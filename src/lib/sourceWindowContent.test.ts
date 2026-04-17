@@ -35,7 +35,7 @@ describe('getSourceWindowDescriptor', () => {
     expect(descriptor.allowsPlaybackPersistence).toBe(true)
   })
 
-  it('uses an NTS embed descriptor for nts.live sources', () => {
+  it('does not create a special embed path for nts.live show URLs', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({
         source_type: 'nts',
@@ -45,10 +45,10 @@ describe('getSourceWindowDescriptor', () => {
       }),
     )
 
-    expect(descriptor.kind).toBe('nts-embed')
-    if (descriptor.kind !== 'nts-embed') throw new Error('expected nts descriptor')
-    expect(descriptor.embedUrl).toBe('https://www.nts.live/shows/test-show')
-    expect(descriptor.ctaLabel).toBe('Open on NTS')
+    expect(descriptor.kind).toBe('audio-dock')
+    if (descriptor.kind !== 'audio-dock') throw new Error('expected audio dock descriptor')
+    expect(descriptor.streamUrl).toBe('https://www.nts.live/shows/test-show')
+    expect(descriptor.ctaLabel).toBe('Resolved track source required')
     expect(descriptor.allowsPlaybackPersistence).toBe(true)
   })
 
@@ -63,7 +63,7 @@ describe('getSourceWindowDescriptor', () => {
     )
 
     expect(descriptor.kind).toBe('audio-dock')
-    expect(descriptor.ctaLabel).toBe('Open audio source')
+    expect(descriptor.ctaLabel).toBe('Open track source')
     expect(descriptor.allowsPlaybackPersistence).toBe(true)
   })
 

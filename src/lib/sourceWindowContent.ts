@@ -9,13 +9,6 @@ export type SourceWindowDescriptor =
       ctaLabel: string
     }
   | {
-      kind: 'nts-embed'
-      embedUrl: string
-      allowsPlaybackPersistence: boolean
-      domainLabel: string
-      ctaLabel: string
-    }
-  | {
       kind: 'audio-dock'
       streamUrl: string | null
       allowsPlaybackPersistence: boolean
@@ -105,23 +98,13 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
     }
   }
 
-  if ((binding.window_type === 'audio' || binding.source_type === 'nts') && isNtsUrl(binding.source_url)) {
-    return {
-      kind: 'nts-embed',
-      embedUrl: binding.source_url ?? 'https://www.nts.live/',
-      allowsPlaybackPersistence,
-      domainLabel,
-      ctaLabel: 'Open on NTS',
-    }
-  }
-
-  if (binding.window_type === 'audio' || binding.source_type === 'nts') {
+  if (binding.window_type === 'audio' || binding.source_type === 'nts' || binding.source_type === 'audio') {
     return {
       kind: 'audio-dock',
       streamUrl: binding.source_url,
       allowsPlaybackPersistence,
       domainLabel,
-      ctaLabel: 'Open audio source',
+      ctaLabel: isNtsUrl(binding.source_url) || binding.source_type === 'nts' ? 'Resolved track source required' : 'Open track source',
     }
   }
 

@@ -322,7 +322,7 @@ function SourceWindow({ binding, mode, onClose }: { binding: SourceBindingRecord
 function SourceWindowBody({ binding }: { binding: SourceBindingRecord }) {
   const descriptor = getSourceWindowDescriptor(binding)
 
-  if (descriptor.kind === 'youtube-embed' || descriptor.kind === 'nts-embed') {
+  if (descriptor.kind === 'youtube-embed') {
     return (
       <div className="source-window__body source-window__body--video">
         <iframe
