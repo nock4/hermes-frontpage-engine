@@ -9,6 +9,13 @@ export type SourceWindowDescriptor =
       ctaLabel: string
     }
   | {
+      kind: 'nts-embed'
+      embedUrl: string
+      allowsPlaybackPersistence: boolean
+      domainLabel: string
+      ctaLabel: string
+    }
+  | {
       kind: 'audio-dock'
       streamUrl: string | null
       allowsPlaybackPersistence: boolean
@@ -70,6 +77,17 @@ const toYouTubeEmbedUrl = (sourceUrl: string | null) => {
   return null
 }
 
+const isNtsUrl = (sourceUrl: string | null) => {
+  if (!sourceUrl) return false
+
+  try {
+    const url = new URL(sourceUrl)
+    return url.hostname.replace(/^www\./, '') === 'nts.live'
+  } catch {
+    return false
+  }
+}
+
 export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceWindowDescriptor => {
   const domainLabel = getDomainLabel(binding.source_url)
   const allowsPlaybackPersistence = binding.playback_persistence
@@ -84,6 +102,16 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
         domainLabel,
         ctaLabel: 'Open on YouTube',
       }
+    }
+  }
+
+  if ((binding.window_type === 'audio' || binding.source_type === 'nts') && isNtsUrl(binding.source_url)) {
+    return {
+      kind: 'nts-embed',
+      embedUrl: binding.source_url ?? 'https://www.nts.live/',
+      allowsPlaybackPersistence,
+      domainLabel,
+      ctaLabel: 'Open on NTS',
     }
   }
 

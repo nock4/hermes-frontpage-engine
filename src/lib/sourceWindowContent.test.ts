@@ -35,11 +35,28 @@ describe('getSourceWindowDescriptor', () => {
     expect(descriptor.allowsPlaybackPersistence).toBe(true)
   })
 
-  it('keeps audio bindings in an audio-dock descriptor', () => {
+  it('uses an NTS embed descriptor for nts.live sources', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({
         source_type: 'nts',
-        source_url: 'https://www.nts.live/',
+        source_url: 'https://www.nts.live/shows/test-show',
+        window_type: 'audio',
+        playback_persistence: true,
+      }),
+    )
+
+    expect(descriptor.kind).toBe('nts-embed')
+    if (descriptor.kind !== 'nts-embed') throw new Error('expected nts descriptor')
+    expect(descriptor.embedUrl).toBe('https://www.nts.live/shows/test-show')
+    expect(descriptor.ctaLabel).toBe('Open on NTS')
+    expect(descriptor.allowsPlaybackPersistence).toBe(true)
+  })
+
+  it('falls back to audio-dock for non-NTS audio bindings', () => {
+    const descriptor = getSourceWindowDescriptor(
+      makeBinding({
+        source_type: 'audio',
+        source_url: 'https://example.com/audio.mp3',
         window_type: 'audio',
         playback_persistence: true,
       }),
