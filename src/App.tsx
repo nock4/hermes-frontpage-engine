@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { loadEditionPackage, loadManifest, polygonToClipPath } from './lib/editionLoader'
 import { buildArchiveHref, buildEditionHref, getEditionArchiveRecords, parseAppRoute, type AppRoute } from './lib/router'
+import { getSourceWindowDescriptor } from './lib/sourceWindowContent'
 import { clearPreview, closeWindow, createWindowState, hoverBinding, pinBinding, restoreWindow } from './lib/sourceWindowManager'
 import type { ArchiveRecord, EditionManifest, LoadedEdition, SourceBindingRecord, SourceWindowState } from './types/runtime'
 
@@ -294,6 +295,8 @@ function ArchiveMiniList({ records, navigate, currentEditionId }: { records: Arc
 }
 
 function SourceWindow({ binding, mode, onClose }: { binding: SourceBindingRecord; mode: 'preview' | 'primary'; onClose: () => void }) {
+  const descriptor = getSourceWindowDescriptor(binding)
+
   return (
     <div className={`source-window source-window--${mode}`}>
       <div className="source-window__top">
@@ -309,13 +312,64 @@ function SourceWindow({ binding, mode, onClose }: { binding: SourceBindingRecord
       <div className="source-window__meta">
         <span>{binding.window_type}</span>
         <span>{binding.source_type}</span>
-        <span>{binding.playback_persistence ? 'persistent' : 'replaceable'}</span>
+        <span>{descriptor.allowsPlaybackPersistence ? 'persistent' : 'replaceable'}</span>
       </div>
-      {binding.source_url ? (
-        <a href={binding.source_url} rel="noreferrer" target="_blank">Open source ↗</a>
-      ) : (
-        <span className="fallback">No live source URL bound yet</span>
-      )}
+      <SourceWindowBody binding={binding} />
+    </div>
+  )
+}
+
+function SourceWindowBody({ binding }: { binding: SourceBindingRecord }) {
+  const descriptor = getSourceWindowDescriptor(binding)
+
+  if (descriptor.kind === 'youtube-embed') {
+    return (
+      <div className="source-window__body source-window__body--video">
+        <iframe
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          loading="lazy"
+          src={descriptor.embedUrl}
+          title={binding.title}
+        />
+        {binding.source_url ? <a href={binding.source_url} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a> : null}
+      </div>
+    )
+  }
+
+  if (descriptor.kind === 'audio-dock') {
+    return (
+      <div className="source-window__body source-window__body--audio">
+        <div className="audio-dock-card">
+          <strong>Persistent audio pocket</strong>
+          <p>This window is treated like the minimized audio dock path. Keep listening while exploring other pockets.</p>
+        </div>
+        {descriptor.streamUrl ? <a href={descriptor.streamUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a> : <span className="fallback">No live audio source URL bound yet</span>}
+      </div>
+    )
+  }
+
+  if (descriptor.kind === 'social-card') {
+    return (
+      <div className="source-window__body source-window__body--social">
+        <div className="social-card">
+          <div className="eyebrow">Social source</div>
+          <strong>{descriptor.domainLabel}</strong>
+          <p>Placeholder for the native social embed path. This still preserves the real outbound source instead of rewriting it into a summary card.</p>
+        </div>
+        {descriptor.sourceUrl ? <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a> : <span className="fallback">No live post URL bound yet</span>}
+      </div>
+    )
+  }
+
+  return (
+    <div className="source-window__body source-window__body--web">
+      <div className="rich-preview-card">
+        <div className="eyebrow">Rich preview</div>
+        <strong>{descriptor.domainLabel}</strong>
+        <p>Source-framed fallback for article, note, and linked web content.</p>
+      </div>
+      {descriptor.sourceUrl ? <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a> : <span className="fallback">No live source URL bound yet</span>}
     </div>
   )
 }

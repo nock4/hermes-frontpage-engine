@@ -226,6 +226,37 @@ a {
   gap: 0.55rem;
 }
 
+.source-window__body {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.source-window__body iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(10, 10, 10, 0.85);
+}
+
+.audio-dock-card,
+.social-card,
+.rich-preview-card {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+
+.audio-dock-card p,
+.social-card p,
+.rich-preview-card p {
+  margin: 0;
+  color: rgba(255,255,255,0.76);
+}
+
 .source-window--preview {
   background: rgba(36, 31, 28, 0.72);
 }
