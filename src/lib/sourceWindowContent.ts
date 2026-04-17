@@ -23,6 +23,17 @@ export type SourceWindowDescriptor =
       accentTone: SourceAccentTone
     }
   | {
+      kind: 'bandcamp-card'
+      sourceUrl: string
+      artistLabel: string
+      releasePath: string
+      allowsPlaybackPersistence: boolean
+      domainLabel: string
+      ctaLabel: string
+      platformLabel: string
+      accentTone: SourceAccentTone
+    }
+  | {
       kind: 'audio-dock'
       streamUrl: string | null
       allowsPlaybackPersistence: boolean
@@ -39,6 +50,8 @@ export type SourceWindowDescriptor =
       ctaLabel: string
       platformLabel: string
       sourceLabel?: string
+      postLabel?: string
+      byline?: string
       accentTone: SourceAccentTone
     }
   | {
@@ -92,6 +105,27 @@ const getSourceLabel = (sourceUrl: string | null) => {
   }
 }
 
+const getSocialMetadata = (sourceUrl: string | null) => {
+  if (!sourceUrl) return { sourceLabel: undefined, postLabel: undefined, byline: undefined }
+
+  try {
+    const url = new URL(sourceUrl)
+    const hostname = url.hostname.replace(/^www\./, '')
+    const parts = url.pathname.split('/').filter(Boolean)
+    const handle = (hostname === 'x.com' || hostname === 'twitter.com') && parts[0] ? `@${parts[0]}` : undefined
+    const statusIndex = parts.findIndex((part) => part === 'status')
+    const statusId = statusIndex >= 0 ? parts[statusIndex + 1] : undefined
+
+    return {
+      sourceLabel: handle,
+      postLabel: statusId ? `Post ${statusId}` : undefined,
+      byline: handle ? `Posted by ${handle} on ${getPlatformLabel(sourceUrl, 'social')}` : undefined,
+    }
+  } catch {
+    return { sourceLabel: undefined, postLabel: undefined, byline: undefined }
+  }
+}
+
 const toYouTubeEmbedUrl = (sourceUrl: string | null) => {
   if (!sourceUrl) return null
 
@@ -129,6 +163,24 @@ const toSoundCloudEmbedUrl = (sourceUrl: string | null) => {
     const url = new URL(sourceUrl)
     if (url.hostname.replace(/^www\./, '') !== 'soundcloud.com') return null
     return `https://w.soundcloud.com/player/?url=${encodeURIComponent(sourceUrl)}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=true`
+  } catch {
+    return null
+  }
+}
+
+const getBandcampMetadata = (sourceUrl: string | null) => {
+  if (!sourceUrl) return null
+
+  try {
+    const url = new URL(sourceUrl)
+    const hostname = url.hostname.replace(/^www\./, '')
+    if (hostname === 'bandcamp.com' || !hostname.endsWith('.bandcamp.com')) return null
+
+    return {
+      sourceUrl,
+      artistLabel: hostname.replace(/\.bandcamp\.com$/, ''),
+      releasePath: url.pathname || '/',
+    }
   } catch {
     return null
   }
@@ -179,6 +231,21 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
       }
     }
 
+    const bandcampMetadata = getBandcampMetadata(binding.source_url)
+    if (bandcampMetadata && binding.source_type !== 'nts') {
+      return {
+        kind: 'bandcamp-card',
+        sourceUrl: bandcampMetadata.sourceUrl,
+        artistLabel: bandcampMetadata.artistLabel,
+        releasePath: bandcampMetadata.releasePath,
+        allowsPlaybackPersistence,
+        domainLabel,
+        ctaLabel: 'Open on Bandcamp',
+        platformLabel: 'Bandcamp',
+        accentTone: 'audio',
+      }
+    }
+
     return {
       kind: 'audio-dock',
       streamUrl: binding.source_url,
@@ -191,6 +258,7 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
   }
 
   if (binding.window_type === 'social' || binding.source_type === 'tweet') {
+    const socialMetadata = getSocialMetadata(binding.source_url)
     return {
       kind: 'social-card',
       sourceUrl: binding.source_url,
@@ -198,7 +266,9 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
       domainLabel,
       ctaLabel: 'Open post',
       platformLabel: getPlatformLabel(binding.source_url, 'Social source'),
-      sourceLabel: getSourceLabel(binding.source_url),
+      sourceLabel: socialMetadata.sourceLabel ?? getSourceLabel(binding.source_url),
+      postLabel: socialMetadata.postLabel,
+      byline: socialMetadata.byline,
       accentTone: 'social',
     }
   }

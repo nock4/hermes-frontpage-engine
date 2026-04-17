@@ -354,6 +354,20 @@ function SourceWindowBody({ binding }: { binding: SourceBindingRecord }) {
     )
   }
 
+  if (descriptor.kind === 'bandcamp-card') {
+    return (
+      <div className="source-window__body source-window__body--audio">
+        <div className="audio-dock-card audio-dock-card--bandcamp">
+          <div className="eyebrow">{descriptor.platformLabel}</div>
+          <strong>{descriptor.artistLabel}</strong>
+          <span className="source-pill">{descriptor.releasePath}</span>
+          <p>Provider-aware fallback for resolved Bandcamp sources when there is no stable embed path available from the stored URL alone.</p>
+        </div>
+        <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a>
+      </div>
+    )
+  }
+
   if (descriptor.kind === 'audio-dock') {
     return (
       <div className="source-window__body source-window__body--audio">
@@ -374,11 +388,12 @@ function SourceWindowBody({ binding }: { binding: SourceBindingRecord }) {
   if (descriptor.kind === 'social-card') {
     return (
       <div className="source-window__body source-window__body--social">
-        <div className="social-card">
+        <div className="social-card social-card--post">
           <div className="eyebrow">{descriptor.platformLabel}</div>
-          <strong>{descriptor.domainLabel}</strong>
-          {descriptor.sourceLabel ? <span className="source-pill">{descriptor.sourceLabel}</span> : null}
-          <p>Use a source-framed social window here. Keep provenance visible and avoid rewriting the post into summary-card UI.</p>
+          <strong>{descriptor.sourceLabel ?? descriptor.domainLabel}</strong>
+          {descriptor.byline ? <span className="source-pill">{descriptor.byline}</span> : null}
+          {descriptor.postLabel ? <span className="source-pill">{descriptor.postLabel}</span> : null}
+          <p>Keep this window source-native. Show the post as a post-shaped object with provenance, not as a flattened content summary.</p>
         </div>
         {descriptor.sourceUrl ? <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a> : <span className="fallback">No live post URL bound yet</span>}
       </div>

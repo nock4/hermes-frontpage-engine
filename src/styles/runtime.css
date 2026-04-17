@@ -328,6 +328,16 @@ a {
   background: rgba(255, 178, 87, 0.07);
 }
 
+.audio-dock-card--bandcamp {
+  border-color: rgba(122, 191, 255, 0.2);
+  background: linear-gradient(180deg, rgba(52, 107, 155, 0.16), rgba(255,255,255,0.03));
+}
+
+.social-card--post {
+  border-color: rgba(93, 212, 190, 0.2);
+  background: linear-gradient(180deg, rgba(38, 89, 82, 0.24), rgba(255,255,255,0.03));
+}
+
 .audio-dock-card p,
 .social-card p,
 .rich-preview-card p {

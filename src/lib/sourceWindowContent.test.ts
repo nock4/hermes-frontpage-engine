@@ -71,7 +71,26 @@ describe('getSourceWindowDescriptor', () => {
     expect(descriptor.accentTone).toBe('audio')
   })
 
-  it('adds provider-aware social labels and a quoted handle for X links', () => {
+  it('uses a provider-aware bandcamp card for resolved track sources when no direct embed path exists', () => {
+    const descriptor = getSourceWindowDescriptor(
+      makeBinding({
+        source_type: 'audio',
+        source_url: 'https://noproblematapes.bandcamp.com/track/example-track',
+        window_type: 'audio',
+        playback_persistence: true,
+      }),
+    )
+
+    expect(descriptor.kind).toBe('bandcamp-card')
+    if (descriptor.kind !== 'bandcamp-card') throw new Error('expected bandcamp descriptor')
+    expect(descriptor.platformLabel).toBe('Bandcamp')
+    expect(descriptor.artistLabel).toBe('noproblematapes')
+    expect(descriptor.releasePath).toBe('/track/example-track')
+    expect(descriptor.ctaLabel).toBe('Open on Bandcamp')
+    expect(descriptor.accentTone).toBe('audio')
+  })
+
+  it('adds richer provenance fields for X links', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({
         source_type: 'tweet',
@@ -85,6 +104,8 @@ describe('getSourceWindowDescriptor', () => {
     expect(descriptor.domainLabel).toBe('x.com')
     expect(descriptor.platformLabel).toBe('X')
     expect(descriptor.sourceLabel).toBe('@nick')
+    expect(descriptor.postLabel).toBe('Post 123')
+    expect(descriptor.byline).toBe('Posted by @nick on X')
     expect(descriptor.accentTone).toBe('social')
   })
 
