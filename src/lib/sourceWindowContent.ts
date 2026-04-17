@@ -13,6 +13,16 @@ export type SourceWindowDescriptor =
       accentTone: SourceAccentTone
     }
   | {
+      kind: 'soundcloud-embed'
+      embedUrl: string
+      sourceUrl: string
+      allowsPlaybackPersistence: boolean
+      domainLabel: string
+      ctaLabel: string
+      platformLabel: string
+      accentTone: SourceAccentTone
+    }
+  | {
       kind: 'audio-dock'
       streamUrl: string | null
       allowsPlaybackPersistence: boolean
@@ -28,6 +38,7 @@ export type SourceWindowDescriptor =
       domainLabel: string
       ctaLabel: string
       platformLabel: string
+      sourceLabel?: string
       accentTone: SourceAccentTone
     }
   | {
@@ -66,6 +77,21 @@ const getPlatformLabel = (sourceUrl: string | null, fallback: string) => {
   }
 }
 
+const getSourceLabel = (sourceUrl: string | null) => {
+  if (!sourceUrl) return undefined
+
+  try {
+    const url = new URL(sourceUrl)
+    const hostname = url.hostname.replace(/^www\./, '')
+    if ((hostname === 'x.com' || hostname === 'twitter.com') && url.pathname.split('/').filter(Boolean)[0]) {
+      return `@${url.pathname.split('/').filter(Boolean)[0]}`
+    }
+    return undefined
+  } catch {
+    return undefined
+  }
+}
+
 const toYouTubeEmbedUrl = (sourceUrl: string | null) => {
   if (!sourceUrl) return null
 
@@ -94,6 +120,18 @@ const toYouTubeEmbedUrl = (sourceUrl: string | null) => {
   }
 
   return null
+}
+
+const toSoundCloudEmbedUrl = (sourceUrl: string | null) => {
+  if (!sourceUrl) return null
+
+  try {
+    const url = new URL(sourceUrl)
+    if (url.hostname.replace(/^www\./, '') !== 'soundcloud.com') return null
+    return `https://w.soundcloud.com/player/?url=${encodeURIComponent(sourceUrl)}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=true`
+  } catch {
+    return null
+  }
 }
 
 const isNtsUrl = (sourceUrl: string | null) => {
@@ -127,6 +165,20 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
   }
 
   if (binding.window_type === 'audio' || binding.source_type === 'nts' || binding.source_type === 'audio') {
+    const soundcloudEmbedUrl = toSoundCloudEmbedUrl(binding.source_url)
+    if (soundcloudEmbedUrl && binding.source_type !== 'nts') {
+      return {
+        kind: 'soundcloud-embed',
+        embedUrl: soundcloudEmbedUrl,
+        sourceUrl: binding.source_url ?? 'https://soundcloud.com',
+        allowsPlaybackPersistence,
+        domainLabel,
+        ctaLabel: 'Open track source',
+        platformLabel: 'SoundCloud',
+        accentTone: 'audio',
+      }
+    }
+
     return {
       kind: 'audio-dock',
       streamUrl: binding.source_url,
@@ -146,6 +198,7 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
       domainLabel,
       ctaLabel: 'Open post',
       platformLabel: getPlatformLabel(binding.source_url, 'Social source'),
+      sourceLabel: getSourceLabel(binding.source_url),
       accentTone: 'social',
     }
   }

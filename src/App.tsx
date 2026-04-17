@@ -339,6 +339,20 @@ function SourceWindowBody({ binding }: { binding: SourceBindingRecord }) {
     )
   }
 
+  if (descriptor.kind === 'soundcloud-embed') {
+    return (
+      <div className="source-window__body source-window__body--audio-embed">
+        <iframe
+          allow="autoplay"
+          loading="lazy"
+          src={descriptor.embedUrl}
+          title={binding.title}
+        />
+        <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a>
+      </div>
+    )
+  }
+
   if (descriptor.kind === 'audio-dock') {
     return (
       <div className="source-window__body source-window__body--audio">
@@ -362,6 +376,7 @@ function SourceWindowBody({ binding }: { binding: SourceBindingRecord }) {
         <div className="social-card">
           <div className="eyebrow">{descriptor.platformLabel}</div>
           <strong>{descriptor.domainLabel}</strong>
+          {descriptor.sourceLabel ? <span className="source-pill">{descriptor.sourceLabel}</span> : null}
           <p>Use a source-framed social window here. Keep provenance visible and avoid rewriting the post into summary-card UI.</p>
         </div>
         {descriptor.sourceUrl ? <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a> : <span className="fallback">No live post URL bound yet</span>}

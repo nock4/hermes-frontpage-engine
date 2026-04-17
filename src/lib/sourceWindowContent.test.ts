@@ -52,7 +52,7 @@ describe('getSourceWindowDescriptor', () => {
     expect(descriptor.allowsPlaybackPersistence).toBe(true)
   })
 
-  it('uses platform-aware labels for resolved track sources', () => {
+  it('uses a SoundCloud embed path for resolved track sources when available', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({
         source_type: 'audio',
@@ -62,14 +62,16 @@ describe('getSourceWindowDescriptor', () => {
       }),
     )
 
-    expect(descriptor.kind).toBe('audio-dock')
-    if (descriptor.kind !== 'audio-dock') throw new Error('expected audio dock descriptor')
+    expect(descriptor.kind).toBe('soundcloud-embed')
+    if (descriptor.kind !== 'soundcloud-embed') throw new Error('expected soundcloud descriptor')
     expect(descriptor.platformLabel).toBe('SoundCloud')
+    expect(descriptor.embedUrl).toContain('w.soundcloud.com/player/')
+    expect(descriptor.embedUrl).toContain(encodeURIComponent('https://soundcloud.com/forss/flickermood'))
     expect(descriptor.ctaLabel).toBe('Open track source')
     expect(descriptor.accentTone).toBe('audio')
   })
 
-  it('uses a social card descriptor for social links that are not directly embeddable yet', () => {
+  it('adds provider-aware social labels and a quoted handle for X links', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({
         source_type: 'tweet',
@@ -82,6 +84,7 @@ describe('getSourceWindowDescriptor', () => {
     if (descriptor.kind !== 'social-card') throw new Error('expected social descriptor')
     expect(descriptor.domainLabel).toBe('x.com')
     expect(descriptor.platformLabel).toBe('X')
+    expect(descriptor.sourceLabel).toBe('@nick')
     expect(descriptor.accentTone).toBe('social')
   })
 
