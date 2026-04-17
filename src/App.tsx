@@ -104,7 +104,7 @@ function App() {
   const modules = loaded.artifactMap.artifacts.filter((artifact) => artifact.kind === 'module')
 
   return (
-    <main className={`runtime-shell review-mode--${reviewMode} ${runtimeAmbienceClasses}${presentation.showSidebar ? '' : ' runtime-shell--immersive'}`}>
+    <main className={`runtime-shell review-mode--${reviewMode} ${runtimeAmbienceClasses}${presentation.showSidebar ? '' : ' runtime-shell--immersive'}${presentation.stageFillViewport ? ' runtime-shell--stage-fill' : ''}`}>
       <section className="runtime-main">
         {presentation.showTopbar ? (
           <header className="runtime-topbar">

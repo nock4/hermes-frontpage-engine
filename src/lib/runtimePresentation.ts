@@ -7,6 +7,7 @@ export interface RuntimePresentation {
   showReviewPanel: boolean
   showPersistentRegionLabels: boolean
   showStageOverlayWindows: boolean
+  stageFillViewport: boolean
   briefEyebrow: string
   selectionEyebrow: string
   sourceWindowsEmptyState: string
@@ -20,7 +21,8 @@ export const getRuntimePresentation = (reviewMode: ReviewMode): RuntimePresentat
       showArtifactLists: false,
       showReviewPanel: false,
       showPersistentRegionLabels: false,
-      showStageOverlayWindows: true,
+      showStageOverlayWindows: false,
+      stageFillViewport: true,
       briefEyebrow: 'Edition',
       selectionEyebrow: 'Active pocket',
       sourceWindowsEmptyState: 'Open a pocket to pin a source window.',
@@ -34,6 +36,7 @@ export const getRuntimePresentation = (reviewMode: ReviewMode): RuntimePresentat
     showReviewPanel: true,
     showPersistentRegionLabels: true,
     showStageOverlayWindows: false,
+    stageFillViewport: false,
     briefEyebrow: 'Review mode',
     selectionEyebrow: 'Selection',
     sourceWindowsEmptyState: 'Hover for preview, click to pin.',

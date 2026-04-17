@@ -11,7 +11,8 @@ describe('getRuntimePresentation', () => {
       showArtifactLists: false,
       showReviewPanel: false,
       showPersistentRegionLabels: false,
-      showStageOverlayWindows: true,
+      showStageOverlayWindows: false,
+      stageFillViewport: true,
       briefEyebrow: 'Edition',
       selectionEyebrow: 'Active pocket',
       sourceWindowsEmptyState: 'Open a pocket to pin a source window.',
@@ -26,6 +27,7 @@ describe('getRuntimePresentation', () => {
       showReviewPanel: true,
       showPersistentRegionLabels: true,
       showStageOverlayWindows: false,
+      stageFillViewport: false,
       briefEyebrow: 'Review mode',
       selectionEyebrow: 'Selection',
       sourceWindowsEmptyState: 'Hover for preview, click to pin.',
@@ -40,6 +42,7 @@ describe('getRuntimePresentation', () => {
       expect(getMode(mode).showArtifactLists).toBe(true)
       expect(getMode(mode).showPersistentRegionLabels).toBe(true)
       expect(getMode(mode).showStageOverlayWindows).toBe(false)
+      expect(getMode(mode).stageFillViewport).toBe(false)
       expect(getMode(mode).briefEyebrow).toBe('Review mode')
     }
   })

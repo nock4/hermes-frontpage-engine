@@ -36,6 +36,10 @@ a {
   min-height: 100vh;
 }
 
+.runtime-shell--stage-fill {
+  overflow: hidden;
+}
+
 .runtime-shell--immersive .runtime-main {
   min-height: 100vh;
 }
