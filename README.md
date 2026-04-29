@@ -92,7 +92,7 @@ npm run daily:process -- --vault /path/to/vault
 - generated editions should use 6-10 non-duplicate source windows when enough valid source material exists
 
 ## Deploying
-This repo now includes `vercel.json` for static Vite deploys with SPA fallback. Existing files are served directly, and non-file routes fall back to `index.html` so archive routing works under a custom domain.
+This repo includes `vercel.json` for static Vite deploys with SPA fallback. Existing files are served directly, and non-file routes fall back to `index.html` so archive routing works under a custom domain.
 
 ## Notes
 - `gpt-image-2` remains the required image model when `DFE_IMAGE_BACKEND=openai`
