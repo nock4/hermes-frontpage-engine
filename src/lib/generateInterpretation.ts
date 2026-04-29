@@ -53,6 +53,7 @@ interface GenerateInterpretationInput {
   analysis?: AnalysisRecord | null
   geometryKit?: Record<string, GeometryKitArtifactRecord> | null
   candidatePack?: Record<string, CandidatePackArtifactRecord> | null
+  plateReadTimestamp?: string
 }
 
 const OBJECT_KEYWORDS = ['cabinet', 'desk', 'table', 'box', 'drawer', 'book', 'note', 'placard', 'ledger', 'bar', 'room', 'device', 'lamp', 'altar-object']
@@ -439,7 +440,7 @@ export function generateInterpretation(input: GenerateInterpretationInput): Inte
   return {
     interpretation_id: `interp-${edition.edition_id}`,
     edition_id: edition.edition_id,
-    plate_read_timestamp: new Date().toISOString(),
+    plate_read_timestamp: input.plateReadTimestamp ?? new Date().toISOString(),
     scene_ontology: {
       primary,
       secondary,

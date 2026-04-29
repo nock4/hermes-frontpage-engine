@@ -48,6 +48,7 @@ Current strongest review routes:
 
 Working commands:
 - `npm run daily:process`
+- `npm run qa:publish`
 - `npm run qa:source-windows`
 - `npm run test:ux:media`
 - `npm run audit:codebase`
@@ -72,6 +73,7 @@ Daily generation:
 - New packages are review editions by default. Passing `--publish` is required to switch the live pointer.
 
 Security / QA:
+- `npm run qa:publish` is the publish gate: dependency audit, codebase audit, edition validation, unit tests, production build, generated-edition smoke test, and source-window media audit.
 - `npm audit --audit-level=moderate` and `npm audit --omit=dev --audit-level=moderate` should both report 0 vulnerabilities before pushing.
 - `npm run audit:codebase` runs strict unused TypeScript checks, Knip dead-code detection, and generated-content slop scans.
 - Source-window media QA fails generated editions when YouTube falls back to linkout, media is title-only, images fail, or media framing is visibly clipped.

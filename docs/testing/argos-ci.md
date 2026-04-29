@@ -1,6 +1,6 @@
-# Argos CI setup
+# Runtime QA and Argos setup
 
-Argos provides visual regression review for the Playwright UX lane.
+GitHub Actions runs the publish QA gate for runtime health, security, package validity, and source-window media behavior. Argos remains available for the broader visual review lane when local screenshot baselines are intentionally refreshed.
 
 ## What runs in CI
 
@@ -8,16 +8,21 @@ Workflow:
 - `.github/workflows/ux-visual-regression.yml`
 
 Command:
-- `npm run test:ux`
+- `npm run qa:publish`
 
 That job:
 - installs dependencies
 - installs Playwright Chromium
+- runs npm dependency audit for all dependencies and production dependencies
+- runs the codebase audit
+- validates generated edition packages
+- runs unit tests
 - builds the app
-- runs the UX suite
+- runs generated-edition Playwright smoke coverage
+- runs source-window media audit coverage
 - uploads Playwright HTML report artifacts
 - uploads Playwright trace and test-result artifacts
-- uploads Argos screenshots and traces when `ARGOS_TOKEN` is present
+- uploads Argos screenshots and traces when `ARGOS_TOKEN` is present and the executed tests emit Argos snapshots
 - uses modern GitHub Actions majors: checkout v6, setup-node v6, upload-artifact v7
 - runs on Node 20; repo `package.json` requires Node `^20.19.0 || >=22.12.0`
 
@@ -37,7 +42,7 @@ Current repo status:
 
 ## Local behavior
 
-Local UX review still uses committed Playwright screenshot baselines.
+Local UX review still uses committed Playwright screenshot baselines for the broader visual suite.
 
 Commands:
 - `npm run test:ux:update`

@@ -127,6 +127,9 @@ describe('generateInterpretationFiles', () => {
         },
       ],
     })
+    writeJson(path.join(editionBase, 'interpretation.json'), {
+      plate_read_timestamp: '2026-04-24T17:10:00Z',
+    })
 
     writeJson(path.join(editionBase, 'analysis.json'), {
       analysis_id: 'analysis-1',
@@ -163,6 +166,7 @@ describe('generateInterpretationFiles', () => {
     expect(result.generated).toBe(1)
     const interpretation = JSON.parse(fs.readFileSync(path.join(editionBase, 'interpretation.json'), 'utf8'))
     expect(interpretation.edition_id).toBe('edition-1')
+    expect(interpretation.plate_read_timestamp).toBe('2026-04-24T17:10:00Z')
     expect(interpretation.scene_ontology.primary).toBe('object-native')
     expect(interpretation.world_read.summary).toContain('ecological listening station')
     expect(interpretation.artifact_candidates[0].strength).toBeGreaterThan(0.95)

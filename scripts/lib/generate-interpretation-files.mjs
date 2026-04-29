@@ -48,7 +48,7 @@ export async function generateInterpretationFiles({ repoRoot = process.cwd() } =
     const editionBase = path.join(repoRoot, 'public', item.path.replace(/^\//, ''))
 
     try {
-      const [edition, brief, artifactMap, sourceBindings, analysis, geometryKit, candidatePack] = await Promise.all([
+      const [edition, brief, artifactMap, sourceBindings, analysis, geometryKit, candidatePack, existingInterpretation] = await Promise.all([
         readJson(path.join(editionBase, 'edition.json')),
         readJson(path.join(editionBase, 'brief.json')),
         readJson(path.join(editionBase, 'artifact-map.json')),
@@ -56,6 +56,7 @@ export async function generateInterpretationFiles({ repoRoot = process.cwd() } =
         readOptionalJson(path.join(editionBase, 'analysis.json')),
         readOptionalJson(path.join(editionBase, 'geometry-kit.json')),
         findLatestTmpArtifact(repoRoot, item.edition_id, 'candidate-pack.json'),
+        readOptionalJson(path.join(editionBase, 'interpretation.json')),
       ])
 
       const interpretation = generateInterpretation({
@@ -67,6 +68,7 @@ export async function generateInterpretationFiles({ repoRoot = process.cwd() } =
         analysis,
         geometryKit,
         candidatePack,
+        plateReadTimestamp: existingInterpretation?.plate_read_timestamp,
       })
 
       await writeJson(path.join(editionBase, 'interpretation.json'), interpretation)

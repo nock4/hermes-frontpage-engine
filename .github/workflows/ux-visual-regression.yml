@@ -1,4 +1,4 @@
-name: UX Visual Regression
+name: Runtime QA
 
 on:
   pull_request:
@@ -8,11 +8,11 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ux-visual-regression-${{ github.ref }}
+  group: runtime-qa-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  playwright-ux:
+  runtime-qa:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
@@ -34,8 +34,8 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Run UX suite
-        run: npm run test:ux
+      - name: Run publish QA
+        run: npm run qa:publish
 
       - name: Upload Playwright report
         if: always()

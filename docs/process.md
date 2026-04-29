@@ -52,6 +52,14 @@ For the broader source-window regression loop, run:
 npm run qa:source-windows
 ```
 
+For the full publish gate, run:
+
+```bash
+npm run qa:publish
+```
+
+That command runs dependency audit, codebase audit, edition validation, unit tests, production build, generated-edition Playwright smoke, and source-window media audit.
+
 For the dead-code and content-slop audit, run:
 
 ```bash
