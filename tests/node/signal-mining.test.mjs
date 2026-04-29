@@ -76,7 +76,43 @@ describe('saved-signal mining', () => {
     ])
   })
 
-  it('mines only recent allowlisted saved-signal notes', async () => {
+  it('mines manifest signals for public mode', async () => {
+    const rootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-manifest-run-'))
+    const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-run-'))
+    const manifestPath = path.join(rootDir, 'signals.json')
+    await fs.writeFile(manifestPath, JSON.stringify([
+      {
+        title: 'Manifest source',
+        url: 'https://example.com/story',
+        source_channel: 'manual-curation',
+        captured_at: '2026-04-25',
+      },
+      {
+        title: 'Older source',
+        url: 'https://example.com/too-old',
+        source_channel: 'manual-curation',
+        captured_at: '2026-01-01',
+      },
+    ]))
+
+    const harvest = await mineSignals({
+      inputMode: 'manifest',
+      signalManifest: manifestPath,
+      date: '2026-04-27',
+      windowDays: 30,
+      maxNotes: 10,
+    }, runDir)
+
+    expect(harvest.input_mode).toBe('manifest')
+    expect(harvest.notes_scanned).toBe(1)
+    expect(harvest.notes_selected[0]).toMatchObject({
+      title: 'Manifest source',
+      source_channel: 'manual-curation',
+    })
+    expect(harvest.source_candidates.map((source) => source.url)).toEqual(['https://example.com/story'])
+  })
+
+  it('mines only recent allowlisted saved-signal notes in legacy obsidian mode', async () => {
     const vault = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-signal-vault-'))
     const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-signal-run-'))
     await fs.mkdir(path.join(vault, 'Inbox', 'tweets'), { recursive: true })
@@ -101,12 +137,14 @@ describe('saved-signal mining', () => {
     await fs.utimes(path.join(vault, 'Resources', 'Chrome Bookmarks.md'), old, old)
 
     const harvest = await mineSignals({
-      vault,
+      inputMode: 'obsidian-allowlist',
+      inputRoot: vault,
       date: '2026-04-27',
       windowDays: 30,
       maxNotes: 10,
     }, runDir)
 
+    expect(harvest.input_mode).toBe('obsidian-allowlist')
     expect(harvest.markdown_files_seen).toBe(3)
     expect(harvest.notes_scanned).toBe(2)
     expect(harvest.notes_selected.map((note) => note.path).sort()).toEqual([

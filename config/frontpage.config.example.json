@@ -1,0 +1,10 @@
+{
+  "input_mode": "manifest",
+  "signal_manifest": "./examples/signals/sample-signals.json",
+  "input_root": "./examples/signals/sample-notes",
+  "browser_harness_path": "browser-harness",
+  "openai_model": "gpt-5.5",
+  "openai_image_model": "gpt-image-2",
+  "timezone": "UTC",
+  "sample_data_enabled": true
+}

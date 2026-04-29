@@ -1,5 +1,5 @@
 {
-  "name": "daily-frontpage-engine",
+  "name": "hermes-frontpage-engine",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -16,6 +16,9 @@
     "generate:enhancement-plans": "tsx scripts/generate-enhancement-plans.mjs",
     "validate:editions": "npm run generate:interpretations && npm run generate:enhancement-plans && node scripts/validate-editions.mjs",
     "daily:process": "node scripts/run-daily-process.mjs",
+    "demo:sample": "node scripts/run-daily-process.mjs --use-sample-signals",
+    "demo:preview": "vite preview --host 127.0.0.1 --port 4174",
+    "check:setup": "node scripts/run-daily-process.mjs --help",
     "enrich:source-images": "node scripts/enrich-source-images.mjs",
     "test:ux": "npm run build && playwright test -c playwright.ux.config.ts",
     "test:ux:media": "npm run build && playwright test -c playwright.ux.config.ts tests/ux/source-window-media-audit.spec.ts",
