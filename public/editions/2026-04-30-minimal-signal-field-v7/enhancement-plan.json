@@ -1,0 +1,233 @@
+{
+  "enhancement_plan_id": "enhance-2026-04-30-minimal-signal-field-v7",
+  "edition_id": "2026-04-30-minimal-signal-field-v7",
+  "derived_from": {
+    "interpretation_id": "interp-2026-04-30-minimal-signal-field-v7"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "threshold-scan-reveal",
+    "screen-rendered-html"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-dominant-threshold-interruption",
+      "target_kind": "artifact",
+      "artifact_id": "hero-dominant-threshold-interruption",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dominant-threshold-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "hero-secondary-shadow-scar",
+      "target_kind": "artifact",
+      "artifact_id": "hero-secondary-shadow-scar",
+      "priority": 2,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (secondary-shadow-scar) selected from interpretation."
+    },
+    {
+      "target_id": "module-metallic-listening-mark",
+      "target_kind": "artifact",
+      "artifact_id": "module-metallic-listening-mark",
+      "priority": 3,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (metallic-listening-mark) selected from interpretation."
+    },
+    {
+      "target_id": "module-edge-source-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-edge-source-cut",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (edge-source-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-source-pathway-plaque",
+      "target_kind": "artifact",
+      "artifact_id": "module-source-pathway-plaque",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pathway-plaque) selected from interpretation."
+    },
+    {
+      "target_id": "module-thin-media-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-thin-media-slit",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-media-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-field-tick",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-field-tick",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (lower-field-tick) selected from interpretation."
+    },
+    {
+      "target_id": "module-small-glass-scar",
+      "target_kind": "artifact",
+      "artifact_id": "module-small-glass-scar",
+      "priority": 8,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-glass-scar) selected from interpretation."
+    },
+    {
+      "target_id": "module-paper-cut-anchor",
+      "target_kind": "artifact",
+      "artifact_id": "module-paper-cut-anchor",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (paper-cut-anchor) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
