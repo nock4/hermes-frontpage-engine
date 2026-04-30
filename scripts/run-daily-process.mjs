@@ -5,6 +5,7 @@ import fsSync from 'node:fs'
 import net from 'node:net'
 import os from 'node:os'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import {
   clamp01,
@@ -43,16 +44,18 @@ import { resolveFrontpageConfig } from './lib/frontpage-config.mjs'
 import { sentenceList, slugify, uniqueNonEmpty } from './lib/string-utils.mjs'
 
 const root = process.cwd()
+const hermesImageGenerateScript = fileURLToPath(new URL('./lib/hermes_image_generate.py', import.meta.url))
 const defaultSignalWindowDays = 30
 const defaultMaxNotes = 30
 const defaultMaxSources = 16
-const minContentItems = 7
+const minContentItems = 6
 const targetContentItems = 9
 const maxContentItems = 10
 const recentDiversityEditionCount = 6
 const maxAutoresearchCandidates = 36
 const autoresearchCandidateMultiplier = 4
 const supportedInputModes = ['manifest', 'markdown-folder', 'obsidian-allowlist']
+const supportedImageBackends = ['openai', 'hermes']
 const minimalExpressionistPolicy = {
   name: 'minimal-expressionist',
   abstractionModes: [
@@ -119,6 +122,7 @@ Options:
   --max-sources <number>        Source URLs to inspect and bind. Defaults to ${defaultMaxSources}.
   --model <model>               OpenAI text/vision model. Defaults to config or OPENAI_MODEL.
   --image-model <model>         OpenAI image model. Defaults to config or OPENAI_IMAGE_MODEL.
+  --image-backend <backend>     Image generation backend: openai | hermes. Defaults to config or DFE_IMAGE_BACKEND.
   --browser-harness <path>      browser-harness executable. Defaults to config or BROWSER_HARNESS_PATH.
   --source-tool <tool>          Source capture tool. From-scratch runs require browser-harness after autoresearch.
   --image-size <size>           Image generation size. Defaults to 1536x1024.
@@ -175,6 +179,7 @@ export function parseArgs(argv) {
     maxSources: null,
     model: null,
     imageModel: null,
+    imageBackend: null,
     browserHarness: null,
     sourceTool: null,
     imageSize: '1536x1024',
@@ -299,6 +304,14 @@ export function parseArgs(argv) {
       cli.imageModel = arg.slice('--image-model='.length)
       continue
     }
+    if (arg === '--image-backend') {
+      cli.imageBackend = readValue(arg)
+      continue
+    }
+    if (arg.startsWith('--image-backend=')) {
+      cli.imageBackend = arg.slice('--image-backend='.length)
+      continue
+    }
     if (arg === '--browser-harness') {
       cli.browserHarness = readValue(arg)
       continue
@@ -395,6 +408,7 @@ export function parseArgs(argv) {
     maxSources: resolveValue(cli.maxSources, defaultMaxSources),
     model: resolveValue(cli.model, config.openai_model),
     imageModel: resolveValue(cli.imageModel, config.openai_image_model),
+    imageBackend: resolveValue(cli.imageBackend, config.image_backend),
     browserHarness: resolveValue(cli.browserHarness, config.browser_harness_path),
     sourceTool: resolveValue(cli.sourceTool, process.env.DFE_SOURCE_TOOL || 'browser-harness'),
     imageSize: cli.imageSize,
@@ -446,6 +460,9 @@ export function parseArgs(argv) {
   if (!['browser-harness', 'fetch'].includes(options.sourceTool)) {
     throw new Error(`Expected --source-tool to be browser-harness or fetch. Received: ${options.sourceTool}`)
   }
+  if (!supportedImageBackends.includes(options.imageBackend)) {
+    throw new Error(`Expected --image-backend to be one of ${supportedImageBackends.join(', ')}. Received: ${options.imageBackend}`)
+  }
   if (options.inputMode === 'manifest' && !options.signalManifest) {
     throw new Error('Manifest mode requires --signal-manifest, DFE_SIGNAL_MANIFEST, or a config file value.')
   }
@@ -458,8 +475,8 @@ export function parseArgs(argv) {
   if (options.mode === 'from-scratch' && options.sourceTool === 'browser-harness' && !commandExists(options.browserHarness)) {
     throw new Error(`browser-harness executable not found: ${options.browserHarness}`)
   }
-  if (options.mode === 'from-scratch' && options.imageModel !== 'gpt-image-2') {
-    throw new Error(`From-scratch plate generation must use gpt-image-2. Received: ${options.imageModel}`)
+  if (options.mode === 'from-scratch' && options.imageBackend === 'openai' && options.imageModel !== 'gpt-image-2') {
+    throw new Error(`From-scratch plate generation with the OpenAI backend must use gpt-image-2. Received: ${options.imageModel}`)
   }
 
   return options
@@ -561,10 +578,10 @@ function loadDotEnv() {
   return loaded
 }
 
-function requireOpenAiKey() {
+function requireOpenAiKey({ required = true } = {}) {
   const loaded = loadDotEnv()
-  const key = process.env.OPENAI_API_KEY
-  if (!key) {
+  const key = process.env.OPENAI_API_KEY || null
+  if (!key && required) {
     throw new Error([
       'OPENAI_API_KEY is required for the from-scratch pipeline or existing-edition plate remap.',
       'The command checked process.env plus .env, ~/.env, and ~/.hermes/.env.',
@@ -603,6 +620,47 @@ async function runProcess(command, args, step, extraEnv = {}) {
       reject(new Error(`${step.name} failed with exit code ${code}`))
     })
   })
+}
+
+async function runJsonCommand(command, args, extraEnv = {}) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, {
+      cwd: root,
+      env: { ...process.env, ...extraEnv },
+      stdio: ['ignore', 'pipe', 'pipe'],
+    })
+
+    let stdout = ''
+    let stderr = ''
+    child.stdout.on('data', (chunk) => {
+      stdout += chunk.toString()
+    })
+    child.stderr.on('data', (chunk) => {
+      stderr += chunk.toString()
+    })
+    child.on('error', reject)
+    child.on('close', (code) => {
+      if (code !== 0) {
+        reject(new Error((stderr || stdout || `${command} exited ${code}`).trim()))
+        return
+      }
+      try {
+        resolve(JSON.parse(stdout.trim()))
+      } catch (error) {
+        reject(new Error(`Expected JSON from ${command}: ${error.message}\n${stdout}`))
+      }
+    })
+  })
+}
+
+function imageAspectRatioFromSize(size) {
+  const match = String(size || '').match(/(\d+)x(\d+)/i)
+  if (!match) return 'landscape'
+  const width = Number(match[1])
+  const height = Number(match[2])
+  if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0) return 'landscape'
+  if (width === height) return 'square'
+  return width > height ? 'landscape' : 'portrait'
 }
 
 async function runInternal(step, command, fn) {
@@ -1417,8 +1475,44 @@ function imagePrompt(payload) {
   ].join('\n')
 }
 
-async function generateScenePlate({ payload, apiKey, imageModel, imageSize, imageQuality }, runDir) {
+async function generateScenePlate({ payload, apiKey, imageModel, imageBackend, imageSize, imageQuality }, runDir) {
   const prompt = imagePrompt(payload)
+  const outputPath = path.join(runDir, 'plate.png')
+  await fs.writeFile(path.join(runDir, 'scene-prompt.txt'), prompt, 'utf8')
+
+  if (imageBackend === 'hermes') {
+    const hermesResult = await runJsonCommand('python3', [
+      hermesImageGenerateScript,
+      '--prompt-file', path.join(runDir, 'scene-prompt.txt'),
+      '--output', outputPath,
+      '--aspect-ratio', imageAspectRatioFromSize(imageSize),
+    ])
+
+    await writeJson(path.join(runDir, 'scene-generation.json'), {
+      backend: 'hermes',
+      provider: hermesResult.provider || null,
+      model: hermesResult.model || null,
+      requested_openai_image_model: imageModel,
+      size: imageSize,
+      quality: imageQuality || null,
+      generated_at: new Date().toISOString(),
+      prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
+      asset_path: outputPath,
+      source_image: hermesResult.source_image || null,
+      aspect_ratio: hermesResult.aspect_ratio || imageAspectRatioFromSize(imageSize),
+    })
+
+    return {
+      backend: 'hermes',
+      provider: hermesResult.provider || null,
+      model: hermesResult.model || 'hermes-image-provider',
+      size: imageSize,
+      quality: imageQuality || null,
+      outputPath,
+      prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
+    }
+  }
+
   const bodyVariants = [
     { model: imageModel, prompt, size: imageSize, quality: imageQuality, n: 1, output_format: 'png' },
     { model: imageModel, prompt, size: imageSize, quality: imageQuality, n: 1 },
@@ -1453,10 +1547,9 @@ async function generateScenePlate({ payload, apiKey, imageModel, imageSize, imag
         throw new Error(`OpenAI image response did not include b64_json or url: ${JSON.stringify(result).slice(0, 1000)}`)
       }
 
-      const outputPath = path.join(runDir, 'plate.png')
       await fs.writeFile(outputPath, buffer)
-      await fs.writeFile(path.join(runDir, 'scene-prompt.txt'), prompt, 'utf8')
       await writeJson(path.join(runDir, 'scene-generation.json'), {
+        backend: 'openai',
         model: imageModel,
         size: body.size,
         quality: body.quality || null,
@@ -1466,6 +1559,7 @@ async function generateScenePlate({ payload, apiKey, imageModel, imageSize, imag
       })
 
       return {
+        backend: 'openai',
         model: imageModel,
         size: body.size,
         quality: body.quality || null,
@@ -1944,6 +2038,11 @@ function existingPackageSteps(options, editionIds, generationName) {
   return steps
 }
 
+function buildSmokeRoute(edition) {
+  if (!edition) return '/'
+  return edition.is_live ? '/?edition=' + encodeURIComponent(edition.edition_id) : '/?archive=' + encodeURIComponent(edition.slug)
+}
+
 function postPackageSteps({ options, editionIds, generationName, smokeRoute }) {
   const steps = [
     {
@@ -2015,7 +2114,7 @@ async function runExistingMode(options) {
   const editionIds = getEditionIds(options, manifest)
   const generationName = options.generationName || defaultGenerationName()
   const firstEdition = manifest.editions.find((item) => item.edition_id === editionIds[0])
-  const smokeRoute = firstEdition?.is_live ? '/' : firstEdition ? `/archive/${firstEdition.slug}` : '/'
+  const smokeRoute = buildSmokeRoute(firstEdition)
 
   for (const editionId of editionIds) {
     const editionDir = path.join(root, 'public', 'editions', editionId)
@@ -2067,15 +2166,19 @@ async function runExistingMode(options) {
 }
 
 async function runFromScratchMode(options) {
-  const { key: apiKey, loaded } = requireOpenAiKey()
+  const { key: apiKey, loaded } = requireOpenAiKey({ required: false })
   const runId = options.generationName || defaultGenerationName()
   const runDir = path.join(root, 'tmp', 'daily-process-runs', runId)
   await fs.mkdir(runDir, { recursive: true })
   const generationName = runId
-  const recentEditions = getRecentEditionSummaries(recentDiversityEditionCount)
-  const recentSourceKeys = getRecentSourceKeys(recentEditions)
-  const recentDiversityAvoidTerms = getRecentDiversityAvoidTerms(recentEditions)
-  const diversityDirective = chooseDiversityDirective(recentEditions, runId)
+  const sampleMode = options.sampleDataEnabled || options.useSampleSignals
+  const rawRecentEditions = sampleMode ? [] : getRecentEditionSummaries(recentDiversityEditionCount)
+  const recentEditions = rawRecentEditions
+  const recentSourceKeys = sampleMode ? new Set() : getRecentSourceKeys(recentEditions)
+  const recentDiversityAvoidTerms = sampleMode ? [] : getRecentDiversityAvoidTerms(recentEditions)
+  const diversityDirective = sampleMode
+    ? 'Sample mode: use the public demo signals as-is rather than suppressing them based on prior local archive history.'
+    : chooseDiversityDirective(recentEditions, runId)
   const managedBrowser = options.sourceTool === 'browser-harness' && !process.env.BU_CDP_WS
     ? await startManagedBrowserHarnessBrowser(runDir, runId)
     : null
@@ -2170,17 +2273,24 @@ async function runFromScratchMode(options) {
     },
     {
       name: 'Generate AI scene plate',
-      tool: `OpenAI Images API (${options.imageModel})`,
-      command: `internal:openai-generate-image --size ${options.imageSize} --quality ${options.imageQuality}`,
+      tool: options.imageBackend === 'hermes'
+        ? 'Hermes image generation provider'
+        : `OpenAI Images API (${options.imageModel})`,
+      command: options.imageBackend === 'hermes'
+        ? `internal:hermes-generate-image --aspect-ratio ${imageAspectRatioFromSize(options.imageSize)} --size ${options.imageSize}`
+        : `internal:openai-generate-image --size ${options.imageSize} --quality ${options.imageQuality}`,
       run: async () => {
         context.plate = await generateScenePlate({
           payload: context.payload,
           apiKey,
           imageModel: options.imageModel,
+          imageBackend: options.imageBackend,
           imageSize: options.imageSize,
           imageQuality: options.imageQuality,
         }, runDir)
         return {
+          backend: context.plate.backend,
+          provider: context.plate.provider || null,
           model: context.plate.model,
           size: context.plate.size,
           output: path.relative(root, context.plate.outputPath),
@@ -2293,7 +2403,11 @@ async function runFromScratchMode(options) {
     options,
     editionIds: [context.package.editionId],
     generationName,
-    smokeRoute: context.package.route,
+    smokeRoute: buildSmokeRoute({
+      edition_id: context.package.editionId,
+      slug: context.package.route.replace('/archive/', ''),
+      is_live: options.publish,
+    }),
   })
 
   for (const step of postSteps) {

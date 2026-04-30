@@ -14,8 +14,30 @@ const trimTrailingSlash = (pathname: string) => {
 const findEdition = (manifest: EditionManifest, value: string) =>
   manifest.editions.find((item) => item.slug === value || item.edition_id === value) ?? null
 
-export const parseAppRoute = (pathname: string, manifest: EditionManifest): AppRoute => {
-  const normalizedPath = trimTrailingSlash(pathname)
+const resolveUrl = (value: string) => {
+  try {
+    return new URL(value, 'https://runtime.local')
+  } catch {
+    return new URL('/', 'https://runtime.local')
+  }
+}
+
+export const parseAppRoute = (locationValue: string, manifest: EditionManifest): AppRoute => {
+  const url = resolveUrl(locationValue)
+  const normalizedPath = trimTrailingSlash(url.pathname)
+  const archiveQuery = url.searchParams.get('archive')
+  const editionQuery = url.searchParams.get('edition')
+
+  if (archiveQuery) {
+    const edition = findEdition(manifest, archiveQuery)
+    if (edition) return { kind: 'archive-edition', edition }
+    return { kind: 'archive-index' }
+  }
+
+  if (editionQuery) {
+    const edition = findEdition(manifest, editionQuery)
+    if (edition) return { kind: 'edition', edition }
+  }
 
   if (normalizedPath === '/archive') {
     return { kind: 'archive-index' }

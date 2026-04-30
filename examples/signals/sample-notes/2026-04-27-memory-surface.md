@@ -1,11 +1,11 @@
 ---
-title: Memory surface fragments
-source_channel: markdown-note
+title: Memory Surface Intake
+source_channel: chrome-bookmark
 note_date: 2026-04-27
 ---
 
-A front page can work like a memory surface instead of a dashboard.
+Public note sample mixing literature and music pages with reliable preview media.
 
-Useful references:
 - https://www.poetryfoundation.org/articles/69390/the-garden-of-forking-paths
-- https://www.youtube.com/watch?v=5qap5aO4i9A
+- https://seefeel.bandcamp.com/track/ever-no-way
+- https://kellymoran.bandcamp.com/track/its-okay-to-disappear

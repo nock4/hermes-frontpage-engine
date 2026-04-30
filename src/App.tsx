@@ -207,7 +207,7 @@ function App() {
         setLoading(true)
         setError(null)
         const nextManifest = manifest ?? (await loadManifest())
-        const nextRoute = parseAppRoute(window.location.pathname, nextManifest)
+        const nextRoute = parseAppRoute(`${window.location.pathname}${window.location.search}`, nextManifest)
         setManifest(nextManifest)
         setRoute(nextRoute)
 

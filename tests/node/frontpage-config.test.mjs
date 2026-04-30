@@ -54,6 +54,7 @@ describe('frontpage config', () => {
     const resolved = resolveFrontpageConfig({ env: {} })
     expect(resolved.browser_harness_path).toBe(portableConfigDefaults.browser_harness_path)
     expect(resolved.openai_image_model).toBe(portableConfigDefaults.openai_image_model)
+    expect(resolved.image_backend).toBe(portableConfigDefaults.image_backend)
     expect(resolved.timezone).toBe(portableConfigDefaults.timezone)
   })
 

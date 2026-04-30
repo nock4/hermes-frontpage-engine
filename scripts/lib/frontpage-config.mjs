@@ -13,6 +13,7 @@ export const portableConfigDefaults = {
   browser_harness_path: 'browser-harness',
   openai_model: 'gpt-5.5',
   openai_image_model: 'gpt-image-2',
+  image_backend: 'hermes',
   timezone: 'UTC',
   sample_data_enabled: false,
 }
@@ -70,6 +71,7 @@ export function resolveFrontpageConfig({ cwd = repoRoot, env = process.env, expl
     browser_harness_path: env.BROWSER_HARNESS_PATH || fileConfig.browser_harness_path || portableConfigDefaults.browser_harness_path,
     openai_model: env.OPENAI_MODEL || fileConfig.openai_model || portableConfigDefaults.openai_model,
     openai_image_model: env.OPENAI_IMAGE_MODEL || fileConfig.openai_image_model || portableConfigDefaults.openai_image_model,
+    image_backend: env.DFE_IMAGE_BACKEND || fileConfig.image_backend || portableConfigDefaults.image_backend,
     timezone: env.TZ || fileConfig.timezone || portableConfigDefaults.timezone,
     sample_data_enabled: sampleEnabled,
     sample_manifest_path: defaultSampleManifest,

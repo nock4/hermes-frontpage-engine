@@ -45,6 +45,13 @@ describe('parseAppRoute', () => {
     expect(route.edition.slug).toBe('night-observatory-v1')
   })
 
+  it('returns direct edition route when edition is provided as a query parameter', () => {
+    const route = parseAppRoute('/?edition=night-observatory-v1', manifest)
+    expect(route.kind).toBe('edition')
+    if (route.kind !== 'edition') throw new Error('expected edition route')
+    expect(route.edition.slug).toBe('night-observatory-v1')
+  })
+
   it('returns archive index for /archive', () => {
     const route = parseAppRoute('/archive', manifest)
     expect(route).toEqual({ kind: 'archive-index' })
@@ -52,6 +59,13 @@ describe('parseAppRoute', () => {
 
   it('returns archive edition when slug is in pathname', () => {
     const route = parseAppRoute('/archive/night-observatory-v1', manifest)
+    expect(route.kind).toBe('archive-edition')
+    if (route.kind !== 'archive-edition') throw new Error('expected archive edition route')
+    expect(route.edition.slug).toBe('night-observatory-v1')
+  })
+
+  it('returns archive edition when archive slug is provided as a query parameter', () => {
+    const route = parseAppRoute('/?archive=night-observatory-v1', manifest)
     expect(route.kind).toBe('archive-edition')
     if (route.kind !== 'archive-edition') throw new Error('expected archive edition route')
     expect(route.edition.slug).toBe('night-observatory-v1')

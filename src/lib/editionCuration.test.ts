@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import manifest from '../../public/editions/index.json'
-import currentArtifactMap from '../../public/editions/2026-04-28-moss-current-index-v1/artifact-map.json'
-import currentSourceBindings from '../../public/editions/2026-04-28-moss-current-index-v1/source-bindings.json'
+import currentArtifactMap from '../../public/editions/2026-04-30-minimal-signal-field-v3/artifact-map.json'
+import currentSourceBindings from '../../public/editions/2026-04-30-minimal-signal-field-v3/source-bindings.json'
 import charcoalArtifactMap from '../../public/editions/2026-04-27-charcoal-spiral-observatory-v1/artifact-map.json'
 import vermilionArtifactMap from '../../public/editions/2026-04-27-vermilion-arc-astrolabe-v1/artifact-map.json'
 import magentaArtifactMap from '../../public/editions/2026-04-26-magenta-quiet-gate-v1/artifact-map.json'
@@ -15,7 +15,7 @@ const packagedArtifactMaps = [
 
 describe('live edition curation rules', () => {
   it('keeps the current live edition between 6 and 10 masks/modules with no duplicate urls', () => {
-    expect(manifest.current_edition_id).toBe('2026-04-28-moss-current-index-v1')
+    expect(manifest.current_edition_id).toBe('2026-04-30-minimal-signal-field-v3')
 
     const urls = currentSourceBindings.bindings
       .map((binding: { source_url?: string | null }) => binding.source_url)

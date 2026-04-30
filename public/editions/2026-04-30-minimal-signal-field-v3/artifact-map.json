@@ -1,0 +1,388 @@
+{
+  "artifact_map_id": "map-2026-04-30-minimal-signal-field-v3",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "minimal-signal-field",
+  "default_artifact_id": "hero-dominant-threshold-interruption",
+  "artifacts": [
+    {
+      "id": "hero-dominant-threshold-interruption",
+      "kind": "hero",
+      "label": "Dominant Threshold Interruption",
+      "artifact_type": "dominant-threshold-interruption",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.1,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.08,
+          0.1
+        ],
+        [
+          0.4,
+          0.1
+        ],
+        [
+          0.4,
+          0.42
+        ],
+        [
+          0.08,
+          0.42
+        ]
+      ],
+      "cluster_id": "minimal-signal-field",
+      "mask_path": "/editions/2026-04-30-minimal-signal-field-v3/assets/masks/hero-dominant-threshold-interruption.svg",
+      "source_binding_ids": [
+        "binding-hero-dominant-threshold-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          369,
+          240
+        ],
+        "safe_stage_window_origin_px": [
+          408,
+          266
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-secondary-shadow-scar",
+      "kind": "hero",
+      "label": "Secondary Shadow Scar",
+      "artifact_type": "secondary-shadow-scar",
+      "bounds": {
+        "x": 0.58,
+        "y": 0.12,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.58,
+          0.12
+        ],
+        [
+          0.9,
+          0.12
+        ],
+        [
+          0.9,
+          0.44
+        ],
+        [
+          0.58,
+          0.44
+        ]
+      ],
+      "cluster_id": "minimal-signal-field",
+      "mask_path": "/editions/2026-04-30-minimal-signal-field-v3/assets/masks/hero-secondary-shadow-scar.svg",
+      "source_binding_ids": [
+        "binding-hero-secondary-shadow-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1137,
+          261
+        ],
+        "safe_stage_window_origin_px": [
+          1176,
+          287
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-metallic-listening-mark",
+      "kind": "module",
+      "label": "Metallic Listening Mark",
+      "artifact_type": "metallic-listening-mark",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.08,
+          0.52
+        ],
+        [
+          0.3,
+          0.52
+        ],
+        [
+          0.3,
+          0.74
+        ],
+        [
+          0.08,
+          0.74
+        ]
+      ],
+      "cluster_id": "minimal-signal-field",
+      "mask_path": "/editions/2026-04-30-minimal-signal-field-v3/assets/masks/module-metallic-listening-mark.svg",
+      "source_binding_ids": [
+        "binding-module-metallic-listening-mark"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          627
+        ],
+        "safe_stage_window_origin_px": [
+          319,
+          645
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-edge-source-cut",
+      "kind": "module",
+      "label": "Edge Source Cut",
+      "artifact_type": "edge-source-cut",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "cluster_id": "minimal-signal-field",
+      "mask_path": "/editions/2026-04-30-minimal-signal-field-v3/assets/masks/module-edge-source-cut.svg",
+      "source_binding_ids": [
+        "binding-module-edge-source-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          691,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          718,
+          666
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-source-pathway-plaque",
+      "kind": "module",
+      "label": "Source Pathway Plaque",
+      "artifact_type": "pathway-plaque",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "minimal-signal-field",
+      "mask_path": "/editions/2026-04-30-minimal-signal-field-v3/assets/masks/module-source-pathway-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-source-pathway-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-thin-media-slit",
+      "kind": "module",
+      "label": "Thin Media Slit",
+      "artifact_type": "thin-media-slit",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "minimal-signal-field",
+      "mask_path": "/editions/2026-04-30-minimal-signal-field-v3/assets/masks/module-thin-media-slit.svg",
+      "source_binding_ids": [
+        "binding-module-thin-media-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-lower-field-tick",
+      "kind": "module",
+      "label": "Lower Field Tick",
+      "artifact_type": "lower-field-tick",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "minimal-signal-field",
+      "mask_path": "/editions/2026-04-30-minimal-signal-field-v3/assets/masks/module-lower-field-tick.svg",
+      "source_binding_ids": [
+        "binding-module-lower-field-tick"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-small-glass-scar",
+      "kind": "module",
+      "label": "Small Glass Scar",
+      "artifact_type": "small-glass-scar",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "minimal-signal-field",
+      "mask_path": "/editions/2026-04-30-minimal-signal-field-v3/assets/masks/module-small-glass-scar.svg",
+      "source_binding_ids": [
+        "binding-module-small-glass-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}
