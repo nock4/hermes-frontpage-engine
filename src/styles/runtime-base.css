@@ -381,9 +381,13 @@ a {
 }
 
 .about-unfurl__panel {
+  align-self: flex-end;
+  display: none;
+  box-sizing: border-box;
   width: min(34rem, 100%);
   max-width: 100%;
-  max-height: min(72vh, 42rem, calc(100% - 4.5rem), calc(100dvh - 6rem));
+  min-width: 0;
+  max-height: min(72vh, 42rem, calc(100dvh - 6rem));
   overflow: auto;
   overscroll-behavior: contain;
   padding: 1rem 1rem 1.05rem;
@@ -394,18 +398,10 @@ a {
   color: rgba(255, 245, 228, 0.94);
   font-family: var(--about-body-font);
   font-weight: var(--about-body-weight);
-  transform-origin: top right;
-  transform: scale(0.96) translateY(-0.4rem);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 180ms ease, transform 220ms ease, visibility 220ms step-end;
 }
 
 .about-unfurl__panel.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1) translateY(0);
-  transition: opacity 180ms ease, transform 220ms ease;
+  display: block;
 }
 
 .about-unfurl__panel--archive {
@@ -466,7 +462,9 @@ a {
   }
 
   .about-unfurl__panel {
+    align-self: stretch;
     width: 100%;
+    max-width: none;
   }
 }
 

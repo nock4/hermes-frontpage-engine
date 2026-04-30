@@ -12,8 +12,27 @@
 }
 
 .archive-mini-list button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
   width: 100%;
-  justify-content: space-between;
+  justify-content: initial;
+  gap: 0.65rem;
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.archive-mini-list button span:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.archive-mini-list button span:not(:first-child) {
+  flex: 0 0 auto;
 }
 
 .fallback {
