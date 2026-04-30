@@ -1,26 +1,28 @@
 import { describe, expect, it } from 'vitest'
 import manifest from '../../public/editions/index.json'
-import liveArtifactMap from '../../public/editions/2026-04-23-forest-breath-cabinet-v2/artifact-map.json'
-import liveSourceBindings from '../../public/editions/2026-04-23-forest-breath-cabinet-v2/source-bindings.json'
-import nightArtifactMap from '../../public/editions/2026-04-16-night-observatory-v1/artifact-map.json'
-import forestArtifactMap from '../../public/editions/2026-04-17-forest-listening-table-v1/artifact-map.json'
-import resolverArtifactMap from '../../public/editions/2026-04-18-resolver-atlas-shrine-v2/artifact-map.json'
+import currentArtifactMap from '../../public/editions/2026-04-28-moss-current-index-v1/artifact-map.json'
+import currentSourceBindings from '../../public/editions/2026-04-28-moss-current-index-v1/source-bindings.json'
+import charcoalArtifactMap from '../../public/editions/2026-04-27-charcoal-spiral-observatory-v1/artifact-map.json'
+import vermilionArtifactMap from '../../public/editions/2026-04-27-vermilion-arc-astrolabe-v1/artifact-map.json'
+import magentaArtifactMap from '../../public/editions/2026-04-26-magenta-quiet-gate-v1/artifact-map.json'
 
 const packagedArtifactMaps = [
-  liveArtifactMap,
-  nightArtifactMap,
-  forestArtifactMap,
-  resolverArtifactMap,
+  currentArtifactMap,
+  charcoalArtifactMap,
+  vermilionArtifactMap,
+  magentaArtifactMap,
 ]
 
 describe('live edition curation rules', () => {
   it('keeps the current live edition between 6 and 10 masks/modules with no duplicate urls', () => {
-    expect(manifest.current_edition_id.startsWith('2026-04-23-')).toBe(true)
+    expect(manifest.current_edition_id).toBe('2026-04-28-moss-current-index-v1')
 
-    const urls = liveSourceBindings.bindings.map((binding) => binding.source_url).filter(Boolean) as string[]
+    const urls = currentSourceBindings.bindings
+      .map((binding: { source_url?: string | null }) => binding.source_url)
+      .filter(Boolean) as string[]
 
-    expect(liveArtifactMap.artifacts.length).toBeGreaterThanOrEqual(6)
-    expect(liveArtifactMap.artifacts.length).toBeLessThanOrEqual(10)
+    expect(currentArtifactMap.artifacts.length).toBeGreaterThanOrEqual(6)
+    expect(currentArtifactMap.artifacts.length).toBeLessThanOrEqual(10)
     expect(new Set(urls).size).toBe(urls.length)
   })
 
@@ -33,10 +35,10 @@ describe('live edition curation rules', () => {
 
   it('keeps the current live edition source set populated with distinct titles', () => {
     const distinctTitles = new Set(
-      liveSourceBindings.bindings.map((binding) => binding.source_title || binding.title),
+      currentSourceBindings.bindings.map((binding: { source_title?: string | null; title: string }) => binding.source_title || binding.title),
     )
 
     expect(distinctTitles.size).toBeGreaterThanOrEqual(6)
-    expect(distinctTitles.size).toBe(liveSourceBindings.bindings.length)
+    expect(distinctTitles.size).toBe(currentSourceBindings.bindings.length)
   })
 })

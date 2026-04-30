@@ -185,6 +185,7 @@ function App() {
   const [windowState, setWindowState] = useState<SourceWindowState>(createWindowState())
   const [locationKey, setLocationKey] = useState(() => `${window.location.pathname}${window.location.search}`)
   const [aboutOpen, setAboutOpen] = useState(false)
+  const [archiveOpen, setArchiveOpen] = useState(false)
 
   const syncLocation = useCallback(() => {
     setLocationKey(`${window.location.pathname}${window.location.search}`)
@@ -233,20 +234,22 @@ function App() {
 
   useEffect(() => {
     setAboutOpen(false)
+    setArchiveOpen(false)
   }, [locationKey])
 
   useEffect(() => {
-    if (!aboutOpen) return
+    if (!aboutOpen && !archiveOpen) return
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         setAboutOpen(false)
+        setArchiveOpen(false)
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [aboutOpen])
+  }, [aboutOpen, archiveOpen])
 
   const bindingsByArtifactId = useMemo(() => {
     if (!loaded) return new Map<string, SourceBindingRecord>()
@@ -397,27 +400,58 @@ function App() {
         >
           <img className="plate" src={loaded.edition.plate_asset_path} alt={loaded.edition.title} />
 
-          {loaded.about ? (
-            <div className={`about-unfurl${aboutOpen ? ' is-open' : ''}`}>
-              <button
-                aria-controls="about-panel"
-                aria-expanded={aboutOpen}
-                className="about-unfurl__button"
-                onClick={() => setAboutOpen((open) => !open)}
-                type="button"
-              >
-                {loaded.about.label}
-              </button>
-              <section className="about-unfurl__panel" id="about-panel">
-                {loaded.about.kicker ? <div className="about-unfurl__kicker">{loaded.about.kicker}</div> : null}
-                <h2>{loaded.about.title}</h2>
-                <p className="about-unfurl__blurb">{loaded.about.short_blurb}</p>
-                <div className="about-unfurl__body">
-                  {loaded.about.body.map((paragraph, index) => (
-                    <p key={`${loaded.about?.about_id ?? 'about'}-${index}`}>{paragraph}</p>
-                  ))}
-                </div>
-              </section>
+          {(loaded.about || archiveRecords.length) ? (
+            <div className={`about-unfurl${aboutOpen || archiveOpen ? ' is-open' : ''}`}>
+              <div className="about-unfurl__controls">
+                <button
+                  aria-controls="archive-panel"
+                  aria-expanded={archiveOpen}
+                  className="about-unfurl__button"
+                  onClick={() => {
+                    setArchiveOpen((open) => !open)
+                    setAboutOpen(false)
+                  }}
+                  type="button"
+                >
+                  Archive
+                </button>
+                {loaded.about ? (
+                  <button
+                    aria-controls="about-panel"
+                    aria-expanded={aboutOpen}
+                    className="about-unfurl__button"
+                    onClick={() => {
+                      setAboutOpen((open) => !open)
+                      setArchiveOpen(false)
+                    }}
+                    type="button"
+                  >
+                    {loaded.about.label}
+                  </button>
+                ) : null}
+              </div>
+              {archiveRecords.length ? (
+                <section className={`about-unfurl__panel about-unfurl__panel--archive${archiveOpen ? ' is-visible' : ''}`} id="archive-panel">
+                  <div className="about-unfurl__kicker">Archive</div>
+                  <h2>Previous generations</h2>
+                  <p className="about-unfurl__blurb">Open any prior edition and explore earlier front-page worlds.</p>
+                  <div className="about-unfurl__archive-list">
+                    <ArchiveMiniList currentEditionId={loaded.edition.edition_id} navigate={navigate} records={archiveRecords} />
+                  </div>
+                </section>
+              ) : null}
+              {loaded.about ? (
+                <section className={`about-unfurl__panel${aboutOpen ? ' is-visible' : ''}`} id="about-panel">
+                  {loaded.about.kicker ? <div className="about-unfurl__kicker">{loaded.about.kicker}</div> : null}
+                  <h2>{loaded.about.title}</h2>
+                  <p className="about-unfurl__blurb">{loaded.about.short_blurb}</p>
+                  <div className="about-unfurl__body">
+                    {loaded.about.body.map((paragraph, index) => (
+                      <p key={`${loaded.about?.about_id ?? 'about'}-${index}`}>{paragraph}</p>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
             </div>
           ) : null}
 

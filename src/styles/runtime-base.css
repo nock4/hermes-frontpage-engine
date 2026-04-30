@@ -344,6 +344,13 @@ a {
   pointer-events: none;
 }
 
+.about-unfurl__controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
 .about-unfurl__button,
 .about-unfurl__panel {
   pointer-events: auto;
@@ -390,11 +397,19 @@ a {
   transition: opacity 180ms ease, transform 220ms ease, visibility 220ms step-end;
 }
 
-.about-unfurl.is-open .about-unfurl__panel {
+.about-unfurl__panel.is-visible {
   opacity: 1;
   visibility: visible;
   transform: scale(1) translateY(0);
   transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.about-unfurl__panel--archive {
+  width: min(30rem, calc(100vw - 2rem));
+}
+
+.about-unfurl__archive-list {
+  margin-top: 0.9rem;
 }
 
 .about-unfurl__kicker {
