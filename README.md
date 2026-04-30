@@ -6,15 +6,11 @@ Scene-first runtime for a daily front page that becomes a new interactive artwor
 
 - Node `^20.19.0 || >=22.12.0`
 - npm
-- `OPENAI_API_KEY` for from-scratch generation
-- browser-harness available at `/Users/nickgeorge-studio/Projects/browser-harness/.venv/bin/browser-harness` unless `BROWSER_HARNESS_PATH` is set
-
-Goal:
-Ship a daily edition engine, not a one-off homepage.
+- `OPENAI_API_KEY` for from-scratch generation (or use image generation hermes skill with gpt-image-2)
+- browser-harness (or similar fetching tool)
 
 Core idea:
-The image is the interface.
-Each edition is a world with native visible artifacts that open real source windows.
+The frontpage engine is page that changes every day. Your obsidian vault is mined from the last 30 days of digital consumption, hermes agent finds something to hone in on and research in depth, it takes aesthetic signals from whatever it researches and generates a prompt for gpt-image-2 based on what it learned. Then, it scans the output for objects, creates masks on them, and pops up embedded links from the original content sources upon a mouse hovering over the object.
 
 Current product rules:
 - live mode is full-page artwork only
@@ -31,20 +27,10 @@ Current product rules:
 
 Current repo state:
 - runtime lives in this repo
-- packaged editions live under `public/editions/`
+- examples live under `public/editions/`
 - root manifest lives at `public/editions/index.json`
 - current live edition: `2026-04-23-forest-breath-cabinet-v2`
-- current archive count: 55 packaged editions
 - latest generated review edition: `2026-04-28-ash-procession-flare-v1`
-
-Current strongest review routes:
-- `/` -> current live edition
-- `/archive/ash-procession-flare-v1`
-- `/archive/indigo-proofing-wash-v1`
-- `/archive/forest-breath-cabinet-v2`
-- `/archive/sustainable-ai-ledger-room-v1`
-- `/archive/algorithmic-folklore-watchpost-v1`
-- `/archive/tape-commons-transfer-desk-v9`
 
 Working commands:
 - `npm run daily:process`
