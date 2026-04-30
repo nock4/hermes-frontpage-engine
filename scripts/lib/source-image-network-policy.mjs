@@ -31,7 +31,7 @@ const isIpLiteral = (hostname) => /^\d+\.\d+\.\d+\.\d+$/.test(hostname) || hostn
 
 const isPrivateAddress = (address) => isPrivateIpv4(address) || isPrivateIpv6(address)
 
-export async function resolveFetchableHtmlUrl(sourceUrl, { lookup } = {}) {
+export async function resolveFetchableRemoteUrl(sourceUrl, { lookup } = {}) {
   if (!sourceUrl) return null
 
   let url
@@ -43,7 +43,7 @@ export async function resolveFetchableHtmlUrl(sourceUrl, { lookup } = {}) {
 
   if (url.protocol !== 'http:' && url.protocol !== 'https:') return null
 
-  const hostname = url.hostname.toLowerCase()
+  const hostname = url.hostname.replace(/^\[|\]$/g, '').toLowerCase()
   if (!hostname || isLocalHostname(hostname)) return null
 
   if (isIpLiteral(hostname)) {
@@ -61,4 +61,12 @@ export async function resolveFetchableHtmlUrl(sourceUrl, { lookup } = {}) {
   }
 
   return url.toString()
+}
+
+export async function resolveFetchableHtmlUrl(sourceUrl, options = {}) {
+  return resolveFetchableRemoteUrl(sourceUrl, options)
+}
+
+export async function resolveFetchableImageUrl(sourceUrl, options = {}) {
+  return resolveFetchableRemoteUrl(sourceUrl, options)
 }

@@ -1,5 +1,6 @@
 import type { SourceBindingRecord } from '../types/runtime'
 import { getSourceWindowDescriptor } from './sourceWindowContent'
+import { sanitizeSourceImageUrl } from './sourceUrl'
 import { getTweetEmbedSrcDoc } from './tweetEmbed'
 
 export type EmbedPreload = {
@@ -59,7 +60,7 @@ export function collectEmbedPreloads({ bindings, reviewMode, openBindingIds }: C
       preloads.push({ id: binding.id, kind: 'soundcloud', src: descriptor.embedUrl, title: binding.title })
     }
 
-    const sourceImageUrl = binding.source_image_url?.trim()
+    const sourceImageUrl = sanitizeSourceImageUrl(binding.source_image_url)
     if (sourceImageUrl) {
       const key = `image:${sourceImageUrl}`
       if (seen.has(key)) continue

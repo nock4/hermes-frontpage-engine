@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/Users/nickgeorge-studio/Projects/daily-frontpage-engine"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RUNTIME_DIR="$ROOT/.runtime"
 PREVIEW_PID_FILE="$RUNTIME_DIR/preview.pid"
 TUNNEL_PID_FILE="$RUNTIME_DIR/cloudflared.pid"

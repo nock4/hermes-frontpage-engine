@@ -4,7 +4,7 @@ import http from 'node:http'
 import path from 'node:path'
 
 import { fetchWithTimeout } from './fetch-with-timeout.mjs'
-import { resolveFetchableHtmlUrl } from './source-image-network-policy.mjs'
+import { resolveFetchableHtmlUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
 import {
   classifySource,
   isAllowedInspectedSource,
@@ -154,14 +154,20 @@ async function isLoadableVisualImage(imageUrl) {
   if (!imageUrl || isLowValueVisualImage(imageUrl)) return false
   if (visualImageHealthCache.has(imageUrl)) return visualImageHealthCache.get(imageUrl)
 
+  const fetchableImageUrl = await resolveFetchableImageUrl(imageUrl, { lookup: dns.lookup })
+  if (!fetchableImageUrl) {
+    visualImageHealthCache.set(imageUrl, false)
+    return false
+  }
+
   try {
-    const response = await fetchWithTimeout(imageUrl, {
+    const response = await fetchWithTimeout(fetchableImageUrl, {
       headers: {
         accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5',
         range: 'bytes=0-4095',
         'user-agent': 'daily-frontpage-engine-source-research/0.1',
       },
-      redirect: 'follow',
+      redirect: 'error',
     }, 8000)
     const contentType = response.headers.get('content-type')?.toLowerCase() || ''
     const loadable = response.ok && (!contentType || (contentType.startsWith('image/') && !contentType.includes('svg')))

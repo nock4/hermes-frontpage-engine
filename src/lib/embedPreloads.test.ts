@@ -95,6 +95,22 @@ describe('collectEmbedPreloads', () => {
     expect(embeds[1]?.kind).toBe('image')
   })
 
+  it('drops private-host image preloads', () => {
+    const embeds = collectEmbedPreloads({
+      bindings: [
+        {
+          ...baseBinding,
+          id: 'image-1',
+          source_image_url: 'http://127.0.0.1:8080/private.jpg',
+        },
+      ],
+      reviewMode: 'live',
+      openBindingIds: [],
+    })
+
+    expect(embeds).toEqual([])
+  })
+
   it('preloads tweet embeds from the validated tweet url instead of trusting raw embed html', () => {
     const embeds = collectEmbedPreloads({
       bindings: [

@@ -12,6 +12,7 @@ import { getTweetEmbedSrcDoc, TWEET_EMBED_SANDBOX } from './lib/tweetEmbed'
 import { clearPreview, closeWindow, createWindowState, focusWindow, hoverBinding, pinBinding, restoreWindow } from './lib/sourceWindowManager'
 import { collectEmbedPreloads, type EmbedPreload } from './lib/embedPreloads'
 import { buildRuntimeWarmupPlan, syncRuntimeWarmupLinks } from './lib/runtimeWarmup'
+import { sanitizeSourceImageUrl } from './lib/sourceUrl'
 import type { ArchiveRecord, ArtifactRecord, EditionManifest, LoadedEdition, SourceBindingRecord, SourceWindowState } from './types/runtime'
 import type { SourceWindowDescriptor } from './types/sourceWindows'
 
@@ -817,7 +818,7 @@ function isLowValueSourceImage(imageUrl: string | null | undefined) {
 }
 
 function getUsableSourceImageUrl(binding: SourceBindingRecord) {
-  const imageUrl = binding.source_image_url?.trim()
+  const imageUrl = sanitizeSourceImageUrl(binding.source_image_url)
   if (!imageUrl || isLowValueSourceImage(imageUrl)) return null
   return imageUrl
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/Users/nickgeorge-studio/Projects/daily-frontpage-engine"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 RUNTIME_DIR="$ROOT/.runtime"
 PREVIEW_PORT="${PREVIEW_PORT:-4174}"
 PREVIEW_HOST="127.0.0.1"
@@ -9,6 +9,17 @@ PREVIEW_LOG="$RUNTIME_DIR/preview.log"
 TUNNEL_LOG="$RUNTIME_DIR/cloudflared.log"
 PREVIEW_PID_FILE="$RUNTIME_DIR/preview.pid"
 TUNNEL_PID_FILE="$RUNTIME_DIR/cloudflared.pid"
+
+if [ "${ALLOW_PUBLIC_TUNNEL:-}" != "1" ]; then
+  cat <<EOF >&2
+Refusing to open a public preview tunnel without explicit opt-in.
+
+This script exposes your local preview server on a public trycloudflare URL.
+If you really want that, rerun with:
+  ALLOW_PUBLIC_TUNNEL=1 $ROOT/scripts/start-preview-tunnel.sh
+EOF
+  exit 1
+fi
 
 mkdir -p "$RUNTIME_DIR"
 cd "$ROOT"
@@ -68,6 +79,7 @@ fi
 cat <<EOF
 Preview server: http://$PREVIEW_HOST:$PREVIEW_PORT
 Public tunnel: $TUNNEL_URL
+Warning: anyone with this URL can reach your local preview until you stop the tunnel.
 Preview log: $PREVIEW_LOG
 Tunnel log: $TUNNEL_LOG
 Stop both: $ROOT/scripts/stop-preview-tunnel.sh

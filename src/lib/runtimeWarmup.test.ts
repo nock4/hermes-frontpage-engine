@@ -80,6 +80,15 @@ describe('runtimeWarmup', () => {
     expect(urls).toEqual(['https://images.example.com/a.jpg'])
   })
 
+  it('skips private-host image warmups', () => {
+    const urls = collectWarmImageUrls([
+      { ...baseBinding, source_image_url: 'http://127.0.0.1:8080/private.jpg' },
+      { ...baseBinding, id: 'binding-2', source_image_url: 'https://images.example.com/public.jpg' },
+    ])
+
+    expect(urls).toEqual(['https://images.example.com/public.jpg'])
+  })
+
   it('collects only the origins needed for the current edition source mix', () => {
     const origins = collectEditionPreconnectOrigins([
       {
@@ -103,6 +112,12 @@ describe('runtimeWarmup', () => {
         id: 'article-1',
         source_url: 'https://algofolk.substack.com/p/example',
         source_image_url: 'https://substackcdn.com/image/fetch/example.jpg',
+      },
+      {
+        ...baseBinding,
+        id: 'private-1',
+        source_url: 'http://localhost:3000/story',
+        source_image_url: 'http://127.0.0.1:8080/private.jpg',
       },
     ])
 

@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import dns from 'node:dns/promises'
 import path from 'node:path'
 
-import { resolveFetchableHtmlUrl } from './lib/source-image-network-policy.mjs'
+import { resolveFetchableHtmlUrl, resolveFetchableImageUrl } from './lib/source-image-network-policy.mjs'
 
 const root = process.cwd()
 const editionsRoot = path.join(root, 'public', 'editions')
@@ -102,14 +102,20 @@ const isLoadablePreviewImage = async (imageUrl) => {
   if (!imageUrl || isLowValuePreviewImage(imageUrl)) return false
   if (imageHealthCache.has(imageUrl)) return imageHealthCache.get(imageUrl)
 
+  const fetchableImageUrl = await resolveFetchableImageUrl(imageUrl, { lookup: dns.lookup })
+  if (!fetchableImageUrl) {
+    imageHealthCache.set(imageUrl, false)
+    return false
+  }
+
   try {
-    const response = await fetch(imageUrl, {
+    const response = await fetch(fetchableImageUrl, {
       headers: {
         'user-agent': 'Mozilla/5.0 (compatible; Hermes/1.0; +https://hermes.local)',
         accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5',
         range: 'bytes=0-4095',
       },
-      redirect: 'follow',
+      redirect: 'error',
       signal: AbortSignal.timeout(8000),
     })
     const contentType = response.headers.get('content-type') ?? ''

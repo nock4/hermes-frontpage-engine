@@ -1,5 +1,6 @@
 import { getSourceWindowDescriptor } from './sourceWindowContent'
 import type { EditionManifest, EditionManifestItem, SourceBindingRecord } from '../types/runtime'
+import { sanitizeSourceImageUrl, sanitizeSourceUrl } from './sourceUrl'
 
 interface RuntimeWarmupPlan {
   packageUrls: string[]
@@ -20,14 +21,12 @@ const EDITION_PACKAGE_PRELOAD_FILES = [
 const HEAD_WARMUP_ATTR = 'data-runtime-warmup'
 const DEFAULT_IMAGE_PRELOAD_LIMIT = 6
 
-const toHttpUrl = (value: string | null | undefined) => {
-  if (!value) return null
+const toHttpUrl = (value: string | null | undefined, kind: 'source' | 'image' = 'image') => {
+  const sanitized = kind === 'source' ? sanitizeSourceUrl(value) : sanitizeSourceImageUrl(value)
+  if (!sanitized) return null
 
   try {
-    const baseOrigin = globalThis.location?.origin ?? 'https://runtime-warmup.local'
-    const url = new URL(value, baseOrigin)
-    if (url.protocol !== 'http:' && url.protocol !== 'https:') return null
-    return url
+    return new URL(sanitized)
   } catch {
     return null
   }
@@ -64,7 +63,7 @@ export const collectWarmImageUrls = (bindings: SourceBindingRecord[], limit = DE
 
   for (const binding of bindings) {
     if (urls.length >= limit) break
-    const sourceImageUrl = toHttpUrl(binding.source_image_url)?.toString()
+    const sourceImageUrl = toHttpUrl(binding.source_image_url, 'image')?.toString()
     if (!sourceImageUrl || seen.has(sourceImageUrl)) continue
     seen.add(sourceImageUrl)
     urls.push(sourceImageUrl)
@@ -80,8 +79,8 @@ export const collectEditionPreconnectOrigins = (bindings: SourceBindingRecord[])
   for (const binding of bindings) {
     const descriptor = getSourceWindowDescriptor(binding)
 
-    pushUnique(origins, seen, normalizeOrigin(binding.source_url))
-    pushUnique(origins, seen, normalizeOrigin(binding.source_image_url))
+    pushUnique(origins, seen, normalizeOrigin(toHttpUrl(binding.source_url, 'source')?.toString()))
+    pushUnique(origins, seen, normalizeOrigin(toHttpUrl(binding.source_image_url, 'image')?.toString()))
 
     if (descriptor.kind === 'youtube-embed') {
       pushUnique(origins, seen, 'https://www.youtube.com')

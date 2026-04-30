@@ -30,7 +30,7 @@ import type {
   SceneOntologyClass,
   SurfaceType,
 } from '../types/interpretation'
-import { sanitizeSourceUrl } from './sourceUrl'
+import { sanitizeSourceImageUrl, sanitizeSourceUrl } from './sourceUrl'
 import { sanitizeSourceText } from './sourceText'
 
 type JsonValue = null | boolean | number | string | JsonValue[] | { [key: string]: JsonValue }
@@ -279,12 +279,18 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
   const binding = requireObject(value, path)
   const sourceUrl = optionalStringOrNull(binding.source_url, `${path}.source_url`)
   const sanitizedSourceUrl = sanitizeSourceUrl(sourceUrl)
+  const sourceImageUrl = optionalString(binding.source_image_url, `${path}.source_image_url`)
+  const sanitizedSourceImageUrl = sanitizeSourceImageUrl(sourceImageUrl)
   const title = requireString(binding.title, `${path}.title`)
   const rawExcerpt = requireString(binding.excerpt, `${path}.excerpt`)
   const rawSourceSummary = optionalString(binding.source_summary, `${path}.source_summary`)
 
   if (sourceUrl && !sanitizedSourceUrl) {
     throw new Error(`Expected ${path}.source_url to be an http(s) URL`)
+  }
+
+  if (sourceImageUrl && !sanitizedSourceImageUrl) {
+    throw new Error(`Expected ${path}.source_image_url to be a public http(s) or same-origin URL`)
   }
 
   return {
@@ -306,7 +312,7 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
     source_domain: optionalString(binding.source_domain, `${path}.source_domain`),
     source_meta: optionalString(binding.source_meta, `${path}.source_meta`),
     source_embed_html: undefined,
-    source_image_url: optionalString(binding.source_image_url, `${path}.source_image_url`),
+    source_image_url: sanitizedSourceImageUrl ?? undefined,
     source_image_alt: optionalString(binding.source_image_alt, `${path}.source_image_alt`),
   }
 }

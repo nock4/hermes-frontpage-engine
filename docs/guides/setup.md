@@ -52,6 +52,14 @@ npm run build
 npm run demo:preview
 ```
 
+If you intentionally need a public Cloudflare quick tunnel for remote review, use:
+
+```bash
+ALLOW_PUBLIC_TUNNEL=1 ./scripts/start-preview-tunnel.sh
+```
+
+Anyone with that URL can reach your local preview until you stop the tunnel.
+
 ## Quick verification
 
 ```bash
