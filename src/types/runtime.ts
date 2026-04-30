@@ -114,7 +114,7 @@ export type SourceBindingWindowType = 'audio' | 'social' | 'video' | 'web'
 export type SourceBindingHoverBehavior = 'preview'
 export type SourceBindingClickBehavior = 'pin-open'
 export type SourceBindingFallbackType = 'rich-preview'
-export type SourceBindingEmbedStatus = 'unavailable'
+export type SourceBindingEmbedStatus = 'processing' | 'unavailable'
 
 export interface SourceBindingRecord {
   id: string

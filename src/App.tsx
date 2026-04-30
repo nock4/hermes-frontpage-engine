@@ -1021,16 +1021,26 @@ function SourceWindowBody({
 
   if (descriptor.kind === 'youtube-linkout') {
     const sourceImage = getUsableSourceImageUrl(binding) || getYouTubeThumbnailUrl(binding.source_url)
+    const statusLabel = binding.embed_status === 'processing'
+      ? 'Video still processing'
+      : binding.embed_status === 'unavailable'
+        ? 'Open on YouTube'
+        : null
 
     return (
       <div className="source-window__body source-window__body--youtube-linkout">
-        <a className="youtube-linkout youtube-linkout--poster-only" href={descriptor.sourceUrl} rel="noreferrer" target="_blank">
+        <a className="youtube-linkout" href={descriptor.sourceUrl} rel="noreferrer" target="_blank">
           {sourceImage ? (
             <figure className="youtube-linkout__poster">
               <img alt={binding.source_image_alt ?? binding.title} src={sourceImage} />
               <span aria-hidden="true" className="youtube-linkout__play">▶</span>
             </figure>
           ) : null}
+          <div className="youtube-linkout__copy">
+            {statusLabel ? <span className="youtube-linkout__status">{statusLabel}</span> : null}
+            <strong className="youtube-linkout__title">{binding.source_title ?? binding.title}</strong>
+            <span className="youtube-linkout__cta">{descriptor.ctaLabel} ↗</span>
+          </div>
         </a>
       </div>
     )

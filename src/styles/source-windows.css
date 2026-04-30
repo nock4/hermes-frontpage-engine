@@ -2076,10 +2076,6 @@
   box-shadow: none;
 }
 
-.youtube-linkout--poster-only {
-  width: min(100%, 34rem);
-}
-
 .youtube-linkout__poster {
   position: relative;
   margin: 0;
@@ -2125,6 +2121,7 @@
   display: grid;
   gap: 0.5rem;
   padding: 0.9rem 1rem 1rem;
+  background: linear-gradient(180deg, rgba(13, 13, 16, 0.7), rgba(13, 13, 16, 0.94));
 }
 
 .youtube-linkout__status {

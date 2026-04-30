@@ -91,6 +91,21 @@ describe('getSourceWindowDescriptor', () => {
     expect(descriptor.ctaLabel).toBe('Watch on YouTube')
   })
 
+  it('uses source-truth YouTube linkout when a binding is still processing for native embed', () => {
+    const descriptor = getSourceWindowDescriptor(
+      makeBinding({
+        source_type: 'youtube',
+        source_url: 'https://youtube.com/watch?v=5qap5aO4i9A',
+        window_type: 'video',
+        embed_status: 'processing',
+      }),
+    )
+
+    expect(descriptor.kind).toBe('youtube-linkout')
+    if (descriptor.kind !== 'youtube-linkout') throw new Error('expected youtube linkout descriptor')
+    expect(descriptor.sourceUrl).toBe('https://youtube.com/watch?v=5qap5aO4i9A')
+  })
+
   it('does not create a special embed path for nts.live show URLs', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({

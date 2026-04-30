@@ -335,11 +335,12 @@ a {
   --about-accent-weight: 720;
   position: absolute;
   top: clamp(0.9rem, 2vw, 1.4rem);
+  left: clamp(0.9rem, 2vw, 1.4rem);
   right: clamp(0.9rem, 2vw, 1.4rem);
   z-index: 58;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
   gap: 0.65rem;
   pointer-events: none;
 }
@@ -348,6 +349,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-self: flex-end;
   gap: 0.65rem;
 }
 
@@ -379,9 +381,11 @@ a {
 }
 
 .about-unfurl__panel {
-  width: min(34rem, calc(100vw - 2rem));
-  max-height: min(72vh, 42rem);
+  width: min(34rem, 100%);
+  max-width: 100%;
+  max-height: min(72vh, 42rem, calc(100% - 4.5rem), calc(100dvh - 6rem));
   overflow: auto;
+  overscroll-behavior: contain;
   padding: 1rem 1rem 1.05rem;
   border-radius: 1.15rem;
   border: 1px solid rgba(255, 245, 222, 0.14);
@@ -405,7 +409,7 @@ a {
 }
 
 .about-unfurl__panel--archive {
-  width: min(30rem, calc(100vw - 2rem));
+  width: min(30rem, 100%);
 }
 
 .about-unfurl__archive-list {

@@ -154,7 +154,7 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
   const youtubeEmbedUrl = toYouTubeEmbedUrl(sourceUrl)
 
   if (youtubeEmbedUrl && (binding.source_type === 'youtube' || binding.window_type === 'video' || binding.window_type === 'web')) {
-    if (binding.embed_status === 'unavailable' && sourceUrl) {
+    if ((binding.embed_status === 'unavailable' || binding.embed_status === 'processing') && sourceUrl) {
       return buildYouTubeLinkoutDescriptor(sourceUrl, allowsPlaybackPersistence, domainLabel)
     }
 
