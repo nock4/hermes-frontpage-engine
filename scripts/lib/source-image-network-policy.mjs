@@ -31,7 +31,7 @@ const isIpLiteral = (hostname) => /^\d+\.\d+\.\d+\.\d+$/.test(hostname) || hostn
 
 const isPrivateAddress = (address) => isPrivateIpv4(address) || isPrivateIpv6(address)
 
-export async function resolveFetchableRemoteUrl(sourceUrl, { lookup } = {}) {
+async function resolveFetchableRemoteUrl(sourceUrl, { lookup } = {}) {
   if (!sourceUrl) return null
 
   let url
