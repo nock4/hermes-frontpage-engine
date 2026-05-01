@@ -1,15 +1,32 @@
 # Hermes Frontpage Engine
 
-Hermes Frontpage Engine is a Hermes-native creative automation system that turns saved links, notes, playlists, and research trails into a new interactive front page every day.
+Hermes Frontpage Engine is a Hermes-native creative system that turns saved links, notes, playlists, and research trails into a new interactive front page every day.
 
 It is not a static homepage template.
-It is a daily edition engine.
+It is a daily edition engine: Hermes researches the day's signals, shapes a visual scene, binds visible marks to real source media, and ships a browsable edition.
+
+## Live demo
+- live site: https://daily.nockgarden.com/
+- current edition: image-led homepage where clicking visible marks opens real source windows
+- archive: browse prior generated editions from the live site's `ARCHIVE` entry point
+
+## What makes this interesting
+- the image is the interface, not just decoration
+- Hermes is doing orchestration, research, scene direction, source binding, packaging, and QA
+- the output is a runnable creative artifact, not a text report or prompt dump
+- each edition becomes both a daily artwork and an explorable source archive
 
 ## Why this fits the hackathon
 - creative software, not just a wrapper around image generation
-- Hermes does the orchestration: intake, research, scene shaping, artifact binding, packaging
+- Hermes handles the full workflow: intake, research, scene shaping, artifact binding, packaging, and QA
 - output is a runnable, shareable interactive artifact
 - works for artists, curators, researchers, and weird internet archivists
+
+## What to click in the live demo
+- open the page and treat the artwork itself like the interface
+- click visible marks, cuts, apertures, or interruptions in the scene to open real source windows
+- use `ABOUT` for the generation/process explanation
+- use `ARCHIVE` to inspect previous editions
 
 ## Quickstart
 
@@ -22,6 +39,14 @@ npm run demo:preview
 ```
 
 Then open `http://127.0.0.1:4174`.
+
+If you want the full generation pipeline instead of the bundled sample demo:
+
+```bash
+npm run daily:process -- --input-mode manifest --signal-manifest ./examples/signals/sample-signals.json
+npm run build
+npm run demo:preview
+```
 
 ## Supported input adapters
 - `manifest`: JSON list of URLs and metadata
@@ -74,6 +99,13 @@ npm run daily:process -- --vault /path/to/vault
 - `docs/guides/setup.md` covers first-run setup
 - `docs/guides/inputs.md` documents the supported input shapes
 - `docs/hackathon-submission.md` holds the submission narrative
+
+## Hackathon framing
+If you are reviewing this for a creative-tooling or agentic-systems hackathon, the fastest way to understand it is:
+- visit the live demo
+- click into the artwork
+- open `ABOUT`
+- inspect how the runtime turns source research into a navigable visual surface
 
 ## Repo structure
 - runtime app: `src/`
