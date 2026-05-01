@@ -56,34 +56,23 @@ const maxAutoresearchCandidates = 36
 const autoresearchCandidateMultiplier = 4
 const supportedInputModes = ['manifest', 'markdown-folder', 'obsidian-allowlist']
 const supportedImageBackends = ['openai', 'hermes']
-const minimalExpressionistPolicy = {
-  name: 'minimal-expressionist',
-  abstractionModes: [
-    'color-field',
-    'gesture-field',
-    'hard-edge-threshold',
-    'symbolic-minimal',
-    'architectural-void',
-  ],
-  dominantFormCount: '1 dominant field or form plus 1 disruptive gesture',
-  sourceAnchorCount: `${minContentItems} to ${maxContentItems} source windows carried by 5 to 8 small gestural mark families when possible`,
-  negativeSpaceTarget: 'at least 60 percent of the image',
-  materialLimit: 3,
+const sceneStructurePolicy = {
+  sourceAnchorCount: `${minContentItems} to ${maxContentItems} source windows with 2 hero-scale anchors when possible`,
   sourceMarkVocabulary: [
-    'interruption',
-    'stain',
+    'mark',
+    'surface',
+    'edge detail',
     'aperture',
-    'scar',
-    'wash',
-    'cut',
-    'smear',
-    'line break',
-    'bright fleck',
-    'dense knot',
-    'scratch',
-    'pool',
-    'void',
-    'edge tear',
+    'label',
+    'gesture',
+    'block',
+    'ribbon',
+    'panel',
+    'island',
+    'notch',
+    'stripe',
+    'signal node',
+    'small light',
   ],
 }
 const envFilePaths = [
@@ -1026,6 +1015,286 @@ async function inspectSourceCandidates(signalHarvest, {
   return researchField
 }
 
+const fallbackMotifStopwords = new Set([
+  'a',
+  'an',
+  'and',
+  'are',
+  'artwork',
+  'audio',
+  'avoid',
+  'channel',
+  'channels',
+  'collisions',
+  'cover',
+  'creative process',
+  'demo',
+  'embed',
+  'good',
+  'image',
+  'images',
+  'instantly',
+  'known',
+  'landing',
+  'media',
+  'page',
+  'pages',
+  'persistent',
+  'public',
+  'recognizable',
+  'reliable',
+  'sample',
+  'signal',
+  'signals',
+  'source',
+  'sources',
+  'stable',
+  'strong',
+  'support',
+  'surface',
+  'surfaces',
+  'text',
+  'thumbnail',
+  'track',
+  'urls',
+  'variant',
+  'video',
+  'anchor',
+  'originality',
+  'recombination',
+])
+
+function trimSourceCreatorSuffix(value) {
+  return String(value || '')
+    .replace(/,\s*by\s+.+$/i, '')
+    .replace(/\s+by\s+.+$/i, '')
+    .replace(/\s*\([^)]*edition[^)]*\)/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function isUsefulFallbackMotifTerm(term) {
+  const normalized = String(term || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+  if (!normalized || normalized.length < 4) return false
+  if (/^\d+$/.test(normalized)) return false
+  if (fallbackMotifStopwords.has(normalized)) return false
+  if (/^(known good|public signal|sample urls|landing page|image surface)$/.test(normalized)) return false
+  return true
+}
+
+function selectFallbackMotifTerms(signalHarvest, limit = 8) {
+  return uniqueNonEmpty(
+    (signalHarvest?.motif_terms || [])
+      .map((entry) => entry?.term)
+      .filter(isUsefulFallbackMotifTerm),
+  ).slice(0, limit)
+}
+
+function fallbackMotifPhrase(term) {
+  const clean = String(term || '').replace(/-/g, ' ').trim()
+  if (!clean) return ''
+  if (/(dreamlike|ambient|electronic|textural|luminous|glow|bright|shadow|nocturnal|organ centered)/i.test(clean)) return `${clean} atmosphere`
+  if (/(branching|labyrinth|geometry|structures|structure|logic|recursion|remix|recombination)/i.test(clean)) return `${clean} geometry`
+  if (/(art|artwork|cover|poster|collage|ribbon|plaque|panel)/i.test(clean)) return `${clean} surfaces`
+  return clean
+}
+
+function buildFallbackMaterialProfile(signalHarvest, researchField) {
+  const motifTerms = selectFallbackMotifTerms(signalHarvest, 6)
+  const visualReferenceTitle = trimSourceCreatorSuffix(getSourceDisplayTitle(researchField?.visual_reference, ''))
+  const sourceTitles = getResearchContentSources(researchField)
+    .slice(0, 3)
+    .map((source) => trimSourceCreatorSuffix(getSourceDisplayTitle(source, '')))
+    .filter(Boolean)
+
+  return uniqueNonEmpty([
+    visualReferenceTitle ? `${visualReferenceTitle} cover art` : '',
+    ...motifTerms.slice(0, 4).map(fallbackMotifPhrase),
+    ...sourceTitles.slice(0, 2).map((title) => `${title} sleeve imagery`),
+  ]).slice(0, 5)
+}
+
+function inferVisualDirectionFallback(signalHarvest, researchField, recentEditions = []) {
+  const motifTerms = selectFallbackMotifTerms(signalHarvest, 18)
+  const textCorpus = [
+    researchField.autoresearch?.synthesis,
+    researchField.autoresearch?.edition_thesis,
+    researchField.visual_reference?.description,
+    researchField.visual_reference?.selection_reason,
+    ...motifTerms,
+    ...getResearchContentSources(researchField)
+      .slice(0, 8)
+      .flatMap((source) => [source.title, source.description, source.note_context]),
+  ].filter(Boolean).join(' ').toLowerCase()
+
+  const score = (terms) => terms.reduce((total, term) => total + (textCorpus.match(new RegExp(`\\b${term}\\b`, 'g')) || []).length, 0)
+  const brightScore = score(['bright', 'sun', 'yellow', 'warm', 'color', 'chromatic', 'paint', 'floral', 'garden', 'glow'])
+  const darkScore = score(['dark', 'night', 'charcoal', 'smoke', 'shadow', 'fog', 'black', 'nocturnal'])
+  const hardEdgeScore = score(['grid', 'block', 'tile', 'panel', 'diagram', 'signal', 'poster', 'graphic', 'print'])
+  const organicScore = score(['wave', 'cloud', 'petal', 'garden', 'field', 'body', 'drift', 'water', 'handmade'])
+  const collageScore = score(['collage', 'scrap', 'archive', 'patch', 'assemblage', 'layer'])
+  const gesturalScore = score(['gesture', 'paint', 'brush', 'scribble', 'smear', 'mark'])
+  const denseScore = score(['dense', 'busy', 'crowd', 'cluster', 'maximal', 'stack'])
+  const airyScore = score(['open', 'spare', 'quiet', 'empty', 'calm', 'breath'])
+  const recentText = recentEditions.map((edition) => `${edition.title || ''} ${edition.scene_family || ''}`).join(' ').toLowerCase()
+  const repeatedMinimal = /(minimal|quiet|gate|threshold|corridor|charcoal|shadow|fog)/.test(recentText)
+
+  const brightnessProfile = brightScore > darkScore ? 'bright' : darkScore > brightScore + 1 ? 'low-key' : 'mixed'
+  const densityProfile = denseScore > airyScore ? 'dense' : airyScore > denseScore ? 'airy' : 'balanced'
+  const geometryProfile = hardEdgeScore > organicScore ? 'hard-edge' : organicScore > hardEdgeScore ? 'organic' : 'mixed'
+  const compositionProfile = collageScore >= Math.max(gesturalScore, hardEdgeScore) && collageScore > 0
+    ? 'collage'
+    : gesturalScore > hardEdgeScore
+      ? 'gestural'
+      : hardEdgeScore > 0
+        ? 'block-based'
+        : 'distributed'
+  const paletteProfile = brightnessProfile === 'bright'
+    ? 'let the strongest source-image colors stay saturated and visible rather than muting them'
+    : brightnessProfile === 'low-key'
+      ? 'keep tonal contrast sourced from the material while preserving readable accents'
+      : 'balance luminous accents with grounded neutrals drawn from the research set'
+  const lightingProfile = brightnessProfile === 'bright'
+    ? 'follow the source set toward even, open illumination unless the evidence clearly calls for drama'
+    : 'derive the lighting from the strongest research imagery rather than imposing theatrical darkness'
+  const negativeSpaceTarget = densityProfile === 'dense' ? 'let density expand where the sources support it; keep enough breathing room for interaction targets' : densityProfile === 'airy' ? 'preserve open breathing room where the source field feels spacious' : 'balance open space with clustered activity according to the source evidence'
+  const materialProfile = buildFallbackMaterialProfile(signalHarvest, researchField)
+  const avoidPatterns = uniqueNonEmpty([
+    repeatedMinimal ? 'avoid repeating the recent minimal dark threshold/gate vocabulary unless the new research clearly reinforces it' : '',
+    'avoid generic office-room, dashboard, or card-grid fallback staging',
+  ])
+
+  return {
+    evidence_summary: researchField.autoresearch?.synthesis || researchField.autoresearch?.edition_thesis || 'Visual direction should be inferred from the saved-signal research set.',
+    brightness_profile: brightnessProfile,
+    density_profile: densityProfile,
+    abstraction_profile: 'abstract',
+    geometry_profile: geometryProfile,
+    composition_profile: compositionProfile,
+    palette_profile: paletteProfile,
+    material_profile: materialProfile.length ? materialProfile : ['research-shaped surfaces', 'source-led color relationships'],
+    lighting_profile: lightingProfile,
+    negative_space_guidance: negativeSpaceTarget,
+    anchor_strategy: 'derive anchor scale and loudness from the source field; some anchors can be bold islands while others remain embedded details',
+    prompt_guardrails: uniqueNonEmpty([
+      'derive composition, palette, density, and geometry from the supplied sources instead of a preset house style',
+      'let the strongest visual reference influence spatial structure and color relationships, not just texture',
+      repeatedMinimal ? 'break away from the recent dark sparse runs if the new source field allows it' : '',
+    ]),
+    avoid_patterns: avoidPatterns,
+    scene_family_seed: slugBaseWithoutVersion(researchField.autoresearch?.edition_thesis || motifTerms.slice(0, 3).join(' ') || 'daily-source-field'),
+    mood_phrase: `${brightnessProfile} ${compositionProfile} source field shaped by current research`,
+    dominant_structure: densityProfile === 'dense' ? 'multiple clusters or panels if the evidence supports them' : 'one to three major structures if that best fits the evidence',
+    material_limit: densityProfile === 'dense' ? 6 : densityProfile === 'airy' ? 4 : 5,
+  }
+}
+
+async function inferVisualDirection({ signalHarvest, researchField, apiKey, model, date, recentEditions = [] }, runDir) {
+  const fallback = inferVisualDirectionFallback(signalHarvest, researchField, recentEditions)
+  const request = {
+    date,
+    goal: 'Infer visual direction from the mined Obsidian signals, autoresearch synthesis, selected content sources, and visual reference. Do not impose a fixed house aesthetic. Let the evidence decide brightness, density, geometry, composition, and material language.',
+    constraints: [
+      'Treat aesthetic direction as evidence-derived, not preset-derived.',
+      'Use the supplied visual reference to influence composition structure, geometry, color relationships, layering, density, and atmosphere when relevant.',
+      'Avoid generic office-room, dashboard, and card-grid staging.',
+      'Consider recent editions only as anti-repetition pressure, not as a style template to repeat.',
+    ],
+    expected_output_schema: {
+      evidence_summary: 'string',
+      brightness_profile: 'bright | mixed | low-key',
+      density_profile: 'airy | balanced | dense',
+      abstraction_profile: 'abstract | hybrid | representational',
+      geometry_profile: 'hard-edge | organic | mixed',
+      composition_profile: 'field-based | block-based | collage | distributed | gestural | stacked',
+      palette_profile: 'plain-language palette guidance grounded in evidence',
+      material_profile: ['3 to 6 source-led materials or surface cues'],
+      lighting_profile: 'plain-language lighting guidance grounded in evidence',
+      negative_space_guidance: 'how open or dense the page should feel, based on evidence',
+      dominant_structure: 'plain-language description of how many major structures the composition should support',
+      anchor_strategy: 'how source anchors should show up visibly in this specific visual world',
+      prompt_guardrails: ['3 to 6 evidence-derived art-direction guardrails'],
+      avoid_patterns: ['specific repeated patterns to avoid if recent editions overused them'],
+      scene_family_seed: 'kebab-case seed inferred from the field, not a versioned slug',
+      mood_phrase: 'short phrase describing the source-led visual mood',
+      material_limit: 'integer from 4 to 6',
+    },
+    signal_summary: {
+      motif_terms: signalHarvest.motif_terms.slice(0, 24),
+      notes_selected: signalHarvest.notes_selected.slice(0, 16).map(({ text, urls, ...note }) => ({
+        ...note,
+        url_count: urls?.length || 0,
+        excerpt: sanitizeSourceText(note.excerpt, '', 240),
+      })),
+    },
+    autoresearch: {
+      synthesis: researchField.autoresearch?.synthesis || null,
+      edition_thesis: researchField.autoresearch?.edition_thesis || null,
+      clusters: researchField.autoresearch?.clusters || [],
+      rejected_patterns: researchField.autoresearch?.rejected_patterns || [],
+    },
+    visual_reference: researchField.visual_reference ? {
+      title: getSourceDisplayTitle(researchField.visual_reference, 'Visual reference'),
+      description: researchField.visual_reference.description || null,
+      selection_reason: researchField.visual_reference.selection_reason || null,
+      source_url: researchField.visual_reference.url || researchField.visual_reference.source_url || null,
+      image_url: researchField.visual_reference.image_url || null,
+    } : null,
+    content_sources: getResearchContentSources(researchField).slice(0, 8).map((source) => ({
+      title: getSourceDisplayTitle(source, 'Source'),
+      description: sanitizeSourceText(source.description, '', 240),
+      note_context: sanitizeSourceText(source.note_context, '', 180),
+      source_type: source.source_type || null,
+      domain: domain(source.url || source.final_url || '') || null,
+      has_image: Boolean(source.image_url),
+    })),
+    recent_editions: recentEditions.slice(0, recentDiversityEditionCount).map((edition) => ({
+      title: edition.title,
+      scene_family: edition.scene_family,
+      summary: edition.about_excerpt || null,
+    })),
+  }
+  await writeJson(path.join(runDir, 'visual-direction-request.json'), request)
+
+  try {
+    const inferred = await openAiJson({
+      apiKey,
+      model,
+      instructions: [
+        'You infer art direction for a daily interactive image from research evidence.',
+        'Do not impose a fixed house style.',
+        'Ground every visual recommendation in the supplied signals, source summaries, and visual reference.',
+        'Return strict JSON matching the requested schema.',
+      ].join(' '),
+      input: JSON.stringify(request, null, 2),
+      maxOutputTokens: 3000,
+    })
+    const normalized = {
+      ...fallback,
+      ...inferred,
+      material_profile: normalizeStringArray(inferred.material_profile, fallback.material_profile).slice(0, 6),
+      prompt_guardrails: normalizeStringArray(inferred.prompt_guardrails, fallback.prompt_guardrails).slice(0, 6),
+      avoid_patterns: normalizeStringArray(inferred.avoid_patterns, fallback.avoid_patterns).slice(0, 6),
+      scene_family_seed: slugBaseWithoutVersion(inferred.scene_family_seed || fallback.scene_family_seed),
+      material_limit: Math.max(4, Math.min(6, Number(inferred.material_limit) || fallback.material_limit || 5)),
+      generated_at: new Date().toISOString(),
+      tool: `OpenAI Responses API (${model})`,
+    }
+    await writeJson(path.join(runDir, 'visual-direction.json'), normalized)
+    return normalized
+  } catch (error) {
+    const normalized = {
+      ...fallback,
+      generated_at: new Date().toISOString(),
+      tool: `OpenAI Responses API (${model})`,
+      status: 'fallback',
+      error: error.message,
+    }
+    await writeJson(path.join(runDir, 'visual-direction.json'), normalized)
+    return normalized
+  }
+}
+
 function firstJsonObject(text) {
   const trimmed = text.trim()
   if (trimmed.startsWith('{') && trimmed.endsWith('}')) return JSON.parse(trimmed)
@@ -1088,71 +1357,67 @@ function ensureJsonModeInput(input) {
   })
 }
 
-function fallbackDailyPayload(signalHarvest, researchField, date) {
+function fallbackDailyPayload(signalHarvest, researchField, visualDirection, date) {
   const sources = getResearchContentSources(researchField).slice(0, targetContentItems)
-  const tags = signalHarvest.motif_terms.slice(0, 5).map((entry) => entry.term)
+  const tags = selectFallbackMotifTerms(signalHarvest, 5)
+  const sceneFamilySeed = slugBaseWithoutVersion(visualDirection.scene_family_seed || tags.join(' ') || 'daily-source-field')
   return {
-    edition_title: 'Signal Field',
-    scene_family: 'minimal-signal-field',
-    slug_base: 'minimal-signal-field',
-    motif_tags: tags.length ? tags : ['signals', 'archive', 'media', 'research'],
-    mood: 'quiet abstract expressionist source field with restrained media weather',
-    material_language: ['open color field', 'smoked shadow plane', 'thin metallic marks'],
-    lighting: 'one low oblique light crossing a mostly empty field',
+    edition_title: String(researchField.autoresearch?.edition_thesis || '').trim() || 'Research Field',
+    scene_family: sceneFamilySeed,
+    slug_base: sceneFamilySeed,
+    motif_tags: tags.length ? tags : ['signals', 'research', 'sources', 'field'],
+    mood: visualDirection.mood_phrase || 'research-shaped visual field',
+    material_language: visualDirection.material_profile?.length ? visualDirection.material_profile : ['research-shaped surfaces', 'source-led color relationships'],
+    lighting: visualDirection.lighting_profile || 'derive the lighting from the strongest research imagery',
     object_inventory: [
-      'large quiet color field',
-      'single disruptive threshold gesture',
-      'small source-bearing interruptions',
-      'thin listening slits',
-      'edge scars',
-      'tiny source apertures',
-      'low metallic ticks',
+      visualDirection.dominant_structure || 'research-led dominant structures',
+      visualDirection.anchor_strategy || 'source-bearing anchors with varied scale',
+      `${visualDirection.geometry_profile || 'mixed'} geometry`,
+      `${visualDirection.composition_profile || 'distributed'} composition`,
     ],
-    negative_constraints: [
-      'no dense archive wall',
-      'no cabinet of objects',
-      'no crowded prop inventory',
+    negative_constraints: uniqueNonEmpty([
+      'no generic office room',
       'no dashboard cards',
       'no floating UI',
-      'no office desk default',
-      'no realistic object inventory',
-      'no generic landing-page hero',
-      'no empty quadrants',
-    ],
+      'no equal-weight grid of source objects',
+      'no literal depiction of the source reference image',
+      ...(visualDirection.avoid_patterns || []),
+    ]),
     ambiance: {
-      motion_system: 'slow-paper-air',
-      color_drift: 'source-image-warmth',
+      motion_system: 'source-shaped drift',
+      color_drift: visualDirection.palette_profile || 'research-led palette drift',
       glow_behavior: 'artifact-proximity',
       audio_posture: 'silent',
       webgl_mode: 'none',
     },
-    scene_prompt: `A full-bleed abstract expressionist artwork for ${date}: one large open color field is crossed by a single disruptive threshold gesture. Small source-bearing interruptions sit quietly inside the field as marks, apertures, scars, cuts, line breaks, and shallow listening slits. Keep the plate mostly empty, with one low oblique light and a restrained palette. It should feel like a nonliteral physical field prepared for discovery, not a room full of objects, a realistic scene, or a software screen.`,
+    scene_prompt: `A full-bleed artwork for ${date} derived from the current research field. ${visualDirection.evidence_summary || ''} Let the composition follow a ${visualDirection.composition_profile || 'distributed'} structure with ${visualDirection.geometry_profile || 'mixed'} geometry and a ${visualDirection.brightness_profile || 'mixed'} brightness profile. ${visualDirection.palette_profile || ''} ${visualDirection.lighting_profile || ''} ${visualDirection.negative_space_guidance || ''} Embed source-bearing anchors as visible forms that belong naturally to the scene rather than as a literal object inventory or interface mockup.`,
+    visual_direction: visualDirection,
     artifacts: sources.map((source, index) => ({
       label: [
-        'Dominant Threshold Interruption',
-        'Secondary Shadow Scar',
-        'Metallic Listening Mark',
-        'Edge Source Cut',
-        'Quiet Aperture',
-        'Thin Media Slit',
-        'Lower Field Tick',
-        'Small Glass Scar',
-        'Paper Cut Anchor',
-        'Corner Signal Fleck',
+        'Primary Source Anchor',
+        'Secondary Source Anchor',
+        'Signal Panel',
+        'Color Node',
+        'Field Marker',
+        'Edge Detail',
+        'Layered Fragment',
+        'Reference Plaque',
+        'Distributed Marker',
+        'Surface Annotation',
       ][index] || `Source Artifact ${index + 1}`,
       artifact_type: [
-        'dominant-threshold-interruption',
-        'secondary-shadow-scar',
-        'metallic-listening-mark',
-        'edge-source-cut',
-        'quiet-aperture',
-        'thin-media-slit',
-        'lower-field-tick',
-        'small-glass-scar',
-        'paper-cut-anchor',
-        'corner-signal-fleck',
+        'primary-source-anchor',
+        'secondary-source-anchor',
+        'signal-panel',
+        'color-node',
+        'field-marker',
+        'edge-detail',
+        'layered-fragment',
+        'reference-plaque',
+        'distributed-marker',
+        'surface-annotation',
       ][index] || 'source-mark',
-      role: index < 2 ? 'hero source-bearing gesture' : 'secondary source-bearing mark',
+      role: index < 2 ? 'hero source-bearing anchor' : 'source-bearing detail',
       source_url: source.url,
     })),
   }
@@ -1160,6 +1425,7 @@ function fallbackDailyPayload(signalHarvest, researchField, date) {
 
 async function composeDailyPayload({ signalHarvest, researchField, apiKey, model, date, recentEditions = [], diversityDirective = '' }, runDir) {
   const contentSources = getResearchContentSources(researchField).slice(0, maxContentItems)
+  const visualDirection = await inferVisualDirection({ signalHarvest, researchField, apiKey, model, date, recentEditions }, runDir)
   const visualReference = researchField.visual_reference?.image_url ? {
     title: getSourceDisplayTitle(researchField.visual_reference, 'Visual reference'),
     source_url: researchField.visual_reference.url || researchField.visual_reference.source_url,
@@ -1189,24 +1455,9 @@ async function composeDailyPayload({ signalHarvest, researchField, apiKey, model
       'Use each supplied source URL at most once. Do not create multiple artifacts for the same article, post, redirect target, image, or source page.',
       'Prefer a mix of source types, domains, notes, media, and visual roles over several pieces from the same source cluster.',
       'Write source artifact labels as quiet visible anchor names, not raw filenames or URLs.',
-      'Artifacts are clickable anchors, not a requirement for equal visual weight. Most should be subtle marks, interruptions, stains, apertures, scars, washes, cuts, smears, line breaks, flecks, voids, labels, or edge details.',
+      'Artifacts are clickable anchors, not a requirement for equal visual weight. Their scale and loudness should follow the inferred visual direction for this source field.',
     ],
-    visual_complexity_policy: {
-      mode: minimalExpressionistPolicy.name,
-      allowed_abstraction_modes: minimalExpressionistPolicy.abstractionModes,
-      dominant_forms: minimalExpressionistPolicy.dominantFormCount,
-      source_anchors: minimalExpressionistPolicy.sourceAnchorCount,
-      negative_space: minimalExpressionistPolicy.negativeSpaceTarget,
-      material_limit: minimalExpressionistPolicy.materialLimit,
-      source_mark_vocabulary: minimalExpressionistPolicy.sourceMarkVocabulary,
-      guidance: [
-        'Make a clean abstract expressionist artwork rather than a dense archive, cabinet, desk, room, realistic scene, or object inventory.',
-        'Choose one abstraction mode and let it drive the whole plate.',
-        'Use one dominant field or form, one disruptive gesture, and quiet source anchors embedded into the field.',
-        'Preserve at least 60 percent open field so the live page reads as artwork first.',
-        'Let source windows provide media richness; the plate should remain nonliteral and sparse.',
-      ],
-    },
+    inferred_visual_direction: visualDirection,
     recent_edition_avoidance: recentEditions.map((edition) => ({
       title: edition.title,
       scene_family: edition.scene_family,
@@ -1215,18 +1466,17 @@ async function composeDailyPayload({ signalHarvest, researchField, apiKey, model
     diversity_directive: diversityDirective,
     source_visual_reference: visualReference,
     source_visual_reference_instruction: visualReference
-      ? 'Use the attached source image only for palette, contrast, composition rhythm, edge behavior, atmosphere, and gesture. Do not depict its subject literally, copy its scene, reproduce logos, or copy page chrome.'
+      ? 'Use the attached source image to inform composition structure, geometry, palette, contrast, layering, edge behavior, atmosphere, and gesture. Do not depict its subject literally, copy its scene, reproduce logos, or copy page chrome.'
       : 'No source image was available; derive visual direction from source metadata only.',
     scene_prompting_rules: [
       'Write the scene_prompt as art direction for one finished still image, not as product strategy or app documentation.',
-      'Start from a visual field, threshold, gesture, void, color plane, or symbolic surface rather than a room full of objects.',
-      'Name one dominant field or form and one disruptive gesture; keep all other anchors quiet and small.',
-      'Keep at least 60 percent of the image as open field or negative space.',
-      'Describe light, camera/framing, palette, negative space, scale, weather, edge behavior, and mood in plain language.',
-      'Translate technical source concepts into minimal visible anchors: small marks, interruptions, stains, apertures, scars, washes, cuts, smears, line breaks, bright flecks, dense knots, scratches, pools, voids, edge tears, labels, or tiny lights.',
-      'Include the required source artifacts as subtle physical anchor points in the scene, but do not explain clicking, source windows, bindings, masks, runtime behavior, or QA mechanics.',
+      'Let the supplied inferred_visual_direction decide brightness, density, geometry, composition, material language, and openness.',
+      'Start from the visual world implied by the research field rather than a stock room, desk, gallery wall, dashboard, or software mockup.',
+      'Describe light, camera/framing, palette, density, scale, layering, edge behavior, and mood in plain language.',
+      'Translate technical source concepts into visible scene elements that fit the inferred world: marks, panels, ribbons, labels, islands, apertures, blocks, traces, nodes, surfaces, or other source-led forms.',
+      'Include the required source artifacts as physical anchor points in the scene, but do not explain clicking, source windows, bindings, masks, runtime behavior, or QA mechanics.',
       'Avoid technical prose in the scene_prompt: no API, framework, module, runtime, interface, dashboard, embedding, source window, artifact mapping, hot path, or product requirement language.',
-      'Avoid object-by-object illustration. Do not make an archive wall, cabinet, shelf system, desk, dashboard, lab bench, gallery of cards, many-prop still life, or realistic object inventory.',
+      'Avoid object-by-object illustration. Do not make an archive wall, cabinet, shelf system, desk, dashboard, lab bench, gallery of cards, many-prop still life, or realistic object inventory unless the source field strongly justifies it.',
     ],
     required_output_shape: {
       edition_title: 'string',
@@ -1234,9 +1484,9 @@ async function composeDailyPayload({ signalHarvest, researchField, apiKey, model
       slug_base: 'kebab-case string without a version suffix; do not include -v1, -v2, or any edition version',
       motif_tags: ['5 to 8 short kebab-case tags'],
       mood: 'string',
-      material_language: ['5 to 8 concrete materials/surfaces'],
+      material_language: ['4 to 6 concrete materials/surfaces derived from the evidence'],
       lighting: 'string',
-      object_inventory: ['3 to 6 nonliteral visual structures, fields, gestures, or source-mark families; avoid literal prop inventories'],
+      object_inventory: ['3 to 6 nonliteral visual structures, forms, layers, or source-anchor families; avoid literal prop inventories'],
       negative_constraints: ['constraints'],
       ambiance: {
         motion_system: 'string',
@@ -1245,7 +1495,7 @@ async function composeDailyPayload({ signalHarvest, researchField, apiKey, model
         audio_posture: 'silent|ambient|reactive',
         webgl_mode: 'none|particles|shader-scene',
       },
-      scene_prompt: '90 to 170 words of abstract expressionist image-generation art direction for gpt-image-2: visual field first, one dominant field/form, one disruptive gesture, 7 to 10 quiet source-bearing marks, at least 60 percent negative space, light, palette, mood; no markdown and no product/implementation explanation',
+      scene_prompt: '90 to 170 words of source-led image-generation art direction for gpt-image-2: use the inferred visual direction, visible source-bearing anchors, light, palette, density, composition, and mood; no markdown and no product/implementation explanation',
       artifacts: [
         {
           label: 'visible source-bearing mark label',
@@ -1263,18 +1513,15 @@ async function composeDailyPayload({ signalHarvest, researchField, apiKey, model
     'Choose one coherent visual world from the saved signals and inspected source metadata.',
     'Use only source URLs from the supplied source_research array in artifacts.',
     'Do not put version suffixes such as -v1 or -v2 in scene_family or slug_base; the package assembler adds edition versions itself.',
-    `Produce ${minContentItems} to ${maxContentItems} source anchor artifacts; ${targetContentItems} is ideal when enough sources are supplied. Exactly 2 should be hero-scale anchors, but the image itself should have only ${minimalExpressionistPolicy.dominantFormCount}.`,
+    `Produce ${minContentItems} to ${maxContentItems} source anchor artifacts; ${targetContentItems} is ideal when enough sources are supplied. Exactly 2 should be hero-scale anchors, but the image should let the inferred visual direction decide how many major shapes or clusters it needs.`,
     'Never use the same source URL, resolved source, article, post, or image twice in artifacts.',
     'Favor variety across domains, notes, media types, visual scales, and artifact roles.',
     'Avoid repeating the recent edition titles, scene families, dominant materials, and visual worlds supplied in recent_edition_avoidance.',
     diversityDirective,
-    'Write the scene_prompt like art direction for a single finished abstract expressionist image, not like a system spec.',
-    'Use concrete nouns for fields, edges, interruptions, voids, gestures, light, palette, atmosphere, negative space, and mood.',
-    'Translate software or research concepts into quiet source-bearing marks inside an abstract field.',
-    `Preserve ${minimalExpressionistPolicy.negativeSpaceTarget} as negative space and limit the dominant material palette to ${minimalExpressionistPolicy.materialLimit} surfaces.`,
+    'Use inferred_visual_direction as the primary aesthetic guide. Do not revert to a fixed house style.',
+    'Let the visual reference influence composition structure, geometry, layering, density, palette, and atmosphere when present; do not depict or copy its subject.',
     'Keep technical source concepts out of the scene_prompt except as short visible labels when necessary.',
-    'Avoid desks, dashboards, generic software UI, empty landing-page layout, source-summary cards, crowded archives, cabinets, shelves, realistic props, literal objects, and implementation language.',
-    'When a source_visual_reference image is attached, use it only for palette, contrast, composition rhythm, edge behavior, atmosphere, and gesture; do not depict or copy its subject.',
+    'Avoid desks, dashboards, generic software UI, empty landing-page layout, source-summary cards, crowded archives, cabinets, shelves, realistic props, literal objects, and implementation language unless the research field clearly demands them.',
   ].join(' ')
   const responseInput = visualReference
     ? [
@@ -1306,10 +1553,10 @@ async function composeDailyPayload({ signalHarvest, researchField, apiKey, model
     })
   } catch (error) {
     console.warn(`OpenAI research composition failed; using deterministic fallback. ${error.message}`)
-    payload = fallbackDailyPayload(signalHarvest, researchField, date)
+    payload = fallbackDailyPayload(signalHarvest, researchField, visualDirection, date)
   }
 
-  payload = normalizeDailyPayload(payload, signalHarvest, researchField, date)
+  payload = normalizeDailyPayload(payload, signalHarvest, researchField, visualDirection, date)
   await writeJson(path.join(runDir, 'daily-generation-payload.json'), payload)
   return payload
 }
@@ -1318,8 +1565,8 @@ function slugBaseWithoutVersion(value) {
   return slugify(value).replace(/-v\d+$/i, '') || 'daily-edition'
 }
 
-function normalizeDailyPayload(payload, signalHarvest, researchField, date) {
-  const fallback = fallbackDailyPayload(signalHarvest, researchField, date)
+function normalizeDailyPayload(payload, signalHarvest, researchField, visualDirection, date) {
+  const fallback = fallbackDailyPayload(signalHarvest, researchField, visualDirection, date)
   const contentSources = getResearchContentSources(researchField).slice(0, maxContentItems)
   const sourceByUrl = buildSourceLookup(contentSources)
   const sourceUrls = new Set(sourceByUrl.keys())
@@ -1354,18 +1601,15 @@ function normalizeDailyPayload(payload, signalHarvest, researchField, date) {
     mood: String(payload.mood || fallback.mood),
     material_language: normalizeStringArray(payload.material_language, fallback.material_language)
       .map(repairProductLanguage)
-      .slice(0, minimalExpressionistPolicy.materialLimit),
+      .slice(0, visualDirection.material_limit || fallback.visual_direction?.material_limit || 5),
     lighting: String(payload.lighting || fallback.lighting),
     object_inventory: normalizeStringArray(payload.object_inventory, fallback.object_inventory).map(repairProductLanguage).slice(0, 8),
     negative_constraints: uniqueNonEmpty([
       ...normalizeStringArray(payload.negative_constraints, fallback.negative_constraints),
-      'no dense archive wall',
-      'no cabinet of objects',
+      'no generic office-room fallback',
       'no many-prop still life',
       'no equal-weight grid of source objects',
-      'no realistic object inventory',
       'no literal depiction of the source reference image',
-      'preserve large negative space',
     ]).slice(0, 14),
     ambiance: {
       motion_system: String(payload.ambiance?.motion_system || fallback.ambiance.motion_system),
@@ -1375,6 +1619,7 @@ function normalizeDailyPayload(payload, signalHarvest, researchField, date) {
       webgl_mode: ['none', 'particles', 'shader-scene'].includes(payload.ambiance?.webgl_mode) ? payload.ambiance.webgl_mode : fallback.ambiance.webgl_mode,
     },
     scene_prompt: repairProductLanguage(String(payload.scene_prompt || fallback.scene_prompt)),
+    visual_direction: visualDirection,
     artifacts: normalizedArtifacts.map((artifact, index) => ({
       label: repairArtifactLabel(String(artifact.label || fallback.artifacts[index]?.label || `Source Artifact ${index + 1}`), index),
       artifact_type: repairArtifactType(slugify(artifact.artifact_type || fallback.artifacts[index]?.artifact_type || 'source-mark'), index),
@@ -1441,35 +1686,34 @@ function repairArtifactType(type, index) {
 }
 
 function imagePrompt(payload) {
+  const visualDirection = payload.visual_direction || {}
   return [
-    'Create one finished, full-bleed abstract expressionist scene image from this art direction.',
+    'Create one finished, full-bleed scene image from this art direction.',
     '',
     'Scene:',
     payload.scene_prompt,
     '',
-    'Quiet source anchors to embed visibly but subtly:',
+    'Visible source anchors to embed:',
     payload.artifacts.map((artifact, index) => `${index + 1}. ${artifact.label}: ${artifact.artifact_type}`).join('\n'),
     '',
-    'Visual direction:',
-    `Mood: ${payload.mood}`,
+    'Inferred visual direction:',
+    `Evidence summary: ${visualDirection.evidence_summary || payload.mood}`,
+    `Brightness: ${visualDirection.brightness_profile || 'mixed'}`,
+    `Density: ${visualDirection.density_profile || 'balanced'}`,
+    `Geometry: ${visualDirection.geometry_profile || 'mixed'}`,
+    `Composition: ${visualDirection.composition_profile || 'distributed'}`,
+    `Palette: ${visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood}`,
     `Materials and surfaces: ${payload.material_language.join(', ')}`,
     `Lighting: ${payload.lighting}`,
-    '',
-    'Complexity budget:',
-    `- Use ${minimalExpressionistPolicy.dominantFormCount}.`,
-    `- Preserve ${minimalExpressionistPolicy.negativeSpaceTarget} as calm negative space.`,
-    `- Limit the dominant material palette to ${minimalExpressionistPolicy.materialLimit} surfaces.`,
-    '- Source anchors should be discoverable marks, interruptions, stains, apertures, scars, washes, cuts, smears, line breaks, flecks, dense knots, scratches, pools, voids, edge tears, labels, or small lights.',
-    '- Do not make every source anchor a separate prop, card, frame, shelf item, or equal-weight object.',
+    `Anchor strategy: ${visualDirection.anchor_strategy || 'fit anchors naturally into the scene'}`,
     '',
     'Composition rules:',
-    '- Make the image feel like an abstract artwork or nonliteral physical field, not a product mockup or realistic scene.',
-    '- Prefer a clean visual field, threshold, hard-edge plane, gesture field, symbolic surface, or architectural void.',
-    '- Integrate listed anchors as gestural details that belong inside the field, not as a dense inventory.',
-    '- Use labels, inscriptions, small marks, cuts, apertures, scars, glyphs, edge details, voids, flecks, or thin lights when the scene needs clear targets.',
-    '- Use any source reference image only as palette, contrast, edge behavior, and compositional rhythm; do not depict or copy its subject.',
-    '- Avoid browser chrome, UI widgets, dashboard cards, floating app panels, chat interfaces, generic software screenshots, empty landing-page composition, shelves, cabinets, realistic furniture, literal props, and crowded archive walls.',
-    '- Do not include explanatory diagrams unless they are sparse physical drawings or inscriptions inside the scene.',
+    '- Let the research-derived visual direction determine whether the plate is airy, balanced, or dense.',
+    '- Let the visual reference influence composition structure, geometry, layering, palette, and atmosphere when present; do not depict or copy its subject.',
+    '- Integrate listed anchors as forms that belong naturally inside the scene, not as a dense equal-weight inventory.',
+    `- Use source-led anchor forms such as ${sceneStructurePolicy.sourceMarkVocabulary.join(', ')} when they fit the evidence.`,
+    '- Avoid browser chrome, UI widgets, dashboard cards, floating app panels, chat interfaces, generic software screenshots, empty landing-page composition, shelves, cabinets, realistic furniture, literal props, and crowded archive walls unless the source field clearly demands them.',
+    '- Do not include explanatory diagrams unless they are sparse physical drawings, labels, or inscriptions already justified by the source field.',
     '',
     `Avoid: ${payload.negative_constraints.join(', ')}`,
   ].join('\n')

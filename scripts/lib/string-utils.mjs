@@ -7,7 +7,8 @@ export function slugify(value) {
 }
 
 export function uniqueNonEmpty(values) {
-  return [...new Set(values.map((value) => String(value || '').trim()).filter(Boolean))]
+  const list = Array.isArray(values) ? values : [values]
+  return [...new Set(list.map((value) => String(value || '').trim()).filter(Boolean))]
 }
 
 export function sentenceList(values, limit = 4) {
