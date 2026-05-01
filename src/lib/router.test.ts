@@ -82,4 +82,112 @@ describe('archive helpers', () => {
     expect(records.map((record) => record.slug)).toEqual(['herbarium-bed-v1', 'night-observatory-v1'])
     expect(records[0].is_live).toBe(true)
   })
+
+  it('dedupes same-day reruns within the same scene family and keeps the highest available rerun', () => {
+    const records = getEditionArchiveRecords({
+      current_edition_id: '2026-04-30-minimal-signal-field-v7',
+      editions: [
+        {
+          edition_id: '2026-04-30-minimal-signal-field-v5',
+          date: '2026-04-30',
+          slug: 'minimal-signal-field-v5',
+          title: 'Signal Field',
+          path: '/editions/2026-04-30-minimal-signal-field-v5',
+          scene_family: 'minimal-signal-field',
+          motif_tags: ['signal'],
+          preview_asset_path: '/editions/2026-04-30-minimal-signal-field-v5/assets/preview.png',
+          is_live: false,
+        },
+        {
+          edition_id: '2026-04-30-minimal-signal-field-v7',
+          date: '2026-04-30',
+          slug: 'minimal-signal-field-v7',
+          title: 'Signal Field',
+          path: '/editions/2026-04-30-minimal-signal-field-v7',
+          scene_family: 'minimal-signal-field',
+          motif_tags: ['signal'],
+          preview_asset_path: '/editions/2026-04-30-minimal-signal-field-v7/assets/preview.png',
+          is_live: true,
+        },
+        {
+          edition_id: '2026-04-28-ash-procession-flare-v1',
+          date: '2026-04-28',
+          slug: 'ash-procession-flare-v1',
+          title: 'The Ash Procession Flare',
+          path: '/editions/2026-04-28-ash-procession-flare-v1',
+          scene_family: 'ash-procession-flare',
+          motif_tags: ['ash'],
+          preview_asset_path: '/editions/2026-04-28-ash-procession-flare-v1/assets/preview.png',
+          is_live: false,
+        },
+      ],
+    })
+
+    expect(records.map((record) => record.slug)).toEqual(['minimal-signal-field-v7', 'ash-procession-flare-v1'])
+    expect(records[0].is_live).toBe(true)
+  })
+
+  it('preserves newest-first date ordering even when an older edition is live', () => {
+    const records = getEditionArchiveRecords({
+      current_edition_id: '2026-04-29-live-edition-v1',
+      editions: [
+        {
+          edition_id: '2026-04-29-live-edition-v1',
+          date: '2026-04-29',
+          slug: 'live-edition-v1',
+          title: 'Live Edition',
+          path: '/editions/2026-04-29-live-edition-v1',
+          scene_family: 'live-edition',
+          motif_tags: ['live'],
+          preview_asset_path: '/editions/2026-04-29-live-edition-v1/assets/preview.png',
+          is_live: true,
+        },
+        {
+          edition_id: '2026-04-30-newer-edition-v1',
+          date: '2026-04-30',
+          slug: 'newer-edition-v1',
+          title: 'Newer Edition',
+          path: '/editions/2026-04-30-newer-edition-v1',
+          scene_family: 'newer-edition',
+          motif_tags: ['newer'],
+          preview_asset_path: '/editions/2026-04-30-newer-edition-v1/assets/preview.png',
+          is_live: false,
+        },
+      ],
+    })
+
+    expect(records.map((record) => record.slug)).toEqual(['newer-edition-v1', 'live-edition-v1'])
+  })
+
+  it('prefers the highest numeric rerun version when deduping same-day editions', () => {
+    const records = getEditionArchiveRecords({
+      current_edition_id: '2026-04-30-minimal-signal-field-v10',
+      editions: [
+        {
+          edition_id: '2026-04-30-minimal-signal-field-v9',
+          date: '2026-04-30',
+          slug: 'minimal-signal-field-v9',
+          title: 'Signal Field',
+          path: '/editions/2026-04-30-minimal-signal-field-v9',
+          scene_family: 'minimal-signal-field',
+          motif_tags: ['signal'],
+          preview_asset_path: '/editions/2026-04-30-minimal-signal-field-v9/assets/preview.png',
+          is_live: true,
+        },
+        {
+          edition_id: '2026-04-30-minimal-signal-field-v10',
+          date: '2026-04-30',
+          slug: 'minimal-signal-field-v10',
+          title: 'Signal Field',
+          path: '/editions/2026-04-30-minimal-signal-field-v10',
+          scene_family: 'minimal-signal-field',
+          motif_tags: ['signal'],
+          preview_asset_path: '/editions/2026-04-30-minimal-signal-field-v10/assets/preview.png',
+          is_live: false,
+        },
+      ],
+    })
+
+    expect(records.map((record) => record.slug)).toEqual(['minimal-signal-field-v10'])
+  })
 })

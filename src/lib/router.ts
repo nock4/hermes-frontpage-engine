@@ -61,10 +61,40 @@ export const parseAppRoute = (locationValue: string, manifest: EditionManifest):
 
 export const buildArchiveHref = (slug: string) => `/archive/${slug}`
 
-export const getEditionArchiveRecords = (manifest: EditionManifest): ArchiveRecord[] =>
-  [...manifest.editions]
-    .sort((a, b) => b.date.localeCompare(a.date))
+const getEditionRevision = (edition: EditionManifestItem) => {
+  const match = edition.slug.match(/-v(\d+)$/i) ?? edition.edition_id.match(/-v(\d+)$/i)
+  return match ? Number.parseInt(match[1] ?? '0', 10) : 0
+}
+
+const compareArchivePreference = (a: EditionManifestItem, b: EditionManifestItem) => {
+  const revisionCompare = getEditionRevision(b) - getEditionRevision(a)
+  if (revisionCompare !== 0) return revisionCompare
+
+  if (a.is_live !== b.is_live) return a.is_live ? -1 : 1
+
+  return b.edition_id.localeCompare(a.edition_id)
+}
+
+export const getEditionArchiveRecords = (manifest: EditionManifest): ArchiveRecord[] => {
+  const dedupedEditions = new Map<string, EditionManifestItem>()
+
+  for (const edition of manifest.editions) {
+    const dedupeKey = `${edition.date}::${edition.scene_family}`
+    const existing = dedupedEditions.get(dedupeKey)
+
+    if (!existing || compareArchivePreference(edition, existing) < 0) {
+      dedupedEditions.set(dedupeKey, edition)
+    }
+  }
+
+  return [...dedupedEditions.values()]
+    .sort((a, b) => {
+      const dateCompare = b.date.localeCompare(a.date)
+      if (dateCompare !== 0) return dateCompare
+      return compareArchivePreference(a, b)
+    })
     .map((edition) => ({
       ...edition,
       archive_href: buildArchiveHref(edition.slug),
     }))
+}
