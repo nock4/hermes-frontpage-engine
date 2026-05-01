@@ -1,0 +1,345 @@
+{
+  "interpretation_id": "interp-2026-05-01-a-varied-saved-signal-field-selected-by-source-quality-rende-v3",
+  "edition_id": "2026-05-01-a-varied-saved-signal-field-selected-by-source-quality-rende-v3",
+  "plate_read_timestamp": "2026-05-01T07:42:46.181Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A full-bleed artwork for 2026-05-01 derived from the current research field. The model autoresearch pass failed, so the runner fell back to deterministic channel-balanced source ranking. Let the composition follow a block-based structure with organic geometry and a bright brightness profile. let the strongest source-image colors stay saturated and visible rather than muting them follow the source set toward even, open illumination unless the evidence clearly calls for drama balance open space with clustered activity according to the source evidence Embed source-bearing anchors as visible forms that belong naturally to the scene rather than as a literal object inventory or interface mockup.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright block-based source field shaped by current research",
+      "A full-bleed artwork for 2026-05-01 derived from the current research field. The model autoresearch pass failed, so the runner fell back to deterministic channel-balanced source ranking. Let the composition follow a block-based structure with organic geometry and a bright brightness profile. let the strongest source-image colors stay saturated and visible rather than muting them follow the source set toward even, open illumination unless the evidence clearly calls for drama balance open space with clustered activity according to the source evidence Embed source-bearing anchors as visible forms that belong naturally to the scene rather than as a literal object inventory or interface mockup.",
+      "electronic",
+      "remix",
+      "ambient"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Primary Source Anchor",
+      "Secondary Source Anchor",
+      "Signal Panel",
+      "Color Node",
+      "Field Marker",
+      "Edge Detail",
+      "Layered Fragment",
+      "Reference Plaque"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "one to three major structures if that best fits the evidence",
+      "derive anchor scale and loudness from the source field; some anchors can be bold islands while others remain embedded details",
+      "organic geometry",
+      "block-based composition",
+      "Alien Observer cover art",
+      "electronic atmosphere",
+      "remix geometry"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: a-varied-saved-signal-field-selected-by-source-quality-rende.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "type": "primary-source-anchor",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.08,
+        "y": 0.1,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "type": "secondary-source-anchor",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.58,
+        "y": 0.12,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.7894439999999999,
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.75714,
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.725808,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "type": "edge-detail",
+      "strength": 0.699204,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "layered-fragment",
+      "strength": 0.6709800000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "type": "reference-plaque",
+      "strength": 0.6494559999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-source-anchor-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.1,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.58,
+        "y": 0.12,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 8 artifacts and scene family heuristics."
+  ]
+}

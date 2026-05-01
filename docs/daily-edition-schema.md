@@ -145,7 +145,7 @@ Each artifact opens a real source window.
 }
 ```
 
-`embed_status` is optional. Use `"unavailable"` only when a provider URL is valid but the native embed is known to fail, so the runtime can preserve source truth with a direct provider fallback instead of rendering a broken player.
+`embed_status` is optional. Use `"processing"` when a valid provider URL is still waiting on native embed readiness and the runtime should temporarily fall back to a source-truth linkout. Use `"unavailable"` when a provider URL is valid but the native embed is known to fail, so the runtime can preserve source truth with a direct provider fallback instead of rendering a broken player.
 
 Generated edition constraints:
 - primary `source_url` values must be unique
