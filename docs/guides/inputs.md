@@ -34,6 +34,44 @@ Supported fields:
 - `text`
 - `metadata`
 
+## Next-run inspiration override manifest
+
+This is separate from the normal input adapters. It is a temporary manifest that biases the next generation run with a specific image while still letting the engine research from the normal saved-signal field.
+
+Default path:
+
+```text
+tmp/next-run-inspiration-override.json
+```
+
+Typical writer command:
+
+```bash
+npm run daily:set-inspiration-override -- \
+  --image /absolute/path/to/seed.jpg \
+  --title "urgent trend seed" \
+  --bias-terms election,breaking \
+  --note "Keep source discovery broad."
+```
+
+Manifest shape:
+
+```json
+{
+  "active": true,
+  "title": "urgent trend seed",
+  "note": "Keep source discovery broad.",
+  "source": "telegram",
+  "source_url": "telegram://message/123",
+  "received_at": "2026-05-02T12:00:00.000Z",
+  "prompt_bias_terms": ["election", "breaking"],
+  "consume_after_success": true,
+  "image_path": "/absolute/path/to/seed.jpg"
+}
+```
+
+Use `image_url` instead of `image_path` when the image lives at a remote URL or a data URL.
+
 ## 2. Markdown-folder mode
 
 Point the engine at a local folder of markdown notes.

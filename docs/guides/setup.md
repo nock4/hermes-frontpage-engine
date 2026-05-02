@@ -36,6 +36,47 @@ Legacy Obsidian mode:
 npm run daily:process -- --input-mode obsidian-allowlist --input-root /path/to/vault
 ```
 
+## Next-run inspiration override
+
+If you want to steer the **next** generated edition with a one-off image, write an override manifest before running `daily:process`:
+
+```bash
+npm run daily:set-inspiration-override -- \
+  --image /absolute/path/to/seed.jpg \
+  --title "urgent trend seed" \
+  --bias-terms election,breaking \
+  --note "Keep source discovery broad."
+```
+
+Default manifest path:
+
+```text
+tmp/next-run-inspiration-override.json
+```
+
+You can override that path with either:
+
+```bash
+DFE_INSPIRATION_OVERRIDE=/absolute/path/to/override.json
+```
+
+or in `config/frontpage.config.example.json` via:
+
+```json
+{
+  "inspiration_override_manifest": "./tmp/next-run-inspiration-override.json"
+}
+```
+
+This is the same hook Hermes Agent's Telegram photo-caption frontpage override uses. In that flow:
+- `/frontpage`, `/frontpage-override`, or `/fp` arms the override
+- the caption title becomes the override title
+- `bias:` becomes `prompt_bias_terms`
+- `note:` and extra body lines become the note
+- only a single image is supported on the Telegram side
+
+After a successful generation run, the override is marked inactive automatically.
+
 ## Browser harness notes
 
 From-scratch generation still uses browser-harness after source selection so Hermes can capture richer page evidence.

@@ -53,6 +53,35 @@ npm run demo:preview
 - `markdown-folder`: local markdown notes with URLs
 - `obsidian-allowlist`: legacy Nick-compatible vault scan
 
+## Single-run inspiration override
+
+The engine can temporarily bias the **next run** with a one-off image override manifest.
+This is what Hermes Agent's Telegram single-photo `/frontpage`, `/frontpage-override`, and `/fp` caption flow writes into.
+
+Quick example:
+
+```bash
+npm run daily:set-inspiration-override -- \
+  --image /absolute/path/to/seed.jpg \
+  --title "urgent trend seed" \
+  --bias-terms election,breaking \
+  --note "Keep source discovery broad."
+```
+
+What this does:
+- writes a manifest for the next run at `tmp/next-run-inspiration-override.json` by default
+- treats the supplied image as the strongest visual cue
+- keeps the normal saved-signal research flow active
+- stores optional `prompt_bias_terms` that tilt downstream source discovery
+- auto-consumes the override after a successful run unless you explicitly disable that in the manifest
+
+The Telegram caption mapping is:
+- first command line: optional title
+- `bias:`: comma-separated bias terms
+- `note:` and any extra body lines: freeform note
+
+You can also point the engine at a custom manifest path with `DFE_INSPIRATION_OVERRIDE` or `inspiration_override_manifest` in the JSON config.
+
 Examples:
 
 ```bash
@@ -77,6 +106,7 @@ npm run daily:process -- --vault /path/to/vault
 
 ## Main commands
 - `npm run daily:process`
+- `npm run daily:set-inspiration-override`
 - `npm run demo:sample`
 - `npm run build`
 - `npm run demo:preview`
