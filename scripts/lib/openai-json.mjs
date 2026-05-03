@@ -85,11 +85,14 @@ async function materializeImage(imageUrl) {
 }
 
 export function buildHermesQuery({ instructions, inputText, maxOutputTokens, imagePath, remoteImageUrl = null }) {
+  const imageReference = imagePath || remoteImageUrl || null
   return [
     'You are returning structured JSON for a local automated frontpage pipeline.',
     'Return exactly one JSON object and nothing else. No markdown. No prose before or after the JSON.',
-    imagePath ? 'An image is attached to this query. Use it as part of your analysis.' : 'No image is attached to this query.',
-    remoteImageUrl ? `If you need the source image directly, use this image URL: ${remoteImageUrl}` : '',
+    imageReference
+      ? 'An image reference is provided below. Use the vision_analyze tool on that image before answering.'
+      : 'No image is attached to this query.',
+    imageReference ? `Image reference: ${imageReference}` : '',
     `Requested output budget: ${maxOutputTokens} tokens maximum.`,
     '',
     'Task instructions:',
@@ -100,7 +103,7 @@ export function buildHermesQuery({ instructions, inputText, maxOutputTokens, ima
   ].join('\n')
 }
 
-export function buildHermesCommandArgs({ query, imagePath, needsVision = false }) {
+export function buildHermesCommandArgs({ query, needsVision = false }) {
   const args = [
     'chat',
     '-Q',
@@ -108,13 +111,12 @@ export function buildHermesCommandArgs({ query, imagePath, needsVision = false }
     '--max-turns', '12',
   ]
   if (needsVision) args.push('-t', 'vision')
-  if (imagePath) args.push('--image', imagePath)
   args.push('-q', query)
   return args
 }
 
-async function runHermesJsonQuery({ query, imagePath, needsVision = false }) {
-  const args = buildHermesCommandArgs({ query, imagePath, needsVision })
+async function runHermesJsonQuery({ query, needsVision = false }) {
+  const args = buildHermesCommandArgs({ query, needsVision })
   return new Promise((resolve, reject) => {
     const child = spawn('hermes', args, {
       cwd: process.cwd(),
@@ -155,5 +157,5 @@ export async function openAiJson({ apiKey, model, instructions, input, maxOutput
     imagePath,
     remoteImageUrl,
   })
-  return runHermesJsonQuery({ query, imagePath, needsVision: Boolean(imagePath || remoteImageUrl), requestedModel: model, apiKeyPresent: Boolean(apiKey) })
+  return runHermesJsonQuery({ query, needsVision: Boolean(imagePath || remoteImageUrl), requestedModel: model, apiKeyPresent: Boolean(apiKey) })
 }
