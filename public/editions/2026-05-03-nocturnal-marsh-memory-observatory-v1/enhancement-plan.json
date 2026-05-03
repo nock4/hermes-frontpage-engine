@@ -1,0 +1,233 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-03-nocturnal-marsh-memory-observatory-v1",
+  "edition_id": "2026-05-03-nocturnal-marsh-memory-observatory-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-03-nocturnal-marsh-memory-observatory-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "screen-rendered-html",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-pale-marsh-clearing-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-pale-marsh-clearing-slab",
+      "priority": 1,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (inset-clearing-surface) selected from interpretation."
+    },
+    {
+      "target_id": "hero-rewilded-horizon-thicket",
+      "target_kind": "artifact",
+      "artifact_id": "hero-rewilded-horizon-thicket",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (canopy-edge-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-looped-filament-arc",
+      "target_kind": "artifact",
+      "artifact_id": "module-looped-filament-arc",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curved-gesture-trace) selected from interpretation."
+    },
+    {
+      "target_id": "module-woodland-refuge-pocket",
+      "target_kind": "artifact",
+      "artifact_id": "module-woodland-refuge-pocket",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (shadowed-clearing-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-leaf-echo-veil",
+      "target_kind": "artifact",
+      "artifact_id": "module-leaf-echo-veil",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-foliage-veil) selected from interpretation."
+    },
+    {
+      "target_id": "module-glass-bell-lens",
+      "target_kind": "artifact",
+      "artifact_id": "module-glass-bell-lens",
+      "priority": 6,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (fogged-glass-orb) selected from interpretation."
+    },
+    {
+      "target_id": "module-indigo-water-ribbon",
+      "target_kind": "artifact",
+      "artifact_id": "module-indigo-water-ribbon",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-reflective-channel) selected from interpretation."
+    },
+    {
+      "target_id": "module-tide-salt-bloom",
+      "target_kind": "artifact",
+      "artifact_id": "module-tide-salt-bloom",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (mineral-sheen-patch) selected from interpretation."
+    },
+    {
+      "target_id": "module-daybreak-mist-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-daybreak-mist-seam",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (low-horizon-haze-band) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

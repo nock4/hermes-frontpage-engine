@@ -1,0 +1,727 @@
+{
+  "artifact_map_id": "map-2026-05-03-nocturnal-marsh-memory-observatory-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "nocturnal-marsh-memory-observatory",
+  "default_artifact_id": "hero-pale-marsh-clearing-slab",
+  "artifacts": [
+    {
+      "id": "hero-pale-marsh-clearing-slab",
+      "kind": "hero",
+      "label": "pale marsh clearing slab",
+      "artifact_type": "inset-clearing-surface",
+      "bounds": {
+        "x": 0.0677,
+        "y": 0.707,
+        "w": 0.1895,
+        "h": 0.2266
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0697,
+          0.7344
+        ],
+        [
+          0.1497,
+          0.71
+        ],
+        [
+          0.2344,
+          0.7412
+        ],
+        [
+          0.2546,
+          0.8184
+        ],
+        [
+          0.2148,
+          0.9043
+        ],
+        [
+          0.1198,
+          0.9297
+        ],
+        [
+          0.0749,
+          0.8594
+        ],
+        [
+          0.0697,
+          0.7412
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/hero-pale-marsh-clearing-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-pale-marsh-clearing-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          253,
+          824
+        ],
+        "safe_stage_window_origin_px": [
+          279,
+          845
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "hero-rewilded-horizon-thicket",
+      "kind": "hero",
+      "label": "rewilded horizon thicket",
+      "artifact_type": "canopy-edge-field",
+      "bounds": {
+        "x": 0.6829,
+        "y": 0.2969,
+        "w": 0.1842,
+        "h": 0.2412
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.6849,
+          0.4531
+        ],
+        [
+          0.6986,
+          0.3984
+        ],
+        [
+          0.7077,
+          0.3828
+        ],
+        [
+          0.7344,
+          0.3447
+        ],
+        [
+          0.7897,
+          0.2998
+        ],
+        [
+          0.8353,
+          0.3203
+        ],
+        [
+          0.8594,
+          0.3896
+        ],
+        [
+          0.8646,
+          0.4502
+        ],
+        [
+          0.8444,
+          0.5098
+        ],
+        [
+          0.7845,
+          0.5342
+        ],
+        [
+          0.7044,
+          0.5146
+        ],
+        [
+          0.6849,
+          0.4551
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/hero-rewilded-horizon-thicket.svg",
+      "source_binding_ids": [
+        "binding-hero-rewilded-horizon-thicket"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1187,
+          385
+        ],
+        "safe_stage_window_origin_px": [
+          1211,
+          410
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-looped-filament-arc",
+      "kind": "module",
+      "label": "looped filament arc",
+      "artifact_type": "curved-gesture-trace",
+      "bounds": {
+        "x": 0.505,
+        "y": 0.02,
+        "w": 0.445,
+        "h": 0.915
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.585,
+          0.085
+        ],
+        [
+          0.69,
+          0.035
+        ],
+        [
+          0.81,
+          0.04
+        ],
+        [
+          0.9,
+          0.095
+        ],
+        [
+          0.955,
+          0.21
+        ],
+        [
+          0.965,
+          0.395
+        ],
+        [
+          0.94,
+          0.585
+        ],
+        [
+          0.89,
+          0.74
+        ],
+        [
+          0.805,
+          0.86
+        ],
+        [
+          0.705,
+          0.93
+        ],
+        [
+          0.625,
+          0.865
+        ],
+        [
+          0.72,
+          0.78
+        ],
+        [
+          0.835,
+          0.625
+        ],
+        [
+          0.905,
+          0.43
+        ],
+        [
+          0.9,
+          0.23
+        ],
+        [
+          0.845,
+          0.105
+        ],
+        [
+          0.745,
+          0.06
+        ],
+        [
+          0.63,
+          0.07
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/module-looped-filament-arc.svg",
+      "source_binding_ids": [
+        "binding-module-looped-filament-arc"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1117,
+          414
+        ],
+        "safe_stage_window_origin_px": [
+          1172,
+          489
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-woodland-refuge-pocket",
+      "kind": "module",
+      "label": "woodland refuge pocket",
+      "artifact_type": "shadowed-clearing-aperture",
+      "bounds": {
+        "x": 0.3027,
+        "y": 0.3418,
+        "w": 0.1999,
+        "h": 0.3516
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.3047,
+          0.5605
+        ],
+        [
+          0.3118,
+          0.4688
+        ],
+        [
+          0.3398,
+          0.3848
+        ],
+        [
+          0.39,
+          0.3447
+        ],
+        [
+          0.4447,
+          0.3496
+        ],
+        [
+          0.4844,
+          0.4092
+        ],
+        [
+          0.5,
+          0.499
+        ],
+        [
+          0.4948,
+          0.5898
+        ],
+        [
+          0.4557,
+          0.6621
+        ],
+        [
+          0.3848,
+          0.6895
+        ],
+        [
+          0.3197,
+          0.6494
+        ],
+        [
+          0.3047,
+          0.5654
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/module-woodland-refuge-pocket.svg",
+      "source_binding_ids": [
+        "binding-module-woodland-refuge-pocket"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          618,
+          500
+        ],
+        "safe_stage_window_origin_px": [
+          645,
+          530
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-leaf-echo-veil",
+      "kind": "module",
+      "label": "leaf-echo veil",
+      "artifact_type": "translucent-foliage-veil",
+      "bounds": {
+        "x": 0.3926,
+        "y": 0.0869,
+        "w": 0.1999,
+        "h": 0.4414
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.3945,
+          0.2168
+        ],
+        [
+          0.4049,
+          0.1045
+        ],
+        [
+          0.4544,
+          0.0898
+        ],
+        [
+          0.5221,
+          0.1172
+        ],
+        [
+          0.5645,
+          0.1699
+        ],
+        [
+          0.5898,
+          0.2539
+        ],
+        [
+          0.5846,
+          0.3604
+        ],
+        [
+          0.5638,
+          0.4512
+        ],
+        [
+          0.5345,
+          0.5146
+        ],
+        [
+          0.4896,
+          0.5244
+        ],
+        [
+          0.4447,
+          0.5
+        ],
+        [
+          0.4147,
+          0.4297
+        ],
+        [
+          0.3997,
+          0.3311
+        ],
+        [
+          0.3945,
+          0.2256
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/module-leaf-echo-veil.svg",
+      "source_binding_ids": [
+        "binding-module-leaf-echo-veil"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          764,
+          284
+        ],
+        "safe_stage_window_origin_px": [
+          789,
+          320
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-glass-bell-lens",
+      "kind": "module",
+      "label": "glass-bell lens",
+      "artifact_type": "fogged-glass-orb",
+      "bounds": {
+        "x": 0.285,
+        "y": 0.34,
+        "w": 0.09,
+        "h": 0.175
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.33,
+          0.342
+        ],
+        [
+          0.35,
+          0.36
+        ],
+        [
+          0.358,
+          0.402
+        ],
+        [
+          0.356,
+          0.458
+        ],
+        [
+          0.345,
+          0.5
+        ],
+        [
+          0.322,
+          0.515
+        ],
+        [
+          0.298,
+          0.5
+        ],
+        [
+          0.288,
+          0.455
+        ],
+        [
+          0.29,
+          0.4
+        ],
+        [
+          0.305,
+          0.36
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/module-glass-bell-lens.svg",
+      "source_binding_ids": [
+        "binding-module-glass-bell-lens"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          507,
+          423
+        ],
+        "safe_stage_window_origin_px": [
+          518,
+          438
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-indigo-water-ribbon",
+      "kind": "module",
+      "label": "indigo water ribbon",
+      "artifact_type": "narrow-reflective-channel",
+      "bounds": {
+        "x": 0.3574,
+        "y": 0.6016,
+        "w": 0.4551,
+        "h": 0.3164
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.3594,
+          0.6934
+        ],
+        [
+          0.3796,
+          0.6191
+        ],
+        [
+          0.5195,
+          0.6045
+        ],
+        [
+          0.6745,
+          0.6191
+        ],
+        [
+          0.7845,
+          0.6592
+        ],
+        [
+          0.8099,
+          0.7539
+        ],
+        [
+          0.7949,
+          0.8594
+        ],
+        [
+          0.7096,
+          0.9092
+        ],
+        [
+          0.5645,
+          0.9141
+        ],
+        [
+          0.4395,
+          0.8848
+        ],
+        [
+          0.3698,
+          0.7998
+        ],
+        [
+          0.3594,
+          0.6973
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/module-indigo-water-ribbon.svg",
+      "source_binding_ids": [
+        "binding-module-indigo-water-ribbon"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          906,
+          754
+        ],
+        "safe_stage_window_origin_px": [
+          962,
+          781
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-tide-salt-bloom",
+      "kind": "module",
+      "label": "tide-salt bloom",
+      "artifact_type": "mineral-sheen-patch",
+      "bounds": {
+        "x": 0.655,
+        "y": 0.735,
+        "w": 0.125,
+        "h": 0.085
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.668,
+          0.785
+        ],
+        [
+          0.68,
+          0.752
+        ],
+        [
+          0.72,
+          0.736
+        ],
+        [
+          0.76,
+          0.742
+        ],
+        [
+          0.782,
+          0.768
+        ],
+        [
+          0.778,
+          0.798
+        ],
+        [
+          0.75,
+          0.817
+        ],
+        [
+          0.71,
+          0.82
+        ],
+        [
+          0.68,
+          0.807
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/module-tide-salt-bloom.svg",
+      "source_binding_ids": [
+        "binding-module-tide-salt-bloom"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1102,
+          789
+        ],
+        "safe_stage_window_origin_px": [
+          1117,
+          796
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-daybreak-mist-seam",
+      "kind": "module",
+      "label": "daybreak mist seam",
+      "artifact_type": "low-horizon-haze-band",
+      "bounds": {
+        "x": 0.5527,
+        "y": 0.3369,
+        "w": 0.3047,
+        "h": 0.1787
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.5547,
+          0.4346
+        ],
+        [
+          0.5749,
+          0.3896
+        ],
+        [
+          0.6191,
+          0.3584
+        ],
+        [
+          0.6947,
+          0.3398
+        ],
+        [
+          0.7695,
+          0.3496
+        ],
+        [
+          0.8294,
+          0.3818
+        ],
+        [
+          0.8353,
+          0.3857
+        ],
+        [
+          0.8548,
+          0.4297
+        ],
+        [
+          0.8398,
+          0.4697
+        ],
+        [
+          0.7799,
+          0.5
+        ],
+        [
+          0.6895,
+          0.5117
+        ],
+        [
+          0.6048,
+          0.5049
+        ],
+        [
+          0.5645,
+          0.4746
+        ],
+        [
+          0.5547,
+          0.4355
+        ]
+      ],
+      "cluster_id": "nocturnal-marsh-memory-observatory",
+      "mask_path": "/editions/2026-05-03-nocturnal-marsh-memory-observatory-v1/assets/masks/module-daybreak-mist-seam.svg",
+      "source_binding_ids": [
+        "binding-module-daybreak-mist-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1087,
+          422
+        ],
+        "safe_stage_window_origin_px": [
+          1124,
+          438
+        ],
+        "preferred_expansion_label": "left"
+      }
+    }
+  ]
+}

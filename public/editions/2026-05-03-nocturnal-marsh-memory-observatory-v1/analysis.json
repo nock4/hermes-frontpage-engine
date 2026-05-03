@@ -1,0 +1,567 @@
+{
+  "analysis_id": "analysis-2026-05-03-nocturnal-marsh-memory-observatory-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Misty nocturnal marsh scene with a weathered pale pod left of center, an overgrown ring arc on the right, a small glass cloche inside the pod, dark reflective water in the foreground, and fog-thicket layering across the back horizon.",
+  "usable_surfaces": [
+    "pale broken foreground slab",
+    "dark horizon tree mass",
+    "mossy circular filament arc",
+    "sheltered pod interior planting pocket",
+    "hanging vine veil on pod opening",
+    "small glass bell cloche",
+    "dark reflective water channel",
+    "pale pink floating mineral-bloom pad",
+    "low bright mist band behind reeds"
+  ],
+  "detected_objects": [
+    {
+      "label": "pale marsh clearing slab",
+      "artifact_type": "inset-clearing-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.06,
+        "y": 0.7,
+        "w": 0.21,
+        "h": 0.25
+      },
+      "polygon": [
+        [
+          0.07,
+          0.735
+        ],
+        [
+          0.15,
+          0.71
+        ],
+        [
+          0.235,
+          0.742
+        ],
+        [
+          0.255,
+          0.82
+        ],
+        [
+          0.215,
+          0.905
+        ],
+        [
+          0.12,
+          0.93
+        ],
+        [
+          0.075,
+          0.86
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "A large pale curved broken panel sits in the lower-left foreground with a clearly visible bright face, irregular edge, and reflective wet surface distinct from the surrounding marsh."
+    },
+    {
+      "label": "rewilded horizon thicket",
+      "artifact_type": "canopy-edge-field",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.675,
+        "y": 0.25,
+        "w": 0.195,
+        "h": 0.3
+      },
+      "polygon": [
+        [
+          0.705,
+          0.515
+        ],
+        [
+          0.685,
+          0.455
+        ],
+        [
+          0.7,
+          0.395
+        ],
+        [
+          0.735,
+          0.345
+        ],
+        [
+          0.79,
+          0.3
+        ],
+        [
+          0.835,
+          0.32
+        ],
+        [
+          0.86,
+          0.39
+        ],
+        [
+          0.865,
+          0.455
+        ],
+        [
+          0.845,
+          0.51
+        ],
+        [
+          0.785,
+          0.535
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A dense silhouette of trees and shrub mass rises through the fog on the right background, forming the most legible distant habitat edge."
+    },
+    {
+      "label": "looped filament arc",
+      "artifact_type": "curved-gesture-trace",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.505,
+        "y": 0.02,
+        "w": 0.445,
+        "h": 0.915
+      },
+      "polygon": [
+        [
+          0.585,
+          0.085
+        ],
+        [
+          0.69,
+          0.035
+        ],
+        [
+          0.81,
+          0.04
+        ],
+        [
+          0.9,
+          0.095
+        ],
+        [
+          0.955,
+          0.21
+        ],
+        [
+          0.965,
+          0.395
+        ],
+        [
+          0.94,
+          0.585
+        ],
+        [
+          0.89,
+          0.74
+        ],
+        [
+          0.805,
+          0.86
+        ],
+        [
+          0.705,
+          0.93
+        ],
+        [
+          0.625,
+          0.865
+        ],
+        [
+          0.72,
+          0.78
+        ],
+        [
+          0.835,
+          0.625
+        ],
+        [
+          0.905,
+          0.43
+        ],
+        [
+          0.9,
+          0.23
+        ],
+        [
+          0.845,
+          0.105
+        ],
+        [
+          0.745,
+          0.06
+        ],
+        [
+          0.63,
+          0.07
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A huge circular moss-coated ring or wire arc dominates the right half of the composition and reads as one continuous visible line gesture."
+    },
+    {
+      "label": "woodland refuge pocket",
+      "artifact_type": "shadowed-clearing-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.295,
+        "y": 0.335,
+        "w": 0.215,
+        "h": 0.365
+      },
+      "polygon": [
+        [
+          0.32,
+          0.65
+        ],
+        [
+          0.305,
+          0.565
+        ],
+        [
+          0.312,
+          0.47
+        ],
+        [
+          0.34,
+          0.385
+        ],
+        [
+          0.39,
+          0.345
+        ],
+        [
+          0.445,
+          0.35
+        ],
+        [
+          0.485,
+          0.41
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.495,
+          0.59
+        ],
+        [
+          0.455,
+          0.665
+        ],
+        [
+          0.385,
+          0.69
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Inside the pod there is a darker sheltered planting cavity with moss, stems, and flowers contained by the pod opening, visibly reading as a protected pocket."
+    },
+    {
+      "label": "leaf-echo veil",
+      "artifact_type": "translucent-foliage-veil",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.095,
+        "w": 0.205,
+        "h": 0.435
+      },
+      "polygon": [
+        [
+          0.405,
+          0.105
+        ],
+        [
+          0.455,
+          0.09
+        ],
+        [
+          0.52,
+          0.115
+        ],
+        [
+          0.565,
+          0.17
+        ],
+        [
+          0.59,
+          0.255
+        ],
+        [
+          0.585,
+          0.36
+        ],
+        [
+          0.565,
+          0.45
+        ],
+        [
+          0.535,
+          0.515
+        ],
+        [
+          0.49,
+          0.525
+        ],
+        [
+          0.445,
+          0.5
+        ],
+        [
+          0.415,
+          0.43
+        ],
+        [
+          0.4,
+          0.33
+        ],
+        [
+          0.395,
+          0.22
+        ]
+      ],
+      "confidence": 0.73,
+      "visual_evidence": "Hanging vines and trailing plant matter drape down over the pod opening and roof edge, creating a visible semi-screening veil between interior and exterior."
+    },
+    {
+      "label": "glass-bell lens",
+      "artifact_type": "fogged-glass-orb",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.285,
+        "y": 0.34,
+        "w": 0.09,
+        "h": 0.175
+      },
+      "polygon": [
+        [
+          0.33,
+          0.342
+        ],
+        [
+          0.35,
+          0.36
+        ],
+        [
+          0.358,
+          0.402
+        ],
+        [
+          0.356,
+          0.458
+        ],
+        [
+          0.345,
+          0.5
+        ],
+        [
+          0.322,
+          0.515
+        ],
+        [
+          0.298,
+          0.5
+        ],
+        [
+          0.288,
+          0.455
+        ],
+        [
+          0.29,
+          0.4
+        ],
+        [
+          0.305,
+          0.36
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "A small clear bell-shaped glass cloche with a knob top is plainly visible inside the pod, catching soft highlights and enclosing delicate plant matter."
+    },
+    {
+      "label": "indigo water ribbon",
+      "artifact_type": "narrow-reflective-channel",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.365,
+        "y": 0.6,
+        "w": 0.45,
+        "h": 0.325
+      },
+      "polygon": [
+        [
+          0.38,
+          0.62
+        ],
+        [
+          0.52,
+          0.605
+        ],
+        [
+          0.675,
+          0.62
+        ],
+        [
+          0.785,
+          0.66
+        ],
+        [
+          0.81,
+          0.755
+        ],
+        [
+          0.795,
+          0.86
+        ],
+        [
+          0.71,
+          0.91
+        ],
+        [
+          0.565,
+          0.915
+        ],
+        [
+          0.44,
+          0.885
+        ],
+        [
+          0.37,
+          0.8
+        ],
+        [
+          0.36,
+          0.695
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "A dark blue-black reflective run of still water spans the lower middle into the right foreground, with visible tonal continuity and edge contrast against moss and reeds."
+    },
+    {
+      "label": "tide-salt bloom",
+      "artifact_type": "mineral-sheen-patch",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.655,
+        "y": 0.735,
+        "w": 0.125,
+        "h": 0.085
+      },
+      "polygon": [
+        [
+          0.668,
+          0.785
+        ],
+        [
+          0.68,
+          0.752
+        ],
+        [
+          0.72,
+          0.736
+        ],
+        [
+          0.76,
+          0.742
+        ],
+        [
+          0.782,
+          0.768
+        ],
+        [
+          0.778,
+          0.798
+        ],
+        [
+          0.75,
+          0.817
+        ],
+        [
+          0.71,
+          0.82
+        ],
+        [
+          0.68,
+          0.807
+        ]
+      ],
+      "confidence": 0.75,
+      "visual_evidence": "A pale pink circular floating pad or sheen patch near the lower-right center catches light and stands out as a small blush-toned deposit on the water surface."
+    },
+    {
+      "label": "daybreak mist seam",
+      "artifact_type": "low-horizon-haze-band",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.555,
+        "y": 0.33,
+        "w": 0.305,
+        "h": 0.195
+      },
+      "polygon": [
+        [
+          0.565,
+          0.475
+        ],
+        [
+          0.555,
+          0.435
+        ],
+        [
+          0.575,
+          0.39
+        ],
+        [
+          0.625,
+          0.355
+        ],
+        [
+          0.695,
+          0.34
+        ],
+        [
+          0.77,
+          0.35
+        ],
+        [
+          0.835,
+          0.385
+        ],
+        [
+          0.855,
+          0.43
+        ],
+        [
+          0.84,
+          0.47
+        ],
+        [
+          0.78,
+          0.5
+        ],
+        [
+          0.69,
+          0.512
+        ],
+        [
+          0.605,
+          0.505
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "A brighter horizontal fog band opens behind the marsh reeds in the mid-right distance, creating a visible seam between water level atmosphere and darker tree mass."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 6,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.918,
+    "rationale": "The plate has strong large-form anchors and clear interaction surfaces, but many reeds, vines, reflections, and layered fog details make it moderately busy rather than minimal."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-05-03-nocturnal-marsh-memory-observatory-v1"
+}

@@ -1,0 +1,385 @@
+{
+  "interpretation_id": "interp-2026-05-03-nocturnal-marsh-memory-observatory-v1",
+  "edition_id": "2026-05-03-nocturnal-marsh-memory-observatory-v1",
+  "plate_read_timestamp": "2026-05-03T15:03:25.035Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Misty nocturnal marsh scene with a weathered pale pod left of center, an overgrown ring arc on the right, a small glass cloche inside the pod, dark reflective water in the foreground, and fog-thicket layering across the back horizon.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "humid, hushed, and gently cosmic, like a designed wetland remembering a lost ambient record through mist and reflected starlight",
+      "Misty nocturnal marsh scene with a weathered pale pod left of center, an overgrown ring arc on the right, a small glass cloche inside the pod, dark reflective water in the foreground, and fog-thicket layering across the back horizon.",
+      "marsh-haze",
+      "memory-miniatures",
+      "fogged-glass"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "pale marsh clearing slab",
+      "rewilded horizon thicket",
+      "looped filament arc",
+      "woodland refuge pocket",
+      "leaf-echo veil",
+      "glass-bell lens",
+      "indigo water ribbon",
+      "tide-salt bloom"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "water",
+      "fog",
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "nocturnal-marsh-memory-observatory",
+      "one broad marsh field with submerged reflective channels",
+      "two hero-scale embedded relic forms, one rectangular pale inset and one looping filamentary arc",
+      "small half-buried sleeve-like plaques and translucent listening traces nested in foliage",
+      "fog pockets and glass apertures that open micro-clearings inside the density",
+      "astral pollen drifts and dim mirrored sky fragments scattered across water",
+      "pale broken foreground slab",
+      "dark horizon tree mass"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: nocturnal-marsh-memory-observatory.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-pale-marsh-clearing-slab",
+      "kind": "hero",
+      "type": "inset-clearing-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.0677,
+        "y": 0.707,
+        "w": 0.1895,
+        "h": 0.2266
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-rewilded-horizon-thicket",
+      "kind": "hero",
+      "type": "canopy-edge-field",
+      "strength": 0.9890599999999999,
+      "bounds": {
+        "x": 0.6829,
+        "y": 0.2969,
+        "w": 0.1842,
+        "h": 0.2412
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-looped-filament-arc",
+      "kind": "module",
+      "type": "curved-gesture-trace",
+      "strength": 0.7697999999999999,
+      "bounds": {
+        "x": 0.505,
+        "y": 0.02,
+        "w": 0.445,
+        "h": 0.915
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-woodland-refuge-pocket",
+      "kind": "module",
+      "type": "shadowed-clearing-aperture",
+      "strength": 0.7551000000000001,
+      "bounds": {
+        "x": 0.3027,
+        "y": 0.3418,
+        "w": 0.1999,
+        "h": 0.3516
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-leaf-echo-veil",
+      "kind": "module",
+      "type": "translucent-foliage-veil",
+      "strength": 0.736032,
+      "bounds": {
+        "x": 0.3926,
+        "y": 0.0869,
+        "w": 0.1999,
+        "h": 0.4414
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glass-bell-lens",
+      "kind": "module",
+      "type": "fogged-glass-orb",
+      "strength": 0.704232,
+      "bounds": {
+        "x": 0.285,
+        "y": 0.34,
+        "w": 0.09,
+        "h": 0.175
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-indigo-water-ribbon",
+      "kind": "module",
+      "type": "narrow-reflective-channel",
+      "strength": 0.6616200000000001,
+      "bounds": {
+        "x": 0.3574,
+        "y": 0.6016,
+        "w": 0.4551,
+        "h": 0.3164
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tide-salt-bloom",
+      "kind": "module",
+      "type": "mineral-sheen-patch",
+      "strength": 0.64894,
+      "bounds": {
+        "x": 0.655,
+        "y": 0.735,
+        "w": 0.125,
+        "h": 0.085
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-daybreak-mist-seam",
+      "kind": "module",
+      "type": "low-horizon-haze-band",
+      "strength": 0.652288,
+      "bounds": {
+        "x": 0.5527,
+        "y": 0.3369,
+        "w": 0.3047,
+        "h": 0.1787
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-pale-marsh-clearing-slab-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0677,
+        "y": 0.707,
+        "w": 0.1895,
+        "h": 0.2266
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-rewilded-horizon-thicket-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.6829,
+        "y": 0.2969,
+        "w": 0.1842,
+        "h": 0.2412
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-looped-filament-arc-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.505,
+        "y": 0.02,
+        "w": 0.445,
+        "h": 0.915
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-woodland-refuge-pocket-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3027,
+        "y": 0.3418,
+        "w": 0.1999,
+        "h": 0.3516
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-leaf-echo-veil-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3926,
+        "y": 0.0869,
+        "w": 0.1999,
+        "h": 0.4414
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glass-bell-lens-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.285,
+        "y": 0.34,
+        "w": 0.09,
+        "h": 0.175
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-indigo-water-ribbon-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3574,
+        "y": 0.6016,
+        "w": 0.4551,
+        "h": 0.3164
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tide-salt-bloom-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.655,
+        "y": 0.735,
+        "w": 0.125,
+        "h": 0.085
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-daybreak-mist-seam-surface",
+      "surface_type": "fog",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.5527,
+        "y": 0.3369,
+        "w": 0.3047,
+        "h": 0.1787
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
