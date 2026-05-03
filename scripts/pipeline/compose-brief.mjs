@@ -12,8 +12,8 @@ export function createComposeBriefStep({
 }) {
   return {
     name: 'Compose research field and daily scene brief',
-    tool: `OpenAI Responses API (${options.model})`,
-    command: `internal:openai-compose-brief --model ${options.model}`,
+    tool: 'Hermes structured JSON',
+    command: `internal:hermes-compose-brief --requested-model ${options.model}`,
     run: async () => {
       context.payload = await composeDailyPayload({
         signalHarvest: context.signalHarvest,

@@ -39,7 +39,7 @@ export function requireOpenAiKey({ root, env = process.env, required = true } = 
   const key = env.OPENAI_API_KEY || null
   if (!key && required) {
     throw new Error([
-      'OPENAI_API_KEY is required for the from-scratch pipeline or existing-edition plate remap.',
+      'OPENAI_API_KEY is only required when the image backend is set to direct OpenAI image generation.',
       'The command checked process.env plus .env, ~/.env, and ~/.hermes/.env.',
     ].join(' '))
   }

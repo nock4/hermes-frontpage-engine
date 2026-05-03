@@ -45,15 +45,15 @@ export async function runExistingMode({
 
   let stepIndex = 0
   if (options.remapPlate) {
-    const { key: apiKey } = requireOpenAiKey()
+    const { key: apiKey } = requireOpenAiKey({ required: false })
     for (const editionId of editionIds) {
       stepIndex += 1
       await runInternal({
         name: `Re-map finished plate for ${editionId}`,
-        tool: `OpenAI Responses API vision (${options.model})`,
+        tool: 'Hermes structured vision JSON',
         index: stepIndex,
         total,
-      }, `internal:openai-vision-remap-existing --model ${options.model} --edition ${editionId}`, async () => remapExistingEditionPlate({
+      }, `internal:hermes-vision-remap-existing --requested-model ${options.model} --edition ${editionId}`, async () => remapExistingEditionPlate({
         editionId,
         apiKey,
         model: options.model,

@@ -268,7 +268,7 @@ async function runSourceAutoresearch({
     const normalized = {
       ...result,
       generated_at: new Date().toISOString(),
-      tool: `OpenAI Responses API (${model})`,
+      tool: 'Hermes structured JSON',
       workflow: request.workflow,
       candidate_count: evidence.length,
     }
@@ -277,7 +277,7 @@ async function runSourceAutoresearch({
   } catch (error) {
     const fallback = {
       generated_at: new Date().toISOString(),
-      tool: `OpenAI Responses API (${model})`,
+      tool: 'Hermes structured JSON',
       workflow: request.workflow,
       status: 'fallback',
       error: error.message,
@@ -383,7 +383,7 @@ export async function inspectSourceCandidates(signalHarvest, {
 
   const researchField = {
     generated_at: new Date().toISOString(),
-    source_research_tool: `OpenAI Responses API (${model}) autoresearch over Node fetch evidence`,
+    source_research_tool: 'Hermes structured JSON autoresearch over Node fetch evidence',
     source_capture_tool: sourceTool,
     browser_harness: sourceTool === 'browser-harness' ? browserHarness : null,
     autoresearch,

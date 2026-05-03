@@ -287,7 +287,7 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       scene_family_seed: slugBaseWithoutVersion(inferred.scene_family_seed || fallback.scene_family_seed),
       material_limit: Math.max(4, Math.min(6, Number(inferred.material_limit) || fallback.material_limit || 5)),
       generated_at: new Date().toISOString(),
-      tool: `OpenAI Responses API (${model})`,
+      tool: 'Hermes structured JSON',
     }
     await writeJson(path.join(runDir, 'visual-direction.json'), normalized)
     return normalized
@@ -295,7 +295,7 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
     const normalized = {
       ...fallback,
       generated_at: new Date().toISOString(),
-      tool: `OpenAI Responses API (${model})`,
+      tool: 'Hermes structured JSON',
       status: 'fallback',
       error: error.message,
     }

@@ -11,8 +11,8 @@ export function createResearchSourcesStep({
 }) {
   return {
     name: 'Deep source autoresearch and browser capture',
-    tool: `Node fetch evidence + OpenAI Responses API (${options.model}) + ${options.sourceTool === 'browser-harness' ? 'browser-harness Chrome capture' : 'Node fetch capture'}`,
-    command: `internal:autoresearch-sources --model ${options.model} --capture-tool ${options.sourceTool} --max-sources ${options.maxSources}`,
+    tool: `Node fetch evidence + Hermes structured JSON + ${options.sourceTool === 'browser-harness' ? 'browser-harness Chrome capture' : 'Node fetch capture'}`,
+    command: `internal:autoresearch-sources --requested-model ${options.model} --capture-tool ${options.sourceTool} --max-sources ${options.maxSources}`,
     run: async () => {
       context.researchField = await inspectSourceCandidates(context.signalHarvest, {
         maxSources: options.maxSources,

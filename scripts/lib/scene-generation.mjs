@@ -173,7 +173,7 @@ export async function composeDailyPayload(
       maxOutputTokens: 6000,
     })
   } catch (error) {
-    console.warn(`OpenAI research composition failed; using deterministic fallback. ${error.message}`)
+    console.warn(`Hermes research composition failed; using deterministic fallback. ${error.message}`)
     payload = fallbackDailyPayload(signalHarvest, researchField, visualDirection, date, {
       getResearchContentSources,
       selectFallbackMotifTerms,

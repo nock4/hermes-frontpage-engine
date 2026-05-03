@@ -70,7 +70,7 @@ export async function inspectGeneratedPlate(
       maxOutputTokens: 7000,
     })
   } catch (error) {
-    console.warn(`OpenAI plate inspection failed; using planned artifact geometry fallback. ${error.message}`)
+    console.warn(`Hermes plate inspection failed; using planned artifact geometry fallback. ${error.message}`)
     analysis = fallbackPlateAnalysis(payload, error.message)
   }
 

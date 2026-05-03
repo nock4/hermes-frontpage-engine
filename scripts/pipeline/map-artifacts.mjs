@@ -3,8 +3,8 @@ import path from 'node:path'
 export function createMapArtifactsStep({ apiKey, context, inspectGeneratedPlate, options, root, runDir }) {
   return {
     name: 'Inspect generated plate and map visible artifacts',
-    tool: `OpenAI Responses API vision (${options.model})`,
-    command: `internal:openai-vision-map --model ${options.model}`,
+    tool: 'Hermes structured vision JSON',
+    command: `internal:hermes-vision-map --requested-model ${options.model}`,
     run: async () => {
       context.analysis = await inspectGeneratedPlate({
         payload: context.payload,
