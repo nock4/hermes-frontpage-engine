@@ -5,11 +5,13 @@ import { fileURLToPath } from 'node:url'
 const repoRoot = path.resolve(fileURLToPath(new URL('../..', import.meta.url)))
 const defaultSampleManifest = path.join(repoRoot, 'examples', 'signals', 'sample-signals.json')
 const defaultSampleNotes = path.join(repoRoot, 'examples', 'signals', 'sample-notes')
+const defaultInspirationOverrideManifest = path.join(repoRoot, 'tmp', 'next-run-inspiration-override.json')
 
 export const portableConfigDefaults = {
   input_mode: 'markdown-folder',
   input_root: defaultSampleNotes,
   signal_manifest: defaultSampleManifest,
+  inspiration_override_manifest: defaultInspirationOverrideManifest,
   browser_harness_path: 'browser-harness',
   openai_model: 'gpt-5.5',
   openai_image_model: 'gpt-image-2',
@@ -40,6 +42,7 @@ function readJsonConfig(configPath) {
     ...parsed,
     input_root: resolveMaybeRelative(path.dirname(configPath), parsed.input_root),
     signal_manifest: resolveMaybeRelative(path.dirname(configPath), parsed.signal_manifest),
+    inspiration_override_manifest: resolveMaybeRelative(path.dirname(configPath), parsed.inspiration_override_manifest),
     browser_harness_path: parsed.browser_harness_path || portableConfigDefaults.browser_harness_path,
   }
 }
@@ -68,6 +71,9 @@ export function resolveFrontpageConfig({ cwd = repoRoot, env = process.env, expl
     signal_manifest: env.DFE_SIGNAL_MANIFEST
       ? resolveMaybeRelative(cwd, env.DFE_SIGNAL_MANIFEST)
       : fileConfig.signal_manifest || portableConfigDefaults.signal_manifest,
+    inspiration_override_manifest: env.DFE_INSPIRATION_OVERRIDE
+      ? resolveMaybeRelative(cwd, env.DFE_INSPIRATION_OVERRIDE)
+      : fileConfig.inspiration_override_manifest || portableConfigDefaults.inspiration_override_manifest,
     browser_harness_path: env.BROWSER_HARNESS_PATH || fileConfig.browser_harness_path || portableConfigDefaults.browser_harness_path,
     openai_model: env.OPENAI_MODEL || fileConfig.openai_model || portableConfigDefaults.openai_model,
     openai_image_model: env.OPENAI_IMAGE_MODEL || fileConfig.openai_image_model || portableConfigDefaults.openai_image_model,

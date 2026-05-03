@@ -41,12 +41,14 @@ describe('frontpage config', () => {
         DFE_CONFIG_PATH: configPath,
         DFE_INPUT_MODE: 'manifest',
         DFE_SIGNAL_MANIFEST: './override.json',
+        DFE_INSPIRATION_OVERRIDE: './inspiration.json',
         OPENAI_MODEL: 'env-model',
       },
     })
 
     expect(resolved.input_mode).toBe('manifest')
     expect(resolved.signal_manifest).toBe(path.join(tempDir, 'override.json'))
+    expect(resolved.inspiration_override_manifest).toBe(path.join(tempDir, 'inspiration.json'))
     expect(resolved.openai_model).toBe('env-model')
   })
 

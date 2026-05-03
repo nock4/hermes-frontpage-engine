@@ -1,5 +1,6 @@
 import path from 'node:path'
 
+import { loadInspirationOverride, consumeInspirationOverride } from '../lib/inspiration-override.mjs'
 import { createAssembleEditionStep } from './assemble-edition.mjs'
 import { createComposeBriefStep } from './compose-brief.mjs'
 import { createGeneratePlateStep } from './generate-plate.mjs'
@@ -53,7 +54,14 @@ export async function runFromScratchMode({
     process.once('exit', () => stopManagedBrowserHarnessBrowser(managedBrowser))
   }
 
-  const context = {}
+  const inspirationOverride = await loadInspirationOverride({
+    overridePath: options.inspirationOverride,
+    date: options.date,
+  })
+
+  const context = {
+    inspirationOverride,
+  }
   const internalSteps = [
     createMineSignalsStep({ options, context, recentDiversityAvoidTerms, root, runDir, mineSignals }),
     createResearchSourcesStep({ apiKey, context, inspectSourceCandidates, options, recentSourceKeys, root, runDir }),
@@ -112,6 +120,13 @@ export async function runFromScratchMode({
       directive: diversityDirective,
       recent_source_keys: recentSourceKeys.size,
     },
+    inspirationOverride: inspirationOverride ? {
+      title: inspirationOverride.title,
+      source: inspirationOverride.source,
+      manifest: path.relative(root, inspirationOverride.override_path),
+      source_url: inspirationOverride.source_url,
+      consume_after_success: inspirationOverride.consume_after_success,
+    } : null,
   }, null, 2))
 
   let stepIndex = 0
@@ -142,6 +157,10 @@ export async function runFromScratchMode({
     stepIndex += 1
     const [command, args] = step.command
     await runProcess(command, args, { ...step, index: stepIndex, total }, step.env)
+  }
+
+  if (context.inspirationOverride?.consume_after_success) {
+    await consumeInspirationOverride(context.inspirationOverride, { status: 'consumed-after-success' })
   }
 
   console.log(JSON.stringify({

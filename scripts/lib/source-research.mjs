@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import { findVisualReference, inspectCandidateSource } from './source-inspection.mjs'
+import { buildInspirationOverrideVisualReference } from './inspiration-override.mjs'
 import { openAiJson } from './openai-json.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
@@ -187,6 +188,7 @@ async function runSourceAutoresearch({
   date,
   maxSources,
   recentSourceKeys = new Set(),
+  inspirationOverride = null,
 }, runDir) {
   const noteLookup = noteLookupForSignalHarvest(signalHarvest)
   const evidence = evidenceSources.map((source, index) => researchEvidenceForSource(source, index, {
@@ -206,7 +208,10 @@ async function runSourceAutoresearch({
       'Prefer source material that can render as title plus real image, direct image, tweet media, or native YouTube embed.',
       'For NTS-derived rows, prefer YouTube streaming sources, then Bandcamp, then SoundCloud.',
       'Choose artistic or material-rich raster visual references over technical diagrams, logos, docs chrome, favicons, icons, and placeholder images.',
-    ],
+      inspirationOverride
+        ? 'A temporary inspiration image override is attached. Treat it as the strongest aesthetic steering signal for today, but still choose public content URLs only from candidate_sources.'
+        : null,
+    ].filter(Boolean),
     expected_output_schema: {
       research_question: 'string',
       synthesis: 'plain-language paragraph describing what the sources collectively suggest',
@@ -226,11 +231,29 @@ async function runSourceAutoresearch({
       })),
       motif_terms: signalHarvest.motif_terms.slice(0, 30),
     },
+    manual_inspiration_override: inspirationOverride ? {
+      title: inspirationOverride.title,
+      note: inspirationOverride.note,
+      source: inspirationOverride.source,
+      source_url: inspirationOverride.source_url,
+      prompt_bias_terms: inspirationOverride.prompt_bias_terms,
+    } : null,
     candidate_sources: evidence,
   }
   await writeJson(path.join(runDir, 'source-autoresearch-request.json'), request)
 
   try {
+    const responseInput = inspirationOverride?.image_data_url
+      ? [
+          {
+            role: 'user',
+            content: [
+              { type: 'input_text', text: JSON.stringify(request, null, 2) },
+              { type: 'input_image', image_url: inspirationOverride.image_data_url },
+            ],
+          },
+        ]
+      : JSON.stringify(request, null, 2)
     const result = await openAiJson({
       apiKey,
       model,
@@ -239,7 +262,7 @@ async function runSourceAutoresearch({
         'Think like an autoresearch pass, not a metadata scraper: orient to all evidence, cluster it, identify the strongest through-line, select a varied source set, and preserve provenance.',
         'Return strict JSON matching the requested schema. Do not include Markdown.',
       ].join(' '),
-      input: JSON.stringify(request, null, 2),
+      input: responseInput,
       maxOutputTokens: 6000,
     })
     const normalized = {
@@ -309,6 +332,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   apiKey,
   model,
   date,
+  inspirationOverride = null,
 }) {
   const candidateLimit = Math.max(maxSources, Math.min(maxSources * autoresearchCandidateMultiplier, maxAutoresearchCandidates))
   const candidates = selectSourceCandidatesForInspection(signalHarvest, candidateLimit, { recentSourceKeys })
@@ -325,6 +349,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     date,
     maxSources,
     recentSourceKeys,
+    inspirationOverride,
   }, runDir)
   const selectedForCapture = normalizeAutoresearchSelection(autoresearch, fetchEvidence, {
     maxSources,
@@ -350,7 +375,10 @@ export async function inspectSourceCandidates(signalHarvest, {
     }))
   }
 
-  const visualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
+  const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
+  const visualReference = inspirationOverride
+    ? buildInspirationOverrideVisualReference(inspirationOverride, { fallback: discoveredVisualReference })
+    : discoveredVisualReference
   const contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
 
   const researchField = {
@@ -361,6 +389,16 @@ export async function inspectSourceCandidates(signalHarvest, {
     autoresearch,
     fetch_evidence_count: fetchEvidence.length,
     source_count: inspected.length,
+    manual_inspiration_override: inspirationOverride ? {
+      title: inspirationOverride.title,
+      note: inspirationOverride.note,
+      source: inspirationOverride.source,
+      source_url: inspirationOverride.source_url,
+      prompt_bias_terms: inspirationOverride.prompt_bias_terms,
+      received_at: inspirationOverride.received_at,
+      manifest_path: inspirationOverride.override_path,
+    } : null,
+    discovered_visual_reference: discoveredVisualReference,
     visual_reference: visualReference,
     content_source_count: contentSources.length,
     content_sources: contentSources,

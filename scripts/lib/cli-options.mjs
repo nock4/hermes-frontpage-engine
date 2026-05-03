@@ -34,6 +34,7 @@ Options:
   --input-mode <mode>           manifest | markdown-folder | obsidian-allowlist.
   --input-root <path>           Root folder for markdown-folder or obsidian-allowlist mode.
   --signal-manifest <path>      JSON manifest for manifest mode.
+  --inspiration-override <path> JSON file describing a one-shot manual inspiration image override.
   --use-sample-signals          Force the repo's bundled sample manifest.
   --vault <path>                Legacy alias for --input-mode obsidian-allowlist --input-root <path>.
   --window-days <number>        Recent-note window for signal mining. Defaults to ${defaultSignalWindowDays}.
@@ -91,6 +92,7 @@ export function parseArgs(argv) {
     inputMode: null,
     inputRoot: null,
     signalManifest: null,
+    inspirationOverride: null,
     useSampleSignals: false,
     vault: null,
     windowDays: null,
@@ -169,6 +171,14 @@ export function parseArgs(argv) {
     }
     if (arg.startsWith('--signal-manifest=')) {
       cli.signalManifest = arg.slice('--signal-manifest='.length)
+      continue
+    }
+    if (arg === '--inspiration-override') {
+      cli.inspirationOverride = readValue(arg)
+      continue
+    }
+    if (arg.startsWith('--inspiration-override=')) {
+      cli.inspirationOverride = arg.slice('--inspiration-override='.length)
       continue
     }
     if (arg === '--use-sample-signals') {
@@ -321,6 +331,7 @@ export function parseArgs(argv) {
     inputMode: resolveValue(cli.inputMode, config.input_mode),
     inputRoot: resolveValue(cli.inputRoot, config.input_root),
     signalManifest: resolveValue(cli.signalManifest, config.signal_manifest),
+    inspirationOverride: resolveValue(cli.inspirationOverride, config.inspiration_override_manifest),
     useSampleSignals: cli.useSampleSignals,
     windowDays: resolveValue(cli.windowDays, defaultSignalWindowDays),
     maxNotes: resolveValue(cli.maxNotes, defaultMaxNotes),

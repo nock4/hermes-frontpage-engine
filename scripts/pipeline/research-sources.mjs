@@ -23,6 +23,7 @@ export function createResearchSourcesStep({
         apiKey,
         model: options.model,
         date: options.date,
+        inspirationOverride: context.inspirationOverride,
       })
       return {
         sources: context.researchField.source_count,
@@ -32,7 +33,8 @@ export function createResearchSourcesStep({
         autoresearch_thesis: context.researchField.autoresearch?.edition_thesis || null,
         visual_reference: context.researchField.visual_reference ? {
           title: context.researchField.visual_reference.title,
-          image_url: context.researchField.visual_reference.image_url,
+          source_url: context.researchField.visual_reference.source_url || context.researchField.visual_reference.url || null,
+          has_image: Boolean(context.researchField.visual_reference.image_url),
           selection_reason: context.researchField.visual_reference.selection_reason,
         } : null,
         content_sources: context.researchField.content_source_count,

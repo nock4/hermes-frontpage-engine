@@ -9,6 +9,7 @@ import {
   signalChannelForPath,
 } from './signal-adapters/obsidian-allowlist-adapter.mjs'
 import { loadMarkdownFolderSignals } from './signal-adapters/markdown-folder-adapter.mjs'
+import { annotateSignalHarvestWithInspirationOverride } from './inspiration-override.mjs'
 import { uniqueNonEmpty } from './string-utils.mjs'
 
 async function writeJson(filePath, value) {
@@ -148,6 +149,7 @@ export async function mineSignals({
   windowDays,
   maxNotes,
   diversityAvoidTerms = [],
+  inspirationOverride = null,
 }, runDir) {
   const resolvedInputRoot = inputRoot || vault || null
   const loaded = await loadSignalsForMode({
@@ -182,7 +184,7 @@ export async function mineSignals({
     }
   }
 
-  const harvest = {
+  const harvest = annotateSignalHarvestWithInspirationOverride({
     generated_at: new Date().toISOString(),
     input_mode: inputMode,
     input_root: loaded.input_root,
@@ -210,7 +212,7 @@ export async function mineSignals({
     notes_selected: selectedNotes.map(({ text, ...note }) => note),
     motif_terms: wordFrequencies(selectedNotes),
     source_candidates: urlRecords,
-  }
+  }, inspirationOverride)
 
   await writeJson(path.join(runDir, 'signal-harvest.json'), harvest)
   return harvest
