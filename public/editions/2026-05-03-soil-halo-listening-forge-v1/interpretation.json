@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-05-03-soil-halo-listening-forge-v1",
+  "edition_id": "2026-05-03-soil-halo-listening-forge-v1",
+  "plate_read_timestamp": "2026-05-03T15:18:16.866Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A symmetrical ruin-like facade sits in dense overgrowth with a large central oval portal, a dark sun-like disc above, hanging vegetation, curved architectural seams, and distinct foreground stone fragments. The image has strong ceremonial geometry but also layered plant texture and weathered surfaces, making it structured rather than sparse.",
+    "dominant_spatial_mode": "contained",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "sun-warmed habitat for slow listening, ceremonial and overgrown",
+      "A symmetrical ruin-like facade sits in dense overgrowth with a large central oval portal, a dark sun-like disc above, hanging vegetation, curved architectural seams, and distinct foreground stone fragments. The image has strong ceremonial geometry but also layered plant texture and weathered surfaces, making it structured rather than sparse.",
+      "cultivated-wildness",
+      "soil-halo",
+      "listening-shrine"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "mini-forest halo gate",
+      "challenge meadow membrane",
+      "drone-sleeve relic",
+      "taaritt sun-marker",
+      "western-light seam",
+      "nine-seconds seed-cluster",
+      "brise wind-lintel",
+      "night-rest furrow"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "soil-halo-listening-forge",
+      "a monumental near-central halo form with an internal void and crisp silhouette",
+      "an overgrown habitat field of layered stems, seed heads, and sleeve-like plaques",
+      "a thin mineral horizon band that grounds the composition without becoming a landscape scene",
+      "suspended woven membranes and weathered panels partially nested into growth",
+      "small buried resonance stones and apertures that puncture the soil field",
+      "central oval ring",
+      "lower portal growth bed"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: soil-halo-listening-forge.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-mini-forest-halo-gate",
+      "kind": "hero",
+      "type": "ring-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.335,
+        "y": 0.245,
+        "w": 0.331,
+        "h": 0.562
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-challenge-meadow-membrane",
+      "kind": "hero",
+      "type": "woven-field-panel",
+      "strength": 0.9821719999999999,
+      "bounds": {
+        "x": 0.4108,
+        "y": 0.6055,
+        "w": 0.1816,
+        "h": 0.2021
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-drone-sleeve-relic",
+      "kind": "module",
+      "type": "weathered-plate",
+      "strength": 0.786396,
+      "bounds": {
+        "x": 0.16,
+        "y": 0.669,
+        "w": 0.141,
+        "h": 0.279
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-taaritt-sun-marker",
+      "kind": "module",
+      "type": "speaker-stone",
+      "strength": 0.770448,
+      "bounds": {
+        "x": 0.452,
+        "y": 0.072,
+        "w": 0.174,
+        "h": 0.188
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-western-light-seam",
+      "kind": "module",
+      "type": "mineral-ribbon",
+      "strength": 0.727236,
+      "bounds": {
+        "x": 0.084,
+        "y": 0.391,
+        "w": 0.262,
+        "h": 0.301
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-nine-seconds-seed-cluster",
+      "kind": "module",
+      "type": "buried-node-array",
+      "strength": 0.70446,
+      "bounds": {
+        "x": 0.4674,
+        "y": 0.2441,
+        "w": 0.0918,
+        "h": 0.2705
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-brise-wind-lintel",
+      "kind": "module",
+      "type": "suspended-lintel",
+      "strength": 0.6678720000000001,
+      "bounds": {
+        "x": 0.82,
+        "y": 0.708,
+        "w": 0.165,
+        "h": 0.248
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-brise-wind-lintel-2",
+      "kind": "module",
+      "type": "suspended-lintel",
+      "strength": 0.6507999999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-night-rest-furrow",
+      "kind": "module",
+      "type": "soil-cut-channel",
+      "strength": 0.6542439999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-mini-forest-halo-gate-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.335,
+        "y": 0.245,
+        "w": 0.331,
+        "h": 0.562
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-challenge-meadow-membrane-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4108,
+        "y": 0.6055,
+        "w": 0.1816,
+        "h": 0.2021
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-drone-sleeve-relic-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.16,
+        "y": 0.669,
+        "w": 0.141,
+        "h": 0.279
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-taaritt-sun-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.452,
+        "y": 0.072,
+        "w": 0.174,
+        "h": 0.188
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-western-light-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.084,
+        "y": 0.391,
+        "w": 0.262,
+        "h": 0.301
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-nine-seconds-seed-cluster-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4674,
+        "y": 0.2441,
+        "w": 0.0918,
+        "h": 0.2705
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-brise-wind-lintel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.82,
+        "y": 0.708,
+        "w": 0.165,
+        "h": 0.248
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-brise-wind-lintel-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-night-rest-furrow-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

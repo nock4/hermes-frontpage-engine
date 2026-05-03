@@ -1,0 +1,232 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-03-soil-halo-listening-forge-v1",
+  "edition_id": "2026-05-03-soil-halo-listening-forge-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-03-soil-halo-listening-forge-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "mechanical-reveal-system",
+    "restoration-scan"
+  ],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-mini-forest-halo-gate",
+      "target_kind": "artifact",
+      "artifact_id": "hero-mini-forest-halo-gate",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ring-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-challenge-meadow-membrane",
+      "target_kind": "artifact",
+      "artifact_id": "hero-challenge-meadow-membrane",
+      "priority": 2,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (woven-field-panel) selected from interpretation."
+    },
+    {
+      "target_id": "module-drone-sleeve-relic",
+      "target_kind": "artifact",
+      "artifact_id": "module-drone-sleeve-relic",
+      "priority": 3,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (weathered-plate) selected from interpretation."
+    },
+    {
+      "target_id": "module-taaritt-sun-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-taaritt-sun-marker",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (speaker-stone) selected from interpretation."
+    },
+    {
+      "target_id": "module-western-light-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-western-light-seam",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (mineral-ribbon) selected from interpretation."
+    },
+    {
+      "target_id": "module-nine-seconds-seed-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-nine-seconds-seed-cluster",
+      "priority": 6,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (buried-node-array) selected from interpretation."
+    },
+    {
+      "target_id": "module-brise-wind-lintel",
+      "target_kind": "artifact",
+      "artifact_id": "module-brise-wind-lintel",
+      "priority": 7,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (suspended-lintel) selected from interpretation."
+    },
+    {
+      "target_id": "module-brise-wind-lintel-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-brise-wind-lintel-2",
+      "priority": 8,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (suspended-lintel) selected from interpretation."
+    },
+    {
+      "target_id": "module-night-rest-furrow",
+      "target_kind": "artifact",
+      "artifact_id": "module-night-rest-furrow",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (soil-cut-channel) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

@@ -1,0 +1,500 @@
+{
+  "analysis_id": "analysis-2026-05-03-soil-halo-listening-forge-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A symmetrical ruin-like facade sits in dense overgrowth with a large central oval portal, a dark sun-like disc above, hanging vegetation, curved architectural seams, and distinct foreground stone fragments. The image has strong ceremonial geometry but also layered plant texture and weathered surfaces, making it structured rather than sparse.",
+  "usable_surfaces": [
+    "central oval ring",
+    "lower portal growth bed",
+    "upper black disc",
+    "left curved seam",
+    "thin central fin",
+    "hanging plant cluster",
+    "lower-left stone relic",
+    "lower-right broken fragment",
+    "bottom-center slit"
+  ],
+  "detected_objects": [
+    {
+      "label": "mini-forest halo gate",
+      "artifact_type": "ring-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.335,
+        "y": 0.245,
+        "w": 0.331,
+        "h": 0.562
+      },
+      "polygon": [
+        [
+          0.501,
+          0.246
+        ],
+        [
+          0.59,
+          0.285
+        ],
+        [
+          0.644,
+          0.395
+        ],
+        [
+          0.661,
+          0.536
+        ],
+        [
+          0.642,
+          0.683
+        ],
+        [
+          0.59,
+          0.775
+        ],
+        [
+          0.503,
+          0.807
+        ],
+        [
+          0.419,
+          0.775
+        ],
+        [
+          0.361,
+          0.684
+        ],
+        [
+          0.338,
+          0.538
+        ],
+        [
+          0.356,
+          0.396
+        ],
+        [
+          0.411,
+          0.288
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "The main visible anchor is a large oval portal with a thick ringed edge and a dark interior void, centered in the composition and carrying the densest structural presence."
+    },
+    {
+      "label": "challenge meadow membrane",
+      "artifact_type": "woven-field-panel",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.413,
+        "y": 0.608,
+        "w": 0.178,
+        "h": 0.196
+      },
+      "polygon": [
+        [
+          0.5,
+          0.609
+        ],
+        [
+          0.556,
+          0.628
+        ],
+        [
+          0.589,
+          0.676
+        ],
+        [
+          0.59,
+          0.744
+        ],
+        [
+          0.568,
+          0.79
+        ],
+        [
+          0.514,
+          0.804
+        ],
+        [
+          0.457,
+          0.793
+        ],
+        [
+          0.42,
+          0.752
+        ],
+        [
+          0.413,
+          0.689
+        ],
+        [
+          0.436,
+          0.639
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "A dense low band of scrubby growth visibly fills the lower interior of the central portal, reading as a planted membrane across the opening."
+    },
+    {
+      "label": "drone-sleeve relic",
+      "artifact_type": "weathered-plate",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.16,
+        "y": 0.669,
+        "w": 0.141,
+        "h": 0.279
+      },
+      "polygon": [
+        [
+          0.195,
+          0.679
+        ],
+        [
+          0.239,
+          0.667
+        ],
+        [
+          0.281,
+          0.693
+        ],
+        [
+          0.299,
+          0.754
+        ],
+        [
+          0.298,
+          0.838
+        ],
+        [
+          0.281,
+          0.915
+        ],
+        [
+          0.249,
+          0.947
+        ],
+        [
+          0.205,
+          0.942
+        ],
+        [
+          0.175,
+          0.9
+        ],
+        [
+          0.161,
+          0.82
+        ],
+        [
+          0.167,
+          0.735
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "In the lower-left foreground a standing stone-like fragment shows a clear weathered silhouette with a round hole and vertical slit, making it a distinct relic surface."
+    },
+    {
+      "label": "taaritt sun-marker",
+      "artifact_type": "speaker-stone",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.452,
+        "y": 0.072,
+        "w": 0.174,
+        "h": 0.188
+      },
+      "polygon": [
+        [
+          0.54,
+          0.072
+        ],
+        [
+          0.587,
+          0.09
+        ],
+        [
+          0.62,
+          0.129
+        ],
+        [
+          0.626,
+          0.181
+        ],
+        [
+          0.611,
+          0.226
+        ],
+        [
+          0.575,
+          0.254
+        ],
+        [
+          0.527,
+          0.26
+        ],
+        [
+          0.48,
+          0.248
+        ],
+        [
+          0.451,
+          0.21
+        ],
+        [
+          0.452,
+          0.159
+        ],
+        [
+          0.469,
+          0.113
+        ],
+        [
+          0.5,
+          0.082
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A single large dark circular disc sits above the main arch at top center, functioning as the clearest visible sun-like marker in the plate."
+    },
+    {
+      "label": "western-light seam",
+      "artifact_type": "mineral-ribbon",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.084,
+        "y": 0.391,
+        "w": 0.262,
+        "h": 0.301
+      },
+      "polygon": [
+        [
+          0.092,
+          0.586
+        ],
+        [
+          0.118,
+          0.477
+        ],
+        [
+          0.181,
+          0.39
+        ],
+        [
+          0.262,
+          0.41
+        ],
+        [
+          0.32,
+          0.505
+        ],
+        [
+          0.345,
+          0.612
+        ],
+        [
+          0.328,
+          0.68
+        ],
+        [
+          0.255,
+          0.692
+        ],
+        [
+          0.171,
+          0.675
+        ],
+        [
+          0.114,
+          0.636
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "On the left side a bright curved architectural edge cleanly separates adjacent surfaces and arcs toward the central ring like a visible seam."
+    },
+    {
+      "label": "nine-seconds seed-cluster",
+      "artifact_type": "buried-node-array",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.47,
+        "y": 0.248,
+        "w": 0.088,
+        "h": 0.263
+      },
+      "polygon": [
+        [
+          0.51,
+          0.248
+        ],
+        [
+          0.53,
+          0.269
+        ],
+        [
+          0.55,
+          0.324
+        ],
+        [
+          0.557,
+          0.39
+        ],
+        [
+          0.552,
+          0.459
+        ],
+        [
+          0.534,
+          0.503
+        ],
+        [
+          0.505,
+          0.511
+        ],
+        [
+          0.484,
+          0.491
+        ],
+        [
+          0.471,
+          0.443
+        ],
+        [
+          0.47,
+          0.376
+        ],
+        [
+          0.481,
+          0.305
+        ],
+        [
+          0.496,
+          0.264
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A localized hanging vegetation mass is visible in the upper center over the portal, with clustered small leaf or seed-like interruptions rather than a flat surface."
+    },
+    {
+      "label": "brise wind-lintel",
+      "artifact_type": "suspended-lintel",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.82,
+        "y": 0.708,
+        "w": 0.165,
+        "h": 0.248
+      },
+      "polygon": [
+        [
+          0.854,
+          0.816
+        ],
+        [
+          0.896,
+          0.744
+        ],
+        [
+          0.961,
+          0.709
+        ],
+        [
+          0.984,
+          0.766
+        ],
+        [
+          0.982,
+          0.887
+        ],
+        [
+          0.954,
+          0.95
+        ],
+        [
+          0.892,
+          0.956
+        ],
+        [
+          0.841,
+          0.92
+        ],
+        [
+          0.82,
+          0.859
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "The lower-right foreground contains a broken curved stone fragment with a distinct arch-like contour and isolated material edge, making it a usable lintel-like remnant."
+    },
+    {
+      "label": "brise wind-lintel",
+      "artifact_type": "suspended-lintel",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "night-rest furrow",
+      "artifact_type": "soil-cut-channel",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 7,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.436,
+    "rationale": "The plate has strong central organization, but overlapping vegetation, weathered textures, and multiple nested architectural forms make it moderately cluttered rather than minimal."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-05-03-soil-halo-listening-forge-v1"
+}

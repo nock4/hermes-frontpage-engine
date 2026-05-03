@@ -1,0 +1,639 @@
+{
+  "artifact_map_id": "map-2026-05-03-soil-halo-listening-forge-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "soil-halo-listening-forge",
+  "default_artifact_id": "hero-mini-forest-halo-gate",
+  "artifacts": [
+    {
+      "id": "hero-mini-forest-halo-gate",
+      "kind": "hero",
+      "label": "mini-forest halo gate",
+      "artifact_type": "ring-aperture",
+      "bounds": {
+        "x": 0.335,
+        "y": 0.245,
+        "w": 0.331,
+        "h": 0.562
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.501,
+          0.246
+        ],
+        [
+          0.59,
+          0.285
+        ],
+        [
+          0.644,
+          0.395
+        ],
+        [
+          0.661,
+          0.536
+        ],
+        [
+          0.642,
+          0.683
+        ],
+        [
+          0.59,
+          0.775
+        ],
+        [
+          0.503,
+          0.807
+        ],
+        [
+          0.419,
+          0.775
+        ],
+        [
+          0.361,
+          0.684
+        ],
+        [
+          0.338,
+          0.538
+        ],
+        [
+          0.356,
+          0.396
+        ],
+        [
+          0.411,
+          0.288
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/hero-mini-forest-halo-gate.svg",
+      "source_binding_ids": [
+        "binding-hero-mini-forest-halo-gate"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          769,
+          493
+        ],
+        "safe_stage_window_origin_px": [
+          809,
+          539
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-challenge-meadow-membrane",
+      "kind": "hero",
+      "label": "challenge meadow membrane",
+      "artifact_type": "woven-field-panel",
+      "bounds": {
+        "x": 0.4108,
+        "y": 0.6055,
+        "w": 0.1816,
+        "h": 0.2021
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.4128,
+          0.6885
+        ],
+        [
+          0.4355,
+          0.6387
+        ],
+        [
+          0.5,
+          0.6084
+        ],
+        [
+          0.556,
+          0.6279
+        ],
+        [
+          0.5885,
+          0.6758
+        ],
+        [
+          0.5898,
+          0.7266
+        ],
+        [
+          0.5892,
+          0.7451
+        ],
+        [
+          0.5677,
+          0.7891
+        ],
+        [
+          0.5137,
+          0.8037
+        ],
+        [
+          0.4564,
+          0.793
+        ],
+        [
+          0.4199,
+          0.752
+        ],
+        [
+          0.4128,
+          0.6904
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/hero-challenge-meadow-membrane.svg",
+      "source_binding_ids": [
+        "binding-hero-challenge-meadow-membrane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          771,
+          707
+        ],
+        "safe_stage_window_origin_px": [
+          793,
+          723
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-drone-sleeve-relic",
+      "kind": "module",
+      "label": "drone-sleeve relic",
+      "artifact_type": "weathered-plate",
+      "bounds": {
+        "x": 0.16,
+        "y": 0.669,
+        "w": 0.141,
+        "h": 0.279
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.195,
+          0.679
+        ],
+        [
+          0.239,
+          0.667
+        ],
+        [
+          0.281,
+          0.693
+        ],
+        [
+          0.299,
+          0.754
+        ],
+        [
+          0.298,
+          0.838
+        ],
+        [
+          0.281,
+          0.915
+        ],
+        [
+          0.249,
+          0.947
+        ],
+        [
+          0.205,
+          0.942
+        ],
+        [
+          0.175,
+          0.9
+        ],
+        [
+          0.161,
+          0.82
+        ],
+        [
+          0.167,
+          0.735
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/module-drone-sleeve-relic.svg",
+      "source_binding_ids": [
+        "binding-module-drone-sleeve-relic"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          354,
+          805
+        ],
+        "safe_stage_window_origin_px": [
+          371,
+          828
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-taaritt-sun-marker",
+      "kind": "module",
+      "label": "taaritt sun-marker",
+      "artifact_type": "speaker-stone",
+      "bounds": {
+        "x": 0.452,
+        "y": 0.072,
+        "w": 0.174,
+        "h": 0.188
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.54,
+          0.072
+        ],
+        [
+          0.587,
+          0.09
+        ],
+        [
+          0.62,
+          0.129
+        ],
+        [
+          0.626,
+          0.181
+        ],
+        [
+          0.611,
+          0.226
+        ],
+        [
+          0.575,
+          0.254
+        ],
+        [
+          0.527,
+          0.26
+        ],
+        [
+          0.48,
+          0.248
+        ],
+        [
+          0.451,
+          0.21
+        ],
+        [
+          0.452,
+          0.159
+        ],
+        [
+          0.469,
+          0.113
+        ],
+        [
+          0.5,
+          0.082
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/module-taaritt-sun-marker.svg",
+      "source_binding_ids": [
+        "binding-module-taaritt-sun-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          828,
+          155
+        ],
+        "safe_stage_window_origin_px": [
+          849,
+          170
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-western-light-seam",
+      "kind": "module",
+      "label": "western-light seam",
+      "artifact_type": "mineral-ribbon",
+      "bounds": {
+        "x": 0.084,
+        "y": 0.391,
+        "w": 0.262,
+        "h": 0.301
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.092,
+          0.586
+        ],
+        [
+          0.118,
+          0.477
+        ],
+        [
+          0.181,
+          0.39
+        ],
+        [
+          0.262,
+          0.41
+        ],
+        [
+          0.32,
+          0.505
+        ],
+        [
+          0.345,
+          0.612
+        ],
+        [
+          0.328,
+          0.68
+        ],
+        [
+          0.255,
+          0.692
+        ],
+        [
+          0.171,
+          0.675
+        ],
+        [
+          0.114,
+          0.636
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/module-western-light-seam.svg",
+      "source_binding_ids": [
+        "binding-module-western-light-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          330,
+          530
+        ],
+        "safe_stage_window_origin_px": [
+          362,
+          554
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-nine-seconds-seed-cluster",
+      "kind": "module",
+      "label": "nine-seconds seed-cluster",
+      "artifact_type": "buried-node-array",
+      "bounds": {
+        "x": 0.4674,
+        "y": 0.2441,
+        "w": 0.0918,
+        "h": 0.2705
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.4694,
+          0.374
+        ],
+        [
+          0.4805,
+          0.3047
+        ],
+        [
+          0.4948,
+          0.2646
+        ],
+        [
+          0.5098,
+          0.2471
+        ],
+        [
+          0.5306,
+          0.2695
+        ],
+        [
+          0.5456,
+          0.3115
+        ],
+        [
+          0.5566,
+          0.3867
+        ],
+        [
+          0.5514,
+          0.459
+        ],
+        [
+          0.5345,
+          0.502
+        ],
+        [
+          0.5046,
+          0.5107
+        ],
+        [
+          0.4824,
+          0.4863
+        ],
+        [
+          0.4707,
+          0.4434
+        ],
+        [
+          0.4694,
+          0.3916
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/module-nine-seconds-seed-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-nine-seconds-seed-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          790,
+          367
+        ],
+        "safe_stage_window_origin_px": [
+          800,
+          389
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-brise-wind-lintel",
+      "kind": "module",
+      "label": "brise wind-lintel",
+      "artifact_type": "suspended-lintel",
+      "bounds": {
+        "x": 0.82,
+        "y": 0.708,
+        "w": 0.165,
+        "h": 0.248
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.854,
+          0.816
+        ],
+        [
+          0.896,
+          0.744
+        ],
+        [
+          0.961,
+          0.709
+        ],
+        [
+          0.984,
+          0.766
+        ],
+        [
+          0.982,
+          0.887
+        ],
+        [
+          0.954,
+          0.95
+        ],
+        [
+          0.892,
+          0.956
+        ],
+        [
+          0.841,
+          0.92
+        ],
+        [
+          0.82,
+          0.859
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/module-brise-wind-lintel.svg",
+      "source_binding_ids": [
+        "binding-module-brise-wind-lintel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          832
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-brise-wind-lintel-2",
+      "kind": "module",
+      "label": "brise wind-lintel",
+      "artifact_type": "suspended-lintel",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/module-brise-wind-lintel-2.svg",
+      "source_binding_ids": [
+        "binding-module-brise-wind-lintel-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-night-rest-furrow",
+      "kind": "module",
+      "label": "night-rest furrow",
+      "artifact_type": "soil-cut-channel",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "soil-halo-listening-forge",
+      "mask_path": "/editions/2026-05-03-soil-halo-listening-forge-v1/assets/masks/module-night-rest-furrow.svg",
+      "source_binding_ids": [
+        "binding-module-night-rest-furrow"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
