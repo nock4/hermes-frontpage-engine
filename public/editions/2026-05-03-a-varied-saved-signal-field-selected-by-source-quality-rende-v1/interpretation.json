@@ -1,52 +1,49 @@
 {
-  "interpretation_id": "interp-2026-04-30-minimal-signal-field-v5",
-  "edition_id": "2026-04-30-minimal-signal-field-v5",
-  "plate_read_timestamp": "2026-04-30T22:19:06.339Z",
+  "interpretation_id": "interp-2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v1",
+  "edition_id": "2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v1",
+  "plate_read_timestamp": "2026-05-03T12:26:52.436Z",
   "scene_ontology": {
     "primary": "material-native",
-    "secondary": [
-      "optical-native"
-    ],
+    "secondary": [],
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A full-bleed abstract expressionist artwork for 2026-04-30: one large open color field is crossed by a single disruptive threshold gesture. Small source-bearing interruptions sit quietly inside the field as marks, apertures, scars, cuts, line breaks, and shallow listening slits. Keep the plate mostly empty, with one low oblique light and a restrained palette. It should feel like a nonliteral physical field prepared for discovery, not a room full of objects, a realistic scene, or a software glass plate.",
+    "summary": "A full-bleed artwork for 2026-05-03 derived from the current research field. The model autoresearch pass failed, so the runner fell back to deterministic channel-balanced source ranking. Let the composition follow a block-based structure with mixed geometry and a bright brightness profile. let the strongest source-image colors stay saturated and visible rather than muting them follow the source set toward even, open illumination unless the evidence clearly calls for drama let density expand where the sources support it; keep enough breathing room for interaction targets Embed source-bearing anchors as visible forms that belong naturally to the scene rather than as a literal object inventory or interface mockup.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "quiet abstract expressionist source field with restrained media weather",
-      "A full-bleed abstract expressionist artwork for 2026-04-30: one large open color field is crossed by a single disruptive threshold gesture. Small source-bearing interruptions sit quietly inside the field as marks, apertures, scars, cuts, line breaks, and shallow listening slits. Keep the plate mostly empty, with one low oblique light and a restrained palette. It should feel like a nonliteral physical field prepared for discovery, not a room full of objects, a realistic scene, or a software glass plate.",
+      "bright block-based source field shaped by current research",
+      "A full-bleed artwork for 2026-05-03 derived from the current research field. The model autoresearch pass failed, so the runner fell back to deterministic channel-balanced source ranking. Let the composition follow a block-based structure with mixed geometry and a bright brightness profile. let the strongest source-image colors stay saturated and visible rather than muting them follow the source set toward even, open illumination unless the evidence clearly calls for drama let density expand where the sources support it; keep enough breathing room for interaction targets Embed source-bearing anchors as visible forms that belong naturally to the scene rather than as a literal object inventory or interface mockup.",
       "https",
-      "com",
-      "bandcamp"
+      "bandcamp",
+      "youtube"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "Dominant Threshold Interruption",
-      "Secondary Shadow Scar",
-      "Metallic Listening Mark",
-      "Edge Source Cut",
-      "Source Pathway Plaque",
-      "Thin Media Slit",
-      "Lower Field Tick",
-      "Small Glass Scar"
+      "Primary Source Anchor",
+      "Secondary Source Anchor",
+      "Signal Panel",
+      "Color Node",
+      "Field Marker",
+      "Edge Detail",
+      "Layered Fragment",
+      "Reference Plaque"
     ],
     "dominant_surfaces": [
-      "paper",
-      "glass",
-      "paint"
+      "paint",
+      "light-band"
     ],
     "dominant_structures": [
-      "minimal-signal-field",
-      "large quiet color field",
-      "single disruptive threshold gesture",
-      "small source-bearing interruptions",
-      "thin listening slits",
-      "edge scars",
-      "tiny source apertures",
-      "low metallic ticks"
+      "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "multiple clusters or panels if the evidence supports them",
+      "derive anchor scale and loudness from the source field; some anchors can be bold islands while others remain embedded details",
+      "mixed geometry",
+      "block-based composition",
+      "Into the Light cover art",
+      "https",
+      "bandcamp"
     ],
     "negative_space_regions": []
   },
@@ -61,16 +58,16 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: minimal-signal-field.",
+      "Primary ontology inferred from scene family and artifact types: a-varied-saved-signal-field-selected-by-source-quality-rende.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-dominant-threshold-interruption",
+      "id": "hero-primary-source-anchor",
       "kind": "hero",
-      "type": "dominant-threshold-interruption",
-      "strength": 0.95,
+      "type": "primary-source-anchor",
+      "strength": 0.99,
       "bounds": {
         "x": 0.08,
         "y": 0.1,
@@ -78,15 +75,15 @@
         "h": 0.32
       },
       "supports": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "hero-secondary-shadow-scar",
+      "id": "hero-secondary-source-anchor",
       "kind": "hero",
-      "type": "secondary-shadow-scar",
-      "strength": 0.9199999999999999,
+      "type": "secondary-source-anchor",
+      "strength": 0.99,
       "bounds": {
         "x": 0.58,
         "y": 0.12,
@@ -94,15 +91,15 @@
         "h": 0.32
       },
       "supports": [
-        "screen-rendered-html",
-        "threshold-scan-reveal"
+        "paint-bleed-reveal",
+        "restoration-scan"
       ]
     },
     {
-      "id": "module-metallic-listening-mark",
+      "id": "module-signal-panel",
       "kind": "module",
-      "type": "metallic-listening-mark",
-      "strength": 0.72,
+      "type": "signal-panel",
+      "strength": 0.789084,
       "bounds": {
         "x": 0.08,
         "y": 0.52,
@@ -110,15 +107,15 @@
         "h": 0.22
       },
       "supports": [
-        "screen-rendered-html",
-        "threshold-scan-reveal"
+        "threshold-scan-reveal",
+        "restoration-scan"
       ]
     },
     {
-      "id": "module-edge-source-cut",
+      "id": "module-color-node",
       "kind": "module",
-      "type": "edge-source-cut",
-      "strength": 0.6900000000000001,
+      "type": "color-node",
+      "strength": 0.756492,
       "bounds": {
         "x": 0.34,
         "y": 0.54,
@@ -131,10 +128,10 @@
       ]
     },
     {
-      "id": "module-source-pathway-plaque",
+      "id": "module-field-marker",
       "kind": "module",
-      "type": "pathway-plaque",
-      "strength": 0.66,
+      "type": "field-marker",
+      "strength": 0.729708,
       "bounds": {
         "x": 0.62,
         "y": 0.54,
@@ -147,10 +144,10 @@
       ]
     },
     {
-      "id": "module-thin-media-slit",
+      "id": "module-edge-detail",
       "kind": "module",
-      "type": "thin-media-slit",
-      "strength": 0.63,
+      "type": "edge-detail",
+      "strength": 0.703164,
       "bounds": {
         "x": 0.1,
         "y": 0.78,
@@ -163,10 +160,10 @@
       ]
     },
     {
-      "id": "module-lower-field-tick",
+      "id": "module-layered-fragment",
       "kind": "module",
-      "type": "lower-field-tick",
-      "strength": 0.6000000000000001,
+      "type": "layered-fragment",
+      "strength": 0.6668280000000001,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
@@ -179,10 +176,10 @@
       ]
     },
     {
-      "id": "module-small-glass-scar",
+      "id": "module-reference-plaque",
       "kind": "module",
-      "type": "small-glass-scar",
-      "strength": 0.58,
+      "type": "reference-plaque",
+      "strength": 0.648064,
       "bounds": {
         "x": 0.72,
         "y": 0.76,
@@ -190,15 +187,15 @@
         "h": 0.16
       },
       "supports": [
-        "screen-rendered-html",
-        "threshold-scan-reveal"
+        "threshold-scan-reveal",
+        "restoration-scan"
       ]
     },
     {
-      "id": "module-paper-cut-anchor",
+      "id": "module-distributed-marker",
       "kind": "module",
-      "type": "paper-cut-anchor",
-      "strength": 0.58,
+      "type": "distributed-marker",
+      "strength": 0.662752,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -214,8 +211,8 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-dominant-threshold-interruption-surface",
-      "surface_type": "paint",
+      "id": "hero-primary-source-anchor-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
         "x": 0.08,
@@ -225,13 +222,13 @@
       },
       "suitability": 0.9,
       "supported_treatments": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "hero-secondary-shadow-scar-surface",
-      "surface_type": "glass",
+      "id": "hero-secondary-source-anchor-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
         "x": 0.58,
@@ -241,13 +238,13 @@
       },
       "suitability": 0.9,
       "supported_treatments": [
-        "screen-rendered-html",
-        "threshold-scan-reveal"
+        "paint-bleed-reveal",
+        "restoration-scan"
       ]
     },
     {
-      "id": "module-metallic-listening-mark-surface",
-      "surface_type": "glass",
+      "id": "module-signal-panel-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.08,
@@ -257,13 +254,13 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "screen-rendered-html",
-        "threshold-scan-reveal"
+        "threshold-scan-reveal",
+        "restoration-scan"
       ]
     },
     {
-      "id": "module-edge-source-cut-surface",
-      "surface_type": "paper",
+      "id": "module-color-node-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.34,
@@ -278,7 +275,7 @@
       ]
     },
     {
-      "id": "module-source-pathway-plaque-surface",
+      "id": "module-field-marker-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -294,7 +291,7 @@
       ]
     },
     {
-      "id": "module-thin-media-slit-surface",
+      "id": "module-edge-detail-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -310,7 +307,7 @@
       ]
     },
     {
-      "id": "module-lower-field-tick-surface",
+      "id": "module-layered-fragment-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -326,8 +323,8 @@
       ]
     },
     {
-      "id": "module-small-glass-scar-surface",
-      "surface_type": "glass",
+      "id": "module-reference-plaque-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.72,
@@ -337,13 +334,13 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "screen-rendered-html",
-        "threshold-scan-reveal"
+        "threshold-scan-reveal",
+        "restoration-scan"
       ]
     },
     {
-      "id": "module-paper-cut-anchor-surface",
-      "surface_type": "paper",
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.28,

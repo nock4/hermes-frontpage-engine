@@ -1,0 +1,303 @@
+{
+  "analysis_id": "analysis-2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v1",
+  "inspection_mode": "planned-artifact-fallback",
+  "inspection_error": "OpenAI Responses API failed (429): {\"error\":{\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.\",\"type\":\"insufficient_quota\",\"param\":null,\"code\":\"insufficient_quota\"}}",
+  "scene_summary": "A full-bleed artwork for 2026-05-03 derived from the current research field. The model autoresearch pass failed, so the runner fell back to deterministic channel-balanced source ranking. Let the composition follow a block-based structure with mixed geometry and a bright brightness profile. let the strongest source-image colors stay saturated and visible rather than muting them follow the source set toward even, open illumination unless the evidence clearly calls for drama let density expand where the sources support it; keep enough breathing room for interaction targets Embed source-bearing anchors as visible forms that belong naturally to the scene rather than as a literal object inventory or interface mockup.",
+  "usable_surfaces": [
+    "Into the Light cover art",
+    "https",
+    "bandcamp",
+    "youtube",
+    "watch"
+  ],
+  "detected_objects": [
+    {
+      "label": "Primary Source Anchor",
+      "artifact_type": "primary-source-anchor",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.1,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "polygon": [
+        [
+          0.08,
+          0.1
+        ],
+        [
+          0.4,
+          0.1
+        ],
+        [
+          0.4,
+          0.42
+        ],
+        [
+          0.08,
+          0.42
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "secondary-source-anchor",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.58,
+        "y": 0.12,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "polygon": [
+        [
+          0.58,
+          0.12
+        ],
+        [
+          0.9,
+          0.12
+        ],
+        [
+          0.9,
+          0.44
+        ],
+        [
+          0.58,
+          0.44
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.08,
+          0.52
+        ],
+        [
+          0.3,
+          0.52
+        ],
+        [
+          0.3,
+          0.74
+        ],
+        [
+          0.08,
+          0.74
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.563,
+    "rationale": "Fallback geometry cannot verify the plate complexity directly."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v1"
+}
