@@ -16,8 +16,8 @@ function parseArgs(argv) {
     branch: 'main',
     remote: 'origin',
     remoteUrl: remoteManifestUrl,
-    retries: 5,
-    retryDelayMs: 5000,
+    retries: 18,
+    retryDelayMs: 10000,
   }
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -108,17 +108,21 @@ async function ensureNodeModulesLink(worktreeDir) {
 async function ensureWorktree({ worktreeDir, remote, branch }) {
   await run('git', ['fetch', remote, branch, '--prune'], { cwd: primaryRoot })
 
-  const worktreeGitDir = path.join(worktreeDir, '.git')
-  if (!(await exists(worktreeGitDir))) {
-    if (await exists(worktreeDir)) {
-      await fs.rm(worktreeDir, { recursive: true, force: true })
-    }
-    await run('git', ['worktree', 'add', '--force', '--detach', worktreeDir, `${remote}/${branch}`], { cwd: primaryRoot })
+  const removeResult = await run('git', ['worktree', 'remove', '--force', worktreeDir], {
+    cwd: primaryRoot,
+    capture: true,
+    allowFailure: true,
+  })
+  if (removeResult.code !== 0 && await exists(worktreeDir)) {
+    await fs.rm(worktreeDir, { recursive: true, force: true })
+  }
+  if (await exists(worktreeDir)) {
+    await fs.rm(worktreeDir, { recursive: true, force: true })
   }
 
+  await run('git', ['worktree', 'add', '--force', '--detach', worktreeDir, `${remote}/${branch}`], { cwd: primaryRoot })
   await ensureNodeModulesLink(worktreeDir)
   await run('git', ['fetch', remote, branch, '--prune'], { cwd: worktreeDir })
-  await run('git', ['checkout', '--detach', `${remote}/${branch}`], { cwd: worktreeDir })
   await run('git', ['reset', '--hard', `${remote}/${branch}`], { cwd: worktreeDir })
   await run('git', ['clean', '-fdx', '-e', 'node_modules'], { cwd: worktreeDir })
 }
@@ -251,6 +255,7 @@ async function main() {
     await run('npm', ['run', 'daily:process', '--', '--input-mode', 'obsidian-allowlist', '--input-root', options.inputRoot, '--publish'], {
       cwd: options.worktreeDir,
     })
+    await fs.rm(path.join(options.worktreeDir, 'vite.config.d.ts'), { force: true })
     await run('npm', ['run', 'qa:publish'], { cwd: options.worktreeDir })
 
     const manifest = await readJson(path.join(options.worktreeDir, 'public', 'editions', 'index.json'))
