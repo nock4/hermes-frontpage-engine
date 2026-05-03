@@ -1,0 +1,435 @@
+{
+  "artifact_map_id": "map-2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+  "default_artifact_id": "hero-primary-source-anchor",
+  "artifacts": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "label": "Primary Source Anchor",
+      "artifact_type": "primary-source-anchor",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.1,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.08,
+          0.1
+        ],
+        [
+          0.4,
+          0.1
+        ],
+        [
+          0.4,
+          0.42
+        ],
+        [
+          0.08,
+          0.42
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/hero-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          369,
+          240
+        ],
+        "safe_stage_window_origin_px": [
+          408,
+          266
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "label": "Secondary Source Anchor",
+      "artifact_type": "secondary-source-anchor",
+      "bounds": {
+        "x": 0.58,
+        "y": 0.12,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.58,
+          0.12
+        ],
+        [
+          0.9,
+          0.12
+        ],
+        [
+          0.9,
+          0.44
+        ],
+        [
+          0.58,
+          0.44
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/hero-secondary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-secondary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1137,
+          261
+        ],
+        "safe_stage_window_origin_px": [
+          1176,
+          287
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.08,
+          0.52
+        ],
+        [
+          0.3,
+          0.52
+        ],
+        [
+          0.3,
+          0.74
+        ],
+        [
+          0.08,
+          0.74
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          627
+        ],
+        "safe_stage_window_origin_px": [
+          319,
+          645
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          691,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          718,
+          666
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "a-varied-saved-signal-field-selected-by-source-quality-rende",
+      "mask_path": "/editions/2026-05-03-a-varied-saved-signal-field-selected-by-source-quality-rende-v5/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
