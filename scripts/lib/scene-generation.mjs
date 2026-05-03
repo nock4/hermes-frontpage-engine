@@ -75,7 +75,7 @@ export async function composeDailyPayload(
       `Use ${minContentItems} to ${maxContentItems} artifacts total; ${targetContentItems} is ideal when enough source material is available.`,
       'Use each supplied source URL at most once. Do not create multiple artifacts for the same article, post, redirect target, image, or source page.',
       'Prefer a mix of source types, domains, notes, media, and visual roles over several pieces from the same source cluster.',
-      'Write source artifact labels as quiet visible anchor names, not raw filenames or URLs.',
+      'Write source artifact labels as internal metadata only. Do not ask for filenames, taxonomy terms, or explicit visible label text in the generated image.',
       'Artifacts are clickable anchors, not a requirement for equal visual weight. Their scale and loudness should follow the inferred visual direction for this source field.',
     ],
     inferred_visual_direction: visualDirection,
@@ -141,7 +141,7 @@ export async function composeDailyPayload(
     diversityDirective,
     'Use inferred_visual_direction as the primary aesthetic guide. Do not revert to a fixed house style.',
     'Let the visual reference influence composition structure, geometry, layering, density, palette, and atmosphere when present; do not depict or copy its subject.',
-    'Keep technical source concepts out of the scene_prompt except as short visible labels when necessary.',
+    'Never include legible words, interface labels, filenames, artifact taxonomy, or alphanumeric callouts inside the finished image.',
     'Avoid desks, dashboards, generic software UI, empty landing-page layout, source-summary cards, crowded archives, cabinets, shelves, realistic props, literal objects, and implementation language unless the research field clearly demands them.',
   ].join(' ')
   const responseInput = visualReference
@@ -207,7 +207,7 @@ export async function generateScenePlate(
   runDir,
   { writeJson },
 ) {
-  const prompt = imagePrompt(payload)
+  const prompt = buildSceneImagePrompt(payload)
   const outputPath = path.join(runDir, 'plate.png')
   await fs.writeFile(path.join(runDir, 'scene-prompt.txt'), prompt, 'utf8')
 
@@ -538,8 +538,27 @@ function repairArtifactType(type, index) {
   ][index] || 'source-artifact'
 }
 
-function imagePrompt(payload) {
+function describeArtifactForImagePrompt(artifact, index) {
+  const role = String(artifact?.role || '').toLowerCase()
+  if (role.includes('hero')) {
+    return index === 0
+      ? 'one dominant hero-scale source-bearing anchor integrated as a natural form'
+      : 'one secondary hero-scale source-bearing anchor integrated as a natural form'
+  }
+  return [
+    'one quiet embedded source-bearing mark',
+    'one small color accent or node-like interruption',
+    'one subtle edge-bound trace or seam',
+    'one layered fragment or plaque-like remnant',
+    'one distributed cluster of small marks',
+  ][Math.max(0, index - 2) % 5]
+}
+
+export function buildSceneImagePrompt(payload) {
   const visualDirection = payload.visual_direction || {}
+  const artifactLines = (Array.isArray(payload.artifacts) ? payload.artifacts : [])
+    .map((artifact, index) => `${index + 1}. ${describeArtifactForImagePrompt(artifact, index)}`)
+    .join('\n')
   return [
     'Create one finished, full-bleed scene image from this art direction.',
     '',
@@ -547,7 +566,7 @@ function imagePrompt(payload) {
     payload.scene_prompt,
     '',
     'Visible source anchors to embed:',
-    payload.artifacts.map((artifact, index) => `${index + 1}. ${artifact.label}: ${artifact.artifact_type}`).join('\n'),
+    artifactLines,
     '',
     'Inferred visual direction:',
     `Evidence summary: ${visualDirection.evidence_summary || payload.mood}`,
@@ -565,8 +584,9 @@ function imagePrompt(payload) {
     '- Let the visual reference influence composition structure, geometry, layering, palette, and atmosphere when present; do not depict or copy its subject.',
     '- Integrate listed anchors as forms that belong naturally inside the scene, not as a dense equal-weight inventory.',
     `- Use source-led anchor forms such as ${sceneStructurePolicy.sourceMarkVocabulary.join(', ')} when they fit the evidence.`,
+    '- No legible text, words, typography, interface labels, alphanumeric codes, filenames, or caption-like callouts anywhere in the artwork.',
     '- Avoid browser chrome, UI widgets, dashboard cards, floating app panels, chat interfaces, generic software screenshots, empty landing-page composition, shelves, cabinets, realistic furniture, literal props, and crowded archive walls unless the source field clearly demands them.',
-    '- Do not include explanatory diagrams unless they are sparse physical drawings, labels, or inscriptions already justified by the source field.',
+    '- Do not include explanatory diagrams unless they are sparse physical drawings already justified by the source field.',
     '',
     `Avoid: ${payload.negative_constraints.join(', ')}`,
   ].join('\n')
