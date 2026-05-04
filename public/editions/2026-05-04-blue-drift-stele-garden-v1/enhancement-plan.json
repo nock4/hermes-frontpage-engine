@@ -1,0 +1,233 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-04-blue-drift-stele-garden-v1",
+  "edition_id": "2026-05-04-blue-drift-stele-garden-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-04-blue-drift-stele-garden-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "screen-rendered-html",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-primary-dusk-stele-inset",
+      "target_kind": "artifact",
+      "artifact_id": "hero-primary-dusk-stele-inset",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (framed-stele-panel) selected from interpretation."
+    },
+    {
+      "target_id": "hero-profile-glass-vitrine",
+      "target_kind": "artifact",
+      "artifact_id": "hero-profile-glass-vitrine",
+      "priority": 2,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (circular-ring-medallion) selected from interpretation."
+    },
+    {
+      "target_id": "module-dance-rhythm-fringe",
+      "target_kind": "artifact",
+      "artifact_id": "module-dance-rhythm-fringe",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (reed-fringe-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-blue-nocturne-horizon-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-blue-nocturne-horizon-strip",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (low-horizon-band) selected from interpretation."
+    },
+    {
+      "target_id": "module-archive-moss-plate",
+      "target_kind": "artifact",
+      "artifact_id": "module-archive-moss-plate",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (patinated-rect-plate) selected from interpretation."
+    },
+    {
+      "target_id": "module-soft-impact-shard",
+      "target_kind": "artifact",
+      "artifact_id": "module-soft-impact-shard",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bone-white-shard) selected from interpretation."
+    },
+    {
+      "target_id": "module-innocence-veil-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-innocence-veil-strip",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-edge-ribbon) selected from interpretation."
+    },
+    {
+      "target_id": "module-sentiment-basin-trace",
+      "target_kind": "artifact",
+      "artifact_id": "module-sentiment-basin-trace",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (watermark-basin) selected from interpretation."
+    },
+    {
+      "target_id": "module-pressure-notch-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-pressure-notch-marker",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (carved-notch-marker) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

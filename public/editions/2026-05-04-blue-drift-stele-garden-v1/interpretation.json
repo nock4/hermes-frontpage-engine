@@ -1,0 +1,384 @@
+{
+  "interpretation_id": "interp-2026-05-04-blue-drift-stele-garden-v1",
+  "edition_id": "2026-05-04-blue-drift-stele-garden-v1",
+  "plate_read_timestamp": "2026-05-04T08:24:15.109Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Dark expressionist shrine-like plate with a tall central stele, a circular wood-ring medallion, a lower tarnished plate, pinned narrow strips, a pale shard near the base, foreground basin stones, reed-like fringe, and a dim blue-gray horizon band at left. The image is sparse but weathered, with a few strong source-bearing anchors and textured distressing rather than dense clutter.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "Austere, devotional, wind-shaped, and quietly ecological",
+      "Dark expressionist shrine-like plate with a tall central stele, a circular wood-ring medallion, a lower tarnished plate, pinned narrow strips, a pale shard near the base, foreground basin stones, reed-like fringe, and a dim blue-gray horizon band at left. The image is sparse but weathered, with a few strong source-bearing anchors and textured distressing rather than dense clutter.",
+      "twilight-stela",
+      "olive-weathering",
+      "ritual-listening"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "primary dusk stele inset",
+      "Profile Glass Vitrine",
+      "dance-rhythm fringe",
+      "blue-nocturne horizon strip",
+      "archive-moss plate",
+      "soft-impact shard",
+      "innocence veil strip",
+      "sentiment basin trace"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "water",
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "blue-drift-stele-garden",
+      "one totemic vertical stele with inset specimen panel",
+      "a low offering band of irregular source-bearing fragments",
+      "wind-tilted boundary reeds or branch traces",
+      "shallow ground haze and blue drift",
+      "framed print-like apertures embedded in the landscape",
+      "central stele face",
+      "upper circular medallion"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: blue-drift-stele-garden.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-dusk-stele-inset",
+      "kind": "hero",
+      "type": "framed-stele-panel",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.3626,
+        "y": 0.0205,
+        "w": 0.2773,
+        "h": 0.6445
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-profile-glass-vitrine",
+      "kind": "hero",
+      "type": "circular-ring-medallion",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.405,
+        "y": 0.14,
+        "w": 0.193,
+        "h": 0.28
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-dance-rhythm-fringe",
+      "kind": "module",
+      "type": "reed-fringe-cluster",
+      "strength": 0.773076,
+      "bounds": {
+        "x": 0.418,
+        "y": 0.5264,
+        "w": 0.4642,
+        "h": 0.4473
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-blue-nocturne-horizon-strip",
+      "kind": "module",
+      "type": "low-horizon-band",
+      "strength": 0.75936,
+      "bounds": {
+        "x": 0,
+        "y": 0.5762,
+        "w": 0.2826,
+        "h": 0.1475
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-archive-moss-plate",
+      "kind": "module",
+      "type": "patinated-rect-plate",
+      "strength": 0.72858,
+      "bounds": {
+        "x": 0.4375,
+        "y": 0.6064,
+        "w": 0.125,
+        "h": 0.1074
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-soft-impact-shard",
+      "kind": "module",
+      "type": "bone-white-shard",
+      "strength": 0.694344,
+      "bounds": {
+        "x": 0.528,
+        "y": 0.7266,
+        "w": 0.0944,
+        "h": 0.1865
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-innocence-veil-strip",
+      "kind": "module",
+      "type": "translucent-edge-ribbon",
+      "strength": 0.6717600000000001,
+      "bounds": {
+        "x": 0.57,
+        "y": 0.38,
+        "w": 0.04,
+        "h": 0.26
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sentiment-basin-trace",
+      "kind": "module",
+      "type": "watermark-basin",
+      "strength": 0.6540039999999999,
+      "bounds": {
+        "x": 0.45,
+        "y": 0.87,
+        "w": 0.08,
+        "h": 0.09
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pressure-notch-marker",
+      "kind": "module",
+      "type": "carved-notch-marker",
+      "strength": 0.6533559999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-dusk-stele-inset-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3626,
+        "y": 0.0205,
+        "w": 0.2773,
+        "h": 0.6445
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-profile-glass-vitrine-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.405,
+        "y": 0.14,
+        "w": 0.193,
+        "h": 0.28
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-dance-rhythm-fringe-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.418,
+        "y": 0.5264,
+        "w": 0.4642,
+        "h": 0.4473
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-blue-nocturne-horizon-strip-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.5762,
+        "w": 0.2826,
+        "h": 0.1475
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-archive-moss-plate-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4375,
+        "y": 0.6064,
+        "w": 0.125,
+        "h": 0.1074
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-soft-impact-shard-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.528,
+        "y": 0.7266,
+        "w": 0.0944,
+        "h": 0.1865
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-innocence-veil-strip-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.57,
+        "y": 0.38,
+        "w": 0.04,
+        "h": 0.26
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sentiment-basin-trace-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.45,
+        "y": 0.87,
+        "w": 0.08,
+        "h": 0.09
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pressure-notch-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

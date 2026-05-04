@@ -1,0 +1,480 @@
+{
+  "analysis_id": "analysis-2026-05-04-blue-drift-stele-garden-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Dark expressionist shrine-like plate with a tall central stele, a circular wood-ring medallion, a lower tarnished plate, pinned narrow strips, a pale shard near the base, foreground basin stones, reed-like fringe, and a dim blue-gray horizon band at left. The image is sparse but weathered, with a few strong source-bearing anchors and textured distressing rather than dense clutter.",
+  "usable_surfaces": [
+    "central stele face",
+    "upper circular medallion",
+    "lower tarnished plate",
+    "narrow pinned strip",
+    "pale shard fragment",
+    "base basin stone",
+    "left horizon band",
+    "reed fringe cluster",
+    "small pin marker"
+  ],
+  "detected_objects": [
+    {
+      "label": "primary dusk stele inset",
+      "artifact_type": "framed-stele-panel",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.365,
+        "y": 0.02,
+        "w": 0.275,
+        "h": 0.9
+      },
+      "polygon": [
+        [
+          0.375,
+          0.92
+        ],
+        [
+          0.365,
+          0.17
+        ],
+        [
+          0.382,
+          0.11
+        ],
+        [
+          0.405,
+          0.08
+        ],
+        [
+          0.5,
+          0.02
+        ],
+        [
+          0.595,
+          0.08
+        ],
+        [
+          0.618,
+          0.12
+        ],
+        [
+          0.635,
+          0.18
+        ],
+        [
+          0.64,
+          0.92
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "Dominant tall central shrine-like panel with chipped pale border, pointed arch top, and dark weathered interior surface."
+    },
+    {
+      "label": "Profile Glass Vitrine",
+      "artifact_type": "circular-ring-medallion",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.405,
+        "y": 0.14,
+        "w": 0.193,
+        "h": 0.28
+      },
+      "polygon": [
+        [
+          0.502,
+          0.14
+        ],
+        [
+          0.545,
+          0.155
+        ],
+        [
+          0.578,
+          0.2
+        ],
+        [
+          0.598,
+          0.27
+        ],
+        [
+          0.585,
+          0.36
+        ],
+        [
+          0.548,
+          0.4
+        ],
+        [
+          0.502,
+          0.42
+        ],
+        [
+          0.452,
+          0.4
+        ],
+        [
+          0.42,
+          0.35
+        ],
+        [
+          0.405,
+          0.27
+        ],
+        [
+          0.42,
+          0.19
+        ],
+        [
+          0.455,
+          0.155
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "Large circular inset near upper center with concentric wood-ring texture and radial cracking, reading as a distinct display surface."
+    },
+    {
+      "label": "dance-rhythm fringe",
+      "artifact_type": "reed-fringe-cluster",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.53,
+        "w": 0.46,
+        "h": 0.44
+      },
+      "polygon": [
+        [
+          0.42,
+          0.95
+        ],
+        [
+          0.435,
+          0.86
+        ],
+        [
+          0.45,
+          0.75
+        ],
+        [
+          0.5,
+          0.63
+        ],
+        [
+          0.56,
+          0.58
+        ],
+        [
+          0.72,
+          0.53
+        ],
+        [
+          0.81,
+          0.58
+        ],
+        [
+          0.86,
+          0.68
+        ],
+        [
+          0.88,
+          0.82
+        ],
+        [
+          0.88,
+          0.92
+        ],
+        [
+          0.8,
+          0.96
+        ],
+        [
+          0.66,
+          0.97
+        ],
+        [
+          0.5,
+          0.97
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "Dense bundle of thin dry stems and reeds crossing the lower center and lower right foreground, forming a rhythmic fringe of repeated lines."
+    },
+    {
+      "label": "blue-nocturne horizon strip",
+      "artifact_type": "low-horizon-band",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.58,
+        "w": 0.28,
+        "h": 0.14
+      },
+      "polygon": [
+        [
+          0,
+          0.66
+        ],
+        [
+          0.03,
+          0.63
+        ],
+        [
+          0.08,
+          0.6
+        ],
+        [
+          0.16,
+          0.58
+        ],
+        [
+          0.24,
+          0.59
+        ],
+        [
+          0.28,
+          0.62
+        ],
+        [
+          0.28,
+          0.68
+        ],
+        [
+          0.22,
+          0.71
+        ],
+        [
+          0.12,
+          0.72
+        ],
+        [
+          0.04,
+          0.71
+        ],
+        [
+          0,
+          0.7
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Thin dim blue-gray illuminated horizon band at the left background beneath the dark sky and above the marsh edge."
+    },
+    {
+      "label": "archive-moss plate",
+      "artifact_type": "patinated-rect-plate",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.44,
+        "y": 0.61,
+        "w": 0.12,
+        "h": 0.1
+      },
+      "polygon": [
+        [
+          0.44,
+          0.615
+        ],
+        [
+          0.5,
+          0.61
+        ],
+        [
+          0.56,
+          0.615
+        ],
+        [
+          0.558,
+          0.71
+        ],
+        [
+          0.442,
+          0.71
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "Small horizontal tarnished brass-like plate below the lower circle, with visible weathering and dark corner fastener dots."
+    },
+    {
+      "label": "soft-impact shard",
+      "artifact_type": "bone-white-shard",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.53,
+        "y": 0.73,
+        "w": 0.09,
+        "h": 0.18
+      },
+      "polygon": [
+        [
+          0.54,
+          0.91
+        ],
+        [
+          0.532,
+          0.85
+        ],
+        [
+          0.53,
+          0.8
+        ],
+        [
+          0.548,
+          0.75
+        ],
+        [
+          0.565,
+          0.73
+        ],
+        [
+          0.603,
+          0.74
+        ],
+        [
+          0.618,
+          0.79
+        ],
+        [
+          0.62,
+          0.89
+        ],
+        [
+          0.585,
+          0.91
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "Irregular pale fragment inset at the lower right of the stele face with broken edges and faint etched organic lines."
+    },
+    {
+      "label": "innocence veil strip",
+      "artifact_type": "translucent-edge-ribbon",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.57,
+        "y": 0.38,
+        "w": 0.04,
+        "h": 0.26
+      },
+      "polygon": [
+        [
+          0.58,
+          0.38
+        ],
+        [
+          0.595,
+          0.382
+        ],
+        [
+          0.61,
+          0.39
+        ],
+        [
+          0.607,
+          0.52
+        ],
+        [
+          0.6,
+          0.64
+        ],
+        [
+          0.575,
+          0.64
+        ],
+        [
+          0.57,
+          0.5
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "Narrow pale vertical hanging strip along the right interior of the stele, carrying dark marks and pinned by a small reddish fastener."
+    },
+    {
+      "label": "sentiment basin trace",
+      "artifact_type": "watermark-basin",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.45,
+        "y": 0.87,
+        "w": 0.08,
+        "h": 0.09
+      },
+      "polygon": [
+        [
+          0.46,
+          0.94
+        ],
+        [
+          0.45,
+          0.9
+        ],
+        [
+          0.47,
+          0.875
+        ],
+        [
+          0.5,
+          0.87
+        ],
+        [
+          0.525,
+          0.885
+        ],
+        [
+          0.53,
+          0.92
+        ],
+        [
+          0.515,
+          0.95
+        ],
+        [
+          0.49,
+          0.96
+        ],
+        [
+          0.47,
+          0.958
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Low rounded bowl-like stone or basin form at the base center foreground with a subtle rim and shallow depression."
+    },
+    {
+      "label": "pressure-notch marker",
+      "artifact_type": "carved-notch-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 5,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.589,
+    "rationale": "One dominant stele and a few clear inset forms organize the plate. Weathering and reeds add texture, but the scene still reads as sparse and expressionist rather than cluttered."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-05-04-blue-drift-stele-garden-v1"
+}
