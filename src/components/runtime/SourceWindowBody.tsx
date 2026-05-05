@@ -1,9 +1,18 @@
 import { getRichPreviewModel } from '../../lib/richPreviewModel'
-import { sanitizeSourceImageUrl } from '../../lib/sourceUrl'
 import { getYouTubeThumbnailUrl } from '../../lib/sourceWindowContent'
 import { getTweetEmbedSrcDoc, TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
 import type { ArtifactRecord, SourceBindingRecord } from '../../types/runtime'
 import type { SourceWindowDescriptor } from '../../types/sourceWindows'
+import {
+  getUsableSourceImageUrl,
+  shouldUseLightTableEnhancement,
+  shouldUseMechanicalRevealEnhancement,
+  shouldUseScannerDecodeEnhancement,
+  shouldUseScreenRenderedEnhancement,
+  shouldUseWarpedPaperEnhancement,
+  usesArchiveImagePreview,
+  usesGhostReflectionTreatment,
+} from './sourceWindowShared'
 import type { RichPreviewModel, SourceWindowMode, SourceWindowSurface, SourceWindowSurfaceProfile } from './sourceWindowShared'
 
 interface SourceWindowBodyProps {
@@ -15,7 +24,6 @@ interface SourceWindowBodyProps {
   surface: SourceWindowSurface
   artifact?: ArtifactRecord | null
   enhancementTechniques?: string[]
-  onPreviewAction?: () => void
 }
 
 function isRootSourceUrl(sourceUrl: string | null | undefined) {
@@ -36,98 +44,69 @@ function getSocialBodyCopy(binding: SourceBindingRecord, descriptor: SourceWindo
   return `Open the original post on ${descriptor.platformLabel}.`
 }
 
-function isLowValueSourceImage(imageUrl: string | null | undefined) {
-  if (!imageUrl) return true
+function getSourceHostLabel(sourceUrl: string | null | undefined) {
+  if (!sourceUrl) return null
 
   try {
-    const parsed = new URL(imageUrl)
-    const path = `${parsed.hostname}${parsed.pathname}`.toLowerCase()
-    return parsed.hostname === 'abs.twimg.com'
-      || path.includes('profile_images')
-      || path.includes('profile_pic')
-      || path.includes('profile-picture')
-      || path.includes('/profile/')
-      || path.includes('s100x100')
-      || path.includes('favicon')
-      || path.includes('apple-touch-icon')
-      || path.includes('site-icon')
-      || path.includes('wordmark')
-      || path.includes('templatethumbnail')
-      || path.includes('/logo')
-      || /(?:^|[/_\-.])icon(?:[/_\-.]|$)/.test(path)
-      || /\.ico(?:$|[?#])/.test(path)
-      || /\.svg(?:$|[?#])/.test(path)
+    return new URL(sourceUrl).hostname.replace(/^www\./, '')
   } catch {
-    const lower = imageUrl.toLowerCase()
-    return lower.includes('abs.twimg.com')
-      || lower.includes('profile_images')
-      || lower.includes('profile_pic')
-      || lower.includes('profile-picture')
-      || lower.includes('/profile/')
-      || lower.includes('s100x100')
-      || lower.includes('favicon')
-      || lower.includes('apple-touch-icon')
-      || lower.includes('site-icon')
-      || lower.includes('wordmark')
-      || lower.includes('templatethumbnail')
-      || lower.includes('/logo')
-      || /(?:^|[/_\-.])icon(?:[/_\-.]|$)/.test(lower)
-      || /\.ico(?:$|[?#])/.test(lower)
-      || /\.svg(?:$|[?#])/.test(lower)
+    return null
   }
 }
 
-function getUsableSourceImageUrl(binding: SourceBindingRecord) {
-  const imageUrl = sanitizeSourceImageUrl(binding.source_image_url)
-  if (!imageUrl || isLowValueSourceImage(imageUrl)) return null
-  return imageUrl
+function getScannerDecodeModeLabel(descriptor: SourceWindowDescriptor) {
+  if (descriptor.platformLabel.toLowerCase().includes('article')) return 'source trace'
+  if (descriptor.platformLabel.toLowerCase().includes('site')) return 'signal extraction'
+  if (descriptor.platformLabel.toLowerCase().includes('repo')) return 'structure readout'
+  return 'decode threshold'
 }
 
-function usesGhostReflectionTreatment(enhancementTechniques: string[]) {
-  return enhancementTechniques.includes('ghost-reflection-treatment')
+function collapseWhitespace(value: string | null | undefined) {
+  return value?.replace(/\s+/g, ' ').trim() || ''
 }
 
-function usesArchiveImagePreview(artifact: ArtifactRecord | null | undefined, enhancementTechniques: string[]) {
-  return artifact?.id === 'module-archive-cabinet' && enhancementTechniques.includes('ghost-reflection-treatment')
+function truncateLabel(value: string | null | undefined, limit: number) {
+  const normalized = collapseWhitespace(value)
+  if (!normalized) return null
+  if (normalized.length <= limit) return normalized
+  return `${normalized.slice(0, Math.max(0, limit - 1)).trimEnd()}…`
 }
 
-function artifactText(artifact: ArtifactRecord | null | undefined) {
-  if (!artifact) return ''
-  return `${artifact.id} ${artifact.label} ${artifact.artifact_type}`.toLowerCase()
+function getScannerHandle(binding: SourceBindingRecord, descriptor: SourceWindowDescriptor, sourceHost: string | null) {
+  const raw = collapseWhitespace(
+    binding.kicker
+    || ('sourceLabel' in descriptor ? descriptor.sourceLabel : '')
+    || sourceHost
+    || descriptor.platformLabel,
+  )
+  if (!raw) return descriptor.platformLabel.toUpperCase()
+  return raw.startsWith('@') ? raw : raw.toUpperCase()
 }
 
-function shouldUseScreenRenderedEnhancement(
-  surface: SourceWindowSurface,
-  mode: SourceWindowMode,
-  descriptor: SourceWindowDescriptor,
-  binding: SourceBindingRecord,
-  artifact: ArtifactRecord | null | undefined,
-  enhancementTechniques: string[],
-) {
-  if (surface !== 'stage' || mode !== 'preview') return false
-  if (descriptor.kind !== 'rich-preview') return false
-  if (enhancementTechniques.includes('screen-rendered-html')) return true
-
-  return Boolean(getUsableSourceImageUrl(binding))
-    && /(screen|monitor|cctv|display|television|video)/.test(artifactText(artifact))
+function getScannerTitle(binding: SourceBindingRecord, richPreview: RichPreviewModel, descriptor: SourceWindowDescriptor) {
+  const rawTitle = collapseWhitespace(binding.source_title || richPreview.richPreviewTitle || binding.title || descriptor.domainLabel)
+  if (!rawTitle) return descriptor.platformLabel
+  const parts = rawTitle.split(/\s[|—–-]\s/).map((part) => part.trim()).filter(Boolean)
+  const candidate = parts[parts.length - 1] || rawTitle
+  return truncateLabel(candidate, 46) || descriptor.platformLabel
 }
 
-function shouldUseWarpedPaperEnhancement(
-  surface: SourceWindowSurface,
-  mode: SourceWindowMode,
-  descriptor: SourceWindowDescriptor,
-  binding: SourceBindingRecord,
-  artifact: ArtifactRecord | null | undefined,
-  enhancementTechniques: string[],
-) {
-  if (surface !== 'stage' || mode !== 'preview' || descriptor.kind !== 'rich-preview') return false
-  if (usesArchiveImagePreview(artifact, enhancementTechniques)) return true
-  if (!enhancementTechniques.includes('warped-paper-fragment')) return false
+function getScannerExcerpt(copy: string | null | undefined) {
+  const normalized = collapseWhitespace(copy)
+  if (!normalized) return null
+  const sentence = normalized.split(/(?<=[.!?])\s+/)[0] || normalized
+  return truncateLabel(sentence, 86)
+}
 
-  const richPreview = getRichPreviewModel(binding, descriptor)
-  if (richPreview.sourceVariant === 'repo-slip') return false
-  if (richPreview.sourceVariant === 'editorial-note' && !/(map|ranking|archive|cabinet|board|placard|spread)/.test(artifactText(artifact))) return false
-  return true
+function getScannerClassLabel(panelLabel: string | null | undefined, descriptor: SourceWindowDescriptor) {
+  const normalized = collapseWhitespace(panelLabel || descriptor.platformLabel)
+  if (!normalized) return 'web source'
+  return normalized.toLowerCase()
+}
+
+function getScannerTraceCode(sourceHost: string | null, descriptor: SourceWindowDescriptor) {
+  const base = (sourceHost || descriptor.domainLabel || descriptor.platformLabel || 'signal').replace(/[^a-z0-9]/gi, '').toUpperCase()
+  return base.slice(0, 6) || 'SIGNAL'
 }
 
 function SourceImageTitleCard({
@@ -179,6 +158,9 @@ export function SourceWindowBody({
 }: SourceWindowBodyProps) {
   const usesScreenRenderedEnhancement = shouldUseScreenRenderedEnhancement(surface, mode, descriptor, binding, artifact, enhancementTechniques)
   const usesWarpedPaperEnhancement = shouldUseWarpedPaperEnhancement(surface, mode, descriptor, binding, artifact, enhancementTechniques)
+  const usesMechanicalRevealEnhancement = shouldUseMechanicalRevealEnhancement(surface, mode, descriptor, enhancementTechniques)
+  const usesLightTableEnhancement = !usesMechanicalRevealEnhancement && shouldUseLightTableEnhancement(surface, mode, descriptor, binding, artifact, enhancementTechniques)
+  const usesScannerDecodeEnhancement = !usesMechanicalRevealEnhancement && !usesLightTableEnhancement && shouldUseScannerDecodeEnhancement(surface, mode, descriptor, enhancementTechniques)
   if (descriptor.kind === 'youtube-embed') {
     return (
       <div className="source-window__body source-window__body--video">
@@ -224,6 +206,166 @@ export function SourceWindowBody({
   const visualCardTitle = binding.source_title || binding.title
   const visualCardHref = 'sourceUrl' in descriptor ? descriptor.sourceUrl : binding.source_url
   const shouldUseVisualCard = Boolean(visualCardImage) || surface === 'stage'
+
+  if (descriptor.kind === 'rich-preview' && usesMechanicalRevealEnhancement) {
+    const richPreview = richPreviewModel ?? getRichPreviewModel(binding, descriptor)
+    const panelTitle = binding.source_title || richPreview.richPreviewTitle
+    const panelImage = getUsableSourceImageUrl(binding)
+    const panelMeta = richPreview.sourceMeta || binding.source_meta || descriptor.platformLabel
+    const panelLabel = richPreview.platformPillLabel || descriptor.platformLabel
+
+    return (
+      <div className="source-window__body source-window__body--mechanical-reveal-preview">
+        <article className={`mechanical-reveal-preview mechanical-reveal-preview--font-${richPreview.fontProfile} mechanical-reveal-preview--title-treatment-${richPreview.titleTreatment} mechanical-reveal-preview--copy-${richPreview.copyProfile}${panelImage ? ' mechanical-reveal-preview--with-image' : ''}`}>
+          <div aria-hidden="true" className="mechanical-reveal-preview__mount" />
+          <div aria-hidden="true" className="mechanical-reveal-preview__guide-slot mechanical-reveal-preview__guide-slot--top" />
+          <div aria-hidden="true" className="mechanical-reveal-preview__guide-slot mechanical-reveal-preview__guide-slot--bottom" />
+          <div aria-hidden="true" className="mechanical-reveal-preview__rail mechanical-reveal-preview__rail--top" />
+          <div aria-hidden="true" className="mechanical-reveal-preview__rail mechanical-reveal-preview__rail--bottom" />
+          <div aria-hidden="true" className="mechanical-reveal-preview__hinge" />
+          <div aria-hidden="true" className="mechanical-reveal-preview__carriage-shadow" />
+          <div className="mechanical-reveal-preview__drawer-shell">
+            <div className="mechanical-reveal-preview__drawer-face">
+              <span className="mechanical-reveal-preview__handle" />
+              <span className="mechanical-reveal-preview__label">source pocket</span>
+              <span className="mechanical-reveal-preview__meta-tab">{panelLabel}</span>
+            </div>
+            <div className="mechanical-reveal-preview__drawer-interior">
+              <div className="mechanical-reveal-preview__copy">
+                <span className="mechanical-reveal-preview__eyebrow">{panelMeta}</span>
+                <strong className="mechanical-reveal-preview__title">{panelTitle}</strong>
+                <p className="mechanical-reveal-preview__excerpt">{richPreview.previewCopy}</p>
+                <span className="mechanical-reveal-preview__cue">pull open ↗</span>
+              </div>
+              {panelImage ? (
+                <figure className={`mechanical-reveal-preview__image-cutout mechanical-reveal-preview__image-cutout--${richPreview.imageTreatment}`}>
+                  <img alt={binding.source_image_alt ?? panelTitle} className="mechanical-reveal-preview__image" src={panelImage} />
+                </figure>
+              ) : null}
+            </div>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
+  if (descriptor.kind === 'rich-preview' && usesLightTableEnhancement) {
+    const richPreview = richPreviewModel ?? getRichPreviewModel(binding, descriptor)
+    const panelTitle = binding.source_title || richPreview.richPreviewTitle
+    const panelImage = getUsableSourceImageUrl(binding)
+    const panelMeta = richPreview.sourceMeta || binding.source_meta || descriptor.platformLabel
+    const panelLabel = richPreview.platformPillLabel || descriptor.platformLabel
+
+    return (
+      <div className="source-window__body source-window__body--light-table-preview">
+        <article className={`light-table-preview light-table-preview--font-${richPreview.fontProfile} light-table-preview--title-treatment-${richPreview.titleTreatment}${panelImage ? ' light-table-preview--with-image' : ''}`}>
+          <div aria-hidden="true" className="light-table-preview__glow" />
+          <div aria-hidden="true" className="light-table-preview__grid" />
+          <div className="light-table-preview__stack">
+            <section className="light-table-preview__sheet light-table-preview__sheet--back">
+              <span className="light-table-preview__sheet-label">plate</span>
+              <span className="light-table-preview__sheet-meta">{panelLabel}</span>
+            </section>
+            <section className="light-table-preview__sheet light-table-preview__sheet--middle">
+              <span className="light-table-preview__eyebrow">{panelMeta}</span>
+              <strong className="light-table-preview__title">{panelTitle}</strong>
+              <p className="light-table-preview__excerpt">{richPreview.previewCopy}</p>
+            </section>
+            <section className="light-table-preview__sheet light-table-preview__sheet--front">
+              {panelImage ? (
+                <figure className={`light-table-preview__image-frame light-table-preview__image-frame--${richPreview.imageTreatment}`}>
+                  <img alt={binding.source_image_alt ?? panelTitle} className="light-table-preview__image" src={panelImage} />
+                </figure>
+              ) : (
+                <div className="light-table-preview__image-placeholder">signal transfer</div>
+              )}
+              <span className="light-table-preview__cue">lift layers ↗</span>
+            </section>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
+  if (descriptor.kind === 'rich-preview' && usesScannerDecodeEnhancement) {
+    const richPreview = richPreviewModel ?? getRichPreviewModel(binding, descriptor)
+    const panelTitle = getScannerTitle(binding, richPreview, descriptor)
+    const panelImage = getUsableSourceImageUrl(binding)
+    const panelLabel = richPreview.platformPillLabel || descriptor.platformLabel
+    const sourceHost = getSourceHostLabel(binding.source_url) || descriptor.domainLabel
+    const sourceHandle = getScannerHandle(binding, descriptor, sourceHost)
+    const decodeMode = getScannerDecodeModeLabel(descriptor)
+    const excerpt = getScannerExcerpt(richPreview.previewCopy)
+    const sourceClass = getScannerClassLabel(panelLabel, descriptor)
+    const traceCode = getScannerTraceCode(sourceHost, descriptor)
+
+    return (
+      <div className="source-window__body source-window__body--scanner-decode-preview">
+        <article className={`scanner-decode-preview scanner-decode-preview--font-${richPreview.fontProfile} scanner-decode-preview--title-treatment-${richPreview.titleTreatment}${panelImage ? ' scanner-decode-preview--with-image' : ''}`}>
+          <div aria-hidden="true" className="scanner-decode-preview__beam" />
+          <div aria-hidden="true" className="scanner-decode-preview__beam scanner-decode-preview__beam--secondary" />
+          <div aria-hidden="true" className="scanner-decode-preview__reticle" />
+          <div aria-hidden="true" className="scanner-decode-preview__noise" />
+          <div aria-hidden="true" className="scanner-decode-preview__grid" />
+          <div className="scanner-decode-preview__plate">
+            <div className="scanner-decode-preview__corner-cut" />
+            <header className="scanner-decode-preview__rail">
+              <span className="scanner-decode-preview__mode">{decodeMode}</span>
+              <span className="scanner-decode-preview__trace-code">{traceCode}</span>
+            </header>
+            <div className="scanner-decode-preview__body">
+              <div className="scanner-decode-preview__signal-block">
+                <span className="scanner-decode-preview__handle">{sourceHandle}</span>
+                <span className="scanner-decode-preview__class">{sourceClass}</span>
+                <div className="scanner-decode-preview__title-stack">
+                  <span aria-hidden="true" className="scanner-decode-preview__title-ghost">{panelTitle}</span>
+                  <strong className="scanner-decode-preview__title">{panelTitle}</strong>
+                </div>
+                {excerpt ? <p className="scanner-decode-preview__excerpt">{excerpt}</p> : null}
+              </div>
+              <aside className="scanner-decode-preview__sample-column">
+                {panelImage ? (
+                  <figure className={`scanner-decode-preview__image-frame scanner-decode-preview__image-frame--${richPreview.imageTreatment}`}>
+                    <span aria-hidden="true" className="scanner-decode-preview__image-corners" />
+                    <img alt={binding.source_image_alt ?? panelTitle} className="scanner-decode-preview__image" src={panelImage} />
+                  </figure>
+                ) : (
+                  <div className="scanner-decode-preview__image-placeholder">signal fragment</div>
+                )}
+                <span className="scanner-decode-preview__sample-label">captured patch</span>
+              </aside>
+            </div>
+            <dl className="scanner-decode-preview__telemetry">
+              <div>
+                <dt>threshold</dt>
+                <dd>open</dd>
+              </div>
+              <div>
+                <dt>channel</dt>
+                <dd>lock</dd>
+              </div>
+              <div>
+                <dt>class</dt>
+                <dd>{sourceClass}</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+      </div>
+    )
+  }
+
+  if (descriptor.kind === 'rich-preview' && surface === 'stage' && mode === 'preview') {
+    const richPreview = richPreviewModel ?? getRichPreviewModel(binding, descriptor)
+    return (
+      <SourceImageTitleCard
+        binding={binding}
+        imageUrl={visualCardImage}
+        title={richPreview.richPreviewTitle || visualCardTitle}
+      />
+    )
+  }
+
   if (shouldUseVisualCard) {
     return (
       <SourceImageTitleCard

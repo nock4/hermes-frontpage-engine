@@ -1,6 +1,9 @@
+import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 
 import { buildHermesCommandArgs, buildHermesQuery, openAiJson } from '../../scripts/lib/openai-json.mjs'
+
+const fakeHermesBin = fileURLToPath(new URL('../fixtures/fake-hermes-json.sh', import.meta.url))
 
 describe('openAiJson', () => {
   it('builds a Hermes CLI query/command for structured JSON work', () => {
@@ -46,14 +49,21 @@ describe('openAiJson', () => {
   })
 
   it('routes text-only structured JSON work through Hermes successfully', async () => {
-    const result = await openAiJson({
-      apiKey: 'ignored',
-      model: 'gpt-5.5',
-      instructions: 'Return strict JSON only.',
-      input: '{"ok":true,"route":"hermes"}',
-      maxOutputTokens: 120,
-    })
+    const previousHermesBin = process.env.HERMES_BIN
+    process.env.HERMES_BIN = fakeHermesBin
+    try {
+      const result = await openAiJson({
+        apiKey: 'ignored',
+        model: 'gpt-5.5',
+        instructions: 'Return strict JSON only.',
+        input: '{"ok":true,"route":"hermes"}',
+        maxOutputTokens: 120,
+      })
 
-    expect(result).toEqual({ ok: true, route: 'hermes' })
+      expect(result).toEqual({ ok: true, route: 'hermes' })
+    } finally {
+      if (previousHermesBin == null) delete process.env.HERMES_BIN
+      else process.env.HERMES_BIN = previousHermesBin
+    }
   }, 90000)
 })

@@ -115,10 +115,15 @@ export function buildHermesCommandArgs({ query, needsVision = false }) {
   return args
 }
 
+function resolveHermesCommand() {
+  return String(process.env.HERMES_BIN || 'hermes').trim() || 'hermes'
+}
+
 async function runHermesJsonQuery({ query, needsVision = false }) {
+  const command = resolveHermesCommand()
   const args = buildHermesCommandArgs({ query, needsVision })
   return new Promise((resolve, reject) => {
-    const child = spawn('hermes', args, {
+    const child = spawn(command, args, {
       cwd: process.cwd(),
       env: { ...process.env },
       stdio: ['ignore', 'pipe', 'pipe'],
@@ -135,19 +140,19 @@ async function runHermesJsonQuery({ query, needsVision = false }) {
     child.on('error', reject)
     child.on('close', (code) => {
       if (code !== 0) {
-        reject(new Error((stderr || stdout || `hermes exited ${code}`).trim()))
+        reject(new Error((stderr || stdout || `${command} exited ${code}`).trim()))
         return
       }
       try {
         resolve(firstJsonObject(extractJsonText(stdout)))
       } catch (error) {
-        reject(new Error(`Expected JSON from Hermes: ${error.message}\n${stdout}`))
+        reject(new Error(`Expected JSON from ${command}: ${error.message}\n${stdout}`))
       }
     })
   })
 }
 
-export async function openAiJson({ apiKey, model, instructions, input, maxOutputTokens = 5000 }) {
+export async function openAiJson({ instructions, input, maxOutputTokens = 5000 }) {
   const { text, imageUrl } = extractTextAndImage(input)
   const { imagePath, remoteImageUrl } = await materializeImage(imageUrl)
   const query = buildHermesQuery({
@@ -157,5 +162,5 @@ export async function openAiJson({ apiKey, model, instructions, input, maxOutput
     imagePath,
     remoteImageUrl,
   })
-  return runHermesJsonQuery({ query, needsVision: Boolean(imagePath || remoteImageUrl), requestedModel: model, apiKeyPresent: Boolean(apiKey) })
+  return runHermesJsonQuery({ query, needsVision: Boolean(imagePath || remoteImageUrl) })
 }
