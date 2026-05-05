@@ -1,0 +1,675 @@
+{
+  "artifact_map_id": "map-2026-05-05-spring-fever-marbling-chambers-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "spring-fever-marbling-chambers",
+  "default_artifact_id": "hero-air-earth-twin-basin",
+  "artifacts": [
+    {
+      "id": "hero-air-earth-twin-basin",
+      "kind": "hero",
+      "label": "air-earth twin basin",
+      "artifact_type": "marbled-portal",
+      "bounds": {
+        "x": 0.099,
+        "y": 0.1025,
+        "w": 0.793,
+        "h": 0.7324
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.1009,
+          0.4531
+        ],
+        [
+          0.1074,
+          0.3799
+        ],
+        [
+          0.1224,
+          0.3154
+        ],
+        [
+          0.1458,
+          0.2549
+        ],
+        [
+          0.1829,
+          0.1934
+        ],
+        [
+          0.2272,
+          0.1475
+        ],
+        [
+          0.2734,
+          0.1191
+        ],
+        [
+          0.3158,
+          0.1064
+        ],
+        [
+          0.3542,
+          0.1055
+        ],
+        [
+          0.6777,
+          0.1172
+        ],
+        [
+          0.7181,
+          0.127
+        ],
+        [
+          0.752,
+          0.1455
+        ],
+        [
+          0.8105,
+          0.2031
+        ],
+        [
+          0.8535,
+          0.2803
+        ],
+        [
+          0.8789,
+          0.3643
+        ],
+        [
+          0.8893,
+          0.4648
+        ],
+        [
+          0.8854,
+          0.5391
+        ],
+        [
+          0.8743,
+          0.5996
+        ],
+        [
+          0.8561,
+          0.6582
+        ],
+        [
+          0.8281,
+          0.7168
+        ],
+        [
+          0.7949,
+          0.7637
+        ],
+        [
+          0.7663,
+          0.792
+        ],
+        [
+          0.7161,
+          0.8213
+        ],
+        [
+          0.6732,
+          0.8311
+        ],
+        [
+          0.3236,
+          0.8232
+        ],
+        [
+          0.2493,
+          0.7979
+        ],
+        [
+          0.196,
+          0.752
+        ],
+        [
+          0.1458,
+          0.6738
+        ],
+        [
+          0.1152,
+          0.5869
+        ],
+        [
+          0.1009,
+          0.4775
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/hero-air-earth-twin-basin.svg",
+      "source_binding_ids": [
+        "binding-hero-air-earth-twin-basin"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          768,
+          431
+        ],
+        "safe_stage_window_origin_px": [
+          866,
+          492
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-flower-reservoir-plate",
+      "kind": "hero",
+      "label": "flower-reservoir plate",
+      "artifact_type": "image-plate",
+      "bounds": {
+        "x": 0.19,
+        "y": 0.34,
+        "w": 0.21,
+        "h": 0.3
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.295,
+          0.34
+        ],
+        [
+          0.24,
+          0.36
+        ],
+        [
+          0.2,
+          0.41
+        ],
+        [
+          0.19,
+          0.49
+        ],
+        [
+          0.2,
+          0.56
+        ],
+        [
+          0.24,
+          0.61
+        ],
+        [
+          0.3,
+          0.64
+        ],
+        [
+          0.36,
+          0.62
+        ],
+        [
+          0.39,
+          0.57
+        ],
+        [
+          0.4,
+          0.49
+        ],
+        [
+          0.39,
+          0.42
+        ],
+        [
+          0.36,
+          0.37
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/hero-flower-reservoir-plate.svg",
+      "source_binding_ids": [
+        "binding-hero-flower-reservoir-plate"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          453,
+          477
+        ],
+        "safe_stage_window_origin_px": [
+          479,
+          502
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-lucid-land-contour",
+      "kind": "module",
+      "label": "lucid-land contour",
+      "artifact_type": "crescent-inset",
+      "bounds": {
+        "x": 0.638,
+        "y": 0.2471,
+        "w": 0.194,
+        "h": 0.4668
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.64,
+          0.6895
+        ],
+        [
+          0.6497,
+          0.2695
+        ],
+        [
+          0.6999,
+          0.25
+        ],
+        [
+          0.7598,
+          0.2695
+        ],
+        [
+          0.8105,
+          0.3418
+        ],
+        [
+          0.8294,
+          0.4385
+        ],
+        [
+          0.8197,
+          0.5498
+        ],
+        [
+          0.7897,
+          0.6396
+        ],
+        [
+          0.7396,
+          0.6992
+        ],
+        [
+          0.6895,
+          0.71
+        ],
+        [
+          0.6491,
+          0.6934
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/module-lucid-land-contour.svg",
+      "source_binding_ids": [
+        "binding-module-lucid-land-contour"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          454
+        ],
+        "safe_stage_window_origin_px": [
+          1146,
+          492
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-clouded-chord-membrane",
+      "kind": "module",
+      "label": "clouded-chord membrane",
+      "artifact_type": "fog-membrane",
+      "bounds": {
+        "x": 0.44,
+        "y": 0.21,
+        "w": 0.13,
+        "h": 0.52
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.5,
+          0.21
+        ],
+        [
+          0.53,
+          0.28
+        ],
+        [
+          0.56,
+          0.4
+        ],
+        [
+          0.57,
+          0.5
+        ],
+        [
+          0.56,
+          0.61
+        ],
+        [
+          0.54,
+          0.69
+        ],
+        [
+          0.5,
+          0.73
+        ],
+        [
+          0.47,
+          0.69
+        ],
+        [
+          0.45,
+          0.61
+        ],
+        [
+          0.44,
+          0.5
+        ],
+        [
+          0.45,
+          0.4
+        ],
+        [
+          0.47,
+          0.28
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/module-clouded-chord-membrane.svg",
+      "source_binding_ids": [
+        "binding-module-clouded-chord-membrane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          776,
+          439
+        ],
+        "safe_stage_window_origin_px": [
+          792,
+          481
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-forest-breath-veil",
+      "kind": "module",
+      "label": "forest-breath veil",
+      "artifact_type": "mist-aperture",
+      "bounds": {
+        "x": 0.81,
+        "y": 0.04,
+        "w": 0.14,
+        "h": 0.19
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.88,
+          0.04
+        ],
+        [
+          0.92,
+          0.06
+        ],
+        [
+          0.95,
+          0.11
+        ],
+        [
+          0.94,
+          0.18
+        ],
+        [
+          0.9,
+          0.23
+        ],
+        [
+          0.85,
+          0.22
+        ],
+        [
+          0.82,
+          0.17
+        ],
+        [
+          0.81,
+          0.11
+        ],
+        [
+          0.83,
+          0.07
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/module-forest-breath-veil.svg",
+      "source_binding_ids": [
+        "binding-module-forest-breath-veil"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          123
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          138
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-spring-sunset-spill",
+      "kind": "module",
+      "label": "spring-sunset spill",
+      "artifact_type": "color-spill",
+      "bounds": {
+        "x": 0.78,
+        "y": 0.78,
+        "w": 0.15,
+        "h": 0.17
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.8,
+          0.82
+        ],
+        [
+          0.84,
+          0.78
+        ],
+        [
+          0.91,
+          0.79
+        ],
+        [
+          0.93,
+          0.83
+        ],
+        [
+          0.93,
+          0.91
+        ],
+        [
+          0.87,
+          0.92
+        ],
+        [
+          0.85,
+          0.95
+        ],
+        [
+          0.8,
+          0.95
+        ],
+        [
+          0.78,
+          0.91
+        ],
+        [
+          0.78,
+          0.85
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/module-spring-sunset-spill.svg",
+      "source_binding_ids": [
+        "binding-module-spring-sunset-spill"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1313,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-fonogram-sediment-seam",
+      "kind": "module",
+      "label": "fonogram sediment seam",
+      "artifact_type": "sediment-seam",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/module-fonogram-sediment-seam.svg",
+      "source_binding_ids": [
+        "binding-module-fonogram-sediment-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-fever-tide-shard",
+      "kind": "module",
+      "label": "fever-tide shard",
+      "artifact_type": "heat-shard",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/module-fever-tide-shard.svg",
+      "source_binding_ids": [
+        "binding-module-fever-tide-shard"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-in-d-drift-ribbon",
+      "kind": "module",
+      "label": "in-d drift ribbon",
+      "artifact_type": "drift-ribbon",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "spring-fever-marbling-chambers",
+      "mask_path": "/editions/2026-05-05-spring-fever-marbling-chambers-v1/assets/masks/module-in-d-drift-ribbon.svg",
+      "source_binding_ids": [
+        "binding-module-in-d-drift-ribbon"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

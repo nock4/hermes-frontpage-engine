@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-05-05-spring-fever-marbling-chambers-v1",
+  "edition_id": "2026-05-05-spring-fever-marbling-chambers-v1",
+  "plate_read_timestamp": "2026-05-05T08:13:37.104Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Minimal abstract plate on a bright orange ground with two large overlapping blue-green circular chambers, a pale inner disk on the left, a cool crescent inset on the right, a dark cloudy overlap membrane, a far-left vertical seam/crack, a small hot orange dot, a small cool green dot, a faint upper-right radial atmospheric mark, and a torn blue-green patch at lower right.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "Open spring air held inside a disciplined pigment ritual, bright and breathable with a faint fever pulse underneath.",
+      "Minimal abstract plate on a bright orange ground with two large overlapping blue-green circular chambers, a pale inner disk on the left, a cool crescent inset on the right, a dark cloudy overlap membrane, a far-left vertical seam/crack, a small hot orange dot, a small cool green dot, a faint upper-right radial atmospheric mark, and a torn blue-green patch at lower right.",
+      "paired-portals",
+      "marbled-reservoirs",
+      "warm-cool-contrast"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "air-earth twin basin",
+      "flower-reservoir plate",
+      "lucid-land contour",
+      "clouded-chord membrane",
+      "forest-breath veil",
+      "spring-sunset spill",
+      "fonogram sediment seam",
+      "fever-tide shard"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "fog",
+      "paint"
+    ],
+    "dominant_structures": [
+      "spring-fever-marbling-chambers",
+      "two overlapping circular pigment chambers",
+      "a narrow almond-shaped inner threshold formed by the overlap",
+      "floating source-bearing plates and crescent insets",
+      "soft veils of clouded particulate drift",
+      "small sediment sparks and dark current lines",
+      "overlapping twin marbled basins at center",
+      "large pale inner plate inside left basin"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: spring-fever-marbling-chambers.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-air-earth-twin-basin",
+      "kind": "hero",
+      "type": "marbled-portal",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.099,
+        "y": 0.1025,
+        "w": 0.793,
+        "h": 0.7324
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-flower-reservoir-plate",
+      "kind": "hero",
+      "type": "image-plate",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.19,
+        "y": 0.34,
+        "w": 0.21,
+        "h": 0.3
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lucid-land-contour",
+      "kind": "module",
+      "type": "crescent-inset",
+      "strength": 0.779148,
+      "bounds": {
+        "x": 0.638,
+        "y": 0.2471,
+        "w": 0.194,
+        "h": 0.4668
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-clouded-chord-membrane",
+      "kind": "module",
+      "type": "fog-membrane",
+      "strength": 0.7609680000000001,
+      "bounds": {
+        "x": 0.44,
+        "y": 0.21,
+        "w": 0.13,
+        "h": 0.52
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-forest-breath-veil",
+      "kind": "module",
+      "type": "mist-aperture",
+      "strength": 0.7403040000000001,
+      "bounds": {
+        "x": 0.81,
+        "y": 0.04,
+        "w": 0.14,
+        "h": 0.19
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spring-sunset-spill",
+      "kind": "module",
+      "type": "color-spill",
+      "strength": 0.702396,
+      "bounds": {
+        "x": 0.78,
+        "y": 0.78,
+        "w": 0.15,
+        "h": 0.17
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fonogram-sediment-seam",
+      "kind": "module",
+      "type": "sediment-seam",
+      "strength": 0.6690240000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fever-tide-shard",
+      "kind": "module",
+      "type": "heat-shard",
+      "strength": 0.6518919999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-in-d-drift-ribbon",
+      "kind": "module",
+      "type": "drift-ribbon",
+      "strength": 0.6636759999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-air-earth-twin-basin-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.099,
+        "y": 0.1025,
+        "w": 0.793,
+        "h": 0.7324
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-flower-reservoir-plate-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.19,
+        "y": 0.34,
+        "w": 0.21,
+        "h": 0.3
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lucid-land-contour-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.638,
+        "y": 0.2471,
+        "w": 0.194,
+        "h": 0.4668
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-clouded-chord-membrane-surface",
+      "surface_type": "fog",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.44,
+        "y": 0.21,
+        "w": 0.13,
+        "h": 0.52
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-forest-breath-veil-surface",
+      "surface_type": "fog",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.81,
+        "y": 0.04,
+        "w": 0.14,
+        "h": 0.19
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spring-sunset-spill-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.78,
+        "y": 0.78,
+        "w": 0.15,
+        "h": 0.17
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fonogram-sediment-seam-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fever-tide-shard-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-in-d-drift-ribbon-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
