@@ -24,7 +24,10 @@ interface GenerateEnhancementPlanInput {
 const RUNTIME_SAFE_TECHNIQUES = new Set<EnhancementTechnique>([
   'screen-rendered-html',
   'warped-paper-fragment',
+  'mechanical-reveal-system',
+  'light-path-reveal',
   'threshold-scan-reveal',
+  'restoration-scan',
 ])
 
 const DISABLED_TECHNIQUES = new Set<EnhancementTechnique>([

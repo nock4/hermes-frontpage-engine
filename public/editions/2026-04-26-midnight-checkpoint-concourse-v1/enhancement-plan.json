@@ -21,12 +21,11 @@
     "wildcard": []
   },
   "runtime_safe_subset": [
+    "mechanical-reveal-system",
     "warped-paper-fragment",
     "threshold-scan-reveal"
   ],
-  "future_only_subset": [
-    "mechanical-reveal-system"
-  ],
+  "future_only_subset": [],
   "rejected": [
     {
       "technique": "light-path-reveal",
