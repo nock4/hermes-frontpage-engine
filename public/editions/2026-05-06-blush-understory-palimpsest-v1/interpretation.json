@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-05-06-blush-understory-palimpsest-v1",
+  "edition_id": "2026-05-06-blush-understory-palimpsest-v1",
+  "plate_read_timestamp": "2026-05-06T08:22:45.554Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Muted abstract plate with a dark left border, a large partial pink disc on the left, a tall translucent central veil, a warm glow near the lower center, and a denser web of pale scratches and forked branch-like lines across the right half. The image stays atmospheric and restrained overall, with most visual activity concentrated on the right side.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "Submerged hush with a warm human trace inside a pinked understory field.",
+      "Muted abstract plate with a dark left border, a large partial pink disc on the left, a tall translucent central veil, a warm glow near the lower center, and a denser web of pale scratches and forked branch-like lines across the right half. The image stays atmospheric and restrained overall, with most visual activity concentrated on the right side.",
+      "veiled-thicket",
+      "suspended-cocoon",
+      "warm-cream-interruption"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "expected veil panel",
+      "alfredo warmth pool",
+      "disappear mist plaque",
+      "gift recess",
+      "dove bifurcation",
+      "thirteen scratch lattice",
+      "paw occlusion"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "fog",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "blush-understory-palimpsest",
+      "translucent vertical partitions with uneven opacity",
+      "one suspended tapered veil-form left of center",
+      "a right-side understory tangle of rootlike filaments",
+      "small sleeve-like panels half-buried in haze",
+      "warm pooled gloss interruptions near the lower field",
+      "dark left border strip with inner seam",
+      "large partial circular plaque on left"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: blush-understory-palimpsest.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-expected-veil-panel",
+      "kind": "hero",
+      "type": "sleeve-panel",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.37,
+        "y": 0.05,
+        "w": 0.18,
+        "h": 0.9
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-alfredo-warmth-pool",
+      "kind": "hero",
+      "type": "gloss-aperture",
+      "strength": 0.9868039999999999,
+      "bounds": {
+        "x": 0.4089,
+        "y": 0.7334,
+        "w": 0.1686,
+        "h": 0.165
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-disappear-mist-plaque",
+      "kind": "module",
+      "type": "haze-plaque",
+      "strength": 0.777588,
+      "bounds": {
+        "x": 0.0339,
+        "y": 0.1143,
+        "w": 0.4284,
+        "h": 0.6973
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gift-recess",
+      "kind": "module",
+      "type": "altar-recess",
+      "strength": 0.7673040000000001,
+      "bounds": {
+        "x": 0.188,
+        "y": 0.624,
+        "w": 0.06,
+        "h": 0.066
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dove-bifurcation",
+      "kind": "module",
+      "type": "forked-filament",
+      "strength": 0.735024,
+      "bounds": {
+        "x": 0.603,
+        "y": 0.182,
+        "w": 0.248,
+        "h": 0.253
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thirteen-scratch-lattice",
+      "kind": "module",
+      "type": "scratch-lattice",
+      "strength": 0.688704,
+      "bounds": {
+        "x": 0.5638,
+        "y": 0.335,
+        "w": 0.3372,
+        "h": 0.4648
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-paw-occlusion",
+      "kind": "module",
+      "type": "veil-occlusion",
+      "strength": 0.6663240000000001,
+      "bounds": {
+        "x": 0.8164,
+        "y": 0.7275,
+        "w": 0.1107,
+        "h": 0.1895
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thirteen-scratch-lattice-2",
+      "kind": "module",
+      "type": "scratch-lattice",
+      "strength": 0.650212,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-paw-occlusion-2",
+      "kind": "module",
+      "type": "veil-occlusion",
+      "strength": 0.654076,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-expected-veil-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.37,
+        "y": 0.05,
+        "w": 0.18,
+        "h": 0.9
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-alfredo-warmth-pool-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4089,
+        "y": 0.7334,
+        "w": 0.1686,
+        "h": 0.165
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-disappear-mist-plaque-surface",
+      "surface_type": "fog",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0339,
+        "y": 0.1143,
+        "w": 0.4284,
+        "h": 0.6973
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gift-recess-surface",
+      "surface_type": "light-band",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.188,
+        "y": 0.624,
+        "w": 0.06,
+        "h": 0.066
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dove-bifurcation-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.603,
+        "y": 0.182,
+        "w": 0.248,
+        "h": 0.253
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thirteen-scratch-lattice-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.5638,
+        "y": 0.335,
+        "w": 0.3372,
+        "h": 0.4648
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-paw-occlusion-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.8164,
+        "y": 0.7275,
+        "w": 0.1107,
+        "h": 0.1895
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thirteen-scratch-lattice-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-paw-occlusion-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

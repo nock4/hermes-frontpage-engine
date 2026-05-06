@@ -1,0 +1,588 @@
+{
+  "analysis_id": "analysis-2026-05-06-blush-understory-palimpsest-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Muted abstract plate with a dark left border, a large partial pink disc on the left, a tall translucent central veil, a warm glow near the lower center, and a denser web of pale scratches and forked branch-like lines across the right half. The image stays atmospheric and restrained overall, with most visual activity concentrated on the right side.",
+  "usable_surfaces": [
+    "dark left border strip with inner seam",
+    "large partial circular plaque on left",
+    "translucent tapered central veil",
+    "warm glow pool at lower center",
+    "small recessed dot within left disc",
+    "lower-left perforation cluster",
+    "upper-right forked filament lines",
+    "right-center scratch web",
+    "lower-right pale oval occlusion"
+  ],
+  "detected_objects": [
+    {
+      "label": "expected veil panel",
+      "artifact_type": "sleeve-panel",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.37,
+        "y": 0.05,
+        "w": 0.18,
+        "h": 0.9
+      },
+      "polygon": [
+        [
+          0.445,
+          0.052
+        ],
+        [
+          0.402,
+          0.158
+        ],
+        [
+          0.384,
+          0.342
+        ],
+        [
+          0.379,
+          0.548
+        ],
+        [
+          0.389,
+          0.772
+        ],
+        [
+          0.423,
+          0.946
+        ],
+        [
+          0.515,
+          0.947
+        ],
+        [
+          0.548,
+          0.786
+        ],
+        [
+          0.55,
+          0.565
+        ],
+        [
+          0.535,
+          0.344
+        ],
+        [
+          0.505,
+          0.162
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A tall luminous tapered vertical sheet sits slightly left of center, with soft but legible edges and a translucent overlay effect from near top to near bottom."
+    },
+    {
+      "label": "alfredo warmth pool",
+      "artifact_type": "gloss-aperture",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.408,
+        "y": 0.736,
+        "w": 0.17,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.492,
+          0.737
+        ],
+        [
+          0.537,
+          0.751
+        ],
+        [
+          0.569,
+          0.789
+        ],
+        [
+          0.575,
+          0.835
+        ],
+        [
+          0.559,
+          0.874
+        ],
+        [
+          0.526,
+          0.895
+        ],
+        [
+          0.481,
+          0.893
+        ],
+        [
+          0.443,
+          0.877
+        ],
+        [
+          0.417,
+          0.844
+        ],
+        [
+          0.411,
+          0.802
+        ],
+        [
+          0.431,
+          0.764
+        ],
+        [
+          0.459,
+          0.744
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "A concentrated yellow-orange glow forms a soft oval pool near the lower center, clearly brighter and warmer than the surrounding field."
+    },
+    {
+      "label": "disappear mist plaque",
+      "artifact_type": "haze-plaque",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.036,
+        "y": 0.118,
+        "w": 0.424,
+        "h": 0.69
+      },
+      "polygon": [
+        [
+          0.095,
+          0.173
+        ],
+        [
+          0.165,
+          0.131
+        ],
+        [
+          0.259,
+          0.118
+        ],
+        [
+          0.346,
+          0.137
+        ],
+        [
+          0.413,
+          0.181
+        ],
+        [
+          0.452,
+          0.255
+        ],
+        [
+          0.46,
+          0.354
+        ],
+        [
+          0.443,
+          0.468
+        ],
+        [
+          0.414,
+          0.588
+        ],
+        [
+          0.37,
+          0.691
+        ],
+        [
+          0.301,
+          0.772
+        ],
+        [
+          0.223,
+          0.808
+        ],
+        [
+          0.151,
+          0.799
+        ],
+        [
+          0.097,
+          0.747
+        ],
+        [
+          0.064,
+          0.663
+        ],
+        [
+          0.044,
+          0.553
+        ],
+        [
+          0.036,
+          0.433
+        ],
+        [
+          0.052,
+          0.282
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "The left third contains a very large partial circular pale pink plaque with visible concentric arc textures and a softly weathered surface."
+    },
+    {
+      "label": "gift recess",
+      "artifact_type": "altar-recess",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.188,
+        "y": 0.624,
+        "w": 0.06,
+        "h": 0.066
+      },
+      "polygon": [
+        [
+          0.214,
+          0.624
+        ],
+        [
+          0.235,
+          0.631
+        ],
+        [
+          0.247,
+          0.647
+        ],
+        [
+          0.246,
+          0.667
+        ],
+        [
+          0.234,
+          0.683
+        ],
+        [
+          0.214,
+          0.69
+        ],
+        [
+          0.196,
+          0.684
+        ],
+        [
+          0.188,
+          0.668
+        ],
+        [
+          0.191,
+          0.647
+        ],
+        [
+          0.201,
+          0.632
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "Within the lower-left area of the large disc is a compact darker round recess-like mark that reads as a sheltered embedded pocket."
+    },
+    {
+      "label": "dove bifurcation",
+      "artifact_type": "forked-filament",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.603,
+        "y": 0.182,
+        "w": 0.248,
+        "h": 0.253
+      },
+      "polygon": [
+        [
+          0.609,
+          0.424
+        ],
+        [
+          0.644,
+          0.373
+        ],
+        [
+          0.676,
+          0.334
+        ],
+        [
+          0.696,
+          0.286
+        ],
+        [
+          0.72,
+          0.227
+        ],
+        [
+          0.755,
+          0.182
+        ],
+        [
+          0.777,
+          0.229
+        ],
+        [
+          0.753,
+          0.286
+        ],
+        [
+          0.742,
+          0.338
+        ],
+        [
+          0.781,
+          0.302
+        ],
+        [
+          0.827,
+          0.274
+        ],
+        [
+          0.851,
+          0.307
+        ],
+        [
+          0.809,
+          0.344
+        ],
+        [
+          0.769,
+          0.364
+        ],
+        [
+          0.727,
+          0.392
+        ],
+        [
+          0.677,
+          0.416
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "In the upper-right half, thin pale lines split into visible Y-like branchings, creating paired forked paths distinct from the denser lower-right tangle."
+    },
+    {
+      "label": "thirteen scratch lattice",
+      "artifact_type": "scratch-lattice",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.565,
+        "y": 0.338,
+        "w": 0.336,
+        "h": 0.458
+      },
+      "polygon": [
+        [
+          0.571,
+          0.353
+        ],
+        [
+          0.625,
+          0.338
+        ],
+        [
+          0.698,
+          0.352
+        ],
+        [
+          0.774,
+          0.386
+        ],
+        [
+          0.834,
+          0.442
+        ],
+        [
+          0.88,
+          0.516
+        ],
+        [
+          0.899,
+          0.598
+        ],
+        [
+          0.898,
+          0.681
+        ],
+        [
+          0.872,
+          0.748
+        ],
+        [
+          0.822,
+          0.789
+        ],
+        [
+          0.752,
+          0.796
+        ],
+        [
+          0.675,
+          0.782
+        ],
+        [
+          0.614,
+          0.742
+        ],
+        [
+          0.58,
+          0.679
+        ],
+        [
+          0.566,
+          0.595
+        ],
+        [
+          0.57,
+          0.504
+        ],
+        [
+          0.57,
+          0.423
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The right-center to lower-right region carries a dense web of pale intersecting scratch-like lines, visibly busier and more filamented than the rest of the plate."
+    },
+    {
+      "label": "paw occlusion",
+      "artifact_type": "veil-occlusion",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.819,
+        "y": 0.731,
+        "w": 0.106,
+        "h": 0.183
+      },
+      "polygon": [
+        [
+          0.87,
+          0.731
+        ],
+        [
+          0.899,
+          0.739
+        ],
+        [
+          0.92,
+          0.762
+        ],
+        [
+          0.925,
+          0.798
+        ],
+        [
+          0.924,
+          0.844
+        ],
+        [
+          0.919,
+          0.886
+        ],
+        [
+          0.905,
+          0.913
+        ],
+        [
+          0.878,
+          0.914
+        ],
+        [
+          0.851,
+          0.904
+        ],
+        [
+          0.832,
+          0.879
+        ],
+        [
+          0.823,
+          0.843
+        ],
+        [
+          0.819,
+          0.804
+        ],
+        [
+          0.823,
+          0.771
+        ],
+        [
+          0.841,
+          0.747
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A pale vertical oval form in the lower-right corner cleanly occludes darker textures and linework behind it, reading as a buried silhouette fragment."
+    },
+    {
+      "label": "thirteen scratch lattice",
+      "artifact_type": "scratch-lattice",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "paw occlusion",
+      "artifact_type": "veil-occlusion",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.722,
+    "rationale": "The plate is mostly restrained and expressionist, but the right-half scratch web adds localized density that pushes it above fully minimal."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-05-06-blush-understory-palimpsest-v1"
+}

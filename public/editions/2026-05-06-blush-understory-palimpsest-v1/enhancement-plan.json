@@ -1,0 +1,230 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-06-blush-understory-palimpsest-v1",
+  "edition_id": "2026-05-06-blush-understory-palimpsest-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-06-blush-understory-palimpsest-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-expected-veil-panel",
+      "target_kind": "artifact",
+      "artifact_id": "hero-expected-veil-panel",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (sleeve-panel) selected from interpretation."
+    },
+    {
+      "target_id": "hero-alfredo-warmth-pool",
+      "target_kind": "artifact",
+      "artifact_id": "hero-alfredo-warmth-pool",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (gloss-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-disappear-mist-plaque",
+      "target_kind": "artifact",
+      "artifact_id": "module-disappear-mist-plaque",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (haze-plaque) selected from interpretation."
+    },
+    {
+      "target_id": "module-gift-recess",
+      "target_kind": "artifact",
+      "artifact_id": "module-gift-recess",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (altar-recess) selected from interpretation."
+    },
+    {
+      "target_id": "module-dove-bifurcation",
+      "target_kind": "artifact",
+      "artifact_id": "module-dove-bifurcation",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (forked-filament) selected from interpretation."
+    },
+    {
+      "target_id": "module-thirteen-scratch-lattice",
+      "target_kind": "artifact",
+      "artifact_id": "module-thirteen-scratch-lattice",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scratch-lattice) selected from interpretation."
+    },
+    {
+      "target_id": "module-paw-occlusion",
+      "target_kind": "artifact",
+      "artifact_id": "module-paw-occlusion",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (veil-occlusion) selected from interpretation."
+    },
+    {
+      "target_id": "module-thirteen-scratch-lattice-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-thirteen-scratch-lattice-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scratch-lattice) selected from interpretation."
+    },
+    {
+      "target_id": "module-paw-occlusion-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-paw-occlusion-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (veil-occlusion) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
