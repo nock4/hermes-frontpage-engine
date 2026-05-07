@@ -1,0 +1,514 @@
+{
+  "analysis_id": "analysis-2026-05-07-earthset-plate-repair-works-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Weathered sunset shoreline collage with a central water inlet, a large cracked oval plate at right-center, a rusted anchor at left-center, a bright sun in the upper-right sky, and dense torn-edge, pixel-fleck, and abrasion textures throughout.",
+  "usable_surfaces": [
+    "central sunset water corridor",
+    "large cracked oval plate",
+    "diagonal fracture seam on plate",
+    "blue square-grid inset inside anchor ring",
+    "dark hooded vertical fold at right edge",
+    "small detached mid-water islet",
+    "sun glow bloom",
+    "lower-right pixel registration fleck cluster"
+  ],
+  "detected_objects": [
+    {
+      "label": "sunset-browser-tide-panel",
+      "artifact_type": "playable-remnant-panel",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.26,
+        "y": 0.27,
+        "w": 0.47,
+        "h": 0.34
+      },
+      "polygon": [
+        [
+          0.27,
+          0.36
+        ],
+        [
+          0.34,
+          0.31
+        ],
+        [
+          0.46,
+          0.28
+        ],
+        [
+          0.58,
+          0.29
+        ],
+        [
+          0.67,
+          0.34
+        ],
+        [
+          0.72,
+          0.42
+        ],
+        [
+          0.71,
+          0.51
+        ],
+        [
+          0.63,
+          0.58
+        ],
+        [
+          0.5,
+          0.6
+        ],
+        [
+          0.38,
+          0.59
+        ],
+        [
+          0.3,
+          0.53
+        ],
+        [
+          0.26,
+          0.44
+        ]
+      ],
+      "confidence": 0.71,
+      "visual_evidence": "A clearly visible coastal sunset panel spans the middle of the image: warm horizon sky above and a reflective blue-gray tidal channel below, forming the main embedded scenic surface."
+    },
+    {
+      "label": "earth-plate-mainland",
+      "artifact_type": "weathered-album-plate",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.49,
+        "y": 0.45,
+        "w": 0.28,
+        "h": 0.34
+      },
+      "polygon": [
+        [
+          0.55,
+          0.46
+        ],
+        [
+          0.64,
+          0.45
+        ],
+        [
+          0.72,
+          0.48
+        ],
+        [
+          0.76,
+          0.55
+        ],
+        [
+          0.77,
+          0.63
+        ],
+        [
+          0.74,
+          0.72
+        ],
+        [
+          0.67,
+          0.78
+        ],
+        [
+          0.58,
+          0.79
+        ],
+        [
+          0.51,
+          0.74
+        ],
+        [
+          0.49,
+          0.66
+        ],
+        [
+          0.5,
+          0.56
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "Large oval beige-gray slab at right-center with weathering, stains, and inset openings; it is the strongest single plate-like surface in the scene."
+    },
+    {
+      "label": "dark-supposition-seam",
+      "artifact_type": "black-seam-incision",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.54,
+        "y": 0.49,
+        "w": 0.15,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.55,
+          0.5
+        ],
+        [
+          0.58,
+          0.49
+        ],
+        [
+          0.61,
+          0.51
+        ],
+        [
+          0.63,
+          0.54
+        ],
+        [
+          0.66,
+          0.56
+        ],
+        [
+          0.68,
+          0.59
+        ],
+        [
+          0.69,
+          0.62
+        ],
+        [
+          0.66,
+          0.64
+        ],
+        [
+          0.62,
+          0.62
+        ],
+        [
+          0.59,
+          0.59
+        ],
+        [
+          0.57,
+          0.56
+        ],
+        [
+          0.54,
+          0.53
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "A jagged diagonal fracture cuts across the oval slab, darker than the surrounding surface and edged by turquoise-blue mineral staining in places."
+    },
+    {
+      "label": "winter-grid-cut",
+      "artifact_type": "frosted-grid-notch",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.2,
+        "y": 0.19,
+        "w": 0.08,
+        "h": 0.08
+      },
+      "polygon": [
+        [
+          0.21,
+          0.2
+        ],
+        [
+          0.25,
+          0.19
+        ],
+        [
+          0.28,
+          0.21
+        ],
+        [
+          0.28,
+          0.25
+        ],
+        [
+          0.25,
+          0.27
+        ],
+        [
+          0.21,
+          0.26
+        ],
+        [
+          0.2,
+          0.23
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "A tight blue-cyan square tile cluster sits inside the circular ring at the top of the anchor, reading as a luminous grid-like inset rather than open space."
+    },
+    {
+      "label": "witch-fold-cairn",
+      "artifact_type": "hooded-fold-islet",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.8,
+        "y": 0.06,
+        "w": 0.17,
+        "h": 0.56
+      },
+      "polygon": [
+        [
+          0.83,
+          0.06
+        ],
+        [
+          0.88,
+          0.08
+        ],
+        [
+          0.92,
+          0.14
+        ],
+        [
+          0.95,
+          0.24
+        ],
+        [
+          0.97,
+          0.35
+        ],
+        [
+          0.96,
+          0.48
+        ],
+        [
+          0.93,
+          0.58
+        ],
+        [
+          0.88,
+          0.62
+        ],
+        [
+          0.84,
+          0.58
+        ],
+        [
+          0.82,
+          0.47
+        ],
+        [
+          0.81,
+          0.33
+        ],
+        [
+          0.8,
+          0.18
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "A tall near-black hooded vertical mass with irregular torn edges occupies the right side, acting like a draped fold or carved silhouette against the sky."
+    },
+    {
+      "label": "orphan-island-fragment",
+      "artifact_type": "detached-island-chip",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.47,
+        "w": 0.08,
+        "h": 0.08
+      },
+      "polygon": [
+        [
+          0.43,
+          0.49
+        ],
+        [
+          0.46,
+          0.47
+        ],
+        [
+          0.49,
+          0.48
+        ],
+        [
+          0.5,
+          0.51
+        ],
+        [
+          0.48,
+          0.54
+        ],
+        [
+          0.45,
+          0.55
+        ],
+        [
+          0.42,
+          0.53
+        ]
+      ],
+      "confidence": 0.67,
+      "visual_evidence": "A small detached dark rock-like chip sits alone in the mid-water pocket left of the large slab, separated from the larger landforms by reflective negative space."
+    },
+    {
+      "label": "flower-static-bloom",
+      "artifact_type": "bloom-static-surface",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.1,
+        "w": 0.18,
+        "h": 0.14
+      },
+      "polygon": [
+        [
+          0.69,
+          0.1
+        ],
+        [
+          0.74,
+          0.12
+        ],
+        [
+          0.78,
+          0.16
+        ],
+        [
+          0.8,
+          0.2
+        ],
+        [
+          0.77,
+          0.23
+        ],
+        [
+          0.72,
+          0.24
+        ],
+        [
+          0.67,
+          0.22
+        ],
+        [
+          0.63,
+          0.18
+        ],
+        [
+          0.63,
+          0.14
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "The bright sun and its soft warm haze in the upper-right sky create a rounded bloom-like interruption with a clear luminous core and diffuse petaled glow."
+    },
+    {
+      "label": "line-stepper-registration-scar",
+      "artifact_type": "pixel-registration-scar",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.69,
+        "y": 0.78,
+        "w": 0.09,
+        "h": 0.1
+      },
+      "polygon": [
+        [
+          0.7,
+          0.79
+        ],
+        [
+          0.73,
+          0.78
+        ],
+        [
+          0.76,
+          0.8
+        ],
+        [
+          0.78,
+          0.83
+        ],
+        [
+          0.77,
+          0.87
+        ],
+        [
+          0.74,
+          0.88
+        ],
+        [
+          0.71,
+          0.86
+        ],
+        [
+          0.69,
+          0.83
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A tight cluster of bright square flecks and snapped tile-like marks appears in the lower-right foreground, reading as a small digital registration repair rather than a natural rock edge."
+    },
+    {
+      "label": "albatross-wind-rib",
+      "artifact_type": "swept-rib-surface",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.3,
+        "y": 0.16,
+        "w": 0.31,
+        "h": 0.11
+      },
+      "polygon": [
+        [
+          0.31,
+          0.22
+        ],
+        [
+          0.37,
+          0.18
+        ],
+        [
+          0.45,
+          0.16
+        ],
+        [
+          0.54,
+          0.17
+        ],
+        [
+          0.6,
+          0.2
+        ],
+        [
+          0.61,
+          0.24
+        ],
+        [
+          0.55,
+          0.26
+        ],
+        [
+          0.47,
+          0.27
+        ],
+        [
+          0.38,
+          0.26
+        ],
+        [
+          0.32,
+          0.24
+        ]
+      ],
+      "confidence": 0.58,
+      "visual_evidence": "A long pale swept band arcs across the upper central sky, functioning as a directional wind-rib gesture above the shoreline forms."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 5,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.455,
+    "rationale": "The plate has multiple large anchors plus dense texture, torn edges, stains, flecks, and embedded marks across most zones, so it reads materially rich and collage-heavy rather than minimal."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-05-07-earthset-plate-repair-works-v1"
+}

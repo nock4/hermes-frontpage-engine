@@ -1,0 +1,230 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-07-earthset-plate-repair-works-v1",
+  "edition_id": "2026-05-07-earthset-plate-repair-works-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-07-earthset-plate-repair-works-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-sunset-browser-tide-panel",
+      "target_kind": "artifact",
+      "artifact_id": "hero-sunset-browser-tide-panel",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (playable-remnant-panel) selected from interpretation."
+    },
+    {
+      "target_id": "hero-earth-plate-mainland",
+      "target_kind": "artifact",
+      "artifact_id": "hero-earth-plate-mainland",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (weathered-album-plate) selected from interpretation."
+    },
+    {
+      "target_id": "module-dark-supposition-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-dark-supposition-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-seam-incision) selected from interpretation."
+    },
+    {
+      "target_id": "module-winter-grid-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-winter-grid-cut",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (frosted-grid-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-witch-fold-cairn",
+      "target_kind": "artifact",
+      "artifact_id": "module-witch-fold-cairn",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hooded-fold-islet) selected from interpretation."
+    },
+    {
+      "target_id": "module-orphan-island-fragment",
+      "target_kind": "artifact",
+      "artifact_id": "module-orphan-island-fragment",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (detached-island-chip) selected from interpretation."
+    },
+    {
+      "target_id": "module-flower-static-bloom",
+      "target_kind": "artifact",
+      "artifact_id": "module-flower-static-bloom",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bloom-static-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-line-stepper-registration-scar",
+      "target_kind": "artifact",
+      "artifact_id": "module-line-stepper-registration-scar",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pixel-registration-scar) selected from interpretation."
+    },
+    {
+      "target_id": "module-albatross-wind-rib",
+      "target_kind": "artifact",
+      "artifact_id": "module-albatross-wind-rib",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (swept-rib-surface) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
