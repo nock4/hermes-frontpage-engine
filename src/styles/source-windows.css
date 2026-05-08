@@ -3429,11 +3429,13 @@
   align-items: stretch;
   justify-content: stretch;
   min-height: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
+  padding: 0.55rem 0.58rem 0.62rem;
+  border: 1px solid rgba(255, 244, 218, 0.13);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(17, 14, 12, 0.72), rgba(8, 8, 9, 0.58)),
+    radial-gradient(circle at 18% 0%, rgba(255, 224, 172, 0.12), transparent 48%);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.26), inset 0 0 0 1px rgba(255, 250, 238, 0.04);
   color: rgba(255, 250, 238, 0.98);
 }
 
@@ -4070,6 +4072,10 @@
   background: rgba(15, 13, 12, 0.7);
   color: rgba(255,255,255,0.88);
   box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+}
+
+.source-window--stage.source-window--frame-artifact-card .source-window__floating-actions {
+  right: calc(100% - min(24rem, 100%) + 0.35rem);
 }
 
 .source-window--stage.source-window--frame-artifact-card .source-window__close--floating {
