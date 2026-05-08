@@ -1,0 +1,384 @@
+{
+  "interpretation_id": "interp-2026-05-08-komachi-browser-lantern-habitat-v1",
+  "edition_id": "2026-05-08-komachi-browser-lantern-habitat-v1",
+  "plate_read_timestamp": "2026-05-08T08:22:37.950Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Dark illuminated-manuscript style plate with an aged central paper-glass panel, mossy wet undergrowth, small celestial/glyph marks, water ripples, a right-side torn slab over a tile grid, fine constellation threads, and several small warm/green light apertures. The strongest usable anchors are the central parchment panel, lower moss-water habitat, water ripple, right mosaic/torn surface, lower-left orbital glyph, and small glowing nodes.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "faded rituals in a living browser garden, quiet, humid, ceremonial, and lightly computational",
+      "Dark illuminated-manuscript style plate with an aged central paper-glass panel, mossy wet undergrowth, small celestial/glyph marks, water ripples, a right-side torn slab over a tile grid, fine constellation threads, and several small warm/green light apertures. The strongest usable anchors are the central parchment panel, lower moss-water habitat, water ripple, right mosaic/torn surface, lower-left orbital glyph, and small glowing nodes.",
+      "ambient-terrarium",
+      "aged-paper",
+      "lantern-glow"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Komachi aged paper-glass plate panel",
+      "generative golf glyph colony",
+      "Shu qin tea-water trace",
+      "hard-work sea lullaby charm",
+      "Ever No Way haze tile",
+      "invertebrate harmonic thread",
+      "Manna Devour moss cluster",
+      "Source Artifact 9"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "water",
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "komachi-browser-lantern-habitat",
+      "one small centered archival vignette floating in darkness",
+      "low horizontal habitat field of water, moss, and audio dust",
+      "soft vertical paper-glass plate relic with worn ink edges",
+      "tiny rule-based glyph colonies moving like insects or ripples",
+      "aged audio-cover charms embedded as source-bearing surfaces",
+      "large aged parchment-glass central panel",
+      "mossy lower habitat and wet pool"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: komachi-browser-lantern-habitat.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-komachi-aged-paper-glass-plate-panel",
+      "kind": "hero",
+      "type": "aged-paper-glass-panel",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.2565,
+        "y": 0.2197,
+        "w": 0.2357,
+        "h": 0.4346
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-generative-golf-glyph-colony",
+      "kind": "hero",
+      "type": "tiny-orbital-glyph-cluster",
+      "strength": 0.9872599999999999,
+      "bounds": {
+        "x": 0.177,
+        "y": 0.628,
+        "w": 0.099,
+        "h": 0.185
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shu-qin-tea-water-trace",
+      "kind": "module",
+      "type": "concentric-water-ripple-line",
+      "strength": 0.795828,
+      "bounds": {
+        "x": 0.452,
+        "y": 0.657,
+        "w": 0.187,
+        "h": 0.073
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-hard-work-sea-lullaby-charm",
+      "kind": "module",
+      "type": "small-faded-audio-paper-charm",
+      "strength": 0.75582,
+      "bounds": {
+        "x": 0.7305,
+        "y": 0.4766,
+        "w": 0.1771,
+        "h": 0.2881
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-ever-no-way-haze-tile",
+      "kind": "module",
+      "type": "blurred-square-audio-tile-grid",
+      "strength": 0.73128,
+      "bounds": {
+        "x": 0.663,
+        "y": 0.522,
+        "w": 0.094,
+        "h": 0.19
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-invertebrate-harmonic-thread",
+      "kind": "module",
+      "type": "fine-constellation-vibration-thread",
+      "strength": 0.71148,
+      "bounds": {
+        "x": 0.503,
+        "y": 0.179,
+        "w": 0.185,
+        "h": 0.243
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-manna-devour-moss-cluster",
+      "kind": "module",
+      "type": "organic-moss-water-habitat-field",
+      "strength": 0.6659280000000001,
+      "bounds": {
+        "x": 0.2467,
+        "y": 0.6025,
+        "w": 0.4883,
+        "h": 0.2275
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-manna-devour-moss-cluster-2",
+      "kind": "module",
+      "type": "hero-scale-organic-habitat-field",
+      "strength": 0.65296,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-source-artifact-9",
+      "kind": "module",
+      "type": "warm-audio-dust-halo",
+      "strength": 0.6561279999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-komachi-aged-paper-glass-plate-panel-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2565,
+        "y": 0.2197,
+        "w": 0.2357,
+        "h": 0.4346
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-generative-golf-glyph-colony-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.177,
+        "y": 0.628,
+        "w": 0.099,
+        "h": 0.185
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shu-qin-tea-water-trace-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.452,
+        "y": 0.657,
+        "w": 0.187,
+        "h": 0.073
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-hard-work-sea-lullaby-charm-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.7305,
+        "y": 0.4766,
+        "w": 0.1771,
+        "h": 0.2881
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-ever-no-way-haze-tile-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.663,
+        "y": 0.522,
+        "w": 0.094,
+        "h": 0.19
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-invertebrate-harmonic-thread-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.503,
+        "y": 0.179,
+        "w": 0.185,
+        "h": 0.243
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-manna-devour-moss-cluster-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2467,
+        "y": 0.6025,
+        "w": 0.4883,
+        "h": 0.2275
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-manna-devour-moss-cluster-2-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-source-artifact-9-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

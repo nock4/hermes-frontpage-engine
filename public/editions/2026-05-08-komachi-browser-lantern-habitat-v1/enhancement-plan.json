@@ -1,0 +1,234 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-08-komachi-browser-lantern-habitat-v1",
+  "edition_id": "2026-05-08-komachi-browser-lantern-habitat-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-08-komachi-browser-lantern-habitat-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "screen-rendered-html",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-komachi-aged-paper-glass-plate-panel",
+      "target_kind": "artifact",
+      "artifact_id": "hero-komachi-aged-paper-glass-plate-panel",
+      "priority": 1,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (aged-paper-glass-panel) selected from interpretation."
+    },
+    {
+      "target_id": "hero-generative-golf-glyph-colony",
+      "target_kind": "artifact",
+      "artifact_id": "hero-generative-golf-glyph-colony",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-orbital-glyph-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-shu-qin-tea-water-trace",
+      "target_kind": "artifact",
+      "artifact_id": "module-shu-qin-tea-water-trace",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (concentric-water-ripple-line) selected from interpretation."
+    },
+    {
+      "target_id": "module-hard-work-sea-lullaby-charm",
+      "target_kind": "artifact",
+      "artifact_id": "module-hard-work-sea-lullaby-charm",
+      "priority": 4,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-faded-audio-paper-charm) selected from interpretation."
+    },
+    {
+      "target_id": "module-ever-no-way-haze-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-ever-no-way-haze-tile",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (blurred-square-audio-tile-grid) selected from interpretation."
+    },
+    {
+      "target_id": "module-invertebrate-harmonic-thread",
+      "target_kind": "artifact",
+      "artifact_id": "module-invertebrate-harmonic-thread",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (fine-constellation-vibration-thread) selected from interpretation."
+    },
+    {
+      "target_id": "module-manna-devour-moss-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-manna-devour-moss-cluster",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (organic-moss-water-habitat-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-manna-devour-moss-cluster-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-manna-devour-moss-cluster-2",
+      "priority": 8,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-organic-habitat-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-source-artifact-9",
+      "target_kind": "artifact",
+      "artifact_id": "module-source-artifact-9",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (warm-audio-dust-halo) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
