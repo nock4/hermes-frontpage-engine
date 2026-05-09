@@ -1,0 +1,383 @@
+{
+  "interpretation_id": "interp-2026-05-09-canopy-score-memory-field-v1",
+  "edition_id": "2026-05-09-canopy-score-memory-field-v1",
+  "plate_read_timestamp": "2026-05-09T08:12:06.188Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Dark earthy mixed-media botanical plate with a pale central scrapbook-like inset, pod forms, root/tendril lines, mossy habitat clusters, small circular markers, a hazy dome, printed tile, and stone-like anchors over a gridded black-and-tan ground. The plate is expressionist but readable: several strong source-bearing marks are visually distinct enough for interaction mapping.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "mossy memory music under glass, quiet but dense",
+      "Dark earthy mixed-media botanical plate with a pale central scrapbook-like inset, pod forms, root/tendril lines, mossy habitat clusters, small circular markers, a hazy dome, printed tile, and stone-like anchors over a gridded black-and-tan ground. The plate is expressionist but readable: several strong source-bearing marks are visually distinct enough for interaction mapping.",
+      "listening-garden",
+      "sound-scrapbook",
+      "native-habitat"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "yokota-central-memory-square",
+      "marsh-house-native-habitat-bed",
+      "radigue-drone-tendril",
+      "mcmackin-woodland-understory",
+      "sound-leaves-folio",
+      "glass-bell-listening-pocket",
+      "painted-tune-patch",
+      "small-altar-offering"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "canopy-score-memory-field",
+      "a dense landscape-scale habitat base of native meadow and woodland textures",
+      "a centered warm scrapbook-painting square interrupting a dark cropped graphic ground",
+      "curling tendril-like drone lines that rise from soil and paper",
+      "small glass-bell listening pockets nested into foliage",
+      "ritual paper fragments and resonant stones used as source-bearing surfaces",
+      "pale central paper inset",
+      "open crystal nest pod"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: canopy-score-memory-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-yokota-central-memory-square",
+      "kind": "hero",
+      "type": "scrapbook-painting-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.26,
+        "y": 0.137,
+        "w": 0.492,
+        "h": 0.601
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "hero-marsh-house-native-habitat-bed",
+      "kind": "hero",
+      "type": "planted-habitat-zone",
+      "strength": 0.9766279999999999,
+      "bounds": {
+        "x": 0.0384,
+        "y": 0.0703,
+        "w": 0.2311,
+        "h": 0.7178
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-radigue-drone-tendril",
+      "kind": "module",
+      "type": "curling-waveform-line",
+      "strength": 0.7793519999999999,
+      "bounds": {
+        "x": 0.286,
+        "y": 0.352,
+        "w": 0.449,
+        "h": 0.52
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mcmackin-woodland-understory",
+      "kind": "module",
+      "type": "woodland-understory-cluster",
+      "strength": 0.7635360000000001,
+      "bounds": {
+        "x": 0.776,
+        "y": 0.808,
+        "w": 0.116,
+        "h": 0.14
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sound-leaves-folio",
+      "kind": "module",
+      "type": "waveform-leaf-fragment",
+      "strength": 0.7431,
+      "bounds": {
+        "x": 0.303,
+        "y": 0.153,
+        "w": 0.169,
+        "h": 0.272
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glass-bell-listening-pocket",
+      "kind": "module",
+      "type": "hazy-glass-dome",
+      "strength": 0.696048,
+      "bounds": {
+        "x": 0.0866,
+        "y": 0.7119,
+        "w": 0.1706,
+        "h": 0.2217
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-painted-tune-patch",
+      "kind": "module",
+      "type": "playable-color-patch",
+      "strength": 0.6698760000000001,
+      "bounds": {
+        "x": 0.647,
+        "y": 0.742,
+        "w": 0.093,
+        "h": 0.108
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-small-altar-offering",
+      "kind": "module",
+      "type": "ritual-paper-altar",
+      "strength": 0.6473439999999999,
+      "bounds": {
+        "x": 0.4759,
+        "y": 0.8203,
+        "w": 0.0514,
+        "h": 0.1035
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-blue-dress-resonant-stone",
+      "kind": "module",
+      "type": "muted-blue-resonant-stone",
+      "strength": 0.65506,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-yokota-central-memory-square-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.26,
+        "y": 0.137,
+        "w": 0.492,
+        "h": 0.601
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "hero-marsh-house-native-habitat-bed-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0384,
+        "y": 0.0703,
+        "w": 0.2311,
+        "h": 0.7178
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-radigue-drone-tendril-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.286,
+        "y": 0.352,
+        "w": 0.449,
+        "h": 0.52
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mcmackin-woodland-understory-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.776,
+        "y": 0.808,
+        "w": 0.116,
+        "h": 0.14
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sound-leaves-folio-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.303,
+        "y": 0.153,
+        "w": 0.169,
+        "h": 0.272
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glass-bell-listening-pocket-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0866,
+        "y": 0.7119,
+        "w": 0.1706,
+        "h": 0.2217
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-painted-tune-patch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.647,
+        "y": 0.742,
+        "w": 0.093,
+        "h": 0.108
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-small-altar-offering-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4759,
+        "y": 0.8203,
+        "w": 0.0514,
+        "h": 0.1035
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-blue-dress-resonant-stone-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

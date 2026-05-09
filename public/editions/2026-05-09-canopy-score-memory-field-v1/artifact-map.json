@@ -1,0 +1,551 @@
+{
+  "artifact_map_id": "map-2026-05-09-canopy-score-memory-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "canopy-score-memory-field",
+  "default_artifact_id": "hero-yokota-central-memory-square",
+  "artifacts": [
+    {
+      "id": "hero-yokota-central-memory-square",
+      "kind": "hero",
+      "label": "yokota-central-memory-square",
+      "artifact_type": "scrapbook-painting-surface",
+      "bounds": {
+        "x": 0.26,
+        "y": 0.137,
+        "w": 0.492,
+        "h": 0.601
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.26,
+          0.137
+        ],
+        [
+          0.752,
+          0.137
+        ],
+        [
+          0.752,
+          0.738
+        ],
+        [
+          0.26,
+          0.738
+        ],
+        [
+          0.26,
+          0.137
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/hero-yokota-central-memory-square.svg",
+      "source_binding_ids": [
+        "binding-hero-yokota-central-memory-square"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          777,
+          399
+        ],
+        "safe_stage_window_origin_px": [
+          838,
+          448
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-marsh-house-native-habitat-bed",
+      "kind": "hero",
+      "label": "marsh-house-native-habitat-bed",
+      "artifact_type": "planted-habitat-zone",
+      "bounds": {
+        "x": 0.0384,
+        "y": 0.0703,
+        "w": 0.2311,
+        "h": 0.7178
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.0404,
+          0.5098
+        ],
+        [
+          0.0586,
+          0.2842
+        ],
+        [
+          0.0957,
+          0.0732
+        ],
+        [
+          0.1738,
+          0.1152
+        ],
+        [
+          0.2389,
+          0.2178
+        ],
+        [
+          0.2669,
+          0.3721
+        ],
+        [
+          0.2448,
+          0.5479
+        ],
+        [
+          0.1901,
+          0.6992
+        ],
+        [
+          0.1087,
+          0.7842
+        ],
+        [
+          0.0514,
+          0.7051
+        ],
+        [
+          0.0404,
+          0.5186
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/hero-marsh-house-native-habitat-bed.svg",
+      "source_binding_ids": [
+        "binding-hero-marsh-house-native-habitat-bed"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          237,
+          382
+        ],
+        "safe_stage_window_origin_px": [
+          264,
+          440
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-radigue-drone-tendril",
+      "kind": "module",
+      "label": "radigue-drone-tendril",
+      "artifact_type": "curling-waveform-line",
+      "bounds": {
+        "x": 0.286,
+        "y": 0.352,
+        "w": 0.449,
+        "h": 0.52
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.36,
+          0.36
+        ],
+        [
+          0.471,
+          0.5
+        ],
+        [
+          0.511,
+          0.735
+        ],
+        [
+          0.501,
+          0.872
+        ],
+        [
+          0.61,
+          0.633
+        ],
+        [
+          0.735,
+          0.448
+        ],
+        [
+          0.695,
+          0.646
+        ],
+        [
+          0.55,
+          0.804
+        ],
+        [
+          0.408,
+          0.625
+        ],
+        [
+          0.286,
+          0.455
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/module-radigue-drone-tendril.svg",
+      "source_binding_ids": [
+        "binding-module-radigue-drone-tendril"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          784,
+          584
+        ],
+        "safe_stage_window_origin_px": [
+          839,
+          627
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-mcmackin-woodland-understory",
+      "kind": "module",
+      "label": "mcmackin-woodland-understory",
+      "artifact_type": "woodland-understory-cluster",
+      "bounds": {
+        "x": 0.776,
+        "y": 0.808,
+        "w": 0.116,
+        "h": 0.14
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.819,
+          0.808
+        ],
+        [
+          0.874,
+          0.828
+        ],
+        [
+          0.892,
+          0.895
+        ],
+        [
+          0.855,
+          0.944
+        ],
+        [
+          0.797,
+          0.948
+        ],
+        [
+          0.776,
+          0.89
+        ],
+        [
+          0.79,
+          0.835
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/module-mcmackin-woodland-understory.svg",
+      "source_binding_ids": [
+        "binding-module-mcmackin-woodland-understory"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1281,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1295,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-sound-leaves-folio",
+      "kind": "module",
+      "label": "sound-leaves-folio",
+      "artifact_type": "waveform-leaf-fragment",
+      "bounds": {
+        "x": 0.303,
+        "y": 0.153,
+        "w": 0.169,
+        "h": 0.272
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.334,
+          0.163
+        ],
+        [
+          0.42,
+          0.158
+        ],
+        [
+          0.462,
+          0.232
+        ],
+        [
+          0.453,
+          0.354
+        ],
+        [
+          0.382,
+          0.421
+        ],
+        [
+          0.315,
+          0.385
+        ],
+        [
+          0.303,
+          0.268
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/module-sound-leaves-folio.svg",
+      "source_binding_ids": [
+        "binding-module-sound-leaves-folio"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          595,
+          274
+        ],
+        "safe_stage_window_origin_px": [
+          616,
+          296
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-glass-bell-listening-pocket",
+      "kind": "module",
+      "label": "glass-bell-listening-pocket",
+      "artifact_type": "hazy-glass-dome",
+      "bounds": {
+        "x": 0.0866,
+        "y": 0.7119,
+        "w": 0.1706,
+        "h": 0.2217
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.0885,
+          0.8672
+        ],
+        [
+          0.1035,
+          0.7744
+        ],
+        [
+          0.1504,
+          0.7148
+        ],
+        [
+          0.2246,
+          0.7383
+        ],
+        [
+          0.2546,
+          0.8447
+        ],
+        [
+          0.2279,
+          0.9209
+        ],
+        [
+          0.1328,
+          0.9297
+        ],
+        [
+          0.0885,
+          0.8691
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/module-glass-bell-listening-pocket.svg",
+      "source_binding_ids": [
+        "binding-module-glass-bell-listening-pocket"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          264,
+          825
+        ],
+        "safe_stage_window_origin_px": [
+          285,
+          842
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-painted-tune-patch",
+      "kind": "module",
+      "label": "painted-tune-patch",
+      "artifact_type": "playable-color-patch",
+      "bounds": {
+        "x": 0.647,
+        "y": 0.742,
+        "w": 0.093,
+        "h": 0.108
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.657,
+          0.742
+        ],
+        [
+          0.74,
+          0.746
+        ],
+        [
+          0.738,
+          0.842
+        ],
+        [
+          0.647,
+          0.85
+        ],
+        [
+          0.65,
+          0.775
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/module-painted-tune-patch.svg",
+      "source_binding_ids": [
+        "binding-module-painted-tune-patch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1065,
+          806
+        ],
+        "safe_stage_window_origin_px": [
+          1077,
+          815
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-small-altar-offering",
+      "kind": "module",
+      "label": "small-altar-offering",
+      "artifact_type": "ritual-paper-altar",
+      "bounds": {
+        "x": 0.4759,
+        "y": 0.8203,
+        "w": 0.0514,
+        "h": 0.1035
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.4779,
+          0.874
+        ],
+        [
+          0.4844,
+          0.8418
+        ],
+        [
+          0.5007,
+          0.8232
+        ],
+        [
+          0.5176,
+          0.8418
+        ],
+        [
+          0.5247,
+          0.8828
+        ],
+        [
+          0.5117,
+          0.915
+        ],
+        [
+          0.4844,
+          0.9199
+        ],
+        [
+          0.4779,
+          0.877
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/module-small-altar-offering.svg",
+      "source_binding_ids": [
+        "binding-module-small-altar-offering"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          770,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          776,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-blue-dress-resonant-stone",
+      "kind": "module",
+      "label": "blue-dress-resonant-stone",
+      "artifact_type": "muted-blue-resonant-stone",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "canopy-score-memory-field",
+      "mask_path": "/editions/2026-05-09-canopy-score-memory-field-v1/assets/masks/module-blue-dress-resonant-stone.svg",
+      "source_binding_ids": [
+        "binding-module-blue-dress-resonant-stone"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

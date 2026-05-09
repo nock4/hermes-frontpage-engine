@@ -1,8 +1,8 @@
 {
-  "enhancement_plan_id": "enhance-2026-05-06-blush-understory-palimpsest-v1",
-  "edition_id": "2026-05-06-blush-understory-palimpsest-v1",
+  "enhancement_plan_id": "enhance-2026-05-09-canopy-score-memory-field-v1",
+  "edition_id": "2026-05-09-canopy-score-memory-field-v1",
   "derived_from": {
-    "interpretation_id": "interp-2026-05-06-blush-understory-palimpsest-v1"
+    "interpretation_id": "interp-2026-05-09-canopy-score-memory-field-v1"
   },
   "interaction_world": {
     "class": "material-native",
@@ -22,7 +22,8 @@
   },
   "runtime_safe_subset": [
     "restoration-scan",
-    "threshold-scan-reveal"
+    "threshold-scan-reveal",
+    "screen-rendered-html"
   ],
   "future_only_subset": [
     "paint-bleed-reveal",
@@ -40,10 +41,31 @@
   ],
   "targets": [
     {
-      "target_id": "hero-expected-veil-panel",
+      "target_id": "hero-yokota-central-memory-square",
       "target_kind": "artifact",
-      "artifact_id": "hero-expected-veil-panel",
+      "artifact_id": "hero-yokota-central-memory-square",
       "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scrapbook-painting-surface) selected from interpretation."
+    },
+    {
+      "target_id": "hero-marsh-house-native-habitat-bed",
+      "target_kind": "artifact",
+      "artifact_id": "hero-marsh-house-native-habitat-bed",
+      "priority": 2,
       "techniques": [
         "paint-bleed-reveal",
         "restoration-scan"
@@ -57,13 +79,13 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (sleeve-panel) selected from interpretation."
+      "reason": "Artifact candidate (planted-habitat-zone) selected from interpretation."
     },
     {
-      "target_id": "hero-alfredo-warmth-pool",
+      "target_id": "module-radigue-drone-tendril",
       "target_kind": "artifact",
-      "artifact_id": "hero-alfredo-warmth-pool",
-      "priority": 2,
+      "artifact_id": "module-radigue-drone-tendril",
+      "priority": 3,
       "techniques": [
         "threshold-scan-reveal",
         "restoration-scan"
@@ -78,39 +100,20 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (gloss-aperture) selected from interpretation."
+      "reason": "Artifact candidate (curling-waveform-line) selected from interpretation."
     },
     {
-      "target_id": "module-disappear-mist-plaque",
+      "target_id": "module-mcmackin-woodland-understory",
       "target_kind": "artifact",
-      "artifact_id": "module-disappear-mist-plaque",
-      "priority": 3,
-      "techniques": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ],
-      "source_classes": [
-        "audio"
-      ],
-      "activation": {
-        "hover": true,
-        "click": true,
-        "drag": false,
-        "hold": false
-      },
-      "reason": "Artifact candidate (haze-plaque) selected from interpretation."
-    },
-    {
-      "target_id": "module-gift-recess",
-      "target_kind": "artifact",
-      "artifact_id": "module-gift-recess",
+      "artifact_id": "module-mcmackin-woodland-understory",
       "priority": 4,
       "techniques": [
         "paint-bleed-reveal",
         "restoration-scan"
       ],
       "source_classes": [
-        "audio"
+        "video",
+        "youtube"
       ],
       "activation": {
         "hover": true,
@@ -118,12 +121,12 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (altar-recess) selected from interpretation."
+      "reason": "Artifact candidate (woodland-understory-cluster) selected from interpretation."
     },
     {
-      "target_id": "module-dove-bifurcation",
+      "target_id": "module-sound-leaves-folio",
       "target_kind": "artifact",
-      "artifact_id": "module-dove-bifurcation",
+      "artifact_id": "module-sound-leaves-folio",
       "priority": 5,
       "techniques": [
         "threshold-scan-reveal",
@@ -138,16 +141,16 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (forked-filament) selected from interpretation."
+      "reason": "Artifact candidate (waveform-leaf-fragment) selected from interpretation."
     },
     {
-      "target_id": "module-thirteen-scratch-lattice",
+      "target_id": "module-glass-bell-listening-pocket",
       "target_kind": "artifact",
-      "artifact_id": "module-thirteen-scratch-lattice",
+      "artifact_id": "module-glass-bell-listening-pocket",
       "priority": 6,
       "techniques": [
-        "threshold-scan-reveal",
-        "restoration-scan"
+        "screen-rendered-html",
+        "threshold-scan-reveal"
       ],
       "source_classes": [
         "audio"
@@ -158,19 +161,20 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (scratch-lattice) selected from interpretation."
+      "reason": "Artifact candidate (hazy-glass-dome) selected from interpretation."
     },
     {
-      "target_id": "module-paw-occlusion",
+      "target_id": "module-painted-tune-patch",
       "target_kind": "artifact",
-      "artifact_id": "module-paw-occlusion",
+      "artifact_id": "module-painted-tune-patch",
       "priority": 7,
       "techniques": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ],
       "source_classes": [
-        "audio"
+        "social",
+        "tweet"
       ],
       "activation": {
         "hover": true,
@@ -178,16 +182,16 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (veil-occlusion) selected from interpretation."
+      "reason": "Artifact candidate (playable-color-patch) selected from interpretation."
     },
     {
-      "target_id": "module-thirteen-scratch-lattice-2",
+      "target_id": "module-small-altar-offering",
       "target_kind": "artifact",
-      "artifact_id": "module-thirteen-scratch-lattice-2",
+      "artifact_id": "module-small-altar-offering",
       "priority": 8,
       "techniques": [
-        "threshold-scan-reveal",
-        "restoration-scan"
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
       ],
       "source_classes": [
         "audio"
@@ -198,15 +202,15 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (scratch-lattice) selected from interpretation."
+      "reason": "Artifact candidate (ritual-paper-altar) selected from interpretation."
     },
     {
-      "target_id": "module-paw-occlusion-2",
+      "target_id": "module-blue-dress-resonant-stone",
       "target_kind": "artifact",
-      "artifact_id": "module-paw-occlusion-2",
+      "artifact_id": "module-blue-dress-resonant-stone",
       "priority": 9,
       "techniques": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ],
       "source_classes": [
@@ -218,7 +222,7 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (veil-occlusion) selected from interpretation."
+      "reason": "Artifact candidate (muted-blue-resonant-stone) selected from interpretation."
     }
   ],
   "global_recommendation": [
