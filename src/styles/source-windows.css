@@ -1785,6 +1785,15 @@
   filter: saturate(0.64) contrast(1.18) brightness(0.82) hue-rotate(-8deg);
 }
 
+.source-window[data-source-window-mode="preview"][data-binding-id="binding-hero-less-lawn-hero-growth-pocket"] .mechanical-reveal-preview__image,
+.source-window[data-source-window-mode="preview"][data-binding-id="binding-hero-less-lawn-hero-growth-pocket"] .light-table-preview__image,
+.source-window[data-source-window-mode="preview"][data-binding-id="binding-hero-less-lawn-hero-growth-pocket"] .scanner-decode-preview__image,
+.source-window[data-source-window-mode="preview"][data-binding-id="binding-module-radigue-drone-chalk-line"] .mechanical-reveal-preview__image,
+.source-window[data-source-window-mode="preview"][data-binding-id="binding-module-radigue-drone-chalk-line"] .light-table-preview__image,
+.source-window[data-source-window-mode="preview"][data-binding-id="binding-module-radigue-drone-chalk-line"] .scanner-decode-preview__image {
+  object-fit: contain;
+}
+
 .scanner-decode-preview__sample-label {
   font-size: 0.5rem;
   letter-spacing: 0.16em;
