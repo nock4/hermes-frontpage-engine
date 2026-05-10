@@ -53,12 +53,36 @@ npm run demo:preview
 - `markdown-folder`: local markdown notes with URLs
 - `obsidian-allowlist`: legacy Nick-compatible vault scan
 
-## Single-run inspiration override
+## Next-run inspiration override
 
-The engine can temporarily bias the **next run** with a one-off image override manifest.
-This is what Hermes Agent's Telegram single-photo `/frontpage`, `/frontpage-override`, and `/fp` caption flow writes into.
+Use this repo-local command when Nick says something like “schedule tomorrow’s daily frontpage around this URL.” This is a true one-shot override, not a bookmark seed.
 
-Quick example:
+Quick URL/source example:
+
+```bash
+npm run next-run:inspo-override -- \
+  --url "https://example.com/source" \
+  --title "Robot Monk Gabi" \
+  --note "Bias tomorrow toward ritual interface and devotional robotics." \
+  --bias "ritual interface,machine novice monk,devotional robotics"
+```
+
+Useful maintenance commands:
+
+```bash
+npm run next-run:inspo-override -- --show
+npm run next-run:inspo-override -- --clear
+```
+
+What this does:
+- writes the canonical next-run manifest at `tmp/next-run-inspiration-override.json` by default
+- is automatically consumed by `npm run daily:publish:cron`, which passes it into `daily:process --inspiration-override`
+- supports URL/text-only overrides and optional image overrides
+- keeps the normal saved-signal research flow active while treating the override as the strongest source/visual bias
+- stores optional `prompt_bias_terms` that tilt downstream source discovery
+- auto-consumes/deactivates the override after a successful run unless the manifest says otherwise
+
+Older lower-level command, still available for compatibility:
 
 ```bash
 npm run daily:set-inspiration-override -- \
@@ -68,14 +92,7 @@ npm run daily:set-inspiration-override -- \
   --note "Keep source discovery broad."
 ```
 
-What this does:
-- writes a manifest for the next run at `tmp/next-run-inspiration-override.json` by default
-- treats the supplied image as the strongest visual cue
-- keeps the normal saved-signal research flow active
-- stores optional `prompt_bias_terms` that tilt downstream source discovery
-- auto-consumes the override after a successful run unless you explicitly disable that in the manifest
-
-The Telegram caption mapping is:
+The Telegram caption mapping for image-based overrides is:
 - first command line: optional title
 - `bias:`: comma-separated bias terms
 - `note:` and any extra body lines: freeform note
@@ -105,6 +122,7 @@ npm run daily:process -- --vault /path/to/vault
 6. assemble a packaged edition for the runtime and archive
 
 ## Main commands
+- `npm run next-run:inspo-override`
 - `npm run daily:process`
 - `npm run daily:set-inspiration-override`
 - `npm run demo:sample`

@@ -18,6 +18,7 @@
     "daily:process": "node scripts/run-daily-process.mjs",
     "daily:publish:cron": "node scripts/run-daily-publish-cron.mjs",
     "daily:set-inspiration-override": "node scripts/set-inspiration-override.mjs",
+    "next-run:inspo-override": "node scripts/next-run-inspo-override.mjs",
     "demo:sample": "node scripts/run-daily-process.mjs --use-sample-signals",
     "demo:preview": "vite preview --host 127.0.0.1 --port 4174",
     "check:setup": "node scripts/run-daily-process.mjs --help",
