@@ -46,6 +46,30 @@ describe('inspiration override', () => {
     expect(override.image_data_url.startsWith('data:image/png;base64,')).toBe(true)
   })
 
+  it('loads a text-only source override when Nick sends a URL without an image', async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-override-text-'))
+    const overridePath = path.join(tempDir, 'override.json')
+    await fs.writeFile(overridePath, JSON.stringify({
+      title: 'Robot Monk Gabi',
+      note: 'Temporary next-run bias around ritual interface, machine novice monk, Seoul temple ceremony.',
+      source: 'telegram',
+      source_url: 'https://www.nytimes.com/video/world/asia/100000010886997/robot-monk-gabi-south-korea.html?smid=url-share',
+      prompt_bias_terms: ['ritual interface', 'machine novice monk', 'soft devotional robotics'],
+    }))
+
+    const override = await loadInspirationOverride({ overridePath })
+
+    expect(override).toMatchObject({
+      title: 'Robot Monk Gabi',
+      note: 'Temporary next-run bias around ritual interface, machine novice monk, Seoul temple ceremony.',
+      source: 'telegram',
+      source_url: 'https://www.nytimes.com/video/world/asia/100000010886997/robot-monk-gabi-south-korea.html?smid=url-share',
+      prompt_bias_terms: ['ritual interface', 'machine novice monk', 'soft devotional robotics'],
+    })
+    expect(override.image_data_url).toBeNull()
+    expect(override.image_url).toBeNull()
+  })
+
   it('annotates signal harvest metadata without embedding the image payload', () => {
     const harvest = annotateSignalHarvestWithInspirationOverride({
       generated_at: '2026-05-02T00:00:00.000Z',

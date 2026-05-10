@@ -40,7 +40,7 @@ function buildSelectionReason(override) {
   const biasTerms = override.prompt_bias_terms.length
     ? ` Bias terms: ${override.prompt_bias_terms.join(', ')}.`
     : ''
-  return `Use this temporary inspiration override as the strongest visual cue while still researching from the normal saved-signal field.${biasTerms}`
+  return `Use this temporary inspiration override as the strongest source and visual cue while still researching from the normal saved-signal field.${biasTerms}`
 }
 
 export async function loadInspirationOverride({ overridePath, cwd = process.cwd(), date = null } = {}) {
@@ -59,10 +59,6 @@ export async function loadInspirationOverride({ overridePath, cwd = process.cwd(
   const imagePath = resolveMaybeRelative(path.dirname(resolvedPath), raw.image_path)
   const imageUrl = normalizeString(raw.image_url)
   const imageDataUrl = normalizeString(raw.image_data_url) || (!imageUrl && imagePath ? await imagePathToDataUrl(imagePath) : null)
-
-  if (!imageDataUrl && !imageUrl) {
-    throw new Error(`Inspiration override requires image_path, image_url, or image_data_url: ${resolvedPath}`)
-  }
 
   return {
     override_path: resolvedPath,
@@ -108,7 +104,7 @@ export function buildInspirationOverrideVisualReference(override, { fallback = n
     source_url: override.source_url || fallback?.source_url || fallback?.url || null,
     final_url: override.source_url || fallback?.final_url || fallback?.source_url || fallback?.url || null,
     image_url: override.image_data_url || override.image_url || fallback?.image_url || null,
-    source_channel: 'manual-image-override',
+    source_channel: override.image_data_url || override.image_url ? 'manual-image-override' : 'manual-source-override',
     source_type: 'manual-inspiration-override',
     visual_reference_score: 999,
     is_temporary_override: true,

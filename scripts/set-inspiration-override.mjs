@@ -6,7 +6,7 @@ const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
 const defaultManifestPath = path.join(root, 'tmp', 'next-run-inspiration-override.json')
 
 function usage() {
-  console.log(`Usage:\n  node scripts/set-inspiration-override.mjs --image <path-or-url> [--title <text>] [--note <text>] [--source <name>] [--source-url <url>] [--manifest <path>] [--bias-terms term1,term2]\n`)
+  console.log(`Usage:\n  node scripts/set-inspiration-override.mjs [--image <path-or-url>] [--title <text>] [--note <text>] [--source <name>] [--source-url <url>] [--manifest <path>] [--bias-terms term1,term2]\n`)
 }
 
 function parseArgs(argv) {
@@ -61,14 +61,14 @@ function parseArgs(argv) {
     }
     throw new Error(`Unknown option: ${arg}`)
   }
-  if (!options.image) throw new Error('Missing required --image')
+  if (!options.image && !options.sourceUrl && !options.note) throw new Error('Missing override content: pass --image, --source-url, or --note')
   return options
 }
 
 async function main() {
   const options = parseArgs(process.argv.slice(2))
   const manifestPath = path.isAbsolute(options.manifest) ? options.manifest : path.resolve(root, options.manifest)
-  const imageIsUrl = /^https?:\/\//i.test(options.image) || options.image.startsWith('data:')
+  const imageIsUrl = options.image ? /^https?:\/\//i.test(options.image) || options.image.startsWith('data:') : false
   const payload = {
     active: true,
     title: options.title,
@@ -78,7 +78,7 @@ async function main() {
     received_at: new Date().toISOString(),
     prompt_bias_terms: options.biasTerms,
     consume_after_success: true,
-    ...(imageIsUrl ? { image_url: options.image } : { image_path: path.isAbsolute(options.image) ? options.image : path.resolve(process.cwd(), options.image) }),
+    ...(options.image ? (imageIsUrl ? { image_url: options.image } : { image_path: path.isAbsolute(options.image) ? options.image : path.resolve(process.cwd(), options.image) }) : {}),
   }
   await fs.mkdir(path.dirname(manifestPath), { recursive: true })
   await fs.writeFile(manifestPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8')

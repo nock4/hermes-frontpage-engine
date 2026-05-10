@@ -7,15 +7,17 @@ import https from 'node:https'
 const primaryRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
 const defaultVaultRoot = '/Users/nickgeorge-studio/Documents/nicks-mind-map'
 const defaultWorktreeDir = process.env.DFE_CRON_WORKTREE_DIR || path.resolve(primaryRoot, '..', 'hermes-frontpage-engine-cron')
+const defaultInspirationOverridePath = path.join(primaryRoot, 'tmp', 'next-run-inspiration-override.json')
 const remoteManifestUrl = 'https://daily.nockgarden.com/editions/index.json'
 
-function parseArgs(argv) {
+export function parseArgs(argv) {
   const options = {
     inputRoot: defaultVaultRoot,
     worktreeDir: defaultWorktreeDir,
     branch: 'main',
     remote: 'origin',
     remoteUrl: remoteManifestUrl,
+    inspirationOverride: null,
     retries: 18,
     retryDelayMs: 10000,
   }
@@ -34,10 +36,11 @@ function parseArgs(argv) {
     else if (arg === '--branch') options.branch = readValue()
     else if (arg === '--remote') options.remote = readValue()
     else if (arg === '--remote-url') options.remoteUrl = readValue()
+    else if (arg === '--inspiration-override') options.inspirationOverride = readValue()
     else if (arg === '--retries') options.retries = Number.parseInt(readValue(), 10)
     else if (arg === '--retry-delay-ms') options.retryDelayMs = Number.parseInt(readValue(), 10)
     else if (arg === '--help') {
-      console.log('Usage: node scripts/run-daily-publish-cron.mjs [--input-root <path>] [--worktree-dir <path>] [--branch <name>] [--remote <name>] [--remote-url <url>]')
+      console.log('Usage: node scripts/run-daily-publish-cron.mjs [--input-root <path>] [--worktree-dir <path>] [--branch <name>] [--remote <name>] [--remote-url <url>] [--inspiration-override <path>]')
       process.exit(0)
     } else {
       throw new Error(`Unknown option: ${arg}`)
@@ -103,6 +106,13 @@ async function ensureNodeModulesLink(worktreeDir) {
   }
   if (await exists(targetNodeModules)) return
   await fs.symlink(sourceNodeModules, targetNodeModules, 'junction')
+}
+
+export async function resolveInspirationOverridePath(options) {
+  const configured = options.inspirationOverride
+    ? path.resolve(primaryRoot, options.inspirationOverride)
+    : defaultInspirationOverridePath
+  return await exists(configured) ? configured : null
 }
 
 async function ensureWorktree({ worktreeDir, remote, branch }) {
@@ -242,6 +252,7 @@ async function main() {
     input_root: path.resolve(options.inputRoot),
     local_edition_id: null,
     local_publish_status: null,
+    inspiration_override: null,
     commit: null,
     push_succeeded: false,
     remote_matches: false,
@@ -252,7 +263,15 @@ async function main() {
   try {
     await ensureWorktree(options)
 
-    await run('npm', ['run', 'daily:process', '--', '--input-mode', 'obsidian-allowlist', '--input-root', options.inputRoot, '--publish'], {
+    const processArgs = ['run', 'daily:process', '--', '--input-mode', 'obsidian-allowlist', '--input-root', options.inputRoot, '--publish']
+    const inspirationOverridePath = await resolveInspirationOverridePath(options)
+    if (inspirationOverridePath) {
+      processArgs.push('--inspiration-override', inspirationOverridePath)
+      summary.inspiration_override = inspirationOverridePath
+      console.log(`[daily:publish:cron] using inspiration override ${inspirationOverridePath}`)
+    }
+
+    await run('npm', processArgs, {
       cwd: options.worktreeDir,
     })
     await fs.rm(path.join(options.worktreeDir, 'vite.config.d.ts'), { force: true })
@@ -284,4 +303,11 @@ async function main() {
   }
 }
 
-main()
+const isDirectRun = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
+
+if (isDirectRun) {
+  main().catch((error) => {
+    console.error(error.stack || error.message)
+    process.exit(1)
+  })
+}
