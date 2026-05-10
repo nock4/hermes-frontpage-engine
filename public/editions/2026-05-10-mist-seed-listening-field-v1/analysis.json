@@ -1,0 +1,495 @@
+{
+  "analysis_id": "analysis-2026-05-10-mist-seed-listening-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Dense dark forest-floor composition with a central pale golden mist/glyph, torn paper and stone-like inserts, wet foliage, ochre plaques, beads, dotted rings, and edge seams. The image has many visible source-bearing marks but remains organized around a few large gestures.",
+  "usable_surfaces": [
+    "central luminous brush-veil glyph",
+    "upper torn pale disc",
+    "left hanging paper marker",
+    "left oval scratched stone",
+    "lower-left torn sleeve fragment",
+    "right ochre rectangular plaque",
+    "lower-right dotted dark stone",
+    "bottom teal wet bead",
+    "bottom orange pulse mark"
+  ],
+  "detected_objects": [
+    {
+      "label": "angel-hero-gesture",
+      "artifact_type": "hero-scale-brush-veil",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.424,
+        "y": 0.283,
+        "w": 0.231,
+        "h": 0.241
+      },
+      "polygon": [
+        [
+          0.493,
+          0.286
+        ],
+        [
+          0.557,
+          0.294
+        ],
+        [
+          0.621,
+          0.331
+        ],
+        [
+          0.652,
+          0.386
+        ],
+        [
+          0.635,
+          0.454
+        ],
+        [
+          0.584,
+          0.511
+        ],
+        [
+          0.512,
+          0.524
+        ],
+        [
+          0.456,
+          0.502
+        ],
+        [
+          0.427,
+          0.455
+        ],
+        [
+          0.431,
+          0.398
+        ],
+        [
+          0.456,
+          0.343
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "large central pale gold spiral and hand-like brush veil with luminous fog halo, clearly the dominant painted interruption"
+    },
+    {
+      "label": "mini-forest-hero-clearing",
+      "artifact_type": "hero-scale-seed-clearing",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.443,
+        "y": 0.017,
+        "w": 0.176,
+        "h": 0.193
+      },
+      "polygon": [
+        [
+          0.489,
+          0.018
+        ],
+        [
+          0.548,
+          0.018
+        ],
+        [
+          0.596,
+          0.04
+        ],
+        [
+          0.619,
+          0.09
+        ],
+        [
+          0.611,
+          0.149
+        ],
+        [
+          0.579,
+          0.195
+        ],
+        [
+          0.524,
+          0.21
+        ],
+        [
+          0.475,
+          0.194
+        ],
+        [
+          0.446,
+          0.153
+        ],
+        [
+          0.443,
+          0.092
+        ],
+        [
+          0.459,
+          0.047
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "upper-center damaged pale circular surface with punched holes, stains, ragged lower edge, and seed-like apertures"
+    },
+    {
+      "label": "less-lawn-paper-marker",
+      "artifact_type": "wet-paper-plant-marker",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.082,
+        "y": 0.151,
+        "w": 0.058,
+        "h": 0.127
+      },
+      "polygon": [
+        [
+          0.109,
+          0.151
+        ],
+        [
+          0.132,
+          0.164
+        ],
+        [
+          0.14,
+          0.2
+        ],
+        [
+          0.137,
+          0.245
+        ],
+        [
+          0.12,
+          0.278
+        ],
+        [
+          0.097,
+          0.267
+        ],
+        [
+          0.085,
+          0.229
+        ],
+        [
+          0.083,
+          0.188
+        ],
+        [
+          0.094,
+          0.158
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "small hanging beige round paper tag tucked into branches, with dark pinhole and faint plant-like mark"
+    },
+    {
+      "label": "radigue-drone-shadow-band",
+      "artifact_type": "charcoal-drone-band",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.214,
+        "y": 0.207,
+        "w": 0.497,
+        "h": 0.142
+      },
+      "polygon": [
+        [
+          0.222,
+          0.207
+        ],
+        [
+          0.319,
+          0.218
+        ],
+        [
+          0.437,
+          0.248
+        ],
+        [
+          0.55,
+          0.28
+        ],
+        [
+          0.65,
+          0.316
+        ],
+        [
+          0.711,
+          0.349
+        ],
+        [
+          0.696,
+          0.336
+        ],
+        [
+          0.591,
+          0.305
+        ],
+        [
+          0.473,
+          0.276
+        ],
+        [
+          0.349,
+          0.239
+        ],
+        [
+          0.214,
+          0.222
+        ]
+      ],
+      "confidence": 0.58,
+      "visual_evidence": "long dark diagonal branch/shadow band crossing through upper foliage and mist, visually reads as a sustained charcoal harmonic line"
+    },
+    {
+      "label": "laurel-halo-water-sheen",
+      "artifact_type": "translucent-water-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.688,
+        "y": 0.809,
+        "w": 0.042,
+        "h": 0.06
+      },
+      "polygon": [
+        [
+          0.705,
+          0.809
+        ],
+        [
+          0.724,
+          0.816
+        ],
+        [
+          0.731,
+          0.84
+        ],
+        [
+          0.724,
+          0.864
+        ],
+        [
+          0.707,
+          0.869
+        ],
+        [
+          0.692,
+          0.857
+        ],
+        [
+          0.688,
+          0.832
+        ],
+        [
+          0.694,
+          0.815
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "small bright blue-gray teal wet bead or glass aperture near lower right, sharply distinct from surrounding leaf texture"
+    },
+    {
+      "label": "taaritt-dust-node",
+      "artifact_type": "ochre-dust-listening-stone",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.797,
+        "y": 0.458,
+        "w": 0.1,
+        "h": 0.085
+      },
+      "polygon": [
+        [
+          0.799,
+          0.46
+        ],
+        [
+          0.875,
+          0.458
+        ],
+        [
+          0.897,
+          0.479
+        ],
+        [
+          0.89,
+          0.532
+        ],
+        [
+          0.82,
+          0.543
+        ],
+        [
+          0.797,
+          0.518
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "rough ochre rectangular stone or plaque embedded in foliage, dry dusty color contrasting with humid green field"
+    },
+    {
+      "label": "into-the-light-sleeve-fragment",
+      "artifact_type": "sun-baked-sleeve-fragment",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.074,
+        "y": 0.539,
+        "w": 0.193,
+        "h": 0.188
+      },
+      "polygon": [
+        [
+          0.095,
+          0.545
+        ],
+        [
+          0.169,
+          0.539
+        ],
+        [
+          0.239,
+          0.566
+        ],
+        [
+          0.267,
+          0.623
+        ],
+        [
+          0.244,
+          0.694
+        ],
+        [
+          0.18,
+          0.727
+        ],
+        [
+          0.104,
+          0.705
+        ],
+        [
+          0.074,
+          0.642
+        ],
+        [
+          0.082,
+          0.583
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "lower-left torn beige parchment or sleeve shard with black stains, creases, and jagged sun-baked paper edges"
+    },
+    {
+      "label": "brise-mist-ribbon",
+      "artifact_type": "soft-mist-ribbon",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.322,
+        "y": 0.356,
+        "w": 0.36,
+        "h": 0.142
+      },
+      "polygon": [
+        [
+          0.327,
+          0.434
+        ],
+        [
+          0.39,
+          0.384
+        ],
+        [
+          0.479,
+          0.359
+        ],
+        [
+          0.58,
+          0.356
+        ],
+        [
+          0.674,
+          0.383
+        ],
+        [
+          0.682,
+          0.424
+        ],
+        [
+          0.598,
+          0.41
+        ],
+        [
+          0.504,
+          0.406
+        ],
+        [
+          0.414,
+          0.43
+        ],
+        [
+          0.334,
+          0.498
+        ]
+      ],
+      "confidence": 0.62,
+      "visual_evidence": "pale drifting mist ribbon through the central foliage, visible as soft moving-air band around the glowing gesture"
+    },
+    {
+      "label": "always-nine-seconds-away-pulse-stone",
+      "artifact_type": "small-gold-pulse-stone",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.303,
+        "y": 0.776,
+        "w": 0.06,
+        "h": 0.08
+      },
+      "polygon": [
+        [
+          0.326,
+          0.778
+        ],
+        [
+          0.352,
+          0.789
+        ],
+        [
+          0.363,
+          0.819
+        ],
+        [
+          0.354,
+          0.848
+        ],
+        [
+          0.33,
+          0.856
+        ],
+        [
+          0.309,
+          0.842
+        ],
+        [
+          0.303,
+          0.812
+        ],
+        [
+          0.311,
+          0.788
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "small orange-gold spiral ember or pulse mark near lower center, compact and brighter than surrounding organic texture"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.271,
+    "rationale": "The plate is expressionist and source-rich, centered by one strong luminous gesture, but dense foliage, flecks, rings, branches, and overlapping paper/stone textures create moderate visual clutter."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-05-10-mist-seed-listening-field-v1"
+}

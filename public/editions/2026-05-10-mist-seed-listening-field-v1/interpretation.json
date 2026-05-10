@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-05-10-mist-seed-listening-field-v1",
+  "edition_id": "2026-05-10-mist-seed-listening-field-v1",
+  "plate_read_timestamp": "2026-05-10T11:28:26.308Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Dense dark forest-floor composition with a central pale golden mist/glyph, torn paper and stone-like inserts, wet foliage, ochre plaques, beads, dotted rings, and edge seams. The image has many visible source-bearing marks but remains organized around a few large gestures.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet, humid, densely planted, and slowly resonant",
+      "Dense dark forest-floor composition with a central pale golden mist/glyph, torn paper and stone-like inserts, wet foliage, ochre plaques, beads, dotted rings, and edge seams. The image has many visible source-bearing marks but remains organized around a few large gestures.",
+      "rewilded-habitat",
+      "drone-weather",
+      "seed-plaques"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "angel-hero-gesture",
+      "mini-forest-hero-clearing",
+      "less-lawn-paper-marker",
+      "radigue-drone-shadow-band",
+      "laurel-halo-water-sheen",
+      "taaritt-dust-node",
+      "into-the-light-sleeve-fragment",
+      "brise-mist-ribbon"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "water",
+      "fog",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "mist-seed-listening-field",
+      "one continuous full-bleed thicket of overlapping organic marks",
+      "three to five small clearings where source-bearing plaques or stones emerge",
+      "diagonal branchlike bands that double as slow drone wave strata",
+      "central nonverbal white brush-gesture cluster hovering over darker growth",
+      "soft-edged paper and sleeve fragments half-buried in soil and leaves",
+      "central luminous brush-veil glyph",
+      "upper torn pale disc"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: mist-seed-listening-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-angel-hero-gesture",
+      "kind": "hero",
+      "type": "hero-scale-brush-veil",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.424,
+        "y": 0.283,
+        "w": 0.231,
+        "h": 0.241
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-mini-forest-hero-clearing",
+      "kind": "hero",
+      "type": "hero-scale-seed-clearing",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.443,
+        "y": 0.017,
+        "w": 0.176,
+        "h": 0.193
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-less-lawn-paper-marker",
+      "kind": "module",
+      "type": "wet-paper-plant-marker",
+      "strength": 0.795528,
+      "bounds": {
+        "x": 0.082,
+        "y": 0.151,
+        "w": 0.058,
+        "h": 0.127
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-radigue-drone-shadow-band",
+      "kind": "module",
+      "type": "charcoal-drone-band",
+      "strength": 0.7701960000000001,
+      "bounds": {
+        "x": 0.214,
+        "y": 0.207,
+        "w": 0.497,
+        "h": 0.142
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-laurel-halo-water-sheen",
+      "kind": "module",
+      "type": "translucent-water-aperture",
+      "strength": 0.7314120000000001,
+      "bounds": {
+        "x": 0.688,
+        "y": 0.809,
+        "w": 0.042,
+        "h": 0.06
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-taaritt-dust-node",
+      "kind": "module",
+      "type": "ochre-dust-listening-stone",
+      "strength": 0.706332,
+      "bounds": {
+        "x": 0.797,
+        "y": 0.458,
+        "w": 0.1,
+        "h": 0.085
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-into-the-light-sleeve-fragment",
+      "kind": "module",
+      "type": "sun-baked-sleeve-fragment",
+      "strength": 0.6614040000000001,
+      "bounds": {
+        "x": 0.074,
+        "y": 0.539,
+        "w": 0.193,
+        "h": 0.188
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-brise-mist-ribbon",
+      "kind": "module",
+      "type": "soft-mist-ribbon",
+      "strength": 0.657376,
+      "bounds": {
+        "x": 0.322,
+        "y": 0.356,
+        "w": 0.36,
+        "h": 0.142
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-always-nine-seconds-away-pulse-stone",
+      "kind": "module",
+      "type": "small-gold-pulse-stone",
+      "strength": 0.650848,
+      "bounds": {
+        "x": 0.303,
+        "y": 0.776,
+        "w": 0.06,
+        "h": 0.08
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-angel-hero-gesture-surface",
+      "surface_type": "fog",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.424,
+        "y": 0.283,
+        "w": 0.231,
+        "h": 0.241
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-mini-forest-hero-clearing-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.443,
+        "y": 0.017,
+        "w": 0.176,
+        "h": 0.193
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-less-lawn-paper-marker-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.082,
+        "y": 0.151,
+        "w": 0.058,
+        "h": 0.127
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-radigue-drone-shadow-band-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.214,
+        "y": 0.207,
+        "w": 0.497,
+        "h": 0.142
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-laurel-halo-water-sheen-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.688,
+        "y": 0.809,
+        "w": 0.042,
+        "h": 0.06
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-taaritt-dust-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.797,
+        "y": 0.458,
+        "w": 0.1,
+        "h": 0.085
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-into-the-light-sleeve-fragment-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.074,
+        "y": 0.539,
+        "w": 0.193,
+        "h": 0.188
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-brise-mist-ribbon-surface",
+      "surface_type": "fog",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.322,
+        "y": 0.356,
+        "w": 0.36,
+        "h": 0.142
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-always-nine-seconds-away-pulse-stone-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.303,
+        "y": 0.776,
+        "w": 0.06,
+        "h": 0.08
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
