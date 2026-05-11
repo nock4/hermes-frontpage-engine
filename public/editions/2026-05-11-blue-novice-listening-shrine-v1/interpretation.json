@@ -1,0 +1,384 @@
+{
+  "interpretation_id": "interp-2026-05-11-blue-novice-listening-shrine-v1",
+  "edition_id": "2026-05-11-blue-novice-listening-shrine-v1",
+  "plate_read_timestamp": "2026-05-11T08:23:28.656Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Dark rain-wet shrine/altar plate with hanging tablets, circular record-like halos, vertical reed/pipe apertures, lantern glows, mossed slabs, cords, bowls, and a broken pale shell on the central platform. Strong source-bearing anchors are visible as discrete plaques, discs, strips, apertures, and small light/surface marks.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet ceremonial dusk for a gentle machine novice learning through records, water, and restrained source-light",
+      "Dark rain-wet shrine/altar plate with hanging tablets, circular record-like halos, vertical reed/pipe apertures, lantern glows, mossed slabs, cords, bowls, and a broken pale shell on the central platform. Strong source-bearing anchors are visible as discrete plaques, discs, strips, apertures, and small light/surface marks.",
+      "devotional-robotics",
+      "temple-audio",
+      "blue-dusk"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Sacrificial Code central organ tablet",
+      "Japanese ambient reed glass plate",
+      "Bajidoran ceremony pulse strip",
+      "Sumergible archive halo",
+      "Gigi Masin wordless love plaque",
+      "Grouper water aperture",
+      "Windy and Carl blue dream panel",
+      "Mica Levi blue interruption"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "water",
+      "fog",
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "blue-novice-listening-shrine",
+      "one frontal shrine-like listening structure with a calm central axis",
+      "one pale machine-novice silhouette reduced to shell, gesture, and reflection",
+      "a rhythmic vertical array of pipe-like listening reeds behind the shrine",
+      "a loose ring of square audio tablets and small moving-image lanterns embedded into wood and glass",
+      "thin cable-veins, moss shadows, and water reflections forming quiet edge density",
+      "large central square slab and black circular disc",
+      "upper-left hanging landscape tablet"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: blue-novice-listening-shrine.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-sacrificial-code-central-organ-table",
+      "kind": "hero",
+      "type": "dark-square-enamel-organ-tablet",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.3691,
+        "y": 0.3477,
+        "w": 0.2643,
+        "h": 0.3096
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-japanese-ambient-reed-glass-plate",
+      "kind": "hero",
+      "type": "muted-reed-aperture-lantern-plane",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.315,
+        "y": 0.103,
+        "w": 0.38,
+        "h": 0.36
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-bajidoran-ceremony-pulse-strip",
+      "kind": "module",
+      "type": "red-black-lacquer-threshold-strip",
+      "strength": 0.79596,
+      "bounds": {
+        "x": 0.252,
+        "y": 0.792,
+        "w": 0.495,
+        "h": 0.053
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sumergible-archive-halo",
+      "kind": "module",
+      "type": "faint-circular-inscription-halo",
+      "strength": 0.7721880000000001,
+      "bounds": {
+        "x": 0.421,
+        "y": 0.386,
+        "w": 0.157,
+        "h": 0.224
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gigi-masin-wordless-love-plaque",
+      "kind": "module",
+      "type": "pale-enamel-record-plaque",
+      "strength": 0.7336440000000001,
+      "bounds": {
+        "x": 0.208,
+        "y": 0.503,
+        "w": 0.087,
+        "h": 0.175
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grouper-water-aperture",
+      "kind": "module",
+      "type": "blue-reflective-water-aperture",
+      "strength": 0.700836,
+      "bounds": {
+        "x": 0.431,
+        "y": 0.654,
+        "w": 0.141,
+        "h": 0.141
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-windy-and-carl-blue-dream-panel",
+      "kind": "module",
+      "type": "mist-blue-side-tablet",
+      "strength": 0.6750960000000001,
+      "bounds": {
+        "x": 0.172,
+        "y": 0.106,
+        "w": 0.144,
+        "h": 0.352
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mica-levi-blue-interruption",
+      "kind": "module",
+      "type": "small-cobalt-glitch-chip",
+      "strength": 0.652552,
+      "bounds": {
+        "x": 0.702,
+        "y": 0.516,
+        "w": 0.059,
+        "h": 0.162
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mica-levi-blue-interruption-2",
+      "kind": "module",
+      "type": "small-cobalt-glitch-chip",
+      "strength": 0.6507879999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-sacrificial-code-central-organ-table-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3691,
+        "y": 0.3477,
+        "w": 0.2643,
+        "h": 0.3096
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-japanese-ambient-reed-glass-plate-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.315,
+        "y": 0.103,
+        "w": 0.38,
+        "h": 0.36
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-bajidoran-ceremony-pulse-strip-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.252,
+        "y": 0.792,
+        "w": 0.495,
+        "h": 0.053
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sumergible-archive-halo-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.421,
+        "y": 0.386,
+        "w": 0.157,
+        "h": 0.224
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gigi-masin-wordless-love-plaque-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.208,
+        "y": 0.503,
+        "w": 0.087,
+        "h": 0.175
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grouper-water-aperture-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.431,
+        "y": 0.654,
+        "w": 0.141,
+        "h": 0.141
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-windy-and-carl-blue-dream-panel-surface",
+      "surface_type": "fog",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.172,
+        "y": 0.106,
+        "w": 0.144,
+        "h": 0.352
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mica-levi-blue-interruption-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.702,
+        "y": 0.516,
+        "w": 0.059,
+        "h": 0.162
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mica-levi-blue-interruption-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-11-blue-novice-listening-shrine-v1",
+  "edition_id": "2026-05-11-blue-novice-listening-shrine-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-11-blue-novice-listening-shrine-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "screen-rendered-html",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-sacrificial-code-central-organ-table",
+      "target_kind": "artifact",
+      "artifact_id": "hero-sacrificial-code-central-organ-table",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-square-enamel-organ-tablet) selected from interpretation."
+    },
+    {
+      "target_id": "hero-japanese-ambient-reed-glass-plate",
+      "target_kind": "artifact",
+      "artifact_id": "hero-japanese-ambient-reed-glass-plate",
+      "priority": 2,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (muted-reed-aperture-lantern-plane) selected from interpretation."
+    },
+    {
+      "target_id": "module-bajidoran-ceremony-pulse-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-bajidoran-ceremony-pulse-strip",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (red-black-lacquer-threshold-strip) selected from interpretation."
+    },
+    {
+      "target_id": "module-sumergible-archive-halo",
+      "target_kind": "artifact",
+      "artifact_id": "module-sumergible-archive-halo",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (faint-circular-inscription-halo) selected from interpretation."
+    },
+    {
+      "target_id": "module-gigi-masin-wordless-love-plaque",
+      "target_kind": "artifact",
+      "artifact_id": "module-gigi-masin-wordless-love-plaque",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-enamel-record-plaque) selected from interpretation."
+    },
+    {
+      "target_id": "module-grouper-water-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-grouper-water-aperture",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (blue-reflective-water-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-windy-and-carl-blue-dream-panel",
+      "target_kind": "artifact",
+      "artifact_id": "module-windy-and-carl-blue-dream-panel",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (mist-blue-side-tablet) selected from interpretation."
+    },
+    {
+      "target_id": "module-mica-levi-blue-interruption",
+      "target_kind": "artifact",
+      "artifact_id": "module-mica-levi-blue-interruption",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-cobalt-glitch-chip) selected from interpretation."
+    },
+    {
+      "target_id": "module-mica-levi-blue-interruption-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-mica-levi-blue-interruption-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-cobalt-glitch-chip) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

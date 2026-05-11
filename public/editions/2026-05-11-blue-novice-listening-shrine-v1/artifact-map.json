@@ -1,0 +1,631 @@
+{
+  "artifact_map_id": "map-2026-05-11-blue-novice-listening-shrine-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "blue-novice-listening-shrine",
+  "default_artifact_id": "hero-sacrificial-code-central-organ-table",
+  "artifacts": [
+    {
+      "id": "hero-sacrificial-code-central-organ-table",
+      "kind": "hero",
+      "label": "Sacrificial Code central organ tablet",
+      "artifact_type": "dark-square-enamel-organ-tablet",
+      "bounds": {
+        "x": 0.3691,
+        "y": 0.3477,
+        "w": 0.2643,
+        "h": 0.3096
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.3711,
+          0.5059
+        ],
+        [
+          0.3763,
+          0.3789
+        ],
+        [
+          0.3887,
+          0.3535
+        ],
+        [
+          0.6061,
+          0.3516
+        ],
+        [
+          0.6133,
+          0.3535
+        ],
+        [
+          0.6211,
+          0.3691
+        ],
+        [
+          0.6309,
+          0.5215
+        ],
+        [
+          0.6257,
+          0.6162
+        ],
+        [
+          0.6191,
+          0.627
+        ],
+        [
+          0.5469,
+          0.6533
+        ],
+        [
+          0.4512,
+          0.6533
+        ],
+        [
+          0.4251,
+          0.6465
+        ],
+        [
+          0.3841,
+          0.6221
+        ],
+        [
+          0.3711,
+          0.5068
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/hero-sacrificial-code-central-organ-table.svg",
+      "source_binding_ids": [
+        "binding-hero-sacrificial-code-central-organ-table"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          770,
+          507
+        ],
+        "safe_stage_window_origin_px": [
+          800,
+          535
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-japanese-ambient-reed-glass-plate",
+      "kind": "hero",
+      "label": "Japanese ambient reed glass plate",
+      "artifact_type": "muted-reed-aperture-lantern-plane",
+      "bounds": {
+        "x": 0.315,
+        "y": 0.103,
+        "w": 0.38,
+        "h": 0.36
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.331,
+          0.127
+        ],
+        [
+          0.412,
+          0.108
+        ],
+        [
+          0.501,
+          0.115
+        ],
+        [
+          0.596,
+          0.105
+        ],
+        [
+          0.684,
+          0.13
+        ],
+        [
+          0.695,
+          0.238
+        ],
+        [
+          0.683,
+          0.445
+        ],
+        [
+          0.599,
+          0.462
+        ],
+        [
+          0.517,
+          0.437
+        ],
+        [
+          0.437,
+          0.45
+        ],
+        [
+          0.338,
+          0.427
+        ],
+        [
+          0.315,
+          0.302
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/hero-japanese-ambient-reed-glass-plate.svg",
+      "source_binding_ids": [
+        "binding-hero-japanese-ambient-reed-glass-plate"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          776,
+          260
+        ],
+        "safe_stage_window_origin_px": [
+          822,
+          290
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-bajidoran-ceremony-pulse-strip",
+      "kind": "module",
+      "label": "Bajidoran ceremony pulse strip",
+      "artifact_type": "red-black-lacquer-threshold-strip",
+      "bounds": {
+        "x": 0.252,
+        "y": 0.792,
+        "w": 0.495,
+        "h": 0.053
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.256,
+          0.802
+        ],
+        [
+          0.347,
+          0.793
+        ],
+        [
+          0.465,
+          0.798
+        ],
+        [
+          0.589,
+          0.793
+        ],
+        [
+          0.708,
+          0.801
+        ],
+        [
+          0.746,
+          0.819
+        ],
+        [
+          0.696,
+          0.842
+        ],
+        [
+          0.565,
+          0.839
+        ],
+        [
+          0.434,
+          0.844
+        ],
+        [
+          0.301,
+          0.836
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/module-bajidoran-ceremony-pulse-strip.svg",
+      "source_binding_ids": [
+        "binding-module-bajidoran-ceremony-pulse-strip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          767,
+          834
+        ],
+        "safe_stage_window_origin_px": [
+          828,
+          838
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-sumergible-archive-halo",
+      "kind": "module",
+      "label": "Sumergible archive halo",
+      "artifact_type": "faint-circular-inscription-halo",
+      "bounds": {
+        "x": 0.421,
+        "y": 0.386,
+        "w": 0.157,
+        "h": 0.224
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.5,
+          0.386
+        ],
+        [
+          0.541,
+          0.398
+        ],
+        [
+          0.569,
+          0.441
+        ],
+        [
+          0.578,
+          0.499
+        ],
+        [
+          0.564,
+          0.558
+        ],
+        [
+          0.535,
+          0.598
+        ],
+        [
+          0.5,
+          0.61
+        ],
+        [
+          0.463,
+          0.597
+        ],
+        [
+          0.433,
+          0.558
+        ],
+        [
+          0.421,
+          0.501
+        ],
+        [
+          0.433,
+          0.444
+        ],
+        [
+          0.462,
+          0.4
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/module-sumergible-archive-halo.svg",
+      "source_binding_ids": [
+        "binding-module-sumergible-archive-halo"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          767,
+          492
+        ],
+        "safe_stage_window_origin_px": [
+          787,
+          510
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-gigi-masin-wordless-love-plaque",
+      "kind": "module",
+      "label": "Gigi Masin wordless love plaque",
+      "artifact_type": "pale-enamel-record-plaque",
+      "bounds": {
+        "x": 0.208,
+        "y": 0.503,
+        "w": 0.087,
+        "h": 0.175
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.217,
+          0.508
+        ],
+        [
+          0.286,
+          0.503
+        ],
+        [
+          0.294,
+          0.526
+        ],
+        [
+          0.295,
+          0.651
+        ],
+        [
+          0.287,
+          0.675
+        ],
+        [
+          0.247,
+          0.678
+        ],
+        [
+          0.212,
+          0.664
+        ],
+        [
+          0.208,
+          0.532
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/module-gigi-masin-wordless-love-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-gigi-masin-wordless-love-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          386,
+          590
+        ],
+        "safe_stage_window_origin_px": [
+          397,
+          605
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-grouper-water-aperture",
+      "kind": "module",
+      "label": "Grouper water aperture",
+      "artifact_type": "blue-reflective-water-aperture",
+      "bounds": {
+        "x": 0.431,
+        "y": 0.654,
+        "w": 0.141,
+        "h": 0.141
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.458,
+          0.657
+        ],
+        [
+          0.523,
+          0.654
+        ],
+        [
+          0.563,
+          0.676
+        ],
+        [
+          0.572,
+          0.724
+        ],
+        [
+          0.551,
+          0.77
+        ],
+        [
+          0.504,
+          0.795
+        ],
+        [
+          0.456,
+          0.779
+        ],
+        [
+          0.431,
+          0.735
+        ],
+        [
+          0.438,
+          0.686
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/module-grouper-water-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-grouper-water-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          770,
+          730
+        ],
+        "safe_stage_window_origin_px": [
+          788,
+          742
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-windy-and-carl-blue-dream-panel",
+      "kind": "module",
+      "label": "Windy and Carl blue dream panel",
+      "artifact_type": "mist-blue-side-tablet",
+      "bounds": {
+        "x": 0.172,
+        "y": 0.106,
+        "w": 0.144,
+        "h": 0.352
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.188,
+          0.111
+        ],
+        [
+          0.304,
+          0.106
+        ],
+        [
+          0.316,
+          0.138
+        ],
+        [
+          0.313,
+          0.428
+        ],
+        [
+          0.296,
+          0.458
+        ],
+        [
+          0.193,
+          0.449
+        ],
+        [
+          0.174,
+          0.415
+        ],
+        [
+          0.172,
+          0.145
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/module-windy-and-carl-blue-dream-panel.svg",
+      "source_binding_ids": [
+        "binding-module-windy-and-carl-blue-dream-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          375,
+          260
+        ],
+        "safe_stage_window_origin_px": [
+          392,
+          289
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-mica-levi-blue-interruption",
+      "kind": "module",
+      "label": "Mica Levi blue interruption",
+      "artifact_type": "small-cobalt-glitch-chip",
+      "bounds": {
+        "x": 0.702,
+        "y": 0.516,
+        "w": 0.059,
+        "h": 0.162
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.715,
+          0.52
+        ],
+        [
+          0.751,
+          0.516
+        ],
+        [
+          0.76,
+          0.54
+        ],
+        [
+          0.761,
+          0.65
+        ],
+        [
+          0.751,
+          0.676
+        ],
+        [
+          0.718,
+          0.678
+        ],
+        [
+          0.704,
+          0.654
+        ],
+        [
+          0.702,
+          0.544
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/module-mica-levi-blue-interruption.svg",
+      "source_binding_ids": [
+        "binding-module-mica-levi-blue-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1124,
+          598
+        ],
+        "safe_stage_window_origin_px": [
+          1131,
+          611
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-mica-levi-blue-interruption-2",
+      "kind": "module",
+      "label": "Mica Levi blue interruption",
+      "artifact_type": "small-cobalt-glitch-chip",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "blue-novice-listening-shrine",
+      "mask_path": "/editions/2026-05-11-blue-novice-listening-shrine-v1/assets/masks/module-mica-levi-blue-interruption-2.svg",
+      "source_binding_ids": [
+        "binding-module-mica-levi-blue-interruption-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
