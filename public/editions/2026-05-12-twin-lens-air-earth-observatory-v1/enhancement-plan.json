@@ -1,0 +1,231 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-12-twin-lens-air-earth-observatory-v1",
+  "edition_id": "2026-05-12-twin-lens-air-earth-observatory-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-12-twin-lens-air-earth-observatory-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "screen-rendered-html",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-air-earth-twin-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-air-earth-twin-aperture",
+      "priority": 1,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-overlapping-lens-field) selected from interpretation."
+    },
+    {
+      "target_id": "hero-forest-breathing-ground-lens",
+      "target_kind": "artifact",
+      "artifact_id": "hero-forest-breathing-ground-lens",
+      "priority": 2,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-moss-observatory-plate) selected from interpretation."
+    },
+    {
+      "target_id": "module-night-rest-dew-plaque",
+      "target_kind": "artifact",
+      "artifact_id": "module-night-rest-dew-plaque",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-blue-mineral-listening-stone) selected from interpretation."
+    },
+    {
+      "target_id": "module-durutti-diagonal-reed",
+      "target_kind": "artifact",
+      "artifact_id": "module-durutti-diagonal-reed",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-cream-waveform-stem) selected from interpretation."
+    },
+    {
+      "target_id": "module-fever-weather-fleck",
+      "target_kind": "artifact",
+      "artifact_id": "module-fever-weather-fleck",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (warm-raster-dew-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-stallion-soil-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-stallion-soil-cut",
+      "priority": 6,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-curved-earth-incision) selected from interpretation."
+    },
+    {
+      "target_id": "module-innocence-mist-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-innocence-mist-aperture",
+      "priority": 7,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (soft-translucent-sky-opening) selected from interpretation."
+    },
+    {
+      "target_id": "module-sentimental-mineral-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-sentimental-mineral-glint",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (piano-bright-reflective-tile) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-right-mineral-disc",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-right-mineral-disc",
+      "priority": 9,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (round-stone-audio-disc) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

@@ -1,0 +1,493 @@
+{
+  "analysis_id": "analysis-2026-05-12-twin-lens-air-earth-observatory-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A misty expressionist plate built from two dominant translucent lens fields: a huge pale sky aperture above and a broad moss-soil observatory below. Visible source-bearing anchors include circular embedded plaques, a rust-orange seam crescent, a vertical pinned cord, small fleck clusters, a diagonal pale reed-line, a dark soil incision, and half-buried mineral tile surfaces.",
+  "usable_surfaces": [
+    "upper translucent sky lens",
+    "lower moss and soil lens",
+    "embedded circular mineral plaques",
+    "rust-orange lens seam crescent",
+    "right-side white dew fleck cluster",
+    "thin diagonal cream reed line",
+    "dark curved soil incision",
+    "small orange orbit tab",
+    "half-buried reflective mineral tile"
+  ],
+  "detected_objects": [
+    {
+      "label": "air-earth twin aperture",
+      "artifact_type": "hero-scale-overlapping-lens-field",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.109,
+        "y": 0,
+        "w": 0.756,
+        "h": 0.596
+      },
+      "polygon": [
+        [
+          0.111,
+          0
+        ],
+        [
+          0.196,
+          0
+        ],
+        [
+          0.36,
+          0
+        ],
+        [
+          0.557,
+          0
+        ],
+        [
+          0.721,
+          0
+        ],
+        [
+          0.827,
+          0
+        ],
+        [
+          0.864,
+          0.104
+        ],
+        [
+          0.839,
+          0.261
+        ],
+        [
+          0.76,
+          0.421
+        ],
+        [
+          0.621,
+          0.542
+        ],
+        [
+          0.455,
+          0.596
+        ],
+        [
+          0.296,
+          0.551
+        ],
+        [
+          0.177,
+          0.42
+        ],
+        [
+          0.122,
+          0.237
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "the largest pale translucent circular lens dominates the upper scene, with visible curved rim, cloudy interior, scratches, and the warm lower seam separating air haze from earth surface"
+    },
+    {
+      "label": "forest-breathing ground lens",
+      "artifact_type": "hero-scale-moss-observatory-plate",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.135,
+        "y": 0.505,
+        "w": 0.747,
+        "h": 0.495
+      },
+      "polygon": [
+        [
+          0.135,
+          0.929
+        ],
+        [
+          0.153,
+          0.825
+        ],
+        [
+          0.198,
+          0.691
+        ],
+        [
+          0.276,
+          0.566
+        ],
+        [
+          0.409,
+          0.505
+        ],
+        [
+          0.571,
+          0.526
+        ],
+        [
+          0.706,
+          0.506
+        ],
+        [
+          0.805,
+          0.586
+        ],
+        [
+          0.861,
+          0.745
+        ],
+        [
+          0.882,
+          0.923
+        ],
+        [
+          0.879,
+          1
+        ],
+        [
+          0.137,
+          1
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "broad lower circular/elliptical moss and soil aperture with visible copper rim, rooted grasses, mulch, stones, and layered ground texture"
+    },
+    {
+      "label": "night-rest dew plaque",
+      "artifact_type": "small-blue-mineral-listening-stone",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.227,
+        "y": 0.218,
+        "w": 0.083,
+        "h": 0.13
+      },
+      "polygon": [
+        [
+          0.268,
+          0.218
+        ],
+        [
+          0.287,
+          0.225
+        ],
+        [
+          0.303,
+          0.25
+        ],
+        [
+          0.31,
+          0.286
+        ],
+        [
+          0.302,
+          0.322
+        ],
+        [
+          0.279,
+          0.346
+        ],
+        [
+          0.25,
+          0.348
+        ],
+        [
+          0.231,
+          0.327
+        ],
+        [
+          0.227,
+          0.29
+        ],
+        [
+          0.237,
+          0.25
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "round blue-green embedded lens in the porous standing stone, bordered by a dark circular rim and filled with tiny landscape-like marks"
+    },
+    {
+      "label": "durutti diagonal reed",
+      "artifact_type": "thin-cream-waveform-stem",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.333,
+        "y": 0.803,
+        "w": 0.262,
+        "h": 0.124
+      },
+      "confidence": 0.78,
+      "visual_evidence": "a thin pale diagonal line crosses the lower garden and leaf area, reading as a delicate cream reed or waveform stem over the soil surface"
+    },
+    {
+      "label": "fever weather fleck",
+      "artifact_type": "warm-raster-dew-cluster",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.771,
+        "y": 0.429,
+        "w": 0.079,
+        "h": 0.088
+      },
+      "polygon": [
+        [
+          0.806,
+          0.429
+        ],
+        [
+          0.83,
+          0.439
+        ],
+        [
+          0.848,
+          0.465
+        ],
+        [
+          0.85,
+          0.493
+        ],
+        [
+          0.833,
+          0.512
+        ],
+        [
+          0.803,
+          0.517
+        ],
+        [
+          0.779,
+          0.505
+        ],
+        [
+          0.771,
+          0.478
+        ],
+        [
+          0.782,
+          0.449
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "tight cluster of bright white dew-like flecks on the right mist edge, forming a visible raster of small heat-shimmer points"
+    },
+    {
+      "label": "stallion soil cut",
+      "artifact_type": "dark-curved-earth-incision",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.103,
+        "y": 0.694,
+        "w": 0.273,
+        "h": 0.129
+      },
+      "polygon": [
+        [
+          0.104,
+          0.719
+        ],
+        [
+          0.153,
+          0.692
+        ],
+        [
+          0.229,
+          0.694
+        ],
+        [
+          0.304,
+          0.724
+        ],
+        [
+          0.36,
+          0.773
+        ],
+        [
+          0.376,
+          0.808
+        ],
+        [
+          0.337,
+          0.823
+        ],
+        [
+          0.265,
+          0.795
+        ],
+        [
+          0.196,
+          0.762
+        ],
+        [
+          0.131,
+          0.746
+        ]
+      ],
+      "confidence": 0.71,
+      "visual_evidence": "dark curved band of exposed soil and shadow cuts across the left lower moss field, visibly separating the standing grasses from the foreground ground"
+    },
+    {
+      "label": "innocence mist aperture",
+      "artifact_type": "soft-translucent-sky-opening",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.229,
+        "w": 0.192,
+        "h": 0.144
+      },
+      "polygon": [
+        [
+          0.647,
+          0.24
+        ],
+        [
+          0.696,
+          0.229
+        ],
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.799,
+          0.287
+        ],
+        [
+          0.812,
+          0.334
+        ],
+        [
+          0.781,
+          0.366
+        ],
+        [
+          0.721,
+          0.373
+        ],
+        [
+          0.663,
+          0.35
+        ],
+        [
+          0.62,
+          0.31
+        ],
+        [
+          0.625,
+          0.264
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "soft pale opening in the upper haze on the right side, bounded by cloudy cream forms and translucent blue lens texture"
+    },
+    {
+      "label": "sentimental mineral glint",
+      "artifact_type": "piano-bright-reflective-tile",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.706,
+        "y": 0.887,
+        "w": 0.112,
+        "h": 0.068
+      },
+      "polygon": [
+        [
+          0.713,
+          0.903
+        ],
+        [
+          0.755,
+          0.887
+        ],
+        [
+          0.812,
+          0.895
+        ],
+        [
+          0.818,
+          0.934
+        ],
+        [
+          0.784,
+          0.954
+        ],
+        [
+          0.732,
+          0.948
+        ],
+        [
+          0.706,
+          0.927
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "half-buried blue-gray reflective tile in the lower-right soil, with bright scratched surface and orange vertical mineral streaks"
+    },
+    {
+      "label": "lower-right mineral disc",
+      "artifact_type": "round-stone-audio-disc",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.611,
+        "y": 0.609,
+        "w": 0.17,
+        "h": 0.211
+      },
+      "polygon": [
+        [
+          0.698,
+          0.609
+        ],
+        [
+          0.744,
+          0.626
+        ],
+        [
+          0.775,
+          0.665
+        ],
+        [
+          0.781,
+          0.721
+        ],
+        [
+          0.759,
+          0.777
+        ],
+        [
+          0.714,
+          0.814
+        ],
+        [
+          0.663,
+          0.82
+        ],
+        [
+          0.623,
+          0.795
+        ],
+        [
+          0.611,
+          0.737
+        ],
+        [
+          0.626,
+          0.672
+        ],
+        [
+          0.659,
+          0.628
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "large pale rounded stone with a circular inset disc and central hole sits half-buried in the moss, making a clear tactile audio-plaque surface"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.977,
+    "rationale": "The plate is still readable as two large expressionist lens fields with a few strong anchors, but the moss floor, speckles, scratches, grasses, and multiple discs add enough detail that interaction mapping should stay tied to visible marks rather than broad decorative regions."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-05-12-twin-lens-air-earth-observatory-v1"
+}

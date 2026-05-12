@@ -1,0 +1,639 @@
+{
+  "artifact_map_id": "map-2026-05-12-twin-lens-air-earth-observatory-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "twin-lens-air-earth-observatory",
+  "default_artifact_id": "hero-air-earth-twin-aperture",
+  "artifacts": [
+    {
+      "id": "hero-air-earth-twin-aperture",
+      "kind": "hero",
+      "label": "air-earth twin aperture",
+      "artifact_type": "hero-scale-overlapping-lens-field",
+      "bounds": {
+        "x": 0.109,
+        "y": 0,
+        "w": 0.756,
+        "h": 0.596
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.111,
+          0
+        ],
+        [
+          0.196,
+          0
+        ],
+        [
+          0.36,
+          0
+        ],
+        [
+          0.557,
+          0
+        ],
+        [
+          0.721,
+          0
+        ],
+        [
+          0.827,
+          0
+        ],
+        [
+          0.864,
+          0.104
+        ],
+        [
+          0.839,
+          0.261
+        ],
+        [
+          0.76,
+          0.421
+        ],
+        [
+          0.621,
+          0.542
+        ],
+        [
+          0.455,
+          0.596
+        ],
+        [
+          0.296,
+          0.551
+        ],
+        [
+          0.177,
+          0.42
+        ],
+        [
+          0.122,
+          0.237
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/hero-air-earth-twin-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-air-earth-twin-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          748,
+          256
+        ],
+        "safe_stage_window_origin_px": [
+          841,
+          305
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-forest-breathing-ground-lens",
+      "kind": "hero",
+      "label": "forest-breathing ground lens",
+      "artifact_type": "hero-scale-moss-observatory-plate",
+      "bounds": {
+        "x": 0.135,
+        "y": 0.505,
+        "w": 0.747,
+        "h": 0.495
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.135,
+          0.929
+        ],
+        [
+          0.153,
+          0.825
+        ],
+        [
+          0.198,
+          0.691
+        ],
+        [
+          0.276,
+          0.566
+        ],
+        [
+          0.409,
+          0.505
+        ],
+        [
+          0.571,
+          0.526
+        ],
+        [
+          0.706,
+          0.506
+        ],
+        [
+          0.805,
+          0.586
+        ],
+        [
+          0.861,
+          0.745
+        ],
+        [
+          0.882,
+          0.923
+        ],
+        [
+          0.879,
+          1
+        ],
+        [
+          0.137,
+          1
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/hero-forest-breathing-ground-lens.svg",
+      "source_binding_ids": [
+        "binding-hero-forest-breathing-ground-lens"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          781,
+          730
+        ],
+        "safe_stage_window_origin_px": [
+          873,
+          771
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-night-rest-dew-plaque",
+      "kind": "module",
+      "label": "night-rest dew plaque",
+      "artifact_type": "small-blue-mineral-listening-stone",
+      "bounds": {
+        "x": 0.227,
+        "y": 0.218,
+        "w": 0.083,
+        "h": 0.13
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.268,
+          0.218
+        ],
+        [
+          0.287,
+          0.225
+        ],
+        [
+          0.303,
+          0.25
+        ],
+        [
+          0.31,
+          0.286
+        ],
+        [
+          0.302,
+          0.322
+        ],
+        [
+          0.279,
+          0.346
+        ],
+        [
+          0.25,
+          0.348
+        ],
+        [
+          0.231,
+          0.327
+        ],
+        [
+          0.227,
+          0.29
+        ],
+        [
+          0.237,
+          0.25
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/module-night-rest-dew-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-night-rest-dew-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          412,
+          279
+        ],
+        "safe_stage_window_origin_px": [
+          423,
+          290
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-durutti-diagonal-reed",
+      "kind": "module",
+      "label": "durutti diagonal reed",
+      "artifact_type": "thin-cream-waveform-stem",
+      "bounds": {
+        "x": 0.333,
+        "y": 0.803,
+        "w": 0.262,
+        "h": 0.124
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.333,
+          0.803
+        ],
+        [
+          0.595,
+          0.803
+        ],
+        [
+          0.595,
+          0.927
+        ],
+        [
+          0.333,
+          0.927
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/module-durutti-diagonal-reed.svg",
+      "source_binding_ids": [
+        "binding-module-durutti-diagonal-reed"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          713,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          745,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-fever-weather-fleck",
+      "kind": "module",
+      "label": "fever weather fleck",
+      "artifact_type": "warm-raster-dew-cluster",
+      "bounds": {
+        "x": 0.771,
+        "y": 0.429,
+        "w": 0.079,
+        "h": 0.088
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.806,
+          0.429
+        ],
+        [
+          0.83,
+          0.439
+        ],
+        [
+          0.848,
+          0.465
+        ],
+        [
+          0.85,
+          0.493
+        ],
+        [
+          0.833,
+          0.512
+        ],
+        [
+          0.803,
+          0.517
+        ],
+        [
+          0.779,
+          0.505
+        ],
+        [
+          0.771,
+          0.478
+        ],
+        [
+          0.782,
+          0.449
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/module-fever-weather-fleck.svg",
+      "source_binding_ids": [
+        "binding-module-fever-weather-fleck"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1245,
+          477
+        ],
+        "safe_stage_window_origin_px": [
+          1255,
+          484
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-stallion-soil-cut",
+      "kind": "module",
+      "label": "stallion soil cut",
+      "artifact_type": "dark-curved-earth-incision",
+      "bounds": {
+        "x": 0.103,
+        "y": 0.694,
+        "w": 0.273,
+        "h": 0.129
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.104,
+          0.719
+        ],
+        [
+          0.153,
+          0.692
+        ],
+        [
+          0.229,
+          0.694
+        ],
+        [
+          0.304,
+          0.724
+        ],
+        [
+          0.36,
+          0.773
+        ],
+        [
+          0.376,
+          0.808
+        ],
+        [
+          0.337,
+          0.823
+        ],
+        [
+          0.265,
+          0.795
+        ],
+        [
+          0.196,
+          0.762
+        ],
+        [
+          0.131,
+          0.746
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/module-stallion-soil-cut.svg",
+      "source_binding_ids": [
+        "binding-module-stallion-soil-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          368,
+          766
+        ],
+        "safe_stage_window_origin_px": [
+          401,
+          777
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-innocence-mist-aperture",
+      "kind": "module",
+      "label": "innocence mist aperture",
+      "artifact_type": "soft-translucent-sky-opening",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.229,
+        "w": 0.192,
+        "h": 0.144
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.647,
+          0.24
+        ],
+        [
+          0.696,
+          0.229
+        ],
+        [
+          0.75,
+          0.25
+        ],
+        [
+          0.799,
+          0.287
+        ],
+        [
+          0.812,
+          0.334
+        ],
+        [
+          0.781,
+          0.366
+        ],
+        [
+          0.721,
+          0.373
+        ],
+        [
+          0.663,
+          0.35
+        ],
+        [
+          0.62,
+          0.31
+        ],
+        [
+          0.625,
+          0.264
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/module-innocence-mist-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-innocence-mist-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1100,
+          296
+        ],
+        "safe_stage_window_origin_px": [
+          1123,
+          308
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-sentimental-mineral-glint",
+      "kind": "module",
+      "label": "sentimental mineral glint",
+      "artifact_type": "piano-bright-reflective-tile",
+      "bounds": {
+        "x": 0.706,
+        "y": 0.887,
+        "w": 0.112,
+        "h": 0.068
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.713,
+          0.903
+        ],
+        [
+          0.755,
+          0.887
+        ],
+        [
+          0.812,
+          0.895
+        ],
+        [
+          0.818,
+          0.934
+        ],
+        [
+          0.784,
+          0.954
+        ],
+        [
+          0.732,
+          0.948
+        ],
+        [
+          0.706,
+          0.927
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/module-sentimental-mineral-glint.svg",
+      "source_binding_ids": [
+        "binding-module-sentimental-mineral-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1170,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1184,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-lower-right-mineral-disc",
+      "kind": "module",
+      "label": "lower-right mineral disc",
+      "artifact_type": "round-stone-audio-disc",
+      "bounds": {
+        "x": 0.611,
+        "y": 0.609,
+        "w": 0.17,
+        "h": 0.211
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.698,
+          0.609
+        ],
+        [
+          0.744,
+          0.626
+        ],
+        [
+          0.775,
+          0.665
+        ],
+        [
+          0.781,
+          0.721
+        ],
+        [
+          0.759,
+          0.777
+        ],
+        [
+          0.714,
+          0.814
+        ],
+        [
+          0.663,
+          0.82
+        ],
+        [
+          0.623,
+          0.795
+        ],
+        [
+          0.611,
+          0.737
+        ],
+        [
+          0.626,
+          0.672
+        ],
+        [
+          0.659,
+          0.628
+        ]
+      ],
+      "cluster_id": "twin-lens-air-earth-observatory",
+      "mask_path": "/editions/2026-05-12-twin-lens-air-earth-observatory-v1/assets/masks/module-lower-right-mineral-disc.svg",
+      "source_binding_ids": [
+        "binding-module-lower-right-mineral-disc"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1069,
+          714
+        ],
+        "safe_stage_window_origin_px": [
+          1090,
+          732
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}

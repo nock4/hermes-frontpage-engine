@@ -1,0 +1,382 @@
+{
+  "interpretation_id": "interp-2026-05-12-twin-lens-air-earth-observatory-v1",
+  "edition_id": "2026-05-12-twin-lens-air-earth-observatory-v1",
+  "plate_read_timestamp": "2026-05-12T12:00:28.062Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A misty expressionist plate built from two dominant translucent lens fields: a huge pale sky aperture above and a broad moss-soil observatory below. Visible source-bearing anchors include circular embedded plaques, a rust-orange seam crescent, a vertical pinned cord, small fleck clusters, a diagonal pale reed-line, a dark soil incision, and half-buried mineral tile surfaces.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "calm daybreak audio habitat seen through overlapping optical lenses",
+      "A misty expressionist plate built from two dominant translucent lens fields: a huge pale sky aperture above and a broad moss-soil observatory below. Visible source-bearing anchors include circular embedded plaques, a rust-orange seam crescent, a vertical pinned cord, small fleck clusters, a diagonal pale reed-line, a dark soil incision, and half-buried mineral tile surfaces.",
+      "air-earth",
+      "daybreak-observatory",
+      "ambient-garden"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "air-earth twin aperture",
+      "forest-breathing ground lens",
+      "night-rest dew plaque",
+      "durutti diagonal reed",
+      "fever weather fleck",
+      "stallion soil cut",
+      "innocence mist aperture",
+      "sentimental mineral glint"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "fog",
+      "paint"
+    ],
+    "dominant_structures": [
+      "twin-lens-air-earth-observatory",
+      "two large overlapping circular observatory apertures holding the main air and earth fields",
+      "lower garden strata of moss, mulch, listening stones, and embedded album fragments",
+      "upper weather layer of pale blue mist, cloud ribbons, and quiet signal arcs",
+      "thin red-orange separator arcs echoing optical calibration without becoming labels",
+      "small satellite source flecks, tabs, and apertures suspended between air and soil",
+      "upper translucent sky lens",
+      "lower moss and soil lens"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: twin-lens-air-earth-observatory.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-air-earth-twin-aperture",
+      "kind": "hero",
+      "type": "hero-scale-overlapping-lens-field",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.109,
+        "y": 0,
+        "w": 0.756,
+        "h": 0.596
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-forest-breathing-ground-lens",
+      "kind": "hero",
+      "type": "hero-scale-moss-observatory-plate",
+      "strength": 0.972224,
+      "bounds": {
+        "x": 0.135,
+        "y": 0.505,
+        "w": 0.747,
+        "h": 0.495
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-night-rest-dew-plaque",
+      "kind": "module",
+      "type": "small-blue-mineral-listening-stone",
+      "strength": 0.8032199999999999,
+      "bounds": {
+        "x": 0.227,
+        "y": 0.218,
+        "w": 0.083,
+        "h": 0.13
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-durutti-diagonal-reed",
+      "kind": "module",
+      "type": "thin-cream-waveform-stem",
+      "strength": 0.765888,
+      "bounds": {
+        "x": 0.333,
+        "y": 0.803,
+        "w": 0.262,
+        "h": 0.124
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fever-weather-fleck",
+      "kind": "module",
+      "type": "warm-raster-dew-cluster",
+      "strength": 0.740664,
+      "bounds": {
+        "x": 0.771,
+        "y": 0.429,
+        "w": 0.079,
+        "h": 0.088
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stallion-soil-cut",
+      "kind": "module",
+      "type": "dark-curved-earth-incision",
+      "strength": 0.69882,
+      "bounds": {
+        "x": 0.103,
+        "y": 0.694,
+        "w": 0.273,
+        "h": 0.129
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-innocence-mist-aperture",
+      "kind": "module",
+      "type": "soft-translucent-sky-opening",
+      "strength": 0.67878,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.229,
+        "w": 0.192,
+        "h": 0.144
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-sentimental-mineral-glint",
+      "kind": "module",
+      "type": "piano-bright-reflective-tile",
+      "strength": 0.6571119999999999,
+      "bounds": {
+        "x": 0.706,
+        "y": 0.887,
+        "w": 0.112,
+        "h": 0.068
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-right-mineral-disc",
+      "kind": "module",
+      "type": "round-stone-audio-disc",
+      "strength": 0.649828,
+      "bounds": {
+        "x": 0.611,
+        "y": 0.609,
+        "w": 0.17,
+        "h": 0.211
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-air-earth-twin-aperture-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.109,
+        "y": 0,
+        "w": 0.756,
+        "h": 0.596
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-forest-breathing-ground-lens-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.135,
+        "y": 0.505,
+        "w": 0.747,
+        "h": 0.495
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-night-rest-dew-plaque-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.227,
+        "y": 0.218,
+        "w": 0.083,
+        "h": 0.13
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-durutti-diagonal-reed-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.333,
+        "y": 0.803,
+        "w": 0.262,
+        "h": 0.124
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fever-weather-fleck-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.771,
+        "y": 0.429,
+        "w": 0.079,
+        "h": 0.088
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stallion-soil-cut-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.103,
+        "y": 0.694,
+        "w": 0.273,
+        "h": 0.129
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-innocence-mist-aperture-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.229,
+        "w": 0.192,
+        "h": 0.144
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-sentimental-mineral-glint-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.706,
+        "y": 0.887,
+        "w": 0.112,
+        "h": 0.068
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-right-mineral-disc-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.611,
+        "y": 0.609,
+        "w": 0.17,
+        "h": 0.211
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
