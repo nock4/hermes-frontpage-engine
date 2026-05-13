@@ -1,0 +1,229 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-13-pink-brine-evidence-lounge-v1",
+  "edition_id": "2026-05-13-pink-brine-evidence-lounge-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-13-pink-brine-evidence-lounge-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-foa-hoka-phonogram-acetate-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-foa-hoka-phonogram-acetate-slab",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-translucent-phonogram-panel) selected from interpretation."
+    },
+    {
+      "target_id": "hero-thirteen-ways-fractured-billiard-rin",
+      "target_kind": "artifact",
+      "artifact_id": "hero-thirteen-ways-fractured-billiard-rin",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-fractured-billiard-orbit) selected from interpretation."
+    },
+    {
+      "target_id": "module-springtime-sunset-amber-coaster",
+      "target_kind": "artifact",
+      "artifact_id": "module-springtime-sunset-amber-coaster",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (amber-sunset-bar-coaster) selected from interpretation."
+    },
+    {
+      "target_id": "module-birth-of-a-witch-occult-felt-card",
+      "target_kind": "artifact",
+      "artifact_id": "module-birth-of-a-witch-occult-felt-card",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (occult-felt-card-scrap) selected from interpretation."
+    },
+    {
+      "target_id": "module-at-daybreak-blue-green-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-at-daybreak-blue-green-aperture",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (daybreak-haze-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-dove-and-pigeon-chrome-token",
+      "target_kind": "artifact",
+      "artifact_id": "module-dove-and-pigeon-chrome-token",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (paired-bird-chrome-token) selected from interpretation."
+    },
+    {
+      "target_id": "module-pine-tree-sleep-shadow-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-pine-tree-sleep-shadow-strip",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pine-shadow-edge-strip) selected from interpretation."
+    },
+    {
+      "target_id": "module-early-ufology-neon-sticker-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-early-ufology-neon-sticker-cluster",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ufology-neon-sticker-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-lucid-landscape-felt-window",
+      "target_kind": "artifact",
+      "artifact_id": "module-lucid-landscape-felt-window",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (lucid-green-felt-window) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-05-13-pink-brine-evidence-lounge-v1",
+  "edition_id": "2026-05-13-pink-brine-evidence-lounge-v1",
+  "plate_read_timestamp": "2026-05-13T08:25:25.686Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Dense neon lounge still-life overlaid with forest/pine haze: a tall coral acetate slab dominates left-center, chrome billiard arcs and glassware anchor the middle, amber drink/coaster forms and occult/card scraps sit on green baize, with cool blue apertures and sticker-like lights in the rear.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "glossy outlaw bar-kitsch filtered through a translucent coral evidence veil",
+      "Dense neon lounge still-life overlaid with forest/pine haze: a tall coral acetate slab dominates left-center, chrome billiard arcs and glassware anchor the middle, amber drink/coaster forms and occult/card scraps sit on green baize, with cool blue apertures and sticker-like lights in the rear.",
+      "neon-lounge-noir",
+      "brine-green-figures",
+      "coral-overlay-collage"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Foa Hoka phonogram acetate slab",
+      "Thirteen Ways fractured billiard ring",
+      "Springtime sunset amber coaster",
+      "Birth of a Witch occult felt card",
+      "At Daybreak blue-green aperture",
+      "Dove and pigeon chrome token",
+      "Pine-tree sleep shadow strip",
+      "Early ufology neon sticker cluster"
+    ],
+    "dominant_surfaces": [
+      "fog",
+      "wood",
+      "paint",
+      "light-band",
+      "paper"
+    ],
+    "dominant_structures": [
+      "pink-brine-evidence-lounge",
+      "one dominant central felt-table collision of glossy garnish-like figures and source-bearing coasters",
+      "two hero-scale translucent vertical photo slabs cutting through the composition like pink acetate shutters",
+      "small occult and ufology scrap islands embedded into the table surface",
+      "soft garden-shadow apertures and pine-haze textures leaking in from the outer edges",
+      "chrome arcs, pool-ball circles, and crooked neon bands that organize the chaos without becoming signage",
+      "tall translucent coral acetate panel",
+      "broken chrome billiard arc"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: pink-brine-evidence-lounge.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-foa-hoka-phonogram-acetate-slab",
+      "kind": "hero",
+      "type": "hero-scale-translucent-phonogram-panel",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.2233,
+        "y": 0,
+        "w": 0.1803,
+        "h": 0.7158
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-thirteen-ways-fractured-billiard-rin",
+      "kind": "hero",
+      "type": "hero-scale-fractured-billiard-orbit",
+      "strength": 0.9866719999999999,
+      "bounds": {
+        "x": 0.565,
+        "y": 0.426,
+        "w": 0.139,
+        "h": 0.258
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-springtime-sunset-amber-coaster",
+      "kind": "module",
+      "type": "amber-sunset-bar-coaster",
+      "strength": 0.794172,
+      "bounds": {
+        "x": 0.723,
+        "y": 0.492,
+        "w": 0.104,
+        "h": 0.169
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-birth-of-a-witch-occult-felt-card",
+      "kind": "module",
+      "type": "occult-felt-card-scrap",
+      "strength": 0.7613040000000001,
+      "bounds": {
+        "x": 0.625,
+        "y": 0.358,
+        "w": 0.084,
+        "h": 0.162
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-at-daybreak-blue-green-aperture",
+      "kind": "module",
+      "type": "daybreak-haze-aperture",
+      "strength": 0.7359720000000001,
+      "bounds": {
+        "x": 0.822,
+        "y": 0.314,
+        "w": 0.145,
+        "h": 0.226
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dove-and-pigeon-chrome-token",
+      "kind": "module",
+      "type": "paired-bird-chrome-token",
+      "strength": 0.703344,
+      "bounds": {
+        "x": 0.488,
+        "y": 0.874,
+        "w": 0.087,
+        "h": 0.091
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pine-tree-sleep-shadow-strip",
+      "kind": "module",
+      "type": "pine-shadow-edge-strip",
+      "strength": 0.6768120000000001,
+      "bounds": {
+        "x": 0.725,
+        "y": 0,
+        "w": 0.166,
+        "h": 0.286
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-early-ufology-neon-sticker-cluster",
+      "kind": "module",
+      "type": "ufology-neon-sticker-cluster",
+      "strength": 0.6628,
+      "bounds": {
+        "x": 0.392,
+        "y": 0.021,
+        "w": 0.197,
+        "h": 0.221
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lucid-landscape-felt-window",
+      "kind": "module",
+      "type": "lucid-green-felt-window",
+      "strength": 0.66496,
+      "bounds": {
+        "x": 0.435,
+        "y": 0.212,
+        "w": 0.151,
+        "h": 0.084
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-foa-hoka-phonogram-acetate-slab-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2233,
+        "y": 0,
+        "w": 0.1803,
+        "h": 0.7158
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-thirteen-ways-fractured-billiard-rin-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.565,
+        "y": 0.426,
+        "w": 0.139,
+        "h": 0.258
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-springtime-sunset-amber-coaster-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.723,
+        "y": 0.492,
+        "w": 0.104,
+        "h": 0.169
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-birth-of-a-witch-occult-felt-card-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.625,
+        "y": 0.358,
+        "w": 0.084,
+        "h": 0.162
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-at-daybreak-blue-green-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.822,
+        "y": 0.314,
+        "w": 0.145,
+        "h": 0.226
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dove-and-pigeon-chrome-token-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.488,
+        "y": 0.874,
+        "w": 0.087,
+        "h": 0.091
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pine-tree-sleep-shadow-strip-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.725,
+        "y": 0,
+        "w": 0.166,
+        "h": 0.286
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-early-ufology-neon-sticker-cluster-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.392,
+        "y": 0.021,
+        "w": 0.197,
+        "h": 0.221
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lucid-landscape-felt-window-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.435,
+        "y": 0.212,
+        "w": 0.151,
+        "h": 0.084
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

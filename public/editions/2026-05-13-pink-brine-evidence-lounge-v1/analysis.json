@@ -1,0 +1,511 @@
+{
+  "analysis_id": "analysis-2026-05-13-pink-brine-evidence-lounge-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Dense neon lounge still-life overlaid with forest/pine haze: a tall coral acetate slab dominates left-center, chrome billiard arcs and glassware anchor the middle, amber drink/coaster forms and occult/card scraps sit on green baize, with cool blue apertures and sticker-like lights in the rear.",
+  "usable_surfaces": [
+    "tall translucent coral acetate panel",
+    "broken chrome billiard arc",
+    "round amber coaster/medallion",
+    "tilted dark occult card scrap",
+    "cool blue-green rear aperture",
+    "paired reflective chrome marble tokens",
+    "dark pine-needle edge band",
+    "small neon sticker-light cluster",
+    "green felt billiard window"
+  ],
+  "detected_objects": [
+    {
+      "label": "Foa Hoka phonogram acetate slab",
+      "artifact_type": "hero-scale-translucent-phonogram-panel",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.224,
+        "y": 0,
+        "w": 0.177,
+        "h": 0.713
+      },
+      "polygon": [
+        [
+          0.226,
+          0
+        ],
+        [
+          0.389,
+          0
+        ],
+        [
+          0.397,
+          0.23
+        ],
+        [
+          0.399,
+          0.51
+        ],
+        [
+          0.376,
+          0.705
+        ],
+        [
+          0.237,
+          0.713
+        ],
+        [
+          0.228,
+          0.45
+        ],
+        [
+          0.224,
+          0.18
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A tall semi-transparent coral-pink vertical acetate sheet spans from the top edge to the lower table, with visible ghosted palm/car/road imagery and clear vertical slab edges."
+    },
+    {
+      "label": "Thirteen Ways fractured billiard ring",
+      "artifact_type": "hero-scale-fractured-billiard-orbit",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.565,
+        "y": 0.426,
+        "w": 0.139,
+        "h": 0.258
+      },
+      "polygon": [
+        [
+          0.587,
+          0.427
+        ],
+        [
+          0.619,
+          0.429
+        ],
+        [
+          0.651,
+          0.448
+        ],
+        [
+          0.681,
+          0.487
+        ],
+        [
+          0.7,
+          0.532
+        ],
+        [
+          0.701,
+          0.573
+        ],
+        [
+          0.688,
+          0.613
+        ],
+        [
+          0.666,
+          0.651
+        ],
+        [
+          0.642,
+          0.681
+        ],
+        [
+          0.623,
+          0.675
+        ],
+        [
+          0.647,
+          0.628
+        ],
+        [
+          0.663,
+          0.583
+        ],
+        [
+          0.666,
+          0.539
+        ],
+        [
+          0.652,
+          0.498
+        ],
+        [
+          0.623,
+          0.462
+        ],
+        [
+          0.579,
+          0.443
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "A shiny broken chrome U-shaped billiard orbit/rail curves around the central glass and table clutter, visibly interrupted by balls and reflections."
+    },
+    {
+      "label": "Springtime sunset amber coaster",
+      "artifact_type": "amber-sunset-bar-coaster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.723,
+        "y": 0.492,
+        "w": 0.104,
+        "h": 0.169
+      },
+      "polygon": [
+        [
+          0.775,
+          0.494
+        ],
+        [
+          0.804,
+          0.507
+        ],
+        [
+          0.823,
+          0.542
+        ],
+        [
+          0.827,
+          0.586
+        ],
+        [
+          0.814,
+          0.628
+        ],
+        [
+          0.789,
+          0.655
+        ],
+        [
+          0.758,
+          0.661
+        ],
+        [
+          0.733,
+          0.644
+        ],
+        [
+          0.722,
+          0.604
+        ],
+        [
+          0.726,
+          0.558
+        ],
+        [
+          0.746,
+          0.516
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A warm circular amber-gold coaster or medallion stands upright at right-center with a sun/compass-like worn varnish design."
+    },
+    {
+      "label": "Birth of a Witch occult felt card",
+      "artifact_type": "occult-felt-card-scrap",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.625,
+        "y": 0.358,
+        "w": 0.084,
+        "h": 0.162
+      },
+      "polygon": [
+        [
+          0.64,
+          0.358
+        ],
+        [
+          0.704,
+          0.372
+        ],
+        [
+          0.709,
+          0.499
+        ],
+        [
+          0.653,
+          0.52
+        ],
+        [
+          0.626,
+          0.489
+        ],
+        [
+          0.628,
+          0.405
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A tilted dark rectangular card/scrap is embedded near the green baize with a small black figure silhouette and shadowy ritual-card look."
+    },
+    {
+      "label": "At Daybreak blue-green aperture",
+      "artifact_type": "daybreak-haze-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.822,
+        "y": 0.314,
+        "w": 0.145,
+        "h": 0.226
+      },
+      "polygon": [
+        [
+          0.853,
+          0.314
+        ],
+        [
+          0.91,
+          0.323
+        ],
+        [
+          0.955,
+          0.356
+        ],
+        [
+          0.967,
+          0.413
+        ],
+        [
+          0.947,
+          0.488
+        ],
+        [
+          0.897,
+          0.533
+        ],
+        [
+          0.842,
+          0.54
+        ],
+        [
+          0.823,
+          0.485
+        ],
+        [
+          0.831,
+          0.402
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "A cool blue-green translucent opening on the right perimeter reveals misty exterior/forest shapes through the lounge surface."
+    },
+    {
+      "label": "Dove and pigeon chrome token",
+      "artifact_type": "paired-bird-chrome-token",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.488,
+        "y": 0.874,
+        "w": 0.087,
+        "h": 0.091
+      },
+      "polygon": [
+        [
+          0.505,
+          0.894
+        ],
+        [
+          0.52,
+          0.875
+        ],
+        [
+          0.542,
+          0.874
+        ],
+        [
+          0.56,
+          0.888
+        ],
+        [
+          0.575,
+          0.919
+        ],
+        [
+          0.569,
+          0.945
+        ],
+        [
+          0.545,
+          0.964
+        ],
+        [
+          0.516,
+          0.958
+        ],
+        [
+          0.494,
+          0.937
+        ],
+        [
+          0.488,
+          0.914
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "Two adjacent reflective chrome/glass marble tokens sit near the bottom center, visibly paired as bright bird-like table tokens."
+    },
+    {
+      "label": "Pine-tree sleep shadow strip",
+      "artifact_type": "pine-shadow-edge-strip",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.725,
+        "y": 0,
+        "w": 0.166,
+        "h": 0.286
+      },
+      "polygon": [
+        [
+          0.742,
+          0
+        ],
+        [
+          0.881,
+          0
+        ],
+        [
+          0.888,
+          0.052
+        ],
+        [
+          0.866,
+          0.104
+        ],
+        [
+          0.883,
+          0.168
+        ],
+        [
+          0.851,
+          0.21
+        ],
+        [
+          0.82,
+          0.286
+        ],
+        [
+          0.777,
+          0.246
+        ],
+        [
+          0.747,
+          0.177
+        ],
+        [
+          0.725,
+          0.088
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A dark green pine-needle canopy/edge band hangs across the upper right with sharp needle clusters and sleep-haze texture."
+    },
+    {
+      "label": "Early ufology neon sticker cluster",
+      "artifact_type": "ufology-neon-sticker-cluster",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.392,
+        "y": 0.021,
+        "w": 0.197,
+        "h": 0.221
+      },
+      "polygon": [
+        [
+          0.419,
+          0.071
+        ],
+        [
+          0.479,
+          0.044
+        ],
+        [
+          0.545,
+          0.047
+        ],
+        [
+          0.582,
+          0.09
+        ],
+        [
+          0.589,
+          0.157
+        ],
+        [
+          0.558,
+          0.219
+        ],
+        [
+          0.496,
+          0.242
+        ],
+        [
+          0.432,
+          0.223
+        ],
+        [
+          0.393,
+          0.173
+        ],
+        [
+          0.392,
+          0.109
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "Small glowing cyan, red, and orange sticker-like light marks cluster in the back lounge wall around diagram-like reflections and neon evidence scraps."
+    },
+    {
+      "label": "Lucid landscape felt window",
+      "artifact_type": "lucid-green-felt-window",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.435,
+        "y": 0.212,
+        "w": 0.151,
+        "h": 0.084
+      },
+      "polygon": [
+        [
+          0.443,
+          0.214
+        ],
+        [
+          0.528,
+          0.211
+        ],
+        [
+          0.586,
+          0.226
+        ],
+        [
+          0.574,
+          0.282
+        ],
+        [
+          0.503,
+          0.296
+        ],
+        [
+          0.438,
+          0.276
+        ],
+        [
+          0.435,
+          0.238
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A saturated green rectangular billiard/felt window appears in the rear center, bordered by table rails and neon reflections."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 9,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.338,
+    "rationale": "The plate has strong usable anchors, but many overlapping balls, glass reflections, forest overlays, and translucent panels make it visually busy rather than minimal."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-05-13-pink-brine-evidence-lounge-v1"
+}
