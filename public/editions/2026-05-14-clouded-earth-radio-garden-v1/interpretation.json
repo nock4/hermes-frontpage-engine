@@ -1,0 +1,382 @@
+{
+  "interpretation_id": "interp-2026-05-14-clouded-earth-radio-garden-v1",
+  "edition_id": "2026-05-14-clouded-earth-radio-garden-v1",
+  "plate_read_timestamp": "2026-05-14T08:19:58.773Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A misty moss-and-soil tabletop landscape with a large dusty pink translucent acetate slab across the center, smaller cloudy glass panes at left and lower field, a suspended dark soil island in the upper right, faint waveform-like scratch lines at left, two tiny green signal lights, thin registration seams, pink vertical overprint at the right edge, root-like pale threads across the foreground, and small pale bead/bloom clusters near the lower right.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "fogged album ecology with soft-machine signals",
+      "A misty moss-and-soil tabletop landscape with a large dusty pink translucent acetate slab across the center, smaller cloudy glass panes at left and lower field, a suspended dark soil island in the upper right, faint waveform-like scratch lines at left, two tiny green signal lights, thin registration seams, pink vertical overprint at the right edge, root-like pale threads across the foreground, and small pale bead/bloom clusters near the lower right.",
+      "fogged-album-ecology",
+      "winter-soil",
+      "soft-machine-radio"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "PINKCOURTESYPHONE translucent album slab",
+      "I Want An Earth soil aperture",
+      "Enfield winter blue buried edge",
+      "Clouded Chords fog pane",
+      "It's Okay to Disappear fading waveform root",
+      "A' Chailleach peat spiral thread",
+      "Flowers Of Evil pale bloom interruption",
+      "right pink overprint ruler edge"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "fog",
+      "paint"
+    ],
+    "dominant_structures": [
+      "clouded-earth-radio-garden",
+      "one broad ground-level listening field divided by faint rectangular album-sleeve seams",
+      "three to five medium source islands made from buried plates, moss patches, fog panes, and waveform roots",
+      "a central dusty-pink album mass with softened vertical cropping and overprinted ghost layers",
+      "small radio-signal ticks and terminal-green editorial marks orbiting the field without becoming cards",
+      "winter-blue cloud ribbons that partially hide and reveal source-bearing surfaces",
+      "central dusty pink translucent slab",
+      "upper-right floating soil island"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: clouded-earth-radio-garden.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-pinkcourtesyphone-translucent-album-",
+      "kind": "hero",
+      "type": "hero-scale-acetate-album-plate",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.229,
+        "y": 0.364,
+        "w": 0.493,
+        "h": 0.376
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-i-want-an-earth-soil-aperture",
+      "kind": "hero",
+      "type": "hero-scale-soil-glass-island",
+      "strength": 0.9882559999999999,
+      "bounds": {
+        "x": 0.444,
+        "y": 0.079,
+        "w": 0.403,
+        "h": 0.303
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-enfield-winter-blue-buried-edge",
+      "kind": "module",
+      "type": "winter-paper-edge",
+      "strength": 0.795492,
+      "bounds": {
+        "x": 0.002,
+        "y": 0.137,
+        "w": 0.143,
+        "h": 0.262
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-clouded-chords-fog-pane",
+      "kind": "module",
+      "type": "milky-cloud-glass-pane",
+      "strength": 0.7616400000000001,
+      "bounds": {
+        "x": 0.039,
+        "y": 0.539,
+        "w": 0.21,
+        "h": 0.199
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-it-s-okay-to-disappear-fading-wavefo",
+      "kind": "module",
+      "type": "disappearing-waveform-root",
+      "strength": 0.735996,
+      "bounds": {
+        "x": 0.021,
+        "y": 0.341,
+        "w": 0.12,
+        "h": 0.058
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-a-chailleach-peat-spiral-thread",
+      "kind": "module",
+      "type": "peat-brown-folk-drone-thread",
+      "strength": 0.688152,
+      "bounds": {
+        "x": 0.31,
+        "y": 0.458,
+        "w": 0.556,
+        "h": 0.432
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-flowers-of-evil-pale-bloom-interrupt",
+      "kind": "module",
+      "type": "muted-botanical-signal-bloom",
+      "strength": 0.6779040000000001,
+      "bounds": {
+        "x": 0.702,
+        "y": 0.781,
+        "w": 0.07,
+        "h": 0.062
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-pink-overprint-ruler-edge",
+      "kind": "module",
+      "type": "translucent-pink-registration-edge",
+      "strength": 0.6290439999999999,
+      "bounds": {
+        "x": 0.919,
+        "y": 0,
+        "w": 0.06,
+        "h": 0.999
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-flowers-of-evil-pale-bloom-interrupt-2",
+      "kind": "module",
+      "type": "muted-botanical-signal-bloom",
+      "strength": 0.654832,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-pinkcourtesyphone-translucent-album--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.229,
+        "y": 0.364,
+        "w": 0.493,
+        "h": 0.376
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-i-want-an-earth-soil-aperture-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.444,
+        "y": 0.079,
+        "w": 0.403,
+        "h": 0.303
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-enfield-winter-blue-buried-edge-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.002,
+        "y": 0.137,
+        "w": 0.143,
+        "h": 0.262
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-clouded-chords-fog-pane-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.039,
+        "y": 0.539,
+        "w": 0.21,
+        "h": 0.199
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-it-s-okay-to-disappear-fading-wavefo-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.021,
+        "y": 0.341,
+        "w": 0.12,
+        "h": 0.058
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-a-chailleach-peat-spiral-thread-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.31,
+        "y": 0.458,
+        "w": 0.556,
+        "h": 0.432
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-flowers-of-evil-pale-bloom-interrupt-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.702,
+        "y": 0.781,
+        "w": 0.07,
+        "h": 0.062
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-pink-overprint-ruler-edge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.919,
+        "y": 0,
+        "w": 0.06,
+        "h": 0.999
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-flowers-of-evil-pale-bloom-interrupt-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

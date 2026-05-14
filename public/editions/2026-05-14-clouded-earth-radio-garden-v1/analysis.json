@@ -1,0 +1,450 @@
+{
+  "analysis_id": "analysis-2026-05-14-clouded-earth-radio-garden-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A misty moss-and-soil tabletop landscape with a large dusty pink translucent acetate slab across the center, smaller cloudy glass panes at left and lower field, a suspended dark soil island in the upper right, faint waveform-like scratch lines at left, two tiny green signal lights, thin registration seams, pink vertical overprint at the right edge, root-like pale threads across the foreground, and small pale bead/bloom clusters near the lower right.",
+  "usable_surfaces": [
+    "central dusty pink translucent slab",
+    "upper-right floating soil island",
+    "left cloudy glass pane with waveform scratches",
+    "lower-left milky glass shard",
+    "right vertical pink edge strip with ruler ticks",
+    "tiny green signal light pins",
+    "foreground root/thread gestures",
+    "lower-right bead-like bloom cluster",
+    "thin vertical registration seams"
+  ],
+  "detected_objects": [
+    {
+      "label": "PINKCOURTESYPHONE translucent album slab",
+      "artifact_type": "hero-scale-acetate-album-plate",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.229,
+        "y": 0.364,
+        "w": 0.493,
+        "h": 0.376
+      },
+      "polygon": [
+        [
+          0.229,
+          0.393
+        ],
+        [
+          0.358,
+          0.365
+        ],
+        [
+          0.541,
+          0.357
+        ],
+        [
+          0.636,
+          0.455
+        ],
+        [
+          0.722,
+          0.686
+        ],
+        [
+          0.632,
+          0.74
+        ],
+        [
+          0.452,
+          0.715
+        ],
+        [
+          0.285,
+          0.612
+        ],
+        [
+          0.242,
+          0.49
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "large dusty pink translucent rectangular plate tilted across the center with visible dirt flecks, scratches, overprint glow, and hard glass-like edges"
+    },
+    {
+      "label": "I Want An Earth soil aperture",
+      "artifact_type": "hero-scale-soil-glass-island",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.444,
+        "y": 0.079,
+        "w": 0.403,
+        "h": 0.303
+      },
+      "polygon": [
+        [
+          0.452,
+          0.203
+        ],
+        [
+          0.477,
+          0.14
+        ],
+        [
+          0.56,
+          0.08
+        ],
+        [
+          0.67,
+          0.089
+        ],
+        [
+          0.773,
+          0.139
+        ],
+        [
+          0.84,
+          0.217
+        ],
+        [
+          0.821,
+          0.301
+        ],
+        [
+          0.736,
+          0.357
+        ],
+        [
+          0.626,
+          0.382
+        ],
+        [
+          0.522,
+          0.341
+        ],
+        [
+          0.461,
+          0.274
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "broad floating dark moss-and-earth island in the upper right with a distinct underside, dusty rim, twig textures, and shadowed aperture-like volume"
+    },
+    {
+      "label": "Enfield winter blue buried edge",
+      "artifact_type": "winter-paper-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.002,
+        "y": 0.137,
+        "w": 0.143,
+        "h": 0.262
+      },
+      "polygon": [
+        [
+          0.003,
+          0.139
+        ],
+        [
+          0.145,
+          0.137
+        ],
+        [
+          0.145,
+          0.392
+        ],
+        [
+          0.109,
+          0.399
+        ],
+        [
+          0.047,
+          0.385
+        ],
+        [
+          0.005,
+          0.351
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "cold blue-gray translucent rectangular torn/paper-like pane emerging at the left side over frosty haze and wintery scrub"
+    },
+    {
+      "label": "Clouded Chords fog pane",
+      "artifact_type": "milky-cloud-glass-pane",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.039,
+        "y": 0.539,
+        "w": 0.21,
+        "h": 0.199
+      },
+      "polygon": [
+        [
+          0.041,
+          0.642
+        ],
+        [
+          0.188,
+          0.539
+        ],
+        [
+          0.236,
+          0.591
+        ],
+        [
+          0.249,
+          0.681
+        ],
+        [
+          0.2,
+          0.736
+        ],
+        [
+          0.096,
+          0.724
+        ],
+        [
+          0.039,
+          0.679
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "lower-left cloudy translucent glass pane with milky speckled condensation and angled hard edges embedded in moss"
+    },
+    {
+      "label": "It's Okay to Disappear fading waveform root",
+      "artifact_type": "disappearing-waveform-root",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.021,
+        "y": 0.341,
+        "w": 0.12,
+        "h": 0.058
+      },
+      "polygon": [
+        [
+          0.021,
+          0.384
+        ],
+        [
+          0.041,
+          0.35
+        ],
+        [
+          0.058,
+          0.381
+        ],
+        [
+          0.073,
+          0.356
+        ],
+        [
+          0.089,
+          0.394
+        ],
+        [
+          0.104,
+          0.36
+        ],
+        [
+          0.116,
+          0.389
+        ],
+        [
+          0.129,
+          0.359
+        ],
+        [
+          0.141,
+          0.398
+        ],
+        [
+          0.136,
+          0.402
+        ],
+        [
+          0.119,
+          0.374
+        ],
+        [
+          0.106,
+          0.399
+        ],
+        [
+          0.091,
+          0.368
+        ],
+        [
+          0.075,
+          0.397
+        ],
+        [
+          0.058,
+          0.364
+        ],
+        [
+          0.043,
+          0.397
+        ],
+        [
+          0.027,
+          0.391
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "fine black waveform-like vertical scratches along the left fog pane, fading into moss and mist toward the green pin"
+    },
+    {
+      "label": "A' Chailleach peat spiral thread",
+      "artifact_type": "peat-brown-folk-drone-thread",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.31,
+        "y": 0.458,
+        "w": 0.556,
+        "h": 0.432
+      },
+      "confidence": 0.69,
+      "visual_evidence": "long pale root/thread gesture arcs through the peat foreground, looping around the central slab and threading toward the right-side signal light"
+    },
+    {
+      "label": "Flowers Of Evil pale bloom interruption",
+      "artifact_type": "muted-botanical-signal-bloom",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.702,
+        "y": 0.781,
+        "w": 0.07,
+        "h": 0.062
+      },
+      "polygon": [
+        [
+          0.705,
+          0.811
+        ],
+        [
+          0.716,
+          0.786
+        ],
+        [
+          0.743,
+          0.781
+        ],
+        [
+          0.766,
+          0.793
+        ],
+        [
+          0.772,
+          0.82
+        ],
+        [
+          0.753,
+          0.842
+        ],
+        [
+          0.724,
+          0.839
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "small cluster of pale round bead-like blooms interrupting the dark moss near the lower right foreground"
+    },
+    {
+      "label": "right pink overprint ruler edge",
+      "artifact_type": "translucent-pink-registration-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.919,
+        "y": 0,
+        "w": 0.06,
+        "h": 0.999
+      },
+      "polygon": [
+        [
+          0.919,
+          0
+        ],
+        [
+          0.976,
+          0
+        ],
+        [
+          0.978,
+          0.187
+        ],
+        [
+          0.975,
+          0.396
+        ],
+        [
+          0.978,
+          0.602
+        ],
+        [
+          0.975,
+          0.805
+        ],
+        [
+          0.977,
+          0.999
+        ],
+        [
+          0.92,
+          0.999
+        ],
+        [
+          0.92,
+          0.78
+        ],
+        [
+          0.919,
+          0.54
+        ],
+        [
+          0.92,
+          0.31
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "tall translucent dusty pink vertical strip at the far right with visible ruler-like tick marks and a hard overprint boundary"
+    },
+    {
+      "label": "Flowers Of Evil pale bloom interruption",
+      "artifact_type": "muted-botanical-signal-bloom",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.698,
+    "rationale": "The plate remains expressionist and source-readable, but several overlapping glass panes, soil islands, threads, seams, and signal lights create moderate density; interaction mapping should stay tied to the clearest physical marks rather than the atmospheric haze."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-05-14-clouded-earth-radio-garden-v1"
+}

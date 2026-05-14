@@ -1,0 +1,231 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-14-clouded-earth-radio-garden-v1",
+  "edition_id": "2026-05-14-clouded-earth-radio-garden-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-14-clouded-earth-radio-garden-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal",
+    "screen-rendered-html"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-pinkcourtesyphone-translucent-album-",
+      "target_kind": "artifact",
+      "artifact_id": "hero-pinkcourtesyphone-translucent-album-",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-acetate-album-plate) selected from interpretation."
+    },
+    {
+      "target_id": "hero-i-want-an-earth-soil-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-i-want-an-earth-soil-aperture",
+      "priority": 2,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-soil-glass-island) selected from interpretation."
+    },
+    {
+      "target_id": "module-enfield-winter-blue-buried-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-enfield-winter-blue-buried-edge",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (winter-paper-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-clouded-chords-fog-pane",
+      "target_kind": "artifact",
+      "artifact_id": "module-clouded-chords-fog-pane",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (milky-cloud-glass-pane) selected from interpretation."
+    },
+    {
+      "target_id": "module-it-s-okay-to-disappear-fading-wavefo",
+      "target_kind": "artifact",
+      "artifact_id": "module-it-s-okay-to-disappear-fading-wavefo",
+      "priority": 5,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (disappearing-waveform-root) selected from interpretation."
+    },
+    {
+      "target_id": "module-a-chailleach-peat-spiral-thread",
+      "target_kind": "artifact",
+      "artifact_id": "module-a-chailleach-peat-spiral-thread",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (peat-brown-folk-drone-thread) selected from interpretation."
+    },
+    {
+      "target_id": "module-flowers-of-evil-pale-bloom-interrupt",
+      "target_kind": "artifact",
+      "artifact_id": "module-flowers-of-evil-pale-bloom-interrupt",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (muted-botanical-signal-bloom) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-pink-overprint-ruler-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-pink-overprint-ruler-edge",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-pink-registration-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-flowers-of-evil-pale-bloom-interrupt-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-flowers-of-evil-pale-bloom-interrupt-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (muted-botanical-signal-bloom) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
