@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { parseArgs, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
+import { allocateCronUxPort, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
 
 describe('daily publish cron wrapper', () => {
   it('parses an explicit inspiration override option', () => {
@@ -19,5 +19,13 @@ describe('daily publish cron wrapper', () => {
     await fs.writeFile(overridePath, '{}')
 
     await expect(resolveInspirationOverridePath({ inspirationOverride: overridePath })).resolves.toBe(overridePath)
+  })
+
+  it('parses lsof pid output for stale preview cleanup', () => {
+    expect(parsePidList('36394\n36422\nnot-a-pid\n')).toEqual([36394, 36422])
+  })
+
+  it('allocates a cron-specific UX port away from the legacy fixed port', () => {
+    expect(allocateCronUxPort(1234)).toBe('45234')
   })
 })

@@ -9,6 +9,14 @@ const defaultVaultRoot = '/Users/nickgeorge-studio/Documents/nicks-mind-map'
 const defaultWorktreeDir = process.env.DFE_CRON_WORKTREE_DIR || path.resolve(primaryRoot, '..', 'hermes-frontpage-engine-cron')
 const defaultInspirationOverridePath = path.join(primaryRoot, 'tmp', 'next-run-inspiration-override.json')
 const remoteManifestUrl = 'https://daily.nockgarden.com/editions/index.json'
+const previewSmokePort = 43180
+
+export function allocateCronUxPort(seed = process.pid) {
+  if (process.env.DFE_UX_PORT) return process.env.DFE_UX_PORT
+  const numericSeed = Number.parseInt(String(seed), 10)
+  const offset = Number.isFinite(numericSeed) ? numericSeed % 4000 : 0
+  return String(44000 + offset)
+}
 
 export function parseArgs(argv) {
   const options = {
@@ -213,6 +221,25 @@ function parseStatusLines(stdout) {
     .filter(Boolean)
 }
 
+export function parsePidList(stdout) {
+  return parseStatusLines(stdout)
+    .map((line) => Number.parseInt(line.trim(), 10))
+    .filter((pid) => Number.isInteger(pid) && pid > 0)
+}
+
+async function cleanupPreviewSmokeServer(port = previewSmokePort) {
+  const listeners = await run('lsof', [`-tiTCP:${port}`, '-sTCP:LISTEN'], {
+    capture: true,
+    allowFailure: true,
+  })
+  const pids = parsePidList(listeners.stdout)
+  if (!pids.length) return []
+
+  console.log(`[daily:publish:cron] cleaning stale preview listener(s) on 127.0.0.1:${port}: ${pids.join(', ')}`)
+  await run('kill', pids.map(String), { capture: true, allowFailure: true })
+  return pids
+}
+
 function allowedStatusPath(line) {
   const candidate = line.slice(3).trim()
   return candidate === 'public/editions' || candidate.startsWith('public/editions/')
@@ -246,6 +273,9 @@ async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
 
 async function main() {
   const options = parseArgs(process.argv.slice(2))
+  let exitCode = 0
+  const cronUxPort = allocateCronUxPort()
+  const cronEnv = { ...process.env, DFE_UX_PORT: cronUxPort }
   const summary = {
     ok: false,
     worktree_dir: path.resolve(options.worktreeDir),
@@ -261,6 +291,8 @@ async function main() {
   }
 
   try {
+    await cleanupPreviewSmokeServer()
+    await cleanupPreviewSmokeServer(cronUxPort)
     await ensureWorktree(options)
 
     const processArgs = ['run', 'daily:process', '--', '--input-mode', 'obsidian-allowlist', '--input-root', options.inputRoot, '--publish']
@@ -273,9 +305,10 @@ async function main() {
 
     await run('npm', processArgs, {
       cwd: options.worktreeDir,
+      env: cronEnv,
     })
     await fs.rm(path.join(options.worktreeDir, 'vite.config.d.ts'), { force: true })
-    await run('npm', ['run', 'qa:publish'], { cwd: options.worktreeDir })
+    await run('npm', ['run', 'qa:publish'], { cwd: options.worktreeDir, env: cronEnv })
 
     const manifest = await readJson(path.join(options.worktreeDir, 'public', 'editions', 'index.json'))
     summary.local_edition_id = manifest.current_edition_id || null
@@ -294,13 +327,17 @@ async function main() {
     summary.remote_verification = remoteVerification
     summary.ok = summary.local_publish_status === 'live' && summary.push_succeeded && summary.remote_matches
     console.log(JSON.stringify(summary, null, 2))
-    if (!summary.ok) process.exit(1)
+    if (!summary.ok) exitCode = 1
   } catch (error) {
     summary.error = error.message
     summary.latest_run_dir = await latestRunDir(options.worktreeDir)
     console.log(JSON.stringify(summary, null, 2))
-    process.exit(1)
+    exitCode = 1
+  } finally {
+    await cleanupPreviewSmokeServer()
+    await cleanupPreviewSmokeServer(cronUxPort)
   }
+  if (exitCode !== 0) process.exit(exitCode)
 }
 
 const isDirectRun = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)

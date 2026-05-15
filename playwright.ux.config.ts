@@ -3,6 +3,8 @@ import { defineConfig } from '@playwright/test'
 
 const isCI = Boolean(process.env.CI)
 const hasArgosToken = Boolean(process.env.ARGOS_TOKEN)
+const uxPreviewPort = process.env.DFE_UX_PORT || '43180'
+const uxPreviewUrl = `http://127.0.0.1:${uxPreviewPort}`
 
 export default defineConfig({
   testDir: './tests/ux',
@@ -20,7 +22,7 @@ export default defineConfig({
     ],
   ],
   use: {
-    baseURL: 'http://127.0.0.1:43180',
+    baseURL: uxPreviewUrl,
     viewport: { width: 1440, height: 980 },
     trace: isCI ? 'on-first-retry' : 'on',
     screenshot: 'only-on-failure',
@@ -35,8 +37,8 @@ export default defineConfig({
     },
   },
   webServer: {
-    command: 'npm run preview -- --host 127.0.0.1 --port 43180 --strictPort',
-    url: 'http://127.0.0.1:43180',
+    command: `npm run preview -- --host 127.0.0.1 --port ${uxPreviewPort} --strictPort`,
+    url: uxPreviewUrl,
     reuseExistingServer: false,
     timeout: 120_000,
   },
