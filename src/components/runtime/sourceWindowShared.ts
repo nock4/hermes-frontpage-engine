@@ -9,6 +9,8 @@ export type SourceWindowSurface = 'panel' | 'stage'
 export type SourceWindowSurfaceProfile = ReturnType<typeof getSourceWindowSurfaceProfile>
 export type RichPreviewModel = ReturnType<typeof getRichPreviewModel>
 
+const SOURCE_IMAGE_FALLBACK_DATA_URL = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22 viewBox=%220 0 320 180%22%3E%3Crect width=%22320%22 height=%22180%22 fill=%22%2313171f%22/%3E%3Cpath d=%22M24 124c36-40 62-48 92-26 24 18 47 15 76-12 30-28 61-30 104-5v75H24z%22 fill=%22%235f7c67%22 opacity=%22.72%22/%3E%3Ccircle cx=%22252%22 cy=%2246%22 r=%2220%22 fill=%22%23d7bd78%22 opacity=%22.88%22/%3E%3Ctext x=%2224%22 y=%2236%22 font-family=%22system-ui,sans-serif%22 font-size=%2214%22 fill=%22%23f2ead6%22%3Esource image unavailable%3C/text%3E%3C/svg%3E'
+
 function isLowValueSourceImage(imageUrl: string | null | undefined) {
   if (!imageUrl) return true
 
@@ -63,6 +65,8 @@ export function getUsableSourceImageUrl(binding: SourceBindingRecord) {
 
   const sourceUrl = sanitizeSourceImageUrl(binding.source_url)
   if (isDirectImageUrl(sourceUrl) && !isLowValueSourceImage(sourceUrl)) return sourceUrl
+
+  if (imageUrl) return SOURCE_IMAGE_FALLBACK_DATA_URL
 
   return null
 }
