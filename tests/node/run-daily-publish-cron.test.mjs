@@ -26,6 +26,26 @@ describe('daily publish cron wrapper', () => {
   })
 
   it('allocates a cron-specific UX port away from the legacy fixed port', () => {
-    expect(allocateCronUxPort(1234)).toBe('45234')
+    const originalPort = process.env.DFE_UX_PORT
+    delete process.env.DFE_UX_PORT
+
+    try {
+      expect(allocateCronUxPort(1234)).toBe('45234')
+    } finally {
+      if (originalPort === undefined) delete process.env.DFE_UX_PORT
+      else process.env.DFE_UX_PORT = originalPort
+    }
+  })
+
+  it('honors an explicit UX port override', () => {
+    const originalPort = process.env.DFE_UX_PORT
+    process.env.DFE_UX_PORT = '45678'
+
+    try {
+      expect(allocateCronUxPort(1234)).toBe('45678')
+    } finally {
+      if (originalPort === undefined) delete process.env.DFE_UX_PORT
+      else process.env.DFE_UX_PORT = originalPort
+    }
   })
 })
