@@ -26,6 +26,7 @@ function isLowValueSourceImage(imageUrl: string | null | undefined) {
       || path.includes('site-icon')
       || path.includes('wordmark')
       || path.includes('templatethumbnail')
+      || path.endsWith('/pixel.png')
       || path.includes('/logo')
       || /(?:^|[/_\-.])icon(?:[/_\-.]|$)/.test(path)
       || /\.ico(?:$|[?#])/.test(path)
@@ -43,6 +44,7 @@ function isLowValueSourceImage(imageUrl: string | null | undefined) {
       || lower.includes('site-icon')
       || lower.includes('wordmark')
       || lower.includes('templatethumbnail')
+      || lower.includes('/pixel.png')
       || lower.includes('/logo')
       || /(?:^|[/_\-.])icon(?:[/_\-.]|$)/.test(lower)
       || /\.ico(?:$|[?#])/.test(lower)
@@ -50,10 +52,19 @@ function isLowValueSourceImage(imageUrl: string | null | undefined) {
   }
 }
 
+function isDirectImageUrl(value: string | null | undefined) {
+  if (!value) return false
+  return /\.(png|jpe?g|webp|avif)(?:$|[?#])/i.test(value)
+}
+
 export function getUsableSourceImageUrl(binding: SourceBindingRecord) {
   const imageUrl = sanitizeSourceImageUrl(binding.source_image_url)
-  if (!imageUrl || isLowValueSourceImage(imageUrl)) return null
-  return imageUrl
+  if (imageUrl && !isLowValueSourceImage(imageUrl)) return imageUrl
+
+  const sourceUrl = sanitizeSourceImageUrl(binding.source_url)
+  if (isDirectImageUrl(sourceUrl) && !isLowValueSourceImage(sourceUrl)) return sourceUrl
+
+  return null
 }
 
 export function usesGhostReflectionTreatment(enhancementTechniques: string[]) {
