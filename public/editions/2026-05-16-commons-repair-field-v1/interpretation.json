@@ -1,0 +1,314 @@
+{
+  "interpretation_id": "interp-2026-05-16-commons-repair-field-v1",
+  "edition_id": "2026-05-16-commons-repair-field-v1",
+  "plate_read_timestamp": "2026-05-16T12:43:19.157Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A sunlit garden-floor archive scene with two large black-ink document plates embedded in soil, plants, roots, translucent amber acetate scaffolds, circular source rings, pinned plot tags, and small fossil/specimen plaques. The strongest interaction anchors are the two printed paper fields, the lower amber rail, the circular specimen plaque, the lower-right fossil card, and visible plant/plot tag clusters.",
+    "dominant_spatial_mode": "contained",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "public repair in bloom",
+      "A sunlit garden-floor archive scene with two large black-ink document plates embedded in soil, plants, roots, translucent amber acetate scaffolds, circular source rings, pinned plot tags, and small fossil/specimen plaques. The strongest interaction anchors are the two printed paper fields, the lower amber rail, the circular specimen plaque, the lower-right fossil card, and visible plant/plot tag clusters.",
+      "living-archive",
+      "civic-botanical",
+      "black-ink"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "combahee-black-feminist-document-plate",
+      "allied-media-civic-future-plate",
+      "creative-capital-support-scaffold",
+      "homegrown-keystone-plant-map",
+      "Source Pathway Plaque",
+      "mdn-dinosaur-specimen-inset",
+      "picsum-forest-canopy-grain"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "wood"
+    ],
+    "dominant_structures": [
+      "commons-repair-field",
+      "one broad cultivated commons field made from paper plots and soil seams",
+      "two large document-plate anchors carrying the civic and Black feminist archive weight",
+      "translucent support scaffolds crossing the field like grant rails",
+      "native-plant trial islands, root paths, and specimen apertures",
+      "small raster insets embedded as texture samples rather than main subjects",
+      "large left black-ink archive document plate",
+      "large right black-ink civic paper field"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: commons-repair-field.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-combahee-black-feminist-document-pla",
+      "kind": "hero",
+      "type": "hero-scale-archive-document-plate",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.186,
+        "y": 0.318,
+        "w": 0.316,
+        "h": 0.381
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-allied-media-civic-future-plate",
+      "kind": "hero",
+      "type": "hero-scale-civic-paper-field",
+      "strength": 0.9868279999999999,
+      "bounds": {
+        "x": 0.501,
+        "y": 0.29,
+        "w": 0.338,
+        "h": 0.394
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-creative-capital-support-scaffold",
+      "kind": "module",
+      "type": "translucent-grant-acetate-rail",
+      "strength": 0.786312,
+      "bounds": {
+        "x": 0.308,
+        "y": 0.657,
+        "w": 0.638,
+        "h": 0.334
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-homegrown-keystone-plant-map",
+      "kind": "module",
+      "type": "native-plant-trial-tag-cluster",
+      "strength": 0.769992,
+      "bounds": {
+        "x": 0.71,
+        "y": 0.072,
+        "w": 0.23,
+        "h": 0.212
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-source-pathway-plaque",
+      "kind": "module",
+      "type": "coral-botanical-cross-section-aperture",
+      "strength": 0.732456,
+      "bounds": {
+        "x": 0.117,
+        "y": 0.763,
+        "w": 0.102,
+        "h": 0.108
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mdn-dinosaur-specimen-inset",
+      "kind": "module",
+      "type": "small-fossil-specimen-card",
+      "strength": 0.698232,
+      "bounds": {
+        "x": 0.705,
+        "y": 0.812,
+        "w": 0.173,
+        "h": 0.159
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-picsum-forest-canopy-grain",
+      "kind": "module",
+      "type": "edge-wash-forest-texture",
+      "strength": 0.6777960000000001,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.354,
+        "h": 0.275
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-combahee-black-feminist-document-pla-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.186,
+        "y": 0.318,
+        "w": 0.316,
+        "h": 0.381
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-allied-media-civic-future-plate-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.501,
+        "y": 0.29,
+        "w": 0.338,
+        "h": 0.394
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-creative-capital-support-scaffold-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.308,
+        "y": 0.657,
+        "w": 0.638,
+        "h": 0.334
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-homegrown-keystone-plant-map-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.71,
+        "y": 0.072,
+        "w": 0.23,
+        "h": 0.212
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-source-pathway-plaque-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.117,
+        "y": 0.763,
+        "w": 0.102,
+        "h": 0.108
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mdn-dinosaur-specimen-inset-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.705,
+        "y": 0.812,
+        "w": 0.173,
+        "h": 0.159
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-picsum-forest-canopy-grain-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.354,
+        "h": 0.275
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 7 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "analysis_id": "analysis-2026-05-16-commons-repair-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A sunlit garden-floor archive scene with two large black-ink document plates embedded in soil, plants, roots, translucent amber acetate scaffolds, circular source rings, pinned plot tags, and small fossil/specimen plaques. The strongest interaction anchors are the two printed paper fields, the lower amber rail, the circular specimen plaque, the lower-right fossil card, and visible plant/plot tag clusters.",
+  "usable_surfaces": [
+    "large left black-ink archive document plate",
+    "large right black-ink civic paper field",
+    "translucent amber acetate rails and clipped plot sheets",
+    "circular fossil/botanical aperture plaque",
+    "lower-right relief specimen inset",
+    "orange source rings around plant nodes",
+    "pinned plant-map tags and plot edges",
+    "upper-left canopy grain and palm-frond wash"
+  ],
+  "detected_objects": [
+    {
+      "label": "combahee-black-feminist-document-plate",
+      "artifact_type": "hero-scale-archive-document-plate",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.186,
+        "y": 0.318,
+        "w": 0.316,
+        "h": 0.381
+      },
+      "polygon": [
+        [
+          0.205,
+          0.332
+        ],
+        [
+          0.419,
+          0.322
+        ],
+        [
+          0.486,
+          0.363
+        ],
+        [
+          0.501,
+          0.675
+        ],
+        [
+          0.372,
+          0.699
+        ],
+        [
+          0.263,
+          0.666
+        ],
+        [
+          0.198,
+          0.593
+        ],
+        [
+          0.186,
+          0.435
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Large skewed paper sheet at center-left with dense black ink illustration of grouped figures, visible document edge, stains, and rooted plant growth along the lower edge."
+    },
+    {
+      "label": "allied-media-civic-future-plate",
+      "artifact_type": "hero-scale-civic-paper-field",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.501,
+        "y": 0.29,
+        "w": 0.338,
+        "h": 0.394
+      },
+      "polygon": [
+        [
+          0.505,
+          0.302
+        ],
+        [
+          0.719,
+          0.29
+        ],
+        [
+          0.832,
+          0.342
+        ],
+        [
+          0.839,
+          0.641
+        ],
+        [
+          0.744,
+          0.684
+        ],
+        [
+          0.598,
+          0.66
+        ],
+        [
+          0.528,
+          0.604
+        ],
+        [
+          0.501,
+          0.397
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Large right-side black-ink paper ground with a dominant tree canopy, crowd line, torn/stained paper edges, soil seams, and rooted field marks."
+    },
+    {
+      "label": "creative-capital-support-scaffold",
+      "artifact_type": "translucent-grant-acetate-rail",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.308,
+        "y": 0.657,
+        "w": 0.638,
+        "h": 0.334
+      },
+      "polygon": [
+        [
+          0.361,
+          0.756
+        ],
+        [
+          0.48,
+          0.703
+        ],
+        [
+          0.624,
+          0.703
+        ],
+        [
+          0.77,
+          0.694
+        ],
+        [
+          0.896,
+          0.668
+        ],
+        [
+          0.946,
+          0.723
+        ],
+        [
+          0.837,
+          0.783
+        ],
+        [
+          0.655,
+          0.83
+        ],
+        [
+          0.62,
+          0.99
+        ],
+        [
+          0.471,
+          0.989
+        ],
+        [
+          0.348,
+          0.938
+        ],
+        [
+          0.308,
+          0.84
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Broad translucent amber/yellow rail sweeping across the lower center and right, with visible curved cut edge, pinned corners, overlapping sheets, scratches, and soil seen through it."
+    },
+    {
+      "label": "homegrown-keystone-plant-map",
+      "artifact_type": "native-plant-trial-tag-cluster",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.71,
+        "y": 0.072,
+        "w": 0.23,
+        "h": 0.212
+      },
+      "polygon": [
+        [
+          0.723,
+          0.081
+        ],
+        [
+          0.843,
+          0.073
+        ],
+        [
+          0.927,
+          0.113
+        ],
+        [
+          0.94,
+          0.196
+        ],
+        [
+          0.881,
+          0.261
+        ],
+        [
+          0.758,
+          0.284
+        ],
+        [
+          0.71,
+          0.224
+        ],
+        [
+          0.726,
+          0.14
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Upper-right amber clipped plot sheet with several black pin anchors, plant stems rising through it, visible transparent tag edges, and dark soil knots under the acetate."
+    },
+    {
+      "label": "Source Pathway Plaque",
+      "artifact_type": "coral-botanical-cross-section-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.117,
+        "y": 0.763,
+        "w": 0.102,
+        "h": 0.108
+      },
+      "polygon": [
+        [
+          0.168,
+          0.763
+        ],
+        [
+          0.194,
+          0.77
+        ],
+        [
+          0.213,
+          0.789
+        ],
+        [
+          0.219,
+          0.816
+        ],
+        [
+          0.209,
+          0.845
+        ],
+        [
+          0.187,
+          0.864
+        ],
+        [
+          0.158,
+          0.871
+        ],
+        [
+          0.133,
+          0.859
+        ],
+        [
+          0.119,
+          0.837
+        ],
+        [
+          0.117,
+          0.809
+        ],
+        [
+          0.13,
+          0.783
+        ],
+        [
+          0.147,
+          0.768
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Lower-left circular framed plaque containing a radial fossil/fruit-section form with bright rim, dark center, and segment-like ridges."
+    },
+    {
+      "label": "mdn-dinosaur-specimen-inset",
+      "artifact_type": "small-fossil-specimen-card",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.705,
+        "y": 0.812,
+        "w": 0.173,
+        "h": 0.159
+      },
+      "polygon": [
+        [
+          0.715,
+          0.832
+        ],
+        [
+          0.801,
+          0.812
+        ],
+        [
+          0.878,
+          0.848
+        ],
+        [
+          0.857,
+          0.943
+        ],
+        [
+          0.773,
+          0.971
+        ],
+        [
+          0.705,
+          0.928
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Lower-right raised rectangular fossil-like relief card, partially buried in soil and grass, with a framed border and grid of small specimen impressions."
+    },
+    {
+      "label": "picsum-forest-canopy-grain",
+      "artifact_type": "edge-wash-forest-texture",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.354,
+        "h": 0.275
+      },
+      "polygon": [
+        [
+          0.002,
+          0.003
+        ],
+        [
+          0.078,
+          0
+        ],
+        [
+          0.158,
+          0.004
+        ],
+        [
+          0.265,
+          0.022
+        ],
+        [
+          0.354,
+          0.061
+        ],
+        [
+          0.298,
+          0.121
+        ],
+        [
+          0.23,
+          0.168
+        ],
+        [
+          0.149,
+          0.22
+        ],
+        [
+          0.061,
+          0.275
+        ],
+        [
+          0,
+          0.221
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "Upper-left margin is dominated by palm-frond canopy grain and dark green radial leaves casting a forest-wash texture over the plate edge."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 9,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.698,
+    "rationale": "The plate is rich and legible but visually busy: two hero documents, multiple amber scaffolds, many plants, pins, rings, roots, and soil textures compete for attention. Interaction mapping should prioritize the clear document surfaces, acetate rails, and discrete specimen anchors."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-05-16-commons-repair-field-v1"
+}

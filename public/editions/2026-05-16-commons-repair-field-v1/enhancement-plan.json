@@ -1,0 +1,195 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-16-commons-repair-field-v1",
+  "edition_id": "2026-05-16-commons-repair-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-16-commons-repair-field-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal",
+    "restoration-scan"
+  ],
+  "future_only_subset": [],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-combahee-black-feminist-document-pla",
+      "target_kind": "artifact",
+      "artifact_id": "hero-combahee-black-feminist-document-pla",
+      "priority": 1,
+      "techniques": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-archive-document-plate) selected from interpretation."
+    },
+    {
+      "target_id": "hero-allied-media-civic-future-plate",
+      "target_kind": "artifact",
+      "artifact_id": "hero-allied-media-civic-future-plate",
+      "priority": 2,
+      "techniques": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-civic-paper-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-creative-capital-support-scaffold",
+      "target_kind": "artifact",
+      "artifact_id": "module-creative-capital-support-scaffold",
+      "priority": 3,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-grant-acetate-rail) selected from interpretation."
+    },
+    {
+      "target_id": "module-homegrown-keystone-plant-map",
+      "target_kind": "artifact",
+      "artifact_id": "module-homegrown-keystone-plant-map",
+      "priority": 4,
+      "techniques": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (native-plant-trial-tag-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-source-pathway-plaque",
+      "target_kind": "artifact",
+      "artifact_id": "module-source-pathway-plaque",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (coral-botanical-cross-section-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-mdn-dinosaur-specimen-inset",
+      "target_kind": "artifact",
+      "artifact_id": "module-mdn-dinosaur-specimen-inset",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-fossil-specimen-card) selected from interpretation."
+    },
+    {
+      "target_id": "module-picsum-forest-canopy-grain",
+      "target_kind": "artifact",
+      "artifact_id": "module-picsum-forest-canopy-grain",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (edge-wash-forest-texture) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 7 artifacts and scene family heuristics."
+}
