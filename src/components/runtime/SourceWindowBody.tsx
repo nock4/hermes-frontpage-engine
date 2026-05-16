@@ -1,3 +1,5 @@
+import type { SyntheticEvent } from 'react'
+
 import { getRichPreviewModel } from '../../lib/richPreviewModel'
 import { getYouTubeThumbnailUrl } from '../../lib/sourceWindowContent'
 import { getTweetEmbedSrcDoc, TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
@@ -109,6 +111,15 @@ function getScannerTraceCode(sourceHost: string | null, descriptor: SourceWindow
   return base.slice(0, 6) || 'SIGNAL'
 }
 
+const SOURCE_IMAGE_FALLBACK_DATA_URL = 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22320%22 height=%22180%22 viewBox=%220 0 320 180%22%3E%3Crect width=%22320%22 height=%22180%22 fill=%22%2313171f%22/%3E%3Cpath d=%22M24 124c36-40 62-48 92-26 24 18 47 15 76-12 30-28 61-30 104-5v75H24z%22 fill=%22%235f7c67%22 opacity=%22.72%22/%3E%3Ccircle cx=%22252%22 cy=%2246%22 r=%2220%22 fill=%22%23d7bd78%22 opacity=%22.88%22/%3E%3Ctext x=%2224%22 y=%2236%22 font-family=%22system-ui,sans-serif%22 font-size=%2214%22 fill=%22%23f2ead6%22%3Esource image unavailable%3C/text%3E%3C/svg%3E'
+
+function handleSourceImageError(event: SyntheticEvent<HTMLImageElement>) {
+  const image = event.currentTarget
+  if (image.dataset.sourceFallbackApplied === 'true') return
+  image.dataset.sourceFallbackApplied = 'true'
+  image.src = SOURCE_IMAGE_FALLBACK_DATA_URL
+}
+
 function SourceImageTitleCard({
   binding,
   imageUrl,
@@ -124,7 +135,7 @@ function SourceImageTitleCard({
     <>
       {imageUrl ? (
         <figure className="visual-source-card__figure">
-          <img alt={binding.source_image_alt ?? title} className="visual-source-card__image" src={imageUrl} />
+          <img alt={binding.source_image_alt ?? title} className="visual-source-card__image" onError={handleSourceImageError} src={imageUrl} />
         </figure>
       ) : null}
       <strong className="visual-source-card__title">{title}</strong>
@@ -188,7 +199,7 @@ export function SourceWindowBody({
         <a className="youtube-linkout" href={descriptor.sourceUrl} rel="noreferrer" target="_blank">
           {sourceImage ? (
             <figure className="youtube-linkout__poster">
-              <img alt={binding.source_image_alt ?? binding.title} src={sourceImage} />
+              <img alt={binding.source_image_alt ?? binding.title} onError={handleSourceImageError} src={sourceImage} />
               <span aria-hidden="true" className="youtube-linkout__play">▶</span>
             </figure>
           ) : null}
@@ -239,7 +250,7 @@ export function SourceWindowBody({
               </div>
               {panelImage ? (
                 <figure className={`mechanical-reveal-preview__image-cutout mechanical-reveal-preview__image-cutout--${richPreview.imageTreatment}`}>
-                  <img alt={binding.source_image_alt ?? panelTitle} className="mechanical-reveal-preview__image" src={panelImage} />
+                  <img alt={binding.source_image_alt ?? panelTitle} className="mechanical-reveal-preview__image" onError={handleSourceImageError} src={panelImage} />
                 </figure>
               ) : null}
             </div>
@@ -274,7 +285,7 @@ export function SourceWindowBody({
             <section className="light-table-preview__sheet light-table-preview__sheet--front">
               {panelImage ? (
                 <figure className={`light-table-preview__image-frame light-table-preview__image-frame--${richPreview.imageTreatment}`}>
-                  <img alt={binding.source_image_alt ?? panelTitle} className="light-table-preview__image" src={panelImage} />
+                  <img alt={binding.source_image_alt ?? panelTitle} className="light-table-preview__image" onError={handleSourceImageError} src={panelImage} />
                 </figure>
               ) : (
                 <div className="light-table-preview__image-placeholder">signal transfer</div>
@@ -327,7 +338,7 @@ export function SourceWindowBody({
                 {panelImage ? (
                   <figure className={`scanner-decode-preview__image-frame scanner-decode-preview__image-frame--${richPreview.imageTreatment}`}>
                     <span aria-hidden="true" className="scanner-decode-preview__image-corners" />
-                    <img alt={binding.source_image_alt ?? panelTitle} className="scanner-decode-preview__image" src={panelImage} />
+                    <img alt={binding.source_image_alt ?? panelTitle} className="scanner-decode-preview__image" onError={handleSourceImageError} src={panelImage} />
                   </figure>
                 ) : (
                   <div className="scanner-decode-preview__image-placeholder">signal fragment</div>
