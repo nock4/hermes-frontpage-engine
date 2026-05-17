@@ -56,6 +56,18 @@ export async function composeDailyPayload(
     selection_reason: researchField.visual_reference.selection_reason,
     visual_reference_score: researchField.visual_reference.visual_reference_score,
   } : null
+  const selectedImageMaterial = Array.isArray(researchField.selected_image_material)
+    ? researchField.selected_image_material.slice(0, 8).map((candidate) => ({
+      page_url: candidate.page_url,
+      image_url: candidate.image_url,
+      title: candidate.title,
+      caption: candidate.caption,
+      lineage: candidate.lineage,
+      visual_reason: candidate.visual_reason,
+      license_or_rights: candidate.license_or_rights,
+      score: candidate.score,
+    }))
+    : []
   const prompt = {
     date,
     product_rules: [
@@ -71,10 +83,21 @@ export async function composeDailyPayload(
       motif_terms: signalHarvest.motif_terms.slice(0, 36),
     },
     source_research: contentSources,
+    source_research_mode: researchField.research_mode || 'autoresearch',
+    source_anchor_research: researchField.anchor_research ? {
+      anchor_source: researchField.anchor_research.anchor_source,
+      thesis: researchField.anchor_research.anchor_research?.thesis,
+      entities: researchField.anchor_research.anchor_research?.entities?.slice?.(0, 12) || [],
+      visual_motifs: researchField.anchor_research.anchor_research?.visual_motifs?.slice?.(0, 12) || [],
+      image_search_queries: researchField.anchor_research.anchor_research?.image_search_queries?.slice?.(0, 6) || [],
+    } : null,
+    selected_image_material: selectedImageMaterial,
     content_selection_rules: [
       `Use ${minContentItems} to ${maxContentItems} artifacts total; ${targetContentItems} is ideal when enough source material is available.`,
       'Use each supplied source URL at most once. Do not create multiple artifacts for the same article, post, redirect target, image, or source page.',
       'Prefer a mix of source types, domains, notes, media, and visual roles over several pieces from the same source cluster.',
+      'When source_anchor_research exists, make one coherent world around that anchor rather than a collage of unrelated bookmarks.',
+      'Use selected_image_material as source-grounded visual material for palette, structure, texture, crop logic, and mark language. Do not copy logos, page chrome, or subjects literally.',
       'Write source artifact labels as internal metadata only. Do not ask for filenames, taxonomy terms, or explicit visible label text in the generated image.',
       'Artifacts are clickable anchors, not a requirement for equal visual weight. Their scale and loudness should follow the inferred visual direction for this source field.',
     ],
@@ -140,6 +163,7 @@ export async function composeDailyPayload(
     'Avoid repeating the recent edition titles, scene families, dominant materials, and visual worlds supplied in recent_edition_avoidance.',
     diversityDirective,
     'Use inferred_visual_direction as the primary aesthetic guide. Do not revert to a fixed house style.',
+    'If source_anchor_research and selected_image_material are present, treat them as the spine of the edition: one deep source field with derived anchors and image-grounded material cues.',
     'Let the visual reference influence composition structure, geometry, layering, density, palette, and atmosphere when present; do not depict or copy its subject.',
     'Never include legible words, interface labels, filenames, artifact taxonomy, or alphanumeric callouts inside the finished image.',
     'Avoid desks, dashboards, generic software UI, empty landing-page layout, source-summary cards, crowded archives, cabinets, shelves, realistic props, literal objects, and implementation language unless the research field clearly demands them.',

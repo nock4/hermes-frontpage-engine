@@ -2,6 +2,12 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import { findVisualReference, inspectCandidateSource } from './source-inspection.mjs'
+import {
+  buildAnchorResearch,
+  discoverDerivedSourceCandidates,
+  discoverImageSourceMaterial,
+  selectAnchorSource,
+} from './anchor-source-research.mjs'
 import { buildInspirationOverrideVisualReference } from './inspiration-override.mjs'
 import { openAiJson } from './openai-json.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
@@ -23,8 +29,12 @@ const root = process.cwd()
 const minContentItems = 6
 const targetContentItems = 9
 const maxContentItems = 10
-const maxAutoresearchCandidates = 36
 const autoresearchCandidateMultiplier = 4
+const maxAutoresearchCandidates = 40
+
+function isSingleAnchorResearchEnabled() {
+  return process.env.DFE_SINGLE_ANCHOR_RESEARCH !== '0'
+}
 
 async function writeJson(filePath, value) {
   await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -108,21 +118,10 @@ function normalizeAutoresearchSelection(autoresearch, evidenceSources, {
   signalHarvest = null,
 } = {}) {
   const lookup = buildResearchSourceLookup(evidenceSources)
-  const preferredTwitterSource = (source) => {
-    if (source?.source_channel !== 'twitter-bookmark' || source?.source_type === 'tweet') return source
-    const noteKey = source.note_id || source.note_title || source.note_path
-    if (!noteKey) return source
-    return evidenceSources.find((candidate) => (
-      candidate?.source_channel === 'twitter-bookmark'
-      && candidate?.source_type === 'tweet'
-      && [candidate.note_id, candidate.note_title, candidate.note_path].includes(noteKey)
-    )) || source
-  }
   const selected = []
   const seen = new Set()
   const seenTwitterNotes = new Set()
   const addSource = (source) => {
-    source = preferredTwitterSource(source)
     if (!source || selected.length >= maxSources) return
     const key = sourceContentKey(source)
     if (!key || seen.has(key)) return
@@ -341,52 +340,144 @@ export async function inspectSourceCandidates(signalHarvest, {
     signalHarvest,
     runDir,
   })
-  const autoresearch = await runSourceAutoresearch({
-    signalHarvest,
-    evidenceSources: fetchEvidence,
-    apiKey,
-    model,
-    date,
-    maxSources,
-    recentSourceKeys,
-    inspirationOverride,
-  }, runDir)
-  const selectedForCapture = normalizeAutoresearchSelection(autoresearch, fetchEvidence, {
-    maxSources,
-    recentSourceKeys,
-    signalHarvest,
-  })
-  const inspected = await captureAutoresearchedSources(selectedForCapture, {
-    sourceTool,
-    browserHarness,
-    maxSources,
-  })
 
-  if (inspected.length < Math.min(maxSources, minContentItems)) {
-    const capturedKeys = new Set(inspected.map(sourceContentKey))
-    const fillCandidates = fetchEvidence
-      .filter((source) => !capturedKeys.has(sourceContentKey(source)))
-      .sort((left, right) => sourceContentScore(right, recentSourceKeys) - sourceContentScore(left, recentSourceKeys))
-      .slice(0, maxSources - inspected.length)
-    inspected.push(...await captureAutoresearchedSources(fillCandidates, {
+  let researchMode = 'single-anchor-derived-pool'
+  let anchorResearch = null
+  let derivedCandidates = []
+  let imageSourceMaterial = { image_source_candidates: [], selected_image_material: [] }
+  let autoresearch = null
+  let inspected = []
+
+  const anchorSource = isSingleAnchorResearchEnabled()
+    ? selectAnchorSource(fetchEvidence, { recentSourceKeys, signalHarvest })
+    : null
+  if (anchorSource) {
+    anchorResearch = await buildAnchorResearch(anchorSource, { runDate: date })
+    await writeJson(path.join(runDir, 'anchor-research.json'), anchorResearch)
+
+    derivedCandidates = await discoverDerivedSourceCandidates(anchorResearch, anchorSource, {
+      maxCandidates: Math.max(maxSources * 3, 24),
+      recentSourceKeys,
+    })
+    imageSourceMaterial = await discoverImageSourceMaterial(anchorResearch, derivedCandidates, {
+      maxCandidates: 32,
+      maxSelected: 8,
+    })
+    await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
+
+    const singleAnchorCaptureSet = [anchorSource, ...derivedCandidates]
+    inspected = await captureAutoresearchedSources(singleAnchorCaptureSet, {
       sourceTool,
       browserHarness,
-      maxSources: maxSources - inspected.length,
-    }))
+      maxSources: Math.max(maxSources * 2, minContentItems + 6),
+    })
+
+    autoresearch = {
+      generated_at: new Date().toISOString(),
+      tool: 'single-anchor-derived-pool',
+      workflow: 'Select one saved-signal anchor, deep-research it, discover derived supporting sources and image source material, then capture a coherent source pool around that anchor.',
+      research_question: `What source field grows out of ${anchorResearch.anchor_source.title}?`,
+      synthesis: anchorResearch.anchor_research.summary,
+      edition_thesis: anchorResearch.anchor_research.thesis,
+      clusters: [{
+        label: 'Anchor-derived source field',
+        takeaway: anchorResearch.anchor_research.thesis,
+        urls: [anchorSource.url, ...derivedCandidates.slice(0, 10).map((candidate) => candidate.url)],
+      }],
+      source_decisions: [
+        { url: anchorSource.url, role: 'content', why: anchorResearch.anchor_source.why_selected, confidence: 'high' },
+        ...derivedCandidates.slice(0, 18).map((candidate) => ({
+          url: candidate.url,
+          role: 'content',
+          why: candidate.source_reason || 'Derived from the selected anchor source.',
+          confidence: 'medium',
+        })),
+      ],
+      selected_content_urls: [anchorSource.url, ...derivedCandidates.map((candidate) => candidate.url)].slice(0, Math.max(maxSources * 2, minContentItems + 6)),
+      visual_reference_urls: imageSourceMaterial.selected_image_material.map((candidate) => candidate.page_url || candidate.image_url).slice(0, 8),
+      capture_notes: [
+        'Single-anchor mode: use the saved-signal anchor as the editorial root and derive supporting source windows from its linked/search context.',
+        'Use selected_image_material as visual source material for the image generation step; do not treat generic logos or profile images as art direction.',
+      ],
+      rejected_patterns: ['login-gated profile pages', 'contact pages', 'logos/favicons/placeholders', 'recent duplicates', 'sources with no lineage back to the anchor'],
+      candidate_count: fetchEvidence.length,
+      derived_candidate_count: derivedCandidates.length,
+      selected_image_material_count: imageSourceMaterial.selected_image_material.length,
+    }
+    await writeJson(path.join(runDir, 'source-autoresearch.json'), autoresearch)
+  }
+
+  let contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
+
+  if (contentSources.length < minContentItems) {
+    researchMode = anchorSource ? 'single-anchor-derived-pool-fallback-autoresearch' : 'fallback-autoresearch'
+    autoresearch = await runSourceAutoresearch({
+      signalHarvest,
+      evidenceSources: fetchEvidence,
+      apiKey,
+      model,
+      date,
+      maxSources,
+      recentSourceKeys,
+      inspirationOverride,
+    }, runDir)
+    const selectedForCapture = normalizeAutoresearchSelection(autoresearch, fetchEvidence, {
+      maxSources,
+      recentSourceKeys,
+      signalHarvest,
+    })
+    inspected = await captureAutoresearchedSources(selectedForCapture, {
+      sourceTool,
+      browserHarness,
+      maxSources,
+    })
+
+    if (inspected.length < Math.min(maxSources, minContentItems)) {
+      const capturedKeys = new Set(inspected.map(sourceContentKey))
+      const fillCandidates = fetchEvidence
+        .filter((source) => !capturedKeys.has(sourceContentKey(source)))
+        .sort((left, right) => sourceContentScore(right, recentSourceKeys) - sourceContentScore(left, recentSourceKeys))
+        .slice(0, maxSources - inspected.length)
+      inspected.push(...await captureAutoresearchedSources(fillCandidates, {
+        sourceTool,
+        browserHarness,
+        maxSources: maxSources - inspected.length,
+      }))
+    }
+    contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
   }
 
   const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
+  const imageMaterialReference = imageSourceMaterial.selected_image_material[0]
+    ? {
+        url: imageSourceMaterial.selected_image_material[0].page_url || imageSourceMaterial.selected_image_material[0].image_url,
+        source_url: imageSourceMaterial.selected_image_material[0].page_url || imageSourceMaterial.selected_image_material[0].image_url,
+        final_url: imageSourceMaterial.selected_image_material[0].page_url || imageSourceMaterial.selected_image_material[0].image_url,
+        title: imageSourceMaterial.selected_image_material[0].title || imageSourceMaterial.selected_image_material[0].caption || 'Anchor image source material',
+        description: imageSourceMaterial.selected_image_material[0].visual_reason || '',
+        image_url: imageSourceMaterial.selected_image_material[0].image_url,
+        selection_reason: 'Top image source material discovered from single-anchor deep research.',
+        visual_reference_score: imageSourceMaterial.selected_image_material[0].score || null,
+      }
+    : null
   const visualReference = inspirationOverride
-    ? buildInspirationOverrideVisualReference(inspirationOverride, { fallback: discoveredVisualReference })
-    : discoveredVisualReference
-  const contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
+    ? buildInspirationOverrideVisualReference(inspirationOverride, { fallback: imageMaterialReference || discoveredVisualReference })
+    : imageMaterialReference || discoveredVisualReference
 
   const researchField = {
     generated_at: new Date().toISOString(),
-    source_research_tool: 'Hermes structured JSON autoresearch over Node fetch evidence',
+    research_mode: researchMode,
+    single_anchor_research_enabled: isSingleAnchorResearchEnabled(),
+    source_research_tool: researchMode.startsWith('single-anchor') ? 'single-anchor deep source research' : 'Hermes structured JSON autoresearch over Node fetch evidence',
     source_capture_tool: sourceTool,
     browser_harness: sourceTool === 'browser-harness' ? browserHarness : null,
     autoresearch,
+    anchor_research: anchorResearch,
+    anchor_research_path: anchorResearch ? path.join(runDir, 'anchor-research.json') : null,
+    derived_source_count: derivedCandidates.length,
+    derived_source_candidates: derivedCandidates,
+    image_source_candidates: imageSourceMaterial.image_source_candidates,
+    selected_image_material: imageSourceMaterial.selected_image_material,
     fetch_evidence_count: fetchEvidence.length,
     source_count: inspected.length,
     manual_inspiration_override: inspirationOverride ? {
