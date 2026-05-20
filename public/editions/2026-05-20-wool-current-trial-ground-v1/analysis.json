@@ -1,0 +1,329 @@
+{
+  "analysis_id": "analysis-2026-05-20-wool-current-trial-ground-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Low garden-floor plate with a rough planted trial bed dominating the right foreground, a cream wool sheep grazing at the left edge, dark solar-panel slits running through the lower center-left, tan perforated tray strips crossing seed rows, and a soft pearly haze suspended over the distant foliage.",
+  "usable_surfaces": [
+    "rough cream-and-black bed rim",
+    "dark solar-panel grid slit",
+    "tan perforated seed strips",
+    "seedling row channels",
+    "pearly backlight veil",
+    "folded distant path and foliage horizon",
+    "small blue pin marker",
+    "weathered bark/wood label shard"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero native trial root plate",
+      "artifact_type": "hero-scale-trial-bed-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.421,
+        "w": 0.595,
+        "h": 0.568
+      },
+      "polygon": [
+        [
+          0.451,
+          0.426
+        ],
+        [
+          0.662,
+          0.421
+        ],
+        [
+          0.843,
+          0.431
+        ],
+        [
+          0.954,
+          0.475
+        ],
+        [
+          0.968,
+          0.684
+        ],
+        [
+          0.892,
+          0.889
+        ],
+        [
+          0.742,
+          0.989
+        ],
+        [
+          0.513,
+          0.918
+        ],
+        [
+          0.373,
+          0.841
+        ],
+        [
+          0.389,
+          0.639
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "Large raised trial bed with rough cream rim, dark soil clods, measured rows, stakes, seedlings, and tray divisions fills the right foreground as a research surface."
+    },
+    {
+      "label": "hero wool-solar pasture edge",
+      "artifact_type": "wool-solar-field-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.12,
+        "y": 0.503,
+        "w": 0.265,
+        "h": 0.405
+      },
+      "polygon": [
+        [
+          0.129,
+          0.525
+        ],
+        [
+          0.202,
+          0.503
+        ],
+        [
+          0.247,
+          0.557
+        ],
+        [
+          0.3,
+          0.572
+        ],
+        [
+          0.346,
+          0.524
+        ],
+        [
+          0.366,
+          0.579
+        ],
+        [
+          0.337,
+          0.708
+        ],
+        [
+          0.38,
+          0.827
+        ],
+        [
+          0.321,
+          0.908
+        ],
+        [
+          0.239,
+          0.808
+        ],
+        [
+          0.17,
+          0.763
+        ],
+        [
+          0.12,
+          0.656
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Cream sheep wool and head press against a black gridded solar-panel channel, forming a visible pasture/energy seam along the bed edge."
+    },
+    {
+      "label": "pearly ambient listening veil",
+      "artifact_type": "translucent-air-plume",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.365,
+        "y": 0.037,
+        "w": 0.455,
+        "h": 0.353
+      },
+      "polygon": [
+        [
+          0.415,
+          0.043
+        ],
+        [
+          0.553,
+          0.037
+        ],
+        [
+          0.672,
+          0.067
+        ],
+        [
+          0.762,
+          0.132
+        ],
+        [
+          0.82,
+          0.244
+        ],
+        [
+          0.793,
+          0.338
+        ],
+        [
+          0.694,
+          0.39
+        ],
+        [
+          0.552,
+          0.354
+        ],
+        [
+          0.43,
+          0.288
+        ],
+        [
+          0.365,
+          0.174
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "Soft luminous wash and haze hang over the mid-background foliage and path, diffusing the branches into pearly atmosphere."
+    },
+    {
+      "label": "seed stratification tray band",
+      "artifact_type": "pressed-seed-protocol-strip",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.756,
+        "y": 0.42,
+        "w": 0.082,
+        "h": 0.318
+      },
+      "polygon": [
+        [
+          0.774,
+          0.42
+        ],
+        [
+          0.825,
+          0.424
+        ],
+        [
+          0.838,
+          0.721
+        ],
+        [
+          0.813,
+          0.738
+        ],
+        [
+          0.786,
+          0.707
+        ],
+        [
+          0.756,
+          0.438
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Tall tan tray-like strip with ordered round perforations runs lengthwise through the soil, reading as a seed-handling protocol band."
+    },
+    {
+      "label": "second perforated seed strip",
+      "artifact_type": "pressed-seed-protocol-strip",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.852,
+        "y": 0.423,
+        "w": 0.104,
+        "h": 0.235
+      },
+      "polygon": [
+        [
+          0.862,
+          0.423
+        ],
+        [
+          0.936,
+          0.428
+        ],
+        [
+          0.956,
+          0.641
+        ],
+        [
+          0.933,
+          0.658
+        ],
+        [
+          0.888,
+          0.634
+        ],
+        [
+          0.852,
+          0.443
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A separate tan perforated strip with rows of holes sits at the far right of the raised bed, distinct from the central band."
+    },
+    {
+      "label": "folded alpine horizon surface",
+      "artifact_type": "distant-terrain-inset",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.464,
+        "y": 0.238,
+        "w": 0.414,
+        "h": 0.168
+      },
+      "polygon": [
+        [
+          0.464,
+          0.34
+        ],
+        [
+          0.537,
+          0.288
+        ],
+        [
+          0.626,
+          0.25
+        ],
+        [
+          0.734,
+          0.238
+        ],
+        [
+          0.835,
+          0.267
+        ],
+        [
+          0.878,
+          0.332
+        ],
+        [
+          0.812,
+          0.382
+        ],
+        [
+          0.687,
+          0.406
+        ],
+        [
+          0.566,
+          0.39
+        ]
+      ],
+      "confidence": 0.66,
+      "visual_evidence": "Quiet sloped path and soft folded background ground plane sit behind the trial bed as a distant landscape memory."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.785,
+    "rationale": "The plate has strong anchors—the raised bed, sheep/solar seam, perforated strips, and atmospheric veil—but dense foreground leaves and many thin stakes create visual noise around otherwise usable surfaces."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-05-20-wool-current-trial-ground-v1"
+}

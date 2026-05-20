@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-05-20-wool-current-trial-ground-v1",
+  "edition_id": "2026-05-20-wool-current-trial-ground-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-05-20-wool-current-trial-ground-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-native-trial-root-plate",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-native-trial-root-plate",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-trial-bed-surface) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-wool-solar-pasture-edge",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-wool-solar-pasture-edge",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (wool-solar-field-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-pearly-ambient-listening-veil",
+      "target_kind": "artifact",
+      "artifact_id": "module-pearly-ambient-listening-veil",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-air-plume) selected from interpretation."
+    },
+    {
+      "target_id": "module-seed-stratification-tray-band",
+      "target_kind": "artifact",
+      "artifact_id": "module-seed-stratification-tray-band",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pressed-seed-protocol-strip) selected from interpretation."
+    },
+    {
+      "target_id": "module-second-perforated-seed-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-second-perforated-seed-strip",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pressed-seed-protocol-strip) selected from interpretation."
+    },
+    {
+      "target_id": "module-folded-alpine-horizon-surface",
+      "target_kind": "artifact",
+      "artifact_id": "module-folded-alpine-horizon-surface",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (distant-terrain-inset) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}
