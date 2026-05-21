@@ -39,20 +39,28 @@ export async function startManagedBrowserHarnessBrowser({ runDir, runId, root, f
   const userDataDir = path.join(runDir, 'browser-harness-chrome-profile')
   await fs.mkdir(userDataDir, { recursive: true })
 
-  const child = spawn(chromium.executablePath(), [
-    `--remote-debugging-port=${port}`,
-    `--user-data-dir=${userDataDir}`,
-    '--no-first-run',
-    '--no-default-browser-check',
-    '--disable-background-networking',
-    'about:blank',
-  ], {
-    cwd: root,
-    stdio: ['ignore', 'pipe', 'pipe'],
+  // Use Playwright's launcher instead of spawning the macOS app binary directly.
+  // In cron/profile shells the raw app process can start without opening the CDP
+  // listener; launchPersistentContext reliably wires the browser process and keeps
+  // the profile isolated to this daily run.
+  const context = await chromium.launchPersistentContext(userDataDir, {
+    headless: true,
+    args: [
+      `--remote-debugging-port=${port}`,
+      '--no-first-run',
+      '--no-default-browser-check',
+      '--disable-background-networking',
+    ],
   })
 
-  child.stdout.on('data', () => {})
-  child.stderr.on('data', () => {})
+  const child = {
+    killed: false,
+    kill: () => {
+      if (child.killed) return
+      child.killed = true
+      void context.close().catch(() => {})
+    },
+  }
 
   const cdpWs = await waitForCdpWebSocket({ port, fetchWithTimeout })
   return {
