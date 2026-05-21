@@ -143,16 +143,20 @@ export function selectBestVisualReference(sources, recentSourceKeys = new Set())
 
 function sourceSelectionScore(candidate, recentSourceKeys = new Set()) {
   if (!isAllowedSourceUrl(candidate?.url)) return Number.NEGATIVE_INFINITY
+  const text = `${candidate?.note_title || ''} ${candidate?.note_path || ''}`.toLowerCase()
   let score = Number(candidate.note_score || 0) + scoreVisualCandidate(candidate)
   if (candidate.source_channel === 'youtube-like') score += 18
   if (candidate.source_channel === 'nts-like') score += 16
   if (candidate.source_channel === 'chrome-bookmark') score += 12
   if (candidate.source_channel === 'twitter-bookmark') score += 4
+  if (candidate.source_channel === 'youtube-like' && isYouTubeVideoUrl(candidate.url)) score += 36
   if (candidate.source_channel === 'twitter-bookmark' && classifySource(candidate.url).source_type === 'tweet') score += 14
   if (candidate.source_channel === 'twitter-bookmark' && isTwitterMediaUrl(candidate.url)) score -= 10
   if (candidate.source_channel === 'nts-like' && isYouTubeVideoUrl(candidate.url)) score += 30
   if (candidate.source_channel === 'nts-like' && isBandcampStreamingSourceUrl(candidate.url)) score += 12
   if (candidate.source_channel === 'nts-like' && isSoundCloudStreamingSourceUrl(candidate.url)) score += 6
+  if (/daily frontpage (?:direct )?renderable seed|recovery seed/.test(text)) score -= 18
+  if (/emergency directly renderable raster|source-window fill only/.test(text)) score -= 22
   if (recentSourceKeys.has(sourceCandidateKey(candidate))) score -= 80
   return score
 }

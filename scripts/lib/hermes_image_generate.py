@@ -1,10 +1,32 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import os
+import pwd
 import shutil
 import sys
 import urllib.request
 from pathlib import Path
+
+
+def ensure_hermes_source_on_path() -> None:
+    """Allow cron/node-launched Python to import Hermes without cwd assumptions."""
+    real_home = Path(pwd.getpwuid(os.getuid()).pw_dir)
+    candidates = [
+        os.environ.get('HERMES_AGENT_DIR'),
+        str(Path.home() / 'Projects/hermes/hermes-agent'),
+        str(real_home / 'Projects/hermes/hermes-agent'),
+        '/Users/nickgeorge-studio/Projects/hermes/hermes-agent',
+        str(Path.home() / '.hermes/hermes-agent'),
+        str(real_home / '.hermes/hermes-agent'),
+    ]
+    for candidate in candidates:
+        if not candidate:
+            continue
+        root = Path(candidate).expanduser()
+        if (root / 'hermes_cli').is_dir() and str(root) not in sys.path:
+            sys.path.insert(0, str(root))
+            return
 
 
 def load_prompt(args: argparse.Namespace) -> str:
@@ -39,6 +61,7 @@ def main() -> int:
     if not prompt:
         raise SystemExit('Prompt is required via --prompt or --prompt-file')
 
+    ensure_hermes_source_on_path()
     from hermes_cli.plugins import _ensure_plugins_discovered
     from agent.image_gen_registry import get_active_provider, get_provider
 

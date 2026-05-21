@@ -431,20 +431,35 @@ export async function inspectSourceCandidates(signalHarvest, {
       browserHarness,
       maxSources,
     })
+    contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
+  }
 
-    if (inspected.length < Math.min(maxSources, minContentItems)) {
-      const capturedKeys = new Set(inspected.map(sourceContentKey))
-      const fillCandidates = fetchEvidence
-        .filter((source) => !capturedKeys.has(sourceContentKey(source)))
-        .sort((left, right) => sourceContentScore(right, recentSourceKeys) - sourceContentScore(left, recentSourceKeys))
-        .slice(0, maxSources - inspected.length)
-      inspected.push(...await captureAutoresearchedSources(fillCandidates, {
+  if (contentSources.length < minContentItems) {
+    const capturedKeys = new Set(inspected.map(sourceContentKey))
+    const fillCandidates = fetchEvidence
+      .filter((source) => !capturedKeys.has(sourceContentKey(source)))
+      .map((source) => ({
+        source,
+        renderable: sourceHasRenderableCardSurface(source, signalHarvest),
+        score: sourceContentScore(source, recentSourceKeys),
+      }))
+      .filter((entry) => Number.isFinite(entry.score))
+      .sort((left, right) => {
+        if (left.renderable !== right.renderable) return left.renderable ? -1 : 1
+        return right.score - left.score
+      })
+      .map((entry) => entry.source)
+
+    for (const candidate of fillCandidates) {
+      if (contentSources.length >= minContentItems) break
+      const added = await captureAutoresearchedSources([candidate], {
         sourceTool,
         browserHarness,
-        maxSources: maxSources - inspected.length,
-      }))
+        maxSources: 1,
+      })
+      inspected.push(...added)
+      contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
     }
-    contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
   }
 
   const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })

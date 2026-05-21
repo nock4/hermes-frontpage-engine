@@ -6,7 +6,7 @@ import { createComposeBriefStep } from './compose-brief.mjs'
 import { createGeneratePlateStep } from './generate-plate.mjs'
 import { createMapArtifactsStep } from './map-artifacts.mjs'
 import { createMineSignalsStep } from './mine-signals.mjs'
-import { buildSmokeRoute, maskPipelineArgs, postPackageSteps } from './package-steps.mjs'
+import { buildSmokeRoute, maskPipelineArgs, pipelinePython, postPackageSteps } from './package-steps.mjs'
 import { createResearchSourcesStep } from './research-sources.mjs'
 
 export async function runFromScratchMode({
@@ -37,7 +37,7 @@ export async function runFromScratchMode({
   const runDir = path.join(root, 'tmp', 'daily-process-runs', runId)
   await fs.mkdir(runDir, { recursive: true })
   const generationName = runId
-  const sampleMode = options.sampleDataEnabled || options.useSampleSignals
+  const sampleMode = options.useSampleSignals || (options.sampleDataEnabled && options.inputMode === 'manifest')
   const rawRecentEditions = sampleMode ? [] : getRecentEditionSummaries(recentDiversityEditionCount)
   const recentEditions = rawRecentEditions
   const recentSourceKeys = sampleMode ? new Set() : getRecentSourceKeys(recentEditions)
@@ -90,7 +90,7 @@ export async function runFromScratchMode({
     postAssemblySteps.push({
       name: 'Generate post-plate mask candidates and geometry audit files',
       tool: 'Python + Pillow + NumPy + SciPy + OpenCV GrabCut + scikit-image contours',
-      command: ['python3', maskPipelineArgs(options, generationName)],
+      command: [pipelinePython(), maskPipelineArgs(options, generationName)],
       dynamicArgs: () => [context.package.editionId],
     })
   }

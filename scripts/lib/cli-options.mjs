@@ -362,7 +362,7 @@ export function parseArgs(argv) {
     options.inputMode = 'obsidian-allowlist'
     options.inputRoot = cli.vault
   }
-  if (options.sampleDataEnabled || cli.useSampleSignals) {
+  if (cli.useSampleSignals || (options.sampleDataEnabled && !cli.inputMode && !cli.vault)) {
     options.inputMode = 'manifest'
     options.signalManifest = config.sample_manifest_path
   }

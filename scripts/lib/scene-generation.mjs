@@ -1,4 +1,5 @@
 import crypto from 'node:crypto'
+import fsSync from 'node:fs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { spawn } from 'node:child_process'
@@ -12,6 +13,12 @@ import { inferVisualDirection, selectFallbackMotifTerms } from './visual-directi
 import { slugify, uniqueNonEmpty } from './string-utils.mjs'
 
 const hermesImageGenerateScript = fileURLToPath(new URL('./hermes_image_generate.py', import.meta.url))
+const hermesAgentPythonCandidates = [
+  process.env.HERMES_IMAGE_PYTHON,
+  '/Users/nickgeorge-studio/Projects/hermes/hermes-agent/venv/bin/python',
+  '/Users/nickgeorge-studio/Projects/hermes/hermes-agent/.venv/bin/python',
+].filter(Boolean)
+const hermesImagePython = hermesAgentPythonCandidates.find((candidate) => fsSync.existsSync(candidate)) || 'python3'
 const sceneStructurePolicy = {
   sourceMarkVocabulary: [
     'mark',
@@ -236,7 +243,7 @@ export async function generateScenePlate(
   await fs.writeFile(path.join(runDir, 'scene-prompt.txt'), prompt, 'utf8')
 
   if (imageBackend === 'hermes') {
-    const hermesResult = await runJsonCommand('python3', [
+    const hermesResult = await runJsonCommand(hermesImagePython, [
       hermesImageGenerateScript,
       '--prompt-file', path.join(runDir, 'scene-prompt.txt'),
       '--output', outputPath,

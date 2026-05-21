@@ -4,6 +4,10 @@ export function getEditionIds(options, manifest) {
   return [manifest.current_edition_id]
 }
 
+export function pipelinePython() {
+  return process.env.PYTHON || '/Users/nickgeorge-studio/Projects/hermes/hermes-agent/venv/bin/python'
+}
+
 export function maskPipelineArgs(options, generationName, editionIds = []) {
   const args = ['scripts/automated-mask-pipeline.py', '--generation-name', generationName, '--apply-artifact-map']
   if (options.promptedMaskDir) args.push('--prompted-mask-dir', options.promptedMaskDir)
@@ -29,7 +33,7 @@ export function existingPackageSteps(options, editionIds, generationName) {
     steps.push({
       name: 'Generate post-plate mask candidates and geometry audit files',
       tool: 'Python + Pillow + NumPy + SciPy + OpenCV GrabCut + scikit-image contours',
-      command: ['python3', maskPipelineArgs(options, generationName, editionIds)],
+      command: [pipelinePython(), maskPipelineArgs(options, generationName, editionIds)],
     })
   }
 
