@@ -14,6 +14,7 @@ import { getSourceDisplayTitle } from './source-display.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 import {
+  aestheticSignalScore,
   isAllowedInspectedSource,
   isLowValueVisualImage,
   selectContentSources,
@@ -57,6 +58,7 @@ function noteLookupForSignalHarvest(signalHarvest) {
 
 function researchEvidenceForSource(source, index, { recentSourceKeys = new Set(), noteLookup = new Map() } = {}) {
   const note = noteLookup.get(source.note_id) || noteLookup.get(source.note_path) || noteLookup.get(source.note_title) || null
+  const aestheticScore = aestheticSignalScore(source)
   return {
     id: `source-${index + 1}`,
     url: source.url,
@@ -75,6 +77,8 @@ function researchEvidenceForSource(source, index, { recentSourceKeys = new Set()
     renderable_surface: sourceHasRenderableCardSurface(source, { notes_selected: note ? [note] : [] }),
     recent_duplicate: recentSourceKeys.has(sourceContentKey(source)),
     evidence_score: Math.round(sourceContentScore(source, recentSourceKeys)),
+    aesthetic_score: Math.round(aestheticScore),
+    selection_bias: aestheticScore >= 20 ? 'creative-art-visual' : aestheticScore < 0 ? 'infrastructure-or-low-visual' : 'neutral',
   }
 }
 
@@ -196,12 +200,16 @@ async function runSourceAutoresearch({
   }))
   const request = {
     date,
-    workflow: 'llm-wiki-inspired autoresearch: read all candidate source evidence first, cluster the field, synthesize a thesis, choose sources with provenance, then hand only selected URLs to browser capture.',
+    workflow: 'aesthetic-field autoresearch: read all candidate source evidence, find the most visually fertile creative through-line, imagine the edition as a coherent aesthetic world, choose renderable source windows with provenance, and avoid infrastructure/tooling links unless they carry strong visible artifacts.',
     hard_rules: [
       'Use only URLs present in candidate_sources. Do not invent outside URLs.',
       'Public content must come only from recent saved-signal channels: Twitter bookmarks, YouTube likes, NTS resolved streaming sources, and Chrome bookmarks.',
       'Never select local files, text documents, NTS pages, unresolved search locators, or URLs that are not in the candidate list.',
       `Select ${minContentItems} to ${maxContentItems} content URLs when enough suitable sources exist; ${targetContentItems} is ideal.`,
+      'Over-index on music, visuals, art, memes, animation, film/video, games, fashion/material texture, comics/zines, photography, archives, and other visually stimulating sources.',
+      'Downrank AI-agent infrastructure, SaaS/product pages, GitHub/docs/API links, SEO/growth tooling, and generic tech commentary unless the page itself contains a strong real visual artifact.',
+      'Treat the selected anchor as an aesthetic seed: choose adjacent works, references, artists, genres, scenes, and visual material that can flesh out a world.',
+      'Prefer sources that give the generated plate surfaces, gestures, edges, objects, textures, and imageable rituals.',
       'Avoid duplicates by story, source page, resolved media, redirect target, video, post, or image.',
       'Prefer variety across channel, source type, domain, and note cluster.',
       'Prefer source material that can render as title plus real image, direct image, tweet media, or native YouTube embed.',
@@ -215,6 +223,9 @@ async function runSourceAutoresearch({
       research_question: 'string',
       synthesis: 'plain-language paragraph describing what the sources collectively suggest',
       edition_thesis: 'short visual/editorial thesis for today',
+      aesthetic_thesis: 'one sentence naming the imagined visual world',
+      visual_motifs: ['concrete visual motifs: surfaces, gestures, objects, palettes, textures'],
+      anchor_reason: 'why the selected anchor is visually fertile',
       clusters: [{ label: 'string', takeaway: 'string', urls: ['candidate URL strings'] }],
       source_decisions: [{ url: 'candidate URL string', role: 'content | visual_reference | supporting | reject', why: 'string', confidence: 'high | medium | low' }],
       selected_content_urls: ['7 to 10 candidate URL strings'],
@@ -257,8 +268,8 @@ async function runSourceAutoresearch({
       apiKey,
       model,
       instructions: [
-        'You are the source-research editor for a daily interactive artwork.',
-        'Think like an autoresearch pass, not a metadata scraper: orient to all evidence, cluster it, identify the strongest through-line, select a varied source set, and preserve provenance.',
+        'You are the source-research editor for a daily interactive artwork. You are a curator of visual culture, music, memes, art, and surfaces — not a technology news summarizer.',
+        'Think like an aesthetic autoresearch pass: find the strongest creative through-line, imagine the plate-world it implies, then select a varied renderable source set with provenance.',
         'Return strict JSON matching the requested schema. Do not include Markdown.',
       ].join(' '),
       input: responseInput,
@@ -484,6 +495,11 @@ export async function inspectSourceCandidates(signalHarvest, {
     research_mode: researchMode,
     single_anchor_research_enabled: isSingleAnchorResearchEnabled(),
     source_research_tool: researchMode.startsWith('single-anchor') ? 'single-anchor deep source research' : 'Hermes structured JSON autoresearch over Node fetch evidence',
+    editorial_bias: {
+      mode: 'creative-aesthetic-first',
+      preferred_domains: ['music', 'visual art', 'memes', 'film/video', 'games', 'fashion/materials', 'archives'],
+      downranked_domains: ['ai-agent infrastructure', 'github/docs/api', 'saas/growth tooling'],
+    },
     source_capture_tool: sourceTool,
     browser_harness: sourceTool === 'browser-harness' ? browserHarness : null,
     autoresearch,

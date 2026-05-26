@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import {
+  aestheticSignalScore,
   classifySource,
   isAllowedInspectedSource,
   isDirectRasterImageUrl,
@@ -25,6 +26,43 @@ const baseSource = {
 }
 
 describe('source selection policy', () => {
+  it('scores creative visual culture above infrastructure', () => {
+    const art = aestheticSignalScore({
+      url: 'https://example.com/gallery/animated-masks',
+      note_title: 'surreal animation masks and album art',
+      description: 'music video stills, collage, costume, visual archive',
+      source_channel: 'chrome-bookmark',
+    })
+    const infra = aestheticSignalScore({
+      url: 'https://github.com/acme/agent-framework',
+      note_title: 'AI agent infra framework docs',
+      description: 'API, quickstart, orchestration, tool calls, zod schemas',
+      source_channel: 'chrome-bookmark',
+    })
+
+    expect(art).toBeGreaterThan(20)
+    expect(infra).toBeLessThan(0)
+    expect(art).toBeGreaterThan(infra + 30)
+  })
+
+  it('puts creative candidates ahead of infrastructure during source inspection', () => {
+    const signalHarvest = {
+      source_candidates: [
+        { url: 'https://github.com/acme/agent-framework', source_channel: 'chrome-bookmark', note_score: 90, note_id: 'infra-a', note_title: 'AI agent orchestration API docs' },
+        { url: 'https://spreadjam.com', source_channel: 'chrome-bookmark', note_score: 85, note_id: 'infra-b', note_title: 'AI SEO growth channel agents' },
+        { url: 'https://www.youtube.com/watch?v=mask123', source_channel: 'youtube-like', note_score: 30, note_id: 'art-a', note_title: 'surreal claymation music video masks' },
+        { url: 'https://publicdomainreview.org/collection/poster-collage', source_channel: 'chrome-bookmark', note_score: 28, note_id: 'art-b', note_title: 'poster collage visual archive' },
+        { url: 'https://label.bandcamp.com/album/nocturne', source_channel: 'nts-like', note_score: 25, note_id: 'art-c', note_title: 'ambient album art and visualizer' },
+      ],
+    }
+
+    expect(selectSourceCandidatesForInspection(signalHarvest, 3).map((source) => source.url)).toEqual([
+      'https://www.youtube.com/watch?v=mask123',
+      'https://label.bandcamp.com/album/nocturne',
+      'https://publicdomainreview.org/collection/poster-collage',
+    ])
+  })
+
   it('classifies source URLs into runtime binding types', () => {
     expect(classifySource('https://www.youtube.com/watch?v=abc123')).toMatchObject({ source_type: 'youtube', window_type: 'video' })
     expect(classifySource('https://x.com/person/status/123')).toMatchObject({ source_type: 'tweet', window_type: 'social' })
@@ -78,6 +116,34 @@ describe('source selection policy', () => {
       baseSource.url,
       youtube.url,
     ]))
+  })
+
+  it('selects renderable creative content ahead of SaaS infrastructure surfaces', () => {
+    const creative = {
+      ...baseSource,
+      url: 'https://label.bandcamp.com/album/nocturne',
+      source_url: 'https://label.bandcamp.com/album/nocturne',
+      final_url: 'https://label.bandcamp.com/album/nocturne',
+      source_channel: 'nts-like',
+      source_type: 'audio',
+      note_score: 20,
+      title: 'ambient album art and visualizer',
+      image_url: 'https://f4.bcbits.com/img/a2618795326_5.jpg',
+    }
+    const infrastructure = {
+      ...baseSource,
+      url: 'https://spreadjam.com',
+      source_url: 'https://spreadjam.com',
+      final_url: 'https://spreadjam.com',
+      source_channel: 'chrome-bookmark',
+      source_type: 'article',
+      note_score: 180,
+      title: 'AI SEO growth channel agents',
+      description: 'SaaS agent infrastructure for cold email and AI search visibility',
+      image_url: 'https://spreadjam.com/og-image.png',
+    }
+
+    expect(selectContentSources([infrastructure, creative], { targetItems: 2 }).map((source) => source.url)[0]).toBe(creative.url)
   })
 
   it('keeps a tweet and its extracted media from becoming duplicate content cards', () => {

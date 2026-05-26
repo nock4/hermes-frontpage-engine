@@ -2,6 +2,7 @@ import { fetchWithTimeout } from './fetch-with-timeout.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
 import { extractUrls, hostnameForUrl, isAllowedSourceUrl, youtubeId } from './source-url-policy.mjs'
 import {
+  aestheticSignalScore,
   isLowValueVisualImage,
   sourceContentKey,
   sourceContentScore,
@@ -72,14 +73,15 @@ export function selectAnchorSource(evidenceSources, { recentSourceKeys = new Set
   const ranked = [...(evidenceSources || [])]
     .filter((source) => source?.url && !recentSourceKeys.has(sourceContentKey(source)))
     .map((source) => {
-      let score = sourceContentScore(source, recentSourceKeys)
+      let score = sourceContentScore(source, recentSourceKeys) + (aestheticSignalScore(source) * 2)
       const text = sourceText(source)
       if (sourceHasRenderableCardSurface(source, signalHarvest)) score += 30
       if (source.image_url && !isLowValueVisualImage(source.image_url)) score += 14
       if (youtubeId(source.url) || youtubeId(source.final_url)) score += 18
       if (text.length > 500) score += 10
       if (extractUrls(text).length) score += 6
-      if (/(farm|garden|archive|museum|map|diagram|field|material|image|artist|research|algorithm|infrastructure|land|plant|city|video|project)/i.test(text)) score += 8
+      if (/(music|video|artist|artwork|gallery|archive|meme|animation|film|photo|fashion|textile|game|pixel|album|poster|zine|comic|installation|sculpture|drawing|painting|collage)/i.test(text)) score += 18
+      if (/(agent|api|docs|github|framework|infrastructure|workflow|orchestration|growth|seo|cold email)/i.test(text)) score -= 50
       if (looksLikeProfileOrUtility(source)) score -= 80
       return { source, score }
     })
@@ -177,19 +179,21 @@ function extractImageCandidatesFromHtml(html, baseUrl, { lineage = 'direct_link'
   return candidates
 }
 
-function buildAnchorQueries(anchor, terms) {
+export function buildAnchorQueries(anchor, terms) {
   const title = getSourceDisplayTitle(anchor, anchor.title || anchor.note_title || '').replace(/["“”]/g, '')
   const quotedTitle = title ? `"${title.slice(0, 80)}"` : ''
   const termString = terms.slice(0, 5).join(' ')
   return uniqueNonEmpty([
     quotedTitle,
-    `${termString} official source`,
-    `${termString} images archive`,
-    `${termString} diagram map`,
-    `${termString} museum archive`,
-    `${termString} github screenshots assets`,
-    `${title} related project`,
-    `${title} images`,
+    `${termString} artist works visual archive`,
+    `${termString} music video stills album art`,
+    `${termString} genre scene visual references`,
+    `${termString} installation animation screenshots`,
+    `${termString} photography collage poster zine`,
+    `${termString} fashion textile material texture`,
+    `${title} related artists works`,
+    `${title} aesthetic references`,
+    `${title} visual archive`,
   ]).slice(0, MAX_DERIVED_SEARCH_QUERIES)
 }
 
@@ -276,7 +280,7 @@ export async function buildAnchorResearch(anchor, { runDate = null } = {}) {
       places: terms.filter((term) => /(detroit|maryland|michigan|city|farm|garden|island|land)/i.test(term)),
       people_orgs: outboundLinks.map((link) => hostnameForUrl(link.url)).filter(Boolean).slice(0, 12),
       outbound_links: outboundLinks,
-      visual_motifs: terms.filter((term) => /(farm|garden|map|diagram|city|plant|field|sheep|solar|carbon|archive|image|grid|algorithm|interface|material)/i.test(term)),
+      visual_motifs: terms.filter((term) => /(music|video|artist|archive|image|photo|film|mask|costume|texture|surface|gesture|palette|meme|comic|zine|poster|album|animation|game|pixel|street|sign|fashion|textile|collage|installation|sculpture|drawing|painting)/i.test(term)),
       image_search_queries: searchQueries.filter((query) => /image|archive|diagram|map|screenshot|asset/i.test(query)),
       search_queries: searchQueries,
       open_questions: [],

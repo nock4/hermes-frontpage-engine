@@ -58,10 +58,38 @@ function noteSelectionKey(record, sourceKey) {
   return noteKey
 }
 
+export function aestheticSignalScore(candidate = {}) {
+  const text = [
+    candidate.url,
+    candidate.final_url,
+    candidate.source_url,
+    candidate.title,
+    candidate.description,
+    candidate.visible_text,
+    candidate.note_title,
+    candidate.note_path,
+    candidate.note_excerpt,
+  ].filter(Boolean).join(' ').toLowerCase()
+
+  let score = 0
+
+  if (/(art|artist|artwork|gallery|museum|archive|visual|image|photo|photography|collage|painting|drawing|illustration|comic|zine|poster|album art|cover art|lookbook|fashion|textile|fabric|material|installation|sculpture|animation|anime|game|pixel|shader|sprite|screenshot|meme|music video|video still|film still|visualizer|playlist|mix|dj|nts|bandcamp|soundcloud|youtube)/.test(text)) score += 26
+  if (/(genre|scene|aesthetic|style|visual language|motif|surface|texture|gesture|palette|costume|mask|set design|stage|club|rave|ambient|noise|jazz|punk|folk|experimental|cinema|architecture|street|storefront|signage)/.test(text)) score += 14
+  if (/\.(png|jpe?g|webp|avif|gif|mp4|mov)(?:$|[?#])/.test(text)) score += 16
+  if (candidate.source_channel === 'youtube-like') score += 18
+  if (candidate.source_channel === 'nts-like') score += 20
+
+  if (/(github|api|sdk|quickstart|docs|documentation|readme|zod|schema|agent framework|\bagents?\b|agentic|workflow node|orchestration|mcp|llm\.txt|benchmark|eval|deployment|inference|vector database|rag|tool call|automation pipeline)/.test(text)) score -= 28
+  if (/(seo|growth channel|cold email|sales|crm|b2b|landing page|pricing|waitlist|sign up|product hunt|saas)/.test(text)) score -= 28
+
+  return score
+}
+
 export function scoreVisualCandidate(candidate) {
   const text = `${candidate?.note_title || ''} ${candidate?.note_path || ''} ${candidate?.url || ''}`.toLowerCase()
   let score = Number(candidate?.note_score || 0) / 4
 
+  score += aestheticSignalScore(candidate) / 2
   if (/(art|artist|visual|image|photo|gallery|portfolio|design|garden|landscape|plant|native|pollinator|biodiversity|wildlife|oudolf|wildones|homegrown|prairie|meadow|field-guide|assets|media|cutscene|game|shader|canvas)/.test(text)) score += 18
   if (/(oudolf|nativegardendesigns|homegrownnationalpark|wildones|michiganflora|mtcubacenter|prairiemoon|detroitvacantland|dfc-lots)/.test(text)) score += 12
   if (/(github|quickstart|docs|documentation|api|llm\.txt|localhost|127\.0\.0\.1|health|conceptual_guide|langmem)/.test(text)) score -= 14
@@ -144,14 +172,14 @@ export function selectBestVisualReference(sources, recentSourceKeys = new Set())
 function sourceSelectionScore(candidate, recentSourceKeys = new Set()) {
   if (!isAllowedSourceUrl(candidate?.url)) return Number.NEGATIVE_INFINITY
   const text = `${candidate?.note_title || ''} ${candidate?.note_path || ''}`.toLowerCase()
-  let score = Number(candidate.note_score || 0) + scoreVisualCandidate(candidate)
+  let score = Number(candidate.note_score || 0) + scoreVisualCandidate(candidate) + aestheticSignalScore(candidate)
   if (candidate.source_channel === 'youtube-like') score += 18
   if (candidate.source_channel === 'nts-like') score += 16
   if (candidate.source_channel === 'chrome-bookmark') score += 12
   if (candidate.source_channel === 'twitter-bookmark') score += 4
   if (candidate.source_channel === 'youtube-like' && isYouTubeVideoUrl(candidate.url)) score += 36
   if (candidate.source_channel === 'twitter-bookmark' && classifySource(candidate.url).source_type === 'tweet') score += 14
-  if (candidate.source_channel === 'twitter-bookmark' && isTwitterMediaUrl(candidate.url)) score -= 10
+  if (candidate.source_channel === 'twitter-bookmark' && isTwitterMediaUrl(candidate.url)) score -= 70
   if (candidate.source_channel === 'nts-like' && isYouTubeVideoUrl(candidate.url)) score += 30
   if (candidate.source_channel === 'nts-like' && isBandcampStreamingSourceUrl(candidate.url)) score += 12
   if (candidate.source_channel === 'nts-like' && isSoundCloudStreamingSourceUrl(candidate.url)) score += 6
@@ -184,6 +212,11 @@ export function selectSourceCandidatesForInspection(signalHarvest, maxSources, {
     .map((candidate) => ({ candidate, score: sourceSelectionScore(candidate, recentSourceKeys) }))
     .filter((entry) => Number.isFinite(entry.score))
     .sort((left, right) => right.score - left.score)
+
+  for (const { candidate } of ranked.filter((entry) => aestheticSignalScore(entry.candidate) >= 20).slice(0, 12)) {
+    if (selected.length >= Math.ceil(maxSources * 0.6)) break
+    add(candidate, { allowRecent: false, domainLimit: 3, noteLimit: 4 })
+  }
 
   for (const channel of SOURCE_CHANNELS) {
     for (const { candidate } of ranked.filter((entry) => entry.candidate.source_channel === channel).slice(0, 8)) {
