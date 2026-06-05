@@ -244,6 +244,14 @@ export function selectSourceCandidatesForInspection(signalHarvest, maxSources, {
     add(candidate, { allowRecent: true, domainLimit: 3, noteLimit: 3 })
   }
 
+  // Obsidian allowlist runs can legitimately be all saved X bookmarks for a day.
+  // Do not let the x.com domain cap shrink the evidence field below the source-window floor;
+  // duplicate and note limits still prevent repeating the same story.
+  for (const { candidate } of ranked) {
+    if (selected.length >= maxSources) break
+    add(candidate, { allowRecent: true, domainLimit: maxSources, noteLimit: 3 })
+  }
+
   return selected
 }
 
@@ -358,6 +366,14 @@ export function selectContentSources(
   for (const entry of ranked) {
     if (selected.length >= maxItems) break
     add(entry, { allowRecent: false, domainLimit: 3, noteLimit: 3 })
+  }
+
+  // If the harvest is narrow but each bookmark has its own real media surface,
+  // keep filling rather than failing below the six-window floor solely because
+  // several windows live on x.com.
+  for (const entry of ranked) {
+    if (selected.length >= maxItems) break
+    add(entry, { allowRecent: false, domainLimit: maxItems, noteLimit: 3 })
   }
 
   return selected.slice(0, maxItems)

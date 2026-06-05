@@ -191,6 +191,78 @@ async function normalizeInspectedSourceMedia(source) {
   return { ...source, image_url: null }
 }
 
+function isTweetStatusUrl(sourceUrl) {
+  try {
+    const parsed = new URL(sourceUrl)
+    const host = parsed.hostname.replace(/^www\./, '').toLowerCase()
+    return (host === 'x.com' || host === 'twitter.com') && /^\/[^/]+\/status\/\d+/.test(parsed.pathname)
+  } catch {
+    return false
+  }
+}
+
+function fxtwitterApiUrl(sourceUrl) {
+  try {
+    const parsed = new URL(sourceUrl)
+    const match = parsed.pathname.match(/^\/([^/]+)\/status\/(\d+)/)
+    if (!match) return null
+    return `https://api.fxtwitter.com/${match[1]}/status/${match[2]}`
+  } catch {
+    return null
+  }
+}
+
+function firstTweetMediaImage(tweet) {
+  const media = [
+    ...(tweet?.media?.photos || []),
+    ...(tweet?.media?.all || []),
+  ]
+  for (const item of media) {
+    if (item?.type === 'photo' && item.url) return item.url
+    if ((item?.type === 'video' || item?.type === 'gif') && item.thumbnail_url) return item.thumbnail_url
+  }
+  return null
+}
+
+async function inspectTweetWithFxtwitter(candidate, classification) {
+  const endpoint = fxtwitterApiUrl(candidate.url)
+  if (!endpoint) return null
+
+  try {
+    const response = await fetchWithTimeout(endpoint, {
+      headers: {
+        accept: 'application/json,text/plain,*/*;q=0.8',
+        'user-agent': 'daily-frontpage-engine-source-research/0.1',
+      },
+    }, 8000)
+    if (!response.ok) return null
+    const payload = await response.json()
+    if (payload?.code && Number(payload.code) >= 400) return null
+    const tweet = payload?.tweet
+    if (!tweet) return null
+
+    const author = tweet.author?.screen_name ? `@${tweet.author.screen_name}` : null
+    const text = String(tweet.text || '').trim()
+    const title = text
+      ? `${author ? `${author}: ` : ''}${text.replace(/\s+/g, ' ').slice(0, 140)}`
+      : candidate.note_title
+    const imageUrl = firstTweetMediaImage(tweet)
+    return normalizeInspectedSourceMedia({
+      ...candidate,
+      ...classification,
+      source_url: candidate.url,
+      final_url: tweet.url || candidate.url,
+      title,
+      description: text || candidate.note_title || '',
+      image_url: imageUrl,
+      fetch_status: 'fxtwitter-fetch-ok',
+      tweet_media_count: tweet.media?.all?.length || tweet.media?.photos?.length || 0,
+    })
+  } catch {
+    return null
+  }
+}
+
 function runCaptured(command, args, { input = '', cwd = process.cwd(), timeoutMs = 30_000, env = process.env } = {}) {
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, {
@@ -361,6 +433,12 @@ export async function inspectCandidateSource(candidate, { sourceTool, browserHar
   const videoId = youtubeId(candidate.url)
   const embedStatus = videoId ? await youtubeEmbedStatus(candidate.url) : null
   if (embedStatus === 'unavailable') return null
+
+  if (isTweetStatusUrl(candidate.url)) {
+    const tweetSource = await inspectTweetWithFxtwitter(candidate, classification)
+    if (tweetSource?.image_url) return tweetSource
+  }
+
   const fetchable = await resolveFetchableHtmlUrl(candidate.url, { lookup: dns.lookup })
   if (!fetchable) return null
 

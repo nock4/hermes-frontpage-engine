@@ -350,6 +350,29 @@ describe('source selection policy', () => {
     expect(selectContentSources(sources, { targetItems: 7, maxItems: 7 })).toHaveLength(7)
   })
 
+  it('allows a narrow day of distinct X bookmarks to reach the source-window floor', () => {
+    const signalHarvest = {
+      source_candidates: Array.from({ length: 7 }, (_, index) => ({
+        url: `https://x.com/person${index}/status/${1000 + index}`,
+        source_channel: 'twitter-bookmark',
+        note_score: 50 - index,
+        note_id: `tweet-${index}`,
+        note_title: `visual tweet ${index}`,
+      })),
+    }
+    const inspected = signalHarvest.source_candidates.map((candidate, index) => ({
+      ...baseSource,
+      ...candidate,
+      source_url: candidate.url,
+      final_url: candidate.url,
+      source_type: 'tweet',
+      image_url: `https://pbs.twimg.com/media/test${index}.jpg?name=orig`,
+    }))
+
+    expect(selectSourceCandidatesForInspection(signalHarvest, 7)).toHaveLength(7)
+    expect(selectContentSources(inspected, { targetItems: 7, maxItems: 7 })).toHaveLength(7)
+  })
+
   it('selects the strongest non-placeholder visual reference', () => {
     const best = selectBestVisualReference([
       { ...baseSource, url: 'https://example.com/favicon', image_url: 'https://example.com/favicon.ico' },
