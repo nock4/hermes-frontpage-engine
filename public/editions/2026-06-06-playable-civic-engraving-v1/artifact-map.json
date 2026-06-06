@@ -1,0 +1,671 @@
+{
+  "artifact_map_id": "map-2026-06-06-playable-civic-engraving-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "engraved-playable-civic-plan",
+  "default_artifact_id": "hero-live-music-waveform-arcade",
+  "artifacts": [
+    {
+      "id": "hero-live-music-waveform-arcade",
+      "kind": "hero",
+      "label": "live music waveform arcade",
+      "artifact_type": "hero-scale-waveform-instrument-surface",
+      "bounds": {
+        "x": 0.141,
+        "y": 0.032,
+        "w": 0.302,
+        "h": 0.505
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.158,
+          0.207
+        ],
+        [
+          0.205,
+          0.157
+        ],
+        [
+          0.263,
+          0.09
+        ],
+        [
+          0.341,
+          0.041
+        ],
+        [
+          0.415,
+          0.023
+        ],
+        [
+          0.432,
+          0.308
+        ],
+        [
+          0.417,
+          0.463
+        ],
+        [
+          0.367,
+          0.511
+        ],
+        [
+          0.279,
+          0.535
+        ],
+        [
+          0.185,
+          0.503
+        ],
+        [
+          0.148,
+          0.407
+        ],
+        [
+          0.141,
+          0.286
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/hero-live-music-waveform-arcade.svg",
+      "source_binding_ids": [
+        "binding-hero-live-music-waveform-arcade"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          449,
+          250
+        ],
+        "safe_stage_window_origin_px": [
+          486,
+          291
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-staggered-motion-causeway",
+      "kind": "hero",
+      "label": "staggered motion causeway",
+      "artifact_type": "hero-scale-motion-trail-causeway",
+      "bounds": {
+        "x": 0.493,
+        "y": 0.541,
+        "w": 0.487,
+        "h": 0.18
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.495,
+          0.643
+        ],
+        [
+          0.545,
+          0.603
+        ],
+        [
+          0.62,
+          0.575
+        ],
+        [
+          0.696,
+          0.574
+        ],
+        [
+          0.773,
+          0.594
+        ],
+        [
+          0.845,
+          0.602
+        ],
+        [
+          0.915,
+          0.568
+        ],
+        [
+          0.972,
+          0.539
+        ],
+        [
+          0.98,
+          0.586
+        ],
+        [
+          0.936,
+          0.642
+        ],
+        [
+          0.861,
+          0.68
+        ],
+        [
+          0.777,
+          0.69
+        ],
+        [
+          0.698,
+          0.668
+        ],
+        [
+          0.622,
+          0.642
+        ],
+        [
+          0.553,
+          0.659
+        ],
+        [
+          0.506,
+          0.72
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/hero-staggered-motion-causeway.svg",
+      "source_binding_ids": [
+        "binding-hero-staggered-motion-causeway"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1131,
+          631
+        ],
+        "safe_stage_window_origin_px": [
+          1191,
+          646
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-low-latency-voice-aperture",
+      "kind": "module",
+      "label": "low-latency voice aperture",
+      "artifact_type": "glowing-voice-aperture",
+      "bounds": {
+        "x": 0.774,
+        "y": 0.369,
+        "w": 0.071,
+        "h": 0.133
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.778,
+          0.432
+        ],
+        [
+          0.784,
+          0.398
+        ],
+        [
+          0.8,
+          0.377
+        ],
+        [
+          0.821,
+          0.373
+        ],
+        [
+          0.838,
+          0.397
+        ],
+        [
+          0.844,
+          0.434
+        ],
+        [
+          0.839,
+          0.469
+        ],
+        [
+          0.824,
+          0.493
+        ],
+        [
+          0.801,
+          0.498
+        ],
+        [
+          0.784,
+          0.475
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/module-low-latency-voice-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-low-latency-voice-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1243,
+          435
+        ],
+        "safe_stage_window_origin_px": [
+          1252,
+          446
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-local-parameter-balcony",
+      "kind": "module",
+      "label": "local parameter balcony",
+      "artifact_type": "translucent-control-balcony",
+      "bounds": {
+        "x": 0.161,
+        "y": 0.168,
+        "w": 0.218,
+        "h": 0.16
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.166,
+          0.274
+        ],
+        [
+          0.203,
+          0.241
+        ],
+        [
+          0.248,
+          0.217
+        ],
+        [
+          0.291,
+          0.189
+        ],
+        [
+          0.338,
+          0.169
+        ],
+        [
+          0.367,
+          0.181
+        ],
+        [
+          0.376,
+          0.222
+        ],
+        [
+          0.354,
+          0.263
+        ],
+        [
+          0.301,
+          0.296
+        ],
+        [
+          0.243,
+          0.321
+        ],
+        [
+          0.188,
+          0.328
+        ],
+        [
+          0.162,
+          0.307
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/module-local-parameter-balcony.svg",
+      "source_binding_ids": [
+        "binding-module-local-parameter-balcony"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          415,
+          241
+        ],
+        "safe_stage_window_origin_px": [
+          442,
+          254
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-maintenance-ledger-scar",
+      "kind": "module",
+      "label": "maintenance ledger scar",
+      "artifact_type": "inked-ledger-cleanout-edge",
+      "bounds": {
+        "x": 0.012,
+        "y": 0.365,
+        "w": 0.04,
+        "h": 0.522
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.018,
+          0.365
+        ],
+        [
+          0.031,
+          0.417
+        ],
+        [
+          0.027,
+          0.476
+        ],
+        [
+          0.041,
+          0.535
+        ],
+        [
+          0.033,
+          0.601
+        ],
+        [
+          0.048,
+          0.663
+        ],
+        [
+          0.038,
+          0.721
+        ],
+        [
+          0.048,
+          0.786
+        ],
+        [
+          0.033,
+          0.849
+        ],
+        [
+          0.018,
+          0.887
+        ],
+        [
+          0.012,
+          0.827
+        ],
+        [
+          0.017,
+          0.746
+        ],
+        [
+          0.011,
+          0.668
+        ],
+        [
+          0.018,
+          0.584
+        ],
+        [
+          0.012,
+          0.494
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/module-maintenance-ledger-scar.svg",
+      "source_binding_ids": [
+        "binding-module-maintenance-ledger-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          90,
+          598
+        ],
+        "safe_stage_window_origin_px": [
+          90,
+          641
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-public-audit-tab",
+      "kind": "module",
+      "label": "public audit tab",
+      "artifact_type": "exposed-record-ledger-tab",
+      "bounds": {
+        "x": 0.717,
+        "y": 0.791,
+        "w": 0.201,
+        "h": 0.168
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.734,
+          0.792
+        ],
+        [
+          0.823,
+          0.799
+        ],
+        [
+          0.903,
+          0.825
+        ],
+        [
+          0.918,
+          0.878
+        ],
+        [
+          0.891,
+          0.936
+        ],
+        [
+          0.802,
+          0.958
+        ],
+        [
+          0.724,
+          0.93
+        ],
+        [
+          0.717,
+          0.862
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/module-public-audit-tab.svg",
+      "source_binding_ids": [
+        "binding-module-public-audit-tab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1256,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1280,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-generated-house-plan-courtyard",
+      "kind": "module",
+      "label": "generated house-plan courtyard",
+      "artifact_type": "inhabited-plan-courtyard",
+      "bounds": {
+        "x": 0.445,
+        "y": 0.045,
+        "w": 0.316,
+        "h": 0.239
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.452,
+          0.099
+        ],
+        [
+          0.522,
+          0.056
+        ],
+        [
+          0.61,
+          0.045
+        ],
+        [
+          0.704,
+          0.06
+        ],
+        [
+          0.76,
+          0.127
+        ],
+        [
+          0.742,
+          0.217
+        ],
+        [
+          0.656,
+          0.278
+        ],
+        [
+          0.553,
+          0.284
+        ],
+        [
+          0.466,
+          0.226
+        ],
+        [
+          0.445,
+          0.151
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/module-generated-house-plan-courtyard.svg",
+      "source_binding_ids": [
+        "binding-module-generated-house-plan-courtyard"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          926,
+          149
+        ],
+        "safe_stage_window_origin_px": [
+          965,
+          168
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-ornamental-power-grove",
+      "kind": "module",
+      "label": "ornamental power grove",
+      "artifact_type": "civic-infrastructure-ornament",
+      "bounds": {
+        "x": 0.823,
+        "y": 0.693,
+        "w": 0.139,
+        "h": 0.142
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.86,
+          0.696
+        ],
+        [
+          0.916,
+          0.696
+        ],
+        [
+          0.956,
+          0.728
+        ],
+        [
+          0.962,
+          0.787
+        ],
+        [
+          0.93,
+          0.829
+        ],
+        [
+          0.873,
+          0.835
+        ],
+        [
+          0.829,
+          0.806
+        ],
+        [
+          0.823,
+          0.747
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/module-ornamental-power-grove.svg",
+      "source_binding_ids": [
+        "binding-module-ornamental-power-grove"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          771
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          782
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-ornamental-power-grove-2",
+      "kind": "module",
+      "label": "ornamental power grove",
+      "artifact_type": "civic-infrastructure-ornament",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "engraved-playable-civic-plan",
+      "mask_path": "/editions/2026-06-06-playable-civic-engraving-v1/assets/masks/module-ornamental-power-grove-2.svg",
+      "source_binding_ids": [
+        "binding-module-ornamental-power-grove-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "brief_id": "brief-2026-06-06-playable-civic-engraving-v1",
+  "date": "2026-06-06",
+  "signal_cluster_ids": [
+    "307854ad9742",
+    "ff1c48f2cf0a",
+    "7fad76e0cb95",
+    "a033839caa9d",
+    "0c8907a81a23",
+    "b2a86a216232",
+    "8a84dcb0e748",
+    "9c59c4eb4335"
+  ],
+  "research_node_ids": [
+    "research-1-5500e9e9",
+    "research-2-1812078a",
+    "research-3-eee9e64c",
+    "research-4-4e72110b",
+    "research-5-ea5dfa6a",
+    "research-6-4e7a28c2",
+    "research-7-6eaee6a4",
+    "research-8-bfd05461",
+    "research-9-3a79a845",
+    "research-10-4c84a9cb",
+    "research-11-c6f71201",
+    "research-12-24d401ab"
+  ],
+  "mood": "a dense parchment town square where sound models, motion grammar, homes, records, and civic infrastructure behave like playable weather",
+  "material_language": [
+    "aged parchment with dense black crosshatching",
+    "translucent waveform glass",
+    "brass parameter seams and small control ridges",
+    "architectural plan ink and roofline cuts",
+    "archival halftone paper and ledger tabs"
+  ],
+  "lighting": "soft ivory daylight over the engraved field, with low internal glow from waveform surfaces and brief festival sparks in the civic square",
+  "object_inventory": [
+    "one interlocked civic-plan field with curving streets, courtyards, and hatching clouds",
+    "a playable sound-and-voice district made from ribbons, apertures, knobs, and waveform ridges",
+    "staggered motion paths crossing the plate like engraved comet tails",
+    "an inhabited plan-neighborhood of rooms, patios, roof seams, and tiny lit thresholds",
+    "a public-record and infrastructure edge with ledger cuts, archive scars, and plantlike civic ornaments"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no legible words, numbers, filenames, callouts, or interface labels inside the image",
+    "no desks, dashboards, browser chrome, summary cards, shelves, cabinets, or office-room framing",
+    "do not copy the visual reference subject, figures, religious scene, symbols, or literal creatures",
+    "avoid greenhouse, shrine, observatory, wool, brine, and repair-field language from recent editions",
+    "do not repeat any source URL or represent the same post twice",
+    "source-bearing anchors must be embedded in marks, edges, surfaces, gestures, or luminous interruptions",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no literal depiction of the source reference image"
+  ]
+}

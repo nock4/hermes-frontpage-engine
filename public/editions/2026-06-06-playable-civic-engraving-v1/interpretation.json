@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-06-06-playable-civic-engraving-v1",
+  "edition_id": "2026-06-06-playable-civic-engraving-v1",
+  "plate_read_timestamp": "2026-06-06T21:46:48.782Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "An engraved isometric city plate with a dominant curved glass waveform hall on the left, a sweeping motion causeway across the lower right, a glowing civic plaza burst, an oval voice portal in the right wall, ledger-paper surfaces, gridded courtyards, and clusters of small infrastructure lights.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "a dense parchment town square where sound models, motion grammar, homes, records, and civic infrastructure behave like playable weather",
+      "An engraved isometric city plate with a dominant curved glass waveform hall on the left, a sweeping motion causeway across the lower right, a glowing civic plaza burst, an oval voice portal in the right wall, ledger-paper surfaces, gridded courtyards, and clusters of small infrastructure lights.",
+      "engraved-plan",
+      "playable-machines",
+      "motion-trails"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "live music waveform arcade",
+      "staggered motion causeway",
+      "low-latency voice aperture",
+      "local parameter balcony",
+      "maintenance ledger scar",
+      "public audit tab",
+      "generated house-plan courtyard",
+      "ornamental power grove"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "engraved-playable-civic-plan",
+      "one interlocked civic-plan field with curving streets, courtyards, and hatching clouds",
+      "a playable sound-and-voice district made from ribbons, apertures, knobs, and waveform ridges",
+      "staggered motion paths crossing the plate like engraved comet tails",
+      "an inhabited plan-neighborhood of rooms, patios, roof seams, and tiny lit thresholds",
+      "a public-record and infrastructure edge with ledger cuts, archive scars, and plantlike civic ornaments",
+      "curved glass waveform facade",
+      "sweeping elevated causeway bands"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: engraved-playable-civic-plan.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-live-music-waveform-arcade",
+      "kind": "hero",
+      "type": "hero-scale-waveform-instrument-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.141,
+        "y": 0.032,
+        "w": 0.302,
+        "h": 0.505
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-staggered-motion-causeway",
+      "kind": "hero",
+      "type": "hero-scale-motion-trail-causeway",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.493,
+        "y": 0.541,
+        "w": 0.487,
+        "h": 0.18
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-low-latency-voice-aperture",
+      "kind": "module",
+      "type": "glowing-voice-aperture",
+      "strength": 0.80064,
+      "bounds": {
+        "x": 0.774,
+        "y": 0.369,
+        "w": 0.071,
+        "h": 0.133
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-local-parameter-balcony",
+      "kind": "module",
+      "type": "translucent-control-balcony",
+      "strength": 0.767028,
+      "bounds": {
+        "x": 0.161,
+        "y": 0.168,
+        "w": 0.218,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-maintenance-ledger-scar",
+      "kind": "module",
+      "type": "inked-ledger-cleanout-edge",
+      "strength": 0.7212000000000001,
+      "bounds": {
+        "x": 0.012,
+        "y": 0.365,
+        "w": 0.04,
+        "h": 0.522
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-public-audit-tab",
+      "kind": "module",
+      "type": "exposed-record-ledger-tab",
+      "strength": 0.693828,
+      "bounds": {
+        "x": 0.717,
+        "y": 0.791,
+        "w": 0.201,
+        "h": 0.168
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-generated-house-plan-courtyard",
+      "kind": "module",
+      "type": "inhabited-plan-courtyard",
+      "strength": 0.6847560000000001,
+      "bounds": {
+        "x": 0.445,
+        "y": 0.045,
+        "w": 0.316,
+        "h": 0.239
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ornamental-power-grove",
+      "kind": "module",
+      "type": "civic-infrastructure-ornament",
+      "strength": 0.6497679999999999,
+      "bounds": {
+        "x": 0.823,
+        "y": 0.693,
+        "w": 0.139,
+        "h": 0.142
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ornamental-power-grove-2",
+      "kind": "module",
+      "type": "civic-infrastructure-ornament",
+      "strength": 0.6521319999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-live-music-waveform-arcade-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.141,
+        "y": 0.032,
+        "w": 0.302,
+        "h": 0.505
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-staggered-motion-causeway-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.493,
+        "y": 0.541,
+        "w": 0.487,
+        "h": 0.18
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-low-latency-voice-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.774,
+        "y": 0.369,
+        "w": 0.071,
+        "h": 0.133
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-local-parameter-balcony-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.161,
+        "y": 0.168,
+        "w": 0.218,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-maintenance-ledger-scar-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.012,
+        "y": 0.365,
+        "w": 0.04,
+        "h": 0.522
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-public-audit-tab-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.717,
+        "y": 0.791,
+        "w": 0.201,
+        "h": 0.168
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-generated-house-plan-courtyard-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.445,
+        "y": 0.045,
+        "w": 0.316,
+        "h": 0.239
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ornamental-power-grove-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.823,
+        "y": 0.693,
+        "w": 0.139,
+        "h": 0.142
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ornamental-power-grove-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

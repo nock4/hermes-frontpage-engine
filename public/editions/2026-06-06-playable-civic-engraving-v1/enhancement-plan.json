@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-06-playable-civic-engraving-v1",
+  "edition_id": "2026-06-06-playable-civic-engraving-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-06-playable-civic-engraving-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-live-music-waveform-arcade",
+      "target_kind": "artifact",
+      "artifact_id": "hero-live-music-waveform-arcade",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-waveform-instrument-surface) selected from interpretation."
+    },
+    {
+      "target_id": "hero-staggered-motion-causeway",
+      "target_kind": "artifact",
+      "artifact_id": "hero-staggered-motion-causeway",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-motion-trail-causeway) selected from interpretation."
+    },
+    {
+      "target_id": "module-low-latency-voice-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-low-latency-voice-aperture",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glowing-voice-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-local-parameter-balcony",
+      "target_kind": "artifact",
+      "artifact_id": "module-local-parameter-balcony",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-control-balcony) selected from interpretation."
+    },
+    {
+      "target_id": "module-maintenance-ledger-scar",
+      "target_kind": "artifact",
+      "artifact_id": "module-maintenance-ledger-scar",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (inked-ledger-cleanout-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-public-audit-tab",
+      "target_kind": "artifact",
+      "artifact_id": "module-public-audit-tab",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (exposed-record-ledger-tab) selected from interpretation."
+    },
+    {
+      "target_id": "module-generated-house-plan-courtyard",
+      "target_kind": "artifact",
+      "artifact_id": "module-generated-house-plan-courtyard",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (inhabited-plan-courtyard) selected from interpretation."
+    },
+    {
+      "target_id": "module-ornamental-power-grove",
+      "target_kind": "artifact",
+      "artifact_id": "module-ornamental-power-grove",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (civic-infrastructure-ornament) selected from interpretation."
+    },
+    {
+      "target_id": "module-ornamental-power-grove-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-ornamental-power-grove-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (civic-infrastructure-ornament) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

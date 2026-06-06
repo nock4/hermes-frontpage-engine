@@ -1,0 +1,544 @@
+{
+  "analysis_id": "analysis-2026-06-06-playable-civic-engraving-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "An engraved isometric city plate with a dominant curved glass waveform hall on the left, a sweeping motion causeway across the lower right, a glowing civic plaza burst, an oval voice portal in the right wall, ledger-paper surfaces, gridded courtyards, and clusters of small infrastructure lights.",
+  "usable_surfaces": [
+    "curved glass waveform facade",
+    "sweeping elevated causeway bands",
+    "oval acoustic aperture",
+    "left torn maintenance scar",
+    "bottom-right ledger-paper stack",
+    "upper gridded plan courtyard",
+    "clustered glowing power grove",
+    "small red proof scar on causeway",
+    "rooftop control-cylinder balcony"
+  ],
+  "detected_objects": [
+    {
+      "label": "live music waveform arcade",
+      "artifact_type": "hero-scale-waveform-instrument-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.141,
+        "y": 0.032,
+        "w": 0.302,
+        "h": 0.505
+      },
+      "polygon": [
+        [
+          0.158,
+          0.207
+        ],
+        [
+          0.205,
+          0.157
+        ],
+        [
+          0.263,
+          0.09
+        ],
+        [
+          0.341,
+          0.041
+        ],
+        [
+          0.415,
+          0.023
+        ],
+        [
+          0.432,
+          0.308
+        ],
+        [
+          0.417,
+          0.463
+        ],
+        [
+          0.367,
+          0.511
+        ],
+        [
+          0.279,
+          0.535
+        ],
+        [
+          0.185,
+          0.503
+        ],
+        [
+          0.148,
+          0.407
+        ],
+        [
+          0.141,
+          0.286
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "large curved glass-and-brass facade carrying tall translucent waveform peaks and a coral diagonal signal trace across the left-center building"
+    },
+    {
+      "label": "staggered motion causeway",
+      "artifact_type": "hero-scale-motion-trail-causeway",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.493,
+        "y": 0.541,
+        "w": 0.487,
+        "h": 0.18
+      },
+      "polygon": [
+        [
+          0.495,
+          0.643
+        ],
+        [
+          0.545,
+          0.603
+        ],
+        [
+          0.62,
+          0.575
+        ],
+        [
+          0.696,
+          0.574
+        ],
+        [
+          0.773,
+          0.594
+        ],
+        [
+          0.845,
+          0.602
+        ],
+        [
+          0.915,
+          0.568
+        ],
+        [
+          0.972,
+          0.539
+        ],
+        [
+          0.98,
+          0.586
+        ],
+        [
+          0.936,
+          0.642
+        ],
+        [
+          0.861,
+          0.68
+        ],
+        [
+          0.777,
+          0.69
+        ],
+        [
+          0.698,
+          0.668
+        ],
+        [
+          0.622,
+          0.642
+        ],
+        [
+          0.553,
+          0.659
+        ],
+        [
+          0.506,
+          0.72
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "broad elevated S-curve causeway with multiple parallel rails and colored motion trails, visibly staggered through the lower-right city"
+    },
+    {
+      "label": "low-latency voice aperture",
+      "artifact_type": "glowing-voice-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.774,
+        "y": 0.369,
+        "w": 0.071,
+        "h": 0.133
+      },
+      "polygon": [
+        [
+          0.778,
+          0.432
+        ],
+        [
+          0.784,
+          0.398
+        ],
+        [
+          0.8,
+          0.377
+        ],
+        [
+          0.821,
+          0.373
+        ],
+        [
+          0.838,
+          0.397
+        ],
+        [
+          0.844,
+          0.434
+        ],
+        [
+          0.839,
+          0.469
+        ],
+        [
+          0.824,
+          0.493
+        ],
+        [
+          0.801,
+          0.498
+        ],
+        [
+          0.784,
+          0.475
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "large oval mouthlike aperture set into the right civic wall, glowing with a cyan waveform-like slash inside"
+    },
+    {
+      "label": "local parameter balcony",
+      "artifact_type": "translucent-control-balcony",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.161,
+        "y": 0.168,
+        "w": 0.218,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.166,
+          0.274
+        ],
+        [
+          0.203,
+          0.241
+        ],
+        [
+          0.248,
+          0.217
+        ],
+        [
+          0.291,
+          0.189
+        ],
+        [
+          0.338,
+          0.169
+        ],
+        [
+          0.367,
+          0.181
+        ],
+        [
+          0.376,
+          0.222
+        ],
+        [
+          0.354,
+          0.263
+        ],
+        [
+          0.301,
+          0.296
+        ],
+        [
+          0.243,
+          0.321
+        ],
+        [
+          0.188,
+          0.328
+        ],
+        [
+          0.162,
+          0.307
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "curved rooftop balcony lined with many small brass cylinders and pinlike controls above the main glass instrument surface"
+    },
+    {
+      "label": "maintenance ledger scar",
+      "artifact_type": "inked-ledger-cleanout-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.012,
+        "y": 0.365,
+        "w": 0.04,
+        "h": 0.522
+      },
+      "polygon": [
+        [
+          0.018,
+          0.365
+        ],
+        [
+          0.031,
+          0.417
+        ],
+        [
+          0.027,
+          0.476
+        ],
+        [
+          0.041,
+          0.535
+        ],
+        [
+          0.033,
+          0.601
+        ],
+        [
+          0.048,
+          0.663
+        ],
+        [
+          0.038,
+          0.721
+        ],
+        [
+          0.048,
+          0.786
+        ],
+        [
+          0.033,
+          0.849
+        ],
+        [
+          0.018,
+          0.887
+        ],
+        [
+          0.012,
+          0.827
+        ],
+        [
+          0.017,
+          0.746
+        ],
+        [
+          0.011,
+          0.668
+        ],
+        [
+          0.018,
+          0.584
+        ],
+        [
+          0.012,
+          0.494
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "scraped vertical torn edge along the far-left border, with pale/coral/cyan signal residue cutting through the dark engraved margin"
+    },
+    {
+      "label": "public audit tab",
+      "artifact_type": "exposed-record-ledger-tab",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.717,
+        "y": 0.791,
+        "w": 0.201,
+        "h": 0.168
+      },
+      "polygon": [
+        [
+          0.734,
+          0.792
+        ],
+        [
+          0.823,
+          0.799
+        ],
+        [
+          0.903,
+          0.825
+        ],
+        [
+          0.918,
+          0.878
+        ],
+        [
+          0.891,
+          0.936
+        ],
+        [
+          0.802,
+          0.958
+        ],
+        [
+          0.724,
+          0.93
+        ],
+        [
+          0.717,
+          0.862
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "bottom-right stack of exposed record sheets with visible ruled columns and red/cyan proof-like stains across the paper surface"
+    },
+    {
+      "label": "generated house-plan courtyard",
+      "artifact_type": "inhabited-plan-courtyard",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.445,
+        "y": 0.045,
+        "w": 0.316,
+        "h": 0.239
+      },
+      "polygon": [
+        [
+          0.452,
+          0.099
+        ],
+        [
+          0.522,
+          0.056
+        ],
+        [
+          0.61,
+          0.045
+        ],
+        [
+          0.704,
+          0.06
+        ],
+        [
+          0.76,
+          0.127
+        ],
+        [
+          0.742,
+          0.217
+        ],
+        [
+          0.656,
+          0.278
+        ],
+        [
+          0.553,
+          0.284
+        ],
+        [
+          0.466,
+          0.226
+        ],
+        [
+          0.445,
+          0.151
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "upper central district of roof seams, rectangular room grids, courtyards, and tiny lit paths forming an inhabited plan-like surface"
+    },
+    {
+      "label": "ornamental power grove",
+      "artifact_type": "civic-infrastructure-ornament",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.823,
+        "y": 0.693,
+        "w": 0.139,
+        "h": 0.142
+      },
+      "polygon": [
+        [
+          0.86,
+          0.696
+        ],
+        [
+          0.916,
+          0.696
+        ],
+        [
+          0.956,
+          0.728
+        ],
+        [
+          0.962,
+          0.787
+        ],
+        [
+          0.93,
+          0.829
+        ],
+        [
+          0.873,
+          0.835
+        ],
+        [
+          0.829,
+          0.806
+        ],
+        [
+          0.823,
+          0.747
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "bottom-right plantlike grove of many evenly spaced glowing golden bulbs on stalks beside the ledger sheets"
+    },
+    {
+      "label": "ornamental power grove",
+      "artifact_type": "civic-infrastructure-ornament",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.434,
+    "rationale": "The plate is dense with engraved city detail and many lights, but the main interface surfaces remain legible: waveform hall, causeway, portal, ledger stack, gridded plan, and power grove."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-06-playable-civic-engraving-v1"
+}
