@@ -1,0 +1,423 @@
+{
+  "analysis_id": "analysis-2026-06-06-crossfade-firework-corridor-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark architectural corridor plate cut by two white crossing bands, with a tilted spectator photograph on the left, etched floor-plan lines across the central black slab, small luminous motion arrows, an archive-like dark aperture, and a right-wall cluster of glowing pixel rooms.",
+  "usable_surfaces": [
+    "left tilted torn photographic slab",
+    "central etched black floor-plan slab",
+    "upper-center luminous motion arrows",
+    "right-wall glowing pixel chamber grid",
+    "upper-right scratched black aperture",
+    "torn misaligned photographic edge"
+  ],
+  "detected_objects": [
+    {
+      "label": "diagonal spectator slab",
+      "artifact_type": "hero-scale-tilted-media-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.018,
+        "w": 0.243,
+        "h": 0.476
+      },
+      "polygon": [
+        [
+          0,
+          0.098
+        ],
+        [
+          0.177,
+          0.018
+        ],
+        [
+          0.237,
+          0.364
+        ],
+        [
+          0.22,
+          0.382
+        ],
+        [
+          0.207,
+          0.376
+        ],
+        [
+          0.194,
+          0.407
+        ],
+        [
+          0.176,
+          0.399
+        ],
+        [
+          0.159,
+          0.448
+        ],
+        [
+          0.13,
+          0.447
+        ],
+        [
+          0.113,
+          0.474
+        ],
+        [
+          0.061,
+          0.48
+        ],
+        [
+          0.026,
+          0.494
+        ],
+        [
+          0,
+          0.486
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Large skewed black-and-white photographic plane on the left wall, with visible spectator silhouettes and ragged torn lower edge."
+    },
+    {
+      "label": "etched domestic plan threshold",
+      "artifact_type": "hero-scale-translucent-floor-plan-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.172,
+        "y": 0.482,
+        "w": 0.505,
+        "h": 0.397
+      },
+      "polygon": [
+        [
+          0.238,
+          0.509
+        ],
+        [
+          0.333,
+          0.482
+        ],
+        [
+          0.48,
+          0.505
+        ],
+        [
+          0.617,
+          0.561
+        ],
+        [
+          0.677,
+          0.659
+        ],
+        [
+          0.632,
+          0.76
+        ],
+        [
+          0.529,
+          0.841
+        ],
+        [
+          0.406,
+          0.879
+        ],
+        [
+          0.284,
+          0.842
+        ],
+        [
+          0.206,
+          0.761
+        ],
+        [
+          0.172,
+          0.648
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Fine white architectural plan lines etched across the central black floor slab, forming rooms, thresholds, and corridor seams."
+    },
+    {
+      "label": "staggered motion seam",
+      "artifact_type": "directional-gesture-trail",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.363,
+        "y": 0.164,
+        "w": 0.128,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.367,
+          0.164
+        ],
+        [
+          0.405,
+          0.179
+        ],
+        [
+          0.402,
+          0.187
+        ],
+        [
+          0.421,
+          0.188
+        ],
+        [
+          0.421,
+          0.198
+        ],
+        [
+          0.455,
+          0.205
+        ],
+        [
+          0.455,
+          0.213
+        ],
+        [
+          0.489,
+          0.213
+        ],
+        [
+          0.491,
+          0.224
+        ],
+        [
+          0.455,
+          0.226
+        ],
+        [
+          0.452,
+          0.218
+        ],
+        [
+          0.421,
+          0.211
+        ],
+        [
+          0.417,
+          0.2
+        ],
+        [
+          0.397,
+          0.197
+        ],
+        [
+          0.397,
+          0.189
+        ],
+        [
+          0.363,
+          0.177
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Three small bright white arrow-like line gestures step across the upper corridor floor, with staggered directional bends and glow."
+    },
+    {
+      "label": "pixel firework room",
+      "artifact_type": "glowing-pixel-chamber",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.746,
+        "y": 0.149,
+        "w": 0.249,
+        "h": 0.403
+      },
+      "polygon": [
+        [
+          0.822,
+          0.149
+        ],
+        [
+          0.905,
+          0.168
+        ],
+        [
+          0.908,
+          0.254
+        ],
+        [
+          0.981,
+          0.273
+        ],
+        [
+          0.98,
+          0.352
+        ],
+        [
+          0.995,
+          0.361
+        ],
+        [
+          0.994,
+          0.474
+        ],
+        [
+          0.936,
+          0.466
+        ],
+        [
+          0.936,
+          0.552
+        ],
+        [
+          0.825,
+          0.531
+        ],
+        [
+          0.826,
+          0.441
+        ],
+        [
+          0.746,
+          0.422
+        ],
+        [
+          0.751,
+          0.333
+        ],
+        [
+          0.822,
+          0.342
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Right wall contains stacked dark room panels filled with orange blocky firework-like pixels and tiny figure clusters."
+    },
+    {
+      "label": "archive-black aperture",
+      "artifact_type": "scratched-dark-media-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.564,
+        "y": 0.037,
+        "w": 0.104,
+        "h": 0.28
+      },
+      "polygon": [
+        [
+          0.593,
+          0.037
+        ],
+        [
+          0.64,
+          0.041
+        ],
+        [
+          0.665,
+          0.086
+        ],
+        [
+          0.668,
+          0.225
+        ],
+        [
+          0.646,
+          0.3
+        ],
+        [
+          0.612,
+          0.317
+        ],
+        [
+          0.579,
+          0.284
+        ],
+        [
+          0.564,
+          0.189
+        ],
+        [
+          0.567,
+          0.091
+        ]
+      ],
+      "confidence": 0.75,
+      "visual_evidence": "Tall glossy black inset behind the blue wall edge, with scratched grain, reflective streaks, and small standing silhouettes at its base."
+    },
+    {
+      "label": "misaligned found-image edge",
+      "artifact_type": "cropped-photographic-interruption",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.064,
+        "y": 0.061,
+        "w": 0.167,
+        "h": 0.367
+      },
+      "polygon": [
+        [
+          0.065,
+          0.083
+        ],
+        [
+          0.178,
+          0.061
+        ],
+        [
+          0.228,
+          0.354
+        ],
+        [
+          0.219,
+          0.366
+        ],
+        [
+          0.202,
+          0.358
+        ],
+        [
+          0.19,
+          0.39
+        ],
+        [
+          0.17,
+          0.385
+        ],
+        [
+          0.157,
+          0.428
+        ],
+        [
+          0.137,
+          0.42
+        ],
+        [
+          0.121,
+          0.384
+        ],
+        [
+          0.103,
+          0.365
+        ],
+        [
+          0.089,
+          0.31
+        ],
+        [
+          0.078,
+          0.24
+        ],
+        [
+          0.07,
+          0.158
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A lighter, misregistered skewed image shard sits over the left photograph, marked by a jagged torn edge and off-axis crowd imagery."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 6,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.604,
+    "rationale": "The plate stays expressionist through a few strong slabs and apertures, but the right-wall pixel grid and many etched scratches add moderate visual density."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-06-06-crossfade-firework-corridor-v1"
+}

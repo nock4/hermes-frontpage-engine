@@ -1,0 +1,279 @@
+{
+  "interpretation_id": "interp-2026-06-06-crossfade-firework-corridor-v1",
+  "edition_id": "2026-06-06-crossfade-firework-corridor-v1",
+  "plate_read_timestamp": "2026-06-06T22:04:00.394Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark architectural corridor plate cut by two white crossing bands, with a tilted spectator photograph on the left, etched floor-plan lines across the central black slab, small luminous motion arrows, an archive-like dark aperture, and a right-wall cluster of glowing pixel rooms.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "quiet rooms tuned like instruments inside a scratched night corridor",
+      "A dark architectural corridor plate cut by two white crossing bands, with a tilted spectator photograph on the left, etched floor-plan lines across the central black slab, small luminous motion arrows, an archive-like dark aperture, and a right-wall cluster of glowing pixel rooms.",
+      "playable-rooms",
+      "diagonal-crossing",
+      "pixel-fireworks"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "diagonal spectator slab",
+      "etched domestic plan threshold",
+      "staggered motion seam",
+      "pixel firework room",
+      "archive-black aperture",
+      "misaligned found-image edge"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "crossfade-firework-corridor",
+      "a public-interior corridor formed by two giant crossing threshold beams",
+      "staggered translucent floor-plan rooms nested behind the crossing",
+      "tilted found-image slabs embedded into the wall surfaces",
+      "motion grammar trails threading between apertures",
+      "tiny pixel-night rooms and firework blooms along the lower seams",
+      "instrument-like wave ribbons and control grooves carved into the panels",
+      "left tilted torn photographic slab"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: crossfade-firework-corridor.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-diagonal-spectator-slab",
+      "kind": "hero",
+      "type": "hero-scale-tilted-media-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0.018,
+        "w": 0.243,
+        "h": 0.476
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-etched-domestic-plan-threshold",
+      "kind": "hero",
+      "type": "hero-scale-translucent-floor-plan-surface",
+      "strength": 0.972224,
+      "bounds": {
+        "x": 0.172,
+        "y": 0.482,
+        "w": 0.505,
+        "h": 0.397
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-staggered-motion-seam",
+      "kind": "module",
+      "type": "directional-gesture-trail",
+      "strength": 0.800508,
+      "bounds": {
+        "x": 0.363,
+        "y": 0.164,
+        "w": 0.128,
+        "h": 0.073
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pixel-firework-room",
+      "kind": "module",
+      "type": "glowing-pixel-chamber",
+      "strength": 0.7627680000000001,
+      "bounds": {
+        "x": 0.746,
+        "y": 0.149,
+        "w": 0.249,
+        "h": 0.403
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-archive-black-aperture",
+      "kind": "module",
+      "type": "scratched-dark-media-aperture",
+      "strength": 0.734388,
+      "bounds": {
+        "x": 0.564,
+        "y": 0.037,
+        "w": 0.104,
+        "h": 0.28
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-misaligned-found-image-edge",
+      "kind": "module",
+      "type": "cropped-photographic-interruption",
+      "strength": 0.7047,
+      "bounds": {
+        "x": 0.064,
+        "y": 0.061,
+        "w": 0.167,
+        "h": 0.367
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-diagonal-spectator-slab-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.018,
+        "w": 0.243,
+        "h": 0.476
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-etched-domestic-plan-threshold-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.172,
+        "y": 0.482,
+        "w": 0.505,
+        "h": 0.397
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-staggered-motion-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.363,
+        "y": 0.164,
+        "w": 0.128,
+        "h": 0.073
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pixel-firework-room-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.746,
+        "y": 0.149,
+        "w": 0.249,
+        "h": 0.403
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-archive-black-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.564,
+        "y": 0.037,
+        "w": 0.104,
+        "h": 0.28
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-misaligned-found-image-edge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.064,
+        "y": 0.061,
+        "w": 0.167,
+        "h": 0.367
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

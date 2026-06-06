@@ -1,0 +1,506 @@
+{
+  "artifact_map_id": "map-2026-06-06-crossfade-firework-corridor-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "crossfade-firework-corridor",
+  "default_artifact_id": "hero-diagonal-spectator-slab",
+  "artifacts": [
+    {
+      "id": "hero-diagonal-spectator-slab",
+      "kind": "hero",
+      "label": "diagonal spectator slab",
+      "artifact_type": "hero-scale-tilted-media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.018,
+        "w": 0.243,
+        "h": 0.476
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.098
+        ],
+        [
+          0.177,
+          0.018
+        ],
+        [
+          0.237,
+          0.364
+        ],
+        [
+          0.22,
+          0.382
+        ],
+        [
+          0.207,
+          0.376
+        ],
+        [
+          0.194,
+          0.407
+        ],
+        [
+          0.176,
+          0.399
+        ],
+        [
+          0.159,
+          0.448
+        ],
+        [
+          0.13,
+          0.447
+        ],
+        [
+          0.113,
+          0.474
+        ],
+        [
+          0.061,
+          0.48
+        ],
+        [
+          0.026,
+          0.494
+        ],
+        [
+          0,
+          0.486
+        ]
+      ],
+      "cluster_id": "crossfade-firework-corridor",
+      "mask_path": "/editions/2026-06-06-crossfade-firework-corridor-v1/assets/masks/hero-diagonal-spectator-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-diagonal-spectator-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          187,
+          223
+        ],
+        "safe_stage_window_origin_px": [
+          216,
+          262
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-etched-domestic-plan-threshold",
+      "kind": "hero",
+      "label": "etched domestic plan threshold",
+      "artifact_type": "hero-scale-translucent-floor-plan-surface",
+      "bounds": {
+        "x": 0.172,
+        "y": 0.482,
+        "w": 0.505,
+        "h": 0.397
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.238,
+          0.509
+        ],
+        [
+          0.333,
+          0.482
+        ],
+        [
+          0.48,
+          0.505
+        ],
+        [
+          0.617,
+          0.561
+        ],
+        [
+          0.677,
+          0.659
+        ],
+        [
+          0.632,
+          0.76
+        ],
+        [
+          0.529,
+          0.841
+        ],
+        [
+          0.406,
+          0.879
+        ],
+        [
+          0.284,
+          0.842
+        ],
+        [
+          0.206,
+          0.761
+        ],
+        [
+          0.172,
+          0.648
+        ]
+      ],
+      "cluster_id": "crossfade-firework-corridor",
+      "mask_path": "/editions/2026-06-06-crossfade-firework-corridor-v1/assets/masks/hero-etched-domestic-plan-threshold.svg",
+      "source_binding_ids": [
+        "binding-hero-etched-domestic-plan-threshold"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          652,
+          664
+        ],
+        "safe_stage_window_origin_px": [
+          714,
+          697
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-staggered-motion-seam",
+      "kind": "module",
+      "label": "staggered motion seam",
+      "artifact_type": "directional-gesture-trail",
+      "bounds": {
+        "x": 0.363,
+        "y": 0.164,
+        "w": 0.128,
+        "h": 0.073
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.367,
+          0.164
+        ],
+        [
+          0.405,
+          0.179
+        ],
+        [
+          0.402,
+          0.187
+        ],
+        [
+          0.421,
+          0.188
+        ],
+        [
+          0.421,
+          0.198
+        ],
+        [
+          0.455,
+          0.205
+        ],
+        [
+          0.455,
+          0.213
+        ],
+        [
+          0.489,
+          0.213
+        ],
+        [
+          0.491,
+          0.224
+        ],
+        [
+          0.455,
+          0.226
+        ],
+        [
+          0.452,
+          0.218
+        ],
+        [
+          0.421,
+          0.211
+        ],
+        [
+          0.417,
+          0.2
+        ],
+        [
+          0.397,
+          0.197
+        ],
+        [
+          0.397,
+          0.189
+        ],
+        [
+          0.363,
+          0.177
+        ]
+      ],
+      "cluster_id": "crossfade-firework-corridor",
+      "mask_path": "/editions/2026-06-06-crossfade-firework-corridor-v1/assets/masks/module-staggered-motion-seam.svg",
+      "source_binding_ids": [
+        "binding-module-staggered-motion-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          656,
+          199
+        ],
+        "safe_stage_window_origin_px": [
+          672,
+          205
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-pixel-firework-room",
+      "kind": "module",
+      "label": "pixel firework room",
+      "artifact_type": "glowing-pixel-chamber",
+      "bounds": {
+        "x": 0.746,
+        "y": 0.149,
+        "w": 0.249,
+        "h": 0.403
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.822,
+          0.149
+        ],
+        [
+          0.905,
+          0.168
+        ],
+        [
+          0.908,
+          0.254
+        ],
+        [
+          0.981,
+          0.273
+        ],
+        [
+          0.98,
+          0.352
+        ],
+        [
+          0.995,
+          0.361
+        ],
+        [
+          0.994,
+          0.474
+        ],
+        [
+          0.936,
+          0.466
+        ],
+        [
+          0.936,
+          0.552
+        ],
+        [
+          0.825,
+          0.531
+        ],
+        [
+          0.826,
+          0.441
+        ],
+        [
+          0.746,
+          0.422
+        ],
+        [
+          0.751,
+          0.333
+        ],
+        [
+          0.822,
+          0.342
+        ]
+      ],
+      "cluster_id": "crossfade-firework-corridor",
+      "mask_path": "/editions/2026-06-06-crossfade-firework-corridor-v1/assets/masks/module-pixel-firework-room.svg",
+      "source_binding_ids": [
+        "binding-module-pixel-firework-room"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          326
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          359
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-archive-black-aperture",
+      "kind": "module",
+      "label": "archive-black aperture",
+      "artifact_type": "scratched-dark-media-aperture",
+      "bounds": {
+        "x": 0.564,
+        "y": 0.037,
+        "w": 0.104,
+        "h": 0.28
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.593,
+          0.037
+        ],
+        [
+          0.64,
+          0.041
+        ],
+        [
+          0.665,
+          0.086
+        ],
+        [
+          0.668,
+          0.225
+        ],
+        [
+          0.646,
+          0.3
+        ],
+        [
+          0.612,
+          0.317
+        ],
+        [
+          0.579,
+          0.284
+        ],
+        [
+          0.564,
+          0.189
+        ],
+        [
+          0.567,
+          0.091
+        ]
+      ],
+      "cluster_id": "crossfade-firework-corridor",
+      "mask_path": "/editions/2026-06-06-crossfade-firework-corridor-v1/assets/masks/module-archive-black-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-archive-black-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          946,
+          158
+        ],
+        "safe_stage_window_origin_px": [
+          959,
+          181
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-misaligned-found-image-edge",
+      "kind": "module",
+      "label": "misaligned found-image edge",
+      "artifact_type": "cropped-photographic-interruption",
+      "bounds": {
+        "x": 0.064,
+        "y": 0.061,
+        "w": 0.167,
+        "h": 0.367
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.065,
+          0.083
+        ],
+        [
+          0.178,
+          0.061
+        ],
+        [
+          0.228,
+          0.354
+        ],
+        [
+          0.219,
+          0.366
+        ],
+        [
+          0.202,
+          0.358
+        ],
+        [
+          0.19,
+          0.39
+        ],
+        [
+          0.17,
+          0.385
+        ],
+        [
+          0.157,
+          0.428
+        ],
+        [
+          0.137,
+          0.42
+        ],
+        [
+          0.121,
+          0.384
+        ],
+        [
+          0.103,
+          0.365
+        ],
+        [
+          0.089,
+          0.31
+        ],
+        [
+          0.078,
+          0.24
+        ],
+        [
+          0.07,
+          0.158
+        ]
+      ],
+      "cluster_id": "crossfade-firework-corridor",
+      "mask_path": "/editions/2026-06-06-crossfade-firework-corridor-v1/assets/masks/module-misaligned-found-image-edge.svg",
+      "source_binding_ids": [
+        "binding-module-misaligned-found-image-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          227,
+          220
+        ],
+        "safe_stage_window_origin_px": [
+          247,
+          250
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

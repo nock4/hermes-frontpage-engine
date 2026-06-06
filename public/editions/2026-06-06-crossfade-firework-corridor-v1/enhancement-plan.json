@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-06-crossfade-firework-corridor-v1",
+  "edition_id": "2026-06-06-crossfade-firework-corridor-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-06-crossfade-firework-corridor-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-diagonal-spectator-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-diagonal-spectator-slab",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-tilted-media-surface) selected from interpretation."
+    },
+    {
+      "target_id": "hero-etched-domestic-plan-threshold",
+      "target_kind": "artifact",
+      "artifact_id": "hero-etched-domestic-plan-threshold",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-translucent-floor-plan-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-staggered-motion-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-staggered-motion-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (directional-gesture-trail) selected from interpretation."
+    },
+    {
+      "target_id": "module-pixel-firework-room",
+      "target_kind": "artifact",
+      "artifact_id": "module-pixel-firework-room",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glowing-pixel-chamber) selected from interpretation."
+    },
+    {
+      "target_id": "module-archive-black-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-archive-black-aperture",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scratched-dark-media-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-misaligned-found-image-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-misaligned-found-image-edge",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-photographic-interruption) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}
