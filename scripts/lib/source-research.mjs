@@ -116,6 +116,58 @@ function selectedUrlsFromAutoresearch(autoresearch) {
   return uniqueNonEmpty(urls)
 }
 
+function sourceTitleFromImageMaterial(candidate, index) {
+  return sanitizeSourceText(
+    candidate.title || candidate.caption || `Anchor image material ${index + 1}`,
+    `Anchor image material ${index + 1}`,
+    180,
+  )
+}
+
+function buildImageMaterialContentSources(imageMaterial, anchorSource) {
+  const selected = imageMaterial?.selected_image_material || []
+  return selected.map((candidate, index) => {
+    const title = sourceTitleFromImageMaterial(candidate, index)
+    return {
+      url: candidate.image_url,
+      source_url: candidate.image_url,
+      final_url: candidate.image_url,
+      page_url: candidate.page_url || null,
+      title,
+      description: sanitizeSourceText(candidate.visual_reason || candidate.caption || '', '', 500),
+      visible_text: sanitizeSourceText(candidate.caption || candidate.visual_reason || '', '', 500),
+      image_url: candidate.image_url,
+      source_channel: 'anchor-derived',
+      source_type: 'image',
+      window_type: 'image',
+      kind: 'image',
+      fetch_status: 'anchor-image-material',
+      note_id: `anchor-image-${index + 1}-${sourceContentKey({ url: candidate.image_url })}`,
+      note_title: title,
+      note_path: anchorSource?.note_path || null,
+      note_date: anchorSource?.note_date || null,
+      note_score: Math.max(42, Number(anchorSource?.note_score || 0) - 12),
+      anchor_url: anchorSource?.url || null,
+      source_lineage: candidate.lineage || 'selected_image_material',
+      source_reason: candidate.visual_reason || 'Selected image source material from anchor research.',
+      source_query: candidate.query || null,
+      visual_reference_score: candidate.score || null,
+    }
+  })
+}
+
+function mergeInspectedSources(...groups) {
+  const merged = []
+  const seen = new Set()
+  for (const source of groups.flat()) {
+    const key = sourceContentKey(source)
+    if (!key || seen.has(key)) continue
+    seen.add(key)
+    merged.push(source)
+  }
+  return merged
+}
+
 function normalizeAutoresearchSelection(autoresearch, evidenceSources, {
   maxSources,
   recentSourceKeys = new Set(),
@@ -375,6 +427,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       maxSelected: 8,
     })
     await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
+    const imageMaterialContentSources = buildImageMaterialContentSources(imageSourceMaterial, anchorSource)
 
     const singleAnchorCaptureSet = [anchorSource, ...derivedCandidates]
     inspected = await captureAutoresearchedSources(singleAnchorCaptureSet, {
@@ -382,6 +435,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       browserHarness,
       maxSources: Math.max(maxSources * 2, minContentItems + 6),
     })
+    inspected = mergeInspectedSources(inspected, fetchEvidence, imageMaterialContentSources)
 
     autoresearch = {
       generated_at: new Date().toISOString(),
