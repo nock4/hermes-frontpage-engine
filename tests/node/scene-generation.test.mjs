@@ -11,12 +11,24 @@ describe('scene generation image prompt', () => {
       material_language: ['paper', 'mist', 'charcoal'],
       negative_constraints: ['no dashboard cards'],
       ambiance: { color_drift: 'muted violet and rust' },
+      plate_posture: {
+        plate_posture: 'minimal field',
+        density_target: 'airy',
+        abstraction_target: 'high',
+        minimality_target: 'high',
+        literalness_limit: 'no literal prop inventory',
+        anchor_strategy_bias: 'tiny apertures and edge notches',
+        negative_space_bias: 'large uninterrupted fields',
+      },
       visual_direction: {
         evidence_summary: 'Deterministic fallback from mixed audio sources.',
         brightness_profile: 'mixed',
         density_profile: 'balanced',
         geometry_profile: 'mixed',
         composition_profile: 'block-based',
+        composition_archetype: 'diagrammatic fold',
+        camera_plate_grammar: 'architectural section with oblique plate depth',
+        visual_compositional_moves: ['hard diagonal seams', 'creased scan border', 'localized glass glare'],
         anchor_strategy: 'some anchors bold, others embedded',
       },
       artifacts: [
@@ -48,5 +60,10 @@ describe('scene generation image prompt', () => {
     expect(prompt).not.toContain('Distributed Marker')
     expect(prompt).not.toContain('distributed-marker')
     expect(prompt.toLowerCase()).toContain('no legible text')
+    expect(prompt).toContain('Composition archetype: diagrammatic fold')
+    expect(prompt).toContain('Camera / plate grammar: architectural section with oblique plate depth')
+    expect(prompt).toContain('Visible compositional moves: hard diagonal seams; creased scan border; localized glass glare')
+    expect(prompt).toContain('Plate posture: minimal field')
+    expect(prompt).toContain('Posture targets: density airy; abstraction high; minimality high; literalness no literal prop inventory')
   })
 })

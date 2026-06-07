@@ -130,6 +130,27 @@ function handleSourceImageLoad(event: SyntheticEvent<HTMLImageElement>) {
   }
 }
 
+function getSourceVisualImageUrl(binding: SourceBindingRecord, fallbackUrl: string | null) {
+  return binding.source_visual?.poster_asset_path || fallbackUrl
+}
+
+function getSourceVisualStyle(binding: SourceBindingRecord) {
+  const focal = binding.source_visual?.focal_point
+  if (!focal) return undefined
+  const x = Math.min(100, Math.max(0, focal.x * 100))
+  const y = Math.min(100, Math.max(0, focal.y * 100))
+  return { objectPosition: `${x}% ${y}%` }
+}
+
+function getSourceGlyph(binding: SourceBindingRecord) {
+  const kind = `${binding.source_type || ''} ${binding.window_type || ''} ${binding.source_domain || ''}`.toLowerCase()
+  if (kind.includes('youtube') || kind.includes('video')) return '▶'
+  if (kind.includes('twitter') || kind.includes('x.com') || kind.includes('tweet')) return '✦'
+  if (kind.includes('image') || kind.includes('visual')) return '◐'
+  if (kind.includes('audio') || kind.includes('music')) return '◍'
+  return '↗'
+}
+
 function SourceImageTitleCard({
   binding,
   imageUrl,
@@ -141,25 +162,35 @@ function SourceImageTitleCard({
   title: string
   href?: string | null
 }) {
+  const sourceLabel = getSourceHostLabel(binding.source_url) || binding.kicker || binding.source_domain || 'source'
+  const visualImageUrl = getSourceVisualImageUrl(binding, imageUrl)
+  const visualStyle = getSourceVisualStyle(binding)
+  const visualMode = binding.source_visual?.render_mode || 'raw'
+  const sourceGlyph = getSourceGlyph(binding)
+  const edgeTitle = truncateLabel(title, 72) || title
   const cardBody = (
     <>
-      {imageUrl ? (
-        <figure className="visual-source-card__figure">
-          <img alt={binding.source_image_alt ?? title} className="visual-source-card__image" onError={handleSourceImageError} onLoad={handleSourceImageLoad} src={imageUrl} />
+      {visualImageUrl ? (
+        <figure className="visual-source-card__figure" data-source-visual-mode={visualMode}>
+          <img alt={binding.source_image_alt ?? title} className="visual-source-card__image" onError={handleSourceImageError} onLoad={handleSourceImageLoad} src={visualImageUrl} style={visualStyle} />
         </figure>
       ) : null}
-      <strong className="visual-source-card__title">{title}</strong>
+      <div className="visual-source-card__caption">
+        <span className="visual-source-card__source"><span className="visual-source-card__glyph" aria-hidden="true">{sourceGlyph}</span>{sourceLabel}</span>
+        <strong className="visual-source-card__title">{edgeTitle}</strong>
+        <span className="visual-source-card__cta">open ↗</span>
+      </div>
     </>
   )
 
   return (
     <div className="source-window__body source-window__body--visual-card">
       {href ? (
-        <a className="visual-source-card" href={href} rel="noreferrer" target="_blank">
+        <a className="visual-source-card" data-source-visual-mode={visualMode} href={href} rel="noreferrer" target="_blank">
           {cardBody}
         </a>
       ) : (
-        <article className="visual-source-card">
+        <article className="visual-source-card" data-source-visual-mode={visualMode}>
           {cardBody}
         </article>
       )}
@@ -182,6 +213,18 @@ export function SourceWindowBody({
   const usesMechanicalRevealEnhancement = shouldUseMechanicalRevealEnhancement(surface, mode, descriptor, enhancementTechniques)
   const usesLightTableEnhancement = !usesMechanicalRevealEnhancement && shouldUseLightTableEnhancement(surface, mode, descriptor, binding, artifact, enhancementTechniques)
   const usesScannerDecodeEnhancement = !usesMechanicalRevealEnhancement && !usesLightTableEnhancement && shouldUseScannerDecodeEnhancement(surface, mode, descriptor, enhancementTechniques)
+
+  if (descriptor.kind === 'rich-preview' && surface === 'stage' && mode === 'preview') {
+    const richPreview = richPreviewModel ?? getRichPreviewModel(binding, descriptor)
+    return (
+      <SourceImageTitleCard
+        binding={binding}
+        imageUrl={getUsableSourceImageUrl(binding)}
+        title={richPreview.richPreviewTitle || binding.source_title || binding.title}
+      />
+    )
+  }
+
   if (descriptor.kind === 'youtube-embed') {
     return (
       <div className="source-window__body source-window__body--video">
@@ -373,17 +416,6 @@ export function SourceWindowBody({
           </div>
         </article>
       </div>
-    )
-  }
-
-  if (descriptor.kind === 'rich-preview' && surface === 'stage' && mode === 'preview') {
-    const richPreview = richPreviewModel ?? getRichPreviewModel(binding, descriptor)
-    return (
-      <SourceImageTitleCard
-        binding={binding}
-        imageUrl={visualCardImage}
-        title={richPreview.richPreviewTitle || visualCardTitle}
-      />
     )
   }
 

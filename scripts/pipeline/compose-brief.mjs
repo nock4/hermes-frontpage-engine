@@ -23,6 +23,7 @@ export function createComposeBriefStep({
         date: options.date,
         recentEditions,
         diversityDirective,
+        platePosture: context.platePosture,
       }, runDir)
       return {
         title: context.payload.edition_title,

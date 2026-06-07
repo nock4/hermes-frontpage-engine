@@ -123,7 +123,7 @@ function buildFallbackMaterialProfile(signalHarvest, researchField) {
   ]).slice(0, 5)
 }
 
-function inferVisualDirectionFallback(signalHarvest, researchField, recentEditions = []) {
+function inferVisualDirectionFallback(signalHarvest, researchField, recentEditions = [], platePosture = null) {
   const motifTerms = selectFallbackMotifTerms(signalHarvest, 18)
   const textCorpus = [
     researchField.autoresearch?.synthesis,
@@ -149,7 +149,16 @@ function inferVisualDirectionFallback(signalHarvest, researchField, recentEditio
   const repeatedMinimal = /(minimal|quiet|gate|threshold|corridor|charcoal|shadow|fog)/.test(recentText)
 
   const brightnessProfile = brightScore > darkScore ? 'bright' : darkScore > brightScore + 1 ? 'low-key' : 'mixed'
-  const densityProfile = denseScore > airyScore ? 'dense' : airyScore > denseScore ? 'airy' : 'balanced'
+  const densityProfile = platePosture?.density_target && platePosture.density_target !== 'source-dependent'
+    ? platePosture.density_target
+    : denseScore > airyScore ? 'dense' : airyScore > denseScore ? 'airy' : 'balanced'
+  const abstractionProfile = platePosture?.abstraction_target === 'high'
+    ? 'abstract'
+    : platePosture?.abstraction_target === 'low'
+      ? 'representational'
+      : platePosture?.abstraction_target === 'medium-high'
+        ? 'abstract'
+        : 'abstract'
   const geometryProfile = hardEdgeScore > organicScore ? 'hard-edge' : organicScore > hardEdgeScore ? 'organic' : 'mixed'
   const compositionProfile = collageScore >= Math.max(gesturalScore, hardEdgeScore) && collageScore > 0
     ? 'collage'
@@ -158,6 +167,50 @@ function inferVisualDirectionFallback(signalHarvest, researchField, recentEditio
       : hardEdgeScore > 0
         ? 'block-based'
         : 'distributed'
+  const postureArchetypeMap = {
+    'minimal field': 'textile field',
+    'abstract system': 'game-space surface',
+    'material macro': 'fashion/material macro',
+    'diagrammatic section': 'architectural section',
+    'poster wall': 'torn poster wall',
+    'wildcard rupture': 'product-photo rupture',
+  }
+  const postureCameraMap = {
+    'minimal field': 'side-lit object slab with generous negative space',
+    'abstract system': 'overhead scan with abstract source marks and separated anchor zones',
+    'material macro': 'shallow macro across one or two source-bearing surfaces',
+    'diagrammatic section': 'architectural section with oblique plate depth',
+    'poster wall': 'torn wall with print-layer depth',
+    'wildcard rupture': 'browserless media shrine built around one giant formal rupture',
+  }
+  const compositionArchetype = postureArchetypeMap[platePosture?.plate_posture] || (collageScore > 0
+    ? 'torn poster wall'
+    : hardEdgeScore > organicScore
+      ? 'diagrammatic fold'
+      : organicScore > hardEdgeScore
+        ? 'fashion/material macro'
+        : 'cinematic still')
+  const cameraPlateGrammar = postureCameraMap[platePosture?.plate_posture] || (densityProfile === 'airy'
+    ? 'side-lit object slab with generous negative space'
+    : densityProfile === 'dense'
+      ? 'overhead scan with layered contact-sheet margins'
+      : geometryProfile === 'hard-edge'
+        ? 'architectural section with oblique plate depth'
+        : 'oblique product table with shallow macro edges')
+  const postureMoves = platePosture ? [
+    platePosture.anchor_strategy_bias,
+    platePosture.negative_space_bias,
+    platePosture.literalness_limit,
+  ] : []
+  const visualCompositionalMoves = uniqueNonEmpty([
+    ...postureMoves,
+    hardEdgeScore > organicScore ? 'hard diagonal seams that cut the plate into source-bearing zones' : '',
+    collageScore > 0 ? 'torn or overlapped margins that expose smaller source traces at the edges' : '',
+    densityProfile === 'dense' ? 'clustered contact-sheet density around one or two louder anchors' : '',
+    densityProfile === 'airy' ? 'large calm fields that leave source apertures readable without becoming cards' : '',
+    brightnessProfile === 'low-key' ? 'localized glare or aperture light against grounded dark surfaces' : 'source-color accents kept saturated enough to read as physical marks',
+    geometryProfile === 'organic' ? 'soft material folds and irregular seams instead of rectangular UI panels' : '',
+  ]).slice(0, 5)
   const paletteProfile = brightnessProfile === 'bright'
     ? 'let the strongest source-image colors stay saturated and visible rather than muting them'
     : brightnessProfile === 'low-key'
@@ -177,9 +230,13 @@ function inferVisualDirectionFallback(signalHarvest, researchField, recentEditio
     evidence_summary: researchField.autoresearch?.synthesis || researchField.autoresearch?.edition_thesis || 'Visual direction should be inferred from the saved-signal research set.',
     brightness_profile: brightnessProfile,
     density_profile: densityProfile,
-    abstraction_profile: 'abstract',
+    abstraction_profile: abstractionProfile,
     geometry_profile: geometryProfile,
     composition_profile: compositionProfile,
+    composition_archetype: compositionArchetype,
+    camera_plate_grammar: cameraPlateGrammar,
+    visual_compositional_moves: visualCompositionalMoves,
+    plate_posture: platePosture,
     palette_profile: paletteProfile,
     material_profile: materialProfile.length ? materialProfile : ['research-shaped surfaces', 'source-led color relationships'],
     lighting_profile: lightingProfile,
@@ -198,14 +255,17 @@ function inferVisualDirectionFallback(signalHarvest, researchField, recentEditio
   }
 }
 
-export async function inferVisualDirection({ signalHarvest, researchField, apiKey, model, date, recentEditions = [] }, runDir) {
-  const fallback = inferVisualDirectionFallback(signalHarvest, researchField, recentEditions)
+export async function inferVisualDirection({ signalHarvest, researchField, apiKey, model, date, recentEditions = [], platePosture = null }, runDir) {
+  const fallback = inferVisualDirectionFallback(signalHarvest, researchField, recentEditions, platePosture)
   const request = {
     date,
-    goal: 'Infer visual direction from the mined Obsidian signals, autoresearch synthesis, selected content sources, and visual reference. Do not impose a fixed house aesthetic. Let the evidence decide brightness, density, geometry, composition, and material language.',
+    goal: 'Infer visual direction from the mined Obsidian signals, autoresearch synthesis, selected content sources, selected image material, visual reference, and plate posture. Do not impose a fixed house aesthetic. Let the evidence decide brightness, geometry, composition, material language, camera/plate grammar, and concrete compositional moves while honoring the posture’s abstraction/minimality/density targets unless evidence strongly conflicts.',
     constraints: [
       'Treat aesthetic direction as evidence-derived, not preset-derived.',
       'Use the supplied visual reference to influence composition structure, geometry, color relationships, layering, density, and atmosphere when relevant.',
+      'Extract 3 to 5 concrete visible compositional moves from visual_reference and selected_image_material; do not reduce images to vague palette or ambience.',
+      'Choose one explicit composition archetype and one camera/plate grammar that the image prompt can obey.',
+      'Honor plate_posture as the edition-level variety gear. Minimal/abstract postures should still preserve 6 to 10 real source-bearing marks as apertures, seams, notches, glints, cuts, nodes, or surface interruptions.',
       'Avoid generic office-room, dashboard, and card-grid staging.',
       'Consider recent editions only as anti-repetition pressure, not as a style template to repeat.',
     ],
@@ -216,6 +276,9 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       abstraction_profile: 'abstract | hybrid | representational',
       geometry_profile: 'hard-edge | organic | mixed',
       composition_profile: 'field-based | block-based | collage | distributed | gestural | stacked',
+      composition_archetype: 'poster crop | textile field | diagrammatic fold | cinematic still | product-photo rupture | scanned archive object | game-space surface | fashion/material macro | torn poster wall | architectural section',
+      camera_plate_grammar: 'overhead scan | oblique product table | shallow macro | side-lit object slab | architectural section | browserless media shrine | torn wall | print contact sheet | other concrete camera/plate grammar',
+      visual_compositional_moves: ['3 to 5 concrete visible moves extracted from visual_reference or selected_image_material, e.g. hard left diagonal, blown flash, 16-bit tile density, creased magazine border, fisheye webcam framing'],
       palette_profile: 'plain-language palette guidance grounded in evidence',
       material_profile: ['3 to 6 source-led materials or surface cues'],
       lighting_profile: 'plain-language lighting guidance grounded in evidence',
@@ -242,6 +305,7 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       clusters: researchField.autoresearch?.clusters || [],
       rejected_patterns: researchField.autoresearch?.rejected_patterns || [],
     },
+    plate_posture: platePosture,
     visual_reference: researchField.visual_reference ? {
       title: getSourceDisplayTitle(researchField.visual_reference, 'Visual reference'),
       description: researchField.visual_reference.description || null,
@@ -249,6 +313,17 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       source_url: researchField.visual_reference.url || researchField.visual_reference.source_url || null,
       image_url: researchField.visual_reference.image_url || null,
     } : null,
+    selected_image_material: Array.isArray(researchField.selected_image_material)
+      ? researchField.selected_image_material.slice(0, 6).map((candidate) => ({
+        title: candidate.title || null,
+        caption: sanitizeSourceText(candidate.caption, '', 180),
+        lineage: candidate.lineage || null,
+        visual_reason: candidate.visual_reason || null,
+        image_url: candidate.image_url || null,
+        page_url: candidate.page_url || null,
+        score: candidate.score || null,
+      }))
+      : [],
     content_sources: getResearchContentSources(researchField).slice(0, 8).map((source) => ({
       title: getSourceDisplayTitle(source, 'Source'),
       description: sanitizeSourceText(source.description, '', 240),
@@ -281,7 +356,11 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
     const normalized = {
       ...fallback,
       ...inferred,
+      plate_posture: platePosture,
       material_profile: normalizeStringArray(inferred.material_profile, fallback.material_profile).slice(0, 6),
+      visual_compositional_moves: normalizeStringArray(inferred.visual_compositional_moves, fallback.visual_compositional_moves).slice(0, 5),
+      composition_archetype: String(inferred.composition_archetype || fallback.composition_archetype),
+      camera_plate_grammar: String(inferred.camera_plate_grammar || fallback.camera_plate_grammar),
       prompt_guardrails: normalizeStringArray(inferred.prompt_guardrails, fallback.prompt_guardrails).slice(0, 6),
       avoid_patterns: normalizeStringArray(inferred.avoid_patterns, fallback.avoid_patterns).slice(0, 6),
       scene_family_seed: slugBaseWithoutVersion(inferred.scene_family_seed || fallback.scene_family_seed),

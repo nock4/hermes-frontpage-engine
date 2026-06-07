@@ -6,6 +6,7 @@ import { loadDotEnv } from './runtime-env.mjs'
 
 const root = process.cwd()
 const defaultSignalWindowDays = 30
+const defaultSampleSignalWindowDays = 3650
 const defaultMaxNotes = 30
 const defaultMaxSources = 16
 const supportedInputModes = ['manifest', 'markdown-folder', 'obsidian-allowlist']
@@ -47,6 +48,10 @@ Options:
   --source-tool <tool>          Source capture tool. From-scratch runs require browser-harness after autoresearch.
   --image-size <size>           Image generation size. Defaults to 1536x1024.
   --image-quality <quality>     Image quality. Defaults to medium.
+  --plate-posture <posture>     Optional formal posture override: source-led-balanced, minimal-field, abstract-system, material-macro, diagrammatic-section, poster-wall, wildcard-rupture.
+  --density-target <target>     Optional density bias: airy | balanced | dense | source-dependent.
+  --abstraction-target <target> Optional abstraction bias: low | medium | medium-high | high | source-dependent.
+  --minimality-target <target>  Optional minimality bias: low | medium | high | source-dependent.
   --publish                     Promote the generated edition to current live after assembly.
   --ux <smoke|focused|full|none>
                                 UX verification scope. Defaults to smoke for from-scratch and focused for --existing.
@@ -105,6 +110,10 @@ export function parseArgs(argv) {
     sourceTool: null,
     imageSize: '1536x1024',
     imageQuality: 'medium',
+    platePosture: null,
+    densityTarget: null,
+    abstractionTarget: null,
+    minimalityTarget: null,
     publish: false,
     ux: null,
     editions: [],
@@ -273,6 +282,38 @@ export function parseArgs(argv) {
       cli.imageQuality = arg.slice('--image-quality='.length)
       continue
     }
+    if (arg === '--plate-posture') {
+      cli.platePosture = readValue(arg)
+      continue
+    }
+    if (arg.startsWith('--plate-posture=')) {
+      cli.platePosture = arg.slice('--plate-posture='.length)
+      continue
+    }
+    if (arg === '--density-target') {
+      cli.densityTarget = readValue(arg)
+      continue
+    }
+    if (arg.startsWith('--density-target=')) {
+      cli.densityTarget = arg.slice('--density-target='.length)
+      continue
+    }
+    if (arg === '--abstraction-target') {
+      cli.abstractionTarget = readValue(arg)
+      continue
+    }
+    if (arg.startsWith('--abstraction-target=')) {
+      cli.abstractionTarget = arg.slice('--abstraction-target='.length)
+      continue
+    }
+    if (arg === '--minimality-target') {
+      cli.minimalityTarget = readValue(arg)
+      continue
+    }
+    if (arg.startsWith('--minimality-target=')) {
+      cli.minimalityTarget = arg.slice('--minimality-target='.length)
+      continue
+    }
     if (arg === '--publish') {
       cli.publish = true
       continue
@@ -343,6 +384,10 @@ export function parseArgs(argv) {
     sourceTool: resolveValue(cli.sourceTool, process.env.DFE_SOURCE_TOOL || 'browser-harness'),
     imageSize: cli.imageSize,
     imageQuality: cli.imageQuality,
+    platePosture: cli.platePosture,
+    densityTarget: cli.densityTarget,
+    abstractionTarget: cli.abstractionTarget,
+    minimalityTarget: cli.minimalityTarget,
     publish: cli.publish,
     ux: cli.ux,
     editions: cli.editions,
@@ -365,6 +410,9 @@ export function parseArgs(argv) {
   if (cli.useSampleSignals || (options.sampleDataEnabled && !cli.inputMode && !cli.vault)) {
     options.inputMode = 'manifest'
     options.signalManifest = config.sample_manifest_path
+    if (!cli.windowDays) {
+      options.windowDays = Math.max(options.windowDays, defaultSampleSignalWindowDays)
+    }
   }
   options.vault = options.inputMode === 'obsidian-allowlist' ? options.inputRoot : null
 

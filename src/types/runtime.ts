@@ -116,6 +116,22 @@ export type SourceBindingClickBehavior = 'pin-open'
 export type SourceBindingFallbackType = 'rich-preview'
 export type SourceBindingEmbedStatus = 'processing' | 'unavailable'
 
+export interface SourceVisualRecord {
+  poster_asset_path?: string
+  render_mode?: 'poster-crop' | 'contain'
+  crop_risk?: 'low' | 'medium' | 'high'
+  focal_point?: { x: number; y: number }
+  poster_crop?: { x: number; y: number; width: number; height: number }
+  image_width?: number
+  image_height?: number
+  analysis?: {
+    method?: string
+    supervision_version?: string
+    edge_density?: number
+    candidate_box_count?: number
+  }
+}
+
 export interface SourceBindingRecord {
   id: string
   artifact_id: string
@@ -137,6 +153,7 @@ export interface SourceBindingRecord {
   source_embed_html?: string
   source_image_url?: string
   source_image_alt?: string
+  source_visual?: SourceVisualRecord
 }
 
 export interface SourceBindingSetRecord {

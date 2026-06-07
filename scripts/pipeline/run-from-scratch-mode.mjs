@@ -1,6 +1,7 @@
 import path from 'node:path'
 
 import { loadInspirationOverride, consumeInspirationOverride } from '../lib/inspiration-override.mjs'
+import { selectPlatePosture } from '../lib/scene-posture.mjs'
 import { createAssembleEditionStep } from './assemble-edition.mjs'
 import { createComposeBriefStep } from './compose-brief.mjs'
 import { createGeneratePlateStep } from './generate-plate.mjs'
@@ -59,8 +60,19 @@ export async function runFromScratchMode({
     date: options.date,
   })
 
+  const platePosture = selectPlatePosture({
+    date: options.date,
+    runId,
+    recentEditions,
+    options,
+    sampleMode,
+    inspirationOverride,
+  })
+  await fs.writeFile(path.join(runDir, 'plate-posture.json'), `${JSON.stringify(platePosture, null, 2)}\n`, 'utf8')
+
   const context = {
     inspirationOverride,
+    platePosture,
   }
   const internalSteps = [
     createMineSignalsStep({ options, context, recentDiversityAvoidTerms, root, runDir, mineSignals }),
@@ -83,6 +95,12 @@ export async function runFromScratchMode({
       name: 'Enrich source images',
       tool: 'Node fetch + provider image rules',
       command: ['npm', ['run', 'enrich:source-images']],
+    },
+    {
+      name: 'Prepare loud source visual surfaces',
+      tool: 'Roboflow Supervision + OpenCV saliency cropper',
+      command: ['npm', ['run', 'prepare:source-visuals', '--', '--edition']],
+      dynamicArgs: () => [context.package.editionId],
     },
   ]
 
@@ -127,6 +145,14 @@ export async function runFromScratchMode({
       source_url: inspirationOverride.source_url,
       consume_after_success: inspirationOverride.consume_after_success,
     } : null,
+    platePosture: {
+      plate_posture: platePosture.plate_posture,
+      density_target: platePosture.density_target,
+      abstraction_target: platePosture.abstraction_target,
+      minimality_target: platePosture.minimality_target,
+      manual_override: platePosture.manual_override,
+      reason: platePosture.reason,
+    },
   }, null, 2))
 
   let stepIndex = 0

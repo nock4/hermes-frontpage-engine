@@ -74,23 +74,24 @@ export function SourceWindow({
   const usesMechanicalRevealEnhancement = shouldUseMechanicalRevealEnhancement(surface, mode, descriptor, enhancementTechniques)
   const usesLightTableEnhancement = !usesMechanicalRevealEnhancement && shouldUseLightTableEnhancement(surface, mode, descriptor, binding, artifact, enhancementTechniques)
   const usesScannerDecodeEnhancement = !usesMechanicalRevealEnhancement && !usesLightTableEnhancement && shouldUseScannerDecodeEnhancement(surface, mode, descriptor, enhancementTechniques)
-  const isStageTextBloom = surface === 'stage'
-    && descriptor.kind === 'rich-preview'
-    && mode === 'preview'
-    && !usesMechanicalRevealEnhancement
-    && !usesLightTableEnhancement
-    && !usesScannerDecodeEnhancement
+  const isStageTextBloom = false
   const isStageTweetEmbed = surface === 'stage' && descriptor.kind === 'tweet-embed'
   const isStageSignalTuning = !usesScreenRenderedEnhancement && surface === 'stage' && descriptor.kind === 'youtube-embed' && mode === 'preview'
   const isStageCabinetPlayer = surface === 'stage' && descriptor.kind === 'youtube-embed' && mode === 'primary' && usesCabinetPlayerShell(artifact)
   const isStageEmbeddedMediaBare = surface === 'stage' && descriptor.kind === 'youtube-embed' && mode === 'primary' && !usesCabinetPlayerShell(artifact)
   const isStageYouTubeLinkout = surface === 'stage' && descriptor.kind === 'youtube-linkout'
+  const isStagePosterWindow = surface === 'stage' && descriptor.kind === 'rich-preview' && mode === 'preview'
+  const isStageBleedEmbed = surface === 'stage' && (descriptor.kind === 'tweet-embed' || descriptor.kind === 'youtube-embed' || descriptor.kind === 'youtube-linkout')
   const isStageClickOut = surface === 'stage' && descriptor.kind === 'rich-preview' && mode === 'preview'
   const isStageRichPreviewCard = surface === 'stage' && descriptor.kind === 'rich-preview' && mode !== 'preview' && !usesScreenRenderedEnhancement && !usesWarpedPaperEnhancement && !usesLightTableEnhancement && !usesScannerDecodeEnhancement
+  const stageWindowStyle = placement ? getSourceWindowPlacementStyle(placement, stackIndex, {
+    widthScale: isStageBleedEmbed ? 1.65 : isStagePosterWindow ? 1.45 : 1,
+    minWidth: isStageBleedEmbed ? '21rem' : isStagePosterWindow ? '19rem' : '15rem',
+  }) : undefined
 
   return (
     <div
-      className={`source-window source-window--${mode} source-window--frame-${profile.frameStyle} source-window--body-${profile.bodyStyle}${usesScreenRenderedEnhancement ? ' source-window--enhancement-screen-rendered' : ''}${usesWarpedPaperEnhancement ? ' source-window--enhancement-warped-paper' : ''}${usesMechanicalRevealEnhancement ? ' source-window--enhancement-mechanical-reveal' : ''}${usesLightTableEnhancement ? ' source-window--enhancement-light-table' : ''}${usesScannerDecodeEnhancement ? ' source-window--enhancement-scanner-decode' : ''}${isStageTextBloom ? ' source-window--text-bloom' : ''}${isStageTweetEmbed ? ' source-window--tweet-embed-native' : ''}${isStageSignalTuning ? ' source-window--signal-tuning-video' : ''}${isStageCabinetPlayer ? ' source-window--cabinet-player' : ''}${isStageEmbeddedMediaBare ? ' source-window--embedded-media-bare' : ''}${isStageYouTubeLinkout ? ' source-window--youtube-linkout' : ''}${isStageClickOut ? ' source-window--click-out' : ''}${isStageRichPreviewCard ? ' source-window--rich-preview-stage' : ''}${artifact ? ` source-window--artifact-${artifactInheritanceProfile}` : ''}${richPreviewModel ? ` source-window--motion-${richPreviewModel.motionProfile} source-window--spatial-${richPreviewModel.spatialProfile} source-window--projection-${richPreviewModel.projectionProfile}` : ''}${placement ? ` source-window--stage source-window--tone-${placement.tone} source-window--anchor-${placement.anchorSide} source-window--direction-${placement.expansionLabel} source-window--route-${placement.routeProfile} source-window--contact-${placement.contactProfile} source-window--seam-${placement.seamProfile}` : ''}`}
+      className={`source-window source-window--${mode} source-window--frame-${profile.frameStyle} source-window--body-${profile.bodyStyle}${usesScreenRenderedEnhancement ? ' source-window--enhancement-screen-rendered' : ''}${usesWarpedPaperEnhancement ? ' source-window--enhancement-warped-paper' : ''}${usesMechanicalRevealEnhancement ? ' source-window--enhancement-mechanical-reveal' : ''}${usesLightTableEnhancement ? ' source-window--enhancement-light-table' : ''}${usesScannerDecodeEnhancement ? ' source-window--enhancement-scanner-decode' : ''}${isStageTextBloom ? ' source-window--text-bloom' : ''}${isStageTweetEmbed ? ' source-window--tweet-embed-native' : ''}${isStageSignalTuning ? ' source-window--signal-tuning-video' : ''}${isStageCabinetPlayer ? ' source-window--cabinet-player' : ''}${isStageEmbeddedMediaBare ? ' source-window--embedded-media-bare' : ''}${isStageYouTubeLinkout ? ' source-window--youtube-linkout' : ''}${isStagePosterWindow ? ' source-window--poster-window' : ''}${isStageBleedEmbed ? ' source-window--bleed-embed' : ''}${isStageClickOut ? ' source-window--click-out' : ''}${isStageRichPreviewCard ? ' source-window--rich-preview-stage' : ''}${artifact ? ` source-window--artifact-${artifactInheritanceProfile}` : ''}${richPreviewModel ? ` source-window--motion-${richPreviewModel.motionProfile} source-window--spatial-${richPreviewModel.spatialProfile} source-window--projection-${richPreviewModel.projectionProfile}` : ''}${placement ? ` source-window--stage source-window--tone-${placement.tone} source-window--anchor-${placement.anchorSide} source-window--direction-${placement.expansionLabel} source-window--route-${placement.routeProfile} source-window--contact-${placement.contactProfile} source-window--seam-${placement.seamProfile}` : ''}`}
       data-artifact-id={binding.artifact_id}
       data-binding-id={binding.id}
       data-source-window-kind={descriptor.kind}
@@ -105,7 +106,7 @@ export function SourceWindow({
         event.preventDefault()
         event.stopPropagation()
       } : undefined}
-      style={placement ? getSourceWindowPlacementStyle(placement, stackIndex) : undefined}
+      style={stageWindowStyle}
       tabIndex={0}
     >
       {profile.showHeader ? (

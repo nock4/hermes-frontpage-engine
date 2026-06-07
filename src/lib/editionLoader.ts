@@ -275,6 +275,31 @@ const parseArtifactMapRecord = (value: JsonObject, path: string): ArtifactMapRec
   }
 }
 
+const parseSourceVisualRecord = (value: JsonValue | undefined, path: string) => {
+  if (value === undefined || value === null) return undefined
+  const visual = requireObject(value, path)
+  const focalPoint = visual.focal_point === undefined ? undefined : requireObject(visual.focal_point, `${path}.focal_point`)
+  const posterCrop = visual.poster_crop === undefined ? undefined : requireObject(visual.poster_crop, `${path}.poster_crop`)
+  return {
+    poster_asset_path: optionalString(visual.poster_asset_path, `${path}.poster_asset_path`),
+    render_mode: optionalLiteral(visual.render_mode, ['poster-crop', 'contain'], `${path}.render_mode`),
+    crop_risk: optionalLiteral(visual.crop_risk, ['low', 'medium', 'high'], `${path}.crop_risk`),
+    focal_point: focalPoint ? {
+      x: requireNumber(focalPoint.x, `${path}.focal_point.x`),
+      y: requireNumber(focalPoint.y, `${path}.focal_point.y`),
+    } : undefined,
+    poster_crop: posterCrop ? {
+      x: requireNumber(posterCrop.x, `${path}.poster_crop.x`),
+      y: requireNumber(posterCrop.y, `${path}.poster_crop.y`),
+      width: requireNumber(posterCrop.width, `${path}.poster_crop.width`),
+      height: requireNumber(posterCrop.height, `${path}.poster_crop.height`),
+    } : undefined,
+    image_width: optionalNumber(visual.image_width, `${path}.image_width`),
+    image_height: optionalNumber(visual.image_height, `${path}.image_height`),
+    analysis: undefined,
+  }
+}
+
 const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBindingRecord => {
   const binding = requireObject(value, path)
   const sourceUrl = optionalStringOrNull(binding.source_url, `${path}.source_url`)
@@ -314,6 +339,7 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
     source_embed_html: undefined,
     source_image_url: sanitizedSourceImageUrl ?? undefined,
     source_image_alt: optionalString(binding.source_image_alt, `${path}.source_image_alt`),
+    source_visual: parseSourceVisualRecord(binding.source_visual, `${path}.source_visual`),
   }
 }
 
