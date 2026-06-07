@@ -39,11 +39,12 @@ interface StageWindowPlacementLike {
 export const getSourceWindowPlacementStyle = (placement: StageWindowPlacementLike, stackIndex: number): SourceWindowPlacementStyle => {
   const bloomX = clampPercent(((placement.emissionX - placement.x) / placement.width) * 100)
   const bloomY = clampPercent(((placement.emissionY - placement.y) / placement.maxHeight) * 100)
+  const readableWidth = `clamp(15rem, ${placement.width * 100}%, calc(100% - 1.5rem))`
 
   return {
-    left: `${placement.x * 100}%`,
+    left: `clamp(0.75rem, ${placement.x * 100}%, calc(100% - ${readableWidth} - 0.75rem))`,
     top: `${placement.y * 100}%`,
-    width: `${placement.width * 100}%`,
+    width: readableWidth,
     maxWidth: 'calc(100% - 1.5rem)',
     maxHeight: `min(${placement.maxHeight * 100}%, calc(100% - 1.5rem))`,
     zIndex: 40 + stackIndex,

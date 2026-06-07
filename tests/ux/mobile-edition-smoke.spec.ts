@@ -210,6 +210,8 @@ for (const viewport of mobileViewports) {
 
       metrics.push(metric)
       if (!metric.exists) failures.push(`${viewport.name} / ${label}: source window did not open from focus/tap preview`)
+      const minimumReadableWidth = Math.min(240, viewport.width - 24)
+      if (metric.width < minimumReadableWidth - 1) failures.push(`${viewport.name} / ${label}: source window too narrow for readable source card (${Math.round(metric.width)}px < ${minimumReadableWidth}px)`)
       if (metric.clipped) failures.push(`${viewport.name} / ${label}: source window clipped by mobile viewport`)
       if (!metric.hasVisibleMedia && !metric.hasReadableText) failures.push(`${viewport.name} / ${label}: source window has no visible media or readable fallback`)
 

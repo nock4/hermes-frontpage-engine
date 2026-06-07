@@ -57,9 +57,9 @@ describe('runtime style helpers', () => {
     }
 
     const style = getSourceWindowPlacementStyle(placement, 2)
-    expect(style.left).toBe('10%')
+    expect(style.left).toBe('clamp(0.75rem, 10%, calc(100% - clamp(15rem, 30%, calc(100% - 1.5rem)) - 0.75rem))')
     expect(style.top).toBe('20%')
-    expect(style.width).toBe('30%')
+    expect(style.width).toBe('clamp(15rem, 30%, calc(100% - 1.5rem))')
     expect(style.maxWidth).toBe('calc(100% - 1.5rem)')
     expect(style.maxHeight).toBe('min(40%, calc(100% - 1.5rem))')
     expect(style.zIndex).toBe(42)
