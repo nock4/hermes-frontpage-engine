@@ -116,7 +116,7 @@ export type SourceBindingClickBehavior = 'pin-open'
 export type SourceBindingFallbackType = 'rich-preview'
 export type SourceBindingEmbedStatus = 'processing' | 'unavailable'
 
-export interface SourceVisualRecord {
+interface SourceVisualRecord {
   poster_asset_path?: string
   render_mode?: 'poster-crop' | 'contain'
   crop_risk?: 'low' | 'medium' | 'high'
