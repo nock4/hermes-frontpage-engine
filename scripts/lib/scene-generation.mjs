@@ -244,19 +244,27 @@ export function imageAspectRatioFromSize(size) {
 export async function generateScenePlate(
   { payload, apiKey, imageModel, imageBackend, imageSize, imageQuality },
   runDir,
-  { writeJson },
+  { writeJson, runHermesImageCommand = runJsonCommand, sleep = delay } = {},
 ) {
   const prompt = buildSceneImagePrompt(payload)
   const outputPath = path.join(runDir, 'plate.png')
   await fs.writeFile(path.join(runDir, 'scene-prompt.txt'), prompt, 'utf8')
 
   if (imageBackend === 'hermes') {
-    const hermesResult = await runJsonCommand(hermesImagePython, [
-      hermesImageGenerateScript,
-      '--prompt-file', path.join(runDir, 'scene-prompt.txt'),
-      '--output', outputPath,
-      '--aspect-ratio', imageAspectRatioFromSize(imageSize),
-    ])
+    const hermesAttempts = []
+    const hermesResult = await retryHermesImageGeneration({
+      command: hermesImagePython,
+      args: [
+        hermesImageGenerateScript,
+        '--prompt-file', path.join(runDir, 'scene-prompt.txt'),
+        '--output', outputPath,
+        '--aspect-ratio', imageAspectRatioFromSize(imageSize),
+      ],
+      runCommand: runHermesImageCommand,
+      sleep,
+      attempts: hermesImageAttemptCount(),
+      onAttempt: (attempt) => hermesAttempts.push(attempt),
+    })
 
     await writeJson(path.join(runDir, 'scene-generation.json'), {
       backend: 'hermes',
@@ -270,6 +278,7 @@ export async function generateScenePlate(
       asset_path: outputPath,
       source_image: hermesResult.source_image || null,
       aspect_ratio: hermesResult.aspect_ratio || imageAspectRatioFromSize(imageSize),
+      attempts: hermesAttempts,
     })
 
     return {
@@ -280,6 +289,7 @@ export async function generateScenePlate(
       quality: imageQuality || null,
       outputPath,
       prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
+      attempts: hermesAttempts.length,
     }
   }
 
@@ -342,6 +352,43 @@ export async function generateScenePlate(
   }
 
   throw lastError || new Error('OpenAI image generation failed.')
+}
+
+function hermesImageAttemptCount() {
+  const parsed = Number.parseInt(process.env.DFE_HERMES_IMAGE_ATTEMPTS || '', 10)
+  if (Number.isFinite(parsed) && parsed > 0) return Math.min(parsed, 6)
+  return 3
+}
+
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
+function hermesImageRetryDelayMs(attemptNumber) {
+  const parsed = Number.parseInt(process.env.DFE_HERMES_IMAGE_RETRY_DELAY_MS || '', 10)
+  const base = Number.isFinite(parsed) && parsed >= 0 ? parsed : 4000
+  return base * Math.max(1, attemptNumber)
+}
+
+async function retryHermesImageGeneration({ command, args, runCommand, sleep, attempts, onAttempt }) {
+  let lastError = null
+  for (let index = 0; index < attempts; index += 1) {
+    const attemptNumber = index + 1
+    try {
+      const result = await runCommand(command, args)
+      onAttempt?.({ attempt: attemptNumber, ok: true })
+      return result
+    } catch (error) {
+      lastError = error
+      const message = error instanceof Error ? error.message : String(error)
+      onAttempt?.({ attempt: attemptNumber, ok: false, error: message.slice(0, 1000) })
+      if (attemptNumber < attempts) {
+        console.warn(`[scene-generation] Hermes image generation attempt ${attemptNumber}/${attempts} failed; retrying: ${message}`)
+        await sleep(hermesImageRetryDelayMs(attemptNumber))
+      }
+    }
+  }
+  throw lastError || new Error('Hermes image generation failed.')
 }
 
 async function runJsonCommand(command, args, extraEnv = {}) {
