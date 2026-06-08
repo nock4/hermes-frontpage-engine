@@ -29,6 +29,19 @@ function trimDisplayTitle(value, limit = 96) {
   return `${title.slice(0, wordIndex > 48 ? wordIndex : limit).trim()}...`
 }
 
+function imageStemFromUrl(sourceUrl) {
+  try {
+    const pathname = new URL(sourceUrl).pathname
+    const lastSegment = pathname.split('/').filter(Boolean).pop() || ''
+    return stripSourceTitleChrome(decodeURIComponent(lastSegment)
+      .replace(/!.*$/g, '')
+      .replace(/\.(?:png|jpe?g|webp|avif)$/i, '')
+      .replace(/[_-]+/g, ' '))
+  } catch {
+    return ''
+  }
+}
+
 function cleanDisplayTitle(value) {
   const title = stripSourceTitleChrome(value)
   if (!title) return ''
@@ -53,4 +66,30 @@ export function getSourceDisplayTitle(source, fallback) {
   if (fallbackTitle) return fallbackTitle
 
   return domain(source?.final_url || source?.url || source?.source_url || '') || 'Source material'
+}
+
+export function getDistinctSourceDisplayTitle(source, fallback, usedTitles = new Set()) {
+  const title = getSourceDisplayTitle(source, fallback)
+  if (!usedTitles.has(title)) {
+    usedTitles.add(title)
+    return title
+  }
+
+  const sourceUrl = source?.final_url || source?.url || source?.source_url || ''
+  const stem = imageStemFromUrl(sourceUrl)
+  const host = domain(sourceUrl)
+  const suffixes = [stem, host, 'alternate source'].filter(Boolean)
+  for (const suffix of suffixes) {
+    const candidate = trimDisplayTitle(`${title} — ${suffix}`, 124)
+    if (!usedTitles.has(candidate)) {
+      usedTitles.add(candidate)
+      return candidate
+    }
+  }
+
+  let counter = 2
+  while (usedTitles.has(`${title} — ${counter}`)) counter += 1
+  const numbered = `${title} — ${counter}`
+  usedTitles.add(numbered)
+  return numbered
 }

@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import {
   domain,
+  getDistinctSourceDisplayTitle,
   getSourceDisplayTitle,
 } from '../../scripts/lib/source-display.mjs'
 
@@ -29,5 +30,20 @@ describe('source display helpers', () => {
       title: 'homepage',
       url: 'https://www.example.com/story',
     }, '')).toBe('example.com')
+  })
+
+  it('keeps repeated image-derived source titles distinct with URL stems', () => {
+    const used = new Set()
+    const first = getDistinctSourceDisplayTitle({
+      title: 'Broccoli Artwork is a unique and beautiful dark green stem broccoli that has only recently become available',
+      url: 'https://all-americaselections.org/wp-content/uploads/2016/10/Broccoli_ArtworkF1-AAS2015-4.jpg',
+    }, '', used)
+    const second = getDistinctSourceDisplayTitle({
+      title: 'Broccoli Artwork is a unique and beautiful dark green stem broccoli that has only recently become available',
+      url: 'https://all-americaselections.org/wp-content/uploads/2016/10/Broccoli_ArtworkF1-AAS2015-2.jpg',
+    }, '', used)
+
+    expect(first).not.toBe(second)
+    expect(second).toContain('Broccoli ArtworkF1 AAS2015 2')
   })
 })

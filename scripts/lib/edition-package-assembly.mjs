@@ -15,7 +15,7 @@ import {
   isDirectRasterImageUrl,
   isLowValueVisualImage,
 } from './source-selection-policy.mjs'
-import { domain, getSourceDisplayTitle } from './source-display.mjs'
+import { domain, getDistinctSourceDisplayTitle, getSourceDisplayTitle } from './source-display.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
 import { isYouTubeVideoUrl } from './source-url-policy.mjs'
 import { sentenceList, slugify, uniqueNonEmpty } from './string-utils.mjs'
@@ -385,12 +385,13 @@ export async function assembleEditionPackage({
   })
   await writeArtifactSvgMasks(editionDir, editionId, artifactMapArtifacts, parseImageSize(options.imageSize), { root })
 
+  const usedBindingTitles = new Set()
   const bindings = await Promise.all(artifactMapArtifacts.map(async (artifact, index) => {
     const url = sourceUrls[index]
     const source = sourceByUrl.get(url)
     const classification = classifySource(url)
     const sourceImageUrl = getSourceImageForBinding(source, researchField, signalHarvest)
-    const displayTitle = getSourceDisplayTitle(source, eligibleArtifacts[index]?.label || artifact.label)
+    const displayTitle = getDistinctSourceDisplayTitle(source, eligibleArtifacts[index]?.label || artifact.label, usedBindingTitles)
     const embedStatus = classification.source_type === 'youtube' ? await youtubeEmbedStatus(url) : null
     return {
       id: `binding-${artifact.id}`,
