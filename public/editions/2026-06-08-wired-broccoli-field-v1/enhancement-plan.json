@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-08-wired-broccoli-field-v1",
+  "edition_id": "2026-06-08-wired-broccoli-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-08-wired-broccoli-field-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-greenhouse-control-crown",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-greenhouse-control-crown",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-branching-crown) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-broccoli-architecture-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-broccoli-architecture-cut",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-edible-texture-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-phone-scan-dew-bracket",
+      "target_kind": "artifact",
+      "artifact_id": "module-phone-scan-dew-bracket",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scan-bracket-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-color-theory-stain-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-color-theory-stain-seam",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pigment-stained-map-fold) selected from interpretation."
+    },
+    {
+      "target_id": "module-collaboration-tide-channel",
+      "target_kind": "artifact",
+      "artifact_id": "module-collaboration-tide-channel",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (shared-irrigation-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-futurist-charge-splinter",
+      "target_kind": "artifact",
+      "artifact_id": "module-futurist-charge-splinter",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (angular-motion-splinter) selected from interpretation."
+    },
+    {
+      "target_id": "module-public-greens-poster-tear",
+      "target_kind": "artifact",
+      "artifact_id": "module-public-greens-poster-tear",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (paper-tear-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-spare-cultivar-side-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-spare-cultivar-side-node",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-floret-side-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-spare-cultivar-side-node-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-spare-cultivar-side-node-2",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-floret-side-node) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-06-08-wired-broccoli-field-v1",
+  "edition_id": "2026-06-08-wired-broccoli-field-v1",
+  "plate_read_timestamp": "2026-06-08T10:44:42.436Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Overhead techno-botanical plate: broccoli crowns and ribbed stems fuse with greenhouse control plates, translucent map-paper, screws, vents, droplets, copper traces, and folded glass-like panels. The image is source-rich, with interaction anchors carried by real edges, rings, slits, stains, floret masses, and branching seams.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "homebuilt greenhouse intelligence, inspected close enough to feel edible and electrical",
+      "Overhead techno-botanical plate: broccoli crowns and ribbed stems fuse with greenhouse control plates, translucent map-paper, screws, vents, droplets, copper traces, and folded glass-like panels. The image is source-rich, with interaction anchors carried by real edges, rings, slits, stains, floret masses, and branching seams.",
+      "cultivated-circuitry",
+      "broccoli-architecture",
+      "field-map-folds"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero greenhouse-control crown",
+      "hero broccoli-architecture cut",
+      "phone-scan dew bracket",
+      "color-theory stain seam",
+      "collaboration tide channel",
+      "futurist charge splinter",
+      "public-greens poster tear",
+      "spare cultivar side-node"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "glass"
+    ],
+    "dominant_structures": [
+      "wired-broccoli-field",
+      "two hero branching crop masses treated as living circuitry",
+      "folded field-map seams bending around crowns",
+      "embedded dew glints and sensor apertures",
+      "rotary gear notches and terminal cuts",
+      "crop-health color stains in surveyed bands",
+      "quiet plastic vent strips crossing the plate",
+      "central pale branching stem-and-channel crown"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: wired-broccoli-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-greenhouse-control-crown",
+      "kind": "hero",
+      "type": "hero-scale-branching-crown",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.285,
+        "y": 0.302,
+        "w": 0.421,
+        "h": 0.665
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-broccoli-architecture-cut",
+      "kind": "hero",
+      "type": "hero-scale-edible-texture-surface",
+      "strength": 0.9877759999999999,
+      "bounds": {
+        "x": 0.572,
+        "y": 0.139,
+        "w": 0.292,
+        "h": 0.485
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-phone-scan-dew-bracket",
+      "kind": "module",
+      "type": "scan-bracket-glint",
+      "strength": 0.797184,
+      "bounds": {
+        "x": 0.178,
+        "y": 0.281,
+        "w": 0.041,
+        "h": 0.061
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-theory-stain-seam",
+      "kind": "module",
+      "type": "pigment-stained-map-fold",
+      "strength": 0.748488,
+      "bounds": {
+        "x": 0.363,
+        "y": 0.701,
+        "w": 0.085,
+        "h": 0.207
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-collaboration-tide-channel",
+      "kind": "module",
+      "type": "shared-irrigation-seam",
+      "strength": 0.717456,
+      "bounds": {
+        "x": 0.438,
+        "y": 0.232,
+        "w": 0.123,
+        "h": 0.625
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-futurist-charge-splinter",
+      "kind": "module",
+      "type": "angular-motion-splinter",
+      "strength": 0.700632,
+      "bounds": {
+        "x": 0.8151,
+        "y": 0.1816,
+        "w": 0.1562,
+        "h": 0.3164
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-public-greens-poster-tear",
+      "kind": "module",
+      "type": "paper-tear-aperture",
+      "strength": 0.666096,
+      "bounds": {
+        "x": 0.7617,
+        "y": 0.71,
+        "w": 0.2383,
+        "h": 0.29
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spare-cultivar-side-node",
+      "kind": "module",
+      "type": "small-floret-side-node",
+      "strength": 0.651208,
+      "bounds": {
+        "x": 0.685,
+        "y": 0.493,
+        "w": 0.132,
+        "h": 0.165
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spare-cultivar-side-node-2",
+      "kind": "module",
+      "type": "small-floret-side-node",
+      "strength": 0.65914,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-greenhouse-control-crown-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.285,
+        "y": 0.302,
+        "w": 0.421,
+        "h": 0.665
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-broccoli-architecture-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.572,
+        "y": 0.139,
+        "w": 0.292,
+        "h": 0.485
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-phone-scan-dew-bracket-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.178,
+        "y": 0.281,
+        "w": 0.041,
+        "h": 0.061
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-theory-stain-seam-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.363,
+        "y": 0.701,
+        "w": 0.085,
+        "h": 0.207
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-collaboration-tide-channel-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.438,
+        "y": 0.232,
+        "w": 0.123,
+        "h": 0.625
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-futurist-charge-splinter-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.8151,
+        "y": 0.1816,
+        "w": 0.1562,
+        "h": 0.3164
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-public-greens-poster-tear-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.7617,
+        "y": 0.71,
+        "w": 0.2383,
+        "h": 0.29
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spare-cultivar-side-node-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.685,
+        "y": 0.493,
+        "w": 0.132,
+        "h": 0.165
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spare-cultivar-side-node-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

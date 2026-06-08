@@ -1,0 +1,643 @@
+{
+  "artifact_map_id": "map-2026-06-08-wired-broccoli-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "wired-broccoli-field",
+  "default_artifact_id": "hero-hero-greenhouse-control-crown",
+  "artifacts": [
+    {
+      "id": "hero-hero-greenhouse-control-crown",
+      "kind": "hero",
+      "label": "hero greenhouse-control crown",
+      "artifact_type": "hero-scale-branching-crown",
+      "bounds": {
+        "x": 0.285,
+        "y": 0.302,
+        "w": 0.421,
+        "h": 0.665
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.457,
+          0.967
+        ],
+        [
+          0.436,
+          0.865
+        ],
+        [
+          0.434,
+          0.742
+        ],
+        [
+          0.374,
+          0.631
+        ],
+        [
+          0.299,
+          0.555
+        ],
+        [
+          0.279,
+          0.481
+        ],
+        [
+          0.343,
+          0.518
+        ],
+        [
+          0.429,
+          0.617
+        ],
+        [
+          0.462,
+          0.512
+        ],
+        [
+          0.421,
+          0.396
+        ],
+        [
+          0.456,
+          0.302
+        ],
+        [
+          0.502,
+          0.442
+        ],
+        [
+          0.557,
+          0.568
+        ],
+        [
+          0.675,
+          0.382
+        ],
+        [
+          0.706,
+          0.456
+        ],
+        [
+          0.592,
+          0.661
+        ],
+        [
+          0.553,
+          0.823
+        ],
+        [
+          0.507,
+          0.963
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/hero-hero-greenhouse-control-crown.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-greenhouse-control-crown"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          761,
+          595
+        ],
+        "safe_stage_window_origin_px": [
+          813,
+          650
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-hero-broccoli-architecture-cut",
+      "kind": "hero",
+      "label": "hero broccoli-architecture cut",
+      "artifact_type": "hero-scale-edible-texture-surface",
+      "bounds": {
+        "x": 0.572,
+        "y": 0.139,
+        "w": 0.292,
+        "h": 0.485
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.596,
+          0.252
+        ],
+        [
+          0.643,
+          0.173
+        ],
+        [
+          0.713,
+          0.139
+        ],
+        [
+          0.796,
+          0.158
+        ],
+        [
+          0.847,
+          0.229
+        ],
+        [
+          0.864,
+          0.344
+        ],
+        [
+          0.842,
+          0.451
+        ],
+        [
+          0.799,
+          0.552
+        ],
+        [
+          0.728,
+          0.624
+        ],
+        [
+          0.652,
+          0.592
+        ],
+        [
+          0.601,
+          0.52
+        ],
+        [
+          0.572,
+          0.41
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/hero-hero-broccoli-architecture-cut.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-broccoli-architecture-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1103,
+          351
+        ],
+        "safe_stage_window_origin_px": [
+          1139,
+          391
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-phone-scan-dew-bracket",
+      "kind": "module",
+      "label": "phone-scan dew bracket",
+      "artifact_type": "scan-bracket-glint",
+      "bounds": {
+        "x": 0.178,
+        "y": 0.281,
+        "w": 0.041,
+        "h": 0.061
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.199,
+          0.281
+        ],
+        [
+          0.213,
+          0.287
+        ],
+        [
+          0.219,
+          0.305
+        ],
+        [
+          0.215,
+          0.326
+        ],
+        [
+          0.202,
+          0.342
+        ],
+        [
+          0.187,
+          0.337
+        ],
+        [
+          0.178,
+          0.318
+        ],
+        [
+          0.183,
+          0.296
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/module-phone-scan-dew-bracket.svg",
+      "source_binding_ids": [
+        "binding-module-phone-scan-dew-bracket"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          305,
+          314
+        ],
+        "safe_stage_window_origin_px": [
+          310,
+          319
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-color-theory-stain-seam",
+      "kind": "module",
+      "label": "color-theory stain seam",
+      "artifact_type": "pigment-stained-map-fold",
+      "bounds": {
+        "x": 0.363,
+        "y": 0.701,
+        "w": 0.085,
+        "h": 0.207
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.389,
+          0.701
+        ],
+        [
+          0.412,
+          0.712
+        ],
+        [
+          0.422,
+          0.754
+        ],
+        [
+          0.448,
+          0.79
+        ],
+        [
+          0.433,
+          0.835
+        ],
+        [
+          0.405,
+          0.881
+        ],
+        [
+          0.377,
+          0.908
+        ],
+        [
+          0.363,
+          0.864
+        ],
+        [
+          0.372,
+          0.806
+        ],
+        [
+          0.369,
+          0.746
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/module-color-theory-stain-seam.svg",
+      "source_binding_ids": [
+        "binding-module-color-theory-stain-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          623,
+          807
+        ],
+        "safe_stage_window_origin_px": [
+          633,
+          824
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-collaboration-tide-channel",
+      "kind": "module",
+      "label": "collaboration tide channel",
+      "artifact_type": "shared-irrigation-seam",
+      "bounds": {
+        "x": 0.438,
+        "y": 0.232,
+        "w": 0.123,
+        "h": 0.625
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.451,
+          0.232
+        ],
+        [
+          0.479,
+          0.318
+        ],
+        [
+          0.487,
+          0.443
+        ],
+        [
+          0.515,
+          0.548
+        ],
+        [
+          0.553,
+          0.633
+        ],
+        [
+          0.561,
+          0.728
+        ],
+        [
+          0.543,
+          0.857
+        ],
+        [
+          0.508,
+          0.821
+        ],
+        [
+          0.497,
+          0.679
+        ],
+        [
+          0.468,
+          0.585
+        ],
+        [
+          0.438,
+          0.476
+        ],
+        [
+          0.442,
+          0.342
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/module-collaboration-tide-channel.svg",
+      "source_binding_ids": [
+        "binding-module-collaboration-tide-channel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          767,
+          506
+        ],
+        "safe_stage_window_origin_px": [
+          782,
+          558
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-futurist-charge-splinter",
+      "kind": "module",
+      "label": "futurist charge splinter",
+      "artifact_type": "angular-motion-splinter",
+      "bounds": {
+        "x": 0.8151,
+        "y": 0.1816,
+        "w": 0.1562,
+        "h": 0.3164
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.8171,
+          0.2334
+        ],
+        [
+          0.89,
+          0.1846
+        ],
+        [
+          0.9648,
+          0.2363
+        ],
+        [
+          0.9688,
+          0.3691
+        ],
+        [
+          0.9674,
+          0.4385
+        ],
+        [
+          0.8665,
+          0.4941
+        ],
+        [
+          0.8171,
+          0.2344
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/module-futurist-charge-splinter.svg",
+      "source_binding_ids": [
+        "binding-module-futurist-charge-splinter"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          330
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          355
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-public-greens-poster-tear",
+      "kind": "module",
+      "label": "public-greens poster tear",
+      "artifact_type": "paper-tear-aperture",
+      "bounds": {
+        "x": 0.7617,
+        "y": 0.71,
+        "w": 0.2383,
+        "h": 0.29
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.7637,
+          0.9873
+        ],
+        [
+          0.7676,
+          0.8018
+        ],
+        [
+          0.7943,
+          0.7578
+        ],
+        [
+          0.8379,
+          0.7129
+        ],
+        [
+          0.8958,
+          0.7158
+        ],
+        [
+          0.9518,
+          0.7275
+        ],
+        [
+          0.998,
+          0.7676
+        ],
+        [
+          0.998,
+          0.9971
+        ],
+        [
+          0.7669,
+          0.9971
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/module-public-greens-poster-tear.svg",
+      "source_binding_ids": [
+        "binding-module-public-greens-poster-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          849
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-spare-cultivar-side-node",
+      "kind": "module",
+      "label": "spare cultivar side-node",
+      "artifact_type": "small-floret-side-node",
+      "bounds": {
+        "x": 0.685,
+        "y": 0.493,
+        "w": 0.132,
+        "h": 0.165
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.713,
+          0.493
+        ],
+        [
+          0.768,
+          0.501
+        ],
+        [
+          0.811,
+          0.548
+        ],
+        [
+          0.817,
+          0.611
+        ],
+        [
+          0.781,
+          0.654
+        ],
+        [
+          0.725,
+          0.658
+        ],
+        [
+          0.685,
+          0.617
+        ],
+        [
+          0.693,
+          0.548
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/module-spare-cultivar-side-node.svg",
+      "source_binding_ids": [
+        "binding-module-spare-cultivar-side-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1154,
+          576
+        ],
+        "safe_stage_window_origin_px": [
+          1170,
+          589
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-spare-cultivar-side-node-2",
+      "kind": "module",
+      "label": "spare cultivar side-node",
+      "artifact_type": "small-floret-side-node",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "wired-broccoli-field",
+      "mask_path": "/editions/2026-06-08-wired-broccoli-field-v1/assets/masks/module-spare-cultivar-side-node-2.svg",
+      "source_binding_ids": [
+        "binding-module-spare-cultivar-side-node-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "analysis_id": "analysis-2026-06-08-wired-broccoli-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Overhead techno-botanical plate: broccoli crowns and ribbed stems fuse with greenhouse control plates, translucent map-paper, screws, vents, droplets, copper traces, and folded glass-like panels. The image is source-rich, with interaction anchors carried by real edges, rings, slits, stains, floret masses, and branching seams.",
+  "usable_surfaces": [
+    "central pale branching stem-and-channel crown",
+    "right dense broccoli floret architecture",
+    "left circular dew lens on leaf edge",
+    "lower-center stained blue-green fold seam",
+    "central converging irrigation-light channel",
+    "upper-right translucent diagonal shard",
+    "lower-center white circular crop notch",
+    "lower-right torn translucent poster panel with vent slits",
+    "right-lower small floret side node"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero greenhouse-control crown",
+      "artifact_type": "hero-scale-branching-crown",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.285,
+        "y": 0.302,
+        "w": 0.421,
+        "h": 0.665
+      },
+      "polygon": [
+        [
+          0.457,
+          0.967
+        ],
+        [
+          0.436,
+          0.865
+        ],
+        [
+          0.434,
+          0.742
+        ],
+        [
+          0.374,
+          0.631
+        ],
+        [
+          0.299,
+          0.555
+        ],
+        [
+          0.279,
+          0.481
+        ],
+        [
+          0.343,
+          0.518
+        ],
+        [
+          0.429,
+          0.617
+        ],
+        [
+          0.462,
+          0.512
+        ],
+        [
+          0.421,
+          0.396
+        ],
+        [
+          0.456,
+          0.302
+        ],
+        [
+          0.502,
+          0.442
+        ],
+        [
+          0.557,
+          0.568
+        ],
+        [
+          0.675,
+          0.382
+        ],
+        [
+          0.706,
+          0.456
+        ],
+        [
+          0.592,
+          0.661
+        ],
+        [
+          0.553,
+          0.823
+        ],
+        [
+          0.507,
+          0.963
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "The largest pale green circuit-stem mass rises from the lower center and branches into the broccoli crowns, with ribbed channels, copper trace lines, small terminals, and crop-map seams visible along the surface."
+    },
+    {
+      "label": "hero broccoli-architecture cut",
+      "artifact_type": "hero-scale-edible-texture-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.572,
+        "y": 0.139,
+        "w": 0.292,
+        "h": 0.485
+      },
+      "polygon": [
+        [
+          0.596,
+          0.252
+        ],
+        [
+          0.643,
+          0.173
+        ],
+        [
+          0.713,
+          0.139
+        ],
+        [
+          0.796,
+          0.158
+        ],
+        [
+          0.847,
+          0.229
+        ],
+        [
+          0.864,
+          0.344
+        ],
+        [
+          0.842,
+          0.451
+        ],
+        [
+          0.799,
+          0.552
+        ],
+        [
+          0.728,
+          0.624
+        ],
+        [
+          0.652,
+          0.592
+        ],
+        [
+          0.601,
+          0.52
+        ],
+        [
+          0.572,
+          0.41
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The right hero broccoli mass has crisp bead-like florets, ribbed stems, and a cutaway botanical structure that reads as a dominant inspected edible surface."
+    },
+    {
+      "label": "phone-scan dew bracket",
+      "artifact_type": "scan-bracket-glint",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.178,
+        "y": 0.281,
+        "w": 0.041,
+        "h": 0.061
+      },
+      "polygon": [
+        [
+          0.199,
+          0.281
+        ],
+        [
+          0.213,
+          0.287
+        ],
+        [
+          0.219,
+          0.305
+        ],
+        [
+          0.215,
+          0.326
+        ],
+        [
+          0.202,
+          0.342
+        ],
+        [
+          0.187,
+          0.337
+        ],
+        [
+          0.178,
+          0.318
+        ],
+        [
+          0.183,
+          0.296
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A small circular glassy ring sits on the left crown/leaf edge, catching light like a phone-scan dew aperture or bracketed identification lens."
+    },
+    {
+      "label": "color-theory stain seam",
+      "artifact_type": "pigment-stained-map-fold",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.363,
+        "y": 0.701,
+        "w": 0.085,
+        "h": 0.207
+      },
+      "polygon": [
+        [
+          0.389,
+          0.701
+        ],
+        [
+          0.412,
+          0.712
+        ],
+        [
+          0.422,
+          0.754
+        ],
+        [
+          0.448,
+          0.79
+        ],
+        [
+          0.433,
+          0.835
+        ],
+        [
+          0.405,
+          0.881
+        ],
+        [
+          0.377,
+          0.908
+        ],
+        [
+          0.363,
+          0.864
+        ],
+        [
+          0.372,
+          0.806
+        ],
+        [
+          0.369,
+          0.746
+        ]
+      ],
+      "confidence": 0.71,
+      "visual_evidence": "Lower-center left of the trunk shows a blue-green and amber stained fold, with pigment-like interruption against the pale map surface and adjacent stem channels."
+    },
+    {
+      "label": "collaboration tide channel",
+      "artifact_type": "shared-irrigation-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.438,
+        "y": 0.232,
+        "w": 0.123,
+        "h": 0.625
+      },
+      "polygon": [
+        [
+          0.451,
+          0.232
+        ],
+        [
+          0.479,
+          0.318
+        ],
+        [
+          0.487,
+          0.443
+        ],
+        [
+          0.515,
+          0.548
+        ],
+        [
+          0.553,
+          0.633
+        ],
+        [
+          0.561,
+          0.728
+        ],
+        [
+          0.543,
+          0.857
+        ],
+        [
+          0.508,
+          0.821
+        ],
+        [
+          0.497,
+          0.679
+        ],
+        [
+          0.468,
+          0.585
+        ],
+        [
+          0.438,
+          0.476
+        ],
+        [
+          0.442,
+          0.342
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A narrow Y-like pale water-and-light seam converges through the center, gathering multiple branching grow lines into one shared channel."
+    },
+    {
+      "label": "futurist charge splinter",
+      "artifact_type": "angular-motion-splinter",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.817,
+        "y": 0.197,
+        "w": 0.158,
+        "h": 0.299
+      },
+      "polygon": [
+        [
+          0.817,
+          0.231
+        ],
+        [
+          0.901,
+          0.197
+        ],
+        [
+          0.975,
+          0.303
+        ],
+        [
+          0.958,
+          0.435
+        ],
+        [
+          0.864,
+          0.496
+        ],
+        [
+          0.835,
+          0.374
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "The upper-right translucent diagonal plate cuts across the grid as an angular shard, with sharp edges and fractured field motion visible over the leaf and tiles."
+    },
+    {
+      "label": "public-greens poster tear",
+      "artifact_type": "paper-tear-aperture",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.761,
+        "y": 0.706,
+        "w": 0.237,
+        "h": 0.292
+      },
+      "polygon": [
+        [
+          0.776,
+          0.725
+        ],
+        [
+          0.878,
+          0.706
+        ],
+        [
+          0.971,
+          0.742
+        ],
+        [
+          0.998,
+          0.826
+        ],
+        [
+          0.982,
+          0.949
+        ],
+        [
+          0.914,
+          0.998
+        ],
+        [
+          0.815,
+          0.972
+        ],
+        [
+          0.761,
+          0.893
+        ],
+        [
+          0.769,
+          0.794
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "The lower-right translucent beige-green sheet has a torn curved edge, leaf imprint, scratches, and repeated dark vent slits that create a strong poster-like aperture."
+    },
+    {
+      "label": "spare cultivar side-node",
+      "artifact_type": "small-floret-side-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.685,
+        "y": 0.493,
+        "w": 0.132,
+        "h": 0.165
+      },
+      "polygon": [
+        [
+          0.713,
+          0.493
+        ],
+        [
+          0.768,
+          0.501
+        ],
+        [
+          0.811,
+          0.548
+        ],
+        [
+          0.817,
+          0.611
+        ],
+        [
+          0.781,
+          0.654
+        ],
+        [
+          0.725,
+          0.658
+        ],
+        [
+          0.685,
+          0.617
+        ],
+        [
+          0.693,
+          0.548
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A secondary broccoli node on the lower-right branch shows dense floret texture and pale stems, distinct from the larger right hero crown."
+    },
+    {
+      "label": "spare cultivar side-node",
+      "artifact_type": "small-floret-side-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.657,
+    "rationale": "The plate is not minimal; it is dense with screws, droplets, vents, glass panels, leaf surfaces, and branching stems. It still holds as organized expressionist machinery because the central trunk and two broccoli masses dominate the composition."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-08-wired-broccoli-field-v1"
+}
