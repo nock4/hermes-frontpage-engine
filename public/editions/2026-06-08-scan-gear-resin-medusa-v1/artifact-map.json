@@ -1,0 +1,643 @@
+{
+  "artifact_map_id": "map-2026-06-08-scan-gear-resin-medusa-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "scan-gear-resin-medusa",
+  "default_artifact_id": "hero-gear-driven-medusa-tweet-hinge",
+  "artifacts": [
+    {
+      "id": "hero-gear-driven-medusa-tweet-hinge",
+      "kind": "hero",
+      "label": "gear-driven medusa tweet hinge",
+      "artifact_type": "hero-scale-toothed-hinge-aperture",
+      "bounds": {
+        "x": 0.129,
+        "y": 0.424,
+        "w": 0.289,
+        "h": 0.368
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.229,
+          0.449
+        ],
+        [
+          0.281,
+          0.452
+        ],
+        [
+          0.327,
+          0.469
+        ],
+        [
+          0.379,
+          0.512
+        ],
+        [
+          0.408,
+          0.574
+        ],
+        [
+          0.397,
+          0.656
+        ],
+        [
+          0.359,
+          0.719
+        ],
+        [
+          0.296,
+          0.778
+        ],
+        [
+          0.223,
+          0.791
+        ],
+        [
+          0.176,
+          0.747
+        ],
+        [
+          0.179,
+          0.681
+        ],
+        [
+          0.214,
+          0.634
+        ],
+        [
+          0.19,
+          0.587
+        ],
+        [
+          0.129,
+          0.572
+        ],
+        [
+          0.141,
+          0.503
+        ],
+        [
+          0.19,
+          0.474
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/hero-gear-driven-medusa-tweet-hinge.svg",
+      "source_binding_ids": [
+        "binding-hero-gear-driven-medusa-tweet-hinge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          420,
+          592
+        ],
+        "safe_stage_window_origin_px": [
+          456,
+          623
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-structured-scan-body-slab",
+      "kind": "hero",
+      "label": "structured scan body-slab",
+      "artifact_type": "hero-scale-contour-scan-surface",
+      "bounds": {
+        "x": 0.493,
+        "y": 0.214,
+        "w": 0.507,
+        "h": 0.786
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.545,
+          0.215
+        ],
+        [
+          0.642,
+          0.251
+        ],
+        [
+          0.742,
+          0.269
+        ],
+        [
+          0.879,
+          0.245
+        ],
+        [
+          0.988,
+          0.262
+        ],
+        [
+          1,
+          0.352
+        ],
+        [
+          0.967,
+          0.48
+        ],
+        [
+          0.948,
+          0.642
+        ],
+        [
+          0.992,
+          0.821
+        ],
+        [
+          0.916,
+          0.937
+        ],
+        [
+          0.773,
+          0.998
+        ],
+        [
+          0.583,
+          0.984
+        ],
+        [
+          0.493,
+          0.867
+        ],
+        [
+          0.498,
+          0.686
+        ],
+        [
+          0.543,
+          0.517
+        ],
+        [
+          0.543,
+          0.353
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/hero-structured-scan-body-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-structured-scan-body-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1147,
+          557
+        ],
+        "safe_stage_window_origin_px": [
+          1209,
+          622
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-coroa-ribbed-crown-cut",
+      "kind": "module",
+      "label": "coroa ribbed crown cut",
+      "artifact_type": "ribbed-lattice-crown-window",
+      "bounds": {
+        "x": 0.443,
+        "y": 0,
+        "w": 0.487,
+        "h": 0.186
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.443,
+          0.001
+        ],
+        [
+          0.523,
+          0.002
+        ],
+        [
+          0.62,
+          0
+        ],
+        [
+          0.724,
+          0.002
+        ],
+        [
+          0.83,
+          0.01
+        ],
+        [
+          0.912,
+          0.023
+        ],
+        [
+          0.93,
+          0.071
+        ],
+        [
+          0.899,
+          0.127
+        ],
+        [
+          0.813,
+          0.159
+        ],
+        [
+          0.704,
+          0.18
+        ],
+        [
+          0.59,
+          0.186
+        ],
+        [
+          0.506,
+          0.16
+        ],
+        [
+          0.466,
+          0.101
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/module-coroa-ribbed-crown-cut.svg",
+      "source_binding_ids": [
+        "binding-module-coroa-ribbed-crown-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1054,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          1114,
+          95
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-marmoreal-bust-fracture",
+      "kind": "module",
+      "label": "marmoreal bust fracture",
+      "artifact_type": "off-white-resin-fracture-edge",
+      "bounds": {
+        "x": 0.0898,
+        "y": 0.752,
+        "w": 0.2103,
+        "h": 0.248
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.0918,
+          0.833
+        ],
+        [
+          0.1094,
+          0.7988
+        ],
+        [
+          0.1302,
+          0.7773
+        ],
+        [
+          0.168,
+          0.7549
+        ],
+        [
+          0.1979,
+          0.7549
+        ],
+        [
+          0.2604,
+          0.792
+        ],
+        [
+          0.2975,
+          0.8721
+        ],
+        [
+          0.2897,
+          0.9385
+        ],
+        [
+          0.2474,
+          0.9971
+        ],
+        [
+          0.1257,
+          0.9971
+        ],
+        [
+          0.0977,
+          0.915
+        ],
+        [
+          0.0918,
+          0.8506
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/module-marmoreal-bust-fracture.svg",
+      "source_binding_ids": [
+        "binding-module-marmoreal-bust-fracture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          280,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          308,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-custom-manufacturing-inset",
+      "kind": "module",
+      "label": "custom manufacturing inset",
+      "artifact_type": "cropped-gray-stl-preview-cut",
+      "bounds": {
+        "x": 0.217,
+        "y": 0.556,
+        "w": 0.135,
+        "h": 0.116
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.222,
+          0.562
+        ],
+        [
+          0.273,
+          0.556
+        ],
+        [
+          0.332,
+          0.567
+        ],
+        [
+          0.352,
+          0.604
+        ],
+        [
+          0.337,
+          0.654
+        ],
+        [
+          0.291,
+          0.672
+        ],
+        [
+          0.239,
+          0.657
+        ],
+        [
+          0.217,
+          0.614
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/module-custom-manufacturing-inset.svg",
+      "source_binding_ids": [
+        "binding-module-custom-manufacturing-inset"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          437,
+          619
+        ],
+        "safe_stage_window_origin_px": [
+          454,
+          629
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-naomi-hardware-lineage-slit",
+      "kind": "module",
+      "label": "naomi hardware lineage slit",
+      "artifact_type": "vertical-mesh-reference-slit",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.454,
+        "w": 0.226,
+        "h": 0.284
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.68,
+          0.454
+        ],
+        [
+          0.75,
+          0.459
+        ],
+        [
+          0.818,
+          0.487
+        ],
+        [
+          0.864,
+          0.548
+        ],
+        [
+          0.868,
+          0.621
+        ],
+        [
+          0.826,
+          0.693
+        ],
+        [
+          0.753,
+          0.735
+        ],
+        [
+          0.681,
+          0.738
+        ],
+        [
+          0.642,
+          0.693
+        ],
+        [
+          0.648,
+          0.615
+        ],
+        [
+          0.666,
+          0.535
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/module-naomi-hardware-lineage-slit.svg",
+      "source_binding_ids": [
+        "binding-module-naomi-hardware-lineage-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1160,
+          587
+        ],
+        "safe_stage_window_origin_px": [
+          1187,
+          610
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-bundle-seam-tab",
+      "kind": "module",
+      "label": "bundle seam tab",
+      "artifact_type": "paper-thin-layer-seam-tab",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/module-bundle-seam-tab.svg",
+      "source_binding_ids": [
+        "binding-module-bundle-seam-tab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-claude-setup-scan-notch",
+      "kind": "module",
+      "label": "claude setup scan-notch",
+      "artifact_type": "orange-gear-tooth-notch",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/module-claude-setup-scan-notch.svg",
+      "source_binding_ids": [
+        "binding-module-claude-setup-scan-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-naomi-hardware-lineage-slit-2",
+      "kind": "module",
+      "label": "naomi hardware lineage slit",
+      "artifact_type": "vertical-mesh-reference-slit",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "scan-gear-resin-medusa",
+      "mask_path": "/editions/2026-06-08-scan-gear-resin-medusa-v1/assets/masks/module-naomi-hardware-lineage-slit-2.svg",
+      "source_binding_ids": [
+        "binding-module-naomi-hardware-lineage-slit-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
