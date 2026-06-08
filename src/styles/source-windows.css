@@ -3011,6 +3011,13 @@
   max-width: min(42rem, calc(100vw - 1.25rem));
 }
 
+.source-window--stage.source-window--preview.source-window--bleed-embed .source-window__body--video,
+.source-window--stage.source-window--preview.source-window--bleed-embed .source-window__body--youtube-linkout,
+.source-window--stage.source-window--preview.source-window--bleed-embed .source-window__body--tweet-embed {
+  width: 100%;
+  max-width: 100%;
+}
+
 .source-window--stage.source-window--bleed-embed .source-window__floating-actions {
   top: 0.55rem;
   right: 0.55rem;
