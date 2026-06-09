@@ -1,0 +1,240 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-09-remote-studio-paste-up-v1",
+  "edition_id": "2026-06-09-remote-studio-paste-up-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-09-remote-studio-paste-up-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation",
+    "ghost-reflection-treatment",
+    "lens-inspection"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-luminous-monitor-tear",
+      "target_kind": "artifact",
+      "artifact_id": "hero-luminous-monitor-tear",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-cyan-torn-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-remote-stack-seam-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "hero-remote-stack-seam-cluster",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "github"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-cable-seam-network) selected from interpretation."
+    },
+    {
+      "target_id": "module-tool-tile-paper-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-tool-tile-paper-strip",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-grid-torn-tile-strip) selected from interpretation."
+    },
+    {
+      "target_id": "module-inventory-sliver",
+      "target_kind": "artifact",
+      "artifact_id": "module-inventory-sliver",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-overprinted-paper-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-tablet-glass-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-tablet-glass-notch",
+      "priority": 5,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-black-tablet-corner) selected from interpretation."
+    },
+    {
+      "target_id": "module-hardware-shadow-patch",
+      "target_kind": "artifact",
+      "artifact_id": "module-hardware-shadow-patch",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-workstation-silhouette-patch) selected from interpretation."
+    },
+    {
+      "target_id": "module-color-theory-scrape",
+      "target_kind": "artifact",
+      "artifact_id": "module-color-theory-scrape",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (magenta-purple-swatch-scratch) selected from interpretation."
+    },
+    {
+      "target_id": "module-cobot-edge-intrusion",
+      "target_kind": "artifact",
+      "artifact_id": "module-cobot-edge-intrusion",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-black-mechanical-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-green-mobility-glow-fleck",
+      "target_kind": "artifact",
+      "artifact_id": "module-green-mobility-glow-fleck",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (acid-green-glow-stain) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

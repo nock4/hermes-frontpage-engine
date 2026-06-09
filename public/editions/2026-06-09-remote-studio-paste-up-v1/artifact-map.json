@@ -1,0 +1,623 @@
+{
+  "artifact_map_id": "map-2026-06-09-remote-studio-paste-up-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "remote-studio-paste-up",
+  "default_artifact_id": "hero-luminous-monitor-tear",
+  "artifacts": [
+    {
+      "id": "hero-luminous-monitor-tear",
+      "kind": "hero",
+      "label": "luminous monitor tear",
+      "artifact_type": "glossy-cyan-torn-aperture",
+      "bounds": {
+        "x": 0.169,
+        "y": 0.073,
+        "w": 0.447,
+        "h": 0.407
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.177,
+          0.188
+        ],
+        [
+          0.214,
+          0.137
+        ],
+        [
+          0.293,
+          0.091
+        ],
+        [
+          0.384,
+          0.126
+        ],
+        [
+          0.458,
+          0.089
+        ],
+        [
+          0.566,
+          0.082
+        ],
+        [
+          0.615,
+          0.154
+        ],
+        [
+          0.578,
+          0.267
+        ],
+        [
+          0.493,
+          0.35
+        ],
+        [
+          0.401,
+          0.382
+        ],
+        [
+          0.316,
+          0.421
+        ],
+        [
+          0.227,
+          0.421
+        ],
+        [
+          0.17,
+          0.344
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/hero-luminous-monitor-tear.svg",
+      "source_binding_ids": [
+        "binding-hero-luminous-monitor-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          603,
+          250
+        ],
+        "safe_stage_window_origin_px": [
+          658,
+          283
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-remote-stack-seam-cluster",
+      "kind": "hero",
+      "label": "remote-stack seam cluster",
+      "artifact_type": "black-cable-seam-network",
+      "bounds": {
+        "x": 0.083,
+        "y": 0.426,
+        "w": 0.762,
+        "h": 0.218
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.084,
+          0.482
+        ],
+        [
+          0.162,
+          0.501
+        ],
+        [
+          0.264,
+          0.532
+        ],
+        [
+          0.384,
+          0.538
+        ],
+        [
+          0.502,
+          0.514
+        ],
+        [
+          0.627,
+          0.506
+        ],
+        [
+          0.736,
+          0.483
+        ],
+        [
+          0.845,
+          0.46
+        ],
+        [
+          0.837,
+          0.474
+        ],
+        [
+          0.731,
+          0.503
+        ],
+        [
+          0.609,
+          0.534
+        ],
+        [
+          0.492,
+          0.559
+        ],
+        [
+          0.379,
+          0.572
+        ],
+        [
+          0.255,
+          0.549
+        ],
+        [
+          0.154,
+          0.519
+        ],
+        [
+          0.086,
+          0.498
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/hero-remote-stack-seam-cluster.svg",
+      "source_binding_ids": [
+        "binding-hero-remote-stack-seam-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          713,
+          530
+        ],
+        "safe_stage_window_origin_px": [
+          806,
+          548
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-tool-tile-paper-strip",
+      "kind": "module",
+      "label": "tool-tile paper strip",
+      "artifact_type": "black-grid-torn-tile-strip",
+      "bounds": {
+        "x": 0.139,
+        "y": 0.605,
+        "w": 0.237,
+        "h": 0.204
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.145,
+          0.64
+        ],
+        [
+          0.214,
+          0.616
+        ],
+        [
+          0.306,
+          0.608
+        ],
+        [
+          0.374,
+          0.656
+        ],
+        [
+          0.355,
+          0.737
+        ],
+        [
+          0.292,
+          0.791
+        ],
+        [
+          0.214,
+          0.802
+        ],
+        [
+          0.158,
+          0.762
+        ],
+        [
+          0.139,
+          0.692
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/module-tool-tile-paper-strip.svg",
+      "source_binding_ids": [
+        "binding-module-tool-tile-paper-strip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          396,
+          707
+        ],
+        "safe_stage_window_origin_px": [
+          425,
+          724
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-inventory-sliver",
+      "kind": "module",
+      "label": "inventory sliver",
+      "artifact_type": "narrow-overprinted-paper-fragment",
+      "bounds": {
+        "x": 0.809,
+        "y": 0.545,
+        "w": 0.083,
+        "h": 0.176
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.811,
+          0.548
+        ],
+        [
+          0.887,
+          0.551
+        ],
+        [
+          0.891,
+          0.597
+        ],
+        [
+          0.877,
+          0.65
+        ],
+        [
+          0.887,
+          0.713
+        ],
+        [
+          0.824,
+          0.718
+        ],
+        [
+          0.81,
+          0.671
+        ],
+        [
+          0.813,
+          0.608
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/module-inventory-sliver.svg",
+      "source_binding_ids": [
+        "binding-module-inventory-sliver"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1306,
+          634
+        ],
+        "safe_stage_window_origin_px": [
+          1317,
+          648
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-tablet-glass-notch",
+      "kind": "module",
+      "label": "tablet-glass notch",
+      "artifact_type": "glossy-black-tablet-corner",
+      "bounds": {
+        "x": 0,
+        "y": 0.772,
+        "w": 0.155,
+        "h": 0.226
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0,
+          0.779
+        ],
+        [
+          0.119,
+          0.822
+        ],
+        [
+          0.15,
+          0.86
+        ],
+        [
+          0.152,
+          0.998
+        ],
+        [
+          0,
+          0.998
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/module-tablet-glass-notch.svg",
+      "source_binding_ids": [
+        "binding-module-tablet-glass-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          119,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          138,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-hardware-shadow-patch",
+      "kind": "module",
+      "label": "hardware-shadow patch",
+      "artifact_type": "dark-workstation-silhouette-patch",
+      "bounds": {
+        "x": 0.556,
+        "y": 0.366,
+        "w": 0.247,
+        "h": 0.296
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.65,
+          0.382
+        ],
+        [
+          0.735,
+          0.367
+        ],
+        [
+          0.803,
+          0.4
+        ],
+        [
+          0.799,
+          0.54
+        ],
+        [
+          0.749,
+          0.614
+        ],
+        [
+          0.634,
+          0.657
+        ],
+        [
+          0.56,
+          0.61
+        ],
+        [
+          0.579,
+          0.505
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/module-hardware-shadow-patch.svg",
+      "source_binding_ids": [
+        "binding-module-hardware-shadow-patch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1044,
+          502
+        ],
+        "safe_stage_window_origin_px": [
+          1074,
+          526
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-color-theory-scrape",
+      "kind": "module",
+      "label": "color-theory scrape",
+      "artifact_type": "magenta-purple-swatch-scratch",
+      "bounds": {
+        "x": 0.328,
+        "y": 0.653,
+        "w": 0.213,
+        "h": 0.302
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.382,
+          0.657
+        ],
+        [
+          0.464,
+          0.683
+        ],
+        [
+          0.535,
+          0.768
+        ],
+        [
+          0.541,
+          0.865
+        ],
+        [
+          0.482,
+          0.934
+        ],
+        [
+          0.396,
+          0.955
+        ],
+        [
+          0.333,
+          0.909
+        ],
+        [
+          0.328,
+          0.794
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/module-color-theory-scrape.svg",
+      "source_binding_ids": [
+        "binding-module-color-theory-scrape"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          667,
+          799
+        ],
+        "safe_stage_window_origin_px": [
+          694,
+          823
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-cobot-edge-intrusion",
+      "kind": "module",
+      "label": "cobot edge intrusion",
+      "artifact_type": "cropped-black-mechanical-edge",
+      "bounds": {
+        "x": 0.81,
+        "y": 0.043,
+        "w": 0.188,
+        "h": 0.249
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.905,
+          0.044
+        ],
+        [
+          0.998,
+          0.043
+        ],
+        [
+          0.998,
+          0.191
+        ],
+        [
+          0.947,
+          0.249
+        ],
+        [
+          0.888,
+          0.288
+        ],
+        [
+          0.812,
+          0.275
+        ],
+        [
+          0.846,
+          0.173
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/module-cobot-edge-intrusion.svg",
+      "source_binding_ids": [
+        "binding-module-cobot-edge-intrusion"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          151
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          172
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-green-mobility-glow-fleck",
+      "kind": "module",
+      "label": "green-mobility glow fleck",
+      "artifact_type": "acid-green-glow-stain",
+      "bounds": {
+        "x": 0.612,
+        "y": 0.683,
+        "w": 0.224,
+        "h": 0.258
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.662,
+          0.689
+        ],
+        [
+          0.747,
+          0.705
+        ],
+        [
+          0.824,
+          0.691
+        ],
+        [
+          0.832,
+          0.772
+        ],
+        [
+          0.798,
+          0.864
+        ],
+        [
+          0.733,
+          0.929
+        ],
+        [
+          0.649,
+          0.938
+        ],
+        [
+          0.616,
+          0.858
+        ],
+        [
+          0.625,
+          0.756
+        ]
+      ],
+      "cluster_id": "remote-studio-paste-up",
+      "mask_path": "/editions/2026-06-09-remote-studio-paste-up-v1/assets/masks/module-green-mobility-glow-fleck.svg",
+      "source_binding_ids": [
+        "binding-module-green-mobility-glow-fleck"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1112,
+          810
+        ],
+        "safe_stage_window_origin_px": [
+          1140,
+          831
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+{
+  "analysis_id": "analysis-2026-06-09-remote-studio-paste-up-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A torn-paper collage wall with a large cyan glowing monitor-like tear in the upper center, cable seams crossing the middle, tablet and stylus hardware exposed through rips on the right and lower left, plus smaller magenta, orange, purple, black, and acid-green source stains embedded as physical apertures.",
+  "usable_surfaces": [
+    "upper-center cyan torn aperture",
+    "middle cable seam network",
+    "right glossy tablet-and-stylus pocket",
+    "lower-left tablet glass corner",
+    "lower-center purple scraped paint island",
+    "lower-right acid-green stain panel",
+    "right-edge mechanical black intrusion",
+    "small orange torn swatch"
+  ],
+  "detected_objects": [
+    {
+      "label": "luminous monitor tear",
+      "artifact_type": "glossy-cyan-torn-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.169,
+        "y": 0.073,
+        "w": 0.447,
+        "h": 0.407
+      },
+      "polygon": [
+        [
+          0.177,
+          0.188
+        ],
+        [
+          0.214,
+          0.137
+        ],
+        [
+          0.293,
+          0.091
+        ],
+        [
+          0.384,
+          0.126
+        ],
+        [
+          0.458,
+          0.089
+        ],
+        [
+          0.566,
+          0.082
+        ],
+        [
+          0.615,
+          0.154
+        ],
+        [
+          0.578,
+          0.267
+        ],
+        [
+          0.493,
+          0.35
+        ],
+        [
+          0.401,
+          0.382
+        ],
+        [
+          0.316,
+          0.421
+        ],
+        [
+          0.227,
+          0.421
+        ],
+        [
+          0.17,
+          0.344
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "Large irregular torn opening near the upper third glows cyan-blue with monitor-like halftone texture, grid residue, dark vertical shapes, and scratched glossy surface marks."
+    },
+    {
+      "label": "remote-stack seam cluster",
+      "artifact_type": "black-cable-seam-network",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.083,
+        "y": 0.426,
+        "w": 0.762,
+        "h": 0.218
+      },
+      "polygon": [
+        [
+          0.084,
+          0.482
+        ],
+        [
+          0.162,
+          0.501
+        ],
+        [
+          0.264,
+          0.532
+        ],
+        [
+          0.384,
+          0.538
+        ],
+        [
+          0.502,
+          0.514
+        ],
+        [
+          0.627,
+          0.506
+        ],
+        [
+          0.736,
+          0.483
+        ],
+        [
+          0.845,
+          0.46
+        ],
+        [
+          0.837,
+          0.474
+        ],
+        [
+          0.731,
+          0.503
+        ],
+        [
+          0.609,
+          0.534
+        ],
+        [
+          0.492,
+          0.559
+        ],
+        [
+          0.379,
+          0.572
+        ],
+        [
+          0.255,
+          0.549
+        ],
+        [
+          0.154,
+          0.519
+        ],
+        [
+          0.086,
+          0.498
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A real black cable and linked seam lines run horizontally across the middle, with looping bends, clipped edges, and code-shadow-like black scuffs underneath."
+    },
+    {
+      "label": "tool-tile paper strip",
+      "artifact_type": "black-grid-torn-tile-strip",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.139,
+        "y": 0.605,
+        "w": 0.237,
+        "h": 0.204
+      },
+      "polygon": [
+        [
+          0.145,
+          0.64
+        ],
+        [
+          0.214,
+          0.616
+        ],
+        [
+          0.306,
+          0.608
+        ],
+        [
+          0.374,
+          0.656
+        ],
+        [
+          0.355,
+          0.737
+        ],
+        [
+          0.292,
+          0.791
+        ],
+        [
+          0.214,
+          0.802
+        ],
+        [
+          0.158,
+          0.762
+        ],
+        [
+          0.139,
+          0.692
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "Lower-left torn dark strip shows a black tiled/grid texture with scuffed rectangular divisions and ripped-paper borders, reading as pasted software-tool tile residue."
+    },
+    {
+      "label": "inventory sliver",
+      "artifact_type": "narrow-overprinted-paper-fragment",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.809,
+        "y": 0.545,
+        "w": 0.083,
+        "h": 0.176
+      },
+      "polygon": [
+        [
+          0.811,
+          0.548
+        ],
+        [
+          0.887,
+          0.551
+        ],
+        [
+          0.891,
+          0.597
+        ],
+        [
+          0.877,
+          0.65
+        ],
+        [
+          0.887,
+          0.713
+        ],
+        [
+          0.824,
+          0.718
+        ],
+        [
+          0.81,
+          0.671
+        ],
+        [
+          0.813,
+          0.608
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "Narrow vertical pasted paper fragment at the right-middle carries pink overprint, table-like banding, scuffed edges, and cropped nonlegible texture."
+    },
+    {
+      "label": "tablet-glass notch",
+      "artifact_type": "glossy-black-tablet-corner",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.772,
+        "w": 0.155,
+        "h": 0.226
+      },
+      "polygon": [
+        [
+          0,
+          0.779
+        ],
+        [
+          0.119,
+          0.822
+        ],
+        [
+          0.15,
+          0.86
+        ],
+        [
+          0.152,
+          0.998
+        ],
+        [
+          0,
+          0.998
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Bottom-left corner exposes a black glossy tablet edge with rounded hardware corner, small circular buttons, and reflective glass seams."
+    },
+    {
+      "label": "hardware-shadow patch",
+      "artifact_type": "dark-workstation-silhouette-patch",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.556,
+        "y": 0.366,
+        "w": 0.247,
+        "h": 0.296
+      },
+      "polygon": [
+        [
+          0.65,
+          0.382
+        ],
+        [
+          0.735,
+          0.367
+        ],
+        [
+          0.803,
+          0.4
+        ],
+        [
+          0.799,
+          0.54
+        ],
+        [
+          0.749,
+          0.614
+        ],
+        [
+          0.634,
+          0.657
+        ],
+        [
+          0.56,
+          0.61
+        ],
+        [
+          0.579,
+          0.505
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Right-center rip reveals a dark glossy workstation/tablet surface with stylus silhouette, black gradients, pressure-like scratches, and adhesive-stained torn borders."
+    },
+    {
+      "label": "color-theory scrape",
+      "artifact_type": "magenta-purple-swatch-scratch",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.328,
+        "y": 0.653,
+        "w": 0.213,
+        "h": 0.302
+      },
+      "polygon": [
+        [
+          0.382,
+          0.657
+        ],
+        [
+          0.464,
+          0.683
+        ],
+        [
+          0.535,
+          0.768
+        ],
+        [
+          0.541,
+          0.865
+        ],
+        [
+          0.482,
+          0.934
+        ],
+        [
+          0.396,
+          0.955
+        ],
+        [
+          0.333,
+          0.909
+        ],
+        [
+          0.328,
+          0.794
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Lower-center irregular dark purple island contains saturated magenta and orange paint residue with white scratch lines and scraped swatch-like marks."
+    },
+    {
+      "label": "cobot edge intrusion",
+      "artifact_type": "cropped-black-mechanical-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.81,
+        "y": 0.043,
+        "w": 0.188,
+        "h": 0.249
+      },
+      "polygon": [
+        [
+          0.905,
+          0.044
+        ],
+        [
+          0.998,
+          0.043
+        ],
+        [
+          0.998,
+          0.191
+        ],
+        [
+          0.947,
+          0.249
+        ],
+        [
+          0.888,
+          0.288
+        ],
+        [
+          0.812,
+          0.275
+        ],
+        [
+          0.846,
+          0.173
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "Upper-right torn opening contains a cropped black mechanical-looking bracket or cylinder, hard glossy edges, bolts, and dark vertical structure under torn paper."
+    },
+    {
+      "label": "green-mobility glow fleck",
+      "artifact_type": "acid-green-glow-stain",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.612,
+        "y": 0.683,
+        "w": 0.224,
+        "h": 0.258
+      },
+      "polygon": [
+        [
+          0.662,
+          0.689
+        ],
+        [
+          0.747,
+          0.705
+        ],
+        [
+          0.824,
+          0.691
+        ],
+        [
+          0.832,
+          0.772
+        ],
+        [
+          0.798,
+          0.864
+        ],
+        [
+          0.733,
+          0.929
+        ],
+        [
+          0.649,
+          0.938
+        ],
+        [
+          0.616,
+          0.858
+        ],
+        [
+          0.625,
+          0.756
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "Lower-right panel shows a dense acid-green stain and light leak interrupted by black paper texture, scratches, torn edges, and printed vertical residue."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.702,
+    "rationale": "The plate has strong expressionist torn-paper energy and clear anchors, but many black scratches, cables, stains, and paper seams compete across the middle; usable, not minimal."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-06-09-remote-studio-paste-up-v1"
+}
