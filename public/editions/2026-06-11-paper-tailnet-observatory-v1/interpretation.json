@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-06-11-paper-tailnet-observatory-v1",
+  "edition_id": "2026-06-11-paper-tailnet-observatory-v1",
+  "plate_read_timestamp": "2026-06-11T08:10:23.129Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A spare paper-slab plate: a descending green stepped trace cuts across stained archive surface, crossed by heavy black cable arcs, with a dark red-orange dotted band, yellow tape tabs, seams, pinholes, scuffs, and small terminal nodes serving as interaction anchors.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet network stack under paper skin",
+      "A spare paper-slab plate: a descending green stepped trace cuts across stained archive surface, crossed by heavy black cable arcs, with a dark red-orange dotted band, yellow tape tabs, seams, pinholes, scuffs, and small terminal nodes serving as interaction anchors.",
+      "material-macro",
+      "stepped-signal",
+      "tailnet-map"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero dark dotted network band",
+      "left yellow cable tab",
+      "translucent archive grain insert",
+      "lower graphite edge notch",
+      "Distributed Marker",
+      "thin archive seam",
+      "warm registry resin window",
+      "right-side green terminal dot"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "wood"
+    ],
+    "dominant_structures": [
+      "paper-tailnet-observatory",
+      "one edge-to-edge pale slab carrying the whole plate",
+      "descending stepped signal path with punched node apertures",
+      "dark embedded dot-field band like a night map seen through paper",
+      "curving cable traces terminating in yellow tabs",
+      "blank graphite-scuffed margin with fine sketch pressure",
+      "small cut seams and glossy defects used as source anchors",
+      "descending green circuit path with raised circular nodes"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: paper-tailnet-observatory.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-dark-dotted-network-band",
+      "kind": "hero",
+      "type": "hero-scale-dot-field-seam",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0.5723,
+        "w": 0.5098,
+        "h": 0.1104
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-left-yellow-cable-tab",
+      "kind": "hero",
+      "type": "adhesive-tag-terminal",
+      "strength": 0.9879319999999999,
+      "bounds": {
+        "x": 0.122,
+        "y": 0.241,
+        "w": 0.066,
+        "h": 0.125
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-translucent-archive-grain-insert",
+      "kind": "module",
+      "type": "paper-grain-inlay",
+      "strength": 0.790488,
+      "bounds": {
+        "x": 0.491,
+        "y": 0.584,
+        "w": 0.06,
+        "h": 0.09
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-lower-graphite-edge-notch",
+      "kind": "module",
+      "type": "graphite-edge-cut",
+      "strength": 0.7670760000000001,
+      "bounds": {
+        "x": 0.156,
+        "y": 0.842,
+        "w": 0.157,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.7370760000000001,
+      "bounds": {
+        "x": 0.187,
+        "y": 0.698,
+        "w": 0.13,
+        "h": 0.126
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thin-archive-seam",
+      "kind": "module",
+      "type": "matte-archive-seam",
+      "strength": 0.70152,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-warm-registry-resin-window",
+      "kind": "module",
+      "type": "resin-window-inclusion",
+      "strength": 0.6716400000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-side-green-terminal-dot",
+      "kind": "module",
+      "type": "terminal-node-glint",
+      "strength": 0.646648,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.6620079999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-dark-dotted-network-band-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.5723,
+        "w": 0.5098,
+        "h": 0.1104
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-left-yellow-cable-tab-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.122,
+        "y": 0.241,
+        "w": 0.066,
+        "h": 0.125
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-translucent-archive-grain-insert-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.491,
+        "y": 0.584,
+        "w": 0.06,
+        "h": 0.09
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-lower-graphite-edge-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.156,
+        "y": 0.842,
+        "w": 0.157,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.187,
+        "y": 0.698,
+        "w": 0.13,
+        "h": 0.126
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thin-archive-seam-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-warm-registry-resin-window-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-side-green-terminal-dot-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
