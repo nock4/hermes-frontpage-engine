@@ -1,0 +1,468 @@
+{
+  "analysis_id": "analysis-2026-06-15-scanned-bouquet-instrument-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A quiet parchment plate with pressed botanical repairs, a blue orbital filament knot, a low waveform ruler seam, small punched lights, a dark miniature window, a torn receipt slit, and stamp-like paper interruptions embedded as real source surfaces.",
+  "usable_surfaces": [
+    "pressed translucent flower repair at lower center-left",
+    "blue filament orbit knot at right-center",
+    "bottom hairline waveform seam",
+    "vertical torn receipt slit near upper center",
+    "dark layered aperture at upper right",
+    "perforated stamp rectangle in faint grid at upper left",
+    "small isolated bud on left stems",
+    "badge-like circular pinhole near upper right-center",
+    "notched paper/image cut at lower right"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero digital bouquet repair",
+      "artifact_type": "hero-scale-pressed-botanical-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.252,
+        "y": 0.322,
+        "w": 0.26,
+        "h": 0.445
+      },
+      "polygon": [
+        [
+          0.306,
+          0.326
+        ],
+        [
+          0.354,
+          0.38
+        ],
+        [
+          0.411,
+          0.36
+        ],
+        [
+          0.472,
+          0.463
+        ],
+        [
+          0.509,
+          0.582
+        ],
+        [
+          0.474,
+          0.726
+        ],
+        [
+          0.387,
+          0.764
+        ],
+        [
+          0.31,
+          0.716
+        ],
+        [
+          0.262,
+          0.627
+        ],
+        [
+          0.253,
+          0.503
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Large translucent pasted botanical repair with pale torn paper islands, pink wash, yellow flower center, branching stems, and visible cracked tissue edges."
+    },
+    {
+      "label": "hero math orbit knot",
+      "artifact_type": "hero-scale-blue-orbit-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.633,
+        "y": 0.475,
+        "w": 0.227,
+        "h": 0.229
+      },
+      "polygon": [
+        [
+          0.682,
+          0.485
+        ],
+        [
+          0.727,
+          0.493
+        ],
+        [
+          0.773,
+          0.481
+        ],
+        [
+          0.806,
+          0.521
+        ],
+        [
+          0.794,
+          0.582
+        ],
+        [
+          0.846,
+          0.616
+        ],
+        [
+          0.782,
+          0.651
+        ],
+        [
+          0.747,
+          0.701
+        ],
+        [
+          0.708,
+          0.66
+        ],
+        [
+          0.656,
+          0.67
+        ],
+        [
+          0.631,
+          0.617
+        ],
+        [
+          0.652,
+          0.557
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "Luminous blue translucent filament loops gather into a dense orbital knot with small colored node dots and a pale blue cloud at the center."
+    },
+    {
+      "label": "visual instrument seam",
+      "artifact_type": "hairline-waveform-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.909,
+        "w": 0.998,
+        "h": 0.054
+      },
+      "polygon": [
+        [
+          0,
+          0.93
+        ],
+        [
+          0.07,
+          0.93
+        ],
+        [
+          0.142,
+          0.93
+        ],
+        [
+          0.218,
+          0.932
+        ],
+        [
+          0.291,
+          0.931
+        ],
+        [
+          0.359,
+          0.929
+        ],
+        [
+          0.432,
+          0.929
+        ],
+        [
+          0.504,
+          0.931
+        ],
+        [
+          0.575,
+          0.931
+        ],
+        [
+          0.65,
+          0.929
+        ],
+        [
+          0.723,
+          0.929
+        ],
+        [
+          0.791,
+          0.931
+        ],
+        [
+          0.862,
+          0.931
+        ],
+        [
+          0.936,
+          0.93
+        ],
+        [
+          0.998,
+          0.931
+        ],
+        [
+          0.998,
+          0.944
+        ],
+        [
+          0,
+          0.944
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A continuous low horizontal band of tiny vertical black ticks and occasional taller waveform spikes runs along the bottom paper edge."
+    },
+    {
+      "label": "moe compliance pinhole",
+      "artifact_type": "badge-like-pinhole",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.634,
+        "y": 0.176,
+        "w": 0.044,
+        "h": 0.058
+      },
+      "polygon": [
+        [
+          0.653,
+          0.177
+        ],
+        [
+          0.668,
+          0.183
+        ],
+        [
+          0.678,
+          0.199
+        ],
+        [
+          0.674,
+          0.219
+        ],
+        [
+          0.659,
+          0.234
+        ],
+        [
+          0.64,
+          0.231
+        ],
+        [
+          0.634,
+          0.214
+        ],
+        [
+          0.636,
+          0.195
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "Tiny gold-centered badge puncture set inside a dotted circular pastel halo, visibly distinct from the parchment."
+    },
+    {
+      "label": "generative horse dark window",
+      "artifact_type": "dark-miniature-code-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.855,
+        "y": 0.238,
+        "w": 0.064,
+        "h": 0.11
+      },
+      "polygon": [
+        [
+          0.858,
+          0.239
+        ],
+        [
+          0.914,
+          0.241
+        ],
+        [
+          0.918,
+          0.342
+        ],
+        [
+          0.858,
+          0.345
+        ],
+        [
+          0.855,
+          0.302
+        ],
+        [
+          0.855,
+          0.26
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "Small dark rectangular aperture at upper right with layered torn beige edges and fine tan crossing lines inside the dark blue-black window."
+    },
+    {
+      "label": "last-one image cut",
+      "artifact_type": "edge-notched-image-cut",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.871,
+        "y": 0.737,
+        "w": 0.112,
+        "h": 0.116
+      },
+      "polygon": [
+        [
+          0.873,
+          0.742
+        ],
+        [
+          0.98,
+          0.735
+        ],
+        [
+          0.982,
+          0.851
+        ],
+        [
+          0.927,
+          0.849
+        ],
+        [
+          0.913,
+          0.833
+        ],
+        [
+          0.874,
+          0.836
+        ],
+        [
+          0.87,
+          0.789
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Lower-right clipped paper/image cut with pinned corners, folded diagonal crease, torn staining, and an uneven notched lower-left edge."
+    },
+    {
+      "label": "stamp-album perforation",
+      "artifact_type": "perforated-grid-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.254,
+        "y": 0.14,
+        "w": 0.048,
+        "h": 0.113
+      },
+      "polygon": [
+        [
+          0.259,
+          0.144
+        ],
+        [
+          0.293,
+          0.144
+        ],
+        [
+          0.301,
+          0.155
+        ],
+        [
+          0.299,
+          0.247
+        ],
+        [
+          0.289,
+          0.253
+        ],
+        [
+          0.258,
+          0.249
+        ],
+        [
+          0.254,
+          0.235
+        ],
+        [
+          0.255,
+          0.157
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "Pale stamp-like rectangle inside a faint ruled album grid, with scalloped perforation teeth visible along the top, sides, and bottom."
+    },
+    {
+      "label": "last-one image cut",
+      "artifact_type": "edge-notched-image-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "stamp-album perforation",
+      "artifact_type": "perforated-grid-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.25,
+    "rationale": "The plate is sparse and expressionist: a few dominant anchors float in broad parchment negative space, with fine seams and pinholes adding detail without becoming clutter."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-15-scanned-bouquet-instrument-field-v1"
+}
