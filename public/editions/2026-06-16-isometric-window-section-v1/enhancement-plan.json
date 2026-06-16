@@ -1,0 +1,239 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-16-isometric-window-section-v1",
+  "edition_id": "2026-06-16-isometric-window-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-16-isometric-window-section-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal",
+    "screen-rendered-html"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-pixel-city-roof-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-pixel-city-roof-cut",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-isometric-block-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-multitudinous-window-bay",
+      "target_kind": "artifact",
+      "artifact_id": "hero-multitudinous-window-bay",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-lit-glass-constellation) selected from interpretation."
+    },
+    {
+      "target_id": "module-data-loom-map",
+      "target_kind": "artifact",
+      "artifact_id": "module-data-loom-map",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (circular-groove-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-serrated-stamp-ledge",
+      "target_kind": "artifact",
+      "artifact_id": "module-serrated-stamp-ledge",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (perforated-paper-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-green-ridge-fissure",
+      "target_kind": "artifact",
+      "artifact_id": "module-green-ridge-fissure",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (landscape-strata-opening) selected from interpretation."
+    },
+    {
+      "target_id": "module-body-landscape-glass-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-body-landscape-glass-slit",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (soft-organic-window-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-woodcut-memory-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-woodcut-memory-seam",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (inked-relief-strata) selected from interpretation."
+    },
+    {
+      "target_id": "module-rich-message-amber-panel",
+      "target_kind": "artifact",
+      "artifact_id": "module-rich-message-amber-panel",
+      "priority": 8,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (structured-glass-pane) selected from interpretation."
+    },
+    {
+      "target_id": "module-rich-message-amber-panel-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-rich-message-amber-panel-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (structured-glass-pane) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
