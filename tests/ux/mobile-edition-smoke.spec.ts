@@ -33,6 +33,8 @@ type MobileWindowMetric = {
   height: number
   hasVisibleMedia: boolean
   hasReadableText: boolean
+  hasReachableClose: boolean
+  mediaAreaRatio: number
 }
 
 const root = process.cwd()
@@ -123,6 +125,8 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
         height: 0,
         hasVisibleMedia: false,
         hasReadableText: false,
+        hasReachableClose: false,
+        mediaAreaRatio: 0,
       }
     }
 
@@ -131,10 +135,22 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       || rect.top < -1
       || rect.right > window.innerWidth + 1
       || rect.bottom > window.innerHeight + 1
+    let largestMediaArea = 0
     const visibleMedia = Array.from(node.querySelectorAll('img, iframe, video')).some((element) => {
       const mediaRect = element.getBoundingClientRect()
-      return mediaRect.width >= 48 && mediaRect.height >= 48
+      const visible = mediaRect.width >= 48 && mediaRect.height >= 48
+      if (visible) largestMediaArea = Math.max(largestMediaArea, mediaRect.width * mediaRect.height)
+      return visible
     })
+    const close = node.querySelector('.source-window__close')
+    const closeRect = close?.getBoundingClientRect()
+    const hasReachableClose = Boolean(closeRect
+      && closeRect.width >= 32
+      && closeRect.height >= 32
+      && closeRect.left >= -1
+      && closeRect.top >= -1
+      && closeRect.right <= window.innerWidth + 1
+      && closeRect.bottom <= window.innerHeight + 1)
     const text = (node.textContent || '').replace(/\s+/g, ' ').trim()
 
     return {
@@ -147,6 +163,8 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       height: rect.height,
       hasVisibleMedia: visibleMedia,
       hasReadableText: text.length >= 12,
+      hasReachableClose,
+      mediaAreaRatio: rect.width > 0 && rect.height > 0 ? largestMediaArea / (rect.width * rect.height) : 0,
     }
   }, { expectedBindingId: bindingId, expectedArtifactLabel: artifactLabel })
 }
@@ -213,7 +231,9 @@ for (const viewport of mobileViewports) {
       const minimumReadableWidth = Math.min(240, viewport.width - 24)
       if (metric.width < minimumReadableWidth - 1) failures.push(`${viewport.name} / ${label}: source window too narrow for readable source card (${Math.round(metric.width)}px < ${minimumReadableWidth}px)`)
       if (metric.clipped) failures.push(`${viewport.name} / ${label}: source window clipped by mobile viewport`)
+      if (!metric.hasReachableClose) failures.push(`${viewport.name} / ${label}: source window close control is not reachable on mobile`)
       if (!metric.hasVisibleMedia && !metric.hasReadableText) failures.push(`${viewport.name} / ${label}: source window has no visible media or readable fallback`)
+      if (metric.hasVisibleMedia && metric.mediaAreaRatio < 0.22) failures.push(`${viewport.name} / ${label}: source media is too small in the mobile source window (${metric.mediaAreaRatio.toFixed(2)} < 0.22)`)
 
       if (metrics.length === 1 && metric.exists) {
         await page.screenshot({ path: path.join(reportRoot, `${viewport.name}-window-open.png`), fullPage: false })

@@ -119,7 +119,7 @@ export function SourceWindow({
             <button className={`source-window__close source-window__close--${profile.closeStyle}`} onClick={onClose} type="button">{mode === 'preview' ? 'Dismiss' : 'Close'}</button>
           </div>
         </div>
-      ) : !isStageTextBloom && !isStageSignalTuning || mode !== 'preview' ? (
+      ) : !isStageTextBloom ? (
         <div className="source-window__floating-actions">
           <button aria-label={mode === 'preview' ? 'Dismiss preview' : 'Close source window'} className={`source-window__close source-window__close--${profile.closeStyle}`} onClick={onClose} type="button">×</button>
         </div>
