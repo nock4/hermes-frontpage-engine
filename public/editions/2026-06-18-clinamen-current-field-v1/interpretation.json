@@ -1,49 +1,49 @@
 {
-  "interpretation_id": "interp-2026-06-17-porcelain-ripple-source-field-v1",
-  "edition_id": "2026-06-17-porcelain-ripple-source-field-v1",
-  "plate_read_timestamp": "2026-06-17T08:08:36.330Z",
+  "interpretation_id": "interp-2026-06-18-clinamen-current-field-v1",
+  "edition_id": "2026-06-18-clinamen-current-field-v1",
+  "plate_read_timestamp": "2026-06-18T08:11:18.051Z",
   "scene_ontology": {
     "primary": "material-native",
     "secondary": [],
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A pale icy basin plate with translucent cracked membranes at the left and right edges, scattered porcelain-like circular ripple nodes, tiny pinholes, a repaired gray tile inset, and two black barbell seams pinned to opposite corners. The field stays mostly open, with source windows embedded as scars, glows, apertures, and edge hardware rather than cards.",
+    "summary": "A pale blue water plate with sparse stone ovals, curved rim intrusions, faint wake seams, small glints, pinhole clusters, and repaired scars. The source windows read as physical marks in the water skin rather than cards.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "quiet atomic chimes on a shallow reflective field",
-      "A pale icy basin plate with translucent cracked membranes at the left and right edges, scattered porcelain-like circular ripple nodes, tiny pinholes, a repaired gray tile inset, and two black barbell seams pinned to opposite corners. The field stays mostly open, with source windows embedded as scars, glows, apertures, and edge hardware rather than cards.",
-      "porcelain-ripples",
-      "quiet-basin",
-      "atomic-swerve"
+      "hushed optical drift, like an observatory plate laid over shallow water",
+      "A pale blue water plate with sparse stone ovals, curved rim intrusions, faint wake seams, small glints, pinhole clusters, and repaired scars. The source windows read as physical marks in the water skin rather than cards.",
+      "nocturnal-water",
+      "ceramic-glints",
+      "swerve-notation"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "hero translucent basin cut for Clinamen article",
-      "hero floating porcelain ring from Clinamen image",
-      "gray-card notch",
-      "impact ripple dent",
-      "Agent Tool Reliquary",
-      "archive tile glint",
-      "animal-drift aperture"
+      "hero stone-rim crescent aperture",
+      "hero cyan current pool scar",
+      "soft ASCII wake seam",
+      "ink-wash glint cluster",
+      "off-axis ripple crossing",
+      "submerged arc still",
+      "silver edge notch",
+      "Source Artifact 9"
     ],
     "dominant_surfaces": [
       "water",
-      "wood",
       "paint"
     ],
     "dominant_structures": [
-      "porcelain-ripple-source-field",
-      "broad uninterrupted overhead basin field",
-      "irregular porcelain-bowl nodes with ripple halos",
-      "two hero-scale translucent membrane planes embedded as luminous edge cuts",
-      "hairline source seams and perimeter notches",
-      "small graphite counterweights and tile-like glints",
-      "left red translucent membrane slit",
-      "right red translucent membrane pocket"
+      "clinamen-current-field",
+      "one wide uninterrupted water-like textile field",
+      "partial stone-rim edge cuts entering from the border",
+      "sparse ceramic drift nodes and collision ovals",
+      "hairline wake arcs and ripple rings",
+      "tiny source-bearing apertures clustered at current intersections",
+      "bottom-right stone crescent rim",
+      "central cyan current pool"
     ],
     "negative_space_regions": []
   },
@@ -58,21 +58,53 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: porcelain-ripple-source-field.",
+      "Primary ontology inferred from scene family and artifact types: clinamen-current-field.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-hero-translucent-basin-cut-for-clina",
+      "id": "hero-hero-stone-rim-crescent-aperture",
       "kind": "hero",
-      "type": "hero-scale-translucent-membrane-cut",
-      "strength": 0.95,
+      "type": "hero-scale-edge-cut",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.0495,
+        "x": 0.7194,
+        "y": 0.79,
+        "w": 0.2806,
+        "h": 0.21
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-cyan-current-pool-scar",
+      "kind": "hero",
+      "type": "hero-scale-water-surface",
+      "strength": 0.983216,
+      "bounds": {
+        "x": 0.238,
+        "y": 0.372,
+        "w": 0.424,
+        "h": 0.405
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-soft-ascii-wake-seam",
+      "kind": "module",
+      "type": "hairline-current-notation",
+      "strength": 0.805644,
+      "bounds": {
+        "x": 0.329,
         "y": 0,
-        "w": 0.1556,
-        "h": 0.7559
+        "w": 0.08,
+        "h": 0.277
       },
       "supports": [
         "threshold-scan-reveal",
@@ -80,15 +112,15 @@
       ]
     },
     {
-      "id": "hero-hero-floating-porcelain-ring-from-cl",
-      "kind": "hero",
-      "type": "hero-scale-porcelain-ripple-node",
-      "strength": 0.9199999999999999,
+      "id": "module-ink-wash-glint-cluster",
+      "kind": "module",
+      "type": "pinhole-glint-cluster",
+      "strength": 0.772368,
       "bounds": {
-        "x": 0.561,
-        "y": 0.153,
-        "w": 0.047,
-        "h": 0.073
+        "x": 0.793,
+        "y": 0.359,
+        "w": 0.107,
+        "h": 0.063
       },
       "supports": [
         "threshold-scan-reveal",
@@ -96,31 +128,15 @@
       ]
     },
     {
-      "id": "module-gray-card-notch",
+      "id": "module-off-axis-ripple-crossing",
       "kind": "module",
-      "type": "muted-gray-edge-notch",
-      "strength": 0.72,
+      "type": "ripple-intersection",
+      "strength": 0.7315200000000001,
       "bounds": {
-        "x": 0.352,
-        "y": 0.633,
-        "w": 0.136,
-        "h": 0.251
-      },
-      "supports": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-impact-ripple-dent",
-      "kind": "module",
-      "type": "collision-shadow-ripple",
-      "strength": 0.6900000000000001,
-      "bounds": {
-        "x": 0.226,
-        "y": 0.608,
-        "w": 0.054,
-        "h": 0.073
+        "x": 0.532,
+        "y": 0.62,
+        "w": 0.159,
+        "h": 0.143
       },
       "supports": [
         "threshold-scan-reveal",
@@ -128,26 +144,10 @@
       ]
     },
     {
-      "id": "module-agent-tool-reliquary",
+      "id": "module-submerged-arc-still",
       "kind": "module",
-      "type": "tool-reliquary",
-      "strength": 0.66,
-      "bounds": {
-        "x": 0.641,
-        "y": 0.513,
-        "w": 0.222,
-        "h": 0.279
-      },
-      "supports": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-impact-ripple-dent-2",
-      "kind": "module",
-      "type": "collision-shadow-ripple",
-      "strength": 0.63,
+      "type": "submerged-image-aperture",
+      "strength": 0.701604,
       "bounds": {
         "x": 0.1,
         "y": 0.78,
@@ -160,10 +160,10 @@
       ]
     },
     {
-      "id": "module-agent-tool-reliquary-2",
+      "id": "module-off-axis-ripple-crossing-2",
       "kind": "module",
-      "type": "tool-reliquary",
-      "strength": 0.6000000000000001,
+      "type": "ripple-intersection",
+      "strength": 0.6702000000000001,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
@@ -171,15 +171,15 @@
         "h": 0.16
       },
       "supports": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-archive-tile-glint",
+      "id": "module-silver-edge-notch",
       "kind": "module",
-      "type": "pale-square-tile-inlay",
-      "strength": 0.58,
+      "type": "edge-notch-glint",
+      "strength": 0.6501159999999999,
       "bounds": {
         "x": 0.72,
         "y": 0.76,
@@ -187,15 +187,15 @@
         "h": 0.16
       },
       "supports": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-animal-drift-aperture",
+      "id": "module-source-artifact-9",
       "kind": "module",
-      "type": "warm-shadow-pinhole",
-      "strength": 0.58,
+      "type": "surface-repair-seam",
+      "strength": 0.661036,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -211,62 +211,78 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-hero-translucent-basin-cut-for-clina-surface",
+      "id": "hero-hero-stone-rim-crescent-aperture-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.0495,
+        "x": 0.7194,
+        "y": 0.79,
+        "w": 0.2806,
+        "h": 0.21
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-cyan-current-pool-scar-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.238,
+        "y": 0.372,
+        "w": 0.424,
+        "h": 0.405
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-soft-ascii-wake-seam-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.329,
         "y": 0,
-        "w": 0.1556,
-        "h": 0.7559
+        "w": 0.08,
+        "h": 0.277
       },
-      "suitability": 0.9,
+      "suitability": 0.76,
       "supported_treatments": [
         "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "hero-hero-floating-porcelain-ring-from-cl-surface",
+      "id": "module-ink-wash-glint-cluster-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.561,
-        "y": 0.153,
-        "w": 0.047,
-        "h": 0.073
+        "x": 0.793,
+        "y": 0.359,
+        "w": 0.107,
+        "h": 0.063
       },
-      "suitability": 0.9,
+      "suitability": 0.76,
       "supported_treatments": [
         "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-gray-card-notch-surface",
-      "surface_type": "paper",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.352,
-        "y": 0.633,
-        "w": 0.136,
-        "h": 0.251
-      },
-      "suitability": 0.76,
-      "supported_treatments": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-impact-ripple-dent-surface",
+      "id": "module-off-axis-ripple-crossing-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.226,
-        "y": 0.608,
-        "w": 0.054,
-        "h": 0.073
+        "x": 0.532,
+        "y": 0.62,
+        "w": 0.159,
+        "h": 0.143
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -275,23 +291,7 @@
       ]
     },
     {
-      "id": "module-agent-tool-reliquary-surface",
-      "surface_type": "unknown",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.641,
-        "y": 0.513,
-        "w": 0.222,
-        "h": 0.279
-      },
-      "suitability": 0.76,
-      "supported_treatments": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-impact-ripple-dent-2-surface",
+      "id": "module-submerged-arc-still-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -307,8 +307,8 @@
       ]
     },
     {
-      "id": "module-agent-tool-reliquary-2-surface",
-      "surface_type": "unknown",
+      "id": "module-off-axis-ripple-crossing-2-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.42,
@@ -318,13 +318,13 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-archive-tile-glint-surface",
-      "surface_type": "wood",
+      "id": "module-silver-edge-notch-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.72,
@@ -334,13 +334,13 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-animal-drift-aperture-surface",
-      "surface_type": "paint",
+      "id": "module-source-artifact-9-surface",
+      "surface_type": "water",
       "host": "artifact",
       "bounds": {
         "x": 0.28,

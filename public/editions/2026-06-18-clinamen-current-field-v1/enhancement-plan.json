@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-18-clinamen-current-field-v1",
+  "edition_id": "2026-06-18-clinamen-current-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-18-clinamen-current-field-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-stone-rim-crescent-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-stone-rim-crescent-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-edge-cut) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-cyan-current-pool-scar",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-cyan-current-pool-scar",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-water-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-soft-ascii-wake-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-soft-ascii-wake-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hairline-current-notation) selected from interpretation."
+    },
+    {
+      "target_id": "module-ink-wash-glint-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-ink-wash-glint-cluster",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pinhole-glint-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-off-axis-ripple-crossing",
+      "target_kind": "artifact",
+      "artifact_id": "module-off-axis-ripple-crossing",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ripple-intersection) selected from interpretation."
+    },
+    {
+      "target_id": "module-submerged-arc-still",
+      "target_kind": "artifact",
+      "artifact_id": "module-submerged-arc-still",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (submerged-image-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-off-axis-ripple-crossing-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-off-axis-ripple-crossing-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ripple-intersection) selected from interpretation."
+    },
+    {
+      "target_id": "module-silver-edge-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-silver-edge-notch",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (edge-notch-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-source-artifact-9",
+      "target_kind": "artifact",
+      "artifact_id": "module-source-artifact-9",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (surface-repair-seam) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
