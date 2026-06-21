@@ -1,0 +1,555 @@
+{
+  "artifact_map_id": "map-2026-06-21-black-tape-scan-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "black-tape-scan-field",
+  "default_artifact_id": "hero-hero-mixtape-archive-aperture",
+  "artifacts": [
+    {
+      "id": "hero-hero-mixtape-archive-aperture",
+      "kind": "hero",
+      "label": "hero mixtape archive aperture",
+      "artifact_type": "large-torn-cover-scan-aperture",
+      "bounds": {
+        "x": 0.2637,
+        "y": 0.5475,
+        "w": 0.3682,
+        "h": 0.2591
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.2666,
+          0.7038
+        ],
+        [
+          0.2871,
+          0.5977
+        ],
+        [
+          0.3252,
+          0.5586
+        ],
+        [
+          0.3496,
+          0.5495
+        ],
+        [
+          0.5039,
+          0.5905
+        ],
+        [
+          0.5693,
+          0.6237
+        ],
+        [
+          0.584,
+          0.6426
+        ],
+        [
+          0.6279,
+          0.7409
+        ],
+        [
+          0.624,
+          0.7689
+        ],
+        [
+          0.5654,
+          0.804
+        ],
+        [
+          0.4023,
+          0.7799
+        ],
+        [
+          0.334,
+          0.7604
+        ],
+        [
+          0.2705,
+          0.7331
+        ],
+        [
+          0.2666,
+          0.709
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/hero-hero-mixtape-archive-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-mixtape-archive-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          667,
+          670
+        ],
+        "safe_stage_window_origin_px": [
+          711,
+          690
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-hero-anchor-cover-scar",
+      "kind": "hero",
+      "label": "hero anchor cover scar",
+      "artifact_type": "large-rubbed-print-fragment",
+      "bounds": {
+        "x": 0.636,
+        "y": 0.193,
+        "w": 0.18,
+        "h": 0.096
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.641,
+          0.254
+        ],
+        [
+          0.674,
+          0.22
+        ],
+        [
+          0.719,
+          0.205
+        ],
+        [
+          0.771,
+          0.199
+        ],
+        [
+          0.804,
+          0.218
+        ],
+        [
+          0.811,
+          0.281
+        ],
+        [
+          0.764,
+          0.286
+        ],
+        [
+          0.705,
+          0.271
+        ],
+        [
+          0.667,
+          0.268
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/hero-hero-anchor-cover-scar.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-anchor-cover-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1115,
+          239
+        ],
+        "safe_stage_window_origin_px": [
+          1137,
+          247
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-public-domain-paper-window",
+      "kind": "module",
+      "label": "public-domain paper window",
+      "artifact_type": "off-white-catalog-paper-tear",
+      "bounds": {
+        "x": 0.896,
+        "y": 0.01,
+        "w": 0.091,
+        "h": 0.102
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.932,
+          0.011
+        ],
+        [
+          0.985,
+          0.028
+        ],
+        [
+          0.987,
+          0.109
+        ],
+        [
+          0.958,
+          0.11
+        ],
+        [
+          0.919,
+          0.084
+        ],
+        [
+          0.895,
+          0.062
+        ],
+        [
+          0.914,
+          0.032
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/module-public-domain-paper-window.svg",
+      "source_binding_ids": [
+        "binding-module-public-domain-paper-window"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          80
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-patchwork-lineage-glint",
+      "kind": "module",
+      "label": "patchwork lineage glint",
+      "artifact_type": "hairline-teal-node-thread",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.443,
+        "w": 0.417,
+        "h": 0.132
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.508,
+          0.443
+        ],
+        [
+          0.925,
+          0.443
+        ],
+        [
+          0.925,
+          0.575
+        ],
+        [
+          0.508,
+          0.575
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/module-patchwork-lineage-glint.svg",
+      "source_binding_ids": [
+        "binding-module-patchwork-lineage-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1101,
+          510
+        ],
+        "safe_stage_window_origin_px": [
+          1152,
+          521
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.784,
+        "y": 0.599,
+        "w": 0.142,
+        "h": 0.096
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.785,
+          0.609
+        ],
+        [
+          0.858,
+          0.606
+        ],
+        [
+          0.876,
+          0.598
+        ],
+        [
+          0.925,
+          0.614
+        ],
+        [
+          0.914,
+          0.658
+        ],
+        [
+          0.884,
+          0.657
+        ],
+        [
+          0.879,
+          0.695
+        ],
+        [
+          0.821,
+          0.689
+        ],
+        [
+          0.817,
+          0.671
+        ],
+        [
+          0.786,
+          0.671
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1313,
+          655
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          663
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.619,
+        "y": 0.704,
+        "w": 0.17,
+        "h": 0.064
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.622,
+          0.719
+        ],
+        [
+          0.65,
+          0.709
+        ],
+        [
+          0.689,
+          0.706
+        ],
+        [
+          0.735,
+          0.708
+        ],
+        [
+          0.778,
+          0.719
+        ],
+        [
+          0.787,
+          0.743
+        ],
+        [
+          0.764,
+          0.763
+        ],
+        [
+          0.709,
+          0.768
+        ],
+        [
+          0.654,
+          0.759
+        ],
+        [
+          0.621,
+          0.741
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1081,
+          748
+        ],
+        "safe_stage_window_origin_px": [
+          1102,
+          754
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-patchwork-lineage-glint-2",
+      "kind": "module",
+      "label": "patchwork lineage glint",
+      "artifact_type": "hairline-teal-node-thread",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/module-patchwork-lineage-glint-2.svg",
+      "source_binding_ids": [
+        "binding-module-patchwork-lineage-glint-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-layered-fragment-2",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/module-layered-fragment-2.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "black-tape-scan-field",
+      "mask_path": "/editions/2026-06-21-black-tape-scan-field-v1/assets/masks/module-distributed-marker-2.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

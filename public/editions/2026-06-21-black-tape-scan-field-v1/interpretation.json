@@ -1,48 +1,47 @@
 {
-  "interpretation_id": "interp-2026-06-21-unheard-index-cloth-v1",
-  "edition_id": "2026-06-21-unheard-index-cloth-v1",
-  "plate_read_timestamp": "2026-06-21T08:12:32.281Z",
+  "interpretation_id": "interp-2026-06-21-black-tape-scan-field-v1",
+  "edition_id": "2026-06-21-black-tape-scan-field-v1",
+  "plate_read_timestamp": "2026-06-21T14:34:41.727Z",
   "scene_ontology": {
     "primary": "material-native",
     "secondary": [],
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A mostly bare cream paper plate with a diagonal torn/stitch seam rising from a lower-left collage wound toward an upper-right parchment aperture. Sparse colored pinholes, dots, registration ticks, embossed beads, small glossy slivers, and edge notches carry the source surfaces without becoming cards.",
+    "summary": "A dark, worn scan-field plate with sparse torn apertures, tiny colored stamps, pinholes, teal thread scratches, paper scars, and one large lower cover-stock rupture carrying the dominant source evidence.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "quiet map of unheard songs",
-      "A mostly bare cream paper plate with a diagonal torn/stitch seam rising from a lower-left collage wound toward an upper-right parchment aperture. Sparse colored pinholes, dots, registration ticks, embossed beads, small glossy slivers, and edge notches carry the source surfaces without becoming cards.",
-      "music-taxonomy",
-      "minimal-field",
-      "scanned-cloth"
+      "quiet black archive, loud tape fragments",
+      "A dark, worn scan-field plate with sparse torn apertures, tiny colored stamps, pinholes, teal thread scratches, paper scars, and one large lower cover-stock rupture carrying the dominant source evidence.",
+      "mixtape-archive",
+      "flatbed-scan",
+      "tiny-apertures"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "every-noise-main-field",
-      "unheard-book-scarf",
-      "Background Memory Ledger",
-      "furialog-thread-seam",
-      "amazon-book-slice",
-      "customer-image-glint",
-      "red-review-shard"
+      "hero mixtape archive aperture",
+      "hero anchor cover scar",
+      "public-domain paper window",
+      "patchwork lineage glint",
+      "Layered Fragment",
+      "Distributed Marker"
     ],
     "dominant_surfaces": [
       "paper",
       "paint"
     ],
     "dominant_structures": [
-      "sparse-genre-taxonomy-cloth",
-      "one uninterrupted pale textile field",
-      "two opposing source constellations connected by a quiet diagonal tension",
-      "tiny colored pinholes and taxonomy dots",
-      "cropped glossy rectangular slivers tucked into repairs",
-      "stitched glyph rows and registration ticks",
-      "darkened edge fade at one corner",
-      "lower-left torn glossy book sliver"
+      "black-tape-scan-field",
+      "one uninterrupted smoky archive field",
+      "two hero-scale torn scan apertures",
+      "tiny square cover slivers embedded in seams",
+      "pinhole catalog nodes with faint teal threads",
+      "corner stamp repairs and clipped edge labels",
+      "lower torn color-cover aperture",
+      "upper-right torn yellow-cyan window"
     ],
     "negative_space_regions": []
   },
@@ -57,21 +56,21 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: sparse-genre-taxonomy-cloth.",
+      "Primary ontology inferred from scene family and artifact types: black-tape-scan-field.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-every-noise-main-field",
+      "id": "hero-hero-mixtape-archive-aperture",
       "kind": "hero",
-      "type": "sparse-taxonomy-pinhole-field",
-      "strength": 0.95,
+      "type": "large-torn-cover-scan-aperture",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.7,
-        "y": 0.006,
-        "w": 0.284,
-        "h": 0.351
+        "x": 0.2637,
+        "y": 0.5475,
+        "w": 0.3682,
+        "h": 0.2591
       },
       "supports": [
         "threshold-scan-reveal",
@@ -79,79 +78,63 @@
       ]
     },
     {
-      "id": "hero-unheard-book-scarf",
+      "id": "hero-hero-anchor-cover-scar",
       "kind": "hero",
-      "type": "glossy-cover-sliver-repair",
-      "strength": 0.9199999999999999,
+      "type": "large-rubbed-print-fragment",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.042,
-        "y": 0.708,
-        "w": 0.184,
-        "h": 0.211
-      },
-      "supports": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-background-memory-ledger",
-      "kind": "module",
-      "type": "charcoal-fade-edge-mark",
-      "strength": 0.72,
-      "bounds": {
-        "x": 0.078,
-        "y": 0.742,
-        "w": 0.111,
-        "h": 0.124
-      },
-      "supports": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-furialog-thread-seam",
-      "kind": "module",
-      "type": "fine-essay-thread-stitch",
-      "strength": 0.6900000000000001,
-      "bounds": {
-        "x": 0.196,
-        "y": 0.136,
-        "w": 0.652,
-        "h": 0.588
-      },
-      "supports": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-amazon-book-slice",
-      "kind": "module",
-      "type": "thin-product-image-seam",
-      "strength": 0.66,
-      "bounds": {
-        "x": 0.62,
-        "y": 0.54,
-        "w": 0.22,
-        "h": 0.22
-      },
-      "supports": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-customer-image-glint",
-      "kind": "module",
-      "type": "pinched-photo-glint",
-      "strength": 0.63,
-      "bounds": {
-        "x": 0.1,
-        "y": 0.78,
+        "x": 0.636,
+        "y": 0.193,
         "w": 0.18,
-        "h": 0.16
+        "h": 0.096
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-public-domain-paper-window",
+      "kind": "module",
+      "type": "off-white-catalog-paper-tear",
+      "strength": 0.799524,
+      "bounds": {
+        "x": 0.896,
+        "y": 0.01,
+        "w": 0.091,
+        "h": 0.102
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-patchwork-lineage-glint",
+      "kind": "module",
+      "type": "hairline-teal-node-thread",
+      "strength": 0.7626600000000001,
+      "bounds": {
+        "x": 0.508,
+        "y": 0.443,
+        "w": 0.417,
+        "h": 0.132
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "layered-fragment",
+      "strength": 0.734004,
+      "bounds": {
+        "x": 0.784,
+        "y": 0.599,
+        "w": 0.142,
+        "h": 0.096
       },
       "supports": [
         "paint-bleed-reveal",
@@ -159,10 +142,26 @@
       ]
     },
     {
-      "id": "module-red-review-shard",
+      "id": "module-distributed-marker",
       "kind": "module",
-      "type": "cropped-review-image-repair",
-      "strength": 0.6000000000000001,
+      "type": "distributed-marker",
+      "strength": 0.70674,
+      "bounds": {
+        "x": 0.619,
+        "y": 0.704,
+        "w": 0.17,
+        "h": 0.064
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-patchwork-lineage-glint-2",
+      "kind": "module",
+      "type": "hairline-teal-node-thread",
+      "strength": 0.6679920000000001,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
@@ -170,15 +169,15 @@
         "h": 0.16
       },
       "supports": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-background-memory-ledger-2",
+      "id": "module-layered-fragment-2",
       "kind": "module",
-      "type": "charcoal-fade-edge-mark",
-      "strength": 0.58,
+      "type": "layered-fragment",
+      "strength": 0.651724,
       "bounds": {
         "x": 0.72,
         "y": 0.76,
@@ -186,15 +185,15 @@
         "h": 0.16
       },
       "supports": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-furialog-thread-seam-2",
+      "id": "module-distributed-marker-2",
       "kind": "module",
-      "type": "fine-essay-thread-stitch",
-      "strength": 0.58,
+      "type": "distributed-marker",
+      "strength": 0.66328,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -210,14 +209,14 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-every-noise-main-field-surface",
+      "id": "hero-hero-mixtape-archive-aperture-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.7,
-        "y": 0.006,
-        "w": 0.284,
-        "h": 0.351
+        "x": 0.2637,
+        "y": 0.5475,
+        "w": 0.3682,
+        "h": 0.2591
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -226,14 +225,14 @@
       ]
     },
     {
-      "id": "hero-unheard-book-scarf-surface",
+      "id": "hero-hero-anchor-cover-scar-surface",
       "surface_type": "paper",
       "host": "artifact",
       "bounds": {
-        "x": 0.042,
-        "y": 0.708,
-        "w": 0.184,
-        "h": 0.211
+        "x": 0.636,
+        "y": 0.193,
+        "w": 0.18,
+        "h": 0.096
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -242,14 +241,14 @@
       ]
     },
     {
-      "id": "module-background-memory-ledger-surface",
+      "id": "module-public-domain-paper-window-surface",
       "surface_type": "paper",
       "host": "artifact",
       "bounds": {
-        "x": 0.078,
-        "y": 0.742,
-        "w": 0.111,
-        "h": 0.124
+        "x": 0.896,
+        "y": 0.01,
+        "w": 0.091,
+        "h": 0.102
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -258,14 +257,14 @@
       ]
     },
     {
-      "id": "module-furialog-thread-seam-surface",
+      "id": "module-patchwork-lineage-glint-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.196,
-        "y": 0.136,
-        "w": 0.652,
-        "h": 0.588
+        "x": 0.508,
+        "y": 0.443,
+        "w": 0.417,
+        "h": 0.132
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -274,30 +273,14 @@
       ]
     },
     {
-      "id": "module-amazon-book-slice-surface",
-      "surface_type": "paper",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.62,
-        "y": 0.54,
-        "w": 0.22,
-        "h": 0.22
-      },
-      "suitability": 0.76,
-      "supported_treatments": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-customer-image-glint-surface",
+      "id": "module-layered-fragment-surface",
       "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
-        "x": 0.1,
-        "y": 0.78,
-        "w": 0.18,
-        "h": 0.16
+        "x": 0.784,
+        "y": 0.599,
+        "w": 0.142,
+        "h": 0.096
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -306,8 +289,24 @@
       ]
     },
     {
-      "id": "module-red-review-shard-surface",
-      "surface_type": "unknown",
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.619,
+        "y": 0.704,
+        "w": 0.17,
+        "h": 0.064
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-patchwork-lineage-glint-2-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.42,
@@ -317,13 +316,13 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-background-memory-ledger-2-surface",
-      "surface_type": "paper",
+      "id": "module-layered-fragment-2-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
         "x": 0.72,
@@ -333,12 +332,12 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-furialog-thread-seam-2-surface",
+      "id": "module-distributed-marker-2-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
