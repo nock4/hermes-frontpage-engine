@@ -1,0 +1,370 @@
+{
+  "analysis_id": "analysis-2026-06-21-unheard-index-cloth-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A mostly bare cream paper plate with a diagonal torn/stitch seam rising from a lower-left collage wound toward an upper-right parchment aperture. Sparse colored pinholes, dots, registration ticks, embossed beads, small glossy slivers, and edge notches carry the source surfaces without becoming cards.",
+  "usable_surfaces": [
+    "lower-left torn glossy book sliver",
+    "wide diagonal stitched repair seam",
+    "upper-right pinhole taxonomy constellation",
+    "upper-right parchment aperture with dark clustered knots",
+    "right-edge clipped registration notch",
+    "tiny blue upper-edge aperture",
+    "lower-center reflective photo shard",
+    "dark fading left-bottom ledger edge",
+    "fine dotted essay stitch lines"
+  ],
+  "detected_objects": [
+    {
+      "label": "every-noise-main-field",
+      "artifact_type": "sparse-taxonomy-pinhole-field",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.7,
+        "y": 0.006,
+        "w": 0.284,
+        "h": 0.351
+      },
+      "polygon": [
+        [
+          0.84,
+          0.009
+        ],
+        [
+          0.933,
+          0.014
+        ],
+        [
+          0.968,
+          0.027
+        ],
+        [
+          0.97,
+          0.108
+        ],
+        [
+          0.984,
+          0.15
+        ],
+        [
+          0.941,
+          0.253
+        ],
+        [
+          0.956,
+          0.332
+        ],
+        [
+          0.842,
+          0.354
+        ],
+        [
+          0.718,
+          0.323
+        ],
+        [
+          0.704,
+          0.253
+        ],
+        [
+          0.771,
+          0.144
+        ],
+        [
+          0.813,
+          0.058
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Sparse constellation of blue, black, brown, and white pinholes and micro-registration marks across the upper-right paper field, including vertical dotted runs and scattered colored apertures."
+    },
+    {
+      "label": "unheard-book-scarf",
+      "artifact_type": "glossy-cover-sliver-repair",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.042,
+        "y": 0.708,
+        "w": 0.184,
+        "h": 0.211
+      },
+      "polygon": [
+        [
+          0.052,
+          0.914
+        ],
+        [
+          0.071,
+          0.862
+        ],
+        [
+          0.081,
+          0.807
+        ],
+        [
+          0.105,
+          0.758
+        ],
+        [
+          0.143,
+          0.72
+        ],
+        [
+          0.191,
+          0.708
+        ],
+        [
+          0.222,
+          0.729
+        ],
+        [
+          0.211,
+          0.787
+        ],
+        [
+          0.183,
+          0.838
+        ],
+        [
+          0.144,
+          0.884
+        ],
+        [
+          0.095,
+          0.912
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "Bold red, blue, black, and cream glossy cropped sliver embedded in a ragged diagonal tear at lower left, with lifted paper fibers and stitched edges."
+    },
+    {
+      "label": "Background Memory Ledger",
+      "artifact_type": "charcoal-fade-edge-mark",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.078,
+        "y": 0.742,
+        "w": 0.111,
+        "h": 0.124
+      },
+      "polygon": [
+        [
+          0.078,
+          0.852
+        ],
+        [
+          0.088,
+          0.798
+        ],
+        [
+          0.106,
+          0.757
+        ],
+        [
+          0.137,
+          0.742
+        ],
+        [
+          0.17,
+          0.752
+        ],
+        [
+          0.189,
+          0.785
+        ],
+        [
+          0.177,
+          0.828
+        ],
+        [
+          0.145,
+          0.858
+        ],
+        [
+          0.104,
+          0.866
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "Dark black triangular fade and shadowed paper weight inside the lower-left torn repair, opposing the cream negative field."
+    },
+    {
+      "label": "furialog-thread-seam",
+      "artifact_type": "fine-essay-thread-stitch",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.196,
+        "y": 0.136,
+        "w": 0.652,
+        "h": 0.588
+      },
+      "confidence": 0.88,
+      "visual_evidence": "Long fine stitched diagonal seam with tiny knots and cross-stitches running from the lower-left repair through the plate toward the upper-right aperture."
+    },
+    {
+      "label": "amazon-book-slice",
+      "artifact_type": "thin-product-image-seam",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "customer-image-glint",
+      "artifact_type": "pinched-photo-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "red-review-shard",
+      "artifact_type": "cropped-review-image-repair",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Background Memory Ledger",
+      "artifact_type": "charcoal-fade-edge-mark",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "furialog-thread-seam",
+      "artifact_type": "fine-essay-thread-stitch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.536,
+    "rationale": "The plate is dominated by negative cream paper, one diagonal repair gesture, and two clustered source zones. The pinholes and ticks are numerous but sparse, so the composition stays minimal and expressionist rather than cluttered."
+  },
+  "fallback_detected_object_count": 5,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-21-unheard-index-cloth-v1"
+}

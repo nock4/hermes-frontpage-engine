@@ -130,8 +130,22 @@ function handleSourceImageLoad(event: SyntheticEvent<HTMLImageElement>) {
   }
 }
 
+function shouldBypassPosterCrop(binding: SourceBindingRecord, fallbackUrl: string | null) {
+  return Boolean(
+    fallbackUrl
+    && binding.source_visual?.render_mode === 'poster-crop'
+    && binding.source_visual?.crop_risk === 'high',
+  )
+}
+
 function getSourceVisualImageUrl(binding: SourceBindingRecord, fallbackUrl: string | null) {
+  if (shouldBypassPosterCrop(binding, fallbackUrl)) return fallbackUrl
   return binding.source_visual?.poster_asset_path || fallbackUrl
+}
+
+function getSourceVisualMode(binding: SourceBindingRecord, fallbackUrl: string | null) {
+  if (shouldBypassPosterCrop(binding, fallbackUrl)) return 'raw'
+  return binding.source_visual?.render_mode || 'raw'
 }
 
 function getSourceVisualStyle(binding: SourceBindingRecord) {
@@ -165,7 +179,7 @@ function SourceImageTitleCard({
   const sourceLabel = getSourceHostLabel(binding.source_url) || binding.kicker || binding.source_domain || 'source'
   const visualImageUrl = getSourceVisualImageUrl(binding, imageUrl)
   const visualStyle = getSourceVisualStyle(binding)
-  const visualMode = binding.source_visual?.render_mode || 'raw'
+  const visualMode = getSourceVisualMode(binding, imageUrl)
   const sourceGlyph = getSourceGlyph(binding)
   const edgeTitle = truncateLabel(title, 72) || title
   const cardBody = (

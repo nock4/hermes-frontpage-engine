@@ -3607,9 +3607,18 @@
   min-height: auto;
 }
 
+.source-window--stage.source-window--preview.source-window--poster-window .visual-source-card,
+.source-window--stage.source-window--preview.source-window--bleed-embed .visual-source-card,
+.source-window--stage.source-window--preview.source-window--poster-window .visual-source-card__figure,
+.source-window--stage.source-window--preview.source-window--bleed-embed .visual-source-card__figure {
+  min-height: min(34vh, 15rem);
+  height: min(34vh, 15rem);
+}
+
 .visual-source-card__figure {
+  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: min(52vh, 20rem);
   max-height: min(52vh, 20rem);
   margin: 0;
   display: grid;
@@ -3650,6 +3659,8 @@
 }
 
 .visual-source-card__image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   max-height: min(52vh, 20rem);
@@ -4611,4 +4622,12 @@
   min-height: 0;
   height: auto;
   aspect-ratio: 16 / 9;
+}
+
+.source-window--stage.source-window--preview.source-window--poster-window .visual-source-card,
+.source-window--stage.source-window--preview.source-window--bleed-embed .visual-source-card,
+.source-window--stage.source-window--preview.source-window--poster-window .visual-source-card__figure,
+.source-window--stage.source-window--preview.source-window--bleed-embed .visual-source-card__figure {
+  min-height: min(34vh, 15rem);
+  height: min(34vh, 15rem);
 }
