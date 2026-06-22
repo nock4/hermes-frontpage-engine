@@ -1,0 +1,251 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-06-22-torn-digital-bouquet-v1",
+  "edition_id": "2026-06-22-torn-digital-bouquet-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-digibouquet-rupture-aperture",
+      "source_image_url": "https://assets.pauwee.com/other/digibouquet.png",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-hero-digibouquet-rupture-aperture.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-hero-digibouquet-rupture-aperture-source-visual-qa.jpg",
+      "image_width": 2360,
+      "image_height": 739,
+      "aspect_ratio": 3.1935,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "poster_crop": {
+        "x": 0.222,
+        "y": 0.0,
+        "width": 0.5564,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "center-fallback",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.0,
+        "candidate_box_count": 0
+      }
+    },
+    {
+      "binding_id": "binding-hero-peony-glass-fold",
+      "source_image_url": "https://assets.pauwee.com/color/flowers/peony.webp",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-hero-peony-glass-fold.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-hero-peony-glass-fold-source-visual-qa.jpg",
+      "image_width": 384,
+      "image_height": 354,
+      "aspect_ratio": 1.0847,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.5091,
+        "y": 0.5
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.1949,
+        "width": 1.0,
+        "height": 0.6102
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.095,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-cool-internet-things-seed-tweet",
+      "source_image_url": "https://pbs.twimg.com/media/HKjGw8iWQAA2R29.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-module-cool-internet-things-seed-tweet.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-module-cool-internet-things-seed-tweet-source-visual-qa.jpg",
+      "image_width": 3024,
+      "image_height": 1528,
+      "aspect_ratio": 1.9791,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.4998,
+        "y": 0.4627
+      },
+      "poster_crop": {
+        "x": 0.0509,
+        "y": 0.0,
+        "width": 0.8981,
+        "height": 0.9993
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02665,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-bookmark-injection-slit",
+      "source_image_url": "https://pbs.twimg.com/media/HLUIXJKaYAARtCJ.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-module-bookmark-injection-slit.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-module-bookmark-injection-slit-source-visual-qa.jpg",
+      "image_width": 2918,
+      "image_height": 1522,
+      "aspect_ratio": 1.9172,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.4321,
+        "y": 0.547
+      },
+      "poster_crop": {
+        "x": 0.0027,
+        "y": 0.0,
+        "width": 0.927,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.04569,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-poetry-camera-receipt",
+      "source_image_url": "https://poetry.camera/assets/images/link-preview-magnolia-tree.png",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-module-poetry-camera-receipt.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-module-poetry-camera-receipt-source-visual-qa.jpg",
+      "image_width": 1000,
+      "image_height": 500,
+      "aspect_ratio": 2.0,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.4755,
+        "y": 0.5
+      },
+      "poster_crop": {
+        "x": 0.056,
+        "y": 0.0,
+        "width": 0.888,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.00888,
+        "candidate_box_count": 15
+      }
+    },
+    {
+      "binding_id": "binding-module-living-sketchbook-vellum-scrap",
+      "source_image_url": "https://www.liumichelle.com/og-image.png?v=5",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-module-living-sketchbook-vellum-scrap.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-module-living-sketchbook-vellum-scrap-source-visual-qa.jpg",
+      "image_width": 1200,
+      "image_height": 628,
+      "aspect_ratio": 1.9108,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4976
+      },
+      "poster_crop": {
+        "x": 0.035,
+        "y": 0.0,
+        "width": 0.93,
+        "height": 0.9984
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.00408,
+        "candidate_box_count": 1
+      }
+    },
+    {
+      "binding_id": "binding-module-anchor-image-well-two",
+      "source_image_url": "https://pbs.twimg.com/media/HKjGw8iWQAA2R29.jpg",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-module-anchor-image-well-two.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-module-anchor-image-well-two-source-visual-qa.jpg",
+      "image_width": 1199,
+      "image_height": 606,
+      "aspect_ratio": 1.9785,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.4996,
+        "y": 0.462
+      },
+      "poster_crop": {
+        "x": 0.05,
+        "y": 0.0,
+        "width": 0.8982,
+        "height": 0.9983
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02485,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-anchor-image-well-two-2",
+      "source_image_url": "https://pbs.twimg.com/media/HKjGyAgWEAASJjq.jpg",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-module-anchor-image-well-two-2.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-module-anchor-image-well-two-2-source-visual-qa.jpg",
+      "image_width": 1199,
+      "image_height": 652,
+      "aspect_ratio": 1.839,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.4137,
+        "y": 0.3083
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.9666,
+        "height": 0.9985
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02397,
+        "candidate_box_count": 21
+      }
+    },
+    {
+      "binding_id": "binding-module-last-one-edge-node",
+      "source_image_url": "https://pbs.twimg.com/media/HKq3xLta4AEqT8e.png?name=orig",
+      "poster_asset_path": "/editions/2026-06-22-torn-digital-bouquet-v1/assets/source-posters/binding-module-last-one-edge-node.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-06-22-torn-digital-bouquet-v1/binding-module-last-one-edge-node-source-visual-qa.jpg",
+      "image_width": 828,
+      "image_height": 828,
+      "aspect_ratio": 1.0,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.5066,
+        "y": 0.5163
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2198,
+        "width": 1.0,
+        "height": 0.5616
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.03695,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-22-torn-digital-bouquet-v1",
+  "edition_id": "2026-06-22-torn-digital-bouquet-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-22-torn-digital-bouquet-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-digibouquet-rupture-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-digibouquet-rupture-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-petal-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-peony-glass-fold",
+      "target_kind": "artifact",
+      "artifact_id": "hero-peony-glass-fold",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-glossy-fold) selected from interpretation."
+    },
+    {
+      "target_id": "module-cool-internet-things-seed-tweet",
+      "target_kind": "artifact",
+      "artifact_id": "module-cool-internet-things-seed-tweet",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-ink-feed-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-bookmark-injection-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-bookmark-injection-slit",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (diagonal-bookmark-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-poetry-camera-receipt",
+      "target_kind": "artifact",
+      "artifact_id": "module-poetry-camera-receipt",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (receipt-paper-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-living-sketchbook-vellum-scrap",
+      "target_kind": "artifact",
+      "artifact_id": "module-living-sketchbook-vellum-scrap",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (inked-vellum-scrap) selected from interpretation."
+    },
+    {
+      "target_id": "module-anchor-image-well-two",
+      "target_kind": "artifact",
+      "artifact_id": "module-anchor-image-well-two",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (perforated-stamp-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-anchor-image-well-two-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-anchor-image-well-two-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (perforated-stamp-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-last-one-edge-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-last-one-edge-node",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (source-artifact) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

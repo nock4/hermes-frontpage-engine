@@ -1,0 +1,436 @@
+{
+  "analysis_id": "analysis-2026-06-22-torn-digital-bouquet-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dense expressionist bloom of translucent pink and cream petals, perforated stamp edges, gridded image wells, black feed cuts, pale receipt strips, beads, and torn vellum scraps. The interface can attach to the visible apertures, slits, knots, beads, and perforated paper islands embedded in the flower mass.",
+  "usable_surfaces": [
+    "large circular gridded red-pink aperture at upper left",
+    "broad translucent pink peony fold across lower center",
+    "narrow black ink cut on diagonal clear ribbon",
+    "sharp diagonal slit through central bloom seam",
+    "pale perforated receipt strip near lower left center",
+    "small vellum scrap tucked below central petal edge",
+    "teal glossy bead in left bloom fold",
+    "perforated stamp notch along lower red image well",
+    "small dark edge node in right open cream field"
+  ],
+  "detected_objects": [
+    {
+      "label": "digibouquet rupture aperture",
+      "artifact_type": "hero-scale-petal-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.125,
+        "y": 0.122,
+        "w": 0.378,
+        "h": 0.309
+      },
+      "polygon": [
+        [
+          0.232,
+          0.122
+        ],
+        [
+          0.327,
+          0.109
+        ],
+        [
+          0.419,
+          0.133
+        ],
+        [
+          0.487,
+          0.189
+        ],
+        [
+          0.503,
+          0.271
+        ],
+        [
+          0.475,
+          0.356
+        ],
+        [
+          0.405,
+          0.415
+        ],
+        [
+          0.306,
+          0.431
+        ],
+        [
+          0.205,
+          0.405
+        ],
+        [
+          0.143,
+          0.344
+        ],
+        [
+          0.125,
+          0.261
+        ],
+        [
+          0.157,
+          0.178
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "largest round translucent red-pink gridded aperture with torn white stamp-like rim in the upper-left bloom"
+    },
+    {
+      "label": "peony glass fold",
+      "artifact_type": "hero-scale-glossy-fold",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.376,
+        "y": 0.489,
+        "w": 0.408,
+        "h": 0.372
+      },
+      "polygon": [
+        [
+          0.497,
+          0.489
+        ],
+        [
+          0.635,
+          0.514
+        ],
+        [
+          0.733,
+          0.603
+        ],
+        [
+          0.784,
+          0.707
+        ],
+        [
+          0.743,
+          0.814
+        ],
+        [
+          0.62,
+          0.861
+        ],
+        [
+          0.5,
+          0.835
+        ],
+        [
+          0.404,
+          0.746
+        ],
+        [
+          0.376,
+          0.646
+        ],
+        [
+          0.426,
+          0.552
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "broad glossy translucent peony-colored petal fold sweeping through the lower central plate"
+    },
+    {
+      "label": "cool internet things seed tweet",
+      "artifact_type": "black-ink-feed-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.558,
+        "y": 0.268,
+        "w": 0.066,
+        "h": 0.076
+      },
+      "polygon": [
+        [
+          0.572,
+          0.268
+        ],
+        [
+          0.6,
+          0.277
+        ],
+        [
+          0.624,
+          0.301
+        ],
+        [
+          0.615,
+          0.321
+        ],
+        [
+          0.586,
+          0.344
+        ],
+        [
+          0.558,
+          0.337
+        ],
+        [
+          0.565,
+          0.306
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "cluster of narrow black square ink marks embedded in the diagonal clear ribbon near the center-right seam"
+    },
+    {
+      "label": "bookmark injection slit",
+      "artifact_type": "diagonal-bookmark-slit",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.455,
+        "y": 0.223,
+        "w": 0.151,
+        "h": 0.246
+      },
+      "polygon": [
+        [
+          0.575,
+          0.223
+        ],
+        [
+          0.606,
+          0.237
+        ],
+        [
+          0.589,
+          0.298
+        ],
+        [
+          0.552,
+          0.367
+        ],
+        [
+          0.5,
+          0.432
+        ],
+        [
+          0.464,
+          0.469
+        ],
+        [
+          0.455,
+          0.447
+        ],
+        [
+          0.493,
+          0.375
+        ],
+        [
+          0.532,
+          0.296
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "sharp diagonal orange-brown seam slicing through the translucent bloom, with dark and amber anchors along its edge"
+    },
+    {
+      "label": "poetry camera receipt",
+      "artifact_type": "receipt-paper-window",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.223,
+        "y": 0.63,
+        "w": 0.218,
+        "h": 0.203
+      },
+      "polygon": [
+        [
+          0.251,
+          0.63
+        ],
+        [
+          0.413,
+          0.633
+        ],
+        [
+          0.441,
+          0.706
+        ],
+        [
+          0.421,
+          0.802
+        ],
+        [
+          0.306,
+          0.833
+        ],
+        [
+          0.226,
+          0.799
+        ],
+        [
+          0.223,
+          0.706
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "thin pale torn paper strip with faint grid, colored flecks, and receipt-like residue in the lower-left center"
+    },
+    {
+      "label": "living sketchbook vellum scrap",
+      "artifact_type": "inked-vellum-scrap",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.448,
+        "y": 0.574,
+        "w": 0.151,
+        "h": 0.134
+      },
+      "polygon": [
+        [
+          0.472,
+          0.574
+        ],
+        [
+          0.564,
+          0.587
+        ],
+        [
+          0.599,
+          0.646
+        ],
+        [
+          0.559,
+          0.701
+        ],
+        [
+          0.49,
+          0.708
+        ],
+        [
+          0.448,
+          0.664
+        ],
+        [
+          0.458,
+          0.608
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "small cream vellum scrap tucked under the pink petal, carrying black square stitch-like ink marks and gold stains"
+    },
+    {
+      "label": "anchor image well two",
+      "artifact_type": "perforated-stamp-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.083,
+        "y": 0.834,
+        "w": 0.217,
+        "h": 0.121
+      },
+      "polygon": [
+        [
+          0.105,
+          0.834
+        ],
+        [
+          0.206,
+          0.832
+        ],
+        [
+          0.281,
+          0.86
+        ],
+        [
+          0.3,
+          0.914
+        ],
+        [
+          0.266,
+          0.95
+        ],
+        [
+          0.16,
+          0.955
+        ],
+        [
+          0.083,
+          0.925
+        ],
+        [
+          0.086,
+          0.873
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "small lower-left red gridded image well with torn perforated stamp rim and black mesh texture"
+    },
+    {
+      "label": "anchor image well two",
+      "artifact_type": "perforated-stamp-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "last-one edge node",
+      "artifact_type": "source-artifact",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.401,
+    "rationale": "The plate has strong source-bearing surfaces, but the layered petals, perforations, beads, gridded wells, and black cuts make it visually dense rather than minimal."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-22-torn-digital-bouquet-v1"
+}
