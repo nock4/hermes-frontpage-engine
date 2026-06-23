@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-23-ceramic-aperture-atlas-v1",
+  "edition_id": "2026-06-23-ceramic-aperture-atlas-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-23-ceramic-aperture-atlas-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-sunlit-mural-tile-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-sunlit-mural-tile-field",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-ceramic-color-island) selected from interpretation."
+    },
+    {
+      "target_id": "hero-perforated-digital-stamp-corner",
+      "target_kind": "artifact",
+      "artifact_id": "hero-perforated-digital-stamp-corner",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stamp-perforation-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-digital-home-pinhole-garden",
+      "target_kind": "artifact",
+      "artifact_id": "module-digital-home-pinhole-garden",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pinhole-isometric-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-punch-cut-commercial-paper-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-punch-cut-commercial-paper-slit",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (die-cut-paper-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-mixed-media-assemblage-chip",
+      "target_kind": "artifact",
+      "artifact_id": "module-mixed-media-assemblage-chip",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (repaired-tile-chip) selected from interpretation."
+    },
+    {
+      "target_id": "module-future-floodproof-sky-village-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-future-floodproof-sky-village-notch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bridge-like-seam-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-archive-constellation-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-archive-constellation-glint",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-archive-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-film-still-seam-frame",
+      "target_kind": "artifact",
+      "artifact_id": "module-film-still-seam-frame",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hairline-frame-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-layered-fragment",
+      "target_kind": "artifact",
+      "artifact_id": "module-layered-fragment",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-fragment) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
