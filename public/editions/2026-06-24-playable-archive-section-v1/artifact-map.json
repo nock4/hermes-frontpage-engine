@@ -1,0 +1,631 @@
+{
+  "artifact_map_id": "map-2026-06-24-playable-archive-section-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "cutaway-game-art-library",
+  "default_artifact_id": "hero-hero-gameplay-library-vault",
+  "artifacts": [
+    {
+      "id": "hero-hero-gameplay-library-vault",
+      "kind": "hero",
+      "label": "hero gameplay-library vault",
+      "artifact_type": "oval-glass-source-chamber",
+      "bounds": {
+        "x": 0.137,
+        "y": 0.622,
+        "w": 0.303,
+        "h": 0.18
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.142,
+          0.689
+        ],
+        [
+          0.154,
+          0.64
+        ],
+        [
+          0.191,
+          0.605
+        ],
+        [
+          0.262,
+          0.594
+        ],
+        [
+          0.343,
+          0.601
+        ],
+        [
+          0.414,
+          0.629
+        ],
+        [
+          0.444,
+          0.68
+        ],
+        [
+          0.43,
+          0.731
+        ],
+        [
+          0.383,
+          0.773
+        ],
+        [
+          0.302,
+          0.793
+        ],
+        [
+          0.219,
+          0.785
+        ],
+        [
+          0.166,
+          0.748
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/hero-hero-gameplay-library-vault.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-gameplay-library-vault"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          443,
+          714
+        ],
+        "safe_stage_window_origin_px": [
+          480,
+          729
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "hero-hero-indie-reference-terrain",
+      "kind": "hero",
+      "label": "hero indie-reference terrain",
+      "artifact_type": "painted-archive-section-panel",
+      "bounds": {
+        "x": 0.377,
+        "y": 0.105,
+        "w": 0.512,
+        "h": 0.432
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.383,
+          0.371
+        ],
+        [
+          0.404,
+          0.285
+        ],
+        [
+          0.462,
+          0.151
+        ],
+        [
+          0.536,
+          0.109
+        ],
+        [
+          0.652,
+          0.104
+        ],
+        [
+          0.751,
+          0.135
+        ],
+        [
+          0.842,
+          0.231
+        ],
+        [
+          0.886,
+          0.34
+        ],
+        [
+          0.887,
+          0.438
+        ],
+        [
+          0.828,
+          0.506
+        ],
+        [
+          0.7,
+          0.53
+        ],
+        [
+          0.565,
+          0.518
+        ],
+        [
+          0.451,
+          0.475
+        ],
+        [
+          0.392,
+          0.424
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/hero-hero-indie-reference-terrain.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-indie-reference-terrain"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          972,
+          293
+        ],
+        "safe_stage_window_origin_px": [
+          1035,
+          329
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-aileenland-vellum-alcove",
+      "kind": "module",
+      "label": "aileenland vellum alcove",
+      "artifact_type": "pale-vellum-aperture",
+      "bounds": {
+        "x": 0.693,
+        "y": 0.409,
+        "w": 0.127,
+        "h": 0.092
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.695,
+          0.413
+        ],
+        [
+          0.725,
+          0.407
+        ],
+        [
+          0.765,
+          0.411
+        ],
+        [
+          0.807,
+          0.424
+        ],
+        [
+          0.819,
+          0.464
+        ],
+        [
+          0.802,
+          0.492
+        ],
+        [
+          0.757,
+          0.5
+        ],
+        [
+          0.712,
+          0.489
+        ],
+        [
+          0.697,
+          0.459
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/module-aileenland-vellum-alcove.svg",
+      "source_binding_ids": [
+        "binding-module-aileenland-vellum-alcove"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1162,
+          458
+        ],
+        "safe_stage_window_origin_px": [
+          1178,
+          466
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-agent-skill-glass-seam",
+      "kind": "module",
+      "label": "agent-skill glass seam",
+      "artifact_type": "dark-glass-learning-seam",
+      "bounds": {
+        "x": 0.562,
+        "y": 0.167,
+        "w": 0.065,
+        "h": 0.292
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.594,
+          0.167
+        ],
+        [
+          0.612,
+          0.221
+        ],
+        [
+          0.622,
+          0.292
+        ],
+        [
+          0.621,
+          0.371
+        ],
+        [
+          0.609,
+          0.446
+        ],
+        [
+          0.593,
+          0.459
+        ],
+        [
+          0.578,
+          0.424
+        ],
+        [
+          0.566,
+          0.348
+        ],
+        [
+          0.562,
+          0.272
+        ],
+        [
+          0.574,
+          0.201
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/module-agent-skill-glass-seam.svg",
+      "source_binding_ids": [
+        "binding-module-agent-skill-glass-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          913,
+          297
+        ],
+        "safe_stage_window_origin_px": [
+          921,
+          321
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-collaboration-graph-root-node",
+      "kind": "module",
+      "label": "collaboration-graph root node",
+      "artifact_type": "bronze-network-knot",
+      "bounds": {
+        "x": 0.454,
+        "y": 0.733,
+        "w": 0.085,
+        "h": 0.06
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.456,
+          0.76
+        ],
+        [
+          0.469,
+          0.736
+        ],
+        [
+          0.491,
+          0.728
+        ],
+        [
+          0.516,
+          0.731
+        ],
+        [
+          0.537,
+          0.752
+        ],
+        [
+          0.533,
+          0.776
+        ],
+        [
+          0.511,
+          0.79
+        ],
+        [
+          0.483,
+          0.789
+        ],
+        [
+          0.463,
+          0.777
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/module-collaboration-graph-root-node.svg",
+      "source_binding_ids": [
+        "binding-module-collaboration-graph-root-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          763,
+          776
+        ],
+        "safe_stage_window_origin_px": [
+          773,
+          781
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-elden-ring-thumbnail-shard",
+      "kind": "module",
+      "label": "elden-ring-thumbnail shard",
+      "artifact_type": "rough-painted-thumbnail-shard",
+      "bounds": {
+        "x": 0.333,
+        "y": 0.389,
+        "w": 0.056,
+        "h": 0.056
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.334,
+          0.4
+        ],
+        [
+          0.356,
+          0.388
+        ],
+        [
+          0.384,
+          0.393
+        ],
+        [
+          0.39,
+          0.421
+        ],
+        [
+          0.375,
+          0.444
+        ],
+        [
+          0.346,
+          0.444
+        ],
+        [
+          0.332,
+          0.425
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/module-elden-ring-thumbnail-shard.svg",
+      "source_binding_ids": [
+        "binding-module-elden-ring-thumbnail-shard"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          554,
+          422
+        ],
+        "safe_stage_window_origin_px": [
+          561,
+          427
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-disco-elysium-paper-cut",
+      "kind": "module",
+      "label": "disco-elysium-paper-cut",
+      "artifact_type": "rough-concept-paper-stratum",
+      "bounds": {
+        "x": 0.876,
+        "y": 0.618,
+        "w": 0.08,
+        "h": 0.064
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.878,
+          0.627
+        ],
+        [
+          0.896,
+          0.609
+        ],
+        [
+          0.934,
+          0.611
+        ],
+        [
+          0.957,
+          0.628
+        ],
+        [
+          0.954,
+          0.666
+        ],
+        [
+          0.932,
+          0.681
+        ],
+        [
+          0.894,
+          0.676
+        ],
+        [
+          0.876,
+          0.654
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/module-disco-elysium-paper-cut.svg",
+      "source_binding_ids": [
+        "binding-module-disco-elysium-paper-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          660
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-overwatch-color-slot",
+      "kind": "module",
+      "label": "overwatch-color-slot",
+      "artifact_type": "glowing-asset-slot",
+      "bounds": {
+        "x": 0.709,
+        "y": 0.7744,
+        "w": 0.2083,
+        "h": 0.1221
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.7109,
+          0.8076
+        ],
+        [
+          0.724,
+          0.7949
+        ],
+        [
+          0.793,
+          0.7783
+        ],
+        [
+          0.8301,
+          0.7773
+        ],
+        [
+          0.8991,
+          0.7842
+        ],
+        [
+          0.9147,
+          0.8115
+        ],
+        [
+          0.9141,
+          0.8193
+        ],
+        [
+          0.8971,
+          0.8477
+        ],
+        [
+          0.8691,
+          0.874
+        ],
+        [
+          0.7702,
+          0.8926
+        ],
+        [
+          0.7507,
+          0.874
+        ],
+        [
+          0.7109,
+          0.8086
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/module-overwatch-color-slot.svg",
+      "source_binding_ids": [
+        "binding-module-overwatch-color-slot"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-disco-elysium-paper-cut-2",
+      "kind": "module",
+      "label": "disco-elysium-paper-cut",
+      "artifact_type": "concept-paper-stratum",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "cutaway-game-art-library",
+      "mask_path": "/editions/2026-06-24-playable-archive-section-v1/assets/masks/module-disco-elysium-paper-cut-2.svg",
+      "source_binding_ids": [
+        "binding-module-disco-elysium-paper-cut-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

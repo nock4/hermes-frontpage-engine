@@ -1,0 +1,61 @@
+{
+  "brief_id": "brief-2026-06-24-playable-archive-section-v1",
+  "date": "2026-06-24",
+  "signal_cluster_ids": [
+    "4b8b7480e29b",
+    "3b54662d8223",
+    "dde2a0477f13",
+    "fe68bf423193",
+    "2c5995e2fe40",
+    "24e535e64578",
+    "54ac09670582",
+    "f486b5354bea"
+  ],
+  "research_node_ids": [
+    "research-1-efb2d734",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-dbef09f7",
+    "research-7-cb8a0329",
+    "research-8-2e1c4bb8",
+    "research-9-6e230925",
+    "research-10-9bc20e0e",
+    "research-11-1c107344",
+    "research-12-0974401a"
+  ],
+  "mood": "a playable archive unearthed in section, half ruin and half reference machine",
+  "material_language": [
+    "cut stone slabs with beveled section faces",
+    "aged parchment concept-paper embedded in strata",
+    "dark polished glass seams",
+    "tarnished bronze conduit lines",
+    "painted thumbnail panels with rough fantasy-art edges",
+    "soft ash-fog between archive layers"
+  ],
+  "lighting": "warm bronze grazing light across cut edges, cold blue-violet glints inside apertures, and a hazy pale backlight that keeps the strata readable",
+  "object_inventory": [
+    "one broad horizontal architectural cutaway with three to four terrain-like strata",
+    "two hero-scale exposed chambers carrying the main source fields",
+    "disciplined clusters of small painted archive fragments absorbed into stone and vellum",
+    "bronze conduit paths linking agentic and game-dev layers without becoming a signal board",
+    "foggy negative-space bands separating hoverable cuts and apertures"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no readable words, labels, filenames, logos, handles, alphanumeric callouts, or UI chrome inside the image",
+    "no desk, browser dashboard, SaaS landing page, card grid, cabinet, shelf wall, or generic software interface",
+    "do not copy the reference subject, armor, animal, pose, logo, or page chrome literally",
+    "do not use source-summary cards; every anchor must be a physical mark, aperture, edge, surface, or material interruption",
+    "avoid recent visual worlds: ceramic aperture atlas, torn bouquet, black tape scan field, cloth taxonomy, chrome observatory, nocturne current field",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no literal depiction of the source reference image"
+  ]
+}

@@ -1,0 +1,472 @@
+{
+  "analysis_id": "analysis-2026-06-24-playable-archive-section-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark layered fantasy archive cutaway: stone strata, parchment chambers, glass-lit vaults, bronze rails, thumbnail-like framed panels, glowing blue and violet apertures, and a lower network of circular nodes embedded into rough rock.",
+  "usable_surfaces": [
+    "central blue glass cathedral seam",
+    "large parchment archive chamber",
+    "lower-left oval gameplay vault",
+    "right parchment paper cut",
+    "small framed thumbnail row",
+    "upper-left violet glow slot",
+    "upper-right blue glow slot",
+    "lower bronze network nodes",
+    "left pale vellum framed aperture"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero gameplay-library vault",
+      "artifact_type": "oval-glass-source-chamber",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.137,
+        "y": 0.622,
+        "w": 0.303,
+        "h": 0.18
+      },
+      "polygon": [
+        [
+          0.142,
+          0.689
+        ],
+        [
+          0.154,
+          0.64
+        ],
+        [
+          0.191,
+          0.605
+        ],
+        [
+          0.262,
+          0.594
+        ],
+        [
+          0.343,
+          0.601
+        ],
+        [
+          0.414,
+          0.629
+        ],
+        [
+          0.444,
+          0.68
+        ],
+        [
+          0.43,
+          0.731
+        ],
+        [
+          0.383,
+          0.773
+        ],
+        [
+          0.302,
+          0.793
+        ],
+        [
+          0.219,
+          0.785
+        ],
+        [
+          0.166,
+          0.748
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "large lower-left oval chamber with blue glass, gold ribs, interior shelves, and game-like tiny lit figures; its contour is physically bounded by bronze arcs and stone."
+    },
+    {
+      "label": "hero indie-reference terrain",
+      "artifact_type": "painted-archive-section-panel",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.377,
+        "y": 0.105,
+        "w": 0.512,
+        "h": 0.432
+      },
+      "polygon": [
+        [
+          0.383,
+          0.371
+        ],
+        [
+          0.404,
+          0.285
+        ],
+        [
+          0.462,
+          0.151
+        ],
+        [
+          0.536,
+          0.109
+        ],
+        [
+          0.652,
+          0.104
+        ],
+        [
+          0.751,
+          0.135
+        ],
+        [
+          0.842,
+          0.231
+        ],
+        [
+          0.886,
+          0.34
+        ],
+        [
+          0.887,
+          0.438
+        ],
+        [
+          0.828,
+          0.506
+        ],
+        [
+          0.7,
+          0.53
+        ],
+        [
+          0.565,
+          0.518
+        ],
+        [
+          0.451,
+          0.475
+        ],
+        [
+          0.392,
+          0.424
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "wide upper-central exposed archive slab: parchment drapes, painted miniature panels, stone lip, and absorbed fantasy thumbnail material spanning the main strata."
+    },
+    {
+      "label": "aileenland vellum alcove",
+      "artifact_type": "pale-vellum-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.693,
+        "y": 0.409,
+        "w": 0.127,
+        "h": 0.092
+      },
+      "polygon": [
+        [
+          0.695,
+          0.413
+        ],
+        [
+          0.725,
+          0.407
+        ],
+        [
+          0.765,
+          0.411
+        ],
+        [
+          0.807,
+          0.424
+        ],
+        [
+          0.819,
+          0.464
+        ],
+        [
+          0.802,
+          0.492
+        ],
+        [
+          0.757,
+          0.5
+        ],
+        [
+          0.712,
+          0.489
+        ],
+        [
+          0.697,
+          0.459
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "soft pale parchment-like framed alcove at the lower-right edge of the central chamber, distinct from the darker image panels around it."
+    },
+    {
+      "label": "agent-skill glass seam",
+      "artifact_type": "dark-glass-learning-seam",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.562,
+        "y": 0.167,
+        "w": 0.065,
+        "h": 0.292
+      },
+      "polygon": [
+        [
+          0.594,
+          0.167
+        ],
+        [
+          0.612,
+          0.221
+        ],
+        [
+          0.622,
+          0.292
+        ],
+        [
+          0.621,
+          0.371
+        ],
+        [
+          0.609,
+          0.446
+        ],
+        [
+          0.593,
+          0.459
+        ],
+        [
+          0.578,
+          0.424
+        ],
+        [
+          0.566,
+          0.348
+        ],
+        [
+          0.562,
+          0.272
+        ],
+        [
+          0.574,
+          0.201
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "vertical polished blue-violet glass incision in the central chamber with bright glints and branching linework, clearly reading as a reusable-skill seam."
+    },
+    {
+      "label": "collaboration-graph root node",
+      "artifact_type": "bronze-network-knot",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.454,
+        "y": 0.733,
+        "w": 0.085,
+        "h": 0.06
+      },
+      "polygon": [
+        [
+          0.456,
+          0.76
+        ],
+        [
+          0.469,
+          0.736
+        ],
+        [
+          0.491,
+          0.728
+        ],
+        [
+          0.516,
+          0.731
+        ],
+        [
+          0.537,
+          0.752
+        ],
+        [
+          0.533,
+          0.776
+        ],
+        [
+          0.511,
+          0.79
+        ],
+        [
+          0.483,
+          0.789
+        ],
+        [
+          0.463,
+          0.777
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "cluster of small bronze-rimmed circular nodes in the lower middle, joined by wirelike branches, forming a visible collaboration graph root gesture."
+    },
+    {
+      "label": "elden-ring-thumbnail shard",
+      "artifact_type": "rough-painted-thumbnail-shard",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.333,
+        "y": 0.389,
+        "w": 0.056,
+        "h": 0.056
+      },
+      "polygon": [
+        [
+          0.334,
+          0.4
+        ],
+        [
+          0.356,
+          0.388
+        ],
+        [
+          0.384,
+          0.393
+        ],
+        [
+          0.39,
+          0.421
+        ],
+        [
+          0.375,
+          0.444
+        ],
+        [
+          0.346,
+          0.444
+        ],
+        [
+          0.332,
+          0.425
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "rough square painted shard just left of the central chamber, showing a fantasy figure silhouette and pale highlight inside a gold-brown frame."
+    },
+    {
+      "label": "disco-elysium-paper-cut",
+      "artifact_type": "rough-concept-paper-stratum",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.876,
+        "y": 0.618,
+        "w": 0.08,
+        "h": 0.064
+      },
+      "polygon": [
+        [
+          0.878,
+          0.627
+        ],
+        [
+          0.896,
+          0.609
+        ],
+        [
+          0.934,
+          0.611
+        ],
+        [
+          0.957,
+          0.628
+        ],
+        [
+          0.954,
+          0.666
+        ],
+        [
+          0.932,
+          0.681
+        ],
+        [
+          0.894,
+          0.676
+        ],
+        [
+          0.876,
+          0.654
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "muted paperlike map cut on the far-right lower shelf, with torn parchment edge and rough painterly colored interior."
+    },
+    {
+      "label": "overwatch-color-slot",
+      "artifact_type": "glowing-asset-slot",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "disco-elysium-paper-cut",
+      "artifact_type": "concept-paper-stratum",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 9,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.32,
+    "rationale": "The plate has strong usable anchors, but many dense frames, rails, nodes, chambers, and tiny lit details compete; it reads more ornate archive cutaway than minimal expressionist field."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-24-playable-archive-section-v1"
+}

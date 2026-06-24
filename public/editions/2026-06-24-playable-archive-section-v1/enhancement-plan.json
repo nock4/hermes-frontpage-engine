@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-24-playable-archive-section-v1",
+  "edition_id": "2026-06-24-playable-archive-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-24-playable-archive-section-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-gameplay-library-vault",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-gameplay-library-vault",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (oval-glass-source-chamber) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-indie-reference-terrain",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-indie-reference-terrain",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-archive-section-panel) selected from interpretation."
+    },
+    {
+      "target_id": "module-aileenland-vellum-alcove",
+      "target_kind": "artifact",
+      "artifact_id": "module-aileenland-vellum-alcove",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-vellum-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-agent-skill-glass-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-agent-skill-glass-seam",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-glass-learning-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-collaboration-graph-root-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-collaboration-graph-root-node",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bronze-network-knot) selected from interpretation."
+    },
+    {
+      "target_id": "module-elden-ring-thumbnail-shard",
+      "target_kind": "artifact",
+      "artifact_id": "module-elden-ring-thumbnail-shard",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rough-painted-thumbnail-shard) selected from interpretation."
+    },
+    {
+      "target_id": "module-disco-elysium-paper-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-disco-elysium-paper-cut",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rough-concept-paper-stratum) selected from interpretation."
+    },
+    {
+      "target_id": "module-overwatch-color-slot",
+      "target_kind": "artifact",
+      "artifact_id": "module-overwatch-color-slot",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glowing-asset-slot) selected from interpretation."
+    },
+    {
+      "target_id": "module-disco-elysium-paper-cut-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-disco-elysium-paper-cut-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (concept-paper-stratum) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

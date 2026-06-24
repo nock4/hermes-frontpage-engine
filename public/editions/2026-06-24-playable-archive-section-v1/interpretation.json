@@ -1,0 +1,383 @@
+{
+  "interpretation_id": "interp-2026-06-24-playable-archive-section-v1",
+  "edition_id": "2026-06-24-playable-archive-section-v1",
+  "plate_read_timestamp": "2026-06-24T08:10:58.053Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark layered fantasy archive cutaway: stone strata, parchment chambers, glass-lit vaults, bronze rails, thumbnail-like framed panels, glowing blue and violet apertures, and a lower network of circular nodes embedded into rough rock.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "a playable archive unearthed in section, half ruin and half reference machine",
+      "A dark layered fantasy archive cutaway: stone strata, parchment chambers, glass-lit vaults, bronze rails, thumbnail-like framed panels, glowing blue and violet apertures, and a lower network of circular nodes embedded into rough rock.",
+      "cutaway-archive",
+      "game-art-strata",
+      "asset-chambers"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero gameplay-library vault",
+      "hero indie-reference terrain",
+      "aileenland vellum alcove",
+      "agent-skill glass seam",
+      "collaboration-graph root node",
+      "elden-ring-thumbnail shard",
+      "disco-elysium-paper-cut",
+      "overwatch-color-slot"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "fog",
+      "paint",
+      "wood"
+    ],
+    "dominant_structures": [
+      "cutaway-game-art-library",
+      "one broad horizontal architectural cutaway with three to four terrain-like strata",
+      "two hero-scale exposed chambers carrying the main source fields",
+      "disciplined clusters of small painted archive fragments absorbed into stone and vellum",
+      "bronze conduit paths linking agentic and game-dev layers without becoming a signal board",
+      "foggy negative-space bands separating hoverable cuts and apertures",
+      "central blue glass cathedral seam",
+      "large parchment archive chamber"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cutaway-game-art-library.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-gameplay-library-vault",
+      "kind": "hero",
+      "type": "oval-glass-source-chamber",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.137,
+        "y": 0.622,
+        "w": 0.303,
+        "h": 0.18
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-indie-reference-terrain",
+      "kind": "hero",
+      "type": "painted-archive-section-panel",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.377,
+        "y": 0.105,
+        "w": 0.512,
+        "h": 0.432
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-aileenland-vellum-alcove",
+      "kind": "module",
+      "type": "pale-vellum-aperture",
+      "strength": 0.8018879999999999,
+      "bounds": {
+        "x": 0.693,
+        "y": 0.409,
+        "w": 0.127,
+        "h": 0.092
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-skill-glass-seam",
+      "kind": "module",
+      "type": "dark-glass-learning-seam",
+      "strength": 0.7694160000000001,
+      "bounds": {
+        "x": 0.562,
+        "y": 0.167,
+        "w": 0.065,
+        "h": 0.292
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-collaboration-graph-root-node",
+      "kind": "module",
+      "type": "bronze-network-knot",
+      "strength": 0.73758,
+      "bounds": {
+        "x": 0.454,
+        "y": 0.733,
+        "w": 0.085,
+        "h": 0.06
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-elden-ring-thumbnail-shard",
+      "kind": "module",
+      "type": "rough-painted-thumbnail-shard",
+      "strength": 0.713064,
+      "bounds": {
+        "x": 0.333,
+        "y": 0.389,
+        "w": 0.056,
+        "h": 0.056
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-disco-elysium-paper-cut",
+      "kind": "module",
+      "type": "rough-concept-paper-stratum",
+      "strength": 0.6738240000000001,
+      "bounds": {
+        "x": 0.876,
+        "y": 0.618,
+        "w": 0.08,
+        "h": 0.064
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-overwatch-color-slot",
+      "kind": "module",
+      "type": "glowing-asset-slot",
+      "strength": 0.632956,
+      "bounds": {
+        "x": 0.709,
+        "y": 0.7744,
+        "w": 0.2083,
+        "h": 0.1221
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-disco-elysium-paper-cut-2",
+      "kind": "module",
+      "type": "concept-paper-stratum",
+      "strength": 0.6569919999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-gameplay-library-vault-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.137,
+        "y": 0.622,
+        "w": 0.303,
+        "h": 0.18
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-indie-reference-terrain-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.377,
+        "y": 0.105,
+        "w": 0.512,
+        "h": 0.432
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-aileenland-vellum-alcove-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.693,
+        "y": 0.409,
+        "w": 0.127,
+        "h": 0.092
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-skill-glass-seam-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.562,
+        "y": 0.167,
+        "w": 0.065,
+        "h": 0.292
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-collaboration-graph-root-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.454,
+        "y": 0.733,
+        "w": 0.085,
+        "h": 0.06
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-elden-ring-thumbnail-shard-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.333,
+        "y": 0.389,
+        "w": 0.056,
+        "h": 0.056
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-disco-elysium-paper-cut-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.876,
+        "y": 0.618,
+        "w": 0.08,
+        "h": 0.064
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-overwatch-color-slot-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.709,
+        "y": 0.7744,
+        "w": 0.2083,
+        "h": 0.1221
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-disco-elysium-paper-cut-2-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
