@@ -336,7 +336,7 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
     source_summary: rawSourceSummary ? sanitizeSourceText(rawSourceSummary, '', 520) : undefined,
     source_domain: optionalString(binding.source_domain, `${path}.source_domain`),
     source_meta: optionalString(binding.source_meta, `${path}.source_meta`),
-    source_embed_html: undefined,
+    source_embed_html: optionalString(binding.source_embed_html, `${path}.source_embed_html`),
     source_image_url: sanitizedSourceImageUrl ?? undefined,
     source_image_alt: optionalString(binding.source_image_alt, `${path}.source_image_alt`),
     source_visual: parseSourceVisualRecord(binding.source_visual, `${path}.source_visual`),

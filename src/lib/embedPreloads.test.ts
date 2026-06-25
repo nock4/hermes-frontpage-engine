@@ -46,6 +46,14 @@ describe('collectEmbedPreloads', () => {
         },
         {
           ...baseBinding,
+          id: 'bandcamp-1',
+          source_type: 'audio',
+          source_url: 'https://billorcutt.bandcamp.com/album/music-for-four-guitars',
+          window_type: 'audio',
+          source_embed_html: '<iframe src="https://bandcamp.com/EmbeddedPlayer/album=1257689164/size=large/bgcol=333333/linkcol=e32c14/artwork=small/transparent=true/"></iframe>',
+        },
+        {
+          ...baseBinding,
           id: 'image-1',
           source_image_url: 'https://images.example.com/story.jpg',
           source_image_alt: 'Story image',
@@ -55,7 +63,7 @@ describe('collectEmbedPreloads', () => {
       openBindingIds: [],
     })
 
-    expect(embeds.map((embed) => embed.kind)).toEqual(['youtube', 'tweet', 'soundcloud', 'image'])
+    expect(embeds.map((embed) => embed.kind)).toEqual(['youtube', 'tweet', 'soundcloud', 'bandcamp', 'image'])
   })
 
   it('dedupes identical media urls on the same page', () => {

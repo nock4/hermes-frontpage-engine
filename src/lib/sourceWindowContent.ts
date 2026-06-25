@@ -113,6 +113,20 @@ const toSoundCloudEmbedUrl = (sourceUrl: string | null) => {
   return `https://w.soundcloud.com/player/?url=${encodeURIComponent(sourceUrl)}&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&visual=true`
 }
 
+const getBandcampEmbedUrlFromHtml = (embedHtml: string | undefined) => {
+  if (!embedHtml) return null
+  const match = embedHtml.match(/<iframe[^>]+src=[\"']([^\"']+)[\"'][^>]*>/i)
+  const rawSrc = match?.[1]
+  if (!rawSrc) return null
+  try {
+    const url = new URL(rawSrc.replace(/&amp;/g, '&'))
+    if (url.hostname !== 'bandcamp.com' || !url.pathname.startsWith('/EmbeddedPlayer/')) return null
+    return url.toString()
+  } catch {
+    return null
+  }
+}
+
 const getBandcampMetadata = (sourceUrl: string | null) => {
   const parsed = getParsedSourceUrl(sourceUrl)
   if (!parsed || parsed.hostname === 'bandcamp.com' || !parsed.hostname.endsWith('.bandcamp.com') || !sourceUrl) return null
@@ -179,6 +193,22 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
 
     const bandcampMetadata = getBandcampMetadata(sourceUrl)
     if (bandcampMetadata && binding.source_type !== 'nts') {
+      const bandcampEmbedUrl = getBandcampEmbedUrlFromHtml(binding.source_embed_html)
+      if (bandcampEmbedUrl) {
+        return {
+          kind: 'bandcamp-embed',
+          embedUrl: bandcampEmbedUrl,
+          sourceUrl: bandcampMetadata.sourceUrl,
+          artistLabel: bandcampMetadata.artistLabel,
+          releasePath: bandcampMetadata.releasePath,
+          allowsPlaybackPersistence,
+          domainLabel,
+          ctaLabel: 'Open on Bandcamp',
+          platformLabel: 'Bandcamp',
+          accentTone,
+        }
+      }
+
       return {
         kind: 'bandcamp-card',
         sourceUrl: bandcampMetadata.sourceUrl,

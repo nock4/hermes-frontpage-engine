@@ -73,7 +73,7 @@ export const getSourceWindowSurfaceProfile = (
   if (mode === 'preview' && descriptor.kind === 'youtube-embed') return stagePreviewVideoProfile
   if (descriptor.kind === 'youtube-linkout') return stageRichPreviewProfile
   if (mode === 'preview') return stagePreviewProfile
-  if (descriptor.kind === 'youtube-embed' || descriptor.kind === 'soundcloud-embed') return immersiveMediaProfile
+  if (descriptor.kind === 'youtube-embed' || descriptor.kind === 'soundcloud-embed' || descriptor.kind === 'bandcamp-embed') return immersiveMediaProfile
   if (descriptor.kind === 'rich-preview') return stageRichPreviewProfile
   return defaultStageProfile
 }

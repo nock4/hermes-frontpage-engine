@@ -410,6 +410,7 @@ export async function assembleEditionPackage({
       source_summary: source?.description ? sanitizeSourceText(source.description, '', 520) : undefined,
       source_domain: domain(url),
       source_meta: source?.note_title || undefined,
+      source_embed_html: source?.source_embed_html || undefined,
       source_image_url: sourceImageUrl || undefined,
       source_image_alt: sourceImageUrl ? `${getSourceDisplayTitle(source, artifact.label)} preview image` : undefined,
       ...(embedStatus === 'unavailable' ? { embed_status: 'unavailable' } : {}),

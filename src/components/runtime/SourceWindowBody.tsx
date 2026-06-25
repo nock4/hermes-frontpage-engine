@@ -280,6 +280,21 @@ export function SourceWindowBody({
     )
   }
 
+  if (descriptor.kind === 'soundcloud-embed' || descriptor.kind === 'bandcamp-embed') {
+    return (
+      <div className="source-window__body source-window__body--audio-embed">
+        {profile.showBodyPlatformPill ? <span className="source-window__platform-pill">{descriptor.platformLabel}</span> : null}
+        <iframe
+          allow="autoplay"
+          loading="eager"
+          src={descriptor.embedUrl}
+          title={binding.title}
+        />
+        <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a>
+      </div>
+    )
+  }
+
   const visualCardImage = getUsableSourceImageUrl(binding)
   const visualCardTitle = binding.source_title || binding.title
   const visualCardHref = 'sourceUrl' in descriptor ? descriptor.sourceUrl : binding.source_url
@@ -441,21 +456,6 @@ export function SourceWindowBody({
         imageUrl={visualCardImage}
         title={visualCardTitle}
       />
-    )
-  }
-
-  if (descriptor.kind === 'soundcloud-embed') {
-    return (
-      <div className="source-window__body source-window__body--audio-embed">
-        {profile.showBodyPlatformPill ? <span className="source-window__platform-pill">{descriptor.platformLabel}</span> : null}
-        <iframe
-          allow="autoplay"
-          loading="lazy"
-          src={descriptor.embedUrl}
-          title={binding.title}
-        />
-        <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a>
-      </div>
     )
   }
 

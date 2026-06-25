@@ -14,6 +14,7 @@ import {
 } from './source-selection-policy.mjs'
 import {
   isAllowedSourceUrl,
+  isBandcampStreamingSourceUrl,
   isYouTubeVideoUrl,
   youtubeId,
 } from './source-url-policy.mjs'
@@ -39,6 +40,36 @@ function absoluteUrl(url, base) {
   if (!url) return null
   try {
     return new URL(url, base).toString()
+  } catch {
+    return null
+  }
+}
+
+function extractBandcampEmbedHtml(html) {
+  const raw = extractMeta(html, [/data-embed=["']([^"']+)["']/i])
+  if (!raw) return null
+  try {
+    const embed = JSON.parse(raw)
+    const param = embed?.tralbum_param
+    const paramName = param?.name === 'album' ? 'album' : param?.name === 'track' ? 'track' : null
+    const paramValue = Number.parseInt(String(param?.value || ''), 10)
+    if (!paramName || !Number.isFinite(paramValue) || paramValue <= 0) return null
+    return `<iframe src="https://bandcamp.com/EmbeddedPlayer/${paramName}=${paramValue}/size=large/bgcol=333333/linkcol=e32c14/artwork=small/transparent=true/"></iframe>`
+  } catch {
+    return null
+  }
+}
+
+async function fetchBandcampEmbedHtml(fetchable) {
+  try {
+    const response = await fetchWithTimeout(fetchable, {
+      headers: {
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'user-agent': 'daily-frontpage-engine-source-research/0.1',
+      },
+    }, 8000)
+    const html = await response.text()
+    return extractBandcampEmbedHtml(html)
   } catch {
     return null
   }
@@ -387,6 +418,7 @@ export async function inspectWithFetch(candidate, fetchable, classification) {
       },
     }, 8000)
     const html = await response.text()
+    const bandcampEmbedHtml = isBandcampStreamingSourceUrl(fetchable) ? extractBandcampEmbedHtml(html) : null
     const title = extractMeta(html, [
       /<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["'][^>]*>/i,
       /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:title["'][^>]*>/i,
@@ -411,6 +443,7 @@ export async function inspectWithFetch(candidate, fetchable, classification) {
       title,
       description,
       image_url: absoluteUrl(image, fetchable),
+      source_embed_html: bandcampEmbedHtml || undefined,
       fetch_status: response.ok ? 'fetch-ok' : `fetch-http-${response.status}`,
     }
   } catch (error) {
@@ -441,6 +474,7 @@ export async function inspectCandidateSource(candidate, { sourceTool, browserHar
 
   const fetchable = await resolveFetchableHtmlUrl(candidate.url, { lookup: dns.lookup })
   if (!fetchable) return null
+  const bandcampEmbedHtml = isBandcampStreamingSourceUrl(fetchable) ? await fetchBandcampEmbedHtml(fetchable) : null
 
   if (sourceTool === 'browser-harness') {
     const browserData = await inspectWithBrowserHarness(fetchable, browserHarness)
@@ -452,6 +486,7 @@ export async function inspectCandidateSource(candidate, { sourceTool, browserHar
           source_url: candidate.url,
           final_url: fallbackData.final_url || fetchable,
           image_url: fallbackData.image_url || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
+          source_embed_html: fallbackData.source_embed_html || bandcampEmbedHtml || undefined,
           fetch_status: 'browser-harness-error-fetch-ok',
           youtube_embed_status: embedStatus,
           browser_error: browserData.error || undefined,
@@ -466,6 +501,7 @@ export async function inspectCandidateSource(candidate, { sourceTool, browserHar
       title: browserData.title || browserData.h1 || candidate.note_title,
       description: browserData.description || browserData.visible_text || '',
       image_url: absoluteUrl(browserData.image_url, browserData.final_url || fetchable) || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
+      source_embed_html: bandcampEmbedHtml || undefined,
       fetch_status: browserData.fetch_status,
       youtube_embed_status: embedStatus,
       browser_error: browserData.error || undefined,

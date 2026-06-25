@@ -37,6 +37,14 @@ interface BandcampSourceWindowDescriptor extends BaseSourceWindowDescriptor {
   releasePath: string
 }
 
+interface BandcampEmbedSourceWindowDescriptor extends BaseSourceWindowDescriptor {
+  kind: 'bandcamp-embed'
+  embedUrl: string
+  sourceUrl: string
+  artistLabel: string
+  releasePath: string
+}
+
 interface AudioDockSourceWindowDescriptor extends BaseSourceWindowDescriptor {
   kind: 'audio-dock'
   streamUrl: string | null
@@ -62,6 +70,7 @@ export type SourceWindowDescriptor =
   | YouTubeLinkoutSourceWindowDescriptor
   | SoundCloudSourceWindowDescriptor
   | BandcampSourceWindowDescriptor
+  | BandcampEmbedSourceWindowDescriptor
   | AudioDockSourceWindowDescriptor
   | TweetSourceWindowDescriptor
   | SocialCardSourceWindowDescriptor

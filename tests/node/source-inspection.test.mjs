@@ -73,6 +73,34 @@ describe('source inspection', () => {
     })
   })
 
+  it('extracts safe Bandcamp embed html from fetched album pages', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      ok: true,
+      status: 200,
+      text: async () => `
+        <html>
+          <head>
+            <meta property="og:title" content="Music For Four Guitars">
+            <meta property="og:image" content="https://f4.bcbits.com/img/0038659416_38.jpg">
+          </head>
+          <body data-embed="{&quot;tralbum_param&quot;:{&quot;name&quot;:&quot;album&quot;,&quot;value&quot;:1257689164},&quot;embed_info&quot;:{&quot;public_embeddable&quot;:true}}"></body>
+        </html>
+      `,
+    })))
+
+    const source = await inspectWithFetch(
+      {
+        url: 'https://billorcutt.bandcamp.com/album/music-for-four-guitars',
+        note_title: 'Bandcamp source',
+      },
+      'https://billorcutt.bandcamp.com/album/music-for-four-guitars',
+      { source_type: 'audio', window_type: 'audio', kind: 'audio' },
+    )
+
+    expect(source.source_embed_html).toContain('https://bandcamp.com/EmbeddedPlayer/album=1257689164/')
+    expect(source.source_embed_html).toContain('artwork=small')
+  })
+
   it('returns a structured fetch error record instead of throwing', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => {
       throw new Error('network down')

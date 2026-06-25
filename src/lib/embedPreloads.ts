@@ -5,7 +5,7 @@ import { getTweetEmbedSrcDoc } from './tweetEmbed'
 
 export type EmbedPreload = {
   id: string
-  kind: 'youtube' | 'tweet' | 'soundcloud' | 'image'
+  kind: 'youtube' | 'tweet' | 'soundcloud' | 'bandcamp' | 'image'
   src?: string
   srcDoc?: string
   title: string
@@ -53,11 +53,11 @@ export function collectEmbedPreloads({ bindings, reviewMode, openBindingIds }: C
       continue
     }
 
-    if (descriptor.kind === 'soundcloud-embed') {
-      const key = `soundcloud:${descriptor.embedUrl}`
+    if (descriptor.kind === 'soundcloud-embed' || descriptor.kind === 'bandcamp-embed') {
+      const key = `${descriptor.kind}:${descriptor.embedUrl}`
       if (seen.has(key)) continue
       seen.add(key)
-      preloads.push({ id: binding.id, kind: 'soundcloud', src: descriptor.embedUrl, title: binding.title })
+      preloads.push({ id: binding.id, kind: descriptor.kind === 'bandcamp-embed' ? 'bandcamp' : 'soundcloud', src: descriptor.embedUrl, title: binding.title })
     }
 
     const sourceImageUrl = sanitizeSourceImageUrl(binding.source_image_url)
