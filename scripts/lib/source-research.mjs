@@ -11,6 +11,7 @@ import {
 import { buildInspirationOverrideVisualReference } from './inspiration-override.mjs'
 import { openAiJson } from './openai-json.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
+import { writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 import {
@@ -528,6 +529,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
 
   const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
+  const sourceImageArtifacts = await writeSourceImageArtifacts(runDir, imageSourceMaterial.selected_image_material)
   const imageMaterialReference = imageSourceMaterial.selected_image_material[0]
     ? {
         url: imageSourceMaterial.selected_image_material[0].page_url || imageSourceMaterial.selected_image_material[0].image_url,
@@ -563,6 +565,9 @@ export async function inspectSourceCandidates(signalHarvest, {
     derived_source_candidates: derivedCandidates,
     image_source_candidates: imageSourceMaterial.image_source_candidates,
     selected_image_material: imageSourceMaterial.selected_image_material,
+    source_image_fingerprints: sourceImageArtifacts.source_image_fingerprints,
+    source_image_fingerprints_path: sourceImageArtifacts.source_image_fingerprints_path,
+    source_image_contact_sheet_path: sourceImageArtifacts.source_image_contact_sheet_path,
     fetch_evidence_count: fetchEvidence.length,
     source_count: inspected.length,
     manual_inspiration_override: inspirationOverride ? {
