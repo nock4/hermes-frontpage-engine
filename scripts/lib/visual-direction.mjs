@@ -201,6 +201,8 @@ function inferVisualDirectionFallback(signalHarvest, researchField, recentEditio
     platePosture.anchor_strategy_bias,
     platePosture.negative_space_bias,
     platePosture.literalness_limit,
+    platePosture.formal_risk,
+    platePosture.look_avoidance_directive,
   ] : []
   const visualCompositionalMoves = uniqueNonEmpty([
     ...postureMoves,
@@ -263,10 +265,12 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
     constraints: [
       'Treat aesthetic direction as evidence-derived, not preset-derived.',
       'Use the supplied visual reference to influence composition structure, geometry, color relationships, layering, density, and atmosphere when relevant.',
-      'Extract 3 to 5 concrete visible compositional moves from visual_reference and selected_image_material; do not reduce images to vague palette or ambience.',
+      'Use source_image_fingerprints as concrete plate-language evidence: preserve crop logic, surface pressure, palette pressure, scale relationships, and edge behavior without copying subjects literally.',
+      'Extract 3 to 5 concrete visible compositional moves from visual_reference, source_image_fingerprints, and selected_image_material; do not reduce images to vague palette or ambience.',
       'Choose one explicit composition archetype and one camera/plate grammar that the image prompt can obey.',
       'Honor plate_posture as the edition-level variety gear. Minimal/abstract postures should still preserve 6 to 10 real source-bearing marks as apertures, seams, notches, glints, cuts, nodes, or surface interruptions.',
-      'Avoid generic office-room, dashboard, and card-grid staging.',
+      'When plate_posture includes formal_risk or look_avoidance_directive, treat those as hard anti-flatness constraints: choose depth, scale shift, rupture, weather, procession, cutaway, object collision, horizon, or loud source-media fragments instead of another polite material scan.',
+      'Avoid generic office-room, dashboard, and card-grid staging, but do not overcorrect into the same flat sleeve/paper/seam macro grammar.',
       'Consider recent editions only as anti-repetition pressure, not as a style template to repeat.',
     ],
     expected_output_schema: {
@@ -322,6 +326,18 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
         image_url: candidate.image_url || null,
         page_url: candidate.page_url || null,
         score: candidate.score || null,
+      }))
+      : [],
+    source_image_fingerprints: Array.isArray(researchField.source_image_fingerprints)
+      ? researchField.source_image_fingerprints.slice(0, 5).map((fingerprint) => ({
+        title: fingerprint.title || null,
+        source_role: fingerprint.source_role || null,
+        palette_cues: fingerprint.palette_cues || [],
+        surface_cues: fingerprint.surface_cues || [],
+        composition_moves: fingerprint.composition_moves || [],
+        visual_reason: sanitizeSourceText(fingerprint.visual_reason, '', 180),
+        image_url: fingerprint.image_url || null,
+        page_url: fingerprint.page_url || null,
       }))
       : [],
     content_sources: getResearchContentSources(researchField).slice(0, 8).map((source) => ({

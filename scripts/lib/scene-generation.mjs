@@ -19,24 +19,6 @@ const hermesAgentPythonCandidates = [
   '/Users/nickgeorge-studio/Projects/hermes/hermes-agent/.venv/bin/python',
 ].filter(Boolean)
 const hermesImagePython = hermesAgentPythonCandidates.find((candidate) => fsSync.existsSync(candidate)) || 'python3'
-const sceneStructurePolicy = {
-  sourceMarkVocabulary: [
-    'mark',
-    'surface',
-    'edge detail',
-    'aperture',
-    'label',
-    'gesture',
-    'block',
-    'ribbon',
-    'panel',
-    'island',
-    'notch',
-    'stripe',
-    'signal node',
-    'small light',
-  ],
-}
 const bannedProductTerms = [
   ['dashboard', 'signal board'],
   ['control panel', 'instrument array'],
@@ -75,6 +57,9 @@ export async function composeDailyPayload(
       score: candidate.score,
     }))
     : []
+  const sourceImageFingerprints = Array.isArray(researchField.source_image_fingerprints)
+    ? researchField.source_image_fingerprints.slice(0, 5)
+    : []
   const prompt = {
     date,
     product_rules: [
@@ -99,6 +84,8 @@ export async function composeDailyPayload(
       image_search_queries: researchField.anchor_research.anchor_research?.image_search_queries?.slice?.(0, 6) || [],
     } : null,
     selected_image_material: selectedImageMaterial,
+    source_image_fingerprints: sourceImageFingerprints,
+    source_image_contact_sheet_path: researchField.source_image_contact_sheet_path || null,
     plate_posture: platePosture,
     content_selection_rules: [
       `Use ${minContentItems} to ${maxContentItems} artifacts total; ${targetContentItems} is ideal when enough source material is available.`,
@@ -106,8 +93,10 @@ export async function composeDailyPayload(
       'Prefer a mix of source types, domains, notes, media, and visual roles over several pieces from the same source cluster.',
       'When source_anchor_research exists, make one coherent world around that anchor rather than a collage of unrelated bookmarks.',
       'Use selected_image_material as source-grounded visual material for palette, structure, texture, crop logic, and mark language. Do not copy logos, page chrome, or subjects literally.',
+      'Use source_image_fingerprints as explicit plate grammar: palette pressure, surface pressure, crop logic, scale relationships, seams, glare, and edge behavior. Do not describe them as thumbnails pasted into the plate.',
       'Use inferred_visual_direction.composition_archetype, camera_plate_grammar, and visual_compositional_moves as hard art-direction inputs, not optional ambience.',
       'Use plate_posture as the edition-level variety gear. If plate_posture asks for minimal or abstract, preserve real source anchors as marks, apertures, seams, notches, cuts, glints, or surface interruptions rather than adding props.',
+      'If plate_posture includes formal_risk or look_avoidance_directive, obey it visibly: break repeated flat material-scan grammar with depth, scale violence, spatial event, weather, procession, cutaway, object collision, horizon, or loud source-media fragments while keeping anchors real.',
       'Write source artifact labels as internal metadata only. Do not ask for filenames, taxonomy terms, or explicit visible label text in the generated image.',
       'Artifacts are clickable anchors, not a requirement for equal visual weight. Their scale and loudness should follow the inferred visual direction for this source field.',
     ],
@@ -127,11 +116,11 @@ export async function composeDailyPayload(
       'Let the supplied inferred_visual_direction decide brightness, density, geometry, composition, material language, and openness.',
       'Let plate_posture decide the day’s formal posture: minimal field, abstract system, material macro, diagrammatic section, poster wall, balanced source world, or wildcard rupture.',
       'Start from the visual world implied by the research field rather than a stock room, desk, gallery wall, dashboard, or software mockup.',
-      'Describe light, camera/framing, palette, density, scale, layering, edge behavior, and mood in plain language.',
+      'Describe only the decisive light, camera/framing, palette, density, scale, layering, edge behavior, and mood. Omit rationale.',
       'Name the camera/plate grammar and composition archetype inside the scene_prompt as visible image behavior, not metadata.',
       'Translate visual_compositional_moves into physical features: crop edges, diagonals, glare, folds, tile density, scan borders, seams, apertures, or material interruptions.',
       'Translate technical source concepts into visible scene elements that fit the inferred world: marks, panels, ribbons, labels, islands, apertures, blocks, traces, nodes, surfaces, or other source-led forms.',
-      'Include the required source artifacts as physical anchor points in the scene, but do not explain clicking, source windows, bindings, masks, runtime behavior, or QA mechanics.',
+      'Include the required source artifacts as physical anchor points in the scene, including exactly two hero-scale source-bearing anchors when enough sources exist; do not explain clicking, source windows, bindings, masks, runtime behavior, or QA mechanics.',
       'Avoid technical prose in the scene_prompt: no API, framework, module, runtime, interface, dashboard, embedding, source window, artifact mapping, hot path, or product requirement language.',
       'Avoid object-by-object illustration. Do not make an archive wall, cabinet, shelf system, desk, dashboard, lab bench, gallery of cards, many-prop still life, or realistic object inventory unless the source field strongly justifies it.',
     ],
@@ -152,7 +141,7 @@ export async function composeDailyPayload(
         audio_posture: 'silent|ambient|reactive',
         webgl_mode: 'none|particles|shader-scene',
       },
-      scene_prompt: '90 to 170 words of source-led image-generation art direction for gpt-image-2: explicitly use inferred_visual_direction.composition_archetype, camera_plate_grammar, and visual_compositional_moves as visible plate grammar; use source-bearing anchors, light, palette, density, composition, and mood; no markdown and no product/implementation explanation',
+      scene_prompt: '45 to 90 words of source-led image-generation art direction for gpt-image-2: name the visual world, composition archetype, camera/plate grammar, strongest visible moves, light, palette, and source-bearing anchor treatment; no markdown, no rationale, no product/implementation explanation',
       artifacts: [
         {
           label: 'visible source-bearing mark label',
@@ -176,8 +165,8 @@ export async function composeDailyPayload(
     'Avoid repeating the recent edition titles, scene families, dominant materials, and visual worlds supplied in recent_edition_avoidance.',
     diversityDirective,
     'Use inferred_visual_direction as the primary aesthetic guide. Do not revert to a fixed house style.',
-    'Use plate_posture as the edition-level gearshift. Honor minimality_target, abstraction_target, density_target, literalness_limit, negative_space_bias, and anchor_strategy_bias unless source evidence strongly conflicts.',
-    'Make the scene_prompt obey the supplied composition_archetype, camera_plate_grammar, and visual_compositional_moves; these are the plate grammar, not adjectives.',
+    'Use plate_posture as the edition-level gearshift. Honor minimality_target, abstraction_target, density_target, literalness_limit, formal_risk, negative_space_bias, anchor_strategy_bias, and look_avoidance_directive unless source evidence strongly conflicts.',
+    'Make the scene_prompt terse: one dense art-director paragraph, no more than 90 words, using composition_archetype, camera_plate_grammar, and the strongest 1-2 visual_compositional_moves as visible plate grammar.',
     'If source_anchor_research and selected_image_material are present, treat them as the spine of the edition: one deep source field with derived anchors and image-grounded material cues.',
     'Let the visual reference influence composition structure, geometry, layering, density, palette, and atmosphere when present; do not depict or copy its subject.',
     'Never include legible words, interface labels, filenames, artifact taxonomy, or alphanumeric callouts inside the finished image.',
@@ -249,6 +238,11 @@ export async function generateScenePlate(
   const prompt = buildSceneImagePrompt(payload)
   const outputPath = path.join(runDir, 'plate.png')
   await fs.writeFile(path.join(runDir, 'scene-prompt.txt'), prompt, 'utf8')
+  await fs.writeFile(path.join(runDir, 'scene-prompt-full.json'), `${JSON.stringify({
+    generated_at: new Date().toISOString(),
+    compact_prompt: prompt,
+    payload,
+  }, null, 2)}\n`, 'utf8')
 
   if (imageBackend === 'hermes') {
     const hermesAttempts = []
@@ -459,7 +453,7 @@ function fallbackDailyPayload(signalHarvest, researchField, visualDirection, dat
       audio_posture: 'silent',
       webgl_mode: 'none',
     },
-    scene_prompt: `A full-bleed artwork for ${date} derived from the current research field. ${visualDirection.plate_posture ? `Use the ${visualDirection.plate_posture.plate_posture} plate posture: density ${visualDirection.plate_posture.density_target}, abstraction ${visualDirection.plate_posture.abstraction_target}, minimality ${visualDirection.plate_posture.minimality_target}.` : ''} Use a ${visualDirection.composition_archetype || 'source-led plate'} composition archetype and ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'} camera/plate grammar. ${visualDirection.evidence_summary || ''} Let the composition follow a ${visualDirection.composition_profile || 'distributed'} structure with ${visualDirection.geometry_profile || 'mixed'} geometry and a ${visualDirection.brightness_profile || 'mixed'} brightness profile. Visible moves: ${(visualDirection.visual_compositional_moves || []).join('; ') || 'source-shaped edges, apertures, and surface interruptions'}. ${visualDirection.palette_profile || ''} ${visualDirection.lighting_profile || ''} ${visualDirection.negative_space_guidance || ''} Embed source-bearing anchors as visible forms that belong naturally to the scene rather than as a literal object inventory or interface mockup.`,
+    scene_prompt: `Full-bleed source-led plate for ${date}. Use ${visualDirection.composition_archetype || 'source-led plate'} with ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}; make ${(visualDirection.visual_compositional_moves || []).slice(0, 2).join('; ') || 'source-shaped edges and apertures'} visible. ${visualDirection.plate_posture ? `${visualDirection.plate_posture.plate_posture}; ${visualDirection.plate_posture.negative_space_bias || ''}.` : ''} ${visualDirection.palette_profile || ''} ${visualDirection.lighting_profile || ''} Anchors are physical marks in the plate, never cards.`,
     visual_direction: visualDirection,
     artifacts: sources.map((source, index) => ({
       label: [
@@ -562,6 +556,8 @@ function normalizeDailyPayload(payload, signalHarvest, researchField, visualDire
     scene_prompt: repairProductLanguage(String(payload.scene_prompt || fallback.scene_prompt)),
     visual_direction: visualDirection,
     plate_posture: visualDirection.plate_posture || fallback.visual_direction?.plate_posture || null,
+    source_image_fingerprints: normalizeSourceImageFingerprints(payload.source_image_fingerprints || researchField.source_image_fingerprints),
+    source_image_contact_sheet_path: payload.source_image_contact_sheet_path || researchField.source_image_contact_sheet_path || null,
     artifacts: normalizedArtifacts.map((artifact, index) => ({
       label: repairArtifactLabel(String(artifact.label || fallback.artifacts[index]?.label || `Source Artifact ${index + 1}`), index),
       artifact_type: repairArtifactType(slugify(artifact.artifact_type || fallback.artifacts[index]?.artifact_type || 'source-mark'), index),
@@ -585,6 +581,22 @@ function normalizeStringArray(value, fallback) {
   if (!Array.isArray(value)) return fallback
   const result = value.map((entry) => String(entry).trim()).filter(Boolean)
   return result.length ? result : fallback
+}
+
+function normalizeSourceImageFingerprints(value) {
+  if (!Array.isArray(value)) return []
+  return value
+    .filter((fingerprint) => fingerprint?.image_url)
+    .slice(0, 5)
+    .map((fingerprint, index) => ({
+      title: String(fingerprint.title || `Source image ${index + 1}`),
+      image_url: fingerprint.image_url,
+      source_role: String(fingerprint.source_role || (index === 0 ? 'dominant plate seed' : 'supporting plate seed')),
+      palette_cues: normalizeStringArray(fingerprint.palette_cues, []).slice(0, 3),
+      surface_cues: normalizeStringArray(fingerprint.surface_cues, []).slice(0, 3),
+      composition_moves: normalizeStringArray(fingerprint.composition_moves, []).slice(0, 4),
+      do_not_copy_literally: normalizeStringArray(fingerprint.do_not_copy_literally, []).slice(0, 2),
+    }))
 }
 
 function repairProductLanguage(value) {
@@ -625,67 +637,66 @@ function repairArtifactType(type, index) {
   ][index] || 'source-artifact'
 }
 
-function describeArtifactForImagePrompt(artifact, index) {
-  const role = String(artifact?.role || '').toLowerCase()
-  if (role.includes('hero')) {
-    return index === 0
-      ? 'one dominant hero-scale source-bearing anchor integrated as a natural form'
-      : 'one secondary hero-scale source-bearing anchor integrated as a natural form'
-  }
-  return [
-    'one quiet embedded source-bearing mark',
-    'one small color accent or node-like interruption',
-    'one subtle edge-bound trace or seam',
-    'one layered fragment or plaque-like remnant',
-    'one distributed cluster of small marks',
-  ][Math.max(0, index - 2) % 5]
+function describeSourceImageFingerprint(fingerprint) {
+  const palette = (fingerprint.palette_cues || []).slice(0, 2).join('; ') || 'source-derived color pressure'
+  const surfaces = (fingerprint.surface_cues || []).slice(0, 1).join('; ') || 'source-derived surface pressure'
+  const moves = (fingerprint.composition_moves || []).slice(0, 2).join('; ') || 'source image crop logic translated into marks'
+  return `${fingerprint.title}: ${palette}; ${surfaces}; ${moves}`
+}
+
+function compactText(value, maxLength = 260) {
+  const text = String(value || '').replace(/\s+/g, ' ').trim()
+  if (text.length <= maxLength) return text
+  const clipped = text.slice(0, maxLength)
+  const sentenceEnd = Math.max(clipped.lastIndexOf('. '), clipped.lastIndexOf('; '))
+  if (sentenceEnd > 180) return `${clipped.slice(0, sentenceEnd + 1).trim()}…`
+  const wordEnd = clipped.lastIndexOf(' ')
+  return `${clipped.slice(0, wordEnd > 80 ? wordEnd : maxLength).trim()}…`
+}
+
+function joinLimited(values, fallback, limit = 4) {
+  const result = normalizeStringArray(values, []).slice(0, limit)
+  return result.length ? result.join('; ') : fallback
 }
 
 export function buildSceneImagePrompt(payload) {
   const visualDirection = payload.visual_direction || {}
   const platePosture = payload.plate_posture || visualDirection.plate_posture || null
-  const artifactLines = (Array.isArray(payload.artifacts) ? payload.artifacts : [])
-    .map((artifact, index) => `${index + 1}. ${describeArtifactForImagePrompt(artifact, index)}`)
-    .join('\n')
+  const artifacts = Array.isArray(payload.artifacts) ? payload.artifacts : []
+  const sourceImageFingerprints = normalizeSourceImageFingerprints(payload.source_image_fingerprints).slice(0, 1)
+  const referenceUse = sourceImageFingerprints.length
+    ? sourceImageFingerprints.map(describeSourceImageFingerprint).join(' | ')
+    : 'Use any attached visual reference for crop logic, surface pressure, palette relationships, and edge behavior only.'
+  const anchorCount = artifacts.length
+    ? `${Math.min(9, Math.max(6, artifacts.length))}`
+    : '6–9'
+  const materialLanguage = joinLimited(payload.material_language, 'source-led physical surfaces', 4)
+  const moves = joinLimited((visualDirection.visual_compositional_moves || []).map((move) => compactText(move, 72)), 'source-shaped seams, apertures, crop edges, and glare', 2)
+  const formalRisk = compactText(platePosture?.formal_risk || visualDirection.formal_risk || 'Choose one visible formal risk: scale shift, rupture, cutaway, horizon, weather, procession, collision, or void.', 150)
+  const lookAvoidance = platePosture?.look_avoidance_directive && !/^No strong/i.test(platePosture.look_avoidance_directive)
+    ? compactText(platePosture.look_avoidance_directive, 155)
+    : ''
+  const constraints = uniqueNonEmpty([
+    'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or copied subjects.',
+    ...(payload.negative_constraints || []).slice(0, 1).map((constraint) => compactText(constraint, 80)),
+  ]).join(' ')
+
   return [
-    'Create one finished, full-bleed scene image from this art direction.',
+    'Use any attached source image as reference only.',
     '',
-    'Scene:',
-    payload.scene_prompt,
+    'PLATE',
+    compactText(`${payload.scene_prompt || payload.mood || 'A full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 240),
     '',
-    'Visible source anchors to embed:',
-    artifactLines,
+    'REFERENCE',
+    `Borrow ${compactText(referenceUse, 170)} as crop, surface, palette, scale, and edge behavior — never as pasted thumbnails.`,
     '',
-    'Inferred visual direction:',
-    `Evidence summary: ${visualDirection.evidence_summary || payload.mood}`,
-    platePosture ? `Plate posture: ${platePosture.plate_posture}` : null,
-    platePosture ? `Posture targets: density ${platePosture.density_target}; abstraction ${platePosture.abstraction_target}; minimality ${platePosture.minimality_target}; literalness ${platePosture.literalness_limit}` : null,
-    platePosture ? `Posture anchor bias: ${platePosture.anchor_strategy_bias}` : null,
-    platePosture ? `Posture negative-space bias: ${platePosture.negative_space_bias}` : null,
-    `Brightness: ${visualDirection.brightness_profile || 'mixed'}`,
-    `Density: ${visualDirection.density_profile || 'balanced'}`,
-    `Geometry: ${visualDirection.geometry_profile || 'mixed'}`,
-    `Composition: ${visualDirection.composition_profile || 'distributed'}`,
-    `Composition archetype: ${visualDirection.composition_archetype || 'source-led plate'}`,
-    `Camera / plate grammar: ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}`,
-    `Visible compositional moves: ${(visualDirection.visual_compositional_moves || []).join('; ') || 'source-shaped edges, apertures, and surface interruptions'}`,
-    `Palette: ${visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood}`,
-    `Materials and surfaces: ${payload.material_language.join(', ')}`,
-    `Lighting: ${payload.lighting}`,
-    `Anchor strategy: ${visualDirection.anchor_strategy || 'fit anchors naturally into the scene'}`,
+    'COMPOSITION',
+    `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
-    'Composition rules:',
-    '- Let the research-derived visual direction determine whether the plate is airy, balanced, or dense.',
-    platePosture ? '- Obey the plate posture as the day’s formal gearshift while keeping every source window anchored to a real visible mark.' : null,
-    '- Obey the named composition archetype and camera/plate grammar as the organizing surface of the image.',
-    '- Make the visible compositional moves tangible: crop behavior, seams, diagonals, glare, folds, scan edges, tile fields, material borders, or apertures.',
-    '- Let the visual reference influence composition structure, geometry, layering, palette, and atmosphere when present; do not depict or copy its subject.',
-    '- Integrate listed anchors as forms that belong naturally inside the scene, not as a dense equal-weight inventory.',
-    `- Use source-led anchor forms such as ${sceneStructurePolicy.sourceMarkVocabulary.join(', ')} when they fit the evidence.`,
-    '- No legible text, words, typography, interface labels, alphanumeric codes, filenames, or caption-like callouts anywhere in the artwork.',
-    '- Avoid browser chrome, UI widgets, dashboard cards, floating app panels, chat interfaces, generic software screenshots, empty landing-page composition, shelves, cabinets, realistic furniture, literal props, and crowded archive walls unless the source field clearly demands them.',
-    '- Do not include explanatory diagrams unless they are sparse physical drawings already justified by the source field.',
+    'SOURCE ANCHORS',
+    `Embed ${anchorCount} anchors as real marks belonging to the plate, not cards. Make exactly two hero-scale source-bearing surfaces/gestures when enough sources exist; keep the rest as smaller apertures, seams, notches, cuts, glints, label slivers, scars, defects, or media grains.`,
     '',
-    `Avoid: ${payload.negative_constraints.join(', ')}`,
-  ].filter((line) => line != null).join('\n')
+    'LIGHT / CONSTRAINTS',
+    `${payload.lighting || visualDirection.lighting_profile || 'source-led light'}; materials: ${materialLanguage}; palette: ${visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood || 'source-led color'}. ${constraints}`,
+  ].filter(Boolean).join('\n')
 }

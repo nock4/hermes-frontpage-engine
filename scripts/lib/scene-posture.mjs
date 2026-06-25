@@ -10,6 +10,7 @@ const postureCatalog = [
     literalness_limit: 'representational allowed when source evidence supports it',
     anchor_strategy_bias: 'mix hero-scale source-bearing forms with smaller seams, marks, and apertures',
     negative_space_bias: 'balanced open space and clustered source activity',
+    formal_risk: 'let one source become a large spatial event, not only a surface detail',
   },
   {
     plate_posture: 'minimal field',
@@ -18,8 +19,9 @@ const postureCatalog = [
     abstraction_target: 'medium-high',
     minimality_target: 'high',
     literalness_limit: 'no literal prop inventory; only sparse source-bearing marks and material interruptions',
-    anchor_strategy_bias: 'tiny apertures, hairline seams, edge notches, glints, pinholes, and quiet but legible source marks',
+    anchor_strategy_bias: 'one or two quiet hero-scale source marks plus smaller apertures, hairline seams, edge notches, glints, pinholes, and legible source marks',
     negative_space_bias: 'large uninterrupted fields with source marks placed on edges, cuts, and small surface repairs',
+    formal_risk: 'protect one severe empty field or one lone oversized interruption',
   },
   {
     plate_posture: 'abstract system',
@@ -30,6 +32,7 @@ const postureCatalog = [
     literalness_limit: 'no literal scene; translate sources into marks, fields, stripes, nodes, folds, and discontinuities',
     anchor_strategy_bias: 'distinct abstract marks with clear hit surfaces: stripes, apertures, nodes, tile breaks, scrapes, and folded edges',
     negative_space_bias: 'negative space should separate anchor marks so the interface remains readable',
+    formal_risk: 'make the system visibly non-decorative: a rupture, orbit, cutaway, impossible scale shift, or rule-break in the field',
   },
   {
     plate_posture: 'material macro',
@@ -40,6 +43,7 @@ const postureCatalog = [
     literalness_limit: 'avoid room-scale prop inventories; use close material surfaces instead',
     anchor_strategy_bias: 'source anchors appear as cuts, labels, embedded media grains, glossy defects, texture seams, and object-edge apertures',
     negative_space_bias: 'one or two large surfaces can carry most of the plate',
+    formal_risk: 'avoid polite flat scans; use extreme scale, collision, occlusion, or flash if material macro repeats recently',
   },
   {
     plate_posture: 'diagrammatic section',
@@ -50,6 +54,7 @@ const postureCatalog = [
     literalness_limit: 'diagram logic without readable text, UI labels, or literal data dashboard cards',
     anchor_strategy_bias: 'source anchors sit on section cuts, blocks, conduits, strata, notches, and visible edge surfaces',
     negative_space_bias: 'clear bands and sections with enough room for hover/tap targets',
+    formal_risk: 'turn one source into a spatial cutaway, exploded section, tunnel, vessel, or public-scale diagram object',
   },
   {
     plate_posture: 'poster wall',
@@ -60,6 +65,7 @@ const postureCatalog = [
     literalness_limit: 'no web-card collage; use torn print layers, cropped surfaces, and source-media residue',
     anchor_strategy_bias: 'anchors are torn corners, pasted fragments, image edges, scratches, stains, and overlapped poster seams',
     negative_space_bias: 'density may rise, but leave several readable windows of calm around anchors',
+    formal_risk: 'allow loud image fragments, scale jumps, torn silhouettes, and uneven poster depth rather than a tidy card wall',
   },
   {
     plate_posture: 'wildcard rupture',
@@ -70,6 +76,7 @@ const postureCatalog = [
     literalness_limit: 'make one surprising formal move; avoid the default coherent room/world if sources allow it',
     anchor_strategy_bias: 'one giant surface or rupture carries multiple source marks; the rest are edge marks or quiet apertures',
     negative_space_bias: 'let the gamble be visibly different from recent editions while preserving real source anchors',
+    formal_risk: 'one mandatory gamble: impossible scale, single giant object, split horizon, flood, procession, void, x-ray cutaway, or violent crop',
   },
 ]
 
@@ -99,6 +106,12 @@ function recentPosturePressure(recentText, posture) {
   }
   const matches = recentText.match(tests[posture] || new RegExp(`\\b${posture.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b`, 'g')) || []
   return matches.length
+}
+
+
+function recentFlatSurfacePressure(recentText) {
+  const flatSurfaceMatches = recentText.match(/(macro|material|surface|texture|slab|paper|cardboard|sleeve|scan|scanned|overhead|shallow|side-lit|grain|seam|aperture|glint|notch|pinlight|quiet)/g) || []
+  return flatSurfaceMatches.length
 }
 
 function chooseWeighted(entries, seed) {
@@ -134,6 +147,7 @@ export function selectPlatePosture({
   inspirationOverride = null,
 } = {}) {
   const recentText = tokenizeRecent(recentEditions)
+  const flatSurfacePressure = sampleMode ? 0 : recentFlatSurfacePressure(recentText)
   const forcedPosture = normalizeOverride(options.platePosture, supportedPostures, '--plate-posture')
   const forcedDensity = normalizeOverride(options.densityTarget, supportedDensities, '--density-target')
   const forcedAbstraction = normalizeOverride(options.abstractionTarget, supportedAbstractions, '--abstraction-target')
@@ -149,6 +163,8 @@ export function selectPlatePosture({
   const candidates = postureCatalog.map((entry) => {
     const recentPressure = sampleMode ? 0 : recentPosturePressure(recentText, entry.plate_posture)
     let effectiveWeight = entry.weight / (1 + recentPressure * 0.85)
+    if (flatSurfacePressure >= 10 && ['material macro', 'minimal field', 'source-led balanced'].includes(entry.plate_posture)) effectiveWeight *= 0.45
+    if (flatSurfacePressure >= 10 && ['wildcard rupture', 'diagrammatic section', 'poster wall'].includes(entry.plate_posture)) effectiveWeight *= 2.1
     if (textualBias.minimal && entry.plate_posture === 'minimal field') effectiveWeight *= 3
     if (textualBias.abstract && entry.plate_posture === 'abstract system') effectiveWeight *= 3
     if (textualBias.dense && entry.plate_posture === 'poster wall') effectiveWeight *= 2.5
@@ -166,11 +182,15 @@ export function selectPlatePosture({
     minimality_target: forcedMinimality || selected.minimality_target,
     manual_override: Boolean(forcedPosture || forcedDensity || forcedAbstraction || forcedMinimality),
     selection_seed: `${date || ''}:${runId || ''}`,
+    recent_flat_surface_pressure: flatSurfacePressure,
+    look_avoidance_directive: flatSurfacePressure >= 10
+      ? 'Recent editions overused flat material scans, sleeve/cardboard surfaces, shallow macro, quiet apertures, seams, glints, and notches. Break that grammar unless the source field absolutely requires it: use depth, scale violence, spatial event, weather, procession, cutaway, object collision, horizon, or loud source-media fragments while keeping real source anchors.'
+      : 'No strong repeated flat-surface penalty detected.',
     reason: forcedPosture
       ? `Manual plate posture override: ${forcedPosture}`
       : sampleMode
         ? 'Sample mode uses deterministic posture selection without recent-edition pressure.'
-        : 'Weighted selection with recent-edition pressure; overused postures are downweighted while minimal/abstract/dense override language can upweight matching modes.',
+        : 'Weighted selection with recent-edition and flat-surface pressure; overused postures and camera/material grammars are downweighted while minimal/abstract/dense override language can upweight matching modes.',
     candidate_weights: candidates.map(({ plate_posture, weight, recent_pressure, effectiveWeight }) => ({
       plate_posture,
       base_weight: weight,

@@ -64,11 +64,53 @@ describe('scene generation image prompt', () => {
     expect(prompt).not.toContain('Distributed Marker')
     expect(prompt).not.toContain('distributed-marker')
     expect(prompt.toLowerCase()).toContain('no legible text')
-    expect(prompt).toContain('Composition archetype: diagrammatic fold')
-    expect(prompt).toContain('Camera / plate grammar: architectural section with oblique plate depth')
-    expect(prompt).toContain('Visible compositional moves: hard diagonal seams; creased scan border; localized glass glare')
-    expect(prompt).toContain('Plate posture: minimal field')
-    expect(prompt).toContain('Posture targets: density airy; abstraction high; minimality high; literalness no literal prop inventory')
+    expect(prompt).toContain('PLATE')
+    expect(prompt).toContain('COMPOSITION')
+    expect(prompt).toContain('SOURCE ANCHORS')
+    expect(prompt).toContain('LIGHT / CONSTRAINTS')
+    expect(prompt).toContain('diagrammatic fold')
+    expect(prompt).toContain('architectural section with oblique plate depth')
+    expect(prompt).toContain('hard diagonal seams; creased scan border')
+    expect(prompt).toContain('Formal risk:')
+    expect(prompt).toContain('hero-scale source-bearing')
+    expect(prompt).toContain('minimal field')
+    expect(prompt.length).toBeLessThan(1550)
+  })
+
+  it('prints source image fingerprints as plate grammar rather than thumbnail instructions', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'A source-led plate shaped by research image pressure.',
+      mood: 'charged source image field',
+      lighting: 'hard flash and soft falloff',
+      material_language: ['gloss sleeve', 'scan grain'],
+      negative_constraints: ['no literal copied logos'],
+      ambiance: { color_drift: 'acid green over charcoal' },
+      visual_direction: {
+        visual_compositional_moves: ['giant negative left field'],
+        anchor_strategy: 'plate seeds become apertures and edge scars',
+      },
+      source_image_fingerprints: [
+        {
+          title: 'Acid sleeve scan',
+          image_url: 'https://assets.example/acid-sleeve.jpg',
+          source_role: 'dominant plate seed',
+          palette_cues: ['acid / neon saturation'],
+          surface_cues: ['gloss / flash glare'],
+          composition_moves: ['hard diagonal crop or seam', 'torn or irregular edge behavior'],
+          do_not_copy_literally: ['Do not reproduce logos, legible text, identifiable subjects, or page chrome from this source image.'],
+        },
+      ],
+      artifacts: [{ source_url: 'https://example.com/source', role: 'hero source-bearing anchor' }],
+    })
+
+    expect(prompt).toContain('REFERENCE')
+    expect(prompt).toContain('Acid sleeve scan')
+    expect(prompt).toContain('acid / neon saturation')
+    expect(prompt).toContain('gloss / flash glare')
+    expect(prompt).toContain('hard diagonal crop or seam; torn or irregular edge behavior')
+    expect(prompt).toContain('never as pasted thumbnails')
+    expect(prompt).not.toContain('Source image plate seeds:')
+    expect(prompt.length).toBeLessThan(1100)
   })
 })
 
@@ -130,6 +172,9 @@ describe('scene generation Hermes image backend', () => {
       ])
       expect(sceneGeneration.provider).toBe('openai-codex')
       expect(await readFile(path.join(runDir, 'plate.png'), 'utf8')).toBe('fake-image-bytes')
+      const promptFull = JSON.parse(await readFile(path.join(runDir, 'scene-prompt-full.json'), 'utf8'))
+      expect(promptFull.compact_prompt).toContain('PLATE')
+      expect(promptFull.payload.scene_prompt).toContain('full-bleed abstract field')
     } finally {
       await rm(runDir, { recursive: true, force: true })
     }

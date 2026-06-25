@@ -40,4 +40,26 @@ describe('scene posture selection', () => {
     expect(minimalWeight.effective_weight).toBeLessThan(minimalWeight.base_weight)
     expect(balancedWeight.effective_weight).toBeGreaterThan(0)
   })
+
+  it('penalizes repeated flat material-scan grammar and records the anti-repeat directive', () => {
+    const posture = selectPlatePosture({
+      date: '2026-06-25',
+      runId: 'flat-pressure-test',
+      recentEditions: [
+        { title: 'Tan sleeve scan', scene_family: 'material macro', visual_summary: 'shallow macro cardboard sleeve paper grain seam aperture glint notch quiet scan' },
+        { title: 'Quiet object slab', scene_family: 'poster crop', visual_summary: 'side-lit object slab material surface texture sleeve seam aperture paper scan' },
+      ],
+    })
+
+    const materialMacro = posture.candidate_weights.find((entry) => entry.plate_posture === 'material macro')
+    const diagrammatic = posture.candidate_weights.find((entry) => entry.plate_posture === 'diagrammatic section')
+    const wildcard = posture.candidate_weights.find((entry) => entry.plate_posture === 'wildcard rupture')
+
+    expect(posture.recent_flat_surface_pressure).toBeGreaterThanOrEqual(10)
+    expect(posture.look_avoidance_directive).toContain('Break that grammar')
+    expect(posture.formal_risk).toBeTruthy()
+    expect(materialMacro.effective_weight).toBeLessThan(2)
+    expect(diagrammatic.effective_weight).toBeGreaterThan(diagrammatic.base_weight)
+    expect(wildcard.effective_weight).toBeGreaterThan(wildcard.base_weight)
+  })
 })
