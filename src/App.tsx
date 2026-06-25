@@ -243,6 +243,7 @@ function App() {
           }}
         >
           <img className="plate" src={loaded.edition.plate_asset_path} alt={loaded.edition.title} />
+          <a className="site-enter-button" href="https://nockgarden.com/">enter</a>
 
           {(loaded.about || archiveRecords.length) ? (
             <div className={`about-unfurl${aboutOpen || archiveOpen ? ' is-open' : ''}`}>

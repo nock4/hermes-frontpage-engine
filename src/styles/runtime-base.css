@@ -326,6 +326,35 @@ a {
   object-fit: cover;
 }
 
+.site-enter-button {
+  position: absolute;
+  top: clamp(0.9rem, 2vw, 1.4rem);
+  left: clamp(0.9rem, 2vw, 1.4rem);
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 245, 222, 0.22);
+  background: rgba(18, 16, 15, 0.52);
+  backdrop-filter: blur(14px);
+  color: rgba(255, 244, 230, 0.96);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  font-family: var(--about-accent-font, 'DFE Space Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
+  font-weight: var(--about-accent-weight, 720);
+  font-size: 0.75rem;
+  box-shadow: 0 16px 36px rgba(8, 6, 5, 0.18);
+}
+
+.site-enter-button:hover,
+.site-enter-button:focus-visible {
+  background: rgba(24, 21, 18, 0.72);
+  border-color: rgba(255, 245, 222, 0.38);
+}
+
 .about-unfurl {
   --about-heading-font: 'DFE Newsreader', Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif;
   --about-body-font: 'DFE Newsreader', Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif;
