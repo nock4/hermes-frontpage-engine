@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-06-25-feather-inbox-rupture-v1",
+  "edition_id": "2026-06-25-feather-inbox-rupture-v1",
+  "plate_read_timestamp": "2026-06-25T16:25:17.554Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A cream paper field holds two broken translucent acrylic slabs, torn through the center with coral strips, teal apertures, punched holes, dotted bead clusters, scratched seams, and a frosted film sweeping in from the lower right. The plate is sparse and expressionist: a few strong slabs and precise source marks, not a dashboard.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "lightweight inbox artifacts under pressure",
+      "A cream paper field holds two broken translucent acrylic slabs, torn through the center with coral strips, teal apertures, punched holes, dotted bead clusters, scratched seams, and a frosted film sweeping in from the lower right. The plate is sparse and expressionist: a few strong slabs and precise source marks, not a dashboard.",
+      "broken-product-slab",
+      "frosted-inbox-film",
+      "coupon-orbit"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "central broken ordering slab",
+      "glyph material fold",
+      "love-letter micro-inscriptions",
+      "musician budget strip",
+      "loop workflow orbit",
+      "image-stack aperture",
+      "feather taxonomy ribs",
+      "three-dimensional drawing glint"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "feather-inbox-rupture-system",
+      "one fractured ordering slab crossing the middle of the plate",
+      "offset alert and document apertures with cropped interiors",
+      "an orbital circular coupon node cutting across straight lanes",
+      "thin delivery tabs and claim strips riding the slab edges",
+      "feather-barb sorting ribs bending around the rupture",
+      "tiny glyph-like inscriptions held as texture, never readable text",
+      "central jagged acrylic fracture"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: feather-inbox-rupture-system.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-central-broken-ordering-slab",
+      "kind": "hero",
+      "type": "hero-scale-fractured-slab",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.115,
+        "y": 0.149,
+        "w": 0.725,
+        "h": 0.577
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-glyph-material-fold",
+      "kind": "hero",
+      "type": "torn-translucent-glyph-fold",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.394,
+        "y": 0.203,
+        "w": 0.149,
+        "h": 0.49
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-love-letter-micro-inscriptions",
+      "kind": "module",
+      "type": "fine-edge-inscription",
+      "strength": 0.796248,
+      "bounds": {
+        "x": 0.193,
+        "y": 0.319,
+        "w": 0.113,
+        "h": 0.225
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-musician-budget-strip",
+      "kind": "module",
+      "type": "thin-coral-pull-strip",
+      "strength": 0.770256,
+      "bounds": {
+        "x": 0.231,
+        "y": 0.252,
+        "w": 0.189,
+        "h": 0.052
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-loop-workflow-orbit",
+      "kind": "module",
+      "type": "circular-orbit-node",
+      "strength": 0.740352,
+      "bounds": {
+        "x": 0.682,
+        "y": 0.179,
+        "w": 0.048,
+        "h": 0.048
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-image-stack-aperture",
+      "kind": "module",
+      "type": "stacked-photo-aperture",
+      "strength": 0.701448,
+      "bounds": {
+        "x": 0.556,
+        "y": 0.484,
+        "w": 0.254,
+        "h": 0.142
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-feather-taxonomy-ribs",
+      "kind": "module",
+      "type": "barbed-data-rib-field",
+      "strength": 0.6781560000000001,
+      "bounds": {
+        "x": 0.603,
+        "y": 0.242,
+        "w": 0.207,
+        "h": 0.172
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-three-dimensional-drawing-glint",
+      "kind": "module",
+      "type": "acrylic-edge-glint",
+      "strength": 0.6554679999999999,
+      "bounds": {
+        "x": 0.445,
+        "y": 0.642,
+        "w": 0.199,
+        "h": 0.045
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-frosted-film-source-veil",
+      "kind": "module",
+      "type": "frosted-coral-film-veil",
+      "strength": 0.641212,
+      "bounds": {
+        "x": 0.706,
+        "y": 0.605,
+        "w": 0.292,
+        "h": 0.392
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-central-broken-ordering-slab-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.115,
+        "y": 0.149,
+        "w": 0.725,
+        "h": 0.577
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-glyph-material-fold-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.394,
+        "y": 0.203,
+        "w": 0.149,
+        "h": 0.49
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-love-letter-micro-inscriptions-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.193,
+        "y": 0.319,
+        "w": 0.113,
+        "h": 0.225
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-musician-budget-strip-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.231,
+        "y": 0.252,
+        "w": 0.189,
+        "h": 0.052
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-loop-workflow-orbit-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.682,
+        "y": 0.179,
+        "w": 0.048,
+        "h": 0.048
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-image-stack-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.556,
+        "y": 0.484,
+        "w": 0.254,
+        "h": 0.142
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-feather-taxonomy-ribs-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.603,
+        "y": 0.242,
+        "w": 0.207,
+        "h": 0.172
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-three-dimensional-drawing-glint-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.445,
+        "y": 0.642,
+        "w": 0.199,
+        "h": 0.045
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-frosted-film-source-veil-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.706,
+        "y": 0.605,
+        "w": 0.292,
+        "h": 0.392
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

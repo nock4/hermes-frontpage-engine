@@ -1,0 +1,514 @@
+{
+  "analysis_id": "analysis-2026-06-25-feather-inbox-rupture-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A cream paper field holds two broken translucent acrylic slabs, torn through the center with coral strips, teal apertures, punched holes, dotted bead clusters, scratched seams, and a frosted film sweeping in from the lower right. The plate is sparse and expressionist: a few strong slabs and precise source marks, not a dashboard.",
+  "usable_surfaces": [
+    "central jagged acrylic fracture",
+    "left slab coral pull strip",
+    "right slab teal photo aperture",
+    "right slab stippled dot field",
+    "lower-right frosted film with coral blur",
+    "small circular punched nodes",
+    "thin incision and sorting ribs",
+    "paper edge slots and tears"
+  ],
+  "detected_objects": [
+    {
+      "label": "central broken ordering slab",
+      "artifact_type": "hero-scale-fractured-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.115,
+        "y": 0.149,
+        "w": 0.725,
+        "h": 0.577
+      },
+      "polygon": [
+        [
+          0.235,
+          0.178
+        ],
+        [
+          0.457,
+          0.177
+        ],
+        [
+          0.471,
+          0.252
+        ],
+        [
+          0.529,
+          0.154
+        ],
+        [
+          0.811,
+          0.129
+        ],
+        [
+          0.841,
+          0.522
+        ],
+        [
+          0.597,
+          0.66
+        ],
+        [
+          0.446,
+          0.691
+        ],
+        [
+          0.395,
+          0.722
+        ],
+        [
+          0.178,
+          0.717
+        ],
+        [
+          0.115,
+          0.698
+        ],
+        [
+          0.151,
+          0.514
+        ],
+        [
+          0.185,
+          0.351
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "The largest visible source-bearing surface is the two-part translucent cream acrylic slab with cropped hard edges, bevels, cracks, and a jagged central break."
+    },
+    {
+      "label": "glyph material fold",
+      "artifact_type": "torn-translucent-glyph-fold",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.394,
+        "y": 0.203,
+        "w": 0.149,
+        "h": 0.49
+      },
+      "polygon": [
+        [
+          0.461,
+          0.204
+        ],
+        [
+          0.487,
+          0.262
+        ],
+        [
+          0.474,
+          0.315
+        ],
+        [
+          0.509,
+          0.327
+        ],
+        [
+          0.531,
+          0.391
+        ],
+        [
+          0.494,
+          0.441
+        ],
+        [
+          0.506,
+          0.513
+        ],
+        [
+          0.468,
+          0.557
+        ],
+        [
+          0.475,
+          0.641
+        ],
+        [
+          0.443,
+          0.692
+        ],
+        [
+          0.417,
+          0.6
+        ],
+        [
+          0.437,
+          0.521
+        ],
+        [
+          0.397,
+          0.477
+        ],
+        [
+          0.429,
+          0.405
+        ],
+        [
+          0.395,
+          0.347
+        ],
+        [
+          0.431,
+          0.29
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A translucent torn fold and ragged vertical fissure runs down the slab center, with layered lifted plastic and paper-like residue forming glyph-like material pressure."
+    },
+    {
+      "label": "love-letter micro-inscriptions",
+      "artifact_type": "fine-edge-inscription",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.193,
+        "y": 0.319,
+        "w": 0.113,
+        "h": 0.225
+      },
+      "polygon": [
+        [
+          0.217,
+          0.319
+        ],
+        [
+          0.256,
+          0.338
+        ],
+        [
+          0.291,
+          0.373
+        ],
+        [
+          0.306,
+          0.424
+        ],
+        [
+          0.3,
+          0.485
+        ],
+        [
+          0.278,
+          0.544
+        ],
+        [
+          0.236,
+          0.531
+        ],
+        [
+          0.207,
+          0.486
+        ],
+        [
+          0.193,
+          0.424
+        ],
+        [
+          0.2,
+          0.361
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A tight field of tiny raised white bead-like inscriptions sits along the left slab surface and edge, small and unreadable like archived letter texture."
+    },
+    {
+      "label": "musician budget strip",
+      "artifact_type": "thin-coral-pull-strip",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.231,
+        "y": 0.252,
+        "w": 0.189,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.231,
+          0.278
+        ],
+        [
+          0.417,
+          0.248
+        ],
+        [
+          0.42,
+          0.277
+        ],
+        [
+          0.234,
+          0.304
+        ],
+        [
+          0.232,
+          0.293
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A narrow coral rectangular strip interrupts the left slab near its upper edge, a distinct funding-ribbon-like source mark."
+    },
+    {
+      "label": "loop workflow orbit",
+      "artifact_type": "circular-orbit-node",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.682,
+        "y": 0.179,
+        "w": 0.048,
+        "h": 0.048
+      },
+      "polygon": [
+        [
+          0.706,
+          0.179
+        ],
+        [
+          0.722,
+          0.184
+        ],
+        [
+          0.73,
+          0.198
+        ],
+        [
+          0.728,
+          0.215
+        ],
+        [
+          0.717,
+          0.226
+        ],
+        [
+          0.699,
+          0.228
+        ],
+        [
+          0.686,
+          0.221
+        ],
+        [
+          0.682,
+          0.204
+        ],
+        [
+          0.688,
+          0.189
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A clean circular punched void in the upper right slab crosses the otherwise straight acrylic geometry, functioning as the visible round node."
+    },
+    {
+      "label": "image-stack aperture",
+      "artifact_type": "stacked-photo-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.556,
+        "y": 0.484,
+        "w": 0.254,
+        "h": 0.142
+      },
+      "polygon": [
+        [
+          0.557,
+          0.529
+        ],
+        [
+          0.809,
+          0.477
+        ],
+        [
+          0.783,
+          0.559
+        ],
+        [
+          0.719,
+          0.584
+        ],
+        [
+          0.657,
+          0.602
+        ],
+        [
+          0.594,
+          0.628
+        ],
+        [
+          0.568,
+          0.606
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A muted green cropped trapezoid appears embedded under the right slab with hard clipped edges and layered transparency, reading as a stacked image aperture."
+    },
+    {
+      "label": "feather taxonomy ribs",
+      "artifact_type": "barbed-data-rib-field",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.603,
+        "y": 0.242,
+        "w": 0.207,
+        "h": 0.172
+      },
+      "polygon": [
+        [
+          0.671,
+          0.244
+        ],
+        [
+          0.731,
+          0.259
+        ],
+        [
+          0.775,
+          0.288
+        ],
+        [
+          0.806,
+          0.329
+        ],
+        [
+          0.811,
+          0.375
+        ],
+        [
+          0.792,
+          0.408
+        ],
+        [
+          0.733,
+          0.414
+        ],
+        [
+          0.671,
+          0.396
+        ],
+        [
+          0.624,
+          0.365
+        ],
+        [
+          0.604,
+          0.323
+        ],
+        [
+          0.617,
+          0.279
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A dense teal-to-black stippled field on the right slab forms barbed feather-like data ribs, with thousands of tiny points fading outward."
+    },
+    {
+      "label": "three-dimensional drawing glint",
+      "artifact_type": "acrylic-edge-glint",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.445,
+        "y": 0.642,
+        "w": 0.199,
+        "h": 0.045
+      },
+      "polygon": [
+        [
+          0.445,
+          0.666
+        ],
+        [
+          0.488,
+          0.654
+        ],
+        [
+          0.541,
+          0.647
+        ],
+        [
+          0.593,
+          0.642
+        ],
+        [
+          0.644,
+          0.646
+        ],
+        [
+          0.627,
+          0.667
+        ],
+        [
+          0.571,
+          0.681
+        ],
+        [
+          0.51,
+          0.687
+        ],
+        [
+          0.462,
+          0.683
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "A polished oblique highlight runs along the lower broken acrylic edge, catching spatial depth and making the slab feel like a three-dimensional drawing surface."
+    },
+    {
+      "label": "lower frosted film source veil",
+      "artifact_type": "frosted-coral-film-veil",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.706,
+        "y": 0.605,
+        "w": 0.292,
+        "h": 0.392
+      },
+      "polygon": [
+        [
+          0.916,
+          0.606
+        ],
+        [
+          0.998,
+          0.623
+        ],
+        [
+          0.998,
+          0.998
+        ],
+        [
+          0.706,
+          0.998
+        ],
+        [
+          0.716,
+          0.878
+        ],
+        [
+          0.758,
+          0.791
+        ],
+        [
+          0.82,
+          0.713
+        ],
+        [
+          0.872,
+          0.654
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "A large frosted translucent sheet enters from the lower right with a soft coral blur and fine speckled surface, a visible media-bearing veil rather than empty space."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.724,
+    "rationale": "The plate is controlled: two fractured slabs, a paper ground, and one frosted film carry most of the image. Small holes, strips, dots, and seams are legible source anchors with ample negative cream space."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-06-25-feather-inbox-rupture-v1"
+}

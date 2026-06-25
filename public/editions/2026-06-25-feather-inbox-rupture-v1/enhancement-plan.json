@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-25-feather-inbox-rupture-v1",
+  "edition_id": "2026-06-25-feather-inbox-rupture-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-25-feather-inbox-rupture-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-central-broken-ordering-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-central-broken-ordering-slab",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-fractured-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-glyph-material-fold",
+      "target_kind": "artifact",
+      "artifact_id": "hero-glyph-material-fold",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (torn-translucent-glyph-fold) selected from interpretation."
+    },
+    {
+      "target_id": "module-love-letter-micro-inscriptions",
+      "target_kind": "artifact",
+      "artifact_id": "module-love-letter-micro-inscriptions",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (fine-edge-inscription) selected from interpretation."
+    },
+    {
+      "target_id": "module-musician-budget-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-musician-budget-strip",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-coral-pull-strip) selected from interpretation."
+    },
+    {
+      "target_id": "module-loop-workflow-orbit",
+      "target_kind": "artifact",
+      "artifact_id": "module-loop-workflow-orbit",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (circular-orbit-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-image-stack-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-image-stack-aperture",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stacked-photo-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-feather-taxonomy-ribs",
+      "target_kind": "artifact",
+      "artifact_id": "module-feather-taxonomy-ribs",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (barbed-data-rib-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-three-dimensional-drawing-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-three-dimensional-drawing-glint",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (acrylic-edge-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-frosted-film-source-veil",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-frosted-film-source-veil",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (frosted-coral-film-veil) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
