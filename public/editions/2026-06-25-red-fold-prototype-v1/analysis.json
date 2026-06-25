@@ -1,0 +1,527 @@
+{
+  "analysis_id": "analysis-2026-06-25-red-fold-prototype-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A minimal red leather-like slab plate is interrupted by a tall black glass spine, a wide translucent acoustic bar, polished circular apertures, perforation clusters, curled torn-film texture, radial tick cuts, and small green/orange light pockets along the lower edge.",
+  "usable_surfaces": [
+    "central black glass spine",
+    "wide translucent horizontal acoustic bar",
+    "round polished glass apertures",
+    "tight perforation clusters",
+    "torn lower-left film edge",
+    "upper-right radial tick cuts",
+    "lower curved rim light seam",
+    "green reflected pocket"
+  ],
+  "detected_objects": [
+    {
+      "label": "Ryan Stephen red slab aperture",
+      "artifact_type": "hero-scale-black-glass-spine",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.353,
+        "y": 0,
+        "w": 0.125,
+        "h": 0.901
+      },
+      "polygon": [
+        [
+          0.441,
+          0
+        ],
+        [
+          0.473,
+          0
+        ],
+        [
+          0.475,
+          0.071
+        ],
+        [
+          0.457,
+          0.097
+        ],
+        [
+          0.456,
+          0.809
+        ],
+        [
+          0.478,
+          0.882
+        ],
+        [
+          0.464,
+          0.904
+        ],
+        [
+          0.354,
+          0.845
+        ],
+        [
+          0.354,
+          0.052
+        ],
+        [
+          0.386,
+          0.025
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "Tall glossy black vertical inset interrupts the red slab, with beveled dark edges and a pointed lower glass termination."
+    },
+    {
+      "label": "Loop automation acoustic bar",
+      "artifact_type": "hero-scale-translucent-speaker-bar",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.419,
+        "w": 0.869,
+        "h": 0.111
+      },
+      "polygon": [
+        [
+          0,
+          0.421
+        ],
+        [
+          0.835,
+          0.421
+        ],
+        [
+          0.85,
+          0.425
+        ],
+        [
+          0.86,
+          0.438
+        ],
+        [
+          0.866,
+          0.459
+        ],
+        [
+          0.868,
+          0.483
+        ],
+        [
+          0.864,
+          0.506
+        ],
+        [
+          0.854,
+          0.522
+        ],
+        [
+          0.836,
+          0.528
+        ],
+        [
+          0,
+          0.527
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "Wide translucent mesh-textured horizontal bar spans the plate and occludes the black spine, with rounded right end and visible pressure/shadow."
+    },
+    {
+      "label": "Je Shen glass circle",
+      "artifact_type": "circular-image-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.38,
+        "y": 0.122,
+        "w": 0.07,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.415,
+          0.122
+        ],
+        [
+          0.437,
+          0.129
+        ],
+        [
+          0.449,
+          0.149
+        ],
+        [
+          0.448,
+          0.172
+        ],
+        [
+          0.435,
+          0.191
+        ],
+        [
+          0.413,
+          0.196
+        ],
+        [
+          0.392,
+          0.188
+        ],
+        [
+          0.381,
+          0.168
+        ],
+        [
+          0.383,
+          0.145
+        ],
+        [
+          0.396,
+          0.129
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "Small polished circular lens embedded in the upper black spine, with specular facets and bright highlight."
+    },
+    {
+      "label": "Leaf phone reflected pocket",
+      "artifact_type": "green-reflection-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.647,
+        "y": 0.593,
+        "w": 0.129,
+        "h": 0.087
+      },
+      "polygon": [
+        [
+          0.674,
+          0.594
+        ],
+        [
+          0.747,
+          0.594
+        ],
+        [
+          0.768,
+          0.607
+        ],
+        [
+          0.776,
+          0.635
+        ],
+        [
+          0.766,
+          0.664
+        ],
+        [
+          0.744,
+          0.679
+        ],
+        [
+          0.673,
+          0.679
+        ],
+        [
+          0.652,
+          0.667
+        ],
+        [
+          0.647,
+          0.638
+        ],
+        [
+          0.655,
+          0.61
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "Lower-right rounded glass pocket with dark interior, silver rim, and green reflected glow along the bottom edge."
+    },
+    {
+      "label": "Portfolio image bevel",
+      "artifact_type": "dark-beveled-tile-break",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.83,
+        "w": 0.09,
+        "h": 0.075
+      },
+      "polygon": [
+        [
+          0.386,
+          0.847
+        ],
+        [
+          0.459,
+          0.887
+        ],
+        [
+          0.476,
+          0.878
+        ],
+        [
+          0.46,
+          0.904
+        ],
+        [
+          0.389,
+          0.865
+        ],
+        [
+          0.354,
+          0.846
+        ],
+        [
+          0.363,
+          0.829
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Small raised bevel fracture at the lower end of the central black spine, where the glossy tile edge breaks into a sharp angled termination."
+    },
+    {
+      "label": "Public domain fold reveal",
+      "artifact_type": "curled-film-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.048,
+        "y": 0.56,
+        "w": 0.203,
+        "h": 0.388
+      },
+      "polygon": [
+        [
+          0.2,
+          0.56
+        ],
+        [
+          0.248,
+          0.61
+        ],
+        [
+          0.262,
+          0.733
+        ],
+        [
+          0.249,
+          0.948
+        ],
+        [
+          0.184,
+          0.859
+        ],
+        [
+          0.109,
+          0.794
+        ],
+        [
+          0.049,
+          0.758
+        ],
+        [
+          0.053,
+          0.648
+        ],
+        [
+          0.103,
+          0.607
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "Lower-left torn red film-like island with ragged edges, lifted seam, and a circular red disc on its textured underside."
+    },
+    {
+      "label": "Colville radial ticks",
+      "artifact_type": "flattened-radial-wedge-node",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.73,
+        "y": 0.078,
+        "w": 0.105,
+        "h": 0.105
+      },
+      "polygon": [
+        [
+          0.781,
+          0.078
+        ],
+        [
+          0.789,
+          0.104
+        ],
+        [
+          0.813,
+          0.083
+        ],
+        [
+          0.801,
+          0.118
+        ],
+        [
+          0.833,
+          0.123
+        ],
+        [
+          0.803,
+          0.139
+        ],
+        [
+          0.828,
+          0.163
+        ],
+        [
+          0.792,
+          0.151
+        ],
+        [
+          0.788,
+          0.182
+        ],
+        [
+          0.775,
+          0.153
+        ],
+        [
+          0.75,
+          0.176
+        ],
+        [
+          0.762,
+          0.142
+        ],
+        [
+          0.729,
+          0.137
+        ],
+        [
+          0.759,
+          0.123
+        ],
+        [
+          0.736,
+          0.099
+        ],
+        [
+          0.771,
+          0.112
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Upper-right circular cluster of short black radial tick cuts around a quiet center, clearly visible as suspended wedge marks."
+    },
+    {
+      "label": "Lower rim pinhole lights",
+      "artifact_type": "curved-edge-light-pinhole-chain",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.568,
+        "y": 0.806,
+        "w": 0.215,
+        "h": 0.115
+      },
+      "polygon": [
+        [
+          0.568,
+          0.91
+        ],
+        [
+          0.595,
+          0.899
+        ],
+        [
+          0.626,
+          0.887
+        ],
+        [
+          0.658,
+          0.872
+        ],
+        [
+          0.691,
+          0.855
+        ],
+        [
+          0.725,
+          0.837
+        ],
+        [
+          0.757,
+          0.818
+        ],
+        [
+          0.783,
+          0.806
+        ],
+        [
+          0.778,
+          0.821
+        ],
+        [
+          0.747,
+          0.841
+        ],
+        [
+          0.714,
+          0.862
+        ],
+        [
+          0.681,
+          0.882
+        ],
+        [
+          0.647,
+          0.9
+        ],
+        [
+          0.608,
+          0.916
+        ],
+        [
+          0.576,
+          0.921
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Along the lower curved rim, small green and orange pinhole lights and vent-like dark slits trace a source-bearing edge seam."
+    },
+    {
+      "label": "Colville radial ticks",
+      "artifact_type": "flattened-radial-wedge-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.347,
+    "rationale": "The plate is dominated by a red slab field, one black vertical spine, one translucent horizontal bar, and a few precise apertures; the small perforations and rim lights add interaction anchors without cluttering the composition."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-25-red-fold-prototype-v1"
+}

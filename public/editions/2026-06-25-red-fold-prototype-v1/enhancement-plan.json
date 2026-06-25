@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-25-red-fold-prototype-v1",
+  "edition_id": "2026-06-25-red-fold-prototype-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-25-red-fold-prototype-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-ryan-stephen-red-slab-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-ryan-stephen-red-slab-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-black-glass-spine) selected from interpretation."
+    },
+    {
+      "target_id": "hero-loop-automation-acoustic-bar",
+      "target_kind": "artifact",
+      "artifact_id": "hero-loop-automation-acoustic-bar",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-translucent-speaker-bar) selected from interpretation."
+    },
+    {
+      "target_id": "module-je-shen-glass-circle",
+      "target_kind": "artifact",
+      "artifact_id": "module-je-shen-glass-circle",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (circular-image-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-leaf-phone-reflected-pocket",
+      "target_kind": "artifact",
+      "artifact_id": "module-leaf-phone-reflected-pocket",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (green-reflection-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-portfolio-image-bevel",
+      "target_kind": "artifact",
+      "artifact_id": "module-portfolio-image-bevel",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-beveled-tile-break) selected from interpretation."
+    },
+    {
+      "target_id": "module-public-domain-fold-reveal",
+      "target_kind": "artifact",
+      "artifact_id": "module-public-domain-fold-reveal",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curled-film-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-colville-radial-ticks",
+      "target_kind": "artifact",
+      "artifact_id": "module-colville-radial-ticks",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (flattened-radial-wedge-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-rim-pinhole-lights",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-rim-pinhole-lights",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curved-edge-light-pinhole-chain) selected from interpretation."
+    },
+    {
+      "target_id": "module-colville-radial-ticks-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-colville-radial-ticks-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (flattened-radial-wedge-node) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

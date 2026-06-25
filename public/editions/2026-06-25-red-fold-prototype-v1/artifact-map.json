@@ -1,0 +1,659 @@
+{
+  "artifact_map_id": "map-2026-06-25-red-fold-prototype-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "red-fold-prototype-threshold",
+  "default_artifact_id": "hero-ryan-stephen-red-slab-aperture",
+  "artifacts": [
+    {
+      "id": "hero-ryan-stephen-red-slab-aperture",
+      "kind": "hero",
+      "label": "Ryan Stephen red slab aperture",
+      "artifact_type": "hero-scale-black-glass-spine",
+      "bounds": {
+        "x": 0.3488,
+        "y": 0.0,
+        "w": 0.1561,
+        "h": 0.6519
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.3511,
+          0.5351
+        ],
+        [
+          0.3534,
+          0.0518
+        ],
+        [
+          0.4509,
+          0.0025
+        ],
+        [
+          0.4798,
+          0.0025
+        ],
+        [
+          0.5019,
+          0.0868
+        ],
+        [
+          0.4798,
+          0.6252
+        ],
+        [
+          0.4699,
+          0.6469
+        ],
+        [
+          0.4501,
+          0.6486
+        ],
+        [
+          0.3762,
+          0.6235
+        ],
+        [
+          0.3534,
+          0.5826
+        ],
+        [
+          0.3511,
+          0.5384
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/hero-ryan-stephen-red-slab-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-ryan-stephen-red-slab-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          638,
+          388
+        ],
+        "safe_stage_window_origin_px": [
+          654,
+          461
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-loop-automation-acoustic-bar",
+      "kind": "hero",
+      "label": "Loop automation acoustic bar",
+      "artifact_type": "hero-scale-translucent-speaker-bar",
+      "bounds": {
+        "x": 0,
+        "y": 0.419,
+        "w": 0.869,
+        "h": 0.111
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.421
+        ],
+        [
+          0.835,
+          0.421
+        ],
+        [
+          0.85,
+          0.425
+        ],
+        [
+          0.86,
+          0.438
+        ],
+        [
+          0.866,
+          0.459
+        ],
+        [
+          0.868,
+          0.483
+        ],
+        [
+          0.864,
+          0.506
+        ],
+        [
+          0.854,
+          0.522
+        ],
+        [
+          0.836,
+          0.528
+        ],
+        [
+          0,
+          0.527
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/hero-loop-automation-acoustic-bar.svg",
+      "source_binding_ids": [
+        "binding-hero-loop-automation-acoustic-bar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          667,
+          477
+        ],
+        "safe_stage_window_origin_px": [
+          774,
+          486
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-je-shen-glass-circle",
+      "kind": "module",
+      "label": "Je Shen glass circle",
+      "artifact_type": "circular-image-aperture",
+      "bounds": {
+        "x": 0.38,
+        "y": 0.122,
+        "w": 0.07,
+        "h": 0.073
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.415,
+          0.122
+        ],
+        [
+          0.437,
+          0.129
+        ],
+        [
+          0.449,
+          0.149
+        ],
+        [
+          0.448,
+          0.172
+        ],
+        [
+          0.435,
+          0.191
+        ],
+        [
+          0.413,
+          0.196
+        ],
+        [
+          0.392,
+          0.188
+        ],
+        [
+          0.381,
+          0.168
+        ],
+        [
+          0.383,
+          0.145
+        ],
+        [
+          0.396,
+          0.129
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/module-je-shen-glass-circle.svg",
+      "source_binding_ids": [
+        "binding-module-je-shen-glass-circle"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          637,
+          156
+        ],
+        "safe_stage_window_origin_px": [
+          646,
+          162
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-leaf-phone-reflected-pocket",
+      "kind": "module",
+      "label": "Leaf phone reflected pocket",
+      "artifact_type": "green-reflection-aperture",
+      "bounds": {
+        "x": 0.647,
+        "y": 0.593,
+        "w": 0.129,
+        "h": 0.087
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.674,
+          0.594
+        ],
+        [
+          0.747,
+          0.594
+        ],
+        [
+          0.768,
+          0.607
+        ],
+        [
+          0.776,
+          0.635
+        ],
+        [
+          0.766,
+          0.664
+        ],
+        [
+          0.744,
+          0.679
+        ],
+        [
+          0.673,
+          0.679
+        ],
+        [
+          0.652,
+          0.667
+        ],
+        [
+          0.647,
+          0.638
+        ],
+        [
+          0.655,
+          0.61
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/module-leaf-phone-reflected-pocket.svg",
+      "source_binding_ids": [
+        "binding-module-leaf-phone-reflected-pocket"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1093,
+          645
+        ],
+        "safe_stage_window_origin_px": [
+          1109,
+          652
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-portfolio-image-bevel",
+      "kind": "module",
+      "label": "Portfolio image bevel",
+      "artifact_type": "dark-beveled-tile-break",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.83,
+        "w": 0.09,
+        "h": 0.075
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.386,
+          0.847
+        ],
+        [
+          0.459,
+          0.887
+        ],
+        [
+          0.476,
+          0.878
+        ],
+        [
+          0.46,
+          0.904
+        ],
+        [
+          0.389,
+          0.865
+        ],
+        [
+          0.354,
+          0.846
+        ],
+        [
+          0.363,
+          0.829
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/module-portfolio-image-bevel.svg",
+      "source_binding_ids": [
+        "binding-module-portfolio-image-bevel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          662,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          673,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-public-domain-fold-reveal",
+      "kind": "module",
+      "label": "Public domain fold reveal",
+      "artifact_type": "curled-film-edge",
+      "bounds": {
+        "x": 0.048,
+        "y": 0.56,
+        "w": 0.203,
+        "h": 0.388
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.2,
+          0.56
+        ],
+        [
+          0.248,
+          0.61
+        ],
+        [
+          0.262,
+          0.733
+        ],
+        [
+          0.249,
+          0.948
+        ],
+        [
+          0.184,
+          0.859
+        ],
+        [
+          0.109,
+          0.794
+        ],
+        [
+          0.049,
+          0.758
+        ],
+        [
+          0.053,
+          0.648
+        ],
+        [
+          0.103,
+          0.607
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/module-public-domain-fold-reveal.svg",
+      "source_binding_ids": [
+        "binding-module-public-domain-fold-reveal"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          230,
+          740
+        ],
+        "safe_stage_window_origin_px": [
+          255,
+          772
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-colville-radial-ticks",
+      "kind": "module",
+      "label": "Colville radial ticks",
+      "artifact_type": "flattened-radial-wedge-node",
+      "bounds": {
+        "x": 0.73,
+        "y": 0.078,
+        "w": 0.105,
+        "h": 0.105
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.781,
+          0.078
+        ],
+        [
+          0.789,
+          0.104
+        ],
+        [
+          0.813,
+          0.083
+        ],
+        [
+          0.801,
+          0.118
+        ],
+        [
+          0.833,
+          0.123
+        ],
+        [
+          0.803,
+          0.139
+        ],
+        [
+          0.828,
+          0.163
+        ],
+        [
+          0.792,
+          0.151
+        ],
+        [
+          0.788,
+          0.182
+        ],
+        [
+          0.775,
+          0.153
+        ],
+        [
+          0.75,
+          0.176
+        ],
+        [
+          0.762,
+          0.142
+        ],
+        [
+          0.729,
+          0.137
+        ],
+        [
+          0.759,
+          0.123
+        ],
+        [
+          0.736,
+          0.099
+        ],
+        [
+          0.771,
+          0.112
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/module-colville-radial-ticks.svg",
+      "source_binding_ids": [
+        "binding-module-colville-radial-ticks"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1202,
+          125
+        ],
+        "safe_stage_window_origin_px": [
+          1215,
+          134
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-lower-rim-pinhole-lights",
+      "kind": "module",
+      "label": "Lower rim pinhole lights",
+      "artifact_type": "curved-edge-light-pinhole-chain",
+      "bounds": {
+        "x": 0.568,
+        "y": 0.806,
+        "w": 0.215,
+        "h": 0.115
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.568,
+          0.91
+        ],
+        [
+          0.595,
+          0.899
+        ],
+        [
+          0.626,
+          0.887
+        ],
+        [
+          0.658,
+          0.872
+        ],
+        [
+          0.691,
+          0.855
+        ],
+        [
+          0.725,
+          0.837
+        ],
+        [
+          0.757,
+          0.818
+        ],
+        [
+          0.783,
+          0.806
+        ],
+        [
+          0.778,
+          0.821
+        ],
+        [
+          0.747,
+          0.841
+        ],
+        [
+          0.714,
+          0.862
+        ],
+        [
+          0.681,
+          0.882
+        ],
+        [
+          0.647,
+          0.9
+        ],
+        [
+          0.608,
+          0.916
+        ],
+        [
+          0.576,
+          0.921
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/module-lower-rim-pinhole-lights.svg",
+      "source_binding_ids": [
+        "binding-module-lower-rim-pinhole-lights"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1038,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1064,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-colville-radial-ticks-2",
+      "kind": "module",
+      "label": "Colville radial ticks",
+      "artifact_type": "flattened-radial-wedge-node",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "red-fold-prototype-threshold",
+      "mask_path": "/editions/2026-06-25-red-fold-prototype-v1/assets/masks/module-colville-radial-ticks-2.svg",
+      "source_binding_ids": [
+        "binding-module-colville-radial-ticks-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "interpretation_id": "interp-2026-06-25-red-fold-prototype-v1",
+  "edition_id": "2026-06-25-red-fold-prototype-v1",
+  "plate_read_timestamp": "2026-06-25T08:11:12.601Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A minimal red leather-like slab plate is interrupted by a tall black glass spine, a wide translucent acoustic bar, polished circular apertures, perforation clusters, curled torn-film texture, radial tick cuts, and small green/orange light pockets along the lower edge.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "spatial prototypes under red pressure",
+      "A minimal red leather-like slab plate is interrupted by a tall black glass spine, a wide translucent acoustic bar, polished circular apertures, perforation clusters, curled torn-film texture, radial tick cuts, and small green/orange light pockets along the lower edge.",
+      "red-slab",
+      "folded-threshold",
+      "black-glass"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Ryan Stephen red slab aperture",
+      "Loop automation acoustic bar",
+      "Je Shen glass circle",
+      "Leaf phone reflected pocket",
+      "Portfolio image bevel",
+      "Public domain fold reveal",
+      "Colville radial ticks",
+      "Lower rim pinhole lights"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "red-fold-prototype-threshold",
+      "one architectural red threshold slab behaving like a public facade",
+      "a vertical dark glass spine partly occluded by a wide horizontal acoustic cut",
+      "curled film edge exposing small anchor marks along the peel",
+      "pill and circular apertures embedded as source-bearing surfaces",
+      "a flattened radial wedge node suspended near one seam",
+      "soft ASCII-like grain pressed into negative space",
+      "central black glass spine"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: red-fold-prototype-threshold.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-ryan-stephen-red-slab-aperture",
+      "kind": "hero",
+      "type": "hero-scale-black-glass-spine",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.3488,
+        "y": 0,
+        "w": 0.1561,
+        "h": 0.6519
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-loop-automation-acoustic-bar",
+      "kind": "hero",
+      "type": "hero-scale-translucent-speaker-bar",
+      "strength": 0.987536,
+      "bounds": {
+        "x": 0,
+        "y": 0.419,
+        "w": 0.869,
+        "h": 0.111
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-je-shen-glass-circle",
+      "kind": "module",
+      "type": "circular-image-aperture",
+      "strength": 0.802704,
+      "bounds": {
+        "x": 0.38,
+        "y": 0.122,
+        "w": 0.07,
+        "h": 0.073
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-leaf-phone-reflected-pocket",
+      "kind": "module",
+      "type": "green-reflection-aperture",
+      "strength": 0.76026,
+      "bounds": {
+        "x": 0.647,
+        "y": 0.593,
+        "w": 0.129,
+        "h": 0.087
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-portfolio-image-bevel",
+      "kind": "module",
+      "type": "dark-beveled-tile-break",
+      "strength": 0.7265520000000001,
+      "bounds": {
+        "x": 0.386,
+        "y": 0.83,
+        "w": 0.09,
+        "h": 0.075
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-public-domain-fold-reveal",
+      "kind": "module",
+      "type": "curled-film-edge",
+      "strength": 0.690588,
+      "bounds": {
+        "x": 0.048,
+        "y": 0.56,
+        "w": 0.203,
+        "h": 0.388
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-colville-radial-ticks",
+      "kind": "module",
+      "type": "flattened-radial-wedge-node",
+      "strength": 0.6851760000000001,
+      "bounds": {
+        "x": 0.73,
+        "y": 0.078,
+        "w": 0.105,
+        "h": 0.105
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-rim-pinhole-lights",
+      "kind": "module",
+      "type": "curved-edge-light-pinhole-chain",
+      "strength": 0.6555759999999999,
+      "bounds": {
+        "x": 0.568,
+        "y": 0.806,
+        "w": 0.215,
+        "h": 0.115
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-colville-radial-ticks-2",
+      "kind": "module",
+      "type": "flattened-radial-wedge-node",
+      "strength": 0.66106,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-ryan-stephen-red-slab-aperture-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3488,
+        "y": 0,
+        "w": 0.1561,
+        "h": 0.6519
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-loop-automation-acoustic-bar-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.419,
+        "w": 0.869,
+        "h": 0.111
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-je-shen-glass-circle-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.38,
+        "y": 0.122,
+        "w": 0.07,
+        "h": 0.073
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-leaf-phone-reflected-pocket-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.647,
+        "y": 0.593,
+        "w": 0.129,
+        "h": 0.087
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-portfolio-image-bevel-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.83,
+        "w": 0.09,
+        "h": 0.075
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-public-domain-fold-reveal-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.048,
+        "y": 0.56,
+        "w": 0.203,
+        "h": 0.388
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-colville-radial-ticks-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.73,
+        "y": 0.078,
+        "w": 0.105,
+        "h": 0.105
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-rim-pinhole-lights-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.568,
+        "y": 0.806,
+        "w": 0.215,
+        "h": 0.115
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-colville-radial-ticks-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
