@@ -16,7 +16,8 @@ export function EmbedPreloadLayer({
             data-embed-preload-kind="tweet"
             loading="eager"
             sandbox={TWEET_EMBED_SANDBOX}
-            srcDoc={embed.srcDoc}
+            src={embed.src}
+            srcDoc={embed.src ? undefined : embed.srcDoc}
             tabIndex={-1}
             title={`Preload ${embed.title}`}
           />

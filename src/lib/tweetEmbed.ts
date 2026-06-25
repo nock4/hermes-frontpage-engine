@@ -1,4 +1,25 @@
-export const TWEET_EMBED_SANDBOX = 'allow-scripts allow-popups'
+export const TWEET_EMBED_SANDBOX = 'allow-scripts allow-popups allow-same-origin'
+
+function getTweetStatusId(sourceUrl: string) {
+  try {
+    const url = new URL(sourceUrl)
+    const parts = url.pathname.split('/').filter(Boolean)
+    const statusIndex = parts.findIndex((part) => part === 'status')
+    return statusIndex >= 0 ? parts[statusIndex + 1] || null : null
+  } catch {
+    return null
+  }
+}
+
+export function getTweetEmbedUrl(sourceUrl: string) {
+  const statusId = getTweetStatusId(sourceUrl)
+  if (!statusId) return null
+  const url = new URL('https://platform.twitter.com/embed/Tweet.html')
+  url.searchParams.set('id', statusId)
+  url.searchParams.set('dnt', 'true')
+  url.searchParams.set('theme', 'dark')
+  return url.toString()
+}
 
 export function getTweetEmbedSrcDoc(sourceUrl: string) {
   const tweetUrl = sourceUrl.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;')

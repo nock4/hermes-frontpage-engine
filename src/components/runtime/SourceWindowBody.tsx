@@ -2,7 +2,7 @@ import type { SyntheticEvent } from 'react'
 
 import { getRichPreviewModel } from '../../lib/richPreviewModel'
 import { getYouTubeThumbnailUrl } from '../../lib/sourceWindowContent'
-import { getTweetEmbedSrcDoc, TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
+import { getTweetEmbedSrcDoc, getTweetEmbedUrl, TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
 import type { ArtifactRecord, SourceBindingRecord } from '../../types/runtime'
 import type { SourceWindowDescriptor } from '../../types/sourceWindows'
 import {
@@ -295,6 +295,22 @@ export function SourceWindowBody({
     )
   }
 
+  if (descriptor.kind === 'tweet-embed') {
+    const tweetEmbedUrl = getTweetEmbedUrl(descriptor.sourceUrl)
+    return (
+      <div className="source-window__body source-window__body--tweet-embed">
+        <iframe
+          className="tweet-embed-frame"
+          loading="eager"
+          sandbox={TWEET_EMBED_SANDBOX}
+          src={tweetEmbedUrl ?? undefined}
+          srcDoc={tweetEmbedUrl ? undefined : getTweetEmbedSrcDoc(descriptor.sourceUrl)}
+          title={binding.title}
+        />
+      </div>
+    )
+  }
+
   const visualCardImage = getUsableSourceImageUrl(binding)
   const visualCardTitle = binding.source_title || binding.title
   const visualCardHref = 'sourceUrl' in descriptor ? descriptor.sourceUrl : binding.source_url
@@ -488,20 +504,6 @@ export function SourceWindowBody({
           </p>
         </div>
         {descriptor.streamUrl ? <a href={descriptor.streamUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a> : <span className="fallback">No live audio source URL bound yet</span>}
-      </div>
-    )
-  }
-
-  if (descriptor.kind === 'tweet-embed') {
-    return (
-      <div className="source-window__body source-window__body--tweet-embed">
-        <iframe
-          className="tweet-embed-frame"
-          loading="lazy"
-          sandbox={TWEET_EMBED_SANDBOX}
-          srcDoc={getTweetEmbedSrcDoc(descriptor.sourceUrl)}
-          title={binding.title}
-        />
       </div>
     )
   }

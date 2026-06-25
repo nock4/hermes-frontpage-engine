@@ -1,7 +1,7 @@
 import type { SourceBindingRecord } from '../types/runtime'
 import { getSourceWindowDescriptor } from './sourceWindowContent'
 import { sanitizeSourceImageUrl } from './sourceUrl'
-import { getTweetEmbedSrcDoc } from './tweetEmbed'
+import { getTweetEmbedUrl } from './tweetEmbed'
 
 export type EmbedPreload = {
   id: string
@@ -45,11 +45,12 @@ export function collectEmbedPreloads({ bindings, reviewMode, openBindingIds }: C
     }
 
     if (descriptor.kind === 'tweet-embed') {
-      const srcDoc = getTweetEmbedSrcDoc(descriptor.sourceUrl)
-      const key = `tweet:${descriptor.sourceUrl}`
+      const src = getTweetEmbedUrl(descriptor.sourceUrl)
+      if (!src) continue
+      const key = `tweet:${src}`
       if (seen.has(key)) continue
       seen.add(key)
-      preloads.push({ id: binding.id, kind: 'tweet', srcDoc, title: binding.title })
+      preloads.push({ id: binding.id, kind: 'tweet', src, title: binding.title })
       continue
     }
 

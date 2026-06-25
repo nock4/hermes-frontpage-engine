@@ -137,9 +137,10 @@ describe('collectEmbedPreloads', () => {
 
     expect(embeds).toHaveLength(1)
     expect(embeds[0]?.kind).toBe('tweet')
-    expect(embeds[0]?.srcDoc).toContain('https://x.com/garrytan/status/2044479509874020852')
-    expect(embeds[0]?.srcDoc).not.toContain('onerror=alert(1)')
-    expect(embeds[0]?.srcDoc).not.toContain('<script>alert(1)</script>')
+    expect(embeds[0]?.src).toContain('https://platform.twitter.com/embed/Tweet.html')
+    expect(embeds[0]?.src).toContain('id=2044479509874020852')
+    expect(embeds[0]?.src).not.toContain('onerror=alert(1)')
+    expect(embeds[0]?.src).not.toContain('<script>alert(1)</script>')
   })
 
   it('turns off preload if a source window is already open', () => {
