@@ -3816,11 +3816,21 @@
 
 .tweet-embed-frame {
   width: min(100%, 34rem);
-  min-height: 420px;
+  height: min(72dvh, 620px);
+  min-height: min(420px, calc(100dvh - 4.5rem));
   border: 0;
   border-radius: 16px;
   background: transparent !important;
   box-shadow: none;
+}
+
+.source-window__body--tweet-embed iframe {
+  aspect-ratio: auto;
+}
+
+.source-window--preview .tweet-embed-frame {
+  height: min(34dvh, 294px);
+  min-height: min(294px, calc(100dvh - 4.5rem));
 }
 
 .tweet-media-card {
