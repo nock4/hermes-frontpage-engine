@@ -84,6 +84,7 @@ const supportedPostures = postureCatalog.map((entry) => entry.plate_posture)
 const supportedDensities = ['airy', 'balanced', 'dense', 'source-dependent']
 const supportedAbstractions = ['low', 'medium', 'medium-high', 'high', 'source-dependent']
 const supportedMinimality = ['low', 'medium', 'high', 'source-dependent']
+const disruptiveAntiFlatnessPostures = ['wildcard rupture', 'diagrammatic section', 'poster wall']
 
 function hashUnit(seed) {
   const digest = crypto.createHash('sha1').update(seed).digest()
@@ -171,9 +172,13 @@ export function selectPlatePosture({
     return { ...entry, recent_pressure: recentPressure, effectiveWeight: Number(effectiveWeight.toFixed(3)) }
   })
 
+  const hardAntiFlatnessRotation = !forcedPosture && flatSurfacePressure >= 16 && !textualBias.minimal && !textualBias.abstract
+  const candidatePool = hardAntiFlatnessRotation
+    ? candidates.filter((entry) => disruptiveAntiFlatnessPostures.includes(entry.plate_posture))
+    : candidates
   const selected = forcedPosture
     ? candidates.find((entry) => entry.plate_posture === forcedPosture)
-    : chooseWeighted(candidates, `${date || ''}:${runId || ''}:${recentText}:${overrideText}`)
+    : chooseWeighted(candidatePool, `${date || ''}:${runId || ''}:${recentText}:${overrideText}:anti-flatness-${hardAntiFlatnessRotation ? 'hard' : 'soft'}`)
 
   const posture = {
     ...selected,
@@ -181,6 +186,7 @@ export function selectPlatePosture({
     abstraction_target: forcedAbstraction || selected.abstraction_target,
     minimality_target: forcedMinimality || selected.minimality_target,
     manual_override: Boolean(forcedPosture || forcedDensity || forcedAbstraction || forcedMinimality),
+    hard_anti_flatness_rotation: hardAntiFlatnessRotation,
     selection_seed: `${date || ''}:${runId || ''}`,
     recent_flat_surface_pressure: flatSurfacePressure,
     look_avoidance_directive: flatSurfacePressure >= 10
@@ -188,7 +194,9 @@ export function selectPlatePosture({
       : 'No strong repeated flat-surface penalty detected.',
     reason: forcedPosture
       ? `Manual plate posture override: ${forcedPosture}`
-      : sampleMode
+      : hardAntiFlatnessRotation
+        ? 'Hard anti-flatness rotation: recent editions crossed the flat-surface pressure ceiling, so selection was limited to disruptive postures (wildcard rupture, diagrammatic section, poster wall).'
+        : sampleMode
         ? 'Sample mode uses deterministic posture selection without recent-edition pressure.'
         : 'Weighted selection with recent-edition and flat-surface pressure; overused postures and camera/material grammars are downweighted while minimal/abstract/dense override language can upweight matching modes.',
     candidate_weights: candidates.map(({ plate_posture, weight, recent_pressure, effectiveWeight }) => ({

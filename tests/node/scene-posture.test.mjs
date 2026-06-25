@@ -62,4 +62,21 @@ describe('scene posture selection', () => {
     expect(diagrammatic.effective_weight).toBeGreaterThan(diagrammatic.base_weight)
     expect(wildcard.effective_weight).toBeGreaterThan(wildcard.base_weight)
   })
+
+  it('hard-rotates into disruptive postures when flat-surface pressure is very high', () => {
+    const posture = selectPlatePosture({
+      date: '2026-06-26',
+      runId: 'hard-flat-pressure-test',
+      recentEditions: [
+        { title: 'Cardboard sleeve scan', scene_family: 'material macro', visual_summary: 'macro material surface texture slab paper cardboard sleeve scan shallow side-lit grain seam aperture glint notch quiet' },
+        { title: 'Flat paper aperture', scene_family: 'source-led balanced', visual_summary: 'paper sleeve scan shallow macro surface seam aperture glint notch pinlight quiet material texture slab' },
+        { title: 'Cream source plate', scene_family: 'material macro', visual_summary: 'flat cardboard surface paper sleeve seam aperture notch glint shallow scan quiet' },
+      ],
+    })
+
+    expect(posture.recent_flat_surface_pressure).toBeGreaterThanOrEqual(16)
+    expect(posture.hard_anti_flatness_rotation).toBe(true)
+    expect(['wildcard rupture', 'diagrammatic section', 'poster wall']).toContain(posture.plate_posture)
+    expect(posture.reason).toContain('Hard anti-flatness rotation')
+  })
 })
