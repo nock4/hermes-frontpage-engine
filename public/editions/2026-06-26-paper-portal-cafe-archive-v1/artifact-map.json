@@ -1,0 +1,543 @@
+{
+  "artifact_map_id": "map-2026-06-26-paper-portal-cafe-archive-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "paper-portal-cafe-archive",
+  "default_artifact_id": "hero-hero-cobalt-envelope-collision",
+  "artifacts": [
+    {
+      "id": "hero-hero-cobalt-envelope-collision",
+      "kind": "hero",
+      "label": "hero cobalt envelope collision",
+      "artifact_type": "hero-scale-envelope-aperture",
+      "bounds": {
+        "x": 0,
+        "y": 0.256,
+        "w": 0.568,
+        "h": 0.703
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.362
+        ],
+        [
+          0.456,
+          0.256
+        ],
+        [
+          0.568,
+          0.373
+        ],
+        [
+          0.351,
+          0.869
+        ],
+        [
+          0.12,
+          0.943
+        ],
+        [
+          0,
+          0.959
+        ],
+        [
+          0,
+          0.73
+        ],
+        [
+          0.112,
+          0.713
+        ],
+        [
+          0.278,
+          0.444
+        ],
+        [
+          0,
+          0.731
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/hero-hero-cobalt-envelope-collision.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-cobalt-envelope-collision"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          436,
+          564
+        ],
+        "safe_stage_window_origin_px": [
+          506,
+          622
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-hero-cream-cafe-receipt-slab",
+      "kind": "hero",
+      "label": "hero cream cafe receipt slab",
+      "artifact_type": "hero-scale-receipt-surface",
+      "bounds": {
+        "x": 0.346,
+        "y": 0.36,
+        "w": 0.654,
+        "h": 0.581
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.505,
+          0.36
+        ],
+        [
+          0.774,
+          0.375
+        ],
+        [
+          0.848,
+          0.41
+        ],
+        [
+          0.892,
+          0.416
+        ],
+        [
+          0.935,
+          0.399
+        ],
+        [
+          1,
+          0.419
+        ],
+        [
+          1,
+          0.941
+        ],
+        [
+          0.602,
+          0.923
+        ],
+        [
+          0.362,
+          0.881
+        ],
+        [
+          0.346,
+          0.863
+        ],
+        [
+          0.502,
+          0.361
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/hero-hero-cream-cafe-receipt-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-cream-cafe-receipt-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1034,
+          619
+        ],
+        "safe_stage_window_origin_px": [
+          1114,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-glossy-moon-print-aperture",
+      "kind": "module",
+      "label": "glossy moon-print aperture",
+      "artifact_type": "glossy-instant-print",
+      "bounds": {
+        "x": 0.5195,
+        "y": 0.2852,
+        "w": 0.4805,
+        "h": 0.151
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.5225,
+          0.3236
+        ],
+        [
+          0.5352,
+          0.2871
+        ],
+        [
+          0.9971,
+          0.319
+        ],
+        [
+          0.9971,
+          0.4336
+        ],
+        [
+          0.876,
+          0.4277
+        ],
+        [
+          0.5674,
+          0.375
+        ],
+        [
+          0.5225,
+          0.3275
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/module-glossy-moon-print-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-glossy-moon-print-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1177,
+          370
+        ],
+        "safe_stage_window_origin_px": [
+          1234,
+          384
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-pastel-envelope-seal-cluster",
+      "kind": "module",
+      "label": "pastel envelope seal cluster",
+      "artifact_type": "wax-seal-envelope-mark",
+      "bounds": {
+        "x": 0.291,
+        "y": 0,
+        "w": 0.557,
+        "h": 0.083
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.291,
+          0
+        ],
+        [
+          0.848,
+          0
+        ],
+        [
+          0.711,
+          0.034
+        ],
+        [
+          0.474,
+          0.083
+        ],
+        [
+          0.356,
+          0.04
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/module-pastel-envelope-seal-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-pastel-envelope-seal-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          875,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          943,
+          80
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-pool-blue-tuner-sticker",
+      "kind": "module",
+      "label": "pool-blue tuner sticker",
+      "artifact_type": "radio-strip-sticker",
+      "bounds": {
+        "x": 0.699,
+        "y": 0.051,
+        "w": 0.301,
+        "h": 0.232
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.838,
+          0.051
+        ],
+        [
+          1,
+          0.011
+        ],
+        [
+          1,
+          0.282
+        ],
+        [
+          0.879,
+          0.228
+        ],
+        [
+          0.699,
+          0.081
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/module-pool-blue-tuner-sticker.svg",
+      "source_binding_ids": [
+        "binding-module-pool-blue-tuner-sticker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1305,
+          152
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          171
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-pool-glare-thumbnail",
+      "kind": "module",
+      "label": "pool glare thumbnail",
+      "artifact_type": "sun-glare-media-grain",
+      "bounds": {
+        "x": 0.762,
+        "y": 0.295,
+        "w": 0.139,
+        "h": 0.098
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.798,
+          0.295
+        ],
+        [
+          0.846,
+          0.301
+        ],
+        [
+          0.884,
+          0.322
+        ],
+        [
+          0.901,
+          0.356
+        ],
+        [
+          0.884,
+          0.386
+        ],
+        [
+          0.843,
+          0.393
+        ],
+        [
+          0.792,
+          0.374
+        ],
+        [
+          0.762,
+          0.341
+        ],
+        [
+          0.773,
+          0.311
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/module-pool-glare-thumbnail.svg",
+      "source_binding_ids": [
+        "binding-module-pool-glare-thumbnail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1277,
+          344
+        ],
+        "safe_stage_window_origin_px": [
+          1294,
+          352
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-rust-recursive-loop-cut",
+      "kind": "module",
+      "label": "rust recursive loop cut",
+      "artifact_type": "painted-portal-cut",
+      "bounds": {
+        "x": 0,
+        "y": 0.821,
+        "w": 0.372,
+        "h": 0.159
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.001,
+          0.941
+        ],
+        [
+          0.122,
+          0.895
+        ],
+        [
+          0.275,
+          0.84
+        ],
+        [
+          0.348,
+          0.821
+        ],
+        [
+          0.372,
+          0.841
+        ],
+        [
+          0.183,
+          0.921
+        ],
+        [
+          0.029,
+          0.98
+        ],
+        [
+          0,
+          0.979
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/module-rust-recursive-loop-cut.svg",
+      "source_binding_ids": [
+        "binding-module-rust-recursive-loop-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          286,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          331,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-rust-recursive-loop-cut-2",
+      "kind": "module",
+      "label": "rust recursive loop cut",
+      "artifact_type": "painted-portal-cut",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/module-rust-recursive-loop-cut-2.svg",
+      "source_binding_ids": [
+        "binding-module-rust-recursive-loop-cut-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-index-stamp-interruption",
+      "kind": "module",
+      "label": "index stamp interruption",
+      "artifact_type": "postage-stamp-notch",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "paper-portal-cafe-archive",
+      "mask_path": "/editions/2026-06-26-paper-portal-cafe-archive-v1/assets/masks/module-index-stamp-interruption.svg",
+      "source_binding_ids": [
+        "binding-module-index-stamp-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

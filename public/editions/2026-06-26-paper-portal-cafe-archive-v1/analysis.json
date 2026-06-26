@@ -1,0 +1,421 @@
+{
+  "analysis_id": "analysis-2026-06-26-paper-portal-cafe-archive-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A minimal tabletop plate of layered paper: a cobalt envelope collision cuts the lower field, a cream torn slab crosses it, and a glossy black print aperture throws a moon-like glare. Pastel envelopes and tiny punctures sit as marginal source-bearing anchors in the negative paper field.",
+  "usable_surfaces": [
+    "large cobalt folded envelope flap",
+    "cream torn receipt-like paper slab",
+    "glossy black instant-print aperture",
+    "pastel envelope flaps at upper edges",
+    "thin center scratch and punched paper holes",
+    "orange-rust underside edge along bottom seam"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero cobalt envelope collision",
+      "artifact_type": "hero-scale-envelope-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.256,
+        "w": 0.568,
+        "h": 0.703
+      },
+      "polygon": [
+        [
+          0,
+          0.362
+        ],
+        [
+          0.456,
+          0.256
+        ],
+        [
+          0.568,
+          0.373
+        ],
+        [
+          0.351,
+          0.869
+        ],
+        [
+          0.12,
+          0.943
+        ],
+        [
+          0,
+          0.959
+        ],
+        [
+          0,
+          0.73
+        ],
+        [
+          0.112,
+          0.713
+        ],
+        [
+          0.278,
+          0.444
+        ],
+        [
+          0,
+          0.731
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "dominant cobalt folded envelope with a sharp diagonal flap, dark slit, torn pinhole and hard paper edges occupying the lower-left plate"
+    },
+    {
+      "label": "hero cream cafe receipt slab",
+      "artifact_type": "hero-scale-receipt-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.346,
+        "y": 0.36,
+        "w": 0.654,
+        "h": 0.581
+      },
+      "polygon": [
+        [
+          0.505,
+          0.36
+        ],
+        [
+          0.774,
+          0.375
+        ],
+        [
+          0.848,
+          0.41
+        ],
+        [
+          0.892,
+          0.416
+        ],
+        [
+          0.935,
+          0.399
+        ],
+        [
+          1,
+          0.419
+        ],
+        [
+          1,
+          0.941
+        ],
+        [
+          0.602,
+          0.923
+        ],
+        [
+          0.362,
+          0.881
+        ],
+        [
+          0.346,
+          0.863
+        ],
+        [
+          0.502,
+          0.361
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "large warm cream paper plane with scalloped torn upper edge, vertical crease, deckled bottom edge and a small puncture near lower right"
+    },
+    {
+      "label": "glossy moon-print aperture",
+      "artifact_type": "glossy-instant-print",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.532,
+        "y": 0.287,
+        "w": 0.46799999999999997,
+        "h": 0.176
+      },
+      "polygon": [
+        [
+          0.535,
+          0.287
+        ],
+        [
+          1,
+          0.322
+        ],
+        [
+          1,
+          0.461
+        ],
+        [
+          0.939,
+          0.435
+        ],
+        [
+          0.891,
+          0.452
+        ],
+        [
+          0.849,
+          0.421
+        ],
+        [
+          0.773,
+          0.376
+        ],
+        [
+          0.592,
+          0.359
+        ],
+        [
+          0.532,
+          0.383
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "black glossy photo aperture partly occluded by the cream slab, with a bright white glare bloom and dust speckles across the dark print"
+    },
+    {
+      "label": "pastel envelope seal cluster",
+      "artifact_type": "wax-seal-envelope-mark",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.291,
+        "y": 0,
+        "w": 0.557,
+        "h": 0.083
+      },
+      "polygon": [
+        [
+          0.291,
+          0
+        ],
+        [
+          0.848,
+          0
+        ],
+        [
+          0.711,
+          0.034
+        ],
+        [
+          0.474,
+          0.083
+        ],
+        [
+          0.356,
+          0.04
+        ]
+      ],
+      "confidence": 0.73,
+      "visual_evidence": "mauve pastel envelope at the top edge with a folded triangular flap and central crease forming a small archived-paper interruption"
+    },
+    {
+      "label": "pool-blue tuner sticker",
+      "artifact_type": "radio-strip-sticker",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.699,
+        "y": 0.051,
+        "w": 0.301,
+        "h": 0.232
+      },
+      "polygon": [
+        [
+          0.838,
+          0.051
+        ],
+        [
+          1,
+          0.011
+        ],
+        [
+          1,
+          0.282
+        ],
+        [
+          0.879,
+          0.228
+        ],
+        [
+          0.699,
+          0.081
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "pale blue paper strip/envelope edge in the upper-right corner, sunlit and band-like, reading as a tucked blue source strip despite no legible ticks"
+    },
+    {
+      "label": "pool glare thumbnail",
+      "artifact_type": "sun-glare-media-grain",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.762,
+        "y": 0.295,
+        "w": 0.139,
+        "h": 0.098
+      },
+      "polygon": [
+        [
+          0.798,
+          0.295
+        ],
+        [
+          0.846,
+          0.301
+        ],
+        [
+          0.884,
+          0.322
+        ],
+        [
+          0.901,
+          0.356
+        ],
+        [
+          0.884,
+          0.386
+        ],
+        [
+          0.843,
+          0.393
+        ],
+        [
+          0.792,
+          0.374
+        ],
+        [
+          0.762,
+          0.341
+        ],
+        [
+          0.773,
+          0.311
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "concentrated white glare bloom with radial dust grains on the glossy black print, a small media-grain target distinct from the larger aperture"
+    },
+    {
+      "label": "rust recursive loop cut",
+      "artifact_type": "painted-portal-cut",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.821,
+        "w": 0.372,
+        "h": 0.159
+      },
+      "polygon": [
+        [
+          0.001,
+          0.941
+        ],
+        [
+          0.122,
+          0.895
+        ],
+        [
+          0.275,
+          0.84
+        ],
+        [
+          0.348,
+          0.821
+        ],
+        [
+          0.372,
+          0.841
+        ],
+        [
+          0.183,
+          0.921
+        ],
+        [
+          0.029,
+          0.98
+        ],
+        [
+          0,
+          0.979
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "orange-rust underside exposed beneath the cobalt and cream papers along the lower edge, forming a cut-through seam and portal-like edge rupture"
+    },
+    {
+      "label": "rust recursive loop cut",
+      "artifact_type": "painted-portal-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "index stamp interruption",
+      "artifact_type": "postage-stamp-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 3,
+    "mapped_region_coverage": 1.05,
+    "rationale": "The plate is sparse and expressionist: a few large paper planes dominate, with isolated punctures, scratches, glare, and seams acting as readable anchors. Negative cream space remains open, so the source windows are not visually cluttered."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-26-paper-portal-cafe-archive-v1"
+}

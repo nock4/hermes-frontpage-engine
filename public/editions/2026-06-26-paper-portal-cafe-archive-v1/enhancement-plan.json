@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-26-paper-portal-cafe-archive-v1",
+  "edition_id": "2026-06-26-paper-portal-cafe-archive-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-26-paper-portal-cafe-archive-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-cobalt-envelope-collision",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-cobalt-envelope-collision",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-envelope-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-cream-cafe-receipt-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-cream-cafe-receipt-slab",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-receipt-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-glossy-moon-print-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-glossy-moon-print-aperture",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-instant-print) selected from interpretation."
+    },
+    {
+      "target_id": "module-pastel-envelope-seal-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-pastel-envelope-seal-cluster",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (wax-seal-envelope-mark) selected from interpretation."
+    },
+    {
+      "target_id": "module-pool-blue-tuner-sticker",
+      "target_kind": "artifact",
+      "artifact_id": "module-pool-blue-tuner-sticker",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (radio-strip-sticker) selected from interpretation."
+    },
+    {
+      "target_id": "module-pool-glare-thumbnail",
+      "target_kind": "artifact",
+      "artifact_id": "module-pool-glare-thumbnail",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (sun-glare-media-grain) selected from interpretation."
+    },
+    {
+      "target_id": "module-rust-recursive-loop-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-rust-recursive-loop-cut",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-portal-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-rust-recursive-loop-cut-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-rust-recursive-loop-cut-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-portal-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-index-stamp-interruption",
+      "target_kind": "artifact",
+      "artifact_id": "module-index-stamp-interruption",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (postage-stamp-notch) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
