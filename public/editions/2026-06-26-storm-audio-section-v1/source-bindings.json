@@ -1,0 +1,392 @@
+{
+  "source_binding_set_id": "bindings-2026-06-26-storm-audio-section-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-seed-audio-hero-chamber",
+      "artifact_id": "hero-seed-audio-hero-chamber",
+      "source_type": "tweet",
+      "source_url": "https://x.com/fal/status/2070138257891791237",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@fal: Seed Audio 1.0 is now exclusively available on fal. - An all-in-one audio model that...",
+      "kicker": "x.com",
+      "excerpt": "Seed Audio 1.0 is now exclusively available on fal. - An all-in-one audio model that generates voice, music and sound effects in one pass. - Accepts up to three reference audio clips to guide voice, emotion and character - Builds complete multi-speaker scenes from a single prompt with precise emotional delivery - Defines any voice through a text description,...",
+      "source_title": "@fal: Seed Audio 1.0 is now exclusively available on fal. - An all-in-one audio model that...",
+      "source_summary": "Seed Audio 1.0 is now exclusively available on fal. - An all-in-one audio model that generates voice, music and sound effects in one pass. - Accepts up to three reference audio clips to guide voice, emotion and character - Builds complete multi-speaker scenes from a single prompt with precise emotional delivery - Defines any voice through a text description, a character image or a reference recording",
+      "source_domain": "x.com",
+      "source_meta": "@fal: Seed Audio 1.0 is now exclusively available on fal. - An all-in-one audio model ...",
+      "source_image_url": "https://pbs.twimg.com/ext_tw_video_thumb/2070138173217185792/pu/img/WpGBwUHrqZeFFr5r.jpg",
+      "source_image_alt": "@fal: Seed Audio 1.0 is now exclusively available on fal. - An all-in-one audio model that... preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-hero-seed-audio-hero-chamber.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.3563,
+          "y": 0.4163
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 675,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02399,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-hero-fal-hero-plate-mass",
+      "artifact_id": "hero-fal-hero-plate-mass",
+      "source_type": "article",
+      "source_url": "https://fal.ai/landing/left-1.webp",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Hero illustration",
+      "kicker": "fal.ai",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Hero illustration",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "fal.ai",
+      "source_meta": "Hero illustration",
+      "source_image_url": "https://fal.ai/landing/left-1.webp",
+      "source_image_alt": "Hero illustration preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-hero-fal-hero-plate-mass.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.4994
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.217,
+          "width": 1.0,
+          "height": 0.5661
+        },
+        "image_width": 914,
+        "image_height": 908,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.05732,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-tweet-thumbnail-storm-notch",
+      "artifact_id": "module-tweet-thumbnail-storm-notch",
+      "source_type": "article",
+      "source_url": "https://pbs.twimg.com/ext_tw_video_thumb/2070138173217185792/pu/img/WpGBwUHrqZeFFr5r.jpg",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 2",
+      "kicker": "pbs.twimg.com",
+      "excerpt": "Image surfaced directly on the selected anchor page.",
+      "source_title": "Anchor image material 2",
+      "source_summary": "Image surfaced directly on the selected anchor page.",
+      "source_domain": "pbs.twimg.com",
+      "source_meta": "Anchor image material 2",
+      "source_image_url": "https://pbs.twimg.com/ext_tw_video_thumb/2070138173217185792/pu/img/WpGBwUHrqZeFFr5r.jpg",
+      "source_image_alt": "Anchor image material 2 preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-module-tweet-thumbnail-storm-notch.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.3563,
+          "y": 0.4163
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 675,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02399,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-seedance-motion-slice",
+      "artifact_id": "module-seedance-motion-slice",
+      "source_type": "article",
+      "source_url": "https://fal.ai/q-80/C5HNQz1oux7K-6Tqfd_-9_c4a7c912a6db402686fe2c01591a1687.webp",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Seedance 2 Image to Video",
+      "kicker": "fal.ai",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Seedance 2 Image to Video",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "fal.ai",
+      "source_meta": "Seedance 2 Image to Video",
+      "source_image_url": "https://fal.ai/og-thumbnail.webp",
+      "source_image_alt": "Seedance 2 Image to Video preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-module-seedance-motion-slice.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5047,
+          "y": 0.4586
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 0.9986
+        },
+        "image_width": 1267,
+        "image_height": 713,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.04086,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-grok-imagine-void-mouth",
+      "artifact_id": "module-grok-imagine-void-mouth",
+      "source_type": "article",
+      "source_url": "https://ir7z8qsacw4tk54b.public.blob.vercel-storage.com/grok-imagine/og.png",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 8",
+      "kicker": "ir7z8qsacw4tk54b.public.blob.vercel-storage.com",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Anchor image material 8",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "ir7z8qsacw4tk54b.public.blob.vercel-storage.com",
+      "source_meta": "Anchor image material 8",
+      "source_image_url": "https://ir7z8qsacw4tk54b.public.blob.vercel-storage.com/grok-imagine/og.png",
+      "source_image_alt": "Anchor image material 8 preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-module-grok-imagine-void-mouth.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5407,
+          "y": 0.6016
+        },
+        "poster_crop": {
+          "x": 0.008,
+          "y": 0.0013,
+          "width": 0.992,
+          "height": 0.9987
+        },
+        "image_width": 1376,
+        "image_height": 768,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02239,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-agency-ladder-stratum",
+      "artifact_id": "module-agency-ladder-stratum",
+      "source_type": "tweet",
+      "source_url": "https://x.com/businessbarista/status/2070194343034360004",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@businessbarista: I stole this idea and now use it with every single employee. It’s the best...",
+      "kicker": "x.com",
+      "excerpt": "I stole this idea and now use it with every single employee. It’s the best illustration I’ve seen of teaching someone to be high agency. It says there are 5 levels of work: Level 1: “There is a problem.” Level 2: “There is a problem, and I’ve found some causes.” Level 3: “Here’s the problem, here are some possible causes, and here are some possible...",
+      "source_title": "@businessbarista: I stole this idea and now use it with every single employee. It’s the best...",
+      "source_summary": "I stole this idea and now use it with every single employee. It’s the best illustration I’ve seen of teaching someone to be high agency. It says there are 5 levels of work: Level 1: “There is a problem.” Level 2: “There is a problem, and I’ve found some causes.” Level 3: “Here’s the problem, here are some possible causes, and here are some possible solutions.” Level 4: “Here’s the problem, here’s what I think caused it, here are some possible solutions, and here’s the one I think we should pick.” Level 5: “I...",
+      "source_domain": "x.com",
+      "source_meta": "@businessbarista: I stole this idea and now use it with every single employee. It’s the best illus...",
+      "source_image_url": "https://pbs.twimg.com/media/HLrOvtaWYAAafg-.jpg?name=orig",
+      "source_image_alt": "@businessbarista: I stole this idea and now use it with every single employee. It’s the best... preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-module-agency-ladder-stratum.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.4971,
+          "y": 0.5201
+        },
+        "poster_crop": {
+          "x": 0.02,
+          "y": 0.0,
+          "width": 0.96,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 648,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.05431,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-fal-platform-bloom-socket",
+      "artifact_id": "module-fal-platform-bloom-socket",
+      "source_type": "article",
+      "source_url": "https://fal.ai/og-thumbnail.webp",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 4",
+      "kicker": "fal.ai",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Anchor image material 4",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "fal.ai",
+      "source_meta": "Anchor image material 4",
+      "source_image_url": "https://fal.ai/og-thumbnail.webp",
+      "source_image_alt": "Anchor image material 4 preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-module-fal-platform-bloom-socket.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5047,
+          "y": 0.4586
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 0.9986
+        },
+        "image_width": 1267,
+        "image_height": 713,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.04086,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-licensed-soundtrack-edge",
+      "artifact_id": "module-licensed-soundtrack-edge",
+      "source_type": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=9Jy5SMKFX1c",
+      "window_type": "video",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Bring your applications to life with Fal, the all-in-one generative media platform",
+      "kicker": "youtube.com",
+      "excerpt": "This video explores how fal, powered by Google Cloud, instantly integrates image, video, audio, and voice generation into your applications. Access over 200 ...",
+      "source_title": "Bring your applications to life with Fal, the all-in-one generative media platform",
+      "source_summary": "This video explores how fal, powered by Google Cloud, instantly integrates image, video, audio, and voice generation into your applications. Access over 200 ...",
+      "source_domain": "youtube.com",
+      "source_meta": "Bring your applications to life with Fal, the all-in-one generative ...",
+      "source_image_url": "https://i.ytimg.com/vi/9Jy5SMKFX1c/maxresdefault.jpg",
+      "source_image_alt": "Bring your applications to life with Fal, the all-in-one generative media platform preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-module-licensed-soundtrack-edge.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.4132
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0
+        },
+        "image_width": 1280,
+        "image_height": 720,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.03202,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-lower-platform-chamber",
+      "artifact_id": "module-lower-platform-chamber",
+      "source_type": "article",
+      "source_url": "https://www.prnewswire.com/news-releases/sonilo-launches-licensed-ai-music-generator-for-video-on-falai-302806164.html",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Sonilo Launches Licensed AI Music Generator for Video on fal.ai",
+      "kicker": "prnewswire.com",
+      "excerpt": "/PRNewswire/ -- Sonilo today announced that its video-to-music model is now available on fal.ai, enabling users to generate a custom, licensed soundtrack for...",
+      "source_title": "Sonilo Launches Licensed AI Music Generator for Video on fal.ai",
+      "source_summary": "/PRNewswire/ -- Sonilo today announced that its video-to-music model is now available on fal.ai, enabling users to generate a custom, licensed soundtrack for...",
+      "source_domain": "prnewswire.com",
+      "source_meta": "Sonilo Launches Licensed AI Music Generator for Video on fal.ai",
+      "source_image_url": "https://mmx.prnewswire.com/media/MS1869868/e01e901276de4812959a66da47df57d4.jpg?id=OA2726910&p=facebook",
+      "source_image_alt": "Sonilo Launches Licensed AI Music Generator for Video on fal.ai preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-06-26-storm-audio-section-v1/assets/source-posters/binding-module-lower-platform-chamber.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.4991,
+          "y": 0.4314
+        },
+        "poster_crop": {
+          "x": 0.0338,
+          "y": 0.0,
+          "width": 0.9306,
+          "height": 1.0
+        },
+        "image_width": 1600,
+        "image_height": 838,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.01688,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

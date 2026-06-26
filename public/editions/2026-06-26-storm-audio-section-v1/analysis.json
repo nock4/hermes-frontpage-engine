@@ -1,0 +1,559 @@
+{
+  "analysis_id": "analysis-2026-06-26-storm-audio-section-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A vertical storm-dark cyan vessel plate with a stepped acid-lime left rim, two large translucent chamber cuts, dotted signal fields, circular black apertures, a yellow dotted motion route, and several pale rim glints embedded as source-bearing anchors.",
+  "usable_surfaces": [
+    "large upper cyan chamber with dotted audio-cell fan",
+    "stepped acid-lime pixel rim along left vessel mass",
+    "storm-dark circular notch with pale crescent edge",
+    "yellow dotted motion slice route across midsection",
+    "large lower translucent platform chamber",
+    "stacked dark strata band with perforation grids",
+    "small glowing circular socket near lower-left midsection",
+    "low black memory-ledger strip with pale scan lines",
+    "warm off-white glint on right sliced rim"
+  ],
+  "detected_objects": [
+    {
+      "label": "seed-audio-hero-chamber",
+      "artifact_type": "hero-scale-luminous-chamber-cut",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.473,
+        "y": 0.004,
+        "w": 0.527,
+        "h": 0.458
+      },
+      "polygon": [
+        [
+          0.632,
+          0.004
+        ],
+        [
+          0.712,
+          0.006
+        ],
+        [
+          0.857,
+          0
+        ],
+        [
+          0.998,
+          0
+        ],
+        [
+          0.934,
+          0.073
+        ],
+        [
+          0.997,
+          0.097
+        ],
+        [
+          0.892,
+          0.158
+        ],
+        [
+          0.873,
+          0.242
+        ],
+        [
+          0.861,
+          0.375
+        ],
+        [
+          0.727,
+          0.388
+        ],
+        [
+          0.655,
+          0.419
+        ],
+        [
+          0.583,
+          0.458
+        ],
+        [
+          0.514,
+          0.389
+        ],
+        [
+          0.473,
+          0.293
+        ],
+        [
+          0.489,
+          0.181
+        ],
+        [
+          0.539,
+          0.087
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "dominant translucent cyan cut surface in the upper right with lime rim highlights, glass scars, and a dense fan of tiny dotted audio cells radiating from the lower center."
+    },
+    {
+      "label": "fal-hero-plate-mass",
+      "artifact_type": "hero-scale-pixel-rim-vessel-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.052,
+        "y": 0,
+        "w": 0.635,
+        "h": 0.999
+      },
+      "polygon": [
+        [
+          0.641,
+          0
+        ],
+        [
+          0.687,
+          0
+        ],
+        [
+          0.675,
+          0.05
+        ],
+        [
+          0.595,
+          0.089
+        ],
+        [
+          0.541,
+          0.143
+        ],
+        [
+          0.482,
+          0.219
+        ],
+        [
+          0.394,
+          0.279
+        ],
+        [
+          0.271,
+          0.407
+        ],
+        [
+          0.35,
+          0.6
+        ],
+        [
+          0.206,
+          0.729
+        ],
+        [
+          0.052,
+          0.797
+        ],
+        [
+          0.185,
+          0.907
+        ],
+        [
+          0.318,
+          0.958
+        ],
+        [
+          0.477,
+          0.999
+        ],
+        [
+          0.574,
+          0.981
+        ],
+        [
+          0.458,
+          0.84
+        ],
+        [
+          0.536,
+          0.675
+        ],
+        [
+          0.497,
+          0.508
+        ],
+        [
+          0.436,
+          0.346
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "dominant stepped vessel body with acid-lime pixelated outer edge and dark perforated cyan slab texture spanning the left and central plate."
+    },
+    {
+      "label": "tweet-thumbnail-storm-notch",
+      "artifact_type": "compression-bloom-window",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.334,
+        "y": 0.235,
+        "w": 0.101,
+        "h": 0.065
+      },
+      "polygon": [
+        [
+          0.376,
+          0.235
+        ],
+        [
+          0.408,
+          0.243
+        ],
+        [
+          0.435,
+          0.267
+        ],
+        [
+          0.425,
+          0.289
+        ],
+        [
+          0.394,
+          0.3
+        ],
+        [
+          0.361,
+          0.295
+        ],
+        [
+          0.341,
+          0.28
+        ],
+        [
+          0.334,
+          0.257
+        ],
+        [
+          0.348,
+          0.241
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "round storm-dark bloom aperture cut into the upper-left vessel face with a thin warm pale crescent along the lower-right interior edge."
+    },
+    {
+      "label": "seedance-motion-slice",
+      "artifact_type": "cyan-motion-shard",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.393,
+        "y": 0.427,
+        "w": 0.446,
+        "h": 0.145
+      },
+      "polygon": [
+        [
+          0.395,
+          0.427
+        ],
+        [
+          0.504,
+          0.43
+        ],
+        [
+          0.626,
+          0.455
+        ],
+        [
+          0.741,
+          0.493
+        ],
+        [
+          0.839,
+          0.559
+        ],
+        [
+          0.813,
+          0.572
+        ],
+        [
+          0.704,
+          0.521
+        ],
+        [
+          0.575,
+          0.505
+        ],
+        [
+          0.475,
+          0.464
+        ],
+        [
+          0.405,
+          0.451
+        ],
+        [
+          0.393,
+          0.438
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "bright yellow dotted path curves from the mid-left ledge across a dark slit and down into a cyan shard band, reading as a motion slice and clickable route."
+    },
+    {
+      "label": "grok-imagine-void-mouth",
+      "artifact_type": "black-tunnel-source-mouth",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.836,
+        "y": 0.201,
+        "w": 0.164,
+        "h": 0.089
+      },
+      "polygon": [
+        [
+          0.904,
+          0.201
+        ],
+        [
+          0.951,
+          0.204
+        ],
+        [
+          0.998,
+          0.229
+        ],
+        [
+          0.987,
+          0.264
+        ],
+        [
+          0.933,
+          0.288
+        ],
+        [
+          0.871,
+          0.283
+        ],
+        [
+          0.836,
+          0.257
+        ],
+        [
+          0.846,
+          0.225
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "large black bite on the right side of the upper vessel with a pale lime-lit inner crescent and hard cyan cut edges."
+    },
+    {
+      "label": "agency-ladder-stratum",
+      "artifact_type": "stacked-section-strata",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.315,
+        "y": 0.565,
+        "w": 0.515,
+        "h": 0.081
+      },
+      "polygon": [
+        [
+          0.315,
+          0.612
+        ],
+        [
+          0.37,
+          0.584
+        ],
+        [
+          0.484,
+          0.572
+        ],
+        [
+          0.6,
+          0.565
+        ],
+        [
+          0.727,
+          0.57
+        ],
+        [
+          0.83,
+          0.59
+        ],
+        [
+          0.808,
+          0.631
+        ],
+        [
+          0.684,
+          0.646
+        ],
+        [
+          0.55,
+          0.642
+        ],
+        [
+          0.42,
+          0.632
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "horizontal stacked band of five dark-cyan strata beneath the midsection, packed with regular white and lime perforation grids and stepped slab edges."
+    },
+    {
+      "label": "fal-platform-bloom-socket",
+      "artifact_type": "small-glowing-source-socket",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.411,
+        "y": 0.599,
+        "w": 0.073,
+        "h": 0.058
+      },
+      "polygon": [
+        [
+          0.44,
+          0.599
+        ],
+        [
+          0.469,
+          0.607
+        ],
+        [
+          0.484,
+          0.628
+        ],
+        [
+          0.476,
+          0.65
+        ],
+        [
+          0.448,
+          0.657
+        ],
+        [
+          0.421,
+          0.647
+        ],
+        [
+          0.411,
+          0.625
+        ],
+        [
+          0.421,
+          0.606
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "compact round rim-lit socket in the lower-left middle of the vessel, black center with bright diagonal cyan-white media streak."
+    },
+    {
+      "label": "licensed-soundtrack-edge",
+      "artifact_type": "pale-edge-source-glint",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.907,
+        "y": 0.9,
+        "w": 0.067,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.934,
+          0.9
+        ],
+        [
+          0.959,
+          0.907
+        ],
+        [
+          0.974,
+          0.93
+        ],
+        [
+          0.956,
+          0.951
+        ],
+        [
+          0.922,
+          0.946
+        ],
+        [
+          0.907,
+          0.925
+        ],
+        [
+          0.918,
+          0.907
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "small faceted off-white cyan shard on the lower-right rim, separated from the chamber and glowing as a distinct sliced-edge glint."
+    },
+    {
+      "label": "lower-platform-chamber",
+      "artifact_type": "translucent-cyan-auditorium-bowl",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.455,
+        "y": 0.633,
+        "w": 0.536,
+        "h": 0.235
+      },
+      "polygon": [
+        [
+          0.546,
+          0.633
+        ],
+        [
+          0.681,
+          0.626
+        ],
+        [
+          0.854,
+          0.643
+        ],
+        [
+          0.991,
+          0.707
+        ],
+        [
+          0.988,
+          0.813
+        ],
+        [
+          0.918,
+          0.856
+        ],
+        [
+          0.759,
+          0.868
+        ],
+        [
+          0.591,
+          0.855
+        ],
+        [
+          0.489,
+          0.813
+        ],
+        [
+          0.455,
+          0.735
+        ],
+        [
+          0.482,
+          0.672
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "large lower translucent cyan dome/bowl with central luminous pool, crowd silhouettes, concentric ceiling rings, and glass-panel seams."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 3,
+    "mapped_region_coverage": 1.137,
+    "rationale": "The plate is expressionist and image-led with a few dominant cyan chambers and a clear lime-rim vessel silhouette, but the perforation fields, dotted route, rain scars, and many small apertures make it dense enough to require careful source-window targeting."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-06-26-storm-audio-section-v1"
+}

@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-26-storm-audio-section-v1",
+  "edition_id": "2026-06-26-storm-audio-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-26-storm-audio-section-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-seed-audio-hero-chamber",
+      "target_kind": "artifact",
+      "artifact_id": "hero-seed-audio-hero-chamber",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-luminous-chamber-cut) selected from interpretation."
+    },
+    {
+      "target_id": "hero-fal-hero-plate-mass",
+      "target_kind": "artifact",
+      "artifact_id": "hero-fal-hero-plate-mass",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-pixel-rim-vessel-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-tweet-thumbnail-storm-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-tweet-thumbnail-storm-notch",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compression-bloom-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-seedance-motion-slice",
+      "target_kind": "artifact",
+      "artifact_id": "module-seedance-motion-slice",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cyan-motion-shard) selected from interpretation."
+    },
+    {
+      "target_id": "module-grok-imagine-void-mouth",
+      "target_kind": "artifact",
+      "artifact_id": "module-grok-imagine-void-mouth",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-tunnel-source-mouth) selected from interpretation."
+    },
+    {
+      "target_id": "module-agency-ladder-stratum",
+      "target_kind": "artifact",
+      "artifact_id": "module-agency-ladder-stratum",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stacked-section-strata) selected from interpretation."
+    },
+    {
+      "target_id": "module-fal-platform-bloom-socket",
+      "target_kind": "artifact",
+      "artifact_id": "module-fal-platform-bloom-socket",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-glowing-source-socket) selected from interpretation."
+    },
+    {
+      "target_id": "module-licensed-soundtrack-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-licensed-soundtrack-edge",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-edge-source-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-platform-chamber",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-platform-chamber",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-cyan-auditorium-bowl) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

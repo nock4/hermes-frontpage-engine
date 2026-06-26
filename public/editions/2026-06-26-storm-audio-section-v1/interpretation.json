@@ -1,0 +1,380 @@
+{
+  "interpretation_id": "interp-2026-06-26-storm-audio-section-v1",
+  "edition_id": "2026-06-26-storm-audio-section-v1",
+  "plate_read_timestamp": "2026-06-26T08:09:12.619Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A vertical storm-dark cyan vessel plate with a stepped acid-lime left rim, two large translucent chamber cuts, dotted signal fields, circular black apertures, a yellow dotted motion route, and several pale rim glints embedded as source-bearing anchors.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "storm-lit synthetic sound chambers",
+      "A vertical storm-dark cyan vessel plate with a stepped acid-lime left rim, two large translucent chamber cuts, dotted signal fields, circular black apertures, a yellow dotted motion route, and several pale rim glints embedded as source-bearing anchors.",
+      "neon-cutaway",
+      "audio-vessel",
+      "signal-perforations"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "seed-audio-hero-chamber",
+      "fal-hero-plate-mass",
+      "tweet-thumbnail-storm-notch",
+      "seedance-motion-slice",
+      "grok-imagine-void-mouth",
+      "agency-ladder-stratum",
+      "fal-platform-bloom-socket",
+      "licensed-soundtrack-edge"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "neon-audio-cutaway-vessel",
+      "one public-scale irregular vessel section pushed partly off-frame",
+      "black tunnel bites and sliced chamber voids inside the body",
+      "dense repeated glyph-perforation fields arranged as waveform strata",
+      "secondary conduits and stepped blocks branching from the main mass",
+      "compression-bloom apertures embedded as source-bearing cuts",
+      "large upper cyan chamber with dotted audio-cell fan",
+      "stepped acid-lime pixel rim along left vessel mass"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: neon-audio-cutaway-vessel.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-seed-audio-hero-chamber",
+      "kind": "hero",
+      "type": "hero-scale-luminous-chamber-cut",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.4697,
+        "y": 0,
+        "w": 0.5303,
+        "h": 0.4401
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-fal-hero-plate-mass",
+      "kind": "hero",
+      "type": "hero-scale-pixel-rim-vessel-surface",
+      "strength": 0.9687199999999999,
+      "bounds": {
+        "x": 0.052,
+        "y": 0,
+        "w": 0.635,
+        "h": 0.999
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tweet-thumbnail-storm-notch",
+      "kind": "module",
+      "type": "compression-bloom-window",
+      "strength": 0.8006519999999999,
+      "bounds": {
+        "x": 0.334,
+        "y": 0.235,
+        "w": 0.101,
+        "h": 0.065
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-seedance-motion-slice",
+      "kind": "module",
+      "type": "cyan-motion-shard",
+      "strength": 0.764136,
+      "bounds": {
+        "x": 0.393,
+        "y": 0.427,
+        "w": 0.446,
+        "h": 0.145
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grok-imagine-void-mouth",
+      "kind": "module",
+      "type": "black-tunnel-source-mouth",
+      "strength": 0.7350840000000001,
+      "bounds": {
+        "x": 0.836,
+        "y": 0.201,
+        "w": 0.164,
+        "h": 0.089
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agency-ladder-stratum",
+      "kind": "module",
+      "type": "stacked-section-strata",
+      "strength": 0.702228,
+      "bounds": {
+        "x": 0.315,
+        "y": 0.565,
+        "w": 0.515,
+        "h": 0.081
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fal-platform-bloom-socket",
+      "kind": "module",
+      "type": "small-glowing-source-socket",
+      "strength": 0.6772800000000001,
+      "bounds": {
+        "x": 0.411,
+        "y": 0.599,
+        "w": 0.073,
+        "h": 0.058
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-licensed-soundtrack-edge",
+      "kind": "module",
+      "type": "pale-edge-source-glint",
+      "strength": 0.656392,
+      "bounds": {
+        "x": 0.907,
+        "y": 0.9,
+        "w": 0.067,
+        "h": 0.052
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-platform-chamber",
+      "kind": "module",
+      "type": "translucent-cyan-auditorium-bowl",
+      "strength": 0.644884,
+      "bounds": {
+        "x": 0.4482,
+        "y": 0.6217,
+        "w": 0.5518,
+        "h": 0.252
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-seed-audio-hero-chamber-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4697,
+        "y": 0,
+        "w": 0.5303,
+        "h": 0.4401
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-fal-hero-plate-mass-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.052,
+        "y": 0,
+        "w": 0.635,
+        "h": 0.999
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tweet-thumbnail-storm-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.334,
+        "y": 0.235,
+        "w": 0.101,
+        "h": 0.065
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-seedance-motion-slice-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.393,
+        "y": 0.427,
+        "w": 0.446,
+        "h": 0.145
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grok-imagine-void-mouth-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.836,
+        "y": 0.201,
+        "w": 0.164,
+        "h": 0.089
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agency-ladder-stratum-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.315,
+        "y": 0.565,
+        "w": 0.515,
+        "h": 0.081
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fal-platform-bloom-socket-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.411,
+        "y": 0.599,
+        "w": 0.073,
+        "h": 0.058
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-licensed-soundtrack-edge-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.907,
+        "y": 0.9,
+        "w": 0.067,
+        "h": 0.052
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-platform-chamber-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4482,
+        "y": 0.6217,
+        "w": 0.5518,
+        "h": 0.252
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
