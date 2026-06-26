@@ -328,8 +328,8 @@ export function selectContentSources(
   } = {},
 ) {
   const duplicateGroupKey = (source) => {
-    if (source.source_channel === 'twitter-bookmark') {
-      return ['twitter-bookmark', source.note_id || source.note_title || source.title].filter(Boolean).join(':')
+    if (source.source_channel === 'twitter-bookmark' && source.source_type === 'tweet') {
+      return ['twitter-bookmark-tweet', source.note_id || source.note_title || source.title].filter(Boolean).join(':')
     }
     return null
   }
