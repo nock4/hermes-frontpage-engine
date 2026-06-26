@@ -1,0 +1,522 @@
+{
+  "analysis_id": "analysis-2026-06-26-gallery-seam-orbit-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A minimal expressionist plate: cream woven textile rises diagonally across the lower field, a translucent fabric sheet curls over the upper right, and small glossy leaf-shaped inlays puncture the pale ground. Source windows read as apertures, folded edges, glass slits, scrapes, and tiny colored glints rather than cards.",
+  "usable_surfaces": [
+    "large dark glossy aperture inside woven textile",
+    "raised cream woven fold edge",
+    "translucent curled canvas sheet with embedded dark image field",
+    "small colored leaf-shaped glass slits",
+    "fine silver curved groove on pale ground",
+    "mesh-filled almond inlay",
+    "blackened abrasive leaf scrape",
+    "red broken tile glint"
+  ],
+  "detected_objects": [
+    {
+      "label": "portal gallery hero aperture",
+      "artifact_type": "hero-scale-cropped-gallery-slit",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.046,
+        "y": 0.417,
+        "w": 0.365,
+        "h": 0.434
+      },
+      "polygon": [
+        [
+          0.05,
+          0.417
+        ],
+        [
+          0.105,
+          0.429
+        ],
+        [
+          0.18,
+          0.481
+        ],
+        [
+          0.264,
+          0.544
+        ],
+        [
+          0.335,
+          0.618
+        ],
+        [
+          0.385,
+          0.709
+        ],
+        [
+          0.411,
+          0.818
+        ],
+        [
+          0.391,
+          0.851
+        ],
+        [
+          0.335,
+          0.81
+        ],
+        [
+          0.274,
+          0.719
+        ],
+        [
+          0.206,
+          0.64
+        ],
+        [
+          0.132,
+          0.557
+        ],
+        [
+          0.07,
+          0.479
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "large irregular glossy dark blue-black opening cut through the woven textile, with bright blue curved light and reflective black edge visible inside the slit"
+    },
+    {
+      "label": "woven source-material hero fold",
+      "artifact_type": "hero-scale-woven-fold-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.137,
+        "w": 0.598,
+        "h": 0.863
+      },
+      "polygon": [
+        [
+          0,
+          0.137
+        ],
+        [
+          0.066,
+          0.186
+        ],
+        [
+          0.134,
+          0.271
+        ],
+        [
+          0.22,
+          0.364
+        ],
+        [
+          0.343,
+          0.463
+        ],
+        [
+          0.491,
+          0.553
+        ],
+        [
+          0.598,
+          0.674
+        ],
+        [
+          0.587,
+          0.873
+        ],
+        [
+          0.503,
+          0.999
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0.827
+        ],
+        [
+          0.1,
+          0.777
+        ],
+        [
+          0.182,
+          0.691
+        ],
+        [
+          0.132,
+          0.589
+        ],
+        [
+          0.027,
+          0.49
+        ],
+        [
+          0,
+          0.327
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "oversized cream woven textile mass with raised seam ridges and tactile looped threads sweeping diagonally across the plate"
+    },
+    {
+      "label": "canvas shader inlay",
+      "artifact_type": "thin-glass-shader-band",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.071,
+        "w": 0.537,
+        "h": 0.395
+      },
+      "polygon": [
+        [
+          0.42,
+          0.071
+        ],
+        [
+          0.536,
+          0.095
+        ],
+        [
+          0.677,
+          0.09
+        ],
+        [
+          0.808,
+          0.042
+        ],
+        [
+          0.957,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0.433
+        ],
+        [
+          0.929,
+          0.466
+        ],
+        [
+          0.791,
+          0.405
+        ],
+        [
+          0.638,
+          0.332
+        ],
+        [
+          0.505,
+          0.241
+        ],
+        [
+          0.431,
+          0.139
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "translucent curled canvas-like sheet across the upper right with woven striations and a darker embedded image field visible beneath the gauze"
+    },
+    {
+      "label": "sound weather scrape",
+      "artifact_type": "waveform-scratch-groove",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.455,
+        "y": 0.384,
+        "w": 0.111,
+        "h": 0.093
+      },
+      "polygon": [
+        [
+          0.456,
+          0.384
+        ],
+        [
+          0.48,
+          0.401
+        ],
+        [
+          0.51,
+          0.426
+        ],
+        [
+          0.543,
+          0.456
+        ],
+        [
+          0.566,
+          0.474
+        ],
+        [
+          0.548,
+          0.477
+        ],
+        [
+          0.511,
+          0.457
+        ],
+        [
+          0.479,
+          0.43
+        ],
+        [
+          0.458,
+          0.402
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "thin curved silver gouge on the pale ground, shaped like a shallow waveform scratch with a bright ridge and dark underside"
+    },
+    {
+      "label": "atlas node constellation",
+      "artifact_type": "signal-green-node-cluster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.603,
+        "y": 0.489,
+        "w": 0.092,
+        "h": 0.064
+      },
+      "polygon": [
+        [
+          0.607,
+          0.525
+        ],
+        [
+          0.625,
+          0.502
+        ],
+        [
+          0.66,
+          0.49
+        ],
+        [
+          0.689,
+          0.502
+        ],
+        [
+          0.695,
+          0.528
+        ],
+        [
+          0.677,
+          0.549
+        ],
+        [
+          0.641,
+          0.553
+        ],
+        [
+          0.615,
+          0.543
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "small almond-shaped inlay filled with dense green-brown mesh and hairline crossings, reading as a compact node constellation"
+    },
+    {
+      "label": "Preference Specimen Tray",
+      "artifact_type": "electric-blue-media-glint",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.225,
+        "y": 0.172,
+        "w": 0.111,
+        "h": 0.071
+      },
+      "polygon": [
+        [
+          0.226,
+          0.176
+        ],
+        [
+          0.253,
+          0.171
+        ],
+        [
+          0.291,
+          0.188
+        ],
+        [
+          0.324,
+          0.22
+        ],
+        [
+          0.336,
+          0.239
+        ],
+        [
+          0.309,
+          0.242
+        ],
+        [
+          0.269,
+          0.224
+        ],
+        [
+          0.238,
+          0.199
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "bright electric-blue glossy almond slit set into the pale surface, with black rim and blue interior highlight"
+    },
+    {
+      "label": "gallery collection tab",
+      "artifact_type": "creased-catalog-paper-tab",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.183,
+        "y": 0.846,
+        "w": 0.104,
+        "h": 0.099
+      },
+      "polygon": [
+        [
+          0.184,
+          0.851
+        ],
+        [
+          0.214,
+          0.846
+        ],
+        [
+          0.254,
+          0.876
+        ],
+        [
+          0.283,
+          0.918
+        ],
+        [
+          0.287,
+          0.944
+        ],
+        [
+          0.255,
+          0.941
+        ],
+        [
+          0.216,
+          0.905
+        ],
+        [
+          0.19,
+          0.872
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "small cream-white folded leaf tab on the woven field near the bottom, with a raised bright crease and catalog-paper-like surface"
+    },
+    {
+      "label": "slop-removal scrape",
+      "artifact_type": "blackened-correction-scrape",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.768,
+        "y": 0.669,
+        "w": 0.127,
+        "h": 0.081
+      },
+      "polygon": [
+        [
+          0.769,
+          0.697
+        ],
+        [
+          0.796,
+          0.673
+        ],
+        [
+          0.839,
+          0.669
+        ],
+        [
+          0.879,
+          0.694
+        ],
+        [
+          0.895,
+          0.736
+        ],
+        [
+          0.872,
+          0.75
+        ],
+        [
+          0.826,
+          0.736
+        ],
+        [
+          0.788,
+          0.714
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "black glossy abrasive almond mark interrupting the otherwise clean pale ground, with a sharp rim and dark correction-like fill"
+    },
+    {
+      "label": "mobile-gallery tile break",
+      "artifact_type": "small-app-tile-break",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.775,
+        "y": 0.844,
+        "w": 0.052,
+        "h": 0.088
+      },
+      "polygon": [
+        [
+          0.776,
+          0.858
+        ],
+        [
+          0.79,
+          0.845
+        ],
+        [
+          0.808,
+          0.868
+        ],
+        [
+          0.825,
+          0.912
+        ],
+        [
+          0.827,
+          0.932
+        ],
+        [
+          0.811,
+          0.929
+        ],
+        [
+          0.793,
+          0.9
+        ],
+        [
+          0.781,
+          0.872
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "compact red glassy broken tile with clean raised black rim embedded at the lower right edge of the woven field"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.936,
+    "rationale": "The plate is spacious and restrained: one main woven mass, one translucent curl, and a sparse orbit of small inlays. The mapped marks are legible without card clutter."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-06-26-gallery-seam-orbit-v1"
+}

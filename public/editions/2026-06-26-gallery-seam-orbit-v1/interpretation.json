@@ -1,0 +1,382 @@
+{
+  "interpretation_id": "interp-2026-06-26-gallery-seam-orbit-v1",
+  "edition_id": "2026-06-26-gallery-seam-orbit-v1",
+  "plate_read_timestamp": "2026-06-26T12:57:38.408Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A minimal expressionist plate: cream woven textile rises diagonally across the lower field, a translucent fabric sheet curls over the upper right, and small glossy leaf-shaped inlays puncture the pale ground. Source windows read as apertures, folded edges, glass slits, scrapes, and tiny colored glints rather than cards.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet catalog surface with live seams, warm edge light, and one deliberate break in the viewing system",
+      "A minimal expressionist plate: cream woven textile rises diagonally across the lower field, a translucent fabric sheet curls over the upper right, and small glossy leaf-shaped inlays puncture the pale ground. Source windows read as apertures, folded edges, glass slits, scrapes, and tiny colored glints rather than cards.",
+      "catalog-light",
+      "woven-apertures",
+      "gallery-orbit"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "portal gallery hero aperture",
+      "woven source-material hero fold",
+      "canvas shader inlay",
+      "sound weather scrape",
+      "atlas node constellation",
+      "Preference Specimen Tray",
+      "gallery collection tab",
+      "slop-removal scrape"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "gallery-seam-orbit",
+      "one oversized cropped textile-like surface entering from the lower-left edge",
+      "a loose orbit of source apertures, folded tabs, scratches, and glass inlays",
+      "one diagonal lifted seam rupturing the clean catalog field",
+      "hairline waveform grooves and shader bands embedded in the surface",
+      "small node constellations and tile breaks separated by quiet plinth space",
+      "large dark glossy aperture inside woven textile",
+      "raised cream woven fold edge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: gallery-seam-orbit.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-portal-gallery-hero-aperture",
+      "kind": "hero",
+      "type": "hero-scale-cropped-gallery-slit",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.046,
+        "y": 0.417,
+        "w": 0.365,
+        "h": 0.434
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-woven-source-material-hero-fold",
+      "kind": "hero",
+      "type": "hero-scale-woven-fold-edge",
+      "strength": 0.9753559999999999,
+      "bounds": {
+        "x": 0,
+        "y": 0.137,
+        "w": 0.598,
+        "h": 0.863
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-canvas-shader-inlay",
+      "kind": "module",
+      "type": "thin-glass-shader-band",
+      "strength": 0.783624,
+      "bounds": {
+        "x": 0.4661,
+        "y": 0.0471,
+        "w": 0.5339,
+        "h": 0.4087
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sound-weather-scrape",
+      "kind": "module",
+      "type": "waveform-scratch-groove",
+      "strength": 0.768552,
+      "bounds": {
+        "x": 0.455,
+        "y": 0.384,
+        "w": 0.111,
+        "h": 0.093
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-atlas-node-constellation",
+      "kind": "module",
+      "type": "signal-green-node-cluster",
+      "strength": 0.72984,
+      "bounds": {
+        "x": 0.603,
+        "y": 0.489,
+        "w": 0.092,
+        "h": 0.064
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-preference-specimen-tray",
+      "kind": "module",
+      "type": "electric-blue-media-glint",
+      "strength": 0.688044,
+      "bounds": {
+        "x": 0.2291,
+        "y": 0.1733,
+        "w": 0.1176,
+        "h": 0.0728
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gallery-collection-tab",
+      "kind": "module",
+      "type": "creased-catalog-paper-tab",
+      "strength": 0.6773760000000001,
+      "bounds": {
+        "x": 0.183,
+        "y": 0.846,
+        "w": 0.104,
+        "h": 0.099
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-slop-removal-scrape",
+      "kind": "module",
+      "type": "blackened-correction-scrape",
+      "strength": 0.644932,
+      "bounds": {
+        "x": 0.768,
+        "y": 0.669,
+        "w": 0.127,
+        "h": 0.081
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mobile-gallery-tile-break",
+      "kind": "module",
+      "type": "small-app-tile-break",
+      "strength": 0.656932,
+      "bounds": {
+        "x": 0.775,
+        "y": 0.844,
+        "w": 0.052,
+        "h": 0.088
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-portal-gallery-hero-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.046,
+        "y": 0.417,
+        "w": 0.365,
+        "h": 0.434
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-woven-source-material-hero-fold-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.137,
+        "w": 0.598,
+        "h": 0.863
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-canvas-shader-inlay-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4661,
+        "y": 0.0471,
+        "w": 0.5339,
+        "h": 0.4087
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sound-weather-scrape-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.455,
+        "y": 0.384,
+        "w": 0.111,
+        "h": 0.093
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-atlas-node-constellation-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.603,
+        "y": 0.489,
+        "w": 0.092,
+        "h": 0.064
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-preference-specimen-tray-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2291,
+        "y": 0.1733,
+        "w": 0.1176,
+        "h": 0.0728
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gallery-collection-tab-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.183,
+        "y": 0.846,
+        "w": 0.104,
+        "h": 0.099
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-slop-removal-scrape-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.768,
+        "y": 0.669,
+        "w": 0.127,
+        "h": 0.081
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mobile-gallery-tile-break-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.775,
+        "y": 0.844,
+        "w": 0.052,
+        "h": 0.088
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,651 @@
+{
+  "artifact_map_id": "map-2026-06-26-gallery-seam-orbit-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "gallery-seam-orbit",
+  "default_artifact_id": "hero-portal-gallery-hero-aperture",
+  "artifacts": [
+    {
+      "id": "hero-portal-gallery-hero-aperture",
+      "kind": "hero",
+      "label": "portal gallery hero aperture",
+      "artifact_type": "hero-scale-cropped-gallery-slit",
+      "bounds": {
+        "x": 0.046,
+        "y": 0.417,
+        "w": 0.365,
+        "h": 0.434
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.05,
+          0.417
+        ],
+        [
+          0.105,
+          0.429
+        ],
+        [
+          0.18,
+          0.481
+        ],
+        [
+          0.264,
+          0.544
+        ],
+        [
+          0.335,
+          0.618
+        ],
+        [
+          0.385,
+          0.709
+        ],
+        [
+          0.411,
+          0.818
+        ],
+        [
+          0.391,
+          0.851
+        ],
+        [
+          0.335,
+          0.81
+        ],
+        [
+          0.274,
+          0.719
+        ],
+        [
+          0.206,
+          0.64
+        ],
+        [
+          0.132,
+          0.557
+        ],
+        [
+          0.07,
+          0.479
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/hero-portal-gallery-hero-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-portal-gallery-hero-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          351,
+          614
+        ],
+        "safe_stage_window_origin_px": [
+          396,
+          649
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-woven-source-material-hero-fold",
+      "kind": "hero",
+      "label": "woven source-material hero fold",
+      "artifact_type": "hero-scale-woven-fold-edge",
+      "bounds": {
+        "x": 0,
+        "y": 0.137,
+        "w": 0.598,
+        "h": 0.863
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.137
+        ],
+        [
+          0.066,
+          0.186
+        ],
+        [
+          0.134,
+          0.271
+        ],
+        [
+          0.22,
+          0.364
+        ],
+        [
+          0.343,
+          0.463
+        ],
+        [
+          0.491,
+          0.553
+        ],
+        [
+          0.598,
+          0.674
+        ],
+        [
+          0.587,
+          0.873
+        ],
+        [
+          0.503,
+          0.999
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0.827
+        ],
+        [
+          0.1,
+          0.777
+        ],
+        [
+          0.182,
+          0.691
+        ],
+        [
+          0.132,
+          0.589
+        ],
+        [
+          0.027,
+          0.49
+        ],
+        [
+          0,
+          0.327
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/hero-woven-source-material-hero-fold.svg",
+      "source_binding_ids": [
+        "binding-hero-woven-source-material-hero-fold"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          459,
+          511
+        ],
+        "safe_stage_window_origin_px": [
+          533,
+          582
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-canvas-shader-inlay",
+      "kind": "module",
+      "label": "canvas shader inlay",
+      "artifact_type": "thin-glass-shader-band",
+      "bounds": {
+        "x": 0.4661,
+        "y": 0.0471,
+        "w": 0.5339,
+        "h": 0.4087
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.4688,
+          0.1498
+        ],
+        [
+          0.4902,
+          0.1327
+        ],
+        [
+          0.5758,
+          0.1034
+        ],
+        [
+          0.8788,
+          0.0492
+        ],
+        [
+          0.9973,
+          0.0578
+        ],
+        [
+          0.9973,
+          0.3103
+        ],
+        [
+          0.8957,
+          0.403
+        ],
+        [
+          0.852,
+          0.4372
+        ],
+        [
+          0.8191,
+          0.4529
+        ],
+        [
+          0.7255,
+          0.4073
+        ],
+        [
+          0.4688,
+          0.1748
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/module-canvas-shader-inlay.svg",
+      "source_binding_ids": [
+        "binding-module-canvas-shader-inlay"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1058,
+          243
+        ],
+        "safe_stage_window_origin_px": [
+          1124,
+          275
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-sound-weather-scrape",
+      "kind": "module",
+      "label": "sound weather scrape",
+      "artifact_type": "waveform-scratch-groove",
+      "bounds": {
+        "x": 0.455,
+        "y": 0.384,
+        "w": 0.111,
+        "h": 0.093
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.456,
+          0.384
+        ],
+        [
+          0.48,
+          0.401
+        ],
+        [
+          0.51,
+          0.426
+        ],
+        [
+          0.543,
+          0.456
+        ],
+        [
+          0.566,
+          0.474
+        ],
+        [
+          0.548,
+          0.477
+        ],
+        [
+          0.511,
+          0.457
+        ],
+        [
+          0.479,
+          0.43
+        ],
+        [
+          0.458,
+          0.402
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/module-sound-weather-scrape.svg",
+      "source_binding_ids": [
+        "binding-module-sound-weather-scrape"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          784,
+          433
+        ],
+        "safe_stage_window_origin_px": [
+          798,
+          441
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-atlas-node-constellation",
+      "kind": "module",
+      "label": "atlas node constellation",
+      "artifact_type": "signal-green-node-cluster",
+      "bounds": {
+        "x": 0.603,
+        "y": 0.489,
+        "w": 0.092,
+        "h": 0.064
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.607,
+          0.525
+        ],
+        [
+          0.625,
+          0.502
+        ],
+        [
+          0.66,
+          0.49
+        ],
+        [
+          0.689,
+          0.502
+        ],
+        [
+          0.695,
+          0.528
+        ],
+        [
+          0.677,
+          0.549
+        ],
+        [
+          0.641,
+          0.553
+        ],
+        [
+          0.615,
+          0.543
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/module-atlas-node-constellation.svg",
+      "source_binding_ids": [
+        "binding-module-atlas-node-constellation"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          997,
+          528
+        ],
+        "safe_stage_window_origin_px": [
+          1008,
+          534
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-preference-specimen-tray",
+      "kind": "module",
+      "label": "Preference Specimen Tray",
+      "artifact_type": "electric-blue-media-glint",
+      "bounds": {
+        "x": 0.2291,
+        "y": 0.1733,
+        "w": 0.1176,
+        "h": 0.0728
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.2317,
+          0.1762
+        ],
+        [
+          0.254,
+          0.1783
+        ],
+        [
+          0.2807,
+          0.1897
+        ],
+        [
+          0.3191,
+          0.214
+        ],
+        [
+          0.3431,
+          0.2368
+        ],
+        [
+          0.3414,
+          0.2432
+        ],
+        [
+          0.3209,
+          0.2368
+        ],
+        [
+          0.254,
+          0.1969
+        ],
+        [
+          0.2326,
+          0.1783
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/module-preference-specimen-tray.svg",
+      "source_binding_ids": [
+        "binding-module-preference-specimen-tray"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          431,
+          207
+        ],
+        "safe_stage_window_origin_px": [
+          444,
+          212
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-gallery-collection-tab",
+      "kind": "module",
+      "label": "gallery collection tab",
+      "artifact_type": "creased-catalog-paper-tab",
+      "bounds": {
+        "x": 0.183,
+        "y": 0.846,
+        "w": 0.104,
+        "h": 0.099
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.184,
+          0.851
+        ],
+        [
+          0.214,
+          0.846
+        ],
+        [
+          0.254,
+          0.876
+        ],
+        [
+          0.283,
+          0.918
+        ],
+        [
+          0.287,
+          0.944
+        ],
+        [
+          0.255,
+          0.941
+        ],
+        [
+          0.216,
+          0.905
+        ],
+        [
+          0.19,
+          0.872
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/module-gallery-collection-tab.svg",
+      "source_binding_ids": [
+        "binding-module-gallery-collection-tab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          361,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          374,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-slop-removal-scrape",
+      "kind": "module",
+      "label": "slop-removal scrape",
+      "artifact_type": "blackened-correction-scrape",
+      "bounds": {
+        "x": 0.768,
+        "y": 0.669,
+        "w": 0.127,
+        "h": 0.081
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.769,
+          0.697
+        ],
+        [
+          0.796,
+          0.673
+        ],
+        [
+          0.839,
+          0.669
+        ],
+        [
+          0.879,
+          0.694
+        ],
+        [
+          0.895,
+          0.736
+        ],
+        [
+          0.872,
+          0.75
+        ],
+        [
+          0.826,
+          0.736
+        ],
+        [
+          0.788,
+          0.714
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/module-slop-removal-scrape.svg",
+      "source_binding_ids": [
+        "binding-module-slop-removal-scrape"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1277,
+          720
+        ],
+        "safe_stage_window_origin_px": [
+          1293,
+          727
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-mobile-gallery-tile-break",
+      "kind": "module",
+      "label": "mobile-gallery tile break",
+      "artifact_type": "small-app-tile-break",
+      "bounds": {
+        "x": 0.775,
+        "y": 0.844,
+        "w": 0.052,
+        "h": 0.088
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.776,
+          0.858
+        ],
+        [
+          0.79,
+          0.845
+        ],
+        [
+          0.808,
+          0.868
+        ],
+        [
+          0.825,
+          0.912
+        ],
+        [
+          0.827,
+          0.932
+        ],
+        [
+          0.811,
+          0.929
+        ],
+        [
+          0.793,
+          0.9
+        ],
+        [
+          0.781,
+          0.872
+        ]
+      ],
+      "cluster_id": "gallery-seam-orbit",
+      "mask_path": "/editions/2026-06-26-gallery-seam-orbit-v1/assets/masks/module-mobile-gallery-tile-break.svg",
+      "source_binding_ids": [
+        "binding-module-mobile-gallery-tile-break"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1230,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1237,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}
