@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-27-white-garden-index-v1",
+  "edition_id": "2026-06-27-white-garden-index-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-27-white-garden-index-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-dark-gallery-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-dark-gallery-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-black-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-personal-home-map-wash",
+      "target_kind": "artifact",
+      "artifact_id": "hero-personal-home-map-wash",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-pale-map-scrap) selected from interpretation."
+    },
+    {
+      "target_id": "module-archive-research-thumbnail",
+      "target_kind": "artifact",
+      "artifact_id": "module-archive-research-thumbnail",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-collage-thumbnail) selected from interpretation."
+    },
+    {
+      "target_id": "module-music-still-frame-scrap",
+      "target_kind": "artifact",
+      "artifact_id": "module-music-still-frame-scrap",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-still-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-anchor-image-mat-two",
+      "target_kind": "artifact",
+      "artifact_id": "module-anchor-image-mat-two",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-offset-image-island) selected from interpretation."
+    },
+    {
+      "target_id": "module-music-still-frame-scrap-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-music-still-frame-scrap-2",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-still-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-anchor-image-mat-one",
+      "target_kind": "artifact",
+      "artifact_id": "module-anchor-image-mat-one",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-matted-thumbnail) selected from interpretation."
+    },
+    {
+      "target_id": "module-anchor-image-mat-two-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-anchor-image-mat-two-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-offset-image-island) selected from interpretation."
+    },
+    {
+      "target_id": "module-soft-home-site-inset",
+      "target_kind": "artifact",
+      "artifact_id": "module-soft-home-site-inset",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (blue-glass-inset) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

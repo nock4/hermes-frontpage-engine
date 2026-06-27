@@ -1,0 +1,511 @@
+{
+  "artifact_map_id": "map-2026-06-27-white-garden-index-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "white-garden-index",
+  "default_artifact_id": "hero-dark-gallery-aperture",
+  "artifacts": [
+    {
+      "id": "hero-dark-gallery-aperture",
+      "kind": "hero",
+      "label": "dark gallery aperture",
+      "artifact_type": "hero-scale-black-aperture",
+      "bounds": {
+        "x": 0.4287,
+        "y": 0.2259,
+        "w": 0.3535,
+        "h": 0.4779
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.4316,
+          0.6426
+        ],
+        [
+          0.4365,
+          0.2279
+        ],
+        [
+          0.7764,
+          0.2285
+        ],
+        [
+          0.7783,
+          0.4844
+        ],
+        [
+          0.7754,
+          0.7012
+        ],
+        [
+          0.4316,
+          0.6986
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/hero-dark-gallery-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-dark-gallery-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          932,
+          438
+        ],
+        "safe_stage_window_origin_px": [
+          975,
+          477
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-personal-home-map-wash",
+      "kind": "hero",
+      "label": "personal home map wash",
+      "artifact_type": "hero-scale-pale-map-scrap",
+      "bounds": {
+        "x": 0.0313,
+        "y": 0.1211,
+        "w": 0.3457,
+        "h": 0.6263
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.041,
+          0.122
+        ],
+        [
+          0.141,
+          0.143
+        ],
+        [
+          0.21,
+          0.205
+        ],
+        [
+          0.297,
+          0.315
+        ],
+        [
+          0.334,
+          0.435
+        ],
+        [
+          0.377,
+          0.57
+        ],
+        [
+          0.343,
+          0.682
+        ],
+        [
+          0.269,
+          0.747
+        ],
+        [
+          0.178,
+          0.713
+        ],
+        [
+          0.097,
+          0.648
+        ],
+        [
+          0.046,
+          0.538
+        ],
+        [
+          0.031,
+          0.397
+        ],
+        [
+          0.035,
+          0.241
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/hero-personal-home-map-wash.svg",
+      "source_binding_ids": [
+        "binding-hero-personal-home-map-wash"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          314,
+          393
+        ],
+        "safe_stage_window_origin_px": [
+          356,
+          445
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-archive-research-thumbnail",
+      "kind": "module",
+      "label": "archive research thumbnail",
+      "artifact_type": "small-collage-thumbnail",
+      "bounds": {
+        "x": 0.8467,
+        "y": 0.4915,
+        "w": 0.0645,
+        "h": 0.0677
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.8496,
+          0.4935
+        ],
+        [
+          0.9072,
+          0.4928
+        ],
+        [
+          0.9111,
+          0.5573
+        ],
+        [
+          0.8486,
+          0.5592
+        ],
+        [
+          0.8467,
+          0.554
+        ],
+        [
+          0.8467,
+          0.498
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/module-archive-research-thumbnail.svg",
+      "source_binding_ids": [
+        "binding-module-archive-research-thumbnail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          532
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          538
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-music-still-frame-scrap",
+      "kind": "module",
+      "label": "music-still frame scrap",
+      "artifact_type": "cropped-still-window",
+      "bounds": {
+        "x": 0.8008,
+        "y": 0.8086,
+        "w": 0.1064,
+        "h": 0.0736
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.8027,
+          0.8086
+        ],
+        [
+          0.9043,
+          0.8079
+        ],
+        [
+          0.9072,
+          0.8796
+        ],
+        [
+          0.8027,
+          0.8822
+        ],
+        [
+          0.8008,
+          0.8763
+        ],
+        [
+          0.8008,
+          0.8138
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/module-music-still-frame-scrap.svg",
+      "source_binding_ids": [
+        "binding-module-music-still-frame-scrap"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1312,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-anchor-image-mat-two",
+      "kind": "module",
+      "label": "anchor image mat two",
+      "artifact_type": "tiny-offset-image-island",
+      "bounds": {
+        "x": 0.5146,
+        "y": 0.3913,
+        "w": 0.1514,
+        "h": 0.1139
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.5273,
+          0.3958
+        ],
+        [
+          0.5908,
+          0.3874
+        ],
+        [
+          0.6582,
+          0.3991
+        ],
+        [
+          0.666,
+          0.4616
+        ],
+        [
+          0.6396,
+          0.4993
+        ],
+        [
+          0.5742,
+          0.5052
+        ],
+        [
+          0.5244,
+          0.4883
+        ],
+        [
+          0.5146,
+          0.4395
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/module-anchor-image-mat-two.svg",
+      "source_binding_ids": [
+        "binding-module-anchor-image-mat-two"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          907,
+          450
+        ],
+        "safe_stage_window_origin_px": [
+          925,
+          459
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-music-still-frame-scrap-2",
+      "kind": "module",
+      "label": "music-still frame scrap",
+      "artifact_type": "cropped-still-window",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/module-music-still-frame-scrap-2.svg",
+      "source_binding_ids": [
+        "binding-module-music-still-frame-scrap-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-anchor-image-mat-one",
+      "kind": "module",
+      "label": "anchor image mat one",
+      "artifact_type": "thin-matted-thumbnail",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/module-anchor-image-mat-one.svg",
+      "source_binding_ids": [
+        "binding-module-anchor-image-mat-one"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-anchor-image-mat-two-2",
+      "kind": "module",
+      "label": "anchor image mat two",
+      "artifact_type": "tiny-offset-image-island",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/module-anchor-image-mat-two-2.svg",
+      "source_binding_ids": [
+        "binding-module-anchor-image-mat-two-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-soft-home-site-inset",
+      "kind": "module",
+      "label": "soft home-site inset",
+      "artifact_type": "blue-glass-inset",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "white-garden-index",
+      "mask_path": "/editions/2026-06-27-white-garden-index-v1/assets/masks/module-soft-home-site-inset.svg",
+      "source_binding_ids": [
+        "binding-module-soft-home-site-inset"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
