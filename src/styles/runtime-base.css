@@ -335,24 +335,29 @@ a {
   align-items: center;
   justify-content: center;
   min-height: 2.25rem;
-  padding: 0.5rem 0.95rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 245, 222, 0.22);
-  background: rgba(18, 16, 15, 0.52);
-  backdrop-filter: blur(14px);
-  color: rgba(255, 244, 230, 0.96);
+  padding: 0.25rem 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  backdrop-filter: none;
+  color: rgba(255, 244, 230, 0.97);
   text-decoration: none;
   letter-spacing: 0.08em;
   font-family: var(--about-accent-font, 'DFE Space Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif);
   font-weight: var(--about-accent-weight, 720);
   font-size: 0.75rem;
-  box-shadow: 0 16px 36px rgba(8, 6, 5, 0.18);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.72), 0 0 1px rgba(0, 0, 0, 0.9);
+}
+
+.site-enter-button::before {
+  content: none;
 }
 
 .site-enter-button:hover,
 .site-enter-button:focus-visible {
-  background: rgba(24, 21, 18, 0.72);
-  border-color: rgba(255, 245, 222, 0.38);
+  color: rgba(255, 250, 238, 1);
+  filter: none;
+  transform: translateY(-1px);
 }
 
 .about-unfurl {
@@ -388,25 +393,39 @@ a {
 }
 
 .about-unfurl__button {
+  position: relative;
   min-height: 2.25rem;
-  padding: 0.5rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 245, 222, 0.18);
-  background: rgba(18, 16, 15, 0.5);
-  backdrop-filter: blur(14px);
-  color: rgba(255, 244, 230, 0.96);
+  padding: 0.25rem 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  backdrop-filter: none;
+  color: rgba(255, 244, 230, 0.97);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   font-family: var(--about-accent-font);
   font-weight: var(--about-accent-weight);
   font-size: 0.75rem;
-  box-shadow: 0 16px 36px rgba(8, 6, 5, 0.18);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.72), 0 0 1px rgba(0, 0, 0, 0.9);
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.about-unfurl__button:nth-child(2) {
+  border-radius: 0;
+}
+
+.about-unfurl__button::before {
+  content: none;
+}
+
+.about-unfurl__button[aria-expanded='true'] {
+  color: rgba(255, 250, 238, 1);
 }
 
 .about-unfurl__button:hover,
 .about-unfurl__button:focus-visible {
-  background: rgba(24, 21, 18, 0.72);
-  border-color: rgba(255, 245, 222, 0.32);
+  color: rgba(255, 250, 238, 1);
+  transform: translateY(-1px);
 }
 
 .about-unfurl__panel {
