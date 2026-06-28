@@ -1,7 +1,7 @@
 {
-  "interpretation_id": "interp-2026-06-27-white-garden-index-v1",
-  "edition_id": "2026-06-27-white-garden-index-v1",
-  "plate_read_timestamp": "2026-06-27T08:10:38.947Z",
+  "interpretation_id": "interp-2026-06-28-playable-ruin-library-v1",
+  "edition_id": "2026-06-28-playable-ruin-library-v1",
+  "plate_read_timestamp": "2026-06-28T08:10:37.326Z",
   "scene_ontology": {
     "primary": "material-native",
     "secondary": [
@@ -10,42 +10,43 @@
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A quiet off-white paper plate with a large central black gallery aperture, a pale blue map-like wash along the left field, and several small embedded source marks: triangular glass, vertical scar, red mat, circular chip knot, lower still frame, central glowing inset, and a bottom seam repair.",
+    "summary": "A dark expressionist ruin-library plate: one dominant carved stone threshold runs diagonally through the center, with circular reliefs, slit windows, hanging plaques, blue glass glows, red fracture lines, and small inset shrines serving as visible source-bearing anchors.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "a private museum map breathing in white space",
-      "A quiet off-white paper plate with a large central black gallery aperture, a pale blue map-like wash along the left field, and several small embedded source marks: triangular glass, vertical scar, red mat, circular chip knot, lower still frame, central glowing inset, and a bottom seam repair.",
-      "quiet-web-gallery",
-      "white-field",
-      "dark-aperture"
+      "a playable reference terrain under ember light, half ruin-section and half torn concept archive",
+      "A dark expressionist ruin-library plate: one dominant carved stone threshold runs diagonally through the center, with circular reliefs, slit windows, hanging plaques, blue glass glows, red fracture lines, and small inset shrines serving as visible source-bearing anchors.",
+      "game-art-archive",
+      "ruin-section",
+      "asset-library"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "dark gallery aperture",
-      "personal home map wash",
-      "archive research thumbnail",
-      "music-still frame scrap",
-      "anchor image mat two",
-      "anchor image mat one",
-      "soft home-site inset"
+      "Memory Prism Catalogue",
+      "hero epic crop stone relief",
+      "inventory plaque for indie styles",
+      "portfolio slit procession",
+      "commercial preview shard",
+      "Secondary Source Anchor",
+      "security checklist notch"
     ],
     "dominant_surfaces": [
       "paper",
       "glass",
-      "paint"
+      "paint",
+      "light-band"
     ],
     "dominant_structures": [
-      "white-garden-index",
-      "one severe off-center dark archive tile with a small image inset",
-      "scattered uneven thumbnail islands across a large white field",
-      "tiny map-like scraps and pinhole constellations near the edges",
-      "mosaic chips gathered as a small civic color patch",
-      "a pale blue blurred horizon washing the lower edge",
-      "central black aperture with inset glow",
-      "left blue map wash field"
+      "playable-ruin-library",
+      "one large ruined level-section mass crossing the plate",
+      "a procession of embedded inventory apertures along chipped ledges",
+      "torn painterly source inserts pressed into stone and paper",
+      "metal asset plaques interrupting the archive surface",
+      "a clean sci-fi shard counterweighting the darker fantasy mass",
+      "diagonal carved library slab",
+      "large cracked circular stone relief"
     ],
     "negative_space_regions": []
   },
@@ -60,37 +61,69 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: white-garden-index.",
+      "Primary ontology inferred from scene family and artifact types: playable-ruin-library.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-dark-gallery-aperture",
+      "id": "hero-memory-prism-catalogue",
       "kind": "hero",
-      "type": "hero-scale-black-aperture",
-      "strength": 0.95,
+      "type": "hero-scale-carved-threshold",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.4287,
-        "y": 0.2259,
-        "w": 0.3535,
-        "h": 0.4779
+        "x": 0.2832,
+        "y": 0.0439,
+        "w": 0.5488,
+        "h": 0.5029
       },
       "supports": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "hero-personal-home-map-wash",
+      "id": "hero-hero-epic-crop-stone-relief",
       "kind": "hero",
-      "type": "hero-scale-pale-map-scrap",
-      "strength": 0.9199999999999999,
+      "type": "hero-scale-stone-source-slab",
+      "strength": 0.9776239999999999,
       "bounds": {
-        "x": 0.0313,
-        "y": 0.1211,
-        "w": 0.3457,
-        "h": 0.6263
+        "x": 0.546,
+        "y": 0.452,
+        "w": 0.283,
+        "h": 0.409
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-inventory-plaque-for-indie-styles",
+      "kind": "module",
+      "type": "oxidized-bronze-asset-plaque",
+      "strength": 0.79872,
+      "bounds": {
+        "x": 0.047,
+        "y": 0.306,
+        "w": 0.051,
+        "h": 0.136
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-portfolio-slit-procession",
+      "kind": "module",
+      "type": "narrow-asset-library-slit",
+      "strength": 0.7686120000000001,
+      "bounds": {
+        "x": 0.244,
+        "y": 0.868,
+        "w": 0.169,
+        "h": 0.043
       },
       "supports": [
         "threshold-scan-reveal",
@@ -98,47 +131,15 @@
       ]
     },
     {
-      "id": "module-archive-research-thumbnail",
+      "id": "module-commercial-preview-shard",
       "kind": "module",
-      "type": "small-collage-thumbnail",
-      "strength": 0.72,
+      "type": "smoky-video-fragment",
+      "strength": 0.7293240000000001,
       "bounds": {
-        "x": 0.8467,
-        "y": 0.4915,
-        "w": 0.0645,
-        "h": 0.0677
-      },
-      "supports": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-music-still-frame-scrap",
-      "kind": "module",
-      "type": "cropped-still-window",
-      "strength": 0.6900000000000001,
-      "bounds": {
-        "x": 0.8008,
-        "y": 0.8086,
-        "w": 0.1064,
-        "h": 0.0736
-      },
-      "supports": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-anchor-image-mat-two",
-      "kind": "module",
-      "type": "tiny-offset-image-island",
-      "strength": 0.66,
-      "bounds": {
-        "x": 0.5146,
-        "y": 0.3913,
-        "w": 0.1514,
-        "h": 0.1139
+        "x": 0.835,
+        "y": 0.475,
+        "w": 0.086,
+        "h": 0.296
       },
       "supports": [
         "threshold-scan-reveal",
@@ -146,15 +147,15 @@
       ]
     },
     {
-      "id": "module-music-still-frame-scrap-2",
+      "id": "module-secondary-source-anchor",
       "kind": "module",
-      "type": "cropped-still-window",
-      "strength": 0.63,
+      "type": "secondary-source-anchor",
+      "strength": 0.699336,
       "bounds": {
-        "x": 0.1,
-        "y": 0.78,
-        "w": 0.18,
-        "h": 0.16
+        "x": 0.507,
+        "y": 0.742,
+        "w": 0.061,
+        "h": 0.19
       },
       "supports": [
         "paint-bleed-reveal",
@@ -162,10 +163,10 @@
       ]
     },
     {
-      "id": "module-anchor-image-mat-one",
+      "id": "module-commercial-preview-shard-2",
       "kind": "module",
-      "type": "thin-matted-thumbnail",
-      "strength": 0.6000000000000001,
+      "type": "smoky-video-fragment",
+      "strength": 0.6718440000000001,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
@@ -178,10 +179,10 @@
       ]
     },
     {
-      "id": "module-anchor-image-mat-two-2",
+      "id": "module-security-checklist-notch",
       "kind": "module",
-      "type": "tiny-offset-image-island",
-      "strength": 0.58,
+      "type": "sealed-metal-warning-cut",
+      "strength": 0.6517959999999999,
       "bounds": {
         "x": 0.72,
         "y": 0.76,
@@ -194,10 +195,10 @@
       ]
     },
     {
-      "id": "module-soft-home-site-inset",
+      "id": "module-secondary-source-anchor-2",
       "kind": "module",
-      "type": "blue-glass-inset",
-      "strength": 0.58,
+      "type": "secondary-source-anchor",
+      "strength": 0.652612,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -205,7 +206,7 @@
         "h": 0.15
       },
       "supports": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     }
@@ -213,62 +214,46 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-dark-gallery-aperture-surface",
-      "surface_type": "paint",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.4287,
-        "y": 0.2259,
-        "w": 0.3535,
-        "h": 0.4779
-      },
-      "suitability": 0.9,
-      "supported_treatments": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "hero-personal-home-map-wash-surface",
-      "surface_type": "paper",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.0313,
-        "y": 0.1211,
-        "w": 0.3457,
-        "h": 0.6263
-      },
-      "suitability": 0.9,
-      "supported_treatments": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-archive-research-thumbnail-surface",
-      "surface_type": "wood",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.8467,
-        "y": 0.4915,
-        "w": 0.0645,
-        "h": 0.0677
-      },
-      "suitability": 0.76,
-      "supported_treatments": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-music-still-frame-scrap-surface",
+      "id": "hero-memory-prism-catalogue-surface",
       "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
-        "x": 0.8008,
-        "y": 0.8086,
-        "w": 0.1064,
-        "h": 0.0736
+        "x": 0.2832,
+        "y": 0.0439,
+        "w": 0.5488,
+        "h": 0.5029
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-epic-crop-stone-relief-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.546,
+        "y": 0.452,
+        "w": 0.283,
+        "h": 0.409
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-inventory-plaque-for-indie-styles-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.047,
+        "y": 0.306,
+        "w": 0.051,
+        "h": 0.136
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -277,14 +262,14 @@
       ]
     },
     {
-      "id": "module-anchor-image-mat-two-surface",
+      "id": "module-portfolio-slit-procession-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.5146,
-        "y": 0.3913,
-        "w": 0.1514,
-        "h": 0.1139
+        "x": 0.244,
+        "y": 0.868,
+        "w": 0.169,
+        "h": 0.043
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -293,14 +278,30 @@
       ]
     },
     {
-      "id": "module-music-still-frame-scrap-2-surface",
+      "id": "module-commercial-preview-shard-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.835,
+        "y": 0.475,
+        "w": 0.086,
+        "h": 0.296
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-secondary-source-anchor-surface",
       "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
-        "x": 0.1,
-        "y": 0.78,
-        "w": 0.18,
-        "h": 0.16
+        "x": 0.507,
+        "y": 0.742,
+        "w": 0.061,
+        "h": 0.19
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -309,7 +310,7 @@
       ]
     },
     {
-      "id": "module-anchor-image-mat-one-surface",
+      "id": "module-commercial-preview-shard-2-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -325,7 +326,7 @@
       ]
     },
     {
-      "id": "module-anchor-image-mat-two-2-surface",
+      "id": "module-security-checklist-notch-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -341,8 +342,8 @@
       ]
     },
     {
-      "id": "module-soft-home-site-inset-surface",
-      "surface_type": "glass",
+      "id": "module-secondary-source-anchor-2-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
         "x": 0.28,
@@ -352,7 +353,7 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     }

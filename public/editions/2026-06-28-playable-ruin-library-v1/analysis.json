@@ -1,0 +1,440 @@
+{
+  "analysis_id": "analysis-2026-06-28-playable-ruin-library-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark expressionist ruin-library plate: one dominant carved stone threshold runs diagonally through the center, with circular reliefs, slit windows, hanging plaques, blue glass glows, red fracture lines, and small inset shrines serving as visible source-bearing anchors.",
+  "usable_surfaces": [
+    "diagonal carved library slab",
+    "large cracked circular stone relief",
+    "top blue-white glass capsule",
+    "left stained lancet aperture",
+    "hanging sword plaque",
+    "bottom narrow ember slit",
+    "right smoky red fracture seam",
+    "right sealed warning notch",
+    "bottom-center arched shrine pocket"
+  ],
+  "detected_objects": [
+    {
+      "label": "Memory Prism Catalogue",
+      "artifact_type": "hero-scale-carved-threshold",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.346,
+        "y": 0.052,
+        "w": 0.483,
+        "h": 0.548
+      },
+      "polygon": [
+        [
+          0.421,
+          0.173
+        ],
+        [
+          0.535,
+          0.119
+        ],
+        [
+          0.677,
+          0.061
+        ],
+        [
+          0.814,
+          0.054
+        ],
+        [
+          0.824,
+          0.268
+        ],
+        [
+          0.776,
+          0.295
+        ],
+        [
+          0.772,
+          0.333
+        ],
+        [
+          0.7,
+          0.36
+        ],
+        [
+          0.664,
+          0.393
+        ],
+        [
+          0.553,
+          0.403
+        ],
+        [
+          0.526,
+          0.449
+        ],
+        [
+          0.427,
+          0.441
+        ],
+        [
+          0.382,
+          0.386
+        ],
+        [
+          0.348,
+          0.369
+        ],
+        [
+          0.374,
+          0.279
+        ],
+        [
+          0.405,
+          0.24
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "The dominant diagonal carved library mass with shelves, arches, broken stair-edge, columns, and lit door reads as the main playable terrain cut rather than a flat card."
+    },
+    {
+      "label": "hero epic crop stone relief",
+      "artifact_type": "hero-scale-stone-source-slab",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.546,
+        "y": 0.452,
+        "w": 0.283,
+        "h": 0.409
+      },
+      "polygon": [
+        [
+          0.572,
+          0.509
+        ],
+        [
+          0.641,
+          0.47
+        ],
+        [
+          0.72,
+          0.486
+        ],
+        [
+          0.79,
+          0.565
+        ],
+        [
+          0.828,
+          0.685
+        ],
+        [
+          0.801,
+          0.797
+        ],
+        [
+          0.716,
+          0.851
+        ],
+        [
+          0.61,
+          0.829
+        ],
+        [
+          0.559,
+          0.748
+        ],
+        [
+          0.548,
+          0.621
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A large cracked stone slab at lower right carries a circular carved relief, radial cuts, fissures, and scuffed masonry, forming a dominant physical source surface."
+    },
+    {
+      "label": "inventory plaque for indie styles",
+      "artifact_type": "oxidized-bronze-asset-plaque",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.047,
+        "y": 0.306,
+        "w": 0.051,
+        "h": 0.136
+      },
+      "polygon": [
+        [
+          0.048,
+          0.306
+        ],
+        [
+          0.09,
+          0.306
+        ],
+        [
+          0.097,
+          0.324
+        ],
+        [
+          0.096,
+          0.425
+        ],
+        [
+          0.087,
+          0.442
+        ],
+        [
+          0.05,
+          0.441
+        ],
+        [
+          0.047,
+          0.421
+        ],
+        [
+          0.047,
+          0.327
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A hanging oxidized plaque with a sword-like vertical object sits on the left wall, framed by hard metal edges and small worn highlights."
+    },
+    {
+      "label": "portfolio slit procession",
+      "artifact_type": "narrow-asset-library-slit",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.244,
+        "y": 0.868,
+        "w": 0.169,
+        "h": 0.043
+      },
+      "polygon": [
+        [
+          0.246,
+          0.867
+        ],
+        [
+          0.41,
+          0.867
+        ],
+        [
+          0.413,
+          0.879
+        ],
+        [
+          0.407,
+          0.91
+        ],
+        [
+          0.245,
+          0.907
+        ],
+        [
+          0.244,
+          0.892
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "A long thin black slit near the bottom edge contains tiny red ember flecks, reading as a narrow asset-library aperture."
+    },
+    {
+      "label": "commercial preview shard",
+      "artifact_type": "smoky-video-fragment",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.835,
+        "y": 0.475,
+        "w": 0.086,
+        "h": 0.296
+      },
+      "polygon": [
+        [
+          0.908,
+          0.475
+        ],
+        [
+          0.921,
+          0.54
+        ],
+        [
+          0.912,
+          0.61
+        ],
+        [
+          0.899,
+          0.674
+        ],
+        [
+          0.868,
+          0.725
+        ],
+        [
+          0.841,
+          0.771
+        ],
+        [
+          0.835,
+          0.732
+        ],
+        [
+          0.861,
+          0.673
+        ],
+        [
+          0.879,
+          0.61
+        ],
+        [
+          0.891,
+          0.536
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "A smoky vertical fracture on the right edge glows orange-red, like a moving media shard caught in the dark surface."
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "secondary-source-anchor",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.507,
+        "y": 0.742,
+        "w": 0.061,
+        "h": 0.19
+      },
+      "polygon": [
+        [
+          0.534,
+          0.742
+        ],
+        [
+          0.56,
+          0.779
+        ],
+        [
+          0.568,
+          0.853
+        ],
+        [
+          0.559,
+          0.928
+        ],
+        [
+          0.51,
+          0.93
+        ],
+        [
+          0.507,
+          0.846
+        ],
+        [
+          0.516,
+          0.781
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A bottom-center arched shrine pocket holds teal-blue oxidized highlights and a small dark embedded figure, distinct from the surrounding stone."
+    },
+    {
+      "label": "commercial preview shard",
+      "artifact_type": "smoky-video-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "security checklist notch",
+      "artifact_type": "sealed-metal-warning-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "secondary-source-anchor",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.432,
+    "rationale": "The plate has a strong diagonal hero slab and readable anchors, but the dense stonework, shelves, circular reliefs, plaques, cracks, and smoky edges make it visually busy rather than minimal."
+  },
+  "fallback_detected_object_count": 3,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-06-28-playable-ruin-library-v1"
+}

@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-28-playable-ruin-library-v1",
+  "edition_id": "2026-06-28-playable-ruin-library-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-28-playable-ruin-library-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-memory-prism-catalogue",
+      "target_kind": "artifact",
+      "artifact_id": "hero-memory-prism-catalogue",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-carved-threshold) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-epic-crop-stone-relief",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-epic-crop-stone-relief",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-stone-source-slab) selected from interpretation."
+    },
+    {
+      "target_id": "module-inventory-plaque-for-indie-styles",
+      "target_kind": "artifact",
+      "artifact_id": "module-inventory-plaque-for-indie-styles",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (oxidized-bronze-asset-plaque) selected from interpretation."
+    },
+    {
+      "target_id": "module-portfolio-slit-procession",
+      "target_kind": "artifact",
+      "artifact_id": "module-portfolio-slit-procession",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-asset-library-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-commercial-preview-shard",
+      "target_kind": "artifact",
+      "artifact_id": "module-commercial-preview-shard",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (smoky-video-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-secondary-source-anchor",
+      "target_kind": "artifact",
+      "artifact_id": "module-secondary-source-anchor",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (secondary-source-anchor) selected from interpretation."
+    },
+    {
+      "target_id": "module-commercial-preview-shard-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-commercial-preview-shard-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (smoky-video-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-security-checklist-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-security-checklist-notch",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (sealed-metal-warning-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-secondary-source-anchor-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-secondary-source-anchor-2",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (secondary-source-anchor) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
