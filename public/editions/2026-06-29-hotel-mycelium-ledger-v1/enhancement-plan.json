@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-06-29-hotel-mycelium-ledger-v1",
+  "edition_id": "2026-06-29-hotel-mycelium-ledger-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-06-29-hotel-mycelium-ledger-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-cantharellus-lithograph-breach",
+      "target_kind": "artifact",
+      "artifact_id": "hero-cantharellus-lithograph-breach",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-botanical-plate-rupture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-picasso-hotel-payment-tear",
+      "target_kind": "artifact",
+      "artifact_id": "hero-picasso-hotel-payment-tear",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-torn-hotel-paper) selected from interpretation."
+    },
+    {
+      "target_id": "module-deepsec-dark-inspection-stamp",
+      "target_kind": "artifact",
+      "artifact_id": "module-deepsec-dark-inspection-stamp",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (charcoal-security-stamp) selected from interpretation."
+    },
+    {
+      "target_id": "module-aileen-digital-home-sliver",
+      "target_kind": "artifact",
+      "artifact_id": "module-aileen-digital-home-sliver",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-web-media-inlay) selected from interpretation."
+    },
+    {
+      "target_id": "module-girl-and-ducks-painted-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-girl-and-ducks-painted-aperture",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-painted-vignette-tear) selected from interpretation."
+    },
+    {
+      "target_id": "module-milan-tram-line-underdrawing",
+      "target_kind": "artifact",
+      "artifact_id": "module-milan-tram-line-underdrawing",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (buried-street-etching) selected from interpretation."
+    },
+    {
+      "target_id": "module-agent-tool-reliquary",
+      "target_kind": "artifact",
+      "artifact_id": "module-agent-tool-reliquary",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curved-varnish-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-fortune-poster-gold-corner",
+      "target_kind": "artifact",
+      "artifact_id": "module-fortune-poster-gold-corner",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tarnished-poster-corner) selected from interpretation."
+    },
+    {
+      "target_id": "module-art-hotel-archive-window",
+      "target_kind": "artifact",
+      "artifact_id": "module-art-hotel-archive-window",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (museum-paper-aperture) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

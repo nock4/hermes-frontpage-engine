@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-06-29-hotel-mycelium-ledger-v1",
+  "edition_id": "2026-06-29-hotel-mycelium-ledger-v1",
+  "plate_read_timestamp": "2026-06-29T08:10:19.528Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A sepia torn-paper botanical plate dominates the scene: large chanterelle mushrooms rise from a ragged archive sheet, with exposed black backing, lifted paper tears, small stamps, red pinholes, faint map lines, a tarnished gold shard, and a small square inlay embedded along the left wall.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "old hotel art breathing through torn archive paper",
+      "A sepia torn-paper botanical plate dominates the scene: large chanterelle mushrooms rise from a ragged archive sheet, with exposed black backing, lifted paper tears, small stamps, red pinholes, faint map lines, a tarnished gold shard, and a small square inlay embedded along the left wall.",
+      "botanical-archive",
+      "hotel-wall",
+      "torn-lithograph"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Cantharellus lithograph breach",
+      "Picasso hotel payment tear",
+      "Deepsec dark inspection stamp",
+      "Aileen digital-home sliver",
+      "Girl-and-ducks painted aperture",
+      "Milan tram-line underdrawing",
+      "Agent Tool Reliquary",
+      "Fortune poster gold corner"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "hotel-mycelium-ledger",
+      "one branching off-center botanical wall event",
+      "secondary painted hotel-vignette aperture",
+      "buried tram-map etching under torn paper",
+      "menu-like price shards with illegible marks",
+      "small glossy web-media slivers",
+      "central botanical mushroom rupture",
+      "left vertical torn black backing seam"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: hotel-mycelium-ledger.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-cantharellus-lithograph-breach",
+      "kind": "hero",
+      "type": "hero-scale-botanical-plate-rupture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.2246,
+        "y": 0.0456,
+        "w": 0.7754,
+        "h": 0.6243
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-picasso-hotel-payment-tear",
+      "kind": "hero",
+      "type": "hero-scale-torn-hotel-paper",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.1992,
+        "y": 0,
+        "w": 0.6924,
+        "h": 0.1263
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-deepsec-dark-inspection-stamp",
+      "kind": "module",
+      "type": "charcoal-security-stamp",
+      "strength": 0.799572,
+      "bounds": {
+        "x": 0.254,
+        "y": 0.155,
+        "w": 0.113,
+        "h": 0.067
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-aileen-digital-home-sliver",
+      "kind": "module",
+      "type": "glossy-web-media-inlay",
+      "strength": 0.76458,
+      "bounds": {
+        "x": 0.025,
+        "y": 0.557,
+        "w": 0.055,
+        "h": 0.051
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-girl-and-ducks-painted-aperture",
+      "kind": "module",
+      "type": "small-painted-vignette-tear",
+      "strength": 0.722244,
+      "bounds": {
+        "x": 0.7246,
+        "y": 0.3086,
+        "w": 0.2754,
+        "h": 0.3418
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-milan-tram-line-underdrawing",
+      "kind": "module",
+      "type": "buried-street-etching",
+      "strength": 0.689496,
+      "bounds": {
+        "x": 0.059,
+        "y": 0.602,
+        "w": 0.277,
+        "h": 0.344
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-tool-reliquary",
+      "kind": "module",
+      "type": "curved-varnish-glint",
+      "strength": 0.6676920000000001,
+      "bounds": {
+        "x": 0.363,
+        "y": 0.611,
+        "w": 0.184,
+        "h": 0.135
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fortune-poster-gold-corner",
+      "kind": "module",
+      "type": "tarnished-poster-corner",
+      "strength": 0.6463,
+      "bounds": {
+        "x": 0.368,
+        "y": 0.646,
+        "w": 0.18,
+        "h": 0.225
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-art-hotel-archive-window",
+      "kind": "module",
+      "type": "museum-paper-aperture",
+      "strength": 0.6313,
+      "bounds": {
+        "x": 0.161,
+        "y": 0.13,
+        "w": 0.128,
+        "h": 0.538
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-cantharellus-lithograph-breach-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2246,
+        "y": 0.0456,
+        "w": 0.7754,
+        "h": 0.6243
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-picasso-hotel-payment-tear-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1992,
+        "y": 0,
+        "w": 0.6924,
+        "h": 0.1263
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-deepsec-dark-inspection-stamp-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.254,
+        "y": 0.155,
+        "w": 0.113,
+        "h": 0.067
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-aileen-digital-home-sliver-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.025,
+        "y": 0.557,
+        "w": 0.055,
+        "h": 0.051
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-girl-and-ducks-painted-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.7246,
+        "y": 0.3086,
+        "w": 0.2754,
+        "h": 0.3418
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-milan-tram-line-underdrawing-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.059,
+        "y": 0.602,
+        "w": 0.277,
+        "h": 0.344
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-tool-reliquary-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.363,
+        "y": 0.611,
+        "w": 0.184,
+        "h": 0.135
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fortune-poster-gold-corner-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.368,
+        "y": 0.646,
+        "w": 0.18,
+        "h": 0.225
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-art-hotel-archive-window-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.161,
+        "y": 0.13,
+        "w": 0.128,
+        "h": 0.538
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

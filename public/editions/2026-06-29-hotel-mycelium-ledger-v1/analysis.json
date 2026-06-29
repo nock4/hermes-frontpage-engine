@@ -1,0 +1,511 @@
+{
+  "analysis_id": "analysis-2026-06-29-hotel-mycelium-ledger-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A sepia torn-paper botanical plate dominates the scene: large chanterelle mushrooms rise from a ragged archive sheet, with exposed black backing, lifted paper tears, small stamps, red pinholes, faint map lines, a tarnished gold shard, and a small square inlay embedded along the left wall.",
+  "usable_surfaces": [
+    "central botanical mushroom rupture",
+    "left vertical torn black backing seam",
+    "upper horizontal torn paper lip",
+    "small red pinhole cluster",
+    "left lower square inlay",
+    "bottom-center tarnished gold shard",
+    "faint lower paper grid etching",
+    "right-side small botanical/printed aperture",
+    "charcoal circular inspection stamp"
+  ],
+  "detected_objects": [
+    {
+      "label": "Cantharellus lithograph breach",
+      "artifact_type": "hero-scale-botanical-plate-rupture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.298,
+        "y": 0.118,
+        "w": 0.65,
+        "h": 0.747
+      },
+      "polygon": [
+        [
+          0.451,
+          0.139
+        ],
+        [
+          0.592,
+          0.116
+        ],
+        [
+          0.743,
+          0.123
+        ],
+        [
+          0.862,
+          0.158
+        ],
+        [
+          0.785,
+          0.206
+        ],
+        [
+          0.646,
+          0.206
+        ],
+        [
+          0.573,
+          0.269
+        ],
+        [
+          0.652,
+          0.294
+        ],
+        [
+          0.91,
+          0.246
+        ],
+        [
+          0.971,
+          0.292
+        ],
+        [
+          0.871,
+          0.391
+        ],
+        [
+          0.736,
+          0.388
+        ],
+        [
+          0.665,
+          0.535
+        ],
+        [
+          0.769,
+          0.633
+        ],
+        [
+          0.682,
+          0.778
+        ],
+        [
+          0.493,
+          0.86
+        ],
+        [
+          0.327,
+          0.7
+        ],
+        [
+          0.302,
+          0.491
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "The dominant visible source surface is the printed chanterelle botanical plate: large caps, gills, stems, roots, and surrounding plant matter form a continuous torn-paper image field."
+    },
+    {
+      "label": "Picasso hotel payment tear",
+      "artifact_type": "hero-scale-torn-hotel-paper",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.167,
+        "y": 0,
+        "w": 0.733,
+        "h": 0.133
+      },
+      "polygon": [
+        [
+          0.18,
+          0
+        ],
+        [
+          0.905,
+          0
+        ],
+        [
+          0.875,
+          0.057
+        ],
+        [
+          0.725,
+          0.075
+        ],
+        [
+          0.574,
+          0.064
+        ],
+        [
+          0.467,
+          0.085
+        ],
+        [
+          0.311,
+          0.095
+        ],
+        [
+          0.245,
+          0.132
+        ],
+        [
+          0.184,
+          0.108
+        ],
+        [
+          0.135,
+          0.064
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A broad lifted hotel-stationery-like rupture spans the top edge, with curled paper, exposed brown backing, and a torn lip casting shadow over the botanical plate."
+    },
+    {
+      "label": "Deepsec dark inspection stamp",
+      "artifact_type": "charcoal-security-stamp",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.254,
+        "y": 0.155,
+        "w": 0.113,
+        "h": 0.067
+      },
+      "polygon": [
+        [
+          0.309,
+          0.155
+        ],
+        [
+          0.339,
+          0.163
+        ],
+        [
+          0.359,
+          0.184
+        ],
+        [
+          0.362,
+          0.205
+        ],
+        [
+          0.34,
+          0.218
+        ],
+        [
+          0.309,
+          0.222
+        ],
+        [
+          0.279,
+          0.213
+        ],
+        [
+          0.259,
+          0.193
+        ],
+        [
+          0.257,
+          0.173
+        ],
+        [
+          0.282,
+          0.159
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A small dark rosette-like circular stamp is pressed into the left upper margin beside the botanical print."
+    },
+    {
+      "label": "Aileen digital-home sliver",
+      "artifact_type": "glossy-web-media-inlay",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.025,
+        "y": 0.557,
+        "w": 0.055,
+        "h": 0.051
+      },
+      "polygon": [
+        [
+          0.026,
+          0.558
+        ],
+        [
+          0.079,
+          0.557
+        ],
+        [
+          0.08,
+          0.607
+        ],
+        [
+          0.026,
+          0.607
+        ],
+        [
+          0.025,
+          0.582
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "A small square, darker inlay sits on the lower-left paper wall like an embedded tile or room-key surface."
+    },
+    {
+      "label": "Girl-and-ducks painted aperture",
+      "artifact_type": "small-painted-vignette-tear",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.731,
+        "y": 0.318,
+        "w": 0.261,
+        "h": 0.334
+      },
+      "polygon": [
+        [
+          0.848,
+          0.322
+        ],
+        [
+          0.966,
+          0.331
+        ],
+        [
+          0.989,
+          0.415
+        ],
+        [
+          0.951,
+          0.504
+        ],
+        [
+          0.891,
+          0.57
+        ],
+        [
+          0.904,
+          0.637
+        ],
+        [
+          0.817,
+          0.652
+        ],
+        [
+          0.757,
+          0.588
+        ],
+        [
+          0.731,
+          0.49
+        ],
+        [
+          0.752,
+          0.397
+        ]
+      ],
+      "confidence": 0.62,
+      "visual_evidence": "A secondary right-side aperture-like paper field contains delicate linework, small printed marks, and open wall space beside the main mushroom, reading as a separate figurative/window pocket."
+    },
+    {
+      "label": "Milan tram-line underdrawing",
+      "artifact_type": "buried-street-etching",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.059,
+        "y": 0.602,
+        "w": 0.277,
+        "h": 0.344
+      },
+      "polygon": [
+        [
+          0.061,
+          0.604
+        ],
+        [
+          0.158,
+          0.618
+        ],
+        [
+          0.246,
+          0.654
+        ],
+        [
+          0.324,
+          0.728
+        ],
+        [
+          0.336,
+          0.857
+        ],
+        [
+          0.291,
+          0.944
+        ],
+        [
+          0.19,
+          0.919
+        ],
+        [
+          0.104,
+          0.832
+        ],
+        [
+          0.069,
+          0.724
+        ]
+      ],
+      "confidence": 0.73,
+      "visual_evidence": "Faint gridded paper seams, vertical map-like lines, and stained underdrawing traces appear beneath the torn left-lower archive surface."
+    },
+    {
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "curved-varnish-glint",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.363,
+        "y": 0.611,
+        "w": 0.184,
+        "h": 0.135
+      },
+      "polygon": [
+        [
+          0.397,
+          0.619
+        ],
+        [
+          0.457,
+          0.611
+        ],
+        [
+          0.525,
+          0.637
+        ],
+        [
+          0.547,
+          0.696
+        ],
+        [
+          0.51,
+          0.735
+        ],
+        [
+          0.444,
+          0.746
+        ],
+        [
+          0.385,
+          0.721
+        ],
+        [
+          0.364,
+          0.665
+        ]
+      ],
+      "confidence": 0.66,
+      "visual_evidence": "A curved, glossy-looking lifted-paper fold at the lower center catches light along the torn botanical sheet and behaves like a varnished interface surface."
+    },
+    {
+      "label": "Fortune poster gold corner",
+      "artifact_type": "tarnished-poster-corner",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.368,
+        "y": 0.646,
+        "w": 0.18,
+        "h": 0.225
+      },
+      "polygon": [
+        [
+          0.398,
+          0.646
+        ],
+        [
+          0.49,
+          0.672
+        ],
+        [
+          0.548,
+          0.823
+        ],
+        [
+          0.478,
+          0.872
+        ],
+        [
+          0.411,
+          0.789
+        ],
+        [
+          0.369,
+          0.698
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A warm ochre-gold torn poster shard is visible near the lower center-left, partly tucked under white torn paper and dark backing."
+    },
+    {
+      "label": "Art-hotel archive window",
+      "artifact_type": "museum-paper-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.161,
+        "y": 0.13,
+        "w": 0.128,
+        "h": 0.538
+      },
+      "polygon": [
+        [
+          0.198,
+          0.132
+        ],
+        [
+          0.286,
+          0.163
+        ],
+        [
+          0.252,
+          0.236
+        ],
+        [
+          0.238,
+          0.331
+        ],
+        [
+          0.217,
+          0.441
+        ],
+        [
+          0.232,
+          0.548
+        ],
+        [
+          0.286,
+          0.63
+        ],
+        [
+          0.23,
+          0.668
+        ],
+        [
+          0.169,
+          0.571
+        ],
+        [
+          0.163,
+          0.44
+        ],
+        [
+          0.169,
+          0.281
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A tall ragged vertical tear along the left side opens to dark backing and layered paper edges, forming a real archive-window interruption beside the botanical sheet."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.91,
+    "rationale": "The plate is expressionist and tactile rather than minimal: one dominant botanical rupture holds the field, but multiple tears, stains, stamps, grid traces, and edge fragments create a busy archive surface."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-06-29-hotel-mycelium-ledger-v1"
+}
