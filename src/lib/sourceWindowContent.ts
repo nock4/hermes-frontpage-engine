@@ -120,8 +120,11 @@ const getBandcampEmbedUrlFromHtml = (embedHtml: string | undefined) => {
   if (!rawSrc) return null
   try {
     const url = new URL(rawSrc.replace(/&amp;/g, '&'))
-    if (url.hostname !== 'bandcamp.com' || !url.pathname.startsWith('/EmbeddedPlayer/')) return null
-    return url.toString()
+    if (url.hostname !== 'bandcamp.com') return null
+    const idMatch = url.pathname.match(/^\/EmbeddedPlayer\/(album|track)=(\d+)(?:\/|$)/)
+    if (!idMatch) return null
+    const [, kind, id] = idMatch
+    return `https://bandcamp.com/EmbeddedPlayer/${kind}=${id}/size=large/bgcol=333333/linkcol=e32c14/artwork=small/transparent=true/`
   } catch {
     return null
   }

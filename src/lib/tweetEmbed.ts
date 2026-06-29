@@ -1,4 +1,5 @@
 export const TWEET_EMBED_SANDBOX = 'allow-scripts allow-popups allow-same-origin'
+export const PROVIDER_EMBED_SANDBOX = 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation'
 
 function getTweetStatusId(sourceUrl: string) {
   try {
@@ -18,6 +19,8 @@ export function getTweetEmbedUrl(sourceUrl: string) {
   url.searchParams.set('id', statusId)
   url.searchParams.set('dnt', 'true')
   url.searchParams.set('theme', 'dark')
+  url.searchParams.set('conversation', 'none')
+  url.searchParams.set('hide_thread', 'true')
   return url.toString()
 }
 

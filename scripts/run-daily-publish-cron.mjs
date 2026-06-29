@@ -106,6 +106,60 @@ async function exists(targetPath) {
   }
 }
 
+const cronWorktreeSentinel = '.daily-frontpage-cron-worktree'
+
+export function isSafeCronWorktreePath(worktreeDir) {
+  const resolved = path.resolve(worktreeDir)
+  const primary = path.resolve(primaryRoot)
+  const home = process.env.HOME ? path.resolve(process.env.HOME) : null
+  const allowedParent = path.resolve(primaryRoot, '..')
+  if (resolved === path.parse(resolved).root) return false
+  if (resolved === primary || primary.startsWith(`${resolved}${path.sep}`)) return false
+  if (home && resolved === home) return false
+  if (path.dirname(resolved) !== allowedParent) return false
+  return path.basename(resolved) === 'hermes-frontpage-engine-cron'
+}
+
+async function assertSafeCronWorktreePath(worktreeDir) {
+  if (!isSafeCronWorktreePath(worktreeDir)) {
+    throw new Error(`Refusing unsafe cron worktree path: ${path.resolve(worktreeDir)}`)
+  }
+}
+
+function isDefaultCronWorktreePath(worktreeDir) {
+  return path.resolve(worktreeDir) === path.resolve(defaultWorktreeDir)
+}
+
+async function registeredGitWorktreePaths() {
+  const result = await run('git', ['worktree', 'list', '--porcelain'], {
+    cwd: primaryRoot,
+    capture: true,
+    allowFailure: true,
+  })
+  if (result.code !== 0) return new Set()
+  return new Set(parseStatusLines(result.stdout)
+    .filter((line) => line.startsWith('worktree '))
+    .map((line) => path.resolve(line.slice('worktree '.length).trim())))
+}
+
+async function assertExistingDisposableWorktree(worktreeDir) {
+  await assertSafeCronWorktreePath(worktreeDir)
+  const sentinelPath = path.join(worktreeDir, cronWorktreeSentinel)
+  if (await exists(sentinelPath)) return
+  const registered = await registeredGitWorktreePaths()
+  if (isDefaultCronWorktreePath(worktreeDir) && registered.has(path.resolve(worktreeDir))) return
+  throw new Error(`Refusing to remove cron worktree without sentinel: ${sentinelPath}`)
+}
+
+async function removeDisposableWorktreeDir(worktreeDir) {
+  await assertExistingDisposableWorktree(worktreeDir)
+  await fs.rm(worktreeDir, { recursive: true, force: true })
+}
+
+async function markDisposableWorktreeDir(worktreeDir) {
+  await fs.writeFile(path.join(worktreeDir, cronWorktreeSentinel), `${new Date().toISOString()}\n`, 'utf8')
+}
+
 async function ensureNodeModulesLink(worktreeDir) {
   const sourceNodeModules = path.join(primaryRoot, 'node_modules')
   const targetNodeModules = path.join(worktreeDir, 'node_modules')
@@ -124,25 +178,30 @@ export async function resolveInspirationOverridePath(options) {
 }
 
 async function ensureWorktree({ worktreeDir, remote, branch }) {
+  await assertSafeCronWorktreePath(worktreeDir)
   await run('git', ['fetch', remote, branch, '--prune'], { cwd: primaryRoot })
 
+  if (await exists(worktreeDir)) {
+    await assertExistingDisposableWorktree(worktreeDir)
+  }
   const removeResult = await run('git', ['worktree', 'remove', '--force', worktreeDir], {
     cwd: primaryRoot,
     capture: true,
     allowFailure: true,
   })
   if (removeResult.code !== 0 && await exists(worktreeDir)) {
-    await fs.rm(worktreeDir, { recursive: true, force: true })
+    await removeDisposableWorktreeDir(worktreeDir)
   }
   if (await exists(worktreeDir)) {
-    await fs.rm(worktreeDir, { recursive: true, force: true })
+    await removeDisposableWorktreeDir(worktreeDir)
   }
 
   await run('git', ['worktree', 'add', '--force', '--detach', worktreeDir, `${remote}/${branch}`], { cwd: primaryRoot })
+  await markDisposableWorktreeDir(worktreeDir)
   await ensureNodeModulesLink(worktreeDir)
   await run('git', ['fetch', remote, branch, '--prune'], { cwd: worktreeDir })
   await run('git', ['reset', '--hard', `${remote}/${branch}`], { cwd: worktreeDir })
-  await run('git', ['clean', '-fdx', '-e', 'node_modules'], { cwd: worktreeDir })
+  await run('git', ['clean', '-fdx', '-e', 'node_modules', '-e', cronWorktreeSentinel], { cwd: worktreeDir })
 }
 
 async function readJson(filePath) {
@@ -242,7 +301,7 @@ async function cleanupPreviewSmokeServer(port = previewSmokePort) {
 
 function allowedStatusPath(line) {
   const candidate = line.slice(3).trim()
-  return candidate === 'public/editions' || candidate.startsWith('public/editions/')
+  return candidate === cronWorktreeSentinel || candidate === 'public/editions' || candidate.startsWith('public/editions/')
 }
 
 async function commitPublishedArtifacts(worktreeDir, editionId, branch) {

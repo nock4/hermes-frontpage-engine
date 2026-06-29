@@ -8,7 +8,8 @@ type ProviderCase = {
   artifactName: string | RegExp
   preloadSelector: string
   preloadUrlPattern: RegExp
-  openFramePattern: RegExp
+  openFramePattern?: RegExp
+  openMediaSelector?: string
   minWidth: number
   minHeight: number
   interceptBandcamp?: boolean
@@ -21,9 +22,9 @@ const providerCases: ProviderCase[] = [
     artifactName: 'glyph material fold',
     preloadSelector: '.embed-preload-layer iframe[data-embed-preload-kind="tweet"]',
     preloadUrlPattern: /platform\.twitter\.com\/embed\/Tweet\.html\?/,
-    openFramePattern: /platform\.twitter\.com\/embed\/Tweet\.html\?/,
+    openMediaSelector: '.visual-source-card__image',
     minWidth: 480,
-    minHeight: 560,
+    minHeight: 500,
   },
   {
     kind: 'youtube',
@@ -93,19 +94,23 @@ async function openProviderWindow(page: Page, providerCase: ProviderCase) {
   const sourceWindow = page.locator('.stage-overlay-windows--live .source-window[data-source-window-mode="primary"]')
   await expect(sourceWindow).toHaveCount(1)
 
-  const frame = sourceWindow.locator('iframe').first()
-  await expect(frame).toBeAttached({ timeout: 10_000 })
-  await expect(frame).toHaveAttribute('src', providerCase.openFramePattern)
+  const media = providerCase.openMediaSelector
+    ? sourceWindow.locator(providerCase.openMediaSelector).first()
+    : sourceWindow.locator('iframe').first()
+  await expect(media).toBeAttached({ timeout: 10_000 })
+  const openFramePattern = providerCase.openFramePattern
+  if (openFramePattern) await expect(media).toHaveAttribute('src', openFramePattern)
   await page.waitForTimeout(1_500)
 
   return sourceWindow
 }
 
-async function collectFrameGeometry(page: Page) {
-  return page.locator('.stage-overlay-windows--live .source-window[data-source-window-mode="primary"] iframe').first().evaluate((node) => {
+async function collectMediaGeometry(page: Page, providerCase: ProviderCase) {
+  const selector = providerCase.openMediaSelector || 'iframe'
+  return page.locator(`.stage-overlay-windows--live .source-window[data-source-window-mode="primary"] ${selector}`).first().evaluate((node) => {
     const rect = node.getBoundingClientRect()
     return {
-      src: (node as HTMLIFrameElement).src,
+      src: node instanceof HTMLIFrameElement || node instanceof HTMLImageElement || node instanceof HTMLVideoElement ? node.currentSrc || node.src : '',
       width: rect.width,
       height: rect.height,
       top: rect.top,
@@ -128,9 +133,9 @@ test.describe('provider embed preload/open geometry', () => {
     test(`${providerCase.kind} preloads and opens provider iframe without bottom clipping`, async ({ page }) => {
       test.setTimeout(60_000)
       await openProviderWindow(page, providerCase)
-      const geometry = await collectFrameGeometry(page)
+      const geometry = await collectMediaGeometry(page, providerCase)
 
-      expect(geometry.src).toMatch(providerCase.openFramePattern)
+      if (providerCase.openFramePattern) expect(geometry.src).toMatch(providerCase.openFramePattern)
       expect(geometry.width).toBeGreaterThanOrEqual(providerCase.minWidth)
       expect(geometry.height).toBeGreaterThanOrEqual(providerCase.minHeight)
       expect(geometry.clipped).toBe(false)

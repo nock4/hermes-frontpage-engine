@@ -161,6 +161,36 @@ describe('getSourceWindowDescriptor', () => {
     expect(descriptor.accentTone).toBe('audio')
   })
 
+  it('rejects Bandcamp iframe paths that are not numeric album or track players', () => {
+    const descriptor = getSourceWindowDescriptor(
+      makeBinding({
+        source_type: 'audio',
+        source_url: 'https://noproblematapes.bandcamp.com/track/example-track',
+        window_type: 'audio',
+        playback_persistence: true,
+        source_embed_html: '<iframe src="https://bandcamp.com/EmbeddedPlayer/evil/path/transparent=true/"></iframe>',
+      }),
+    )
+
+    expect(descriptor.kind).not.toBe('bandcamp-embed')
+  })
+
+  it('rebuilds stored Bandcamp iframe urls from validated numeric ids', () => {
+    const descriptor = getSourceWindowDescriptor(
+      makeBinding({
+        source_type: 'audio',
+        source_url: 'https://noproblematapes.bandcamp.com/track/example-track',
+        window_type: 'audio',
+        playback_persistence: true,
+        source_embed_html: '<iframe src="https://bandcamp.com/EmbeddedPlayer/track=123456/size=large/bgcol=ffffff/linkcol=javascript:alert(1)/artwork=small/transparent=true/?extra=<script>"></iframe>',
+      }),
+    )
+
+    expect(descriptor.kind).toBe('bandcamp-embed')
+    if (descriptor.kind !== 'bandcamp-embed') throw new Error('expected bandcamp embed descriptor')
+    expect(descriptor.embedUrl).toBe('https://bandcamp.com/EmbeddedPlayer/track=123456/size=large/bgcol=333333/linkcol=e32c14/artwork=small/transparent=true/')
+  })
+
   it('uses a provider-aware bandcamp card for resolved track sources when no direct embed path exists', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({

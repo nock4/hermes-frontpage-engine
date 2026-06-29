@@ -42,6 +42,7 @@ const SOURCE_BINDING_HOVER_BEHAVIORS = ['preview'] as const satisfies readonly S
 const SOURCE_BINDING_CLICK_BEHAVIORS = ['pin-open'] as const satisfies readonly SourceBindingClickBehavior[]
 const SOURCE_BINDING_FALLBACK_TYPES = ['rich-preview'] as const satisfies readonly SourceBindingFallbackType[]
 const SOURCE_BINDING_EMBED_STATUSES = ['processing', 'unavailable'] as const satisfies readonly SourceBindingEmbedStatus[]
+const SOURCE_BINDING_MEDIA_TYPES = ['image', 'video'] as const
 const EXPANSION_LABELS = ['left', 'right', 'up', 'down'] as const satisfies readonly NonNullable<ArtifactGeometryRecord['preferred_expansion_label']>[]
 const SCENE_ONTOLOGY_CLASSES = ['object-native', 'field-native', 'material-native', 'optical-native', 'ritual-native'] as const satisfies readonly SceneOntologyClass[]
 const SURFACE_TYPES = ['paper', 'glass', 'water', 'fog', 'rock', 'metal', 'screen', 'paint', 'varnish', 'wood', 'soil', 'light-band', 'reflection', 'sky', 'fabric', 'unknown'] as const satisfies readonly SurfaceType[]
@@ -306,6 +307,8 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
   const sanitizedSourceUrl = sanitizeSourceUrl(sourceUrl)
   const sourceImageUrl = optionalString(binding.source_image_url, `${path}.source_image_url`)
   const sanitizedSourceImageUrl = sanitizeSourceImageUrl(sourceImageUrl)
+  const sourceMediaUrl = optionalString(binding.source_media_url, `${path}.source_media_url`)
+  const sanitizedSourceMediaUrl = sanitizeSourceImageUrl(sourceMediaUrl)
   const title = requireString(binding.title, `${path}.title`)
   const rawExcerpt = requireString(binding.excerpt, `${path}.excerpt`)
   const rawSourceSummary = optionalString(binding.source_summary, `${path}.source_summary`)
@@ -316,6 +319,10 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
 
   if (sourceImageUrl && !sanitizedSourceImageUrl) {
     throw new Error(`Expected ${path}.source_image_url to be a public http(s) or same-origin URL`)
+  }
+
+  if (sourceMediaUrl && !sanitizedSourceMediaUrl) {
+    throw new Error(`Expected ${path}.source_media_url to be a public http(s) or same-origin URL`)
   }
 
   return {
@@ -339,6 +346,8 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
     source_embed_html: optionalString(binding.source_embed_html, `${path}.source_embed_html`),
     source_image_url: sanitizedSourceImageUrl ?? undefined,
     source_image_alt: optionalString(binding.source_image_alt, `${path}.source_image_alt`),
+    source_media_url: sanitizedSourceMediaUrl ?? undefined,
+    source_media_type: optionalLiteral(binding.source_media_type, SOURCE_BINDING_MEDIA_TYPES, `${path}.source_media_type`),
     source_visual: parseSourceVisualRecord(binding.source_visual, `${path}.source_visual`),
   }
 }

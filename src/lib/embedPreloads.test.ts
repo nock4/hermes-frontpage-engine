@@ -139,6 +139,8 @@ describe('collectEmbedPreloads', () => {
     expect(embeds[0]?.kind).toBe('tweet')
     expect(embeds[0]?.src).toContain('https://platform.twitter.com/embed/Tweet.html')
     expect(embeds[0]?.src).toContain('id=2044479509874020852')
+    expect(embeds[0]?.src).toContain('conversation=none')
+    expect(embeds[0]?.src).toContain('hide_thread=true')
     expect(embeds[0]?.src).not.toContain('onerror=alert(1)')
     expect(embeds[0]?.src).not.toContain('<script>alert(1)</script>')
   })

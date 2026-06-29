@@ -2,7 +2,7 @@ import type { SyntheticEvent } from 'react'
 
 import { getRichPreviewModel } from '../../lib/richPreviewModel'
 import { getYouTubeThumbnailUrl } from '../../lib/sourceWindowContent'
-import { getTweetEmbedSrcDoc, getTweetEmbedUrl, TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
+import { getTweetEmbedSrcDoc, getTweetEmbedUrl, PROVIDER_EMBED_SANDBOX, TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
 import type { ArtifactRecord, SourceBindingRecord } from '../../types/runtime'
 import type { SourceWindowDescriptor } from '../../types/sourceWindows'
 import {
@@ -143,7 +143,17 @@ function getSourceVisualImageUrl(binding: SourceBindingRecord, fallbackUrl: stri
   return binding.source_visual?.poster_asset_path || fallbackUrl
 }
 
+function getSourceMediaUrl(binding: SourceBindingRecord, fallbackUrl: string | null) {
+  if (binding.source_media_type === 'video') return binding.source_media_url || fallbackUrl
+  return getSourceVisualImageUrl(binding, binding.source_media_url || fallbackUrl)
+}
+
+function getSourceMediaType(binding: SourceBindingRecord) {
+  return binding.source_media_type === 'video' ? 'video' : 'image'
+}
+
 function getSourceVisualMode(binding: SourceBindingRecord, fallbackUrl: string | null) {
+  if (binding.source_media_url) return 'poster-crop'
   if (shouldBypassPosterCrop(binding, fallbackUrl)) return 'raw'
   return binding.source_visual?.render_mode || 'raw'
 }
@@ -156,43 +166,49 @@ function getSourceVisualStyle(binding: SourceBindingRecord) {
   return { objectPosition: `${x}% ${y}%` }
 }
 
-function getSourceGlyph(binding: SourceBindingRecord) {
-  const kind = `${binding.source_type || ''} ${binding.window_type || ''} ${binding.source_domain || ''}`.toLowerCase()
-  if (kind.includes('youtube') || kind.includes('video')) return '▶'
-  if (kind.includes('twitter') || kind.includes('x.com') || kind.includes('tweet')) return '✦'
-  if (kind.includes('image') || kind.includes('visual')) return '◐'
-  if (kind.includes('audio') || kind.includes('music')) return '◍'
-  return '↗'
-}
-
 function SourceImageTitleCard({
   binding,
   imageUrl,
+  mediaType = 'image',
   title,
   href,
 }: {
   binding: SourceBindingRecord
   imageUrl: string | null
+  mediaType?: 'image' | 'video'
   title: string
   href?: string | null
 }) {
-  const sourceLabel = getSourceHostLabel(binding.source_url) || binding.kicker || binding.source_domain || 'source'
-  const visualImageUrl = getSourceVisualImageUrl(binding, imageUrl)
+  const visualImageUrl = getSourceMediaUrl(binding, imageUrl)
   const visualStyle = getSourceVisualStyle(binding)
   const visualMode = getSourceVisualMode(binding, imageUrl)
-  const sourceGlyph = getSourceGlyph(binding)
-  const edgeTitle = truncateLabel(title, 72) || title
+  const resolvedMediaType = visualImageUrl && mediaType === 'video' ? 'video' : 'image'
+  const fallbackLabel = [title, binding.source_domain || getSourceHostLabel(binding.source_url) || binding.kicker]
+    .filter(Boolean)
+    .join(' · ')
+  const edgeTitle = truncateLabel(visualImageUrl ? title : fallbackLabel, 92) || title
   const cardBody = (
     <>
       {visualImageUrl ? (
-        <figure className="visual-source-card__figure" data-source-visual-mode={visualMode}>
-          <img alt={binding.source_image_alt ?? title} className="visual-source-card__image" onError={handleSourceImageError} onLoad={handleSourceImageLoad} src={visualImageUrl} style={visualStyle} />
+        <figure className="visual-source-card__figure" data-source-visual-mode={visualMode} data-source-media-type={resolvedMediaType}>
+          {resolvedMediaType === 'video' ? (
+            <video
+              className="visual-source-card__image visual-source-card__video"
+              controls
+              loop
+              muted
+              playsInline
+              poster={binding.source_image_url}
+              preload="metadata"
+              src={visualImageUrl}
+            />
+          ) : (
+            <img alt={binding.source_image_alt ?? title} className="visual-source-card__image" onError={handleSourceImageError} onLoad={handleSourceImageLoad} src={visualImageUrl} style={visualStyle} />
+          )}
         </figure>
       ) : null}
       <div className="visual-source-card__caption">
-        <span className="visual-source-card__source"><span className="visual-source-card__glyph" aria-hidden="true">{sourceGlyph}</span>{sourceLabel}</span>
         <strong className="visual-source-card__title">{edgeTitle}</strong>
-        <span className="visual-source-card__cta">open ↗</span>
       </div>
     </>
   )
@@ -246,6 +262,8 @@ export function SourceWindowBody({
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+          sandbox={PROVIDER_EMBED_SANDBOX}
           src={descriptor.embedUrl}
           title={binding.title}
         />
@@ -287,11 +305,31 @@ export function SourceWindowBody({
         <iframe
           allow="autoplay"
           loading="eager"
+          referrerPolicy="strict-origin-when-cross-origin"
+          sandbox={PROVIDER_EMBED_SANDBOX}
           src={descriptor.embedUrl}
           title={binding.title}
         />
         <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a>
       </div>
+    )
+  }
+
+  const visualCardImage = getUsableSourceImageUrl(binding)
+  const visualCardMediaUrl = binding.source_media_url || visualCardImage
+  const visualCardTitle = binding.source_title || binding.title
+  const visualCardHref = 'sourceUrl' in descriptor ? descriptor.sourceUrl : binding.source_url
+  const shouldUseVisualCard = Boolean(visualCardMediaUrl) || surface === 'stage'
+
+  if (visualCardMediaUrl && descriptor.kind !== 'audio-dock' && descriptor.kind !== 'bandcamp-card') {
+    return (
+      <SourceImageTitleCard
+        binding={binding}
+        href={visualCardHref}
+        imageUrl={visualCardImage}
+        mediaType={getSourceMediaType(binding)}
+        title={visualCardTitle}
+      />
     )
   }
 
@@ -310,11 +348,6 @@ export function SourceWindowBody({
       </div>
     )
   }
-
-  const visualCardImage = getUsableSourceImageUrl(binding)
-  const visualCardTitle = binding.source_title || binding.title
-  const visualCardHref = 'sourceUrl' in descriptor ? descriptor.sourceUrl : binding.source_url
-  const shouldUseVisualCard = Boolean(visualCardImage) || surface === 'stage'
 
   if (descriptor.kind === 'rich-preview' && usesMechanicalRevealEnhancement) {
     const richPreview = richPreviewModel ?? getRichPreviewModel(binding, descriptor)
@@ -470,6 +503,7 @@ export function SourceWindowBody({
         binding={binding}
         href={visualCardHref}
         imageUrl={visualCardImage}
+        mediaType={getSourceMediaType(binding)}
         title={visualCardTitle}
       />
     )

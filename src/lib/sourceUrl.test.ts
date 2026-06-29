@@ -20,6 +20,18 @@ describe('sanitizeSourceUrl', () => {
     expect(sanitizeSourceUrl('http://192.168.1.10/test')).toBeNull()
     expect(sanitizeSourceUrl('http://devbox.local/test')).toBeNull()
     expect(sanitizeSourceUrl('http://metadata.google.internal/test')).toBeNull()
+    expect(sanitizeSourceUrl('http://localhost./test')).toBeNull()
+    expect(sanitizeSourceUrl('http://devbox.local./test')).toBeNull()
+    expect(sanitizeSourceUrl('http://metadata.google.internal./test')).toBeNull()
+  })
+
+  it('rejects mapped and special-use IP literal forms', () => {
+    expect(sanitizeSourceUrl('http://[::ffff:127.0.0.1]/test')).toBeNull()
+    expect(sanitizeSourceUrl('http://[::ffff:c0a8:010a]/test')).toBeNull()
+    expect(sanitizeSourceUrl('http://[fc00::1]/test')).toBeNull()
+    expect(sanitizeSourceUrl('http://100.64.0.1/test')).toBeNull()
+    expect(sanitizeSourceUrl('http://198.18.0.1/test')).toBeNull()
+    expect(sanitizeSourceUrl('https://[2606:2800:220:1:248:1893:25c8:1946]/story')).not.toBeNull()
   })
 })
 

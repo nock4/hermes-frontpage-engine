@@ -243,16 +243,49 @@ function fxtwitterApiUrl(sourceUrl) {
   }
 }
 
-function firstTweetMediaImage(tweet) {
+function bestTweetMedia(tweet) {
   const media = [
-    ...(tweet?.media?.photos || []),
+    ...(tweet?.media?.videos || []),
     ...(tweet?.media?.all || []),
+    ...(tweet?.media?.photos || []),
   ]
+
   for (const item of media) {
-    if (item?.type === 'photo' && item.url) return item.url
-    if ((item?.type === 'video' || item?.type === 'gif') && item.thumbnail_url) return item.thumbnail_url
+    if (item?.type !== 'video' && item?.type !== 'gif') continue
+    const variants = [
+      ...(item?.variants || []),
+      ...(item?.video_info?.variants || []),
+    ].filter((variant) => typeof variant?.url === 'string' && variant.url.includes('.mp4'))
+    const bestVariant = variants
+      .map((variant) => ({ ...variant, bitrate: Number(variant.bitrate || 0) }))
+      .sort((a, b) => b.bitrate - a.bitrate)[0]
+    if (bestVariant?.url) {
+      return {
+        media_url: bestVariant.url,
+        media_type: 'video',
+        image_url: item.thumbnail_url || item.url || null,
+      }
+    }
+    if (item.thumbnail_url) {
+      return {
+        media_url: item.thumbnail_url,
+        media_type: 'image',
+        image_url: item.thumbnail_url,
+      }
+    }
   }
-  return null
+
+  for (const item of media) {
+    if (item?.type === 'photo' && item.url) {
+      return {
+        media_url: item.url,
+        media_type: 'image',
+        image_url: item.url,
+      }
+    }
+  }
+
+  return { media_url: null, media_type: null, image_url: null }
 }
 
 async function inspectTweetWithFxtwitter(candidate, classification) {
@@ -277,7 +310,7 @@ async function inspectTweetWithFxtwitter(candidate, classification) {
     const title = text
       ? `${author ? `${author}: ` : ''}${text.replace(/\s+/g, ' ').slice(0, 140)}`
       : candidate.note_title
-    const imageUrl = firstTweetMediaImage(tweet)
+    const media = bestTweetMedia(tweet)
     return normalizeInspectedSourceMedia({
       ...candidate,
       ...classification,
@@ -285,7 +318,9 @@ async function inspectTweetWithFxtwitter(candidate, classification) {
       final_url: tweet.url || candidate.url,
       title,
       description: text || candidate.note_title || '',
-      image_url: imageUrl,
+      image_url: media.image_url,
+      media_url: media.media_url,
+      media_type: media.media_type,
       fetch_status: 'fxtwitter-fetch-ok',
       tweet_media_count: tweet.media?.all?.length || tweet.media?.photos?.length || 0,
     })

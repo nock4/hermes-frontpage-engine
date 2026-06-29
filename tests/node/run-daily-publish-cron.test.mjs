@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { allocateCronUxPort, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
+import { allocateCronUxPort, isSafeCronWorktreePath, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
 
 describe('daily publish cron wrapper', () => {
   it('parses an explicit inspiration override option', () => {
@@ -47,5 +47,19 @@ describe('daily publish cron wrapper', () => {
       if (originalPort === undefined) delete process.env.DFE_UX_PORT
       else process.env.DFE_UX_PORT = originalPort
     }
+  })
+
+  it('accepts only the dedicated sibling cron worktree shape', () => {
+    const repoRoot = process.cwd()
+    const parent = path.resolve(repoRoot, '..')
+
+    expect(isSafeCronWorktreePath(path.join(parent, 'hermes-frontpage-engine-cron'))).toBe(true)
+    expect(isSafeCronWorktreePath(repoRoot)).toBe(false)
+    expect(isSafeCronWorktreePath(os.homedir())).toBe(false)
+    expect(isSafeCronWorktreePath(path.parse(repoRoot).root)).toBe(false)
+    expect(isSafeCronWorktreePath(path.join(parent, 'frontpage-scratch'))).toBe(false)
+    expect(isSafeCronWorktreePath(path.join(parent, 'my-frontpage-cron-backup'))).toBe(false)
+    expect(isSafeCronWorktreePath(path.join(parent, 'foo', 'hermes-frontpage-engine-cron'))).toBe(false)
+    expect(isSafeCronWorktreePath(path.resolve(parent, '..', 'hermes-frontpage-engine-cron'))).toBe(false)
   })
 })

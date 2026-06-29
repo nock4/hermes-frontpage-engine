@@ -166,6 +166,15 @@ function getSourceImageForBinding(source, researchField, signalHarvest = null) {
   return getDirectSourceImageUrl(relatedMedia)
 }
 
+function getSourceMediaForBinding(source, sourceImageUrl) {
+  if (!source?.media_url || !source?.media_type) return { mediaUrl: sourceImageUrl, mediaType: sourceImageUrl ? 'image' : null }
+  if (source.media_type !== 'video' && source.media_type !== 'image') return { mediaUrl: sourceImageUrl, mediaType: sourceImageUrl ? 'image' : null }
+  return {
+    mediaUrl: source.media_url,
+    mediaType: source.media_type,
+  }
+}
+
 function chooseAboutTypography(payload) {
   const text = [
     payload.edition_title,
@@ -391,6 +400,7 @@ export async function assembleEditionPackage({
     const source = sourceByUrl.get(url)
     const classification = classifySource(url)
     const sourceImageUrl = getSourceImageForBinding(source, researchField, signalHarvest)
+    const sourceMedia = getSourceMediaForBinding(source, sourceImageUrl)
     const displayTitle = getDistinctSourceDisplayTitle(source, eligibleArtifacts[index]?.label || artifact.label, usedBindingTitles)
     const embedStatus = classification.source_type === 'youtube' ? await youtubeEmbedStatus(url) : null
     return {
@@ -413,6 +423,8 @@ export async function assembleEditionPackage({
       source_embed_html: source?.source_embed_html || undefined,
       source_image_url: sourceImageUrl || undefined,
       source_image_alt: sourceImageUrl ? `${getSourceDisplayTitle(source, artifact.label)} preview image` : undefined,
+      source_media_url: sourceMedia.mediaUrl || undefined,
+      source_media_type: sourceMedia.mediaType || undefined,
       ...(embedStatus === 'unavailable' ? { embed_status: 'unavailable' } : {}),
     }
   }))

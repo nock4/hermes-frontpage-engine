@@ -1,5 +1,5 @@
 import type { EmbedPreload } from '../../lib/embedPreloads'
-import { TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
+import { PROVIDER_EMBED_SANDBOX, TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
 
 export function EmbedPreloadLayer({
   embeds,
@@ -40,6 +40,8 @@ export function EmbedPreloadLayer({
             className="embed-preload-frame"
             data-embed-preload-kind={embed.kind}
             loading="eager"
+            referrerPolicy="strict-origin-when-cross-origin"
+            sandbox={PROVIDER_EMBED_SANDBOX}
             src={embed.src}
             tabIndex={-1}
             title={`Preload ${embed.title}`}

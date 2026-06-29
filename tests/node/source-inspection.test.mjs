@@ -2,6 +2,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import {
   classifyYouTubeEmbedFrameText,
+  inspectCandidateSource,
   inspectWithFetch,
   youtubeEmbedStatus,
 } from '../../scripts/lib/source-inspection.mjs'
@@ -99,6 +100,52 @@ describe('source inspection', () => {
 
     expect(source.source_embed_html).toContain('https://bandcamp.com/EmbeddedPlayer/album=1257689164/')
     expect(source.source_embed_html).toContain('artwork=small')
+  })
+
+  it('extracts tweet video media plus thumbnail through fxtwitter', async () => {
+    vi.stubGlobal('fetch', vi.fn(async (url) => {
+      const href = String(url)
+      if (href.includes('api.fxtwitter.com')) {
+        return {
+          ok: true,
+          json: async () => ({
+            tweet: {
+              url: 'https://x.com/maker/status/12345',
+              text: 'a moving source surface',
+              author: { screen_name: 'maker' },
+              media: {
+                all: [{
+                  type: 'video',
+                  thumbnail_url: 'https://pbs.twimg.com/media/tweet-thumb.jpg',
+                  variants: [
+                    { url: 'https://video.twimg.com/ext_tw_video/low.mp4', bitrate: 256000 },
+                    { url: 'https://video.twimg.com/ext_tw_video/high.mp4', bitrate: 2176000 },
+                  ],
+                }],
+              },
+            },
+          }),
+        }
+      }
+
+      return {
+        ok: true,
+        headers: new Headers({ 'content-type': 'image/jpeg' }),
+      }
+    }))
+
+    const source = await inspectCandidateSource(
+      { url: 'https://x.com/maker/status/12345', note_title: 'Tweet with video' },
+      { sourceTool: 'fetch', browserHarness: null },
+    )
+
+    expect(source).toMatchObject({
+      source_type: 'tweet',
+      media_type: 'video',
+      media_url: 'https://video.twimg.com/ext_tw_video/high.mp4',
+      image_url: 'https://pbs.twimg.com/media/tweet-thumb.jpg',
+      fetch_status: 'fxtwitter-fetch-ok',
+    })
   })
 
   it('returns a structured fetch error record instead of throwing', async () => {

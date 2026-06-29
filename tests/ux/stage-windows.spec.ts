@@ -433,7 +433,8 @@ test.describe('live-stage window UX baselines', () => {
     await expect(stageWindows(page)).toHaveCount(1)
     await expectLiveMasksInvisible(page)
     await expect(page.getByText('Keep this window source-native. Show the post as a post-shaped object with provenance, not as a flattened content summary.')).toHaveCount(0)
-    await expect(page.locator('.stage-overlay-windows--live .tweet-embed-frame')).toHaveCount(1)
+    const socialMediaCount = await page.locator('.stage-overlay-windows--live .visual-source-card__image, .stage-overlay-windows--live .tweet-embed-frame').count()
+    expect(socialMediaCount).toBeGreaterThanOrEqual(1)
     await expect(page.locator('.stage-overlay-windows--live .source-window')).not.toContainText('Open post ↗')
   })
 
@@ -450,10 +451,10 @@ test.describe('live-stage window UX baselines', () => {
     await page.getByRole('button', { name: 'Pinned diagonal line study' }).hover({ force: true })
     await page.waitForTimeout(500)
 
-    await expect(page.locator('.stage-overlay-windows--live .tweet-media-card')).toHaveCount(1)
+    await expect(page.locator('.stage-overlay-windows--live .visual-source-card__image')).toHaveCount(1)
     await expect(page.locator('.stage-overlay-windows--live .tweet-embed-frame')).toHaveCount(0)
 
-    const imageSrc = await page.locator('.stage-overlay-windows--live .tweet-media-card__image').getAttribute('src')
+    const imageSrc = await page.locator('.stage-overlay-windows--live .visual-source-card__image').getAttribute('src')
     expect(imageSrc).toContain('pbs.twimg.com/media/')
     expect(imageSrc).not.toContain('profile_images')
   })

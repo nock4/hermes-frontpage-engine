@@ -40,7 +40,28 @@ describe('source-image-network-policy', () => {
     const lookup = vi.fn()
 
     await expect(resolveFetchableHtmlUrl('http://localhost:3000/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://localhost./', { lookup })).resolves.toBeNull()
     await expect(resolveFetchableHtmlUrl('http://169.254.169.254/latest/meta-data/', { lookup })).resolves.toBeNull()
     await expect(resolveFetchableImageUrl('http://devbox.local/private.jpg', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableImageUrl('http://devbox.local./private.jpg', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableImageUrl('http://metadata.google.internal./private.jpg', { lookup })).resolves.toBeNull()
+  })
+
+  it('rejects IPv6-mapped and special-use IP literals', async () => {
+    const lookup = vi.fn()
+
+    await expect(resolveFetchableHtmlUrl('http://[::ffff:127.0.0.1]/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://[::ffff:c0a8:010a]/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://[fc00::1]/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://100.64.0.1/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://198.18.0.1/', { lookup })).resolves.toBeNull()
+    expect(lookup).not.toHaveBeenCalled()
+  })
+
+  it('rejects DNS results that are IPv6-mapped private addresses', async () => {
+    const lookup = vi.fn(async () => [{ address: '::ffff:127.0.0.1', family: 6 }])
+
+    await expect(resolveFetchableHtmlUrl('https://attacker.example/story', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableImageUrl('https://images.attacker.example/private.jpg', { lookup })).resolves.toBeNull()
   })
 })

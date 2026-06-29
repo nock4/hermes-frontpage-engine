@@ -3460,6 +3460,12 @@
 
 .source-window__body--tweet-embed {
   gap: 0;
+  overflow: visible;
+}
+
+.source-window--stage.source-window--tweet-embed-native:not(.source-window--preview) {
+  top: clamp(0.75rem, 8dvh, 4rem) !important;
+  max-height: calc(100dvh - 1.5rem) !important;
 }
 
 .source-window__body--tweet-media {
@@ -3665,14 +3671,23 @@
   height: 100%;
   max-height: min(52vh, 20rem);
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+.visual-source-card__video {
+  background: #050505;
 }
 
 .source-window--stage.source-window--poster-window .visual-source-card__image,
 .source-window--stage.source-window--bleed-embed .visual-source-card__image {
   max-height: none;
-  object-fit: contain;
+  object-fit: cover;
   filter: saturate(1.18) contrast(1.04) brightness(1.02);
+}
+
+.source-window--stage .visual-source-card[data-source-visual-mode='raw'] .visual-source-card__image,
+.source-window--stage .visual-source-card[data-source-visual-mode='contain'] .visual-source-card__image {
+  object-fit: contain;
 }
 
 .visual-source-card__caption {
@@ -3764,11 +3779,18 @@
 
 .source-window--stage.source-window--poster-window .visual-source-card__title,
 .source-window--stage.source-window--bleed-embed .visual-source-card__title {
+  position: absolute;
+  right: 0.72rem;
+  bottom: 0.66rem;
   display: -webkit-box;
   overflow: hidden;
-  max-width: min(58%, 16rem);
-  font-size: clamp(0.58rem, 0.52rem + 0.22vw, 0.82rem);
-  font-weight: 560;
+  max-width: min(72%, 22rem);
+  padding: 0.34rem 0.46rem;
+  border-radius: 0.56rem;
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
+  font-size: clamp(0.68rem, 0.58rem + 0.28vw, 0.92rem);
+  font-weight: 620;
   line-height: 1.08;
   letter-spacing: -0.012em;
   -webkit-box-orient: vertical;
@@ -3816,8 +3838,8 @@
 
 .tweet-embed-frame {
   width: min(100%, 34rem);
-  height: min(72dvh, 620px);
-  min-height: min(420px, calc(100dvh - 4.5rem));
+  height: min(84dvh, 760px);
+  min-height: min(560px, calc(100dvh - 2rem));
   border: 0;
   border-radius: 16px;
   background: transparent !important;
