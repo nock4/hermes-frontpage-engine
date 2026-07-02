@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-07-02-waterline-pose-observatory-v1",
+  "edition_id": "2026-07-02-waterline-pose-observatory-v1",
+  "plate_read_timestamp": "2026-07-02T14:22:18.859Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A water-scarred contact sheet plate: three upper crop cells, one large central carry-and-reach aperture, and four lower crop cells, all held by dirty paper gutters, pinholes, red edge tags, black fabric tears, aqua water planes, and small glints.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "studio bodies dragging the web through a cool optical tank",
+      "A water-scarred contact sheet plate: three upper crop cells, one large central carry-and-reach aperture, and four lower crop cells, all held by dirty paper gutters, pinholes, red edge tags, black fabric tears, aqua water planes, and small glints.",
+      "pose-chain",
+      "waterline-cuts",
+      "contact-sheet"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero diagonal carry aperture",
+      "hero submerged waterline cut",
+      "character-sheet crop cell",
+      "retro-internet thumbnail cluster",
+      "aurient leaning block",
+      "feather inbox pale tile",
+      "black fabric tear red underlayer",
+      "typelit ink ribbon"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "water",
+      "paint"
+    ],
+    "dominant_structures": [
+      "pose-reference-waterline-observatory",
+      "one diagonal carry-and-reach procession spanning the plate",
+      "submerged lower band bending source marks below a waterline",
+      "reference-sheet compartments cut into limb-like slabs",
+      "low bench-compression block where two forms lean across a gap",
+      "tiny square glints and mask-like interruptions at joints and edges",
+      "large central diagonal body-and-water aperture",
+      "upper-left aqua fabric crop"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: pose-reference-waterline-observatory.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-diagonal-carry-aperture",
+      "kind": "hero",
+      "type": "hero-scale-pose-slab",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.015,
+        "y": 0.187,
+        "w": 0.954,
+        "h": 0.497
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-submerged-waterline-cut",
+      "kind": "hero",
+      "type": "hero-scale-waterline-seam",
+      "strength": 0.9869359999999999,
+      "bounds": {
+        "x": 0.016,
+        "y": 0.397,
+        "w": 0.95,
+        "h": 0.285
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-character-sheet-crop-cell",
+      "kind": "module",
+      "type": "reference-sheet-aperture",
+      "strength": 0.8051999999999999,
+      "bounds": {
+        "x": 0.323,
+        "y": 0.015,
+        "w": 0.296,
+        "h": 0.167
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-retro-internet-thumbnail-cluster",
+      "kind": "module",
+      "type": "stacked-media-glint",
+      "strength": 0.771768,
+      "bounds": {
+        "x": 0.0225,
+        "y": 0.002,
+        "w": 0.292,
+        "h": 0.1888
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-aurient-leaning-block",
+      "kind": "module",
+      "type": "low-horizontal-video-block",
+      "strength": 0.7284240000000001,
+      "bounds": {
+        "x": 0.198,
+        "y": 0.599,
+        "w": 0.614,
+        "h": 0.072
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-feather-inbox-pale-tile",
+      "kind": "module",
+      "type": "soft-tool-surface-tile",
+      "strength": 0.70806,
+      "bounds": {
+        "x": 0.699,
+        "y": 0.688,
+        "w": 0.249,
+        "h": 0.125
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-fabric-tear-red-underlayer",
+      "kind": "module",
+      "type": "torn-aperture-scar",
+      "strength": 0.678324,
+      "bounds": {
+        "x": 0.469,
+        "y": 0.893,
+        "w": 0.107,
+        "h": 0.059
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-typelit-ink-ribbon",
+      "kind": "module",
+      "type": "typed-paper-ribbon",
+      "strength": 0.652504,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-feather-inbox-pale-tile-2",
+      "kind": "module",
+      "type": "soft-tool-surface-tile",
+      "strength": 0.660088,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-diagonal-carry-aperture-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.015,
+        "y": 0.187,
+        "w": 0.954,
+        "h": 0.497
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-submerged-waterline-cut-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.016,
+        "y": 0.397,
+        "w": 0.95,
+        "h": 0.285
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-character-sheet-crop-cell-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.323,
+        "y": 0.015,
+        "w": 0.296,
+        "h": 0.167
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-retro-internet-thumbnail-cluster-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0225,
+        "y": 0.002,
+        "w": 0.292,
+        "h": 0.1888
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-aurient-leaning-block-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.198,
+        "y": 0.599,
+        "w": 0.614,
+        "h": 0.072
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-feather-inbox-pale-tile-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.699,
+        "y": 0.688,
+        "w": 0.249,
+        "h": 0.125
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-fabric-tear-red-underlayer-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.469,
+        "y": 0.893,
+        "w": 0.107,
+        "h": 0.059
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-typelit-ink-ribbon-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-feather-inbox-pale-tile-2-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

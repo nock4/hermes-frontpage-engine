@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-02-waterline-pose-observatory-v1",
+  "edition_id": "2026-07-02-waterline-pose-observatory-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-02-waterline-pose-observatory-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-diagonal-carry-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-diagonal-carry-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-pose-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-submerged-waterline-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-submerged-waterline-cut",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-waterline-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-character-sheet-crop-cell",
+      "target_kind": "artifact",
+      "artifact_id": "module-character-sheet-crop-cell",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (reference-sheet-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-retro-internet-thumbnail-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-retro-internet-thumbnail-cluster",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stacked-media-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-aurient-leaning-block",
+      "target_kind": "artifact",
+      "artifact_id": "module-aurient-leaning-block",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (low-horizontal-video-block) selected from interpretation."
+    },
+    {
+      "target_id": "module-feather-inbox-pale-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-feather-inbox-pale-tile",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (soft-tool-surface-tile) selected from interpretation."
+    },
+    {
+      "target_id": "module-black-fabric-tear-red-underlayer",
+      "target_kind": "artifact",
+      "artifact_id": "module-black-fabric-tear-red-underlayer",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (torn-aperture-scar) selected from interpretation."
+    },
+    {
+      "target_id": "module-typelit-ink-ribbon",
+      "target_kind": "artifact",
+      "artifact_id": "module-typelit-ink-ribbon",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (typed-paper-ribbon) selected from interpretation."
+    },
+    {
+      "target_id": "module-feather-inbox-pale-tile-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-feather-inbox-pale-tile-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (soft-tool-surface-tile) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
