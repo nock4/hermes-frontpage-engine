@@ -51,15 +51,18 @@ describe('daily publish cron wrapper', () => {
 
   it('accepts only the dedicated sibling cron worktree shape', () => {
     const repoRoot = process.cwd()
-    const parent = path.resolve(repoRoot, '..')
+    const primaryRoot = path.basename(repoRoot) === 'hermes-frontpage-engine-cron'
+      ? path.join(path.dirname(repoRoot), 'hermes-frontpage-engine')
+      : repoRoot
+    const parent = path.resolve(primaryRoot, '..')
 
-    expect(isSafeCronWorktreePath(path.join(parent, 'hermes-frontpage-engine-cron'))).toBe(true)
-    expect(isSafeCronWorktreePath(repoRoot)).toBe(false)
-    expect(isSafeCronWorktreePath(os.homedir())).toBe(false)
-    expect(isSafeCronWorktreePath(path.parse(repoRoot).root)).toBe(false)
-    expect(isSafeCronWorktreePath(path.join(parent, 'frontpage-scratch'))).toBe(false)
-    expect(isSafeCronWorktreePath(path.join(parent, 'my-frontpage-cron-backup'))).toBe(false)
-    expect(isSafeCronWorktreePath(path.join(parent, 'foo', 'hermes-frontpage-engine-cron'))).toBe(false)
-    expect(isSafeCronWorktreePath(path.resolve(parent, '..', 'hermes-frontpage-engine-cron'))).toBe(false)
+    expect(isSafeCronWorktreePath(path.join(parent, 'hermes-frontpage-engine-cron'), primaryRoot)).toBe(true)
+    expect(isSafeCronWorktreePath(primaryRoot, primaryRoot)).toBe(false)
+    expect(isSafeCronWorktreePath(os.homedir(), primaryRoot)).toBe(false)
+    expect(isSafeCronWorktreePath(path.parse(primaryRoot).root, primaryRoot)).toBe(false)
+    expect(isSafeCronWorktreePath(path.join(parent, 'frontpage-scratch'), primaryRoot)).toBe(false)
+    expect(isSafeCronWorktreePath(path.join(parent, 'my-frontpage-cron-backup'), primaryRoot)).toBe(false)
+    expect(isSafeCronWorktreePath(path.join(parent, 'foo', 'hermes-frontpage-engine-cron'), primaryRoot)).toBe(false)
+    expect(isSafeCronWorktreePath(path.resolve(parent, '..', 'hermes-frontpage-engine-cron'), primaryRoot)).toBe(false)
   })
 })

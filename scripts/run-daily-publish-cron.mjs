@@ -108,11 +108,11 @@ async function exists(targetPath) {
 
 const cronWorktreeSentinel = '.daily-frontpage-cron-worktree'
 
-export function isSafeCronWorktreePath(worktreeDir) {
+export function isSafeCronWorktreePath(worktreeDir, primaryRootForSafety = primaryRoot) {
   const resolved = path.resolve(worktreeDir)
-  const primary = path.resolve(primaryRoot)
+  const primary = path.resolve(primaryRootForSafety)
   const home = process.env.HOME ? path.resolve(process.env.HOME) : null
-  const allowedParent = path.resolve(primaryRoot, '..')
+  const allowedParent = path.resolve(primary, '..')
   if (resolved === path.parse(resolved).root) return false
   if (resolved === primary || primary.startsWith(`${resolved}${path.sep}`)) return false
   if (home && resolved === home) return false
