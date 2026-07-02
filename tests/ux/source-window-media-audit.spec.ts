@@ -24,6 +24,8 @@ type SourceBindingRecord = {
   title?: string
   source_title?: string
   source_image_url?: string
+  source_media_url?: string
+  source_media_type?: string
   embed_status?: string
 }
 
@@ -73,6 +75,7 @@ type MediaAuditRecord = {
   source_type: string
   window_type: string
   source_image_url: string
+  source_media_url: string
   screenshots: Record<string, string>
   hover: WindowMetric
   primary?: WindowMetric
@@ -155,8 +158,9 @@ function shouldOpenPrimaryWindow(binding: SourceBindingRecord) {
     || binding.window_type === 'audio'
 }
 
-function isMediaCapable(binding: SourceBindingRecord) {
-  return Boolean(binding.source_image_url)
+function isMediaCapable(binding: Partial<SourceBindingRecord>) {
+  return Boolean(binding.source_media_url)
+    || Boolean(binding.source_image_url)
     || isDirectImageUrl(binding.source_url)
     || isYouTubeUrl(binding.source_url)
     || binding.window_type === 'video'
@@ -245,12 +249,13 @@ async function collectWindowMetric(page: Page, locator: Locator, mode: 'hover' |
       }
     })
 
-    const frameMetrics = Array.from(node.querySelectorAll('iframe')).map((frame) => {
-      const element = frame as HTMLIFrameElement
+    const frameMetrics: WindowFrameMetric[] = Array.from(node.querySelectorAll('iframe, video')).map((media) => {
+      const element = media as HTMLIFrameElement | HTMLVideoElement
       const rect = element.getBoundingClientRect()
+      const src = element instanceof HTMLVideoElement ? (element.currentSrc || element.src) : element.src
       return {
-        src: element.src || null,
-        title: element.title || null,
+        src: src || null,
+        title: element instanceof HTMLIFrameElement ? (element.title || null) : null,
         bodyText: null,
         width: rect.width,
         height: rect.height,
@@ -432,6 +437,7 @@ test('real source-window media audit across packaged editions', async ({ page })
         source_type: binding.source_type ?? '',
         window_type: binding.window_type ?? '',
         source_image_url: binding.source_image_url ?? '',
+        source_media_url: binding.source_media_url ?? '',
         screenshots,
         hover,
         primary,
