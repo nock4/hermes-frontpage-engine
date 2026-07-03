@@ -1,0 +1,61 @@
+{
+  "brief_id": "brief-2026-07-03-video-alley-archive-section-v1",
+  "date": "2026-07-03",
+  "signal_cluster_ids": [
+    "7b89dbd59ba1",
+    "bf901cc2fef1",
+    "9f06d1c55c9c",
+    "88e76a14701a",
+    "37c7df6caa26",
+    "bc1f3187306c",
+    "8ee49648b3c0",
+    "93ec53f1d7a8"
+  ],
+  "research_node_ids": [
+    "research-1-1e0369b6",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-8eb214ec",
+    "research-7-092f50a2",
+    "research-8-a7ff98aa",
+    "research-9-403ad518",
+    "research-10-845eb1f0",
+    "research-11-63949da0",
+    "research-12-002fd4cd"
+  ],
+  "mood": "compressed neighborhood memory opened as a civic archive cutaway",
+  "material_language": [
+    "pale concrete ledges and utility-block faces",
+    "faded charcoal fabric-like matte strata",
+    "washed denim-blue bands",
+    "corrugated roof ridges and gutter shadows",
+    "scan-grained archive paper edges",
+    "black cable, tripod, and lens metal lines"
+  ],
+  "lighting": "cool late-morning video glow with darker archive interiors, green shade pressure, and a few restrained red-orange inspection glints",
+  "object_inventory": [
+    "one tall body-scale central void translated into a cutaway chamber",
+    "long horizontal roof, street, and skyline bands crossing the section",
+    "torn archive seams interrupting clean concrete blocks",
+    "small glowing media wells and letter-slot apertures",
+    "thin black sightlines, cable conduits, and circular lens holes"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no readable words, labels, filenames, charts, or alphanumeric callouts inside the image",
+    "no dashboard, browser chrome, card grid, office desk, shelf archive, cabinet wall, cafe, hotel, garden, or greenhouse scene",
+    "do not copy the source image subject, clothing pose, page chrome, logos, or identifiable people",
+    "source anchors must be embedded as physical cuts, apertures, seams, ledges, glints, or surface interruptions",
+    "keep hover-scale negative space as section air, alley gap, or archive margin rather than blank UI padding",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no literal depiction of the source reference image"
+  ]
+}

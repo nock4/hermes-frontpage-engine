@@ -1,0 +1,479 @@
+{
+  "analysis_id": "analysis-2026-07-03-video-alley-archive-section-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A torn concrete archive-section plate with one dominant luminous vertical video well, a blue civic ledge at the crown, small media apertures and paper-like tears embedded in side rooms, plus lower green-gold atmospheric seams.",
+  "usable_surfaces": [
+    "central green-gold luminous vertical chamber",
+    "top pale-blue horizontal ledge under roof ribs",
+    "left lower glowing monitor aperture",
+    "left orange lens flare aperture",
+    "right torn cream reference plaque",
+    "right black torn vertical cavity",
+    "lower right green-blue torn seam",
+    "bottom orange field marker shard"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero video-well chamber",
+      "artifact_type": "glowing-video-cutaway",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.383,
+        "y": 0.297,
+        "w": 0.247,
+        "h": 0.469
+      },
+      "polygon": [
+        [
+          0.386,
+          0.3
+        ],
+        [
+          0.445,
+          0.292
+        ],
+        [
+          0.522,
+          0.291
+        ],
+        [
+          0.627,
+          0.299
+        ],
+        [
+          0.629,
+          0.454
+        ],
+        [
+          0.628,
+          0.602
+        ],
+        [
+          0.628,
+          0.764
+        ],
+        [
+          0.567,
+          0.766
+        ],
+        [
+          0.481,
+          0.765
+        ],
+        [
+          0.386,
+          0.764
+        ],
+        [
+          0.385,
+          0.626
+        ],
+        [
+          0.386,
+          0.482
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "The dominant tall green-blue-yellow luminous cutaway in the central shaft, bordered by hard concrete edges and compression-like bloom."
+    },
+    {
+      "label": "hero torn credit chamber",
+      "artifact_type": "torn-archive-chamber",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.018,
+        "y": 0.013,
+        "w": 0.862,
+        "h": 0.345
+      },
+      "polygon": [
+        [
+          0.02,
+          0.049
+        ],
+        [
+          0.066,
+          0.015
+        ],
+        [
+          0.264,
+          0.015
+        ],
+        [
+          0.346,
+          0.014
+        ],
+        [
+          0.414,
+          0.051
+        ],
+        [
+          0.493,
+          0.067
+        ],
+        [
+          0.57,
+          0.069
+        ],
+        [
+          0.664,
+          0.059
+        ],
+        [
+          0.756,
+          0.068
+        ],
+        [
+          0.833,
+          0.079
+        ],
+        [
+          0.878,
+          0.123
+        ],
+        [
+          0.861,
+          0.191
+        ],
+        [
+          0.76,
+          0.198
+        ],
+        [
+          0.611,
+          0.197
+        ],
+        [
+          0.458,
+          0.197
+        ],
+        [
+          0.321,
+          0.194
+        ],
+        [
+          0.157,
+          0.215
+        ],
+        [
+          0.018,
+          0.218
+        ]
+      ],
+      "confidence": 0.75,
+      "visual_evidence": "Large irregular dark scan-grain torn surface across the upper archive wall, with a ragged ripped paper contour and heavy black texture."
+    },
+    {
+      "label": "seoul skyline ledge",
+      "artifact_type": "street-section-band",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.218,
+        "y": 0.119,
+        "w": 0.577,
+        "h": 0.079
+      },
+      "polygon": [
+        [
+          0.219,
+          0.124
+        ],
+        [
+          0.318,
+          0.123
+        ],
+        [
+          0.431,
+          0.124
+        ],
+        [
+          0.551,
+          0.124
+        ],
+        [
+          0.671,
+          0.123
+        ],
+        [
+          0.794,
+          0.124
+        ],
+        [
+          0.794,
+          0.188
+        ],
+        [
+          0.733,
+          0.195
+        ],
+        [
+          0.603,
+          0.197
+        ],
+        [
+          0.467,
+          0.195
+        ],
+        [
+          0.346,
+          0.189
+        ],
+        [
+          0.245,
+          0.176
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Long pale-blue horizontal glowing band just beneath the roof ribs, reading as a civic skyline/media ledge."
+    },
+    {
+      "label": "love-letter paper notch",
+      "artifact_type": "paper-letter-slot",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.113,
+        "y": 0.269,
+        "w": 0.045,
+        "h": 0.045
+      },
+      "polygon": [
+        [
+          0.119,
+          0.272
+        ],
+        [
+          0.143,
+          0.268
+        ],
+        [
+          0.157,
+          0.277
+        ],
+        [
+          0.152,
+          0.3
+        ],
+        [
+          0.138,
+          0.313
+        ],
+        [
+          0.12,
+          0.307
+        ],
+        [
+          0.113,
+          0.289
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Narrow cream torn paper notch embedded in the dark left wall, with soft shadow and ragged edge."
+    },
+    {
+      "label": "riverside color seam",
+      "artifact_type": "painted-horizon-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.771,
+        "w": 0.209,
+        "h": 0.048
+      },
+      "polygon": [
+        [
+          0.793,
+          0.775
+        ],
+        [
+          0.843,
+          0.773
+        ],
+        [
+          0.892,
+          0.777
+        ],
+        [
+          0.947,
+          0.783
+        ],
+        [
+          0.999,
+          0.79
+        ],
+        [
+          0.997,
+          0.813
+        ],
+        [
+          0.946,
+          0.816
+        ],
+        [
+          0.887,
+          0.812
+        ],
+        [
+          0.833,
+          0.804
+        ],
+        [
+          0.79,
+          0.795
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "Ragged lower-right horizontal green-blue torn seam, like a painted landscape strip pressed into the wall edge."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.486,
+        "y": 0.935,
+        "w": 0.072,
+        "h": 0.043
+      },
+      "polygon": [
+        [
+          0.487,
+          0.94
+        ],
+        [
+          0.526,
+          0.934
+        ],
+        [
+          0.555,
+          0.942
+        ],
+        [
+          0.56,
+          0.954
+        ],
+        [
+          0.54,
+          0.97
+        ],
+        [
+          0.51,
+          0.977
+        ],
+        [
+          0.486,
+          0.971
+        ],
+        [
+          0.486,
+          0.954
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Small orange-black torn shard at the bottom center, glowing like a field marker against the concrete base."
+    },
+    {
+      "label": "riverside color seam",
+      "artifact_type": "painted-horizon-seam",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.474,
+    "rationale": "The plate is expressionist and image-led, anchored by one strong central well and a top ledge, but the many sectional rooms, torn edges, ladders, and small apertures make it moderately busy rather than minimal."
+  },
+  "fallback_detected_object_count": 3,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-03-video-alley-archive-section-v1"
+}

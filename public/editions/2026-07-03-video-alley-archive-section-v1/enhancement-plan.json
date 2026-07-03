@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-03-video-alley-archive-section-v1",
+  "edition_id": "2026-07-03-video-alley-archive-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-03-video-alley-archive-section-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-video-well-chamber",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-video-well-chamber",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glowing-video-cutaway) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-torn-credit-chamber",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-torn-credit-chamber",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (torn-archive-chamber) selected from interpretation."
+    },
+    {
+      "target_id": "module-seoul-skyline-ledge",
+      "target_kind": "artifact",
+      "artifact_id": "module-seoul-skyline-ledge",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (street-section-band) selected from interpretation."
+    },
+    {
+      "target_id": "module-love-letter-paper-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-love-letter-paper-notch",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (paper-letter-slot) selected from interpretation."
+    },
+    {
+      "target_id": "module-riverside-color-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-riverside-color-seam",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-horizon-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-field-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-field-marker",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (field-marker) selected from interpretation."
+    },
+    {
+      "target_id": "module-riverside-color-seam-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-riverside-color-seam-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-horizon-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-field-marker-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-field-marker-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (field-marker) selected from interpretation."
+    },
+    {
+      "target_id": "module-reference-plaque",
+      "target_kind": "artifact",
+      "artifact_id": "module-reference-plaque",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (reference-plaque) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
