@@ -1,0 +1,237 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-05-oxblood-noise-sleeve-macro-v1",
+  "edition_id": "2026-07-05-oxblood-noise-sleeve-macro-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-05-oxblood-noise-sleeve-macro-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-oxblood-cover-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-oxblood-cover-cut",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-cropped-sleeve-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-procedural-creature-seam",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-procedural-creature-seam",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-animated-grain-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-bandcamp-scuffed-audio-inset",
+      "target_kind": "artifact",
+      "artifact_id": "module-bandcamp-scuffed-audio-inset",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-audio-grain-rectangle) selected from interpretation."
+    },
+    {
+      "target_id": "module-alternate-cover-rub",
+      "target_kind": "artifact",
+      "artifact_id": "module-alternate-cover-rub",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (worn-image-rub-mark) selected from interpretation."
+    },
+    {
+      "target_id": "module-corridor-painting-crease",
+      "target_kind": "artifact",
+      "artifact_id": "module-corridor-painting-crease",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curved-ink-crease) selected from interpretation."
+    },
+    {
+      "target_id": "module-secondary-sleeve-grain-island",
+      "target_kind": "artifact",
+      "artifact_id": "module-secondary-sleeve-grain-island",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-cover-grain-island) selected from interpretation."
+    },
+    {
+      "target_id": "module-noise-catalogue-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-noise-catalogue-notch",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (low-gloss-label-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-corridor-painting-crease-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-corridor-painting-crease-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curved-ink-crease) selected from interpretation."
+    },
+    {
+      "target_id": "module-secondary-sleeve-grain-island-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-secondary-sleeve-grain-island-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-cover-grain-island) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

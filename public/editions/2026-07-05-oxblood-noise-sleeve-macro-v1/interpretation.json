@@ -1,0 +1,377 @@
+{
+  "interpretation_id": "interp-2026-07-05-oxblood-noise-sleeve-macro-v1",
+  "edition_id": "2026-07-05-oxblood-noise-sleeve-macro-v1",
+  "plate_read_timestamp": "2026-07-05T08:08:07.136Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A minimal dark oxblood sleeve-plate built from tall cropped slabs, curved cut edges, small punctures, rubbed grain, and a few warm exposed-paper wounds. The image is expressionist and restrained: source windows can attach to actual seams, pinholes, notches, rubs, and apertures rather than cards.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "buried noise pressed into dark paper",
+      "A minimal dark oxblood sleeve-plate built from tall cropped slabs, curved cut edges, small punctures, rubbed grain, and a few warm exposed-paper wounds. The image is expressionist and restrained: source windows can attach to actual seams, pinholes, notches, rubs, and apertures rather than cards.",
+      "dark-sleeve",
+      "noise-pressing",
+      "oxblood-ink"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero oxblood cover cut",
+      "hero procedural creature seam",
+      "bandcamp scuffed audio inset",
+      "alternate cover rub",
+      "corridor painting crease",
+      "secondary sleeve grain island",
+      "noise catalogue notch"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "oxblood-noise-sleeve-macro",
+      "oversized cropped letterform slabs treated as abstract architecture",
+      "two hero-scale dark sleeve interruptions embedded into the main vertical strokes",
+      "narrow seam lanes and curved edge cuts crossing the plate",
+      "small glossy defects and paper notches carrying source marks",
+      "compressed audio-image grains pressed into scuffed rectangles",
+      "large oxblood curved sleeve cut on left",
+      "central black vertical grain seam"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: oxblood-noise-sleeve-macro.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-oxblood-cover-cut",
+      "kind": "hero",
+      "type": "hero-scale-cropped-sleeve-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.009,
+        "y": 0,
+        "w": 0.432,
+        "h": 0.974
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-procedural-creature-seam",
+      "kind": "hero",
+      "type": "hero-scale-animated-grain-seam",
+      "strength": 0.9758239999999999,
+      "bounds": {
+        "x": 0.627,
+        "y": 0,
+        "w": 0.197,
+        "h": 0.991
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bandcamp-scuffed-audio-inset",
+      "kind": "module",
+      "type": "glossy-audio-grain-rectangle",
+      "strength": 0.787356,
+      "bounds": {
+        "x": 0.636,
+        "y": 0.764,
+        "w": 0.201,
+        "h": 0.21
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-alternate-cover-rub",
+      "kind": "module",
+      "type": "worn-image-rub-mark",
+      "strength": 0.7619760000000001,
+      "bounds": {
+        "x": 0.323,
+        "y": 0.315,
+        "w": 0.092,
+        "h": 0.369
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-corridor-painting-crease",
+      "kind": "module",
+      "type": "curved-ink-crease",
+      "strength": 0.735696,
+      "bounds": {
+        "x": 0.579,
+        "y": 0.756,
+        "w": 0.282,
+        "h": 0.076
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-secondary-sleeve-grain-island",
+      "kind": "module",
+      "type": "compressed-cover-grain-island",
+      "strength": 0.698124,
+      "bounds": {
+        "x": 0.911,
+        "y": 0.941,
+        "w": 0.087,
+        "h": 0.057
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-noise-catalogue-notch",
+      "kind": "module",
+      "type": "low-gloss-label-notch",
+      "strength": 0.6691920000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-corridor-painting-crease-2",
+      "kind": "module",
+      "type": "curved-ink-crease",
+      "strength": 0.650536,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-secondary-sleeve-grain-island-2",
+      "kind": "module",
+      "type": "compressed-cover-grain-island",
+      "strength": 0.662404,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-oxblood-cover-cut-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.009,
+        "y": 0,
+        "w": 0.432,
+        "h": 0.974
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-procedural-creature-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.627,
+        "y": 0,
+        "w": 0.197,
+        "h": 0.991
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bandcamp-scuffed-audio-inset-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.636,
+        "y": 0.764,
+        "w": 0.201,
+        "h": 0.21
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-alternate-cover-rub-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.323,
+        "y": 0.315,
+        "w": 0.092,
+        "h": 0.369
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-corridor-painting-crease-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.579,
+        "y": 0.756,
+        "w": 0.282,
+        "h": 0.076
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-secondary-sleeve-grain-island-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.911,
+        "y": 0.941,
+        "w": 0.087,
+        "h": 0.057
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-noise-catalogue-notch-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-corridor-painting-crease-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-secondary-sleeve-grain-island-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
