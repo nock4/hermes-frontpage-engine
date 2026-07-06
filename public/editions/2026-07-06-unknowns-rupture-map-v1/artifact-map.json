@@ -1,0 +1,587 @@
+{
+  "artifact_map_id": "map-2026-07-06-unknowns-rupture-map-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "unknowns-rupture-map",
+  "default_artifact_id": "hero-dominant-rupture-origin-node",
+  "artifacts": [
+    {
+      "id": "hero-dominant-rupture-origin-node",
+      "kind": "hero",
+      "label": "dominant rupture origin node",
+      "artifact_type": "hero-scale-filled-node-aperture",
+      "bounds": {
+        "x": 0.117,
+        "y": 0.813,
+        "w": 0.086,
+        "h": 0.091
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.16,
+          0.813
+        ],
+        [
+          0.178,
+          0.819
+        ],
+        [
+          0.193,
+          0.835
+        ],
+        [
+          0.201,
+          0.855
+        ],
+        [
+          0.199,
+          0.875
+        ],
+        [
+          0.187,
+          0.892
+        ],
+        [
+          0.168,
+          0.903
+        ],
+        [
+          0.145,
+          0.902
+        ],
+        [
+          0.127,
+          0.892
+        ],
+        [
+          0.118,
+          0.873
+        ],
+        [
+          0.117,
+          0.85
+        ],
+        [
+          0.126,
+          0.83
+        ],
+        [
+          0.141,
+          0.818
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/hero-dominant-rupture-origin-node.svg",
+      "source_binding_ids": [
+        "binding-hero-dominant-rupture-origin-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          246,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          256,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "hero-software-factory-territory-shard",
+      "kind": "hero",
+      "label": "software-factory territory shard",
+      "artifact_type": "hero-scale-glowing-map-district",
+      "bounds": {
+        "x": 0.396,
+        "y": 0,
+        "w": 0.532,
+        "h": 0.891
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.781,
+          0
+        ],
+        [
+          0.847,
+          0.062
+        ],
+        [
+          0.895,
+          0.178
+        ],
+        [
+          0.864,
+          0.301
+        ],
+        [
+          0.905,
+          0.43
+        ],
+        [
+          0.87,
+          0.577
+        ],
+        [
+          0.797,
+          0.699
+        ],
+        [
+          0.672,
+          0.795
+        ],
+        [
+          0.516,
+          0.866
+        ],
+        [
+          0.392,
+          0.891
+        ],
+        [
+          0.429,
+          0.731
+        ],
+        [
+          0.389,
+          0.594
+        ],
+        [
+          0.455,
+          0.441
+        ],
+        [
+          0.548,
+          0.305
+        ],
+        [
+          0.601,
+          0.164
+        ],
+        [
+          0.681,
+          0.058
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/hero-software-factory-territory-shard.svg",
+      "source_binding_ids": [
+        "binding-hero-software-factory-territory-shard"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1017,
+          383
+        ],
+        "safe_stage_window_origin_px": [
+          1082,
+          456
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-data-loom-map",
+      "kind": "module",
+      "label": "Data Loom Map",
+      "artifact_type": "data-loom-map",
+      "bounds": {
+        "x": 0.506,
+        "y": 0.079,
+        "w": 0.322,
+        "h": 0.631
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.666,
+          0.079
+        ],
+        [
+          0.776,
+          0.099
+        ],
+        [
+          0.828,
+          0.206
+        ],
+        [
+          0.804,
+          0.344
+        ],
+        [
+          0.816,
+          0.505
+        ],
+        [
+          0.769,
+          0.65
+        ],
+        [
+          0.665,
+          0.71
+        ],
+        [
+          0.565,
+          0.677
+        ],
+        [
+          0.529,
+          0.543
+        ],
+        [
+          0.506,
+          0.394
+        ],
+        [
+          0.545,
+          0.239
+        ],
+        [
+          0.591,
+          0.128
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/module-data-loom-map.svg",
+      "source_binding_ids": [
+        "binding-module-data-loom-map"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1025,
+          352
+        ],
+        "safe_stage_window_origin_px": [
+          1064,
+          404
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-graphics-agent-check-ring",
+      "kind": "module",
+      "label": "graphics-agent check ring",
+      "artifact_type": "glowing-check-ring-node",
+      "bounds": {
+        "x": 0.77,
+        "y": 0.126,
+        "w": 0.056,
+        "h": 0.058
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.797,
+          0.126
+        ],
+        [
+          0.813,
+          0.131
+        ],
+        [
+          0.824,
+          0.145
+        ],
+        [
+          0.826,
+          0.162
+        ],
+        [
+          0.818,
+          0.177
+        ],
+        [
+          0.803,
+          0.184
+        ],
+        [
+          0.786,
+          0.181
+        ],
+        [
+          0.774,
+          0.17
+        ],
+        [
+          0.77,
+          0.153
+        ],
+        [
+          0.775,
+          0.137
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/module-graphics-agent-check-ring.svg",
+      "source_binding_ids": [
+        "binding-module-graphics-agent-check-ring"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1226,
+          154
+        ],
+        "safe_stage_window_origin_px": [
+          1233,
+          159
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-rain-snow-grass-media-glint",
+      "kind": "module",
+      "label": "rain-snow-grass media glint",
+      "artifact_type": "video-glint-edge-notch",
+      "bounds": {
+        "x": 0.889,
+        "y": 0.724,
+        "w": 0.068,
+        "h": 0.062
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.956,
+          0.724
+        ],
+        [
+          0.942,
+          0.75
+        ],
+        [
+          0.93,
+          0.775
+        ],
+        [
+          0.909,
+          0.786
+        ],
+        [
+          0.889,
+          0.779
+        ],
+        [
+          0.901,
+          0.758
+        ],
+        [
+          0.92,
+          0.742
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/module-rain-snow-grass-media-glint.svg",
+      "source_binding_ids": [
+        "binding-module-rain-snow-grass-media-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          768
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          773
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-alhambra-archive-cut",
+      "kind": "module",
+      "label": "alhambra archive cut",
+      "artifact_type": "ornamental-frame-slit",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/module-alhambra-archive-cut.svg",
+      "source_binding_ids": [
+        "binding-module-alhambra-archive-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-alternative-press-overprint-scar",
+      "kind": "module",
+      "label": "alternative-press overprint scar",
+      "artifact_type": "inked-paper-tear-scar",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/module-alternative-press-overprint-scar.svg",
+      "source_binding_ids": [
+        "binding-module-alternative-press-overprint-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-looking-through-aperture",
+      "kind": "module",
+      "label": "looking-through aperture",
+      "artifact_type": "small-archive-frame-window",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/module-looking-through-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-looking-through-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-paradise-loading-fog-flag",
+      "kind": "module",
+      "label": "paradise-loading fog flag",
+      "artifact_type": "tiny-flag-in-fog-basin",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "unknowns-rupture-map",
+      "mask_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/masks/module-paradise-loading-fog-flag.svg",
+      "source_binding_ids": [
+        "binding-module-paradise-loading-fog-flag"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

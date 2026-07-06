@@ -1,0 +1,239 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-06-unknowns-rupture-map-v1",
+  "edition_id": "2026-07-06-unknowns-rupture-map-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-06-unknowns-rupture-map-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal",
+    "warped-paper-fragment"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-dominant-rupture-origin-node",
+      "target_kind": "artifact",
+      "artifact_id": "hero-dominant-rupture-origin-node",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-filled-node-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-software-factory-territory-shard",
+      "target_kind": "artifact",
+      "artifact_id": "hero-software-factory-territory-shard",
+      "priority": 2,
+      "techniques": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "github"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-glowing-map-district) selected from interpretation."
+    },
+    {
+      "target_id": "module-data-loom-map",
+      "target_kind": "artifact",
+      "artifact_id": "module-data-loom-map",
+      "priority": 3,
+      "techniques": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "github"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (data-loom-map) selected from interpretation."
+    },
+    {
+      "target_id": "module-graphics-agent-check-ring",
+      "target_kind": "artifact",
+      "artifact_id": "module-graphics-agent-check-ring",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glowing-check-ring-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-rain-snow-grass-media-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-rain-snow-grass-media-glint",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (video-glint-edge-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-alhambra-archive-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-alhambra-archive-cut",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ornamental-frame-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-alternative-press-overprint-scar",
+      "target_kind": "artifact",
+      "artifact_id": "module-alternative-press-overprint-scar",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (inked-paper-tear-scar) selected from interpretation."
+    },
+    {
+      "target_id": "module-looking-through-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-looking-through-aperture",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-archive-frame-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-paradise-loading-fog-flag",
+      "target_kind": "artifact",
+      "artifact_id": "module-paradise-loading-fog-flag",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-flag-in-fog-basin) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
