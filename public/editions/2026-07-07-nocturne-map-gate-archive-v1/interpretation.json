@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-07-07-nocturne-map-gate-archive-v1",
+  "edition_id": "2026-07-07-nocturne-map-gate-archive-v1",
+  "plate_read_timestamp": "2026-07-07T08:11:05.717Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A vertical expressionist terrain plate: ruined stone platforms and bridges float around three dominant apertures, with blue portal wells and a large amber city gate acting as the strongest source-bearing surfaces. Smaller cyan pinlights and circular stone plates puncture the route network as interaction anchors.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "a playable archive opening under dusk optics",
+      "A vertical expressionist terrain plate: ruined stone platforms and bridges float around three dominant apertures, with blue portal wells and a large amber city gate acting as the strongest source-bearing surfaces. Smaller cyan pinlights and circular stone plates puncture the route network as interaction anchors.",
+      "generated-map-edge",
+      "nocturnal-observatory",
+      "navmesh-stone"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero spawning map gate",
+      "hero optical workflow bloom",
+      "distant image shard",
+      "archive widget plate",
+      "film-paper diagonal",
+      "shutdown night portal",
+      "twin-media lookout",
+      "Signal Panel"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "nocturne-map-gate-archive",
+      "hero navigable terrain edge spawning beyond a gate-like cut",
+      "secondary optical control seam crossing the map diagonally",
+      "small archive scan plates embedded in stone joints",
+      "thumbnail portals with softened compression halos",
+      "route-node constellations stitched into the playable ground",
+      "paper-and-film cuts interrupting the terrain plane",
+      "large amber ruined city gate at upper right"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: nocturne-map-gate-archive.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-spawning-map-gate",
+      "kind": "hero",
+      "type": "hero-scale-terrain-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.473,
+        "y": 0.034,
+        "w": 0.418,
+        "h": 0.351
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-optical-workflow-bloom",
+      "kind": "hero",
+      "type": "hero-scale-video-portal",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.061,
+        "y": 0.028,
+        "w": 0.348,
+        "h": 0.269
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distant-image-shard",
+      "kind": "module",
+      "type": "thumbnail-bloom-cut",
+      "strength": 0.796824,
+      "bounds": {
+        "x": 0.807,
+        "y": 0.398,
+        "w": 0.078,
+        "h": 0.066
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-archive-widget-plate",
+      "kind": "module",
+      "type": "small-scan-plate",
+      "strength": 0.7675200000000001,
+      "bounds": {
+        "x": 0.194,
+        "y": 0.567,
+        "w": 0.064,
+        "h": 0.052
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-film-paper-diagonal",
+      "kind": "module",
+      "type": "printed-paper-seam",
+      "strength": 0.729696,
+      "bounds": {
+        "x": 0.292,
+        "y": 0.389,
+        "w": 0.418,
+        "h": 0.332
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shutdown-night-portal",
+      "kind": "module",
+      "type": "dark-video-aperture",
+      "strength": 0.6969,
+      "bounds": {
+        "x": 0.306,
+        "y": 0.677,
+        "w": 0.169,
+        "h": 0.169
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-twin-media-lookout",
+      "kind": "module",
+      "type": "edge-thumbnail-window",
+      "strength": 0.6792120000000001,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.347,
+        "w": 0.077,
+        "h": 0.058
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.654496,
+      "bounds": {
+        "x": 0.386,
+        "y": 0.587,
+        "w": 0.058,
+        "h": 0.064
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "layered-fragment",
+      "strength": 0.645208,
+      "bounds": {
+        "x": 0.582,
+        "y": 0.674,
+        "w": 0.295,
+        "h": 0.239
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-spawning-map-gate-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.473,
+        "y": 0.034,
+        "w": 0.418,
+        "h": 0.351
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-optical-workflow-bloom-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.061,
+        "y": 0.028,
+        "w": 0.348,
+        "h": 0.269
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distant-image-shard-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.807,
+        "y": 0.398,
+        "w": 0.078,
+        "h": 0.066
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-archive-widget-plate-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.194,
+        "y": 0.567,
+        "w": 0.064,
+        "h": 0.052
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-film-paper-diagonal-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.292,
+        "y": 0.389,
+        "w": 0.418,
+        "h": 0.332
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shutdown-night-portal-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.306,
+        "y": 0.677,
+        "w": 0.169,
+        "h": 0.169
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-twin-media-lookout-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.347,
+        "w": 0.077,
+        "h": 0.058
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.587,
+        "w": 0.058,
+        "h": 0.064
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.582,
+        "y": 0.674,
+        "w": 0.295,
+        "h": 0.239
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

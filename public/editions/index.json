@@ -1,6 +1,25 @@
 {
-  "current_edition_id": "2026-07-06-unknowns-rupture-map-v1",
+  "current_edition_id": "2026-07-07-nocturne-map-gate-archive-v1",
   "editions": [
+    {
+      "edition_id": "2026-07-07-nocturne-map-gate-archive-v1",
+      "date": "2026-07-07",
+      "slug": "nocturne-map-gate-archive-v1",
+      "title": "Nocturne Map Gate",
+      "path": "/editions/2026-07-07-nocturne-map-gate-archive-v1",
+      "scene_family": "nocturne-map-gate-archive",
+      "motif_tags": [
+        "generated-map-edge",
+        "nocturnal-observatory",
+        "navmesh-stone",
+        "thumbnail-bloom",
+        "archive-apertures",
+        "paper-collision",
+        "route-glints"
+      ],
+      "preview_asset_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/preview.png",
+      "is_live": true
+    },
     {
       "edition_id": "2026-07-06-unknowns-rupture-map-v1",
       "date": "2026-07-06",
@@ -18,7 +37,7 @@
         "glowing-territories"
       ],
       "preview_asset_path": "/editions/2026-07-06-unknowns-rupture-map-v1/assets/preview.png",
-      "is_live": true
+      "is_live": false
     },
     {
       "edition_id": "2026-07-05-oxblood-noise-sleeve-macro-v1",

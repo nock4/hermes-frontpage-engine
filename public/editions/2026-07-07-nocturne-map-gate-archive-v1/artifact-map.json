@@ -1,0 +1,603 @@
+{
+  "artifact_map_id": "map-2026-07-07-nocturne-map-gate-archive-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "nocturne-map-gate-archive",
+  "default_artifact_id": "hero-hero-spawning-map-gate",
+  "artifacts": [
+    {
+      "id": "hero-hero-spawning-map-gate",
+      "kind": "hero",
+      "label": "hero spawning map gate",
+      "artifact_type": "hero-scale-terrain-aperture",
+      "bounds": {
+        "x": 0.473,
+        "y": 0.034,
+        "w": 0.418,
+        "h": 0.351
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.514,
+          0.037
+        ],
+        [
+          0.638,
+          0.028
+        ],
+        [
+          0.778,
+          0.038
+        ],
+        [
+          0.856,
+          0.091
+        ],
+        [
+          0.881,
+          0.178
+        ],
+        [
+          0.865,
+          0.291
+        ],
+        [
+          0.814,
+          0.361
+        ],
+        [
+          0.706,
+          0.381
+        ],
+        [
+          0.591,
+          0.351
+        ],
+        [
+          0.522,
+          0.282
+        ],
+        [
+          0.488,
+          0.178
+        ],
+        [
+          0.492,
+          0.085
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/hero-hero-spawning-map-gate.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-spawning-map-gate"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1048,
+          186
+        ],
+        "safe_stage_window_origin_px": [
+          1099,
+          215
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-hero-optical-workflow-bloom",
+      "kind": "hero",
+      "label": "hero optical workflow bloom",
+      "artifact_type": "hero-scale-video-portal",
+      "bounds": {
+        "x": 0.061,
+        "y": 0.028,
+        "w": 0.348,
+        "h": 0.269
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.079,
+          0.149
+        ],
+        [
+          0.116,
+          0.075
+        ],
+        [
+          0.195,
+          0.034
+        ],
+        [
+          0.303,
+          0.041
+        ],
+        [
+          0.365,
+          0.095
+        ],
+        [
+          0.397,
+          0.178
+        ],
+        [
+          0.365,
+          0.247
+        ],
+        [
+          0.287,
+          0.288
+        ],
+        [
+          0.186,
+          0.281
+        ],
+        [
+          0.105,
+          0.235
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/hero-hero-optical-workflow-bloom.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-optical-workflow-bloom"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          361,
+          144
+        ],
+        "safe_stage_window_origin_px": [
+          404,
+          166
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-distant-image-shard",
+      "kind": "module",
+      "label": "distant image shard",
+      "artifact_type": "thumbnail-bloom-cut",
+      "bounds": {
+        "x": 0.807,
+        "y": 0.398,
+        "w": 0.078,
+        "h": 0.066
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.842,
+          0.399
+        ],
+        [
+          0.872,
+          0.413
+        ],
+        [
+          0.884,
+          0.443
+        ],
+        [
+          0.862,
+          0.463
+        ],
+        [
+          0.824,
+          0.457
+        ],
+        [
+          0.807,
+          0.432
+        ],
+        [
+          0.818,
+          0.407
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/module-distant-image-shard.svg",
+      "source_binding_ids": [
+        "binding-module-distant-image-shard"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1299,
+          436
+        ],
+        "safe_stage_window_origin_px": [
+          1309,
+          441
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-archive-widget-plate",
+      "kind": "module",
+      "label": "archive widget plate",
+      "artifact_type": "small-scan-plate",
+      "bounds": {
+        "x": 0.194,
+        "y": 0.567,
+        "w": 0.064,
+        "h": 0.052
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.221,
+          0.568
+        ],
+        [
+          0.246,
+          0.575
+        ],
+        [
+          0.258,
+          0.597
+        ],
+        [
+          0.244,
+          0.616
+        ],
+        [
+          0.216,
+          0.618
+        ],
+        [
+          0.196,
+          0.603
+        ],
+        [
+          0.199,
+          0.581
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/module-archive-widget-plate.svg",
+      "source_binding_ids": [
+        "binding-module-archive-widget-plate"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          347,
+          603
+        ],
+        "safe_stage_window_origin_px": [
+          355,
+          607
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-film-paper-diagonal",
+      "kind": "module",
+      "label": "film-paper diagonal",
+      "artifact_type": "printed-paper-seam",
+      "bounds": {
+        "x": 0.292,
+        "y": 0.389,
+        "w": 0.418,
+        "h": 0.332
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.674,
+          0.389
+        ],
+        [
+          0.71,
+          0.408
+        ],
+        [
+          0.671,
+          0.471
+        ],
+        [
+          0.597,
+          0.536
+        ],
+        [
+          0.522,
+          0.601
+        ],
+        [
+          0.459,
+          0.672
+        ],
+        [
+          0.348,
+          0.721
+        ],
+        [
+          0.292,
+          0.703
+        ],
+        [
+          0.377,
+          0.65
+        ],
+        [
+          0.441,
+          0.588
+        ],
+        [
+          0.516,
+          0.52
+        ],
+        [
+          0.593,
+          0.455
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/module-film-paper-diagonal.svg",
+      "source_binding_ids": [
+        "binding-module-film-paper-diagonal"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          770,
+          541
+        ],
+        "safe_stage_window_origin_px": [
+          821,
+          568
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-shutdown-night-portal",
+      "kind": "module",
+      "label": "shutdown night portal",
+      "artifact_type": "dark-video-aperture",
+      "bounds": {
+        "x": 0.306,
+        "y": 0.677,
+        "w": 0.169,
+        "h": 0.169
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.37,
+          0.679
+        ],
+        [
+          0.432,
+          0.704
+        ],
+        [
+          0.474,
+          0.755
+        ],
+        [
+          0.464,
+          0.813
+        ],
+        [
+          0.408,
+          0.846
+        ],
+        [
+          0.342,
+          0.831
+        ],
+        [
+          0.309,
+          0.777
+        ],
+        [
+          0.319,
+          0.716
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/module-shutdown-night-portal.svg",
+      "source_binding_ids": [
+        "binding-module-shutdown-night-portal"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          600,
+          766
+        ],
+        "safe_stage_window_origin_px": [
+          621,
+          780
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-twin-media-lookout",
+      "kind": "module",
+      "label": "twin-media lookout",
+      "artifact_type": "edge-thumbnail-window",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.347,
+        "w": 0.077,
+        "h": 0.058
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.66,
+          0.348
+        ],
+        [
+          0.689,
+          0.361
+        ],
+        [
+          0.696,
+          0.385
+        ],
+        [
+          0.677,
+          0.403
+        ],
+        [
+          0.644,
+          0.401
+        ],
+        [
+          0.622,
+          0.383
+        ],
+        [
+          0.629,
+          0.358
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/module-twin-media-lookout.svg",
+      "source_binding_ids": [
+        "binding-module-twin-media-lookout"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1011,
+          380
+        ],
+        "safe_stage_window_origin_px": [
+          1021,
+          385
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.587,
+        "w": 0.058,
+        "h": 0.064
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.414,
+          0.587
+        ],
+        [
+          0.435,
+          0.602
+        ],
+        [
+          0.444,
+          0.626
+        ],
+        [
+          0.428,
+          0.649
+        ],
+        [
+          0.399,
+          0.649
+        ],
+        [
+          0.384,
+          0.626
+        ],
+        [
+          0.393,
+          0.602
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          637,
+          629
+        ],
+        "safe_stage_window_origin_px": [
+          645,
+          634
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.582,
+        "y": 0.674,
+        "w": 0.295,
+        "h": 0.239
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.637,
+          0.684
+        ],
+        [
+          0.755,
+          0.655
+        ],
+        [
+          0.856,
+          0.689
+        ],
+        [
+          0.881,
+          0.786
+        ],
+        [
+          0.833,
+          0.876
+        ],
+        [
+          0.722,
+          0.913
+        ],
+        [
+          0.612,
+          0.877
+        ],
+        [
+          0.582,
+          0.771
+        ]
+      ],
+      "cluster_id": "nocturne-map-gate-archive",
+      "mask_path": "/editions/2026-07-07-nocturne-map-gate-archive-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          793
+        ],
+        "safe_stage_window_origin_px": [
+          1157,
+          813
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "brief_id": "brief-2026-07-07-nocturne-map-gate-archive-v1",
+  "date": "2026-07-07",
+  "signal_cluster_ids": [
+    "fd95a48bb338",
+    "a166f79789f3",
+    "cf016ebee6d2",
+    "7b89dbd59ba1",
+    "aad57dd9c4c6",
+    "dbd7bbb912ba",
+    "3e762173d01e",
+    "93450fadae69"
+  ],
+  "research_node_ids": [
+    "research-1-bc78b509",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-092f50a2",
+    "research-7-9ded48ee",
+    "research-8-10b28d07",
+    "research-9-26258e83",
+    "research-10-45d92834",
+    "research-11-518beb0a",
+    "research-12-5e7efd70"
+  ],
+  "mood": "a playable archive opening under dusk optics",
+  "material_language": [
+    "compressed video thumbnail bloom",
+    "painted stone navmesh terrain",
+    "archive scan grain",
+    "warm magazine paper seam",
+    "glass plate-lit route lines",
+    "matte film-set surface"
+  ],
+  "lighting": "dusk-to-night screen glow, amber horizon haze, cool blue aperture light, small sharp route-node glints",
+  "object_inventory": [
+    "hero navigable terrain edge spawning beyond a gate-like cut",
+    "secondary optical control seam crossing the map diagonally",
+    "small archive scan plates embedded in stone joints",
+    "thumbnail portals with softened compression halos",
+    "route-node constellations stitched into the playable ground",
+    "paper-and-film cuts interrupting the terrain plane"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no dashboard cards or browser chrome",
+    "no desks, shelves, cabinets, or office still life",
+    "no legible words, logos, filenames, labels, or alphanumeric callouts inside the image",
+    "do not copy the reference subject literally",
+    "avoid generic fantasy props and literal character focus",
+    "avoid flat contact-sheet or poster-wall composition",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no literal depiction of the source reference image"
+  ]
+}
