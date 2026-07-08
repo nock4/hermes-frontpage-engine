@@ -1,0 +1,473 @@
+{
+  "artifact_map_id": "map-2026-07-08-cutaway-noise-vessel-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "cutaway-noise-vessel",
+  "default_artifact_id": "hero-main-mesh-cabinet-face",
+  "artifacts": [
+    {
+      "id": "hero-main-mesh-cabinet-face",
+      "kind": "hero",
+      "label": "main mesh cabinet face",
+      "artifact_type": "hero-scale-glowing-mesh-face",
+      "bounds": {
+        "x": 0.1212,
+        "y": 0.1148,
+        "w": 0.5,
+        "h": 0.551
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.1236,
+          0.1252
+        ],
+        [
+          0.134,
+          0.1172
+        ],
+        [
+          0.6108,
+          0.1188
+        ],
+        [
+          0.618,
+          0.13
+        ],
+        [
+          0.6132,
+          0.6021
+        ],
+        [
+          0.4466,
+          0.6603
+        ],
+        [
+          0.4083,
+          0.6603
+        ],
+        [
+          0.2815,
+          0.6005
+        ],
+        [
+          0.2041,
+          0.5502
+        ],
+        [
+          0.1619,
+          0.512
+        ],
+        [
+          0.13,
+          0.4673
+        ],
+        [
+          0.1236,
+          0.449
+        ]
+      ],
+      "cluster_id": "cutaway-noise-vessel",
+      "mask_path": "/editions/2026-07-08-cutaway-noise-vessel-v1/assets/masks/hero-main-mesh-cabinet-face.svg",
+      "source_binding_ids": [
+        "binding-hero-main-mesh-cabinet-face"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          558,
+          441
+        ],
+        "safe_stage_window_origin_px": [
+          618,
+          502
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-profile-glass-vitrine",
+      "kind": "hero",
+      "label": "Profile Glass Vitrine",
+      "artifact_type": "hero-scale-cutaway-cable-cavity",
+      "bounds": {
+        "x": 0.4569,
+        "y": 0.4633,
+        "w": 0.4274,
+        "h": 0.4266
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.4593,
+          0.6595
+        ],
+        [
+          0.4641,
+          0.6212
+        ],
+        [
+          0.8222,
+          0.4665
+        ],
+        [
+          0.8748,
+          0.4657
+        ],
+        [
+          0.8812,
+          0.4713
+        ],
+        [
+          0.8812,
+          0.7959
+        ],
+        [
+          0.8349,
+          0.8716
+        ],
+        [
+          0.819,
+          0.8844
+        ],
+        [
+          0.4633,
+          0.8828
+        ],
+        [
+          0.4593,
+          0.6699
+        ]
+      ],
+      "cluster_id": "cutaway-noise-vessel",
+      "mask_path": "/editions/2026-07-08-cutaway-noise-vessel-v1/assets/masks/hero-profile-glass-vitrine.svg",
+      "source_binding_ids": [
+        "binding-hero-profile-glass-vitrine"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1015,
+          643
+        ],
+        "safe_stage_window_origin_px": [
+          1066,
+          676
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-lower-sleeve-surface-pane",
+      "kind": "module",
+      "label": "lower sleeve-surface pane",
+      "artifact_type": "scuffed-printed-sleeve-surface",
+      "bounds": {
+        "x": 0.116,
+        "y": 0.671,
+        "w": 0.207,
+        "h": 0.196
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.117,
+          0.672
+        ],
+        [
+          0.323,
+          0.867
+        ],
+        [
+          0.143,
+          0.866
+        ],
+        [
+          0.122,
+          0.848
+        ],
+        [
+          0.117,
+          0.672
+        ]
+      ],
+      "cluster_id": "cutaway-noise-vessel",
+      "mask_path": "/editions/2026-07-08-cutaway-noise-vessel-v1/assets/masks/module-lower-sleeve-surface-pane.svg",
+      "source_binding_ids": [
+        "binding-module-lower-sleeve-surface-pane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          337,
+          771
+        ],
+        "safe_stage_window_origin_px": [
+          363,
+          787
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-left-oxblood-pressure-stratum",
+      "kind": "module",
+      "label": "left oxblood pressure stratum",
+      "artifact_type": "vertical-oxblood-strata-notch",
+      "bounds": {
+        "x": 0.606,
+        "y": 0.111,
+        "w": 0.115,
+        "h": 0.493
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.607,
+          0.112
+        ],
+        [
+          0.718,
+          0.112
+        ],
+        [
+          0.719,
+          0.293
+        ],
+        [
+          0.713,
+          0.337
+        ],
+        [
+          0.703,
+          0.38
+        ],
+        [
+          0.693,
+          0.42
+        ],
+        [
+          0.695,
+          0.469
+        ],
+        [
+          0.683,
+          0.518
+        ],
+        [
+          0.671,
+          0.579
+        ],
+        [
+          0.663,
+          0.604
+        ],
+        [
+          0.607,
+          0.604
+        ],
+        [
+          0.607,
+          0.112
+        ]
+      ],
+      "cluster_id": "cutaway-noise-vessel",
+      "mask_path": "/editions/2026-07-08-cutaway-noise-vessel-v1/assets/masks/module-left-oxblood-pressure-stratum.svg",
+      "source_binding_ids": [
+        "binding-module-left-oxblood-pressure-stratum"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1019,
+          326
+        ],
+        "safe_stage_window_origin_px": [
+          1033,
+          366
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-right-buried-media-pane",
+      "kind": "module",
+      "label": "right buried media pane",
+      "artifact_type": "recessed-brown-image-pane",
+      "bounds": {
+        "x": 0.753,
+        "y": 0.118,
+        "w": 0.107,
+        "h": 0.354
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.754,
+          0.119
+        ],
+        [
+          0.86,
+          0.119
+        ],
+        [
+          0.861,
+          0.47
+        ],
+        [
+          0.778,
+          0.47
+        ],
+        [
+          0.777,
+          0.391
+        ],
+        [
+          0.754,
+          0.391
+        ],
+        [
+          0.754,
+          0.119
+        ]
+      ],
+      "cluster_id": "cutaway-noise-vessel",
+      "mask_path": "/editions/2026-07-08-cutaway-noise-vessel-v1/assets/masks/module-right-buried-media-pane.svg",
+      "source_binding_ids": [
+        "binding-module-right-buried-media-pane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1239,
+          273
+        ],
+        "safe_stage_window_origin_px": [
+          1252,
+          302
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-top-compartment-screw-row",
+      "kind": "module",
+      "label": "top compartment screw row",
+      "artifact_type": "metal-screw-glint-chain",
+      "bounds": {
+        "x": 0.44,
+        "y": 0.063,
+        "w": 0.105,
+        "h": 0.042
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.441,
+          0.063
+        ],
+        [
+          0.545,
+          0.063
+        ],
+        [
+          0.545,
+          0.104
+        ],
+        [
+          0.533,
+          0.105
+        ],
+        [
+          0.532,
+          0.095
+        ],
+        [
+          0.456,
+          0.095
+        ],
+        [
+          0.456,
+          0.105
+        ],
+        [
+          0.441,
+          0.104
+        ]
+      ],
+      "cluster_id": "cutaway-noise-vessel",
+      "mask_path": "/editions/2026-07-08-cutaway-noise-vessel-v1/assets/masks/module-top-compartment-screw-row.svg",
+      "source_binding_ids": [
+        "binding-module-top-compartment-screw-row"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          756,
+          83
+        ],
+        "safe_stage_window_origin_px": [
+          769,
+          86
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-bottom-audio-pressure-stamp",
+      "kind": "module",
+      "label": "bottom audio pressure stamp",
+      "artifact_type": "cropped-audio-stamp-plate",
+      "bounds": {
+        "x": 0.694,
+        "y": 0.773,
+        "w": 0.114,
+        "h": 0.043
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.695,
+          0.774
+        ],
+        [
+          0.765,
+          0.773
+        ],
+        [
+          0.789,
+          0.78
+        ],
+        [
+          0.808,
+          0.786
+        ],
+        [
+          0.806,
+          0.812
+        ],
+        [
+          0.694,
+          0.815
+        ],
+        [
+          0.694,
+          0.774
+        ]
+      ],
+      "cluster_id": "cutaway-noise-vessel",
+      "mask_path": "/editions/2026-07-08-cutaway-noise-vessel-v1/assets/masks/module-bottom-audio-pressure-stamp.svg",
+      "source_binding_ids": [
+        "binding-module-bottom-audio-pressure-stamp"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1154,
+          810
+        ],
+        "safe_stage_window_origin_px": [
+          1168,
+          814
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}

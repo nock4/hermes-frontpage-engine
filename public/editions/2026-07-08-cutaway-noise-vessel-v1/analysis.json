@@ -1,0 +1,379 @@
+{
+  "analysis_id": "analysis-2026-07-08-cutaway-noise-vessel-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A square, black-ground vessel face: a large translucent perforated mesh glows over red vertical strata on the left, while an exposed stepped vitrine of cables, screws, stains, slits, and small red light marks occupies the lower right. The plate reads as an industrial cabinet cutaway with source windows embedded as mesh cells, torn strata, screw glints, sleeve-like patches, and audio-pressure hardware near the base.",
+  "usable_surfaces": [
+    "large glowing perforated mesh cabinet face",
+    "stepped lower-right glass-and-cable vitrine",
+    "buried printed sleeve patch behind mesh",
+    "left oxblood vertical pressure band",
+    "right recessed brown wall pane",
+    "top rail notch and screw-glint chain",
+    "bottom compressed audio stamp and red lens"
+  ],
+  "detected_objects": [
+    {
+      "label": "main mesh cabinet face",
+      "artifact_type": "hero-scale-glowing-mesh-face",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.118,
+        "y": 0.119,
+        "w": 0.49,
+        "h": 0.743
+      },
+      "polygon": [
+        [
+          0.12,
+          0.12
+        ],
+        [
+          0.591,
+          0.121
+        ],
+        [
+          0.607,
+          0.128
+        ],
+        [
+          0.608,
+          0.61
+        ],
+        [
+          0.453,
+          0.611
+        ],
+        [
+          0.453,
+          0.859
+        ],
+        [
+          0.119,
+          0.86
+        ],
+        [
+          0.118,
+          0.12
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "The dominant translucent perforated rectangle fills the left body, with visible grid cells, scuffs, vertical ribs, and a warm central glow behind it."
+    },
+    {
+      "label": "Profile Glass Vitrine",
+      "artifact_type": "hero-scale-cutaway-cable-cavity",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.453,
+        "y": 0.455,
+        "w": 0.416,
+        "h": 0.411
+      },
+      "polygon": [
+        [
+          0.454,
+          0.613
+        ],
+        [
+          0.49,
+          0.613
+        ],
+        [
+          0.493,
+          0.603
+        ],
+        [
+          0.543,
+          0.603
+        ],
+        [
+          0.552,
+          0.592
+        ],
+        [
+          0.719,
+          0.593
+        ],
+        [
+          0.719,
+          0.575
+        ],
+        [
+          0.737,
+          0.56
+        ],
+        [
+          0.751,
+          0.531
+        ],
+        [
+          0.801,
+          0.531
+        ],
+        [
+          0.801,
+          0.459
+        ],
+        [
+          0.865,
+          0.459
+        ],
+        [
+          0.866,
+          0.863
+        ],
+        [
+          0.453,
+          0.862
+        ],
+        [
+          0.453,
+          0.613
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "The bright stepped exposed compartment in the lower right has cut metal edges, glassy recesses, yellow cables, screw plates, grime, and a small red lens."
+    },
+    {
+      "label": "lower sleeve-surface pane",
+      "artifact_type": "scuffed-printed-sleeve-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.116,
+        "y": 0.671,
+        "w": 0.207,
+        "h": 0.196
+      },
+      "polygon": [
+        [
+          0.117,
+          0.672
+        ],
+        [
+          0.323,
+          0.867
+        ],
+        [
+          0.143,
+          0.866
+        ],
+        [
+          0.122,
+          0.848
+        ],
+        [
+          0.117,
+          0.672
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A triangular scuffed paper-like dark patch sits under the mesh at the lower left, with a diagonal torn edge and dusty printed surface."
+    },
+    {
+      "label": "left oxblood pressure stratum",
+      "artifact_type": "vertical-oxblood-strata-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.606,
+        "y": 0.111,
+        "w": 0.115,
+        "h": 0.493
+      },
+      "polygon": [
+        [
+          0.607,
+          0.112
+        ],
+        [
+          0.718,
+          0.112
+        ],
+        [
+          0.719,
+          0.293
+        ],
+        [
+          0.713,
+          0.337
+        ],
+        [
+          0.703,
+          0.38
+        ],
+        [
+          0.693,
+          0.42
+        ],
+        [
+          0.695,
+          0.469
+        ],
+        [
+          0.683,
+          0.518
+        ],
+        [
+          0.671,
+          0.579
+        ],
+        [
+          0.663,
+          0.604
+        ],
+        [
+          0.607,
+          0.604
+        ],
+        [
+          0.607,
+          0.112
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A dark red vertical interior band appears to the right of the mesh, edged by a torn ochre seam and deep shadow notch."
+    },
+    {
+      "label": "right buried media pane",
+      "artifact_type": "recessed-brown-image-pane",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.753,
+        "y": 0.118,
+        "w": 0.107,
+        "h": 0.354
+      },
+      "polygon": [
+        [
+          0.754,
+          0.119
+        ],
+        [
+          0.86,
+          0.119
+        ],
+        [
+          0.861,
+          0.47
+        ],
+        [
+          0.778,
+          0.47
+        ],
+        [
+          0.777,
+          0.391
+        ],
+        [
+          0.754,
+          0.391
+        ],
+        [
+          0.754,
+          0.119
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A recessed brown rectangular wall section sits inside the right side cavity, separated by dark vertical strips and stained surface texture."
+    },
+    {
+      "label": "top compartment screw row",
+      "artifact_type": "metal-screw-glint-chain",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.44,
+        "y": 0.063,
+        "w": 0.105,
+        "h": 0.042
+      },
+      "polygon": [
+        [
+          0.441,
+          0.063
+        ],
+        [
+          0.545,
+          0.063
+        ],
+        [
+          0.545,
+          0.104
+        ],
+        [
+          0.533,
+          0.105
+        ],
+        [
+          0.532,
+          0.095
+        ],
+        [
+          0.456,
+          0.095
+        ],
+        [
+          0.456,
+          0.105
+        ],
+        [
+          0.441,
+          0.104
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "The top metal rail has a centered rectangular notch with a thin red glow and worn metal edges, functioning as a chain of tiny apertures rather than a broad card."
+    },
+    {
+      "label": "bottom audio pressure stamp",
+      "artifact_type": "cropped-audio-stamp-plate",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.694,
+        "y": 0.773,
+        "w": 0.114,
+        "h": 0.043
+      },
+      "polygon": [
+        [
+          0.695,
+          0.774
+        ],
+        [
+          0.765,
+          0.773
+        ],
+        [
+          0.789,
+          0.78
+        ],
+        [
+          0.808,
+          0.786
+        ],
+        [
+          0.806,
+          0.812
+        ],
+        [
+          0.694,
+          0.815
+        ],
+        [
+          0.694,
+          0.774
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Near the base of the exposed compartment is a compressed dark glassy stamp plate with a horizontal tube, black pressure bed, and bright red star-like lens."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.68,
+    "rationale": "The composition is controlled by a few large industrial forms, but the mesh perforations, cable vitrine, screws, stains, and multiple slits create dense local detail. It remains source-mappable rather than cluttered because most marks belong to clear physical surfaces."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-07-08-cutaway-noise-vessel-v1"
+}

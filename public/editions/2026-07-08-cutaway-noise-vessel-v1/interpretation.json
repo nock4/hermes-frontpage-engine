@@ -1,0 +1,317 @@
+{
+  "interpretation_id": "interp-2026-07-08-cutaway-noise-vessel-v1",
+  "edition_id": "2026-07-08-cutaway-noise-vessel-v1",
+  "plate_read_timestamp": "2026-07-08T08:09:22.441Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A square, black-ground vessel face: a large translucent perforated mesh glows over red vertical strata on the left, while an exposed stepped vitrine of cables, screws, stains, slits, and small red light marks occupies the lower right. The plate reads as an industrial cabinet cutaway with source windows embedded as mesh cells, torn strata, screw glints, sleeve-like patches, and audio-pressure hardware near the base.",
+    "dominant_spatial_mode": "contained",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "bruised archive machinery with a white-hot conduit wound",
+      "A square, black-ground vessel face: a large translucent perforated mesh glows over red vertical strata on the left, while an exposed stepped vitrine of cables, screws, stains, slits, and small red light marks occupies the lower right. The plate reads as an industrial cabinet cutaway with source windows embedded as mesh cells, torn strata, screw glints, sleeve-like patches, and audio-pressure hardware near the base.",
+      "black-void",
+      "mesh-face",
+      "oxblood-strata"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "main mesh cabinet face",
+      "Profile Glass Vitrine",
+      "lower sleeve-surface pane",
+      "left oxblood pressure stratum",
+      "right buried media pane",
+      "top compartment screw row",
+      "bottom audio pressure stamp"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "cutaway-noise-vessel",
+      "centered public-scale sectioned noise vessel suspended in black void",
+      "luminous gridded front face with embedded source apertures",
+      "oxblood vertical strata and stained interior bands",
+      "off-white cutaway cavity with tangled conduit wound",
+      "buried cropped stamp plates and screw-head glints",
+      "large glowing perforated mesh cabinet face",
+      "stepped lower-right glass-and-cable vitrine"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cutaway-noise-vessel.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-main-mesh-cabinet-face",
+      "kind": "hero",
+      "type": "hero-scale-glowing-mesh-face",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.1212,
+        "y": 0.1148,
+        "w": 0.5,
+        "h": 0.551
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-profile-glass-vitrine",
+      "kind": "hero",
+      "type": "hero-scale-cutaway-cable-cavity",
+      "strength": 0.9807919999999999,
+      "bounds": {
+        "x": 0.4569,
+        "y": 0.4633,
+        "w": 0.4274,
+        "h": 0.4266
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-sleeve-surface-pane",
+      "kind": "module",
+      "type": "scuffed-printed-sleeve-surface",
+      "strength": 0.784524,
+      "bounds": {
+        "x": 0.116,
+        "y": 0.671,
+        "w": 0.207,
+        "h": 0.196
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-left-oxblood-pressure-stratum",
+      "kind": "module",
+      "type": "vertical-oxblood-strata-notch",
+      "strength": 0.7611960000000001,
+      "bounds": {
+        "x": 0.606,
+        "y": 0.111,
+        "w": 0.115,
+        "h": 0.493
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-buried-media-pane",
+      "kind": "module",
+      "type": "recessed-brown-image-pane",
+      "strength": 0.73626,
+      "bounds": {
+        "x": 0.753,
+        "y": 0.118,
+        "w": 0.107,
+        "h": 0.354
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-top-compartment-screw-row",
+      "kind": "module",
+      "type": "metal-screw-glint-chain",
+      "strength": 0.70416,
+      "bounds": {
+        "x": 0.44,
+        "y": 0.063,
+        "w": 0.105,
+        "h": 0.042
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-audio-pressure-stamp",
+      "kind": "module",
+      "type": "cropped-audio-stamp-plate",
+      "strength": 0.67578,
+      "bounds": {
+        "x": 0.694,
+        "y": 0.773,
+        "w": 0.114,
+        "h": 0.043
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-main-mesh-cabinet-face-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1212,
+        "y": 0.1148,
+        "w": 0.5,
+        "h": 0.551
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-profile-glass-vitrine-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4569,
+        "y": 0.4633,
+        "w": 0.4274,
+        "h": 0.4266
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-sleeve-surface-pane-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.116,
+        "y": 0.671,
+        "w": 0.207,
+        "h": 0.196
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-left-oxblood-pressure-stratum-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.606,
+        "y": 0.111,
+        "w": 0.115,
+        "h": 0.493
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-buried-media-pane-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.753,
+        "y": 0.118,
+        "w": 0.107,
+        "h": 0.354
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-top-compartment-screw-row-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.44,
+        "y": 0.063,
+        "w": 0.105,
+        "h": 0.042
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-audio-pressure-stamp-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.694,
+        "y": 0.773,
+        "w": 0.114,
+        "h": 0.043
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 7 artifacts and scene family heuristics."
+  ]
+}

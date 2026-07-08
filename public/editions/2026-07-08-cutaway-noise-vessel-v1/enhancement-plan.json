@@ -1,0 +1,198 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-08-cutaway-noise-vessel-v1",
+  "edition_id": "2026-07-08-cutaway-noise-vessel-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-08-cutaway-noise-vessel-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal",
+    "restoration-scan",
+    "screen-rendered-html"
+  ],
+  "future_only_subset": [
+    "ghost-reflection-treatment",
+    "lens-inspection"
+  ],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-main-mesh-cabinet-face",
+      "target_kind": "artifact",
+      "artifact_id": "hero-main-mesh-cabinet-face",
+      "priority": 1,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-glowing-mesh-face) selected from interpretation."
+    },
+    {
+      "target_id": "hero-profile-glass-vitrine",
+      "target_kind": "artifact",
+      "artifact_id": "hero-profile-glass-vitrine",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-cutaway-cable-cavity) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-sleeve-surface-pane",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-sleeve-surface-pane",
+      "priority": 3,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scuffed-printed-sleeve-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-left-oxblood-pressure-stratum",
+      "target_kind": "artifact",
+      "artifact_id": "module-left-oxblood-pressure-stratum",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (vertical-oxblood-strata-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-buried-media-pane",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-buried-media-pane",
+      "priority": 5,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (recessed-brown-image-pane) selected from interpretation."
+    },
+    {
+      "target_id": "module-top-compartment-screw-row",
+      "target_kind": "artifact",
+      "artifact_id": "module-top-compartment-screw-row",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (metal-screw-glint-chain) selected from interpretation."
+    },
+    {
+      "target_id": "module-bottom-audio-pressure-stamp",
+      "target_kind": "artifact",
+      "artifact_id": "module-bottom-audio-pressure-stamp",
+      "priority": 7,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-audio-stamp-plate) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 7 artifacts and scene family heuristics."
+}
