@@ -1,0 +1,539 @@
+{
+  "artifact_map_id": "map-2026-07-10-pale-internet-herbarium-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "pale-internet-herbarium",
+  "default_artifact_id": "hero-retro-index-hero-slip",
+  "artifacts": [
+    {
+      "id": "hero-retro-index-hero-slip",
+      "kind": "hero",
+      "label": "retro-index-hero-slip",
+      "artifact_type": "tilted-hero-media-slip",
+      "bounds": {
+        "x": 0.512,
+        "y": 0.055,
+        "w": 0.32,
+        "h": 0.532
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.657,
+          0.055
+        ],
+        [
+          0.773,
+          0.208
+        ],
+        [
+          0.832,
+          0.257
+        ],
+        [
+          0.779,
+          0.303
+        ],
+        [
+          0.681,
+          0.445
+        ],
+        [
+          0.602,
+          0.585
+        ],
+        [
+          0.512,
+          0.578
+        ],
+        [
+          0.545,
+          0.444
+        ],
+        [
+          0.575,
+          0.292
+        ],
+        [
+          0.613,
+          0.142
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/hero-retro-index-hero-slip.svg",
+      "source_binding_ids": [
+        "binding-hero-retro-index-hero-slip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1032,
+          285
+        ],
+        "safe_stage_window_origin_px": [
+          1072,
+          329
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-living-itinerary-hero-island",
+      "kind": "hero",
+      "label": "living-itinerary-hero-island",
+      "artifact_type": "floating-hero-world-shard",
+      "bounds": {
+        "x": 0.106,
+        "y": 0.63,
+        "w": 0.203,
+        "h": 0.31
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.3,
+          0.63
+        ],
+        [
+          0.308,
+          0.689
+        ],
+        [
+          0.29,
+          0.789
+        ],
+        [
+          0.259,
+          0.938
+        ],
+        [
+          0.101,
+          0.94
+        ],
+        [
+          0.101,
+          0.897
+        ],
+        [
+          0.151,
+          0.83
+        ],
+        [
+          0.207,
+          0.743
+        ],
+        [
+          0.259,
+          0.668
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/hero-living-itinerary-hero-island.svg",
+      "source_binding_ids": [
+        "binding-hero-living-itinerary-hero-island"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          319,
+          778
+        ],
+        "safe_stage_window_origin_px": [
+          344,
+          804
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-typelit-book-page-cut",
+      "kind": "module",
+      "label": "typelit-book-page-cut",
+      "artifact_type": "washed-book-page-slip",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.078,
+        "h": 0.765
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.002,
+          0.001
+        ],
+        [
+          0.074,
+          0.002
+        ],
+        [
+          0.076,
+          0.129
+        ],
+        [
+          0.069,
+          0.282
+        ],
+        [
+          0.073,
+          0.461
+        ],
+        [
+          0.069,
+          0.63
+        ],
+        [
+          0.077,
+          0.757
+        ],
+        [
+          0.006,
+          0.765
+        ],
+        [
+          0,
+          0.585
+        ],
+        [
+          0.003,
+          0.39
+        ],
+        [
+          0,
+          0.189
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/module-typelit-book-page-cut.svg",
+      "source_binding_ids": [
+        "binding-module-typelit-book-page-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          90,
+          329
+        ],
+        "safe_stage_window_origin_px": [
+          90,
+          392
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-nityas-leisure-column",
+      "kind": "module",
+      "label": "nityas-leisure-column",
+      "artifact_type": "faded-margin-text-column",
+      "bounds": {
+        "x": 0.925,
+        "y": 0.039,
+        "w": 0.072,
+        "h": 0.888
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.929,
+          0.04
+        ],
+        [
+          0.994,
+          0.041
+        ],
+        [
+          0.997,
+          0.206
+        ],
+        [
+          0.991,
+          0.392
+        ],
+        [
+          0.998,
+          0.604
+        ],
+        [
+          0.987,
+          0.792
+        ],
+        [
+          0.996,
+          0.926
+        ],
+        [
+          0.934,
+          0.92
+        ],
+        [
+          0.925,
+          0.747
+        ],
+        [
+          0.932,
+          0.563
+        ],
+        [
+          0.925,
+          0.365
+        ],
+        [
+          0.929,
+          0.184
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/module-nityas-leisure-column.svg",
+      "source_binding_ids": [
+        "binding-module-nityas-leisure-column"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          422
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          495
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-cod-recipe-glint",
+      "kind": "module",
+      "label": "cod-recipe-glint",
+      "artifact_type": "small-gloss-image-glint",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/module-cod-recipe-glint.svg",
+      "source_binding_ids": [
+        "binding-module-cod-recipe-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-anchor-image-orbit-chip",
+      "kind": "module",
+      "label": "anchor-image-orbit-chip",
+      "artifact_type": "tiny-orbital-thumbnail-chip",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/module-anchor-image-orbit-chip.svg",
+      "source_binding_ids": [
+        "binding-module-anchor-image-orbit-chip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-midlife-square-repair",
+      "kind": "module",
+      "label": "midlife-square-repair",
+      "artifact_type": "square-paper-repair-patch",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/module-midlife-square-repair.svg",
+      "source_binding_ids": [
+        "binding-module-midlife-square-repair"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "pale-internet-herbarium",
+      "mask_path": "/editions/2026-07-10-pale-internet-herbarium-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
