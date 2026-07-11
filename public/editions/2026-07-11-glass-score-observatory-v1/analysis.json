@@ -1,0 +1,478 @@
+{
+  "analysis_id": "analysis-2026-07-11-glass-score-observatory-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A restrained black-glass transcription plate is crossed by a broad white diagram band. Thin piano-roll grids, colored pill apertures, playhead cuts, rounded diagram strokes, reflective wedges, and small optical holes provide the usable source-bearing marks.",
+  "usable_surfaces": [
+    "upper black transcription slab with faint MIDI grid",
+    "central white rounded diagram band",
+    "lower black piano-roll glass field",
+    "thin vertical playhead seams",
+    "colored pill apertures",
+    "lower-left circular optical hole",
+    "right-side rounded diagram trace"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero dark transcription slab",
+      "artifact_type": "hero-scale-glass-plate-glass-field",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.168,
+        "y": 0.077,
+        "w": 0.832,
+        "h": 0.304
+      },
+      "polygon": [
+        [
+          0.214,
+          0.084
+        ],
+        [
+          0.575,
+          0.081
+        ],
+        [
+          0.578,
+          0.219
+        ],
+        [
+          0.584,
+          0.226
+        ],
+        [
+          0.589,
+          0.218
+        ],
+        [
+          0.591,
+          0.079
+        ],
+        [
+          1,
+          0.078
+        ],
+        [
+          1,
+          0.381
+        ],
+        [
+          0.323,
+          0.381
+        ],
+        [
+          0.168,
+          0.373
+        ],
+        [
+          0.168,
+          0.125
+        ],
+        [
+          0.175,
+          0.102
+        ],
+        [
+          0.192,
+          0.089
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "large glossy black rounded slab across the top, containing faint grid lines, embedded specks, and a narrow central glass cut"
+    },
+    {
+      "label": "hero piano-roll color field",
+      "artifact_type": "hero-scale-midi-note-grid",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.322,
+        "y": 0.245,
+        "w": 0.6779999999999999,
+        "h": 0.144
+      },
+      "polygon": [
+        [
+          0.323,
+          0.247
+        ],
+        [
+          0.561,
+          0.246
+        ],
+        [
+          0.562,
+          0.306
+        ],
+        [
+          0.744,
+          0.306
+        ],
+        [
+          0.745,
+          0.248
+        ],
+        [
+          0.897,
+          0.249
+        ],
+        [
+          0.897,
+          0.358
+        ],
+        [
+          1,
+          0.358
+        ],
+        [
+          1,
+          0.389
+        ],
+        [
+          0.323,
+          0.389
+        ],
+        [
+          0.323,
+          0.365
+        ],
+        [
+          0.462,
+          0.364
+        ],
+        [
+          0.462,
+          0.306
+        ],
+        [
+          0.323,
+          0.306
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "faint horizontal and vertical piano-roll notation lines with small rectangular note blocks embedded inside the upper black slab"
+    },
+    {
+      "label": "black-arrow diagram pressure",
+      "artifact_type": "fat-arrow-panel-fragment",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.393,
+        "w": 0.758,
+        "h": 0.239
+      },
+      "polygon": [
+        [
+          0,
+          0.399
+        ],
+        [
+          0.421,
+          0.399
+        ],
+        [
+          0.453,
+          0.407
+        ],
+        [
+          0.475,
+          0.432
+        ],
+        [
+          0.487,
+          0.468
+        ],
+        [
+          0.489,
+          0.505
+        ],
+        [
+          0.489,
+          0.616
+        ],
+        [
+          0.721,
+          0.616
+        ],
+        [
+          0.744,
+          0.609
+        ],
+        [
+          0.754,
+          0.584
+        ],
+        [
+          0.754,
+          0.382
+        ],
+        [
+          0.758,
+          0.382
+        ],
+        [
+          0.758,
+          0.632
+        ],
+        [
+          0,
+          0.632
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "dominant black rounded diagram stroke printed inside the broad white band, forming a thick pressure path and panel edge"
+    },
+    {
+      "label": "muted teaser bloom",
+      "artifact_type": "compressed-video-bloom-patch",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.16,
+        "y": 0.657,
+        "w": 0.373,
+        "h": 0.246
+      },
+      "polygon": [
+        [
+          0.163,
+          0.658
+        ],
+        [
+          0.223,
+          0.659
+        ],
+        [
+          0.532,
+          0.902
+        ],
+        [
+          0.16,
+          0.902
+        ],
+        [
+          0.16,
+          0.838
+        ],
+        [
+          0.203,
+          0.809
+        ],
+        [
+          0.224,
+          0.771
+        ],
+        [
+          0.208,
+          0.713
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "soft gray triangular overexposed reflection patch across the lower-left black glass, like compressed video bloom"
+    },
+    {
+      "label": "procedural foliage side trace",
+      "artifact_type": "rounded-panel-root-trace",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.899,
+        "y": 0.449,
+        "w": 0.10099999999999998,
+        "h": 0.168
+      },
+      "polygon": [
+        [
+          0.905,
+          0.616
+        ],
+        [
+          0.904,
+          0.565
+        ],
+        [
+          0.906,
+          0.526
+        ],
+        [
+          0.915,
+          0.492
+        ],
+        [
+          0.933,
+          0.466
+        ],
+        [
+          0.958,
+          0.454
+        ],
+        [
+          1,
+          0.454
+        ],
+        [
+          1,
+          0.467
+        ],
+        [
+          0.976,
+          0.467
+        ],
+        [
+          0.947,
+          0.474
+        ],
+        [
+          0.927,
+          0.493
+        ],
+        [
+          0.916,
+          0.527
+        ],
+        [
+          0.913,
+          0.57
+        ],
+        [
+          0.914,
+          0.616
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "cropped rounded black outline emerging from the right side of the white diagram band, resembling a clipped generated trace"
+    },
+    {
+      "label": "acid green slash reflection",
+      "artifact_type": "green-glass-slash",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "muted teaser bloom",
+      "artifact_type": "compressed-video-bloom-patch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "procedural foliage side trace",
+      "artifact_type": "rounded-panel-root-trace",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "retro broadcast corner glow",
+      "artifact_type": "lacquer-corner-glass-plate-glow",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.64,
+    "rationale": "The plate is sparse and expressionist: three dominant bands of black glass and white diagram paper carry most of the field, while source marks are restrained as thin seams, pill lights, faint grids, and clipped rounded edges rather than busy cards."
+  },
+  "fallback_detected_object_count": 4,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-11-glass-score-observatory-v1"
+}

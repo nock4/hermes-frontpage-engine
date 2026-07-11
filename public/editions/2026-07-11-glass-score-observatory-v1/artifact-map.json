@@ -1,0 +1,607 @@
+{
+  "artifact_map_id": "map-2026-07-11-glass-score-observatory-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "glass-score-observatory",
+  "default_artifact_id": "hero-hero-dark-transcription-slab",
+  "artifacts": [
+    {
+      "id": "hero-hero-dark-transcription-slab",
+      "kind": "hero",
+      "label": "hero dark transcription slab",
+      "artifact_type": "hero-scale-glass-plate-glass-field",
+      "bounds": {
+        "x": 0.168,
+        "y": 0.077,
+        "w": 0.832,
+        "h": 0.304
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.214,
+          0.084
+        ],
+        [
+          0.575,
+          0.081
+        ],
+        [
+          0.578,
+          0.219
+        ],
+        [
+          0.584,
+          0.226
+        ],
+        [
+          0.589,
+          0.218
+        ],
+        [
+          0.591,
+          0.079
+        ],
+        [
+          1,
+          0.078
+        ],
+        [
+          1,
+          0.381
+        ],
+        [
+          0.323,
+          0.381
+        ],
+        [
+          0.168,
+          0.373
+        ],
+        [
+          0.168,
+          0.125
+        ],
+        [
+          0.175,
+          0.102
+        ],
+        [
+          0.192,
+          0.089
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/hero-hero-dark-transcription-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-dark-transcription-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          897,
+          210
+        ],
+        "safe_stage_window_origin_px": [
+          999,
+          234
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-hero-piano-roll-color-field",
+      "kind": "hero",
+      "label": "hero piano-roll color field",
+      "artifact_type": "hero-scale-midi-note-grid",
+      "bounds": {
+        "x": 0.322,
+        "y": 0.245,
+        "w": 0.6779999999999999,
+        "h": 0.144
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.323,
+          0.247
+        ],
+        [
+          0.561,
+          0.246
+        ],
+        [
+          0.562,
+          0.306
+        ],
+        [
+          0.744,
+          0.306
+        ],
+        [
+          0.745,
+          0.248
+        ],
+        [
+          0.897,
+          0.249
+        ],
+        [
+          0.897,
+          0.358
+        ],
+        [
+          1,
+          0.358
+        ],
+        [
+          1,
+          0.389
+        ],
+        [
+          0.323,
+          0.389
+        ],
+        [
+          0.323,
+          0.365
+        ],
+        [
+          0.462,
+          0.364
+        ],
+        [
+          0.462,
+          0.306
+        ],
+        [
+          0.323,
+          0.306
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/hero-hero-piano-roll-color-field.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-piano-roll-color-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1015,
+          313
+        ],
+        "safe_stage_window_origin_px": [
+          1099,
+          325
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-black-arrow-diagram-pressure",
+      "kind": "module",
+      "label": "black-arrow diagram pressure",
+      "artifact_type": "fat-arrow-panel-fragment",
+      "bounds": {
+        "x": 0,
+        "y": 0.393,
+        "w": 0.758,
+        "h": 0.239
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0,
+          0.399
+        ],
+        [
+          0.421,
+          0.399
+        ],
+        [
+          0.453,
+          0.407
+        ],
+        [
+          0.475,
+          0.432
+        ],
+        [
+          0.487,
+          0.468
+        ],
+        [
+          0.489,
+          0.505
+        ],
+        [
+          0.489,
+          0.616
+        ],
+        [
+          0.721,
+          0.616
+        ],
+        [
+          0.744,
+          0.609
+        ],
+        [
+          0.754,
+          0.584
+        ],
+        [
+          0.754,
+          0.382
+        ],
+        [
+          0.758,
+          0.382
+        ],
+        [
+          0.758,
+          0.632
+        ],
+        [
+          0,
+          0.632
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/module-black-arrow-diagram-pressure.svg",
+      "source_binding_ids": [
+        "binding-module-black-arrow-diagram-pressure"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          582,
+          505
+        ],
+        "safe_stage_window_origin_px": [
+          675,
+          525
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-muted-teaser-bloom",
+      "kind": "module",
+      "label": "muted teaser bloom",
+      "artifact_type": "compressed-video-bloom-patch",
+      "bounds": {
+        "x": 0.16,
+        "y": 0.657,
+        "w": 0.373,
+        "h": 0.246
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.163,
+          0.658
+        ],
+        [
+          0.223,
+          0.659
+        ],
+        [
+          0.532,
+          0.902
+        ],
+        [
+          0.16,
+          0.902
+        ],
+        [
+          0.16,
+          0.838
+        ],
+        [
+          0.203,
+          0.809
+        ],
+        [
+          0.224,
+          0.771
+        ],
+        [
+          0.208,
+          0.713
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/module-muted-teaser-bloom.svg",
+      "source_binding_ids": [
+        "binding-module-muted-teaser-bloom"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          532,
+          779
+        ],
+        "safe_stage_window_origin_px": [
+          578,
+          799
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-procedural-foliage-side-trace",
+      "kind": "module",
+      "label": "procedural foliage side trace",
+      "artifact_type": "rounded-panel-root-trace",
+      "bounds": {
+        "x": 0.899,
+        "y": 0.449,
+        "w": 0.10099999999999998,
+        "h": 0.168
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.905,
+          0.616
+        ],
+        [
+          0.904,
+          0.565
+        ],
+        [
+          0.906,
+          0.526
+        ],
+        [
+          0.915,
+          0.492
+        ],
+        [
+          0.933,
+          0.466
+        ],
+        [
+          0.958,
+          0.454
+        ],
+        [
+          1,
+          0.454
+        ],
+        [
+          1,
+          0.467
+        ],
+        [
+          0.976,
+          0.467
+        ],
+        [
+          0.947,
+          0.474
+        ],
+        [
+          0.927,
+          0.493
+        ],
+        [
+          0.916,
+          0.527
+        ],
+        [
+          0.913,
+          0.57
+        ],
+        [
+          0.914,
+          0.616
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/module-procedural-foliage-side-trace.svg",
+      "source_binding_ids": [
+        "binding-module-procedural-foliage-side-trace"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          532
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          546
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-acid-green-slash-reflection",
+      "kind": "module",
+      "label": "acid green slash reflection",
+      "artifact_type": "green-glass-slash",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/module-acid-green-slash-reflection.svg",
+      "source_binding_ids": [
+        "binding-module-acid-green-slash-reflection"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-muted-teaser-bloom-2",
+      "kind": "module",
+      "label": "muted teaser bloom",
+      "artifact_type": "compressed-video-bloom-patch",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/module-muted-teaser-bloom-2.svg",
+      "source_binding_ids": [
+        "binding-module-muted-teaser-bloom-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-procedural-foliage-side-trace-2",
+      "kind": "module",
+      "label": "procedural foliage side trace",
+      "artifact_type": "rounded-panel-root-trace",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/module-procedural-foliage-side-trace-2.svg",
+      "source_binding_ids": [
+        "binding-module-procedural-foliage-side-trace-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-retro-broadcast-corner-glow",
+      "kind": "module",
+      "label": "retro broadcast corner glow",
+      "artifact_type": "lacquer-corner-glass-plate-glow",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "glass-score-observatory",
+      "mask_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/masks/module-retro-broadcast-corner-glow.svg",
+      "source_binding_ids": [
+        "binding-module-retro-broadcast-corner-glow"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

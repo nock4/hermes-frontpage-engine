@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-07-11-glass-score-observatory-v1",
+  "edition_id": "2026-07-11-glass-score-observatory-v1",
+  "plate_read_timestamp": "2026-07-11T08:09:14.443Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A restrained black-glass transcription plate is crossed by a broad white diagram band. Thin piano-roll grids, colored pill apertures, playhead cuts, rounded diagram strokes, reflective wedges, and small optical holes provide the usable source-bearing marks.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "a nocturnal studio slab where recorded sound is being optically sorted into colored notation",
+      "A restrained black-glass transcription plate is crossed by a broad white diagram band. Thin piano-roll grids, colored pill apertures, playhead cuts, rounded diagram strokes, reflective wedges, and small optical holes provide the usable source-bearing marks.",
+      "audio-transcription",
+      "midi-bars",
+      "studio-glass"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero dark transcription slab",
+      "hero piano-roll color field",
+      "black-arrow diagram pressure",
+      "muted teaser bloom",
+      "procedural foliage side trace",
+      "acid green slash reflection",
+      "retro broadcast corner glow"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "glass-score-observatory",
+      "dark central transcription slab cropped as a macro surface",
+      "bright diagram band colliding across the middle plane",
+      "staggered colored note bars and token apertures",
+      "single vertical playhead seam cutting the grid",
+      "clipped studio-edge silhouettes acting as optical occluders",
+      "rounded arrow-panel fragments embedded into the surface",
+      "upper black transcription slab with faint MIDI grid"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: glass-score-observatory.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-dark-transcription-slab",
+      "kind": "hero",
+      "type": "hero-scale-glass-plate-glass-field",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.168,
+        "y": 0.077,
+        "w": 0.832,
+        "h": 0.304
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "hero-hero-piano-roll-color-field",
+      "kind": "hero",
+      "type": "hero-scale-midi-note-grid",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.322,
+        "y": 0.245,
+        "w": 0.6779999999999999,
+        "h": 0.144
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-black-arrow-diagram-pressure",
+      "kind": "module",
+      "type": "fat-arrow-panel-fragment",
+      "strength": 0.794184,
+      "bounds": {
+        "x": 0,
+        "y": 0.393,
+        "w": 0.758,
+        "h": 0.239
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-muted-teaser-bloom",
+      "kind": "module",
+      "type": "compressed-video-bloom-patch",
+      "strength": 0.7621920000000001,
+      "bounds": {
+        "x": 0.16,
+        "y": 0.657,
+        "w": 0.373,
+        "h": 0.246
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-procedural-foliage-side-trace",
+      "kind": "module",
+      "type": "rounded-panel-root-trace",
+      "strength": 0.7324080000000001,
+      "bounds": {
+        "x": 0.899,
+        "y": 0.449,
+        "w": 0.10099999999999998,
+        "h": 0.168
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-acid-green-slash-reflection",
+      "kind": "module",
+      "type": "green-glass-slash",
+      "strength": 0.70314,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-muted-teaser-bloom-2",
+      "kind": "module",
+      "type": "compressed-video-bloom-patch",
+      "strength": 0.6693000000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-procedural-foliage-side-trace-2",
+      "kind": "module",
+      "type": "rounded-panel-root-trace",
+      "strength": 0.6534639999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-retro-broadcast-corner-glow",
+      "kind": "module",
+      "type": "lacquer-corner-glass-plate-glow",
+      "strength": 0.646876,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-dark-transcription-slab-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.168,
+        "y": 0.077,
+        "w": 0.832,
+        "h": 0.304
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "hero-hero-piano-roll-color-field-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.322,
+        "y": 0.245,
+        "w": 0.6779999999999999,
+        "h": 0.144
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-black-arrow-diagram-pressure-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.393,
+        "w": 0.758,
+        "h": 0.239
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-muted-teaser-bloom-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.16,
+        "y": 0.657,
+        "w": 0.373,
+        "h": 0.246
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-procedural-foliage-side-trace-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.899,
+        "y": 0.449,
+        "w": 0.10099999999999998,
+        "h": 0.168
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-acid-green-slash-reflection-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-muted-teaser-bloom-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-procedural-foliage-side-trace-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-retro-broadcast-corner-glow-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

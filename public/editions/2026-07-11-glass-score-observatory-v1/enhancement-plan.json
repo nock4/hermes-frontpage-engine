@@ -1,0 +1,240 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-11-glass-score-observatory-v1",
+  "edition_id": "2026-07-11-glass-score-observatory-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-11-glass-score-observatory-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation",
+    "ghost-reflection-treatment",
+    "lens-inspection"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-dark-transcription-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-dark-transcription-slab",
+      "priority": 1,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-glass-plate-glass-field) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-piano-roll-color-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-piano-roll-color-field",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-midi-note-grid) selected from interpretation."
+    },
+    {
+      "target_id": "module-black-arrow-diagram-pressure",
+      "target_kind": "artifact",
+      "artifact_id": "module-black-arrow-diagram-pressure",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (fat-arrow-panel-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-muted-teaser-bloom",
+      "target_kind": "artifact",
+      "artifact_id": "module-muted-teaser-bloom",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-video-bloom-patch) selected from interpretation."
+    },
+    {
+      "target_id": "module-procedural-foliage-side-trace",
+      "target_kind": "artifact",
+      "artifact_id": "module-procedural-foliage-side-trace",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rounded-panel-root-trace) selected from interpretation."
+    },
+    {
+      "target_id": "module-acid-green-slash-reflection",
+      "target_kind": "artifact",
+      "artifact_id": "module-acid-green-slash-reflection",
+      "priority": 6,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (green-glass-slash) selected from interpretation."
+    },
+    {
+      "target_id": "module-muted-teaser-bloom-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-muted-teaser-bloom-2",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-video-bloom-patch) selected from interpretation."
+    },
+    {
+      "target_id": "module-procedural-foliage-side-trace-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-procedural-foliage-side-trace-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rounded-panel-root-trace) selected from interpretation."
+    },
+    {
+      "target_id": "module-retro-broadcast-corner-glow",
+      "target_kind": "artifact",
+      "artifact_id": "module-retro-broadcast-corner-glow",
+      "priority": 9,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (lacquer-corner-glass-plate-glow) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

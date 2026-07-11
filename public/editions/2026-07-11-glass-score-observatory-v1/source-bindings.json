@@ -1,0 +1,335 @@
+{
+  "source_binding_set_id": "bindings-2026-07-11-glass-score-observatory-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-hero-dark-transcription-slab",
+      "artifact_id": "hero-hero-dark-transcription-slab",
+      "source_type": "tweet",
+      "source_url": "https://x.com/MireloAI/status/2075536492177354771",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@MireloAI: Today, together with @kyutai_labs, we’re introducing our new Audio-to-MIDI model. It...",
+      "kicker": "x.com",
+      "excerpt": "Today, together with @kyutai_labs, we’re introducing our new Audio-to-MIDI model.",
+      "source_title": "@MireloAI: Today, together with @kyutai_labs, we’re introducing our new Audio-to-MIDI model. It...",
+      "source_summary": "Today, together with @kyutai_labs, we’re introducing our new Audio-to-MIDI model.",
+      "source_domain": "x.com",
+      "source_meta": "@MireloAI: Today, together with @kyutai_labs, we’re introducing our new Audio-to-MIDI model...",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2075532449589714944/img/Lz2K-Zzebwh53t1v.jpg",
+      "source_image_alt": "@MireloAI: Today, together with @kyutai_labs, we’re introducing our new Audio-to-MIDI model. It... preview image",
+      "source_media_url": "https://video.twimg.com/amplify_video/2075532449589714944/vid/avc1/1920x1280/YqIs_BwJZvG7P6wX.mp4?tag=28",
+      "source_media_type": "video",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/source-posters/binding-hero-hero-dark-transcription-slab.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.54,
+          "y": 0.4675
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0775,
+          "width": 1.0,
+          "height": 0.8438
+        },
+        "image_width": 1200,
+        "image_height": 800,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02989,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-hero-hero-piano-roll-color-field",
+      "artifact_id": "hero-hero-piano-roll-color-field",
+      "source_type": "article",
+      "source_url": "http://mirelo.ai/marketing/blog/audio-to-midi-piano-roll.png",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Piano roll representation",
+      "kicker": "mirelo.ai",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Piano roll representation",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "mirelo.ai",
+      "source_meta": "Piano roll representation",
+      "source_media_url": "http://mirelo.ai/marketing/blog/audio-to-midi-piano-roll.png",
+      "source_media_type": "image"
+    },
+    {
+      "id": "binding-module-black-arrow-diagram-pressure",
+      "artifact_id": "module-black-arrow-diagram-pressure",
+      "source_type": "article",
+      "source_url": "https://pbs.twimg.com/amplify_video_thumb/2075532449589714944/img/Lz2K-Zzebwh53t1v.jpg",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 1",
+      "kicker": "pbs.twimg.com",
+      "excerpt": "Image surfaced directly on the selected anchor page.",
+      "source_title": "Anchor image material 1",
+      "source_summary": "Image surfaced directly on the selected anchor page.",
+      "source_domain": "pbs.twimg.com",
+      "source_meta": "Anchor image material 1",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2075532449589714944/img/Lz2K-Zzebwh53t1v.jpg",
+      "source_image_alt": "Anchor image material 1 preview image",
+      "source_media_url": "https://pbs.twimg.com/amplify_video_thumb/2075532449589714944/img/Lz2K-Zzebwh53t1v.jpg",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/source-posters/binding-module-black-arrow-diagram-pressure.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.54,
+          "y": 0.4675
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0775,
+          "width": 1.0,
+          "height": 0.8438
+        },
+        "image_width": 1200,
+        "image_height": 800,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02989,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-muted-teaser-bloom",
+      "artifact_id": "module-muted-teaser-bloom",
+      "source_type": "article",
+      "source_url": "http://mirelo.ai/marketing/blog/audio-to-midi-token-representation.png",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Token representation",
+      "kicker": "mirelo.ai",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Token representation",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "mirelo.ai",
+      "source_meta": "Token representation",
+      "source_media_url": "http://mirelo.ai/marketing/blog/audio-to-midi-token-representation.png",
+      "source_media_type": "image"
+    },
+    {
+      "id": "binding-module-procedural-foliage-side-trace",
+      "artifact_id": "module-procedural-foliage-side-trace",
+      "source_type": "article",
+      "source_url": "http://mirelo.ai/marketing/blog/audio-to-midi-transformer-architecture.png",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Transformer architecture",
+      "kicker": "mirelo.ai",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Transformer architecture",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "mirelo.ai",
+      "source_meta": "Transformer architecture",
+      "source_media_url": "http://mirelo.ai/marketing/blog/audio-to-midi-transformer-architecture.png",
+      "source_media_type": "image"
+    },
+    {
+      "id": "binding-module-acid-green-slash-reflection",
+      "artifact_id": "module-acid-green-slash-reflection",
+      "source_type": "article",
+      "source_url": "https://kyutai.org/assets/home/slash.png",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "green slash",
+      "kicker": "kyutai.org",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "green slash",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "kyutai.org",
+      "source_meta": "green slash",
+      "source_image_url": "https://kyutai.org/assets/home/slash.png",
+      "source_image_alt": "green slash preview image",
+      "source_media_url": "https://kyutai.org/assets/home/slash.png",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/source-posters/binding-module-acid-green-slash-reflection.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "high",
+        "focal_point": {
+          "x": 0.6077,
+          "y": 0.5
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.3544,
+          "width": 1.0,
+          "height": 0.2911
+        },
+        "image_width": 246,
+        "image_height": 474,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.01683,
+          "candidate_box_count": 3
+        }
+      }
+    },
+    {
+      "id": "binding-module-muted-teaser-bloom-2",
+      "artifact_id": "module-muted-teaser-bloom-2",
+      "source_type": "article",
+      "source_url": "https://kyutai.org/assets/home/unmute_teaser_thumb.png",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "passive project teaser image",
+      "kicker": "kyutai.org",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "passive project teaser image",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "kyutai.org",
+      "source_meta": "passive project teaser image",
+      "source_image_url": "https://kyutai.org/assets/home/unmute_teaser_thumb.png",
+      "source_image_alt": "passive project teaser image preview image",
+      "source_media_url": "https://kyutai.org/assets/home/unmute_teaser_thumb.png",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/source-posters/binding-module-muted-teaser-bloom-2.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2189,
+          "width": 1.0,
+          "height": 0.5623
+        },
+        "image_width": 595,
+        "image_height": 594,
+        "analysis": {
+          "method": "center-fallback",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.00851,
+          "candidate_box_count": 0
+        }
+      }
+    },
+    {
+      "id": "binding-module-procedural-foliage-side-trace-2",
+      "artifact_id": "module-procedural-foliage-side-trace-2",
+      "source_type": "tweet",
+      "source_url": "https://x.com/pascal_app/status/2073097131892576577",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@pascal_app: Meet Nature 🌱: the first Pascal plugin. Procedural trees, flowers & grass, right...",
+      "kicker": "x.com",
+      "excerpt": "Meet Nature 🌱: the first Pascal plugin. Procedural trees, flowers & grass, right in the editor. New node types and panels, shipped entirely as an open-source plugin. Use it as a template to build your own. Built on @dangreenheck's EZ-Tree.",
+      "source_title": "@pascal_app: Meet Nature 🌱: the first Pascal plugin. Procedural trees, flowers & grass, right...",
+      "source_summary": "Meet Nature 🌱: the first Pascal plugin. Procedural trees, flowers & grass, right in the editor. New node types and panels, shipped entirely as an open-source plugin. Use it as a template to build your own. Built on @dangreenheck's EZ-Tree.",
+      "source_domain": "x.com",
+      "source_meta": "@pascal_app: Meet Nature 🌱: the first Pascal plugin. Procedural trees, flowers &amp; grass, r...",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2073096542517428224/img/BOEbRPvqD9wvQJyX.jpg",
+      "source_image_alt": "@pascal_app: Meet Nature 🌱: the first Pascal plugin. Procedural trees, flowers & grass, right... preview image",
+      "source_media_url": "https://video.twimg.com/amplify_video/2073096542517428224/vid/avc1/2160x2160/I82xBXiu_IgKeSm5.mp4?tag=28",
+      "source_media_type": "video",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/source-posters/binding-module-procedural-foliage-side-trace-2.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5008,
+          "y": 0.485
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2033,
+          "width": 1.0,
+          "height": 0.5625
+        },
+        "image_width": 1200,
+        "image_height": 1200,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.00627,
+          "candidate_box_count": 10
+        }
+      }
+    },
+    {
+      "id": "binding-module-retro-broadcast-corner-glow",
+      "artifact_id": "module-retro-broadcast-corner-glow",
+      "source_type": "article",
+      "source_url": "http://70s.myretrotvs.com",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "My 70",
+      "kicker": "70s.myretrotvs.com",
+      "excerpt": "A nostalgic television simulator to help keep the 70",
+      "source_title": "My 70",
+      "source_summary": "A nostalgic television simulator to help keep the 70",
+      "source_domain": "70s.myretrotvs.com",
+      "source_meta": "@jonaasw1: cool internet things pt. 11 - retro console games - type out classic books - ind...",
+      "source_image_url": "https://70s.myretrotvs.com/share.jpg",
+      "source_image_alt": "My 70 preview image",
+      "source_media_url": "https://70s.myretrotvs.com/share.jpg",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-11-glass-score-observatory-v1/assets/source-posters/binding-module-retro-broadcast-corner-glow.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5062,
+          "y": 0.4925
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.22,
+          "width": 1.0,
+          "height": 0.5625
+        },
+        "image_width": 400,
+        "image_height": 400,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.07412,
+          "candidate_box_count": 12
+        }
+      }
+    }
+  ]
+}
