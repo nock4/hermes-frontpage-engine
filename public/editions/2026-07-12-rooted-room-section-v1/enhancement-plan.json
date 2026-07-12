@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-12-rooted-room-section-v1",
+  "edition_id": "2026-07-12-rooted-room-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-12-rooted-room-section-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-generated-home-cutaway",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-generated-home-cutaway",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-room-plan-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-suspended-root-chamber",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-suspended-root-chamber",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-aeroponic-root-column) selected from interpretation."
+    },
+    {
+      "target_id": "module-cropped-human-scale-counterform",
+      "target_kind": "artifact",
+      "artifact_id": "module-cropped-human-scale-counterform",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pose-shadow-plan-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "module-angled-limb-shadow-partition",
+      "target_kind": "artifact",
+      "artifact_id": "module-angled-limb-shadow-partition",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (gesture-shadow-wall-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-kneeling-pressure-floor-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-kneeling-pressure-floor-notch",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (body-scale-material-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-privacy-scrubber-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-privacy-scrubber-edge",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (data-removal-scrape-mark) selected from interpretation."
+    },
+    {
+      "target_id": "module-privacy-scrubber-edge-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-privacy-scrubber-edge-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (data-removal-scrape-mark) selected from interpretation."
+    },
+    {
+      "target_id": "module-assembly-route-hinge",
+      "target_kind": "artifact",
+      "artifact_id": "module-assembly-route-hinge",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (installation-arrow-cutline) selected from interpretation."
+    },
+    {
+      "target_id": "module-audio-to-video-glint-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-audio-to-video-glint-strip",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (coherent-media-glint-strip) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

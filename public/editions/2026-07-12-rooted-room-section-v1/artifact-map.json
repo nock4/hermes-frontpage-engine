@@ -1,0 +1,627 @@
+{
+  "artifact_map_id": "map-2026-07-12-rooted-room-section-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "rooted-room-section",
+  "default_artifact_id": "hero-hero-generated-home-cutaway",
+  "artifacts": [
+    {
+      "id": "hero-hero-generated-home-cutaway",
+      "kind": "hero",
+      "label": "hero generated home cutaway",
+      "artifact_type": "hero-scale-room-plan-aperture",
+      "bounds": {
+        "x": 0.2982,
+        "y": 0.1133,
+        "w": 0.5462,
+        "h": 0.5713
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.3001,
+          0.3828
+        ],
+        [
+          0.3633,
+          0.2598
+        ],
+        [
+          0.4486,
+          0.1338
+        ],
+        [
+          0.5475,
+          0.1172
+        ],
+        [
+          0.612,
+          0.1162
+        ],
+        [
+          0.7721,
+          0.1367
+        ],
+        [
+          0.8203,
+          0.248
+        ],
+        [
+          0.8418,
+          0.3564
+        ],
+        [
+          0.8418,
+          0.3789
+        ],
+        [
+          0.8099,
+          0.5596
+        ],
+        [
+          0.7057,
+          0.6338
+        ],
+        [
+          0.4915,
+          0.6797
+        ],
+        [
+          0.3887,
+          0.6807
+        ],
+        [
+          0.3138,
+          0.6133
+        ],
+        [
+          0.3008,
+          0.5068
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/hero-hero-generated-home-cutaway.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-generated-home-cutaway"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          809,
+          467
+        ],
+        "safe_stage_window_origin_px": [
+          870,
+          534
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-hero-suspended-root-chamber",
+      "kind": "hero",
+      "label": "hero suspended root chamber",
+      "artifact_type": "hero-scale-aeroponic-root-column",
+      "bounds": {
+        "x": 0.543,
+        "y": 0.145,
+        "w": 0.066,
+        "h": 0.204
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.545,
+          0.319
+        ],
+        [
+          0.547,
+          0.194
+        ],
+        [
+          0.566,
+          0.164
+        ],
+        [
+          0.582,
+          0.151
+        ],
+        [
+          0.6,
+          0.174
+        ],
+        [
+          0.608,
+          0.227
+        ],
+        [
+          0.608,
+          0.348
+        ],
+        [
+          0.586,
+          0.349
+        ],
+        [
+          0.567,
+          0.342
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/hero-hero-suspended-root-chamber.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-suspended-root-chamber"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          885,
+          236
+        ],
+        "safe_stage_window_origin_px": [
+          893,
+          253
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-cropped-human-scale-counterform",
+      "kind": "module",
+      "label": "cropped human-scale counterform",
+      "artifact_type": "pose-shadow-plan-interruption",
+      "bounds": {
+        "x": 0.498,
+        "y": 0.356,
+        "w": 0.083,
+        "h": 0.239
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.503,
+          0.36
+        ],
+        [
+          0.522,
+          0.379
+        ],
+        [
+          0.542,
+          0.414
+        ],
+        [
+          0.563,
+          0.464
+        ],
+        [
+          0.579,
+          0.522
+        ],
+        [
+          0.581,
+          0.59
+        ],
+        [
+          0.563,
+          0.596
+        ],
+        [
+          0.543,
+          0.547
+        ],
+        [
+          0.522,
+          0.491
+        ],
+        [
+          0.505,
+          0.432
+        ],
+        [
+          0.498,
+          0.381
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/module-cropped-human-scale-counterform.svg",
+      "source_binding_ids": [
+        "binding-module-cropped-human-scale-counterform"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          829,
+          467
+        ],
+        "safe_stage_window_origin_px": [
+          839,
+          487
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-angled-limb-shadow-partition",
+      "kind": "module",
+      "label": "angled limb-shadow partition",
+      "artifact_type": "gesture-shadow-wall-cut",
+      "bounds": {
+        "x": 0.603,
+        "y": 0.244,
+        "w": 0.069,
+        "h": 0.214
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.606,
+          0.245
+        ],
+        [
+          0.62,
+          0.257
+        ],
+        [
+          0.64,
+          0.295
+        ],
+        [
+          0.658,
+          0.345
+        ],
+        [
+          0.671,
+          0.405
+        ],
+        [
+          0.671,
+          0.457
+        ],
+        [
+          0.658,
+          0.458
+        ],
+        [
+          0.642,
+          0.407
+        ],
+        [
+          0.625,
+          0.35
+        ],
+        [
+          0.609,
+          0.291
+        ],
+        [
+          0.603,
+          0.256
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/module-angled-limb-shadow-partition.svg",
+      "source_binding_ids": [
+        "binding-module-angled-limb-shadow-partition"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          979,
+          342
+        ],
+        "safe_stage_window_origin_px": [
+          988,
+          359
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-kneeling-pressure-floor-notch",
+      "kind": "module",
+      "label": "kneeling-pressure floor notch",
+      "artifact_type": "body-scale-material-notch",
+      "bounds": {
+        "x": 0.516,
+        "y": 0.806,
+        "w": 0.056,
+        "h": 0.055
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.516,
+          0.851
+        ],
+        [
+          0.526,
+          0.822
+        ],
+        [
+          0.542,
+          0.807
+        ],
+        [
+          0.56,
+          0.811
+        ],
+        [
+          0.572,
+          0.834
+        ],
+        [
+          0.564,
+          0.858
+        ],
+        [
+          0.54,
+          0.862
+        ],
+        [
+          0.523,
+          0.86
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/module-kneeling-pressure-floor-notch.svg",
+      "source_binding_ids": [
+        "binding-module-kneeling-pressure-floor-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          836,
+          849
+        ],
+        "safe_stage_window_origin_px": [
+          842,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-privacy-scrubber-edge",
+      "kind": "module",
+      "label": "privacy scrubber edge",
+      "artifact_type": "data-removal-scrape-mark",
+      "bounds": {
+        "x": 0.756,
+        "y": 0.137,
+        "w": 0.215,
+        "h": 0.64
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.758,
+          0.138
+        ],
+        [
+          0.776,
+          0.14
+        ],
+        [
+          0.785,
+          0.18
+        ],
+        [
+          0.805,
+          0.213
+        ],
+        [
+          0.832,
+          0.232
+        ],
+        [
+          0.843,
+          0.281
+        ],
+        [
+          0.831,
+          0.333
+        ],
+        [
+          0.804,
+          0.386
+        ],
+        [
+          0.784,
+          0.449
+        ],
+        [
+          0.813,
+          0.505
+        ],
+        [
+          0.856,
+          0.558
+        ],
+        [
+          0.889,
+          0.639
+        ],
+        [
+          0.93,
+          0.725
+        ],
+        [
+          0.97,
+          0.773
+        ],
+        [
+          0.866,
+          0.771
+        ],
+        [
+          0.756,
+          0.76
+        ],
+        [
+          0.756,
+          0.518
+        ],
+        [
+          0.757,
+          0.3
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/module-privacy-scrubber-edge.svg",
+      "source_binding_ids": [
+        "binding-module-privacy-scrubber-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          416
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          468
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-privacy-scrubber-edge-2",
+      "kind": "module",
+      "label": "privacy scrubber edge",
+      "artifact_type": "data-removal-scrape-mark",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/module-privacy-scrubber-edge-2.svg",
+      "source_binding_ids": [
+        "binding-module-privacy-scrubber-edge-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-assembly-route-hinge",
+      "kind": "module",
+      "label": "assembly-route hinge",
+      "artifact_type": "installation-arrow-cutline",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/module-assembly-route-hinge.svg",
+      "source_binding_ids": [
+        "binding-module-assembly-route-hinge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-audio-to-video-glint-strip",
+      "kind": "module",
+      "label": "audio-to-video glint strip",
+      "artifact_type": "coherent-media-glint-strip",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "rooted-room-section",
+      "mask_path": "/editions/2026-07-12-rooted-room-section-v1/assets/masks/module-audio-to-video-glint-strip.svg",
+      "source_binding_ids": [
+        "binding-module-audio-to-video-glint-strip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
