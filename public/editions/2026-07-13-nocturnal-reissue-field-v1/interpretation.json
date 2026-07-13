@@ -1,49 +1,47 @@
 {
-  "interpretation_id": "interp-2026-07-12-rooted-room-section-v1",
-  "edition_id": "2026-07-12-rooted-room-section-v1",
-  "plate_read_timestamp": "2026-07-12T08:10:26.375Z",
+  "interpretation_id": "interp-2026-07-13-nocturnal-reissue-field-v1",
+  "edition_id": "2026-07-13-nocturnal-reissue-field-v1",
+  "plate_read_timestamp": "2026-07-13T12:26:11.905Z",
   "scene_ontology": {
     "primary": "material-native",
     "secondary": [],
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A pale gridded plate holds a cutaway home plan as the dominant interface. Source-bearing anchors appear as architectural apertures, root-filled pockets, cyan seams, cropped shadow gestures, notches, scrapes, hinge cuts, and a lower film-like strip embedded into the plan and surrounding surface.",
+    "summary": "A minimal black, leather-like split sleeve plate with two blown white vertical paint scars, a deep central cleft, small inset square apertures, rubbed border ghosts, and one repaired diagonal right-edge tear leading to a violet glint.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "a generated room learning its own edges",
-      "A pale gridded plate holds a cutaway home plan as the dominant interface. Source-bearing anchors appear as architectural apertures, root-filled pockets, cyan seams, cropped shadow gestures, notches, scrapes, hinge cuts, and a lower film-like strip embedded into the plan and surrounding surface.",
-      "editable-home",
-      "architectural-section",
-      "aeroponic-roots"
+      "quiet noise pressed into a severe nocturnal plate",
+      "A minimal black, leather-like split sleeve plate with two blown white vertical paint scars, a deep central cleft, small inset square apertures, rubbed border ghosts, and one repaired diagonal right-edge tear leading to a violet glint.",
+      "noise-reissue",
+      "black-field",
+      "poster-crop"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "hero generated home cutaway",
-      "hero suspended root chamber",
-      "cropped human-scale counterform",
-      "angled limb-shadow partition",
-      "kneeling-pressure floor notch",
-      "privacy scrubber edge",
-      "assembly-route hinge",
-      "audio-to-video glint strip"
+      "dominant blown-white poster scar",
+      "secondary black-cleft album slab",
+      "right-edge repaired sleeve notch",
+      "thin archive registration tick",
+      "procedural creature seam",
+      "small portal pinhole glint",
+      "distant task-island shard"
     ],
     "dominant_surfaces": [
-      "wood",
       "paint"
     ],
     "dominant_structures": [
-      "rooted-room-section",
-      "one central cutaway home-plan slab with bright regenerated room apertures",
-      "a vertical aeroponic root band pressed against one edge",
-      "cropped pose-study shadows interrupting hard plan geometry",
-      "material swatch seams spliced into walls and floors",
-      "small embedded media glints and assembly cuts distributed through the section",
-      "central cutaway home mass and room edges",
-      "transparent planted upper chamber"
+      "nocturnal-reissue-field",
+      "one oversized blurred poster-crop interruption",
+      "one secondary white ink slab split by a central void",
+      "small square album apertures along the lower edge",
+      "archive-photo corner ticks and caption scars",
+      "hairline needle seams and pinhole glints",
+      "dominant blown-white paint scar on left panel",
+      "deep central black cleft between panels"
     ],
     "negative_space_regions": []
   },
@@ -58,21 +56,21 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: rooted-room-section.",
+      "Primary ontology inferred from scene family and artifact types: nocturnal-reissue-field.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-hero-generated-home-cutaway",
+      "id": "hero-dominant-blown-white-poster-scar",
       "kind": "hero",
-      "type": "hero-scale-room-plan-aperture",
-      "strength": 0.95,
+      "type": "hero-scale-image-scar",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.2982,
-        "y": 0.1133,
-        "w": 0.5462,
-        "h": 0.5713
+        "x": 0.137,
+        "y": 0.026,
+        "w": 0.385,
+        "h": 0.761
       },
       "supports": [
         "threshold-scan-reveal",
@@ -80,15 +78,15 @@
       ]
     },
     {
-      "id": "hero-hero-suspended-root-chamber",
+      "id": "hero-secondary-black-cleft-album-slab",
       "kind": "hero",
-      "type": "hero-scale-aeroponic-root-column",
-      "strength": 0.9199999999999999,
+      "type": "hero-scale-optical-slab",
+      "strength": 0.975548,
       "bounds": {
-        "x": 0.543,
-        "y": 0.145,
-        "w": 0.066,
-        "h": 0.204
+        "x": 0.49,
+        "y": 0.057,
+        "w": 0.061,
+        "h": 0.876
       },
       "supports": [
         "threshold-scan-reveal",
@@ -96,15 +94,15 @@
       ]
     },
     {
-      "id": "module-cropped-human-scale-counterform",
+      "id": "module-right-edge-repaired-sleeve-notch",
       "kind": "module",
-      "type": "pose-shadow-plan-interruption",
-      "strength": 0.72,
+      "type": "repaired-edge-notch",
+      "strength": 0.79752,
       "bounds": {
-        "x": 0.498,
-        "y": 0.356,
-        "w": 0.083,
-        "h": 0.239
+        "x": 0.796,
+        "y": 0.325,
+        "w": 0.177,
+        "h": 0.191
       },
       "supports": [
         "threshold-scan-reveal",
@@ -112,15 +110,15 @@
       ]
     },
     {
-      "id": "module-angled-limb-shadow-partition",
+      "id": "module-thin-archive-registration-tick",
       "kind": "module",
-      "type": "gesture-shadow-wall-cut",
-      "strength": 0.6900000000000001,
+      "type": "archive-registration-tick",
+      "strength": 0.7619880000000001,
       "bounds": {
-        "x": 0.603,
-        "y": 0.244,
-        "w": 0.069,
-        "h": 0.214
+        "x": 0.003,
+        "y": 0.79,
+        "w": 0.111,
+        "h": 0.206
       },
       "supports": [
         "threshold-scan-reveal",
@@ -128,15 +126,15 @@
       ]
     },
     {
-      "id": "module-kneeling-pressure-floor-notch",
+      "id": "module-procedural-creature-seam",
       "kind": "module",
-      "type": "body-scale-material-notch",
-      "strength": 0.66,
+      "type": "shader-seam",
+      "strength": 0.714252,
       "bounds": {
-        "x": 0.516,
-        "y": 0.806,
-        "w": 0.056,
-        "h": 0.055
+        "x": 0.5622,
+        "y": 0.1794,
+        "w": 0.1978,
+        "h": 0.5159
       },
       "supports": [
         "threshold-scan-reveal",
@@ -144,15 +142,15 @@
       ]
     },
     {
-      "id": "module-privacy-scrubber-edge",
+      "id": "module-thin-archive-registration-tick-2",
       "kind": "module",
-      "type": "data-removal-scrape-mark",
-      "strength": 0.63,
+      "type": "archive-registration-tick",
+      "strength": 0.702612,
       "bounds": {
-        "x": 0.756,
-        "y": 0.137,
-        "w": 0.215,
-        "h": 0.64
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
       },
       "supports": [
         "threshold-scan-reveal",
@@ -160,10 +158,10 @@
       ]
     },
     {
-      "id": "module-privacy-scrubber-edge-2",
+      "id": "module-small-portal-pinhole-glint",
       "kind": "module",
-      "type": "data-removal-scrape-mark",
-      "strength": 0.6000000000000001,
+      "type": "pinhole-glint",
+      "strength": 0.6604920000000001,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
@@ -176,10 +174,10 @@
       ]
     },
     {
-      "id": "module-assembly-route-hinge",
+      "id": "module-distant-task-island-shard",
       "kind": "module",
-      "type": "installation-arrow-cutline",
-      "strength": 0.58,
+      "type": "isometric-shard",
+      "strength": 0.652588,
       "bounds": {
         "x": 0.72,
         "y": 0.76,
@@ -187,15 +185,15 @@
         "h": 0.16
       },
       "supports": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-audio-to-video-glint-strip",
+      "id": "module-procedural-creature-seam-2",
       "kind": "module",
-      "type": "coherent-media-glint-strip",
-      "strength": 0.58,
+      "type": "shader-seam",
+      "strength": 0.6644319999999999,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -203,7 +201,7 @@
         "h": 0.15
       },
       "supports": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     }
@@ -211,14 +209,14 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-hero-generated-home-cutaway-surface",
+      "id": "hero-dominant-blown-white-poster-scar-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.2982,
-        "y": 0.1133,
-        "w": 0.5462,
-        "h": 0.5713
+        "x": 0.137,
+        "y": 0.026,
+        "w": 0.385,
+        "h": 0.761
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -227,14 +225,14 @@
       ]
     },
     {
-      "id": "hero-hero-suspended-root-chamber-surface",
+      "id": "hero-secondary-black-cleft-album-slab-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.543,
-        "y": 0.145,
-        "w": 0.066,
-        "h": 0.204
+        "x": 0.49,
+        "y": 0.057,
+        "w": 0.061,
+        "h": 0.876
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -243,14 +241,14 @@
       ]
     },
     {
-      "id": "module-cropped-human-scale-counterform-surface",
+      "id": "module-right-edge-repaired-sleeve-notch-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.498,
-        "y": 0.356,
-        "w": 0.083,
-        "h": 0.239
+        "x": 0.796,
+        "y": 0.325,
+        "w": 0.177,
+        "h": 0.191
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -259,14 +257,14 @@
       ]
     },
     {
-      "id": "module-angled-limb-shadow-partition-surface",
+      "id": "module-thin-archive-registration-tick-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.603,
-        "y": 0.244,
-        "w": 0.069,
-        "h": 0.214
+        "x": 0.003,
+        "y": 0.79,
+        "w": 0.111,
+        "h": 0.206
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -275,14 +273,14 @@
       ]
     },
     {
-      "id": "module-kneeling-pressure-floor-notch-surface",
+      "id": "module-procedural-creature-seam-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.516,
-        "y": 0.806,
-        "w": 0.056,
-        "h": 0.055
+        "x": 0.5622,
+        "y": 0.1794,
+        "w": 0.1978,
+        "h": 0.5159
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -291,14 +289,14 @@
       ]
     },
     {
-      "id": "module-privacy-scrubber-edge-surface",
+      "id": "module-thin-archive-registration-tick-2-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.756,
-        "y": 0.137,
-        "w": 0.215,
-        "h": 0.64
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -307,7 +305,7 @@
       ]
     },
     {
-      "id": "module-privacy-scrubber-edge-2-surface",
+      "id": "module-small-portal-pinhole-glint-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -323,8 +321,8 @@
       ]
     },
     {
-      "id": "module-assembly-route-hinge-surface",
-      "surface_type": "paint",
+      "id": "module-distant-task-island-shard-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
         "x": 0.72,
@@ -334,13 +332,13 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-audio-to-video-glint-strip-surface",
-      "surface_type": "unknown",
+      "id": "module-procedural-creature-seam-2-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.28,
@@ -350,7 +348,7 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     }
