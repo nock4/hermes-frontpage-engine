@@ -36,7 +36,35 @@ test('generated edition route renders artwork and opens a source window', async 
   expect(stageState.documentWidth).toBeLessThanOrEqual(stageState.viewportWidth + 1)
   expect(stageState.visibleDebugChrome).toBe(0)
 
-  await page.locator('button.artifact').first().hover({ force: true })
+  const artifactHitPoints = await page.locator('button.artifact').evaluateAll((nodes) => nodes.flatMap((node) => {
+    const element = node as HTMLElement
+    const rect = element.getBoundingClientRect()
+    const xSteps = [0.5, 0.35, 0.65, 0.2, 0.8]
+    const ySteps = [0.5, 0.35, 0.65, 0.2, 0.8]
+    const points: { x: number, y: number }[] = []
+
+    for (const xStep of xSteps) {
+      for (const yStep of ySteps) {
+        const x = rect.left + rect.width * xStep
+        const y = rect.top + rect.height * yStep
+        const hit = document.elementFromPoint(x, y)
+        if (hit === element || element.contains(hit)) {
+          points.push({ x, y })
+        }
+      }
+    }
+
+    return points
+  }))
+
+  expect(artifactHitPoints.length).toBeGreaterThan(0)
+
+  for (const point of artifactHitPoints) {
+    await page.mouse.move(point.x, point.y)
+    const openWindows = await page.locator('.stage-overlay-windows--live .source-window').count()
+    if (openWindows > 0) break
+  }
+
   await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveCount(1)
   await page.waitForTimeout(450)
 
