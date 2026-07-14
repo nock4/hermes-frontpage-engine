@@ -1,0 +1,546 @@
+{
+  "analysis_id": "analysis-2026-07-14-glaze-weather-plinth-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Close-cropped ceramic still life on a white plinth: one large cropped vessel dominates the right edge with red storm glaze and blue aperture-like glaze, while smaller rear and left vessels supply secondary seams, pools, notches, and contact shadows.",
+  "usable_surfaces": [
+    "cropped red-orange glaze shoulder on the main vessel",
+    "large uneven blue glaze aperture on the right wall",
+    "rear vessel peach seam below blue cap",
+    "green sidewall band on the left vessel",
+    "black glossy pool on the left vessel rim",
+    "chipped clay foot edge at the main vessel base",
+    "low contact-shadow mouth along the plinth"
+  ],
+  "detected_objects": [
+    {
+      "label": "primary storm-glaze body",
+      "artifact_type": "hero-scale-cropped-ceramic-mass",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.399,
+        "y": 0,
+        "w": 0.536,
+        "h": 0.424
+      },
+      "polygon": [
+        [
+          0.501,
+          0
+        ],
+        [
+          0.916,
+          0
+        ],
+        [
+          0.947,
+          0.023
+        ],
+        [
+          0.94,
+          0.076
+        ],
+        [
+          0.912,
+          0.152
+        ],
+        [
+          0.88,
+          0.238
+        ],
+        [
+          0.842,
+          0.318
+        ],
+        [
+          0.792,
+          0.393
+        ],
+        [
+          0.716,
+          0.424
+        ],
+        [
+          0.63,
+          0.394
+        ],
+        [
+          0.562,
+          0.332
+        ],
+        [
+          0.492,
+          0.288
+        ],
+        [
+          0.429,
+          0.295
+        ],
+        [
+          0.4,
+          0.219
+        ],
+        [
+          0.406,
+          0.105
+        ],
+        [
+          0.438,
+          0.035
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "The dominant cropped red-orange glossy ceramic shoulder fills the upper main vessel, with a cloudy fired lower edge, surface pits, and broad specular highlights."
+    },
+    {
+      "label": "blue rim weather aperture",
+      "artifact_type": "hero-scale-glaze-window",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.723,
+        "y": 0.078,
+        "w": 0.277,
+        "h": 0.831
+      },
+      "polygon": [
+        [
+          0.963,
+          0.078
+        ],
+        [
+          1,
+          0.092
+        ],
+        [
+          1,
+          0.909
+        ],
+        [
+          0.938,
+          0.896
+        ],
+        [
+          0.884,
+          0.834
+        ],
+        [
+          0.846,
+          0.747
+        ],
+        [
+          0.824,
+          0.639
+        ],
+        [
+          0.792,
+          0.548
+        ],
+        [
+          0.759,
+          0.455
+        ],
+        [
+          0.724,
+          0.358
+        ],
+        [
+          0.748,
+          0.254
+        ],
+        [
+          0.811,
+          0.159
+        ],
+        [
+          0.894,
+          0.106
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A large irregular blue glaze field runs down the right side of the main vessel, with dark saturated pools, cloudy pale borders, and a rim-like cropped edge."
+    },
+    {
+      "label": "rear peach cloud seam",
+      "artifact_type": "soft-glaze-border-seam",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.296,
+        "y": 0.485,
+        "w": 0.051,
+        "h": 0.133
+      },
+      "polygon": [
+        [
+          0.319,
+          0.485
+        ],
+        [
+          0.333,
+          0.501
+        ],
+        [
+          0.341,
+          0.536
+        ],
+        [
+          0.346,
+          0.581
+        ],
+        [
+          0.336,
+          0.613
+        ],
+        [
+          0.319,
+          0.618
+        ],
+        [
+          0.306,
+          0.592
+        ],
+        [
+          0.296,
+          0.552
+        ],
+        [
+          0.303,
+          0.514
+        ]
+      ],
+      "confidence": 0.75,
+      "visual_evidence": "On the rear vessel, a warm peach vertical clay/glaze seam sits below the blue cap, readable as a narrow soft border against the pale ceramic body."
+    },
+    {
+      "label": "foot-ring clay notch",
+      "artifact_type": "matte-foot-ring-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.812,
+        "y": 0.883,
+        "w": 0.145,
+        "h": 0.063
+      },
+      "polygon": [
+        [
+          0.812,
+          0.914
+        ],
+        [
+          0.841,
+          0.903
+        ],
+        [
+          0.866,
+          0.884
+        ],
+        [
+          0.903,
+          0.887
+        ],
+        [
+          0.935,
+          0.905
+        ],
+        [
+          0.957,
+          0.931
+        ],
+        [
+          0.918,
+          0.945
+        ],
+        [
+          0.868,
+          0.943
+        ],
+        [
+          0.828,
+          0.93
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A chipped matte clay foot-ring interruption appears at the base of the main vessel, with brown torn edges and a small lifted shard against the plinth."
+    },
+    {
+      "label": "sidewall studio shard",
+      "artifact_type": "embedded-image-shard",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.462,
+        "w": 0.223,
+        "h": 0.337
+      },
+      "polygon": [
+        [
+          0.121,
+          0.462
+        ],
+        [
+          0.207,
+          0.462
+        ],
+        [
+          0.268,
+          0.496
+        ],
+        [
+          0.294,
+          0.584
+        ],
+        [
+          0.287,
+          0.684
+        ],
+        [
+          0.26,
+          0.771
+        ],
+        [
+          0.205,
+          0.799
+        ],
+        [
+          0.153,
+          0.76
+        ],
+        [
+          0.112,
+          0.673
+        ],
+        [
+          0.082,
+          0.585
+        ],
+        [
+          0.071,
+          0.506
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "The left vessel carries a distinct green glazed band wrapping down the sidewall, with speckled fired texture and an uneven embedded-shard contour."
+    },
+    {
+      "label": "gallery-cover glaze pool",
+      "artifact_type": "dark-gloss-pool",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.465,
+        "w": 0.143,
+        "h": 0.083
+      },
+      "polygon": [
+        [
+          0.006,
+          0.493
+        ],
+        [
+          0.027,
+          0.477
+        ],
+        [
+          0.066,
+          0.467
+        ],
+        [
+          0.107,
+          0.465
+        ],
+        [
+          0.137,
+          0.482
+        ],
+        [
+          0.143,
+          0.512
+        ],
+        [
+          0.124,
+          0.535
+        ],
+        [
+          0.082,
+          0.548
+        ],
+        [
+          0.033,
+          0.54
+        ],
+        [
+          0,
+          0.522
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "A dark glossy oval pool sits on the rim of the left vessel, surrounded by green glaze and bright wet highlights."
+    },
+    {
+      "label": "render-budget crack glint",
+      "artifact_type": "gold-hairline-crack",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.552,
+        "y": 0.525,
+        "w": 0.067,
+        "h": 0.181
+      },
+      "polygon": [
+        [
+          0.57,
+          0.525
+        ],
+        [
+          0.598,
+          0.537
+        ],
+        [
+          0.618,
+          0.575
+        ],
+        [
+          0.606,
+          0.617
+        ],
+        [
+          0.591,
+          0.657
+        ],
+        [
+          0.596,
+          0.706
+        ],
+        [
+          0.574,
+          0.688
+        ],
+        [
+          0.565,
+          0.637
+        ],
+        [
+          0.552,
+          0.591
+        ],
+        [
+          0.56,
+          0.552
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "A narrow dark blue-black descending streak and chipped scar on the pale main body reads as a thin source-bearing crack gesture catching small highlights."
+    },
+    {
+      "label": "noise-shadow mouth",
+      "artifact_type": "contact-shadow-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.033,
+        "y": 0.748,
+        "w": 0.866,
+        "h": 0.188
+      },
+      "polygon": [
+        [
+          0.033,
+          0.805
+        ],
+        [
+          0.155,
+          0.773
+        ],
+        [
+          0.285,
+          0.75
+        ],
+        [
+          0.41,
+          0.748
+        ],
+        [
+          0.53,
+          0.78
+        ],
+        [
+          0.641,
+          0.83
+        ],
+        [
+          0.756,
+          0.872
+        ],
+        [
+          0.899,
+          0.913
+        ],
+        [
+          0.846,
+          0.936
+        ],
+        [
+          0.681,
+          0.917
+        ],
+        [
+          0.525,
+          0.881
+        ],
+        [
+          0.37,
+          0.838
+        ],
+        [
+          0.209,
+          0.827
+        ],
+        [
+          0.079,
+          0.829
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A low grey-brown contact shadow runs beneath the ceramic forms on the plinth, opening as a broad soft mouth under the heavy vessels."
+    },
+    {
+      "label": "noise-shadow mouth",
+      "artifact_type": "contact-shadow-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.735,
+    "rationale": "The plate is expressionist and object-led, with a few strong ceramic masses and glaze regions; dense pores and speckles add visual noise but do not overpower the main source-bearing surfaces."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-14-glaze-weather-plinth-v1"
+}

@@ -1,0 +1,377 @@
+{
+  "interpretation_id": "interp-2026-07-14-glaze-weather-plinth-v1",
+  "edition_id": "2026-07-14-glaze-weather-plinth-v1",
+  "plate_read_timestamp": "2026-07-14T08:22:51.561Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Close-cropped ceramic still life on a white plinth: one large cropped vessel dominates the right edge with red storm glaze and blue aperture-like glaze, while smaller rear and left vessels supply secondary seams, pools, notches, and contact shadows.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright studio quiet with charged handmade edges",
+      "Close-cropped ceramic still life on a white plinth: one large cropped vessel dominates the right edge with red storm glaze and blue aperture-like glaze, while smaller rear and left vessels supply secondary seams, pools, notches, and contact shadows.",
+      "ceramic-weather",
+      "studio-plinth",
+      "glaze-seams"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "primary storm-glaze body",
+      "blue rim weather aperture",
+      "rear peach cloud seam",
+      "foot-ring clay notch",
+      "sidewall studio shard",
+      "gallery-cover glaze pool",
+      "render-budget crack glint",
+      "noise-shadow mouth"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "glaze-weather-plinth",
+      "one oversized cropped ceramic mass interrupting two plate edges",
+      "two secondary rounded plinth fragments receding behind it",
+      "irregular glaze-cloud fields carrying apertures and seams",
+      "tiny island-contour node field fused into one fired surface",
+      "shadow-mouths and chipped rim cuts acting as source anchors",
+      "cropped red-orange glaze shoulder on the main vessel",
+      "large uneven blue glaze aperture on the right wall"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: glaze-weather-plinth.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-storm-glaze-body",
+      "kind": "hero",
+      "type": "hero-scale-cropped-ceramic-mass",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.399,
+        "y": 0,
+        "w": 0.536,
+        "h": 0.424
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-blue-rim-weather-aperture",
+      "kind": "hero",
+      "type": "hero-scale-glaze-window",
+      "strength": 0.9736759999999999,
+      "bounds": {
+        "x": 0.723,
+        "y": 0.078,
+        "w": 0.277,
+        "h": 0.831
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-rear-peach-cloud-seam",
+      "kind": "module",
+      "type": "soft-glaze-border-seam",
+      "strength": 0.7944479999999999,
+      "bounds": {
+        "x": 0.296,
+        "y": 0.485,
+        "w": 0.051,
+        "h": 0.133
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-foot-ring-clay-notch",
+      "kind": "module",
+      "type": "matte-foot-ring-notch",
+      "strength": 0.7646400000000001,
+      "bounds": {
+        "x": 0.812,
+        "y": 0.883,
+        "w": 0.145,
+        "h": 0.063
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sidewall-studio-shard",
+      "kind": "module",
+      "type": "embedded-image-shard",
+      "strength": 0.72546,
+      "bounds": {
+        "x": 0.071,
+        "y": 0.462,
+        "w": 0.223,
+        "h": 0.337
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gallery-cover-glaze-pool",
+      "kind": "module",
+      "type": "dark-gloss-pool",
+      "strength": 0.708648,
+      "bounds": {
+        "x": 0,
+        "y": 0.465,
+        "w": 0.143,
+        "h": 0.083
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-render-budget-crack-glint",
+      "kind": "module",
+      "type": "gold-hairline-crack",
+      "strength": 0.6698520000000001,
+      "bounds": {
+        "x": 0.552,
+        "y": 0.525,
+        "w": 0.067,
+        "h": 0.181
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-noise-shadow-mouth",
+      "kind": "module",
+      "type": "contact-shadow-aperture",
+      "strength": 0.640096,
+      "bounds": {
+        "x": 0.033,
+        "y": 0.748,
+        "w": 0.866,
+        "h": 0.188
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-noise-shadow-mouth-2",
+      "kind": "module",
+      "type": "contact-shadow-aperture",
+      "strength": 0.6489999999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-storm-glaze-body-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.399,
+        "y": 0,
+        "w": 0.536,
+        "h": 0.424
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-blue-rim-weather-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.723,
+        "y": 0.078,
+        "w": 0.277,
+        "h": 0.831
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-rear-peach-cloud-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.296,
+        "y": 0.485,
+        "w": 0.051,
+        "h": 0.133
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-foot-ring-clay-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.812,
+        "y": 0.883,
+        "w": 0.145,
+        "h": 0.063
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sidewall-studio-shard-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.462,
+        "w": 0.223,
+        "h": 0.337
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gallery-cover-glaze-pool-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.465,
+        "w": 0.143,
+        "h": 0.083
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-render-budget-crack-glint-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.552,
+        "y": 0.525,
+        "w": 0.067,
+        "h": 0.181
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-noise-shadow-mouth-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.033,
+        "y": 0.748,
+        "w": 0.866,
+        "h": 0.188
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-noise-shadow-mouth-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

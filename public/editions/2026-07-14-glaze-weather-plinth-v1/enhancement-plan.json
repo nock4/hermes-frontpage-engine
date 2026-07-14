@@ -1,0 +1,237 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-14-glaze-weather-plinth-v1",
+  "edition_id": "2026-07-14-glaze-weather-plinth-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-14-glaze-weather-plinth-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-primary-storm-glaze-body",
+      "target_kind": "artifact",
+      "artifact_id": "hero-primary-storm-glaze-body",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-cropped-ceramic-mass) selected from interpretation."
+    },
+    {
+      "target_id": "hero-blue-rim-weather-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-blue-rim-weather-aperture",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-glaze-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-rear-peach-cloud-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-rear-peach-cloud-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (soft-glaze-border-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-foot-ring-clay-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-foot-ring-clay-notch",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (matte-foot-ring-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-sidewall-studio-shard",
+      "target_kind": "artifact",
+      "artifact_id": "module-sidewall-studio-shard",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (embedded-image-shard) selected from interpretation."
+    },
+    {
+      "target_id": "module-gallery-cover-glaze-pool",
+      "target_kind": "artifact",
+      "artifact_id": "module-gallery-cover-glaze-pool",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-gloss-pool) selected from interpretation."
+    },
+    {
+      "target_id": "module-render-budget-crack-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-render-budget-crack-glint",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (gold-hairline-crack) selected from interpretation."
+    },
+    {
+      "target_id": "module-noise-shadow-mouth",
+      "target_kind": "artifact",
+      "artifact_id": "module-noise-shadow-mouth",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (contact-shadow-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-noise-shadow-mouth-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-noise-shadow-mouth-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (contact-shadow-aperture) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

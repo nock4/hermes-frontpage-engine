@@ -1,0 +1,410 @@
+{
+  "source_binding_set_id": "bindings-2026-07-14-glaze-weather-plinth-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-primary-storm-glaze-body",
+      "artifact_id": "hero-primary-storm-glaze-body",
+      "source_type": "tweet",
+      "source_url": "https://x.com/digitlartifacts/status/2076460262727745617",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@digitlartifacts: gorgeous ceramics from artist hedy yang",
+      "kicker": "x.com",
+      "excerpt": "gorgeous ceramics from artist hedy yang",
+      "source_title": "@digitlartifacts: gorgeous ceramics from artist hedy yang",
+      "source_summary": "gorgeous ceramics from artist hedy yang",
+      "source_domain": "x.com",
+      "source_meta": "@digitlartifacts: gorgeous ceramics from artist hedy yang",
+      "source_image_url": "https://pbs.twimg.com/media/HNERmjmacAAh3Lm.jpg?name=orig",
+      "source_image_alt": "@digitlartifacts: gorgeous ceramics from artist hedy yang preview image",
+      "source_media_url": "https://pbs.twimg.com/media/HNERmjmacAAh3Lm.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-hero-primary-storm-glaze-body.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.472,
+          "y": 0.5665
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.27,
+          "width": 1.0,
+          "height": 0.562
+        },
+        "image_width": 1000,
+        "image_height": 1000,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.00584,
+          "candidate_box_count": 14
+        }
+      }
+    },
+    {
+      "id": "binding-hero-blue-rim-weather-aperture",
+      "artifact_id": "hero-blue-rim-weather-aperture",
+      "source_type": "article",
+      "source_url": "https://pbs.twimg.com/media/HNERmjmacAAh3Lm?format=webp&name=large",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 1",
+      "kicker": "pbs.twimg.com",
+      "excerpt": "Image surfaced directly on the selected anchor page.",
+      "source_title": "Anchor image material 1",
+      "source_summary": "Image surfaced directly on the selected anchor page.",
+      "source_domain": "pbs.twimg.com",
+      "source_meta": "Anchor image material 1",
+      "source_image_url": "https://pbs.twimg.com/media/HNERmjmacAAh3Lm?format=webp&name=large",
+      "source_image_alt": "Anchor image material 1 preview image",
+      "source_media_url": "https://pbs.twimg.com/media/HNERmjmacAAh3Lm?format=webp&name=large",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-hero-blue-rim-weather-aperture.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.472,
+          "y": 0.567
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.27,
+          "width": 1.0,
+          "height": 0.562
+        },
+        "image_width": 1000,
+        "image_height": 1000,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.0057,
+          "candidate_box_count": 16
+        }
+      }
+    },
+    {
+      "id": "binding-module-rear-peach-cloud-seam",
+      "artifact_id": "module-rear-peach-cloud-seam",
+      "source_type": "article",
+      "source_url": "https://pbs.twimg.com/media/HNERmjmbsAASk59?format=webp&name=large",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 2",
+      "kicker": "pbs.twimg.com",
+      "excerpt": "Image surfaced directly on the selected anchor page.",
+      "source_title": "Anchor image material 2",
+      "source_summary": "Image surfaced directly on the selected anchor page.",
+      "source_domain": "pbs.twimg.com",
+      "source_meta": "Anchor image material 2",
+      "source_image_url": "https://pbs.twimg.com/media/HNERmjmbsAASk59?format=webp&name=large",
+      "source_image_alt": "Anchor image material 2 preview image",
+      "source_media_url": "https://pbs.twimg.com/media/HNERmjmbsAASk59?format=webp&name=large",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-module-rear-peach-cloud-seam.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.4937,
+          "y": 0.5146
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2188,
+          "width": 1.0,
+          "height": 0.5625
+        },
+        "image_width": 2048,
+        "image_height": 2048,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.0098,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-foot-ring-clay-notch",
+      "artifact_id": "module-foot-ring-clay-notch",
+      "source_type": "article",
+      "source_url": "https://hedyyangceramics.com/cdn/shop/files/315A0280_300x.jpg?v=1766764043",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 5",
+      "kicker": "hedyyangceramics.com",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Anchor image material 5",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "hedyyangceramics.com",
+      "source_meta": "Anchor image material 5",
+      "source_image_url": "https://hedyyangceramics.com/cdn/shop/files/315A0280_300x.jpg?v=1766764043",
+      "source_image_alt": "Anchor image material 5 preview image",
+      "source_media_url": "https://hedyyangceramics.com/cdn/shop/files/315A0280_300x.jpg?v=1766764043",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-module-foot-ring-clay-notch.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5883,
+          "y": 0.5525
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.12,
+          "width": 1.0,
+          "height": 0.84
+        },
+        "image_width": 300,
+        "image_height": 200,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.03502,
+          "candidate_box_count": 15
+        }
+      }
+    },
+    {
+      "id": "binding-module-sidewall-studio-shard",
+      "artifact_id": "module-sidewall-studio-shard",
+      "source_type": "article",
+      "source_url": "https://hedyyangceramics.com/cdn/shop/files/11-06-23_LB_Ceramics-33_%7Bwidth%7Dx.jpg?v=1702861033",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 6",
+      "kicker": "hedyyangceramics.com",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Anchor image material 6",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "hedyyangceramics.com",
+      "source_meta": "Anchor image material 6",
+      "source_image_url": "https://hedyyangceramics.com/cdn/shop/files/HYC_LOGOBIG_45b10253-e48a-4e04-8b22-1c7038f27161_260x.png?v=1631291428",
+      "source_image_alt": "Anchor image material 6 preview image",
+      "source_media_url": "https://hedyyangceramics.com/cdn/shop/files/11-06-23_LB_Ceramics-33_%7Bwidth%7Dx.jpg?v=1702861033",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-module-sidewall-studio-shard.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.5154
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2346,
+          "width": 1.0,
+          "height": 0.5615
+        },
+        "image_width": 260,
+        "image_height": 260,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02751,
+          "candidate_box_count": 21
+        }
+      }
+    },
+    {
+      "id": "binding-module-gallery-cover-glaze-pool",
+      "artifact_id": "module-gallery-cover-glaze-pool",
+      "source_type": "article",
+      "source_url": "https://static-assets.artlogic.net/w_2400,h_2000,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite2055/usr/exhibitions/images/artists/88/hedyyangcover.jpg",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 7",
+      "kicker": "static-assets.artlogic.net",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Anchor image material 7",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "static-assets.artlogic.net",
+      "source_meta": "Anchor image material 7",
+      "source_image_url": "https://static-assets.artlogic.net/w_2400,h_2000,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite2055/usr/exhibitions/images/artists/88/hedyyangcover.jpg",
+      "source_image_alt": "Anchor image material 7 preview image",
+      "source_media_url": "https://static-assets.artlogic.net/w_2400,h_2000,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsite2055/usr/exhibitions/images/artists/88/hedyyangcover.jpg",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-module-gallery-cover-glaze-pool.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.503,
+          "y": 0.6777
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0581,
+          "width": 1.0,
+          "height": 0.9419
+        },
+        "image_width": 1500,
+        "image_height": 895,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.0114,
+          "candidate_box_count": 23
+        }
+      }
+    },
+    {
+      "id": "binding-module-render-budget-crack-glint",
+      "artifact_id": "module-render-budget-crack-glint",
+      "source_type": "article",
+      "source_url": "https://cdn.artcld.com/img/w_1920,c_fit/mkqwjvnilbbw4s24dkuy.jpg",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 8",
+      "kicker": "cdn.artcld.com",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Anchor image material 8",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "cdn.artcld.com",
+      "source_meta": "Anchor image material 8",
+      "source_image_url": "https://cdn.artcld.com/img/w_1920,c_fit/mkqwjvnilbbw4s24dkuy.jpg",
+      "source_image_alt": "Anchor image material 8 preview image",
+      "source_media_url": "https://cdn.artcld.com/img/w_1920,c_fit/mkqwjvnilbbw4s24dkuy.jpg",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-module-render-budget-crack-glint.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5086,
+          "y": 0.4747
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2161,
+          "width": 1.0,
+          "height": 0.5625
+        },
+        "image_width": 1920,
+        "image_height": 1920,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.00277,
+          "candidate_box_count": 11
+        }
+      }
+    },
+    {
+      "id": "binding-module-noise-shadow-mouth",
+      "artifact_id": "module-noise-shadow-mouth",
+      "source_type": "tweet",
+      "source_url": "https://x.com/majidmanzarpour/status/2075040799851487652",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Majid Manzarpour (@majidmanzarpour) on X",
+      "kicker": "x.com",
+      "excerpt": "updated my @threejs game dev agent skills: 📐 designs the game better - core loop, levels, difficulty ✨ game feel - hitstop, screenshake, juice 🎨 shader/material cookbook + render budgets ✅ proves it plays &amp; looks right, on real metrics https://t.co/73JabuOEMm",
+      "source_title": "Majid Manzarpour (@majidmanzarpour) on X",
+      "source_summary": "updated my @threejs game dev agent skills: 📐 designs the game better - core loop, levels, difficulty ✨ game feel - hitstop, screenshake, juice 🎨 shader/material cookbook + render budgets ✅ proves it plays &amp; looks right, on real metrics https://t.co/73JabuOEMm",
+      "source_domain": "x.com",
+      "source_meta": "@majidmanzarpour: updated my @threejs game dev agent skills: 📐 designs the game better - core loop...",
+      "source_image_url": "https://pbs.twimg.com/card_img/2076307667199594496/MQdjp-Jt?format=jpg&name=orig",
+      "source_image_alt": "Majid Manzarpour (@majidmanzarpour) on X preview image",
+      "source_media_url": "https://pbs.twimg.com/card_img/2076307667199594496/MQdjp-Jt?format=jpg&name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-module-noise-shadow-mouth.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.565
+        },
+        "poster_crop": {
+          "x": 0.0558,
+          "y": 0.0,
+          "width": 0.8883,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 600,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.0436,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-noise-shadow-mouth-2",
+      "artifact_id": "module-noise-shadow-mouth-2",
+      "source_type": "audio",
+      "source_url": "https://realamericannoise.bandcamp.com/",
+      "window_type": "audio",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Real American Noise",
+      "kicker": "realamericannoise.bandcamp.com",
+      "excerpt": "Real American Noise. Ohio. independento label",
+      "source_title": "Real American Noise",
+      "source_summary": "Real American Noise. Ohio. independento label",
+      "source_domain": "realamericannoise.bandcamp.com",
+      "source_meta": "@m_m_____m____mm: Real American Noise is officially back reissue of 2024 release Pictures is curre...",
+      "source_image_url": "https://f4.bcbits.com/img/0045868858_23.jpg",
+      "source_image_alt": "Real American Noise preview image",
+      "source_media_url": "https://f4.bcbits.com/img/0045868858_23.jpg",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/source-posters/binding-module-noise-shadow-mouth-2.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5067,
+          "y": 0.4967
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.22,
+          "width": 1.0,
+          "height": 0.56
+        },
+        "image_width": 300,
+        "image_height": 300,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.07321,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}
