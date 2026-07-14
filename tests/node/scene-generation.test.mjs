@@ -64,17 +64,18 @@ describe('scene generation image prompt', () => {
     expect(prompt).not.toContain('Distributed Marker')
     expect(prompt).not.toContain('distributed-marker')
     expect(prompt.toLowerCase()).toContain('no legible text')
-    expect(prompt).toContain('PLATE')
+    expect(prompt).toContain('PRESERVE')
+    expect(prompt).toContain('TRANSFORM')
     expect(prompt).toContain('COMPOSITION')
-    expect(prompt).toContain('SOURCE ANCHORS')
-    expect(prompt).toContain('LIGHT / CONSTRAINTS')
+    expect(prompt).toContain('ANCHORS')
+    expect(prompt).toContain('LIMITS')
     expect(prompt).toContain('diagrammatic fold')
     expect(prompt).toContain('architectural section with oblique plate depth')
     expect(prompt).toContain('hard diagonal seams; creased scan border')
     expect(prompt).toContain('Formal risk:')
-    expect(prompt).toContain('hero-scale source-bearing')
+    expect(prompt).toContain('belong to the source image')
     expect(prompt).toContain('minimal field')
-    expect(prompt.length).toBeLessThan(1550)
+    expect(prompt.length).toBeLessThan(1850)
   })
 
   it('prints source image fingerprints as plate grammar rather than thumbnail instructions', () => {
@@ -103,14 +104,44 @@ describe('scene generation image prompt', () => {
       artifacts: [{ source_url: 'https://example.com/source', role: 'hero source-bearing anchor' }],
     })
 
-    expect(prompt).toContain('REFERENCE')
+    expect(prompt).toContain('PRESERVE')
     expect(prompt).toContain('Acid sleeve scan')
     expect(prompt).toContain('acid / neon saturation')
     expect(prompt).toContain('gloss / flash glare')
     expect(prompt).toContain('hard diagonal crop or seam; torn or irregular edge behavior')
-    expect(prompt).toContain('never as pasted thumbnails')
+    expect(prompt).toContain('not appear as cards, pasted thumbnails')
     expect(prompt).not.toContain('Source image plate seeds:')
-    expect(prompt.length).toBeLessThan(1100)
+    expect(prompt.length).toBeLessThan(1400)
+  })
+
+  it('keeps graphic editorial source references as layout instead of metaphor', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'Preserve the wide black cover framing, left-heavy empty text block as illegible pale mass, right off-white blob with gridded route gesture, sparse red accents, and low side light; transform it into a dense torn nocturne poster wall where source anchors are ripped apertures.',
+      mood: 'handled nocturnal research wall, bright unknowns cut into black paper',
+      lighting: 'low side light',
+      material_language: ['matte black article-cover stock', 'torn off-white gridded paper'],
+      negative_constraints: ['no legible words'],
+      source_reference_preserve: [
+        'wide horizontal crop with a dominant black background and strong left-right separation',
+        'large pale off-white organic island on the right, carrying a thin rising route gesture and faint grid pressure',
+        'left-side block of large typographic mass converted to illegible pale torn shapes',
+      ],
+      visual_direction: {
+        evidence_summary: 'The strongest visual evidence is an article cover image with graphic poster residue.',
+        composition_archetype: 'torn poster wall',
+        camera_plate_grammar: 'torn wall',
+        visual_compositional_moves: ['one large cropped article-cover fragment dominates the field'],
+      },
+      plate_posture: { plate_posture: 'poster wall' },
+      artifacts: [{ source_url: 'https://example.com/source', role: 'hero source-bearing anchor' }],
+    })
+
+    expect(prompt).toContain('Use the attached source image as the main composition reference')
+    expect(prompt).toContain('wide horizontal crop')
+    expect(prompt).toContain('large pale off-white organic island')
+    expect(prompt).toContain('graphic/editorial/poster/package reference')
+    expect(prompt).toContain('Do not replace it with unrelated macro texture')
+    expect(prompt).toContain('Posture: poster wall')
   })
 })
 
@@ -173,7 +204,8 @@ describe('scene generation Hermes image backend', () => {
       expect(sceneGeneration.provider).toBe('openai-codex')
       expect(await readFile(path.join(runDir, 'plate.png'), 'utf8')).toBe('fake-image-bytes')
       const promptFull = JSON.parse(await readFile(path.join(runDir, 'scene-prompt-full.json'), 'utf8'))
-      expect(promptFull.compact_prompt).toContain('PLATE')
+      expect(promptFull.compact_prompt).toContain('PRESERVE')
+      expect(promptFull.compact_prompt).toContain('TRANSFORM')
       expect(promptFull.payload.scene_prompt).toContain('full-bleed abstract field')
     } finally {
       await rm(runDir, { recursive: true, force: true })

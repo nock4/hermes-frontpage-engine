@@ -109,7 +109,7 @@ export async function composeDailyPayload(
     diversity_directive: diversityDirective,
     source_visual_reference: visualReference,
     source_visual_reference_instruction: visualReference
-      ? 'Use the attached source image to inform composition structure, geometry, palette, contrast, layering, edge behavior, atmosphere, and gesture. Do not depict its subject literally, copy its scene, reproduce logos, or copy page chrome.'
+      ? 'Use the attached source image as the primary composition reference, not loose ambience. Preserve its framing, massing, subject/object spacing, palette, light relationship, and edge behavior before adding research-world marks. If it is a graphic/editorial/poster source, preserve the layout as abstract shapes: text-block silhouettes, blob/diagram geometry, route/grid marks, negative space, palette, and light; convert readable text/logos into illegible mass and do not replace the source with a figurative scene, room, landscape, character, or metaphor.'
       : 'No source image was available; derive visual direction from source metadata only.',
     scene_prompting_rules: [
       'Write the scene_prompt as art direction for one finished still image, not as product strategy or app documentation.',
@@ -638,10 +638,12 @@ function repairArtifactType(type, index) {
 }
 
 function describeSourceImageFingerprint(fingerprint) {
+  const preserve = (fingerprint.preserve_cues || []).slice(0, 4).join('; ')
+  const summary = fingerprint.visual_summary ? `${fingerprint.visual_summary}; ` : ''
   const palette = (fingerprint.palette_cues || []).slice(0, 2).join('; ') || 'source-derived color pressure'
   const surfaces = (fingerprint.surface_cues || []).slice(0, 1).join('; ') || 'source-derived surface pressure'
   const moves = (fingerprint.composition_moves || []).slice(0, 2).join('; ') || 'source image crop logic translated into marks'
-  return `${fingerprint.title}: ${palette}; ${surfaces}; ${moves}`
+  return `${fingerprint.title}: ${summary}${preserve || `${palette}; ${surfaces}; ${moves}`}`
 }
 
 function compactText(value, maxLength = 260) {
@@ -659,6 +661,27 @@ function joinLimited(values, fallback, limit = 4) {
   return result.length ? result.join('; ') : fallback
 }
 
+function sourceReferencePreserveText(payload, fallback) {
+  const preserve = normalizeStringArray(payload.source_reference_preserve, [])
+    .slice(0, 5)
+    .map((cue) => compactText(cue, 95))
+  return uniqueNonEmpty([...preserve, fallback]).join('; ')
+}
+
+function looksLikeGraphicEditorialSource(payload, referenceText) {
+  const text = [
+    payload.scene_prompt,
+    payload.mood,
+    referenceText,
+    ...(payload.source_reference_preserve || []),
+    payload.visual_direction?.evidence_summary,
+    payload.visual_direction?.composition_archetype,
+  ].filter(Boolean).join(' ').toLowerCase()
+  const graphicCues = /(graphic|editorial|poster|cover|typographic|headline|text block|type mass|letterform)/.test(text)
+  const diagramCues = /(blob|island|grid|route|diagram|left[- ]?right|negative space)/.test(text)
+  return graphicCues && diagramCues
+}
+
 export function buildSceneImagePrompt(payload) {
   const visualDirection = payload.visual_direction || {}
   const platePosture = payload.plate_posture || visualDirection.plate_posture || null
@@ -666,7 +689,11 @@ export function buildSceneImagePrompt(payload) {
   const sourceImageFingerprints = normalizeSourceImageFingerprints(payload.source_image_fingerprints).slice(0, 1)
   const referenceUse = sourceImageFingerprints.length
     ? sourceImageFingerprints.map(describeSourceImageFingerprint).join(' | ')
-    : 'Use any attached visual reference for crop logic, surface pressure, palette relationships, and edge behavior only.'
+    : 'attached visual reference crop logic, source massing, surface pressure, palette relationships, and edge behavior'
+  const preserveText = sourceReferencePreserveText(payload, referenceUse)
+  const graphicEditorialGuard = looksLikeGraphicEditorialSource(payload, preserveText)
+    ? 'This is a graphic/editorial/poster/package reference: preserve the cover layout, figure/portrait masses as abstract shapes, text-strip silhouettes as illegible marks, object/hand edge cues, negative space, palette, and light. Do not replace it with unrelated macro texture, cave, room, landscape, character, poster wall, or metaphor.'
+    : ''
   const anchorCount = artifacts.length
     ? `${Math.min(9, Math.max(6, artifacts.length))}`
     : '6–9'
@@ -677,26 +704,27 @@ export function buildSceneImagePrompt(payload) {
     ? compactText(platePosture.look_avoidance_directive, 155)
     : ''
   const constraints = uniqueNonEmpty([
-    'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or copied subjects.',
+    'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or literal identity/photoreal face copying. Preserve source subjects only as abstract massing, silhouettes, edge cues, and surface pressure.',
     ...(payload.negative_constraints || []).slice(0, 1).map((constraint) => compactText(constraint, 80)),
   ]).join(' ')
 
   return [
-    'Use any attached source image as reference only.',
+    'Use the attached source image as the main composition reference.',
     '',
-    'PLATE',
-    compactText(`${payload.scene_prompt || payload.mood || 'A full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 240),
+    'PRESERVE',
+    compactText(preserveText, 520),
+    graphicEditorialGuard,
     '',
-    'REFERENCE',
-    `Borrow ${compactText(referenceUse, 170)} as crop, surface, palette, scale, and edge behavior — never as pasted thumbnails.`,
+    'TRANSFORM',
+    compactText(`${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source resemblance.` : ''}`, 300),
     '',
     'COMPOSITION',
     `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
-    'SOURCE ANCHORS',
-    `Embed ${anchorCount} anchors as real marks belonging to the plate, not cards. Make exactly two hero-scale source-bearing surfaces/gestures when enough sources exist; keep the rest as smaller apertures, seams, notches, cuts, glints, label slivers, scars, defects, or media grains.`,
+    'ANCHORS',
+    `Add ${anchorCount} source windows as small real marks in the preserved image: existing edges, seams, ticks, apertures, cuts, glints, label slivers, scars, defects, or media grains. They must belong to the source image, not appear as cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`,
     '',
-    'LIGHT / CONSTRAINTS',
+    'LIMITS',
     `${payload.lighting || visualDirection.lighting_profile || 'source-led light'}; materials: ${materialLanguage}; palette: ${visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood || 'source-led color'}. ${constraints}`,
   ].filter(Boolean).join('\n')
 }

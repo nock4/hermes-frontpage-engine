@@ -1,9 +1,15 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
+import { openAiJson } from './openai-json.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
 
 const literalCopyRule = 'Do not reproduce logos, legible text, identifiable subjects, or page chrome from this source image.'
+
+const sourceImageVisionInstructions = `Inspect the source image for a Daily Frontpage plate. Return concrete visual facts, not vibes.
+Describe the exact composition identity the generated plate must preserve: subject/object placement, crop/framing, massing, dominant shapes, text/logo silhouettes as illegible masses, palette, light, surface/material, and distinctive marks.
+If the image is an album/package/editorial/poster cover, preserve the cover layout and portrait/figure/image masses as abstract shapes; readable text can become illegible marks, but the plate must not replace the image with unrelated macro texture or metaphor.
+Return concise JSON with keys: visual_summary string, preserve_cues array of 3-6 strings, palette_cues array, surface_cues array, composition_moves array.`
 
 function cleanText(value, fallback = '') {
   return sanitizeSourceText(value, fallback, 280)
@@ -90,10 +96,71 @@ export function buildSourceImageFingerprints(selectedImageMaterial = [], { limit
         palette_cues: paletteCues(text).slice(0, 3),
         surface_cues: surfaceCues(text).slice(0, 3),
         composition_moves: compositionMoves(text).slice(0, 4),
+        preserve_cues: [],
+        visual_summary: '',
         do_not_copy_literally: [literalCopyRule],
         score: candidate.score || null,
       }
     })
+}
+
+function arrayOfStrings(value, fallback = []) {
+  if (!Array.isArray(value)) return fallback
+  return unique(value.map((item) => cleanText(item, '')).filter(Boolean), fallback)
+}
+
+async function visionFingerprint(candidate, fingerprint, analyzer = openAiJson) {
+  if (!candidate?.image_url || !analyzer) return fingerprint
+  const response = await analyzer({
+    instructions: sourceImageVisionInstructions,
+    input: [
+      {
+        role: 'user',
+        content: [
+          {
+            type: 'input_text',
+            text: JSON.stringify({
+              title: candidate.title || candidate.caption || fingerprint.title,
+              page_url: candidate.page_url || null,
+              image_url: candidate.image_url,
+              lineage: candidate.lineage || null,
+            }, null, 2),
+          },
+          { type: 'input_image', image_url: candidate.image_url },
+        ],
+      },
+    ],
+    maxOutputTokens: 900,
+  })
+  return {
+    ...fingerprint,
+    visual_summary: cleanText(response.visual_summary || '', ''),
+    preserve_cues: arrayOfStrings(response.preserve_cues, []),
+    palette_cues: arrayOfStrings(response.palette_cues, fingerprint.palette_cues).slice(0, 4),
+    surface_cues: arrayOfStrings(response.surface_cues, fingerprint.surface_cues).slice(0, 4),
+    composition_moves: arrayOfStrings(response.composition_moves, fingerprint.composition_moves).slice(0, 5),
+  }
+}
+
+export async function enrichSourceImageFingerprints(selectedImageMaterial = [], fingerprints = [], { analyzer = openAiJson, limit = 3 } = {}) {
+  const enriched = []
+  for (let index = 0; index < fingerprints.length; index += 1) {
+    const fingerprint = fingerprints[index]
+    const candidate = selectedImageMaterial[index]
+    if (index >= limit) {
+      enriched.push(fingerprint)
+      continue
+    }
+    try {
+      enriched.push(await visionFingerprint(candidate, fingerprint, analyzer))
+    } catch (error) {
+      enriched.push({
+        ...fingerprint,
+        vision_error: cleanText(error?.message || error, 'vision fingerprint failed'),
+      })
+    }
+  }
+  return enriched
 }
 
 function escapeXml(value) {
@@ -112,6 +179,7 @@ function rowForFingerprint(fingerprint, index) {
   const imageUrl = escapeXml(fingerprint.image_url || '')
   const palette = escapeXml((fingerprint.palette_cues || []).join(' · '))
   const moves = escapeXml((fingerprint.composition_moves || []).join(' · '))
+  const preserve = escapeXml((fingerprint.preserve_cues || []).slice(0, 2).join(' · '))
   return `
   <g transform="translate(${x} ${y})">
     <rect width="520" height="252" rx="18" fill="#121212" stroke="#3a3a3a"/>
@@ -120,6 +188,7 @@ function rowForFingerprint(fingerprint, index) {
     <text x="256" y="66" fill="#aaa392" font-size="13" font-family="Arial, sans-serif">${role}</text>
     <text x="256" y="112" fill="#cfc7b6" font-size="14" font-family="Arial, sans-serif">palette: ${palette}</text>
     <text x="256" y="146" fill="#cfc7b6" font-size="14" font-family="Arial, sans-serif">moves: ${moves}</text>
+    <text x="256" y="180" fill="#cfc7b6" font-size="14" font-family="Arial, sans-serif">preserve: ${preserve}</text>
   </g>`
 }
 
@@ -134,8 +203,9 @@ export function buildSourceImageContactSheetSvg(fingerprints = []) {
 `
 }
 
-export async function writeSourceImageArtifacts(runDir, selectedImageMaterial = []) {
-  const fingerprints = buildSourceImageFingerprints(selectedImageMaterial)
+export async function writeSourceImageArtifacts(runDir, selectedImageMaterial = [], options = {}) {
+  const baseFingerprints = buildSourceImageFingerprints(selectedImageMaterial)
+  const fingerprints = await enrichSourceImageFingerprints(selectedImageMaterial, baseFingerprints, options)
   const fingerprintPath = path.join(runDir, 'source-image-fingerprints.json')
   const contactSheetPath = path.join(runDir, 'source-image-contact-sheet.svg')
   await fs.writeFile(fingerprintPath, `${JSON.stringify({ generated_at: new Date().toISOString(), fingerprints }, null, 2)}\n`, 'utf8')

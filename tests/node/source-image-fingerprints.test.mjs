@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { buildSourceImageFingerprints, buildSourceImageContactSheetSvg } from '../../scripts/lib/source-image-fingerprints.mjs'
+import { buildSourceImageFingerprints, buildSourceImageContactSheetSvg, enrichSourceImageFingerprints } from '../../scripts/lib/source-image-fingerprints.mjs'
 
 describe('source image fingerprints', () => {
   it('turns selected source images into plate-language fingerprints', () => {
@@ -28,6 +28,31 @@ describe('source image fingerprints', () => {
     expect(fingerprints[0].surface_cues).toContain('gloss / flash glare')
     expect(fingerprints[0].composition_moves).toContain('torn or irregular edge behavior')
     expect(fingerprints[0].do_not_copy_literally).toContain('Do not reproduce logos, legible text, identifiable subjects, or page chrome from this source image.')
+  })
+
+  it('can enrich fingerprints with vision-derived preserve cues', async () => {
+    const candidates = [
+      {
+        caption: 'package image',
+        image_url: 'https://assets.example/album.jpg',
+        page_url: 'https://example.com/album',
+        lineage: 'direct_link',
+      },
+    ]
+    const base = buildSourceImageFingerprints(candidates)
+    const enriched = await enrichSourceImageFingerprints(candidates, base, {
+      analyzer: async () => ({
+        visual_summary: 'square album cover with a cropped portrait head filling the lower left',
+        preserve_cues: ['cropped human head mass low-left', 'white title text band along the top edge', 'hand gripping right edge'],
+        palette_cues: ['warm skin and black hair against tan sleeve'],
+        surface_cues: ['printed sleeve paper'],
+        composition_moves: ['tight portrait crop', 'top title band'],
+      }),
+    })
+
+    expect(enriched[0].visual_summary).toContain('cropped portrait head')
+    expect(enriched[0].preserve_cues).toContain('white title text band along the top edge')
+    expect(enriched[0].composition_moves).toContain('tight portrait crop')
   })
 
   it('builds a contact-sheet svg from source image material for review artifacts', () => {
