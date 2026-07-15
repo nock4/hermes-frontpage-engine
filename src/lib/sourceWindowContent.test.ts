@@ -74,6 +74,22 @@ describe('getSourceWindowDescriptor', () => {
     }
   })
 
+  it('uses source-truth YouTube linkout for playlist URLs without a native video id', () => {
+    const descriptor = getSourceWindowDescriptor(
+      makeBinding({
+        source_type: 'youtube',
+        source_url: 'https://www.youtube.com/playlist?list=OLAK5uy_ml3b2TJh9lE4NPtfzuj1IkbQXQpjigPzk',
+        window_type: 'video',
+        source_image_url: 'https://i9.ytimg.com/s_p/OLAK5uy_ml3b2TJh9lE4NPtfzuj1IkbQXQpjigPzk/mqdefault.jpg',
+      }),
+    )
+
+    expect(descriptor.kind).toBe('youtube-linkout')
+    if (descriptor.kind !== 'youtube-linkout') throw new Error('expected youtube linkout descriptor')
+    expect(descriptor.platformLabel).toBe('YouTube')
+    expect(descriptor.sourceUrl).toBe('https://www.youtube.com/playlist?list=OLAK5uy_ml3b2TJh9lE4NPtfzuj1IkbQXQpjigPzk')
+  })
+
   it('uses source-truth YouTube linkout when a binding is marked unavailable for native embed', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({

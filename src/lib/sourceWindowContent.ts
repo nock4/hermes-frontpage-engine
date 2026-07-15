@@ -178,6 +178,10 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
     return buildYouTubeDescriptor(youtubeEmbedUrl, allowsPlaybackPersistence, domainLabel)
   }
 
+  if (sourceUrl && isYouTubeHostname(getHostname(sourceUrl) ?? '') && (binding.source_type === 'youtube' || binding.window_type === 'video')) {
+    return buildYouTubeLinkoutDescriptor(sourceUrl, allowsPlaybackPersistence, domainLabel)
+  }
+
   if (binding.window_type === 'audio' || binding.source_type === 'nts' || binding.source_type === 'audio') {
     const soundcloudEmbedUrl = toSoundCloudEmbedUrl(sourceUrl)
     if (soundcloudEmbedUrl && binding.source_type !== 'nts') {
