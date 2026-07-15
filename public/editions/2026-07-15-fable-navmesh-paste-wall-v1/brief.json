@@ -1,0 +1,61 @@
+{
+  "brief_id": "brief-2026-07-15-fable-navmesh-paste-wall-v1",
+  "date": "2026-07-15",
+  "signal_cluster_ids": [
+    "3facfcd9144a",
+    "4140d10bb37e",
+    "7d42d0ab2be1",
+    "880f32ddddc4",
+    "24fd5031ad66",
+    "2577835e5c54",
+    "3ea08385350c",
+    "3409a8917d91"
+  ],
+  "research_node_ids": [
+    "research-1-bc78b509",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-d86c1cf5",
+    "research-7-45d92834",
+    "research-8-a9031d38",
+    "research-9-d0b432e3",
+    "research-10-8f2a6584",
+    "research-11-301447b0",
+    "research-12-b37400d0"
+  ],
+  "mood": "a dense evidence wall where a game world is being built from torn print, routed scratches, and unstable pasted fragments",
+  "material_language": [
+    "torn poster paper with lifted corners",
+    "inkjet screenshot strata",
+    "scratched navmesh route lines",
+    "weathered paste and tape seams",
+    "rubbed plaster backing"
+  ],
+  "lighting": "side-biased wall light with shallow shadows under torn edges, bright enough for source fragments but uneven across the relief",
+  "object_inventory": [
+    "one dominant torn game-map mass",
+    "two diagonal bands of pasted source fragments",
+    "scratched route-node geometry crossing paper seams",
+    "spawned edge tears where new terrain seems to emerge",
+    "quiet exposed backing pockets around anchor marks"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no web-card collage",
+    "no dashboard or software mockup",
+    "no desks, shelves, cabinets, archive walls, or realistic prop inventory",
+    "no legible words, labels, filenames, logos, or alphanumeric callouts inside the image",
+    "do not copy the unavailable reference image subject literally",
+    "avoid plinth, herbarium, observatory, nocturnal field, and room-section staging",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no literal depiction of the source reference image"
+  ]
+}

@@ -1,0 +1,607 @@
+{
+  "artifact_map_id": "map-2026-07-15-fable-navmesh-paste-wall-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "fable-navmesh-paste-wall",
+  "default_artifact_id": "hero-hero-torn-game-map-aperture",
+  "artifacts": [
+    {
+      "id": "hero-hero-torn-game-map-aperture",
+      "kind": "hero",
+      "label": "hero torn game-map aperture",
+      "artifact_type": "hero-scale-torn-map-aperture",
+      "bounds": {
+        "x": 0.168,
+        "y": 0.1061,
+        "w": 0.6943,
+        "h": 0.5723
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.1709,
+          0.502
+        ],
+        [
+          0.251,
+          0.2487
+        ],
+        [
+          0.4053,
+          0.1087
+        ],
+        [
+          0.8232,
+          0.2012
+        ],
+        [
+          0.8584,
+          0.3288
+        ],
+        [
+          0.8574,
+          0.4349
+        ],
+        [
+          0.7803,
+          0.5371
+        ],
+        [
+          0.6758,
+          0.623
+        ],
+        [
+          0.5879,
+          0.6634
+        ],
+        [
+          0.4414,
+          0.6751
+        ],
+        [
+          0.3789,
+          0.6517
+        ],
+        [
+          0.1807,
+          0.541
+        ],
+        [
+          0.1709,
+          0.528
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/hero-hero-torn-game-map-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-torn-game-map-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          782,
+          435
+        ],
+        "safe_stage_window_origin_px": [
+          851,
+          494
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-profile-glass-vitrine",
+      "kind": "hero",
+      "label": "Profile Glass Vitrine",
+      "artifact_type": "glass-vitrine",
+      "bounds": {
+        "x": 0.102,
+        "y": 0.049,
+        "w": 0.24,
+        "h": 0.18
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.111,
+          0.052
+        ],
+        [
+          0.279,
+          0.047
+        ],
+        [
+          0.338,
+          0.081
+        ],
+        [
+          0.337,
+          0.203
+        ],
+        [
+          0.277,
+          0.226
+        ],
+        [
+          0.157,
+          0.214
+        ],
+        [
+          0.102,
+          0.169
+        ],
+        [
+          0.108,
+          0.091
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/hero-profile-glass-vitrine.svg",
+      "source_binding_ids": [
+        "binding-hero-profile-glass-vitrine"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          341,
+          128
+        ],
+        "safe_stage_window_origin_px": [
+          370,
+          142
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-smoked-corner-skill-scrap",
+      "kind": "module",
+      "label": "smoked corner skill scrap",
+      "artifact_type": "charred-corner-print-scrap",
+      "bounds": {
+        "x": 0.66,
+        "y": 0.078,
+        "w": 0.205,
+        "h": 0.153
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.702,
+          0.079
+        ],
+        [
+          0.786,
+          0.085
+        ],
+        [
+          0.852,
+          0.124
+        ],
+        [
+          0.866,
+          0.182
+        ],
+        [
+          0.824,
+          0.224
+        ],
+        [
+          0.727,
+          0.232
+        ],
+        [
+          0.665,
+          0.19
+        ],
+        [
+          0.651,
+          0.129
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/module-smoked-corner-skill-scrap.svg",
+      "source_binding_ids": [
+        "binding-module-smoked-corner-skill-scrap"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1171,
+          146
+        ],
+        "safe_stage_window_origin_px": [
+          1196,
+          158
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-birthday-card-color-tear",
+      "kind": "module",
+      "label": "birthday-card color tear",
+      "artifact_type": "saturated-greeting-card-tear",
+      "bounds": {
+        "x": 0.668,
+        "y": 0.719,
+        "w": 0.254,
+        "h": 0.149
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.692,
+          0.724
+        ],
+        [
+          0.821,
+          0.72
+        ],
+        [
+          0.906,
+          0.745
+        ],
+        [
+          0.923,
+          0.817
+        ],
+        [
+          0.877,
+          0.867
+        ],
+        [
+          0.754,
+          0.858
+        ],
+        [
+          0.679,
+          0.82
+        ],
+        [
+          0.666,
+          0.757
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/module-birthday-card-color-tear.svg",
+      "source_binding_ids": [
+        "binding-module-birthday-card-color-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1221,
+          800
+        ],
+        "safe_stage_window_origin_px": [
+          1252,
+          813
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-status-tracker-paste-seal",
+      "kind": "module",
+      "label": "status-tracker paste seal",
+      "artifact_type": "round-paste-seal",
+      "bounds": {
+        "x": 0.495,
+        "y": 0.517,
+        "w": 0.045,
+        "h": 0.047
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.518,
+          0.518
+        ],
+        [
+          0.531,
+          0.522
+        ],
+        [
+          0.54,
+          0.536
+        ],
+        [
+          0.537,
+          0.552
+        ],
+        [
+          0.524,
+          0.564
+        ],
+        [
+          0.507,
+          0.561
+        ],
+        [
+          0.495,
+          0.548
+        ],
+        [
+          0.498,
+          0.531
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/module-status-tracker-paste-seal.svg",
+      "source_binding_ids": [
+        "binding-module-status-tracker-paste-seal"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          795,
+          550
+        ],
+        "safe_stage_window_origin_px": [
+          800,
+          553
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-lost-disc-underlayer",
+      "kind": "module",
+      "label": "lost-disc underlayer",
+      "artifact_type": "exposed-archive-underlayer",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.866,
+        "w": 0.208,
+        "h": 0.078
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.411,
+          0.866
+        ],
+        [
+          0.552,
+          0.866
+        ],
+        [
+          0.602,
+          0.889
+        ],
+        [
+          0.596,
+          0.928
+        ],
+        [
+          0.548,
+          0.945
+        ],
+        [
+          0.438,
+          0.938
+        ],
+        [
+          0.395,
+          0.913
+        ],
+        [
+          0.397,
+          0.881
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/module-lost-disc-underlayer.svg",
+      "source_binding_ids": [
+        "binding-module-lost-disc-underlayer"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          766,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          792,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-agent-tool-reliquary",
+      "kind": "module",
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "overlapped-image-seam",
+      "bounds": {
+        "x": 0.828,
+        "y": 0.066,
+        "w": 0.106,
+        "h": 0.338
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.845,
+          0.067
+        ],
+        [
+          0.907,
+          0.069
+        ],
+        [
+          0.929,
+          0.147
+        ],
+        [
+          0.917,
+          0.234
+        ],
+        [
+          0.932,
+          0.318
+        ],
+        [
+          0.909,
+          0.403
+        ],
+        [
+          0.861,
+          0.394
+        ],
+        [
+          0.837,
+          0.302
+        ],
+        [
+          0.851,
+          0.215
+        ],
+        [
+          0.829,
+          0.124
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/module-agent-tool-reliquary.svg",
+      "source_binding_ids": [
+        "binding-module-agent-tool-reliquary"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          213
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          241
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-spawn-edge-video-shard",
+      "kind": "module",
+      "label": "spawn-edge video shard",
+      "artifact_type": "glossy-video-edge-shard",
+      "bounds": {
+        "x": 0.093,
+        "y": 0.747,
+        "w": 0.182,
+        "h": 0.086
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.105,
+          0.75
+        ],
+        [
+          0.236,
+          0.746
+        ],
+        [
+          0.274,
+          0.767
+        ],
+        [
+          0.267,
+          0.813
+        ],
+        [
+          0.219,
+          0.834
+        ],
+        [
+          0.133,
+          0.826
+        ],
+        [
+          0.091,
+          0.802
+        ],
+        [
+          0.094,
+          0.765
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/module-spawn-edge-video-shard.svg",
+      "source_binding_ids": [
+        "binding-module-spawn-edge-video-shard"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          283,
+          802
+        ],
+        "safe_stage_window_origin_px": [
+          305,
+          809
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-deep-route-thumbnail-chip",
+      "kind": "module",
+      "label": "deep route thumbnail chip",
+      "artifact_type": "small-route-thumbnail-chip",
+      "bounds": {
+        "x": 0.769,
+        "y": 0.452,
+        "w": 0.162,
+        "h": 0.112
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.789,
+          0.454
+        ],
+        [
+          0.897,
+          0.453
+        ],
+        [
+          0.929,
+          0.481
+        ],
+        [
+          0.92,
+          0.544
+        ],
+        [
+          0.872,
+          0.563
+        ],
+        [
+          0.79,
+          0.555
+        ],
+        [
+          0.763,
+          0.521
+        ],
+        [
+          0.77,
+          0.474
+        ]
+      ],
+      "cluster_id": "fable-navmesh-paste-wall",
+      "mask_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/masks/module-deep-route-thumbnail-chip.svg",
+      "source_binding_ids": [
+        "binding-module-deep-route-thumbnail-chip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1306,
+          511
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          520
+        ],
+        "preferred_expansion_label": "left"
+      }
+    }
+  ]
+}

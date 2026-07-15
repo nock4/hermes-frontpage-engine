@@ -1,0 +1,241 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-15-fable-navmesh-paste-wall-v1",
+  "edition_id": "2026-07-15-fable-navmesh-paste-wall-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-15-fable-navmesh-paste-wall-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal",
+    "warped-paper-fragment"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation",
+    "ghost-reflection-treatment",
+    "lens-inspection"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-torn-game-map-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-torn-game-map-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-torn-map-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-profile-glass-vitrine",
+      "target_kind": "artifact",
+      "artifact_id": "hero-profile-glass-vitrine",
+      "priority": 2,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glass-vitrine) selected from interpretation."
+    },
+    {
+      "target_id": "module-smoked-corner-skill-scrap",
+      "target_kind": "artifact",
+      "artifact_id": "module-smoked-corner-skill-scrap",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (charred-corner-print-scrap) selected from interpretation."
+    },
+    {
+      "target_id": "module-birthday-card-color-tear",
+      "target_kind": "artifact",
+      "artifact_id": "module-birthday-card-color-tear",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (saturated-greeting-card-tear) selected from interpretation."
+    },
+    {
+      "target_id": "module-status-tracker-paste-seal",
+      "target_kind": "artifact",
+      "artifact_id": "module-status-tracker-paste-seal",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (round-paste-seal) selected from interpretation."
+    },
+    {
+      "target_id": "module-lost-disc-underlayer",
+      "target_kind": "artifact",
+      "artifact_id": "module-lost-disc-underlayer",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (exposed-archive-underlayer) selected from interpretation."
+    },
+    {
+      "target_id": "module-agent-tool-reliquary",
+      "target_kind": "artifact",
+      "artifact_id": "module-agent-tool-reliquary",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (overlapped-image-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-spawn-edge-video-shard",
+      "target_kind": "artifact",
+      "artifact_id": "module-spawn-edge-video-shard",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-video-edge-shard) selected from interpretation."
+    },
+    {
+      "target_id": "module-deep-route-thumbnail-chip",
+      "target_kind": "artifact",
+      "artifact_id": "module-deep-route-thumbnail-chip",
+      "priority": 9,
+      "techniques": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-route-thumbnail-chip) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

@@ -1,6 +1,25 @@
 {
-  "current_edition_id": "2026-07-14-glaze-weather-plinth-v1",
+  "current_edition_id": "2026-07-15-fable-navmesh-paste-wall-v1",
   "editions": [
+    {
+      "edition_id": "2026-07-15-fable-navmesh-paste-wall-v1",
+      "date": "2026-07-15",
+      "slug": "fable-navmesh-paste-wall-v1",
+      "title": "Navmesh Paste Wall",
+      "path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1",
+      "scene_family": "fable-navmesh-paste-wall",
+      "motif_tags": [
+        "torn-poster-wall",
+        "navmesh-routes",
+        "spawned-edges",
+        "game-world-scraps",
+        "inkjet-residue",
+        "lifted-corners",
+        "source-seams"
+      ],
+      "preview_asset_path": "/editions/2026-07-15-fable-navmesh-paste-wall-v1/assets/preview.png",
+      "is_live": true
+    },
     {
       "edition_id": "2026-07-14-glaze-weather-plinth-v1",
       "date": "2026-07-14",
@@ -18,7 +37,7 @@
         "island-contours"
       ],
       "preview_asset_path": "/editions/2026-07-14-glaze-weather-plinth-v1/assets/preview.png",
-      "is_live": true
+      "is_live": false
     },
     {
       "edition_id": "2026-07-13-nocturnal-reissue-field-v1",

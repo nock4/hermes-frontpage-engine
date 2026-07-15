@@ -1,0 +1,383 @@
+{
+  "interpretation_id": "interp-2026-07-15-fable-navmesh-paste-wall-v1",
+  "edition_id": "2026-07-15-fable-navmesh-paste-wall-v1",
+  "plate_read_timestamp": "2026-07-15T12:47:09.916Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A vertical distressed wall plate built from torn plaster, dark route-map circuitry, pasted photographic chips, smoked scraps, red-black apertures, and small luminous media pockets. The dominant source surface is the central ripped game-map field, with several smaller image-bearing tears embedded around its edges.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "a dense evidence wall where a game world is being built from torn print, routed scratches, and unstable pasted fragments",
+      "A vertical distressed wall plate built from torn plaster, dark route-map circuitry, pasted photographic chips, smoked scraps, red-black apertures, and small luminous media pockets. The dominant source surface is the central ripped game-map field, with several smaller image-bearing tears embedded around its edges.",
+      "torn-poster-wall",
+      "navmesh-routes",
+      "spawned-edges"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero torn game-map aperture",
+      "Profile Glass Vitrine",
+      "smoked corner skill scrap",
+      "birthday-card color tear",
+      "status-tracker paste seal",
+      "lost-disc underlayer",
+      "Agent Tool Reliquary",
+      "spawn-edge video shard"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "wood",
+      "paint",
+      "screen"
+    ],
+    "dominant_structures": [
+      "fable-navmesh-paste-wall",
+      "one dominant torn game-map mass",
+      "two diagonal bands of pasted source fragments",
+      "scratched route-node geometry crossing paper seams",
+      "spawned edge tears where new terrain seems to emerge",
+      "quiet exposed backing pockets around anchor marks",
+      "central torn route-map field",
+      "upper-left teal glassy media pocket"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: fable-navmesh-paste-wall.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-torn-game-map-aperture",
+      "kind": "hero",
+      "type": "hero-scale-torn-map-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.168,
+        "y": 0.1061,
+        "w": 0.6943,
+        "h": 0.5723
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-profile-glass-vitrine",
+      "kind": "hero",
+      "type": "glass-vitrine",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.102,
+        "y": 0.049,
+        "w": 0.24,
+        "h": 0.18
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-smoked-corner-skill-scrap",
+      "kind": "module",
+      "type": "charred-corner-print-scrap",
+      "strength": 0.793032,
+      "bounds": {
+        "x": 0.66,
+        "y": 0.078,
+        "w": 0.205,
+        "h": 0.153
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-birthday-card-color-tear",
+      "kind": "module",
+      "type": "saturated-greeting-card-tear",
+      "strength": 0.758352,
+      "bounds": {
+        "x": 0.668,
+        "y": 0.719,
+        "w": 0.254,
+        "h": 0.149
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-status-tracker-paste-seal",
+      "kind": "module",
+      "type": "round-paste-seal",
+      "strength": 0.741048,
+      "bounds": {
+        "x": 0.495,
+        "y": 0.517,
+        "w": 0.045,
+        "h": 0.047
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-lost-disc-underlayer",
+      "kind": "module",
+      "type": "exposed-archive-underlayer",
+      "strength": 0.706488,
+      "bounds": {
+        "x": 0.395,
+        "y": 0.866,
+        "w": 0.208,
+        "h": 0.078
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-tool-reliquary",
+      "kind": "module",
+      "type": "overlapped-image-seam",
+      "strength": 0.6818160000000001,
+      "bounds": {
+        "x": 0.828,
+        "y": 0.066,
+        "w": 0.106,
+        "h": 0.338
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spawn-edge-video-shard",
+      "kind": "module",
+      "type": "glossy-video-edge-shard",
+      "strength": 0.6523359999999999,
+      "bounds": {
+        "x": 0.093,
+        "y": 0.747,
+        "w": 0.182,
+        "h": 0.086
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-deep-route-thumbnail-chip",
+      "kind": "module",
+      "type": "small-route-thumbnail-chip",
+      "strength": 0.6524679999999999,
+      "bounds": {
+        "x": 0.769,
+        "y": 0.452,
+        "w": 0.162,
+        "h": 0.112
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-torn-game-map-aperture-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.168,
+        "y": 0.1061,
+        "w": 0.6943,
+        "h": 0.5723
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-profile-glass-vitrine-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.102,
+        "y": 0.049,
+        "w": 0.24,
+        "h": 0.18
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-smoked-corner-skill-scrap-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.66,
+        "y": 0.078,
+        "w": 0.205,
+        "h": 0.153
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-birthday-card-color-tear-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.668,
+        "y": 0.719,
+        "w": 0.254,
+        "h": 0.149
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-status-tracker-paste-seal-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.495,
+        "y": 0.517,
+        "w": 0.045,
+        "h": 0.047
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-lost-disc-underlayer-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.866,
+        "w": 0.208,
+        "h": 0.078
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-tool-reliquary-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.828,
+        "y": 0.066,
+        "w": 0.106,
+        "h": 0.338
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spawn-edge-video-shard-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.093,
+        "y": 0.747,
+        "w": 0.182,
+        "h": 0.086
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-deep-route-thumbnail-chip-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.769,
+        "y": 0.452,
+        "w": 0.162,
+        "h": 0.112
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,487 @@
+{
+  "analysis_id": "analysis-2026-07-15-fable-navmesh-paste-wall-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A vertical distressed wall plate built from torn plaster, dark route-map circuitry, pasted photographic chips, smoked scraps, red-black apertures, and small luminous media pockets. The dominant source surface is the central ripped game-map field, with several smaller image-bearing tears embedded around its edges.",
+  "usable_surfaces": [
+    "central torn route-map field",
+    "upper-left teal glassy media pocket",
+    "upper-right red smoked aperture",
+    "left-middle green pasted image chip",
+    "right-middle blue video slit",
+    "lower-left glossy spawn shard",
+    "lower-center archive underlayer chip",
+    "lower-right saturated color tear and green image pocket",
+    "small round route seal near lower-center map"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero torn game-map aperture",
+      "artifact_type": "hero-scale-torn-map-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.228,
+        "y": 0.127,
+        "w": 0.562,
+        "h": 0.71
+      },
+      "polygon": [
+        [
+          0.323,
+          0.131
+        ],
+        [
+          0.453,
+          0.163
+        ],
+        [
+          0.596,
+          0.177
+        ],
+        [
+          0.712,
+          0.255
+        ],
+        [
+          0.789,
+          0.36
+        ],
+        [
+          0.765,
+          0.502
+        ],
+        [
+          0.827,
+          0.625
+        ],
+        [
+          0.708,
+          0.716
+        ],
+        [
+          0.603,
+          0.836
+        ],
+        [
+          0.424,
+          0.787
+        ],
+        [
+          0.318,
+          0.715
+        ],
+        [
+          0.229,
+          0.602
+        ],
+        [
+          0.239,
+          0.458
+        ],
+        [
+          0.203,
+          0.317
+        ],
+        [
+          0.259,
+          0.207
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "Dominant dark ripped terrain-like print mass with pale route lines, nodes, grid scars, and torn plaster edges; it reads as the central interactive map surface."
+    },
+    {
+      "label": "Profile Glass Vitrine",
+      "artifact_type": "glass-vitrine",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.102,
+        "y": 0.049,
+        "w": 0.24,
+        "h": 0.18
+      },
+      "polygon": [
+        [
+          0.111,
+          0.052
+        ],
+        [
+          0.279,
+          0.047
+        ],
+        [
+          0.338,
+          0.081
+        ],
+        [
+          0.337,
+          0.203
+        ],
+        [
+          0.277,
+          0.226
+        ],
+        [
+          0.157,
+          0.214
+        ],
+        [
+          0.102,
+          0.169
+        ],
+        [
+          0.108,
+          0.091
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Upper-left teal glassy rectangular pocket under torn paper, with cyan lights, gridded panes, and preserved image-like massing."
+    },
+    {
+      "label": "smoked corner skill scrap",
+      "artifact_type": "charred-corner-print-scrap",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.66,
+        "y": 0.078,
+        "w": 0.205,
+        "h": 0.153
+      },
+      "polygon": [
+        [
+          0.702,
+          0.079
+        ],
+        [
+          0.786,
+          0.085
+        ],
+        [
+          0.852,
+          0.124
+        ],
+        [
+          0.866,
+          0.182
+        ],
+        [
+          0.824,
+          0.224
+        ],
+        [
+          0.727,
+          0.232
+        ],
+        [
+          0.665,
+          0.19
+        ],
+        [
+          0.651,
+          0.129
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Upper-right charred black scrap with a red-orange glowing interior and torn white surround, visibly distinct from the route field."
+    },
+    {
+      "label": "birthday-card color tear",
+      "artifact_type": "saturated-greeting-card-tear",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.668,
+        "y": 0.719,
+        "w": 0.254,
+        "h": 0.149
+      },
+      "polygon": [
+        [
+          0.692,
+          0.724
+        ],
+        [
+          0.821,
+          0.72
+        ],
+        [
+          0.906,
+          0.745
+        ],
+        [
+          0.923,
+          0.817
+        ],
+        [
+          0.877,
+          0.867
+        ],
+        [
+          0.754,
+          0.858
+        ],
+        [
+          0.679,
+          0.82
+        ],
+        [
+          0.666,
+          0.757
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Lower-right saturated red and turquoise torn patch with black pasted center and rough handmade paper edge behavior."
+    },
+    {
+      "label": "status-tracker paste seal",
+      "artifact_type": "round-paste-seal",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.495,
+        "y": 0.517,
+        "w": 0.045,
+        "h": 0.047
+      },
+      "polygon": [
+        [
+          0.518,
+          0.518
+        ],
+        [
+          0.531,
+          0.522
+        ],
+        [
+          0.54,
+          0.536
+        ],
+        [
+          0.537,
+          0.552
+        ],
+        [
+          0.524,
+          0.564
+        ],
+        [
+          0.507,
+          0.561
+        ],
+        [
+          0.495,
+          0.548
+        ],
+        [
+          0.498,
+          0.531
+        ]
+      ],
+      "confidence": 0.66,
+      "visual_evidence": "Small round pale-blue node/seal on the route geometry near the lower central map, compact and checkpoint-like."
+    },
+    {
+      "label": "lost-disc underlayer",
+      "artifact_type": "exposed-archive-underlayer",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.866,
+        "w": 0.208,
+        "h": 0.078
+      },
+      "polygon": [
+        [
+          0.411,
+          0.866
+        ],
+        [
+          0.552,
+          0.866
+        ],
+        [
+          0.602,
+          0.889
+        ],
+        [
+          0.596,
+          0.928
+        ],
+        [
+          0.548,
+          0.945
+        ],
+        [
+          0.438,
+          0.938
+        ],
+        [
+          0.395,
+          0.913
+        ],
+        [
+          0.397,
+          0.881
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "Lower-center greenish buried image chip peeking through ripped plaster, with dark silhouettes and aged archive tones."
+    },
+    {
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "overlapped-image-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.828,
+        "y": 0.066,
+        "w": 0.106,
+        "h": 0.338
+      },
+      "polygon": [
+        [
+          0.845,
+          0.067
+        ],
+        [
+          0.907,
+          0.069
+        ],
+        [
+          0.929,
+          0.147
+        ],
+        [
+          0.917,
+          0.234
+        ],
+        [
+          0.932,
+          0.318
+        ],
+        [
+          0.909,
+          0.403
+        ],
+        [
+          0.861,
+          0.394
+        ],
+        [
+          0.837,
+          0.302
+        ],
+        [
+          0.851,
+          0.215
+        ],
+        [
+          0.829,
+          0.124
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "Narrow right-side overlapped vertical seam with gridded poster remnants and torn white paper, cropped and illegible but clearly source-bearing."
+    },
+    {
+      "label": "spawn-edge video shard",
+      "artifact_type": "glossy-video-edge-shard",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.093,
+        "y": 0.747,
+        "w": 0.182,
+        "h": 0.086
+      },
+      "polygon": [
+        [
+          0.105,
+          0.75
+        ],
+        [
+          0.236,
+          0.746
+        ],
+        [
+          0.274,
+          0.767
+        ],
+        [
+          0.267,
+          0.813
+        ],
+        [
+          0.219,
+          0.834
+        ],
+        [
+          0.133,
+          0.826
+        ],
+        [
+          0.091,
+          0.802
+        ],
+        [
+          0.094,
+          0.765
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Lower-left glossy blue-black horizontal video-like shard with bright track lines and a small red light near the floor edge."
+    },
+    {
+      "label": "deep route thumbnail chip",
+      "artifact_type": "small-route-thumbnail-chip",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.769,
+        "y": 0.452,
+        "w": 0.162,
+        "h": 0.112
+      },
+      "polygon": [
+        [
+          0.789,
+          0.454
+        ],
+        [
+          0.897,
+          0.453
+        ],
+        [
+          0.929,
+          0.481
+        ],
+        [
+          0.92,
+          0.544
+        ],
+        [
+          0.872,
+          0.563
+        ],
+        [
+          0.79,
+          0.555
+        ],
+        [
+          0.763,
+          0.521
+        ],
+        [
+          0.77,
+          0.474
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "Right-middle blue luminous thumbnail chip embedded in a torn white aperture, with visible interior vertical marks and a cool glow."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.599,
+    "rationale": "The plate has one strong central route-map mass and several readable source pockets, but many plaster tears, scratches, and high-contrast scraps create a busy field. It remains expressionist rather than generic clutter because the source anchors are materially distinct."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-07-15-fable-navmesh-paste-wall-v1"
+}
