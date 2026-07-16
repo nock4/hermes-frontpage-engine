@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-07-16-glazed-edge-habitat-v1",
+  "edition_id": "2026-07-16-glazed-edge-habitat-v1",
+  "plate_read_timestamp": "2026-07-16T11:27:54.863Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A macro ceramic-paper slab with routed graphite seams, inlaid colored apertures, tiny glossy chips, cut slits, and cropped media-like edge pools. The plate is minimal and expressionist: one pale terrain dominates, with source windows appearing as physical cuts, stains, pools, and flecks rather than cards.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "routes breeding under glazed paper",
+      "A macro ceramic-paper slab with routed graphite seams, inlaid colored apertures, tiny glossy chips, cut slits, and cropped media-like edge pools. The plate is minimal and expressionist: one pale terrain dominates, with source windows appearing as physical cuts, stains, pools, and flecks rather than cards.",
+      "edge-map",
+      "glazed-paper",
+      "navmesh-routes"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero routed drawing slab",
+      "Profile Glass Vitrine",
+      "algorithm defect chip",
+      "Source Pathway Plaque",
+      "puppy-love media grain",
+      "anchor-image corner crop",
+      "sable edge pool",
+      "note-header ceramic fleck"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "glazed-edge-habitat",
+      "one broad navigable paper-glaze terrain",
+      "a smaller collision cluster of apertures and chipped labels",
+      "branching route seams with corner nodes",
+      "partial image crops entering from edges",
+      "gloss defects that behave like tiny living ponds",
+      "large matte routed slab",
+      "orange glazed rectangular aperture"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: glazed-edge-habitat.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-routed-drawing-slab",
+      "kind": "hero",
+      "type": "matte-route-seam-terrain",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.5791,
+        "h": 1
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-profile-glass-vitrine",
+      "kind": "hero",
+      "type": "orange-glazed-rectangular-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.089,
+        "y": 0.097,
+        "w": 0.238,
+        "h": 0.095
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-algorithm-defect-chip",
+      "kind": "module",
+      "type": "gloss-defect-node",
+      "strength": 0.794484,
+      "bounds": {
+        "x": 0.581,
+        "y": 0.188,
+        "w": 0.051,
+        "h": 0.052
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-source-pathway-plaque",
+      "kind": "module",
+      "type": "tan-sticker-edge-notch",
+      "strength": 0.768036,
+      "bounds": {
+        "x": 0.696,
+        "y": 0.36,
+        "w": 0.196,
+        "h": 0.165
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-puppy-love-media-grain",
+      "kind": "module",
+      "type": "black-speckled-embedded-media-grain",
+      "strength": 0.7378680000000001,
+      "bounds": {
+        "x": 0.776,
+        "y": 0.276,
+        "w": 0.22399999999999998,
+        "h": 0.212
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-anchor-image-corner-crop",
+      "kind": "module",
+      "type": "teal-edge-crop-interruption",
+      "strength": 0.70074,
+      "bounds": {
+        "x": 0.8096,
+        "y": 0.4668,
+        "w": 0.1904,
+        "h": 0.1719
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sable-edge-pool",
+      "kind": "module",
+      "type": "red-cropped-color-pool",
+      "strength": 0.663,
+      "bounds": {
+        "x": 0.724,
+        "y": 0.638,
+        "w": 0.276,
+        "h": 0.305
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-note-header-ceramic-fleck",
+      "kind": "module",
+      "type": "round-glazed-fleck-aperture",
+      "strength": 0.6555519999999999,
+      "bounds": {
+        "x": 0.633,
+        "y": 0.517,
+        "w": 0.083,
+        "h": 0.067
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-shimmer-scar",
+      "kind": "module",
+      "type": "clear-scratched-glaze-scar",
+      "strength": 0.644836,
+      "bounds": {
+        "x": 0.362,
+        "y": 0.856,
+        "w": 0.182,
+        "h": 0.062
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-routed-drawing-slab-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.5791,
+        "h": 1
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-profile-glass-vitrine-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.089,
+        "y": 0.097,
+        "w": 0.238,
+        "h": 0.095
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-algorithm-defect-chip-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.581,
+        "y": 0.188,
+        "w": 0.051,
+        "h": 0.052
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-source-pathway-plaque-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.696,
+        "y": 0.36,
+        "w": 0.196,
+        "h": 0.165
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-puppy-love-media-grain-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.776,
+        "y": 0.276,
+        "w": 0.22399999999999998,
+        "h": 0.212
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-anchor-image-corner-crop-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.8096,
+        "y": 0.4668,
+        "w": 0.1904,
+        "h": 0.1719
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sable-edge-pool-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.638,
+        "w": 0.276,
+        "h": 0.305
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-note-header-ceramic-fleck-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.633,
+        "y": 0.517,
+        "w": 0.083,
+        "h": 0.067
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-shimmer-scar-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.362,
+        "y": 0.856,
+        "w": 0.182,
+        "h": 0.062
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,439 @@
+{
+  "analysis_id": "analysis-2026-07-16-glazed-edge-habitat-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A macro ceramic-paper slab with routed graphite seams, inlaid colored apertures, tiny glossy chips, cut slits, and cropped media-like edge pools. The plate is minimal and expressionist: one pale terrain dominates, with source windows appearing as physical cuts, stains, pools, and flecks rather than cards.",
+  "usable_surfaces": [
+    "large matte routed slab",
+    "orange glazed rectangular aperture",
+    "central blue route-junction pool",
+    "tiny glossy defect chip",
+    "right black speckled media crop",
+    "right tan notched paper plaque",
+    "lower-right red cropped color pool",
+    "small circular glazed fleck",
+    "lower-left shimmer scratch seam"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero routed drawing slab",
+      "artifact_type": "matte-route-seam-terrain",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.72,
+        "h": 1
+      },
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.214,
+          0
+        ],
+        [
+          0.283,
+          0.083
+        ],
+        [
+          0.345,
+          0.191
+        ],
+        [
+          0.397,
+          0.309
+        ],
+        [
+          0.484,
+          0.424
+        ],
+        [
+          0.438,
+          0.505
+        ],
+        [
+          0.308,
+          0.598
+        ],
+        [
+          0.203,
+          0.704
+        ],
+        [
+          0.259,
+          0.842
+        ],
+        [
+          0.488,
+          0.891
+        ],
+        [
+          0.525,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The dominant pale matte slab is visibly routed by dark graphite-like seams, with hand-worked texture, scratches, and cut channels forming the main navigable drawing terrain."
+    },
+    {
+      "label": "Profile Glass Vitrine",
+      "artifact_type": "orange-glazed-rectangular-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.089,
+        "y": 0.097,
+        "w": 0.238,
+        "h": 0.095
+      },
+      "polygon": [
+        [
+          0.088,
+          0.125
+        ],
+        [
+          0.101,
+          0.111
+        ],
+        [
+          0.212,
+          0.096
+        ],
+        [
+          0.314,
+          0.103
+        ],
+        [
+          0.326,
+          0.176
+        ],
+        [
+          0.313,
+          0.188
+        ],
+        [
+          0.111,
+          0.192
+        ],
+        [
+          0.098,
+          0.183
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "A recessed orange glossy rectangular window sits in the upper-left slab, with dark illegible vertical masses under glaze and a bright lower rim."
+    },
+    {
+      "label": "algorithm defect chip",
+      "artifact_type": "gloss-defect-node",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.581,
+        "y": 0.188,
+        "w": 0.051,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.585,
+          0.199
+        ],
+        [
+          0.611,
+          0.188
+        ],
+        [
+          0.627,
+          0.198
+        ],
+        [
+          0.632,
+          0.223
+        ],
+        [
+          0.617,
+          0.238
+        ],
+        [
+          0.594,
+          0.234
+        ],
+        [
+          0.581,
+          0.216
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A small raised glossy chip near the upper middle catches light, with a dark core and a tiny blue-white specular dot at its lower edge."
+    },
+    {
+      "label": "Source Pathway Plaque",
+      "artifact_type": "tan-sticker-edge-notch",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.696,
+        "y": 0.36,
+        "w": 0.196,
+        "h": 0.165
+      },
+      "polygon": [
+        [
+          0.717,
+          0.36
+        ],
+        [
+          0.826,
+          0.359
+        ],
+        [
+          0.892,
+          0.431
+        ],
+        [
+          0.875,
+          0.523
+        ],
+        [
+          0.766,
+          0.503
+        ],
+        [
+          0.696,
+          0.432
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A tan clipped paper-like plaque on the right edge contains dark combed illegible line marks and is bounded by metallic routed edges."
+    },
+    {
+      "label": "puppy-love media grain",
+      "artifact_type": "black-speckled-embedded-media-grain",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.776,
+        "y": 0.276,
+        "w": 0.22399999999999998,
+        "h": 0.212
+      },
+      "polygon": [
+        [
+          0.815,
+          0.283
+        ],
+        [
+          0.936,
+          0.27
+        ],
+        [
+          1,
+          0.289
+        ],
+        [
+          1,
+          0.486
+        ],
+        [
+          0.915,
+          0.484
+        ],
+        [
+          0.875,
+          0.42
+        ],
+        [
+          0.823,
+          0.361
+        ],
+        [
+          0.776,
+          0.316
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A dark rounded cropped surface at the right edge is packed with tan speckles, red bars, and blue flecks, like media grain trapped under glaze."
+    },
+    {
+      "label": "anchor-image corner crop",
+      "artifact_type": "teal-edge-crop-interruption",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.806,
+        "y": 0.487,
+        "w": 0.19399999999999995,
+        "h": 0.158
+      },
+      "polygon": [
+        [
+          0.837,
+          0.487
+        ],
+        [
+          1,
+          0.49
+        ],
+        [
+          1,
+          0.627
+        ],
+        [
+          0.833,
+          0.645
+        ],
+        [
+          0.806,
+          0.532
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A deep teal cropped block enters from the right edge beneath the plaque, interrupted by the frame and edged with pale routed outline and speckled glare."
+    },
+    {
+      "label": "sable edge pool",
+      "artifact_type": "red-cropped-color-pool",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.638,
+        "w": 0.276,
+        "h": 0.305
+      },
+      "polygon": [
+        [
+          0.821,
+          0.641
+        ],
+        [
+          1,
+          0.639
+        ],
+        [
+          1,
+          0.94
+        ],
+        [
+          0.86,
+          0.942
+        ],
+        [
+          0.739,
+          0.864
+        ],
+        [
+          0.724,
+          0.76
+        ],
+        [
+          0.765,
+          0.688
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A large red-and-cream cropped color pool pushes in from the lower-right edge, mottled with circular stains and abraded pigment."
+    },
+    {
+      "label": "note-header ceramic fleck",
+      "artifact_type": "round-glazed-fleck-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.633,
+        "y": 0.517,
+        "w": 0.083,
+        "h": 0.067
+      },
+      "polygon": [
+        [
+          0.656,
+          0.519
+        ],
+        [
+          0.688,
+          0.517
+        ],
+        [
+          0.713,
+          0.539
+        ],
+        [
+          0.708,
+          0.565
+        ],
+        [
+          0.681,
+          0.584
+        ],
+        [
+          0.646,
+          0.577
+        ],
+        [
+          0.633,
+          0.552
+        ],
+        [
+          0.639,
+          0.531
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A small circular glazed inset contains turquoise, white, and orange color wedges, with a raised glossy ring and tight shadow."
+    },
+    {
+      "label": "lower shimmer scar",
+      "artifact_type": "clear-scratched-glaze-scar",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.362,
+        "y": 0.856,
+        "w": 0.182,
+        "h": 0.062
+      },
+      "polygon": [
+        [
+          0.377,
+          0.869
+        ],
+        [
+          0.479,
+          0.855
+        ],
+        [
+          0.537,
+          0.882
+        ],
+        [
+          0.514,
+          0.91
+        ],
+        [
+          0.405,
+          0.919
+        ],
+        [
+          0.362,
+          0.899
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "A translucent glossy scar near the lower center-left carries bright diagonal scratches, bounded by a soft oval chip edge on the pale slab."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.957,
+    "rationale": "The image is mostly one quiet matte slab crossed by a few routed seams. Source-bearing activity clusters at distinct apertures and cropped edge pools, leaving enough negative space for an image-led interface without visual clutter."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-07-16-glazed-edge-habitat-v1"
+}

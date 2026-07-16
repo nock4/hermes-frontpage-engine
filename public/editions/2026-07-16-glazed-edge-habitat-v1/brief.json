@@ -1,0 +1,60 @@
+{
+  "brief_id": "brief-2026-07-16-glazed-edge-habitat-v1",
+  "date": "2026-07-16",
+  "signal_cluster_ids": [
+    "eeee0ce681f6",
+    "4f27daa43805",
+    "3facfcd9144a",
+    "4140d10bb37e",
+    "7d42d0ab2be1",
+    "880f32ddddc4",
+    "24fd5031ad66",
+    "2577835e5c54"
+  ],
+  "research_node_ids": [
+    "research-1-bc78b509",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-d86c1cf5",
+    "research-7-45d92834",
+    "research-8-a9031d38",
+    "research-9-c97fa13e",
+    "research-10-d0b432e3",
+    "research-11-b37400d0",
+    "research-12-fa49b2ef"
+  ],
+  "mood": "routes breeding under glazed paper",
+  "material_language": [
+    "matte drawing-paper fiber",
+    "thin routed seam cuts",
+    "glossy embedded media grain",
+    "soft ceramic glaze defects",
+    "sticker-edge notches"
+  ],
+  "lighting": "side-lit shallow macro with skimming shadows, small flash glints on glossy defects, and bright cropped media flares at seam junctions",
+  "object_inventory": [
+    "one broad navigable paper-glaze terrain",
+    "a smaller collision cluster of apertures and chipped labels",
+    "branching route seams with corner nodes",
+    "partial image crops entering from edges",
+    "gloss defects that behave like tiny living ponds"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no legible words or interface labels inside the image",
+    "no dashboard, desk, room, cabinet, shelf, gallery wall, or card grid",
+    "do not copy the unavailable visual reference subject literally",
+    "avoid poster-wall paste-up, ceramic plinth, nocturnal archive field, room section, observatory, or pale herbarium repetition",
+    "source anchors must appear as physical marks, cuts, apertures, seams, grains, or edge interruptions",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no literal depiction of the source reference image"
+  ]
+}
