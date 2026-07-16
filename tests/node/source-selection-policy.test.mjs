@@ -65,6 +65,7 @@ describe('source selection policy', () => {
 
   it('classifies source URLs into runtime binding types', () => {
     expect(classifySource('https://www.youtube.com/watch?v=abc123')).toMatchObject({ source_type: 'youtube', window_type: 'video' })
+    expect(classifySource('https://www.youtube.com/playlist?list=OLAK5uy_ml3b2TJh9lE4NPtfzuj1IkbQXQpjigPzk')).toMatchObject({ source_type: 'article', window_type: 'web' })
     expect(classifySource('https://x.com/person/status/123')).toMatchObject({ source_type: 'tweet', window_type: 'social' })
     expect(classifySource('https://github.com/openai/codex')).toMatchObject({ source_type: 'github', window_type: 'web' })
   })

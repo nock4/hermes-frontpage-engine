@@ -16,7 +16,10 @@ export function classifySource(url) {
   try {
     const parsed = new URL(url)
     const host = parsed.hostname.replace(/^www\./, '')
-    if (host.includes('youtube.com') || host.includes('youtu.be')) return { source_type: 'youtube', window_type: 'video', kind: 'video' }
+    if (host.includes('youtube.com') || host.includes('youtu.be')) {
+      if (isYouTubeVideoUrl(url)) return { source_type: 'youtube', window_type: 'video', kind: 'video' }
+      return { source_type: 'article', window_type: 'web', kind: 'article' }
+    }
     if (host === 'x.com' || host === 'twitter.com') return { source_type: 'tweet', window_type: 'social', kind: 'social' }
     if (host.includes('github.com')) return { source_type: 'github', window_type: 'web', kind: 'web' }
     if (host.includes('nts.live')) return { source_type: 'nts', window_type: 'audio', kind: 'audio' }
