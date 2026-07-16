@@ -147,8 +147,21 @@ function isYouTubeUrl(value: string | undefined) {
   }
 }
 
+function isYouTubeVideoUrl(value: string | undefined) {
+  if (!value) return false
+  try {
+    const url = new URL(value)
+    const host = url.hostname.replace(/^www\./, '')
+    const parts = url.pathname.split('/').filter(Boolean)
+    if (host === 'youtu.be') return Boolean(parts[0])
+    return isYouTubeUrl(value) && (url.pathname === '/watch' ? Boolean(url.searchParams.get('v')) : ['embed', 'shorts', 'live', 'v'].includes(parts[0] ?? '') && Boolean(parts[1]))
+  } catch {
+    return false
+  }
+}
+
 function shouldOpenPrimaryWindow(binding: SourceBindingRecord) {
-  return isYouTubeUrl(binding.source_url)
+  return isYouTubeVideoUrl(binding.source_url)
     || binding.source_type === 'youtube'
     || binding.window_type === 'video'
     || binding.source_type === 'tweet'
@@ -162,7 +175,7 @@ function isMediaCapable(binding: Partial<SourceBindingRecord>) {
   return Boolean(binding.source_media_url)
     || Boolean(binding.source_image_url)
     || isDirectImageUrl(binding.source_url)
-    || isYouTubeUrl(binding.source_url)
+    || isYouTubeVideoUrl(binding.source_url)
     || binding.window_type === 'video'
     || binding.source_type === 'youtube'
 }
@@ -294,7 +307,7 @@ async function collectWindowMetric(page: Page, locator: Locator, mode: 'hover' |
 function analyzeWindow(binding: SourceBindingRecord, metric: WindowMetric) {
   const failures: string[] = []
   const mediaCapable = isMediaCapable(binding)
-  const youtubeBinding = binding.source_type === 'youtube' || binding.window_type === 'video' || isYouTubeUrl(binding.source_url)
+  const youtubeBinding = binding.source_type === 'youtube' || binding.window_type === 'video' || isYouTubeVideoUrl(binding.source_url)
   const minMediaRatio = metric.mode === 'hover' ? 0.035 : 0.08
   const visibleImages = metric.images.filter((image) => image.width >= 48 && image.height >= 48)
   const visibleFrames = metric.frames.filter((frame) => frame.width >= 160 && frame.height >= 90)
