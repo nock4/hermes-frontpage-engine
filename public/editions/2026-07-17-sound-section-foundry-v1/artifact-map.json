@@ -1,0 +1,535 @@
+{
+  "artifact_map_id": "map-2026-07-17-sound-section-foundry-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "sound-section-foundry",
+  "default_artifact_id": "hero-hero-central-glass-plate-section-cha",
+  "artifacts": [
+    {
+      "id": "hero-hero-central-glass-plate-section-cha",
+      "kind": "hero",
+      "label": "hero central glass plate-section chamber",
+      "artifact_type": "hero-scale-glass-cutaway",
+      "bounds": {
+        "x": 0.17,
+        "y": 0.417,
+        "w": 0.65,
+        "h": 0.181
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.17,
+          0.42
+        ],
+        [
+          0.24,
+          0.422
+        ],
+        [
+          0.41,
+          0.421
+        ],
+        [
+          0.613,
+          0.42
+        ],
+        [
+          0.767,
+          0.419
+        ],
+        [
+          0.82,
+          0.419
+        ],
+        [
+          0.817,
+          0.532
+        ],
+        [
+          0.771,
+          0.565
+        ],
+        [
+          0.632,
+          0.585
+        ],
+        [
+          0.482,
+          0.596
+        ],
+        [
+          0.319,
+          0.582
+        ],
+        [
+          0.19,
+          0.536
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/hero-hero-central-glass-plate-section-cha.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-central-glass-plate-section-cha"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          760,
+          505
+        ],
+        "safe_stage_window_origin_px": [
+          840,
+          520
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-hero-oversized-white-mask-crossing-c",
+      "kind": "hero",
+      "label": "hero oversized white mask crossing chamber",
+      "artifact_type": "hero-scale-foreground-mask",
+      "bounds": {
+        "x": 0.0488,
+        "y": 0.3008,
+        "w": 0.9512,
+        "h": 0.4463
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.0508,
+          0.3057
+        ],
+        [
+          0.9473,
+          0.3047
+        ],
+        [
+          0.998,
+          0.4561
+        ],
+        [
+          0.9974,
+          0.5684
+        ],
+        [
+          0.7747,
+          0.7041
+        ],
+        [
+          0.6797,
+          0.7422
+        ],
+        [
+          0.6478,
+          0.7432
+        ],
+        [
+          0.3288,
+          0.6924
+        ],
+        [
+          0.1035,
+          0.6357
+        ],
+        [
+          0.0664,
+          0.5635
+        ],
+        [
+          0.0508,
+          0.3652
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/hero-hero-oversized-white-mask-crossing-c.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-oversized-white-mask-crossing-c"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          768,
+          389
+        ],
+        "safe_stage_window_origin_px": [
+          891,
+          463
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-pale-mint-diagonal-backplane",
+      "kind": "module",
+      "label": "pale mint diagonal backplane",
+      "artifact_type": "diagonal-glow-plane",
+      "bounds": {
+        "x": 0.0781,
+        "y": 0.0,
+        "w": 0.8359,
+        "h": 0.3242
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.0801,
+          0.0029
+        ],
+        [
+          0.9115,
+          0.0029
+        ],
+        [
+          0.9108,
+          0.3037
+        ],
+        [
+          0.4733,
+          0.3203
+        ],
+        [
+          0.0801,
+          0.3037
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/module-pale-mint-diagonal-backplane.svg",
+      "source_binding_ids": [
+        "binding-module-pale-mint-diagonal-backplane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          763,
+          241
+        ],
+        "safe_stage_window_origin_px": [
+          852,
+          287
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-primary-source-anchor",
+      "kind": "module",
+      "label": "Primary Source Anchor",
+      "artifact_type": "primary-source-anchor",
+      "bounds": {
+        "x": 0.051,
+        "y": 0.305,
+        "w": 0.416,
+        "h": 0.06
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.051,
+          0.305
+        ],
+        [
+          0.466,
+          0.305
+        ],
+        [
+          0.467,
+          0.348
+        ],
+        [
+          0.463,
+          0.363
+        ],
+        [
+          0.35,
+          0.365
+        ],
+        [
+          0.198,
+          0.364
+        ],
+        [
+          0.064,
+          0.365
+        ],
+        [
+          0.052,
+          0.356
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/module-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-module-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          398,
+          338
+        ],
+        "safe_stage_window_origin_px": [
+          449,
+          343
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.711,
+        "y": 0.502,
+        "w": 0.051,
+        "h": 0.066
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.711,
+          0.527
+        ],
+        [
+          0.724,
+          0.518
+        ],
+        [
+          0.741,
+          0.507
+        ],
+        [
+          0.756,
+          0.502
+        ],
+        [
+          0.762,
+          0.507
+        ],
+        [
+          0.746,
+          0.535
+        ],
+        [
+          0.731,
+          0.553
+        ],
+        [
+          0.716,
+          0.568
+        ],
+        [
+          0.711,
+          0.562
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1131,
+          542
+        ],
+        "safe_stage_window_origin_px": [
+          1138,
+          548
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-retro-side-tunnel-thumbnail-glow",
+      "kind": "module",
+      "label": "retro side-tunnel thumbnail glow",
+      "artifact_type": "small-side-tunnel",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/module-retro-side-tunnel-thumbnail-glow.svg",
+      "source_binding_ids": [
+        "binding-module-retro-side-tunnel-thumbnail-glow"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-primary-source-anchor-2",
+      "kind": "module",
+      "label": "Primary Source Anchor",
+      "artifact_type": "primary-source-anchor",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/module-primary-source-anchor-2.svg",
+      "source_binding_ids": [
+        "binding-module-primary-source-anchor-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-layered-fragment-2",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/module-layered-fragment-2.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "sound-section-foundry",
+      "mask_path": "/editions/2026-07-17-sound-section-foundry-v1/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

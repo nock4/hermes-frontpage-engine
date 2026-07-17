@@ -1,49 +1,52 @@
 {
-  "interpretation_id": "interp-2026-07-16-edge-learning-benchmark-field-v1",
-  "edition_id": "2026-07-16-edge-learning-benchmark-field-v1",
-  "plate_read_timestamp": "2026-07-16T13:32:13.090Z",
+  "interpretation_id": "interp-2026-07-17-sound-section-foundry-v1",
+  "edition_id": "2026-07-17-sound-section-foundry-v1",
+  "plate_read_timestamp": "2026-07-17T08:12:14.117Z",
   "scene_ontology": {
     "primary": "material-native",
-    "secondary": [],
+    "secondary": [
+      "optical-native"
+    ],
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A sparse cream paper plate with a large central circular portrait aperture, a cropped terrain-like window breaking the lower field, three small rounded media slits in the middle band, route seams in green, pinhole rivets, top signal dashes, footer rule, and right-edge paper scars.",
+    "summary": "A minimal expressionist black-glass audio-machine cutaway sits across a pale concrete field, interrupted by oversized white mask strokes and a mint diagonal backplane. The strongest source windows are the long glass chamber, the cropped white mask, the mint diagonal plane, the yellow-green lane, a token notch, small side-tunnel glows, and compact light/pinhole marks along the machine edge.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "a clean map learning where its edges are",
-      "A sparse cream paper plate with a large central circular portrait aperture, a cropped terrain-like window breaking the lower field, three small rounded media slits in the middle band, route seams in green, pinhole rivets, top signal dashes, footer rule, and right-edge paper scars.",
-      "minimal-field",
-      "navmesh-surface",
-      "emerald-routes"
+      "studio glass turning sound into colored strata",
+      "A minimal expressionist black-glass audio-machine cutaway sits across a pale concrete field, interrupted by oversized white mask strokes and a mint diagonal backplane. The strongest source windows are the long glass chamber, the cropped white mask, the mint diagonal plane, the yellow-green lane, a token notch, small side-tunnel glows, and compact light/pinhole marks along the machine edge.",
+      "audio-midi",
+      "section-cut",
+      "studio-glass"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "central benchmark wound",
-      "living itinerary crop",
-      "unknowns interview notch",
-      "cod-recipe image slit",
-      "prompt-sheet fragment",
-      "fable-core signal",
-      "anonymous media pinhole",
-      "historian archive edge"
+      "hero central glass plate-section chamber",
+      "hero oversized white mask crossing chamber",
+      "pale mint diagonal backplane",
+      "Primary Source Anchor",
+      "Layered Fragment",
+      "retro side-tunnel thumbnail glow",
+      "Reference Plaque"
     ],
     "dominant_surfaces": [
       "paper",
+      "glass",
+      "wood",
       "paint"
     ],
     "dominant_structures": [
-      "edge-learning-benchmark-field",
-      "one severe empty game-space sheet",
-      "two hero-scale cropped source interruptions",
-      "three restrained middle-band apertures",
-      "hairline route seams that stop at the crop edge",
-      "small footer traces and edge pinholes",
-      "central circular aperture with portrait silhouette",
-      "lower rounded terrain crop"
+      "sound-section-foundry",
+      "one public-scale laptop-glass plate slab opened as an architectural section",
+      "cropped white structural masks crossing the central chamber",
+      "right-side stacked sidebar mass with small apertures",
+      "bottom graphite base stratum with reflective source glints",
+      "pale diagonal mint plane behind the section",
+      "colored conduits and note-block seams embedded along cut faces",
+      "long central glass cutaway chamber"
     ],
     "negative_space_regions": []
   },
@@ -58,21 +61,21 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: edge-learning-benchmark-field.",
+      "Primary ontology inferred from scene family and artifact types: sound-section-foundry.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-central-benchmark-wound",
+      "id": "hero-hero-central-glass-plate-section-cha",
       "kind": "hero",
-      "type": "hero-scale-rounded-aperture",
-      "strength": 0.95,
+      "type": "hero-scale-glass-cutaway",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.363,
-        "y": 0.253,
-        "w": 0.283,
-        "h": 0.192
+        "x": 0.17,
+        "y": 0.417,
+        "w": 0.65,
+        "h": 0.181
       },
       "supports": [
         "threshold-scan-reveal",
@@ -80,15 +83,15 @@
       ]
     },
     {
-      "id": "hero-living-itinerary-crop",
+      "id": "hero-hero-oversized-white-mask-crossing-c",
       "kind": "hero",
-      "type": "hero-scale-map-tile",
-      "strength": 0.9199999999999999,
+      "type": "hero-scale-foreground-mask",
+      "strength": 0.970124,
       "bounds": {
-        "x": 0.2451,
-        "y": 0.7858,
-        "w": 0.5977,
-        "h": 0.2142
+        "x": 0.0488,
+        "y": 0.3008,
+        "w": 0.9512,
+        "h": 0.4463
       },
       "supports": [
         "threshold-scan-reveal",
@@ -96,14 +99,30 @@
       ]
     },
     {
-      "id": "module-unknowns-interview-notch",
+      "id": "module-pale-mint-diagonal-backplane",
       "kind": "module",
-      "type": "emerald-route-seam",
-      "strength": 0.72,
+      "type": "diagonal-glow-plane",
+      "strength": 0.784188,
       "bounds": {
-        "x": 0.641,
-        "y": 0.354,
-        "w": 0.267,
+        "x": 0.0781,
+        "y": 0,
+        "w": 0.8359,
+        "h": 0.3242
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-primary-source-anchor",
+      "kind": "module",
+      "type": "primary-source-anchor",
+      "strength": 0.7683000000000001,
+      "bounds": {
+        "x": 0.051,
+        "y": 0.305,
+        "w": 0.416,
         "h": 0.06
       },
       "supports": [
@@ -112,30 +131,14 @@
       ]
     },
     {
-      "id": "module-cod-recipe-image-slit",
+      "id": "module-layered-fragment",
       "kind": "module",
-      "type": "edge-image-slit",
-      "strength": 0.6900000000000001,
+      "type": "layered-fragment",
+      "strength": 0.735924,
       "bounds": {
-        "x": 0.124,
-        "y": 0.402,
-        "w": 0.134,
-        "h": 0.066
-      },
-      "supports": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-prompt-sheet-fragment",
-      "kind": "module",
-      "type": "three-column-panel-fragment",
-      "strength": 0.66,
-      "bounds": {
-        "x": 0.421,
-        "y": 0.402,
-        "w": 0.159,
+        "x": 0.711,
+        "y": 0.502,
+        "w": 0.051,
         "h": 0.066
       },
       "supports": [
@@ -144,10 +147,10 @@
       ]
     },
     {
-      "id": "module-fable-core-signal",
+      "id": "module-retro-side-tunnel-thumbnail-glow",
       "kind": "module",
-      "type": "top-center-signal-badge",
-      "strength": 0.63,
+      "type": "small-side-tunnel",
+      "strength": 0.699972,
       "bounds": {
         "x": 0.1,
         "y": 0.78,
@@ -155,15 +158,15 @@
         "h": 0.16
       },
       "supports": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-anonymous-media-pinhole",
+      "id": "module-primary-source-anchor-2",
       "kind": "module",
-      "type": "mint-media-pinhole",
-      "strength": 0.6000000000000001,
+      "type": "primary-source-anchor",
+      "strength": 0.6718320000000001,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
@@ -176,10 +179,10 @@
       ]
     },
     {
-      "id": "module-historian-archive-edge",
+      "id": "module-layered-fragment-2",
       "kind": "module",
-      "type": "right-edge-route-cut",
-      "strength": 0.58,
+      "type": "layered-fragment",
+      "strength": 0.6478119999999999,
       "bounds": {
         "x": 0.72,
         "y": 0.76,
@@ -187,15 +190,15 @@
         "h": 0.16
       },
       "supports": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-prompt-sheet-fragment-2",
+      "id": "module-reference-plaque",
       "kind": "module",
-      "type": "three-column-panel-fragment",
-      "strength": 0.58,
+      "type": "reference-plaque",
+      "strength": 0.65626,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -211,14 +214,14 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-central-benchmark-wound-surface",
-      "surface_type": "paint",
+      "id": "hero-hero-central-glass-plate-section-cha-surface",
+      "surface_type": "glass",
       "host": "artifact",
       "bounds": {
-        "x": 0.363,
-        "y": 0.253,
-        "w": 0.283,
-        "h": 0.192
+        "x": 0.17,
+        "y": 0.417,
+        "w": 0.65,
+        "h": 0.181
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -227,14 +230,14 @@
       ]
     },
     {
-      "id": "hero-living-itinerary-crop-surface",
-      "surface_type": "paper",
+      "id": "hero-hero-oversized-white-mask-crossing-c-surface",
+      "surface_type": "glass",
       "host": "artifact",
       "bounds": {
-        "x": 0.2451,
-        "y": 0.7858,
-        "w": 0.5977,
-        "h": 0.2142
+        "x": 0.0488,
+        "y": 0.3008,
+        "w": 0.9512,
+        "h": 0.4463
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -243,13 +246,29 @@
       ]
     },
     {
-      "id": "module-unknowns-interview-notch-surface",
-      "surface_type": "paint",
+      "id": "module-pale-mint-diagonal-backplane-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
-        "x": 0.641,
-        "y": 0.354,
-        "w": 0.267,
+        "x": 0.0781,
+        "y": 0,
+        "w": 0.8359,
+        "h": 0.3242
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-primary-source-anchor-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.051,
+        "y": 0.305,
+        "w": 0.416,
         "h": 0.06
       },
       "suitability": 0.76,
@@ -259,29 +278,13 @@
       ]
     },
     {
-      "id": "module-cod-recipe-image-slit-surface",
-      "surface_type": "paper",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.124,
-        "y": 0.402,
-        "w": 0.134,
-        "h": 0.066
-      },
-      "suitability": 0.76,
-      "supported_treatments": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-prompt-sheet-fragment-surface",
+      "id": "module-layered-fragment-surface",
       "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
-        "x": 0.421,
-        "y": 0.402,
-        "w": 0.159,
+        "x": 0.711,
+        "y": 0.502,
+        "w": 0.051,
         "h": 0.066
       },
       "suitability": 0.76,
@@ -291,8 +294,8 @@
       ]
     },
     {
-      "id": "module-fable-core-signal-surface",
-      "surface_type": "unknown",
+      "id": "module-retro-side-tunnel-thumbnail-glow-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.1,
@@ -302,13 +305,13 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-anonymous-media-pinhole-surface",
-      "surface_type": "paint",
+      "id": "module-primary-source-anchor-2-surface",
+      "surface_type": "glass",
       "host": "artifact",
       "bounds": {
         "x": 0.42,
@@ -323,8 +326,8 @@
       ]
     },
     {
-      "id": "module-historian-archive-edge-surface",
-      "surface_type": "paper",
+      "id": "module-layered-fragment-2-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
         "x": 0.72,
@@ -334,12 +337,12 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-prompt-sheet-fragment-2-surface",
+      "id": "module-reference-plaque-surface",
       "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
