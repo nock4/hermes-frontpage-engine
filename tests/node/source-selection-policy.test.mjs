@@ -152,6 +152,36 @@ describe('source selection policy', () => {
     expect(selectContentSources([infrastructure, creative], { targetItems: 2 }).map((source) => source.url)[0]).toBe(creative.url)
   })
 
+  it('keeps AI model/tool screenshots behind artwork sources during content selection', () => {
+    const aiTool = {
+      ...baseSource,
+      url: 'https://x.com/MireloAI/status/2075536492177354771',
+      source_url: 'https://x.com/MireloAI/status/2075536492177354771',
+      final_url: 'https://x.com/MireloAI/status/2075536492177354771',
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      note_score: 80,
+      title: '@MireloAI: introducing our new Audio-to-MIDI model',
+      description: 'AI model benchmark workflow screenshots audio-to-midi model',
+      image_url: 'https://pbs.twimg.com/media/model-demo.jpg',
+    }
+    const artwork = {
+      ...baseSource,
+      url: 'https://x.com/archivepilled/status/2077727698265546956',
+      source_url: 'https://x.com/archivepilled/status/2077727698265546956',
+      final_url: 'https://x.com/archivepilled/status/2077727698265546956',
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      note_score: 40,
+      title: "@archivepilled: Nicolò Pucci di Benisichi, 'Biliardo con aereo' (2026)",
+      description: 'artist artwork painting gallery billiard aircraft image surface',
+      image_url: 'https://pbs.twimg.com/media/billiard-aircraft.jpg',
+    }
+
+    expect(sourceContentScore(artwork)).toBeGreaterThan(sourceContentScore(aiTool))
+    expect(selectContentSources([aiTool, artwork], { targetItems: 2 }).map((source) => source.url)[0]).toBe(artwork.url)
+  })
+
   it('keeps a tweet and its extracted media from becoming duplicate content cards', () => {
     const tweet = {
       ...baseSource,

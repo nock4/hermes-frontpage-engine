@@ -69,35 +69,64 @@ function looksLikeProfileOrUtility(source) {
     || /x\.com\/[^/]+\/?(?:$|[?#])/.test(url)
 }
 
+function isAiToolingAnchor(source) {
+  const text = sourceText(source).toLowerCase()
+  const url = String(source?.url || source?.source_url || source?.final_url || '').toLowerCase()
+  return /\b(ai assistant|assistant|agent|agents|agentic|prompt guide|prompts?|benchmark|model|claude|fable|codex|comfy mcp|mcp|workflow|automation|api|sdk|github|docs|framework|vibe cod|vibe-coded|tooling|productivity|software factory)\b/.test(text)
+    || /\b(substack\.com\/p\/claude|anthropic\.com\/claude|github\.com|docs\.|mcp|codex|comfyui)\b/.test(url)
+}
+
+function isArtworkAnchor(source) {
+  const text = sourceText(source).toLowerCase()
+  const url = String(source?.url || source?.source_url || source?.final_url || '').toLowerCase()
+  const artworkLanguage = /\b(artist|artwork|drawings?|painting|paintings|gallery|museum|ceramics?|sculpture|collage|illustration|photography|photo|poster|print|zine|comic|textile|fashion|installation|exhibition|archivepilled|compositioning|monet|jans muskee)\b/.test(text)
+  const visualHost = /\b(arts?|gallery|museum|wikiart|nga\.gov|moma|metmuseum|artsy|pbs\.twimg\.com|instagram\.com|x\.com)\b/.test(url)
+  const hasSurface = sourceHasRenderableCardSurface(source) || (source.image_url && !isLowValueVisualImage(source.image_url))
+  return hasSurface && artworkLanguage && !isAiToolingAnchor(source) && (visualHost || source.source_channel === 'twitter-bookmark')
+}
+
+function anchorSelectionEntry(source, { recentSourceKeys = new Set(), signalHarvest = null } = {}) {
+  let score = sourceContentScore(source, recentSourceKeys) + (aestheticSignalScore(source) * 2)
+  const text = sourceText(source)
+  const artworkAnchor = isArtworkAnchor(source)
+  const aiToolingAnchor = isAiToolingAnchor(source)
+  if (sourceHasRenderableCardSurface(source, signalHarvest)) score += 30
+  if (source.image_url && !isLowValueVisualImage(source.image_url)) score += 14
+  if (youtubeId(source.url) || youtubeId(source.final_url)) score += 18
+  if (text.length > 500) score += aiToolingAnchor ? 0 : 10
+  if (extractUrls(text).length) score += aiToolingAnchor ? 0 : 6
+  if (/\b(music|video|artist|artwork|gallery|archive|meme|animation|film|photo|fashion|textile|game|pixel|album|poster|zine|comic|installation|sculpture|drawing|painting|collage)\b/i.test(text)) score += 18
+  if (artworkAnchor) score += 140
+  if (aiToolingAnchor) score -= 180
+  if (/(agent|api|docs|github|framework|infrastructure|workflow|orchestration|growth|seo|cold email)/i.test(text)) score -= 50
+  if (looksLikeProfileOrUtility(source)) score -= 80
+  return { source, score, artworkAnchor, aiToolingAnchor }
+}
+
 export function selectAnchorSource(evidenceSources, { recentSourceKeys = new Set(), signalHarvest = null } = {}) {
   const ranked = [...(evidenceSources || [])]
     .filter((source) => source?.url && !recentSourceKeys.has(sourceContentKey(source)))
-    .map((source) => {
-      let score = sourceContentScore(source, recentSourceKeys) + (aestheticSignalScore(source) * 2)
-      const text = sourceText(source)
-      if (sourceHasRenderableCardSurface(source, signalHarvest)) score += 30
-      if (source.image_url && !isLowValueVisualImage(source.image_url)) score += 14
-      if (youtubeId(source.url) || youtubeId(source.final_url)) score += 18
-      if (text.length > 500) score += 10
-      if (extractUrls(text).length) score += 6
-      if (/(music|video|artist|artwork|gallery|archive|meme|animation|film|photo|fashion|textile|game|pixel|album|poster|zine|comic|installation|sculpture|drawing|painting|collage)/i.test(text)) score += 18
-      if (/(agent|api|docs|github|framework|infrastructure|workflow|orchestration|growth|seo|cold email)/i.test(text)) score -= 50
-      if (looksLikeProfileOrUtility(source)) score -= 80
-      return { source, score }
-    })
+    .map((source) => anchorSelectionEntry(source, { recentSourceKeys, signalHarvest }))
     .filter((entry) => Number.isFinite(entry.score))
-    .sort((left, right) => right.score - left.score)
+    .sort((left, right) => {
+      if (left.artworkAnchor !== right.artworkAnchor) return left.artworkAnchor ? -1 : 1
+      return right.score - left.score
+    })
 
   const winner = ranked[0]?.source || null
   if (!winner) return null
   return {
     ...winner,
     anchor_selection_score: ranked[0].score,
-    anchor_selection_reason: 'Highest scoring saved-signal source for renderability, richness, freshness, and research depth.',
-    anchor_alternates: ranked.slice(1, 6).map(({ source, score }) => ({
+    anchor_selection_reason: ranked[0].artworkAnchor
+      ? 'Artwork-first anchor lane: recent saved artwork with a real renderable surface outranked AI/tooling expansion yield.'
+      : 'Highest scoring saved-signal source for renderability, richness, freshness, and research depth.',
+    anchor_selection_lane: ranked[0].artworkAnchor ? 'artwork-first' : ranked[0].aiToolingAnchor ? 'ai-tooling-penalized' : 'general',
+    anchor_alternates: ranked.slice(1, 6).map(({ source, score, artworkAnchor, aiToolingAnchor }) => ({
       url: source.url,
       title: getSourceDisplayTitle(source, source.title || source.note_title || source.url),
       score,
+      lane: artworkAnchor ? 'artwork-first' : aiToolingAnchor ? 'ai-tooling-penalized' : 'general',
     })),
   }
 }

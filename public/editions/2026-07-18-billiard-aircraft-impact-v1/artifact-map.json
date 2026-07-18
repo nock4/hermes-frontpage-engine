@@ -1,0 +1,631 @@
+{
+  "artifact_map_id": "map-2026-07-18-billiard-aircraft-impact-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "billiard-aircraft-impact",
+  "default_artifact_id": "hero-green-fuselage-impact-band",
+  "artifacts": [
+    {
+      "id": "hero-green-fuselage-impact-band",
+      "kind": "hero",
+      "label": "green fuselage impact band",
+      "artifact_type": "hero-scale-glossy-slab",
+      "bounds": {
+        "x": 0,
+        "y": 0.096,
+        "w": 1,
+        "h": 0.398
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.096
+        ],
+        [
+          0.145,
+          0.11
+        ],
+        [
+          0.336,
+          0.145
+        ],
+        [
+          0.556,
+          0.198
+        ],
+        [
+          0.742,
+          0.169
+        ],
+        [
+          1,
+          0.178
+        ],
+        [
+          1,
+          0.494
+        ],
+        [
+          0.755,
+          0.49
+        ],
+        [
+          0.514,
+          0.489
+        ],
+        [
+          0.281,
+          0.475
+        ],
+        [
+          0.071,
+          0.449
+        ],
+        [
+          0,
+          0.414
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/hero-green-fuselage-impact-band.svg",
+      "source_binding_ids": [
+        "binding-hero-green-fuselage-impact-band"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          768,
+          269
+        ],
+        "safe_stage_window_origin_px": [
+          891,
+          302
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-audio-to-midi-scratch-field",
+      "kind": "hero",
+      "label": "audio-to-midi scratch field",
+      "artifact_type": "waveform-scratch-field",
+      "bounds": {
+        "x": 0.008,
+        "y": 0.39,
+        "w": 0.957,
+        "h": 0.096
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.008,
+          0.41
+        ],
+        [
+          0.091,
+          0.408
+        ],
+        [
+          0.207,
+          0.412
+        ],
+        [
+          0.331,
+          0.414
+        ],
+        [
+          0.453,
+          0.418
+        ],
+        [
+          0.557,
+          0.415
+        ],
+        [
+          0.666,
+          0.417
+        ],
+        [
+          0.783,
+          0.412
+        ],
+        [
+          0.897,
+          0.401
+        ],
+        [
+          0.965,
+          0.398
+        ],
+        [
+          0.955,
+          0.442
+        ],
+        [
+          0.814,
+          0.44
+        ],
+        [
+          0.665,
+          0.432
+        ],
+        [
+          0.524,
+          0.434
+        ],
+        [
+          0.386,
+          0.432
+        ],
+        [
+          0.237,
+          0.426
+        ],
+        [
+          0.108,
+          0.424
+        ],
+        [
+          0.012,
+          0.427
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/hero-audio-to-midi-scratch-field.svg",
+      "source_binding_ids": [
+        "binding-hero-audio-to-midi-scratch-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          747,
+          441
+        ],
+        "safe_stage_window_origin_px": [
+          865,
+          449
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-black-oval-leading-aperture",
+      "kind": "module",
+      "label": "black oval leading aperture",
+      "artifact_type": "painted-boundary-aperture",
+      "bounds": {
+        "x": 0.703,
+        "y": 0.651,
+        "w": 0.193,
+        "h": 0.15
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.704,
+          0.72
+        ],
+        [
+          0.716,
+          0.689
+        ],
+        [
+          0.739,
+          0.666
+        ],
+        [
+          0.773,
+          0.653
+        ],
+        [
+          0.811,
+          0.652
+        ],
+        [
+          0.851,
+          0.665
+        ],
+        [
+          0.884,
+          0.694
+        ],
+        [
+          0.896,
+          0.727
+        ],
+        [
+          0.884,
+          0.758
+        ],
+        [
+          0.853,
+          0.783
+        ],
+        [
+          0.811,
+          0.798
+        ],
+        [
+          0.765,
+          0.794
+        ],
+        [
+          0.729,
+          0.771
+        ],
+        [
+          0.708,
+          0.744
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/module-black-oval-leading-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-black-oval-leading-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1228,
+          731
+        ],
+        "safe_stage_window_origin_px": [
+          1252,
+          743
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-object-edge-rail-notch",
+      "kind": "module",
+      "label": "object-edge rail notch",
+      "artifact_type": "wood-rail-notch",
+      "bounds": {
+        "x": 0.647,
+        "y": 0.752,
+        "w": 0.208,
+        "h": 0.246
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.648,
+          0.855
+        ],
+        [
+          0.678,
+          0.817
+        ],
+        [
+          0.714,
+          0.778
+        ],
+        [
+          0.742,
+          0.754
+        ],
+        [
+          0.809,
+          0.753
+        ],
+        [
+          0.856,
+          0.794
+        ],
+        [
+          0.837,
+          0.91
+        ],
+        [
+          0.806,
+          0.998
+        ],
+        [
+          0.607,
+          0.998
+        ],
+        [
+          0.624,
+          0.932
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/module-object-edge-rail-notch.svg",
+      "source_binding_ids": [
+        "binding-module-object-edge-rail-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1154,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1179,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-history-plaster-scar",
+      "kind": "module",
+      "label": "history-plaster scar",
+      "artifact_type": "smoky-plaster-scar",
+      "bounds": {
+        "x": 0.593,
+        "y": 0.007,
+        "w": 0.258,
+        "h": 0.185
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.593,
+          0.18
+        ],
+        [
+          0.635,
+          0.148
+        ],
+        [
+          0.684,
+          0.104
+        ],
+        [
+          0.733,
+          0.06
+        ],
+        [
+          0.789,
+          0.024
+        ],
+        [
+          0.85,
+          0.007
+        ],
+        [
+          0.828,
+          0.057
+        ],
+        [
+          0.793,
+          0.104
+        ],
+        [
+          0.756,
+          0.151
+        ],
+        [
+          0.706,
+          0.183
+        ],
+        [
+          0.653,
+          0.192
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/module-history-plaster-scar.svg",
+      "source_binding_ids": [
+        "binding-module-history-plaster-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1109,
+          87
+        ],
+        "safe_stage_window_origin_px": [
+          1141,
+          102
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-youtube-short-glare-fleck",
+      "kind": "module",
+      "label": "youtube-short glare fleck",
+      "artifact_type": "vertical-video-glint",
+      "bounds": {
+        "x": 0.915,
+        "y": 0.778,
+        "w": 0.08499999999999996,
+        "h": 0.059
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.916,
+          0.784
+        ],
+        [
+          0.947,
+          0.779
+        ],
+        [
+          0.981,
+          0.787
+        ],
+        [
+          1,
+          0.803
+        ],
+        [
+          1,
+          0.834
+        ],
+        [
+          0.972,
+          0.833
+        ],
+        [
+          0.939,
+          0.82
+        ],
+        [
+          0.919,
+          0.803
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/module-youtube-short-glare-fleck.svg",
+      "source_binding_ids": [
+        "binding-module-youtube-short-glare-fleck"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          822
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          827
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "panel-seam-with-rivets",
+      "bounds": {
+        "x": 0.431,
+        "y": 0.296,
+        "w": 0.104,
+        "h": 0.214
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.431,
+          0.296
+        ],
+        [
+          0.535,
+          0.296
+        ],
+        [
+          0.535,
+          0.51
+        ],
+        [
+          0.431,
+          0.51
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          742,
+          395
+        ],
+        "safe_stage_window_origin_px": [
+          755,
+          413
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-youtube-short-glare-fleck-2",
+      "kind": "module",
+      "label": "youtube-short glare fleck",
+      "artifact_type": "vertical-video-glint",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/module-youtube-short-glare-fleck-2.svg",
+      "source_binding_ids": [
+        "binding-module-youtube-short-glare-fleck-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-signal-panel-2",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-impact",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-impact-v1/assets/masks/module-signal-panel-2.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

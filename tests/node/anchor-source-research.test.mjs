@@ -29,6 +29,36 @@ describe('anchor-source-research', () => {
     expect(anchor.url).toBe('https://www.youtube.com/watch?v=mask123')
   })
 
+  it('puts recent saved artwork ahead of AI-assistant expansion yield', () => {
+    const anchor = selectAnchorSource([
+      {
+        url: 'https://x.com/gill_works/status/2073869404182585683',
+        source_channel: 'twitter-bookmark',
+        source_type: 'tweet',
+        title: '@gill_works: I gave Fable my project from last year and it just knocked it out of the park',
+        description: 'AI assistant, prompt guide, Claude Fable, agent workflow, benchmark screenshots, related URLs '.repeat(8),
+        note_score: 95,
+        image_url: 'https://pbs.twimg.com/card_img/fable.jpg',
+        fetch_status: 'fetch-ok',
+      },
+      {
+        url: 'https://x.com/compositioning/status/2077410985493606481',
+        source_channel: 'twitter-bookmark',
+        source_type: 'tweet',
+        title: '@compositioning: Drawings by Jans Muskee (2014-2025)',
+        description: 'artist drawings artwork gallery image surface linework',
+        note_score: 65,
+        image_url: 'https://pbs.twimg.com/media/jans-muskee.jpg',
+        fetch_status: 'fetch-ok',
+      },
+    ])
+
+    expect(anchor.url).toBe('https://x.com/compositioning/status/2077410985493606481')
+    expect(anchor.anchor_selection_lane).toBe('artwork-first')
+    expect(anchor.anchor_selection_reason).toMatch(/Artwork-first anchor lane/)
+    expect(anchor.anchor_alternates[0].lane).toBe('ai-tooling-penalized')
+  })
+
   it('builds aesthetic expansion queries from the anchor', () => {
     const queries = buildAnchorQueries({ title: 'surreal claymation music video masks' }, ['claymation', 'mask', 'ambient'])
     const joined = queries.join(' ')

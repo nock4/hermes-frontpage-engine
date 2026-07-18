@@ -83,6 +83,7 @@ export function aestheticSignalScore(candidate = {}) {
   if (candidate.source_channel === 'nts-like') score += 20
 
   if (/(github|api|sdk|quickstart|docs|documentation|readme|zod|schema|agent framework|\bagents?\b|agentic|workflow node|orchestration|mcp|llm\.txt|benchmark|eval|deployment|inference|vector database|rag|tool call|automation pipeline)/.test(text)) score -= 28
+  if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|software factory|model benchmark|agent workflow|comfy mcp|audio-to-midi model)/.test(text)) score -= 42
   if (/(seo|growth channel|cold email|sales|crm|b2b|landing page|pricing|waitlist|sign up|product hunt|saas)/.test(text)) score -= 28
 
   return score
@@ -294,6 +295,14 @@ export function sourceContentScore(source, recentSourceKeys = new Set()) {
   if (source.source_channel === 'chrome-bookmark') score += 12
   if (source.source_channel === 'twitter-bookmark') score += 4
   if (source.source_channel === 'twitter-bookmark' && source.source_type === 'tweet') score += 10
+  if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|software factory|model benchmark|agent workflow|comfy mcp|audio-to-midi model|github|api|sdk|docs|agentic|\bagents?\b|mcp)/i.test([
+    source.title,
+    source.description,
+    source.visible_text,
+    source.note_title,
+    source.note_excerpt,
+    ...sourceUrls,
+  ].filter(Boolean).join(' '))) score -= 45
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) score -= 8
   if (source.source_channel === 'nts-like' && sourceUrls.some(isYouTubeVideoUrl)) score += 30
   if (source.source_channel === 'nts-like' && sourceUrls.some(isBandcampStreamingSourceUrl)) score += 12
