@@ -31,9 +31,9 @@
           "y": 0.4675
         },
         "poster_crop": {
-          "x": 0.0,
+          "x": 0,
           "y": 0.0775,
-          "width": 1.0,
+          "width": 1,
           "height": 0.8438
         },
         "image_width": 1200,
@@ -76,9 +76,9 @@
           "y": 0.4675
         },
         "poster_crop": {
-          "x": 0.0,
+          "x": 0,
           "y": 0.0775,
-          "width": 1.0,
+          "width": 1,
           "height": 0.8438
         },
         "image_width": 1200,
@@ -109,7 +109,9 @@
       "source_domain": "mirelo.ai",
       "source_meta": "Anchor image material 3",
       "source_media_url": "https://mirelo.ai/opengraph-image.png",
-      "source_media_type": "image"
+      "source_media_type": "image",
+      "source_image_url": "https://mirelo.ai/opengraph-image.png",
+      "source_image_alt": "Source preview image"
     },
     {
       "id": "binding-module-primary-source-anchor",
@@ -181,9 +183,9 @@
           "y": 0.4925
         },
         "poster_crop": {
-          "x": 0.0,
+          "x": 0,
           "y": 0.22,
-          "width": 1.0,
+          "width": 1,
           "height": 0.5625
         },
         "image_width": 400,
@@ -226,9 +228,9 @@
           "y": 0.5465
         },
         "poster_crop": {
-          "x": 0.0,
+          "x": 0,
           "y": 0.1272,
-          "width": 1.0,
+          "width": 1,
           "height": 0.7465
         },
         "image_width": 1440,
@@ -271,9 +273,9 @@
           "y": 0.4674
         },
         "poster_crop": {
-          "x": 0.0,
+          "x": 0,
           "y": 0.0778,
-          "width": 1.0,
+          "width": 1,
           "height": 0.8431
         },
         "image_width": 1080,
@@ -317,9 +319,9 @@
         },
         "poster_crop": {
           "x": 0.0169,
-          "y": 0.0,
+          "y": 0,
           "width": 0.9459,
-          "height": 1.0
+          "height": 1
         },
         "image_width": 3014,
         "image_height": 1604,
