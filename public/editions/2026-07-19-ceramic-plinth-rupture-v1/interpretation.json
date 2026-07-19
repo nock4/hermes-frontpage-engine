@@ -1,7 +1,7 @@
 {
-  "interpretation_id": "interp-2026-07-18-optical-drafting-threshold-v1",
-  "edition_id": "2026-07-18-optical-drafting-threshold-v1",
-  "plate_read_timestamp": "2026-07-18T08:12:02.357Z",
+  "interpretation_id": "interp-2026-07-19-ceramic-plinth-rupture-v1",
+  "edition_id": "2026-07-19-ceramic-plinth-rupture-v1",
+  "plate_read_timestamp": "2026-07-19T08:13:04.750Z",
   "scene_ontology": {
     "primary": "material-native",
     "secondary": [
@@ -10,45 +10,42 @@
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A minimal expressionist architectural paper plate: pale gridded drafting field, one large folded plan mass with a triangular interior void, a dark wood threshold at the lower right, a separate small folded preview slab on the right, and sparse pinholes/seams along the left margin.",
+    "summary": "A minimal ceramic plate: three pastel-glazed vessels on a white plinth, dominated by a cropped blue storm-belly vessel at right. Source-bearing anchors appear as real apertures, rim shadows, glaze chips, flecks, drip scars, and a broken plinth edge rather than interface cards.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "a severe pale plan sheet interrupted by quiet optical evidence and warm studio pressure",
-      "A minimal expressionist architectural paper plate: pale gridded drafting field, one large folded plan mass with a triangular interior void, a dark wood threshold at the lower right, a separate small folded preview slab on the right, and sparse pinholes/seams along the left margin.",
-      "minimal-field",
-      "plan-sheet",
-      "optical-grid"
+      "soft glaze, violent crop",
+      "A minimal ceramic plate: three pastel-glazed vessels on a white plinth, dominated by a cropped blue storm-belly vessel at right. Source-bearing anchors appear as real apertures, rim shadows, glaze chips, flecks, drip scars, and a broken plinth edge rather than interface cards.",
+      "ceramic-rupture",
+      "white-plinth",
+      "cloud-glaze"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "central plan aperture",
-      "mist-chamber edge slab",
-      "posed triangular void one",
-      "posed curled overlay",
-      "lower brace notch",
-      "right preview slit",
-      "Signal Panel"
+      "giant storm-belly aperture",
+      "front lightning seam chip",
+      "studio-plinth side cut",
+      "catalog-row glaze rupture",
+      "gallery-image rim shadow",
+      "tiny island trapped in opening",
+      "Signal Panel",
+      "Distributed Marker"
     ],
     "dominant_surfaces": [
-      "paper",
-      "glass",
-      "fog",
-      "wood",
       "paint",
       "light-band"
     ],
     "dominant_structures": [
-      "optical-drafting-threshold",
-      "three unequal plate zones abstracted from a planning surface",
-      "one oversized central footprint aperture slightly below center",
-      "quiet lower-third threshold slab in dark warm wood",
-      "triangular light-well cutouts inside the plan mass",
-      "small edge chips, pinholes, seams, and translucent overlay repairs",
-      "central folded plan aperture",
-      "right translucent preview slab"
+      "ceramic-plinth-rupture",
+      "one impossible-scale cropped ceramic belly carrying multiple source apertures",
+      "two rear vessel silhouettes forming a quiet procession behind the rupture",
+      "a broken white plinth line with inset cuts and reflections",
+      "painted cloud masses that become apertures, chips, and rim marks",
+      "tiny subordinated island and audio traces trapped inside ceramic openings",
+      "large blue storm-belly aperture and weathered glaze",
+      "rear peach vessel rim shadow and side pinhole"
     ],
     "negative_space_regions": []
   },
@@ -63,21 +60,21 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: optical-drafting-threshold.",
+      "Primary ontology inferred from scene family and artifact types: ceramic-plinth-rupture.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-central-plan-aperture",
+      "id": "hero-giant-storm-belly-aperture",
       "kind": "hero",
-      "type": "hero-scale-footprint-aperture",
-      "strength": 0.95,
+      "type": "hero-scale-ceramic-belly-aperture",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.224,
-        "y": 0.301,
-        "w": 0.468,
-        "h": 0.6990000000000001
+        "x": 0.765,
+        "y": 0.05,
+        "w": 0.066,
+        "h": 0.101
       },
       "supports": [
         "threshold-scan-reveal",
@@ -85,15 +82,15 @@
       ]
     },
     {
-      "id": "hero-mist-chamber-edge-slab",
+      "id": "hero-front-lightning-seam-chip",
       "kind": "hero",
-      "type": "hero-scale-translucent-growth-slab",
-      "strength": 0.9199999999999999,
+      "type": "gold-lightning-glaze-chip",
+      "strength": 0.988868,
       "bounds": {
-        "x": 0.758,
-        "y": 0.522,
-        "w": 0.225,
-        "h": 0.462
+        "x": 0.774,
+        "y": 0.765,
+        "w": 0.07,
+        "h": 0.103
       },
       "supports": [
         "threshold-scan-reveal",
@@ -101,15 +98,15 @@
       ]
     },
     {
-      "id": "module-posed-triangular-void-one",
+      "id": "module-studio-plinth-side-cut",
       "kind": "module",
-      "type": "triangular-light-well-cutout",
-      "strength": 0.72,
+      "type": "white-plinth-side-cut",
+      "strength": 0.7974479999999999,
       "bounds": {
-        "x": 0.459,
-        "y": 0.625,
-        "w": 0.135,
-        "h": 0.236
+        "x": 0.385,
+        "y": 0.879,
+        "w": 0.062,
+        "h": 0.119
       },
       "supports": [
         "threshold-scan-reveal",
@@ -117,15 +114,15 @@
       ]
     },
     {
-      "id": "module-posed-curled-overlay",
+      "id": "module-catalog-row-glaze-rupture",
       "kind": "module",
-      "type": "curled-translucent-plan-overlay",
-      "strength": 0.6900000000000001,
+      "type": "hero-scale-cup-row-glaze-field",
+      "strength": 0.7470600000000001,
       "bounds": {
-        "x": 0.311,
-        "y": 0.296,
-        "w": 0.229,
-        "h": 0.647
+        "x": 0.277,
+        "y": 0.374,
+        "w": 0.318,
+        "h": 0.481
       },
       "supports": [
         "threshold-scan-reveal",
@@ -133,26 +130,26 @@
       ]
     },
     {
-      "id": "module-lower-brace-notch",
+      "id": "module-studio-plinth-side-cut-2",
       "kind": "module",
-      "type": "wood-threshold-notch",
-      "strength": 0.66,
+      "type": "white-plinth-side-cut",
+      "strength": 0.727608,
       "bounds": {
-        "x": 0.536,
-        "y": 0.877,
-        "w": 0.155,
-        "h": 0.123
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
       },
       "supports": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-posed-curled-overlay-2",
+      "id": "module-gallery-image-rim-shadow",
       "kind": "module",
-      "type": "curled-translucent-plan-overlay",
-      "strength": 0.63,
+      "type": "dark-rim-interior-window",
+      "strength": 0.701136,
       "bounds": {
         "x": 0.1,
         "y": 0.78,
@@ -165,29 +162,13 @@
       ]
     },
     {
-      "id": "module-lower-brace-notch-2",
+      "id": "module-tiny-island-trapped-in-opening",
       "kind": "module",
-      "type": "wood-threshold-notch",
-      "strength": 0.6000000000000001,
+      "type": "miniature-island-rim-node",
+      "strength": 0.658908,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
-        "w": 0.18,
-        "h": 0.16
-      },
-      "supports": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-right-preview-slit",
-      "kind": "module",
-      "type": "memory-ledger",
-      "strength": 0.58,
-      "bounds": {
-        "x": 0.72,
-        "y": 0.76,
         "w": 0.18,
         "h": 0.16
       },
@@ -200,7 +181,23 @@
       "id": "module-signal-panel",
       "kind": "module",
       "type": "signal-panel",
-      "strength": 0.58,
+      "strength": 0.647176,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.655948,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -216,14 +213,14 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-central-plan-aperture-surface",
+      "id": "hero-giant-storm-belly-aperture-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.224,
-        "y": 0.301,
-        "w": 0.468,
-        "h": 0.6990000000000001
+        "x": 0.765,
+        "y": 0.05,
+        "w": 0.066,
+        "h": 0.101
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -232,14 +229,14 @@
       ]
     },
     {
-      "id": "hero-mist-chamber-edge-slab-surface",
-      "surface_type": "fog",
+      "id": "hero-front-lightning-seam-chip-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.758,
-        "y": 0.522,
-        "w": 0.225,
-        "h": 0.462
+        "x": 0.774,
+        "y": 0.765,
+        "w": 0.07,
+        "h": 0.103
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -248,14 +245,14 @@
       ]
     },
     {
-      "id": "module-posed-triangular-void-one-surface",
+      "id": "module-studio-plinth-side-cut-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.459,
-        "y": 0.625,
-        "w": 0.135,
-        "h": 0.236
+        "x": 0.385,
+        "y": 0.879,
+        "w": 0.062,
+        "h": 0.119
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -264,14 +261,14 @@
       ]
     },
     {
-      "id": "module-posed-curled-overlay-surface",
-      "surface_type": "paper",
+      "id": "module-catalog-row-glaze-rupture-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.311,
-        "y": 0.296,
-        "w": 0.229,
-        "h": 0.647
+        "x": 0.277,
+        "y": 0.374,
+        "w": 0.318,
+        "h": 0.481
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -280,24 +277,24 @@
       ]
     },
     {
-      "id": "module-lower-brace-notch-surface",
-      "surface_type": "wood",
+      "id": "module-studio-plinth-side-cut-2-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.536,
-        "y": 0.877,
-        "w": 0.155,
-        "h": 0.123
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-posed-curled-overlay-2-surface",
-      "surface_type": "paper",
+      "id": "module-gallery-image-rim-shadow-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.1,
@@ -312,28 +309,12 @@
       ]
     },
     {
-      "id": "module-lower-brace-notch-2-surface",
-      "surface_type": "wood",
+      "id": "module-tiny-island-trapped-in-opening-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.42,
         "y": 0.78,
-        "w": 0.18,
-        "h": 0.16
-      },
-      "suitability": 0.76,
-      "supported_treatments": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "module-right-preview-slit-surface",
-      "surface_type": "paper",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.72,
-        "y": 0.76,
         "w": 0.18,
         "h": 0.16
       },
@@ -345,6 +326,22 @@
     },
     {
       "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {

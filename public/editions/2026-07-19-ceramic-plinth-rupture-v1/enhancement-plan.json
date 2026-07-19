@@ -1,0 +1,237 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-19-ceramic-plinth-rupture-v1",
+  "edition_id": "2026-07-19-ceramic-plinth-rupture-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-19-ceramic-plinth-rupture-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-giant-storm-belly-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-giant-storm-belly-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-ceramic-belly-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-front-lightning-seam-chip",
+      "target_kind": "artifact",
+      "artifact_id": "hero-front-lightning-seam-chip",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (gold-lightning-glaze-chip) selected from interpretation."
+    },
+    {
+      "target_id": "module-studio-plinth-side-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-studio-plinth-side-cut",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (white-plinth-side-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-catalog-row-glaze-rupture",
+      "target_kind": "artifact",
+      "artifact_id": "module-catalog-row-glaze-rupture",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-cup-row-glaze-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-studio-plinth-side-cut-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-studio-plinth-side-cut-2",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (white-plinth-side-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-gallery-image-rim-shadow",
+      "target_kind": "artifact",
+      "artifact_id": "module-gallery-image-rim-shadow",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-rim-interior-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-tiny-island-trapped-in-opening",
+      "target_kind": "artifact",
+      "artifact_id": "module-tiny-island-trapped-in-opening",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (miniature-island-rim-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-signal-panel",
+      "target_kind": "artifact",
+      "artifact_id": "module-signal-panel",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (signal-panel) selected from interpretation."
+    },
+    {
+      "target_id": "module-distributed-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-distributed-marker",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (distributed-marker) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
