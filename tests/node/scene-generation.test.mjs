@@ -109,9 +109,13 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('acid / neon saturation')
     expect(prompt).toContain('gloss / flash glare')
     expect(prompt).toContain('hard diagonal crop or seam; torn or irregular edge behavior')
+    expect(prompt).toContain('KEEP ORIGINAL FRAMING')
+    expect(prompt).toContain('Do not zoom into a single object')
+    expect(prompt).toContain('source subjects, object relationships')
+    expect(prompt).not.toContain('no literal depiction of the source reference image')
     expect(prompt).toContain('not appear as cards, pasted thumbnails')
     expect(prompt).not.toContain('Source image plate seeds:')
-    expect(prompt.length).toBeLessThan(1400)
+    expect(prompt.length).toBeLessThan(1600)
   })
 
   it('keeps graphic editorial source references as layout instead of metaphor', () => {

@@ -1,8 +1,8 @@
 {
-  "enhancement_plan_id": "enhance-2026-07-18-billiard-aircraft-impact-v1",
-  "edition_id": "2026-07-18-billiard-aircraft-impact-v1",
+  "enhancement_plan_id": "enhance-2026-07-18-billiard-aircraft-surface-rupture-v1",
+  "edition_id": "2026-07-18-billiard-aircraft-surface-rupture-v1",
   "derived_from": {
-    "interpretation_id": "interp-2026-07-18-billiard-aircraft-impact-v1"
+    "interpretation_id": "interp-2026-07-18-billiard-aircraft-surface-rupture-v1"
   },
   "interaction_world": {
     "class": "material-native",
@@ -40,12 +40,12 @@
   ],
   "targets": [
     {
-      "target_id": "hero-green-fuselage-impact-band",
+      "target_id": "hero-hero-green-aircraft-smear",
       "target_kind": "artifact",
-      "artifact_id": "hero-green-fuselage-impact-band",
+      "artifact_id": "hero-hero-green-aircraft-smear",
       "priority": 1,
       "techniques": [
-        "paint-bleed-reveal",
+        "threshold-scan-reveal",
         "restoration-scan"
       ],
       "source_classes": [
@@ -58,12 +58,12 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (hero-scale-glossy-slab) selected from interpretation."
+      "reason": "Artifact candidate (cropped-gloss-velocity-band) selected from interpretation."
     },
     {
-      "target_id": "hero-audio-to-midi-scratch-field",
+      "target_id": "hero-hero-teal-felt-slab",
       "target_kind": "artifact",
-      "artifact_id": "hero-audio-to-midi-scratch-field",
+      "artifact_id": "hero-hero-teal-felt-slab",
       "priority": 2,
       "techniques": [
         "threshold-scan-reveal",
@@ -79,12 +79,12 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (waveform-scratch-field) selected from interpretation."
+      "reason": "Artifact candidate (felt-trapezoid-surface) selected from interpretation."
     },
     {
-      "target_id": "module-black-oval-leading-aperture",
+      "target_id": "module-upper-right-fin-chip",
       "target_kind": "artifact",
-      "artifact_id": "module-black-oval-leading-aperture",
+      "artifact_id": "module-upper-right-fin-chip",
       "priority": 3,
       "techniques": [
         "threshold-scan-reveal",
@@ -100,12 +100,12 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (painted-boundary-aperture) selected from interpretation."
+      "reason": "Artifact candidate (white-green-vertical-aperture) selected from interpretation."
     },
     {
-      "target_id": "module-object-edge-rail-notch",
+      "target_id": "module-aircraft-oval-window-rail",
       "target_kind": "artifact",
-      "artifact_id": "module-object-edge-rail-notch",
+      "artifact_id": "module-aircraft-oval-window-rail",
       "priority": 4,
       "techniques": [
         "threshold-scan-reveal",
@@ -121,12 +121,12 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (wood-rail-notch) selected from interpretation."
+      "reason": "Artifact candidate (thin-rhythm-rail-notches) selected from interpretation."
     },
     {
-      "target_id": "module-history-plaster-scar",
+      "target_id": "module-lastfm-dark-audio-smudge",
       "target_kind": "artifact",
-      "artifact_id": "module-history-plaster-scar",
+      "artifact_id": "module-lastfm-dark-audio-smudge",
       "priority": 5,
       "techniques": [
         "threshold-scan-reveal",
@@ -142,12 +142,12 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (smoky-plaster-scar) selected from interpretation."
+      "reason": "Artifact candidate (smoked-audio-grain-defect) selected from interpretation."
     },
     {
-      "target_id": "module-youtube-short-glare-fleck",
+      "target_id": "module-artist-index-glare-patch",
       "target_kind": "artifact",
-      "artifact_id": "module-youtube-short-glare-fleck",
+      "artifact_id": "module-artist-index-glare-patch",
       "priority": 6,
       "techniques": [
         "threshold-scan-reveal",
@@ -163,57 +163,15 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (vertical-video-glint) selected from interpretation."
+      "reason": "Artifact candidate (matte-plaster-glare-window) selected from interpretation."
     },
     {
-      "target_id": "module-signal-panel",
+      "target_id": "module-pale-portrait-edge-aperture",
       "target_kind": "artifact",
-      "artifact_id": "module-signal-panel",
+      "artifact_id": "module-pale-portrait-edge-aperture",
       "priority": 7,
       "techniques": [
-        "paint-bleed-reveal",
-        "restoration-scan"
-      ],
-      "source_classes": [
-        "social",
-        "tweet"
-      ],
-      "activation": {
-        "hover": true,
-        "click": true,
-        "drag": false,
-        "hold": false
-      },
-      "reason": "Artifact candidate (panel-seam-with-rivets) selected from interpretation."
-    },
-    {
-      "target_id": "module-youtube-short-glare-fleck-2",
-      "target_kind": "artifact",
-      "artifact_id": "module-youtube-short-glare-fleck-2",
-      "priority": 8,
-      "techniques": [
         "threshold-scan-reveal",
-        "restoration-scan"
-      ],
-      "source_classes": [
-        "video",
-        "youtube"
-      ],
-      "activation": {
-        "hover": true,
-        "click": true,
-        "drag": false,
-        "hold": false
-      },
-      "reason": "Artifact candidate (vertical-video-glint) selected from interpretation."
-    },
-    {
-      "target_id": "module-signal-panel-2",
-      "target_kind": "artifact",
-      "artifact_id": "module-signal-panel-2",
-      "priority": 9,
-      "techniques": [
-        "paint-bleed-reveal",
         "restoration-scan"
       ],
       "source_classes": [
@@ -226,7 +184,49 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (signal-panel) selected from interpretation."
+      "reason": "Artifact candidate (soft-painted-figure-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-aircraft-hatch-outline",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-aircraft-hatch-outline",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-rectangular-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-warm-rail-notch-cuts",
+      "target_kind": "artifact",
+      "artifact_id": "module-warm-rail-notch-cuts",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (wood-edge-notch-cluster) selected from interpretation."
     }
   ],
   "global_recommendation": [

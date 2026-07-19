@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-07-18-billiard-aircraft-surface-rupture-v1",
+  "edition_id": "2026-07-18-billiard-aircraft-surface-rupture-v1",
+  "plate_read_timestamp": "2026-07-19T11:16:50.894Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A giant rubbed green aircraft body slices across a dim billiards room, with a teal felt table below acting as the second large plane. The usable source marks are mostly the fuselage smear, fin glare, window/notch chain, dark underside defects, cracked plaster interruptions, pool-felt slab, rail cuts, and a few isolated ball/glow anchors.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "painted velocity across green felt",
+      "A giant rubbed green aircraft body slices across a dim billiards room, with a teal felt table below acting as the second large plane. The usable source marks are mostly the fuselage smear, fin glare, window/notch chain, dark underside defects, cracked plaster interruptions, pool-felt slab, rail cuts, and a few isolated ball/glow anchors.",
+      "aircraft-smear",
+      "teal-felt",
+      "varnished-rails"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero green aircraft smear",
+      "hero teal felt slab",
+      "upper-right fin chip",
+      "aircraft oval window rail",
+      "lastfm dark audio smudge",
+      "artist-index glare patch",
+      "pale portrait edge aperture",
+      "right aircraft hatch outline"
+    ],
+    "dominant_surfaces": [
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "billiard-aircraft-surface-rupture",
+      "cropped horizontal green velocity band",
+      "lower teal trapezoid slab with warm rails",
+      "upper-right white-and-green fin aperture",
+      "tilted cubist frame and pad cuts",
+      "dark spectator smears at the side edges",
+      "small billiard-ball color punctures",
+      "long rubbed green aircraft skin"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: billiard-aircraft-surface-rupture.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-green-aircraft-smear",
+      "kind": "hero",
+      "type": "cropped-gloss-velocity-band",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0.074,
+        "w": 0.945,
+        "h": 0.496
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-teal-felt-slab",
+      "kind": "hero",
+      "type": "felt-trapezoid-surface",
+      "strength": 0.9821359999999999,
+      "bounds": {
+        "x": 0,
+        "y": 0.7041,
+        "w": 1,
+        "h": 0.2959
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-right-fin-chip",
+      "kind": "module",
+      "type": "white-green-vertical-aperture",
+      "strength": 0.793848,
+      "bounds": {
+        "x": 0.772,
+        "y": 0.075,
+        "w": 0.174,
+        "h": 0.218
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-aircraft-oval-window-rail",
+      "kind": "module",
+      "type": "thin-rhythm-rail-notches",
+      "strength": 0.7699560000000001,
+      "bounds": {
+        "x": 0.022,
+        "y": 0.261,
+        "w": 0.626,
+        "h": 0.114
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lastfm-dark-audio-smudge",
+      "kind": "module",
+      "type": "smoked-audio-grain-defect",
+      "strength": 0.736284,
+      "bounds": {
+        "x": 0,
+        "y": 0.407,
+        "w": 0.216,
+        "h": 0.137
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-artist-index-glare-patch",
+      "kind": "module",
+      "type": "matte-plaster-glare-window",
+      "strength": 0.712608,
+      "bounds": {
+        "x": 0.408,
+        "y": 0.111,
+        "w": 0.289,
+        "h": 0.097
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-portrait-edge-aperture",
+      "kind": "module",
+      "type": "soft-painted-figure-edge",
+      "strength": 0.6742800000000001,
+      "bounds": {
+        "x": 0.815,
+        "y": 0.591,
+        "w": 0.042,
+        "h": 0.131
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-aircraft-hatch-outline",
+      "kind": "module",
+      "type": "painted-rectangular-aperture",
+      "strength": 0.657424,
+      "bounds": {
+        "x": 0.862,
+        "y": 0.337,
+        "w": 0.058,
+        "h": 0.117
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-warm-rail-notch-cuts",
+      "kind": "module",
+      "type": "wood-edge-notch-cluster",
+      "strength": 0.651316,
+      "bounds": {
+        "x": 0.79,
+        "y": 0.718,
+        "w": 0.151,
+        "h": 0.116
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-green-aircraft-smear-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.074,
+        "w": 0.945,
+        "h": 0.496
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-teal-felt-slab-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.7041,
+        "w": 1,
+        "h": 0.2959
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-right-fin-chip-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.772,
+        "y": 0.075,
+        "w": 0.174,
+        "h": 0.218
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-aircraft-oval-window-rail-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.022,
+        "y": 0.261,
+        "w": 0.626,
+        "h": 0.114
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lastfm-dark-audio-smudge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.407,
+        "w": 0.216,
+        "h": 0.137
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-artist-index-glare-patch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.408,
+        "y": 0.111,
+        "w": 0.289,
+        "h": 0.097
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-portrait-edge-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.815,
+        "y": 0.591,
+        "w": 0.042,
+        "h": 0.131
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-aircraft-hatch-outline-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.862,
+        "y": 0.337,
+        "w": 0.058,
+        "h": 0.117
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-warm-rail-notch-cuts-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.718,
+        "w": 0.151,
+        "h": 0.116
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

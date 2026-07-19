@@ -1,0 +1,490 @@
+{
+  "analysis_id": "analysis-2026-07-18-billiard-aircraft-surface-rupture-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A giant rubbed green aircraft body slices across a dim billiards room, with a teal felt table below acting as the second large plane. The usable source marks are mostly the fuselage smear, fin glare, window/notch chain, dark underside defects, cracked plaster interruptions, pool-felt slab, rail cuts, and a few isolated ball/glow anchors.",
+  "usable_surfaces": [
+    "long rubbed green aircraft skin",
+    "teal billiard-felt trapezoid",
+    "bright fin-and-glare aperture",
+    "oval fuselage window chain",
+    "dark underside smudge band",
+    "cracked plaster glare scar",
+    "right wall pale chipped edge",
+    "warm wooden rail with notch cuts"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero green aircraft smear",
+      "artifact_type": "cropped-gloss-velocity-band",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.074,
+        "w": 0.945,
+        "h": 0.496
+      },
+      "polygon": [
+        [
+          0,
+          0.077
+        ],
+        [
+          0.145,
+          0.103
+        ],
+        [
+          0.31,
+          0.145
+        ],
+        [
+          0.508,
+          0.184
+        ],
+        [
+          0.711,
+          0.205
+        ],
+        [
+          0.881,
+          0.236
+        ],
+        [
+          0.945,
+          0.276
+        ],
+        [
+          0.933,
+          0.453
+        ],
+        [
+          0.809,
+          0.571
+        ],
+        [
+          0.565,
+          0.583
+        ],
+        [
+          0.33,
+          0.559
+        ],
+        [
+          0.126,
+          0.534
+        ],
+        [
+          0,
+          0.497
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "dominant horizontal green aircraft body with scraped white highlights, dark lower rubbing, visible rivet seams, and painted velocity streaks across most of the plate"
+    },
+    {
+      "label": "hero teal felt slab",
+      "artifact_type": "felt-trapezoid-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.704,
+        "w": 0.984,
+        "h": 0.296
+      },
+      "polygon": [
+        [
+          0.013,
+          0.863
+        ],
+        [
+          0.309,
+          0.737
+        ],
+        [
+          0.503,
+          0.711
+        ],
+        [
+          0.798,
+          0.717
+        ],
+        [
+          0.984,
+          0.998
+        ],
+        [
+          0.005,
+          0.998
+        ],
+        [
+          0,
+          0.887
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "large turquoise billiard-felt plane forming a trapezoid in the lower half, bounded by dark pockets and wooden rails"
+    },
+    {
+      "label": "upper-right fin chip",
+      "artifact_type": "white-green-vertical-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.772,
+        "y": 0.075,
+        "w": 0.174,
+        "h": 0.218
+      },
+      "polygon": [
+        [
+          0.772,
+          0.264
+        ],
+        [
+          0.792,
+          0.217
+        ],
+        [
+          0.818,
+          0.129
+        ],
+        [
+          0.866,
+          0.075
+        ],
+        [
+          0.946,
+          0.083
+        ],
+        [
+          0.928,
+          0.293
+        ],
+        [
+          0.85,
+          0.287
+        ],
+        [
+          0.804,
+          0.278
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "upright green tail fin at upper right with a bright white chipped leading edge and luminous counterform where it joins the fuselage"
+    },
+    {
+      "label": "aircraft oval window rail",
+      "artifact_type": "thin-rhythm-rail-notches",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.022,
+        "y": 0.261,
+        "w": 0.626,
+        "h": 0.114
+      },
+      "polygon": [
+        [
+          0.024,
+          0.265
+        ],
+        [
+          0.098,
+          0.27
+        ],
+        [
+          0.186,
+          0.286
+        ],
+        [
+          0.279,
+          0.297
+        ],
+        [
+          0.393,
+          0.31
+        ],
+        [
+          0.498,
+          0.321
+        ],
+        [
+          0.606,
+          0.332
+        ],
+        [
+          0.648,
+          0.353
+        ],
+        [
+          0.633,
+          0.375
+        ],
+        [
+          0.518,
+          0.357
+        ],
+        [
+          0.403,
+          0.342
+        ],
+        [
+          0.286,
+          0.324
+        ],
+        [
+          0.174,
+          0.307
+        ],
+        [
+          0.074,
+          0.293
+        ],
+        [
+          0.022,
+          0.283
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "a procession of dark oval airplane windows and small cut-like interruptions reads as evenly spaced rhythm notches across the green band"
+    },
+    {
+      "label": "lastfm dark audio smudge",
+      "artifact_type": "smoked-audio-grain-defect",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.407,
+        "w": 0.216,
+        "h": 0.137
+      },
+      "polygon": [
+        [
+          0,
+          0.419
+        ],
+        [
+          0.047,
+          0.407
+        ],
+        [
+          0.125,
+          0.419
+        ],
+        [
+          0.193,
+          0.45
+        ],
+        [
+          0.216,
+          0.493
+        ],
+        [
+          0.159,
+          0.529
+        ],
+        [
+          0.067,
+          0.544
+        ],
+        [
+          0,
+          0.529
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "black-green smoky rubbed defect below the aircraft windows, with smeared horizontal grain and pooled darkness under the fuselage"
+    },
+    {
+      "label": "artist-index glare patch",
+      "artifact_type": "matte-plaster-glare-window",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.408,
+        "y": 0.111,
+        "w": 0.289,
+        "h": 0.097
+      },
+      "polygon": [
+        [
+          0.408,
+          0.122
+        ],
+        [
+          0.482,
+          0.118
+        ],
+        [
+          0.56,
+          0.128
+        ],
+        [
+          0.632,
+          0.153
+        ],
+        [
+          0.697,
+          0.179
+        ],
+        [
+          0.678,
+          0.202
+        ],
+        [
+          0.578,
+          0.208
+        ],
+        [
+          0.477,
+          0.189
+        ],
+        [
+          0.419,
+          0.16
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "cloudy pale scraped highlight and cracked plaster-like scar running along the upper edge of the green aircraft body"
+    },
+    {
+      "label": "pale portrait edge aperture",
+      "artifact_type": "soft-painted-figure-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.815,
+        "y": 0.591,
+        "w": 0.042,
+        "h": 0.131
+      },
+      "polygon": [
+        [
+          0.818,
+          0.591
+        ],
+        [
+          0.846,
+          0.594
+        ],
+        [
+          0.854,
+          0.635
+        ],
+        [
+          0.857,
+          0.691
+        ],
+        [
+          0.845,
+          0.72
+        ],
+        [
+          0.822,
+          0.706
+        ],
+        [
+          0.815,
+          0.658
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "pale vertical chipped wall edge just below the aircraft body at right, with rubbed plaster contour and broken edge pressure"
+    },
+    {
+      "label": "right aircraft hatch outline",
+      "artifact_type": "painted-rectangular-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.862,
+        "y": 0.337,
+        "w": 0.058,
+        "h": 0.117
+      },
+      "polygon": [
+        [
+          0.862,
+          0.342
+        ],
+        [
+          0.898,
+          0.337
+        ],
+        [
+          0.91,
+          0.356
+        ],
+        [
+          0.915,
+          0.424
+        ],
+        [
+          0.92,
+          0.446
+        ],
+        [
+          0.899,
+          0.454
+        ],
+        [
+          0.871,
+          0.447
+        ],
+        [
+          0.866,
+          0.409
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "thin pale rectangular hatch outline painted into the right side of the fuselage, with chipped corners and a dark base scuff"
+    },
+    {
+      "label": "warm rail notch cuts",
+      "artifact_type": "wood-edge-notch-cluster",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.718,
+        "w": 0.151,
+        "h": 0.116
+      },
+      "polygon": [
+        [
+          0.79,
+          0.718
+        ],
+        [
+          0.843,
+          0.722
+        ],
+        [
+          0.894,
+          0.746
+        ],
+        [
+          0.941,
+          0.813
+        ],
+        [
+          0.926,
+          0.834
+        ],
+        [
+          0.872,
+          0.782
+        ],
+        [
+          0.817,
+          0.746
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "warm brown billiard rail on the right with angled seams, pocket cuts, and repeated edge interruptions against the teal felt"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.957,
+    "rationale": "The plate is image-led and expressionist with two strong planes—the green aircraft smear and teal felt slab—but the billiard-room background, window chain, balls, rail cuts, cracks, and chairs add enough detail to require careful tight mapping rather than broad clickable zones."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-07-18-billiard-aircraft-surface-rupture-v1"
+}

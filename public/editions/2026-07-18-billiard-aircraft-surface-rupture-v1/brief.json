@@ -1,0 +1,61 @@
+{
+  "brief_id": "brief-2026-07-18-billiard-aircraft-surface-rupture-v1",
+  "date": "2026-07-18",
+  "signal_cluster_ids": [
+    "b37b70afb343",
+    "eeee0ce681f6",
+    "4f27daa43805",
+    "3facfcd9144a",
+    "4140d10bb37e",
+    "7d42d0ab2be1",
+    "880f32ddddc4",
+    "24fd5031ad66"
+  ],
+  "research_node_ids": [
+    "research-1-99395af4",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-a2be7acb",
+    "research-7-45d92834",
+    "research-8-a05ccc8f",
+    "research-9-daac6dc1",
+    "research-10-d0b432e3",
+    "research-11-c826155d",
+    "research-12-02c304c5"
+  ],
+  "mood": "painted velocity across green felt",
+  "material_language": [
+    "teal billiard felt with rubbed nap",
+    "varnished brown rail edges",
+    "aircraft-green translucent oil smear",
+    "matte plaster-gray ceiling plane",
+    "thick black contour seams"
+  ],
+  "lighting": "side-lit with a slight flash, catching glossy aircraft defects, pale fin glare, and shadowed rail seams",
+  "object_inventory": [
+    "cropped horizontal green velocity band",
+    "lower teal trapezoid slab with warm rails",
+    "upper-right white-and-green fin aperture",
+    "tilted cubist frame and pad cuts",
+    "dark spectator smears at the side edges",
+    "small billiard-ball color punctures"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no legible words, logos, filenames, labels, or alphanumeric callouts inside the finished image",
+    "no dashboard, desk, archive wall, card grid, browser chrome, cabinet, shelf, or generic software interface",
+    "do not turn the source field into an airport, cockpit, office, gallery, or literal room inventory",
+    "do not copy identifiable subjects from the reference image; preserve massing, palette, crop logic, and edge behavior only",
+    "avoid clean optical drafting geometry, polite flat scans, torn-poster walls, fog corridors, gates, and nocturnal reissue mood",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached"
+  ]
+}

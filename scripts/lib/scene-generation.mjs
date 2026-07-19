@@ -443,7 +443,7 @@ function fallbackDailyPayload(signalHarvest, researchField, visualDirection, dat
       'no dashboard cards',
       'no floating UI',
       'no equal-weight grid of source objects',
-      'no literal depiction of the source reference image',
+      'no unrelated replacement image or metaphorical scene when a source image is attached',
       ...(visualDirection.avoid_patterns || []),
     ]),
     ambiance: {
@@ -544,7 +544,7 @@ function normalizeDailyPayload(payload, signalHarvest, researchField, visualDire
       'no generic office-room fallback',
       'no many-prop still life',
       'no equal-weight grid of source objects',
-      'no literal depiction of the source reference image',
+      'no unrelated replacement image or metaphorical scene when a source image is attached',
     ]).slice(0, 14),
     ambiance: {
       motion_system: String(payload.ambiance?.motion_system || fallback.ambiance.motion_system),
@@ -703,8 +703,12 @@ export function buildSceneImagePrompt(payload) {
   const lookAvoidance = platePosture?.look_avoidance_directive && !/^No strong/i.test(platePosture.look_avoidance_directive)
     ? compactText(platePosture.look_avoidance_directive, 155)
     : ''
+  const sourceFidelityGuard = sourceImageFingerprints.length
+    ? 'KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, or let posture/formal-risk override resemblance.'
+    : ''
   const constraints = uniqueNonEmpty([
-    'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or literal identity/photoreal face copying. Preserve source subjects only as abstract massing, silhouettes, edge cues, and surface pressure.',
+    sourceFidelityGuard,
+    'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or literal identity/photoreal face copying. Preserve source subjects, object relationships, silhouettes, edge cues, and surface pressure from the source image.',
     ...(payload.negative_constraints || []).slice(0, 1).map((constraint) => compactText(constraint, 80)),
   ]).join(' ')
 

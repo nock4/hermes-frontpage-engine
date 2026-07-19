@@ -1,0 +1,627 @@
+{
+  "artifact_map_id": "map-2026-07-18-billiard-aircraft-surface-rupture-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "billiard-aircraft-surface-rupture",
+  "default_artifact_id": "hero-hero-green-aircraft-smear",
+  "artifacts": [
+    {
+      "id": "hero-hero-green-aircraft-smear",
+      "kind": "hero",
+      "label": "hero green aircraft smear",
+      "artifact_type": "cropped-gloss-velocity-band",
+      "bounds": {
+        "x": 0,
+        "y": 0.074,
+        "w": 0.945,
+        "h": 0.496
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.077
+        ],
+        [
+          0.145,
+          0.103
+        ],
+        [
+          0.31,
+          0.145
+        ],
+        [
+          0.508,
+          0.184
+        ],
+        [
+          0.711,
+          0.205
+        ],
+        [
+          0.881,
+          0.236
+        ],
+        [
+          0.945,
+          0.276
+        ],
+        [
+          0.933,
+          0.453
+        ],
+        [
+          0.809,
+          0.571
+        ],
+        [
+          0.565,
+          0.583
+        ],
+        [
+          0.33,
+          0.559
+        ],
+        [
+          0.126,
+          0.534
+        ],
+        [
+          0,
+          0.497
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/hero-hero-green-aircraft-smear.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-green-aircraft-smear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          726,
+          289
+        ],
+        "safe_stage_window_origin_px": [
+          842,
+          330
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-hero-teal-felt-slab",
+      "kind": "hero",
+      "label": "hero teal felt slab",
+      "artifact_type": "felt-trapezoid-surface",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.7041,
+        "w": 1.0,
+        "h": 0.2959
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.0014,
+          0.8458
+        ],
+        [
+          0.1854,
+          0.7807
+        ],
+        [
+          0.5007,
+          0.7086
+        ],
+        [
+          0.7753,
+          0.7175
+        ],
+        [
+          0.8031,
+          0.7219
+        ],
+        [
+          0.8124,
+          0.7299
+        ],
+        [
+          0.9979,
+          0.951
+        ],
+        [
+          0.9979,
+          0.9973
+        ],
+        [
+          0.0014,
+          0.9973
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/hero-hero-teal-felt-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-teal-felt-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          756,
+          848
+        ],
+        "safe_stage_window_origin_px": [
+          877,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-upper-right-fin-chip",
+      "kind": "module",
+      "label": "upper-right fin chip",
+      "artifact_type": "white-green-vertical-aperture",
+      "bounds": {
+        "x": 0.772,
+        "y": 0.075,
+        "w": 0.174,
+        "h": 0.218
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.772,
+          0.264
+        ],
+        [
+          0.792,
+          0.217
+        ],
+        [
+          0.818,
+          0.129
+        ],
+        [
+          0.866,
+          0.075
+        ],
+        [
+          0.946,
+          0.083
+        ],
+        [
+          0.928,
+          0.293
+        ],
+        [
+          0.85,
+          0.287
+        ],
+        [
+          0.804,
+          0.278
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/module-upper-right-fin-chip.svg",
+      "source_binding_ids": [
+        "binding-module-upper-right-fin-chip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1319,
+          171
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          188
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-aircraft-oval-window-rail",
+      "kind": "module",
+      "label": "aircraft oval window rail",
+      "artifact_type": "thin-rhythm-rail-notches",
+      "bounds": {
+        "x": 0.022,
+        "y": 0.261,
+        "w": 0.626,
+        "h": 0.114
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.024,
+          0.265
+        ],
+        [
+          0.098,
+          0.27
+        ],
+        [
+          0.186,
+          0.286
+        ],
+        [
+          0.279,
+          0.297
+        ],
+        [
+          0.393,
+          0.31
+        ],
+        [
+          0.498,
+          0.321
+        ],
+        [
+          0.606,
+          0.332
+        ],
+        [
+          0.648,
+          0.353
+        ],
+        [
+          0.633,
+          0.375
+        ],
+        [
+          0.518,
+          0.357
+        ],
+        [
+          0.403,
+          0.342
+        ],
+        [
+          0.286,
+          0.324
+        ],
+        [
+          0.174,
+          0.307
+        ],
+        [
+          0.074,
+          0.293
+        ],
+        [
+          0.022,
+          0.283
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/module-aircraft-oval-window-rail.svg",
+      "source_binding_ids": [
+        "binding-module-aircraft-oval-window-rail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          515,
+          316
+        ],
+        "safe_stage_window_origin_px": [
+          591,
+          326
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-lastfm-dark-audio-smudge",
+      "kind": "module",
+      "label": "lastfm dark audio smudge",
+      "artifact_type": "smoked-audio-grain-defect",
+      "bounds": {
+        "x": 0,
+        "y": 0.407,
+        "w": 0.216,
+        "h": 0.137
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0,
+          0.419
+        ],
+        [
+          0.047,
+          0.407
+        ],
+        [
+          0.125,
+          0.419
+        ],
+        [
+          0.193,
+          0.45
+        ],
+        [
+          0.216,
+          0.493
+        ],
+        [
+          0.159,
+          0.529
+        ],
+        [
+          0.067,
+          0.544
+        ],
+        [
+          0,
+          0.529
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/module-lastfm-dark-audio-smudge.svg",
+      "source_binding_ids": [
+        "binding-module-lastfm-dark-audio-smudge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          166,
+          476
+        ],
+        "safe_stage_window_origin_px": [
+          192,
+          487
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-artist-index-glare-patch",
+      "kind": "module",
+      "label": "artist-index glare patch",
+      "artifact_type": "matte-plaster-glare-window",
+      "bounds": {
+        "x": 0.408,
+        "y": 0.111,
+        "w": 0.289,
+        "h": 0.097
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.408,
+          0.122
+        ],
+        [
+          0.482,
+          0.118
+        ],
+        [
+          0.56,
+          0.128
+        ],
+        [
+          0.632,
+          0.153
+        ],
+        [
+          0.697,
+          0.179
+        ],
+        [
+          0.678,
+          0.202
+        ],
+        [
+          0.578,
+          0.208
+        ],
+        [
+          0.477,
+          0.189
+        ],
+        [
+          0.419,
+          0.16
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/module-artist-index-glare-patch.svg",
+      "source_binding_ids": [
+        "binding-module-artist-index-glare-patch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          849,
+          155
+        ],
+        "safe_stage_window_origin_px": [
+          884,
+          163
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-pale-portrait-edge-aperture",
+      "kind": "module",
+      "label": "pale portrait edge aperture",
+      "artifact_type": "soft-painted-figure-edge",
+      "bounds": {
+        "x": 0.815,
+        "y": 0.591,
+        "w": 0.042,
+        "h": 0.131
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.818,
+          0.591
+        ],
+        [
+          0.846,
+          0.594
+        ],
+        [
+          0.854,
+          0.635
+        ],
+        [
+          0.857,
+          0.691
+        ],
+        [
+          0.845,
+          0.72
+        ],
+        [
+          0.822,
+          0.706
+        ],
+        [
+          0.815,
+          0.658
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/module-pale-portrait-edge-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-pale-portrait-edge-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1284,
+          662
+        ],
+        "safe_stage_window_origin_px": [
+          1289,
+          672
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-right-aircraft-hatch-outline",
+      "kind": "module",
+      "label": "right aircraft hatch outline",
+      "artifact_type": "painted-rectangular-aperture",
+      "bounds": {
+        "x": 0.862,
+        "y": 0.337,
+        "w": 0.058,
+        "h": 0.117
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.862,
+          0.342
+        ],
+        [
+          0.898,
+          0.337
+        ],
+        [
+          0.91,
+          0.356
+        ],
+        [
+          0.915,
+          0.424
+        ],
+        [
+          0.92,
+          0.446
+        ],
+        [
+          0.899,
+          0.454
+        ],
+        [
+          0.871,
+          0.447
+        ],
+        [
+          0.866,
+          0.409
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/module-right-aircraft-hatch-outline.svg",
+      "source_binding_ids": [
+        "binding-module-right-aircraft-hatch-outline"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          395
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          405
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-warm-rail-notch-cuts",
+      "kind": "module",
+      "label": "warm rail notch cuts",
+      "artifact_type": "wood-edge-notch-cluster",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.718,
+        "w": 0.151,
+        "h": 0.116
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.79,
+          0.718
+        ],
+        [
+          0.843,
+          0.722
+        ],
+        [
+          0.894,
+          0.746
+        ],
+        [
+          0.941,
+          0.813
+        ],
+        [
+          0.926,
+          0.834
+        ],
+        [
+          0.872,
+          0.782
+        ],
+        [
+          0.817,
+          0.746
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-surface-rupture",
+      "mask_path": "/editions/2026-07-18-billiard-aircraft-surface-rupture-v1/assets/masks/module-warm-rail-notch-cuts.svg",
+      "source_binding_ids": [
+        "binding-module-warm-rail-notch-cuts"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          785
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          795
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}
