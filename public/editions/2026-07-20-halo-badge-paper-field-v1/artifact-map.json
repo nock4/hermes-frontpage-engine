@@ -1,0 +1,643 @@
+{
+  "artifact_map_id": "map-2026-07-20-halo-badge-paper-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "halo-badge-paper-field",
+  "default_artifact_id": "hero-hero-portrait-paper-slab",
+  "artifacts": [
+    {
+      "id": "hero-hero-portrait-paper-slab",
+      "kind": "hero",
+      "label": "hero portrait paper slab",
+      "artifact_type": "hero-scale-paper-slab",
+      "bounds": {
+        "x": 0.0684,
+        "y": 0.0455,
+        "w": 0.868,
+        "h": 0.9109
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0714,
+          0.931
+        ],
+        [
+          0.086,
+          0.1301
+        ],
+        [
+          0.0909,
+          0.0625
+        ],
+        [
+          0.1036,
+          0.0586
+        ],
+        [
+          0.6188,
+          0.0488
+        ],
+        [
+          0.8935,
+          0.0475
+        ],
+        [
+          0.9189,
+          0.0527
+        ],
+        [
+          0.9326,
+          0.866
+        ],
+        [
+          0.9316,
+          0.9453
+        ],
+        [
+          0.915,
+          0.9532
+        ],
+        [
+          0.1251,
+          0.9453
+        ],
+        [
+          0.086,
+          0.944
+        ],
+        [
+          0.0714,
+          0.9336
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/hero-hero-portrait-paper-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-portrait-paper-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          760,
+          437
+        ],
+        "safe_stage_window_origin_px": [
+          863,
+          510
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-hero-teal-atlas-border",
+      "kind": "hero",
+      "label": "hero teal atlas border",
+      "artifact_type": "hero-scale-patterned-border",
+      "bounds": {
+        "x": 0.889,
+        "y": 0,
+        "w": 0.11099999999999999,
+        "h": 0.963
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.891,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0.962
+        ],
+        [
+          0.888,
+          0.952
+        ],
+        [
+          0.914,
+          0.898
+        ],
+        [
+          0.917,
+          0.73
+        ],
+        [
+          0.914,
+          0.537
+        ],
+        [
+          0.921,
+          0.338
+        ],
+        [
+          0.915,
+          0.14
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/hero-hero-teal-atlas-border.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-teal-atlas-border"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          414
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          493
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-direct-image-pressure-ghost",
+      "kind": "module",
+      "label": "direct image pressure ghost",
+      "artifact_type": "pencil-pressure-ghost",
+      "bounds": {
+        "x": 0.29,
+        "y": 0.157,
+        "w": 0.414,
+        "h": 0.29
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.482,
+          0.158
+        ],
+        [
+          0.585,
+          0.18
+        ],
+        [
+          0.658,
+          0.242
+        ],
+        [
+          0.69,
+          0.335
+        ],
+        [
+          0.665,
+          0.409
+        ],
+        [
+          0.571,
+          0.438
+        ],
+        [
+          0.47,
+          0.446
+        ],
+        [
+          0.376,
+          0.42
+        ],
+        [
+          0.31,
+          0.349
+        ],
+        [
+          0.299,
+          0.262
+        ],
+        [
+          0.344,
+          0.196
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/module-direct-image-pressure-ghost.svg",
+      "source_binding_ids": [
+        "binding-module-direct-image-pressure-ghost"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          763,
+          285
+        ],
+        "safe_stage_window_origin_px": [
+          814,
+          309
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-ranked-graphite-baseline",
+      "kind": "module",
+      "label": "ranked graphite baseline",
+      "artifact_type": "smudged-rank-stroke",
+      "bounds": {
+        "x": 0.355,
+        "y": 0.632,
+        "w": 0.317,
+        "h": 0.21
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.474,
+          0.634
+        ],
+        [
+          0.525,
+          0.642
+        ],
+        [
+          0.573,
+          0.675
+        ],
+        [
+          0.629,
+          0.738
+        ],
+        [
+          0.669,
+          0.832
+        ],
+        [
+          0.615,
+          0.811
+        ],
+        [
+          0.555,
+          0.732
+        ],
+        [
+          0.51,
+          0.678
+        ],
+        [
+          0.449,
+          0.724
+        ],
+        [
+          0.392,
+          0.812
+        ],
+        [
+          0.356,
+          0.836
+        ],
+        [
+          0.397,
+          0.735
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/module-ranked-graphite-baseline.svg",
+      "source_binding_ids": [
+        "binding-module-ranked-graphite-baseline"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          789,
+          737
+        ],
+        "safe_stage_window_origin_px": [
+          828,
+          755
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-black-left-badge-slit",
+      "kind": "module",
+      "label": "black left badge slit",
+      "artifact_type": "glossy-rounded-badge-cut",
+      "bounds": {
+        "x": 0.181,
+        "y": 0.243,
+        "w": 0.06,
+        "h": 0.088
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.186,
+          0.248
+        ],
+        [
+          0.225,
+          0.246
+        ],
+        [
+          0.238,
+          0.257
+        ],
+        [
+          0.239,
+          0.315
+        ],
+        [
+          0.229,
+          0.329
+        ],
+        [
+          0.19,
+          0.327
+        ],
+        [
+          0.181,
+          0.313
+        ],
+        [
+          0.182,
+          0.259
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/module-black-left-badge-slit.svg",
+      "source_binding_ids": [
+        "binding-module-black-left-badge-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          324,
+          287
+        ],
+        "safe_stage_window_origin_px": [
+          331,
+          294
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-colored-triangle-fleck-slit",
+      "kind": "module",
+      "label": "colored triangle fleck slit",
+      "artifact_type": "colored-badge-aperture",
+      "bounds": {
+        "x": 0.686,
+        "y": 0.232,
+        "w": 0.103,
+        "h": 0.087
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.715,
+          0.233
+        ],
+        [
+          0.758,
+          0.232
+        ],
+        [
+          0.785,
+          0.256
+        ],
+        [
+          0.787,
+          0.288
+        ],
+        [
+          0.764,
+          0.314
+        ],
+        [
+          0.72,
+          0.318
+        ],
+        [
+          0.692,
+          0.298
+        ],
+        [
+          0.686,
+          0.263
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/module-colored-triangle-fleck-slit.svg",
+      "source_binding_ids": [
+        "binding-module-colored-triangle-fleck-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1133,
+          275
+        ],
+        "safe_stage_window_origin_px": [
+          1145,
+          282
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-colored-vertical-badge-seam",
+      "kind": "module",
+      "label": "colored vertical badge seam",
+      "artifact_type": "colored-badge-aperture",
+      "bounds": {
+        "x": 0.6745,
+        "y": 0.5869,
+        "w": 0.0772,
+        "h": 0.1217
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.6774,
+          0.6174
+        ],
+        [
+          0.6852,
+          0.5908
+        ],
+        [
+          0.7126,
+          0.5888
+        ],
+        [
+          0.739,
+          0.5921
+        ],
+        [
+          0.7468,
+          0.6057
+        ],
+        [
+          0.7478,
+          0.661
+        ],
+        [
+          0.7468,
+          0.6962
+        ],
+        [
+          0.7253,
+          0.7053
+        ],
+        [
+          0.695,
+          0.7053
+        ],
+        [
+          0.6813,
+          0.7001
+        ],
+        [
+          0.6774,
+          0.6675
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/module-colored-vertical-badge-seam.svg",
+      "source_binding_ids": [
+        "binding-module-colored-vertical-badge-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1093,
+          657
+        ],
+        "safe_stage_window_origin_px": [
+          1102,
+          667
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-archive-dust-notch",
+      "kind": "module",
+      "label": "archive dust notch",
+      "artifact_type": "archive-speck-edge-notch",
+      "bounds": {
+        "x": 0.887,
+        "y": 0.646,
+        "w": 0.052,
+        "h": 0.073
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.904,
+          0.646
+        ],
+        [
+          0.925,
+          0.65
+        ],
+        [
+          0.938,
+          0.671
+        ],
+        [
+          0.929,
+          0.695
+        ],
+        [
+          0.91,
+          0.717
+        ],
+        [
+          0.892,
+          0.707
+        ],
+        [
+          0.887,
+          0.681
+        ],
+        [
+          0.896,
+          0.662
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/module-archive-dust-notch.svg",
+      "source_binding_ids": [
+        "binding-module-archive-dust-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          693
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          699
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-lower-torn-archive-scar",
+      "kind": "module",
+      "label": "lower torn archive scar",
+      "artifact_type": "archive-speck-edge-notch",
+      "bounds": {
+        "x": 0.379,
+        "y": 0.843,
+        "w": 0.056,
+        "h": 0.075
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.41,
+          0.843
+        ],
+        [
+          0.431,
+          0.849
+        ],
+        [
+          0.425,
+          0.868
+        ],
+        [
+          0.407,
+          0.879
+        ],
+        [
+          0.399,
+          0.901
+        ],
+        [
+          0.381,
+          0.918
+        ],
+        [
+          0.379,
+          0.89
+        ],
+        [
+          0.394,
+          0.874
+        ]
+      ],
+      "cluster_id": "halo-badge-paper-field",
+      "mask_path": "/editions/2026-07-20-halo-badge-paper-field-v1/assets/masks/module-lower-torn-archive-scar.svg",
+      "source_binding_ids": [
+        "binding-module-lower-torn-archive-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          625,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          632,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}

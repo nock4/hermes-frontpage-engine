@@ -1,0 +1,506 @@
+{
+  "analysis_id": "analysis-2026-07-20-halo-badge-paper-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A pale, worn paper slab sits on a teal patterned textile field. The slab carries graphite halo and wing-pressure gestures, black glossy badge cuts, small colored flecks, torn edge scars, pinholes, and folded seams that can serve as source windows.",
+  "usable_surfaces": [
+    "large pale lifted paper slab",
+    "right teal patterned border strip",
+    "faint graphite halo ring",
+    "dark graphite V-shaped wing field",
+    "black rounded badge cuts",
+    "tiny torn paper notches",
+    "fold seams and edge slits",
+    "small pinhole clusters"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero portrait paper slab",
+      "artifact_type": "hero-scale-paper-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.072,
+        "y": 0.05,
+        "w": 0.845,
+        "h": 0.896
+      },
+      "polygon": [
+        [
+          0.095,
+          0.059
+        ],
+        [
+          0.506,
+          0.052
+        ],
+        [
+          0.814,
+          0.051
+        ],
+        [
+          0.912,
+          0.048
+        ],
+        [
+          0.921,
+          0.239
+        ],
+        [
+          0.917,
+          0.49
+        ],
+        [
+          0.919,
+          0.723
+        ],
+        [
+          0.909,
+          0.938
+        ],
+        [
+          0.72,
+          0.943
+        ],
+        [
+          0.401,
+          0.941
+        ],
+        [
+          0.09,
+          0.943
+        ],
+        [
+          0.071,
+          0.82
+        ],
+        [
+          0.073,
+          0.536
+        ],
+        [
+          0.075,
+          0.277
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "largest visible source-bearing surface is the lifted pale rectangular paper with soft edge shadows, worn corners, graphite marks, cuts, pinholes, and torn scars."
+    },
+    {
+      "label": "hero teal atlas border",
+      "artifact_type": "hero-scale-patterned-border",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.889,
+        "y": 0,
+        "w": 0.11099999999999999,
+        "h": 0.963
+      },
+      "polygon": [
+        [
+          0.891,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0.962
+        ],
+        [
+          0.888,
+          0.952
+        ],
+        [
+          0.914,
+          0.898
+        ],
+        [
+          0.917,
+          0.73
+        ],
+        [
+          0.914,
+          0.537
+        ],
+        [
+          0.921,
+          0.338
+        ],
+        [
+          0.915,
+          0.14
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "right exposed teal fabric strip surrounds the slab and shows repeated pale loop/grid-like arcs, functioning as the patterned atlas border rather than empty background."
+    },
+    {
+      "label": "direct image pressure ghost",
+      "artifact_type": "pencil-pressure-ghost",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.29,
+        "y": 0.157,
+        "w": 0.414,
+        "h": 0.29
+      },
+      "polygon": [
+        [
+          0.482,
+          0.158
+        ],
+        [
+          0.585,
+          0.18
+        ],
+        [
+          0.658,
+          0.242
+        ],
+        [
+          0.69,
+          0.335
+        ],
+        [
+          0.665,
+          0.409
+        ],
+        [
+          0.571,
+          0.438
+        ],
+        [
+          0.47,
+          0.446
+        ],
+        [
+          0.376,
+          0.42
+        ],
+        [
+          0.31,
+          0.349
+        ],
+        [
+          0.299,
+          0.262
+        ],
+        [
+          0.344,
+          0.196
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "faint graphite halo rings and a pale head-like pressure smudge are visible above the central black aperture, matching the planned secondary pressure ghost."
+    },
+    {
+      "label": "ranked graphite baseline",
+      "artifact_type": "smudged-rank-stroke",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.355,
+        "y": 0.632,
+        "w": 0.317,
+        "h": 0.21
+      },
+      "polygon": [
+        [
+          0.474,
+          0.634
+        ],
+        [
+          0.525,
+          0.642
+        ],
+        [
+          0.573,
+          0.675
+        ],
+        [
+          0.629,
+          0.738
+        ],
+        [
+          0.669,
+          0.832
+        ],
+        [
+          0.615,
+          0.811
+        ],
+        [
+          0.555,
+          0.732
+        ],
+        [
+          0.51,
+          0.678
+        ],
+        [
+          0.449,
+          0.724
+        ],
+        [
+          0.392,
+          0.812
+        ],
+        [
+          0.356,
+          0.836
+        ],
+        [
+          0.397,
+          0.735
+        ]
+      ],
+      "confidence": 0.64,
+      "visual_evidence": "a low uneven dark graphite convergence below the central aperture forms a tier-like baseline without readable text."
+    },
+    {
+      "label": "black left badge slit",
+      "artifact_type": "glossy-rounded-badge-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.181,
+        "y": 0.243,
+        "w": 0.06,
+        "h": 0.088
+      },
+      "polygon": [
+        [
+          0.186,
+          0.248
+        ],
+        [
+          0.225,
+          0.246
+        ],
+        [
+          0.238,
+          0.257
+        ],
+        [
+          0.239,
+          0.315
+        ],
+        [
+          0.229,
+          0.329
+        ],
+        [
+          0.19,
+          0.327
+        ],
+        [
+          0.181,
+          0.313
+        ],
+        [
+          0.182,
+          0.259
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "hard black vertical rounded cut at upper left contains compact white and green glyph-like strokes, clearly matching the glossy badge slit."
+    },
+    {
+      "label": "colored triangle fleck slit",
+      "artifact_type": "colored-badge-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.686,
+        "y": 0.232,
+        "w": 0.103,
+        "h": 0.087
+      },
+      "polygon": [
+        [
+          0.715,
+          0.233
+        ],
+        [
+          0.758,
+          0.232
+        ],
+        [
+          0.785,
+          0.256
+        ],
+        [
+          0.787,
+          0.288
+        ],
+        [
+          0.764,
+          0.314
+        ],
+        [
+          0.72,
+          0.318
+        ],
+        [
+          0.692,
+          0.298
+        ],
+        [
+          0.686,
+          0.263
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "upper-right glossy black round aperture holds small green, blue, yellow, and orange flecks plus white angular strokes."
+    },
+    {
+      "label": "colored vertical badge seam",
+      "artifact_type": "colored-badge-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.675,
+        "y": 0.591,
+        "w": 0.073,
+        "h": 0.121
+      },
+      "polygon": [
+        [
+          0.689,
+          0.592
+        ],
+        [
+          0.729,
+          0.591
+        ],
+        [
+          0.746,
+          0.607
+        ],
+        [
+          0.747,
+          0.696
+        ],
+        [
+          0.735,
+          0.71
+        ],
+        [
+          0.693,
+          0.71
+        ],
+        [
+          0.677,
+          0.696
+        ],
+        [
+          0.675,
+          0.613
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "lower-right vertical black laminate notch has a white triangular mark with yellow and red flecks, a second distinct colored badge-like seam."
+    },
+    {
+      "label": "archive dust notch",
+      "artifact_type": "archive-speck-edge-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.887,
+        "y": 0.646,
+        "w": 0.052,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.904,
+          0.646
+        ],
+        [
+          0.925,
+          0.65
+        ],
+        [
+          0.938,
+          0.671
+        ],
+        [
+          0.929,
+          0.695
+        ],
+        [
+          0.91,
+          0.717
+        ],
+        [
+          0.892,
+          0.707
+        ],
+        [
+          0.887,
+          0.681
+        ],
+        [
+          0.896,
+          0.662
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "right torn paper edge shows a small rough compressed scar with dust and bright chipped paper grains clustered along the slab edge."
+    },
+    {
+      "label": "lower torn archive scar",
+      "artifact_type": "archive-speck-edge-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.379,
+        "y": 0.843,
+        "w": 0.056,
+        "h": 0.075
+      },
+      "polygon": [
+        [
+          0.41,
+          0.843
+        ],
+        [
+          0.431,
+          0.849
+        ],
+        [
+          0.425,
+          0.868
+        ],
+        [
+          0.407,
+          0.879
+        ],
+        [
+          0.399,
+          0.901
+        ],
+        [
+          0.381,
+          0.918
+        ],
+        [
+          0.379,
+          0.89
+        ],
+        [
+          0.394,
+          0.874
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "bottom-center paper surface contains a jagged tear with bright exposed fibers and dust specks, a distinct archive-like edge notch."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 3,
+    "mapped_region_coverage": 1.082,
+    "rationale": "The plate is expressionist and sparse: one dominant slab, one teal border field, one graphite body gesture, and a small set of glossy apertures and scars. Marks are readable without visual clutter."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-07-20-halo-badge-paper-field-v1"
+}
