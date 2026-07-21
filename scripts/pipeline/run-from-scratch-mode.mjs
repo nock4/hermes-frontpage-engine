@@ -85,7 +85,7 @@ export async function runFromScratchMode({
       tool: 'Vision source/plate adversarial QA',
       command: 'compare attached source material against generated plate',
       run: () => auditSourceImageFidelity({
-        payload: context.brief.payload,
+        payload: context.payload,
         platePath: context.plate.outputPath,
         apiKey,
         model: options.model,

@@ -692,7 +692,7 @@ export function buildSceneImagePrompt(payload) {
     : 'attached visual reference crop logic, source massing, surface pressure, palette relationships, and edge behavior'
   const preserveText = sourceReferencePreserveText(payload, referenceUse)
   const graphicEditorialGuard = looksLikeGraphicEditorialSource(payload, preserveText)
-    ? 'This is a graphic/editorial/poster/package reference: preserve the cover layout, figure/portrait masses as abstract shapes, text-strip silhouettes as illegible marks, object/hand edge cues, negative space, palette, and light. Do not replace it with unrelated macro texture, cave, room, landscape, character, poster wall, or metaphor.'
+    ? 'This is a graphic/editorial/poster/package reference: preserve the cover layout, figure/portrait masses as abstract shapes, text-strip silhouettes as illegible marks, object/hand edge cues, negative space, palette, and light. Keep it as a flat source plane unless the source itself has deep space. Do not replace it with unrelated macro texture, cave, room, landscape, city, skyline, horizon, character, central figure, poster wall, or metaphor.'
     : ''
   const anchorCount = artifacts.length
     ? `${Math.min(9, Math.max(6, artifacts.length))}`
@@ -704,7 +704,7 @@ export function buildSceneImagePrompt(payload) {
     ? compactText(platePosture.look_avoidance_directive, 155)
     : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
-    ? 'KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, or let posture/formal-risk override resemblance.'
+    ? 'KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, invent people/characters/city skylines/horizons/deep space not present in the source, or let posture/formal-risk override resemblance.'
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,

@@ -1,5 +1,6 @@
 import { spawn } from 'node:child_process'
 import fs from 'node:fs/promises'
+import fsSync from 'node:fs'
 import path from 'node:path'
 
 import { openAiJson } from './openai-json.mjs'
@@ -65,10 +66,20 @@ print(output_path)
 `
 }
 
+function resolveSourceFidelityPython() {
+  const candidates = [
+    process.env.FRONT_PAGE_PYTHON,
+    process.env.PYTHON,
+    '/Users/nickgeorge-studio/Projects/hermes/hermes-agent/venv/bin/python',
+    '/Users/nickgeorge-studio/Projects/hermes/hermes-agent/.venv/bin/python',
+  ].filter(Boolean)
+  return candidates.find((candidate) => fsSync.existsSync(candidate)) || 'python3'
+}
+
 async function createSourcePlateContactSheet({ sourceImageUrl, platePath, outputPath, runCommand = null }) {
   await fs.mkdir(path.dirname(outputPath), { recursive: true })
   const script = pythonSourceFidelityScript()
-  const command = process.env.FRONT_PAGE_PYTHON || 'python3'
+  const command = resolveSourceFidelityPython()
   if (runCommand) {
     await runCommand({ command, script, args: [sourceImageUrl, platePath, outputPath] })
     return outputPath
