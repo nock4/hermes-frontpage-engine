@@ -26,6 +26,7 @@ export async function runFromScratchMode({
   inspectSourceCandidates,
   composeDailyPayload,
   generateScenePlate,
+  auditSourceImageFidelity,
   inspectGeneratedPlate,
   assembleEditionPackage,
   runInternal,
@@ -79,6 +80,17 @@ export async function runFromScratchMode({
     createResearchSourcesStep({ apiKey, context, inspectSourceCandidates, options, recentSourceKeys, root, runDir }),
     createComposeBriefStep({ apiKey, composeDailyPayload, context, diversityDirective, options, recentEditions, root, runDir }),
     createGeneratePlateStep({ apiKey, context, generateScenePlate, imageAspectRatioFromSize, options, root, runDir }),
+    {
+      name: 'Audit source-image fidelity before mapping',
+      tool: 'Vision source/plate adversarial QA',
+      command: 'compare attached source material against generated plate',
+      run: () => auditSourceImageFidelity({
+        payload: context.brief.payload,
+        platePath: context.plate.outputPath,
+        apiKey,
+        model: options.model,
+      }, runDir),
+    },
     createMapArtifactsStep({ apiKey, context, inspectGeneratedPlate, options, root, runDir }),
     createAssembleEditionStep({
       assembleEditionPackage,

@@ -18,6 +18,7 @@ import { fetchWithTimeout } from './lib/fetch-with-timeout.mjs'
 import { parseArgs } from './lib/cli-options.mjs'
 import { mineSignals } from './lib/signal-mining.mjs'
 import { inspectGeneratedPlate as inspectGeneratedPlateImpl } from './lib/plate-analysis.mjs'
+import { auditSourceImageFidelity as auditSourceImageFidelityImpl } from './lib/source-fidelity-audit.mjs'
 import { inspectSourceCandidates } from './lib/source-research.mjs'
 import { composeDailyPayload as composeDailyPayloadImpl, generateScenePlate as generateScenePlateImpl, imageAspectRatioFromSize } from './lib/scene-generation.mjs'
 import { defaultGenerationName, requireOpenAiKey } from './lib/runtime-env.mjs'
@@ -94,6 +95,10 @@ function inspectGeneratedPlate(args, runDir) {
   return inspectGeneratedPlateImpl(args, runDir, { writeJson, minContentItems, maxContentItems })
 }
 
+function auditSourceImageFidelity(args, runDir) {
+  return auditSourceImageFidelityImpl(args, runDir, { writeJson })
+}
+
 async function main() {
   const options = parseArgs(process.argv.slice(2))
   if (options.mode === 'existing') {
@@ -135,6 +140,7 @@ async function main() {
     inspectSourceCandidates,
     composeDailyPayload,
     generateScenePlate,
+    auditSourceImageFidelity,
     inspectGeneratedPlate,
     assembleEditionPackage,
     runInternal,
