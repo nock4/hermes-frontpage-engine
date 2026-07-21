@@ -1,0 +1,555 @@
+{
+  "artifact_map_id": "map-2026-07-21-nocturne-aperture-section-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "nocturne-aperture-section",
+  "default_artifact_id": "hero-hero-ochre-viewing-aperture",
+  "artifacts": [
+    {
+      "id": "hero-hero-ochre-viewing-aperture",
+      "kind": "hero",
+      "label": "hero ochre viewing aperture",
+      "artifact_type": "hero-scale-aperture",
+      "bounds": {
+        "x": 0.257,
+        "y": 0.188,
+        "w": 0.093,
+        "h": 0.415
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.257,
+          0.188
+        ],
+        [
+          0.334,
+          0.209
+        ],
+        [
+          0.35,
+          0.596
+        ],
+        [
+          0.322,
+          0.602
+        ],
+        [
+          0.261,
+          0.602
+        ],
+        [
+          0.257,
+          0.471
+        ],
+        [
+          0.257,
+          0.285
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/hero-hero-ochre-viewing-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-ochre-viewing-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          466,
+          371
+        ],
+        "safe_stage_window_origin_px": [
+          478,
+          405
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-hero-dark-algorithm-slab",
+      "kind": "hero",
+      "label": "hero dark algorithm slab",
+      "artifact_type": "hero-scale-vertical-slab",
+      "bounds": {
+        "x": 0.351,
+        "y": 0.141,
+        "w": 0.113,
+        "h": 0.752
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.358,
+          0.141
+        ],
+        [
+          0.434,
+          0.149
+        ],
+        [
+          0.458,
+          0.224
+        ],
+        [
+          0.462,
+          0.46
+        ],
+        [
+          0.464,
+          0.742
+        ],
+        [
+          0.46,
+          0.885
+        ],
+        [
+          0.426,
+          0.893
+        ],
+        [
+          0.368,
+          0.887
+        ],
+        [
+          0.35,
+          0.743
+        ],
+        [
+          0.35,
+          0.398
+        ],
+        [
+          0.352,
+          0.196
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/hero-hero-dark-algorithm-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-dark-algorithm-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          626,
+          468
+        ],
+        "safe_stage_window_origin_px": [
+          640,
+          529
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-left-portrait-glow-mullion",
+      "kind": "module",
+      "label": "left portrait-glow mullion",
+      "artifact_type": "glass-mullion-edge",
+      "bounds": {
+        "x": 0.177,
+        "y": 0.153,
+        "w": 0.08,
+        "h": 0.79
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.184,
+          0.153
+        ],
+        [
+          0.216,
+          0.171
+        ],
+        [
+          0.254,
+          0.191
+        ],
+        [
+          0.248,
+          0.326
+        ],
+        [
+          0.246,
+          0.517
+        ],
+        [
+          0.249,
+          0.773
+        ],
+        [
+          0.236,
+          0.929
+        ],
+        [
+          0.194,
+          0.943
+        ],
+        [
+          0.181,
+          0.82
+        ],
+        [
+          0.178,
+          0.55
+        ],
+        [
+          0.177,
+          0.274
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/module-left-portrait-glow-mullion.svg",
+      "source_binding_ids": [
+        "binding-module-left-portrait-glow-mullion"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          333,
+          496
+        ],
+        "safe_stage_window_origin_px": [
+          343,
+          561
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-pool-cyan-side-pane",
+      "kind": "module",
+      "label": "pool-cyan side pane",
+      "artifact_type": "cool-aperture-pane",
+      "bounds": {
+        "x": 0.076,
+        "y": 0.153,
+        "w": 0.115,
+        "h": 0.704
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.079,
+          0.153
+        ],
+        [
+          0.179,
+          0.204
+        ],
+        [
+          0.189,
+          0.416
+        ],
+        [
+          0.188,
+          0.677
+        ],
+        [
+          0.186,
+          0.851
+        ],
+        [
+          0.142,
+          0.857
+        ],
+        [
+          0.081,
+          0.834
+        ],
+        [
+          0.075,
+          0.566
+        ],
+        [
+          0.075,
+          0.316
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/module-pool-cyan-side-pane.svg",
+      "source_binding_ids": [
+        "binding-module-pool-cyan-side-pane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          205,
+          459
+        ],
+        "safe_stage_window_origin_px": [
+          219,
+          517
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-converging-ochre-rail-break",
+      "kind": "module",
+      "label": "converging ochre rail break",
+      "artifact_type": "receding-rail-seam",
+      "bounds": {
+        "x": 0.519,
+        "y": 0.486,
+        "w": 0.351,
+        "h": 0.086
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.519,
+          0.561
+        ],
+        [
+          0.58,
+          0.549
+        ],
+        [
+          0.655,
+          0.535
+        ],
+        [
+          0.731,
+          0.527
+        ],
+        [
+          0.812,
+          0.527
+        ],
+        [
+          0.87,
+          0.536
+        ],
+        [
+          0.866,
+          0.551
+        ],
+        [
+          0.799,
+          0.544
+        ],
+        [
+          0.725,
+          0.543
+        ],
+        [
+          0.652,
+          0.55
+        ],
+        [
+          0.579,
+          0.565
+        ],
+        [
+          0.52,
+          0.572
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/module-converging-ochre-rail-break.svg",
+      "source_binding_ids": [
+        "binding-module-converging-ochre-rail-break"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1067,
+          535
+        ],
+        "safe_stage_window_origin_px": [
+          1110,
+          542
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-low-diagonal-blob-trace",
+      "kind": "module",
+      "label": "low diagonal blob trace",
+      "artifact_type": "floor-node-scrape",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/module-low-diagonal-blob-trace.svg",
+      "source_binding_ids": [
+        "binding-module-low-diagonal-blob-trace"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-right-folded-wall-patch",
+      "kind": "module",
+      "label": "right folded wall patch",
+      "artifact_type": "folded-plaster-patch",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/module-right-folded-wall-patch.svg",
+      "source_binding_ids": [
+        "binding-module-right-folded-wall-patch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-tiny-framed-plaster-scuff",
+      "kind": "module",
+      "label": "tiny framed plaster scuff",
+      "artifact_type": "miniature-framed-scuff",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/module-tiny-framed-plaster-scuff.svg",
+      "source_binding_ids": [
+        "binding-module-tiny-framed-plaster-scuff"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-speckled-black-node-chain",
+      "kind": "module",
+      "label": "speckled black node chain",
+      "artifact_type": "speckled-node-chain",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "nocturne-aperture-section",
+      "mask_path": "/editions/2026-07-21-nocturne-aperture-section-v1/assets/masks/module-speckled-black-node-chain.svg",
+      "source_binding_ids": [
+        "binding-module-speckled-black-node-chain"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
