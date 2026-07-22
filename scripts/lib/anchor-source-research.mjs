@@ -285,6 +285,19 @@ export async function buildAnchorResearch(anchor, { runDate = null } = {}) {
     width: null,
     height: null,
   }] : []
+  const primaryAnchorImages = uniqueNonEmpty([anchor.image_url, /\.(png|jpe?g|webp|avif)(?:$|[?#])/.test(anchor.url || '') ? anchor.url : null])
+    .map((imageUrl) => ({
+      page_url: anchor.url,
+      image_url: imageUrl,
+      title: getSourceDisplayTitle(anchor, anchor.title || anchor.note_title || 'Anchor image source material'),
+      caption: anchor.description || anchor.note_excerpt || '',
+      lineage: 'primary_anchor_image',
+      query: null,
+      visual_reason: 'Primary image explicitly supplied by the selected anchor source.',
+      license_or_rights: null,
+      width: null,
+      height: null,
+    }))
   const searchQueries = buildAnchorQueries(anchor, terms)
   return {
     generated_at: new Date().toISOString(),
@@ -314,7 +327,7 @@ export async function buildAnchorResearch(anchor, { runDate = null } = {}) {
       search_queries: searchQueries,
       open_questions: [],
     },
-    direct_image_candidates: [...thumbnail, ...pageImages],
+    direct_image_candidates: [...primaryAnchorImages, ...thumbnail, ...pageImages],
   }
 }
 
@@ -361,6 +374,7 @@ function scoreImageCandidate(candidate, anchorResearch) {
   if (/\.(png|jpe?g|webp|avif)(?:$|[?#])/.test(candidate.image_url || '')) score += 8
   if (candidate.width && candidate.height) score += Math.min(12, Math.round(Math.log10(candidate.width * candidate.height) * 2))
   if (['archive_reference', 'repo_asset', 'map_diagram', 'video_thumbnail', 'direct_link'].includes(candidate.lineage)) score += 8
+  if (candidate.lineage === 'primary_anchor_image') score += 40
   for (const motif of motifs) if (motif && text.includes(motif)) score += 2
   if (/logo|favicon|avatar|profile|icon|sprite|wordmark|placeholder|pixel\.png/.test(text)) score -= 30
   if (/map|diagram|plate|archive|field|garden|farm|screenshot|asset|photo|image|scan|object|museum|commons|iiif/.test(text)) score += 10

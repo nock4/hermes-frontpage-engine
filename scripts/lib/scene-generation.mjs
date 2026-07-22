@@ -703,8 +703,11 @@ export function buildSceneImagePrompt(payload) {
   const lookAvoidance = platePosture?.look_avoidance_directive && !/^No strong/i.test(platePosture.look_avoidance_directive)
     ? compactText(platePosture.look_avoidance_directive, 155)
     : ''
+  const sourceAspectGuard = /\bsquare\b/i.test(preserveText)
+    ? 'The output canvas is landscape, but the source is square: keep a centered square source field/panel inside the landscape plate with quiet side margin, not a panoramic crop or stretched wide sky.'
+    : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
-    ? 'KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, invent people/characters/city skylines/horizons/deep space not present in the source, or let posture/formal-risk override resemblance.'
+    ? `KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. ${sourceAspectGuard} Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, invent people/characters/city skylines/horizons/deep space not present in the source, or let posture/formal-risk override resemblance.`
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
