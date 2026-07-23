@@ -129,6 +129,23 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   if (normalized.framing_score < 0.55) blockers.push(`framing_score ${normalized.framing_score} < 0.55`)
   if (normalized.object_relationship_score < 0.55) blockers.push(`object_relationship_score ${normalized.object_relationship_score} < 0.55`)
   if (normalized.context_score < 0.45 && normalized.missing_critical_elements.length >= 2) blockers.push('lost source context and multiple critical elements')
+  const auditText = [
+    ...normalized.missing_critical_elements,
+    ...normalized.drift_risks,
+    normalized.rationale,
+  ].join(' ').toLowerCase()
+  if (/square/.test(auditText) && /(wide|wider|panoramic|landscape|aspect|framing|crop)/.test(auditText) && normalized.framing_score < 0.75) {
+    blockers.push(`square source framing drift: framing_score ${normalized.framing_score} < 0.75`)
+  }
+  if (/(vertical light shafts?|vertical flare|light columns?|flare spines?)/.test(auditText) && /(missing|lost|absent|reduced|weakened)/.test(auditText) && normalized.object_relationship_score < 0.9) {
+    blockers.push(`source light-shaft relationship weakened: object_relationship_score ${normalized.object_relationship_score} < 0.9`)
+  }
+  if (/square crop (?:is )?not preserved/.test(auditText) || /source-like square framing/.test(auditText)) {
+    blockers.push('square source crop not preserved')
+  }
+  if (/(borderless|no-border|fills? the whole plate|whole plate|cover framing|image-led surface)/.test(auditText) && /(frame|framed|panel|perimeter|surround|mat|border|wall|object in space)/.test(auditText)) {
+    blockers.push('source turned into framed panel/object instead of preserved image surface')
+  }
   return {
     ...normalized,
     pass: blockers.length === 0,

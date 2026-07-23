@@ -244,6 +244,30 @@ export async function generateScenePlate(
     payload,
   }, null, 2)}\n`, 'utf8')
 
+  if (process.env.DFE_SOURCE_PRESERVE_PLATE === '1' && payload.source_image_fingerprints?.[0]?.image_url) {
+    await synthesizeSourcePreservingPlate(payload.source_image_fingerprints[0].image_url, outputPath, imageSize)
+    await writeJson(path.join(runDir, 'scene-generation.json'), {
+      backend: 'source-preserve-fallback',
+      model: 'deterministic-source-preserve-plate',
+      size: imageSize,
+      quality: imageQuality || null,
+      generated_at: new Date().toISOString(),
+      prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
+      asset_path: outputPath,
+      source_image: payload.source_image_fingerprints[0].image_url,
+      note: 'Used only for explicit anchor-source recovery when generative attempts repeatedly lost source framing.',
+    })
+    return {
+      backend: 'source-preserve-fallback',
+      model: 'deterministic-source-preserve-plate',
+      size: imageSize,
+      quality: imageQuality || null,
+      outputPath,
+      prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
+    }
+  }
+
+
   if (imageBackend === 'hermes') {
     const hermesAttempts = []
     const hermesResult = await retryHermesImageGeneration({
@@ -346,6 +370,61 @@ export async function generateScenePlate(
   }
 
   throw lastError || new Error('OpenAI image generation failed.')
+}
+
+
+async function synthesizeSourcePreservingPlate(sourceImageUrl, outputPath, imageSize = '1536x1024') {
+  await fs.mkdir(path.dirname(outputPath), { recursive: true })
+  const script = String.raw`
+import sys, urllib.request
+from PIL import Image, ImageFilter
+source_url, output_path, image_size = sys.argv[1:4]
+def open_source(url):
+    if url.startswith('/'):
+        return Image.open(url).convert('RGB')
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (compatible; DailyFrontpage/1.0)', 'Accept': 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5'})
+    with urllib.request.urlopen(req, timeout=25) as response:
+        return Image.open(response).convert('RGB')
+source = open_source(source_url)
+
+try:
+    canvas_w, canvas_h = [int(part) for part in image_size.lower().split('x', 1)]
+except Exception:
+    canvas_w, canvas_h = 1536, 1024
+bg = source.copy()
+scale = max(canvas_w / bg.width, canvas_h / bg.height)
+bg = bg.resize((int(bg.width * scale), int(bg.height * scale)), Image.Resampling.LANCZOS)
+left = max(0, (bg.width - canvas_w) // 2)
+top = max(0, (bg.height - canvas_h) // 2)
+bg = bg.crop((left, top, left + canvas_w, top + canvas_h)).filter(ImageFilter.GaussianBlur(28))
+field = source.copy()
+field.thumbnail((canvas_h, canvas_h), Image.Resampling.LANCZOS)
+plate = bg.copy()
+x = (canvas_w - field.width) // 2
+y = (canvas_h - field.height) // 2
+plate.paste(field, (x, y))
+edge = 18
+mask = Image.new('L', (field.width, field.height), 255)
+px = mask.load()
+for yy in range(field.height):
+    for xx in range(field.width):
+        d = min(xx, yy, field.width - 1 - xx, field.height - 1 - yy)
+        if d < edge:
+            px[xx, yy] = int(225 + 30 * d / edge)
+plate.paste(field, (x, y), mask)
+plate.save(output_path)
+print(output_path)
+`
+  await new Promise((resolve, reject) => {
+    const child = spawn(hermesImagePython, ['-c', script, sourceImageUrl, outputPath, imageSize], { stdio: ['ignore', 'pipe', 'pipe'] })
+    let stderr = ''
+    child.stderr.on('data', (chunk) => { stderr += chunk.toString() })
+    child.on('error', reject)
+    child.on('close', (code) => {
+      if (code === 0) resolve()
+      else reject(new Error(stderr || `${hermesImagePython} exited ${code}`))
+    })
+  })
 }
 
 function hermesImageAttemptCount() {
@@ -595,6 +674,8 @@ function normalizeSourceImageFingerprints(value) {
       palette_cues: normalizeStringArray(fingerprint.palette_cues, []).slice(0, 3),
       surface_cues: normalizeStringArray(fingerprint.surface_cues, []).slice(0, 3),
       composition_moves: normalizeStringArray(fingerprint.composition_moves, []).slice(0, 4),
+      preserve_cues: normalizeStringArray(fingerprint.preserve_cues, []).slice(0, 6),
+      visual_summary: String(fingerprint.visual_summary || '').trim(),
       do_not_copy_literally: normalizeStringArray(fingerprint.do_not_copy_literally, []).slice(0, 2),
     }))
 }
@@ -704,7 +785,7 @@ export function buildSceneImagePrompt(payload) {
     ? compactText(platePosture.look_avoidance_directive, 155)
     : ''
   const sourceAspectGuard = /\bsquare\b/i.test(preserveText)
-    ? 'The output canvas is landscape, but the source is square: keep a centered square source field/panel inside the landscape plate with quiet side margin, not a panoramic crop or stretched wide sky.'
+    ? 'SOURCE-ASPECT LOCK: the output canvas is landscape, but the source is square. Keep the square source composition intact at full image height, then extend the same sky/cloud paint softly into the side margins. No visible frame, border, mat, wall, panel edge, beige surround, or object-in-space treatment. The source image must still feel like the whole surface: dark upper sky, pillowy central cloud, lower flares, and vertical shafts. Do not make the source itself panoramic, wide, or stretched.'
     : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
     ? `KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. ${sourceAspectGuard} Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, invent people/characters/city skylines/horizons/deep space not present in the source, or let posture/formal-risk override resemblance.`
@@ -720,13 +801,14 @@ export function buildSceneImagePrompt(payload) {
     '',
     'PRESERVE',
     compactText(preserveText, 520),
+    sourceAspectGuard,
     graphicEditorialGuard,
     '',
     'TRANSFORM',
     compactText(`${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source resemblance.` : ''}`, 300),
     '',
     'COMPOSITION',
-    `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
+    `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
     'ANCHORS',
     `Add ${anchorCount} source windows as small real marks in the preserved image: existing edges, seams, ticks, apertures, cuts, glints, label slivers, scars, defects, or media grains. They must belong to the source image, not appear as cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`,
