@@ -1,0 +1,524 @@
+{
+  "analysis_id": "analysis-2026-07-24-offwhite-route-failure-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A stark white square plate with one centered black typographic mark reading “verse talks.” The only visible source-bearing surfaces are the two word masses and their distinct letter gestures; the planned pigment apertures, side tear, orbit tile, pinhole, seam, ochre scrape, notch, and archive marks are not visibly present.",
+  "usable_surfaces": [
+    "centered black wordmark on white field",
+    "left regular-weight verse letter mass",
+    "right italic talks letter mass",
+    "individual italic stroke gestures in talks",
+    "small counters and gaps inside letters"
+  ],
+  "detected_objects": [
+    {
+      "label": "primary black word-mass rupture",
+      "artifact_type": "centered-readable-wordmark-mass",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.286,
+        "y": 0.469,
+        "w": 0.426,
+        "h": 0.064
+      },
+      "polygon": [
+        [
+          0.286,
+          0.489
+        ],
+        [
+          0.304,
+          0.489
+        ],
+        [
+          0.317,
+          0.519
+        ],
+        [
+          0.333,
+          0.489
+        ],
+        [
+          0.354,
+          0.489
+        ],
+        [
+          0.371,
+          0.476
+        ],
+        [
+          0.393,
+          0.476
+        ],
+        [
+          0.416,
+          0.489
+        ],
+        [
+          0.438,
+          0.476
+        ],
+        [
+          0.469,
+          0.476
+        ],
+        [
+          0.501,
+          0.521
+        ],
+        [
+          0.531,
+          0.478
+        ],
+        [
+          0.575,
+          0.487
+        ],
+        [
+          0.611,
+          0.47
+        ],
+        [
+          0.656,
+          0.488
+        ],
+        [
+          0.712,
+          0.519
+        ],
+        [
+          0.696,
+          0.532
+        ],
+        [
+          0.286,
+          0.532
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "The only dominant visible mark is the centered black typographic mass, split into the regular “verse” and italic “talks” word shapes on an otherwise blank plate."
+    },
+    {
+      "label": "left verse word surface",
+      "artifact_type": "regular-black-word-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.286,
+        "y": 0.476,
+        "w": 0.215,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.286,
+          0.489
+        ],
+        [
+          0.305,
+          0.489
+        ],
+        [
+          0.318,
+          0.519
+        ],
+        [
+          0.335,
+          0.489
+        ],
+        [
+          0.357,
+          0.489
+        ],
+        [
+          0.374,
+          0.477
+        ],
+        [
+          0.394,
+          0.477
+        ],
+        [
+          0.411,
+          0.489
+        ],
+        [
+          0.431,
+          0.478
+        ],
+        [
+          0.463,
+          0.477
+        ],
+        [
+          0.489,
+          0.494
+        ],
+        [
+          0.501,
+          0.52
+        ],
+        [
+          0.483,
+          0.528
+        ],
+        [
+          0.456,
+          0.516
+        ],
+        [
+          0.428,
+          0.528
+        ],
+        [
+          0.397,
+          0.526
+        ],
+        [
+          0.363,
+          0.526
+        ],
+        [
+          0.306,
+          0.528
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The regular-weight lowercase “verse” cluster is a discrete black source-bearing word surface with clear left and right edges."
+    },
+    {
+      "label": "right talks italic surface",
+      "artifact_type": "italic-black-word-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.519,
+        "y": 0.47,
+        "w": 0.193,
+        "h": 0.063
+      },
+      "polygon": [
+        [
+          0.535,
+          0.476
+        ],
+        [
+          0.558,
+          0.482
+        ],
+        [
+          0.575,
+          0.489
+        ],
+        [
+          0.592,
+          0.475
+        ],
+        [
+          0.616,
+          0.47
+        ],
+        [
+          0.631,
+          0.486
+        ],
+        [
+          0.653,
+          0.47
+        ],
+        [
+          0.668,
+          0.474
+        ],
+        [
+          0.661,
+          0.506
+        ],
+        [
+          0.69,
+          0.489
+        ],
+        [
+          0.712,
+          0.5
+        ],
+        [
+          0.704,
+          0.523
+        ],
+        [
+          0.681,
+          0.532
+        ],
+        [
+          0.648,
+          0.519
+        ],
+        [
+          0.629,
+          0.532
+        ],
+        [
+          0.6,
+          0.525
+        ],
+        [
+          0.57,
+          0.529
+        ],
+        [
+          0.519,
+          0.524
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "The italic “talks” word is visibly separated from “verse” and has a slanted black contour suitable as a distinct interaction surface."
+    },
+    {
+      "label": "bad-hand loading slash",
+      "artifact_type": "slanted-black-letter-stroke",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.516,
+        "y": 0.475,
+        "w": 0.044,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.533,
+          0.475
+        ],
+        [
+          0.557,
+          0.479
+        ],
+        [
+          0.552,
+          0.492
+        ],
+        [
+          0.54,
+          0.492
+        ],
+        [
+          0.533,
+          0.526
+        ],
+        [
+          0.516,
+          0.526
+        ],
+        [
+          0.522,
+          0.493
+        ],
+        [
+          0.511,
+          0.493
+        ],
+        [
+          0.515,
+          0.481
+        ],
+        [
+          0.527,
+          0.481
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "The initial italic t in “talks” forms a compact slanted black slash-like stroke with a crossbar, the closest visible charged gesture to the planned loading slash."
+    },
+    {
+      "label": "italic k angled joint",
+      "artifact_type": "black-angled-letter-joint",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.47,
+        "w": 0.047,
+        "h": 0.058
+      },
+      "polygon": [
+        [
+          0.656,
+          0.47
+        ],
+        [
+          0.672,
+          0.472
+        ],
+        [
+          0.665,
+          0.5
+        ],
+        [
+          0.688,
+          0.488
+        ],
+        [
+          0.681,
+          0.505
+        ],
+        [
+          0.664,
+          0.511
+        ],
+        [
+          0.68,
+          0.527
+        ],
+        [
+          0.66,
+          0.527
+        ],
+        [
+          0.651,
+          0.514
+        ],
+        [
+          0.646,
+          0.528
+        ],
+        [
+          0.642,
+          0.528
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "The italic k creates a visible angled joint and forked gesture near the right side of the wordmark."
+    },
+    {
+      "label": "thin playback notch",
+      "artifact_type": "folded-paper-playback-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "questioning ochre scrape",
+      "artifact_type": "ochre-pigment-scrape",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "museum-index pinhole",
+      "artifact_type": "small-pale-index-pinhole",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "bad-hand loading slash",
+      "artifact_type": "slanted-black-loading-slash",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 2,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.056,
+    "rationale": "The plate is highly minimal: a single centered black wordmark on an empty white field. It is not cluttered, but most planned expressionist source apertures and tactile anchors are absent."
+  },
+  "fallback_detected_object_count": 4,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-24-offwhite-route-failure-v1"
+}

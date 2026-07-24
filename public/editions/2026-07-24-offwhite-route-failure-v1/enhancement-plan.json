@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-24-offwhite-route-failure-v1",
+  "edition_id": "2026-07-24-offwhite-route-failure-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-24-offwhite-route-failure-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-primary-black-word-mass-rupture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-primary-black-word-mass-rupture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (centered-readable-wordmark-mass) selected from interpretation."
+    },
+    {
+      "target_id": "hero-left-verse-word-surface",
+      "target_kind": "artifact",
+      "artifact_id": "hero-left-verse-word-surface",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (regular-black-word-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-talks-italic-surface",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-talks-italic-surface",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (italic-black-word-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-bad-hand-loading-slash",
+      "target_kind": "artifact",
+      "artifact_id": "module-bad-hand-loading-slash",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (slanted-black-letter-stroke) selected from interpretation."
+    },
+    {
+      "target_id": "module-italic-k-angled-joint",
+      "target_kind": "artifact",
+      "artifact_id": "module-italic-k-angled-joint",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-angled-letter-joint) selected from interpretation."
+    },
+    {
+      "target_id": "module-thin-playback-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-thin-playback-notch",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (folded-paper-playback-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-questioning-ochre-scrape",
+      "target_kind": "artifact",
+      "artifact_id": "module-questioning-ochre-scrape",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ochre-pigment-scrape) selected from interpretation."
+    },
+    {
+      "target_id": "module-museum-index-pinhole",
+      "target_kind": "artifact",
+      "artifact_id": "module-museum-index-pinhole",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-pale-index-pinhole) selected from interpretation."
+    },
+    {
+      "target_id": "module-bad-hand-loading-slash-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-bad-hand-loading-slash-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (slanted-black-loading-slash) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

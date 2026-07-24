@@ -1,52 +1,49 @@
 {
-  "interpretation_id": "interp-2026-07-21-nocturne-aperture-section-v1",
-  "edition_id": "2026-07-21-nocturne-aperture-section-v1",
-  "plate_read_timestamp": "2026-07-21T08:12:34.586Z",
+  "interpretation_id": "interp-2026-07-24-offwhite-route-failure-v1",
+  "edition_id": "2026-07-24-offwhite-route-failure-v1",
+  "plate_read_timestamp": "2026-07-24T16:14:55.639Z",
   "scene_ontology": {
     "primary": "material-native",
-    "secondary": [
-      "optical-native"
-    ],
+    "secondary": [],
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A tall nocturne plate built from nested architectural apertures: a glowing ochre vertical window at left, a dense black slab down the center, a pale observatory dome at upper right, and small scuffs, lights, panes, rails, and folded wall marks embedded as source-bearing edges.",
+    "summary": "A stark white square plate with one centered black typographic mark reading “verse talks.” The only visible source-bearing surfaces are the two word masses and their distinct letter gestures; the planned pigment apertures, side tear, orbit tile, pinhole, seam, ochre scrape, notch, and archive marks are not visibly present.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "hushed, nocturnal, optically staged, with a single rule-breaking aperture pulling the section off axis",
-      "A tall nocturne plate built from nested architectural apertures: a glowing ochre vertical window at left, a dense black slab down the center, a pale observatory dome at upper right, and small scuffs, lights, panes, rails, and folded wall marks embedded as source-bearing edges.",
-      "nocturne-aperture",
-      "painted-section",
-      "ochre-window"
+      "blank cover, broken route",
+      "A stark white square plate with one centered black typographic mark reading “verse talks.” The only visible source-bearing surfaces are the two word masses and their distinct letter gestures; the planned pigment apertures, side tear, orbit tile, pinhole, seam, ochre scrape, notch, and archive marks are not visibly present.",
+      "offwhite-field",
+      "broken-wordmark",
+      "archive-apertures"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "hero ochre viewing aperture",
-      "hero dark algorithm slab",
-      "left portrait-glow mullion",
-      "pool-cyan side pane",
-      "converging ochre rail break",
-      "low diagonal blob trace",
-      "right folded wall patch",
-      "tiny framed plaster scuff"
+      "primary black word-mass rupture",
+      "left verse word surface",
+      "right talks italic surface",
+      "bad-hand loading slash",
+      "italic k angled joint",
+      "thin playback notch",
+      "questioning ochre scrape",
+      "museum-index pinhole"
     ],
     "dominant_surfaces": [
-      "glass",
-      "paint",
-      "light-band"
+      "paper",
+      "paint"
     ],
     "dominant_structures": [
-      "nocturne-aperture-section",
-      "large off-axis viewing aperture held by dark vertical edges",
-      "abstract shadow mass dissolved into the wall field",
-      "low foreground block interrupting the lower right plane",
-      "thin rail and light-bar gestures receding through a shallow architectural section",
-      "small framed scuffs and speckled nodes embedded in plaster",
-      "left ochre glowing aperture",
-      "central black-brown vertical slab"
+      "offwhite-ruptured-wordmark-field",
+      "dominant pale square field with empty corners",
+      "small two-part black mark below centerline",
+      "vertical archive-edge band of rose, terracotta, ochre, and navy planes",
+      "orbiting cutaway tile pulling marks off-axis",
+      "fringe-like seam strokes along a dark curved overlap",
+      "isolated folded notches and pigment apertures as source-bearing plates",
+      "centered black wordmark on white field"
     ],
     "negative_space_regions": []
   },
@@ -61,21 +58,21 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: nocturne-aperture-section.",
+      "Primary ontology inferred from scene family and artifact types: offwhite-ruptured-wordmark-field.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-hero-ochre-viewing-aperture",
+      "id": "hero-primary-black-word-mass-rupture",
       "kind": "hero",
-      "type": "hero-scale-aperture",
-      "strength": 0.95,
+      "type": "centered-readable-wordmark-mass",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.257,
-        "y": 0.188,
-        "w": 0.093,
-        "h": 0.415
+        "x": 0.286,
+        "y": 0.469,
+        "w": 0.426,
+        "h": 0.064
       },
       "supports": [
         "threshold-scan-reveal",
@@ -83,15 +80,15 @@
       ]
     },
     {
-      "id": "hero-hero-dark-algorithm-slab",
+      "id": "hero-left-verse-word-surface",
       "kind": "hero",
-      "type": "hero-scale-vertical-slab",
-      "strength": 0.9199999999999999,
+      "type": "regular-black-word-surface",
+      "strength": 0.9835759999999999,
       "bounds": {
-        "x": 0.351,
-        "y": 0.141,
-        "w": 0.113,
-        "h": 0.752
+        "x": 0.3301,
+        "y": 0.4834,
+        "w": 0.167,
+        "h": 0.0488
       },
       "supports": [
         "threshold-scan-reveal",
@@ -99,15 +96,15 @@
       ]
     },
     {
-      "id": "module-left-portrait-glow-mullion",
+      "id": "module-right-talks-italic-surface",
       "kind": "module",
-      "type": "glass-mullion-edge",
-      "strength": 0.72,
+      "type": "italic-black-word-surface",
+      "strength": 0.790488,
       "bounds": {
-        "x": 0.177,
-        "y": 0.153,
-        "w": 0.08,
-        "h": 0.79
+        "x": 0.5166,
+        "y": 0.4658,
+        "w": 0.1982,
+        "h": 0.0674
       },
       "supports": [
         "threshold-scan-reveal",
@@ -115,15 +112,15 @@
       ]
     },
     {
-      "id": "module-pool-cyan-side-pane",
+      "id": "module-bad-hand-loading-slash",
       "kind": "module",
-      "type": "cool-aperture-pane",
-      "strength": 0.6900000000000001,
+      "type": "slanted-black-letter-stroke",
+      "strength": 0.7546200000000001,
       "bounds": {
-        "x": 0.076,
-        "y": 0.153,
-        "w": 0.115,
-        "h": 0.704
+        "x": 0.516,
+        "y": 0.475,
+        "w": 0.044,
+        "h": 0.052
       },
       "supports": [
         "threshold-scan-reveal",
@@ -131,15 +128,15 @@
       ]
     },
     {
-      "id": "module-converging-ochre-rail-break",
+      "id": "module-italic-k-angled-joint",
       "kind": "module",
-      "type": "receding-rail-seam",
-      "strength": 0.66,
+      "type": "black-angled-letter-joint",
+      "strength": 0.729252,
       "bounds": {
-        "x": 0.519,
-        "y": 0.486,
-        "w": 0.351,
-        "h": 0.086
+        "x": 0.642,
+        "y": 0.47,
+        "w": 0.047,
+        "h": 0.058
       },
       "supports": [
         "threshold-scan-reveal",
@@ -147,10 +144,10 @@
       ]
     },
     {
-      "id": "module-low-diagonal-blob-trace",
+      "id": "module-thin-playback-notch",
       "kind": "module",
-      "type": "floor-node-scrape",
-      "strength": 0.63,
+      "type": "folded-paper-playback-notch",
+      "strength": 0.699552,
       "bounds": {
         "x": 0.1,
         "y": 0.78,
@@ -158,15 +155,15 @@
         "h": 0.16
       },
       "supports": [
-        "threshold-scan-reveal",
-        "restoration-scan"
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
       ]
     },
     {
-      "id": "module-right-folded-wall-patch",
+      "id": "module-questioning-ochre-scrape",
       "kind": "module",
-      "type": "folded-plaster-patch",
-      "strength": 0.6000000000000001,
+      "type": "ochre-pigment-scrape",
+      "strength": 0.6680280000000001,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
@@ -174,15 +171,15 @@
         "h": 0.16
       },
       "supports": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-tiny-framed-plaster-scuff",
+      "id": "module-museum-index-pinhole",
       "kind": "module",
-      "type": "miniature-framed-scuff",
-      "strength": 0.58,
+      "type": "small-pale-index-pinhole",
+      "strength": 0.6496959999999999,
       "bounds": {
         "x": 0.72,
         "y": 0.76,
@@ -195,10 +192,10 @@
       ]
     },
     {
-      "id": "module-speckled-black-node-chain",
+      "id": "module-bad-hand-loading-slash-2",
       "kind": "module",
-      "type": "speckled-node-chain",
-      "strength": 0.58,
+      "type": "slanted-black-loading-slash",
+      "strength": 0.65596,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -214,14 +211,14 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-hero-ochre-viewing-aperture-surface",
+      "id": "hero-primary-black-word-mass-rupture-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.257,
-        "y": 0.188,
-        "w": 0.093,
-        "h": 0.415
+        "x": 0.286,
+        "y": 0.469,
+        "w": 0.426,
+        "h": 0.064
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -230,14 +227,14 @@
       ]
     },
     {
-      "id": "hero-hero-dark-algorithm-slab-surface",
+      "id": "hero-left-verse-word-surface-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.351,
-        "y": 0.141,
-        "w": 0.113,
-        "h": 0.752
+        "x": 0.3301,
+        "y": 0.4834,
+        "w": 0.167,
+        "h": 0.0488
       },
       "suitability": 0.9,
       "supported_treatments": [
@@ -246,14 +243,14 @@
       ]
     },
     {
-      "id": "module-left-portrait-glow-mullion-surface",
-      "surface_type": "glass",
+      "id": "module-right-talks-italic-surface-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.177,
-        "y": 0.153,
-        "w": 0.08,
-        "h": 0.79
+        "x": 0.5166,
+        "y": 0.4658,
+        "w": 0.1982,
+        "h": 0.0674
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -262,14 +259,14 @@
       ]
     },
     {
-      "id": "module-pool-cyan-side-pane-surface",
+      "id": "module-bad-hand-loading-slash-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.076,
-        "y": 0.153,
-        "w": 0.115,
-        "h": 0.704
+        "x": 0.516,
+        "y": 0.475,
+        "w": 0.044,
+        "h": 0.052
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -278,14 +275,14 @@
       ]
     },
     {
-      "id": "module-converging-ochre-rail-break-surface",
+      "id": "module-italic-k-angled-joint-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.519,
-        "y": 0.486,
-        "w": 0.351,
-        "h": 0.086
+        "x": 0.642,
+        "y": 0.47,
+        "w": 0.047,
+        "h": 0.058
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -294,8 +291,8 @@
       ]
     },
     {
-      "id": "module-low-diagonal-blob-trace-surface",
-      "surface_type": "paint",
+      "id": "module-thin-playback-notch-surface",
+      "surface_type": "paper",
       "host": "artifact",
       "bounds": {
         "x": 0.1,
@@ -305,12 +302,12 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "threshold-scan-reveal",
-        "restoration-scan"
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
       ]
     },
     {
-      "id": "module-right-folded-wall-patch-surface",
+      "id": "module-questioning-ochre-scrape-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -321,12 +318,12 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-tiny-framed-plaster-scuff-surface",
+      "id": "module-museum-index-pinhole-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -342,7 +339,7 @@
       ]
     },
     {
-      "id": "module-speckled-black-node-chain-surface",
+      "id": "module-bad-hand-loading-slash-2-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
