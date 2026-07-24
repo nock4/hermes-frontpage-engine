@@ -166,8 +166,10 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   ]
   const blockerScopeText = normalized.verdict === 'pass'
     ? auditText
+      .replace(/contact sheet display[^.;]*[.;]?/g, ' ')
       .replace(/minor[^.;]*[.;]?/g, ' ')
       .replace(/slight(?:ly)?[^.;]*[.;]?/g, ' ')
+      .replace(/no [^.;]*(?:replacement|metaphor|scene|context loss|blocks publication)[^.;]*[.;]?/g, ' preserved ')
       .replace(/not replaced/g, 'preserved')
       .replace(/direct transformed edition/g, 'preserved edition')
     : auditText

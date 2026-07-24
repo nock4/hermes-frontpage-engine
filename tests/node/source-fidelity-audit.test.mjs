@@ -188,6 +188,49 @@ describe('source image fidelity audit', () => {
     expect(audit.verdict).toBe('pass')
   })
 
+  it('does not block a pass verdict for negated replacement language', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-negated-pass-'))
+    const platePath = path.join(runDir, 'plate.png')
+    await writeFile(platePath, 'fake plate')
+
+    const audit = await auditSourceImageFidelity(
+      {
+        payload: {
+          source_image_fingerprints: [
+            {
+              title: 'Verse talks wordmark',
+              image_url: 'https://assets.example/wordmark.jpg',
+              preserve_cues: ['square minimal source transformation', 'centered wordmark', 'huge blank margins'],
+            },
+          ],
+        },
+        platePath,
+      },
+      runDir,
+      {
+        writeJson,
+        createContactSheetImpl: async ({ outputPath }) => {
+          await writeFile(outputPath, 'fake contact sheet')
+          return outputPath
+        },
+        openAiJsonImpl: async () => ({
+          verdict: 'pass',
+          resemblance_score: 1,
+          framing_score: 1,
+          object_relationship_score: 1,
+          context_score: 1,
+          retained_critical_elements: ['uninterrupted pale negative space', 'single centered horizontal wordmark'],
+          missing_critical_elements: [],
+          drift_risks: ['contact sheet display is landscape, but the plate content still reads as a square minimal source transformation'],
+          rationale: 'The generated plate visibly reads as the same source. No metaphor scene, texture replacement, poster decoration, or context loss blocks publication.',
+        }),
+      },
+    )
+
+    expect(audit.pass).toBe(true)
+    expect(audit.blockers).toEqual([])
+  })
+
   it('skips when no source image fingerprint is attached', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-skip-'))
     const audit = await auditSourceImageFidelity(
