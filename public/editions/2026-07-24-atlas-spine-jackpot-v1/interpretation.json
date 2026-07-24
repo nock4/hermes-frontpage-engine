@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-07-24-atlas-spine-jackpot-v1",
+  "edition_id": "2026-07-24-atlas-spine-jackpot-v1",
+  "plate_read_timestamp": "2026-07-24T20:59:48.749Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A tall expressionist sectional plate: two dark atlas-like rails flank a blown-out pale vertical spine. Small embedded chambers, coin lights, slot reels, blue media wells, paper/map scraps, and pixel notches sit as source windows along the cut faces.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "overexposed game-atlas spine split by small jackpot wounds",
+      "A tall expressionist sectional plate: two dark atlas-like rails flank a blown-out pale vertical spine. Small embedded chambers, coin lights, slot reels, blue media wells, paper/map scraps, and pixel notches sit as source windows along the cut faces.",
+      "vertical-rupture",
+      "game-atlas",
+      "hard-edge-section"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "VGMaps atlas spine cut",
+      "left map rail slab",
+      "right map rail echo",
+      "home-plan media well",
+      "cod recipe paper scrap",
+      "jackpot reel wound",
+      "boku coin aperture",
+      "recorded-skill media tile"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "vertical-game-atlas-spine",
+      "building-sized vertical atlas spine",
+      "two compressed black edge rails",
+      "stacked sectional map rooms and corridors",
+      "small glossy media wells cut into the rails",
+      "coin-like glints and reel-slice wounds",
+      "illegible paper-map scraps crossing the void",
+      "central pale atlas spine cut"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: vertical-game-atlas-spine.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-vgmaps-atlas-spine-cut",
+      "kind": "hero",
+      "type": "hero-scale-vertical-atlas-spine",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.378,
+        "y": 0,
+        "w": 0.252,
+        "h": 0.995
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-left-map-rail-slab",
+      "kind": "hero",
+      "type": "hero-scale-dark-edge-rail",
+      "strength": 0.973208,
+      "bounds": {
+        "x": 0.143,
+        "y": 0,
+        "w": 0.263,
+        "h": 0.996
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-map-rail-echo",
+      "kind": "module",
+      "type": "compressed-map-rail",
+      "strength": 0.77154,
+      "bounds": {
+        "x": 0.606,
+        "y": 0,
+        "w": 0.251,
+        "h": 0.997
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-home-plan-media-well",
+      "kind": "module",
+      "type": "glossy-blue-section-well",
+      "strength": 0.767148,
+      "bounds": {
+        "x": 0.689,
+        "y": 0.046,
+        "w": 0.078,
+        "h": 0.057
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cod-recipe-paper-scrap",
+      "kind": "module",
+      "type": "torn-paper-crossing",
+      "strength": 0.72438,
+      "bounds": {
+        "x": 0.582,
+        "y": 0.623,
+        "w": 0.204,
+        "h": 0.214
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-jackpot-reel-wound",
+      "kind": "module",
+      "type": "gold-enamel-reel-cut",
+      "strength": 0.709404,
+      "bounds": {
+        "x": 0.648,
+        "y": 0.367,
+        "w": 0.154,
+        "h": 0.115
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-boku-coin-aperture",
+      "kind": "module",
+      "type": "coin-gold-side-aperture",
+      "strength": 0.67422,
+      "bounds": {
+        "x": 0.173,
+        "y": 0.918,
+        "w": 0.053,
+        "h": 0.049
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-recorded-skill-media-tile",
+      "kind": "module",
+      "type": "muted-glass-plate-fragment",
+      "strength": 0.652192,
+      "bounds": {
+        "x": 0.198,
+        "y": 0.441,
+        "w": 0.161,
+        "h": 0.106
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-left-jackpot-reel-wound",
+      "kind": "module",
+      "type": "red-gold-reel-cut",
+      "strength": 0.6554679999999999,
+      "bounds": {
+        "x": 0.218,
+        "y": 0.322,
+        "w": 0.105,
+        "h": 0.061
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-vgmaps-atlas-spine-cut-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.378,
+        "y": 0,
+        "w": 0.252,
+        "h": 0.995
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-left-map-rail-slab-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.143,
+        "y": 0,
+        "w": 0.263,
+        "h": 0.996
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-map-rail-echo-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.606,
+        "y": 0,
+        "w": 0.251,
+        "h": 0.997
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-home-plan-media-well-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.689,
+        "y": 0.046,
+        "w": 0.078,
+        "h": 0.057
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cod-recipe-paper-scrap-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.582,
+        "y": 0.623,
+        "w": 0.204,
+        "h": 0.214
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-jackpot-reel-wound-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.648,
+        "y": 0.367,
+        "w": 0.154,
+        "h": 0.115
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-boku-coin-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.173,
+        "y": 0.918,
+        "w": 0.053,
+        "h": 0.049
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-recorded-skill-media-tile-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.198,
+        "y": 0.441,
+        "w": 0.161,
+        "h": 0.106
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-left-jackpot-reel-wound-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.218,
+        "y": 0.322,
+        "w": 0.105,
+        "h": 0.061
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

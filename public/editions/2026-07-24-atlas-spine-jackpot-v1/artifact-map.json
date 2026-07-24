@@ -1,0 +1,699 @@
+{
+  "artifact_map_id": "map-2026-07-24-atlas-spine-jackpot-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "vertical-game-atlas-spine",
+  "default_artifact_id": "hero-vgmaps-atlas-spine-cut",
+  "artifacts": [
+    {
+      "id": "hero-vgmaps-atlas-spine-cut",
+      "kind": "hero",
+      "label": "VGMaps atlas spine cut",
+      "artifact_type": "hero-scale-vertical-atlas-spine",
+      "bounds": {
+        "x": 0.378,
+        "y": 0,
+        "w": 0.252,
+        "h": 0.995
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.393,
+          0
+        ],
+        [
+          0.603,
+          0
+        ],
+        [
+          0.596,
+          0.108
+        ],
+        [
+          0.618,
+          0.196
+        ],
+        [
+          0.585,
+          0.31
+        ],
+        [
+          0.612,
+          0.44
+        ],
+        [
+          0.594,
+          0.57
+        ],
+        [
+          0.627,
+          0.716
+        ],
+        [
+          0.59,
+          0.878
+        ],
+        [
+          0.594,
+          0.995
+        ],
+        [
+          0.425,
+          0.995
+        ],
+        [
+          0.438,
+          0.872
+        ],
+        [
+          0.399,
+          0.748
+        ],
+        [
+          0.43,
+          0.616
+        ],
+        [
+          0.398,
+          0.498
+        ],
+        [
+          0.419,
+          0.354
+        ],
+        [
+          0.382,
+          0.205
+        ],
+        [
+          0.405,
+          0.077
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/hero-vgmaps-atlas-spine-cut.svg",
+      "source_binding_ids": [
+        "binding-hero-vgmaps-atlas-spine-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          774,
+          428
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          509
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-left-map-rail-slab",
+      "kind": "hero",
+      "label": "left map rail slab",
+      "artifact_type": "hero-scale-dark-edge-rail",
+      "bounds": {
+        "x": 0.143,
+        "y": 0,
+        "w": 0.263,
+        "h": 0.996
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.149,
+          0
+        ],
+        [
+          0.335,
+          0
+        ],
+        [
+          0.36,
+          0.092
+        ],
+        [
+          0.319,
+          0.176
+        ],
+        [
+          0.346,
+          0.288
+        ],
+        [
+          0.333,
+          0.405
+        ],
+        [
+          0.376,
+          0.528
+        ],
+        [
+          0.331,
+          0.653
+        ],
+        [
+          0.363,
+          0.766
+        ],
+        [
+          0.314,
+          0.878
+        ],
+        [
+          0.356,
+          0.996
+        ],
+        [
+          0.153,
+          0.996
+        ],
+        [
+          0.145,
+          0.81
+        ],
+        [
+          0.151,
+          0.626
+        ],
+        [
+          0.148,
+          0.43
+        ],
+        [
+          0.153,
+          0.21
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/hero-left-map-rail-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-left-map-rail-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          422,
+          428
+        ],
+        "safe_stage_window_origin_px": [
+          454,
+          510
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-right-map-rail-echo",
+      "kind": "module",
+      "label": "right map rail echo",
+      "artifact_type": "compressed-map-rail",
+      "bounds": {
+        "x": 0.606,
+        "y": 0,
+        "w": 0.251,
+        "h": 0.997
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.63,
+          0
+        ],
+        [
+          0.838,
+          0
+        ],
+        [
+          0.845,
+          0.195
+        ],
+        [
+          0.804,
+          0.292
+        ],
+        [
+          0.839,
+          0.418
+        ],
+        [
+          0.794,
+          0.535
+        ],
+        [
+          0.835,
+          0.672
+        ],
+        [
+          0.793,
+          0.794
+        ],
+        [
+          0.846,
+          0.997
+        ],
+        [
+          0.64,
+          0.997
+        ],
+        [
+          0.614,
+          0.823
+        ],
+        [
+          0.65,
+          0.706
+        ],
+        [
+          0.615,
+          0.565
+        ],
+        [
+          0.642,
+          0.439
+        ],
+        [
+          0.613,
+          0.296
+        ],
+        [
+          0.64,
+          0.142
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/module-right-map-rail-echo.svg",
+      "source_binding_ids": [
+        "binding-module-right-map-rail-echo"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1124,
+          429
+        ],
+        "safe_stage_window_origin_px": [
+          1154,
+          510
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-home-plan-media-well",
+      "kind": "module",
+      "label": "home-plan media well",
+      "artifact_type": "glossy-blue-section-well",
+      "bounds": {
+        "x": 0.689,
+        "y": 0.046,
+        "w": 0.078,
+        "h": 0.057
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.699,
+          0.048
+        ],
+        [
+          0.755,
+          0.048
+        ],
+        [
+          0.768,
+          0.059
+        ],
+        [
+          0.766,
+          0.083
+        ],
+        [
+          0.746,
+          0.101
+        ],
+        [
+          0.708,
+          0.101
+        ],
+        [
+          0.69,
+          0.09
+        ],
+        [
+          0.692,
+          0.061
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/module-home-plan-media-well.svg",
+      "source_binding_ids": [
+        "binding-module-home-plan-media-well"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1118,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          1128,
+          80
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-cod-recipe-paper-scrap",
+      "kind": "module",
+      "label": "cod recipe paper scrap",
+      "artifact_type": "torn-paper-crossing",
+      "bounds": {
+        "x": 0.582,
+        "y": 0.623,
+        "w": 0.204,
+        "h": 0.214
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.608,
+          0.623
+        ],
+        [
+          0.701,
+          0.637
+        ],
+        [
+          0.774,
+          0.677
+        ],
+        [
+          0.788,
+          0.746
+        ],
+        [
+          0.753,
+          0.817
+        ],
+        [
+          0.664,
+          0.835
+        ],
+        [
+          0.591,
+          0.799
+        ],
+        [
+          0.578,
+          0.728
+        ],
+        [
+          0.596,
+          0.667
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/module-cod-recipe-paper-scrap.svg",
+      "source_binding_ids": [
+        "binding-module-cod-recipe-paper-scrap"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1051,
+          730
+        ],
+        "safe_stage_window_origin_px": [
+          1076,
+          748
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-jackpot-reel-wound",
+      "kind": "module",
+      "label": "jackpot reel wound",
+      "artifact_type": "gold-enamel-reel-cut",
+      "bounds": {
+        "x": 0.648,
+        "y": 0.367,
+        "w": 0.154,
+        "h": 0.115
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.662,
+          0.385
+        ],
+        [
+          0.703,
+          0.362
+        ],
+        [
+          0.763,
+          0.364
+        ],
+        [
+          0.798,
+          0.394
+        ],
+        [
+          0.798,
+          0.436
+        ],
+        [
+          0.767,
+          0.469
+        ],
+        [
+          0.7,
+          0.483
+        ],
+        [
+          0.649,
+          0.459
+        ],
+        [
+          0.635,
+          0.417
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/module-jackpot-reel-wound.svg",
+      "source_binding_ids": [
+        "binding-module-jackpot-reel-wound"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1114,
+          425
+        ],
+        "safe_stage_window_origin_px": [
+          1133,
+          435
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-boku-coin-aperture",
+      "kind": "module",
+      "label": "boku coin aperture",
+      "artifact_type": "coin-gold-side-aperture",
+      "bounds": {
+        "x": 0.173,
+        "y": 0.918,
+        "w": 0.053,
+        "h": 0.049
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.199,
+          0.918
+        ],
+        [
+          0.214,
+          0.922
+        ],
+        [
+          0.224,
+          0.935
+        ],
+        [
+          0.223,
+          0.951
+        ],
+        [
+          0.211,
+          0.963
+        ],
+        [
+          0.194,
+          0.966
+        ],
+        [
+          0.18,
+          0.958
+        ],
+        [
+          0.173,
+          0.944
+        ],
+        [
+          0.177,
+          0.929
+        ],
+        [
+          0.188,
+          0.92
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/module-boku-coin-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-boku-coin-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          306,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          313,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-recorded-skill-media-tile",
+      "kind": "module",
+      "label": "recorded-skill media tile",
+      "artifact_type": "muted-glass-plate-fragment",
+      "bounds": {
+        "x": 0.198,
+        "y": 0.441,
+        "w": 0.161,
+        "h": 0.106
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.209,
+          0.445
+        ],
+        [
+          0.335,
+          0.44
+        ],
+        [
+          0.356,
+          0.464
+        ],
+        [
+          0.353,
+          0.525
+        ],
+        [
+          0.33,
+          0.547
+        ],
+        [
+          0.218,
+          0.542
+        ],
+        [
+          0.195,
+          0.518
+        ],
+        [
+          0.195,
+          0.468
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/module-recorded-skill-media-tile.svg",
+      "source_binding_ids": [
+        "binding-module-recorded-skill-media-tile"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          428,
+          497
+        ],
+        "safe_stage_window_origin_px": [
+          448,
+          506
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-left-jackpot-reel-wound",
+      "kind": "module",
+      "label": "left jackpot reel wound",
+      "artifact_type": "red-gold-reel-cut",
+      "bounds": {
+        "x": 0.218,
+        "y": 0.322,
+        "w": 0.105,
+        "h": 0.061
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.226,
+          0.326
+        ],
+        [
+          0.309,
+          0.324
+        ],
+        [
+          0.323,
+          0.339
+        ],
+        [
+          0.32,
+          0.372
+        ],
+        [
+          0.303,
+          0.385
+        ],
+        [
+          0.231,
+          0.382
+        ],
+        [
+          0.216,
+          0.366
+        ],
+        [
+          0.216,
+          0.34
+        ]
+      ],
+      "cluster_id": "vertical-game-atlas-spine",
+      "mask_path": "/editions/2026-07-24-atlas-spine-jackpot-v1/assets/masks/module-left-jackpot-reel-wound.svg",
+      "source_binding_ids": [
+        "binding-module-left-jackpot-reel-wound"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          415,
+          356
+        ],
+        "safe_stage_window_origin_px": [
+          428,
+          361
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

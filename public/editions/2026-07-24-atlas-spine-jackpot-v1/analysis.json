@@ -1,0 +1,570 @@
+{
+  "analysis_id": "analysis-2026-07-24-atlas-spine-jackpot-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A tall expressionist sectional plate: two dark atlas-like rails flank a blown-out pale vertical spine. Small embedded chambers, coin lights, slot reels, blue media wells, paper/map scraps, and pixel notches sit as source windows along the cut faces.",
+  "usable_surfaces": [
+    "central pale atlas spine cut",
+    "left dark rail with laddered inner edge",
+    "right compressed rail with chamber pockets",
+    "blue glowing media wells",
+    "gold slot-reel wounds",
+    "coin-like side apertures",
+    "ragged pixel-map paper islands",
+    "small squared button notches"
+  ],
+  "detected_objects": [
+    {
+      "label": "VGMaps atlas spine cut",
+      "artifact_type": "hero-scale-vertical-atlas-spine",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.378,
+        "y": 0,
+        "w": 0.252,
+        "h": 0.995
+      },
+      "polygon": [
+        [
+          0.393,
+          0
+        ],
+        [
+          0.603,
+          0
+        ],
+        [
+          0.596,
+          0.108
+        ],
+        [
+          0.618,
+          0.196
+        ],
+        [
+          0.585,
+          0.31
+        ],
+        [
+          0.612,
+          0.44
+        ],
+        [
+          0.594,
+          0.57
+        ],
+        [
+          0.627,
+          0.716
+        ],
+        [
+          0.59,
+          0.878
+        ],
+        [
+          0.594,
+          0.995
+        ],
+        [
+          0.425,
+          0.995
+        ],
+        [
+          0.438,
+          0.872
+        ],
+        [
+          0.399,
+          0.748
+        ],
+        [
+          0.43,
+          0.616
+        ],
+        [
+          0.398,
+          0.498
+        ],
+        [
+          0.419,
+          0.354
+        ],
+        [
+          0.382,
+          0.205
+        ],
+        [
+          0.405,
+          0.077
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "The dominant pale vertical void/spine runs nearly full height through the center, with ragged pixel-map edges and small map flecks embedded along both sides."
+    },
+    {
+      "label": "left map rail slab",
+      "artifact_type": "hero-scale-dark-edge-rail",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.143,
+        "y": 0,
+        "w": 0.263,
+        "h": 0.996
+      },
+      "polygon": [
+        [
+          0.149,
+          0
+        ],
+        [
+          0.335,
+          0
+        ],
+        [
+          0.36,
+          0.092
+        ],
+        [
+          0.319,
+          0.176
+        ],
+        [
+          0.346,
+          0.288
+        ],
+        [
+          0.333,
+          0.405
+        ],
+        [
+          0.376,
+          0.528
+        ],
+        [
+          0.331,
+          0.653
+        ],
+        [
+          0.363,
+          0.766
+        ],
+        [
+          0.314,
+          0.878
+        ],
+        [
+          0.356,
+          0.996
+        ],
+        [
+          0.153,
+          0.996
+        ],
+        [
+          0.145,
+          0.81
+        ],
+        [
+          0.151,
+          0.626
+        ],
+        [
+          0.148,
+          0.43
+        ],
+        [
+          0.153,
+          0.21
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A towering black-brown left wall slab with stacked rooms, ladders, worn stone pixels, and a pale inner cut edge carries the map-rail structure."
+    },
+    {
+      "label": "right map rail echo",
+      "artifact_type": "compressed-map-rail",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.606,
+        "y": 0,
+        "w": 0.251,
+        "h": 0.997
+      },
+      "polygon": [
+        [
+          0.63,
+          0
+        ],
+        [
+          0.838,
+          0
+        ],
+        [
+          0.845,
+          0.195
+        ],
+        [
+          0.804,
+          0.292
+        ],
+        [
+          0.839,
+          0.418
+        ],
+        [
+          0.794,
+          0.535
+        ],
+        [
+          0.835,
+          0.672
+        ],
+        [
+          0.793,
+          0.794
+        ],
+        [
+          0.846,
+          0.997
+        ],
+        [
+          0.64,
+          0.997
+        ],
+        [
+          0.614,
+          0.823
+        ],
+        [
+          0.65,
+          0.706
+        ],
+        [
+          0.615,
+          0.565
+        ],
+        [
+          0.642,
+          0.439
+        ],
+        [
+          0.613,
+          0.296
+        ],
+        [
+          0.64,
+          0.142
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "The right rail is a darker compressed vertical sectional face, broken by chamber apertures and map-pixel edge tears against the bright central spine."
+    },
+    {
+      "label": "home-plan media well",
+      "artifact_type": "glossy-blue-section-well",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.689,
+        "y": 0.046,
+        "w": 0.078,
+        "h": 0.057
+      },
+      "polygon": [
+        [
+          0.699,
+          0.048
+        ],
+        [
+          0.755,
+          0.048
+        ],
+        [
+          0.768,
+          0.059
+        ],
+        [
+          0.766,
+          0.083
+        ],
+        [
+          0.746,
+          0.101
+        ],
+        [
+          0.708,
+          0.101
+        ],
+        [
+          0.69,
+          0.09
+        ],
+        [
+          0.692,
+          0.061
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A bright electric-blue chamber at the upper right contains a circular UI-like glow and glossy panel edges, reading as a bounded media well."
+    },
+    {
+      "label": "cod recipe paper scrap",
+      "artifact_type": "torn-paper-crossing",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.582,
+        "y": 0.623,
+        "w": 0.204,
+        "h": 0.214
+      },
+      "polygon": [
+        [
+          0.608,
+          0.623
+        ],
+        [
+          0.701,
+          0.637
+        ],
+        [
+          0.774,
+          0.677
+        ],
+        [
+          0.788,
+          0.746
+        ],
+        [
+          0.753,
+          0.817
+        ],
+        [
+          0.664,
+          0.835
+        ],
+        [
+          0.591,
+          0.799
+        ],
+        [
+          0.578,
+          0.728
+        ],
+        [
+          0.596,
+          0.667
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A ragged green-and-pale pixel map island crosses from the central void into the lower-right rail, with torn paper-like edges and small figurative flecks."
+    },
+    {
+      "label": "jackpot reel wound",
+      "artifact_type": "gold-enamel-reel-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.648,
+        "y": 0.367,
+        "w": 0.154,
+        "h": 0.115
+      },
+      "polygon": [
+        [
+          0.662,
+          0.385
+        ],
+        [
+          0.703,
+          0.362
+        ],
+        [
+          0.763,
+          0.364
+        ],
+        [
+          0.798,
+          0.394
+        ],
+        [
+          0.798,
+          0.436
+        ],
+        [
+          0.767,
+          0.469
+        ],
+        [
+          0.7,
+          0.483
+        ],
+        [
+          0.649,
+          0.459
+        ],
+        [
+          0.635,
+          0.417
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "A gold slot-machine wound on the right rail shows three bright reels, red side knobs, and a spill of coin-like gold pixels below it."
+    },
+    {
+      "label": "boku coin aperture",
+      "artifact_type": "coin-gold-side-aperture",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.173,
+        "y": 0.918,
+        "w": 0.053,
+        "h": 0.049
+      },
+      "polygon": [
+        [
+          0.199,
+          0.918
+        ],
+        [
+          0.214,
+          0.922
+        ],
+        [
+          0.224,
+          0.935
+        ],
+        [
+          0.223,
+          0.951
+        ],
+        [
+          0.211,
+          0.963
+        ],
+        [
+          0.194,
+          0.966
+        ],
+        [
+          0.18,
+          0.958
+        ],
+        [
+          0.173,
+          0.944
+        ],
+        [
+          0.177,
+          0.929
+        ],
+        [
+          0.188,
+          0.92
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A small circular gold coin-like aperture glows near the lower-left edge, with a medallion center and warm halo against black stone."
+    },
+    {
+      "label": "recorded-skill media tile",
+      "artifact_type": "muted-glass-plate-fragment",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.198,
+        "y": 0.441,
+        "w": 0.161,
+        "h": 0.106
+      },
+      "polygon": [
+        [
+          0.209,
+          0.445
+        ],
+        [
+          0.335,
+          0.44
+        ],
+        [
+          0.356,
+          0.464
+        ],
+        [
+          0.353,
+          0.525
+        ],
+        [
+          0.33,
+          0.547
+        ],
+        [
+          0.218,
+          0.542
+        ],
+        [
+          0.195,
+          0.518
+        ],
+        [
+          0.195,
+          0.468
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "A cool blue glassy screen fragment sits in the mid-left wall, bounded by stone steps and glowing horizontal blue bands."
+    },
+    {
+      "label": "left jackpot reel wound",
+      "artifact_type": "red-gold-reel-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.218,
+        "y": 0.322,
+        "w": 0.105,
+        "h": 0.061
+      },
+      "polygon": [
+        [
+          0.226,
+          0.326
+        ],
+        [
+          0.309,
+          0.324
+        ],
+        [
+          0.323,
+          0.339
+        ],
+        [
+          0.32,
+          0.372
+        ],
+        [
+          0.303,
+          0.385
+        ],
+        [
+          0.231,
+          0.382
+        ],
+        [
+          0.216,
+          0.366
+        ],
+        [
+          0.216,
+          0.34
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "A second slot-like cut on the left rail shows red enamel darkness around pale reel faces and small symbol marks."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.855,
+    "rationale": "The plate remains expressionist and source-window legible because the central spine and two rails dominate, but many small chambers, ladders, coin lights, and map flecks create a dense field that needs tight mapping rather than broad regions."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-07-24-atlas-spine-jackpot-v1"
+}

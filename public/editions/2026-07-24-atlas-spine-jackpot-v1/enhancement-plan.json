@@ -1,0 +1,240 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-24-atlas-spine-jackpot-v1",
+  "edition_id": "2026-07-24-atlas-spine-jackpot-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-24-atlas-spine-jackpot-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation",
+    "ghost-reflection-treatment",
+    "lens-inspection"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-vgmaps-atlas-spine-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-vgmaps-atlas-spine-cut",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-vertical-atlas-spine) selected from interpretation."
+    },
+    {
+      "target_id": "hero-left-map-rail-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-left-map-rail-slab",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-dark-edge-rail) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-map-rail-echo",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-map-rail-echo",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-map-rail) selected from interpretation."
+    },
+    {
+      "target_id": "module-home-plan-media-well",
+      "target_kind": "artifact",
+      "artifact_id": "module-home-plan-media-well",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-blue-section-well) selected from interpretation."
+    },
+    {
+      "target_id": "module-cod-recipe-paper-scrap",
+      "target_kind": "artifact",
+      "artifact_id": "module-cod-recipe-paper-scrap",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (torn-paper-crossing) selected from interpretation."
+    },
+    {
+      "target_id": "module-jackpot-reel-wound",
+      "target_kind": "artifact",
+      "artifact_id": "module-jackpot-reel-wound",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (gold-enamel-reel-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-boku-coin-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-boku-coin-aperture",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (coin-gold-side-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-recorded-skill-media-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-recorded-skill-media-tile",
+      "priority": 8,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (muted-glass-plate-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-left-jackpot-reel-wound",
+      "target_kind": "artifact",
+      "artifact_id": "module-left-jackpot-reel-wound",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (red-gold-reel-cut) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
