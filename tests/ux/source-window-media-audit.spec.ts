@@ -112,6 +112,7 @@ function sanitizePathPart(value: string) {
 function isKnownBadImageUrl(value: string | undefined) {
   if (!value) return false
   const lower = value.toLowerCase()
+  if (lower.includes('/assets/source-posters/')) return false
   return lower.includes('abs.twimg.com')
     || lower.includes('profile_images')
     || lower.includes('profile_pic')
