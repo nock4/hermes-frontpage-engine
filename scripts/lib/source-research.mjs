@@ -11,7 +11,7 @@ import {
 import { buildInspirationOverrideVisualReference } from './inspiration-override.mjs'
 import { openAiJson } from './openai-json.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
-import { writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
+import { isLowFertilitySourceFingerprint, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 import {
@@ -529,17 +529,38 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
 
   const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
-  const sourceImageArtifacts = await writeSourceImageArtifacts(runDir, imageSourceMaterial.selected_image_material)
-  const imageMaterialReference = imageSourceMaterial.selected_image_material[0]
+  let selectedImageMaterial = imageSourceMaterial.selected_image_material
+  let sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
+  const fertileIndex = sourceImageArtifacts.source_image_fingerprints.findIndex((fingerprint) => !isLowFertilitySourceFingerprint(fingerprint))
+  if (fertileIndex > 0) {
+    selectedImageMaterial = [
+      selectedImageMaterial[fertileIndex],
+      ...selectedImageMaterial.slice(0, fertileIndex),
+      ...selectedImageMaterial.slice(fertileIndex + 1),
+    ].filter(Boolean)
+    imageSourceMaterial = {
+      ...imageSourceMaterial,
+      selected_image_material: selectedImageMaterial,
+      low_fertility_anchor_demoted: {
+        demoted_title: sourceImageArtifacts.source_image_fingerprints[0]?.title || null,
+        promoted_title: sourceImageArtifacts.source_image_fingerprints[fertileIndex]?.title || null,
+        reason: 'Primary image material was a low-fertility text/wordmark/blank-field surface; promoted the first visually fertile source image for the plate seed.',
+      },
+    }
+    sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
+  }
+  const imageMaterialReference = selectedImageMaterial[0]
     ? {
-        url: imageSourceMaterial.selected_image_material[0].page_url || imageSourceMaterial.selected_image_material[0].image_url,
-        source_url: imageSourceMaterial.selected_image_material[0].page_url || imageSourceMaterial.selected_image_material[0].image_url,
-        final_url: imageSourceMaterial.selected_image_material[0].page_url || imageSourceMaterial.selected_image_material[0].image_url,
-        title: imageSourceMaterial.selected_image_material[0].title || imageSourceMaterial.selected_image_material[0].caption || 'Anchor image source material',
-        description: imageSourceMaterial.selected_image_material[0].visual_reason || '',
-        image_url: imageSourceMaterial.selected_image_material[0].image_url,
-        selection_reason: 'Top image source material discovered from single-anchor deep research.',
-        visual_reference_score: imageSourceMaterial.selected_image_material[0].score || null,
+        url: selectedImageMaterial[0].page_url || selectedImageMaterial[0].image_url,
+        source_url: selectedImageMaterial[0].page_url || selectedImageMaterial[0].image_url,
+        final_url: selectedImageMaterial[0].page_url || selectedImageMaterial[0].image_url,
+        title: selectedImageMaterial[0].title || selectedImageMaterial[0].caption || 'Anchor image source material',
+        description: selectedImageMaterial[0].visual_reason || '',
+        image_url: selectedImageMaterial[0].image_url,
+        selection_reason: imageSourceMaterial.low_fertility_anchor_demoted
+          ? `Promoted visually fertile image material after demoting low-fertility text/wordmark anchor: ${imageSourceMaterial.low_fertility_anchor_demoted.demoted_title || 'primary anchor image'}.`
+          : 'Top image source material discovered from single-anchor deep research.',
+        visual_reference_score: selectedImageMaterial[0].score || null,
       }
     : null
   const visualReference = inspirationOverride

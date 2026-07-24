@@ -188,6 +188,50 @@ describe('source image fidelity audit', () => {
     expect(audit.verdict).toBe('pass')
   })
 
+  it('blocks faithful but literal copies without edition transformation', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-overcopy-'))
+    const platePath = path.join(runDir, 'plate.png')
+    await writeFile(platePath, 'fake plate')
+
+    await expect(auditSourceImageFidelity(
+      {
+        payload: {
+          source_image_fingerprints: [{
+            title: 'Minimal wordmark cover',
+            image_url: 'https://assets.example/wordmark.jpg',
+            preserve_cues: ['blank field', 'single centered wordmark'],
+          }],
+        },
+        platePath,
+      },
+      runDir,
+      {
+        writeJson,
+        createContactSheetImpl: async ({ outputPath }) => {
+          await writeFile(outputPath, 'fake contact sheet')
+          return outputPath
+        },
+        openAiJsonImpl: async () => ({
+          verdict: 'pass',
+          resemblance_score: 1,
+          framing_score: 1,
+          object_relationship_score: 1,
+          context_score: 1,
+          transformation_score: 0.1,
+          retained_critical_elements: ['same quiet blank field', 'same centered wordmark'],
+          missing_critical_elements: [],
+          drift_risks: ['no added source-window apertures, cuts, seams, or edition-native transformation'],
+          rationale: 'The plate is a near-copy reproduction of the source: same quiet blank field and same wordmark, without visible transformed source-window marks.',
+        }),
+      },
+    )).rejects.toThrow(/Source-image fidelity QA failed/)
+
+    const audit = JSON.parse(await readFile(path.join(runDir, 'source-fidelity-audit.json'), 'utf8'))
+    expect(audit.pass).toBe(false)
+    expect(audit.blockers).toContain('transformation_score 0.1 < 0.35')
+    expect(audit.blockers).toContain('anchor copied without edition transformation')
+  })
+
   it('does not block a pass verdict for negated replacement language', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-negated-pass-'))
     const platePath = path.join(runDir, 'plate.png')

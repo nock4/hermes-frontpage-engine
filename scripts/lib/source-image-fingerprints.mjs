@@ -9,7 +9,7 @@ const literalCopyRule = 'Do not reproduce logos, legible text, identifiable subj
 const sourceImageVisionInstructions = `Inspect the source image for a Daily Frontpage plate. Return concrete visual facts, not vibes.
 Describe the exact composition identity the generated plate must preserve: subject/object placement, crop/framing, massing, dominant shapes, text/logo silhouettes as illegible masses, palette, light, surface/material, and distinctive marks.
 If the image is an album/package/editorial/poster cover, preserve the cover layout and portrait/figure/image masses as abstract shapes; readable text can become illegible marks, but the plate must not replace the image with unrelated macro texture or metaphor.
-Return concise JSON with keys: visual_summary string, preserve_cues array of 3-6 strings, palette_cues array, surface_cues array, composition_moves array.`
+Also judge whether the image is visually fertile enough to be the main plate seed. A near-empty text/wordmark/logo cover can be useful as a supporting cue, but is usually too sterile to anchor the whole edition.\nReturn concise JSON with keys: visual_summary string, preserve_cues array of 3-6 strings, palette_cues array, surface_cues array, composition_moves array, visual_fertility \"high|medium|low\", low_fertility_reason string.`
 
 function cleanText(value, fallback = '') {
   return sanitizeSourceText(value, fallback, 280)
@@ -80,6 +80,22 @@ function roleForIndex(index) {
   return 'supporting plate seed'
 }
 
+export function isLowFertilitySourceFingerprint(fingerprint = {}) {
+  const text = [
+    fingerprint.title,
+    fingerprint.visual_summary,
+    fingerprint.visual_reason,
+    ...(fingerprint.preserve_cues || []),
+    ...(fingerprint.composition_moves || []),
+    ...(fingerprint.surface_cues || []),
+    fingerprint.low_fertility_reason,
+  ].filter(Boolean).join(' ').toLowerCase()
+  if (fingerprint.visual_fertility === 'low') return true
+  const sparseTextSurface = /(wordmark|typographic|text mass|lowercase|logo|single centered|blank field|empty field|negative space|minimalist cover|near-white|off-white|white background)/.test(text)
+  const fertileImageSurface = /(figure|portrait|body|hand|object|room|landscape|architecture|street|painting|drawing|photo|photograph|collage|texture|pattern|installation|sculpture|scene|vehicle|animal|plant|fabric|artifact)/.test(text)
+  return sparseTextSurface && !fertileImageSurface
+}
+
 export function buildSourceImageFingerprints(selectedImageMaterial = [], { limit = 5 } = {}) {
   return (selectedImageMaterial || [])
     .filter((candidate) => candidate?.image_url)
@@ -139,6 +155,8 @@ async function visionFingerprint(candidate, fingerprint, analyzer = openAiJson) 
     palette_cues: arrayOfStrings(response.palette_cues, fingerprint.palette_cues).slice(0, 4),
     surface_cues: arrayOfStrings(response.surface_cues, fingerprint.surface_cues).slice(0, 4),
     composition_moves: arrayOfStrings(response.composition_moves, fingerprint.composition_moves).slice(0, 5),
+    visual_fertility: ['high', 'medium', 'low'].includes(String(response.visual_fertility || '').toLowerCase()) ? String(response.visual_fertility).toLowerCase() : null,
+    low_fertility_reason: cleanText(response.low_fertility_reason || '', ''),
   }
 }
 

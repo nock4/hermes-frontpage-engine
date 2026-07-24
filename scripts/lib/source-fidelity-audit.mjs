@@ -117,6 +117,7 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
     framing_score: normalizeNumber(raw?.framing_score, 0),
     object_relationship_score: normalizeNumber(raw?.object_relationship_score, 0),
     context_score: normalizeNumber(raw?.context_score, 0),
+    transformation_score: normalizeNumber(raw?.transformation_score, 1),
     retained_critical_elements: normalizeStringArray(raw?.retained_critical_elements),
     missing_critical_elements: normalizeStringArray(raw?.missing_critical_elements),
     drift_risks: normalizeStringArray(raw?.drift_risks),
@@ -129,6 +130,7 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   if (normalized.framing_score < 0.55) blockers.push(`framing_score ${normalized.framing_score} < 0.55`)
   if (normalized.object_relationship_score < 0.55) blockers.push(`object_relationship_score ${normalized.object_relationship_score} < 0.55`)
   if (normalized.context_score < 0.45 && normalized.missing_critical_elements.length >= 2) blockers.push('lost source context and multiple critical elements')
+  if (normalized.transformation_score < 0.35) blockers.push(`transformation_score ${normalized.transformation_score} < 0.35`)
   const auditText = [
     ...normalized.missing_critical_elements,
     ...normalized.drift_risks,
@@ -163,6 +165,10 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       label: 'invented replacement scene',
       pattern: /(invented|unrelated|replacement|metaphor).{0,100}(scene|city|skyline|horizon|figure|character|deep space|macro texture)|(?:city|skyline|horizon|figure|character|deep space|macro texture).{0,100}(not present|invented|unrelated|replacement)/,
     },
+    {
+      label: 'anchor copied without edition transformation',
+      pattern: /(copy|copied|near[- ]?copy|duplicate|reproduction|reproduces|direct transformed edition|same quiet blank field|same centered|same wordmark|same typographic).{0,140}(no added|without|only|same|close enough|publication)|(?:no added|without|only).{0,100}(source[- ]?window|aperture|cut|seam|interruption|edition[- ]?native|transformation)/,
+    },
   ]
   const blockerScopeText = normalized.verdict === 'pass'
     ? auditText
@@ -172,7 +178,6 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       .replace(/slight(?:ly)?[^.;]*[.;]?/g, ' ')
       .replace(/no [^.;]*(?:replacement|metaphor|scene|context loss|blocks publication)[^.;]*[.;]?/g, ' preserved ')
       .replace(/not replaced/g, 'preserved')
-      .replace(/direct transformed edition/g, 'preserved edition')
     : auditText
   for (const { label, pattern } of blockerWarningPatterns) {
     if (pattern.test(blockerScopeText) && !blockers.includes(label)) blockers.push(label)
@@ -235,6 +240,7 @@ export async function auditSourceImageFidelity(
       'This is not a generic style-similarity check. The generated plate may be painterly or abstracted, but it must keep the source framing, camera distance, major object positions, object/figure relationships, and spatial context when a source image is attached.',
       'Treat over-cropping, macro texture replacement, lost room/background context, or replacement with an unrelated metaphor scene as blockers.',
       'Treat warning-level language about source crop/framing drift, square-to-landscape drift, lost light/object relationships, framed-panel conversion, or same-palette-not-same-source as blockers; return fail for those cases, not warn.',
+      'Also block overcopying: if the generated plate is basically the source image again, especially a minimal graphic/wordmark/cover with the same blank field and same central mark but without visible edition-native cuts, seams, apertures, source-window marks, scale shifts, or material interventions, return fail. Fidelity is necessary but a copy is not an edition.',
       'A pass requires the right image to visibly read as a transformed edition of the left image, not merely share colors or one object.',
       'Be adversarial: if a human editor would say the source material looks nothing like the plate, return fail.',
     ],
@@ -248,6 +254,7 @@ export async function auditSourceImageFidelity(
       framing_score: 0.0,
       object_relationship_score: 0.0,
       context_score: 0.0,
+      transformation_score: 0.0,
       retained_critical_elements: ['short phrases'],
       missing_critical_elements: ['short phrases'],
       drift_risks: ['short phrases'],

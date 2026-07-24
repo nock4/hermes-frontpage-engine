@@ -244,7 +244,7 @@ export async function generateScenePlate(
     payload,
   }, null, 2)}\n`, 'utf8')
 
-  if (process.env.DFE_SOURCE_PRESERVE_PLATE === '1' && payload.source_image_fingerprints?.[0]?.image_url) {
+  if (process.env.DFE_SOURCE_PRESERVE_PLATE === '1' && process.env.DFE_DETERMINISTIC_SOURCE_PRESERVE_PLATE === '1' && payload.source_image_fingerprints?.[0]?.image_url) {
     await synthesizeSourcePreservingPlate(payload.source_image_fingerprints[0].image_url, outputPath, imageSize)
     await writeJson(path.join(runDir, 'scene-generation.json'), {
       backend: 'source-preserve-fallback',
@@ -785,10 +785,13 @@ export function buildSceneImagePrompt(payload) {
     ? compactText(platePosture.look_avoidance_directive, 155)
     : ''
   const sourceAspectGuard = /\bsquare\b/i.test(preserveText)
-    ? 'SOURCE-ASPECT LOCK: the output canvas is landscape, but the source is square. Keep the square source composition intact at full image height, then extend the same sky/cloud paint softly into the side margins. No visible frame, border, mat, wall, panel edge, beige surround, or object-in-space treatment. The source image must still feel like the whole surface: dark upper sky, pillowy central cloud, lower flares, and vertical shafts. Do not make the source itself panoramic, wide, or stretched.'
+    ? 'SOURCE-ASPECT LOCK: the output canvas may be landscape, but the source is square. Preserve the square source composition as the dominant full-height field or crop logic, then extend only source-specific color/material pressure into side margins. No visible frame, border, mat, wall, panel edge, beige surround, or object-in-space treatment. Do not make the source itself panoramic, wide, or stretched.'
+    : ''
+  const recoveryTransformGuard = process.env.DFE_SOURCE_PRESERVE_PLATE === '1'
+    ? 'RECOVERY TRANSFORM: the previous plate failed source-fidelity, but do not make a literal copy. Preserve framing and source grammar while adding visible edition-native transformation: cuts, seams, apertures, edge repairs, material interruptions, scale shifts, and source-window marks. If the anchor is a minimal text/wordmark/cover, demote the text to illegible massing and let richer supporting source imagery or material cuts carry the edition.'
     : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
-    ? `KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. ${sourceAspectGuard} Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, invent people/characters/city skylines/horizons/deep space not present in the source, or let posture/formal-risk override resemblance.`
+    ? `KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. ${sourceAspectGuard} ${recoveryTransformGuard} Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, invent people/characters/city skylines/horizons/deep space not present in the source, or let posture/formal-risk override resemblance. Do not simply reproduce the anchor image; a valid frontpage plate needs visible transformed source-window marks.`
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
@@ -802,6 +805,7 @@ export function buildSceneImagePrompt(payload) {
     'PRESERVE',
     compactText(preserveText, 520),
     sourceAspectGuard,
+    recoveryTransformGuard,
     graphicEditorialGuard,
     '',
     'TRANSFORM',

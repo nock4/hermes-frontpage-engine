@@ -114,8 +114,11 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('source subjects, object relationships')
     expect(prompt).not.toContain('no literal depiction of the source reference image')
     expect(prompt).toContain('not appear as cards, pasted thumbnails')
+    expect(prompt).not.toContain('sky/cloud')
+    expect(prompt).not.toContain('vertical shafts')
+    expect(prompt).toContain('Do not simply reproduce the anchor image')
     expect(prompt).not.toContain('Source image plate seeds:')
-    expect(prompt.length).toBeLessThan(1600)
+    expect(prompt.length).toBeLessThan(1850)
   })
 
   it('keeps graphic editorial source references as layout instead of metaphor', () => {
