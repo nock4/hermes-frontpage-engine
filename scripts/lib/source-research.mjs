@@ -11,7 +11,7 @@ import {
 import { buildInspirationOverrideVisualReference } from './inspiration-override.mjs'
 import { openAiJson } from './openai-json.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
-import { isLowFertilitySourceFingerprint, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
+import { isLowFertilitySourceFingerprint, isLowFertilitySourceImageCandidate, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 import {
@@ -530,6 +530,28 @@ export async function inspectSourceCandidates(signalHarvest, {
 
   const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
   let selectedImageMaterial = imageSourceMaterial.selected_image_material
+    .filter((candidate) => !isLowFertilitySourceImageCandidate(candidate))
+  if (!selectedImageMaterial.length && imageSourceMaterial.selected_image_material[0]) {
+    imageSourceMaterial = {
+      ...imageSourceMaterial,
+      selected_image_material: [],
+      low_fertility_anchor_demoted: {
+        demoted_title: imageSourceMaterial.selected_image_material[0]?.title || imageSourceMaterial.selected_image_material[0]?.caption || imageSourceMaterial.selected_image_material[0]?.image_url || null,
+        promoted_title: null,
+        reason: 'All selected image material was low-fertility UI chrome, buttons, ads, spacers, or blank page furniture; do not use it as dominant plate source material.',
+      },
+    }
+  } else if (selectedImageMaterial.length !== imageSourceMaterial.selected_image_material.length) {
+    imageSourceMaterial = {
+      ...imageSourceMaterial,
+      selected_image_material: selectedImageMaterial,
+      low_fertility_anchor_demoted: {
+        demoted_title: imageSourceMaterial.selected_image_material[0]?.title || imageSourceMaterial.selected_image_material[0]?.caption || imageSourceMaterial.selected_image_material[0]?.image_url || null,
+        promoted_title: selectedImageMaterial[0]?.title || selectedImageMaterial[0]?.caption || selectedImageMaterial[0]?.image_url || null,
+        reason: 'Filtered low-fertility UI chrome, buttons, ads, spacers, or blank page furniture out of dominant plate source material.',
+      },
+    }
+  }
   let sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
   const fertileIndex = sourceImageArtifacts.source_image_fingerprints.findIndex((fingerprint) => !isLowFertilitySourceFingerprint(fingerprint))
   if (fertileIndex > 0) {

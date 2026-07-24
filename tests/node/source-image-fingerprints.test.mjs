@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { buildSourceImageFingerprints, buildSourceImageContactSheetSvg, enrichSourceImageFingerprints, isLowFertilitySourceFingerprint } from '../../scripts/lib/source-image-fingerprints.mjs'
+import { buildSourceImageFingerprints, buildSourceImageContactSheetSvg, enrichSourceImageFingerprints, isLowFertilitySourceFingerprint, isLowFertilitySourceImageCandidate } from '../../scripts/lib/source-image-fingerprints.mjs'
 
 describe('source image fingerprints', () => {
   it('turns selected source images into plate-language fingerprints', () => {
@@ -80,6 +80,26 @@ describe('source image fingerprints', () => {
     expect(isLowFertilitySourceFingerprint({
       visual_summary: 'portrait photograph with hands, fabric, room, and diagonal crop',
       preserve_cues: ['figure mass', 'room background'],
+    })).toBe(false)
+  })
+
+  it('marks UI chrome, buttons, ads, and extreme spacers as low-fertility image candidates', () => {
+    expect(isLowFertilitySourceImageCandidate({
+      image_url: 'http://vgmaps.com/System/Main/Button-Forums.png',
+      width: 168,
+      height: 16,
+    })).toBe(true)
+    expect(isLowFertilitySourceImageCandidate({
+      image_url: 'http://vgmaps.com/System/AffiliateButtons/Laatukasinot.com.png',
+      title: 'Kasinot ilman Kirjautumista',
+      width: 728,
+      height: 90,
+    })).toBe(true)
+    expect(isLowFertilitySourceImageCandidate({
+      image_url: 'https://assets.example/game-map.png',
+      title: 'large hand-drawn game map',
+      width: 1024,
+      height: 768,
     })).toBe(false)
   })
 

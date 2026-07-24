@@ -81,6 +81,12 @@ function roleForIndex(index) {
 }
 
 export function isLowFertilitySourceFingerprint(fingerprint = {}) {
+  const url = String(fingerprint.image_url || '').toLowerCase()
+  const width = Number(fingerprint.width || 0)
+  const height = Number(fingerprint.height || 0)
+  if (/\/(button-|header-|spacer|affiliatebuttons?)|casino|adspace|1x1/.test(url)) return true
+  if ((width && width < 48) || (height && height < 40)) return true
+  if (width && height && Math.max(width / height, height / width) > 8) return true
   const text = [
     fingerprint.title,
     fingerprint.visual_summary,
@@ -96,6 +102,17 @@ export function isLowFertilitySourceFingerprint(fingerprint = {}) {
   return sparseTextSurface && !fertileImageSurface
 }
 
+export function isLowFertilitySourceImageCandidate(candidate = {}) {
+  const url = String(candidate.image_url || '').toLowerCase()
+  const text = [candidate.title, candidate.caption, candidate.visual_reason, candidate.lineage, url].filter(Boolean).join(' ').toLowerCase()
+  const width = Number(candidate.width || 0)
+  const height = Number(candidate.height || 0)
+  if (/\/(button-|header-|spacer|affiliatebuttons?)|casino|adspace|1x1|pixel\.png|favicon|logo|avatar|placeholder/.test(text)) return true
+  if ((width && width < 48) || (height && height < 40)) return true
+  if (width && height && Math.max(width / height, height / width) > 8) return true
+  return false
+}
+
 export function buildSourceImageFingerprints(selectedImageMaterial = [], { limit = 5 } = {}) {
   return (selectedImageMaterial || [])
     .filter((candidate) => candidate?.image_url)
@@ -107,6 +124,8 @@ export function buildSourceImageFingerprints(selectedImageMaterial = [], { limit
         image_url: candidate.image_url,
         page_url: candidate.page_url || null,
         lineage: candidate.lineage || null,
+        width: candidate.width || null,
+        height: candidate.height || null,
         source_role: roleForIndex(index),
         visual_reason: cleanText(candidate.visual_reason || candidate.caption || '', ''),
         palette_cues: paletteCues(text).slice(0, 3),
