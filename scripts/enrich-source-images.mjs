@@ -50,6 +50,12 @@ const isLowValuePreviewImage = (imageUrl) => {
     || /(?:^|[/_\-.])icon(?:[/_\-.]|$)/.test(lower)
 }
 
+const isLowValueBindingPreview = (binding) => {
+  const text = `${binding?.title || ''} ${binding?.source_title || ''} ${binding?.source_summary || ''} ${binding?.excerpt || ''} ${binding?.source_image_alt || ''} ${binding?.source_image_url || ''}`.toLowerCase()
+  return /\bportfolio\b/.test(text)
+    && /(skip to content|cart \(0\)|header-logo|parkerparrella|untitled_artwork%281%29|wordmark|logo)/.test(text)
+}
+
 const isWebLikeBinding = (binding) => {
   if (!binding?.source_url) return false
   return binding.window_type === 'web' || binding.source_type === 'article' || binding.source_type === 'web' || binding.source_type === 'concept-note'
@@ -149,6 +155,8 @@ const extractMetaImage = (html, pageUrl) => {
 const extractFirstImage = (html, pageUrl) => {
   const imagePattern = /<img[^>]+src=["']([^"']+)["'][^>]*>/gi
   for (const match of html.matchAll(imagePattern)) {
+    const tag = match[0].toLowerCase()
+    if (/logo|wordmark|header-logo|site-title|avatar/.test(tag)) continue
     const absolute = toAbsoluteUrl(match[1], pageUrl)
     if (!absolute) continue
     if (absolute.startsWith('data:')) continue
@@ -270,6 +278,7 @@ const getBandcampPreview = async (sourceUrl) => {
 const shouldRefreshSourceImage = async (binding) => {
   const currentImage = binding?.source_image_url?.trim()
   if (!currentImage) return true
+  if (isLowValueBindingPreview(binding)) return true
   if (isLowValuePreviewImage(currentImage)) return true
   if (currentImage.includes('/assets/source-previews/') && /(?:-page\.png|page\.png)$/i.test(currentImage)) return true
   if (!await isLoadablePreviewImage(currentImage)) return true
@@ -279,6 +288,7 @@ const shouldRefreshSourceImage = async (binding) => {
 const shouldClearSourceImage = async (binding) => {
   const currentImage = binding?.source_image_url?.trim()
   if (!currentImage) return false
+  if (isLowValueBindingPreview(binding)) return true
   if (isLowValuePreviewImage(currentImage)) return true
   if (currentImage.includes('/assets/source-previews/') && /(?:-page\.png|page\.png)$/i.test(currentImage)) return true
   if (!await isLoadablePreviewImage(currentImage)) return true

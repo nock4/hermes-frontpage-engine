@@ -83,13 +83,43 @@ export async function runFromScratchMode({
     {
       name: 'Audit source-image fidelity before mapping',
       tool: 'Vision source/plate adversarial QA',
-      command: 'compare attached source material against generated plate',
-      run: () => auditSourceImageFidelity({
-        payload: context.payload,
-        platePath: context.plate.outputPath,
-        apiKey,
-        model: options.model,
-      }, runDir),
+      command: 'compare attached source material against generated plate; recover once with source-preserving plate if blocked',
+      run: async () => {
+        try {
+          return await auditSourceImageFidelity({
+            payload: context.payload,
+            platePath: context.plate.outputPath,
+            apiKey,
+            model: options.model,
+          }, runDir)
+        } catch (error) {
+          const hasSourceImage = Array.isArray(context.payload?.source_image_fingerprints)
+            && context.payload.source_image_fingerprints.some((fingerprint) => fingerprint?.image_url)
+          if (!hasSourceImage || process.env.DFE_SOURCE_FIDELITY_AUTO_RECOVERY === '0') throw error
+          console.warn(`[source-fidelity] ${error.message}; regenerating once with source-preserving recovery plate`)
+          const previousRecoveryFlag = process.env.DFE_SOURCE_PRESERVE_PLATE
+          process.env.DFE_SOURCE_PRESERVE_PLATE = '1'
+          try {
+            context.plate = await generateScenePlate({
+              payload: context.payload,
+              apiKey,
+              imageModel: options.imageModel,
+              imageBackend: options.imageBackend,
+              imageSize: options.imageSize,
+              imageQuality: options.imageQuality,
+            }, runDir)
+          } finally {
+            if (previousRecoveryFlag === undefined) delete process.env.DFE_SOURCE_PRESERVE_PLATE
+            else process.env.DFE_SOURCE_PRESERVE_PLATE = previousRecoveryFlag
+          }
+          return auditSourceImageFidelity({
+            payload: context.payload,
+            platePath: context.plate.outputPath,
+            apiKey,
+            model: options.model,
+          }, runDir)
+        }
+      },
     },
     createMapArtifactsStep({ apiKey, context, inspectGeneratedPlate, options, root, runDir }),
     createAssembleEditionStep({

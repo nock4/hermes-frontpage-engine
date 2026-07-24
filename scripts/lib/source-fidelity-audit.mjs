@@ -134,17 +134,48 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
     ...normalized.drift_risks,
     normalized.rationale,
   ].join(' ').toLowerCase()
-  if (/square/.test(auditText) && /(wide|wider|panoramic|landscape|aspect|framing|crop)/.test(auditText) && normalized.framing_score < 0.75) {
-    blockers.push(`square source framing drift: framing_score ${normalized.framing_score} < 0.75`)
+  const blockerWarningPatterns = [
+    {
+      label: 'source crop/framing drift',
+      pattern: /(crop|framing|camera distance|edge proportion|full[- ]?frame).{0,80}(not preserved|lost|missing|changed|drift|wide|wider|panoramic|landscape|stretched|cropped)|(?:wide|wider|panoramic|landscape|stretched|cropped).{0,80}(crop|framing|source|full[- ]?frame)/,
+    },
+    {
+      label: 'square source composition drift',
+      pattern: /square.{0,120}(not preserved|wide|wider|panoramic|landscape|aspect|framing|crop|stretched|changed|lost)|(?:wide|wider|panoramic|landscape|stretched).{0,80}square/,
+    },
+    {
+      label: 'major source relationship lost',
+      pattern: /(major object|object relationship|figure relationship|spatial relationship|source structure|composition|layout|massing).{0,100}(missing|lost|absent|reduced|weakened|flattened|shifted|changed|not preserved)/,
+    },
+    {
+      label: 'defining light structure lost',
+      pattern: /(vertical light shafts?|vertical shafts?|light columns?|flare spines?|starbursts?|glint lines?|flare nodes?|horizontal beam).{0,100}(missing|lost|absent|reduced|weakened|flattened|shifted|changed|not preserved)/,
+    },
+    {
+      label: 'source generalized into ambience',
+      pattern: /(same palette|shared palette|related palette|related style|similar color|reads as related|ambience|atmosphere|texture).{0,120}(not the same|not same source|rather than|instead of|loses|lost|missing|fails)/,
+    },
+    {
+      label: 'source turned into framed panel/object',
+      pattern: /(borderless|no-border|fills? the whole plate|whole plate|cover framing|image-led surface|source surface).{0,120}(frame|framed|panel|perimeter|surround|mat|border|wall|object in space)|(?:frame|framed|panel|perimeter|surround|mat|border|wall|object in space).{0,120}(borderless|source surface|whole plate)/,
+    },
+    {
+      label: 'invented replacement scene',
+      pattern: /(invented|unrelated|replacement|metaphor).{0,100}(scene|city|skyline|horizon|figure|character|deep space|macro texture)|(?:city|skyline|horizon|figure|character|deep space|macro texture).{0,100}(not present|invented|unrelated|replacement)/,
+    },
+  ]
+  const blockerScopeText = normalized.verdict === 'pass'
+    ? auditText
+      .replace(/minor[^.;]*[.;]?/g, ' ')
+      .replace(/slight(?:ly)?[^.;]*[.;]?/g, ' ')
+      .replace(/not replaced/g, 'preserved')
+      .replace(/direct transformed edition/g, 'preserved edition')
+    : auditText
+  for (const { label, pattern } of blockerWarningPatterns) {
+    if (pattern.test(blockerScopeText) && !blockers.includes(label)) blockers.push(label)
   }
-  if (/(vertical light shafts?|vertical flare|light columns?|flare spines?)/.test(auditText) && /(missing|lost|absent|reduced|weakened)/.test(auditText) && normalized.object_relationship_score < 0.9) {
-    blockers.push(`source light-shaft relationship weakened: object_relationship_score ${normalized.object_relationship_score} < 0.9`)
-  }
-  if (/square crop (?:is )?not preserved/.test(auditText) || /source-like square framing/.test(auditText)) {
-    blockers.push('square source crop not preserved')
-  }
-  if (/(borderless|no-border|fills? the whole plate|whole plate|cover framing|image-led surface)/.test(auditText) && /(frame|framed|panel|perimeter|surround|mat|border|wall|object in space)/.test(auditText)) {
-    blockers.push('source turned into framed panel/object instead of preserved image surface')
+  if (normalized.verdict === 'warn' && normalized.missing_critical_elements.length >= 2) {
+    blockers.push('warning lists multiple missing critical source elements')
   }
   return {
     ...normalized,
@@ -200,6 +231,7 @@ export async function auditSourceImageFidelity(
     rules: [
       'This is not a generic style-similarity check. The generated plate may be painterly or abstracted, but it must keep the source framing, camera distance, major object positions, object/figure relationships, and spatial context when a source image is attached.',
       'Treat over-cropping, macro texture replacement, lost room/background context, or replacement with an unrelated metaphor scene as blockers.',
+      'Treat warning-level language about source crop/framing drift, square-to-landscape drift, lost light/object relationships, framed-panel conversion, or same-palette-not-same-source as blockers; return fail for those cases, not warn.',
       'A pass requires the right image to visibly read as a transformed edition of the left image, not merely share colors or one object.',
       'Be adversarial: if a human editor would say the source material looks nothing like the plate, return fail.',
     ],
