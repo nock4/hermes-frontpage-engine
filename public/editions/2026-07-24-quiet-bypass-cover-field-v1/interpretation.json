@@ -1,49 +1,49 @@
 {
-  "interpretation_id": "interp-2026-07-24-offwhite-route-failure-v1",
-  "edition_id": "2026-07-24-offwhite-route-failure-v1",
-  "plate_read_timestamp": "2026-07-24T16:14:55.639Z",
+  "interpretation_id": "interp-2026-07-24-quiet-bypass-cover-field-v1",
+  "edition_id": "2026-07-24-quiet-bypass-cover-field-v1",
+  "plate_read_timestamp": "2026-07-24T18:04:59.218Z",
   "scene_ontology": {
     "primary": "material-native",
     "secondary": [],
     "confidence": 0.9
   },
   "world_read": {
-    "summary": "A stark white square plate with one centered black typographic mark reading “verse talks.” The only visible source-bearing surfaces are the two word masses and their distinct letter gestures; the planned pigment apertures, side tear, orbit tile, pinhole, seam, ochre scrape, notch, and archive marks are not visibly present.",
+    "summary": "A near-empty pale plate with a single central black typographic mark reading “verse talks”; no seams, slits, stains, glints, pinholes, repairs, side apertures, or edge nicks are visible beyond the glyph surface itself.",
     "dominant_spatial_mode": "flat-field",
     "density": "dense",
     "legibility": "selective",
     "mood": [
-      "blank cover, broken route",
-      "A stark white square plate with one centered black typographic mark reading “verse talks.” The only visible source-bearing surfaces are the two word masses and their distinct letter gestures; the planned pigment apertures, side tear, orbit tile, pinhole, seam, ochre scrape, notch, and archive marks are not visibly present.",
-      "offwhite-field",
-      "broken-wordmark",
-      "archive-apertures"
+      "a blank cover becoming a sparse procession of independent source marks",
+      "A near-empty pale plate with a single central black typographic mark reading “verse talks”; no seams, slits, stains, glints, pinholes, repairs, side apertures, or edge nicks are visible beyond the glyph surface itself.",
+      "pale-field",
+      "black-glyph-mark",
+      "edge-apertures"
     ]
   },
   "visual_ecology": {
     "dominant_objects": [
-      "primary black word-mass rupture",
-      "left verse word surface",
-      "right talks italic surface",
-      "bad-hand loading slash",
-      "italic k angled joint",
-      "thin playback notch",
-      "questioning ochre scrape",
-      "museum-index pinhole"
+      "Memory Prism Catalogue central verse glyph cluster",
+      "Memory Prism Catalogue italic talks glyph cluster",
+      "italic k fork stroke",
+      "pure image side slit",
+      "Source Pathway Plaque",
+      "Preference Specimen Tray",
+      "fishing line notch",
+      "coffee dark pinhole"
     ],
     "dominant_surfaces": [
       "paper",
       "paint"
     ],
     "dominant_structures": [
-      "offwhite-ruptured-wordmark-field",
-      "dominant pale square field with empty corners",
-      "small two-part black mark below centerline",
-      "vertical archive-edge band of rose, terracotta, ochre, and navy planes",
-      "orbiting cutaway tile pulling marks off-axis",
-      "fringe-like seam strokes along a dark curved overlap",
-      "isolated folded notches and pigment apertures as source-bearing plates",
-      "centered black wordmark on white field"
+      "quiet-bypass-cover-field",
+      "one compact central black glyph procession",
+      "one oversized uninterrupted pale field",
+      "margin-bound apertures and edge notches",
+      "faint vertical underpaint bands",
+      "tiny metallic and coffee-dark interruptions",
+      "large blank pale field",
+      "central black glyph cluster"
     ],
     "negative_space_regions": []
   },
@@ -58,36 +58,20 @@
       "cabinet-drawer-behavior"
     ],
     "reasoning": [
-      "Primary ontology inferred from scene family and artifact types: offwhite-ruptured-wordmark-field.",
+      "Primary ontology inferred from scene family and artifact types: quiet-bypass-cover-field.",
       "Artifact vocabulary suggests material-native interaction logic."
     ]
   },
   "artifact_candidates": [
     {
-      "id": "hero-primary-black-word-mass-rupture",
+      "id": "hero-memory-prism-catalogue-central-verse",
       "kind": "hero",
-      "type": "centered-readable-wordmark-mass",
-      "strength": 0.95,
+      "type": "black-typographic-glyph-aperture",
+      "strength": 0.99,
       "bounds": {
-        "x": 0.286,
-        "y": 0.469,
-        "w": 0.426,
-        "h": 0.064
-      },
-      "supports": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "hero-left-verse-word-surface",
-      "kind": "hero",
-      "type": "regular-black-word-surface",
-      "strength": 0.9199999999999999,
-      "bounds": {
-        "x": 0.3301,
+        "x": 0.2832,
         "y": 0.4834,
-        "w": 0.167,
+        "w": 0.2139,
         "h": 0.0488
       },
       "supports": [
@@ -96,10 +80,10 @@
       ]
     },
     {
-      "id": "module-right-talks-italic-surface",
-      "kind": "module",
-      "type": "italic-black-word-surface",
-      "strength": 0.72,
+      "id": "hero-memory-prism-catalogue-italic-talks-",
+      "kind": "hero",
+      "type": "italic-black-glyph-aperture",
+      "strength": 0.9860119999999999,
       "bounds": {
         "x": 0.5166,
         "y": 0.4658,
@@ -112,15 +96,15 @@
       ]
     },
     {
-      "id": "module-bad-hand-loading-slash",
+      "id": "module-italic-k-fork-stroke",
       "kind": "module",
-      "type": "slanted-black-letter-stroke",
-      "strength": 0.6900000000000001,
+      "type": "forked-slanted-letter-mark",
+      "strength": 0.786,
       "bounds": {
-        "x": 0.516,
-        "y": 0.475,
-        "w": 0.044,
-        "h": 0.052
+        "x": 0.643,
+        "y": 0.469,
+        "w": 0.041,
+        "h": 0.06
       },
       "supports": [
         "threshold-scan-reveal",
@@ -128,15 +112,15 @@
       ]
     },
     {
-      "id": "module-italic-k-angled-joint",
+      "id": "module-pure-image-side-slit",
       "kind": "module",
-      "type": "black-angled-letter-joint",
-      "strength": 0.66,
+      "type": "thin-media-slit",
+      "strength": 0.761148,
       "bounds": {
-        "x": 0.642,
-        "y": 0.47,
-        "w": 0.047,
-        "h": 0.058
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
       },
       "supports": [
         "threshold-scan-reveal",
@@ -144,10 +128,26 @@
       ]
     },
     {
-      "id": "module-thin-playback-notch",
+      "id": "module-source-pathway-plaque",
       "kind": "module",
-      "type": "folded-paper-playback-notch",
-      "strength": 0.63,
+      "type": "muted-square-cover-impression",
+      "strength": 0.730452,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-preference-specimen-tray",
+      "kind": "module",
+      "type": "warm-crumb-pinhole",
+      "strength": 0.699552,
       "bounds": {
         "x": 0.1,
         "y": 0.78,
@@ -155,15 +155,15 @@
         "h": 0.16
       },
       "supports": [
-        "paint-bleed-reveal",
-        "pigment-crack-annotation"
+        "threshold-scan-reveal",
+        "restoration-scan"
       ]
     },
     {
-      "id": "module-questioning-ochre-scrape",
+      "id": "module-fishing-line-notch",
       "kind": "module",
-      "type": "ochre-pigment-scrape",
-      "strength": 0.6000000000000001,
+      "type": "hairline-hook-notch",
+      "strength": 0.6680280000000001,
       "bounds": {
         "x": 0.42,
         "y": 0.78,
@@ -176,10 +176,10 @@
       ]
     },
     {
-      "id": "module-museum-index-pinhole",
+      "id": "module-coffee-dark-pinhole",
       "kind": "module",
-      "type": "small-pale-index-pinhole",
-      "strength": 0.58,
+      "type": "coffee-stain-pinhole",
+      "strength": 0.6496959999999999,
       "bounds": {
         "x": 0.72,
         "y": 0.76,
@@ -192,10 +192,10 @@
       ]
     },
     {
-      "id": "module-bad-hand-loading-slash-2",
+      "id": "module-puppy-love-soft-corner-nick",
       "kind": "module",
-      "type": "slanted-black-loading-slash",
-      "strength": 0.58,
+      "type": "soft-corner-nick",
+      "strength": 0.65596,
       "bounds": {
         "x": 0.28,
         "y": 0.34,
@@ -203,7 +203,7 @@
         "h": 0.15
       },
       "supports": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     }
@@ -211,29 +211,13 @@
   "field_candidates": [],
   "html_surfaces": [
     {
-      "id": "hero-primary-black-word-mass-rupture-surface",
+      "id": "hero-memory-prism-catalogue-central-verse-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.286,
-        "y": 0.469,
-        "w": 0.426,
-        "h": 0.064
-      },
-      "suitability": 0.9,
-      "supported_treatments": [
-        "threshold-scan-reveal",
-        "restoration-scan"
-      ]
-    },
-    {
-      "id": "hero-left-verse-word-surface-surface",
-      "surface_type": "paint",
-      "host": "artifact",
-      "bounds": {
-        "x": 0.3301,
+        "x": 0.2832,
         "y": 0.4834,
-        "w": 0.167,
+        "w": 0.2139,
         "h": 0.0488
       },
       "suitability": 0.9,
@@ -243,7 +227,7 @@
       ]
     },
     {
-      "id": "module-right-talks-italic-surface-surface",
+      "id": "hero-memory-prism-catalogue-italic-talks--surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -252,21 +236,21 @@
         "w": 0.1982,
         "h": 0.0674
       },
-      "suitability": 0.76,
+      "suitability": 0.9,
       "supported_treatments": [
         "threshold-scan-reveal",
         "restoration-scan"
       ]
     },
     {
-      "id": "module-bad-hand-loading-slash-surface",
+      "id": "module-italic-k-fork-stroke-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.516,
-        "y": 0.475,
-        "w": 0.044,
-        "h": 0.052
+        "x": 0.643,
+        "y": 0.469,
+        "w": 0.041,
+        "h": 0.06
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -275,14 +259,14 @@
       ]
     },
     {
-      "id": "module-italic-k-angled-joint-surface",
+      "id": "module-pure-image-side-slit-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
-        "x": 0.642,
-        "y": 0.47,
-        "w": 0.047,
-        "h": 0.058
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
       },
       "suitability": 0.76,
       "supported_treatments": [
@@ -291,8 +275,24 @@
       ]
     },
     {
-      "id": "module-thin-playback-notch-surface",
-      "surface_type": "paper",
+      "id": "module-source-pathway-plaque-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-preference-specimen-tray-surface",
+      "surface_type": "paint",
       "host": "artifact",
       "bounds": {
         "x": 0.1,
@@ -302,13 +302,13 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "paint-bleed-reveal",
-        "pigment-crack-annotation"
+        "threshold-scan-reveal",
+        "restoration-scan"
       ]
     },
     {
-      "id": "module-questioning-ochre-scrape-surface",
-      "surface_type": "paint",
+      "id": "module-fishing-line-notch-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
         "x": 0.42,
@@ -323,7 +323,7 @@
       ]
     },
     {
-      "id": "module-museum-index-pinhole-surface",
+      "id": "module-coffee-dark-pinhole-surface",
       "surface_type": "paint",
       "host": "artifact",
       "bounds": {
@@ -339,8 +339,8 @@
       ]
     },
     {
-      "id": "module-bad-hand-loading-slash-2-surface",
-      "surface_type": "paint",
+      "id": "module-puppy-love-soft-corner-nick-surface",
+      "surface_type": "unknown",
       "host": "artifact",
       "bounds": {
         "x": 0.28,
@@ -350,7 +350,7 @@
       },
       "suitability": 0.76,
       "supported_treatments": [
-        "threshold-scan-reveal",
+        "paint-bleed-reveal",
         "restoration-scan"
       ]
     }
