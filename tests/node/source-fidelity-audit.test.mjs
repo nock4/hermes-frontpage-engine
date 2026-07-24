@@ -221,8 +221,8 @@ describe('source image fidelity audit', () => {
           context_score: 1,
           retained_critical_elements: ['uninterrupted pale negative space', 'single centered horizontal wordmark'],
           missing_critical_elements: [],
-          drift_risks: ['contact sheet display is landscape, but the plate content still reads as a square minimal source transformation'],
-          rationale: 'The generated plate visibly reads as the same source. No metaphor scene, texture replacement, poster decoration, or context loss blocks publication.',
+          drift_risks: ['contact sheet panel is landscape, but generated composition itself preserves the square-minimal source logic'],
+          rationale: 'The generated plate reads as the same typographic island in the same empty field. It preserves the source framing logic, camera distance, centered placement, and dominant negative space rather than replacing the source with texture or metaphor.',
         }),
       },
     )
