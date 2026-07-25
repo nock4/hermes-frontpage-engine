@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-25-sister-card-field-v1",
+  "edition_id": "2026-07-25-sister-card-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-25-sister-card-field-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-paper-edge-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-paper-edge-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curled-paper-border-cut) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-floral-corner-pressure",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-floral-corner-pressure",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-botanical-ink-corner) selected from interpretation."
+    },
+    {
+      "target_id": "module-coral-wreath-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-coral-wreath-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-botanical-border-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-special-card-repair-tear",
+      "target_kind": "artifact",
+      "artifact_id": "module-special-card-repair-tear",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (raspberry-paper-repair) selected from interpretation."
+    },
+    {
+      "target_id": "module-template-index-pinholes",
+      "target_kind": "artifact",
+      "artifact_id": "module-template-index-pinholes",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (clustered-ground-pinholes) selected from interpretation."
+    },
+    {
+      "target_id": "module-atlas-vine-interruption",
+      "target_kind": "artifact",
+      "artifact_id": "module-atlas-vine-interruption",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (maplike-vine-band-break) selected from interpretation."
+    },
+    {
+      "target_id": "module-tier-slice-candle-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-tier-slice-candle-glint",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-candle-flame-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-bottom-dense-graphite-constellation",
+      "target_kind": "artifact",
+      "artifact_id": "module-bottom-dense-graphite-constellation",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (clustered-charcoal-ground-flecks) selected from interpretation."
+    },
+    {
+      "target_id": "module-tier-slice-candle-glint-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-tier-slice-candle-glint-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-candle-flame-glint) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

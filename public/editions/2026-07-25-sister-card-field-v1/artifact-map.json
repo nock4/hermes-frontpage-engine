@@ -1,0 +1,567 @@
+{
+  "artifact_map_id": "map-2026-07-25-sister-card-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "scanned-sister-card-field",
+  "default_artifact_id": "hero-hero-paper-edge-aperture",
+  "artifacts": [
+    {
+      "id": "hero-hero-paper-edge-aperture",
+      "kind": "hero",
+      "label": "hero paper-edge aperture",
+      "artifact_type": "curled-paper-border-cut",
+      "bounds": {
+        "x": 0.767,
+        "y": 0.062,
+        "w": 0.19,
+        "h": 0.22
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.768,
+          0.063
+        ],
+        [
+          0.819,
+          0.083
+        ],
+        [
+          0.862,
+          0.117
+        ],
+        [
+          0.918,
+          0.175
+        ],
+        [
+          0.954,
+          0.229
+        ],
+        [
+          0.907,
+          0.218
+        ],
+        [
+          0.847,
+          0.185
+        ],
+        [
+          0.804,
+          0.14
+        ],
+        [
+          0.772,
+          0.095
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/hero-hero-paper-edge-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-paper-edge-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          158
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          176
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-hero-floral-corner-pressure",
+      "kind": "hero",
+      "label": "hero floral corner pressure",
+      "artifact_type": "cropped-botanical-ink-corner",
+      "bounds": {
+        "x": 0.063,
+        "y": 0.787,
+        "w": 0.062,
+        "h": 0.133
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.075,
+          0.79
+        ],
+        [
+          0.099,
+          0.806
+        ],
+        [
+          0.116,
+          0.843
+        ],
+        [
+          0.124,
+          0.886
+        ],
+        [
+          0.117,
+          0.916
+        ],
+        [
+          0.088,
+          0.921
+        ],
+        [
+          0.069,
+          0.892
+        ],
+        [
+          0.064,
+          0.848
+        ],
+        [
+          0.067,
+          0.812
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/hero-hero-floral-corner-pressure.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-floral-corner-pressure"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          144,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          152,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-coral-wreath-seam",
+      "kind": "module",
+      "label": "coral wreath seam",
+      "artifact_type": "thin-botanical-border-seam",
+      "bounds": {
+        "x": 0.062,
+        "y": 0.396,
+        "w": 0.798,
+        "h": 0.109
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.062,
+          0.396
+        ],
+        [
+          0.86,
+          0.396
+        ],
+        [
+          0.86,
+          0.505
+        ],
+        [
+          0.062,
+          0.505
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/module-coral-wreath-seam.svg",
+      "source_binding_ids": [
+        "binding-module-coral-wreath-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          708,
+          452
+        ],
+        "safe_stage_window_origin_px": [
+          806,
+          461
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-special-card-repair-tear",
+      "kind": "module",
+      "label": "special-card repair tear",
+      "artifact_type": "raspberry-paper-repair",
+      "bounds": {
+        "x": 0.126,
+        "y": 0.222,
+        "w": 0.054,
+        "h": 0.099
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.13,
+          0.229
+        ],
+        [
+          0.157,
+          0.224
+        ],
+        [
+          0.177,
+          0.253
+        ],
+        [
+          0.18,
+          0.286
+        ],
+        [
+          0.166,
+          0.319
+        ],
+        [
+          0.138,
+          0.304
+        ],
+        [
+          0.125,
+          0.27
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/module-special-card-repair-tear.svg",
+      "source_binding_ids": [
+        "binding-module-special-card-repair-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          235,
+          270
+        ],
+        "safe_stage_window_origin_px": [
+          242,
+          278
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-template-index-pinholes",
+      "kind": "module",
+      "label": "template-index pinholes",
+      "artifact_type": "clustered-ground-pinholes",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.307,
+        "w": 0.13,
+        "h": 0.096
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.728,
+          0.336
+        ],
+        [
+          0.758,
+          0.313
+        ],
+        [
+          0.806,
+          0.307
+        ],
+        [
+          0.843,
+          0.33
+        ],
+        [
+          0.854,
+          0.374
+        ],
+        [
+          0.829,
+          0.402
+        ],
+        [
+          0.78,
+          0.398
+        ],
+        [
+          0.741,
+          0.377
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/module-template-index-pinholes.svg",
+      "source_binding_ids": [
+        "binding-module-template-index-pinholes"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1212,
+          356
+        ],
+        "safe_stage_window_origin_px": [
+          1228,
+          364
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-atlas-vine-interruption",
+      "kind": "module",
+      "label": "atlas-vine interruption",
+      "artifact_type": "maplike-vine-band-break",
+      "bounds": {
+        "x": 0.713,
+        "y": 0.635,
+        "w": 0.19,
+        "h": 0.117
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.719,
+          0.711
+        ],
+        [
+          0.742,
+          0.679
+        ],
+        [
+          0.78,
+          0.65
+        ],
+        [
+          0.83,
+          0.636
+        ],
+        [
+          0.876,
+          0.651
+        ],
+        [
+          0.903,
+          0.689
+        ],
+        [
+          0.887,
+          0.733
+        ],
+        [
+          0.838,
+          0.752
+        ],
+        [
+          0.784,
+          0.744
+        ],
+        [
+          0.742,
+          0.729
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/module-atlas-vine-interruption.svg",
+      "source_binding_ids": [
+        "binding-module-atlas-vine-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1241,
+          701
+        ],
+        "safe_stage_window_origin_px": [
+          1264,
+          710
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-tier-slice-candle-glint",
+      "kind": "module",
+      "label": "tier-slice candle glint",
+      "artifact_type": "tiny-candle-flame-glint",
+      "bounds": {
+        "x": 0.527,
+        "y": 0.799,
+        "w": 0.122,
+        "h": 0.101
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.53,
+          0.86
+        ],
+        [
+          0.544,
+          0.835
+        ],
+        [
+          0.569,
+          0.815
+        ],
+        [
+          0.604,
+          0.802
+        ],
+        [
+          0.635,
+          0.817
+        ],
+        [
+          0.649,
+          0.856
+        ],
+        [
+          0.646,
+          0.896
+        ],
+        [
+          0.605,
+          0.9
+        ],
+        [
+          0.559,
+          0.89
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/module-tier-slice-candle-glint.svg",
+      "source_binding_ids": [
+        "binding-module-tier-slice-candle-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          903,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          918,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-bottom-dense-graphite-constellation",
+      "kind": "module",
+      "label": "bottom dense graphite constellation",
+      "artifact_type": "clustered-charcoal-ground-flecks",
+      "bounds": {
+        "x": 0.201,
+        "y": 0.861,
+        "w": 0.28,
+        "h": 0.069
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.202,
+          0.865
+        ],
+        [
+          0.256,
+          0.854
+        ],
+        [
+          0.326,
+          0.862
+        ],
+        [
+          0.406,
+          0.878
+        ],
+        [
+          0.478,
+          0.897
+        ],
+        [
+          0.456,
+          0.923
+        ],
+        [
+          0.365,
+          0.929
+        ],
+        [
+          0.279,
+          0.918
+        ],
+        [
+          0.213,
+          0.896
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/module-bottom-dense-graphite-constellation.svg",
+      "source_binding_ids": [
+        "binding-module-bottom-dense-graphite-constellation"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          524,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          558,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-tier-slice-candle-glint-2",
+      "kind": "module",
+      "label": "tier-slice candle glint",
+      "artifact_type": "tiny-candle-flame-glint",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "scanned-sister-card-field",
+      "mask_path": "/editions/2026-07-25-sister-card-field-v1/assets/masks/module-tier-slice-candle-glint-2.svg",
+      "source_binding_ids": [
+        "binding-module-tier-slice-candle-glint-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "interpretation_id": "interp-2026-07-25-sister-card-field-v1",
+  "edition_id": "2026-07-25-sister-card-field-v1",
+  "plate_read_timestamp": "2026-07-25T20:30:36.353Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A pale blue paper plate lies on teal vine-patterned cloth, with a curled upper-right corner, torn diagonal seam, graphite flower arcs, tiny pinhole clusters, red botanical rubs, an edge notch with warm light, and a small candle-cake glint near the lower field.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet handmade card under archival light",
+      "A pale blue paper plate lies on teal vine-patterned cloth, with a curled upper-right corner, torn diagonal seam, graphite flower arcs, tiny pinhole clusters, red botanical rubs, an edge notch with warm light, and a small candle-cake glint near the lower field.",
+      "scanned-card",
+      "graphite-wings",
+      "teal-vine-ground"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero paper-edge aperture",
+      "hero floral corner pressure",
+      "coral wreath seam",
+      "special-card repair tear",
+      "template-index pinholes",
+      "atlas-vine interruption",
+      "tier-slice candle glint",
+      "bottom dense graphite constellation"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "scanned-sister-card-field",
+      "one severe card-like paper field with a visible crop and shadow",
+      "oversized graphite wing arcs enclosing an empty center",
+      "two cropped diagonal botanical corner weights",
+      "a tiny dense bottom compression mark with candle-like glints",
+      "paper-border cuts, pinholes, scuffs, vine-band interruptions, and repaired tears",
+      "pale fibrous paper field",
+      "curled upper-right paper edge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: scanned-sister-card-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-paper-edge-aperture",
+      "kind": "hero",
+      "type": "curled-paper-border-cut",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.767,
+        "y": 0.062,
+        "w": 0.19,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-floral-corner-pressure",
+      "kind": "hero",
+      "type": "cropped-botanical-ink-corner",
+      "strength": 0.982628,
+      "bounds": {
+        "x": 0.063,
+        "y": 0.787,
+        "w": 0.062,
+        "h": 0.133
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-coral-wreath-seam",
+      "kind": "module",
+      "type": "thin-botanical-border-seam",
+      "strength": 0.796176,
+      "bounds": {
+        "x": 0.062,
+        "y": 0.396,
+        "w": 0.798,
+        "h": 0.109
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-special-card-repair-tear",
+      "kind": "module",
+      "type": "raspberry-paper-repair",
+      "strength": 0.77532,
+      "bounds": {
+        "x": 0.126,
+        "y": 0.222,
+        "w": 0.054,
+        "h": 0.099
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-template-index-pinholes",
+      "kind": "module",
+      "type": "clustered-ground-pinholes",
+      "strength": 0.743148,
+      "bounds": {
+        "x": 0.724,
+        "y": 0.307,
+        "w": 0.13,
+        "h": 0.096
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-atlas-vine-interruption",
+      "kind": "module",
+      "type": "maplike-vine-band-break",
+      "strength": 0.7065,
+      "bounds": {
+        "x": 0.713,
+        "y": 0.635,
+        "w": 0.19,
+        "h": 0.117
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tier-slice-candle-glint",
+      "kind": "module",
+      "type": "tiny-candle-flame-glint",
+      "strength": 0.675648,
+      "bounds": {
+        "x": 0.527,
+        "y": 0.799,
+        "w": 0.122,
+        "h": 0.101
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-dense-graphite-constellation",
+      "kind": "module",
+      "type": "clustered-charcoal-ground-flecks",
+      "strength": 0.6583359999999999,
+      "bounds": {
+        "x": 0.201,
+        "y": 0.861,
+        "w": 0.28,
+        "h": 0.069
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tier-slice-candle-glint-2",
+      "kind": "module",
+      "type": "tiny-candle-flame-glint",
+      "strength": 0.66262,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-paper-edge-aperture-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.767,
+        "y": 0.062,
+        "w": 0.19,
+        "h": 0.22
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-floral-corner-pressure-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.063,
+        "y": 0.787,
+        "w": 0.062,
+        "h": 0.133
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-coral-wreath-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.062,
+        "y": 0.396,
+        "w": 0.798,
+        "h": 0.109
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-special-card-repair-tear-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.126,
+        "y": 0.222,
+        "w": 0.054,
+        "h": 0.099
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-template-index-pinholes-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.307,
+        "w": 0.13,
+        "h": 0.096
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-atlas-vine-interruption-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.713,
+        "y": 0.635,
+        "w": 0.19,
+        "h": 0.117
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tier-slice-candle-glint-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.527,
+        "y": 0.799,
+        "w": 0.122,
+        "h": 0.101
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-dense-graphite-constellation-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.201,
+        "y": 0.861,
+        "w": 0.28,
+        "h": 0.069
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tier-slice-candle-glint-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

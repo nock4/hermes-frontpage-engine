@@ -1,0 +1,421 @@
+{
+  "analysis_id": "analysis-2026-07-25-sister-card-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A pale blue paper plate lies on teal vine-patterned cloth, with a curled upper-right corner, torn diagonal seam, graphite flower arcs, tiny pinhole clusters, red botanical rubs, an edge notch with warm light, and a small candle-cake glint near the lower field.",
+  "usable_surfaces": [
+    "pale fibrous paper field",
+    "curled upper-right paper edge",
+    "frayed diagonal repair seam",
+    "teal woven vine ground",
+    "graphite flower gesture",
+    "tiny puncture clusters",
+    "red rubbed botanical corners",
+    "narrow lit edge cut"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero paper-edge aperture",
+      "artifact_type": "curled-paper-border-cut",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.767,
+        "y": 0.062,
+        "w": 0.19,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.768,
+          0.063
+        ],
+        [
+          0.819,
+          0.083
+        ],
+        [
+          0.862,
+          0.117
+        ],
+        [
+          0.918,
+          0.175
+        ],
+        [
+          0.954,
+          0.229
+        ],
+        [
+          0.907,
+          0.218
+        ],
+        [
+          0.847,
+          0.185
+        ],
+        [
+          0.804,
+          0.14
+        ],
+        [
+          0.772,
+          0.095
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "The upper-right paper corner is visibly curled and torn back, exposing the teal cloth beneath and forming a dominant paper-edge aperture with shadow and rough fibrous edges."
+    },
+    {
+      "label": "hero floral corner pressure",
+      "artifact_type": "cropped-botanical-ink-corner",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.063,
+        "y": 0.787,
+        "w": 0.062,
+        "h": 0.133
+      },
+      "polygon": [
+        [
+          0.075,
+          0.79
+        ],
+        [
+          0.099,
+          0.806
+        ],
+        [
+          0.116,
+          0.843
+        ],
+        [
+          0.124,
+          0.886
+        ],
+        [
+          0.117,
+          0.916
+        ],
+        [
+          0.088,
+          0.921
+        ],
+        [
+          0.069,
+          0.892
+        ],
+        [
+          0.064,
+          0.848
+        ],
+        [
+          0.067,
+          0.812
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A saturated red rubbed botanical/ink fragment presses along the lower-left paper edge, cropped by the border and dense enough to serve as a source-bearing corner mass."
+    },
+    {
+      "label": "coral wreath seam",
+      "artifact_type": "thin-botanical-border-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.062,
+        "y": 0.396,
+        "w": 0.798,
+        "h": 0.109
+      },
+      "confidence": 0.86,
+      "visual_evidence": "A long frayed diagonal paper seam crosses the sheet, carrying pale botanical-border energy as a thin torn line with fiber and shadow."
+    },
+    {
+      "label": "special-card repair tear",
+      "artifact_type": "raspberry-paper-repair",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.126,
+        "y": 0.222,
+        "w": 0.054,
+        "h": 0.099
+      },
+      "polygon": [
+        [
+          0.13,
+          0.229
+        ],
+        [
+          0.157,
+          0.224
+        ],
+        [
+          0.177,
+          0.253
+        ],
+        [
+          0.18,
+          0.286
+        ],
+        [
+          0.166,
+          0.319
+        ],
+        [
+          0.138,
+          0.304
+        ],
+        [
+          0.125,
+          0.27
+        ]
+      ],
+      "confidence": 0.73,
+      "visual_evidence": "A small coral-raspberry scuffed patch interrupts the upper-left open paper field, appearing like a repaired printable-card fragment rather than text."
+    },
+    {
+      "label": "template-index pinholes",
+      "artifact_type": "clustered-ground-pinholes",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.307,
+        "w": 0.13,
+        "h": 0.096
+      },
+      "polygon": [
+        [
+          0.728,
+          0.336
+        ],
+        [
+          0.758,
+          0.313
+        ],
+        [
+          0.806,
+          0.307
+        ],
+        [
+          0.843,
+          0.33
+        ],
+        [
+          0.854,
+          0.374
+        ],
+        [
+          0.829,
+          0.402
+        ],
+        [
+          0.78,
+          0.398
+        ],
+        [
+          0.741,
+          0.377
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "A grid-like cluster of tiny raised pinholes and dimples sits on the right paper field near the vine-side ground, clearly visible as small puncture marks."
+    },
+    {
+      "label": "atlas-vine interruption",
+      "artifact_type": "maplike-vine-band-break",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.713,
+        "y": 0.635,
+        "w": 0.19,
+        "h": 0.117
+      },
+      "polygon": [
+        [
+          0.719,
+          0.711
+        ],
+        [
+          0.742,
+          0.679
+        ],
+        [
+          0.78,
+          0.65
+        ],
+        [
+          0.83,
+          0.636
+        ],
+        [
+          0.876,
+          0.651
+        ],
+        [
+          0.903,
+          0.689
+        ],
+        [
+          0.887,
+          0.733
+        ],
+        [
+          0.838,
+          0.752
+        ],
+        [
+          0.784,
+          0.744
+        ],
+        [
+          0.742,
+          0.729
+        ]
+      ],
+      "confidence": 0.67,
+      "visual_evidence": "A sparse olive-green broken vine or route-like scatter crosses the lower-right paper field, distinct from empty space and visually tied to the patterned ground."
+    },
+    {
+      "label": "tier-slice candle glint",
+      "artifact_type": "tiny-candle-flame-glint",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.527,
+        "y": 0.799,
+        "w": 0.122,
+        "h": 0.101
+      },
+      "polygon": [
+        [
+          0.53,
+          0.86
+        ],
+        [
+          0.544,
+          0.835
+        ],
+        [
+          0.569,
+          0.815
+        ],
+        [
+          0.604,
+          0.802
+        ],
+        [
+          0.635,
+          0.817
+        ],
+        [
+          0.649,
+          0.856
+        ],
+        [
+          0.646,
+          0.896
+        ],
+        [
+          0.605,
+          0.9
+        ],
+        [
+          0.559,
+          0.89
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A small graphite cake-like dense mark with five vertical candle stems and warm flame tips sits near the bottom field, compressing the tier/slice source into tiny candle glints."
+    },
+    {
+      "label": "bottom dense graphite constellation",
+      "artifact_type": "clustered-charcoal-ground-flecks",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.201,
+        "y": 0.861,
+        "w": 0.28,
+        "h": 0.069
+      },
+      "polygon": [
+        [
+          0.202,
+          0.865
+        ],
+        [
+          0.256,
+          0.854
+        ],
+        [
+          0.326,
+          0.862
+        ],
+        [
+          0.406,
+          0.878
+        ],
+        [
+          0.478,
+          0.897
+        ],
+        [
+          0.456,
+          0.923
+        ],
+        [
+          0.365,
+          0.929
+        ],
+        [
+          0.279,
+          0.918
+        ],
+        [
+          0.213,
+          0.896
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "A low scatter of dark graphite pinpoints and flecks spans the lower paper, forming a dense ground mark beneath the drawn gestures without becoming a broad arbitrary region."
+    },
+    {
+      "label": "tier-slice candle glint",
+      "artifact_type": "tiny-candle-flame-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.209,
+    "rationale": "The plate is spacious and expressionist: one pale paper body, one teal vine ground, and a few controlled marks. Source windows can bind to real cuts, seams, flecks, and pinholes without visual clutter."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-25-sister-card-field-v1"
+}
