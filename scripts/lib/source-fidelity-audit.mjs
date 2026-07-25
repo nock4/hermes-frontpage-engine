@@ -178,6 +178,9 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       .replace(/slight(?:ly)?[^.;]*[.;]?/g, ' ')
       .replace(/no [^.;]*(?:replacement|metaphor|scene|context loss|blocks publication)[^.;]*[.;]?/g, ' preserved ')
       .replace(/not replaced/g, 'preserved')
+      .replace(/rather than replaced[^.;]*/g, 'preserved')
+      .replace(/does not replace/g, 'preserves')
+      .replace(/do not replace/g, 'preserve')
     : auditText
   for (const { label, pattern } of blockerWarningPatterns) {
     if (pattern.test(blockerScopeText) && !blockers.includes(label)) blockers.push(label)
