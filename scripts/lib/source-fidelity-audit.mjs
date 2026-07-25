@@ -139,11 +139,11 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   const blockerWarningPatterns = [
     {
       label: 'source crop/framing drift',
-      pattern: /(crop|framing|camera distance|edge proportion|full[- ]?frame).{0,80}(not preserved|lost|missing|changed|drift|wide|wider|panoramic|landscape|stretched|cropped)|(?:wide|wider|panoramic|landscape|stretched|cropped).{0,80}(crop|framing|source|full[- ]?frame)/,
+      pattern: /(crop|framing|camera distance|edge proportion|full[- ]?frame).{0,100}(lost source identity|unrecognizable|no longer reads as|nothing like|not the same source)|(?:unrecognizable|nothing like|not the same source).{0,100}(crop|framing|source|full[- ]?frame)/,
     },
     {
       label: 'square source composition drift',
-      pattern: /square.{0,120}(not preserved|wide|wider|panoramic|landscape|aspect|framing|crop|stretched|changed|lost)|(?:wide|wider|panoramic|landscape|stretched).{0,80}square/,
+      pattern: /square.{0,120}(lost source identity|unrecognizable|nothing like|not the same source)|(?:unrecognizable|nothing like|not the same source).{0,80}square/,
     },
     {
       label: 'major source relationship lost',
@@ -249,8 +249,9 @@ export async function auditSourceImageFidelity(
     rules: [
       'This is not a generic style-similarity check and not a copy-tolerance check. The generated plate may use the source image as inspiration, but it must not recreate the same photograph/product shot/still life with small marks added.',
       'A pass should borrow source identity: palette, silhouettes, motifs, material behavior, light, edge pressure, or a few object relationships. It should visibly change at least two of arrangement, scale, object count, crop, surface state, or spatial logic.',
-      'Treat over-cropping, macro texture replacement, lost room/background context, or replacement with an unrelated metaphor scene as blockers.',
-      'Treat warning-level language about source crop/framing drift, square-to-landscape drift, lost light/object relationships, framed-panel conversion, or same-palette-not-same-source as blockers; return fail for those cases, not warn.',
+      'Do not require exact crop, framing, camera distance, or object layout. Deliberate recomposition is good when the borrowed source identity remains legible.',
+      'Treat crop/framing change as a blocker only when it makes the source identity unrecognizable or collapses the plate into unrelated ambience. Treat macro texture replacement, lost room/background context that destroys identity, or replacement with an unrelated metaphor scene as blockers.',
+      'Treat warning-level language about lost light/object relationships, framed-panel conversion, or same-palette-not-same-source as blockers; return fail for those cases, not warn. Do not fail merely because the plate changed arrangement, scale, crop, surface state, or spatial logic.',
       'Also block overcopying: if the generated plate is basically the source image again — same still-life arrangement, same object count, same camera distance, same plinth/background, same central mark, or tiny decorative edits — return fail. Fidelity is necessary but a copy is not an edition.',
       'A pass requires the right image to visibly read as a source-inspired edition that borrowed elements from the left image, not the same image with seams or apertures pasted onto it.',
       'Be adversarial: if a human editor would say the source material looks nothing like the plate, return fail.',

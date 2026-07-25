@@ -56,7 +56,7 @@ describe('source image fidelity audit', () => {
     expect(audit.blockers.some((blocker) => blocker.includes('resemblance_score'))).toBe(true)
   })
 
-  it('blocks warning-level source crop and light-structure drift', async () => {
+  it('blocks warning-level light-structure drift without blocking deliberate crop changes alone', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-warn-block-'))
     const platePath = path.join(runDir, 'plate.png')
     await writeFile(platePath, 'fake plate')
@@ -88,17 +88,59 @@ describe('source image fidelity audit', () => {
           object_relationship_score: 0.91,
           context_score: 0.78,
           retained_critical_elements: ['deep blue sky field', 'pale cloud mass'],
-          missing_critical_elements: ['square crop is not preserved', 'vertical light shafts are weakened'],
+          missing_critical_elements: ['vertical light shafts are weakened'],
           drift_risks: ['source becomes a wider landscape atmosphere rather than the same source transformed'],
-          rationale: 'It shares palette, but the square source framing drifts into a panoramic plate.',
+          rationale: 'It changes the square source framing but keeps source identity; the publication blocker is the lost light structure.',
         }),
       },
     )).rejects.toThrow(/Source-image fidelity QA failed/)
 
     const audit = JSON.parse(await readFile(path.join(runDir, 'source-fidelity-audit.json'), 'utf8'))
     expect(audit.pass).toBe(false)
-    expect(audit.blockers).toContain('square source composition drift')
+    expect(audit.blockers).not.toContain('square source composition drift')
     expect(audit.blockers).toContain('defining light structure lost')
+  })
+
+  it('allows recomposed source-inspired plates when borrowed identity remains legible', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-borrow-pass-'))
+    const platePath = path.join(runDir, 'plate.png')
+    await writeFile(platePath, 'fake plate')
+
+    const audit = await auditSourceImageFidelity(
+      {
+        payload: {
+          source_image_fingerprints: [{
+            title: 'Birthday card on patterned cloth',
+            image_url: 'https://assets.example/card.jpg',
+            preserve_cues: ['angel outline', 'yellow halo', 'birthday cake', 'teal patterned cloth'],
+          }],
+        },
+        platePath,
+      },
+      runDir,
+      {
+        writeJson,
+        createContactSheetImpl: async ({ outputPath }) => {
+          await writeFile(outputPath, 'fake contact sheet')
+          return outputPath
+        },
+        openAiJsonImpl: async () => ({
+          verdict: 'pass',
+          resemblance_score: 0.88,
+          framing_score: 0.62,
+          object_relationship_score: 0.78,
+          context_score: 0.72,
+          transformation_score: 0.86,
+          retained_critical_elements: ['angel silhouette', 'yellow halo', 'cake candles', 'teal looping cloth pattern'],
+          missing_critical_elements: ['exact centered card crop'],
+          drift_risks: ['crop and scale changed deliberately but source identity remains legible'],
+          rationale: 'The plate borrows the source identity while changing crop, scale, surface state, and spatial logic enough to avoid copying.',
+        }),
+      },
+    )
+
+    expect(audit.pass).toBe(true)
+    expect(audit.blockers).toEqual([])
   })
 
   it('blocks warnings that admit the plate only shares palette/style', async () => {
