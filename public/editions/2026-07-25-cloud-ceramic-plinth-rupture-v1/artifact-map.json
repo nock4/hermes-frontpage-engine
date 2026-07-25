@@ -1,0 +1,635 @@
+{
+  "artifact_map_id": "map-2026-07-25-cloud-ceramic-plinth-rupture-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "cloud-ceramic-plinth-rupture",
+  "default_artifact_id": "hero-primary-storm-vessel",
+  "artifacts": [
+    {
+      "id": "hero-primary-storm-vessel",
+      "kind": "hero",
+      "label": "primary storm vessel",
+      "artifact_type": "hero-scale-ceramic-body",
+      "bounds": {
+        "x": 0.3,
+        "y": 0.43,
+        "w": 0.372,
+        "h": 0.419
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.412,
+          0.444
+        ],
+        [
+          0.358,
+          0.493
+        ],
+        [
+          0.318,
+          0.57
+        ],
+        [
+          0.303,
+          0.647
+        ],
+        [
+          0.316,
+          0.734
+        ],
+        [
+          0.365,
+          0.812
+        ],
+        [
+          0.428,
+          0.846
+        ],
+        [
+          0.515,
+          0.846
+        ],
+        [
+          0.59,
+          0.819
+        ],
+        [
+          0.641,
+          0.751
+        ],
+        [
+          0.67,
+          0.656
+        ],
+        [
+          0.655,
+          0.566
+        ],
+        [
+          0.611,
+          0.493
+        ],
+        [
+          0.559,
+          0.447
+        ],
+        [
+          0.486,
+          0.43
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/hero-primary-storm-vessel.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-storm-vessel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          746,
+          621
+        ],
+        "safe_stage_window_origin_px": [
+          792,
+          655
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-front-lightning-branch",
+      "kind": "hero",
+      "label": "front lightning branch",
+      "artifact_type": "gold-inlay-fracture",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.59,
+        "w": 0.129,
+        "h": 0.227
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.421,
+          0.591
+        ],
+        [
+          0.43,
+          0.612
+        ],
+        [
+          0.421,
+          0.636
+        ],
+        [
+          0.432,
+          0.657
+        ],
+        [
+          0.421,
+          0.681
+        ],
+        [
+          0.437,
+          0.704
+        ],
+        [
+          0.431,
+          0.733
+        ],
+        [
+          0.445,
+          0.764
+        ],
+        [
+          0.427,
+          0.792
+        ],
+        [
+          0.432,
+          0.817
+        ],
+        [
+          0.42,
+          0.814
+        ],
+        [
+          0.417,
+          0.79
+        ],
+        [
+          0.433,
+          0.761
+        ],
+        [
+          0.42,
+          0.735
+        ],
+        [
+          0.425,
+          0.704
+        ],
+        [
+          0.41,
+          0.681
+        ],
+        [
+          0.42,
+          0.656
+        ],
+        [
+          0.411,
+          0.613
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/hero-front-lightning-branch.svg",
+      "source_binding_ids": [
+        "binding-hero-front-lightning-branch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          697,
+          702
+        ],
+        "safe_stage_window_origin_px": [
+          712,
+          720
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-left-powder-cloud-band",
+      "kind": "module",
+      "label": "left powder cloud band",
+      "artifact_type": "curved-cloud-aperture",
+      "bounds": {
+        "x": 0.215,
+        "y": 0.239,
+        "w": 0.221,
+        "h": 0.052
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.218,
+          0.261
+        ],
+        [
+          0.235,
+          0.246
+        ],
+        [
+          0.262,
+          0.24
+        ],
+        [
+          0.289,
+          0.245
+        ],
+        [
+          0.314,
+          0.238
+        ],
+        [
+          0.341,
+          0.249
+        ],
+        [
+          0.367,
+          0.244
+        ],
+        [
+          0.393,
+          0.254
+        ],
+        [
+          0.421,
+          0.256
+        ],
+        [
+          0.436,
+          0.274
+        ],
+        [
+          0.412,
+          0.286
+        ],
+        [
+          0.376,
+          0.283
+        ],
+        [
+          0.343,
+          0.276
+        ],
+        [
+          0.314,
+          0.284
+        ],
+        [
+          0.281,
+          0.278
+        ],
+        [
+          0.25,
+          0.286
+        ],
+        [
+          0.224,
+          0.276
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/module-left-powder-cloud-band.svg",
+      "source_binding_ids": [
+        "binding-module-left-powder-cloud-band"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          500,
+          267
+        ],
+        "safe_stage_window_origin_px": [
+          527,
+          271
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-sidewall-crescent-gap",
+      "kind": "module",
+      "label": "sidewall crescent gap",
+      "artifact_type": "crescent-handle-aperture",
+      "bounds": {
+        "x": 0.704,
+        "y": 0.464,
+        "w": 0.098,
+        "h": 0.204
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.711,
+          0.464
+        ],
+        [
+          0.796,
+          0.464
+        ],
+        [
+          0.802,
+          0.472
+        ],
+        [
+          0.802,
+          0.657
+        ],
+        [
+          0.793,
+          0.668
+        ],
+        [
+          0.708,
+          0.667
+        ],
+        [
+          0.702,
+          0.658
+        ],
+        [
+          0.703,
+          0.475
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/module-sidewall-crescent-gap.svg",
+      "source_binding_ids": [
+        "binding-module-sidewall-crescent-gap"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1157,
+          563
+        ],
+        "safe_stage_window_origin_px": [
+          1169,
+          580
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "bounds": {
+        "x": 0.535,
+        "y": 0.59,
+        "w": 0.141,
+        "h": 0.09
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.538,
+          0.619
+        ],
+        [
+          0.558,
+          0.598
+        ],
+        [
+          0.588,
+          0.591
+        ],
+        [
+          0.616,
+          0.6
+        ],
+        [
+          0.643,
+          0.592
+        ],
+        [
+          0.669,
+          0.612
+        ],
+        [
+          0.676,
+          0.642
+        ],
+        [
+          0.654,
+          0.666
+        ],
+        [
+          0.617,
+          0.679
+        ],
+        [
+          0.584,
+          0.671
+        ],
+        [
+          0.553,
+          0.66
+        ],
+        [
+          0.535,
+          0.64
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          930,
+          643
+        ],
+        "safe_stage_window_origin_px": [
+          947,
+          650
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-sidewall-crescent-gap-2",
+      "kind": "module",
+      "label": "sidewall crescent gap",
+      "artifact_type": "crescent-handle-aperture",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/module-sidewall-crescent-gap-2.svg",
+      "source_binding_ids": [
+        "binding-module-sidewall-crescent-gap-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-gallery-shoulder-glint",
+      "kind": "module",
+      "label": "gallery shoulder glint",
+      "artifact_type": "rim-glint-window",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/module-gallery-shoulder-glint.svg",
+      "source_binding_ids": [
+        "binding-module-gallery-shoulder-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-square-one-pastel-notch",
+      "kind": "module",
+      "label": "square-one pastel notch",
+      "artifact_type": "plinth-corner-notch",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/module-square-one-pastel-notch.svg",
+      "source_binding_ids": [
+        "binding-module-square-one-pastel-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-color-node-2",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "cloud-ceramic-plinth-rupture",
+      "mask_path": "/editions/2026-07-25-cloud-ceramic-plinth-rupture-v1/assets/masks/module-color-node-2.svg",
+      "source_binding_ids": [
+        "binding-module-color-node-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "interpretation_id": "interp-2026-07-25-cloud-ceramic-plinth-rupture-v1",
+  "edition_id": "2026-07-25-cloud-ceramic-plinth-rupture-v1",
+  "plate_read_timestamp": "2026-07-25T17:37:31.188Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Three ceramic storm vessels sit on a warm white plinth: a deep teal front vase carries a gold lightning fracture and cloud bands, a tall rear-left blue vessel shows powder-cloud glazing and a vertical scar, and a rear-right peach vessel holds a rectangular aperture. The plinth front edge is a real seam with chips and abrasions.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright weather held in clay",
+      "Three ceramic storm vessels sit on a warm white plinth: a deep teal front vase carries a gold lightning fracture and cloud bands, a tall rear-left blue vessel shows powder-cloud glazing and a vertical scar, and a rear-right peach vessel holds a rectangular aperture. The plinth front edge is a real seam with chips and abrasions.",
+      "weather-ceramic",
+      "white-plinth",
+      "cloud-bands"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "primary storm vessel",
+      "front lightning branch",
+      "left powder cloud band",
+      "sidewall crescent gap",
+      "Color Node",
+      "gallery shoulder glint",
+      "square-one pastel notch"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "cloud-ceramic-plinth-rupture",
+      "triangular vessel mass with front overlap",
+      "low white plinth seam acting as a horizontal cut",
+      "curved cloud apertures wrapped around ceramic bellies",
+      "stepped mug-like rhythm of small crescent gaps",
+      "deep teal storm body against pastel rear forms",
+      "front teal ceramic belly",
+      "gold lightning inlay fracture"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cloud-ceramic-plinth-rupture.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-storm-vessel",
+      "kind": "hero",
+      "type": "hero-scale-ceramic-body",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.3,
+        "y": 0.43,
+        "w": 0.372,
+        "h": 0.419
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-front-lightning-branch",
+      "kind": "hero",
+      "type": "gold-inlay-fracture",
+      "strength": 0.9869479999999999,
+      "bounds": {
+        "x": 0.389,
+        "y": 0.59,
+        "w": 0.129,
+        "h": 0.227
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-powder-cloud-band",
+      "kind": "module",
+      "type": "curved-cloud-aperture",
+      "strength": 0.801204,
+      "bounds": {
+        "x": 0.215,
+        "y": 0.239,
+        "w": 0.221,
+        "h": 0.052
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sidewall-crescent-gap",
+      "kind": "module",
+      "type": "crescent-handle-aperture",
+      "strength": 0.763344,
+      "bounds": {
+        "x": 0.704,
+        "y": 0.464,
+        "w": 0.098,
+        "h": 0.204
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.738144,
+      "bounds": {
+        "x": 0.535,
+        "y": 0.59,
+        "w": 0.141,
+        "h": 0.09
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sidewall-crescent-gap-2",
+      "kind": "module",
+      "type": "crescent-handle-aperture",
+      "strength": 0.696636,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gallery-shoulder-glint",
+      "kind": "module",
+      "type": "rim-glint-window",
+      "strength": 0.6696120000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-square-one-pastel-notch",
+      "kind": "module",
+      "type": "plinth-corner-notch",
+      "strength": 0.6481239999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-2",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.6585399999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-storm-vessel-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3,
+        "y": 0.43,
+        "w": 0.372,
+        "h": 0.419
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-front-lightning-branch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.59,
+        "w": 0.129,
+        "h": 0.227
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-powder-cloud-band-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.215,
+        "y": 0.239,
+        "w": 0.221,
+        "h": 0.052
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sidewall-crescent-gap-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.704,
+        "y": 0.464,
+        "w": 0.098,
+        "h": 0.204
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.535,
+        "y": 0.59,
+        "w": 0.141,
+        "h": 0.09
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sidewall-crescent-gap-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gallery-shoulder-glint-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-square-one-pastel-notch-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
