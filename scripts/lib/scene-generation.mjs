@@ -761,12 +761,14 @@ function sourceReferencePreserveText(payload, fallback) {
 
 function looksLikeGraphicEditorialSource(payload, referenceText) {
   const text = [
-    payload.scene_prompt,
-    payload.mood,
     referenceText,
     ...(payload.source_reference_preserve || []),
-    payload.visual_direction?.evidence_summary,
-    payload.visual_direction?.composition_archetype,
+    ...(payload.source_image_fingerprints || []).flatMap((fingerprint) => [
+      fingerprint.title,
+      fingerprint.visual_summary,
+      ...(fingerprint.preserve_cues || []),
+      ...(fingerprint.composition_moves || []),
+    ]),
   ].filter(Boolean).join(' ').toLowerCase()
   const graphicCues = /(graphic|editorial|poster|cover|typographic|headline|text block|type mass|letterform)/.test(text)
   const diagramCues = /(blob|island|grid|route|diagram|left[- ]?right|negative space)/.test(text)
@@ -799,10 +801,10 @@ export function buildSceneImagePrompt(payload) {
     ? 'SOURCE-ASPECT LOCK: the output canvas may be landscape, but the source is square. Preserve the square source composition as the dominant full-height field or crop logic, then extend only source-specific color/material pressure into side margins. No visible frame, border, mat, wall, panel edge, beige surround, or object-in-space treatment. Do not make the source itself panoramic, wide, or stretched.'
     : ''
   const recoveryTransformGuard = process.env.DFE_SOURCE_PRESERVE_PLATE === '1'
-    ? 'RECOVERY TRANSFORM: the previous plate failed source-fidelity, but do not make a literal copy. Preserve framing and source grammar while adding visible edition-native transformation: cuts, seams, apertures, edge repairs, material interruptions, scale shifts, and source-window marks. If the anchor is a minimal text/wordmark/cover, demote the text to illegible massing and let richer supporting source imagery or material cuts carry the edition.'
+    ? 'RECOVERY TRANSFORM: the previous plate failed source-fidelity. Rebuild from the full source composition first, not from the failed abstract crop. Keep every named PRESERVE cue visible at once, then add edition-native transformation: cuts, seams, apertures, edge repairs, material interruptions, scale shifts, and source-window marks. Do not erase people, gestures, balls, table geometry, room context, or other source relationships to create an empty field. If the anchor is a minimal text/wordmark/cover, demote the text to illegible massing and let richer supporting source imagery or material cuts carry the edition.'
     : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
-    ? `KEEP ORIGINAL FRAMING: preserve the source image camera distance, full-frame spatial layout, major object positions, figure/object relationships, background, and edge proportions. ${sourceAspectGuard} ${recoveryTransformGuard} Do not zoom into a single object, crop away the room/context, replace the scene with a macro texture, invent people/characters/city skylines/horizons/deep space not present in the source, or let posture/formal-risk override resemblance. Do not simply reproduce the anchor image; a valid frontpage plate needs visible transformed source-window marks.`
+    ? `KEEP ORIGINAL FRAMING: preserve source camera distance, full-frame layout, major object positions, relationships, background, and edge proportions. ${sourceAspectGuard} ${recoveryTransformGuard} No macro crop, replacement scene, invented people/city/horizon/deep space, or posture that overrides resemblance. Do not simply reproduce the anchor image; add visible transformed source-window marks.`
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
@@ -824,14 +826,18 @@ export function buildSceneImagePrompt(payload) {
     graphicEditorialGuard,
     '',
     'TRANSFORM',
-    compactText(`${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source resemblance.` : ''}`, 300),
+    compactText(hasSourceImage
+      ? `Transform the exact full source composition described in PRESERVE; keep named objects, gestures, relationships, and background visible. ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source resemblance. ` : ''}${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
+      : `${payload.scene_prompt || payload.mood || 'Turn the source field into a full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 420),
     '',
     'COMPOSITION',
-    `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
+    hasSourceImage
+      ? `Start with original source framing and object layout; use ${visualDirection.composition_archetype || 'source-led plate'} / ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'} only as surface treatment. ${sourceAspectGuard} ${moves}. Formal risk can add seams, cuts, or scale pressure, but must not crop away: ${compactText(preserveText, 150)}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`
+      : `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
     'ANCHORS',
     hasSourceImage
-      ? `Add ${anchorCount} source windows as small real marks in the preserved image: existing edges, seams, ticks, apertures, cuts, glints, label slivers, scars, defects, or media grains. They must belong to the source image, not appear as cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`
+      ? `Add ${anchorCount} source windows as small real marks in the preserved image: existing edges, seams, ticks, apertures, cuts, glints, scars, defects, or media grains. They must belong to the source image, never cards, pasted thumbnails, rings, outlines, pins, or debug markers.`
       : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`,
     '',
     'LIMITS',
