@@ -190,8 +190,37 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('wide horizontal crop')
     expect(prompt).toContain('large pale off-white organic island')
     expect(prompt).toContain('graphic/editorial/poster/package reference')
+    expect(prompt).toContain('Do not preserve the exact cover/card/photo arrangement')
     expect(prompt).toContain('Do not replace it with unrelated macro texture')
     expect(prompt).toContain('Posture: poster wall')
+  })
+
+  it('does not let recovery mode contradict inspiration-not-copy policy', () => {
+    const previous = process.env.DFE_SOURCE_PRESERVE_PLATE
+    process.env.DFE_SOURCE_PRESERVE_PLATE = '1'
+    try {
+      const prompt = buildSceneImagePrompt({
+        scene_prompt: 'A birthday-card cutaway section.',
+        lighting: 'soft tabletop daylight',
+        material_language: ['matte paper', 'graphite line'],
+        source_image_fingerprints: [{
+          title: 'Birthday card',
+          image_url: 'https://assets.example/card.jpg',
+          visual_summary: 'Portrait photo of a handmade birthday card on a patterned surface.',
+          preserve_cues: ['angel outline', 'yellow halo', 'small birthday cake', 'teal patterned tabletop'],
+        }],
+        visual_direction: { composition_archetype: 'architectural section', camera_plate_grammar: 'paper cutaway' },
+        artifacts: [{ source_url: 'https://example.com/source' }],
+      })
+      expect(prompt).toContain('RECOVERY TRANSFORM')
+      expect(prompt).toContain('Do not rebuild the full source composition')
+      expect(prompt).toContain('change at least two of arrangement, scale, object count, crop, surface state, or spatial logic')
+      expect(prompt).not.toContain('Keep every named PRESERVE cue visible at once')
+      expect(prompt).not.toContain('Rebuild from the full source composition first')
+    } finally {
+      if (previous === undefined) delete process.env.DFE_SOURCE_PRESERVE_PLATE
+      else process.env.DFE_SOURCE_PRESERVE_PLATE = previous
+    }
   })
 })
 
