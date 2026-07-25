@@ -64,7 +64,9 @@ describe('scene generation image prompt', () => {
     expect(prompt).not.toContain('Distributed Marker')
     expect(prompt).not.toContain('distributed-marker')
     expect(prompt.toLowerCase()).toContain('no legible text')
-    expect(prompt).toContain('PRESERVE')
+    expect(prompt).not.toContain('Use the attached source image as the main composition reference')
+    expect(prompt).toContain('No dominant source image is attached')
+    expect(prompt).toContain('SOURCE FIELD')
     expect(prompt).toContain('TRANSFORM')
     expect(prompt).toContain('COMPOSITION')
     expect(prompt).toContain('ANCHORS')
@@ -73,7 +75,7 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('architectural section with oblique plate depth')
     expect(prompt).toContain('hard diagonal seams; creased scan border')
     expect(prompt).toContain('Formal risk:')
-    expect(prompt).toContain('belong to the source image')
+    expect(prompt).toContain('source windows as real marks from the source field')
     expect(prompt).toContain('minimal field')
     expect(prompt.length).toBeLessThan(1850)
   })
@@ -139,6 +141,12 @@ describe('scene generation image prompt', () => {
         camera_plate_grammar: 'torn wall',
         visual_compositional_moves: ['one large cropped article-cover fragment dominates the field'],
       },
+      source_image_fingerprints: [{
+        title: 'Graphic article cover',
+        image_url: 'https://assets.example/cover.jpg',
+        preserve_cues: ['wide horizontal crop', 'large pale off-white organic island', 'left-side block of typographic mass'],
+        composition_moves: ['left-right graphic separation'],
+      }],
       plate_posture: { plate_posture: 'poster wall' },
       artifacts: [{ source_url: 'https://example.com/source', role: 'hero source-bearing anchor' }],
     })
@@ -211,7 +219,7 @@ describe('scene generation Hermes image backend', () => {
       expect(sceneGeneration.provider).toBe('openai-codex')
       expect(await readFile(path.join(runDir, 'plate.png'), 'utf8')).toBe('fake-image-bytes')
       const promptFull = JSON.parse(await readFile(path.join(runDir, 'scene-prompt-full.json'), 'utf8'))
-      expect(promptFull.compact_prompt).toContain('PRESERVE')
+      expect(promptFull.compact_prompt).toContain('SOURCE FIELD')
       expect(promptFull.compact_prompt).toContain('TRANSFORM')
       expect(promptFull.payload.scene_prompt).toContain('full-bleed abstract field')
     } finally {

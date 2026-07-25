@@ -553,6 +553,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     }
   }
   let sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
+  let lowFertilityModeReason = imageSourceMaterial.low_fertility_anchor_demoted?.reason || null
   const fertileIndex = sourceImageArtifacts.source_image_fingerprints.findIndex((fingerprint) => !isLowFertilitySourceFingerprint(fingerprint))
   if (fertileIndex > 0) {
     selectedImageMaterial = [
@@ -570,7 +571,24 @@ export async function inspectSourceCandidates(signalHarvest, {
       },
     }
     sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
+  } else if (sourceImageArtifacts.source_image_fingerprints.length && fertileIndex < 0) {
+    const demotedTitle = sourceImageArtifacts.source_image_fingerprints[0]?.title || selectedImageMaterial[0]?.title || selectedImageMaterial[0]?.caption || selectedImageMaterial[0]?.image_url || null
+    lowFertilityModeReason = 'All inspected selected image material was low-fertility after vision fingerprinting; switching to source-field mode instead of preserving sterile UI/page chrome or copy-prone image seeds.'
+    selectedImageMaterial = []
+    imageSourceMaterial = {
+      ...imageSourceMaterial,
+      selected_image_material: [],
+      low_fertility_anchor_demoted: {
+        demoted_title: demotedTitle,
+        promoted_title: null,
+        reason: lowFertilityModeReason,
+      },
+    }
+    sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
   }
+  const sourceImageMode = sourceImageArtifacts.source_image_fingerprints.some((fingerprint) => fingerprint?.image_url && !isLowFertilitySourceFingerprint(fingerprint))
+    ? 'dominant-source-image'
+    : 'skipped-no-valid-dominant-source-image'
   const imageMaterialReference = selectedImageMaterial[0]
     ? {
         url: selectedImageMaterial[0].page_url || selectedImageMaterial[0].image_url,
@@ -608,6 +626,15 @@ export async function inspectSourceCandidates(signalHarvest, {
     derived_source_candidates: derivedCandidates,
     image_source_candidates: imageSourceMaterial.image_source_candidates,
     selected_image_material: imageSourceMaterial.selected_image_material,
+    source_image_mode: sourceImageMode,
+    source_image_mode_reason: sourceImageMode === 'dominant-source-image'
+      ? 'A visually fertile dominant source image survived pre-generation source-material screening and vision fingerprinting.'
+      : (lowFertilityModeReason || 'No valid dominant source image survived source-material screening; visual direction must come from the broader source field.'),
+    source_material_verdict: {
+      source_image_mode: sourceImageMode,
+      valid_dominant_source_image: sourceImageMode === 'dominant-source-image',
+      rejected_low_fertility_anchor: imageSourceMaterial.low_fertility_anchor_demoted || null,
+    },
     source_image_fingerprints: sourceImageArtifacts.source_image_fingerprints,
     source_image_fingerprints_path: sourceImageArtifacts.source_image_fingerprints_path,
     source_image_contact_sheet_path: sourceImageArtifacts.source_image_contact_sheet_path,
@@ -629,6 +656,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     sources: inspected,
   }
 
+  await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
   await writeJson(path.join(runDir, 'source-research.json'), researchField)
   if (contentSources.length < minContentItems) {
     throw new Error(`Source research produced ${contentSources.length} non-duplicate renderable content sources; expected at least ${minContentItems}. See ${path.relative(root, path.join(runDir, 'source-research.json'))}.`)

@@ -202,11 +202,14 @@ export async function auditSourceImageFidelity(
   if (!fingerprint?.image_url) {
     const skipped = {
       audit_id: `source-fidelity-${Date.now()}`,
-      inspection_mode: 'skipped-no-source-image',
+      inspection_mode: 'skipped-no-valid-dominant-source-image',
+      source_image_mode: payload?.source_image_mode || 'skipped-no-valid-dominant-source-image',
+      gate_applicable: false,
       pass: true,
-      verdict: 'pass',
+      editorial_pass: false,
+      verdict: 'skipped',
       blockers: [],
-      rationale: 'No source_image_fingerprints image_url was present; no source-image fidelity gate was applicable.',
+      rationale: 'No valid dominant source_image_fingerprints image_url was present; source-image fidelity was not applicable and must be reported as skipped, not passed.',
     }
     await writeJson(auditPath, skipped)
     return skipped

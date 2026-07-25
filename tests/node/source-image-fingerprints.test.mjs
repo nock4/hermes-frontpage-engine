@@ -101,6 +101,25 @@ describe('source image fingerprints', () => {
       width: 1024,
       height: 768,
     })).toBe(false)
+    expect(isLowFertilitySourceImageCandidate({
+      image_url: 'http://vgmaps.com/System/Main/LeftSide.gif',
+      title: 'VGMaps left skinny gutter page chrome',
+      width: 12,
+      height: 900,
+    })).toBe(true)
+    expect(isLowFertilitySourceImageCandidate({
+      image_url: 'https://example.com/prompt-guide-card.png',
+      title: 'generic prompt-guide card for an AI tooling workflow',
+      width: 1200,
+      height: 630,
+    })).toBe(true)
+    expect(isLowFertilitySourceFingerprint({
+      image_url: 'https://example.com/header-banner.jpg',
+      visual_summary: 'page chrome navigation header and affiliate banner ad',
+      visual_fertility: 'medium',
+      width: 728,
+      height: 90,
+    })).toBe(true)
   })
 
   it('builds a contact-sheet svg from source image material for review artifacts', () => {

@@ -36,7 +36,9 @@ export async function composeDailyPayload(
 ) {
   const contentSources = getResearchContentSources(researchField).slice(0, maxContentItems)
   const visualDirection = await inferVisualDirection({ signalHarvest, researchField, apiKey, model, date, recentEditions, platePosture }, runDir)
-  const visualReference = researchField.visual_reference?.image_url ? {
+  const sourceImageMode = researchField.source_image_mode || (Array.isArray(researchField.source_image_fingerprints) && researchField.source_image_fingerprints.length ? 'dominant-source-image' : 'source-field')
+  const mayUseDominantSourceImage = sourceImageMode === 'dominant-source-image' || !researchField.source_image_mode
+  const visualReference = mayUseDominantSourceImage && researchField.visual_reference?.image_url ? {
     title: getSourceDisplayTitle(researchField.visual_reference, 'Visual reference'),
     source_url: researchField.visual_reference.url || researchField.visual_reference.source_url,
     final_url: researchField.visual_reference.final_url,
@@ -92,8 +94,12 @@ export async function composeDailyPayload(
       'Use each supplied source URL at most once. Do not create multiple artifacts for the same article, post, redirect target, image, or source page.',
       'Prefer a mix of source types, domains, notes, media, and visual roles over several pieces from the same source cluster.',
       'When source_anchor_research exists, make one coherent world around that anchor rather than a collage of unrelated bookmarks.',
-      'Use selected_image_material as source-grounded visual material for palette, structure, texture, crop logic, and mark language. Do not copy logos, page chrome, or subjects literally.',
-      'Use source_image_fingerprints as explicit plate grammar: palette pressure, surface pressure, crop logic, scale relationships, seams, glare, and edge behavior. Do not describe them as thumbnails pasted into the plate.',
+      selectedImageMaterial.length
+        ? 'Use selected_image_material as source-grounded visual material for palette, structure, texture, crop logic, and mark language. Do not copy logos, page chrome, or subjects literally.'
+        : 'No valid dominant source image survived source-material screening; build a source-field plate from source metadata, surfaces, media types, and research motifs without pretending a source image is attached.',
+      sourceImageFingerprints.length
+        ? 'Use source_image_fingerprints as explicit plate grammar: palette pressure, surface pressure, crop logic, scale relationships, seams, glare, and edge behavior. Do not describe them as thumbnails pasted into the plate.'
+        : 'Do not include source-image-preservation language when source_image_fingerprints is empty; this is source-field mode, not source-image fidelity mode.',
       'Use inferred_visual_direction.composition_archetype, camera_plate_grammar, and visual_compositional_moves as hard art-direction inputs, not optional ambience.',
       'Use plate_posture as the edition-level variety gear. If plate_posture asks for minimal or abstract, preserve real source anchors as marks, apertures, seams, notches, cuts, glints, or surface interruptions rather than adding props.',
       'If plate_posture includes formal_risk or look_avoidance_directive, obey it visibly: break repeated flat material-scan grammar with depth, scale violence, spatial event, weather, procession, cutaway, object collision, horizon, or loud source-media fragments while keeping anchors real.',
@@ -108,9 +114,13 @@ export async function composeDailyPayload(
     })),
     diversity_directive: diversityDirective,
     source_visual_reference: visualReference,
+    source_image_mode: sourceImageMode,
+    source_image_mode_reason: researchField.source_image_mode_reason || null,
     source_visual_reference_instruction: visualReference
       ? 'Use the attached source image as the primary composition reference, not loose ambience. Preserve its framing, massing, subject/object spacing, palette, light relationship, and edge behavior before adding research-world marks. If it is a graphic/editorial/poster source, preserve the layout as abstract shapes: text-block silhouettes, blob/diagram geometry, route/grid marks, negative space, palette, and light; convert readable text/logos into illegible mass and do not replace the source with a figurative scene, room, landscape, character, or metaphor.'
-      : 'No source image was available; derive visual direction from source metadata only.',
+      : sourceImageMode === 'skipped-no-valid-dominant-source-image'
+        ? 'No valid dominant source image survived screening; derive visual direction from the broader source field and report source-image fidelity as skipped, not passed.'
+        : 'No source image was available; derive visual direction from source metadata only.',
     scene_prompting_rules: [
       'Write the scene_prompt as art direction for one finished still image, not as product strategy or app documentation.',
       'Let the supplied inferred_visual_direction decide brightness, density, geometry, composition, material language, and openness.',
@@ -768,9 +778,10 @@ export function buildSceneImagePrompt(payload) {
   const platePosture = payload.plate_posture || visualDirection.plate_posture || null
   const artifacts = Array.isArray(payload.artifacts) ? payload.artifacts : []
   const sourceImageFingerprints = normalizeSourceImageFingerprints(payload.source_image_fingerprints).slice(0, 1)
-  const referenceUse = sourceImageFingerprints.length
+  const hasSourceImage = sourceImageFingerprints.length > 0
+  const referenceUse = hasSourceImage
     ? sourceImageFingerprints.map(describeSourceImageFingerprint).join(' | ')
-    : 'attached visual reference crop logic, source massing, surface pressure, palette relationships, and edge behavior'
+    : compactText(`${payload.scene_prompt || payload.mood || 'source field'}; ${visualDirection.evidence_summary || ''}; ${joinLimited(payload.material_language, 'source-led surfaces', 3)}; ${(visualDirection.visual_compositional_moves || []).slice(0, 2).join('; ')}`, 520)
   const preserveText = sourceReferencePreserveText(payload, referenceUse)
   const graphicEditorialGuard = looksLikeGraphicEditorialSource(payload, preserveText)
     ? 'This is a graphic/editorial/poster/package reference: preserve the cover layout, figure/portrait masses as abstract shapes, text-strip silhouettes as illegible marks, object/hand edge cues, negative space, palette, and light. Keep it as a flat source plane unless the source itself has deep space. Do not replace it with unrelated macro texture, cave, room, landscape, city, skyline, horizon, character, central figure, poster wall, or metaphor.'
@@ -795,14 +806,18 @@ export function buildSceneImagePrompt(payload) {
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
-    'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or literal identity/photoreal face copying. Preserve source subjects, object relationships, silhouettes, edge cues, and surface pressure from the source image.',
+    hasSourceImage
+      ? 'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or literal identity/photoreal face copying. Preserve source subjects, object relationships, silhouettes, edge cues, and surface pressure from the source image.'
+      : 'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, fake summary cards, or literal UI. Since no dominant source image is attached, make anchors from the broader source field: media surfaces, source edges, gestures, apertures, cuts, traces, and material marks.',
     ...(payload.negative_constraints || []).slice(0, 1).map((constraint) => compactText(constraint, 80)),
   ]).join(' ')
 
   return [
-    'Use the attached source image as the main composition reference.',
+    hasSourceImage
+      ? 'Use the attached source image as the main composition reference.'
+      : 'No dominant source image is attached. Build a source-field plate from the supplied research field; do not claim source-image preservation.',
     '',
-    'PRESERVE',
+    hasSourceImage ? 'PRESERVE' : 'SOURCE FIELD',
     compactText(preserveText, 520),
     sourceAspectGuard,
     recoveryTransformGuard,
@@ -815,7 +830,9 @@ export function buildSceneImagePrompt(payload) {
     `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
     'ANCHORS',
-    `Add ${anchorCount} source windows as small real marks in the preserved image: existing edges, seams, ticks, apertures, cuts, glints, label slivers, scars, defects, or media grains. They must belong to the source image, not appear as cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`,
+    hasSourceImage
+      ? `Add ${anchorCount} source windows as small real marks in the preserved image: existing edges, seams, ticks, apertures, cuts, glints, label slivers, scars, defects, or media grains. They must belong to the source image, not appear as cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`
+      : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`,
     '',
     'LIMITS',
     `${payload.lighting || visualDirection.lighting_profile || 'source-led light'}; materials: ${materialLanguage}; palette: ${visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood || 'source-led color'}. ${constraints}`,

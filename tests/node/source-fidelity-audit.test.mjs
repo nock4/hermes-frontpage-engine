@@ -275,7 +275,7 @@ describe('source image fidelity audit', () => {
     expect(audit.blockers).toEqual([])
   })
 
-  it('skips when no source image fingerprint is attached', async () => {
+  it('reports skipped source-field mode as not a source-image fidelity pass', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-skip-'))
     const audit = await auditSourceImageFidelity(
       { payload: {}, platePath: path.join(runDir, 'plate.png') },
@@ -284,6 +284,10 @@ describe('source image fidelity audit', () => {
     )
 
     expect(audit.pass).toBe(true)
-    expect(audit.inspection_mode).toBe('skipped-no-source-image')
+    expect(audit.editorial_pass).toBe(false)
+    expect(audit.gate_applicable).toBe(false)
+    expect(audit.verdict).toBe('skipped')
+    expect(audit.inspection_mode).toBe('skipped-no-valid-dominant-source-image')
+    expect(audit.rationale).toContain('not passed')
   })
 })
