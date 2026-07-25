@@ -287,6 +287,7 @@ export async function generateScenePlate(
         '--prompt-file', path.join(runDir, 'scene-prompt.txt'),
         '--output', outputPath,
         '--aspect-ratio', imageAspectRatioFromSize(imageSize),
+        ...(payload.source_image_fingerprints?.[0]?.image_url ? ['--image-url', payload.source_image_fingerprints[0].image_url] : []),
       ],
       runCommand: runHermesImageCommand,
       sleep,
@@ -305,6 +306,8 @@ export async function generateScenePlate(
       prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
       asset_path: outputPath,
       source_image: hermesResult.source_image || null,
+      input_image_url: hermesResult.input_image_url || payload.source_image_fingerprints?.[0]?.image_url || null,
+      modality: hermesResult.modality || null,
       aspect_ratio: hermesResult.aspect_ratio || imageAspectRatioFromSize(imageSize),
       attempts: hermesAttempts,
     })

@@ -226,4 +226,58 @@ describe('scene generation Hermes image backend', () => {
       await rm(runDir, { recursive: true, force: true })
     }
   })
+
+  it('passes source image fingerprints into edit-capable Hermes image providers', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-scene-source-image-'))
+    let seenArgs = []
+    try {
+      await generateScenePlate(
+        {
+          payload: {
+            scene_prompt: 'A transformed full-frame source plate.',
+            lighting: 'source light',
+            material_language: ['paint'],
+            ambiance: { color_drift: 'source palette' },
+            source_image_fingerprints: [{
+              title: 'Source image',
+              image_url: 'https://assets.example/source.jpg',
+              preserve_cues: ['full room framing', 'right-side player gesture'],
+            }],
+            visual_direction: {},
+            artifacts: [{ source_url: 'https://example.com/source' }],
+          },
+          imageModel: 'gpt-image-2-medium',
+          imageBackend: 'hermes',
+          imageSize: '1536x1024',
+          imageQuality: 'medium',
+        },
+        runDir,
+        {
+          writeJson: async (targetPath, payload) => {
+            await writeFile(targetPath, JSON.stringify(payload, null, 2), 'utf8')
+          },
+          runHermesImageCommand: async (_command, args) => {
+            seenArgs = args
+            await writeFile(path.join(runDir, 'plate.png'), 'fake-image-bytes')
+            return {
+              provider: 'openai-codex',
+              model: 'gpt-image-2-medium',
+              source_image: '/tmp/generated.png',
+              input_image_url: 'https://assets.example/source.jpg',
+              modality: 'image',
+              aspect_ratio: 'landscape',
+            }
+          },
+          sleep: async () => {},
+        },
+      )
+      expect(seenArgs).toContain('--image-url')
+      expect(seenArgs[seenArgs.indexOf('--image-url') + 1]).toBe('https://assets.example/source.jpg')
+      const sceneGeneration = JSON.parse(await readFile(path.join(runDir, 'scene-generation.json'), 'utf8'))
+      expect(sceneGeneration.input_image_url).toBe('https://assets.example/source.jpg')
+      expect(sceneGeneration.modality).toBe('image')
+    } finally {
+      await rm(runDir, { recursive: true, force: true })
+    }
+  })
 })

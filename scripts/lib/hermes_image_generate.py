@@ -54,6 +54,7 @@ def main() -> int:
     parser.add_argument('--prompt-file', help='Path to a UTF-8 prompt file')
     parser.add_argument('--output', required=True, help='Where to save the final PNG/JPG/WebP file')
     parser.add_argument('--aspect-ratio', default='landscape', choices=['landscape', 'portrait', 'square'])
+    parser.add_argument('--image-url', help='Optional source image URL/path for edit-capable Hermes providers')
     parser.add_argument('--provider', help='Explicit Hermes image provider name. Defaults to active provider from Hermes config.')
     args = parser.parse_args()
 
@@ -72,7 +73,10 @@ def main() -> int:
     if not provider.is_available():
         raise SystemExit(f"Hermes image provider '{provider.name}' is configured but unavailable.")
 
-    result = provider.generate(prompt=prompt, aspect_ratio=args.aspect_ratio)
+    kwargs = {'prompt': prompt, 'aspect_ratio': args.aspect_ratio}
+    if args.image_url:
+        kwargs['image_url'] = args.image_url
+    result = provider.generate(**kwargs)
     if not isinstance(result, dict):
         raise SystemExit('Hermes image provider returned a non-dict result.')
     if not result.get('success'):
@@ -86,6 +90,8 @@ def main() -> int:
         'provider': result.get('provider') or getattr(provider, 'name', None),
         'model': result.get('model') or getattr(provider, 'default_model', lambda: None)(),
         'source_image': result.get('image'),
+        'input_image_url': args.image_url,
+        'modality': result.get('modality'),
         'output': str(output_path),
         'aspect_ratio': args.aspect_ratio,
     }
