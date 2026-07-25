@@ -291,7 +291,7 @@ describe('scene generation Hermes image backend', () => {
     }
   })
 
-  it('passes source image fingerprints into edit-capable Hermes image providers', async () => {
+  it('keeps source images as prompt fingerprints by default instead of edit inputs', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-scene-source-image-'))
     let seenArgs = []
     try {
@@ -327,19 +327,19 @@ describe('scene generation Hermes image backend', () => {
               provider: 'openai-codex',
               model: 'gpt-image-2-medium',
               source_image: '/tmp/generated.png',
-              input_image_url: 'https://assets.example/source.jpg',
-              modality: 'image',
+              modality: 'text',
               aspect_ratio: 'landscape',
             }
           },
           sleep: async () => {},
         },
       )
-      expect(seenArgs).toContain('--image-url')
-      expect(seenArgs[seenArgs.indexOf('--image-url') + 1]).toBe('https://assets.example/source.jpg')
+      expect(seenArgs).not.toContain('--image-url')
       const sceneGeneration = JSON.parse(await readFile(path.join(runDir, 'scene-generation.json'), 'utf8'))
-      expect(sceneGeneration.input_image_url).toBe('https://assets.example/source.jpg')
-      expect(sceneGeneration.modality).toBe('image')
+      expect(sceneGeneration.input_image_url).toBe(null)
+      expect(sceneGeneration.source_reference_url).toBe('https://assets.example/source.jpg')
+      expect(sceneGeneration.source_image_generation_mode).toBe('fingerprint-prompt-only')
+      expect(sceneGeneration.modality).toBe('text')
     } finally {
       await rm(runDir, { recursive: true, force: true })
     }
