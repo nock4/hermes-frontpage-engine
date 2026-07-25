@@ -232,6 +232,52 @@ describe('source image fidelity audit', () => {
     expect(audit.blockers).toContain('anchor copied without edition transformation')
   })
 
+  it('blocks source-image plates that recreate the same product still life with small edits', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-still-life-copy-'))
+    const platePath = path.join(runDir, 'plate.png')
+    await writeFile(platePath, 'fake plate')
+
+    await expect(auditSourceImageFidelity(
+      {
+        payload: {
+          source_image_fingerprints: [{
+            title: 'Cloud ceramics',
+            image_url: 'https://assets.example/ceramics.jpg',
+            preserve_cues: ['three-vase arrangement', 'white plinth', 'cloud motifs and gold lightning'],
+          }],
+        },
+        platePath,
+      },
+      runDir,
+      {
+        writeJson,
+        createContactSheetImpl: async ({ outputPath }) => {
+          await writeFile(outputPath, 'fake contact sheet')
+          return outputPath
+        },
+        openAiJsonImpl: async () => ({
+          verdict: 'pass',
+          resemblance_score: 1,
+          framing_score: 1,
+          object_relationship_score: 1,
+          context_score: 1,
+          transformation_score: 0.62,
+          retained_critical_elements: ['same three-vase arrangement', 'same plinth', 'same object positions'],
+          missing_critical_elements: [],
+          drift_risks: [
+            'generated plate is almost identical: same still life, same object positions, same camera distance and plinth, with only a small aperture and subtle seam added',
+            'borrowed elements are not enough because the plate remains the same image',
+          ],
+          rationale: 'The plate recreates the source product photo too literally. It uses the same three-vase arrangement and plinth; the small edits do not change arrangement, scale, object count, crop, surface state, or spatial logic enough.',
+        }),
+      },
+    )).rejects.toThrow(/Source-image fidelity QA failed/)
+
+    const audit = JSON.parse(await readFile(path.join(runDir, 'source-fidelity-audit.json'), 'utf8'))
+    expect(audit.pass).toBe(false)
+    expect(audit.blockers).toContain('source image recreated instead of borrowed')
+  })
+
   it('does not block a pass verdict for negated replacement language', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-negated-pass-'))
     const platePath = path.join(runDir, 'plate.png')

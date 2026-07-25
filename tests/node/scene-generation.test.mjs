@@ -106,21 +106,56 @@ describe('scene generation image prompt', () => {
       artifacts: [{ source_url: 'https://example.com/source', role: 'hero source-bearing anchor' }],
     })
 
-    expect(prompt).toContain('PRESERVE')
+    expect(prompt).toContain('BORROW')
     expect(prompt).toContain('Acid sleeve scan')
     expect(prompt).toContain('acid / neon saturation')
     expect(prompt).toContain('gloss / flash glare')
     expect(prompt).toContain('hard diagonal crop or seam; torn or irregular edge behavior')
-    expect(prompt).toContain('KEEP ORIGINAL FRAMING')
-    expect(prompt).toContain('No macro crop')
-    expect(prompt).toContain('source subjects, object relationships')
+    expect(prompt).toContain('SOURCE-INSPIRATION LOCK')
+    expect(prompt).toContain('No unrelated replacement scene')
+    expect(prompt).toContain('Borrow recognizable elements')
     expect(prompt).not.toContain('no literal depiction of the source reference image')
     expect(prompt).toContain('never cards, pasted thumbnails')
     expect(prompt).not.toContain('sky/cloud')
     expect(prompt).not.toContain('vertical shafts')
-    expect(prompt).toContain('Do not simply reproduce the anchor image')
+    expect(prompt).toContain('not as a composition to copy')
     expect(prompt).not.toContain('Source image plate seeds:')
-    expect(prompt.length).toBeLessThan(2050)
+    expect(prompt.length).toBeLessThan(2300)
+  })
+
+  it('tells source-image runs to borrow elements instead of recreating the same still life', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'A cloud-ceramic plinth rupture plate.',
+      lighting: 'diffuse studio light',
+      material_language: ['satin ceramic', 'gold lightning inlay'],
+      source_image_fingerprints: [{
+        title: 'Cloud ceramics',
+        image_url: 'https://assets.example/ceramics.jpg',
+        visual_summary: 'Square studio product image of three hand-painted ceramic vases on a white plinth.',
+        preserve_cues: [
+          'Three-vase arrangement: small dark teal round vase centered in front, taller pale blue vase set back left, peach-lavender round vase set back right.',
+          'White rectangular plinth occupies the lower third with visible top plane and front vertical face; background is nearly blank pale gray.',
+          'Painted sky motifs wrap around the ceramics with thin branching gold lightning on the front vase.',
+        ],
+      }],
+      visual_direction: {
+        composition_archetype: 'product-photo rupture',
+        camera_plate_grammar: 'side-lit object slab',
+        visual_compositional_moves: ['large ceramic aperture', 'shifted scale rupture'],
+      },
+      plate_posture: { plate_posture: 'source-led balanced' },
+      artifacts: Array.from({ length: 9 }, (_, index) => ({ source_url: `https://example.com/${index}` })),
+    })
+
+    expect(prompt).toContain('Use the attached source image as inspiration')
+    expect(prompt).toContain('not as a picture to recreate')
+    expect(prompt).toContain('BORROW')
+    expect(prompt).toContain('change at least two of arrangement, scale, object count, crop, surface state, or spatial logic')
+    expect(prompt).toContain('Do not start by duplicating the original source framing and object layout')
+    expect(prompt).toContain('near-identical still life')
+    expect(prompt).not.toContain('Use the attached source image as the main composition reference')
+    expect(prompt).not.toContain('Transform the exact full source composition')
+    expect(prompt).not.toContain('KEEP ORIGINAL FRAMING')
   })
 
   it('keeps graphic editorial source references as layout instead of metaphor', () => {
@@ -151,7 +186,7 @@ describe('scene generation image prompt', () => {
       artifacts: [{ source_url: 'https://example.com/source', role: 'hero source-bearing anchor' }],
     })
 
-    expect(prompt).toContain('Use the attached source image as the main composition reference')
+    expect(prompt).toContain('Use the attached source image as inspiration')
     expect(prompt).toContain('wide horizontal crop')
     expect(prompt).toContain('large pale off-white organic island')
     expect(prompt).toContain('graphic/editorial/poster/package reference')

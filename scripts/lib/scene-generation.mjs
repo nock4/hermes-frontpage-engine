@@ -801,13 +801,13 @@ export function buildSceneImagePrompt(payload) {
     ? compactText(platePosture.look_avoidance_directive, 155)
     : ''
   const sourceAspectGuard = /\bsquare\b/i.test(preserveText)
-    ? 'SOURCE-ASPECT LOCK: the output canvas may be landscape, but the source is square. Preserve the square source composition as the dominant full-height field or crop logic, then extend only source-specific color/material pressure into side margins. No visible frame, border, mat, wall, panel edge, beige surround, or object-in-space treatment. Do not make the source itself panoramic, wide, or stretched.'
+    ? 'SOURCE-ASPECT NOTE: the source is square. Do not stretch it into a panorama or paste the square as a framed panel. Borrow its crop pressure, negative-space ratio, and edge logic, but rebuild the plate as a new composition.'
     : ''
   const recoveryTransformGuard = process.env.DFE_SOURCE_PRESERVE_PLATE === '1'
     ? 'RECOVERY TRANSFORM: the previous plate failed source-fidelity. Rebuild from the full source composition first, not from the failed abstract crop. Keep every named PRESERVE cue visible at once, then add edition-native transformation that is obvious at thumbnail scale: several large seams, cut-through apertures, repaired tears, translucent material interruptions, source-window scars, and scale shifts crossing both the hero source mass and the lower anchor surface. Do not erase people, gestures, balls, table geometry, room context, or other source relationships to create an empty field. Do not return a near-identical aged copy with tiny decorative ticks.'
     : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
-    ? `KEEP ORIGINAL FRAMING: preserve source camera distance, full-frame layout, major object positions, relationships, background, and edge proportions. ${sourceAspectGuard} ${recoveryTransformGuard} No macro crop, replacement scene, invented people/city/horizon/deep space, or posture that overrides resemblance. Do not simply reproduce the anchor image; add visible transformed source-window marks.`
+    ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements — palette, silhouettes, object relationships, surface motifs, light, and edge pressure — then change the edition's arrangement enough that it is clearly not the same image. ${sourceAspectGuard} ${recoveryTransformGuard} No unrelated replacement scene, pasted source photo, framed source panel, or near-identical still life with tiny marks. Keep source identity through borrowed elements and visible source-window interventions.`
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
@@ -819,10 +819,10 @@ export function buildSceneImagePrompt(payload) {
 
   return [
     hasSourceImage
-      ? 'Use the attached source image as the main composition reference.'
+      ? 'Use the attached source image as inspiration and material grammar, not as a picture to recreate.'
       : 'No dominant source image is attached. Build a source-field plate from the supplied research field; do not claim source-image preservation.',
     '',
-    hasSourceImage ? 'PRESERVE' : 'SOURCE FIELD',
+    hasSourceImage ? 'BORROW' : 'SOURCE FIELD',
     compactText(preserveText, 520),
     sourceAspectGuard,
     recoveryTransformGuard,
@@ -830,17 +830,17 @@ export function buildSceneImagePrompt(payload) {
     '',
     'TRANSFORM',
     compactText(hasSourceImage
-      ? `Transform the exact full source composition described in PRESERVE; keep named objects, gestures, relationships, and background visible, but make edition-native interventions large enough to read immediately. ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source resemblance. ` : ''}${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
+      ? `Build a new plate from the BORROW cues: keep source identity through borrowed silhouettes, motifs, palette, lighting, and material edges, but change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source borrowing, not source copying. ` : ''}${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
       : `${payload.scene_prompt || payload.mood || 'Turn the source field into a full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 420),
     '',
     'COMPOSITION',
     hasSourceImage
-      ? `Start with original source framing and object layout; use ${visualDirection.composition_archetype || 'source-led plate'} / ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'} only as surface treatment. ${sourceAspectGuard} ${moves}. Formal risk can add seams, cuts, or scale pressure, but must not crop away: ${compactText(preserveText, 150)}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`
+      ? `Do not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through ${visualDirection.composition_archetype || 'source-led plate'} / ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk must visibly change the source arrangement while retaining: ${compactText(preserveText, 150)}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`
       : `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
     'ANCHORS',
     hasSourceImage
-      ? `Add ${anchorCount} source windows as real marks in the preserved image: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure, not sit as tiny decorative ticks. They must belong to the source image, never cards, pasted thumbnails, rings, outlines, pins, or debug markers.`
+      ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, rings, outlines, pins, or debug markers.`
       : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`,
     '',
     'LIMITS',

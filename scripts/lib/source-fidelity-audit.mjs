@@ -167,7 +167,11 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
     },
     {
       label: 'anchor copied without edition transformation',
-      pattern: /(copy|copied|near[- ]?copy|duplicate|reproduction|reproduces|direct transformed edition|same quiet blank field|same centered|same wordmark|same typographic).{0,140}(no added|without|only|same|close enough|publication)|(?:no added|without|only).{0,100}(source[- ]?window|aperture|cut|seam|interruption|edition[- ]?native|transformation)/,
+      pattern: /(copy|copied|near[- ]?copy|duplicate|reproduction|reproduces|direct transformed edition|same quiet blank field|same centered|same wordmark|same typographic|same still[- ]?life|same arrangement|same object positions|same composition|basically the source|almost identical|too close to the source).{0,180}(no added|without|only|same|close enough|publication|subtle|tiny|minor|not enough|insufficient)|(?:no added|without|only|tiny|minor|subtle|insufficient).{0,120}(source[- ]?window|aperture|cut|seam|interruption|edition[- ]?native|transformation|arrangement change)/,
+    },
+    {
+      label: 'source image recreated instead of borrowed',
+      pattern: /(same|identical|near[- ]?identical|almost identical|unchanged).{0,120}(arrangement|object positions|still[- ]?life|three[- ]?vase|camera distance|plinth|composition|layout)|(?:borrow|inspiration|inspired).{0,140}(not enough|insufficient|too literal|same image)/,
     },
   ]
   const blockerScopeText = normalized.verdict === 'pass'
@@ -241,14 +245,16 @@ export async function auditSourceImageFidelity(
   }
 
   const prompt = {
-    task: 'Compare the LEFT source material image with the RIGHT generated plate. Judge whether the generated plate preserves the source-image composition strongly enough for publication.',
+    task: 'Compare the LEFT source material image with the RIGHT generated plate. Judge whether the generated plate borrows recognizable source elements while becoming a new Daily Frontpage plate, not a recreation of the same image.',
     rules: [
-      'This is not a generic style-similarity check. The generated plate may be painterly or abstracted, but it must keep the source framing, camera distance, major object positions, object/figure relationships, and spatial context when a source image is attached.',
+      'This is not a generic style-similarity check and not a copy-tolerance check. The generated plate may use the source image as inspiration, but it must not recreate the same photograph/product shot/still life with small marks added.',
+      'A pass should borrow source identity: palette, silhouettes, motifs, material behavior, light, edge pressure, or a few object relationships. It should visibly change at least two of arrangement, scale, object count, crop, surface state, or spatial logic.',
       'Treat over-cropping, macro texture replacement, lost room/background context, or replacement with an unrelated metaphor scene as blockers.',
       'Treat warning-level language about source crop/framing drift, square-to-landscape drift, lost light/object relationships, framed-panel conversion, or same-palette-not-same-source as blockers; return fail for those cases, not warn.',
-      'Also block overcopying: if the generated plate is basically the source image again, especially a minimal graphic/wordmark/cover with the same blank field and same central mark but without visible edition-native cuts, seams, apertures, source-window marks, scale shifts, or material interventions, return fail. Fidelity is necessary but a copy is not an edition.',
-      'A pass requires the right image to visibly read as a transformed edition of the left image, not merely share colors or one object.',
+      'Also block overcopying: if the generated plate is basically the source image again — same still-life arrangement, same object count, same camera distance, same plinth/background, same central mark, or tiny decorative edits — return fail. Fidelity is necessary but a copy is not an edition.',
+      'A pass requires the right image to visibly read as a source-inspired edition that borrowed elements from the left image, not the same image with seams or apertures pasted onto it.',
       'Be adversarial: if a human editor would say the source material looks nothing like the plate, return fail.',
+      'Be equally adversarial if a human editor would say the plate generation looks identical to the source material; return fail for that too.',
     ],
     source_title: fingerprint.title,
     source_image_url: fingerprint.image_url,
