@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-07-25-green-fuselage-felt-wall-v1",
+  "edition_id": "2026-07-25-green-fuselage-felt-wall-v1",
+  "plate_read_timestamp": "2026-07-25T14:53:05.893Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A worn paper plate with torn deckled borders holds a smeared billiards-room scene. The dominant source-bearing gesture is a long emerald fuselage-like band crossing the upper-middle, interrupted by ripped vertical seams, pale ceiling scratches, a greenhouse-like pasted patch at upper right, small table glints, and right-side monochrome figures compressed into a damaged aperture.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "an archive wall struck sideways by a green aircraft, dense with pasted residue and calm scraped pockets",
+      "A worn paper plate with torn deckled borders holds a smeared billiards-room scene. The dominant source-bearing gesture is a long emerald fuselage-like band crossing the upper-middle, interrupted by ripped vertical seams, pale ceiling scratches, a greenhouse-like pasted patch at upper right, small table glints, and right-side monochrome figures compressed into a damaged aperture.",
+      "torn-poster-wall",
+      "green-fuselage",
+      "aqua-felt"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero emerald fuselage tear",
+      "hero procedural creature smear",
+      "cream greenhouse border",
+      "trench-line ceiling scratch",
+      "hepburn-crowd aperture",
+      "arts-index paper notch",
+      "Secondary Source Anchor",
+      "Color Node"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "surreal-billiards-poster-wall",
+      "emerald horizontal tear crossing the upper plate",
+      "turquoise forced-perspective felt trapezoid widening from the bottom edge",
+      "right-edge smeared figure cluster with white flashes",
+      "cream archive borders and pasted image fragments at uneven depths",
+      "diagonal greenhouse and trench seams scratched through the wall",
+      "long emerald horizontal smear across the upper-middle",
+      "pale torn greenhouse-like patch at upper right"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: surreal-billiards-poster-wall.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-emerald-fuselage-tear",
+      "kind": "hero",
+      "type": "hero-scale-horizontal-torn-image-band",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.015,
+        "y": 0.274,
+        "w": 0.832,
+        "h": 0.252
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-procedural-creature-smear",
+      "kind": "hero",
+      "type": "dark-animated-media-residue-smear",
+      "strength": 0.9851119999999999,
+      "bounds": {
+        "x": 0.027,
+        "y": 0.412,
+        "w": 0.332,
+        "h": 0.393
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cream-greenhouse-border",
+      "kind": "module",
+      "type": "decorated-poster-margin",
+      "strength": 0.801276,
+      "bounds": {
+        "x": 0.633,
+        "y": 0.124,
+        "w": 0.178,
+        "h": 0.265
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-trench-line-ceiling-scratch",
+      "kind": "module",
+      "type": "diagonal-scratched-seam",
+      "strength": 0.764916,
+      "bounds": {
+        "x": 0.581,
+        "y": 0.011,
+        "w": 0.399,
+        "h": 0.435
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-hepburn-crowd-aperture",
+      "kind": "module",
+      "type": "black-and-white-pasted-aperture",
+      "strength": 0.7177680000000001,
+      "bounds": {
+        "x": 0.825,
+        "y": 0.44,
+        "w": 0.139,
+        "h": 0.445
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-arts-index-paper-notch",
+      "kind": "module",
+      "type": "pale-catalog-notch",
+      "strength": 0.70404,
+      "bounds": {
+        "x": 0.035,
+        "y": 0.637,
+        "w": 0.188,
+        "h": 0.191
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-secondary-source-anchor",
+      "kind": "module",
+      "type": "turquoise-billiards-table-surface",
+      "strength": 0.6687000000000001,
+      "bounds": {
+        "x": 0.259,
+        "y": 0.666,
+        "w": 0.496,
+        "h": 0.196
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "billiard-ball-color-node",
+      "strength": 0.6532,
+      "bounds": {
+        "x": 0.268,
+        "y": 0.744,
+        "w": 0.144,
+        "h": 0.077
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-2",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.6565479999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-emerald-fuselage-tear-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.015,
+        "y": 0.274,
+        "w": 0.832,
+        "h": 0.252
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-procedural-creature-smear-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.027,
+        "y": 0.412,
+        "w": 0.332,
+        "h": 0.393
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cream-greenhouse-border-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.633,
+        "y": 0.124,
+        "w": 0.178,
+        "h": 0.265
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-trench-line-ceiling-scratch-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.581,
+        "y": 0.011,
+        "w": 0.399,
+        "h": 0.435
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-hepburn-crowd-aperture-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.825,
+        "y": 0.44,
+        "w": 0.139,
+        "h": 0.445
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-arts-index-paper-notch-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.035,
+        "y": 0.637,
+        "w": 0.188,
+        "h": 0.191
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-secondary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.259,
+        "y": 0.666,
+        "w": 0.496,
+        "h": 0.196
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.268,
+        "y": 0.744,
+        "w": 0.144,
+        "h": 0.077
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

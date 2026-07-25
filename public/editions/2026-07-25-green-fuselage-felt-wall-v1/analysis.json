@@ -1,0 +1,485 @@
+{
+  "analysis_id": "analysis-2026-07-25-green-fuselage-felt-wall-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A worn paper plate with torn deckled borders holds a smeared billiards-room scene. The dominant source-bearing gesture is a long emerald fuselage-like band crossing the upper-middle, interrupted by ripped vertical seams, pale ceiling scratches, a greenhouse-like pasted patch at upper right, small table glints, and right-side monochrome figures compressed into a damaged aperture.",
+  "usable_surfaces": [
+    "long emerald horizontal smear across the upper-middle",
+    "pale torn greenhouse-like patch at upper right",
+    "vertical ripped paper seam left of center",
+    "diagonal ceiling scratches in the upper field",
+    "right-side figure aperture and dark pasted edge",
+    "tiny white glints on the pool-table felt",
+    "lower-left torn paper notch and black void",
+    "yellow and orange billiard color nodes"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero emerald fuselage tear",
+      "artifact_type": "hero-scale-horizontal-torn-image-band",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.015,
+        "y": 0.274,
+        "w": 0.832,
+        "h": 0.252
+      },
+      "polygon": [
+        [
+          0.015,
+          0.323
+        ],
+        [
+          0.128,
+          0.294
+        ],
+        [
+          0.245,
+          0.302
+        ],
+        [
+          0.376,
+          0.335
+        ],
+        [
+          0.524,
+          0.371
+        ],
+        [
+          0.675,
+          0.393
+        ],
+        [
+          0.813,
+          0.415
+        ],
+        [
+          0.847,
+          0.445
+        ],
+        [
+          0.833,
+          0.508
+        ],
+        [
+          0.664,
+          0.506
+        ],
+        [
+          0.493,
+          0.494
+        ],
+        [
+          0.327,
+          0.462
+        ],
+        [
+          0.17,
+          0.43
+        ],
+        [
+          0.026,
+          0.399
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A long green smeared band runs nearly the full width, with a bright pale lower edge and darker emerald body, visibly torn and abraded like a fuselage rupture."
+    },
+    {
+      "label": "hero procedural creature smear",
+      "artifact_type": "dark-animated-media-residue-smear",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.027,
+        "y": 0.412,
+        "w": 0.332,
+        "h": 0.393
+      },
+      "polygon": [
+        [
+          0.027,
+          0.416
+        ],
+        [
+          0.13,
+          0.411
+        ],
+        [
+          0.237,
+          0.436
+        ],
+        [
+          0.31,
+          0.488
+        ],
+        [
+          0.359,
+          0.594
+        ],
+        [
+          0.345,
+          0.73
+        ],
+        [
+          0.294,
+          0.803
+        ],
+        [
+          0.203,
+          0.783
+        ],
+        [
+          0.139,
+          0.705
+        ],
+        [
+          0.055,
+          0.676
+        ],
+        [
+          0.029,
+          0.557
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "Below the green band at left is a murky black-green, creature-like smear with smoky limbs, chair-like arcs, and rubbed animation residue embedded in the wall and lower table edge."
+    },
+    {
+      "label": "cream greenhouse border",
+      "artifact_type": "decorated-poster-margin",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.633,
+        "y": 0.124,
+        "w": 0.178,
+        "h": 0.265
+      },
+      "polygon": [
+        [
+          0.648,
+          0.127
+        ],
+        [
+          0.783,
+          0.132
+        ],
+        [
+          0.809,
+          0.178
+        ],
+        [
+          0.807,
+          0.283
+        ],
+        [
+          0.775,
+          0.357
+        ],
+        [
+          0.684,
+          0.388
+        ],
+        [
+          0.636,
+          0.341
+        ],
+        [
+          0.633,
+          0.238
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Upper right contains a cream-white pasted rectangle under a green cap, with faded diagonal greenhouse-like lines and paper grain distinct from the surrounding wall."
+    },
+    {
+      "label": "trench-line ceiling scratch",
+      "artifact_type": "diagonal-scratched-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.581,
+        "y": 0.011,
+        "w": 0.399,
+        "h": 0.435
+      },
+      "confidence": 0.76,
+      "visual_evidence": "A pale diagonal scratch arcs from the upper center-right down toward the right wall, with repeated fine trench-map-like incisions crossing the ceiling surface."
+    },
+    {
+      "label": "hepburn-crowd aperture",
+      "artifact_type": "black-and-white-pasted-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.825,
+        "y": 0.44,
+        "w": 0.139,
+        "h": 0.445
+      },
+      "polygon": [
+        [
+          0.836,
+          0.444
+        ],
+        [
+          0.884,
+          0.456
+        ],
+        [
+          0.925,
+          0.491
+        ],
+        [
+          0.955,
+          0.584
+        ],
+        [
+          0.964,
+          0.708
+        ],
+        [
+          0.947,
+          0.869
+        ],
+        [
+          0.899,
+          0.884
+        ],
+        [
+          0.858,
+          0.82
+        ],
+        [
+          0.834,
+          0.69
+        ],
+        [
+          0.825,
+          0.55
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "The right side compresses standing human figures into a torn monochrome-dark aperture, bounded by rubbed white scratches and the ragged paper edge."
+    },
+    {
+      "label": "arts-index paper notch",
+      "artifact_type": "pale-catalog-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.035,
+        "y": 0.637,
+        "w": 0.188,
+        "h": 0.191
+      },
+      "polygon": [
+        [
+          0.04,
+          0.657
+        ],
+        [
+          0.104,
+          0.642
+        ],
+        [
+          0.168,
+          0.648
+        ],
+        [
+          0.219,
+          0.688
+        ],
+        [
+          0.205,
+          0.763
+        ],
+        [
+          0.16,
+          0.823
+        ],
+        [
+          0.087,
+          0.805
+        ],
+        [
+          0.047,
+          0.748
+        ],
+        [
+          0.035,
+          0.691
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "Lower left has a torn pale-to-black paper notch with scan-grain, curled edge, and dark void beneath, suitable as a catalog/index remnant."
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "turquoise-billiards-table-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.259,
+        "y": 0.666,
+        "w": 0.496,
+        "h": 0.196
+      },
+      "polygon": [
+        [
+          0.259,
+          0.804
+        ],
+        [
+          0.4,
+          0.701
+        ],
+        [
+          0.537,
+          0.667
+        ],
+        [
+          0.681,
+          0.679
+        ],
+        [
+          0.755,
+          0.76
+        ],
+        [
+          0.691,
+          0.858
+        ],
+        [
+          0.522,
+          0.861
+        ],
+        [
+          0.357,
+          0.846
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The turquoise billiards table is the clearest lower source surface, a broad trapezoidal plane carrying the player's gesture, balls, scratches, and small white glints."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "billiard-ball-color-node",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.268,
+        "y": 0.744,
+        "w": 0.144,
+        "h": 0.077
+      },
+      "polygon": [
+        [
+          0.268,
+          0.807
+        ],
+        [
+          0.272,
+          0.792
+        ],
+        [
+          0.282,
+          0.785
+        ],
+        [
+          0.293,
+          0.788
+        ],
+        [
+          0.301,
+          0.801
+        ],
+        [
+          0.3,
+          0.815
+        ],
+        [
+          0.291,
+          0.824
+        ],
+        [
+          0.279,
+          0.822
+        ],
+        [
+          0.271,
+          0.815
+        ],
+        [
+          0.391,
+          0.745
+        ],
+        [
+          0.403,
+          0.747
+        ],
+        [
+          0.41,
+          0.757
+        ],
+        [
+          0.408,
+          0.77
+        ],
+        [
+          0.398,
+          0.779
+        ],
+        [
+          0.386,
+          0.777
+        ],
+        [
+          0.379,
+          0.767
+        ],
+        [
+          0.38,
+          0.754
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Two saturated billiard balls puncture the muted plate: a yellow node at lower left of the felt and an orange node nearer center-left."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.767,
+    "rationale": "The plate has strong source-bearing anchors and expressive torn edges, but it is visually dense: the fuselage smear, table plane, right figure aperture, vertical rips, and paper border all compete. Still usable because the major marks remain legible and separable."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-25-green-fuselage-felt-wall-v1"
+}
