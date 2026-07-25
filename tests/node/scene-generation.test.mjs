@@ -120,7 +120,7 @@ describe('scene generation image prompt', () => {
     expect(prompt).not.toContain('vertical shafts')
     expect(prompt).toContain('Do not simply reproduce the anchor image')
     expect(prompt).not.toContain('Source image plate seeds:')
-    expect(prompt.length).toBeLessThan(1850)
+    expect(prompt.length).toBeLessThan(2050)
   })
 
   it('keeps graphic editorial source references as layout instead of metaphor', () => {

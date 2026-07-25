@@ -804,7 +804,7 @@ export function buildSceneImagePrompt(payload) {
     ? 'SOURCE-ASPECT LOCK: the output canvas may be landscape, but the source is square. Preserve the square source composition as the dominant full-height field or crop logic, then extend only source-specific color/material pressure into side margins. No visible frame, border, mat, wall, panel edge, beige surround, or object-in-space treatment. Do not make the source itself panoramic, wide, or stretched.'
     : ''
   const recoveryTransformGuard = process.env.DFE_SOURCE_PRESERVE_PLATE === '1'
-    ? 'RECOVERY TRANSFORM: the previous plate failed source-fidelity. Rebuild from the full source composition first, not from the failed abstract crop. Keep every named PRESERVE cue visible at once, then add edition-native transformation: cuts, seams, apertures, edge repairs, material interruptions, scale shifts, and source-window marks. Do not erase people, gestures, balls, table geometry, room context, or other source relationships to create an empty field. If the anchor is a minimal text/wordmark/cover, demote the text to illegible massing and let richer supporting source imagery or material cuts carry the edition.'
+    ? 'RECOVERY TRANSFORM: the previous plate failed source-fidelity. Rebuild from the full source composition first, not from the failed abstract crop. Keep every named PRESERVE cue visible at once, then add edition-native transformation that is obvious at thumbnail scale: several large seams, cut-through apertures, repaired tears, translucent material interruptions, source-window scars, and scale shifts crossing both the hero source mass and the lower anchor surface. Do not erase people, gestures, balls, table geometry, room context, or other source relationships to create an empty field. Do not return a near-identical aged copy with tiny decorative ticks.'
     : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
     ? `KEEP ORIGINAL FRAMING: preserve source camera distance, full-frame layout, major object positions, relationships, background, and edge proportions. ${sourceAspectGuard} ${recoveryTransformGuard} No macro crop, replacement scene, invented people/city/horizon/deep space, or posture that overrides resemblance. Do not simply reproduce the anchor image; add visible transformed source-window marks.`
@@ -830,7 +830,7 @@ export function buildSceneImagePrompt(payload) {
     '',
     'TRANSFORM',
     compactText(hasSourceImage
-      ? `Transform the exact full source composition described in PRESERVE; keep named objects, gestures, relationships, and background visible. ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source resemblance. ` : ''}${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
+      ? `Transform the exact full source composition described in PRESERVE; keep named objects, gestures, relationships, and background visible, but make edition-native interventions large enough to read immediately. ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source resemblance. ` : ''}${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
       : `${payload.scene_prompt || payload.mood || 'Turn the source field into a full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 420),
     '',
     'COMPOSITION',
@@ -840,7 +840,7 @@ export function buildSceneImagePrompt(payload) {
     '',
     'ANCHORS',
     hasSourceImage
-      ? `Add ${anchorCount} source windows as small real marks in the preserved image: existing edges, seams, ticks, apertures, cuts, glints, scars, defects, or media grains. They must belong to the source image, never cards, pasted thumbnails, rings, outlines, pins, or debug markers.`
+      ? `Add ${anchorCount} source windows as real marks in the preserved image: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure, not sit as tiny decorative ticks. They must belong to the source image, never cards, pasted thumbnails, rings, outlines, pins, or debug markers.`
       : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`,
     '',
     'LIMITS',
