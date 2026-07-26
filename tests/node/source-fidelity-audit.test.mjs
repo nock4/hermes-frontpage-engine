@@ -186,7 +186,7 @@ describe('source image fidelity audit', () => {
             'standing figures are ghosted and moved inside the doorway rather than clearly outside',
           ],
           drift_risks: ['floor-object anchors lost near seated figure'],
-          rationale: 'The right plate clearly borrows the source panoramic split, pool doorway, gray interior wall, two central upright figures, cropped seated figure, and perforated black foreground mass. The lost floor objects are fidelity wounds, but the source identity remains legible and the transformation is substantial rather than overcopying.',
+          rationale: 'The right plate clearly borrows the source panoramic split, pool doorway, gray interior wall, two central upright figures, cropped seated figure, and perforated black foreground mass. The lost floor objects are fidelity wounds, but the source identity remains legible, the transformation is substantial rather than overcopying, and the result is not an unrelated ambience scene.',
         }),
       },
     )

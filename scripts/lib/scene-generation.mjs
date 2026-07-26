@@ -780,7 +780,7 @@ function looksLikeGraphicEditorialSource(payload, referenceText) {
     ]),
   ].filter(Boolean).join(' ').toLowerCase()
   const representationalSceneCues = /(painting|painted|figurative|interior|room|doorway|window|pool|seated|standing|figure|chair|curtain|wall picture|still[- ]?life)/.test(text)
-  const graphicCues = /(editorial|poster|cover|typographic|headline|text block|type mass|letterform)/.test(text)
+  const graphicCues = /\b(editorial|poster|cover|typographic|headline|text block|type mass|letterform)\b/.test(text)
   const diagramCues = /(blob|island|grid|route|diagram|left[- ]?right|negative space)/.test(text)
   if (representationalSceneCues && !graphicCues) return false
   return graphicCues && diagramCues
