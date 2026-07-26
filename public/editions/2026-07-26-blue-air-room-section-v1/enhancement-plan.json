@@ -1,0 +1,237 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-26-blue-air-room-section-v1",
+  "edition_id": "2026-07-26-blue-air-room-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-26-blue-air-room-section-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal",
+    "restoration-scan"
+  ],
+  "future_only_subset": [],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-pool-blue-exterior-pane",
+      "target_kind": "artifact",
+      "artifact_id": "hero-pool-blue-exterior-pane",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-glass-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-black-curtain-source-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-black-curtain-source-slab",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-textile-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-plaster-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-plaster-notch",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (matte-wall-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "module-dotted-foreground-fabric",
+      "target_kind": "artifact",
+      "artifact_id": "module-dotted-foreground-fabric",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (perforated-textile-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-floor-plate-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-floor-plate-node",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-object-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-dotted-foreground-fabric-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-dotted-foreground-fabric-2",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (perforated-textile-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-floor-plate-node-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-floor-plate-node-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-object-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-signal-panel",
+      "target_kind": "artifact",
+      "artifact_id": "module-signal-panel",
+      "priority": 8,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (signal-panel) selected from interpretation."
+    },
+    {
+      "target_id": "module-color-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-color-node",
+      "priority": 9,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (color-node) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

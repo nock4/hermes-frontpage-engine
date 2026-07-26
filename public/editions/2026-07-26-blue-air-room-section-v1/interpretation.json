@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-07-26-blue-air-room-section-v1",
+  "edition_id": "2026-07-26-blue-air-room-section-v1",
+  "plate_read_timestamp": "2026-07-26T13:11:31.928Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A wide, washed concrete-and-glass corridor plate: cyan pool pane left of center, black curtain slab at center, ochre wall bands, thin light seams, a translucent peach plaster figure panel on the right, and a low gray floor with stains and a small dark circular node.",
+    "dominant_spatial_mode": "contained",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet cutaway with blue air beyond the wall",
+      "A wide, washed concrete-and-glass corridor plate: cyan pool pane left of center, black curtain slab at center, ochre wall bands, thin light seams, a translucent peach plaster figure panel on the right, and a low gray floor with stains and a small dark circular node.",
+      "architectural-section",
+      "blue-air",
+      "matte-plaster"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "pool-blue exterior pane",
+      "black curtain source slab",
+      "right plaster notch",
+      "dotted foreground fabric",
+      "floor plate node",
+      "Signal Panel",
+      "Color Node"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "muskee-room-section",
+      "left exterior pane carrying the weather-blue field",
+      "central black curtain slab with cut notches",
+      "right matte wall band with nested frame apertures",
+      "low rail-and-fabric foreground sweep",
+      "abstract cropped body-mass silhouettes",
+      "luminous cyan pool aperture",
+      "central black curtain textile cut"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: muskee-room-section.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-pool-blue-exterior-pane",
+      "kind": "hero",
+      "type": "hero-scale-glass-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.239,
+        "y": 0.164,
+        "w": 0.172,
+        "h": 0.574
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-black-curtain-source-slab",
+      "kind": "hero",
+      "type": "hero-scale-textile-cut",
+      "strength": 0.9827959999999999,
+      "bounds": {
+        "x": 0.4092,
+        "y": 0,
+        "w": 0.1997,
+        "h": 0.6292
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-plaster-notch",
+      "kind": "module",
+      "type": "matte-wall-interruption",
+      "strength": 0.778824,
+      "bounds": {
+        "x": 0.741,
+        "y": 0.335,
+        "w": 0.135,
+        "h": 0.437
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dotted-foreground-fabric",
+      "kind": "module",
+      "type": "perforated-textile-surface",
+      "strength": 0.761904,
+      "bounds": {
+        "x": 0.249,
+        "y": 0.799,
+        "w": 0.413,
+        "h": 0.093
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-floor-plate-node",
+      "kind": "module",
+      "type": "small-object-aperture",
+      "strength": 0.7374120000000001,
+      "bounds": {
+        "x": 0.754,
+        "y": 0.818,
+        "w": 0.073,
+        "h": 0.071
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dotted-foreground-fabric-2",
+      "kind": "module",
+      "type": "perforated-textile-surface",
+      "strength": 0.701352,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-floor-plate-node-2",
+      "kind": "module",
+      "type": "small-object-aperture",
+      "strength": 0.6682680000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.64894,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.659824,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-pool-blue-exterior-pane-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.239,
+        "y": 0.164,
+        "w": 0.172,
+        "h": 0.574
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-black-curtain-source-slab-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4092,
+        "y": 0,
+        "w": 0.1997,
+        "h": 0.6292
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-plaster-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.741,
+        "y": 0.335,
+        "w": 0.135,
+        "h": 0.437
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dotted-foreground-fabric-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.249,
+        "y": 0.799,
+        "w": 0.413,
+        "h": 0.093
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-floor-plate-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.754,
+        "y": 0.818,
+        "w": 0.073,
+        "h": 0.071
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dotted-foreground-fabric-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-floor-plate-node-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

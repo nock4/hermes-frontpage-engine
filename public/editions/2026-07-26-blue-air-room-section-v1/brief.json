@@ -1,0 +1,60 @@
+{
+  "brief_id": "brief-2026-07-26-blue-air-room-section-v1",
+  "date": "2026-07-26",
+  "signal_cluster_ids": [
+    "0005e125d83e",
+    "f2e7f25e0934",
+    "0cfe1aa74a71",
+    "1eafc954e463",
+    "0b9171c2b62c",
+    "1748f65e04b9",
+    "e3f39e189dd2",
+    "ba6a701d8fe9"
+  ],
+  "research_node_ids": [
+    "research-1-8c42a17e",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-cc00cb97",
+    "research-7-6bc53092",
+    "research-8-53600559",
+    "research-9-a9031d38",
+    "research-10-711568a7",
+    "research-11-511de7e2",
+    "research-12-0d6fd94d"
+  ],
+  "mood": "quiet cutaway with blue air beyond the wall",
+  "material_language": [
+    "matte gray plaster wall and floor",
+    "hazy sliding-glass edge",
+    "heavy black scratched textile",
+    "oil-pastel body-color grain",
+    "cyan pool-and-sky wash"
+  ],
+  "lighting": "soft interior ambient light split by a bright cyan-green exterior opening and narrow warm slits along the section cuts",
+  "object_inventory": [
+    "left exterior pane carrying the weather-blue field",
+    "central black curtain slab with cut notches",
+    "right matte wall band with nested frame apertures",
+    "low rail-and-fabric foreground sweep",
+    "abstract cropped body-mass silhouettes"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no readable words, labels, filenames, interface chrome, logos, or alphanumeric callouts",
+    "no desks, dashboards, generic software UI, summary cards, archive wall, shelves, cabinets, or office room staging",
+    "do not copy the source subjects literally; preserve only framing, massing, palette, material pressure, and edge behavior",
+    "do not pad with fake source cards; every anchor must be a physical seam, aperture, notch, surface, or interruption",
+    "avoid glossy 3D render, neon app chroma, hard studio glare, and flat contact-sheet layout",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached"
+  ]
+}

@@ -1,0 +1,567 @@
+{
+  "artifact_map_id": "map-2026-07-26-blue-air-room-section-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "muskee-room-section",
+  "default_artifact_id": "hero-pool-blue-exterior-pane",
+  "artifacts": [
+    {
+      "id": "hero-pool-blue-exterior-pane",
+      "kind": "hero",
+      "label": "pool-blue exterior pane",
+      "artifact_type": "hero-scale-glass-aperture",
+      "bounds": {
+        "x": 0.239,
+        "y": 0.164,
+        "w": 0.172,
+        "h": 0.574
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.239,
+          0.166
+        ],
+        [
+          0.308,
+          0.165
+        ],
+        [
+          0.374,
+          0.165
+        ],
+        [
+          0.41,
+          0.167
+        ],
+        [
+          0.411,
+          0.387
+        ],
+        [
+          0.409,
+          0.626
+        ],
+        [
+          0.405,
+          0.735
+        ],
+        [
+          0.321,
+          0.735
+        ],
+        [
+          0.244,
+          0.734
+        ],
+        [
+          0.24,
+          0.571
+        ],
+        [
+          0.239,
+          0.347
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/hero-pool-blue-exterior-pane.svg",
+      "source_binding_ids": [
+        "binding-hero-pool-blue-exterior-pane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          499,
+          415
+        ],
+        "safe_stage_window_origin_px": [
+          520,
+          462
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-black-curtain-source-slab",
+      "kind": "hero",
+      "label": "black curtain source slab",
+      "artifact_type": "hero-scale-textile-cut",
+      "bounds": {
+        "x": 0.4092,
+        "y": 0.0,
+        "w": 0.1997,
+        "h": 0.6292
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.4109,
+          0.4334
+        ],
+        [
+          0.4114,
+          0.0023
+        ],
+        [
+          0.6067,
+          0.0023
+        ],
+        [
+          0.6061,
+          0.4797
+        ],
+        [
+          0.5968,
+          0.6002
+        ],
+        [
+          0.5699,
+          0.6153
+        ],
+        [
+          0.5239,
+          0.6246
+        ],
+        [
+          0.4531,
+          0.6176
+        ],
+        [
+          0.4224,
+          0.6083
+        ],
+        [
+          0.4109,
+          0.5562
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/hero-black-curtain-source-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-black-curtain-source-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          785,
+          341
+        ],
+        "safe_stage_window_origin_px": [
+          809,
+          407
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-right-plaster-notch",
+      "kind": "module",
+      "label": "right plaster notch",
+      "artifact_type": "matte-wall-interruption",
+      "bounds": {
+        "x": 0.741,
+        "y": 0.335,
+        "w": 0.135,
+        "h": 0.437
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.809,
+          0.335
+        ],
+        [
+          0.846,
+          0.388
+        ],
+        [
+          0.871,
+          0.445
+        ],
+        [
+          0.875,
+          0.565
+        ],
+        [
+          0.86,
+          0.692
+        ],
+        [
+          0.833,
+          0.769
+        ],
+        [
+          0.785,
+          0.767
+        ],
+        [
+          0.746,
+          0.736
+        ],
+        [
+          0.741,
+          0.66
+        ],
+        [
+          0.759,
+          0.567
+        ],
+        [
+          0.779,
+          0.496
+        ],
+        [
+          0.791,
+          0.417
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/module-right-plaster-notch.svg",
+      "source_binding_ids": [
+        "binding-module-right-plaster-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1242,
+          531
+        ],
+        "safe_stage_window_origin_px": [
+          1258,
+          567
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-dotted-foreground-fabric",
+      "kind": "module",
+      "label": "dotted foreground fabric",
+      "artifact_type": "perforated-textile-surface",
+      "bounds": {
+        "x": 0.249,
+        "y": 0.799,
+        "w": 0.413,
+        "h": 0.093
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.249,
+          0.821
+        ],
+        [
+          0.323,
+          0.812
+        ],
+        [
+          0.419,
+          0.808
+        ],
+        [
+          0.529,
+          0.8
+        ],
+        [
+          0.618,
+          0.804
+        ],
+        [
+          0.662,
+          0.823
+        ],
+        [
+          0.642,
+          0.869
+        ],
+        [
+          0.551,
+          0.884
+        ],
+        [
+          0.434,
+          0.892
+        ],
+        [
+          0.32,
+          0.879
+        ],
+        [
+          0.257,
+          0.857
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/module-dotted-foreground-fabric.svg",
+      "source_binding_ids": [
+        "binding-module-dotted-foreground-fabric"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          700,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          750,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-floor-plate-node",
+      "kind": "module",
+      "label": "floor plate node",
+      "artifact_type": "small-object-aperture",
+      "bounds": {
+        "x": 0.754,
+        "y": 0.818,
+        "w": 0.073,
+        "h": 0.071
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.78,
+          0.82
+        ],
+        [
+          0.807,
+          0.822
+        ],
+        [
+          0.825,
+          0.842
+        ],
+        [
+          0.824,
+          0.869
+        ],
+        [
+          0.807,
+          0.888
+        ],
+        [
+          0.778,
+          0.886
+        ],
+        [
+          0.758,
+          0.873
+        ],
+        [
+          0.754,
+          0.849
+        ],
+        [
+          0.763,
+          0.829
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/module-floor-plate-node.svg",
+      "source_binding_ids": [
+        "binding-module-floor-plate-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1214,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1223,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-dotted-foreground-fabric-2",
+      "kind": "module",
+      "label": "dotted foreground fabric",
+      "artifact_type": "perforated-textile-surface",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/module-dotted-foreground-fabric-2.svg",
+      "source_binding_ids": [
+        "binding-module-dotted-foreground-fabric-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-floor-plate-node-2",
+      "kind": "module",
+      "label": "floor plate node",
+      "artifact_type": "small-object-aperture",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/module-floor-plate-node-2.svg",
+      "source_binding_ids": [
+        "binding-module-floor-plate-node-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "muskee-room-section",
+      "mask_path": "/editions/2026-07-26-blue-air-room-section-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
