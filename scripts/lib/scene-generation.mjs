@@ -779,8 +779,10 @@ function looksLikeGraphicEditorialSource(payload, referenceText) {
       ...(fingerprint.composition_moves || []),
     ]),
   ].filter(Boolean).join(' ').toLowerCase()
-  const graphicCues = /(graphic|editorial|poster|cover|typographic|headline|text block|type mass|letterform)/.test(text)
+  const representationalSceneCues = /(painting|painted|figurative|interior|room|doorway|window|pool|seated|standing|figure|chair|curtain|wall picture|still[- ]?life)/.test(text)
+  const graphicCues = /(editorial|poster|cover|typographic|headline|text block|type mass|letterform)/.test(text)
   const diagramCues = /(blob|island|grid|route|diagram|left[- ]?right|negative space)/.test(text)
+  if (representationalSceneCues && !graphicCues) return false
   return graphicCues && diagramCues
 }
 
@@ -810,7 +812,7 @@ export function buildSceneImagePrompt(payload) {
     ? 'SOURCE-ASPECT NOTE: the source is square. Do not stretch it into a panorama or paste the square as a framed panel. Borrow its crop pressure, negative-space ratio, and edge logic, but rebuild the plate as a new composition.'
     : ''
   const recoveryTransformGuard = process.env.DFE_SOURCE_PRESERVE_PLATE === '1'
-    ? 'RECOVERY TRANSFORM: the previous plate failed source QA. Do not rebuild the full source composition and do not return a decorated copy. Start from the source\'s strongest borrowed elements, then make a new composition: change at least two of arrangement, scale, object count, crop, surface state, or spatial logic while keeping borrowed identity legible. Use large seams, cut-through apertures, repaired tears, translucent material interruptions, source-window scars, and scale shifts as structural changes, not pasted decoration. Do not erase all source cues into an unrelated empty field; do not keep the same still life/card/photo with tiny marks.'
+    ? 'RECOVERY TRANSFORM: the previous plate failed source QA. Do not rebuild the full source composition and do not return a decorated copy. Keep the named source subjects, figure/object masses, and object relationships legible as abstract silhouettes before adding formal risk. Change at least two of arrangement, scale, object count, crop, surface state, or spatial logic through large seams, cut-through apertures, repaired tears, translucent interruptions, source-window scars, and scale shifts. Do not erase source cues into blank panels, unrelated ambience, or numbered annotation marks; do not keep the same still life/card/photo with tiny marks.'
     : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
     ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements — palette, silhouettes, object relationships, surface motifs, light, and edge pressure — then change the edition's arrangement enough that it is clearly not the same image. ${sourceAspectGuard} ${recoveryTransformGuard} No unrelated replacement scene, pasted source photo, framed source panel, or near-identical still life with tiny marks. Keep source identity through borrowed elements and visible source-window interventions.`
@@ -846,8 +848,8 @@ export function buildSceneImagePrompt(payload) {
     '',
     'ANCHORS',
     hasSourceImage
-      ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, rings, outlines, pins, or debug markers.`
-      : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, or debug markers.`,
+      ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, rings, outlines, pins, numerals, numbered dots, labels, captions, UI badges, or debug markers.`
+      : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, numerals, numbered dots, labels, UI badges, or debug markers.`,
     '',
     'LIMITS',
     `${payload.lighting || visualDirection.lighting_profile || 'source-led light'}; materials: ${materialLanguage}; palette: ${visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood || 'source-led color'}. ${constraints}`,

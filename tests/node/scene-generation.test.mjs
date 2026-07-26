@@ -116,6 +116,7 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('Borrow recognizable elements')
     expect(prompt).not.toContain('no literal depiction of the source reference image')
     expect(prompt).toContain('never cards, pasted thumbnails')
+    expect(prompt).toContain('numbered dots')
     expect(prompt).not.toContain('sky/cloud')
     expect(prompt).not.toContain('vertical shafts')
     expect(prompt).toContain('not as a composition to copy')
@@ -195,6 +196,37 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('Posture: poster wall')
   })
 
+  it('does not classify figurative interior paintings as graphic cover references', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'A source-led section from a painted room threshold.',
+      lighting: 'soft gray interior daylight and cyan pool glow',
+      material_language: ['oil-pastel grain', 'matte plaster', 'black curtain fabric'],
+      source_image_fingerprints: [{
+        title: '@compositioning: Drawings by Jans Muskee (2014-2025)',
+        image_url: 'https://assets.example/muskee-room.jpg',
+        visual_summary: 'Wide horizontal figurative interior painting with a left glass doorway opening to pool blue and a seated figure on the right gray wall.',
+        preserve_cues: [
+          'two standing back-view figures in the left window',
+          'seated side-profile figure cropped at far right',
+          'black perforated foreground chair with white oval holes',
+          'small framed picture high on the right wall',
+        ],
+        composition_moves: ['panoramic left-right split between outdoor pool opening and gray interior room'],
+      }],
+      visual_direction: {
+        composition_archetype: 'architectural section',
+        camera_plate_grammar: 'architectural section with oblique plate depth',
+        visual_compositional_moves: ['large cyan doorway cut', 'gray wall seam'],
+      },
+      plate_posture: { plate_posture: 'diagrammatic section' },
+      artifacts: Array.from({ length: 9 }, (_, index) => ({ source_url: `https://example.com/${index}` })),
+    })
+
+    expect(prompt).not.toContain('graphic/editorial/poster/package reference')
+    expect(prompt).toContain('Preserve source subjects, object relationships, silhouettes')
+    expect(prompt).toContain('numbered dots')
+  })
+
   it('does not let recovery mode contradict inspiration-not-copy policy', () => {
     const previous = process.env.DFE_SOURCE_PRESERVE_PLATE
     process.env.DFE_SOURCE_PRESERVE_PLATE = '1'
@@ -214,7 +246,9 @@ describe('scene generation image prompt', () => {
       })
       expect(prompt).toContain('RECOVERY TRANSFORM')
       expect(prompt).toContain('Do not rebuild the full source composition')
+      expect(prompt).toContain('Keep the named source subjects, figure/object masses, and object relationships legible')
       expect(prompt).toContain('change at least two of arrangement, scale, object count, crop, surface state, or spatial logic')
+      expect(prompt).toContain('numbered annotation marks')
       expect(prompt).not.toContain('Keep every named PRESERVE cue visible at once')
       expect(prompt).not.toContain('Rebuild from the full source composition first')
     } finally {
