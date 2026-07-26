@@ -143,6 +143,58 @@ describe('source image fidelity audit', () => {
     expect(audit.blockers).toEqual([])
   })
 
+  it('does not promote pass-verdict missing-detail notes into source-fidelity blockers', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-pass-missing-detail-'))
+    const platePath = path.join(runDir, 'plate.png')
+    await writeFile(platePath, 'fake plate')
+
+    const audit = await auditSourceImageFidelity(
+      {
+        payload: {
+          source_image_fingerprints: [{
+            title: 'Interior pool threshold painting',
+            image_url: 'https://assets.example/pool-threshold.jpg',
+            preserve_cues: ['panoramic left pool/right gray room split', 'three figure masses', 'black perforated foreground mass'],
+          }],
+        },
+        platePath,
+      },
+      runDir,
+      {
+        writeJson,
+        createContactSheetImpl: async ({ outputPath }) => {
+          await writeFile(outputPath, 'fake contact sheet')
+          return outputPath
+        },
+        openAiJsonImpl: async () => ({
+          verdict: 'pass',
+          resemblance_score: 1,
+          framing_score: 1,
+          object_relationship_score: 1,
+          context_score: 1,
+          transformation_score: 1,
+          retained_critical_elements: [
+            'very wide panoramic crop',
+            'left outdoor pool opening against right gray interior wall',
+            'two upright back-facing figure masses near doorway',
+            'seated side-profile figure cropped at far right',
+            'black foreground mass with repeated white oval holes',
+          ],
+          missing_critical_elements: [
+            'small framed picture high on right wall is replaced by a small blue slit, not a nested scene',
+            'orange cup and pale plate/disc floor objects are absent',
+            'standing figures are ghosted and moved inside the doorway rather than clearly outside',
+          ],
+          drift_risks: ['floor-object anchors lost near seated figure'],
+          rationale: 'The right plate clearly borrows the source panoramic split, pool doorway, gray interior wall, two central upright figures, cropped seated figure, and perforated black foreground mass. The lost floor objects are fidelity wounds, but the source identity remains legible and the transformation is substantial rather than overcopying.',
+        }),
+      },
+    )
+
+    expect(audit.pass).toBe(true)
+    expect(audit.blockers).toEqual([])
+  })
+
   it('blocks warnings that admit the plate only shares palette/style', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-palette-block-'))
     const platePath = path.join(runDir, 'plate.png')

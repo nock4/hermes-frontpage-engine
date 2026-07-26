@@ -155,7 +155,7 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
     },
     {
       label: 'source generalized into ambience',
-      pattern: /(same palette|shared palette|related palette|related style|similar color|reads as related|ambience|atmosphere|texture).{0,120}(not the same|not same source|rather than|instead of|loses|lost|missing|fails)/,
+      pattern: /(same palette|shared palette|related palette|related style|similar color|reads as related|ambience|atmosphere).{0,120}(not the same|not same source|rather than|instead of|loses|lost|missing|fails)/,
     },
     {
       label: 'source turned into framed panel/object',
@@ -174,8 +174,12 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       pattern: /(same|identical|near[- ]?identical|almost identical|unchanged).{0,120}(arrangement|object positions|still[- ]?life|three[- ]?vase|camera distance|plinth|composition|layout)|(?:borrow|inspiration|inspired).{0,140}(not enough|insufficient|too literal|same image)/,
     },
   ]
+  const passAuditText = [
+    ...normalized.drift_risks,
+    normalized.rationale,
+  ].join(' ').toLowerCase()
   const blockerScopeText = normalized.verdict === 'pass'
-    ? auditText
+    ? passAuditText
       .replace(/contact sheet (?:display|panel)[^.;]*[.;]?/g, ' ')
       .replace(/contact[- ]sheet aspect framing[^.;]*[.;]?/g, ' ')
       .replace(/minor[^.;]*[.;]?/g, ' ')
