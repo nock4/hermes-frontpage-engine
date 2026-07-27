@@ -1,0 +1,65 @@
+{
+  "brief_id": "brief-2026-07-27-acid-felt-poster-hall-v1",
+  "date": "2026-07-27",
+  "signal_cluster_ids": [
+    "0238a327f494",
+    "cc1f7ece7798",
+    "63ade76b75eb",
+    "be2294e540e9",
+    "0005e125d83e",
+    "f2e7f25e0934",
+    "54fe22ff738e",
+    "0cfe1aa74a71"
+  ],
+  "research_node_ids": [
+    "research-1-99395af4",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-45d92834",
+    "research-7-02c304c5",
+    "research-8-d0b432e3",
+    "research-9-a2be7acb",
+    "research-10-a05ccc8f",
+    "research-11-fdb20573",
+    "research-12-c3b5edcf"
+  ],
+  "mood": "acid felt colliding with archive paper inside a public interior",
+  "material_language": [
+    "worn turquoise billiard felt with dark speckles",
+    "smeared oil-paint motion blur",
+    "aged ivory poster paper with torn fibers",
+    "scuffed plaster wall planes",
+    "lithograph hatching and archive scan grain",
+    "black-green scratched shadow residue"
+  ],
+  "lighting": "uneven chalky archive light from the upper left, dropping into black-green underlaps beneath torn paper, felt edges, and the long green rupture",
+  "object_inventory": [
+    "one acid-green horizontal rupture spanning the upper interior",
+    "one tilted turquoise trapezoid field anchoring the lower center",
+    "one compressed right-edge cropped figure-and-paper cluster",
+    "layered poster borders, torn corners, and lifted seams",
+    "diagonal trench, roof, and hatch lines cutting across the wall",
+    "small stained apertures and glints embedded in felt and plaster"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no legible words, numbers, UI labels, filenames, handles, or callouts in the finished image",
+    "no dashboard, browser chrome, web-card collage, office, desk, shelf, cabinet, or tidy archive grid",
+    "do not depict a literal airport, hangar, generic pool hall, or realistic prop inventory",
+    "do not copy the source artwork or identifiable subjects directly; translate massing, palette, edge behavior, and scale collision",
+    "anchors must be visible source-bearing marks, seams, apertures, torn surfaces, or interruptions rather than summary cards",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached",
+    "do not strip handmade details into generic torn-paper ambience",
+    "do not fragment the primary source objects until their original silhouettes stop reading",
+    "do not replace source candy/wrapper/handwriting cues with unrelated scraps"
+  ]
+}

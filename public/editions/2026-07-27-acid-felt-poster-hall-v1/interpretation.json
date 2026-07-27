@@ -1,0 +1,380 @@
+{
+  "interpretation_id": "interp-2026-07-27-acid-felt-poster-hall-v1",
+  "edition_id": "2026-07-27-acid-felt-poster-hall-v1",
+  "plate_read_timestamp": "2026-07-27T15:08:31.150Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A worn plaster-and-paper plate with a black-green horizontal rupture across the upper wall, a large turquoise billiard table slab in the lower half, torn ivory paper seams, translucent pasted panes, shadow-figure clusters, and small bright anchors on the felt.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "acid felt colliding with archive paper inside a public interior",
+      "A worn plaster-and-paper plate with a black-green horizontal rupture across the upper wall, a large turquoise billiard table slab in the lower half, torn ivory paper seams, translucent pasted panes, shadow-figure clusters, and small bright anchors on the felt.",
+      "acid-green-slash",
+      "turquoise-felt",
+      "torn-poster-wall"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero acid-green horizontal rupture",
+      "hero turquoise felt trapezoid",
+      "old paper lifted corner",
+      "procedural creature scorch",
+      "decorative archive border notch",
+      "diagonal trench hatch",
+      "artist-index pale pane",
+      "fishing-water teal tear"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "water",
+      "paint",
+      "wood"
+    ],
+    "dominant_structures": [
+      "billiard-aircraft-poster-hall",
+      "one acid-green horizontal rupture spanning the upper interior",
+      "one tilted turquoise trapezoid field anchoring the lower center",
+      "one compressed right-edge cropped figure-and-paper cluster",
+      "layered poster borders, torn corners, and lifted seams",
+      "diagonal trench, roof, and hatch lines cutting across the wall",
+      "small stained apertures and glints embedded in felt and plaster",
+      "acid-green upper wall rupture"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: billiard-aircraft-poster-hall.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-acid-green-horizontal-rupture",
+      "kind": "hero",
+      "type": "hero-scale-smeared-band",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.071,
+        "y": 0.226,
+        "w": 0.883,
+        "h": 0.175
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-turquoise-felt-trapezoid",
+      "kind": "hero",
+      "type": "hero-scale-felt-slab",
+      "strength": 0.97688,
+      "bounds": {
+        "x": 0,
+        "y": 0.587,
+        "w": 0.842,
+        "h": 0.357
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-old-paper-lifted-corner",
+      "kind": "module",
+      "type": "torn-paper-corner",
+      "strength": 0.794208,
+      "bounds": {
+        "x": 0.724,
+        "y": 0.001,
+        "w": 0.237,
+        "h": 0.433
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-procedural-creature-scorch",
+      "kind": "module",
+      "type": "animated-smudge-aperture",
+      "strength": 0.768672,
+      "bounds": {
+        "x": 0,
+        "y": 0.088,
+        "w": 0.264,
+        "h": 0.375
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-decorative-archive-border-notch",
+      "kind": "module",
+      "type": "lithograph-border-fragment",
+      "strength": 0.7403040000000001,
+      "bounds": {
+        "x": 0.004,
+        "y": 0,
+        "w": 0.184,
+        "h": 0.227
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-diagonal-trench-hatch",
+      "kind": "module",
+      "type": "watercolour-line-incision",
+      "strength": 0.693372,
+      "bounds": {
+        "x": 0.078,
+        "y": 0.051,
+        "w": 0.595,
+        "h": 0.556
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-artist-index-pale-pane",
+      "kind": "module",
+      "type": "translucent-poster-pane",
+      "strength": 0.6693960000000001,
+      "bounds": {
+        "x": 0.629,
+        "y": 0.162,
+        "w": 0.176,
+        "h": 0.432
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fishing-water-teal-tear",
+      "kind": "module",
+      "type": "wet-edge-teal-tear",
+      "strength": 0.643864,
+      "bounds": {
+        "x": 0.523,
+        "y": 0.711,
+        "w": 0.274,
+        "h": 0.276
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-crowd-sculpture-shadow-cluster",
+      "kind": "module",
+      "type": "cropped-figure-shadow-seam",
+      "strength": 0.6445719999999999,
+      "bounds": {
+        "x": 0.854,
+        "y": 0.527,
+        "w": 0.143,
+        "h": 0.34
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-acid-green-horizontal-rupture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.226,
+        "w": 0.883,
+        "h": 0.175
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-turquoise-felt-trapezoid-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.587,
+        "w": 0.842,
+        "h": 0.357
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-old-paper-lifted-corner-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.001,
+        "w": 0.237,
+        "h": 0.433
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-procedural-creature-scorch-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.088,
+        "w": 0.264,
+        "h": 0.375
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-decorative-archive-border-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.004,
+        "y": 0,
+        "w": 0.184,
+        "h": 0.227
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-diagonal-trench-hatch-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.078,
+        "y": 0.051,
+        "w": 0.595,
+        "h": 0.556
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-artist-index-pale-pane-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.629,
+        "y": 0.162,
+        "w": 0.176,
+        "h": 0.432
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fishing-water-teal-tear-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.523,
+        "y": 0.711,
+        "w": 0.274,
+        "h": 0.276
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-crowd-sculpture-shadow-cluster-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.854,
+        "y": 0.527,
+        "w": 0.143,
+        "h": 0.34
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

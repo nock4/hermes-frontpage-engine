@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-27-acid-felt-poster-hall-v1",
+  "edition_id": "2026-07-27-acid-felt-poster-hall-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-27-acid-felt-poster-hall-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-acid-green-horizontal-rupture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-acid-green-horizontal-rupture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-smeared-band) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-turquoise-felt-trapezoid",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-turquoise-felt-trapezoid",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-felt-slab) selected from interpretation."
+    },
+    {
+      "target_id": "module-old-paper-lifted-corner",
+      "target_kind": "artifact",
+      "artifact_id": "module-old-paper-lifted-corner",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (torn-paper-corner) selected from interpretation."
+    },
+    {
+      "target_id": "module-procedural-creature-scorch",
+      "target_kind": "artifact",
+      "artifact_id": "module-procedural-creature-scorch",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (animated-smudge-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-decorative-archive-border-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-decorative-archive-border-notch",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (lithograph-border-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-diagonal-trench-hatch",
+      "target_kind": "artifact",
+      "artifact_id": "module-diagonal-trench-hatch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (watercolour-line-incision) selected from interpretation."
+    },
+    {
+      "target_id": "module-artist-index-pale-pane",
+      "target_kind": "artifact",
+      "artifact_id": "module-artist-index-pale-pane",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-poster-pane) selected from interpretation."
+    },
+    {
+      "target_id": "module-fishing-water-teal-tear",
+      "target_kind": "artifact",
+      "artifact_id": "module-fishing-water-teal-tear",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (wet-edge-teal-tear) selected from interpretation."
+    },
+    {
+      "target_id": "module-crowd-sculpture-shadow-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-crowd-sculpture-shadow-cluster",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-figure-shadow-seam) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

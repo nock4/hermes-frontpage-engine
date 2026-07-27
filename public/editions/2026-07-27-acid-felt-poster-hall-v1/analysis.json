@@ -1,0 +1,443 @@
+{
+  "analysis_id": "analysis-2026-07-27-acid-felt-poster-hall-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A worn plaster-and-paper plate with a black-green horizontal rupture across the upper wall, a large turquoise billiard table slab in the lower half, torn ivory paper seams, translucent pasted panes, shadow-figure clusters, and small bright anchors on the felt.",
+  "usable_surfaces": [
+    "acid-green upper wall rupture",
+    "turquoise billiard felt plane",
+    "left torn paper aperture",
+    "right lifted paper fold",
+    "pale translucent archive panes",
+    "right-edge figure shadow seam",
+    "tiny ball and light flecks on felt"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero acid-green horizontal rupture",
+      "artifact_type": "hero-scale-smeared-band",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.226,
+        "w": 0.883,
+        "h": 0.175
+      },
+      "polygon": [
+        [
+          0.075,
+          0.226
+        ],
+        [
+          0.242,
+          0.232
+        ],
+        [
+          0.438,
+          0.248
+        ],
+        [
+          0.638,
+          0.274
+        ],
+        [
+          0.84,
+          0.286
+        ],
+        [
+          0.953,
+          0.292
+        ],
+        [
+          0.951,
+          0.349
+        ],
+        [
+          0.748,
+          0.342
+        ],
+        [
+          0.542,
+          0.329
+        ],
+        [
+          0.343,
+          0.316
+        ],
+        [
+          0.142,
+          0.3
+        ],
+        [
+          0.071,
+          0.285
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "broad acid-green and black smeared horizontal band interrupts the upper wall, with a crisp white diagonal stripe and dark underpaint along its lower edge"
+    },
+    {
+      "label": "hero turquoise felt trapezoid",
+      "artifact_type": "hero-scale-felt-slab",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.587,
+        "w": 0.842,
+        "h": 0.357
+      },
+      "polygon": [
+        [
+          0.006,
+          0.742
+        ],
+        [
+          0.159,
+          0.648
+        ],
+        [
+          0.379,
+          0.602
+        ],
+        [
+          0.62,
+          0.587
+        ],
+        [
+          0.842,
+          0.657
+        ],
+        [
+          0.793,
+          0.814
+        ],
+        [
+          0.559,
+          0.875
+        ],
+        [
+          0.278,
+          0.943
+        ],
+        [
+          0.076,
+          0.876
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "large lower-center turquoise billiard felt surface in perspective, speckled and scratched, with dark rail edges and visible corner geometry"
+    },
+    {
+      "label": "old paper lifted corner",
+      "artifact_type": "torn-paper-corner",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.001,
+        "w": 0.237,
+        "h": 0.433
+      },
+      "polygon": [
+        [
+          0.732,
+          0
+        ],
+        [
+          0.934,
+          0
+        ],
+        [
+          0.927,
+          0.08
+        ],
+        [
+          0.899,
+          0.17
+        ],
+        [
+          0.948,
+          0.254
+        ],
+        [
+          0.96,
+          0.371
+        ],
+        [
+          0.888,
+          0.434
+        ],
+        [
+          0.811,
+          0.357
+        ],
+        [
+          0.783,
+          0.251
+        ],
+        [
+          0.754,
+          0.146
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "right-side ivory paper sheet curls down from the top edge with torn shadows, folded ridges, and a lifted pointed lower flap"
+    },
+    {
+      "label": "procedural creature scorch",
+      "artifact_type": "animated-smudge-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.088,
+        "w": 0.264,
+        "h": 0.375
+      },
+      "polygon": [
+        [
+          0.146,
+          0.09
+        ],
+        [
+          0.193,
+          0.169
+        ],
+        [
+          0.259,
+          0.23
+        ],
+        [
+          0.245,
+          0.311
+        ],
+        [
+          0.187,
+          0.372
+        ],
+        [
+          0.141,
+          0.463
+        ],
+        [
+          0.06,
+          0.382
+        ],
+        [
+          0.001,
+          0.33
+        ],
+        [
+          0.021,
+          0.22
+        ],
+        [
+          0.08,
+          0.153
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "dark irregular torn aperture under the left plaster edge, shaped like a black fluttering scorch with ragged paper fibers around it"
+    },
+    {
+      "label": "decorative archive border notch",
+      "artifact_type": "lithograph-border-fragment",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.004,
+        "y": 0,
+        "w": 0.184,
+        "h": 0.227
+      },
+      "polygon": [
+        [
+          0.005,
+          0
+        ],
+        [
+          0.152,
+          0
+        ],
+        [
+          0.169,
+          0.058
+        ],
+        [
+          0.187,
+          0.117
+        ],
+        [
+          0.146,
+          0.171
+        ],
+        [
+          0.064,
+          0.207
+        ],
+        [
+          0.005,
+          0.227
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "pale left-wall plaster border with stained paper texture, ragged torn edge, and printed-looking grime along the margin"
+    },
+    {
+      "label": "diagonal trench hatch",
+      "artifact_type": "watercolour-line-incision",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.078,
+        "y": 0.051,
+        "w": 0.595,
+        "h": 0.556
+      },
+      "confidence": 0.82,
+      "visual_evidence": "thin pale diagonal incision crosses the composition from lower left through the wall toward the upper right, cutting over the smear as a drawn line"
+    },
+    {
+      "label": "artist-index pale pane",
+      "artifact_type": "translucent-poster-pane",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.629,
+        "y": 0.162,
+        "w": 0.176,
+        "h": 0.432
+      },
+      "polygon": [
+        [
+          0.632,
+          0.163
+        ],
+        [
+          0.805,
+          0.162
+        ],
+        [
+          0.802,
+          0.591
+        ],
+        [
+          0.63,
+          0.594
+        ],
+        [
+          0.628,
+          0.424
+        ],
+        [
+          0.63,
+          0.26
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "semi-transparent pale rectangular pane sits behind and below the green rupture, its vertical and horizontal edges visible against the stained wall"
+    },
+    {
+      "label": "fishing-water teal tear",
+      "artifact_type": "wet-edge-teal-tear",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.523,
+        "y": 0.711,
+        "w": 0.274,
+        "h": 0.276
+      },
+      "polygon": [
+        [
+          0.54,
+          0.711
+        ],
+        [
+          0.72,
+          0.733
+        ],
+        [
+          0.794,
+          0.79
+        ],
+        [
+          0.783,
+          0.986
+        ],
+        [
+          0.636,
+          0.913
+        ],
+        [
+          0.528,
+          0.916
+        ],
+        [
+          0.523,
+          0.812
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "translucent grey-teal torn rectangular sheet overlays the lower-right pool-table rail, with waterlike scuffs and a ragged lower paper edge"
+    },
+    {
+      "label": "crowd-sculpture shadow cluster",
+      "artifact_type": "cropped-figure-shadow-seam",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.854,
+        "y": 0.527,
+        "w": 0.143,
+        "h": 0.34
+      },
+      "polygon": [
+        [
+          0.868,
+          0.528
+        ],
+        [
+          0.909,
+          0.533
+        ],
+        [
+          0.943,
+          0.529
+        ],
+        [
+          0.982,
+          0.546
+        ],
+        [
+          0.997,
+          0.599
+        ],
+        [
+          0.997,
+          0.867
+        ],
+        [
+          0.952,
+          0.854
+        ],
+        [
+          0.919,
+          0.766
+        ],
+        [
+          0.884,
+          0.701
+        ],
+        [
+          0.854,
+          0.621
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "right-edge vertical group of cropped dark human silhouettes stands against the wall and table edge, forming a soft shadow seam"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 4,
+    "large_region_count": 5,
+    "mapped_region_coverage": 1.23,
+    "rationale": "The plate remains expressionist and source-led, but the torn paper seams, translucent panes, figure clusters, diagonal lines, and speckled felt create a moderately busy interaction field that needs tight mapping rather than broad regions."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-07-27-acid-felt-poster-hall-v1"
+}

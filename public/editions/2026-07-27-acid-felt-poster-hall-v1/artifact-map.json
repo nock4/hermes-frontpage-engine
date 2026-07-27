@@ -1,0 +1,591 @@
+{
+  "artifact_map_id": "map-2026-07-27-acid-felt-poster-hall-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "billiard-aircraft-poster-hall",
+  "default_artifact_id": "hero-hero-acid-green-horizontal-rupture",
+  "artifacts": [
+    {
+      "id": "hero-hero-acid-green-horizontal-rupture",
+      "kind": "hero",
+      "label": "hero acid-green horizontal rupture",
+      "artifact_type": "hero-scale-smeared-band",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.226,
+        "w": 0.883,
+        "h": 0.175
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.075,
+          0.226
+        ],
+        [
+          0.242,
+          0.232
+        ],
+        [
+          0.438,
+          0.248
+        ],
+        [
+          0.638,
+          0.274
+        ],
+        [
+          0.84,
+          0.286
+        ],
+        [
+          0.953,
+          0.292
+        ],
+        [
+          0.951,
+          0.349
+        ],
+        [
+          0.748,
+          0.342
+        ],
+        [
+          0.542,
+          0.329
+        ],
+        [
+          0.343,
+          0.316
+        ],
+        [
+          0.142,
+          0.3
+        ],
+        [
+          0.071,
+          0.285
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/hero-hero-acid-green-horizontal-rupture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-acid-green-horizontal-rupture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          787,
+          307
+        ],
+        "safe_stage_window_origin_px": [
+          896,
+          321
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-hero-turquoise-felt-trapezoid",
+      "kind": "hero",
+      "label": "hero turquoise felt trapezoid",
+      "artifact_type": "hero-scale-felt-slab",
+      "bounds": {
+        "x": 0,
+        "y": 0.587,
+        "w": 0.842,
+        "h": 0.357
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.006,
+          0.742
+        ],
+        [
+          0.159,
+          0.648
+        ],
+        [
+          0.379,
+          0.602
+        ],
+        [
+          0.62,
+          0.587
+        ],
+        [
+          0.842,
+          0.657
+        ],
+        [
+          0.793,
+          0.814
+        ],
+        [
+          0.559,
+          0.875
+        ],
+        [
+          0.278,
+          0.943
+        ],
+        [
+          0.076,
+          0.876
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/hero-hero-turquoise-felt-trapezoid.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-turquoise-felt-trapezoid"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          647,
+          755
+        ],
+        "safe_stage_window_origin_px": [
+          750,
+          784
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-old-paper-lifted-corner",
+      "kind": "module",
+      "label": "old paper lifted corner",
+      "artifact_type": "torn-paper-corner",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.001,
+        "w": 0.237,
+        "h": 0.433
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.732,
+          0
+        ],
+        [
+          0.934,
+          0
+        ],
+        [
+          0.927,
+          0.08
+        ],
+        [
+          0.899,
+          0.17
+        ],
+        [
+          0.948,
+          0.254
+        ],
+        [
+          0.96,
+          0.371
+        ],
+        [
+          0.888,
+          0.434
+        ],
+        [
+          0.811,
+          0.357
+        ],
+        [
+          0.783,
+          0.251
+        ],
+        [
+          0.754,
+          0.146
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/module-old-paper-lifted-corner.svg",
+      "source_binding_ids": [
+        "binding-module-old-paper-lifted-corner"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1294,
+          187
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          223
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-procedural-creature-scorch",
+      "kind": "module",
+      "label": "procedural creature scorch",
+      "artifact_type": "animated-smudge-aperture",
+      "bounds": {
+        "x": 0,
+        "y": 0.088,
+        "w": 0.264,
+        "h": 0.375
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.146,
+          0.09
+        ],
+        [
+          0.193,
+          0.169
+        ],
+        [
+          0.259,
+          0.23
+        ],
+        [
+          0.245,
+          0.311
+        ],
+        [
+          0.187,
+          0.372
+        ],
+        [
+          0.141,
+          0.463
+        ],
+        [
+          0.06,
+          0.382
+        ],
+        [
+          0.001,
+          0.33
+        ],
+        [
+          0.021,
+          0.22
+        ],
+        [
+          0.08,
+          0.153
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/module-procedural-creature-scorch.svg",
+      "source_binding_ids": [
+        "binding-module-procedural-creature-scorch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          203,
+          251
+        ],
+        "safe_stage_window_origin_px": [
+          235,
+          282
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-decorative-archive-border-notch",
+      "kind": "module",
+      "label": "decorative archive border notch",
+      "artifact_type": "lithograph-border-fragment",
+      "bounds": {
+        "x": 0.004,
+        "y": 0,
+        "w": 0.184,
+        "h": 0.227
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.005,
+          0
+        ],
+        [
+          0.152,
+          0
+        ],
+        [
+          0.169,
+          0.058
+        ],
+        [
+          0.187,
+          0.117
+        ],
+        [
+          0.146,
+          0.171
+        ],
+        [
+          0.064,
+          0.207
+        ],
+        [
+          0.005,
+          0.227
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/module-decorative-archive-border-notch.svg",
+      "source_binding_ids": [
+        "binding-module-decorative-archive-border-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          147,
+          98
+        ],
+        "safe_stage_window_origin_px": [
+          170,
+          116
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-diagonal-trench-hatch",
+      "kind": "module",
+      "label": "diagonal trench hatch",
+      "artifact_type": "watercolour-line-incision",
+      "bounds": {
+        "x": 0.078,
+        "y": 0.051,
+        "w": 0.595,
+        "h": 0.556
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.078,
+          0.051
+        ],
+        [
+          0.673,
+          0.051
+        ],
+        [
+          0.673,
+          0.607
+        ],
+        [
+          0.078,
+          0.607
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/module-diagonal-trench-hatch.svg",
+      "source_binding_ids": [
+        "binding-module-diagonal-trench-hatch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          577,
+          291
+        ],
+        "safe_stage_window_origin_px": [
+          650,
+          337
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-artist-index-pale-pane",
+      "kind": "module",
+      "label": "artist-index pale pane",
+      "artifact_type": "translucent-poster-pane",
+      "bounds": {
+        "x": 0.629,
+        "y": 0.162,
+        "w": 0.176,
+        "h": 0.432
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.632,
+          0.163
+        ],
+        [
+          0.805,
+          0.162
+        ],
+        [
+          0.802,
+          0.591
+        ],
+        [
+          0.63,
+          0.594
+        ],
+        [
+          0.628,
+          0.424
+        ],
+        [
+          0.63,
+          0.26
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/module-artist-index-pale-pane.svg",
+      "source_binding_ids": [
+        "binding-module-artist-index-pale-pane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1101,
+          352
+        ],
+        "safe_stage_window_origin_px": [
+          1123,
+          387
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-fishing-water-teal-tear",
+      "kind": "module",
+      "label": "fishing-water teal tear",
+      "artifact_type": "wet-edge-teal-tear",
+      "bounds": {
+        "x": 0.523,
+        "y": 0.711,
+        "w": 0.274,
+        "h": 0.276
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.54,
+          0.711
+        ],
+        [
+          0.72,
+          0.733
+        ],
+        [
+          0.794,
+          0.79
+        ],
+        [
+          0.783,
+          0.986
+        ],
+        [
+          0.636,
+          0.913
+        ],
+        [
+          0.528,
+          0.916
+        ],
+        [
+          0.523,
+          0.812
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/module-fishing-water-teal-tear.svg",
+      "source_binding_ids": [
+        "binding-module-fishing-water-teal-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1014,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1047,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-crowd-sculpture-shadow-cluster",
+      "kind": "module",
+      "label": "crowd-sculpture shadow cluster",
+      "artifact_type": "cropped-figure-shadow-seam",
+      "bounds": {
+        "x": 0.854,
+        "y": 0.527,
+        "w": 0.143,
+        "h": 0.34
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.868,
+          0.528
+        ],
+        [
+          0.909,
+          0.533
+        ],
+        [
+          0.943,
+          0.529
+        ],
+        [
+          0.982,
+          0.546
+        ],
+        [
+          0.997,
+          0.599
+        ],
+        [
+          0.997,
+          0.867
+        ],
+        [
+          0.952,
+          0.854
+        ],
+        [
+          0.919,
+          0.766
+        ],
+        [
+          0.884,
+          0.701
+        ],
+        [
+          0.854,
+          0.621
+        ]
+      ],
+      "cluster_id": "billiard-aircraft-poster-hall",
+      "mask_path": "/editions/2026-07-27-acid-felt-poster-hall-v1/assets/masks/module-crowd-sculpture-shadow-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-crowd-sculpture-shadow-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          686
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          714
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}
