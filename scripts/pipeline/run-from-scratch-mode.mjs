@@ -92,7 +92,15 @@ export async function runFromScratchMode({
           scenePrompt: context.payload?.scene_prompt || '',
           sourceImageMode: context.payload?.source_image_mode,
         })
-        context.payload = { ...context.payload, source_contract: contract }
+        context.payload = contract.mode === 'source-image'
+          ? { ...context.payload, source_contract: contract }
+          : {
+              ...context.payload,
+              source_contract: contract,
+              source_image_fingerprints: [],
+              source_image_mode: 'skipped-no-valid-dominant-source-image',
+              source_image_mode_reason: contract.skip_reason,
+            }
         await fs.writeFile(path.join(runDir, 'source-contract.json'), `${JSON.stringify(contract, null, 2)}\n`, 'utf8')
         await fs.writeFile(path.join(runDir, 'daily-generation-payload.json'), `${JSON.stringify(context.payload, null, 2)}\n`, 'utf8')
         return contract

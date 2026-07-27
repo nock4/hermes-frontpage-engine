@@ -113,6 +113,18 @@ describe('source image fingerprints', () => {
       width: 1200,
       height: 630,
     })).toBe(true)
+    expect(isLowFertilitySourceImageCandidate({
+      image_url: 'https://www.apple.com/v/home/images/ipad-air-m4/a/hero_ipad_air_m4__gc1zddfs5tiu_large.jpg',
+      title: 'iPad Air product hero floating devices tablet stack Apple product ad',
+      width: 1400,
+      height: 700,
+    })).toBe(true)
+    expect(isLowFertilitySourceFingerprint({
+      image_url: 'https://www.apple.com/v/home/images/ipad-air-m4/a/hero_ipad_air_m4__gc1zddfs5tiu_large.jpg',
+      visual_summary: 'Ultra-wide pale blue product hero with floating iPad Air tablet stack, no hands, no environment',
+      preserve_cues: ['crisp Apple product-ad geometry', 'floating devices', 'tablet stack'],
+      visual_fertility: 'high',
+    })).toBe(true)
     expect(isLowFertilitySourceFingerprint({
       image_url: 'https://example.com/header-banner.jpg',
       visual_summary: 'page chrome navigation header and affiliate banner ad',

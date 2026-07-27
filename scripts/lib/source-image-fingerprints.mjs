@@ -97,7 +97,7 @@ export function isLowFertilitySourceFingerprint(fingerprint = {}) {
     fingerprint.low_fertility_reason,
   ].filter(Boolean).join(' ').toLowerCase()
   if (fingerprint.visual_fertility === 'low') return true
-  if (/(ui chrome|page chrome|button|nav button|navigation|header|footer|sidebar|advert|affiliate|banner ad|skinny gutter|tracking pixel|spacer|favicon|avatar|profile image|prompt guide card|tooling screenshot|browser chrome)/.test(text)) return true
+  if (/(ui chrome|page chrome|button|nav button|navigation|header|footer|sidebar|advert|affiliate|banner ad|skinny gutter|tracking pixel|spacer|favicon|avatar|profile image|prompt guide card|tooling screenshot|browser chrome|product hero|product-ad|product ad|device mockup|floating devices|tablet stack|ipad air|apple product)/.test(text)) return true
   const sparseTextSurface = /(wordmark|typographic|text mass|lowercase|logo|single centered|blank field|empty field|negative space|minimalist cover|near-white|off-white|white background)/.test(text)
   const fertileImageSurface = /(figure|portrait|body|hand|object|room|landscape|architecture|street|painting|drawing|photo|photograph|collage|texture|pattern|installation|sculpture|scene|vehicle|animal|plant|fabric|artifact)/.test(text)
   return sparseTextSurface && !fertileImageSurface
@@ -109,7 +109,7 @@ export function isLowFertilitySourceImageCandidate(candidate = {}) {
   const width = Number(candidate.width || 0)
   const height = Number(candidate.height || 0)
   if (/\/(button-|nav-|header-|footer-|spacer|gutter|sidebar|affiliatebuttons?)|casino|adspace|banner|1x1|pixel\.png|favicon|logo|avatar|placeholder/.test(text)) return true
-  if (/(ui chrome|page chrome|nav button|navigation button|header image|footer image|affiliate banner|ad banner|sidebar asset|skinny gutter|tracking pixel|spacer gif|wordmark only|logo only|generic prompt-guide card|prompt guide card|ai tooling screenshot|browser chrome)/.test(text)) return true
+  if (/(ui chrome|page chrome|nav button|navigation button|header image|footer image|affiliate banner|ad banner|sidebar asset|skinny gutter|tracking pixel|spacer gif|wordmark only|logo only|generic prompt-guide card|prompt guide card|ai tooling screenshot|browser chrome|product hero|product-ad|product ad|device mockup|floating devices|tablet stack|ipad air|apple product)/.test(text)) return true
   if ((width && width < 48) || (height && height < 40)) return true
   if (width && height && Math.max(width / height, height / width) > 8) return true
   return false
