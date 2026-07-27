@@ -9,6 +9,7 @@ import { createMapArtifactsStep } from './map-artifacts.mjs'
 import { createMineSignalsStep } from './mine-signals.mjs'
 import { buildSmokeRoute, maskPipelineArgs, pipelinePython, postPackageSteps } from './package-steps.mjs'
 import { createResearchSourcesStep } from './research-sources.mjs'
+import { buildSourceContract } from '../lib/source-contract.mjs'
 
 export async function runFromScratchMode({
   options,
@@ -79,6 +80,24 @@ export async function runFromScratchMode({
     createMineSignalsStep({ options, context, recentDiversityAvoidTerms, root, runDir, mineSignals }),
     createResearchSourcesStep({ apiKey, context, inspectSourceCandidates, options, recentSourceKeys, root, runDir }),
     createComposeBriefStep({ apiKey, composeDailyPayload, context, diversityDirective, options, recentEditions, root, runDir }),
+    {
+      name: 'Build source contract',
+      tool: 'Deterministic source-image contract gate',
+      command: 'write source-contract.json and attach prompt safety contract',
+      run: async () => {
+        const contract = buildSourceContract({
+          sourceImageFingerprints: context.payload?.source_image_fingerprints || [],
+          visualDirection: context.payload?.visual_direction || {},
+          platePosture,
+          scenePrompt: context.payload?.scene_prompt || '',
+          sourceImageMode: context.payload?.source_image_mode,
+        })
+        context.payload = { ...context.payload, source_contract: contract }
+        await fs.writeFile(path.join(runDir, 'source-contract.json'), `${JSON.stringify(contract, null, 2)}\n`, 'utf8')
+        await fs.writeFile(path.join(runDir, 'daily-generation-payload.json'), `${JSON.stringify(context.payload, null, 2)}\n`, 'utf8')
+        return contract
+      },
+    },
     createGeneratePlateStep({ apiKey, context, generateScenePlate, imageAspectRatioFromSize, options, root, runDir }),
     {
       name: 'Audit source-image fidelity before mapping',

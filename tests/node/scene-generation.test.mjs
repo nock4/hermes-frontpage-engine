@@ -80,6 +80,32 @@ describe('scene generation image prompt', () => {
     expect(prompt.length).toBeLessThan(1850)
   })
 
+  it('prints source contract blockers into source-image prompts', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'A source-led transformed plate.',
+      lighting: 'hard low light',
+      material_language: ['paper', 'glare'],
+      source_contract: {
+        mode: 'source-image',
+        must_preserve: ['square crop', 'vertical light shafts', 'lower flare nodes'],
+        must_transform: ['change scale and surface state'],
+        forbidden_drift: ['same palette but not the same source'],
+        forbidden_overcopy: ['near-identical source recreation with tiny seams'],
+      },
+      source_image_fingerprints: [{
+        title: 'Sky Box',
+        image_url: 'https://assets.example/sky-box.jpg',
+        preserve_cues: ['square crop', 'vertical light shafts'],
+      }],
+      artifacts: [{ source_url: 'https://example.com/source' }],
+    })
+
+    expect(prompt).toContain('SOURCE CONTRACT')
+    expect(prompt).toContain('Must preserve: square crop; vertical light shafts; lower flare nodes')
+    expect(prompt).toContain('Forbidden drift: same palette but not the same source')
+    expect(prompt).toContain('Forbidden overcopy: near-identical source recreation with tiny seams')
+  })
+
   it('prints source image fingerprints as plate grammar rather than thumbnail instructions', () => {
     const prompt = buildSceneImagePrompt({
       scene_prompt: 'A source-led plate shaped by research image pressure.',
@@ -259,6 +285,31 @@ describe('scene generation image prompt', () => {
 })
 
 describe('scene generation Hermes image backend', () => {
+  it('fails before image generation when the source contract has prompt conflicts', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-contract-conflict-'))
+    try {
+      await expect(generateScenePlate({
+        payload: {
+          scene_prompt: 'replace the source with an unrelated macro landscape',
+          source_contract: {
+            mode: 'source-image',
+            prompt_conflicts: ['source-preserve contract conflicts with macro/landscape replacement language'],
+          },
+          source_image_fingerprints: [{ image_url: 'https://assets.example/source.jpg', preserve_cues: ['room framing'] }],
+          artifacts: [{ source_url: 'https://example.com/source' }],
+        },
+        imageBackend: 'hermes',
+      }, runDir, {
+        writeJson: async () => {},
+        runHermesImageCommand: async () => {
+          throw new Error('image generation should not be called')
+        },
+      })).rejects.toThrow(/source contract prompt conflicts/)
+    } finally {
+      await rm(runDir, { recursive: true, force: true })
+    }
+  })
+
   it('retries a transient missing image-generation result before writing the plate metadata', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-scene-retry-'))
     const written = new Map()

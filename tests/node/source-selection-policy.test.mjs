@@ -63,11 +63,14 @@ describe('source selection policy', () => {
     ])
   })
 
-  it('classifies source URLs into runtime binding types', () => {
-    expect(classifySource('https://www.youtube.com/watch?v=abc123')).toMatchObject({ source_type: 'youtube', window_type: 'video' })
-    expect(classifySource('https://www.youtube.com/playlist?list=OLAK5uy_ml3b2TJh9lE4NPtfzuj1IkbQXQpjigPzk')).toMatchObject({ source_type: 'article', window_type: 'web' })
-    expect(classifySource('https://x.com/person/status/123')).toMatchObject({ source_type: 'tweet', window_type: 'social' })
-    expect(classifySource('https://github.com/openai/codex')).toMatchObject({ source_type: 'github', window_type: 'web' })
+  it('classifies source URLs through the provider/media matrix', () => {
+    expect(classifySource('https://www.youtube.com/watch?v=abc123')).toMatchObject({ source_type: 'youtube', window_type: 'video', media_class: 'youtube-video', embed_strategy: 'native-iframe' })
+    expect(classifySource('https://www.youtube.com/playlist?list=OLAK5uy_ml3b2TJh9lE4NPtfzuj1IkbQXQpjigPzk')).toMatchObject({ source_type: 'article', window_type: 'web', media_class: 'youtube-playlist' })
+    expect(classifySource('https://x.com/person/status/123')).toMatchObject({ source_type: 'tweet', window_type: 'social', media_class: 'tweet' })
+    expect(classifySource('https://pbs.twimg.com/media/abc123?format=jpg&name=large')).toMatchObject({ source_type: 'article', window_type: 'image', media_class: 'tweet-raw-media', embed_strategy: 'never-primary-content-source' })
+    expect(classifySource('https://label.bandcamp.com/album/nocturne')).toMatchObject({ source_type: 'audio', window_type: 'audio', media_class: 'bandcamp-album' })
+    expect(classifySource('https://soundcloud.com/artist/track')).toMatchObject({ source_type: 'audio', window_type: 'audio', media_class: 'soundcloud-track' })
+    expect(classifySource('https://github.com/openai/codex')).toMatchObject({ source_type: 'github', window_type: 'web', media_class: 'github-page' })
   })
 
   it('rejects inspected sources that point at unavailable embeds or disallowed URLs', () => {
@@ -180,6 +183,32 @@ describe('source selection policy', () => {
 
     expect(sourceContentScore(artwork)).toBeGreaterThan(sourceContentScore(aiTool))
     expect(selectContentSources([aiTool, artwork], { targetItems: 2 }).map((source) => source.url)[0]).toBe(artwork.url)
+  })
+
+  it('lets recent favorited artwork outrank higher-note AI tooling during inspection', () => {
+    const signalHarvest = {
+      source_candidates: [
+        {
+          url: 'https://github.com/acme/prompt-agent-kit',
+          source_channel: 'chrome-bookmark',
+          note_score: 160,
+          note_id: 'tool-a',
+          note_title: 'AI assistant prompt guide and agent workflow screenshots',
+        },
+        {
+          url: 'https://x.com/archivepilled/status/2077727698265546956',
+          source_channel: 'twitter-bookmark',
+          note_score: 18,
+          note_id: 'art-fav',
+          note_title: "Favorited artwork — Nicolò Pucci di Benisichi painting aircraft billiard",
+          note_path: 'Bookmarks/Recent/Favorited Artwork.md',
+        },
+      ],
+    }
+
+    expect(selectSourceCandidatesForInspection(signalHarvest, 1).map((source) => source.url)).toEqual([
+      'https://x.com/archivepilled/status/2077727698265546956',
+    ])
   })
 
   it('keeps a tweet and its extracted media from becoming duplicate content cards', () => {

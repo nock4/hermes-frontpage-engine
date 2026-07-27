@@ -7,27 +7,27 @@ import {
   isYouTubeVideoUrl,
   youtubeId,
 } from './source-url-policy.mjs'
+import { classifyMediaUrl } from './media-url-classifier.mjs'
 
 const DEFAULT_MAX_CONTENT_ITEMS = 10
 const DEFAULT_TARGET_CONTENT_ITEMS = 9
 const SOURCE_CHANNELS = ['youtube-like', 'nts-like', 'chrome-bookmark', 'twitter-bookmark']
 
 export function classifySource(url) {
-  try {
-    const parsed = new URL(url)
-    const host = parsed.hostname.replace(/^www\./, '')
-    if (host.includes('youtube.com') || host.includes('youtu.be')) {
-      if (isYouTubeVideoUrl(url)) return { source_type: 'youtube', window_type: 'video', kind: 'video' }
-      return { source_type: 'article', window_type: 'web', kind: 'article' }
-    }
-    if (host === 'x.com' || host === 'twitter.com') return { source_type: 'tweet', window_type: 'social', kind: 'social' }
-    if (host.includes('github.com')) return { source_type: 'github', window_type: 'web', kind: 'web' }
-    if (host.includes('nts.live')) return { source_type: 'nts', window_type: 'audio', kind: 'audio' }
-    if (host.includes('soundcloud.com') || host.includes('bandcamp.com')) return { source_type: 'audio', window_type: 'audio', kind: 'audio' }
-  } catch {
-    return { source_type: 'web', window_type: 'web', kind: 'web' }
+  const classification = classifyMediaUrl(url)
+  return {
+    source_type: classification.source_type,
+    window_type: classification.window_type,
+    kind: classification.source_type === 'youtube' ? 'video'
+      : classification.source_type === 'tweet' ? 'social'
+        : classification.source_type === 'audio' ? 'audio'
+          : classification.source_type === 'github' ? 'web'
+            : classification.source_type === 'image' ? 'image'
+              : 'article',
+    media_class: classification.media_class,
+    provider: classification.provider,
+    embed_strategy: classification.embed_strategy,
   }
-  return { source_type: 'article', window_type: 'web', kind: 'article' }
 }
 
 export function isAllowedInspectedSource(source) {
