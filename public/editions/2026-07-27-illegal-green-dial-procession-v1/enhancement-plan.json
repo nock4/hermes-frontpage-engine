@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-27-illegal-green-dial-procession-v1",
+  "edition_id": "2026-07-27-illegal-green-dial-procession-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-27-illegal-green-dial-procession-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-bad-hand-loading-glass-flare",
+      "target_kind": "artifact",
+      "artifact_id": "hero-bad-hand-loading-glass-flare",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-glass-dial-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-drifella-card-inscription-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-drifella-card-inscription-field",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (off-white-rounded-card-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-primary-cover-black-glyph",
+      "target_kind": "artifact",
+      "artifact_id": "module-primary-cover-black-glyph",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dense-black-inscription-glyph-mass) selected from interpretation."
+    },
+    {
+      "target_id": "module-purelivn-media-grain",
+      "target_kind": "artifact",
+      "artifact_id": "module-purelivn-media-grain",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-embedded-thumbnail-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-ipad-rounded-edge-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-ipad-rounded-edge-cut",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rounded-metal-bevel-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-macbook-v-rim-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-macbook-v-rim-slit",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-hinged-v-shadow-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-golden-boots-green-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-golden-boots-green-notch",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (acid-green-ribbed-strap-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-apple-source-field-rim",
+      "target_kind": "artifact",
+      "artifact_id": "module-apple-source-field-rim",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-bright-diagonal-top-rim) selected from interpretation."
+    },
+    {
+      "target_id": "module-upper-left-scratch-stain-island",
+      "target_kind": "artifact",
+      "artifact_id": "module-upper-left-scratch-stain-island",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (brushed-pigment-scratch-island) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

@@ -1,0 +1,595 @@
+{
+  "analysis_id": "analysis-2026-07-27-illegal-green-dial-procession-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark, product-field plate holds a brushed bronze slab with a black circular glass dial, a pale rounded card surface with a dense black inscription, a glossy embedded left slit, and an acid-green ribbed strap rising from below. The strongest source-bearing anchors are real surface interruptions: apertures, rim cuts, flecks, stains, glyph mass, and hinged shadows.",
+  "usable_surfaces": [
+    "black glass dial aperture",
+    "off-white rounded card field",
+    "central black inscription mass",
+    "left glossy embedded slit",
+    "acid-green ribbed strap notch",
+    "upper-left brushed stain island",
+    "lower-right hinged shadow slit",
+    "thin bright top rim edge",
+    "small glass droplet on lower lip"
+  ],
+  "detected_objects": [
+    {
+      "label": "bad-hand-loading-glass-flare",
+      "artifact_type": "black-glass-dial-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.365,
+        "y": 0.272,
+        "w": 0.237,
+        "h": 0.293
+      },
+      "polygon": [
+        [
+          0.486,
+          0.272
+        ],
+        [
+          0.535,
+          0.282
+        ],
+        [
+          0.577,
+          0.319
+        ],
+        [
+          0.598,
+          0.371
+        ],
+        [
+          0.593,
+          0.434
+        ],
+        [
+          0.563,
+          0.499
+        ],
+        [
+          0.512,
+          0.555
+        ],
+        [
+          0.455,
+          0.563
+        ],
+        [
+          0.404,
+          0.532
+        ],
+        [
+          0.374,
+          0.478
+        ],
+        [
+          0.365,
+          0.415
+        ],
+        [
+          0.377,
+          0.354
+        ],
+        [
+          0.421,
+          0.3
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "Large black circular glossy aperture interrupts the bronze slab, with strong white flare at lower left and reflected crescent on the upper right glass."
+    },
+    {
+      "label": "drifella-card-inscription-field",
+      "artifact_type": "off-white-rounded-card-surface",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.752,
+        "y": 0.173,
+        "w": 0.248,
+        "h": 0.348
+      },
+      "polygon": [
+        [
+          0.796,
+          0.202
+        ],
+        [
+          0.997,
+          0.103
+        ],
+        [
+          1,
+          0.449
+        ],
+        [
+          0.966,
+          0.481
+        ],
+        [
+          0.792,
+          0.521
+        ],
+        [
+          0.764,
+          0.514
+        ],
+        [
+          0.752,
+          0.486
+        ],
+        [
+          0.752,
+          0.259
+        ],
+        [
+          0.765,
+          0.224
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Pale textured rounded rectangular card plane is visible at the right, inset under a dark bevel and carrying the small black inscription block."
+    },
+    {
+      "label": "primary-cover-black-glyph",
+      "artifact_type": "dense-black-inscription-glyph-mass",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.842,
+        "y": 0.276,
+        "w": 0.145,
+        "h": 0.139
+      },
+      "polygon": [
+        [
+          0.844,
+          0.305
+        ],
+        [
+          0.88,
+          0.294
+        ],
+        [
+          0.93,
+          0.281
+        ],
+        [
+          0.984,
+          0.276
+        ],
+        [
+          0.987,
+          0.344
+        ],
+        [
+          0.984,
+          0.392
+        ],
+        [
+          0.934,
+          0.404
+        ],
+        [
+          0.885,
+          0.415
+        ],
+        [
+          0.849,
+          0.407
+        ],
+        [
+          0.842,
+          0.352
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A compact dense field of tiny black square marks sits on the off-white card, reading as an illegible two-dimensional glyph inscription rather than type."
+    },
+    {
+      "label": "purelivn-media-grain",
+      "artifact_type": "glossy-embedded-thumbnail-slit",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.506,
+        "w": 0.219,
+        "h": 0.11
+      },
+      "polygon": [
+        [
+          0,
+          0.548
+        ],
+        [
+          0.032,
+          0.535
+        ],
+        [
+          0.103,
+          0.519
+        ],
+        [
+          0.177,
+          0.506
+        ],
+        [
+          0.21,
+          0.498
+        ],
+        [
+          0.219,
+          0.515
+        ],
+        [
+          0.219,
+          0.58
+        ],
+        [
+          0.203,
+          0.592
+        ],
+        [
+          0.12,
+          0.604
+        ],
+        [
+          0.041,
+          0.616
+        ],
+        [
+          0,
+          0.614
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Left edge contains a dark glossy rounded slit packed with photographic grain, bright specks, and liquid-looking embedded fragments under glass."
+    },
+    {
+      "label": "ipad-rounded-edge-cut",
+      "artifact_type": "rounded-metal-bevel-aperture",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.745,
+        "y": 0.173,
+        "w": 0.255,
+        "h": 0.353
+      },
+      "polygon": [
+        [
+          0.791,
+          0.19
+        ],
+        [
+          0.998,
+          0.089
+        ],
+        [
+          1,
+          0.105
+        ],
+        [
+          0.798,
+          0.203
+        ],
+        [
+          0.771,
+          0.219
+        ],
+        [
+          0.754,
+          0.251
+        ],
+        [
+          0.748,
+          0.471
+        ],
+        [
+          0.757,
+          0.507
+        ],
+        [
+          0.787,
+          0.526
+        ],
+        [
+          0.97,
+          0.481
+        ],
+        [
+          1,
+          0.452
+        ],
+        [
+          1,
+          0.466
+        ],
+        [
+          0.972,
+          0.499
+        ],
+        [
+          0.789,
+          0.548
+        ],
+        [
+          0.75,
+          0.535
+        ],
+        [
+          0.735,
+          0.493
+        ],
+        [
+          0.735,
+          0.254
+        ],
+        [
+          0.753,
+          0.211
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "The right card is held by a thick dark rounded bevel, especially visible along the left and bottom lip, borrowing a rounded device-edge grammar."
+    },
+    {
+      "label": "macbook-v-rim-slit",
+      "artifact_type": "dark-hinged-v-shadow-slit",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.584,
+        "y": 0.578,
+        "w": 0.157,
+        "h": 0.276
+      },
+      "polygon": [
+        [
+          0.584,
+          0.594
+        ],
+        [
+          0.657,
+          0.583
+        ],
+        [
+          0.713,
+          0.572
+        ],
+        [
+          0.741,
+          0.596
+        ],
+        [
+          0.729,
+          0.695
+        ],
+        [
+          0.688,
+          0.751
+        ],
+        [
+          0.667,
+          0.854
+        ],
+        [
+          0.632,
+          0.844
+        ],
+        [
+          0.605,
+          0.763
+        ],
+        [
+          0.588,
+          0.666
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "A dark hinged V-like occlusion drops below the bronze slab at lower right of the dial, with a narrow rim highlight and deep shadow pocket."
+    },
+    {
+      "label": "golden-boots-green-notch",
+      "artifact_type": "acid-green-ribbed-strap-notch",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.225,
+        "y": 0.584,
+        "w": 0.36,
+        "h": 0.416
+      },
+      "polygon": [
+        [
+          0.228,
+          0.646
+        ],
+        [
+          0.252,
+          0.605
+        ],
+        [
+          0.327,
+          0.596
+        ],
+        [
+          0.446,
+          0.585
+        ],
+        [
+          0.543,
+          0.584
+        ],
+        [
+          0.572,
+          0.615
+        ],
+        [
+          0.585,
+          0.711
+        ],
+        [
+          0.582,
+          0.884
+        ],
+        [
+          0.568,
+          1
+        ],
+        [
+          0.273,
+          1
+        ],
+        [
+          0.258,
+          0.884
+        ],
+        [
+          0.234,
+          0.783
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "The loud acid-green strap emerges from the bottom center with raised vertical ribs and dark side notches, the strongest color interruption on the plate."
+    },
+    {
+      "label": "apple-source-field-rim",
+      "artifact_type": "thin-bright-diagonal-top-rim",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.1,
+        "w": 1,
+        "h": 0.251
+      },
+      "polygon": [
+        [
+          0,
+          0.346
+        ],
+        [
+          0.128,
+          0.316
+        ],
+        [
+          0.289,
+          0.282
+        ],
+        [
+          0.453,
+          0.247
+        ],
+        [
+          0.625,
+          0.212
+        ],
+        [
+          0.787,
+          0.177
+        ],
+        [
+          0.938,
+          0.136
+        ],
+        [
+          1,
+          0.121
+        ],
+        [
+          1,
+          0.1
+        ],
+        [
+          0.936,
+          0.115
+        ],
+        [
+          0.785,
+          0.155
+        ],
+        [
+          0.623,
+          0.19
+        ],
+        [
+          0.451,
+          0.225
+        ],
+        [
+          0.286,
+          0.26
+        ],
+        [
+          0.126,
+          0.294
+        ],
+        [
+          0,
+          0.325
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A thin luminous diagonal rim defines the top edge of the black product field and pressures the empty margin around the central object island."
+    },
+    {
+      "label": "upper-left-scratch-stain-island",
+      "artifact_type": "brushed-pigment-scratch-island",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.112,
+        "y": 0.305,
+        "w": 0.098,
+        "h": 0.117
+      },
+      "polygon": [
+        [
+          0.116,
+          0.342
+        ],
+        [
+          0.134,
+          0.313
+        ],
+        [
+          0.166,
+          0.305
+        ],
+        [
+          0.193,
+          0.323
+        ],
+        [
+          0.207,
+          0.357
+        ],
+        [
+          0.197,
+          0.393
+        ],
+        [
+          0.171,
+          0.421
+        ],
+        [
+          0.137,
+          0.407
+        ],
+        [
+          0.112,
+          0.378
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A dark smeared island of scratches and flecks appears on the upper-left bronze surface, distinct from the general brushed texture."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 5,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.746,
+    "rationale": "The plate is expressionist but controlled: a few large surfaces carry the composition, while the interaction marks are concentrated as apertures, edge cuts, inscription mass, and compact flecks rather than many competing cards."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-07-27-illegal-green-dial-procession-v1"
+}

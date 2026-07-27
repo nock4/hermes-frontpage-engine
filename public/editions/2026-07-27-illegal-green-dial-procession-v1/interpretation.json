@@ -1,0 +1,382 @@
+{
+  "interpretation_id": "interp-2026-07-27-illegal-green-dial-procession-v1",
+  "edition_id": "2026-07-27-illegal-green-dial-procession-v1",
+  "plate_read_timestamp": "2026-07-27T14:45:35.932Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark, product-field plate holds a brushed bronze slab with a black circular glass dial, a pale rounded card surface with a dense black inscription, a glossy embedded left slit, and an acid-green ribbed strap rising from below. The strongest source-bearing anchors are real surface interruptions: apertures, rim cuts, flecks, stains, glyph mass, and hinged shadows.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "illegal handheld gloss in a black collectible field",
+      "A dark, product-field plate holds a brushed bronze slab with a black circular glass dial, a pale rounded card surface with a dense black inscription, a glossy embedded left slit, and an acid-green ribbed strap rising from below. The strongest source-bearing anchors are real surface interruptions: apertures, rim cuts, flecks, stains, glyph mass, and hinged shadows.",
+      "black-product-field",
+      "titanium-bevel",
+      "acid-green-strap"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "bad-hand-loading-glass-flare",
+      "drifella-card-inscription-field",
+      "primary-cover-black-glyph",
+      "purelivn-media-grain",
+      "ipad-rounded-edge-cut",
+      "macbook-v-rim-slit",
+      "golden-boots-green-notch",
+      "apple-source-field-rim"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "titanium-glyph-card-rupture",
+      "central side-lit object island hovering in a wide black field",
+      "single acid-green vertical rupture falling into shadow",
+      "glossy radial aperture packed with tiny source-bearing grains",
+      "pale square inscription counter-field offset against the black",
+      "sharp V-shaped metal collision opening depth below the slab",
+      "edge notches, seam cuts, strap holes, and glyph clusters carrying saved sources",
+      "black glass dial aperture"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: titanium-glyph-card-rupture.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-bad-hand-loading-glass-flare",
+      "kind": "hero",
+      "type": "black-glass-dial-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.3652,
+        "y": 0.2676,
+        "w": 0.2363,
+        "h": 0.291
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-drifella-card-inscription-field",
+      "kind": "hero",
+      "type": "off-white-rounded-card-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.752,
+        "y": 0.173,
+        "w": 0.248,
+        "h": 0.348
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-primary-cover-black-glyph",
+      "kind": "module",
+      "type": "dense-black-inscription-glyph-mass",
+      "strength": 0.801732,
+      "bounds": {
+        "x": 0.842,
+        "y": 0.276,
+        "w": 0.145,
+        "h": 0.139
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-purelivn-media-grain",
+      "kind": "module",
+      "type": "glossy-embedded-thumbnail-slit",
+      "strength": 0.764556,
+      "bounds": {
+        "x": 0,
+        "y": 0.506,
+        "w": 0.219,
+        "h": 0.11
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ipad-rounded-edge-cut",
+      "kind": "module",
+      "type": "rounded-metal-bevel-aperture",
+      "strength": 0.72426,
+      "bounds": {
+        "x": 0.745,
+        "y": 0.173,
+        "w": 0.255,
+        "h": 0.353
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-macbook-v-rim-slit",
+      "kind": "module",
+      "type": "dark-hinged-v-shadow-slit",
+      "strength": 0.6939960000000001,
+      "bounds": {
+        "x": 0.584,
+        "y": 0.578,
+        "w": 0.157,
+        "h": 0.276
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-golden-boots-green-notch",
+      "kind": "module",
+      "type": "acid-green-ribbed-strap-notch",
+      "strength": 0.65568,
+      "bounds": {
+        "x": 0.225,
+        "y": 0.584,
+        "w": 0.36,
+        "h": 0.416
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-apple-source-field-rim",
+      "kind": "module",
+      "type": "thin-bright-diagonal-top-rim",
+      "strength": 0.6493599999999999,
+      "bounds": {
+        "x": 0,
+        "y": 0.1,
+        "w": 1,
+        "h": 0.251
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-left-scratch-stain-island",
+      "kind": "module",
+      "type": "brushed-pigment-scratch-island",
+      "strength": 0.662056,
+      "bounds": {
+        "x": 0.112,
+        "y": 0.305,
+        "w": 0.098,
+        "h": 0.117
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-bad-hand-loading-glass-flare-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3652,
+        "y": 0.2676,
+        "w": 0.2363,
+        "h": 0.291
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-drifella-card-inscription-field-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.752,
+        "y": 0.173,
+        "w": 0.248,
+        "h": 0.348
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-primary-cover-black-glyph-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.842,
+        "y": 0.276,
+        "w": 0.145,
+        "h": 0.139
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-purelivn-media-grain-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.506,
+        "w": 0.219,
+        "h": 0.11
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ipad-rounded-edge-cut-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.745,
+        "y": 0.173,
+        "w": 0.255,
+        "h": 0.353
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-macbook-v-rim-slit-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.584,
+        "y": 0.578,
+        "w": 0.157,
+        "h": 0.276
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-golden-boots-green-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.225,
+        "y": 0.584,
+        "w": 0.36,
+        "h": 0.416
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-apple-source-field-rim-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.1,
+        "w": 1,
+        "h": 0.251
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-left-scratch-stain-island-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.112,
+        "y": 0.305,
+        "w": 0.098,
+        "h": 0.117
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
