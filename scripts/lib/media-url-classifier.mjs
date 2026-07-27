@@ -39,7 +39,7 @@ export function classifyMediaUrl(sourceUrl) {
     }
 
     if (host === 'pbs.twimg.com' || host === 'video.twimg.com') {
-      return { provider: 'x-cdn', media_class: 'tweet-raw-media', source_type: 'article', window_type: 'image', embed_strategy: 'never-primary-content-source' }
+      return { provider: 'x-cdn', media_class: 'tweet-raw-media', source_type: 'article', window_type: 'web', embed_strategy: 'never-primary-content-source' }
     }
 
     if (host.includes('nts.live')) {
@@ -55,7 +55,7 @@ export function classifyMediaUrl(sourceUrl) {
     }
 
     if (isDirectRasterImageUrl(sourceUrl)) {
-      return { provider: host, media_class: 'direct-raster-image', source_type: 'image', window_type: 'image', embed_strategy: 'image' }
+      return { provider: host, media_class: 'direct-raster-image', source_type: 'article', window_type: 'web', embed_strategy: 'image' }
     }
 
     if (host.includes('github.com')) return { provider: 'github', media_class: 'github-page', source_type: 'github', window_type: 'web', embed_strategy: 'web-card' }

@@ -67,7 +67,7 @@ describe('source selection policy', () => {
     expect(classifySource('https://www.youtube.com/watch?v=abc123')).toMatchObject({ source_type: 'youtube', window_type: 'video', media_class: 'youtube-video', embed_strategy: 'native-iframe' })
     expect(classifySource('https://www.youtube.com/playlist?list=OLAK5uy_ml3b2TJh9lE4NPtfzuj1IkbQXQpjigPzk')).toMatchObject({ source_type: 'article', window_type: 'web', media_class: 'youtube-playlist' })
     expect(classifySource('https://x.com/person/status/123')).toMatchObject({ source_type: 'tweet', window_type: 'social', media_class: 'tweet' })
-    expect(classifySource('https://pbs.twimg.com/media/abc123?format=jpg&name=large')).toMatchObject({ source_type: 'article', window_type: 'image', media_class: 'tweet-raw-media', embed_strategy: 'never-primary-content-source' })
+    expect(classifySource('https://pbs.twimg.com/media/abc123?format=jpg&name=large')).toMatchObject({ source_type: 'article', window_type: 'web', media_class: 'tweet-raw-media', embed_strategy: 'never-primary-content-source' })
     expect(classifySource('https://label.bandcamp.com/album/nocturne')).toMatchObject({ source_type: 'audio', window_type: 'audio', media_class: 'bandcamp-album' })
     expect(classifySource('https://soundcloud.com/artist/track')).toMatchObject({ source_type: 'audio', window_type: 'audio', media_class: 'soundcloud-track' })
     expect(classifySource('https://github.com/openai/codex')).toMatchObject({ source_type: 'github', window_type: 'web', media_class: 'github-page' })
