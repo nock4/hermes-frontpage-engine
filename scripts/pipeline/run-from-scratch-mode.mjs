@@ -83,41 +83,57 @@ export async function runFromScratchMode({
     {
       name: 'Audit source-image fidelity before mapping',
       tool: 'Vision source/plate adversarial QA',
-      command: 'compare attached source material against generated plate; recover once with source-preserving plate if blocked',
+      command: 'compare attached source material against generated plate; recover with audit-guided source-preserving plates if blocked',
       run: async () => {
+        const auditPlate = () => auditSourceImageFidelity({
+          payload: context.payload,
+          platePath: context.plate.outputPath,
+          apiKey,
+          model: options.model,
+        }, runDir)
+
         try {
-          return await auditSourceImageFidelity({
-            payload: context.payload,
-            platePath: context.plate.outputPath,
-            apiKey,
-            model: options.model,
-          }, runDir)
-        } catch (error) {
+          return await auditPlate()
+        } catch (firstError) {
           const hasSourceImage = Array.isArray(context.payload?.source_image_fingerprints)
             && context.payload.source_image_fingerprints.some((fingerprint) => fingerprint?.image_url)
-          if (!hasSourceImage || process.env.DFE_SOURCE_FIDELITY_AUTO_RECOVERY === '0') throw error
-          console.warn(`[source-fidelity] ${error.message}; regenerating once with source-preserving recovery plate`)
-          const previousRecoveryFlag = process.env.DFE_SOURCE_PRESERVE_PLATE
-          process.env.DFE_SOURCE_PRESERVE_PLATE = '1'
-          try {
-            context.plate = await generateScenePlate({
-              payload: context.payload,
-              apiKey,
-              imageModel: options.imageModel,
-              imageBackend: options.imageBackend,
-              imageSize: options.imageSize,
-              imageQuality: options.imageQuality,
-            }, runDir)
-          } finally {
-            if (previousRecoveryFlag === undefined) delete process.env.DFE_SOURCE_PRESERVE_PLATE
-            else process.env.DFE_SOURCE_PRESERVE_PLATE = previousRecoveryFlag
+          if (!hasSourceImage || process.env.DFE_SOURCE_FIDELITY_AUTO_RECOVERY === '0') throw firstError
+
+          let lastError = firstError
+          const recoveryAttempts = sourceFidelityRecoveryAttempts()
+          for (let attempt = 1; attempt <= recoveryAttempts; attempt += 1) {
+            const failedAudit = await readSourceFidelityAudit(runDir, fs)
+            context.payload = buildSourceFidelityRecoveryPayload(context.payload, failedAudit, attempt)
+            await fs.writeFile(
+              path.join(runDir, `daily-generation-payload.source-fidelity-recovery-${attempt}.json`),
+              `${JSON.stringify(context.payload, null, 2)}\n`,
+              'utf8',
+            )
+
+            console.warn(`[source-fidelity] ${lastError.message}; regenerating recovery plate ${attempt}/${recoveryAttempts} with audit-guided preserve cues`)
+            const previousRecoveryFlag = process.env.DFE_SOURCE_PRESERVE_PLATE
+            process.env.DFE_SOURCE_PRESERVE_PLATE = '1'
+            try {
+              context.plate = await generateScenePlate({
+                payload: context.payload,
+                apiKey,
+                imageModel: options.imageModel,
+                imageBackend: options.imageBackend,
+                imageSize: options.imageSize,
+                imageQuality: options.imageQuality,
+              }, runDir)
+            } finally {
+              if (previousRecoveryFlag === undefined) delete process.env.DFE_SOURCE_PRESERVE_PLATE
+              else process.env.DFE_SOURCE_PRESERVE_PLATE = previousRecoveryFlag
+            }
+
+            try {
+              return await auditPlate()
+            } catch (recoveryError) {
+              lastError = recoveryError
+            }
           }
-          return auditSourceImageFidelity({
-            payload: context.payload,
-            platePath: context.plate.outputPath,
-            apiKey,
-            model: options.model,
-          }, runDir)
+          throw lastError
         }
       },
     },
@@ -240,4 +256,73 @@ export async function runFromScratchMode({
   }, null, 2))
   stopManagedBrowserHarnessBrowser(managedBrowser)
   console.log('\nDaily process completed.')
+}
+
+function sourceFidelityRecoveryAttempts() {
+  const parsed = Number.parseInt(process.env.DFE_SOURCE_FIDELITY_RECOVERY_ATTEMPTS || '', 10)
+  if (Number.isFinite(parsed) && parsed >= 0) return Math.min(parsed, 4)
+  return 2
+}
+
+async function readSourceFidelityAudit(runDir, fsImpl) {
+  try {
+    return JSON.parse(await fsImpl.readFile(path.join(runDir, 'source-fidelity-audit.json'), 'utf8'))
+  } catch {
+    return null
+  }
+}
+
+export function buildSourceFidelityRecoveryPayload(payload, audit, attempt = 1) {
+  const existingPreserve = Array.isArray(payload?.source_reference_preserve) ? payload.source_reference_preserve : []
+  const missing = Array.isArray(audit?.missing_critical_elements) ? audit.missing_critical_elements : []
+  const risks = Array.isArray(audit?.drift_risks) ? audit.drift_risks : []
+  const blockers = Array.isArray(audit?.blockers) ? audit.blockers : []
+  const retained = Array.isArray(audit?.retained_critical_elements) ? audit.retained_critical_elements : []
+  const failureCueText = [
+    ...missing.map((cue) => `Recover missing source cue: ${cue}`),
+    ...risks.slice(0, 3).map((cue) => `Avoid drift: ${cue}`),
+    ...blockers.slice(0, 3).map((cue) => `Previous blocker: ${cue}`),
+  ]
+  const keepCueText = retained.slice(0, 4).map((cue) => `Keep retained source cue: ${cue}`)
+  const sourceReferencePreserve = uniqueStrings([
+    ...existingPreserve,
+    ...failureCueText,
+    ...keepCueText,
+    'Recovery rule: preserve the named missing details as visible illegible marks or material objects, not as readable labels or debug annotations.',
+  ], 12)
+
+  const negativeConstraints = uniqueStrings([
+    ...(Array.isArray(payload?.negative_constraints) ? payload.negative_constraints : []),
+    'do not strip handmade details into generic torn-paper ambience',
+    'do not fragment the primary source objects until their original silhouettes stop reading',
+    'do not replace source candy/wrapper/handwriting cues with unrelated scraps',
+  ], 16)
+
+  const scenePrompt = [
+    payload?.scene_prompt || '',
+    `Source-fidelity recovery pass ${attempt}: restore the audit-missing source identifiers before adding seams or ruptures.`,
+    missing.length ? `Visible details to restore: ${missing.slice(0, 5).join('; ')}.` : '',
+    'Keep source-window marks grown from those restored details; no labels, rings, pins, or pasted cards.',
+  ].filter(Boolean).join(' ')
+
+  return {
+    ...payload,
+    source_reference_preserve: sourceReferencePreserve,
+    negative_constraints: negativeConstraints,
+    scene_prompt: scenePrompt,
+  }
+}
+
+function uniqueStrings(values, limit) {
+  const result = []
+  const seen = new Set()
+  for (const value of values) {
+    const text = String(value || '').replace(/\s+/g, ' ').trim()
+    const key = text.toLowerCase()
+    if (!text || seen.has(key)) continue
+    seen.add(key)
+    result.push(text)
+    if (result.length >= limit) break
+  }
+  return result
 }
