@@ -72,8 +72,10 @@ export function buildSourceContract({
   ].filter(Boolean).join(' ').toLowerCase()
   const preserveText = preserve.join(' ').toLowerCase()
   const promptConflicts = []
-  if (/(macro|landscape|horizon|skyline|city|unrelated|replacement|replace with|metaphor)/.test(promptText)
-    && /(room|interior|figure|object|square|crop|framing|doorway|window|still[- ]?life|source)/.test(preserveText)) {
+  const explicitReplacement = /(unrelated|replacement|replace with|instead of the source|rather than the source)/.test(promptText)
+  const replacementScene = /(macro|landscape|horizon|skyline|city|metaphor|texture field)/.test(promptText)
+  if (explicitReplacement && replacementScene
+    && /(room|interior|figure|object|square|crop|framing|doorway|window|still[- ]?life|source|chair|painting)/.test(preserveText)) {
     promptConflicts.push('source-preserve contract conflicts with macro/landscape replacement language')
   }
   if (/no literal depiction|do not depict|avoid depicting the source|not depict the source/.test(promptText)) {

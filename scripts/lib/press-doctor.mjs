@@ -17,6 +17,17 @@ export function classifyCronFailure(logText) {
     }
   }
 
+  if (/source contract prompt conflicts/i.test(text)) {
+    return {
+      kind: 'source_contract_conflict',
+      stage: 'source contract / prompt contradiction gate',
+      summary,
+      latest_run_dir: summary.latest_run_dir || null,
+      next_action: 'repair_source_contract_conflict_then_rerun_cron',
+      blocker: firstMatchingLine(text, /source contract prompt conflicts/i),
+    }
+  }
+
   if (pressState === 'proof_failed_after_publish' || /Live proof captured stale edition|loaded plate image.*not loaded|success screenshot/i.test(text) && summary.ok === true) {
     return {
       kind: 'proof_failed_after_publish',

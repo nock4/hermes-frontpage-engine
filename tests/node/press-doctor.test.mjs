@@ -21,6 +21,16 @@ describe('press doctor failure classifier', () => {
     ])
   })
 
+  it('classifies source-contract prompt conflicts separately from generic generation failure', () => {
+    const incident = classifyCronFailure([
+      'Error: source contract prompt conflicts: source-preserve contract conflicts with macro/landscape replacement language',
+      '{\n  "ok": false,\n  "latest_run_dir": "/tmp/run"\n}',
+    ].join('\n'))
+
+    expect(incident.kind).toBe('source_contract_conflict')
+    expect(incident.next_action).toBe('repair_source_contract_conflict_then_rerun_cron')
+  })
+
   it('classifies stale proof after publish separately from publish failure', () => {
     const incident = classifyCronFailure([
       '{\n  "ok": true,\n  "local_edition_id": "edition-v1",\n  "local_publish_status": "live",\n  "remote_matches": true\n}',

@@ -40,6 +40,27 @@ describe('source contract', () => {
     expect(contract.skip_reason).toContain('low-fertility')
   })
 
+  it('does not treat a macro posture label as a conflict when the source remains explicitly dominant', () => {
+    const contract = buildSourceContract({
+      sourceImageFingerprints: [{
+        title: 'Van Gogh chair',
+        image_url: 'https://uploads0.wikiart.org/images/vincent-van-gogh/van-gogh-s-chair-1889.jpg!Large.jpg',
+        visual_fertility: 'high',
+        preserve_cues: ['Central yellow-green wooden chair', 'rush woven seat', 'turquoise wall field'],
+      }],
+      visualDirection: {
+        composition_archetype: 'material macro',
+        camera_plate_grammar: 'source-led object study',
+      },
+      platePosture: { plate_posture: 'material macro' },
+      scenePrompt: 'Keep the chair as the dominant source mass while transforming surface and scale.',
+    })
+
+    expect(contract.mode).toBe('source-image')
+    expect(contract.prompt_conflicts).toEqual([])
+    expect(() => assertSourceContractPromptSafe(contract)).not.toThrow()
+  })
+
   it('detects source preservation contradictions before image generation', () => {
     const contract = buildSourceContract({
       sourceImageFingerprints: [{
