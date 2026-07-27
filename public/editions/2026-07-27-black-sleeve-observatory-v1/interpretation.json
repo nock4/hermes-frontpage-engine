@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-07-27-black-sleeve-observatory-v1",
+  "edition_id": "2026-07-27-black-sleeve-observatory-v1",
+  "plate_read_timestamp": "2026-07-27T14:16:33.793Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A square nocturnal plate: one sepia-black portrait torn into a matte black field, with straw-frayed crown fibers, paper chips, void cuts, gloss scars, a bright glint, and narrow seams acting as source windows.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "smoky sleeve under observatory glass, clean card proof cutting through the dark",
+      "A square nocturnal plate: one sepia-black portrait torn into a matte black field, with straw-frayed crown fibers, paper chips, void cuts, gloss scars, a bright glint, and narrow seams acting as source windows.",
+      "charcoal-sleeve",
+      "nocturnal-card",
+      "straw-fray"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero charcoal sleeve aperture",
+      "hero straw-fray image notch",
+      "goblincore varnish scar",
+      "Conversation Transcript Folio",
+      "iceman cold chip",
+      "sad-girl-card-flake",
+      "bound disc glint",
+      "verse-talks seam"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint",
+      "paper"
+    ],
+    "dominant_structures": [
+      "charcoal-card-observatory-macro",
+      "large nocturnal charcoal sleeve field with scratched navigation void",
+      "cropped warm abstract material mass rising from the bottom edge",
+      "small off-white horizontal card band embedded below center",
+      "straw-gold rope-fiber silhouette breaks along the upper mass",
+      "nine source-bearing apertures as cuts, chips, labels, seams, and varnish glints",
+      "matte black sleeve field",
+      "straw-gold fiber crown"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: charcoal-card-observatory-macro.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-charcoal-sleeve-aperture",
+      "kind": "hero",
+      "type": "large-dark-edge-cut",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.173,
+        "y": 0.779,
+        "w": 0.177,
+        "h": 0.109
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-straw-fray-image-notch",
+      "kind": "hero",
+      "type": "large-fiber-frayed-aperture",
+      "strength": 0.988304,
+      "bounds": {
+        "x": 0.2145,
+        "y": 0.1372,
+        "w": 0.5734,
+        "h": 0.512
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-goblincore-varnish-scar",
+      "kind": "module",
+      "type": "glossy-side-scratch",
+      "strength": 0.783732,
+      "bounds": {
+        "x": 0.187,
+        "y": 0.703,
+        "w": 0.047,
+        "h": 0.118
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-conversation-transcript-folio",
+      "kind": "module",
+      "type": "round-matte-image-seal",
+      "strength": 0.760152,
+      "bounds": {
+        "x": 0.332,
+        "y": 0.359,
+        "w": 0.114,
+        "h": 0.067
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-iceman-cold-chip",
+      "kind": "module",
+      "type": "pale-gloss-album-chip",
+      "strength": 0.7301040000000001,
+      "bounds": {
+        "x": 0.562,
+        "y": 0.392,
+        "w": 0.074,
+        "h": 0.355
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sad-girl-card-flake",
+      "kind": "module",
+      "type": "off-white-card-flake",
+      "strength": 0.6915,
+      "bounds": {
+        "x": 0.665,
+        "y": 0.704,
+        "w": 0.302,
+        "h": 0.294
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-bound-disc-glint",
+      "kind": "module",
+      "type": "hard-flash-media-glint",
+      "strength": 0.6627120000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-verse-talks-seam",
+      "kind": "module",
+      "type": "horizontal-audio-card-seam",
+      "strength": 0.6433599999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sad-girl-card-flake-2",
+      "kind": "module",
+      "type": "off-white-card-flake",
+      "strength": 0.6577959999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-charcoal-sleeve-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.173,
+        "y": 0.779,
+        "w": 0.177,
+        "h": 0.109
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-straw-fray-image-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2145,
+        "y": 0.1372,
+        "w": 0.5734,
+        "h": 0.512
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-goblincore-varnish-scar-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.187,
+        "y": 0.703,
+        "w": 0.047,
+        "h": 0.118
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-conversation-transcript-folio-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.332,
+        "y": 0.359,
+        "w": 0.114,
+        "h": 0.067
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-iceman-cold-chip-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.562,
+        "y": 0.392,
+        "w": 0.074,
+        "h": 0.355
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sad-girl-card-flake-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.665,
+        "y": 0.704,
+        "w": 0.302,
+        "h": 0.294
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-bound-disc-glint-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-verse-talks-seam-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sad-girl-card-flake-2-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-27-black-sleeve-observatory-v1",
+  "edition_id": "2026-07-27-black-sleeve-observatory-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-27-black-sleeve-observatory-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-charcoal-sleeve-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-charcoal-sleeve-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (large-dark-edge-cut) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-straw-fray-image-notch",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-straw-fray-image-notch",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (large-fiber-frayed-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-goblincore-varnish-scar",
+      "target_kind": "artifact",
+      "artifact_id": "module-goblincore-varnish-scar",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-side-scratch) selected from interpretation."
+    },
+    {
+      "target_id": "module-conversation-transcript-folio",
+      "target_kind": "artifact",
+      "artifact_id": "module-conversation-transcript-folio",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (round-matte-image-seal) selected from interpretation."
+    },
+    {
+      "target_id": "module-iceman-cold-chip",
+      "target_kind": "artifact",
+      "artifact_id": "module-iceman-cold-chip",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-gloss-album-chip) selected from interpretation."
+    },
+    {
+      "target_id": "module-sad-girl-card-flake",
+      "target_kind": "artifact",
+      "artifact_id": "module-sad-girl-card-flake",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (off-white-card-flake) selected from interpretation."
+    },
+    {
+      "target_id": "module-bound-disc-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-bound-disc-glint",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hard-flash-media-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-verse-talks-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-verse-talks-seam",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (horizontal-audio-card-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-sad-girl-card-flake-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-sad-girl-card-flake-2",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (off-white-card-flake) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
