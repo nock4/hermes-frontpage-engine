@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-27-mint-wing-wood-quiet-v1",
+  "edition_id": "2026-07-27-mint-wing-wood-quiet-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-27-mint-wing-wood-quiet-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-mint-wing-crop",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-mint-wing-crop",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-cut-paper-surface) selected from interpretation."
+    },
+    {
+      "target_id": "hero-polygon-shard-notch",
+      "target_kind": "artifact",
+      "artifact_id": "hero-polygon-shard-notch",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cut-fan-polygon-slits) selected from interpretation."
+    },
+    {
+      "target_id": "module-foil-video-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-foil-video-glint",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-wrapper-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-carved-ink-fleck",
+      "target_kind": "artifact",
+      "artifact_id": "module-carved-ink-fleck",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-pinhole-speck-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-archive-dust-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-archive-dust-cluster",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (worn-white-repair-patch) selected from interpretation."
+    },
+    {
+      "target_id": "module-abstract-paper-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-abstract-paper-slit",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-paper-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-object-rim-arc",
+      "target_kind": "artifact",
+      "artifact_id": "module-object-rim-arc",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scalloped-paper-rim-arc) selected from interpretation."
+    },
+    {
+      "target_id": "module-distributed-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-distributed-marker",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-torn-paper-voids) selected from interpretation."
+    },
+    {
+      "target_id": "module-magenta-torn-wing-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-magenta-torn-wing-slit",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (magenta-cut-paper-aperture) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

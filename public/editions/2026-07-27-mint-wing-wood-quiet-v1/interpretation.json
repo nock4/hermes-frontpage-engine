@@ -1,0 +1,382 @@
+{
+  "interpretation_id": "interp-2026-07-27-mint-wing-wood-quiet-v1",
+  "edition_id": "2026-07-27-mint-wing-wood-quiet-v1",
+  "plate_read_timestamp": "2026-07-27T12:13:38.898Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A wood tabletop plate with a dominant mint cut-paper wing mass across the lower field, crossed by torn seams, fan slits, repair patches, white sticks, foil flashes, translucent torn paper voids, and a magenta paper shard in the upper right.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright craft-table quiet with tiny glyph weather",
+      "A wood tabletop plate with a dominant mint cut-paper wing mass across the lower field, crossed by torn seams, fan slits, repair patches, white sticks, foil flashes, translucent torn paper voids, and a magenta paper shard in the upper right.",
+      "cut-paper",
+      "wood-field",
+      "glyph-pinhole"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero mint wing crop",
+      "polygon shard notch",
+      "foil video glint",
+      "carved ink fleck",
+      "archive dust cluster",
+      "abstract-paper-slit",
+      "object-rim-arc",
+      "Distributed Marker"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "cut-paper-wing-wood-field",
+      "hero-scale mint wing interruption cropped by the lower edge",
+      "smaller magenta counterform above-right across open wood grain",
+      "diagonal white stick and skewer lines acting as quiet routes",
+      "tiny glyph loops, rim scribbles, pinholes, and repaired edge marks",
+      "glass-rim arc and napkin-square seam as pale apertures",
+      "black ink flecks and cyan badge-scale interruptions",
+      "mint cardstock wing surface"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cut-paper-wing-wood-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-mint-wing-crop",
+      "kind": "hero",
+      "type": "hero-scale-cut-paper-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0.4453,
+        "w": 1,
+        "h": 0.5547
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-polygon-shard-notch",
+      "kind": "hero",
+      "type": "cut-fan-polygon-slits",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.733,
+        "y": 0.537,
+        "w": 0.209,
+        "h": 0.135
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-foil-video-glint",
+      "kind": "module",
+      "type": "glossy-wrapper-glint",
+      "strength": 0.800796,
+      "bounds": {
+        "x": 0.632,
+        "y": 0.095,
+        "w": 0.173,
+        "h": 0.282
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-carved-ink-fleck",
+      "kind": "module",
+      "type": "black-pinhole-speck-cluster",
+      "strength": 0.7659720000000001,
+      "bounds": {
+        "x": 0.881,
+        "y": 0.737,
+        "w": 0.116,
+        "h": 0.093
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-archive-dust-cluster",
+      "kind": "module",
+      "type": "worn-white-repair-patch",
+      "strength": 0.7371840000000001,
+      "bounds": {
+        "x": 0.817,
+        "y": 0.837,
+        "w": 0.135,
+        "h": 0.103
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-abstract-paper-slit",
+      "kind": "module",
+      "type": "pale-paper-seam",
+      "strength": 0.699348,
+      "bounds": {
+        "x": 0.707,
+        "y": 0.692,
+        "w": 0.216,
+        "h": 0.247
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-object-rim-arc",
+      "kind": "module",
+      "type": "scalloped-paper-rim-arc",
+      "strength": 0.6774000000000001,
+      "bounds": {
+        "x": 0.326,
+        "y": 0.427,
+        "w": 0.289,
+        "h": 0.173
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "translucent-torn-paper-voids",
+      "strength": 0.655948,
+      "bounds": {
+        "x": 0,
+        "y": 0.078,
+        "w": 0.395,
+        "h": 0.238
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-magenta-torn-wing-slit",
+      "kind": "module",
+      "type": "magenta-cut-paper-aperture",
+      "strength": 0.6527559999999999,
+      "bounds": {
+        "x": 0.546,
+        "y": 0.031,
+        "w": 0.449,
+        "h": 0.466
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-mint-wing-crop-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.4453,
+        "w": 1,
+        "h": 0.5547
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-polygon-shard-notch-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.733,
+        "y": 0.537,
+        "w": 0.209,
+        "h": 0.135
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-foil-video-glint-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.632,
+        "y": 0.095,
+        "w": 0.173,
+        "h": 0.282
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-carved-ink-fleck-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.881,
+        "y": 0.737,
+        "w": 0.116,
+        "h": 0.093
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-archive-dust-cluster-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.817,
+        "y": 0.837,
+        "w": 0.135,
+        "h": 0.103
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-abstract-paper-slit-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.707,
+        "y": 0.692,
+        "w": 0.216,
+        "h": 0.247
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-object-rim-arc-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.326,
+        "y": 0.427,
+        "w": 0.289,
+        "h": 0.173
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.078,
+        "w": 0.395,
+        "h": 0.238
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-magenta-torn-wing-slit-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.546,
+        "y": 0.031,
+        "w": 0.449,
+        "h": 0.466
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
