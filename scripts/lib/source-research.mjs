@@ -125,6 +125,16 @@ function sourceTitleFromImageMaterial(candidate, index) {
   )
 }
 
+function imageMaterialAlreadyUsed(candidate, recentSourceKeys = new Set()) {
+  const keys = uniqueNonEmpty([
+    sourceContentKey({ url: candidate?.page_url, source_url: candidate?.page_url }),
+    sourceContentKey({ url: candidate?.image_url, source_url: candidate?.image_url }),
+    canonicalizeSourceUrl(candidate?.page_url),
+    canonicalizeSourceUrl(candidate?.image_url),
+  ])
+  return keys.some((key) => recentSourceKeys.has(key))
+}
+
 function buildImageMaterialContentSources(imageMaterial, anchorSource) {
   const selected = imageMaterial?.selected_image_material || []
   return selected.map((candidate, index) => {
@@ -530,15 +540,33 @@ export async function inspectSourceCandidates(signalHarvest, {
 
   const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
   let selectedImageMaterial = imageSourceMaterial.selected_image_material
+    .filter((candidate) => !imageMaterialAlreadyUsed(candidate, recentSourceKeys))
     .filter((candidate) => !isLowFertilitySourceImageCandidate(candidate))
+  const reusedImageMaterial = imageSourceMaterial.selected_image_material
+    .filter((candidate) => imageMaterialAlreadyUsed(candidate, recentSourceKeys))
+    .map((candidate) => ({
+      title: candidate.title || candidate.caption || candidate.image_url || candidate.page_url || null,
+      page_url: candidate.page_url || null,
+      image_url: candidate.image_url || null,
+      reason: 'Source material already appeared in a published edition; it cannot anchor another plate.',
+    }))
+  if (reusedImageMaterial.length) {
+    imageSourceMaterial = {
+      ...imageSourceMaterial,
+      rejected_reused_image_material: reusedImageMaterial,
+    }
+  }
   if (!selectedImageMaterial.length && imageSourceMaterial.selected_image_material[0]) {
+    const allSelectedMaterialWasReused = reusedImageMaterial.length === imageSourceMaterial.selected_image_material.length
     imageSourceMaterial = {
       ...imageSourceMaterial,
       selected_image_material: [],
       low_fertility_anchor_demoted: {
         demoted_title: imageSourceMaterial.selected_image_material[0]?.title || imageSourceMaterial.selected_image_material[0]?.caption || imageSourceMaterial.selected_image_material[0]?.image_url || null,
         promoted_title: null,
-        reason: 'All selected image material was low-fertility UI chrome, buttons, ads, spacers, or blank page furniture; do not use it as dominant plate source material.',
+        reason: allSelectedMaterialWasReused
+          ? 'All selected image material already appeared in a published edition; do not use repeated anchor source material as the dominant plate seed.'
+          : 'All selected image material was low-fertility UI chrome, buttons, ads, spacers, or blank page furniture; do not use it as dominant plate source material.',
       },
     }
   } else if (selectedImageMaterial.length !== imageSourceMaterial.selected_image_material.length) {

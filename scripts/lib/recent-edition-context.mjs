@@ -21,13 +21,7 @@ export function getRecentEditionSummaries({ root, fsSync, sourceContentKey, limi
     const edition = readJsonSyncIfExists(path.join(editionDir, 'edition.json'), { fsSync })
     const brief = readJsonSyncIfExists(path.join(editionDir, 'brief.json'), { fsSync })
     const sourceBindings = readJsonSyncIfExists(path.join(editionDir, 'source-bindings.json'), { fsSync })
-    const sourceKeys = (sourceBindings?.bindings || [])
-      .map((binding) => sourceContentKey({
-        url: binding.source_url,
-        source_url: binding.source_url,
-        final_url: binding.resolved_url,
-      }))
-      .filter(Boolean)
+    const sourceKeys = sourceKeysForBindings(sourceBindings?.bindings || [], sourceContentKey)
 
     return {
       edition_id: item.edition_id,
@@ -40,8 +34,31 @@ export function getRecentEditionSummaries({ root, fsSync, sourceContentKey, limi
   })
 }
 
+function sourceKeysForBindings(bindings, sourceContentKey) {
+  return [...new Set((bindings || []).flatMap((binding) => [
+    sourceContentKey({
+      url: binding.source_url,
+      source_url: binding.source_url,
+      final_url: binding.resolved_url,
+    }),
+    sourceContentKey({ url: binding.source_image_url, source_url: binding.source_image_url }),
+    sourceContentKey({ url: binding.source_media_url, source_url: binding.source_media_url }),
+  ].filter(Boolean)))]
+}
+
 export function getRecentSourceKeys(recentEditions) {
   return new Set(recentEditions.flatMap((edition) => edition.source_keys || []))
+}
+
+export function getHistoricalSourceKeys({ root, fsSync, sourceContentKey }) {
+  const manifest = loadManifest({ root, fsSync })
+  const keys = []
+  for (const item of manifest.editions || []) {
+    const editionDir = path.join(root, 'public', item.path.replace(/^\//, ''))
+    const sourceBindings = readJsonSyncIfExists(path.join(editionDir, 'source-bindings.json'), { fsSync })
+    keys.push(...sourceKeysForBindings(sourceBindings?.bindings || [], sourceContentKey))
+  }
+  return new Set(keys)
 }
 
 export function getRecentDiversityAvoidTerms(recentEditions, limit = 16) {

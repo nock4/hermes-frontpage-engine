@@ -22,7 +22,7 @@ import { auditSourceImageFidelity as auditSourceImageFidelityImpl } from './lib/
 import { inspectSourceCandidates } from './lib/source-research.mjs'
 import { composeDailyPayload as composeDailyPayloadImpl, generateScenePlate as generateScenePlateImpl, imageAspectRatioFromSize } from './lib/scene-generation.mjs'
 import { defaultGenerationName, requireOpenAiKey } from './lib/runtime-env.mjs'
-import { chooseDiversityDirective, getRecentDiversityAvoidTerms, getRecentEditionSummaries, getRecentSourceKeys, loadManifest } from './lib/recent-edition-context.mjs'
+import { chooseDiversityDirective, getHistoricalSourceKeys, getRecentDiversityAvoidTerms, getRecentEditionSummaries, getRecentSourceKeys, loadManifest } from './lib/recent-edition-context.mjs'
 import { sourceContentKey } from './lib/source-selection-policy.mjs'
 import { runExistingMode } from './pipeline/run-existing-mode.mjs'
 import { runFromScratchMode } from './pipeline/run-from-scratch-mode.mjs'
@@ -124,6 +124,7 @@ async function main() {
     defaultGenerationName,
     getRecentEditionSummaries: (limit = recentDiversityEditionCount) => getRecentEditionSummaries({ root, fsSync, sourceContentKey, limit }),
     getRecentSourceKeys,
+    getHistoricalSourceKeys: () => getHistoricalSourceKeys({ root, fsSync, sourceContentKey }),
     getRecentDiversityAvoidTerms,
     chooseDiversityDirective,
     startManagedBrowserHarnessBrowser: async (runDir, runId) => startManagedBrowserHarnessBrowser({
