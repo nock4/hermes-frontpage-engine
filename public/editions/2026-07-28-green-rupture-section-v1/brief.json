@@ -1,0 +1,65 @@
+{
+  "brief_id": "brief-2026-07-28-green-rupture-section-v1",
+  "date": "2026-07-28",
+  "signal_cluster_ids": [
+    "d8f264b8668b",
+    "0d7abd59aa90",
+    "0238a327f494",
+    "cc1f7ece7798",
+    "63ade76b75eb",
+    "be2294e540e9",
+    "0005e125d83e",
+    "f2e7f25e0934"
+  ],
+  "research_node_ids": [
+    "research-1-99395af4",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-055cf7d4",
+    "research-5-cf461952",
+    "research-6-45d92834",
+    "research-7-02c304c5",
+    "research-8-d0b432e3",
+    "research-9-4bee0efc",
+    "research-10-a2be7acb",
+    "research-11-c3b5edcf",
+    "research-12-6690c38c"
+  ],
+  "mood": "chalky, suspended, rule-broken; an impossible interior section held open by a green horizontal force",
+  "material_language": [
+    "motion-smeared green oil pigment",
+    "turquoise billiard-felt plane",
+    "warm varnished wood rail fragments",
+    "aged ivory archive paper",
+    "chalky plaster seams",
+    "faded lithograph registration ink"
+  ],
+  "lighting": "soft printed daylight across matte plaster and paper, with saturated green and turquoise bands carrying the only strong color pressure",
+  "object_inventory": [
+    "full-width green rupture rail cutting the upper-middle field",
+    "receding turquoise trapezoid plane in the lower half",
+    "pale architectural section with diagonal ceiling and trench seams",
+    "faded poster-border fragments and registration ticks",
+    "dissolved glyph-node clusters under the rupture and along the right edge",
+    "small dark apertures, folded corners, scrapes, and tile breaks as source-bearing marks"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no legible words, filenames, usernames, labels, logos, or alphanumeric callouts inside the image",
+    "do not recreate the airplane, billiard players, or room literally",
+    "no desks, dashboards, browser chrome, floating cards, cabinets, shelves, or generic software UI",
+    "avoid a crowded archive wall or card grid; each source mark must live in the surface of the plate",
+    "keep negative space between anchors so the image reads first as artwork",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached",
+    "do not strip handmade details into generic torn-paper ambience",
+    "do not fragment the primary source objects until their original silhouettes stop reading",
+    "do not replace source candy/wrapper/handwriting cues with unrelated scraps"
+  ]
+}

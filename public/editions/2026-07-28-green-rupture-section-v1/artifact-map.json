@@ -1,0 +1,719 @@
+{
+  "artifact_map_id": "map-2026-07-28-green-rupture-section-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "green-rupture-archive-section",
+  "default_artifact_id": "hero-green-rupture-rail",
+  "artifacts": [
+    {
+      "id": "hero-green-rupture-rail",
+      "kind": "hero",
+      "label": "green rupture rail",
+      "artifact_type": "hero-scale-horizontal-rupture",
+      "bounds": {
+        "x": 0,
+        "y": 0.247,
+        "w": 1,
+        "h": 0.241
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.363
+        ],
+        [
+          0.072,
+          0.313
+        ],
+        [
+          0.23,
+          0.282
+        ],
+        [
+          0.415,
+          0.285
+        ],
+        [
+          0.586,
+          0.301
+        ],
+        [
+          0.711,
+          0.287
+        ],
+        [
+          0.82,
+          0.304
+        ],
+        [
+          0.94,
+          0.337
+        ],
+        [
+          1,
+          0.366
+        ],
+        [
+          1,
+          0.439
+        ],
+        [
+          0.887,
+          0.421
+        ],
+        [
+          0.705,
+          0.414
+        ],
+        [
+          0.55,
+          0.429
+        ],
+        [
+          0.37,
+          0.421
+        ],
+        [
+          0.185,
+          0.406
+        ],
+        [
+          0.036,
+          0.405
+        ],
+        [
+          0,
+          0.386
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/hero-green-rupture-rail.svg",
+      "source_binding_ids": [
+        "binding-hero-green-rupture-rail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          768,
+          357
+        ],
+        "safe_stage_window_origin_px": [
+          891,
+          376
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-turquoise-felt-trapezoid",
+      "kind": "hero",
+      "label": "turquoise felt trapezoid",
+      "artifact_type": "hero-scale-receding-plane",
+      "bounds": {
+        "x": 0,
+        "y": 0.661,
+        "w": 0.67,
+        "h": 0.337
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.694
+        ],
+        [
+          0.158,
+          0.683
+        ],
+        [
+          0.365,
+          0.662
+        ],
+        [
+          0.58,
+          0.676
+        ],
+        [
+          0.67,
+          0.724
+        ],
+        [
+          0.59,
+          0.833
+        ],
+        [
+          0.424,
+          0.927
+        ],
+        [
+          0.25,
+          0.998
+        ],
+        [
+          0,
+          0.998
+        ],
+        [
+          0,
+          0.918
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/hero-turquoise-felt-trapezoid.svg",
+      "source_binding_ids": [
+        "binding-hero-turquoise-felt-trapezoid"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          515,
+          822
+        ],
+        "safe_stage_window_origin_px": [
+          597,
+          849
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-right-edge-dark-figure-cluster",
+      "kind": "module",
+      "label": "right-edge dark figure cluster",
+      "artifact_type": "dissolved-vertical-cluster",
+      "bounds": {
+        "x": 0.65,
+        "y": 0.458,
+        "w": 0.348,
+        "h": 0.231
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.65,
+          0.635
+        ],
+        [
+          0.655,
+          0.545
+        ],
+        [
+          0.673,
+          0.518
+        ],
+        [
+          0.69,
+          0.57
+        ],
+        [
+          0.707,
+          0.515
+        ],
+        [
+          0.726,
+          0.551
+        ],
+        [
+          0.75,
+          0.515
+        ],
+        [
+          0.772,
+          0.561
+        ],
+        [
+          0.794,
+          0.548
+        ],
+        [
+          0.819,
+          0.515
+        ],
+        [
+          0.842,
+          0.552
+        ],
+        [
+          0.876,
+          0.462
+        ],
+        [
+          0.911,
+          0.535
+        ],
+        [
+          0.94,
+          0.58
+        ],
+        [
+          0.955,
+          0.451
+        ],
+        [
+          0.982,
+          0.48
+        ],
+        [
+          0.998,
+          0.665
+        ],
+        [
+          0.843,
+          0.688
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/module-right-edge-dark-figure-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-right-edge-dark-figure-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1266,
+          568
+        ],
+        "safe_stage_window_origin_px": [
+          1308,
+          587
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-coffee-fold-in-plaster",
+      "kind": "module",
+      "label": "coffee fold in plaster",
+      "artifact_type": "folded-paper-corner",
+      "bounds": {
+        "x": 0.5,
+        "y": 0.858,
+        "w": 0.092,
+        "h": 0.081
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.5,
+          0.872
+        ],
+        [
+          0.518,
+          0.858
+        ],
+        [
+          0.551,
+          0.872
+        ],
+        [
+          0.575,
+          0.89
+        ],
+        [
+          0.592,
+          0.904
+        ],
+        [
+          0.58,
+          0.923
+        ],
+        [
+          0.546,
+          0.94
+        ],
+        [
+          0.518,
+          0.929
+        ],
+        [
+          0.505,
+          0.905
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/module-coffee-fold-in-plaster.svg",
+      "source_binding_ids": [
+        "binding-module-coffee-fold-in-plaster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          839,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          850,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-cinematic-border-breach",
+      "kind": "module",
+      "label": "cinematic border breach",
+      "artifact_type": "interrupted-registration-border",
+      "bounds": {
+        "x": 0.069,
+        "y": 0.097,
+        "w": 0.19,
+        "h": 0.39
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.077,
+          0.1
+        ],
+        [
+          0.21,
+          0.1
+        ],
+        [
+          0.255,
+          0.185
+        ],
+        [
+          0.259,
+          0.486
+        ],
+        [
+          0.07,
+          0.474
+        ],
+        [
+          0.071,
+          0.323
+        ],
+        [
+          0.072,
+          0.196
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/module-cinematic-border-breach.svg",
+      "source_binding_ids": [
+        "binding-module-cinematic-border-breach"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          252,
+          267
+        ],
+        "safe_stage_window_origin_px": [
+          275,
+          299
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-gallery-seam-panel",
+      "kind": "module",
+      "label": "gallery seam panel",
+      "artifact_type": "diagonal-section-seam",
+      "bounds": {
+        "x": 0.365,
+        "y": 0,
+        "w": 0.397,
+        "h": 0.186
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.365,
+          0.164
+        ],
+        [
+          0.43,
+          0.127
+        ],
+        [
+          0.51,
+          0.091
+        ],
+        [
+          0.604,
+          0.043
+        ],
+        [
+          0.705,
+          0
+        ],
+        [
+          0.762,
+          0
+        ],
+        [
+          0.688,
+          0.048
+        ],
+        [
+          0.59,
+          0.094
+        ],
+        [
+          0.492,
+          0.137
+        ],
+        [
+          0.397,
+          0.186
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/module-gallery-seam-panel.svg",
+      "source_binding_ids": [
+        "binding-module-gallery-seam-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          866,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          914,
+          95
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-wind-grass-smear-nodes",
+      "kind": "module",
+      "label": "wind-grass smear nodes",
+      "artifact_type": "procedural-node-scrape",
+      "bounds": {
+        "x": 0.284,
+        "y": 0.29,
+        "w": 0.631,
+        "h": 0.073
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.284,
+          0.306
+        ],
+        [
+          0.36,
+          0.297
+        ],
+        [
+          0.438,
+          0.293
+        ],
+        [
+          0.527,
+          0.299
+        ],
+        [
+          0.61,
+          0.302
+        ],
+        [
+          0.698,
+          0.295
+        ],
+        [
+          0.79,
+          0.3
+        ],
+        [
+          0.872,
+          0.317
+        ],
+        [
+          0.915,
+          0.343
+        ],
+        [
+          0.848,
+          0.353
+        ],
+        [
+          0.742,
+          0.344
+        ],
+        [
+          0.622,
+          0.335
+        ],
+        [
+          0.505,
+          0.337
+        ],
+        [
+          0.391,
+          0.329
+        ],
+        [
+          0.31,
+          0.322
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/module-wind-grass-smear-nodes.svg",
+      "source_binding_ids": [
+        "binding-module-wind-grass-smear-nodes"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          921,
+          328
+        ],
+        "safe_stage_window_origin_px": [
+          998,
+          334
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-central-torn-vertical-seam",
+      "kind": "module",
+      "label": "central torn vertical seam",
+      "artifact_type": "jagged-paper-rift",
+      "bounds": {
+        "x": 0.2656,
+        "y": 0.0,
+        "w": 0.3392,
+        "h": 0.6553
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.2676,
+          0.0596
+        ],
+        [
+          0.2721,
+          0.0039
+        ],
+        [
+          0.2832,
+          0.002
+        ],
+        [
+          0.4792,
+          0.0586
+        ],
+        [
+          0.5892,
+          0.1104
+        ],
+        [
+          0.5924,
+          0.1172
+        ],
+        [
+          0.6022,
+          0.3018
+        ],
+        [
+          0.5944,
+          0.624
+        ],
+        [
+          0.584,
+          0.6494
+        ],
+        [
+          0.5365,
+          0.6514
+        ],
+        [
+          0.4492,
+          0.6445
+        ],
+        [
+          0.3906,
+          0.6367
+        ],
+        [
+          0.3522,
+          0.624
+        ],
+        [
+          0.2969,
+          0.5801
+        ],
+        [
+          0.291,
+          0.5645
+        ],
+        [
+          0.2702,
+          0.249
+        ],
+        [
+          0.2676,
+          0.1055
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/module-central-torn-vertical-seam.svg",
+      "source_binding_ids": [
+        "binding-module-central-torn-vertical-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          617,
+          399
+        ],
+        "safe_stage_window_origin_px": [
+          654,
+          475
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-wind-grass-smear-nodes-2",
+      "kind": "module",
+      "label": "wind-grass smear nodes",
+      "artifact_type": "procedural-node-scrape",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "green-rupture-archive-section",
+      "mask_path": "/editions/2026-07-28-green-rupture-section-v1/assets/masks/module-wind-grass-smear-nodes-2.svg",
+      "source_binding_ids": [
+        "binding-module-wind-grass-smear-nodes-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
