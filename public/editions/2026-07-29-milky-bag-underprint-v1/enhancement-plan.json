@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-29-milky-bag-underprint-v1",
+  "edition_id": "2026-07-29-milky-bag-underprint-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-29-milky-bag-underprint-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-central-milky-bag-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-central-milky-bag-slab",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-translucent-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-upper-red-underprint-band",
+      "target_kind": "artifact",
+      "artifact_id": "hero-upper-red-underprint-band",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-red-underprint-band) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-left-crease-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-left-crease-glint",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (fold-glint-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-gengar-scratch-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-gengar-scratch-notch",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (charcoal-scratch-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-monochrome-diagonal-paper-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-monochrome-diagonal-paper-cut",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (archive-paper-diagonal) selected from interpretation."
+    },
+    {
+      "target_id": "module-small-card-image-fold-shard",
+      "target_kind": "artifact",
+      "artifact_id": "module-small-card-image-fold-shard",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (milky-fold-shard) selected from interpretation."
+    },
+    {
+      "target_id": "module-edge-detail",
+      "target_kind": "artifact",
+      "artifact_id": "module-edge-detail",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (edge-detail) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-rust-fleck-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-rust-fleck-cluster",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (brown-stain-fleck-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-edge-detail-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-edge-detail-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (edge-detail) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

@@ -1,0 +1,715 @@
+{
+  "artifact_map_id": "map-2026-07-29-milky-bag-underprint-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "translucent-bag-underprint-slab",
+  "default_artifact_id": "hero-central-milky-bag-slab",
+  "artifacts": [
+    {
+      "id": "hero-central-milky-bag-slab",
+      "kind": "hero",
+      "label": "central milky bag slab",
+      "artifact_type": "hero-translucent-slab",
+      "bounds": {
+        "x": 0.1467,
+        "y": 0.0949,
+        "w": 0.7807,
+        "h": 0.862
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.1491,
+          0.7871
+        ],
+        [
+          0.1547,
+          0.5271
+        ],
+        [
+          0.2815,
+          0.1108
+        ],
+        [
+          0.2982,
+          0.0973
+        ],
+        [
+          0.7073,
+          0.0981
+        ],
+        [
+          0.7225,
+          0.1037
+        ],
+        [
+          0.878,
+          0.3222
+        ],
+        [
+          0.9242,
+          0.8198
+        ],
+        [
+          0.9234,
+          0.9155
+        ],
+        [
+          0.9131,
+          0.9346
+        ],
+        [
+          0.8461,
+          0.9458
+        ],
+        [
+          0.5781,
+          0.9537
+        ],
+        [
+          0.2648,
+          0.9203
+        ],
+        [
+          0.1667,
+          0.8995
+        ],
+        [
+          0.1491,
+          0.7943
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/hero-central-milky-bag-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-central-milky-bag-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          756,
+          463
+        ],
+        "safe_stage_window_origin_px": [
+          852,
+          531
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-upper-red-underprint-band",
+      "kind": "hero",
+      "label": "upper red underprint band",
+      "artifact_type": "hero-red-underprint-band",
+      "bounds": {
+        "x": 0,
+        "y": 0.012,
+        "w": 1,
+        "h": 0.217
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.012
+        ],
+        [
+          0.076,
+          0.012
+        ],
+        [
+          0.076,
+          0.042
+        ],
+        [
+          0.102,
+          0.042
+        ],
+        [
+          0.102,
+          0.014
+        ],
+        [
+          0.279,
+          0.014
+        ],
+        [
+          0.279,
+          0.087
+        ],
+        [
+          0.474,
+          0.087
+        ],
+        [
+          0.474,
+          0.013
+        ],
+        [
+          0.724,
+          0.017
+        ],
+        [
+          0.724,
+          0.229
+        ],
+        [
+          0.578,
+          0.228
+        ],
+        [
+          0.574,
+          0.019
+        ],
+        [
+          0.497,
+          0.018
+        ],
+        [
+          0.495,
+          0.091
+        ],
+        [
+          0.414,
+          0.09
+        ],
+        [
+          0.41,
+          0.228
+        ],
+        [
+          0,
+          0.228
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/hero-upper-red-underprint-band.svg",
+      "source_binding_ids": [
+        "binding-hero-upper-red-underprint-band"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          768,
+          106
+        ],
+        "safe_stage_window_origin_px": [
+          891,
+          123
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-lower-left-crease-glint",
+      "kind": "module",
+      "label": "lower-left crease glint",
+      "artifact_type": "fold-glint-aperture",
+      "bounds": {
+        "x": 0.181,
+        "y": 0.609,
+        "w": 0.124,
+        "h": 0.18
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.218,
+          0.609
+        ],
+        [
+          0.238,
+          0.625
+        ],
+        [
+          0.252,
+          0.659
+        ],
+        [
+          0.267,
+          0.69
+        ],
+        [
+          0.305,
+          0.728
+        ],
+        [
+          0.287,
+          0.756
+        ],
+        [
+          0.254,
+          0.789
+        ],
+        [
+          0.229,
+          0.754
+        ],
+        [
+          0.203,
+          0.706
+        ],
+        [
+          0.181,
+          0.66
+        ],
+        [
+          0.194,
+          0.628
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/module-lower-left-crease-glint.svg",
+      "source_binding_ids": [
+        "binding-module-lower-left-crease-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          373,
+          701
+        ],
+        "safe_stage_window_origin_px": [
+          388,
+          716
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-gengar-scratch-notch",
+      "kind": "module",
+      "label": "gengar scratch notch",
+      "artifact_type": "charcoal-scratch-notch",
+      "bounds": {
+        "x": 0,
+        "y": 0.247,
+        "w": 0.407,
+        "h": 0.227
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0,
+          0.443
+        ],
+        [
+          0.073,
+          0.412
+        ],
+        [
+          0.154,
+          0.374
+        ],
+        [
+          0.23,
+          0.335
+        ],
+        [
+          0.323,
+          0.293
+        ],
+        [
+          0.402,
+          0.247
+        ],
+        [
+          0.407,
+          0.257
+        ],
+        [
+          0.327,
+          0.306
+        ],
+        [
+          0.24,
+          0.35
+        ],
+        [
+          0.156,
+          0.397
+        ],
+        [
+          0.078,
+          0.439
+        ],
+        [
+          0,
+          0.474
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/module-gengar-scratch-notch.svg",
+      "source_binding_ids": [
+        "binding-module-gengar-scratch-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          313,
+          351
+        ],
+        "safe_stage_window_origin_px": [
+          363,
+          369
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-monochrome-diagonal-paper-cut",
+      "kind": "module",
+      "label": "monochrome diagonal paper cut",
+      "artifact_type": "archive-paper-diagonal",
+      "bounds": {
+        "x": 0.156,
+        "y": 0.674,
+        "w": 0.844,
+        "h": 0.171
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.156,
+          0.831
+        ],
+        [
+          0.267,
+          0.805
+        ],
+        [
+          0.384,
+          0.779
+        ],
+        [
+          0.502,
+          0.757
+        ],
+        [
+          0.622,
+          0.735
+        ],
+        [
+          0.746,
+          0.711
+        ],
+        [
+          0.864,
+          0.691
+        ],
+        [
+          1,
+          0.674
+        ],
+        [
+          1,
+          0.684
+        ],
+        [
+          0.872,
+          0.704
+        ],
+        [
+          0.75,
+          0.725
+        ],
+        [
+          0.624,
+          0.75
+        ],
+        [
+          0.506,
+          0.773
+        ],
+        [
+          0.386,
+          0.797
+        ],
+        [
+          0.27,
+          0.823
+        ],
+        [
+          0.156,
+          0.845
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/module-monochrome-diagonal-paper-cut.svg",
+      "source_binding_ids": [
+        "binding-module-monochrome-diagonal-paper-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          888,
+          764
+        ],
+        "safe_stage_window_origin_px": [
+          992,
+          778
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-small-card-image-fold-shard",
+      "kind": "module",
+      "label": "small card-image fold shard",
+      "artifact_type": "milky-fold-shard",
+      "bounds": {
+        "x": 0.694,
+        "y": 0.641,
+        "w": 0.068,
+        "h": 0.158
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.72,
+          0.641
+        ],
+        [
+          0.749,
+          0.647
+        ],
+        [
+          0.762,
+          0.694
+        ],
+        [
+          0.751,
+          0.726
+        ],
+        [
+          0.744,
+          0.769
+        ],
+        [
+          0.719,
+          0.799
+        ],
+        [
+          0.694,
+          0.765
+        ],
+        [
+          0.698,
+          0.721
+        ],
+        [
+          0.683,
+          0.685
+        ],
+        [
+          0.704,
+          0.658
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/module-small-card-image-fold-shard.svg",
+      "source_binding_ids": [
+        "binding-module-small-card-image-fold-shard"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1118,
+          724
+        ],
+        "safe_stage_window_origin_px": [
+          1127,
+          737
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "bounds": {
+        "x": 0.755,
+        "y": 0.027,
+        "w": 0.069,
+        "h": 0.074
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.777,
+          0.027
+        ],
+        [
+          0.804,
+          0.035
+        ],
+        [
+          0.824,
+          0.051
+        ],
+        [
+          0.807,
+          0.074
+        ],
+        [
+          0.787,
+          0.082
+        ],
+        [
+          0.778,
+          0.101
+        ],
+        [
+          0.763,
+          0.085
+        ],
+        [
+          0.755,
+          0.059
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1213,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          1221,
+          80
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-right-rust-fleck-cluster",
+      "kind": "module",
+      "label": "right rust fleck cluster",
+      "artifact_type": "brown-stain-fleck-cluster",
+      "bounds": {
+        "x": 0.6515,
+        "y": 0.5973,
+        "w": 0.2663,
+        "h": 0.2536
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.6539,
+          0.7177
+        ],
+        [
+          0.6818,
+          0.6427
+        ],
+        [
+          0.7552,
+          0.5997
+        ],
+        [
+          0.8126,
+          0.6005
+        ],
+        [
+          0.9027,
+          0.6252
+        ],
+        [
+          0.9147,
+          0.6802
+        ],
+        [
+          0.8939,
+          0.7759
+        ],
+        [
+          0.8628,
+          0.7935
+        ],
+        [
+          0.7935,
+          0.8222
+        ],
+        [
+          0.7201,
+          0.8477
+        ],
+        [
+          0.7153,
+          0.8477
+        ],
+        [
+          0.6547,
+          0.7249
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/module-right-rust-fleck-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-right-rust-fleck-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1216,
+          686
+        ],
+        "safe_stage_window_origin_px": [
+          1240,
+          712
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-edge-detail-2",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "translucent-bag-underprint-slab",
+      "mask_path": "/editions/2026-07-29-milky-bag-underprint-v1/assets/masks/module-edge-detail-2.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

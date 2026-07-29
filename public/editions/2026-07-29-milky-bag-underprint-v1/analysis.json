@@ -1,0 +1,591 @@
+{
+  "analysis_id": "analysis-2026-07-29-milky-bag-underprint-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A square expressionist plate: olive-black distressed ground, two broad red underprint bands, and a translucent milky plastic bag mass rising in two peaks. Source-bearing anchors appear as torn paper wounds, a vertical mist seam, dark diagonal scratches, a long lower cut line, red buried poster blocks, and small rust fleck clusters.",
+  "usable_surfaces": [
+    "central translucent plastic bag slab",
+    "upper distressed red underprint band",
+    "lower buried red poster band under plastic",
+    "vertical white-blue fog seam",
+    "long lower diagonal cut edge",
+    "left black charcoal scratch bundle",
+    "torn cream paper wounds",
+    "small rust fleck cluster on right plastic"
+  ],
+  "detected_objects": [
+    {
+      "label": "central milky bag slab",
+      "artifact_type": "hero-translucent-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.102,
+        "y": 0.099,
+        "w": 0.78,
+        "h": 0.84
+      },
+      "polygon": [
+        [
+          0.296,
+          0.099
+        ],
+        [
+          0.35,
+          0.13
+        ],
+        [
+          0.39,
+          0.253
+        ],
+        [
+          0.487,
+          0.275
+        ],
+        [
+          0.61,
+          0.273
+        ],
+        [
+          0.699,
+          0.101
+        ],
+        [
+          0.764,
+          0.164
+        ],
+        [
+          0.813,
+          0.296
+        ],
+        [
+          0.88,
+          0.305
+        ],
+        [
+          0.898,
+          0.493
+        ],
+        [
+          0.913,
+          0.718
+        ],
+        [
+          0.871,
+          0.935
+        ],
+        [
+          0.664,
+          0.919
+        ],
+        [
+          0.477,
+          0.938
+        ],
+        [
+          0.168,
+          0.896
+        ],
+        [
+          0.151,
+          0.744
+        ],
+        [
+          0.179,
+          0.505
+        ],
+        [
+          0.102,
+          0.351
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The dominant translucent plastic mass is visibly bounded by crinkled pale edges, two peaked handles, folded side flaps, and a milky lower bag edge."
+    },
+    {
+      "label": "upper red underprint band",
+      "artifact_type": "hero-red-underprint-band",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0,
+        "y": 0.012,
+        "w": 1,
+        "h": 0.217
+      },
+      "polygon": [
+        [
+          0,
+          0.012
+        ],
+        [
+          0.076,
+          0.012
+        ],
+        [
+          0.076,
+          0.042
+        ],
+        [
+          0.102,
+          0.042
+        ],
+        [
+          0.102,
+          0.014
+        ],
+        [
+          0.279,
+          0.014
+        ],
+        [
+          0.279,
+          0.087
+        ],
+        [
+          0.474,
+          0.087
+        ],
+        [
+          0.474,
+          0.013
+        ],
+        [
+          0.724,
+          0.017
+        ],
+        [
+          0.724,
+          0.229
+        ],
+        [
+          0.578,
+          0.228
+        ],
+        [
+          0.574,
+          0.019
+        ],
+        [
+          0.497,
+          0.018
+        ],
+        [
+          0.495,
+          0.091
+        ],
+        [
+          0.414,
+          0.09
+        ],
+        [
+          0.41,
+          0.228
+        ],
+        [
+          0,
+          0.228
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A saturated distressed red block band spans the top, broken by olive vertical gaps and overprinted grime behind the plastic peaks."
+    },
+    {
+      "label": "lower-left crease glint",
+      "artifact_type": "fold-glint-aperture",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.181,
+        "y": 0.609,
+        "w": 0.124,
+        "h": 0.18
+      },
+      "polygon": [
+        [
+          0.218,
+          0.609
+        ],
+        [
+          0.238,
+          0.625
+        ],
+        [
+          0.252,
+          0.659
+        ],
+        [
+          0.267,
+          0.69
+        ],
+        [
+          0.305,
+          0.728
+        ],
+        [
+          0.287,
+          0.756
+        ],
+        [
+          0.254,
+          0.789
+        ],
+        [
+          0.229,
+          0.754
+        ],
+        [
+          0.203,
+          0.706
+        ],
+        [
+          0.181,
+          0.66
+        ],
+        [
+          0.194,
+          0.628
+        ]
+      ],
+      "confidence": 0.65,
+      "visual_evidence": "A pale angular crease network in the lower-left plastic catches light as a small folded glint over the submerged red band."
+    },
+    {
+      "label": "gengar scratch notch",
+      "artifact_type": "charcoal-scratch-notch",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.247,
+        "w": 0.407,
+        "h": 0.227
+      },
+      "polygon": [
+        [
+          0,
+          0.443
+        ],
+        [
+          0.073,
+          0.412
+        ],
+        [
+          0.154,
+          0.374
+        ],
+        [
+          0.23,
+          0.335
+        ],
+        [
+          0.323,
+          0.293
+        ],
+        [
+          0.402,
+          0.247
+        ],
+        [
+          0.407,
+          0.257
+        ],
+        [
+          0.327,
+          0.306
+        ],
+        [
+          0.24,
+          0.35
+        ],
+        [
+          0.156,
+          0.397
+        ],
+        [
+          0.078,
+          0.439
+        ],
+        [
+          0,
+          0.474
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A dark charcoal diagonal scratch bundle cuts from the left edge into the bag, forming a small black notch-like slash across the olive and plastic surface."
+    },
+    {
+      "label": "monochrome diagonal paper cut",
+      "artifact_type": "archive-paper-diagonal",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.156,
+        "y": 0.674,
+        "w": 0.844,
+        "h": 0.171
+      },
+      "polygon": [
+        [
+          0.156,
+          0.831
+        ],
+        [
+          0.267,
+          0.805
+        ],
+        [
+          0.384,
+          0.779
+        ],
+        [
+          0.502,
+          0.757
+        ],
+        [
+          0.622,
+          0.735
+        ],
+        [
+          0.746,
+          0.711
+        ],
+        [
+          0.864,
+          0.691
+        ],
+        [
+          1,
+          0.674
+        ],
+        [
+          1,
+          0.684
+        ],
+        [
+          0.872,
+          0.704
+        ],
+        [
+          0.75,
+          0.725
+        ],
+        [
+          0.624,
+          0.75
+        ],
+        [
+          0.506,
+          0.773
+        ],
+        [
+          0.386,
+          0.797
+        ],
+        [
+          0.27,
+          0.823
+        ],
+        [
+          0.156,
+          0.845
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A long diagonal paper-like incision crosses the lower half, with a dark shadow below and a pale raised edge along the cut."
+    },
+    {
+      "label": "small card-image fold shard",
+      "artifact_type": "milky-fold-shard",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.694,
+        "y": 0.641,
+        "w": 0.068,
+        "h": 0.158
+      },
+      "polygon": [
+        [
+          0.72,
+          0.641
+        ],
+        [
+          0.749,
+          0.647
+        ],
+        [
+          0.762,
+          0.694
+        ],
+        [
+          0.751,
+          0.726
+        ],
+        [
+          0.744,
+          0.769
+        ],
+        [
+          0.719,
+          0.799
+        ],
+        [
+          0.694,
+          0.765
+        ],
+        [
+          0.698,
+          0.721
+        ],
+        [
+          0.683,
+          0.685
+        ],
+        [
+          0.704,
+          0.658
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "A cream torn paper shard sits near the lower-right diagonal cut, its irregular blue-gray shadow and ragged edge embedded in the plastic fold system."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.755,
+        "y": 0.027,
+        "w": 0.069,
+        "h": 0.074
+      },
+      "polygon": [
+        [
+          0.777,
+          0.027
+        ],
+        [
+          0.804,
+          0.035
+        ],
+        [
+          0.824,
+          0.051
+        ],
+        [
+          0.807,
+          0.074
+        ],
+        [
+          0.787,
+          0.082
+        ],
+        [
+          0.778,
+          0.101
+        ],
+        [
+          0.763,
+          0.085
+        ],
+        [
+          0.755,
+          0.059
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "A small cream torn edge at the upper-right red band exposes paper texture with ragged contour against the dark ground."
+    },
+    {
+      "label": "right rust fleck cluster",
+      "artifact_type": "brown-stain-fleck-cluster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.694,
+        "y": 0.536,
+        "w": 0.195,
+        "h": 0.318
+      },
+      "polygon": [
+        [
+          0.729,
+          0.536
+        ],
+        [
+          0.805,
+          0.565
+        ],
+        [
+          0.855,
+          0.626
+        ],
+        [
+          0.889,
+          0.721
+        ],
+        [
+          0.867,
+          0.809
+        ],
+        [
+          0.813,
+          0.854
+        ],
+        [
+          0.742,
+          0.823
+        ],
+        [
+          0.704,
+          0.759
+        ],
+        [
+          0.694,
+          0.664
+        ],
+        [
+          0.706,
+          0.59
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "A dense constellation of brown specks and stains marks the right side of the plastic, clustered around the torn shard and lower diagonal edge."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 4,
+    "mapped_region_coverage": 1.209,
+    "rationale": "The plate remains expressionist and image-led: one bag mass, two red bands, and a few strong cuts carry the interface. It is not minimal, but the clutter is mostly surface distress rather than competing objects."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-29-milky-bag-underprint-v1"
+}
