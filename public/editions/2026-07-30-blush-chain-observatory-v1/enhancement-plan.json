@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-30-blush-chain-observatory-v1",
+  "edition_id": "2026-07-30-blush-chain-observatory-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-30-blush-chain-observatory-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-red-orange-folded-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-red-orange-folded-slab",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-patent-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-black-headline-canopy",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-black-headline-canopy",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-ink-pressure) selected from interpretation."
+    },
+    {
+      "target_id": "module-gold-chain-orbit",
+      "target_kind": "artifact",
+      "artifact_id": "module-gold-chain-orbit",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (metal-chain-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-edge-video-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-edge-video-slit",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-motion-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-shorts-enamel-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-shorts-enamel-notch",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (vertical-video-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-black-white-animal-glyph-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-black-white-animal-glyph-cut",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (monochrome-logo-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-audio-raster-stamp",
+      "target_kind": "artifact",
+      "artifact_id": "module-audio-raster-stamp",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (archive-raster-sticker) selected from interpretation."
+    },
+    {
+      "target_id": "module-museum-edge-chip",
+      "target_kind": "artifact",
+      "artifact_id": "module-museum-edge-chip",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-gallery-chip) selected from interpretation."
+    },
+    {
+      "target_id": "module-museum-edge-chip-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-museum-edge-chip-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-gallery-chip) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

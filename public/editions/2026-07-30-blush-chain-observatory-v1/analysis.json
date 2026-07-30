@@ -1,0 +1,516 @@
+{
+  "analysis_id": "analysis-2026-07-30-blush-chain-observatory-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A blush paper field is cut by a heavy matte-black headline canopy, a glossy red-orange folded bag slab, gold chain loops, and a handful of torn apertures exposing color, halftone, and edge material. The plate is source-mappable through real seams, tears, glints, raster flecks, and folded triangular surfaces rather than cards.",
+  "usable_surfaces": [
+    "glossy red folded triangular slab",
+    "matte black torn headline canopy",
+    "gold chain loops and star glints",
+    "left cyan vertical slit",
+    "mid-right green-yellow torn chip",
+    "top-right halftone torn corner",
+    "lower center yellow-black glyph slit",
+    "black raster stamp flecks on paper strip",
+    "thin right-edge red fold seam"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero red-orange folded slab",
+      "artifact_type": "hero-scale-patent-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.119,
+        "y": 0.445,
+        "w": 0.879,
+        "h": 0.515
+      },
+      "polygon": [
+        [
+          0.119,
+          0.613
+        ],
+        [
+          0.171,
+          0.599
+        ],
+        [
+          0.472,
+          0.538
+        ],
+        [
+          0.997,
+          0.447
+        ],
+        [
+          0.998,
+          0.656
+        ],
+        [
+          0.927,
+          0.715
+        ],
+        [
+          0.808,
+          0.825
+        ],
+        [
+          0.727,
+          0.92
+        ],
+        [
+          0.51,
+          0.955
+        ],
+        [
+          0.257,
+          0.932
+        ],
+        [
+          0.168,
+          0.893
+        ],
+        [
+          0.133,
+          0.747
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "large glossy red-orange patent surface with visible folded triangular seams, stitched edges, and torn lower-right edge acts as the dominant source-bearing slab"
+    },
+    {
+      "label": "hero black headline canopy",
+      "artifact_type": "hero-scale-ink-pressure",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.083,
+        "y": 0,
+        "w": 0.75,
+        "h": 0.351
+      },
+      "polygon": [
+        [
+          0.083,
+          0.115
+        ],
+        [
+          0.444,
+          0
+        ],
+        [
+          0.794,
+          0
+        ],
+        [
+          0.604,
+          0.114
+        ],
+        [
+          0.828,
+          0.096
+        ],
+        [
+          0.831,
+          0.169
+        ],
+        [
+          0.482,
+          0.223
+        ],
+        [
+          0.455,
+          0.335
+        ],
+        [
+          0.366,
+          0.335
+        ],
+        [
+          0.353,
+          0.289
+        ],
+        [
+          0.139,
+          0.352
+        ],
+        [
+          0.091,
+          0.267
+        ],
+        [
+          0.608,
+          0.17
+        ],
+        [
+          0.599,
+          0.153
+        ],
+        [
+          0.169,
+          0.231
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "large stacked matte-black bars and torn pressure shapes across the upper half read as an illegible headline canopy"
+    },
+    {
+      "label": "gold chain orbit",
+      "artifact_type": "metal-chain-glint",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.617,
+        "w": 0.326,
+        "h": 0.354
+      },
+      "polygon": [
+        [
+          0.093,
+          0.631
+        ],
+        [
+          0.076,
+          0.666
+        ],
+        [
+          0.036,
+          0.76
+        ],
+        [
+          0.001,
+          0.812
+        ],
+        [
+          0.03,
+          0.846
+        ],
+        [
+          0.103,
+          0.823
+        ],
+        [
+          0.174,
+          0.883
+        ],
+        [
+          0.276,
+          0.927
+        ],
+        [
+          0.326,
+          0.94
+        ],
+        [
+          0.288,
+          0.96
+        ],
+        [
+          0.169,
+          0.938
+        ],
+        [
+          0.07,
+          0.878
+        ],
+        [
+          0.008,
+          0.889
+        ],
+        [
+          0,
+          0.855
+        ],
+        [
+          0.029,
+          0.779
+        ],
+        [
+          0.062,
+          0.692
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "reflective gold chain links curve around the lower-left corner with bright star glints at clasp and loop turns"
+    },
+    {
+      "label": "right-edge video slit",
+      "artifact_type": "cropped-motion-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.82,
+        "y": 0,
+        "w": 0.178,
+        "h": 0.149
+      },
+      "polygon": [
+        [
+          0.82,
+          0
+        ],
+        [
+          0.925,
+          0
+        ],
+        [
+          0.938,
+          0.031
+        ],
+        [
+          0.973,
+          0.058
+        ],
+        [
+          0.998,
+          0.075
+        ],
+        [
+          0.998,
+          0.148
+        ],
+        [
+          0.92,
+          0.139
+        ],
+        [
+          0.891,
+          0.103
+        ],
+        [
+          0.872,
+          0.059
+        ],
+        [
+          0.849,
+          0.023
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "top-right torn paper corner exposes a dark halftone black-white cropped pocket with ragged paper fibers along the edge"
+    },
+    {
+      "label": "shorts enamel notch",
+      "artifact_type": "vertical-video-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.058,
+        "y": 0.055,
+        "w": 0.055,
+        "h": 0.304
+      },
+      "polygon": [
+        [
+          0.066,
+          0.055
+        ],
+        [
+          0.083,
+          0.122
+        ],
+        [
+          0.107,
+          0.176
+        ],
+        [
+          0.113,
+          0.25
+        ],
+        [
+          0.104,
+          0.319
+        ],
+        [
+          0.082,
+          0.359
+        ],
+        [
+          0.071,
+          0.29
+        ],
+        [
+          0.058,
+          0.214
+        ],
+        [
+          0.061,
+          0.132
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "narrow vertical torn slit at the left margin exposes a bright cyan enamel-like strip with white ragged paper edges"
+    },
+    {
+      "label": "black-white animal glyph cut",
+      "artifact_type": "monochrome-logo-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.515,
+        "y": 0.796,
+        "w": 0.084,
+        "h": 0.193
+      },
+      "polygon": [
+        [
+          0.562,
+          0.796
+        ],
+        [
+          0.585,
+          0.854
+        ],
+        [
+          0.598,
+          0.929
+        ],
+        [
+          0.599,
+          0.989
+        ],
+        [
+          0.532,
+          0.987
+        ],
+        [
+          0.515,
+          0.942
+        ],
+        [
+          0.535,
+          0.882
+        ],
+        [
+          0.547,
+          0.829
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "lower-center vertical torn aperture exposes yellow enamel beside black-white halftone glyph material, tightly framed by ragged paper"
+    },
+    {
+      "label": "audio-raster stamp",
+      "artifact_type": "archive-raster-sticker",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.46,
+        "y": 0.388,
+        "w": 0.153,
+        "h": 0.043
+      },
+      "polygon": [
+        [
+          0.46,
+          0.392
+        ],
+        [
+          0.522,
+          0.388
+        ],
+        [
+          0.574,
+          0.389
+        ],
+        [
+          0.613,
+          0.392
+        ],
+        [
+          0.609,
+          0.43
+        ],
+        [
+          0.567,
+          0.428
+        ],
+        [
+          0.515,
+          0.419
+        ],
+        [
+          0.467,
+          0.407
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "scan-soft black raster flecks and rough ink breakup appear at the right end of a lower black paper strip"
+    },
+    {
+      "label": "museum-edge chip",
+      "artifact_type": "cropped-gallery-chip",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.911,
+        "y": 0.772,
+        "w": 0.087,
+        "h": 0.187
+      },
+      "polygon": [
+        [
+          0.998,
+          0.772
+        ],
+        [
+          0.998,
+          0.958
+        ],
+        [
+          0.923,
+          0.958
+        ],
+        [
+          0.911,
+          0.91
+        ],
+        [
+          0.93,
+          0.852
+        ],
+        [
+          0.947,
+          0.801
+        ]
+      ],
+      "confidence": 0.69,
+      "visual_evidence": "lower-right torn black edge carries pale stippled chip marks and a ragged contour where the red slab peels into a dark margin"
+    },
+    {
+      "label": "museum-edge chip",
+      "artifact_type": "cropped-gallery-chip",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.914,
+    "rationale": "The plate remains expressionist and image-led with a few strong masses, but the upper black bars plus multiple torn apertures and chain glints push it slightly beyond minimal."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-30-blush-chain-observatory-v1"
+}
