@@ -783,7 +783,7 @@ function looksLikeGraphicEditorialSource(payload, referenceText) {
       ...(fingerprint.composition_moves || []),
     ]),
   ].filter(Boolean).join(' ').toLowerCase()
-  const representationalSceneCues = /(painting|painted|figurative|interior|room|doorway|window|pool|seated|standing|figure|chair|curtain|wall picture|still[- ]?life)/.test(text)
+  const representationalSceneCues = /(photograph|photo|photographic|painting|painted|figurative|interior|room|domestic|doorway|window|pool|seated|standing|kneeling|figure|body|torso|legs|arms|head|foot|feet|chair|curtain|wall picture|still[- ]?life)/.test(text)
   const graphicCues = /\b(editorial|poster|cover|typographic|headline|text block|type mass|letterform)\b/.test(text)
   const diagramCues = /(blob|island|grid|route|diagram|left[- ]?right|negative space)/.test(text)
   if (representationalSceneCues && !graphicCues) return false
@@ -797,7 +797,7 @@ function describeSourceContract(contract = {}) {
   const overcopy = joinLimited(contract.forbidden_overcopy, '', 5)
   return [
     'SOURCE CONTRACT',
-    preserve ? `Must preserve: ${preserve}.` : '',
+    preserve ? `Must preserve: ${preserve} — as fragments/proportions/gestures, not exact crop, camera distance, or layout.` : '',
     transform ? `Must transform: ${transform}.` : '',
     drift ? `Forbidden drift: ${drift}.` : '',
     overcopy ? `Forbidden overcopy: ${overcopy}.` : '',
@@ -836,12 +836,12 @@ export function buildSceneImagePrompt(payload) {
     ? describeSourceContract(payload.source_contract)
     : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
-    ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements — palette, silhouettes, object relationships, surface motifs, light, and edge pressure — then change the edition's arrangement enough that it is clearly not the same image. ${sourceAspectGuard} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, framed source panel, or near-identical still life with tiny marks. Keep source identity through borrowed elements and visible source-window interventions.`
+    ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements — palette, silhouettes, object relationships, surface motifs, light, and edge pressure — then visibly recompose them. Translate crop/placement cues into fragment scale, seam position, silhouette pressure, or negative-space ratio; never reproduce the full layout. ${sourceAspectGuard} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, framed source panel, or near-identical still life with tiny marks.`
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
     hasSourceImage
-      ? 'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or literal identity/photoreal face copying. Preserve source subjects, object relationships, silhouettes, edge cues, and surface pressure from the source image.'
+      ? 'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, photoreal identity copying, or same-photo restaging. Preserve source subjects, object relationships, silhouettes, edge cues, and surfaces as recomposed fragments.'
       : 'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, fake summary cards, or literal UI. Since no dominant source image is attached, make anchors from the broader source field: media surfaces, source edges, gestures, apertures, cuts, traces, and material marks.',
     ...(payload.negative_constraints || []).slice(0, 1).map((constraint) => compactText(constraint, 80)),
   ]).join(' ')
