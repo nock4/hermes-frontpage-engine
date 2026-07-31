@@ -1,0 +1,217 @@
+{
+  "enhancement_plan_id": "enhance-2026-07-31-moonlit-yard-scumble-v1",
+  "edition_id": "2026-07-31-moonlit-yard-scumble-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-07-31-moonlit-yard-scumble-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-bark-proscenium-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-bark-proscenium-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-bark-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-backyard-render-fracture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-backyard-render-fracture",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-pool-siding-fracture) selected from interpretation."
+    },
+    {
+      "target_id": "module-primary-video-thumbnail-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-primary-video-thumbnail-glint",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glassy-thumbnail-basin) selected from interpretation."
+    },
+    {
+      "target_id": "module-pale-resource-chip",
+      "target_kind": "artifact",
+      "artifact_id": "module-pale-resource-chip",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-blue-label-chip) selected from interpretation."
+    },
+    {
+      "target_id": "module-pergola-animation-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-pergola-animation-notch",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (slatted-video-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-agent-tool-reliquary",
+      "target_kind": "artifact",
+      "artifact_id": "module-agent-tool-reliquary",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (gate-gap-web-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-thumbnail-moss-fleck",
+      "target_kind": "artifact",
+      "artifact_id": "module-thumbnail-moss-fleck",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-image-fleck) selected from interpretation."
+    },
+    {
+      "target_id": "module-thumbnail-moss-fleck-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-thumbnail-moss-fleck-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-image-fleck) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 8 artifacts and scene family heuristics."
+}

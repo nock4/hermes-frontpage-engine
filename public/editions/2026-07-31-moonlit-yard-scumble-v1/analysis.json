@@ -1,0 +1,444 @@
+{
+  "analysis_id": "analysis-2026-07-31-moonlit-yard-scumble-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark bark-framed woodland plate opens onto a moonlit pastoral valley. The usable source windows are carried by a torn left proscenium edge, a pale triangular siding-like fracture, a turquoise basin aperture on the right, small house-face chips, fence/gate cuts, slatted roof gestures, and compressed flecks near the lower path.",
+  "usable_surfaces": [
+    "ragged left bark aperture edge",
+    "pale triangular gable fracture across center-right",
+    "turquoise rounded basin cut in right hillside",
+    "small pale house wall chip at lower-left",
+    "thin scan-scar along torn opening",
+    "central gate and rail web-plane",
+    "slatted conical roof notch",
+    "compressed moss fleck on lower path"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero bark proscenium aperture",
+      "artifact_type": "hero-scale-bark-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.137,
+        "y": 0,
+        "w": 0.747,
+        "h": 0.987
+      },
+      "polygon": [
+        [
+          0.169,
+          0
+        ],
+        [
+          0.314,
+          0.022
+        ],
+        [
+          0.455,
+          0.052
+        ],
+        [
+          0.64,
+          0.085
+        ],
+        [
+          0.828,
+          0.117
+        ],
+        [
+          0.881,
+          0.233
+        ],
+        [
+          0.849,
+          0.366
+        ],
+        [
+          0.808,
+          0.507
+        ],
+        [
+          0.807,
+          0.686
+        ],
+        [
+          0.752,
+          0.831
+        ],
+        [
+          0.638,
+          0.925
+        ],
+        [
+          0.481,
+          0.982
+        ],
+        [
+          0.315,
+          0.987
+        ],
+        [
+          0.186,
+          0.929
+        ],
+        [
+          0.15,
+          0.759
+        ],
+        [
+          0.143,
+          0.568
+        ],
+        [
+          0.137,
+          0.346
+        ],
+        [
+          0.151,
+          0.154
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "The dominant opening between the two black bark trunks forms an irregular proscenium around the moonlit hills, branches, gate, path, and small house; its contour follows the actual torn tree-edge aperture rather than the full image frame."
+    },
+    {
+      "label": "hero backyard render fracture",
+      "artifact_type": "hero-scale-pool-siding-fracture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.382,
+        "y": 0.331,
+        "w": 0.401,
+        "h": 0.253
+      },
+      "polygon": [
+        [
+          0.382,
+          0.343
+        ],
+        [
+          0.45,
+          0.352
+        ],
+        [
+          0.526,
+          0.38
+        ],
+        [
+          0.603,
+          0.417
+        ],
+        [
+          0.675,
+          0.455
+        ],
+        [
+          0.744,
+          0.502
+        ],
+        [
+          0.783,
+          0.554
+        ],
+        [
+          0.753,
+          0.584
+        ],
+        [
+          0.685,
+          0.548
+        ],
+        [
+          0.607,
+          0.509
+        ],
+        [
+          0.527,
+          0.47
+        ],
+        [
+          0.447,
+          0.427
+        ],
+        [
+          0.399,
+          0.384
+        ]
+      ],
+      "confidence": 0.71,
+      "visual_evidence": "A pale green-gray triangular fracture cuts diagonally through the center-right woodland, reading as a siding or rendered plane laid over the brush and hill contour."
+    },
+    {
+      "label": "primary video thumbnail glint",
+      "artifact_type": "glassy-thumbnail-basin",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.738,
+        "y": 0.463,
+        "w": 0.137,
+        "h": 0.119
+      },
+      "polygon": [
+        [
+          0.759,
+          0.463
+        ],
+        [
+          0.812,
+          0.464
+        ],
+        [
+          0.858,
+          0.482
+        ],
+        [
+          0.875,
+          0.519
+        ],
+        [
+          0.866,
+          0.559
+        ],
+        [
+          0.828,
+          0.581
+        ],
+        [
+          0.774,
+          0.58
+        ],
+        [
+          0.742,
+          0.558
+        ],
+        [
+          0.738,
+          0.518
+        ],
+        [
+          0.747,
+          0.486
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The bright turquoise rounded aperture on the right hillside has glassy horizontal water-like streaks and a hard varnished edge, distinct from the surrounding dark vegetation."
+    },
+    {
+      "label": "pale resource chip",
+      "artifact_type": "pale-blue-label-chip",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.187,
+        "y": 0.506,
+        "w": 0.072,
+        "h": 0.051
+      },
+      "polygon": [
+        [
+          0.19,
+          0.506
+        ],
+        [
+          0.248,
+          0.507
+        ],
+        [
+          0.259,
+          0.522
+        ],
+        [
+          0.258,
+          0.556
+        ],
+        [
+          0.218,
+          0.557
+        ],
+        [
+          0.188,
+          0.545
+        ],
+        [
+          0.187,
+          0.519
+        ]
+      ],
+      "confidence": 0.64,
+      "visual_evidence": "A small pale rectangular house-wall face with tiny dark window marks sits near the lower-left opening, functioning as the visible label-like chip."
+    },
+    {
+      "label": "pergola animation notch",
+      "artifact_type": "slatted-video-notch",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.655,
+        "y": 0.592,
+        "w": 0.15,
+        "h": 0.164
+      },
+      "polygon": [
+        [
+          0.725,
+          0.592
+        ],
+        [
+          0.759,
+          0.634
+        ],
+        [
+          0.784,
+          0.685
+        ],
+        [
+          0.805,
+          0.744
+        ],
+        [
+          0.758,
+          0.756
+        ],
+        [
+          0.699,
+          0.751
+        ],
+        [
+          0.655,
+          0.731
+        ],
+        [
+          0.673,
+          0.676
+        ],
+        [
+          0.697,
+          0.625
+        ]
+      ],
+      "confidence": 0.73,
+      "visual_evidence": "The conical slatted roof form at lower-right creates a dense roofline notch with repeated dark ribs and hard triangular shadow cuts."
+    },
+    {
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "gate-gap-web-surface",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.582,
+        "y": 0.742,
+        "w": 0.105,
+        "h": 0.088
+      },
+      "polygon": [
+        [
+          0.594,
+          0.744
+        ],
+        [
+          0.657,
+          0.742
+        ],
+        [
+          0.687,
+          0.765
+        ],
+        [
+          0.684,
+          0.817
+        ],
+        [
+          0.642,
+          0.83
+        ],
+        [
+          0.59,
+          0.816
+        ],
+        [
+          0.582,
+          0.774
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "The central gate opening and its dark rail-grid read as a muted web-surface plane, bounded by posts and crossed by small horizontal and diagonal marks without readable text."
+    },
+    {
+      "label": "thumbnail moss fleck",
+      "artifact_type": "compressed-image-fleck",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.398,
+        "y": 0.884,
+        "w": 0.123,
+        "h": 0.083
+      },
+      "polygon": [
+        [
+          0.431,
+          0.884
+        ],
+        [
+          0.49,
+          0.895
+        ],
+        [
+          0.521,
+          0.932
+        ],
+        [
+          0.5,
+          0.967
+        ],
+        [
+          0.438,
+          0.962
+        ],
+        [
+          0.398,
+          0.93
+        ]
+      ],
+      "confidence": 0.66,
+      "visual_evidence": "A compressed ochre lattice-fleck embedded in the muddy lower path stands out as a small image-like color fragment near the bottom edge."
+    },
+    {
+      "label": "thumbnail moss fleck",
+      "artifact_type": "compressed-image-fleck",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.903,
+    "rationale": "The plate is expressionist and image-led, with a strong bark aperture and a few clear source pockets, but the dense twig network adds visual noise around the central mapped surfaces."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-07-31-moonlit-yard-scumble-v1"
+}

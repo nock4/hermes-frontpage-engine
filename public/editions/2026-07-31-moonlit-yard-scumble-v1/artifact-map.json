@@ -1,0 +1,556 @@
+{
+  "artifact_map_id": "map-2026-07-31-moonlit-yard-scumble-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "moonlit-yard-render-scumble",
+  "default_artifact_id": "hero-hero-bark-proscenium-aperture",
+  "artifacts": [
+    {
+      "id": "hero-hero-bark-proscenium-aperture",
+      "kind": "hero",
+      "label": "hero bark proscenium aperture",
+      "artifact_type": "hero-scale-bark-aperture",
+      "bounds": {
+        "x": 0.137,
+        "y": 0,
+        "w": 0.747,
+        "h": 0.987
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.169,
+          0
+        ],
+        [
+          0.314,
+          0.022
+        ],
+        [
+          0.455,
+          0.052
+        ],
+        [
+          0.64,
+          0.085
+        ],
+        [
+          0.828,
+          0.117
+        ],
+        [
+          0.881,
+          0.233
+        ],
+        [
+          0.849,
+          0.366
+        ],
+        [
+          0.808,
+          0.507
+        ],
+        [
+          0.807,
+          0.686
+        ],
+        [
+          0.752,
+          0.831
+        ],
+        [
+          0.638,
+          0.925
+        ],
+        [
+          0.481,
+          0.982
+        ],
+        [
+          0.315,
+          0.987
+        ],
+        [
+          0.186,
+          0.929
+        ],
+        [
+          0.15,
+          0.759
+        ],
+        [
+          0.143,
+          0.568
+        ],
+        [
+          0.137,
+          0.346
+        ],
+        [
+          0.151,
+          0.154
+        ]
+      ],
+      "cluster_id": "moonlit-yard-render-scumble",
+      "mask_path": "/editions/2026-07-31-moonlit-yard-scumble-v1/assets/masks/hero-hero-bark-proscenium-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-bark-proscenium-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          784,
+          424
+        ],
+        "safe_stage_window_origin_px": [
+          876,
+          505
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-hero-backyard-render-fracture",
+      "kind": "hero",
+      "label": "hero backyard render fracture",
+      "artifact_type": "hero-scale-pool-siding-fracture",
+      "bounds": {
+        "x": 0.382,
+        "y": 0.331,
+        "w": 0.401,
+        "h": 0.253
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.382,
+          0.343
+        ],
+        [
+          0.45,
+          0.352
+        ],
+        [
+          0.526,
+          0.38
+        ],
+        [
+          0.603,
+          0.417
+        ],
+        [
+          0.675,
+          0.455
+        ],
+        [
+          0.744,
+          0.502
+        ],
+        [
+          0.783,
+          0.554
+        ],
+        [
+          0.753,
+          0.584
+        ],
+        [
+          0.685,
+          0.548
+        ],
+        [
+          0.607,
+          0.509
+        ],
+        [
+          0.527,
+          0.47
+        ],
+        [
+          0.447,
+          0.427
+        ],
+        [
+          0.399,
+          0.384
+        ]
+      ],
+      "cluster_id": "moonlit-yard-render-scumble",
+      "mask_path": "/editions/2026-07-31-moonlit-yard-scumble-v1/assets/masks/hero-hero-backyard-render-fracture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-backyard-render-fracture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          895,
+          448
+        ],
+        "safe_stage_window_origin_px": [
+          944,
+          468
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-primary-video-thumbnail-glint",
+      "kind": "module",
+      "label": "primary video thumbnail glint",
+      "artifact_type": "glassy-thumbnail-basin",
+      "bounds": {
+        "x": 0.738,
+        "y": 0.463,
+        "w": 0.137,
+        "h": 0.119
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.759,
+          0.463
+        ],
+        [
+          0.812,
+          0.464
+        ],
+        [
+          0.858,
+          0.482
+        ],
+        [
+          0.875,
+          0.519
+        ],
+        [
+          0.866,
+          0.559
+        ],
+        [
+          0.828,
+          0.581
+        ],
+        [
+          0.774,
+          0.58
+        ],
+        [
+          0.742,
+          0.558
+        ],
+        [
+          0.738,
+          0.518
+        ],
+        [
+          0.747,
+          0.486
+        ]
+      ],
+      "cluster_id": "moonlit-yard-render-scumble",
+      "mask_path": "/editions/2026-07-31-moonlit-yard-scumble-v1/assets/masks/module-primary-video-thumbnail-glint.svg",
+      "source_binding_ids": [
+        "binding-module-primary-video-thumbnail-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1239,
+          525
+        ],
+        "safe_stage_window_origin_px": [
+          1256,
+          535
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-pale-resource-chip",
+      "kind": "module",
+      "label": "pale resource chip",
+      "artifact_type": "pale-blue-label-chip",
+      "bounds": {
+        "x": 0.187,
+        "y": 0.506,
+        "w": 0.072,
+        "h": 0.051
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.19,
+          0.506
+        ],
+        [
+          0.248,
+          0.507
+        ],
+        [
+          0.259,
+          0.522
+        ],
+        [
+          0.258,
+          0.556
+        ],
+        [
+          0.218,
+          0.557
+        ],
+        [
+          0.188,
+          0.545
+        ],
+        [
+          0.187,
+          0.519
+        ]
+      ],
+      "cluster_id": "moonlit-yard-render-scumble",
+      "mask_path": "/editions/2026-07-31-moonlit-yard-scumble-v1/assets/masks/module-pale-resource-chip.svg",
+      "source_binding_ids": [
+        "binding-module-pale-resource-chip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          343,
+          540
+        ],
+        "safe_stage_window_origin_px": [
+          351,
+          544
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-pergola-animation-notch",
+      "kind": "module",
+      "label": "pergola animation notch",
+      "artifact_type": "slatted-video-notch",
+      "bounds": {
+        "x": 0.655,
+        "y": 0.592,
+        "w": 0.15,
+        "h": 0.164
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.725,
+          0.592
+        ],
+        [
+          0.759,
+          0.634
+        ],
+        [
+          0.784,
+          0.685
+        ],
+        [
+          0.805,
+          0.744
+        ],
+        [
+          0.758,
+          0.756
+        ],
+        [
+          0.699,
+          0.751
+        ],
+        [
+          0.655,
+          0.731
+        ],
+        [
+          0.673,
+          0.676
+        ],
+        [
+          0.697,
+          0.625
+        ]
+      ],
+      "cluster_id": "moonlit-yard-render-scumble",
+      "mask_path": "/editions/2026-07-31-moonlit-yard-scumble-v1/assets/masks/module-pergola-animation-notch.svg",
+      "source_binding_ids": [
+        "binding-module-pergola-animation-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          677
+        ],
+        "safe_stage_window_origin_px": [
+          1140,
+          690
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-agent-tool-reliquary",
+      "kind": "module",
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "gate-gap-web-surface",
+      "bounds": {
+        "x": 0.582,
+        "y": 0.742,
+        "w": 0.105,
+        "h": 0.088
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.594,
+          0.744
+        ],
+        [
+          0.657,
+          0.742
+        ],
+        [
+          0.687,
+          0.765
+        ],
+        [
+          0.684,
+          0.817
+        ],
+        [
+          0.642,
+          0.83
+        ],
+        [
+          0.59,
+          0.816
+        ],
+        [
+          0.582,
+          0.774
+        ]
+      ],
+      "cluster_id": "moonlit-yard-render-scumble",
+      "mask_path": "/editions/2026-07-31-moonlit-yard-scumble-v1/assets/masks/module-agent-tool-reliquary.svg",
+      "source_binding_ids": [
+        "binding-module-agent-tool-reliquary"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          975,
+          798
+        ],
+        "safe_stage_window_origin_px": [
+          987,
+          805
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-thumbnail-moss-fleck",
+      "kind": "module",
+      "label": "thumbnail moss fleck",
+      "artifact_type": "compressed-image-fleck",
+      "bounds": {
+        "x": 0.398,
+        "y": 0.884,
+        "w": 0.123,
+        "h": 0.083
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.431,
+          0.884
+        ],
+        [
+          0.49,
+          0.895
+        ],
+        [
+          0.521,
+          0.932
+        ],
+        [
+          0.5,
+          0.967
+        ],
+        [
+          0.438,
+          0.962
+        ],
+        [
+          0.398,
+          0.93
+        ]
+      ],
+      "cluster_id": "moonlit-yard-render-scumble",
+      "mask_path": "/editions/2026-07-31-moonlit-yard-scumble-v1/assets/masks/module-thumbnail-moss-fleck.svg",
+      "source_binding_ids": [
+        "binding-module-thumbnail-moss-fleck"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          706,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          721,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-thumbnail-moss-fleck-2",
+      "kind": "module",
+      "label": "thumbnail moss fleck",
+      "artifact_type": "compressed-image-fleck",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "moonlit-yard-render-scumble",
+      "mask_path": "/editions/2026-07-31-moonlit-yard-scumble-v1/assets/masks/module-thumbnail-moss-fleck-2.svg",
+      "source_binding_ids": [
+        "binding-module-thumbnail-moss-fleck-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}
