@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-01-black-earth-dropout-slab-v1",
+  "edition_id": "2026-08-01-black-earth-dropout-slab-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-01-black-earth-dropout-slab-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-skull-aperture-mass",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-skull-aperture-mass",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-charcoal-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-lower-bass-ridge",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-lower-bass-ridge",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-chipped-ridge-band) selected from interpretation."
+    },
+    {
+      "target_id": "module-gray-pillar-margin-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-gray-pillar-margin-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (side-margin-slab-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-powder-blue-tile-break",
+      "target_kind": "artifact",
+      "artifact_id": "module-powder-blue-tile-break",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hard-collage-tile-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-black-patterned-vertical-nick",
+      "target_kind": "artifact",
+      "artifact_id": "module-black-patterned-vertical-nick",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-pattern-strip-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-compressed-thumbnail-grain-patch",
+      "target_kind": "artifact",
+      "artifact_id": "module-compressed-thumbnail-grain-patch",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thumbnail-grain-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-tiny-portrait-sized-pinhole",
+      "target_kind": "artifact",
+      "artifact_id": "module-tiny-portrait-sized-pinhole",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (micro-image-pinhole) selected from interpretation."
+    },
+    {
+      "target_id": "module-bottom-right-blue-edge-tear",
+      "target_kind": "artifact",
+      "artifact_id": "module-bottom-right-blue-edge-tear",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (blue-gray-torn-edge-shard) selected from interpretation."
+    },
+    {
+      "target_id": "module-tiny-portrait-sized-pinhole-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-tiny-portrait-sized-pinhole-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (micro-image-pinhole) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

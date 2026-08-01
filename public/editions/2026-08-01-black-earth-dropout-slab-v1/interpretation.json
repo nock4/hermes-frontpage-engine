@@ -1,0 +1,377 @@
+{
+  "interpretation_id": "interp-2026-08-01-black-earth-dropout-slab-v1",
+  "edition_id": "2026-08-01-black-earth-dropout-slab-v1",
+  "plate_read_timestamp": "2026-08-01T17:34:28.981Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A black, worn square plate carries a large gray skull aperture at center, a stitched vertical scar, a jagged lower bass ridge, small blue-gray punctures, a red torn slit, and several hard-edged scrape fields that can become source windows without adding chrome.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bass pressure under chipped black ink",
+      "A black, worn square plate carries a large gray skull aperture at center, a stitched vertical scar, a jagged lower bass ridge, small blue-gray punctures, a red torn slit, and several hard-edged scrape fields that can become source windows without adding chrome.",
+      "black-earth",
+      "dropout-slit",
+      "bass-ridge"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero skull aperture mass",
+      "hero lower bass ridge",
+      "gray pillar margin seam",
+      "powder-blue tile break",
+      "black patterned vertical nick",
+      "compressed thumbnail grain patch",
+      "tiny portrait-sized pinhole",
+      "bottom-right blue edge tear"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "black-earth-dropout-slab",
+      "centered square dark slab inside gray pillar margins",
+      "three stacked bands of apertures and broken ink masses",
+      "lower bass-ridge seam system with sparse punctures",
+      "single red rounded shard with a white triangular void",
+      "thin dropout slit cutting across the field",
+      "small hard-edged collage tile breaks embedded in cracks",
+      "central skull aperture mass"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: black-earth-dropout-slab.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-skull-aperture-mass",
+      "kind": "hero",
+      "type": "hero-scale-charcoal-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.322,
+        "y": 0.106,
+        "w": 0.358,
+        "h": 0.402
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-lower-bass-ridge",
+      "kind": "hero",
+      "type": "hero-scale-chipped-ridge-band",
+      "strength": 0.981644,
+      "bounds": {
+        "x": 0.2002,
+        "y": 0.5686,
+        "w": 0.6196,
+        "h": 0.2735
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gray-pillar-margin-seam",
+      "kind": "module",
+      "type": "side-margin-slab-edge",
+      "strength": 0.766536,
+      "bounds": {
+        "x": 0.359,
+        "y": 0.057,
+        "w": 0.043,
+        "h": 0.886
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-powder-blue-tile-break",
+      "kind": "module",
+      "type": "hard-collage-tile-seam",
+      "strength": 0.766152,
+      "bounds": {
+        "x": 0.123,
+        "y": 0.087,
+        "w": 0.071,
+        "h": 0.091
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-patterned-vertical-nick",
+      "kind": "module",
+      "type": "narrow-pattern-strip-cut",
+      "strength": 0.7431840000000001,
+      "bounds": {
+        "x": 0.766,
+        "y": 0.143,
+        "w": 0.058,
+        "h": 0.177
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-compressed-thumbnail-grain-patch",
+      "kind": "module",
+      "type": "thumbnail-grain-surface",
+      "strength": 0.693096,
+      "bounds": {
+        "x": 0.314,
+        "y": 0.72,
+        "w": 0.424,
+        "h": 0.223
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tiny-portrait-sized-pinhole",
+      "kind": "module",
+      "type": "micro-image-pinhole",
+      "strength": 0.6732720000000001,
+      "bounds": {
+        "x": 0.087,
+        "y": 0.774,
+        "w": 0.12,
+        "h": 0.138
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-right-blue-edge-tear",
+      "kind": "module",
+      "type": "blue-gray-torn-edge-shard",
+      "strength": 0.64894,
+      "bounds": {
+        "x": 0.856,
+        "y": 0.777,
+        "w": 0.046,
+        "h": 0.139
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tiny-portrait-sized-pinhole-2",
+      "kind": "module",
+      "type": "micro-image-pinhole",
+      "strength": 0.6479919999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-skull-aperture-mass-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.322,
+        "y": 0.106,
+        "w": 0.358,
+        "h": 0.402
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-lower-bass-ridge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2002,
+        "y": 0.5686,
+        "w": 0.6196,
+        "h": 0.2735
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gray-pillar-margin-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.359,
+        "y": 0.057,
+        "w": 0.043,
+        "h": 0.886
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-powder-blue-tile-break-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.123,
+        "y": 0.087,
+        "w": 0.071,
+        "h": 0.091
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-patterned-vertical-nick-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.766,
+        "y": 0.143,
+        "w": 0.058,
+        "h": 0.177
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-compressed-thumbnail-grain-patch-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.314,
+        "y": 0.72,
+        "w": 0.424,
+        "h": 0.223
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tiny-portrait-sized-pinhole-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.087,
+        "y": 0.774,
+        "w": 0.12,
+        "h": 0.138
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-right-blue-edge-tear-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.856,
+        "y": 0.777,
+        "w": 0.046,
+        "h": 0.139
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tiny-portrait-sized-pinhole-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
