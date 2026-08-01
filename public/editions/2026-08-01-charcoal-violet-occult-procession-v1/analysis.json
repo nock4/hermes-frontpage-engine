@@ -1,0 +1,551 @@
+{
+  "analysis_id": "analysis-2026-08-01-charcoal-violet-occult-procession-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A black charcoal diagram plate with cropped off-white typographic pressure across the top, a central violet occult-electronic node, torn vertical scars, a right-edge violet aperture curve, and a low caption band of pale scratches and illegible type.",
+  "usable_surfaces": [
+    "upper off-white cropped type mass",
+    "central violet diagram node",
+    "right crescent aperture edge",
+    "lower dark caption band",
+    "left inset specimen panel",
+    "vertical torn paper scars",
+    "thin pale horizontal scratches",
+    "tiny violet pinhole dots"
+  ],
+  "detected_objects": [
+    {
+      "label": "upper cropped word-shape shadow",
+      "artifact_type": "hero-scale-typographic-mass",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.011,
+        "w": 0.638,
+        "h": 0.303
+      },
+      "polygon": [
+        [
+          0.003,
+          0.013
+        ],
+        [
+          0.341,
+          0.011
+        ],
+        [
+          0.344,
+          0.147
+        ],
+        [
+          0.249,
+          0.15
+        ],
+        [
+          0.249,
+          0.206
+        ],
+        [
+          0.181,
+          0.312
+        ],
+        [
+          0.089,
+          0.349
+        ],
+        [
+          0.089,
+          0.247
+        ],
+        [
+          0.004,
+          0.313
+        ],
+        [
+          0.004,
+          0.225
+        ],
+        [
+          0.062,
+          0.147
+        ],
+        [
+          0.004,
+          0.075
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "large cropped off-white distressed letterform mass intrudes from the top edge with black cutouts, torn ink grain, and hard typographic contours"
+    },
+    {
+      "label": "right off-frame sigil star",
+      "artifact_type": "hero-scale-starburst-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.751,
+        "y": 0.074,
+        "w": 0.248,
+        "h": 0.7
+      },
+      "polygon": [
+        [
+          0.999,
+          0.075
+        ],
+        [
+          0.992,
+          0.149
+        ],
+        [
+          0.982,
+          0.238
+        ],
+        [
+          0.965,
+          0.342
+        ],
+        [
+          0.94,
+          0.444
+        ],
+        [
+          0.901,
+          0.498
+        ],
+        [
+          0.836,
+          0.511
+        ],
+        [
+          0.766,
+          0.494
+        ],
+        [
+          0.835,
+          0.503
+        ],
+        [
+          0.898,
+          0.536
+        ],
+        [
+          0.937,
+          0.609
+        ],
+        [
+          0.963,
+          0.696
+        ],
+        [
+          0.987,
+          0.774
+        ],
+        [
+          0.999,
+          0.769
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "major violet-white crescent aperture cuts through the right edge, with a bright curved rim and dotted halftone field inside the dark opening"
+    },
+    {
+      "label": "Data Loom Map",
+      "artifact_type": "violet-diagram-node",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.33,
+        "y": 0.221,
+        "w": 0.34,
+        "h": 0.594
+      },
+      "polygon": [
+        [
+          0.502,
+          0.224
+        ],
+        [
+          0.662,
+          0.459
+        ],
+        [
+          0.606,
+          0.714
+        ],
+        [
+          0.503,
+          0.769
+        ],
+        [
+          0.394,
+          0.713
+        ],
+        [
+          0.337,
+          0.458
+        ],
+        [
+          0.502,
+          0.224
+        ],
+        [
+          0.548,
+          0.438
+        ],
+        [
+          0.503,
+          0.589
+        ],
+        [
+          0.458,
+          0.438
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "central violet pentagonal circuit/occult node with circular hubs, radial traces, resistor-like hatches, and nested circular geometry"
+    },
+    {
+      "label": "left logic-gate notch cluster",
+      "artifact_type": "specimen-tray",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.023,
+        "y": 0.719,
+        "w": 0.084,
+        "h": 0.256
+      },
+      "polygon": [
+        [
+          0.024,
+          0.72
+        ],
+        [
+          0.107,
+          0.72
+        ],
+        [
+          0.107,
+          0.975
+        ],
+        [
+          0.023,
+          0.975
+        ],
+        [
+          0.024,
+          0.72
+        ],
+        [
+          0.05,
+          0.754
+        ],
+        [
+          0.089,
+          0.754
+        ],
+        [
+          0.064,
+          0.817
+        ],
+        [
+          0.093,
+          0.85
+        ],
+        [
+          0.03,
+          0.85
+        ],
+        [
+          0.064,
+          0.817
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "bottom-left inset tray contains a pale compass star, circular symbol, arch-like logic marks, purple notches, and thin rule lines inside a visible rectangular specimen plate"
+    },
+    {
+      "label": "purple varnish repair seam",
+      "artifact_type": "translucent-ink-repair",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.34,
+        "w": 0.142,
+        "h": 0.339
+      },
+      "polygon": [
+        [
+          0.647,
+          0.34
+        ],
+        [
+          0.639,
+          0.376
+        ],
+        [
+          0.62,
+          0.421
+        ],
+        [
+          0.599,
+          0.475
+        ],
+        [
+          0.58,
+          0.53
+        ],
+        [
+          0.559,
+          0.587
+        ],
+        [
+          0.54,
+          0.635
+        ],
+        [
+          0.514,
+          0.679
+        ],
+        [
+          0.507,
+          0.668
+        ],
+        [
+          0.533,
+          0.619
+        ],
+        [
+          0.552,
+          0.568
+        ],
+        [
+          0.572,
+          0.513
+        ],
+        [
+          0.594,
+          0.455
+        ],
+        [
+          0.617,
+          0.399
+        ]
+      ],
+      "confidence": 0.75,
+      "visual_evidence": "thin diagonal repair scar catches pale violet-white side light as it crosses the central diagram field from upper right toward lower center"
+    },
+    {
+      "label": "blue-flower pinhole constellation",
+      "artifact_type": "tiny-pitch-color-pinhole",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.032,
+        "y": 0.89,
+        "w": 0.065,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.034,
+          0.896
+        ],
+        [
+          0.044,
+          0.896
+        ],
+        [
+          0.044,
+          0.904
+        ],
+        [
+          0.034,
+          0.904
+        ],
+        [
+          0.054,
+          0.909
+        ],
+        [
+          0.063,
+          0.909
+        ],
+        [
+          0.063,
+          0.918
+        ],
+        [
+          0.054,
+          0.918
+        ],
+        [
+          0.074,
+          0.928
+        ],
+        [
+          0.085,
+          0.928
+        ],
+        [
+          0.085,
+          0.938
+        ],
+        [
+          0.074,
+          0.938
+        ],
+        [
+          0.092,
+          0.899
+        ],
+        [
+          0.098,
+          0.899
+        ],
+        [
+          0.098,
+          0.907
+        ],
+        [
+          0.092,
+          0.907
+        ]
+      ],
+      "confidence": 0.68,
+      "visual_evidence": "tiny blue-violet pinhole dots puncture the lower-left inset panel beneath the arch marks, grouped as small apertures rather than readable symbols"
+    },
+    {
+      "label": "author-plate white glint",
+      "artifact_type": "serif-glint-strip",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.792,
+        "w": 0.193,
+        "h": 0.043
+      },
+      "polygon": [
+        [
+          0.386,
+          0.797
+        ],
+        [
+          0.428,
+          0.793
+        ],
+        [
+          0.466,
+          0.795
+        ],
+        [
+          0.503,
+          0.796
+        ],
+        [
+          0.544,
+          0.794
+        ],
+        [
+          0.579,
+          0.8
+        ],
+        [
+          0.575,
+          0.829
+        ],
+        [
+          0.535,
+          0.827
+        ],
+        [
+          0.496,
+          0.832
+        ],
+        [
+          0.455,
+          0.828
+        ],
+        [
+          0.419,
+          0.831
+        ],
+        [
+          0.388,
+          0.823
+        ]
+      ],
+      "confidence": 0.73,
+      "visual_evidence": "compact lower-center band of pale illegible serif-like text and glints sits inside the caption-strip pressure, brighter than surrounding charcoal"
+    },
+    {
+      "label": "blue-flower pinhole constellation",
+      "artifact_type": "tiny-pitch-color-pinhole",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "author-plate white glint",
+      "artifact_type": "serif-glint-strip",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.65,
+    "rationale": "The plate holds strong minimal anchors—top type mass, central node, right aperture, lower band—but dense fine circuit linework and many scratches make the interaction map visually busy if every mark is activated."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-01-charcoal-violet-occult-procession-v1"
+}
