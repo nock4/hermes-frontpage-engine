@@ -8,6 +8,8 @@ import { uniqueNonEmpty } from '../string-utils.mjs'
 const allowedSignalDirectories = [
   'Inbox/tweets',
   'Inbox/youtube',
+  '00 - Capture/tweets',
+  '00 - Capture/youtube',
 ]
 
 const allowedSignalFiles = [
@@ -38,6 +40,8 @@ export function signalChannelForPath(relativePath) {
   const lower = normalized.toLowerCase()
   if (lower.startsWith('inbox/tweets/')) return 'twitter-bookmark'
   if (lower.startsWith('inbox/youtube/')) return 'youtube-like'
+  if (lower.startsWith('00 - capture/tweets/')) return 'twitter-bookmark'
+  if (lower.startsWith('00 - capture/youtube/')) return 'youtube-like'
   if (lower.startsWith('inbox/nts-liked-tracks-source-map')) return 'nts-like'
   if (lower === 'resources/chrome bookmarks.md' || lower === 'resources/collections/chrome bookmarks.md') return 'chrome-bookmark'
   if (lower === 'resources/collections/youtube likes.md') return 'youtube-like'
@@ -177,7 +181,7 @@ export async function loadObsidianAllowlistSignals({ inputRoot, date, windowDays
     notes,
     selection_filters: [
       'Markdown files only.',
-      'Only enumerate explicit saved-content signal paths: Inbox/tweets, Inbox/youtube, Inbox NTS liked-track source maps, Resources Chrome Bookmarks, and Resources/Collections YouTube Likes.',
+      'Only enumerate explicit saved-content signal paths: Inbox/tweets, Inbox/youtube, 00 - Capture/tweets, 00 - Capture/youtube, Inbox NTS liked-track source maps, Resources Chrome Bookmarks, and Resources/Collections YouTube Likes.',
       `Keep notes whose date is from ${date} back through ${windowDays} days.`,
       'Reject local/private endpoints and text/data/document URLs before source research.',
       'For NTS liked-track maps, use only direct streamable source URLs and skip low-confidence or search rows.',

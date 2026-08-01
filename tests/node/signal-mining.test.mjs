@@ -16,6 +16,8 @@ describe('saved-signal mining', () => {
   it('maps only explicit saved-content paths to source channels', () => {
     expect(signalChannelForPath('Inbox/tweets/2026-04-26-post.md')).toBe('twitter-bookmark')
     expect(signalChannelForPath('Inbox/youtube/2026-04-26-video.md')).toBe('youtube-like')
+    expect(signalChannelForPath('00 - Capture/tweets/2026-04-26-post.md')).toBe('twitter-bookmark')
+    expect(signalChannelForPath('00 - Capture/youtube/2026-04-26-video.md')).toBe('youtube-like')
     expect(signalChannelForPath('Inbox/nts-liked-tracks-source-map.md')).toBe('nts-like')
     expect(signalChannelForPath('Resources/Collections/Chrome Bookmarks.md')).toBe('chrome-bookmark')
     expect(signalChannelForPath('Private/memory.md')).toBe(null)
@@ -116,6 +118,7 @@ describe('saved-signal mining', () => {
     const vault = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-signal-vault-'))
     const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-signal-run-'))
     await fs.mkdir(path.join(vault, 'Inbox', 'tweets'), { recursive: true })
+    await fs.mkdir(path.join(vault, '00 - Capture', 'youtube'), { recursive: true })
     await fs.mkdir(path.join(vault, 'Resources'), { recursive: true })
     await fs.mkdir(path.join(vault, 'Private'), { recursive: true })
 
@@ -127,6 +130,10 @@ describe('saved-signal mining', () => {
       '| # | Artist | Track | Best source | Confidence | URL |',
       '| 1 | Artist | Track | YouTube | high | https://www.youtube.com/watch?v=abc123 |',
       '| 2 | Artist | Track | Search | high | https://www.youtube.com/results?search_query=artist |',
+    ].join('\n'))
+    await fs.writeFile(path.join(vault, '00 - Capture', 'youtube', '2026-04-26-video.md'), [
+      '# Saved YouTube Like',
+      'https://www.youtube.com/watch?v=liked456',
     ].join('\n'))
     await fs.writeFile(path.join(vault, 'Resources', 'Chrome Bookmarks.md'), 'https://example.com/old-bookmark')
     await fs.writeFile(path.join(vault, 'Private', 'memory.md'), 'https://example.com/private')
@@ -145,14 +152,16 @@ describe('saved-signal mining', () => {
     }, runDir)
 
     expect(harvest.input_mode).toBe('obsidian-allowlist')
-    expect(harvest.markdown_files_seen).toBe(3)
-    expect(harvest.notes_scanned).toBe(2)
+    expect(harvest.markdown_files_seen).toBe(4)
+    expect(harvest.notes_scanned).toBe(3)
     expect(harvest.notes_selected.map((note) => note.path).sort()).toEqual([
+      '00 - Capture/youtube/2026-04-26-video.md',
       'Inbox/nts-liked-tracks-source-map.md',
       'Inbox/tweets/2026-04-25-post.md',
     ])
     expect(harvest.source_candidates.map((source) => source.url).sort()).toEqual([
       'https://www.youtube.com/watch?v=abc123',
+      'https://www.youtube.com/watch?v=liked456',
       'https://x.com/person/status/123',
     ])
     await expect(fs.readFile(path.join(runDir, 'signal-harvest.json'), 'utf8')).resolves.toContain('"selection_policy"')

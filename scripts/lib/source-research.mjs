@@ -576,7 +576,9 @@ export async function inspectSourceCandidates(signalHarvest, {
       low_fertility_anchor_demoted: {
         demoted_title: imageSourceMaterial.selected_image_material[0]?.title || imageSourceMaterial.selected_image_material[0]?.caption || imageSourceMaterial.selected_image_material[0]?.image_url || null,
         promoted_title: selectedImageMaterial[0]?.title || selectedImageMaterial[0]?.caption || selectedImageMaterial[0]?.image_url || null,
-        reason: 'Filtered low-fertility UI chrome, buttons, ads, spacers, or blank page furniture out of dominant plate source material.',
+        reason: reusedImageMaterial.length
+          ? 'Filtered source image material that already appeared in a published edition; do not use repeated source media as the dominant plate seed.'
+          : 'Filtered low-fertility UI chrome, buttons, ads, spacers, or blank page furniture out of dominant plate source material.',
       },
     }
   }

@@ -106,6 +106,7 @@ function anchorSelectionEntry(source, { recentSourceKeys = new Set(), signalHarv
 export function selectAnchorSource(evidenceSources, { recentSourceKeys = new Set(), signalHarvest = null } = {}) {
   const ranked = [...(evidenceSources || [])]
     .filter((source) => source?.url && !recentSourceKeys.has(sourceContentKey(source)))
+    .filter((source) => sourceHasRenderableCardSurface(source, signalHarvest))
     .map((source) => anchorSelectionEntry(source, { recentSourceKeys, signalHarvest }))
     .filter((entry) => Number.isFinite(entry.score))
     .sort((left, right) => {

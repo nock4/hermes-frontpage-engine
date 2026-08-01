@@ -90,4 +90,29 @@ describe('anchor-source-research', () => {
     expect(anchor.url).toBe('https://www.nga.gov/collection/art-object-page.46665.html')
     expect(anchor.anchor_selection_score).toBeGreaterThan(0)
   })
+
+  it('does not let non-renderable tweets become the single anchor just because the text is fresh', () => {
+    const anchor = selectAnchorSource([
+      {
+        url: 'https://x.com/avantgayALPHA/status/2082211248234483881',
+        source_channel: 'twitter-bookmark',
+        source_type: 'tweet',
+        title: 'AVANTGAYNFTCOREPORTER on X',
+        description: 'REPORT BAGS NFT by newartprogram minted out before I even saw it art archive visual',
+        note_score: 80,
+        fetch_status: 'fetch-ok',
+      },
+      {
+        url: 'https://www.youtube.com/watch?v=liked456',
+        source_channel: 'youtube-like',
+        source_type: 'youtube',
+        title: 'recent liked music video with hard visual surface',
+        description: 'film video art gesture surface',
+        note_score: 40,
+        fetch_status: 'fetch-ok',
+      },
+    ])
+
+    expect(anchor.url).toBe('https://www.youtube.com/watch?v=liked456')
+  })
 })
