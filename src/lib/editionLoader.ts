@@ -169,6 +169,48 @@ const parseGeometryRecord = (value: JsonValue | undefined, path: string): Artifa
   }
 }
 
+const parseOptionalBoundsRecord = (value: JsonValue | undefined, path: string) => {
+  if (value === undefined || value === null) return undefined
+  const bounds = requireObject(value, path)
+  return {
+    x: requireNumber(bounds.x, `${path}.x`),
+    y: requireNumber(bounds.y, `${path}.y`),
+    w: requireNumber(bounds.w, `${path}.w`),
+    h: requireNumber(bounds.h, `${path}.h`),
+  }
+}
+
+const parseOptionalPolygon = (value: JsonValue | undefined, path: string) => {
+  if (value === undefined || value === null) return undefined
+  return requireArray(value, path).map((point, index) => requirePoint(point, `${path}[${index}]`))
+}
+
+const parseArtifactInteractionMeshRecord = (value: JsonValue | undefined, path: string) => {
+  if (value === undefined || value === null) return undefined
+  const mesh = requireObject(value, path)
+  const neighbors = mesh.neighbors === undefined
+    ? undefined
+    : requireArray(mesh.neighbors, `${path}.neighbors`).map((entry, index) => {
+      const neighbor = requireObject(entry, `${path}.neighbors[${index}]`)
+      return {
+        artifact_id: requireString(neighbor.artifact_id, `${path}.neighbors[${index}].artifact_id`),
+        shared_edge_px: optionalNumber(neighbor.shared_edge_px, `${path}.neighbors[${index}].shared_edge_px`),
+        direction: optionalLiteral(neighbor.direction, EXPANSION_LABELS, `${path}.neighbors[${index}].direction`),
+        distance_px: optionalNumber(neighbor.distance_px, `${path}.neighbors[${index}].distance_px`),
+      }
+    })
+  return {
+    schema_version: optionalNumber(mesh.schema_version, `${path}.schema_version`),
+    visible_polygon: parseOptionalPolygon(mesh.visible_polygon, `${path}.visible_polygon`),
+    hover_polygon: parseOptionalPolygon(mesh.hover_polygon, `${path}.hover_polygon`),
+    hover_bounds: parseOptionalBoundsRecord(mesh.hover_bounds, `${path}.hover_bounds`),
+    territory_area_px: optionalNumber(mesh.territory_area_px, `${path}.territory_area_px`),
+    visible_area_px: optionalNumber(mesh.visible_area_px, `${path}.visible_area_px`),
+    expansion_ratio: optionalNumber(mesh.expansion_ratio, `${path}.expansion_ratio`),
+    neighbors,
+  }
+}
+
 const parseEditionManifestItem = (value: JsonValue, path: string): EditionManifestItem => {
   const item = requireObject(value, path)
   return {
@@ -253,6 +295,7 @@ const parseArtifactRecord = (value: JsonValue, path: string): ArtifactRecord => 
       h: requireNumber(bounds.h, `${path}.bounds.h`),
     },
     polygon: polygon.map((point, index) => requirePoint(point, `${path}.polygon[${index}]`)),
+    interaction_mesh: parseArtifactInteractionMeshRecord(artifact.interaction_mesh, `${path}.interaction_mesh`),
     mask_path: optionalString(artifact.mask_path, `${path}.mask_path`),
     geometry: artifact.geometry === undefined ? undefined : parseGeometryRecord(artifact.geometry, `${path}.geometry`),
     z_index: requireNumber(artifact.z_index, `${path}.z_index`),
@@ -697,10 +740,10 @@ export const loadEditionPackage = async (basePath: string): Promise<LoadedEditio
   return { edition, brief, artifactMap: mergedArtifactMap, sourceBindings, ambiance, review, geometryKit, enhancementPlan, about, interpretation }
 }
 
-export const polygonToClipPath = (artifact: ArtifactRecord) => {
-  if (!artifact.polygon || artifact.polygon.length < 3) return undefined
-  const { x, y, w, h } = artifact.bounds
-  return `polygon(${artifact.polygon
+export const polygonToClipPathForGeometry = (polygon: ArtifactRecord['polygon'] | undefined, bounds: ArtifactRecord['bounds'] | undefined) => {
+  if (!polygon || polygon.length < 3 || !bounds || bounds.w <= 0 || bounds.h <= 0) return undefined
+  const { x, y, w, h } = bounds
+  return `polygon(${polygon
     .map(([px, py]) => `${((px - x) / w) * 100}% ${((py - y) / h) * 100}%`)
     .join(', ')})`
 }

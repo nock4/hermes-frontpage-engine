@@ -217,6 +217,11 @@ export async function runFromScratchMode({
       tool: 'Python + Pillow + NumPy + SciPy + OpenCV GrabCut + scikit-image contours',
       command: [pipelinePython(), maskPipelineArgs(options, generationName)],
       dynamicArgs: () => [context.package.editionId],
+    }, {
+      name: 'Build interaction mesh hover territories',
+      tool: 'Python + Pillow + NumPy + SciPy mask-derived navmesh topology',
+      command: [pipelinePython(), ['scripts/build-interaction-mesh.py', '--generation-name', generationName, '--apply-artifact-map']],
+      dynamicArgs: () => [context.package.editionId],
     })
   }
 

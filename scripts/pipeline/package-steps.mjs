@@ -15,6 +15,10 @@ export function maskPipelineArgs(options, generationName, editionIds = []) {
   return args
 }
 
+function interactionMeshArgs(generationName, editionIds = []) {
+  return ['scripts/build-interaction-mesh.py', '--generation-name', generationName, '--apply-artifact-map', ...editionIds]
+}
+
 export function existingPackageSteps(options, editionIds, generationName) {
   const steps = [
     {
@@ -34,6 +38,10 @@ export function existingPackageSteps(options, editionIds, generationName) {
       name: 'Generate post-plate mask candidates and geometry audit files',
       tool: 'Python + Pillow + NumPy + SciPy + OpenCV GrabCut + scikit-image contours',
       command: [pipelinePython(), maskPipelineArgs(options, generationName, editionIds)],
+    }, {
+      name: 'Build interaction mesh hover territories',
+      tool: 'Python + Pillow + NumPy + SciPy mask-derived navmesh topology',
+      command: [pipelinePython(), interactionMeshArgs(generationName, editionIds)],
     })
   }
 

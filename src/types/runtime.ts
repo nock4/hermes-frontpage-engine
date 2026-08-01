@@ -8,6 +8,22 @@ export interface ArtifactGeometryRecord {
   preferred_expansion_label?: 'left' | 'right' | 'up' | 'down'
 }
 
+interface ArtifactInteractionMeshRecord {
+  schema_version?: number
+  visible_polygon?: Point[]
+  hover_polygon?: Point[]
+  hover_bounds?: Bounds
+  territory_area_px?: number
+  visible_area_px?: number
+  expansion_ratio?: number
+  neighbors?: Array<{
+    artifact_id: string
+    shared_edge_px?: number
+    direction?: 'left' | 'right' | 'up' | 'down'
+    distance_px?: number
+  }>
+}
+
 export interface GeometryKitArtifactRecord {
   artifact_type?: string
   winner?: string
@@ -80,6 +96,7 @@ export interface ArtifactRecord {
   cluster_id: string
   bounds: Bounds
   polygon: Point[]
+  interaction_mesh?: ArtifactInteractionMeshRecord
   mask_path?: string
   geometry?: ArtifactGeometryRecord
   z_index: number

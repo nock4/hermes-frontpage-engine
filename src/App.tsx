@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
-import { loadEditionPackage, loadManifest, polygonToClipPath } from './lib/editionLoader'
+import { loadEditionPackage, loadManifest, polygonToClipPathForGeometry } from './lib/editionLoader'
 import { buildArchiveHref, getEditionArchiveRecords, parseAppRoute, type AppRoute } from './lib/router'
 import { getRuntimeAmbienceClasses } from './lib/runtimeAmbience'
 import { getRuntimePresentation } from './lib/runtimePresentation'
@@ -302,7 +302,10 @@ function App() {
 
           {loaded.artifactMap.artifacts.map((artifact, artifactIndex) => {
             const active = artifact.id === activeArtifactId
-            const clipPath = polygonToClipPath(artifact)
+            const interactionMesh = artifact.interaction_mesh
+            const hitBounds = interactionMesh?.hover_bounds ?? artifact.bounds
+            const hitPolygon = interactionMesh?.hover_polygon ?? artifact.polygon
+            const clipPath = polygonToClipPathForGeometry(hitPolygon, hitBounds)
             const binding = bindingsByArtifactId.get(artifact.id) ?? null
             const bindingDescriptor = binding ? getSourceWindowDescriptor(binding) : null
             const bindingRichPreview = binding && bindingDescriptor?.kind === 'rich-preview'
@@ -340,10 +343,10 @@ function App() {
                 aria-label={artifact.label}
                 className={`artifact artifact--${artifact.kind} artifact--inherit-${artifactInheritanceProfile}${clickOutClass}${active ? ' is-active' : ''}${previewActive ? ' artifact--preview-active' : ''}${presentation.showPersistentRegionLabels ? ' artifact--labels-on' : ''}${whimsyClasses}${sceneReactionClasses}`}
                 style={{
-                  left: `${artifact.bounds.x * 100}%`,
-                  top: `${artifact.bounds.y * 100}%`,
-                  width: `${artifact.bounds.w * 100}%`,
-                  height: `${artifact.bounds.h * 100}%`,
+                  left: `${hitBounds.x * 100}%`,
+                  top: `${hitBounds.y * 100}%`,
+                  width: `${hitBounds.w * 100}%`,
+                  height: `${hitBounds.h * 100}%`,
                   clipPath,
                   WebkitClipPath: clipPath,
                   zIndex: artifact.z_index,
