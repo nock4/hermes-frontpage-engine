@@ -1,0 +1,196 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-01-corner-strap-archive-v1",
+  "edition_id": "2026-08-01-corner-strap-archive-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-01-corner-strap-archive-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-dominant-kneeling-silhouette-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-dominant-kneeling-silhouette-slab",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-photo-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lower-bench-and-prone-bar",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-bench-and-prone-bar",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-horizontal-slab) selected from interpretation."
+    },
+    {
+      "target_id": "module-beige-square-thumbnail-margin",
+      "target_kind": "artifact",
+      "artifact_id": "module-beige-square-thumbnail-margin",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (paper-margin-inset) selected from interpretation."
+    },
+    {
+      "target_id": "module-floor-scuff-album-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-floor-scuff-album-aperture",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scuffed-floor-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-underground-newsprint-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-underground-newsprint-edge",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (torn-newsprint-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-pale-expression-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-pale-expression-tile",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-square-tile) selected from interpretation."
+    },
+    {
+      "target_id": "module-left-black-wall-slab-with-bright-sli",
+      "target_kind": "artifact",
+      "artifact_id": "module-left-black-wall-slab-with-bright-sli",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-vertical-slab-with-slit) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 7 artifacts and scene family heuristics."
+}

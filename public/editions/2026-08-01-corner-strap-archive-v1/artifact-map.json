@@ -1,0 +1,581 @@
+{
+  "artifact_map_id": "map-2026-08-01-corner-strap-archive-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "corner-strap-archive-slab",
+  "default_artifact_id": "hero-dominant-kneeling-silhouette-slab",
+  "artifacts": [
+    {
+      "id": "hero-dominant-kneeling-silhouette-slab",
+      "kind": "hero",
+      "label": "dominant kneeling-silhouette slab",
+      "artifact_type": "hero-scale-photo-slab",
+      "bounds": {
+        "x": 0.304,
+        "y": 0.018,
+        "w": 0.587,
+        "h": 0.939
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.307,
+          0.019
+        ],
+        [
+          0.387,
+          0.086
+        ],
+        [
+          0.461,
+          0.179
+        ],
+        [
+          0.522,
+          0.193
+        ],
+        [
+          0.558,
+          0.113
+        ],
+        [
+          0.678,
+          0.096
+        ],
+        [
+          0.746,
+          0.149
+        ],
+        [
+          0.729,
+          0.25
+        ],
+        [
+          0.714,
+          0.352
+        ],
+        [
+          0.765,
+          0.52
+        ],
+        [
+          0.846,
+          0.721
+        ],
+        [
+          0.79,
+          0.77
+        ],
+        [
+          0.688,
+          0.865
+        ],
+        [
+          0.561,
+          0.891
+        ],
+        [
+          0.413,
+          0.816
+        ],
+        [
+          0.298,
+          0.843
+        ],
+        [
+          0.333,
+          0.685
+        ],
+        [
+          0.527,
+          0.574
+        ]
+      ],
+      "cluster_id": "corner-strap-archive-slab",
+      "mask_path": "/editions/2026-08-01-corner-strap-archive-v1/assets/masks/hero-dominant-kneeling-silhouette-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-dominant-kneeling-silhouette-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          918,
+          422
+        ],
+        "safe_stage_window_origin_px": [
+          990,
+          499
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "hero-lower-bench-and-prone-bar",
+      "kind": "hero",
+      "label": "lower bench-and-prone bar",
+      "artifact_type": "hero-scale-horizontal-slab",
+      "bounds": {
+        "x": 0.039,
+        "y": 0.759,
+        "w": 0.854,
+        "h": 0.201
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.04,
+          0.777
+        ],
+        [
+          0.191,
+          0.759
+        ],
+        [
+          0.319,
+          0.784
+        ],
+        [
+          0.445,
+          0.834
+        ],
+        [
+          0.557,
+          0.879
+        ],
+        [
+          0.672,
+          0.869
+        ],
+        [
+          0.801,
+          0.799
+        ],
+        [
+          0.891,
+          0.824
+        ],
+        [
+          0.892,
+          0.938
+        ],
+        [
+          0.763,
+          0.948
+        ],
+        [
+          0.621,
+          0.955
+        ],
+        [
+          0.481,
+          0.953
+        ],
+        [
+          0.332,
+          0.939
+        ],
+        [
+          0.205,
+          0.954
+        ],
+        [
+          0.045,
+          0.957
+        ]
+      ],
+      "cluster_id": "corner-strap-archive-slab",
+      "mask_path": "/editions/2026-08-01-corner-strap-archive-v1/assets/masks/hero-lower-bench-and-prone-bar.svg",
+      "source_binding_ids": [
+        "binding-hero-lower-bench-and-prone-bar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          716,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          821,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-beige-square-thumbnail-margin",
+      "kind": "module",
+      "label": "beige square thumbnail margin",
+      "artifact_type": "paper-margin-inset",
+      "bounds": {
+        "x": 0.89,
+        "y": 0.044,
+        "w": 0.06,
+        "h": 0.929
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.894,
+          0.045
+        ],
+        [
+          0.946,
+          0.044
+        ],
+        [
+          0.951,
+          0.159
+        ],
+        [
+          0.949,
+          0.302
+        ],
+        [
+          0.951,
+          0.454
+        ],
+        [
+          0.949,
+          0.61
+        ],
+        [
+          0.951,
+          0.76
+        ],
+        [
+          0.946,
+          0.971
+        ],
+        [
+          0.897,
+          0.966
+        ],
+        [
+          0.889,
+          0.794
+        ],
+        [
+          0.89,
+          0.632
+        ],
+        [
+          0.891,
+          0.467
+        ],
+        [
+          0.89,
+          0.3
+        ],
+        [
+          0.891,
+          0.148
+        ]
+      ],
+      "cluster_id": "corner-strap-archive-slab",
+      "mask_path": "/editions/2026-08-01-corner-strap-archive-v1/assets/masks/module-beige-square-thumbnail-margin.svg",
+      "source_binding_ids": [
+        "binding-module-beige-square-thumbnail-margin"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          445
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          521
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-floor-scuff-album-aperture",
+      "kind": "module",
+      "label": "floor-scuff album aperture",
+      "artifact_type": "scuffed-floor-window",
+      "bounds": {
+        "x": 0.289,
+        "y": 0.821,
+        "w": 0.124,
+        "h": 0.086
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.318,
+          0.823
+        ],
+        [
+          0.365,
+          0.828
+        ],
+        [
+          0.401,
+          0.85
+        ],
+        [
+          0.412,
+          0.88
+        ],
+        [
+          0.386,
+          0.903
+        ],
+        [
+          0.342,
+          0.907
+        ],
+        [
+          0.305,
+          0.89
+        ],
+        [
+          0.289,
+          0.862
+        ],
+        [
+          0.299,
+          0.837
+        ]
+      ],
+      "cluster_id": "corner-strap-archive-slab",
+      "mask_path": "/editions/2026-08-01-corner-strap-archive-v1/assets/masks/module-floor-scuff-album-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-floor-scuff-album-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          539,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          554,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-underground-newsprint-edge",
+      "kind": "module",
+      "label": "underground newsprint edge",
+      "artifact_type": "torn-newsprint-edge",
+      "bounds": {
+        "x": 0.0352,
+        "y": 0.0163,
+        "w": 0.9521,
+        "h": 0.9779
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.0381,
+          0.0989
+        ],
+        [
+          0.042,
+          0.0189
+        ],
+        [
+          0.8983,
+          0.0195
+        ],
+        [
+          0.9814,
+          0.0488
+        ],
+        [
+          0.9834,
+          0.9349
+        ],
+        [
+          0.9804,
+          0.987
+        ],
+        [
+          0.9599,
+          0.9915
+        ],
+        [
+          0.1378,
+          0.9909
+        ],
+        [
+          0.044,
+          0.946
+        ],
+        [
+          0.0381,
+          0.9258
+        ]
+      ],
+      "cluster_id": "corner-strap-archive-slab",
+      "mask_path": "/editions/2026-08-01-corner-strap-archive-v1/assets/masks/module-underground-newsprint-edge.svg",
+      "source_binding_ids": [
+        "binding-module-underground-newsprint-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          760,
+          430
+        ],
+        "safe_stage_window_origin_px": [
+          878,
+          511
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-pale-expression-tile",
+      "kind": "module",
+      "label": "pale expression tile",
+      "artifact_type": "small-square-tile",
+      "bounds": {
+        "x": 0.252,
+        "y": 0.018,
+        "w": 0.066,
+        "h": 0.454
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.253,
+          0.019
+        ],
+        [
+          0.316,
+          0.019
+        ],
+        [
+          0.318,
+          0.13
+        ],
+        [
+          0.316,
+          0.236
+        ],
+        [
+          0.318,
+          0.348
+        ],
+        [
+          0.314,
+          0.463
+        ],
+        [
+          0.276,
+          0.471
+        ],
+        [
+          0.254,
+          0.454
+        ],
+        [
+          0.253,
+          0.33
+        ],
+        [
+          0.253,
+          0.205
+        ],
+        [
+          0.252,
+          0.092
+        ]
+      ],
+      "cluster_id": "corner-strap-archive-slab",
+      "mask_path": "/editions/2026-08-01-corner-strap-archive-v1/assets/masks/module-pale-expression-tile.svg",
+      "source_binding_ids": [
+        "binding-module-pale-expression-tile"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          438,
+          214
+        ],
+        "safe_stage_window_origin_px": [
+          446,
+          251
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-left-black-wall-slab-with-bright-sli",
+      "kind": "module",
+      "label": "left black wall slab with bright slit",
+      "artifact_type": "dark-vertical-slab-with-slit",
+      "bounds": {
+        "x": 0.0313,
+        "y": 0.0046,
+        "w": 0.2278,
+        "h": 0.8855
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.0342,
+          0.0137
+        ],
+        [
+          0.044,
+          0.0065
+        ],
+        [
+          0.1916,
+          0.0065
+        ],
+        [
+          0.2287,
+          0.0085
+        ],
+        [
+          0.2512,
+          0.0189
+        ],
+        [
+          0.2551,
+          0.2661
+        ],
+        [
+          0.2414,
+          0.8393
+        ],
+        [
+          0.2336,
+          0.8803
+        ],
+        [
+          0.216,
+          0.8874
+        ],
+        [
+          0.0391,
+          0.8861
+        ],
+        [
+          0.0342,
+          0.0143
+        ]
+      ],
+      "cluster_id": "corner-strap-archive-slab",
+      "mask_path": "/editions/2026-08-01-corner-strap-archive-v1/assets/masks/module-left-black-wall-slab-with-bright-sli.svg",
+      "source_binding_ids": [
+        "binding-module-left-black-wall-slab-with-bright-sli"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          227,
+          389
+        ],
+        "safe_stage_window_origin_px": [
+          253,
+          459
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}
