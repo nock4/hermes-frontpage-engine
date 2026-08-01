@@ -150,6 +150,44 @@ describe('scene generation image prompt', () => {
     expect(prompt.length).toBeLessThan(2300)
   })
 
+  it('pairs YouTube audio material with source-image grammar without visualizer UI', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'A ritual sleeve surface cut by acoustic pressure.',
+      lighting: 'warm low light',
+      material_language: ['painted sleeve stock', 'charcoal grain'],
+      source_image_fingerprints: [{
+        title: 'Nat song still',
+        image_url: 'https://assets.example/nat-song.jpg',
+        preserve_cues: ['blue field', 'central painted procession'],
+      }],
+      source_audio_material: {
+        status: 'ok',
+        audio_visual_briefs: [{
+          title: 'Pantra U Kyaw Nyunt',
+          source_url: 'https://www.youtube.com/watch?v=3gDa-cfKaKY',
+          brief: 'tempo 129.2 bpm / fast procession. heavy lower-field weight; bright high-frequency scratch field. dense beat grid usable as seam rhythm; linear procession structure. source-window marks: bass ridge / lower pressure field; high-frequency scratch veil; onset puncture cluster; silence aperture or dropout slit; linear measure cut',
+        }],
+        prompt_guidance: ['Treat source_audio_material as structure, not UI.'],
+      },
+      visual_direction: {
+        composition_archetype: 'textile field',
+        camera_plate_grammar: 'overhead scan',
+        visual_compositional_moves: ['processional vertical cuts'],
+      },
+      artifacts: [{ source_url: 'https://www.youtube.com/watch?v=3gDa-cfKaKY' }],
+    })
+
+    expect(prompt).toContain('AUDIO MATERIAL')
+    expect(prompt).toContain('Pantra U Kyaw Nyunt')
+    expect(prompt).toContain('heavy lower-field weight')
+    expect(prompt).toContain('onset punctures')
+    expect(prompt).toContain('silence apertures')
+    expect(prompt).toContain('pitch-color drift')
+    expect(prompt).toContain('Do not draw waveforms, equalizer bars, media-player UI')
+    expect(prompt).toContain('source image as inspiration')
+    expect(prompt).toContain('BORROW')
+  })
+
   it('tells source-image runs to borrow elements instead of recreating the same still life', () => {
     const prompt = buildSceneImagePrompt({
       scene_prompt: 'A cloud-ceramic plinth rupture plate.',

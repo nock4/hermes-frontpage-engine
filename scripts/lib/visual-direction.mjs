@@ -266,7 +266,8 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       'Treat aesthetic direction as evidence-derived, not preset-derived.',
       'Use the supplied visual reference to influence composition structure, geometry, color relationships, layering, density, and atmosphere when relevant.',
       'Use source_image_fingerprints as concrete plate-language evidence: preserve crop logic, surface pressure, palette pressure, scale relationships, and edge behavior without copying subjects literally.',
-      'Extract 3 to 5 concrete visible compositional moves from visual_reference, source_image_fingerprints, and selected_image_material; do not reduce images to vague palette or ambience.',
+      'When source_audio_material is present, use it as structural evidence for density, pulse, seams, silence fields, pitch-color drift, and source-window mark types; never recommend waveform/equalizer/visualizer UI.',
+      'Extract 3 to 5 concrete visible compositional moves from visual_reference, source_image_fingerprints, selected_image_material, and source_audio_material; do not reduce images or audio to vague palette or ambience.',
       'Choose one explicit composition archetype and one camera/plate grammar that the image prompt can obey.',
       'Honor plate_posture as the edition-level variety gear. Minimal/abstract postures should still preserve 6 to 10 real source-bearing marks as apertures, seams, notches, glints, cuts, nodes, or surface interruptions.',
       'When plate_posture includes formal_risk or look_avoidance_directive, treat those as hard anti-flatness constraints: choose depth, scale shift, rupture, weather, procession, cutaway, object collision, horizon, or loud source-media fragments instead of another polite material scan.',
@@ -340,6 +341,18 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
         page_url: fingerprint.page_url || null,
       }))
       : [],
+    source_audio_material: researchField.source_audio_material?.audio_visual_briefs?.length
+      ? {
+        status: researchField.source_audio_material.status || null,
+        audio_visual_briefs: researchField.source_audio_material.audio_visual_briefs.slice(0, 3).map((entry) => ({
+          title: entry.title || null,
+          source_url: entry.source_url || null,
+          brief: sanitizeSourceText(entry.brief, '', 420),
+          contact_sheet_path: entry.contact_sheet_path || null,
+        })),
+        prompt_guidance: researchField.source_audio_material.prompt_guidance || [],
+      }
+      : null,
     content_sources: getResearchContentSources(researchField).slice(0, 8).map((source) => ({
       title: getSourceDisplayTitle(source, 'Source'),
       description: sanitizeSourceText(source.description, '', 240),

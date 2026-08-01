@@ -63,6 +63,7 @@ export async function composeDailyPayload(
   const sourceImageFingerprints = Array.isArray(researchField.source_image_fingerprints)
     ? researchField.source_image_fingerprints.slice(0, 5)
     : []
+  const sourceAudioMaterial = normalizeSourceAudioMaterial(researchField.source_audio_material)
   const prompt = {
     date,
     product_rules: [
@@ -89,6 +90,7 @@ export async function composeDailyPayload(
     selected_image_material: selectedImageMaterial,
     source_image_fingerprints: sourceImageFingerprints,
     source_image_contact_sheet_path: researchField.source_image_contact_sheet_path || null,
+    source_audio_material: sourceAudioMaterial,
     plate_posture: platePosture,
     content_selection_rules: [
       `Use ${minContentItems} to ${maxContentItems} artifacts total; ${targetContentItems} is ideal when enough source material is available.`,
@@ -101,6 +103,9 @@ export async function composeDailyPayload(
       sourceImageFingerprints.length
         ? 'Use source_image_fingerprints as explicit plate grammar: palette pressure, surface pressure, crop logic, scale relationships, seams, glare, and edge behavior. Do not describe them as thumbnails pasted into the plate.'
         : 'Do not include source-image-preservation language when source_image_fingerprints is empty; this is source-field mode, not source-image fidelity mode.',
+      sourceAudioMaterial.audio_visual_briefs?.length
+        ? 'Use source_audio_material as hidden structure paired with the anchor image: translate bass pressure, spectral bands, onset clusters, self-similarity, silence, and pitch color into physical plate marks. Never make a generic waveform/equalizer visualizer.'
+        : 'If no source_audio_material is present, do not invent audio analysis cues.',
       'Use inferred_visual_direction.composition_archetype, camera_plate_grammar, and visual_compositional_moves as hard art-direction inputs, not optional ambience.',
       'Use plate_posture as the edition-level variety gear. If plate_posture asks for minimal or abstract, preserve real source anchors as marks, apertures, seams, notches, cuts, glints, or surface interruptions rather than adding props.',
       'If plate_posture includes formal_risk or look_avoidance_directive, obey it visibly: break repeated flat material-scan grammar with depth, scale violence, spatial event, weather, procession, cutaway, object collision, horizon, or loud source-media fragments while keeping anchors real.',
@@ -130,6 +135,7 @@ export async function composeDailyPayload(
       'Describe only the decisive light, camera/framing, palette, density, scale, layering, edge behavior, and mood. Omit rationale.',
       'Name the camera/plate grammar and composition archetype inside the scene_prompt as visible image behavior, not metadata.',
       'Translate visual_compositional_moves into physical features: crop edges, diagonals, glare, folds, tile density, scan borders, seams, apertures, or material interruptions.',
+      'When source_audio_material is present, pair the anchor still/thumbnail surface with audio-authored structure: bass ridges, spectral veils, onset punctures, silence apertures, loop folds, and pulse seams. Keep it image-native, not an audio-player UI.',
       'Translate technical source concepts into visible scene elements that fit the inferred world: marks, panels, ribbons, labels, islands, apertures, blocks, traces, nodes, surfaces, or other source-led forms.',
       'Include the required source artifacts as physical anchor points in the scene, including exactly two hero-scale source-bearing anchors when enough sources exist; do not explain clicking, source windows, bindings, masks, runtime behavior, or QA mechanics.',
       'Avoid technical prose in the scene_prompt: no API, framework, module, runtime, interface, dashboard, embedding, source window, artifact mapping, hot path, or product requirement language.',
@@ -660,6 +666,7 @@ function normalizeDailyPayload(payload, signalHarvest, researchField, visualDire
     plate_posture: visualDirection.plate_posture || fallback.visual_direction?.plate_posture || null,
     source_image_fingerprints: normalizeSourceImageFingerprints(payload.source_image_fingerprints || researchField.source_image_fingerprints),
     source_image_contact_sheet_path: payload.source_image_contact_sheet_path || researchField.source_image_contact_sheet_path || null,
+    source_audio_material: normalizeSourceAudioMaterial(payload.source_audio_material || researchField.source_audio_material),
     artifacts: normalizedArtifacts.map((artifact, index) => ({
       label: repairArtifactLabel(String(artifact.label || fallback.artifacts[index]?.label || `Source Artifact ${index + 1}`), index),
       artifact_type: repairArtifactType(slugify(artifact.artifact_type || fallback.artifacts[index]?.artifact_type || 'source-mark'), index),
@@ -677,6 +684,24 @@ function buildSourceLookup(sources) {
     }
   }
   return lookup
+}
+
+function normalizeSourceAudioMaterial(value) {
+  const source = value && typeof value === 'object' ? value : {}
+  const briefs = Array.isArray(source.audio_visual_briefs)
+    ? source.audio_visual_briefs.slice(0, 3).map((entry) => ({
+      title: String(entry.title || 'YouTube audio source'),
+      source_url: entry.source_url || null,
+      brief: compactText(entry.brief || '', 420),
+      features_path: entry.features_path || null,
+      contact_sheet_path: entry.contact_sheet_path || null,
+    })).filter((entry) => entry.brief)
+    : []
+  return {
+    status: source.status || (briefs.length ? 'ok' : 'skipped'),
+    audio_visual_briefs: briefs,
+    prompt_guidance: normalizeStringArray(source.prompt_guidance, []).slice(0, 3),
+  }
 }
 
 function normalizeStringArray(value, fallback) {
@@ -790,6 +815,15 @@ function looksLikeGraphicEditorialSource(payload, referenceText) {
   return graphicCues && diagramCues
 }
 
+function describeSourceAudioMaterial(material = {}) {
+  const normalized = normalizeSourceAudioMaterial(material)
+  const briefs = normalized.audio_visual_briefs || []
+  if (!briefs.length) return ''
+  const briefText = briefs.map((entry) => `${entry.title}: ${entry.brief}`).join(' | ')
+  const guidance = joinLimited(normalized.prompt_guidance, '', 3)
+  return compactText([briefText, guidance].filter(Boolean).join(' '), 700)
+}
+
 function describeSourceContract(contract = {}) {
   const preserve = joinLimited(contract.must_preserve, '', 8)
   const transform = joinLimited(contract.must_transform, '', 4)
@@ -835,6 +869,7 @@ export function buildSceneImagePrompt(payload) {
   const sourceContract = sourceImageFingerprints.length && payload.source_contract?.mode === 'source-image'
     ? describeSourceContract(payload.source_contract)
     : ''
+  const sourceAudioMaterial = describeSourceAudioMaterial(payload.source_audio_material)
   const sourceFidelityGuard = sourceImageFingerprints.length
     ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements — palette, silhouettes, object relationships, surface motifs, light, and edge pressure — then visibly recompose them. Translate crop/placement cues into fragment scale, seam position, silhouette pressure, or negative-space ratio; never reproduce the full layout. ${sourceAspectGuard} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, framed source panel, or near-identical still life with tiny marks.`
     : ''
@@ -859,8 +894,10 @@ export function buildSceneImagePrompt(payload) {
     '',
     'TRANSFORM',
     compactText(hasSourceImage
-      ? `Build a new plate from the BORROW cues: keep source identity through borrowed silhouettes, motifs, palette, lighting, and material edges, but change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. ${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source borrowing, not source copying. ` : ''}${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
-      : `${payload.scene_prompt || payload.mood || 'Turn the source field into a full-bleed source-led artwork.'} ${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 420),
+      ? `Build a new plate from the BORROW cues: keep source identity through borrowed silhouettes, motifs, palette, lighting, and material edges, but change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. ${sourceAudioMaterial ? `Audio material provides the hidden skeleton: ${sourceAudioMaterial}. ` : ''}${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source borrowing, not source copying. ` : ''}${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
+      : `${payload.scene_prompt || payload.mood || 'Turn the source field into a full-bleed source-led artwork.'} ${sourceAudioMaterial ? `Audio material provides hidden structure: ${sourceAudioMaterial}. ` : ''}${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 420),
+    sourceAudioMaterial ? 'AUDIO MATERIAL' : '',
+    sourceAudioMaterial ? compactText(`Translate the audio into surfaces and marks only: bass ridges, spectral veils, onset punctures, silence apertures, loop folds, pulse seams, pitch-color drift. Do not draw waveforms, equalizer bars, media-player UI, circular visualizers, or charts. ${sourceAudioMaterial}`, 620) : '',
     '',
     'COMPOSITION',
     hasSourceImage

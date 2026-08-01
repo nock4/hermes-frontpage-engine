@@ -10,6 +10,7 @@ import { createMineSignalsStep } from './mine-signals.mjs'
 import { buildSmokeRoute, maskPipelineArgs, pipelinePython, postPackageSteps } from './package-steps.mjs'
 import { createResearchSourcesStep } from './research-sources.mjs'
 import { buildSourceContract } from '../lib/source-contract.mjs'
+import { prepareSourceAudioMaterial } from '../lib/source-audio-material.mjs'
 
 export async function runFromScratchMode({
   options,
@@ -80,6 +81,26 @@ export async function runFromScratchMode({
   const internalSteps = [
     createMineSignalsStep({ options, context, recentDiversityAvoidTerms, root, runDir, mineSignals }),
     createResearchSourcesStep({ apiKey, context, inspectSourceCandidates, options, recentSourceKeys, root, runDir }),
+    {
+      name: 'Prepare source audio material',
+      tool: 'yt-dlp + ffmpeg + songsee/librosa audio analysis',
+      command: 'internal:prepare-source-audio-material --youtube-anchors',
+      run: async () => {
+        context.audioMaterial = await prepareSourceAudioMaterial(context.researchField, { runDir, root })
+        context.researchField = {
+          ...context.researchField,
+          source_audio_material: context.audioMaterial,
+          source_audio_material_path: path.join(runDir, 'source-audio-material.json'),
+        }
+        await fs.writeFile(path.join(runDir, 'source-research.json'), `${JSON.stringify(context.researchField, null, 2)}\n`, 'utf8')
+        return {
+          status: context.audioMaterial.status,
+          sources: context.audioMaterial.sources?.length || 0,
+          briefs: context.audioMaterial.audio_visual_briefs?.length || 0,
+          output: path.relative(root, path.join(runDir, 'source-audio-material.json')),
+        }
+      },
+    },
     createComposeBriefStep({ apiKey, composeDailyPayload, context, diversityDirective, options, recentEditions, root, runDir }),
     {
       name: 'Build source contract',
