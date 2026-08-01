@@ -1,0 +1,619 @@
+{
+  "artifact_map_id": "map-2026-08-01-nat-song-blue-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "nat-song-blue-field",
+  "default_artifact_id": "hero-pantra-album-sleeve-spine",
+  "artifacts": [
+    {
+      "id": "hero-pantra-album-sleeve-spine",
+      "kind": "hero",
+      "label": "Pantra album sleeve spine",
+      "artifact_type": "hero-album-sleeve-seam",
+      "bounds": {
+        "x": 0.003,
+        "y": 0,
+        "w": 0.124,
+        "h": 0.882
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.024,
+          0
+        ],
+        [
+          0.07,
+          0.004
+        ],
+        [
+          0.104,
+          0.063
+        ],
+        [
+          0.121,
+          0.153
+        ],
+        [
+          0.112,
+          0.324
+        ],
+        [
+          0.105,
+          0.504
+        ],
+        [
+          0.089,
+          0.689
+        ],
+        [
+          0.057,
+          0.881
+        ],
+        [
+          0.028,
+          0.873
+        ],
+        [
+          0.016,
+          0.711
+        ],
+        [
+          0.004,
+          0.481
+        ],
+        [
+          0.004,
+          0.236
+        ],
+        [
+          0.009,
+          0.082
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/hero-pantra-album-sleeve-spine.svg",
+      "source_binding_ids": [
+        "binding-hero-pantra-album-sleeve-spine"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          100,
+          379
+        ],
+        "safe_stage_window_origin_px": [
+          115,
+          452
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "hero-untitle-orange-blue-canvas-field",
+      "kind": "hero",
+      "label": "Untitle orange-blue canvas field",
+      "artifact_type": "hero-painted-field-interruption",
+      "bounds": {
+        "x": 0.0215,
+        "y": 0.0,
+        "w": 0.681,
+        "h": 0.6553
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.0234,
+          0.0352
+        ],
+        [
+          0.0378,
+          0.002
+        ],
+        [
+          0.0534,
+          0.002
+        ],
+        [
+          0.6361,
+          0.2305
+        ],
+        [
+          0.6504,
+          0.25
+        ],
+        [
+          0.6667,
+          0.3047
+        ],
+        [
+          0.694,
+          0.4082
+        ],
+        [
+          0.6999,
+          0.4717
+        ],
+        [
+          0.6868,
+          0.541
+        ],
+        [
+          0.6712,
+          0.5859
+        ],
+        [
+          0.5449,
+          0.6455
+        ],
+        [
+          0.4701,
+          0.6504
+        ],
+        [
+          0.3926,
+          0.624
+        ],
+        [
+          0.1667,
+          0.4775
+        ],
+        [
+          0.1003,
+          0.4219
+        ],
+        [
+          0.0234,
+          0.335
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/hero-untitle-orange-blue-canvas-field.svg",
+      "source_binding_ids": [
+        "binding-hero-untitle-orange-blue-canvas-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          604,
+          368
+        ],
+        "safe_stage_window_origin_px": [
+          678,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-northern-skies-archive-slip",
+      "kind": "module",
+      "label": "Northern Skies archive slip",
+      "artifact_type": "small-paper-edge-slip",
+      "bounds": {
+        "x": 0.738,
+        "y": 0.099,
+        "w": 0.079,
+        "h": 0.166
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.79,
+          0.101
+        ],
+        [
+          0.814,
+          0.119
+        ],
+        [
+          0.802,
+          0.154
+        ],
+        [
+          0.789,
+          0.192
+        ],
+        [
+          0.781,
+          0.235
+        ],
+        [
+          0.755,
+          0.265
+        ],
+        [
+          0.741,
+          0.248
+        ],
+        [
+          0.752,
+          0.198
+        ],
+        [
+          0.763,
+          0.153
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/module-northern-skies-archive-slip.svg",
+      "source_binding_ids": [
+        "binding-module-northern-skies-archive-slip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1194,
+          173
+        ],
+        "safe_stage_window_origin_px": [
+          1204,
+          186
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-red-blue-canvas-notch",
+      "kind": "module",
+      "label": "Red-blue canvas notch",
+      "artifact_type": "cropped-brushstroke-notch",
+      "bounds": {
+        "x": 0.6654,
+        "y": 0.5068,
+        "w": 0.3346,
+        "h": 0.3223
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.6673,
+          0.8008
+        ],
+        [
+          0.7051,
+          0.6074
+        ],
+        [
+          0.7292,
+          0.5693
+        ],
+        [
+          0.8561,
+          0.5098
+        ],
+        [
+          0.9655,
+          0.5107
+        ],
+        [
+          0.998,
+          0.5205
+        ],
+        [
+          0.998,
+          0.7031
+        ],
+        [
+          0.9082,
+          0.75
+        ],
+        [
+          0.6745,
+          0.8252
+        ],
+        [
+          0.6673,
+          0.8057
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/module-red-blue-canvas-notch.svg",
+      "source_binding_ids": [
+        "binding-module-red-blue-canvas-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1254,
+          705
+        ],
+        "safe_stage_window_origin_px": [
+          1292,
+          732
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-untitled-9-red-pink-repair",
+      "kind": "module",
+      "label": "Untitled 9 red-pink repair",
+      "artifact_type": "painted-surface-repair",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.675,
+        "w": 0.058,
+        "h": 0.107
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.398,
+          0.681
+        ],
+        [
+          0.43,
+          0.673
+        ],
+        [
+          0.451,
+          0.706
+        ],
+        [
+          0.448,
+          0.761
+        ],
+        [
+          0.423,
+          0.781
+        ],
+        [
+          0.4,
+          0.748
+        ],
+        [
+          0.393,
+          0.708
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/module-untitled-9-red-pink-repair.svg",
+      "source_binding_ids": [
+        "binding-module-untitled-9-red-pink-repair"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          651,
+          737
+        ],
+        "safe_stage_window_origin_px": [
+          658,
+          746
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "bounds": {
+        "x": 0.418,
+        "y": 0.428,
+        "w": 0.075,
+        "h": 0.105
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.455,
+          0.43
+        ],
+        [
+          0.481,
+          0.448
+        ],
+        [
+          0.493,
+          0.489
+        ],
+        [
+          0.474,
+          0.523
+        ],
+        [
+          0.438,
+          0.533
+        ],
+        [
+          0.42,
+          0.507
+        ],
+        [
+          0.425,
+          0.465
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          700,
+          483
+        ],
+        "safe_stage_window_origin_px": [
+          709,
+          492
+        ],
+        "preferred_expansion_label": "right"
+      }
+    },
+    {
+      "id": "module-center-right-cream-curved-gesture",
+      "kind": "module",
+      "label": "Center-right cream curved gesture",
+      "artifact_type": "cream-brush-aperture-gesture",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.232,
+        "w": 0.077,
+        "h": 0.419
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.624,
+          0.246
+        ],
+        [
+          0.642,
+          0.232
+        ],
+        [
+          0.663,
+          0.272
+        ],
+        [
+          0.684,
+          0.344
+        ],
+        [
+          0.695,
+          0.444
+        ],
+        [
+          0.689,
+          0.543
+        ],
+        [
+          0.669,
+          0.621
+        ],
+        [
+          0.647,
+          0.651
+        ],
+        [
+          0.633,
+          0.624
+        ],
+        [
+          0.65,
+          0.542
+        ],
+        [
+          0.661,
+          0.45
+        ],
+        [
+          0.649,
+          0.35
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/module-center-right-cream-curved-gesture.svg",
+      "source_binding_ids": [
+        "binding-module-center-right-cream-curved-gesture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1011,
+          418
+        ],
+        "safe_stage_window_origin_px": [
+          1021,
+          452
+        ],
+        "preferred_expansion_label": "left"
+      }
+    },
+    {
+      "id": "module-untitled-9-red-pink-repair-2",
+      "kind": "module",
+      "label": "Untitled 9 red-pink repair",
+      "artifact_type": "painted-surface-repair",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/module-untitled-9-red-pink-repair-2.svg",
+      "source_binding_ids": [
+        "binding-module-untitled-9-red-pink-repair-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      }
+    },
+    {
+      "id": "module-color-node-2",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "nat-song-blue-field",
+      "mask_path": "/editions/2026-08-01-nat-song-blue-field-v1/assets/masks/module-color-node-2.svg",
+      "source_binding_ids": [
+        "binding-module-color-node-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

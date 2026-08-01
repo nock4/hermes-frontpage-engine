@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-01-nat-song-blue-field-v1",
+  "edition_id": "2026-08-01-nat-song-blue-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-01-nat-song-blue-field-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-pantra-album-sleeve-spine",
+      "target_kind": "artifact",
+      "artifact_id": "hero-pantra-album-sleeve-spine",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-album-sleeve-seam) selected from interpretation."
+    },
+    {
+      "target_id": "hero-untitle-orange-blue-canvas-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-untitle-orange-blue-canvas-field",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-painted-field-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "module-northern-skies-archive-slip",
+      "target_kind": "artifact",
+      "artifact_id": "module-northern-skies-archive-slip",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-paper-edge-slip) selected from interpretation."
+    },
+    {
+      "target_id": "module-red-blue-canvas-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-red-blue-canvas-notch",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-brushstroke-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-untitled-9-red-pink-repair",
+      "target_kind": "artifact",
+      "artifact_id": "module-untitled-9-red-pink-repair",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-surface-repair) selected from interpretation."
+    },
+    {
+      "target_id": "module-color-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-color-node",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (color-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-center-right-cream-curved-gesture",
+      "target_kind": "artifact",
+      "artifact_id": "module-center-right-cream-curved-gesture",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cream-brush-aperture-gesture) selected from interpretation."
+    },
+    {
+      "target_id": "module-untitled-9-red-pink-repair-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-untitled-9-red-pink-repair-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-surface-repair) selected from interpretation."
+    },
+    {
+      "target_id": "module-color-node-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-color-node-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (color-node) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

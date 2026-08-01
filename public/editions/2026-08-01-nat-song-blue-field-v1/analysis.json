@@ -1,0 +1,488 @@
+{
+  "analysis_id": "analysis-2026-08-01-nat-song-blue-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Dark teal-black canvas plate crossed by a dominant orange-red painted mass, cream torn-spine gestures, small blue apertures, pinholes, scars, and repaired brush islands. The usable source windows are physical marks in the paint: seams, voids, scraped notches, glints, and paper-like tears rather than cards.",
+  "usable_surfaces": [
+    "left cream vertical torn sleeve seam",
+    "wide orange-red gestural field across center",
+    "central dark punched void inside orange paint",
+    "top-right red paper scar with blue inset",
+    "lower-right red scraped canvas notch",
+    "small blue torn aperture in lower center",
+    "pinhole fleck cluster in lower-left dark field",
+    "cream curved gesture near center-right",
+    "bottom-right cream torn edge"
+  ],
+  "detected_objects": [
+    {
+      "label": "Pantra album sleeve spine",
+      "artifact_type": "hero-album-sleeve-seam",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.003,
+        "y": 0,
+        "w": 0.124,
+        "h": 0.882
+      },
+      "polygon": [
+        [
+          0.024,
+          0
+        ],
+        [
+          0.07,
+          0.004
+        ],
+        [
+          0.104,
+          0.063
+        ],
+        [
+          0.121,
+          0.153
+        ],
+        [
+          0.112,
+          0.324
+        ],
+        [
+          0.105,
+          0.504
+        ],
+        [
+          0.089,
+          0.689
+        ],
+        [
+          0.057,
+          0.881
+        ],
+        [
+          0.028,
+          0.873
+        ],
+        [
+          0.016,
+          0.711
+        ],
+        [
+          0.004,
+          0.481
+        ],
+        [
+          0.004,
+          0.236
+        ],
+        [
+          0.009,
+          0.082
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Tall cream paper-like vertical seam on the far left, with torn dark edge, aged fiber streaks, and a central crease line."
+    },
+    {
+      "label": "Untitle orange-blue canvas field",
+      "artifact_type": "hero-painted-field-interruption",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.094,
+        "y": 0.07,
+        "w": 0.599,
+        "h": 0.69
+      },
+      "polygon": [
+        [
+          0.094,
+          0.085
+        ],
+        [
+          0.19,
+          0.131
+        ],
+        [
+          0.301,
+          0.186
+        ],
+        [
+          0.427,
+          0.258
+        ],
+        [
+          0.5,
+          0.322
+        ],
+        [
+          0.589,
+          0.27
+        ],
+        [
+          0.659,
+          0.388
+        ],
+        [
+          0.693,
+          0.486
+        ],
+        [
+          0.652,
+          0.582
+        ],
+        [
+          0.552,
+          0.557
+        ],
+        [
+          0.51,
+          0.676
+        ],
+        [
+          0.419,
+          0.636
+        ],
+        [
+          0.345,
+          0.55
+        ],
+        [
+          0.228,
+          0.516
+        ],
+        [
+          0.126,
+          0.452
+        ],
+        [
+          0.103,
+          0.279
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "Dominant red-orange brush mass spanning the left and center, with mottled teal ground showing through, ragged edges, thick pigment ridges, and downward drips."
+    },
+    {
+      "label": "Northern Skies archive slip",
+      "artifact_type": "small-paper-edge-slip",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.738,
+        "y": 0.099,
+        "w": 0.079,
+        "h": 0.166
+      },
+      "polygon": [
+        [
+          0.79,
+          0.101
+        ],
+        [
+          0.814,
+          0.119
+        ],
+        [
+          0.802,
+          0.154
+        ],
+        [
+          0.789,
+          0.192
+        ],
+        [
+          0.781,
+          0.235
+        ],
+        [
+          0.755,
+          0.265
+        ],
+        [
+          0.741,
+          0.248
+        ],
+        [
+          0.752,
+          0.198
+        ],
+        [
+          0.763,
+          0.153
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Small cream torn paper shard embedded in the upper-right red block, distinct from the larger cream gestures."
+    },
+    {
+      "label": "Red-blue canvas notch",
+      "artifact_type": "cropped-brushstroke-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.662,
+        "y": 0.551,
+        "w": 0.309,
+        "h": 0.328
+      },
+      "polygon": [
+        [
+          0.731,
+          0.551
+        ],
+        [
+          0.852,
+          0.553
+        ],
+        [
+          0.971,
+          0.551
+        ],
+        [
+          0.957,
+          0.657
+        ],
+        [
+          0.89,
+          0.744
+        ],
+        [
+          0.775,
+          0.805
+        ],
+        [
+          0.666,
+          0.879
+        ],
+        [
+          0.69,
+          0.73
+        ],
+        [
+          0.705,
+          0.626
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "Lower-right red painted cut/notch with scrape ridges, exposed darker underpaint, and a curved scratched edge running across it."
+    },
+    {
+      "label": "Untitled 9 red-pink repair",
+      "artifact_type": "painted-surface-repair",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.675,
+        "w": 0.058,
+        "h": 0.107
+      },
+      "polygon": [
+        [
+          0.398,
+          0.681
+        ],
+        [
+          0.43,
+          0.673
+        ],
+        [
+          0.451,
+          0.706
+        ],
+        [
+          0.448,
+          0.761
+        ],
+        [
+          0.423,
+          0.781
+        ],
+        [
+          0.4,
+          0.748
+        ],
+        [
+          0.393,
+          0.708
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "Small repaired patch in the lower blue-dark field, with blue-gray exposed area and warmer scraped pressure along its edge."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.418,
+        "y": 0.428,
+        "w": 0.075,
+        "h": 0.105
+      },
+      "polygon": [
+        [
+          0.455,
+          0.43
+        ],
+        [
+          0.481,
+          0.448
+        ],
+        [
+          0.493,
+          0.489
+        ],
+        [
+          0.474,
+          0.523
+        ],
+        [
+          0.438,
+          0.533
+        ],
+        [
+          0.42,
+          0.507
+        ],
+        [
+          0.425,
+          0.465
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Central dark punched void surrounded by orange paint, with a clear irregular edge and teal-black interior."
+    },
+    {
+      "label": "Center-right cream curved gesture",
+      "artifact_type": "cream-brush-aperture-gesture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.232,
+        "w": 0.077,
+        "h": 0.419
+      },
+      "polygon": [
+        [
+          0.624,
+          0.246
+        ],
+        [
+          0.642,
+          0.232
+        ],
+        [
+          0.663,
+          0.272
+        ],
+        [
+          0.684,
+          0.344
+        ],
+        [
+          0.695,
+          0.444
+        ],
+        [
+          0.689,
+          0.543
+        ],
+        [
+          0.669,
+          0.621
+        ],
+        [
+          0.647,
+          0.651
+        ],
+        [
+          0.633,
+          0.624
+        ],
+        [
+          0.65,
+          0.542
+        ],
+        [
+          0.661,
+          0.45
+        ],
+        [
+          0.649,
+          0.35
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Tall cream curved brushstroke near the center-right, shaped like a parenthesis or aperture edge, with thick pigment and uneven contour."
+    },
+    {
+      "label": "Untitled 9 red-pink repair",
+      "artifact_type": "painted-surface-repair",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 5,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.683,
+    "rationale": "The plate is expressionist but controlled: a few large painted gestures carry the scene, while smaller apertures, flecks, voids, and seams provide interaction anchors without becoming visual clutter."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-01-nat-song-blue-field-v1"
+}
