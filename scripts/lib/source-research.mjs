@@ -167,6 +167,36 @@ function buildImageMaterialContentSources(imageMaterial, anchorSource) {
   })
 }
 
+function forcedAnchorSourceFromInspirationOverride(inspirationOverride, fetchEvidence) {
+  const sourceUrl = inspirationOverride?.source_url
+  if (!sourceUrl) return null
+  const wantedKey = canonicalizeSourceUrl(sourceUrl)
+  const existing = fetchEvidence.find((source) => [source.url, source.source_url, source.final_url]
+    .filter(Boolean)
+    .some((url) => canonicalizeSourceUrl(url) === wantedKey))
+  if (existing) {
+    return {
+      ...existing,
+      why_selected: `Exact manual inspiration override requested by Nick: ${sourceUrl}`,
+      manual_anchor_override: true,
+    }
+  }
+  return {
+    url: sourceUrl,
+    source_url: sourceUrl,
+    final_url: sourceUrl,
+    title: inspirationOverride.title || sourceUrl,
+    description: inspirationOverride.note || 'Exact manual inspiration override requested by Nick.',
+    excerpt: inspirationOverride.note || '',
+    note_context: inspirationOverride.note || '',
+    source_type: 'manual-inspiration-override',
+    source_channel: 'manual-inspiration-override',
+    note_score: 100,
+    why_selected: `Exact manual inspiration override requested by Nick: ${sourceUrl}`,
+    manual_anchor_override: true,
+  }
+}
+
 function mergeInspectedSources(...groups) {
   const merged = []
   const seen = new Set()
@@ -422,8 +452,9 @@ export async function inspectSourceCandidates(signalHarvest, {
   let autoresearch = null
   let inspected = []
 
+  const forcedAnchorSource = forcedAnchorSourceFromInspirationOverride(inspirationOverride, fetchEvidence)
   const anchorSource = isSingleAnchorResearchEnabled()
-    ? selectAnchorSource(fetchEvidence, { recentSourceKeys, signalHarvest })
+    ? (forcedAnchorSource || selectAnchorSource(fetchEvidence, { recentSourceKeys, signalHarvest }))
     : null
   if (anchorSource) {
     anchorResearch = await buildAnchorResearch(anchorSource, { runDate: date })
