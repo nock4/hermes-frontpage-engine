@@ -10,6 +10,7 @@ const defaultWorktreeDir = process.env.DFE_CRON_WORKTREE_DIR || path.resolve(pri
 const defaultInspirationOverridePath = path.join(primaryRoot, 'tmp', 'next-run-inspiration-override.json')
 const remoteManifestUrl = 'https://daily.nockgarden.com/editions/index.json'
 const previewSmokePort = 43180
+const defaultCronWindowDays = Number.parseInt(process.env.DFE_CRON_WINDOW_DAYS || '120', 10)
 const defaultCronMaxNotes = Number.parseInt(process.env.DFE_CRON_MAX_NOTES || '80', 10)
 const defaultCronMaxSources = Number.parseInt(process.env.DFE_CRON_MAX_SOURCES || '24', 10)
 
@@ -28,6 +29,7 @@ export function parseArgs(argv) {
     remote: 'origin',
     remoteUrl: remoteManifestUrl,
     inspirationOverride: null,
+    windowDays: defaultCronWindowDays,
     maxNotes: defaultCronMaxNotes,
     maxSources: defaultCronMaxSources,
     retries: 18,
@@ -49,12 +51,13 @@ export function parseArgs(argv) {
     else if (arg === '--remote') options.remote = readValue()
     else if (arg === '--remote-url') options.remoteUrl = readValue()
     else if (arg === '--inspiration-override') options.inspirationOverride = readValue()
+    else if (arg === '--window-days') options.windowDays = Number.parseInt(readValue(), 10)
     else if (arg === '--max-notes') options.maxNotes = Number.parseInt(readValue(), 10)
     else if (arg === '--max-sources') options.maxSources = Number.parseInt(readValue(), 10)
     else if (arg === '--retries') options.retries = Number.parseInt(readValue(), 10)
     else if (arg === '--retry-delay-ms') options.retryDelayMs = Number.parseInt(readValue(), 10)
     else if (arg === '--help') {
-      console.log('Usage: node scripts/run-daily-publish-cron.mjs [--input-root <path>] [--worktree-dir <path>] [--branch <name>] [--remote <name>] [--remote-url <url>] [--inspiration-override <path>] [--max-notes <n>] [--max-sources <n>]')
+      console.log('Usage: node scripts/run-daily-publish-cron.mjs [--input-root <path>] [--worktree-dir <path>] [--branch <name>] [--remote <name>] [--remote-url <url>] [--inspiration-override <path>] [--window-days <n>] [--max-notes <n>] [--max-sources <n>]')
       process.exit(0)
     } else {
       throw new Error(`Unknown option: ${arg}`)
@@ -63,6 +66,7 @@ export function parseArgs(argv) {
 
   if (!Number.isFinite(options.retries) || options.retries < 1) throw new Error('--retries must be >= 1')
   if (!Number.isFinite(options.retryDelayMs) || options.retryDelayMs < 0) throw new Error('--retry-delay-ms must be >= 0')
+  if (!Number.isFinite(options.windowDays) || options.windowDays < 1) throw new Error('--window-days must be >= 1')
   if (!Number.isFinite(options.maxNotes) || options.maxNotes < 1) throw new Error('--max-notes must be >= 1')
   if (!Number.isFinite(options.maxSources) || options.maxSources < 1) throw new Error('--max-sources must be >= 1')
   return options
@@ -373,6 +377,7 @@ async function main() {
       'run', 'daily:process', '--',
       '--input-mode', 'obsidian-allowlist',
       '--input-root', options.inputRoot,
+      '--window-days', String(options.windowDays),
       '--max-notes', String(options.maxNotes),
       '--max-sources', String(options.maxSources),
       '--publish',

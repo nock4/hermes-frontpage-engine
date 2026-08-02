@@ -16,13 +16,15 @@ describe('daily publish cron wrapper', () => {
   it('uses a wider default cron source field than the interactive daily run', () => {
     const options = parseArgs([])
 
+    expect(options.windowDays).toBe(120)
     expect(options.maxNotes).toBe(80)
     expect(options.maxSources).toBe(24)
   })
 
   it('parses explicit cron source-field limits', () => {
-    const options = parseArgs(['--max-notes', '90', '--max-sources', '28'])
+    const options = parseArgs(['--window-days', '150', '--max-notes', '90', '--max-sources', '28'])
 
+    expect(options.windowDays).toBe(150)
     expect(options.maxNotes).toBe(90)
     expect(options.maxSources).toBe(28)
   })
