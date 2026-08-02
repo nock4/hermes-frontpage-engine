@@ -13,12 +13,34 @@ describe('daily publish cron wrapper', () => {
     expect(options.inspirationOverride).toBe('/tmp/manual-override.json')
   })
 
+  it('uses a wider default cron source field than the interactive daily run', () => {
+    const options = parseArgs([])
+
+    expect(options.maxNotes).toBe(80)
+    expect(options.maxSources).toBe(24)
+  })
+
+  it('parses explicit cron source-field limits', () => {
+    const options = parseArgs(['--max-notes', '90', '--max-sources', '28'])
+
+    expect(options.maxNotes).toBe(90)
+    expect(options.maxSources).toBe(28)
+  })
+
   it('passes through an existing explicit inspiration override path', async () => {
     const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-cron-override-'))
     const overridePath = path.join(tempDir, 'override.json')
     await fs.writeFile(overridePath, '{}')
 
     await expect(resolveInspirationOverridePath({ inspirationOverride: overridePath })).resolves.toBe(overridePath)
+  })
+
+  it('ignores an inactive inspiration override file', async () => {
+    const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-cron-override-'))
+    const overridePath = path.join(tempDir, 'override.json')
+    await fs.writeFile(overridePath, JSON.stringify({ active: false }))
+
+    await expect(resolveInspirationOverridePath({ inspirationOverride: overridePath })).resolves.toBe(null)
   })
 
   it('parses lsof pid output for stale preview cleanup', () => {
