@@ -85,6 +85,7 @@ export function classifyYouTubeEmbedFrameText(text) {
     || normalized.includes('playback on other websites has been disabled')
     || normalized.includes('only available on youtube')
     || normalized.includes('watch video on youtube')
+    || normalized.includes('watch on youtube')
     || normalized.includes('video player configuration error')
   ) {
     return 'unavailable'
@@ -136,12 +137,17 @@ async function browserVerifiedYouTubeEmbedStatus(videoId) {
       iframe.allowFullscreen = true
       document.body.append(iframe)
     }, { origin: temporaryOrigin.origin, videoId })
-    await page.waitForTimeout(4200)
-    const frame = page.frames().find((candidate) => candidate.url().includes(`/embed/${videoId}`))
-    const bodyText = frame
-      ? await frame.locator('body').innerText({ timeout: 1200 }).catch(() => '')
-      : ''
-    return classifyYouTubeEmbedFrameText(bodyText)
+    let lastBodyText = ''
+    for (let attempt = 0; attempt < 8; attempt += 1) {
+      await page.waitForTimeout(1500)
+      const frame = page.frames().find((candidate) => candidate.url().includes(`/embed/${videoId}`))
+      lastBodyText = frame
+        ? await frame.locator('body').innerText({ timeout: 1500 }).catch(() => '')
+        : ''
+      const classified = classifyYouTubeEmbedFrameText(lastBodyText)
+      if (classified) return classified
+    }
+    return classifyYouTubeEmbedFrameText(lastBodyText)
   } catch {
     return null
   } finally {
