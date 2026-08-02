@@ -1,0 +1,237 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-02-bleached-timber-ant-section-v1",
+  "edition_id": "2026-08-02-bleached-timber-ant-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-02-bleached-timber-ant-section-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-upper-right-clustered-seam-body",
+      "target_kind": "artifact",
+      "artifact_id": "hero-upper-right-clustered-seam-body",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-charcoal-node-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lower-left-foreground-cutaway-mouth",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-left-foreground-cutaway-mouth",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-shadow-void) selected from interpretation."
+    },
+    {
+      "target_id": "module-center-oxblood-eroded-chamber",
+      "target_kind": "artifact",
+      "artifact_id": "module-center-oxblood-eroded-chamber",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (distressed-red-recess) selected from interpretation."
+    },
+    {
+      "target_id": "module-central-hairline-procession-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-central-hairline-procession-seam",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (transcript-folio) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-right-splinter-lip-pocket",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-right-splinter-lip-pocket",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (broken-edge-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-upper-pale-plank-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-upper-pale-plank-notch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scraped-surface-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-thin-film-slit-crossing",
+      "target_kind": "artifact",
+      "artifact_id": "module-thin-film-slit-crossing",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stop-motion-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-resonant-dark-groove",
+      "target_kind": "artifact",
+      "artifact_id": "module-resonant-dark-groove",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bandcamp-seam-ridge) selected from interpretation."
+    },
+    {
+      "target_id": "module-thin-film-slit-crossing-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-thin-film-slit-crossing-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stop-motion-slit) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

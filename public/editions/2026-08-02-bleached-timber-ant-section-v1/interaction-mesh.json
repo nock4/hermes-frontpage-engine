@@ -1,0 +1,566 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-02-bleached-timber-ant-section-v1",
+  "generation": "daily-process-2026-08-02T11-37-05-960Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1254,
+    "height": 1254
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-02T11-37-05-960Z/2026-08-02-bleached-timber-ant-section-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-upper-right-clustered-seam-body",
+      "visible_area_px": 115919,
+      "territory_area_px": 164539,
+      "hover_bounds": {
+        "x": 0.4163,
+        "y": 0.0255,
+        "w": 0.5837,
+        "h": 0.2472
+      },
+      "hover_polygon": [
+        [
+          0.4163,
+          0.1284
+        ],
+        [
+          0.4434,
+          0.1013
+        ],
+        [
+          0.6188,
+          0.0455
+        ],
+        [
+          0.815,
+          0.0263
+        ],
+        [
+          0.9992,
+          0.0255
+        ],
+        [
+          0.9992,
+          0.2719
+        ],
+        [
+          0.7887,
+          0.2576
+        ],
+        [
+          0.4912,
+          0.1874
+        ],
+        [
+          0.4434,
+          0.1555
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-central-hairline-procession-seam",
+          "shared_edge_px": 106,
+          "direction": "down",
+          "distance_px": 329.34
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-lower-left-foreground-cutaway-mouth",
+      "visible_area_px": 115636,
+      "territory_area_px": 147507,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.5646,
+        "w": 0.3134,
+        "h": 0.3931
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.5821
+        ],
+        [
+          0.1212,
+          0.5646
+        ],
+        [
+          0.1754,
+          0.5837
+        ],
+        [
+          0.2456,
+          0.6571
+        ],
+        [
+          0.2879,
+          0.7209
+        ],
+        [
+          0.3126,
+          0.8038
+        ],
+        [
+          0.2879,
+          0.8868
+        ],
+        [
+          0.1994,
+          0.9569
+        ],
+        [
+          0.1124,
+          0.9434
+        ],
+        [
+          0.0,
+          0.8333
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-center-oxblood-eroded-chamber",
+      "visible_area_px": 53800,
+      "territory_area_px": 77891,
+      "hover_bounds": {
+        "x": 0.6204,
+        "y": 0.2951,
+        "w": 0.3716,
+        "h": 0.1906
+      },
+      "hover_polygon": [
+        [
+          0.6204,
+          0.366
+        ],
+        [
+          0.685,
+          0.3094
+        ],
+        [
+          0.7919,
+          0.2951
+        ],
+        [
+          0.8708,
+          0.3062
+        ],
+        [
+          0.941,
+          0.3246
+        ],
+        [
+          0.9912,
+          0.3788
+        ],
+        [
+          0.9681,
+          0.4195
+        ],
+        [
+          0.945,
+          0.4426
+        ],
+        [
+          0.9051,
+          0.4665
+        ],
+        [
+          0.89,
+          0.4753
+        ],
+        [
+          0.8118,
+          0.4848
+        ],
+        [
+          0.7416,
+          0.4681
+        ],
+        [
+          0.6794,
+          0.4426
+        ],
+        [
+          0.6563,
+          0.4195
+        ],
+        [
+          0.6204,
+          0.3668
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-central-hairline-procession-seam",
+          "shared_edge_px": 1386,
+          "direction": "left",
+          "distance_px": 267.42
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-central-hairline-procession-seam",
+      "visible_area_px": 22962,
+      "territory_area_px": 38044,
+      "hover_bounds": {
+        "x": 0.236,
+        "y": 0.2488,
+        "w": 0.5486,
+        "h": 0.2656
+      },
+      "hover_polygon": [
+        [
+          0.236,
+          0.4912
+        ],
+        [
+          0.2472,
+          0.4801
+        ],
+        [
+          0.5877,
+          0.2935
+        ],
+        [
+          0.7033,
+          0.252
+        ],
+        [
+          0.7632,
+          0.2496
+        ],
+        [
+          0.7839,
+          0.2703
+        ],
+        [
+          0.7751,
+          0.2967
+        ],
+        [
+          0.4984,
+          0.4593
+        ],
+        [
+          0.2584,
+          0.5136
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-center-oxblood-eroded-chamber",
+          "shared_edge_px": 1386,
+          "direction": "right",
+          "distance_px": 267.42
+        },
+        {
+          "artifact_id": "module-thin-film-slit-crossing-2",
+          "shared_edge_px": 900,
+          "direction": "left",
+          "distance_px": 316.16
+        },
+        {
+          "artifact_id": "hero-upper-right-clustered-seam-body",
+          "shared_edge_px": 106,
+          "direction": "up",
+          "distance_px": 329.34
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-lower-right-splinter-lip-pocket",
+      "visible_area_px": 83343,
+      "territory_area_px": 126319,
+      "hover_bounds": {
+        "x": 0.2903,
+        "y": 0.5199,
+        "w": 0.6021,
+        "h": 0.1746
+      },
+      "hover_polygon": [
+        [
+          0.2903,
+          0.5478
+        ],
+        [
+          0.3126,
+          0.5255
+        ],
+        [
+          0.4418,
+          0.5199
+        ],
+        [
+          0.7584,
+          0.5391
+        ],
+        [
+          0.8692,
+          0.5534
+        ],
+        [
+          0.8915,
+          0.5758
+        ],
+        [
+          0.866,
+          0.614
+        ],
+        [
+          0.8429,
+          0.6372
+        ],
+        [
+          0.7424,
+          0.6611
+        ],
+        [
+          0.638,
+          0.677
+        ],
+        [
+          0.4346,
+          0.6938
+        ],
+        [
+          0.3453,
+          0.6762
+        ],
+        [
+          0.2919,
+          0.61
+        ],
+        [
+          0.2903,
+          0.5774
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-thin-film-slit-crossing-2",
+          "shared_edge_px": 919,
+          "direction": "left",
+          "distance_px": 346.67
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-upper-pale-plank-notch",
+      "visible_area_px": 3424,
+      "territory_area_px": 13168,
+      "hover_bounds": {
+        "x": 0.2384,
+        "y": 0.0766,
+        "w": 0.0925,
+        "h": 0.1563
+      },
+      "hover_polygon": [
+        [
+          0.2384,
+          0.122
+        ],
+        [
+          0.2456,
+          0.1037
+        ],
+        [
+          0.2783,
+          0.0766
+        ],
+        [
+          0.3014,
+          0.0997
+        ],
+        [
+          0.311,
+          0.1188
+        ],
+        [
+          0.3301,
+          0.201
+        ],
+        [
+          0.2967,
+          0.2321
+        ],
+        [
+          0.2743,
+          0.2097
+        ],
+        [
+          0.2384,
+          0.1228
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-thin-film-slit-crossing",
+      "visible_area_px": 4878,
+      "territory_area_px": 15809,
+      "hover_bounds": {
+        "x": 0.7153,
+        "y": 0.736,
+        "w": 0.1356,
+        "h": 0.1603
+      },
+      "hover_polygon": [
+        [
+          0.7153,
+          0.8628
+        ],
+        [
+          0.7504,
+          0.7759
+        ],
+        [
+          0.7919,
+          0.736
+        ],
+        [
+          0.8333,
+          0.7464
+        ],
+        [
+          0.8501,
+          0.7632
+        ],
+        [
+          0.7528,
+          0.8955
+        ],
+        [
+          0.7472,
+          0.8955
+        ],
+        [
+          0.7153,
+          0.8636
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-resonant-dark-groove",
+          "shared_edge_px": 17177,
+          "direction": "right",
+          "distance_px": 55.08
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-resonant-dark-groove",
+      "visible_area_px": 45627,
+      "territory_area_px": 82987,
+      "hover_bounds": {
+        "x": 0.6874,
+        "y": 0.7281,
+        "w": 0.2448,
+        "h": 0.2241
+      },
+      "hover_polygon": [
+        [
+          0.6874,
+          0.76
+        ],
+        [
+          0.7193,
+          0.7281
+        ],
+        [
+          0.8995,
+          0.7281
+        ],
+        [
+          0.9314,
+          0.76
+        ],
+        [
+          0.9314,
+          0.9195
+        ],
+        [
+          0.8995,
+          0.9514
+        ],
+        [
+          0.7193,
+          0.9514
+        ],
+        [
+          0.6874,
+          0.9195
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-thin-film-slit-crossing",
+          "shared_edge_px": 17177,
+          "direction": "left",
+          "distance_px": 55.08
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-thin-film-slit-crossing-2",
+      "visible_area_px": 37989,
+      "territory_area_px": 71596,
+      "hover_bounds": {
+        "x": 0.248,
+        "y": 0.3078,
+        "w": 0.2241,
+        "h": 0.2145
+      },
+      "hover_polygon": [
+        [
+          0.248,
+          0.3397
+        ],
+        [
+          0.2799,
+          0.3078
+        ],
+        [
+          0.4394,
+          0.3078
+        ],
+        [
+          0.4713,
+          0.3397
+        ],
+        [
+          0.4713,
+          0.4896
+        ],
+        [
+          0.4394,
+          0.5215
+        ],
+        [
+          0.2799,
+          0.5215
+        ],
+        [
+          0.248,
+          0.4896
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lower-right-splinter-lip-pocket",
+          "shared_edge_px": 919,
+          "direction": "right",
+          "distance_px": 346.67
+        },
+        {
+          "artifact_id": "module-central-hairline-procession-seam",
+          "shared_edge_px": 900,
+          "direction": "right",
+          "distance_px": 316.16
+        }
+      ]
+    }
+  ]
+}

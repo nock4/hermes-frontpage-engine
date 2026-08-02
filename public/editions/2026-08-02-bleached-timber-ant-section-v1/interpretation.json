@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-08-02-bleached-timber-ant-section-v1",
+  "edition_id": "2026-08-02-bleached-timber-ant-section-v1",
+  "plate_read_timestamp": "2026-08-02T11:52:15.482Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A close macro plate of pale broken planks with black ants occupying torn seams, holes, and dark cavities. The interface marks are physical: clustered insect bodies in a cropped upper slit, a lower-left void with large ants, an oxblood recess, hairline ant procession, plank gutters, splinter lips, pinholes, and scraped grooves.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "sun-bleached occult cutaway with small black movements",
+      "A close macro plate of pale broken planks with black ants occupying torn seams, holes, and dark cavities. The interface marks are physical: clustered insect bodies in a cropped upper slit, a lower-left void with large ants, an oxblood recess, hairline ant procession, plank gutters, splinter lips, pinholes, and scraped grooves.",
+      "bleached-timber",
+      "ant-trails",
+      "section-cut"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "upper-right clustered seam body",
+      "lower-left foreground cutaway mouth",
+      "center oxblood eroded chamber",
+      "central hairline procession seam",
+      "lower-right splinter lip pocket",
+      "upper pale plank notch",
+      "thin film-slit crossing",
+      "resonant dark groove"
+    ],
+    "dominant_surfaces": [
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "bleached-timber-ant-section",
+      "one weathered timber slab opened as an architectural section",
+      "four to six horizontal plank strata functioning as broad quiet bands",
+      "upper-right cluster of black bead-like source nodes",
+      "lower-left cropped foreground void entering the plate",
+      "thin seam conduits and broken-lip apertures",
+      "one small centered oxblood recessed chamber",
+      "upper-right ant-filled torn seam"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: bleached-timber-ant-section.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-upper-right-clustered-seam-body",
+      "kind": "hero",
+      "type": "hero-scale-charcoal-node-cluster",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.444,
+        "y": 0.053,
+        "w": 0.556,
+        "h": 0.198
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-left-foreground-cutaway-mouth",
+      "kind": "hero",
+      "type": "hero-scale-shadow-void",
+      "strength": 0.9815119999999999,
+      "bounds": {
+        "x": 0,
+        "y": 0.586,
+        "w": 0.286,
+        "h": 0.344
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-center-oxblood-eroded-chamber",
+      "kind": "module",
+      "type": "distressed-red-recess",
+      "strength": 0.791508,
+      "bounds": {
+        "x": 0.641,
+        "y": 0.32,
+        "w": 0.328,
+        "h": 0.143
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-central-hairline-procession-seam",
+      "kind": "module",
+      "type": "transcript-folio",
+      "strength": 0.7658640000000001,
+      "bounds": {
+        "x": 0.259,
+        "y": 0.27,
+        "w": 0.503,
+        "h": 0.225
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-right-splinter-lip-pocket",
+      "kind": "module",
+      "type": "broken-edge-aperture",
+      "strength": 0.728712,
+      "bounds": {
+        "x": 0.313,
+        "y": 0.54,
+        "w": 0.557,
+        "h": 0.133
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-pale-plank-notch",
+      "kind": "module",
+      "type": "scraped-surface-notch",
+      "strength": 0.714996,
+      "bounds": {
+        "x": 0.261,
+        "y": 0.099,
+        "w": 0.047,
+        "h": 0.111
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thin-film-slit-crossing",
+      "kind": "module",
+      "type": "stop-motion-slit",
+      "strength": 0.6738360000000001,
+      "bounds": {
+        "x": 0.748,
+        "y": 0.768,
+        "w": 0.086,
+        "h": 0.103
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-resonant-dark-groove",
+      "kind": "module",
+      "type": "bandcamp-seam-ridge",
+      "strength": 0.6523,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thin-film-slit-crossing-2",
+      "kind": "module",
+      "type": "stop-motion-slit",
+      "strength": 0.659716,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-upper-right-clustered-seam-body-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.444,
+        "y": 0.053,
+        "w": 0.556,
+        "h": 0.198
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-left-foreground-cutaway-mouth-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.586,
+        "w": 0.286,
+        "h": 0.344
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-center-oxblood-eroded-chamber-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.641,
+        "y": 0.32,
+        "w": 0.328,
+        "h": 0.143
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-central-hairline-procession-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.259,
+        "y": 0.27,
+        "w": 0.503,
+        "h": 0.225
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-right-splinter-lip-pocket-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.313,
+        "y": 0.54,
+        "w": 0.557,
+        "h": 0.133
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-pale-plank-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.261,
+        "y": 0.099,
+        "w": 0.047,
+        "h": 0.111
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thin-film-slit-crossing-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.748,
+        "y": 0.768,
+        "w": 0.086,
+        "h": 0.103
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-resonant-dark-groove-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-thin-film-slit-crossing-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
