@@ -32,7 +32,11 @@ const minContentItems = 6
 const targetContentItems = 9
 const maxContentItems = 10
 const autoresearchCandidateMultiplier = 4
-const maxAutoresearchCandidates = 40
+// Keep enough of the saved-signal field on the press bed to survive archive-wide
+// source-material dedupe. High-score recent YouTube and emergency seeds can all be
+// repeats; visually fertile artwork/bookmark material may sit lower in the ranked
+// field and still be the difference between 2 windows and a real 6-window edition.
+const maxAutoresearchCandidates = 80
 
 function isSingleAnchorResearchEnabled() {
   return process.env.DFE_SINGLE_ANCHOR_RESEARCH !== '0'

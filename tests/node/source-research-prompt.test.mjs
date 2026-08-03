@@ -10,4 +10,9 @@ describe('source autoresearch prompt', () => {
     expect(source).toContain('Downrank AI-agent infrastructure')
     expect(source).toContain('curator of visual culture, music, memes, art, and surfaces')
   })
+
+  it('keeps a broad enough candidate bed to survive archive-wide source dedupe', () => {
+    expect(source).toContain('const maxAutoresearchCandidates = 80')
+    expect(source).toContain('survive archive-wide')
+  })
 })
