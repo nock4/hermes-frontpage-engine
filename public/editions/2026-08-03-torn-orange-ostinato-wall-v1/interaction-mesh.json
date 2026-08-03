@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-03-torn-orange-ostinato-wall-v1",
+  "generation": "daily-process-2026-08-03T17-40-08-934Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1536
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-03T17-40-08-934Z/2026-08-03-torn-orange-ostinato-wall-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-orange-label-perimeter-tear",
+      "visible_area_px": 528021,
+      "territory_area_px": 344187,
+      "hover_bounds": {
+        "x": 0.0215,
+        "y": 0.1465,
+        "w": 0.9141,
+        "h": 0.5137
+      },
+      "hover_polygon": [
+        [
+          0.0215,
+          0.3138
+        ],
+        [
+          0.0781,
+          0.2305
+        ],
+        [
+          0.1113,
+          0.2083
+        ],
+        [
+          0.1689,
+          0.1862
+        ],
+        [
+          0.6533,
+          0.1465
+        ],
+        [
+          0.7754,
+          0.2018
+        ],
+        [
+          0.8105,
+          0.2253
+        ],
+        [
+          0.9023,
+          0.3268
+        ],
+        [
+          0.9346,
+          0.4544
+        ],
+        [
+          0.8945,
+          0.5807
+        ],
+        [
+          0.8145,
+          0.6465
+        ],
+        [
+          0.5029,
+          0.6595
+        ],
+        [
+          0.3369,
+          0.6439
+        ],
+        [
+          0.2793,
+          0.61
+        ],
+        [
+          0.166,
+          0.5033
+        ],
+        [
+          0.0215,
+          0.3151
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-soundohm-paper-scar",
+          "shared_edge_px": 3787,
+          "direction": "left",
+          "distance_px": 312.33
+        },
+        {
+          "artifact_id": "module-texture-extraction-scrape",
+          "shared_edge_px": 3430,
+          "direction": "down",
+          "distance_px": 217.38
+        },
+        {
+          "artifact_id": "module-newsletter-ghost-patch",
+          "shared_edge_px": 2975,
+          "direction": "right",
+          "distance_px": 281.96
+        },
+        {
+          "artifact_id": "module-black-side-bar-tear",
+          "shared_edge_px": 2681,
+          "direction": "up",
+          "distance_px": 411.08
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-mauve-labyrinth-underprint",
+      "visible_area_px": 125150,
+      "territory_area_px": 139447,
+      "hover_bounds": {
+        "x": 0.1699,
+        "y": 0.0,
+        "w": 0.4131,
+        "h": 0.2643
+      },
+      "hover_polygon": [
+        [
+          0.1699,
+          0.1009
+        ],
+        [
+          0.2383,
+          0.0
+        ],
+        [
+          0.5625,
+          0.0
+        ],
+        [
+          0.582,
+          0.0924
+        ],
+        [
+          0.5146,
+          0.2539
+        ],
+        [
+          0.4648,
+          0.2637
+        ],
+        [
+          0.418,
+          0.2637
+        ],
+        [
+          0.1816,
+          0.2487
+        ],
+        [
+          0.1699,
+          0.2409
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-black-side-bar-tear",
+          "shared_edge_px": 2358,
+          "direction": "right",
+          "distance_px": 255.83
+        },
+        {
+          "artifact_id": "module-soundohm-paper-scar",
+          "shared_edge_px": 1491,
+          "direction": "down",
+          "distance_px": 319.4
+        },
+        {
+          "artifact_id": "hero-orange-label-perimeter-tear",
+          "shared_edge_px": 1203,
+          "direction": "down",
+          "distance_px": 534.05
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-black-side-bar-tear",
+      "visible_area_px": 79425,
+      "territory_area_px": 67188,
+      "hover_bounds": {
+        "x": 0.4971,
+        "y": 0.0,
+        "w": 0.1924,
+        "h": 0.3444
+      },
+      "hover_polygon": [
+        [
+          0.4971,
+          0.1699
+        ],
+        [
+          0.5635,
+          0.0
+        ],
+        [
+          0.6631,
+          0.0
+        ],
+        [
+          0.6885,
+          0.2559
+        ],
+        [
+          0.6875,
+          0.276
+        ],
+        [
+          0.6553,
+          0.3438
+        ],
+        [
+          0.5117,
+          0.3151
+        ],
+        [
+          0.4971,
+          0.1777
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-orange-label-perimeter-tear",
+          "shared_edge_px": 2681,
+          "direction": "down",
+          "distance_px": 411.08
+        },
+        {
+          "artifact_id": "hero-mauve-labyrinth-underprint",
+          "shared_edge_px": 2358,
+          "direction": "left",
+          "distance_px": 255.83
+        },
+        {
+          "artifact_id": "module-newsletter-ghost-patch",
+          "shared_edge_px": 661,
+          "direction": "down",
+          "distance_px": 272.41
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-soundohm-paper-scar",
+      "visible_area_px": 58528,
+      "territory_area_px": 71998,
+      "hover_bounds": {
+        "x": 0.1357,
+        "y": 0.2337,
+        "w": 0.3301,
+        "h": 0.2051
+      },
+      "hover_polygon": [
+        [
+          0.1357,
+          0.3249
+        ],
+        [
+          0.168,
+          0.2591
+        ],
+        [
+          0.1963,
+          0.2396
+        ],
+        [
+          0.3496,
+          0.2337
+        ],
+        [
+          0.4277,
+          0.2682
+        ],
+        [
+          0.4551,
+          0.2865
+        ],
+        [
+          0.4648,
+          0.3125
+        ],
+        [
+          0.3525,
+          0.4382
+        ],
+        [
+          0.2979,
+          0.4316
+        ],
+        [
+          0.2217,
+          0.3945
+        ],
+        [
+          0.1357,
+          0.3255
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-orange-label-perimeter-tear",
+          "shared_edge_px": 3787,
+          "direction": "right",
+          "distance_px": 312.33
+        },
+        {
+          "artifact_id": "hero-mauve-labyrinth-underprint",
+          "shared_edge_px": 1491,
+          "direction": "up",
+          "distance_px": 319.4
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-texture-extraction-scrape",
+      "visible_area_px": 22730,
+      "territory_area_px": 34747,
+      "hover_bounds": {
+        "x": 0.3281,
+        "y": 0.4948,
+        "w": 0.3154,
+        "h": 0.1706
+      },
+      "hover_polygon": [
+        [
+          0.3281,
+          0.5247
+        ],
+        [
+          0.3535,
+          0.4948
+        ],
+        [
+          0.4268,
+          0.4987
+        ],
+        [
+          0.6426,
+          0.6621
+        ],
+        [
+          0.5127,
+          0.6647
+        ],
+        [
+          0.3311,
+          0.5273
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-orange-label-perimeter-tear",
+          "shared_edge_px": 3430,
+          "direction": "up",
+          "distance_px": 217.38
+        },
+        {
+          "artifact_id": "module-cable-black-loop-ridge",
+          "shared_edge_px": 946,
+          "direction": "down",
+          "distance_px": 231.81
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-cyan-portal-scrap",
+      "visible_area_px": 9969,
+      "territory_area_px": 17305,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.3197,
+        "w": 0.1064,
+        "h": 0.1497
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.3197
+        ],
+        [
+          0.043,
+          0.3307
+        ],
+        [
+          0.0713,
+          0.3496
+        ],
+        [
+          0.1055,
+          0.3906
+        ],
+        [
+          0.0879,
+          0.431
+        ],
+        [
+          0.0596,
+          0.4499
+        ],
+        [
+          0.0186,
+          0.4688
+        ],
+        [
+          0.0,
+          0.4577
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-orange-label-perimeter-tear",
+          "shared_edge_px": 911,
+          "direction": "right",
+          "distance_px": 517.98
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-cable-black-loop-ridge",
+      "visible_area_px": 196657,
+      "territory_area_px": 264233,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.6367,
+        "w": 1.0,
+        "h": 0.2077
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.6465
+        ],
+        [
+          0.1699,
+          0.6367
+        ],
+        [
+          0.8945,
+          0.6445
+        ],
+        [
+          0.999,
+          0.6686
+        ],
+        [
+          0.999,
+          0.8047
+        ],
+        [
+          0.7852,
+          0.8424
+        ],
+        [
+          0.0469,
+          0.8438
+        ],
+        [
+          0.0,
+          0.8112
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-orange-label-perimeter-tear",
+          "shared_edge_px": 2216,
+          "direction": "up",
+          "distance_px": 442.88
+        },
+        {
+          "artifact_id": "module-cloth-fiber-lifted-corner",
+          "shared_edge_px": 1611,
+          "direction": "right",
+          "distance_px": 477.45
+        },
+        {
+          "artifact_id": "module-texture-extraction-scrape",
+          "shared_edge_px": 946,
+          "direction": "up",
+          "distance_px": 231.81
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-cloth-fiber-lifted-corner",
+      "visible_area_px": 28020,
+      "territory_area_px": 41348,
+      "hover_bounds": {
+        "x": 0.7705,
+        "y": 0.7773,
+        "w": 0.2295,
+        "h": 0.1725
+      },
+      "hover_polygon": [
+        [
+          0.7705,
+          0.8249
+        ],
+        [
+          0.8359,
+          0.7826
+        ],
+        [
+          0.876,
+          0.7773
+        ],
+        [
+          0.9375,
+          0.7812
+        ],
+        [
+          0.999,
+          0.8053
+        ],
+        [
+          0.999,
+          0.9238
+        ],
+        [
+          0.959,
+          0.9492
+        ],
+        [
+          0.9395,
+          0.9453
+        ],
+        [
+          0.873,
+          0.9049
+        ],
+        [
+          0.7891,
+          0.8451
+        ],
+        [
+          0.7705,
+          0.8262
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-cable-black-loop-ridge",
+          "shared_edge_px": 1611,
+          "direction": "left",
+          "distance_px": 477.45
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-newsletter-ghost-patch",
+      "visible_area_px": 14639,
+      "territory_area_px": 29815,
+      "hover_bounds": {
+        "x": 0.6553,
+        "y": 0.2767,
+        "w": 0.1895,
+        "h": 0.1068
+      },
+      "hover_polygon": [
+        [
+          0.6553,
+          0.3457
+        ],
+        [
+          0.6582,
+          0.2949
+        ],
+        [
+          0.6855,
+          0.2767
+        ],
+        [
+          0.8164,
+          0.2767
+        ],
+        [
+          0.8438,
+          0.2949
+        ],
+        [
+          0.8438,
+          0.3646
+        ],
+        [
+          0.8164,
+          0.3828
+        ],
+        [
+          0.6826,
+          0.3822
+        ],
+        [
+          0.6553,
+          0.3639
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-orange-label-perimeter-tear",
+          "shared_edge_px": 2975,
+          "direction": "left",
+          "distance_px": 281.96
+        },
+        {
+          "artifact_id": "module-black-side-bar-tear",
+          "shared_edge_px": 661,
+          "direction": "up",
+          "distance_px": 272.41
+        }
+      ]
+    }
+  ]
+}

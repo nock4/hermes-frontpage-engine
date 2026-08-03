@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-03-torn-orange-ostinato-wall-v1",
+  "edition_id": "2026-08-03-torn-orange-ostinato-wall-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-03-torn-orange-ostinato-wall-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-orange-label-perimeter-tear",
+      "target_kind": "artifact",
+      "artifact_id": "hero-orange-label-perimeter-tear",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-circular-paper-edge) selected from interpretation."
+    },
+    {
+      "target_id": "hero-mauve-labyrinth-underprint",
+      "target_kind": "artifact",
+      "artifact_id": "hero-mauve-labyrinth-underprint",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-concentric-glyph-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-black-side-bar-tear",
+      "target_kind": "artifact",
+      "artifact_id": "module-black-side-bar-tear",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (vertical-margin-rip) selected from interpretation."
+    },
+    {
+      "target_id": "module-soundohm-paper-scar",
+      "target_kind": "artifact",
+      "artifact_id": "module-soundohm-paper-scar",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (article-sleeve-paste-scar) selected from interpretation."
+    },
+    {
+      "target_id": "module-texture-extraction-scrape",
+      "target_kind": "artifact",
+      "artifact_id": "module-texture-extraction-scrape",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (diagonal-scratch-gesture) selected from interpretation."
+    },
+    {
+      "target_id": "module-cyan-portal-scrap",
+      "target_kind": "artifact",
+      "artifact_id": "module-cyan-portal-scrap",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cyan-cut-paper-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "module-cable-black-loop-ridge",
+      "target_kind": "artifact",
+      "artifact_id": "module-cable-black-loop-ridge",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (coiled-ridge-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-cloth-fiber-lifted-corner",
+      "target_kind": "artifact",
+      "artifact_id": "module-cloth-fiber-lifted-corner",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (fibrous-poster-corner) selected from interpretation."
+    },
+    {
+      "target_id": "module-newsletter-ghost-patch",
+      "target_kind": "artifact",
+      "artifact_id": "module-newsletter-ghost-patch",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-paste-rectangle) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

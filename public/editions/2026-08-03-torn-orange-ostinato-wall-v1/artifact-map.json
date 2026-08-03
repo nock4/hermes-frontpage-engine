@@ -1,0 +1,1619 @@
+{
+  "artifact_map_id": "map-2026-08-03-torn-orange-ostinato-wall-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "torn-orange-ostinato-wall",
+  "default_artifact_id": "hero-orange-label-perimeter-tear",
+  "artifacts": [
+    {
+      "id": "hero-orange-label-perimeter-tear",
+      "kind": "hero",
+      "label": "orange label perimeter tear",
+      "artifact_type": "hero-scale-circular-paper-edge",
+      "bounds": {
+        "x": 0.055,
+        "y": 0.151,
+        "w": 0.846,
+        "h": 0.548
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.505,
+          0.153
+        ],
+        [
+          0.647,
+          0.166
+        ],
+        [
+          0.777,
+          0.225
+        ],
+        [
+          0.87,
+          0.327
+        ],
+        [
+          0.902,
+          0.456
+        ],
+        [
+          0.862,
+          0.581
+        ],
+        [
+          0.758,
+          0.666
+        ],
+        [
+          0.613,
+          0.697
+        ],
+        [
+          0.451,
+          0.677
+        ],
+        [
+          0.314,
+          0.611
+        ],
+        [
+          0.201,
+          0.504
+        ],
+        [
+          0.111,
+          0.394
+        ],
+        [
+          0.055,
+          0.315
+        ],
+        [
+          0.112,
+          0.231
+        ],
+        [
+          0.258,
+          0.175
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/hero-orange-label-perimeter-tear.svg",
+      "source_binding_ids": [
+        "binding-hero-orange-label-perimeter-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          734,
+          390
+        ],
+        "safe_stage_window_origin_px": [
+          838,
+          435
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.505,
+            0.153
+          ],
+          [
+            0.647,
+            0.166
+          ],
+          [
+            0.777,
+            0.225
+          ],
+          [
+            0.87,
+            0.327
+          ],
+          [
+            0.902,
+            0.456
+          ],
+          [
+            0.862,
+            0.581
+          ],
+          [
+            0.758,
+            0.666
+          ],
+          [
+            0.613,
+            0.697
+          ],
+          [
+            0.451,
+            0.677
+          ],
+          [
+            0.314,
+            0.611
+          ],
+          [
+            0.201,
+            0.504
+          ],
+          [
+            0.111,
+            0.394
+          ],
+          [
+            0.055,
+            0.315
+          ],
+          [
+            0.112,
+            0.231
+          ],
+          [
+            0.258,
+            0.175
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0215,
+            0.3138
+          ],
+          [
+            0.0781,
+            0.2305
+          ],
+          [
+            0.1113,
+            0.2083
+          ],
+          [
+            0.1689,
+            0.1862
+          ],
+          [
+            0.6533,
+            0.1465
+          ],
+          [
+            0.7754,
+            0.2018
+          ],
+          [
+            0.8105,
+            0.2253
+          ],
+          [
+            0.9023,
+            0.3268
+          ],
+          [
+            0.9346,
+            0.4544
+          ],
+          [
+            0.8945,
+            0.5807
+          ],
+          [
+            0.8145,
+            0.6465
+          ],
+          [
+            0.5029,
+            0.6595
+          ],
+          [
+            0.3369,
+            0.6439
+          ],
+          [
+            0.2793,
+            0.61
+          ],
+          [
+            0.166,
+            0.5033
+          ],
+          [
+            0.0215,
+            0.3151
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0215,
+          "y": 0.1465,
+          "w": 0.9141,
+          "h": 0.5137
+        },
+        "territory_area_px": 344187,
+        "visible_area_px": 528021,
+        "expansion_ratio": 0.652,
+        "neighbors": [
+          {
+            "artifact_id": "module-soundohm-paper-scar",
+            "shared_edge_px": 3787,
+            "direction": "left",
+            "distance_px": 312.33
+          },
+          {
+            "artifact_id": "module-texture-extraction-scrape",
+            "shared_edge_px": 3430,
+            "direction": "down",
+            "distance_px": 217.38
+          },
+          {
+            "artifact_id": "module-newsletter-ghost-patch",
+            "shared_edge_px": 2975,
+            "direction": "right",
+            "distance_px": 281.96
+          },
+          {
+            "artifact_id": "module-black-side-bar-tear",
+            "shared_edge_px": 2681,
+            "direction": "up",
+            "distance_px": 411.08
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-mauve-labyrinth-underprint",
+      "kind": "hero",
+      "label": "mauve labyrinth underprint",
+      "artifact_type": "hero-scale-concentric-glyph-field",
+      "bounds": {
+        "x": 0.2012,
+        "y": 0.0007,
+        "w": 0.3662,
+        "h": 0.2441
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.2041,
+          0.1016
+        ],
+        [
+          0.2695,
+          0.0026
+        ],
+        [
+          0.5332,
+          0.0026
+        ],
+        [
+          0.5635,
+          0.1771
+        ],
+        [
+          0.5293,
+          0.2422
+        ],
+        [
+          0.2041,
+          0.2409
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/hero-mauve-labyrinth-underprint.svg",
+      "source_binding_ids": [
+        "binding-hero-mauve-labyrinth-underprint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          840,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          907,
+          88
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.2041,
+            0.1016
+          ],
+          [
+            0.2695,
+            0.0026
+          ],
+          [
+            0.5332,
+            0.0026
+          ],
+          [
+            0.5635,
+            0.1771
+          ],
+          [
+            0.5293,
+            0.2422
+          ],
+          [
+            0.2041,
+            0.2409
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1699,
+            0.1009
+          ],
+          [
+            0.2383,
+            0.0
+          ],
+          [
+            0.5625,
+            0.0
+          ],
+          [
+            0.582,
+            0.0924
+          ],
+          [
+            0.5146,
+            0.2539
+          ],
+          [
+            0.4648,
+            0.2637
+          ],
+          [
+            0.418,
+            0.2637
+          ],
+          [
+            0.1816,
+            0.2487
+          ],
+          [
+            0.1699,
+            0.2409
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1699,
+          "y": 0.0,
+          "w": 0.4131,
+          "h": 0.2643
+        },
+        "territory_area_px": 139447,
+        "visible_area_px": 125150,
+        "expansion_ratio": 1.114,
+        "neighbors": [
+          {
+            "artifact_id": "module-black-side-bar-tear",
+            "shared_edge_px": 2358,
+            "direction": "right",
+            "distance_px": 255.83
+          },
+          {
+            "artifact_id": "module-soundohm-paper-scar",
+            "shared_edge_px": 1491,
+            "direction": "down",
+            "distance_px": 319.4
+          },
+          {
+            "artifact_id": "hero-orange-label-perimeter-tear",
+            "shared_edge_px": 1203,
+            "direction": "down",
+            "distance_px": 534.05
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-black-side-bar-tear",
+      "kind": "module",
+      "label": "black side-bar tear",
+      "artifact_type": "vertical-margin-rip",
+      "bounds": {
+        "x": 0.523,
+        "y": 0,
+        "w": 0.163,
+        "h": 0.505
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.536,
+          0
+        ],
+        [
+          0.636,
+          0
+        ],
+        [
+          0.643,
+          0.078
+        ],
+        [
+          0.619,
+          0.173
+        ],
+        [
+          0.662,
+          0.257
+        ],
+        [
+          0.657,
+          0.348
+        ],
+        [
+          0.614,
+          0.441
+        ],
+        [
+          0.55,
+          0.505
+        ],
+        [
+          0.523,
+          0.382
+        ],
+        [
+          0.548,
+          0.276
+        ],
+        [
+          0.525,
+          0.176
+        ],
+        [
+          0.533,
+          0.072
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/module-black-side-bar-tear.svg",
+      "source_binding_ids": [
+        "binding-module-black-side-bar-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          929,
+          217
+        ],
+        "safe_stage_window_origin_px": [
+          949,
+          259
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.536,
+            0
+          ],
+          [
+            0.636,
+            0
+          ],
+          [
+            0.643,
+            0.078
+          ],
+          [
+            0.619,
+            0.173
+          ],
+          [
+            0.662,
+            0.257
+          ],
+          [
+            0.657,
+            0.348
+          ],
+          [
+            0.614,
+            0.441
+          ],
+          [
+            0.55,
+            0.505
+          ],
+          [
+            0.523,
+            0.382
+          ],
+          [
+            0.548,
+            0.276
+          ],
+          [
+            0.525,
+            0.176
+          ],
+          [
+            0.533,
+            0.072
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4971,
+            0.1699
+          ],
+          [
+            0.5635,
+            0.0
+          ],
+          [
+            0.6631,
+            0.0
+          ],
+          [
+            0.6885,
+            0.2559
+          ],
+          [
+            0.6875,
+            0.276
+          ],
+          [
+            0.6553,
+            0.3438
+          ],
+          [
+            0.5117,
+            0.3151
+          ],
+          [
+            0.4971,
+            0.1777
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4971,
+          "y": 0.0,
+          "w": 0.1924,
+          "h": 0.3444
+        },
+        "territory_area_px": 67188,
+        "visible_area_px": 79425,
+        "expansion_ratio": 0.846,
+        "neighbors": [
+          {
+            "artifact_id": "hero-orange-label-perimeter-tear",
+            "shared_edge_px": 2681,
+            "direction": "down",
+            "distance_px": 411.08
+          },
+          {
+            "artifact_id": "hero-mauve-labyrinth-underprint",
+            "shared_edge_px": 2358,
+            "direction": "left",
+            "distance_px": 255.83
+          },
+          {
+            "artifact_id": "module-newsletter-ghost-patch",
+            "shared_edge_px": 661,
+            "direction": "down",
+            "distance_px": 272.41
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-soundohm-paper-scar",
+      "kind": "module",
+      "label": "soundohm paper scar",
+      "artifact_type": "article-sleeve-paste-scar",
+      "bounds": {
+        "x": 0.164,
+        "y": 0.252,
+        "w": 0.291,
+        "h": 0.179
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.197,
+          0.258
+        ],
+        [
+          0.35,
+          0.252
+        ],
+        [
+          0.428,
+          0.287
+        ],
+        [
+          0.455,
+          0.36
+        ],
+        [
+          0.417,
+          0.428
+        ],
+        [
+          0.298,
+          0.414
+        ],
+        [
+          0.221,
+          0.376
+        ],
+        [
+          0.164,
+          0.326
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/module-soundohm-paper-scar.svg",
+      "source_binding_ids": [
+        "binding-module-soundohm-paper-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          475,
+          335
+        ],
+        "safe_stage_window_origin_px": [
+          511,
+          350
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.197,
+            0.258
+          ],
+          [
+            0.35,
+            0.252
+          ],
+          [
+            0.428,
+            0.287
+          ],
+          [
+            0.455,
+            0.36
+          ],
+          [
+            0.417,
+            0.428
+          ],
+          [
+            0.298,
+            0.414
+          ],
+          [
+            0.221,
+            0.376
+          ],
+          [
+            0.164,
+            0.326
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1357,
+            0.3249
+          ],
+          [
+            0.168,
+            0.2591
+          ],
+          [
+            0.1963,
+            0.2396
+          ],
+          [
+            0.3496,
+            0.2337
+          ],
+          [
+            0.4277,
+            0.2682
+          ],
+          [
+            0.4551,
+            0.2865
+          ],
+          [
+            0.4648,
+            0.3125
+          ],
+          [
+            0.3525,
+            0.4382
+          ],
+          [
+            0.2979,
+            0.4316
+          ],
+          [
+            0.2217,
+            0.3945
+          ],
+          [
+            0.1357,
+            0.3255
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1357,
+          "y": 0.2337,
+          "w": 0.3301,
+          "h": 0.2051
+        },
+        "territory_area_px": 71998,
+        "visible_area_px": 58528,
+        "expansion_ratio": 1.23,
+        "neighbors": [
+          {
+            "artifact_id": "hero-orange-label-perimeter-tear",
+            "shared_edge_px": 3787,
+            "direction": "right",
+            "distance_px": 312.33
+          },
+          {
+            "artifact_id": "hero-mauve-labyrinth-underprint",
+            "shared_edge_px": 1491,
+            "direction": "up",
+            "distance_px": 319.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-texture-extraction-scrape",
+      "kind": "module",
+      "label": "texture-extraction scrape",
+      "artifact_type": "diagonal-scratch-gesture",
+      "bounds": {
+        "x": 0.356,
+        "y": 0.489,
+        "w": 0.285,
+        "h": 0.205
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.386,
+          0.489
+        ],
+        [
+          0.466,
+          0.546
+        ],
+        [
+          0.535,
+          0.601
+        ],
+        [
+          0.641,
+          0.682
+        ],
+        [
+          0.611,
+          0.694
+        ],
+        [
+          0.524,
+          0.654
+        ],
+        [
+          0.442,
+          0.593
+        ],
+        [
+          0.356,
+          0.525
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/module-texture-extraction-scrape.svg",
+      "source_binding_ids": [
+        "binding-module-texture-extraction-scrape"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          766,
+          589
+        ],
+        "safe_stage_window_origin_px": [
+          801,
+          606
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.386,
+            0.489
+          ],
+          [
+            0.466,
+            0.546
+          ],
+          [
+            0.535,
+            0.601
+          ],
+          [
+            0.641,
+            0.682
+          ],
+          [
+            0.611,
+            0.694
+          ],
+          [
+            0.524,
+            0.654
+          ],
+          [
+            0.442,
+            0.593
+          ],
+          [
+            0.356,
+            0.525
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3281,
+            0.5247
+          ],
+          [
+            0.3535,
+            0.4948
+          ],
+          [
+            0.4268,
+            0.4987
+          ],
+          [
+            0.6426,
+            0.6621
+          ],
+          [
+            0.5127,
+            0.6647
+          ],
+          [
+            0.3311,
+            0.5273
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3281,
+          "y": 0.4948,
+          "w": 0.3154,
+          "h": 0.1706
+        },
+        "territory_area_px": 34747,
+        "visible_area_px": 22730,
+        "expansion_ratio": 1.529,
+        "neighbors": [
+          {
+            "artifact_id": "hero-orange-label-perimeter-tear",
+            "shared_edge_px": 3430,
+            "direction": "up",
+            "distance_px": 217.38
+          },
+          {
+            "artifact_id": "module-cable-black-loop-ridge",
+            "shared_edge_px": 946,
+            "direction": "down",
+            "distance_px": 231.81
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-cyan-portal-scrap",
+      "kind": "module",
+      "label": "cyan portal scrap",
+      "artifact_type": "cyan-cut-paper-interruption",
+      "bounds": {
+        "x": 0,
+        "y": 0.335,
+        "w": 0.079,
+        "h": 0.116
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0,
+          0.338
+        ],
+        [
+          0.043,
+          0.349
+        ],
+        [
+          0.079,
+          0.391
+        ],
+        [
+          0.061,
+          0.431
+        ],
+        [
+          0.019,
+          0.451
+        ],
+        [
+          0,
+          0.44
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/module-cyan-portal-scrap.svg",
+      "source_binding_ids": [
+        "binding-module-cyan-portal-scrap"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          90,
+          393
+        ],
+        "safe_stage_window_origin_px": [
+          90,
+          402
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.338
+          ],
+          [
+            0.043,
+            0.349
+          ],
+          [
+            0.079,
+            0.391
+          ],
+          [
+            0.061,
+            0.431
+          ],
+          [
+            0.019,
+            0.451
+          ],
+          [
+            0,
+            0.44
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.3197
+          ],
+          [
+            0.043,
+            0.3307
+          ],
+          [
+            0.0713,
+            0.3496
+          ],
+          [
+            0.1055,
+            0.3906
+          ],
+          [
+            0.0879,
+            0.431
+          ],
+          [
+            0.0596,
+            0.4499
+          ],
+          [
+            0.0186,
+            0.4688
+          ],
+          [
+            0.0,
+            0.4577
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.3197,
+          "w": 0.1064,
+          "h": 0.1497
+        },
+        "territory_area_px": 17305,
+        "visible_area_px": 9969,
+        "expansion_ratio": 1.736,
+        "neighbors": [
+          {
+            "artifact_id": "hero-orange-label-perimeter-tear",
+            "shared_edge_px": 911,
+            "direction": "right",
+            "distance_px": 517.98
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-cable-black-loop-ridge",
+      "kind": "module",
+      "label": "cable-black loop ridge",
+      "artifact_type": "coiled-ridge-seam",
+      "bounds": {
+        "x": 0,
+        "y": 0.661,
+        "w": 0.998,
+        "h": 0.167
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.003,
+          0.671
+        ],
+        [
+          0.17,
+          0.663
+        ],
+        [
+          0.35,
+          0.671
+        ],
+        [
+          0.516,
+          0.687
+        ],
+        [
+          0.704,
+          0.676
+        ],
+        [
+          0.895,
+          0.671
+        ],
+        [
+          0.998,
+          0.694
+        ],
+        [
+          0.984,
+          0.791
+        ],
+        [
+          0.802,
+          0.818
+        ],
+        [
+          0.603,
+          0.807
+        ],
+        [
+          0.405,
+          0.784
+        ],
+        [
+          0.225,
+          0.79
+        ],
+        [
+          0.047,
+          0.818
+        ],
+        [
+          0,
+          0.779
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/module-cable-black-loop-ridge.svg",
+      "source_binding_ids": [
+        "binding-module-cable-black-loop-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          766,
+          749
+        ],
+        "safe_stage_window_origin_px": [
+          889,
+          762
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.003,
+            0.671
+          ],
+          [
+            0.17,
+            0.663
+          ],
+          [
+            0.35,
+            0.671
+          ],
+          [
+            0.516,
+            0.687
+          ],
+          [
+            0.704,
+            0.676
+          ],
+          [
+            0.895,
+            0.671
+          ],
+          [
+            0.998,
+            0.694
+          ],
+          [
+            0.984,
+            0.791
+          ],
+          [
+            0.802,
+            0.818
+          ],
+          [
+            0.603,
+            0.807
+          ],
+          [
+            0.405,
+            0.784
+          ],
+          [
+            0.225,
+            0.79
+          ],
+          [
+            0.047,
+            0.818
+          ],
+          [
+            0,
+            0.779
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.6465
+          ],
+          [
+            0.1699,
+            0.6367
+          ],
+          [
+            0.8945,
+            0.6445
+          ],
+          [
+            0.999,
+            0.6686
+          ],
+          [
+            0.999,
+            0.8047
+          ],
+          [
+            0.7852,
+            0.8424
+          ],
+          [
+            0.0469,
+            0.8438
+          ],
+          [
+            0.0,
+            0.8112
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.6367,
+          "w": 1.0,
+          "h": 0.2077
+        },
+        "territory_area_px": 264233,
+        "visible_area_px": 196657,
+        "expansion_ratio": 1.344,
+        "neighbors": [
+          {
+            "artifact_id": "hero-orange-label-perimeter-tear",
+            "shared_edge_px": 2216,
+            "direction": "up",
+            "distance_px": 442.88
+          },
+          {
+            "artifact_id": "module-cloth-fiber-lifted-corner",
+            "shared_edge_px": 1611,
+            "direction": "right",
+            "distance_px": 477.45
+          },
+          {
+            "artifact_id": "module-texture-extraction-scrape",
+            "shared_edge_px": 946,
+            "direction": "up",
+            "distance_px": 231.81
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-cloth-fiber-lifted-corner",
+      "kind": "module",
+      "label": "cloth-fiber lifted corner",
+      "artifact_type": "fibrous-poster-corner",
+      "bounds": {
+        "x": 0.7959,
+        "y": 0.7936,
+        "w": 0.2041,
+        "h": 0.14
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.7988,
+          0.8255
+        ],
+        [
+          0.8047,
+          0.8177
+        ],
+        [
+          0.8389,
+          0.7995
+        ],
+        [
+          0.876,
+          0.7956
+        ],
+        [
+          0.9375,
+          0.8001
+        ],
+        [
+          0.9971,
+          0.8223
+        ],
+        [
+          0.9971,
+          0.9017
+        ],
+        [
+          0.9844,
+          0.916
+        ],
+        [
+          0.959,
+          0.931
+        ],
+        [
+          0.9404,
+          0.9271
+        ],
+        [
+          0.8691,
+          0.8835
+        ],
+        [
+          0.8125,
+          0.8424
+        ],
+        [
+          0.7988,
+          0.8268
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/module-cloth-fiber-lifted-corner.svg",
+      "source_binding_ids": [
+        "binding-module-cloth-fiber-lifted-corner"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.7988,
+            0.8255
+          ],
+          [
+            0.8047,
+            0.8177
+          ],
+          [
+            0.8389,
+            0.7995
+          ],
+          [
+            0.876,
+            0.7956
+          ],
+          [
+            0.9375,
+            0.8001
+          ],
+          [
+            0.9971,
+            0.8223
+          ],
+          [
+            0.9971,
+            0.9017
+          ],
+          [
+            0.9844,
+            0.916
+          ],
+          [
+            0.959,
+            0.931
+          ],
+          [
+            0.9404,
+            0.9271
+          ],
+          [
+            0.8691,
+            0.8835
+          ],
+          [
+            0.8125,
+            0.8424
+          ],
+          [
+            0.7988,
+            0.8268
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7705,
+            0.8249
+          ],
+          [
+            0.8359,
+            0.7826
+          ],
+          [
+            0.876,
+            0.7773
+          ],
+          [
+            0.9375,
+            0.7812
+          ],
+          [
+            0.999,
+            0.8053
+          ],
+          [
+            0.999,
+            0.9238
+          ],
+          [
+            0.959,
+            0.9492
+          ],
+          [
+            0.9395,
+            0.9453
+          ],
+          [
+            0.873,
+            0.9049
+          ],
+          [
+            0.7891,
+            0.8451
+          ],
+          [
+            0.7705,
+            0.8262
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7705,
+          "y": 0.7773,
+          "w": 0.2295,
+          "h": 0.1725
+        },
+        "territory_area_px": 41348,
+        "visible_area_px": 28020,
+        "expansion_ratio": 1.476,
+        "neighbors": [
+          {
+            "artifact_id": "module-cable-black-loop-ridge",
+            "shared_edge_px": 1611,
+            "direction": "left",
+            "distance_px": 477.45
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-newsletter-ghost-patch",
+      "kind": "module",
+      "label": "newsletter ghost patch",
+      "artifact_type": "pale-paste-rectangle",
+      "bounds": {
+        "x": 0.683,
+        "y": 0.293,
+        "w": 0.134,
+        "h": 0.073
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.686,
+          0.295
+        ],
+        [
+          0.817,
+          0.295
+        ],
+        [
+          0.817,
+          0.365
+        ],
+        [
+          0.683,
+          0.364
+        ],
+        [
+          0.684,
+          0.327
+        ]
+      ],
+      "cluster_id": "torn-orange-ostinato-wall",
+      "mask_path": "/editions/2026-08-03-torn-orange-ostinato-wall-v1/assets/masks/module-newsletter-ghost-patch.svg",
+      "source_binding_ids": [
+        "binding-module-newsletter-ghost-patch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1152,
+          331
+        ],
+        "safe_stage_window_origin_px": [
+          1168,
+          337
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.686,
+            0.295
+          ],
+          [
+            0.817,
+            0.295
+          ],
+          [
+            0.817,
+            0.365
+          ],
+          [
+            0.683,
+            0.364
+          ],
+          [
+            0.684,
+            0.327
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6553,
+            0.3457
+          ],
+          [
+            0.6582,
+            0.2949
+          ],
+          [
+            0.6855,
+            0.2767
+          ],
+          [
+            0.8164,
+            0.2767
+          ],
+          [
+            0.8438,
+            0.2949
+          ],
+          [
+            0.8438,
+            0.3646
+          ],
+          [
+            0.8164,
+            0.3828
+          ],
+          [
+            0.6826,
+            0.3822
+          ],
+          [
+            0.6553,
+            0.3639
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6553,
+          "y": 0.2767,
+          "w": 0.1895,
+          "h": 0.1068
+        },
+        "territory_area_px": 29815,
+        "visible_area_px": 14639,
+        "expansion_ratio": 2.037,
+        "neighbors": [
+          {
+            "artifact_id": "hero-orange-label-perimeter-tear",
+            "shared_edge_px": 2975,
+            "direction": "left",
+            "distance_px": 281.96
+          },
+          {
+            "artifact_id": "module-black-side-bar-tear",
+            "shared_edge_px": 661,
+            "direction": "up",
+            "distance_px": 272.41
+          }
+        ]
+      }
+    }
+  ]
+}

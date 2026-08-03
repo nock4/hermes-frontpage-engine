@@ -1,0 +1,518 @@
+{
+  "analysis_id": "analysis-2026-08-03-torn-orange-ostinato-wall-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A torn black paper wall carries a large burnt-orange circular label, a mauve radial underprint, cyan torn apertures, pale pasted scars, pinholes, and fibrous lower rips. The plate is source-rich but still organized around one central disk and a few physical tears.",
+  "usable_surfaces": [
+    "burnt-orange circular paper rim",
+    "mauve radial glyph underprint",
+    "vertical black torn pressure strip",
+    "rubbed off-white paste scars",
+    "small cyan torn glow apertures",
+    "lower black ridged seam with pinholes",
+    "fibrous lifted lower-right paper corner",
+    "central spindle-like black void"
+  ],
+  "detected_objects": [
+    {
+      "label": "orange label perimeter tear",
+      "artifact_type": "hero-scale-circular-paper-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.055,
+        "y": 0.151,
+        "w": 0.846,
+        "h": 0.548
+      },
+      "polygon": [
+        [
+          0.505,
+          0.153
+        ],
+        [
+          0.647,
+          0.166
+        ],
+        [
+          0.777,
+          0.225
+        ],
+        [
+          0.87,
+          0.327
+        ],
+        [
+          0.902,
+          0.456
+        ],
+        [
+          0.862,
+          0.581
+        ],
+        [
+          0.758,
+          0.666
+        ],
+        [
+          0.613,
+          0.697
+        ],
+        [
+          0.451,
+          0.677
+        ],
+        [
+          0.314,
+          0.611
+        ],
+        [
+          0.201,
+          0.504
+        ],
+        [
+          0.111,
+          0.394
+        ],
+        [
+          0.055,
+          0.315
+        ],
+        [
+          0.112,
+          0.231
+        ],
+        [
+          0.258,
+          0.175
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "dominant burnt-orange circular label remains visible as a torn disk with ragged perimeter, scuffed ink, and broken white print fields around the center."
+    },
+    {
+      "label": "mauve labyrinth underprint",
+      "artifact_type": "hero-scale-concentric-glyph-field",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.277,
+        "y": 0,
+        "w": 0.54,
+        "h": 0.172
+      },
+      "polygon": [
+        [
+          0.285,
+          0
+        ],
+        [
+          0.526,
+          0
+        ],
+        [
+          0.529,
+          0.035
+        ],
+        [
+          0.618,
+          0.036
+        ],
+        [
+          0.62,
+          0
+        ],
+        [
+          0.724,
+          0
+        ],
+        [
+          0.815,
+          0.047
+        ],
+        [
+          0.815,
+          0.151
+        ],
+        [
+          0.748,
+          0.146
+        ],
+        [
+          0.663,
+          0.092
+        ],
+        [
+          0.564,
+          0.079
+        ],
+        [
+          0.474,
+          0.092
+        ],
+        [
+          0.373,
+          0.125
+        ],
+        [
+          0.292,
+          0.15
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "mauve-and-black concentric maze/glyph print is exposed across the top behind torn black paper and above the orange label."
+    },
+    {
+      "label": "black side-bar tear",
+      "artifact_type": "vertical-margin-rip",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.523,
+        "y": 0,
+        "w": 0.163,
+        "h": 0.505
+      },
+      "polygon": [
+        [
+          0.536,
+          0
+        ],
+        [
+          0.636,
+          0
+        ],
+        [
+          0.643,
+          0.078
+        ],
+        [
+          0.619,
+          0.173
+        ],
+        [
+          0.662,
+          0.257
+        ],
+        [
+          0.657,
+          0.348
+        ],
+        [
+          0.614,
+          0.441
+        ],
+        [
+          0.55,
+          0.505
+        ],
+        [
+          0.523,
+          0.382
+        ],
+        [
+          0.548,
+          0.276
+        ],
+        [
+          0.525,
+          0.176
+        ],
+        [
+          0.533,
+          0.072
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "a vertical black torn strip cuts down through the mauve print and orange disk, with rough beige paper fibers along both edges."
+    },
+    {
+      "label": "soundohm paper scar",
+      "artifact_type": "article-sleeve-paste-scar",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.164,
+        "y": 0.252,
+        "w": 0.291,
+        "h": 0.179
+      },
+      "polygon": [
+        [
+          0.197,
+          0.258
+        ],
+        [
+          0.35,
+          0.252
+        ],
+        [
+          0.428,
+          0.287
+        ],
+        [
+          0.455,
+          0.36
+        ],
+        [
+          0.417,
+          0.428
+        ],
+        [
+          0.298,
+          0.414
+        ],
+        [
+          0.221,
+          0.376
+        ],
+        [
+          0.164,
+          0.326
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "rubbed off-white paste scar sits over the left side of the orange label, with granular dirt, faded red specks, and an uneven torn edge."
+    },
+    {
+      "label": "texture-extraction scrape",
+      "artifact_type": "diagonal-scratch-gesture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.356,
+        "y": 0.489,
+        "w": 0.285,
+        "h": 0.205
+      },
+      "polygon": [
+        [
+          0.386,
+          0.489
+        ],
+        [
+          0.466,
+          0.546
+        ],
+        [
+          0.535,
+          0.601
+        ],
+        [
+          0.641,
+          0.682
+        ],
+        [
+          0.611,
+          0.694
+        ],
+        [
+          0.524,
+          0.654
+        ],
+        [
+          0.442,
+          0.593
+        ],
+        [
+          0.356,
+          0.525
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "a dark diagonal torn scrape crosses the lower half of the orange disk, lifting black paper over the printed surface like a peeled texture skin."
+    },
+    {
+      "label": "cyan portal scrap",
+      "artifact_type": "cyan-cut-paper-interruption",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.335,
+        "w": 0.079,
+        "h": 0.116
+      },
+      "polygon": [
+        [
+          0,
+          0.338
+        ],
+        [
+          0.043,
+          0.349
+        ],
+        [
+          0.079,
+          0.391
+        ],
+        [
+          0.061,
+          0.431
+        ],
+        [
+          0.019,
+          0.451
+        ],
+        [
+          0,
+          0.44
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "small electric blue speckled fragment glows through a torn opening on the left edge, sharply bounded by black rag paper."
+    },
+    {
+      "label": "cable-black loop ridge",
+      "artifact_type": "coiled-ridge-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.661,
+        "w": 0.998,
+        "h": 0.167
+      },
+      "polygon": [
+        [
+          0.003,
+          0.671
+        ],
+        [
+          0.17,
+          0.663
+        ],
+        [
+          0.35,
+          0.671
+        ],
+        [
+          0.516,
+          0.687
+        ],
+        [
+          0.704,
+          0.676
+        ],
+        [
+          0.895,
+          0.671
+        ],
+        [
+          0.998,
+          0.694
+        ],
+        [
+          0.984,
+          0.791
+        ],
+        [
+          0.802,
+          0.818
+        ],
+        [
+          0.603,
+          0.807
+        ],
+        [
+          0.405,
+          0.784
+        ],
+        [
+          0.225,
+          0.79
+        ],
+        [
+          0.047,
+          0.818
+        ],
+        [
+          0,
+          0.779
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "wide lower black ridge reads as wrinkled cable-like pressure and torn seam, with repeated pinholes and raised crusted folds across the full width."
+    },
+    {
+      "label": "cloth-fiber lifted corner",
+      "artifact_type": "fibrous-poster-corner",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.802,
+        "y": 0.781,
+        "w": 0.19799999999999995,
+        "h": 0.157
+      },
+      "polygon": [
+        [
+          0.858,
+          0.783
+        ],
+        [
+          0.956,
+          0.801
+        ],
+        [
+          1,
+          0.827
+        ],
+        [
+          1,
+          0.934
+        ],
+        [
+          0.924,
+          0.93
+        ],
+        [
+          0.856,
+          0.894
+        ],
+        [
+          0.802,
+          0.833
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "lower-right pale beige torn corner exposes vertical fiber grain and dotted holes, like cloth-backed poster paper lifting from the black wall."
+    },
+    {
+      "label": "newsletter ghost patch",
+      "artifact_type": "pale-paste-rectangle",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.683,
+        "y": 0.293,
+        "w": 0.134,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.686,
+          0.295
+        ],
+        [
+          0.817,
+          0.295
+        ],
+        [
+          0.817,
+          0.365
+        ],
+        [
+          0.683,
+          0.364
+        ],
+        [
+          0.684,
+          0.327
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "small pale rectangular pasted patch sits on the upper-right orange label field, nearly blank but stained and scuffed at its surface."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.966,
+    "rationale": "The composition is expressionist and image-led with one dominant circular label, one vertical tear, a lower seam, and a top glyph field. Dense scratches, holes, and ragged lower textures make it a watch rather than fully minimal, but it is not card-like or too cluttered."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-03-torn-orange-ostinato-wall-v1"
+}
