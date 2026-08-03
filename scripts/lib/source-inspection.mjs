@@ -77,6 +77,23 @@ async function fetchBandcampEmbedHtml(fetchable) {
 
 const youtubeEmbedStatusCache = new Map()
 
+function timeoutAfter(timeoutMs, message) {
+  let timer = null
+  const promise = new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(message)), timeoutMs)
+  })
+  return { promise, cancel: () => clearTimeout(timer) }
+}
+
+async function withTimeout(promise, timeoutMs, message) {
+  const timeout = timeoutAfter(timeoutMs, message)
+  try {
+    return await Promise.race([promise, timeout.promise])
+  } finally {
+    timeout.cancel()
+  }
+}
+
 export function classifyYouTubeEmbedFrameText(text) {
   const normalized = String(text || '').replace(/\s+/g, ' ').trim().toLowerCase()
   if (!normalized) return null
@@ -124,7 +141,7 @@ async function browserVerifiedYouTubeEmbedStatus(videoId) {
   try {
     const { chromium } = await import('playwright')
     temporaryOrigin = await startTemporaryEmbedOrigin()
-    browser = await chromium.launch()
+    browser = await chromium.launch({ timeout: 8000 })
     const page = await browser.newPage({ viewport: { width: 640, height: 390 } })
     await page.goto(temporaryOrigin.origin, { waitUntil: 'domcontentloaded', timeout: 6000 })
     await page.evaluate(({ origin, videoId }) => {
@@ -156,6 +173,18 @@ async function browserVerifiedYouTubeEmbedStatus(videoId) {
   }
 }
 
+async function browserVerifiedYouTubeEmbedStatusWithTimeout(videoId, timeoutMs = 20_000) {
+  try {
+    return await withTimeout(
+      browserVerifiedYouTubeEmbedStatus(videoId),
+      timeoutMs,
+      `YouTube embed playback probe timed out after ${timeoutMs}ms`,
+    )
+  } catch {
+    return null
+  }
+}
+
 export async function youtubeEmbedStatus(sourceUrl, { verifyPlayback = true } = {}) {
   if (!isYouTubeVideoUrl(sourceUrl)) return null
   const videoId = youtubeId(sourceUrl)
@@ -180,7 +209,7 @@ export async function youtubeEmbedStatus(sourceUrl, { verifyPlayback = true } = 
     return 'unavailable'
   }
 
-  const status = verifyPlayback ? await browserVerifiedYouTubeEmbedStatus(videoId) : null
+  const status = verifyPlayback ? await browserVerifiedYouTubeEmbedStatusWithTimeout(videoId) : null
   youtubeEmbedStatusCache.set(cacheKey, status)
   return status
 }
@@ -337,6 +366,7 @@ async function inspectTweetWithFxtwitter(candidate, classification) {
 
 function runCaptured(command, args, { input = '', cwd = process.cwd(), timeoutMs = 30_000, env = process.env } = {}) {
   return new Promise((resolve, reject) => {
+    let settled = false
     const child = spawn(command, args, {
       cwd,
       env,
@@ -344,6 +374,10 @@ function runCaptured(command, args, { input = '', cwd = process.cwd(), timeoutMs
     })
     const timer = setTimeout(() => {
       child.kill('SIGTERM')
+      setTimeout(() => {
+        if (!settled) child.kill('SIGKILL')
+      }, 2000).unref()
+      settled = true
       reject(new Error(`${command} timed out after ${timeoutMs}ms`))
     }, timeoutMs)
     let stdout = ''
@@ -356,10 +390,14 @@ function runCaptured(command, args, { input = '', cwd = process.cwd(), timeoutMs
     })
     child.on('error', (error) => {
       clearTimeout(timer)
+      if (settled) return
+      settled = true
       reject(error)
     })
     child.on('close', (code) => {
       clearTimeout(timer)
+      if (settled) return
+      settled = true
       resolve({ code, stdout, stderr })
     })
     if (input) child.stdin.write(input)
@@ -501,7 +539,7 @@ export async function inspectWithFetch(candidate, fetchable, classification) {
   }
 }
 
-export async function inspectCandidateSource(candidate, { sourceTool, browserHarness }) {
+async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarness }) {
   if (!isAllowedSourceUrl(candidate.url)) return null
   const classification = classifySource(candidate.url)
   const videoId = youtubeId(candidate.url)
@@ -553,6 +591,28 @@ export async function inspectCandidateSource(candidate, { sourceTool, browserHar
     ...await inspectWithFetch(candidate, fetchable, classification),
     youtube_embed_status: embedStatus,
   })
+}
+
+export async function inspectCandidateSource(candidate, { sourceTool, browserHarness, timeoutMs = 35_000 } = {}) {
+  try {
+    return await withTimeout(
+      inspectCandidateSourceInner(candidate, { sourceTool, browserHarness }),
+      timeoutMs,
+      `Source inspection timed out after ${timeoutMs}ms: ${candidate?.url || 'unknown source'}`,
+    )
+  } catch (error) {
+    return {
+      ...candidate,
+      ...classifySource(candidate?.url || ''),
+      source_url: candidate?.url || null,
+      final_url: candidate?.url || null,
+      title: candidate?.note_title || candidate?.url || 'Timed out source',
+      description: '',
+      image_url: null,
+      fetch_status: `source-inspection-timeout: ${error.message}`,
+      browser_error: error.message,
+    }
+  }
 }
 
 export async function findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys = new Set() }) {

@@ -168,4 +168,20 @@ describe('source inspection', () => {
       fetch_status: 'fetch-error: network down',
     })
   })
+
+  it('bounds whole source inspection so a hung fetch cannot stall source research', async () => {
+    vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})))
+
+    const source = await inspectCandidateSource(
+      { url: 'https://example.com/hangs', note_title: 'Hung source' },
+      { sourceTool: 'fetch', browserHarness: null, timeoutMs: 25 },
+    )
+
+    expect(source).toMatchObject({
+      title: 'Hung source',
+      image_url: null,
+      fetch_status: expect.stringContaining('source-inspection-timeout:'),
+      browser_error: expect.stringContaining('Source inspection timed out after 25ms'),
+    })
+  })
 })
