@@ -66,4 +66,25 @@ describe('openAiJson', () => {
       else process.env.HERMES_BIN = previousHermesBin
     }
   }, 90000)
+
+  it('refuses private remote image references before invoking Hermes vision', async () => {
+    const previousHermesBin = process.env.HERMES_BIN
+    process.env.HERMES_BIN = fakeHermesBin
+    try {
+      await expect(openAiJson({
+        instructions: 'Return strict JSON only.',
+        input: [{
+          role: 'user',
+          content: [
+            { type: 'input_text', text: '{"task":"inspect-image"}' },
+            { type: 'input_image', image_url: 'http://169.254.169.254/latest/meta-data/iam/security-credentials' },
+          ],
+        }],
+        maxOutputTokens: 120,
+      })).rejects.toThrow(/Refusing non-public image reference/)
+    } finally {
+      if (previousHermesBin == null) delete process.env.HERMES_BIN
+      else process.env.HERMES_BIN = previousHermesBin
+    }
+  })
 })

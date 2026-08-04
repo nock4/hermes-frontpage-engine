@@ -210,7 +210,7 @@ function App() {
   const editionTypographyStyle = getAboutTypographyStyle(loaded.about)
 
   return (
-    <main className={`runtime-shell review-mode--${reviewMode} ${runtimeAmbienceClasses}${presentation.showSidebar ? '' : ' runtime-shell--immersive'}${presentation.stageFillViewport ? ' runtime-shell--stage-fill' : ''}`} style={editionTypographyStyle}>
+    <main className={`runtime-shell review-mode--${reviewMode} ${runtimeAmbienceClasses}${presentation.showSidebar ? '' : ' runtime-shell--immersive'}${presentation.stageFillViewport ? ' runtime-shell--stage-fill' : ''}`} data-edition-id={loaded.edition.edition_id} style={editionTypographyStyle}>
       <section className="runtime-main">
         {embedPreloads.length ? <EmbedPreloadLayer embeds={embedPreloads} /> : null}
         {presentation.showTopbar ? (

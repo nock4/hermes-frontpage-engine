@@ -4,7 +4,7 @@ import http from 'node:http'
 import path from 'node:path'
 
 import { fetchWithTimeout } from './fetch-with-timeout.mjs'
-import { resolveFetchableHtmlUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
+import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
 import {
   classifySource,
   isAllowedInspectedSource,
@@ -62,12 +62,16 @@ function extractBandcampEmbedHtml(html) {
 
 async function fetchBandcampEmbedHtml(fetchable) {
   try {
-    const response = await fetchWithTimeout(fetchable, {
+    const response = await fetchVettedRemoteUrl(fetchable, {
+      lookup: dns.lookup,
       headers: {
         accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'user-agent': 'daily-frontpage-engine-source-research/0.1',
       },
-    }, 8000)
+      timeoutMs: 8000,
+      maxBytes: 1_000_001,
+    })
+    if (!response) throw new Error('blocked HTML URL')
     const html = await response.text()
     return extractBandcampEmbedHtml(html)
   } catch {
@@ -227,14 +231,17 @@ async function isLoadableVisualImage(imageUrl) {
   }
 
   try {
-    const response = await fetchWithTimeout(fetchableImageUrl, {
+    const response = await fetchVettedRemoteUrl(fetchableImageUrl, {
+      lookup: dns.lookup,
       headers: {
         accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5',
         range: 'bytes=0-4095',
         'user-agent': 'daily-frontpage-engine-source-research/0.1',
       },
-      redirect: 'error',
-    }, 8000)
+      timeoutMs: 8000,
+      maxBytes: 8192,
+    })
+    if (!response) throw new Error('blocked image URL')
     const contentType = response.headers.get('content-type')?.toLowerCase() || ''
     const loadable = response.ok && (!contentType || (contentType.startsWith('image/') && !contentType.includes('svg')))
     visualImageHealthCache.set(imageUrl, loadable)
@@ -406,6 +413,17 @@ function runCaptured(command, args, { input = '', cwd = process.cwd(), timeoutMs
 }
 
 async function inspectWithBrowserHarness(sourceUrl, browserHarnessPath) {
+  if (process.env.DFE_ENABLE_UNTRUSTED_BROWSER_SOURCE_INSPECTION !== '1') {
+    return {
+      fetch_status: 'browser-harness-disabled',
+      error: 'browser-harness source navigation is disabled unless DFE_ENABLE_UNTRUSTED_BROWSER_SOURCE_INSPECTION=1; using DNS-vetted fetch fallback',
+      final_url: sourceUrl,
+      title: '',
+      description: '',
+      image_url: '',
+      visible_text: '',
+    }
+  }
   const script = `
 import json
 
@@ -490,12 +508,16 @@ except Exception as exc:
 
 export async function inspectWithFetch(candidate, fetchable, classification) {
   try {
-    const response = await fetchWithTimeout(fetchable, {
+    const response = await fetchVettedRemoteUrl(fetchable, {
+      lookup: dns.lookup,
       headers: {
         accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'user-agent': 'daily-frontpage-engine-source-research/0.1',
       },
-    }, 8000)
+      timeoutMs: 8000,
+      maxBytes: 1_000_001,
+    })
+    if (!response) throw new Error('blocked HTML URL')
     const html = await response.text()
     const bandcampEmbedHtml = isBandcampStreamingSourceUrl(fetchable) ? extractBandcampEmbedHtml(html) : null
     const title = extractMeta(html, [
@@ -557,7 +579,11 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
 
   if (sourceTool === 'browser-harness') {
     const browserData = await inspectWithBrowserHarness(fetchable, browserHarness)
-    if (browserData.fetch_status === 'browser-harness-error') {
+    const browserFinalUrl = browserData.final_url || fetchable
+    const browserFinalFetchable = browserData.fetch_status !== 'browser-harness'
+      ? null
+      : await resolveFetchableHtmlUrl(browserFinalUrl, { lookup: dns.lookup })
+    if (browserData.fetch_status !== 'browser-harness' || !browserFinalFetchable) {
       const fallbackData = await inspectWithFetch(candidate, fetchable, classification)
       if (fallbackData.fetch_status === 'fetch-ok') {
         return normalizeInspectedSourceMedia({
@@ -566,11 +592,16 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
           final_url: fallbackData.final_url || fetchable,
           image_url: fallbackData.image_url || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
           source_embed_html: fallbackData.source_embed_html || bandcampEmbedHtml || undefined,
-          fetch_status: 'browser-harness-error-fetch-ok',
+          fetch_status: browserData.fetch_status === 'browser-harness-error'
+            ? 'browser-harness-error-fetch-ok'
+            : browserData.fetch_status === 'browser-harness-disabled'
+              ? 'browser-harness-disabled-fetch-ok'
+              : 'browser-harness-blocked-final-url-fetch-ok',
           youtube_embed_status: embedStatus,
-          browser_error: browserData.error || undefined,
+          browser_error: browserData.error || (!browserFinalFetchable ? `blocked browser final URL: ${browserFinalUrl}` : undefined),
         })
       }
+      if (!browserFinalFetchable) return null
     }
     return normalizeInspectedSourceMedia({
       ...candidate,

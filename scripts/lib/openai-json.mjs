@@ -1,7 +1,10 @@
 import fs from 'node:fs/promises'
+import dns from 'node:dns/promises'
 import os from 'node:os'
 import path from 'node:path'
 import { spawn } from 'node:child_process'
+
+import { fetchVettedRemoteUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
 
 function firstJsonObject(text) {
   const trimmed = String(text || '').trim()
@@ -70,15 +73,22 @@ async function materializeImage(imageUrl) {
   }
   if (imageUrl.startsWith('file://')) return { imagePath: new URL(imageUrl).pathname, remoteImageUrl: null }
   if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
+    const fetchableImageUrl = await resolveFetchableImageUrl(imageUrl, { lookup: dns.lookup })
+    if (!fetchableImageUrl) throw new Error(`Refusing non-public image reference: ${imageUrl}`)
     try {
-      const response = await fetch(imageUrl)
+      const response = await fetchVettedRemoteUrl(fetchableImageUrl, {
+        lookup: dns.lookup,
+        timeoutMs: 8000,
+        maxBytes: 8_000_000,
+      })
+      if (!response) throw new Error('blocked image URL')
       if (!response.ok) throw new Error(`HTTP ${response.status}`)
       const arrayBuffer = await response.arrayBuffer()
-      const filePath = path.join(await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-hermes-image-')), `input${extensionFromMime(response.headers.get('content-type'), extensionFromUrl(imageUrl))}`)
+      const filePath = path.join(await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-hermes-image-')), `input${extensionFromMime(response.headers.get('content-type'), extensionFromUrl(fetchableImageUrl))}`)
       await fs.writeFile(filePath, Buffer.from(arrayBuffer))
       return { imagePath: filePath, remoteImageUrl: null }
-    } catch {
-      return { imagePath: null, remoteImageUrl: imageUrl }
+    } catch (error) {
+      throw new Error(`Unable to materialize vetted image reference: ${error.message}`)
     }
   }
   return { imagePath: imageUrl, remoteImageUrl: null }

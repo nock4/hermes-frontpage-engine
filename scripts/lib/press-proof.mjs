@@ -92,7 +92,10 @@ export function checkPressProof(proof = {}) {
     }
     const plateSrc = liveProof.plate?.src || ''
     const pageEditionId = liveProof.pageEditionId || null
-    if (expectedEditionId && !plateSrc.includes(expectedEditionId) && pageEditionId !== expectedEditionId) {
+    if (expectedEditionId && pageEditionId !== expectedEditionId) {
+      blockers.push('live page edition id does not match expected edition')
+    }
+    if (expectedEditionId && !plateSrc.includes(expectedEditionId)) {
       blockers.push('live plate does not match expected edition')
     }
     const naturalWidth = Number(liveProof.plate?.naturalWidth || 0)
@@ -170,7 +173,7 @@ export function classifyPressState({ summary = {}, proof = null } = {}) {
     const blockers = Array.isArray(proof.blockers) ? proof.blockers : checkPressProof(proof).blockers
     const publishSucceeded = summary.ok === true && summary.remote_matches === true && summary.local_publish_status === 'live'
     if (!blockers.length) return 'green'
-    if (publishSucceeded && blockers.some((blocker) => /screenshot|preload|plate|prompt|visual QA|proof/i.test(blocker))) {
+    if (publishSucceeded && blockers.some((blocker) => /screenshot|preload|plate|prompt|visual QA|proof|edition id/i.test(blocker))) {
       return 'proof_failed_after_publish'
     }
   }

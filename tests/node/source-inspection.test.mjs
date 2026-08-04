@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from 'vitest'
+import { afterAll, afterEach, describe, expect, it, vi } from 'vitest'
 
 import {
   classifyYouTubeEmbedFrameText,
@@ -7,8 +7,16 @@ import {
   youtubeEmbedStatus,
 } from '../../scripts/lib/source-inspection.mjs'
 
+const previousTestFetchMode = process.env.DFE_TEST_USE_GLOBAL_FETCH
+process.env.DFE_TEST_USE_GLOBAL_FETCH = '1'
+
 afterEach(() => {
   vi.unstubAllGlobals()
+})
+
+afterAll(() => {
+  if (previousTestFetchMode === undefined) delete process.env.DFE_TEST_USE_GLOBAL_FETCH
+  else process.env.DFE_TEST_USE_GLOBAL_FETCH = previousTestFetchMode
 })
 
 describe('source inspection', () => {
@@ -72,6 +80,10 @@ describe('source inspection', () => {
       image_url: 'https://example.com/lead.jpg',
       fetch_status: 'fetch-ok',
     })
+    expect(fetch).toHaveBeenCalledWith(
+      'https://example.com/story',
+      expect.objectContaining({ redirect: 'error', signal: expect.any(AbortSignal) }),
+    )
   })
 
   it('extracts safe Bandcamp embed html from fetched album pages', async () => {

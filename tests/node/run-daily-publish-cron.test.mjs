@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { allocateCronUxPort, isSafeCronWorktreePath, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
+import { allowedStatusPath, allocateCronUxPort, isSafeCronWorktreePath, isSafeEditionId, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
 
 describe('daily publish cron wrapper', () => {
   it('parses an explicit inspiration override option', () => {
@@ -88,5 +88,18 @@ describe('daily publish cron wrapper', () => {
     expect(isSafeCronWorktreePath(path.join(parent, 'my-frontpage-cron-backup'), primaryRoot)).toBe(false)
     expect(isSafeCronWorktreePath(path.join(parent, 'foo', 'hermes-frontpage-engine-cron'), primaryRoot)).toBe(false)
     expect(isSafeCronWorktreePath(path.resolve(parent, '..', 'hermes-frontpage-engine-cron'), primaryRoot)).toBe(false)
+  })
+
+  it('limits cron publish commits to the manifest and current edition directory', () => {
+    const editionId = '2026-08-04-split-crimson-j-card-v1'
+
+    expect(allowedStatusPath(' M public/editions/index.json', editionId)).toBe(true)
+    expect(allowedStatusPath('?? public/editions/2026-08-04-split-crimson-j-card-v1/edition.json', editionId)).toBe(true)
+    expect(allowedStatusPath(' M public/editions/2026-08-03-old-edition/interpretation.json', editionId)).toBe(false)
+    expect(allowedStatusPath(' M public/editions/../../scripts/run-daily-publish-cron.mjs', '../../scripts')).toBe(false)
+    expect(isSafeEditionId(editionId)).toBe(true)
+    expect(isSafeEditionId('../../scripts')).toBe(false)
+    expect(isSafeEditionId('2026-08-04-Split-Crimson-v1')).toBe(false)
+    expect(allowedStatusPath(' M scripts/run-daily-publish-cron.mjs', editionId)).toBe(false)
   })
 })

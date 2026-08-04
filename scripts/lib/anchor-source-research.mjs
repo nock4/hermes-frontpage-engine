@@ -1,6 +1,8 @@
-import { fetchWithTimeout } from './fetch-with-timeout.mjs'
+import dns from 'node:dns/promises'
+
 import { getSourceDisplayTitle } from './source-display.mjs'
 import { extractUrls, hostnameForUrl, isAllowedSourceUrl, youtubeId } from './source-url-policy.mjs'
+import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl } from './source-image-network-policy.mjs'
 import {
   aestheticSignalScore,
   isLowValueVisualImage,
@@ -133,14 +135,19 @@ export function selectAnchorSource(evidenceSources, { recentSourceKeys = new Set
 }
 
 async function fetchHtml(url) {
+  const fetchableUrl = await resolveFetchableHtmlUrl(url, { lookup: dns.lookup })
+  if (!fetchableUrl) return null
   try {
-    const response = await fetchWithTimeout(url, {
+    const response = await fetchVettedRemoteUrl(fetchableUrl, {
+      lookup: dns.lookup,
       headers: {
         accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'user-agent': 'daily-frontpage-engine-anchor-research/0.1',
       },
-      redirect: 'follow',
-    }, 9000)
+      timeoutMs: 9000,
+      maxBytes: 1_000_001,
+    })
+    if (!response) return null
     const contentType = response.headers.get('content-type') || ''
     if (!response.ok || !contentType.toLowerCase().includes('text/html')) return null
     return await response.text()

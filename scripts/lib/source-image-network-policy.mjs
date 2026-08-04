@@ -1,3 +1,7 @@
+import dns from 'node:dns/promises'
+import http from 'node:http'
+import https from 'node:https'
+
 const BLOCKED_HOSTNAMES = new Set([
   'localhost',
   'metadata.google.internal',
@@ -96,7 +100,7 @@ const isIpLiteral = (hostname) => /^\d+\.\d+\.\d+\.\d+$/.test(hostname) || hostn
 
 const isPrivateAddress = (address) => isBlockedIpv4(address) || isBlockedIpv6(address)
 
-async function resolveFetchableRemoteUrl(sourceUrl, { lookup } = {}) {
+async function resolvePublicRemote(sourceUrl, { lookup = dns.lookup } = {}) {
   if (!sourceUrl) return null
 
   let url
@@ -112,20 +116,131 @@ async function resolveFetchableRemoteUrl(sourceUrl, { lookup } = {}) {
   if (!hostname || isLocalHostname(hostname)) return null
 
   if (isIpLiteral(hostname)) {
-    return isPrivateAddress(hostname) ? null : url.toString()
+    return isPrivateAddress(hostname) ? null : { url, hostname, address: hostname, family: hostname.includes(':') ? 6 : 4 }
   }
 
-  if (!lookup) return url.toString()
+  if (!lookup) return null
 
   try {
     const records = await lookup(hostname, { all: true })
     if (!Array.isArray(records) || records.length === 0) return null
     if (records.some((record) => isPrivateAddress(record.address))) return null
+    const pinned = records.find((record) => !isPrivateAddress(record.address))
+    return pinned ? { url, hostname, address: pinned.address, family: pinned.family || (pinned.address.includes(':') ? 6 : 4) } : null
   } catch {
     return null
   }
+}
 
-  return url.toString()
+async function resolveFetchableRemoteUrl(sourceUrl, options = {}) {
+  const resolved = await resolvePublicRemote(sourceUrl, options)
+  return resolved ? resolved.url.toString() : null
+}
+
+class VettedResponse {
+  constructor({ status, statusText, headers, body }) {
+    this.status = status
+    this.statusText = statusText || ''
+    this.ok = status >= 200 && status < 300
+    this.headers = {
+      get: (name) => headers[String(name || '').toLowerCase()] ?? null,
+    }
+    this._body = body
+  }
+
+  async text() {
+    return this._body.toString('utf8')
+  }
+
+  async arrayBuffer() {
+    const buffer = this._body
+    return buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength)
+  }
+
+  async json() {
+    return JSON.parse(await this.text())
+  }
+}
+
+export async function fetchVettedRemoteUrl(sourceUrl, {
+  lookup = dns.lookup,
+  headers = {},
+  method = 'GET',
+  timeoutMs = 8000,
+  maxBytes = 5_000_000,
+} = {}) {
+  const resolved = await resolvePublicRemote(sourceUrl, { lookup })
+  if (!resolved) return null
+
+  const { url, hostname, address, family } = resolved
+
+  if (process.env.NODE_ENV === 'test' && process.env.DFE_TEST_USE_GLOBAL_FETCH === '1') {
+    return fetch(url.toString(), {
+      method,
+      headers,
+      redirect: 'error',
+      signal: AbortSignal.timeout(timeoutMs),
+    })
+  }
+
+  const transport = url.protocol === 'https:' ? https : http
+
+  return new Promise((resolve, reject) => {
+    let settled = false
+    const request = transport.request({
+      protocol: url.protocol,
+      hostname,
+      port: url.port || undefined,
+      path: `${url.pathname}${url.search}`,
+      method,
+      headers,
+      servername: hostname,
+      lookup: (_hostname, options, callback) => {
+        if (options?.all) {
+          callback(null, [{ address, family }])
+          return
+        }
+        callback(null, address, family)
+      },
+    }, (response) => {
+      const chunks = []
+      let total = 0
+      response.on('data', (chunk) => {
+        total += chunk.length
+        if (total > maxBytes) {
+          request.destroy(new Error(`Response exceeded ${maxBytes} bytes`))
+          return
+        }
+        chunks.push(chunk)
+      })
+      response.on('end', () => {
+        if (settled) return
+        settled = true
+        clearTimeout(timer)
+        const normalizedHeaders = Object.fromEntries(
+          Object.entries(response.headers).map(([key, value]) => [key.toLowerCase(), Array.isArray(value) ? value.join(', ') : String(value ?? '')]),
+        )
+        resolve(new VettedResponse({
+          status: response.statusCode || 0,
+          statusText: response.statusMessage || '',
+          headers: normalizedHeaders,
+          body: Buffer.concat(chunks),
+        }))
+      })
+    })
+
+    const timer = setTimeout(() => {
+      request.destroy(new Error(`Fetch timed out after ${timeoutMs}ms`))
+    }, timeoutMs)
+
+    request.on('error', (error) => {
+      if (settled) return
+      settled = true
+      clearTimeout(timer)
+      reject(error)
+    })
+    request.end()
+  })
 }
 
 export async function resolveFetchableHtmlUrl(sourceUrl, options = {}) {

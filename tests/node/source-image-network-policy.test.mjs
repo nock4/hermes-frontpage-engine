@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
 import {
+  fetchVettedRemoteUrl,
   resolveFetchableHtmlUrl,
   resolveFetchableImageUrl,
 } from '../../scripts/lib/source-image-network-policy.mjs'
@@ -52,10 +53,19 @@ describe('source-image-network-policy', () => {
 
     await expect(resolveFetchableHtmlUrl('http://[::ffff:127.0.0.1]/', { lookup })).resolves.toBeNull()
     await expect(resolveFetchableHtmlUrl('http://[::ffff:c0a8:010a]/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://2130706433/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://0177.0.0.1/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://0x7f.0.0.1/', { lookup })).resolves.toBeNull()
+    await expect(resolveFetchableHtmlUrl('http://127.1/', { lookup })).resolves.toBeNull()
     await expect(resolveFetchableHtmlUrl('http://[fc00::1]/', { lookup })).resolves.toBeNull()
     await expect(resolveFetchableHtmlUrl('http://100.64.0.1/', { lookup })).resolves.toBeNull()
     await expect(resolveFetchableHtmlUrl('http://198.18.0.1/', { lookup })).resolves.toBeNull()
     expect(lookup).not.toHaveBeenCalled()
+  })
+
+  it('refuses hostname fetches when DNS pinning is unavailable', async () => {
+    await expect(resolveFetchableHtmlUrl('https://example.com/story', { lookup: null })).resolves.toBeNull()
+    await expect(fetchVettedRemoteUrl('https://example.com/story', { lookup: null })).resolves.toBeNull()
   })
 
   it('rejects DNS results that are IPv6-mapped private addresses', async () => {

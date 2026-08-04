@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import dns from 'node:dns/promises'
 import path from 'node:path'
 
-import { resolveFetchableHtmlUrl, resolveFetchableImageUrl } from './lib/source-image-network-policy.mjs'
+import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl, resolveFetchableImageUrl } from './lib/source-image-network-policy.mjs'
 
 const root = process.cwd()
 const editionsRoot = path.join(root, 'public', 'editions')
@@ -115,15 +115,17 @@ const isLoadablePreviewImage = async (imageUrl) => {
   }
 
   try {
-    const response = await fetch(fetchableImageUrl, {
+    const response = await fetchVettedRemoteUrl(fetchableImageUrl, {
+      lookup: dns.lookup,
       headers: {
         'user-agent': 'Mozilla/5.0 (compatible; Hermes/1.0; +https://hermes.local)',
         accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5',
         range: 'bytes=0-4095',
       },
-      redirect: 'error',
-      signal: AbortSignal.timeout(8000),
+      timeoutMs: 8000,
+      maxBytes: 8192,
     })
+    if (!response) throw new Error('blocked image URL')
     const contentType = response.headers.get('content-type') ?? ''
     const isLoadable = response.ok && (!contentType || contentType.toLowerCase().startsWith('image/'))
     imageHealthCache.set(imageUrl, isLoadable)
@@ -180,14 +182,16 @@ const fetchHtml = async (sourceUrl) => {
   if (!fetchableUrl) return null
   if (htmlCache.has(fetchableUrl)) return htmlCache.get(fetchableUrl)
   try {
-    const response = await fetch(fetchableUrl, {
+    const response = await fetchVettedRemoteUrl(fetchableUrl, {
+      lookup: dns.lookup,
       headers: {
         'user-agent': 'Mozilla/5.0 (compatible; Hermes/1.0; +https://hermes.local)',
         accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
       },
-      redirect: 'error',
-      signal: AbortSignal.timeout(8000),
+      timeoutMs: 8000,
+      maxBytes: 1_000_001,
     })
+    if (!response) throw new Error('blocked HTML URL')
     const contentType = response.headers.get('content-type') ?? ''
     if (!response.ok || !contentType.includes('text/html')) {
       htmlCache.set(fetchableUrl, null)

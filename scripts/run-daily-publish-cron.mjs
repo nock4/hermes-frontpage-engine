@@ -318,9 +318,18 @@ async function cleanupPreviewSmokeServer(port = previewSmokePort) {
   return pids
 }
 
-function allowedStatusPath(line) {
+export function isSafeEditionId(value) {
+  return /^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9][a-z0-9-]*-v[0-9]+$/.test(String(value || ''))
+}
+
+export function allowedStatusPath(line, editionId) {
+  if (!isSafeEditionId(editionId)) return false
   const candidate = line.slice(3).trim()
-  return candidate === cronWorktreeSentinel || candidate === 'public/editions' || candidate.startsWith('public/editions/')
+  const editionRoot = `public/editions/${editionId}`
+  return candidate === cronWorktreeSentinel
+    || candidate === 'public/editions/index.json'
+    || candidate === editionRoot
+    || candidate.startsWith(`${editionRoot}/`)
 }
 
 async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
@@ -329,12 +338,12 @@ async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
   if (!lines.length) {
     return { committed: false, commit: null, changed_paths: [] }
   }
-  const unexpected = lines.filter((line) => !allowedStatusPath(line))
+  const unexpected = lines.filter((line) => !allowedStatusPath(line, editionId))
   if (unexpected.length) {
     throw new Error(`Unexpected changed paths in cron worktree: ${unexpected.join(', ')}`)
   }
 
-  await run('git', ['add', 'public/editions'], { cwd: worktreeDir })
+  await run('git', ['add', 'public/editions/index.json', path.join('public', 'editions', editionId)], { cwd: worktreeDir })
   const cached = await run('git', ['diff', '--cached', '--name-only'], { cwd: worktreeDir, capture: true })
   const cachedPaths = parseStatusLines(cached.stdout)
   if (!cachedPaths.length) {
