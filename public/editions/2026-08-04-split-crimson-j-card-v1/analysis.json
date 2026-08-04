@@ -1,0 +1,518 @@
+{
+  "analysis_id": "analysis-2026-08-04-split-crimson-j-card-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A red distressed paper sleeve on black ground: one large black halftone photo aperture presses into the upper right, a torn vertical spine splits the plate, pinholes and scratches puncture the upper field, and lower ridges carry torn holes, slits, and illegible print scars.",
+  "usable_surfaces": [
+    "upper black halftone rectangle",
+    "ragged left release strip",
+    "central torn spine",
+    "pinhole cluster",
+    "right vertical slit",
+    "lower black tear void",
+    "lower-right print scars",
+    "top scratch field",
+    "bottom compression ridges"
+  ],
+  "detected_objects": [
+    {
+      "label": "upper black halftone aperture",
+      "artifact_type": "hero-scale-photo-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.441,
+        "y": 0.143,
+        "w": 0.498,
+        "h": 0.348
+      },
+      "polygon": [
+        [
+          0.441,
+          0.143
+        ],
+        [
+          0.938,
+          0.143
+        ],
+        [
+          0.938,
+          0.489
+        ],
+        [
+          0.441,
+          0.489
+        ],
+        [
+          0.441,
+          0.298
+        ],
+        [
+          0.516,
+          0.338
+        ],
+        [
+          0.633,
+          0.416
+        ],
+        [
+          0.441,
+          0.298
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "Large rectangular black halftone inset with tree texture, hooded silhouette, and a diagonal pale wedge cut into its lower-left field."
+    },
+    {
+      "label": "torn off-white release band",
+      "artifact_type": "hero-scale-underpaper-band",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.102,
+        "y": 0.034,
+        "w": 0.206,
+        "h": 0.93
+      },
+      "polygon": [
+        [
+          0.108,
+          0.041
+        ],
+        [
+          0.281,
+          0.035
+        ],
+        [
+          0.302,
+          0.057
+        ],
+        [
+          0.292,
+          0.185
+        ],
+        [
+          0.301,
+          0.332
+        ],
+        [
+          0.294,
+          0.505
+        ],
+        [
+          0.302,
+          0.687
+        ],
+        [
+          0.296,
+          0.824
+        ],
+        [
+          0.291,
+          0.96
+        ],
+        [
+          0.11,
+          0.963
+        ],
+        [
+          0.098,
+          0.78
+        ],
+        [
+          0.101,
+          0.365
+        ],
+        [
+          0.101,
+          0.117
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Long left sleeve strip with dark border lines, worn tan paper edges, vertical black distressed print, and a torn ragged right edge."
+    },
+    {
+      "label": "law-database pinhole procession",
+      "artifact_type": "spine-pinhole-chain",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.376,
+        "y": 0.253,
+        "w": 0.041,
+        "h": 0.043
+      },
+      "polygon": [
+        [
+          0.388,
+          0.253
+        ],
+        [
+          0.397,
+          0.257
+        ],
+        [
+          0.398,
+          0.263
+        ],
+        [
+          0.392,
+          0.268
+        ],
+        [
+          0.382,
+          0.266
+        ],
+        [
+          0.376,
+          0.259
+        ],
+        [
+          0.383,
+          0.254
+        ],
+        [
+          0.405,
+          0.267
+        ],
+        [
+          0.416,
+          0.272
+        ],
+        [
+          0.412,
+          0.279
+        ],
+        [
+          0.401,
+          0.278
+        ],
+        [
+          0.397,
+          0.287
+        ],
+        [
+          0.386,
+          0.292
+        ],
+        [
+          0.379,
+          0.286
+        ],
+        [
+          0.384,
+          0.278
+        ],
+        [
+          0.413,
+          0.294
+        ],
+        [
+          0.419,
+          0.3
+        ],
+        [
+          0.409,
+          0.302
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Five small black pierced holes with slight pale rims clustered just right of the torn spine in the upper red field."
+    },
+    {
+      "label": "bias deck scratch cluster",
+      "artifact_type": "stacked-print-scar-cluster",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.584,
+        "y": 0.671,
+        "w": 0.322,
+        "h": 0.18
+      },
+      "confidence": 0.89,
+      "visual_evidence": "Lower-right stack of illegible black horizontal print scars broken by cracked red paper and offset rows."
+    },
+    {
+      "label": "detroit rent tear notch",
+      "artifact_type": "lower-ridge-tear-notch",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.702,
+        "y": 0.529,
+        "w": 0.149,
+        "h": 0.123
+      },
+      "polygon": [
+        [
+          0.725,
+          0.532
+        ],
+        [
+          0.763,
+          0.529
+        ],
+        [
+          0.793,
+          0.543
+        ],
+        [
+          0.822,
+          0.544
+        ],
+        [
+          0.846,
+          0.571
+        ],
+        [
+          0.832,
+          0.603
+        ],
+        [
+          0.841,
+          0.626
+        ],
+        [
+          0.814,
+          0.65
+        ],
+        [
+          0.778,
+          0.638
+        ],
+        [
+          0.744,
+          0.635
+        ],
+        [
+          0.716,
+          0.616
+        ],
+        [
+          0.703,
+          0.586
+        ],
+        [
+          0.711,
+          0.558
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "Irregular torn hole in the lower-right red sheet exposing dark underpaper, with curled tan fibers around the edge."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.33,
+        "y": 0.038,
+        "w": 0.55,
+        "h": 0.173
+      },
+      "polygon": [
+        [
+          0.336,
+          0.041
+        ],
+        [
+          0.497,
+          0.15
+        ],
+        [
+          0.641,
+          0.22
+        ],
+        [
+          0.486,
+          0.096
+        ],
+        [
+          0.576,
+          0.036
+        ],
+        [
+          0.64,
+          0.143
+        ],
+        [
+          0.743,
+          0.048
+        ],
+        [
+          0.826,
+          0.116
+        ],
+        [
+          0.882,
+          0.041
+        ],
+        [
+          0.835,
+          0.133
+        ],
+        [
+          0.704,
+          0.089
+        ],
+        [
+          0.574,
+          0.198
+        ],
+        [
+          0.455,
+          0.129
+        ],
+        [
+          0.367,
+          0.203
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "Fine pale scratch network crossing the upper red surface above and through the halftone aperture, visible as thin incised gestures."
+    },
+    {
+      "label": "lower compressed ridge tear field",
+      "artifact_type": "compressed-paper-ridge-field",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.103,
+        "y": 0.804,
+        "w": 0.807,
+        "h": 0.106
+      },
+      "polygon": [
+        [
+          0.104,
+          0.812
+        ],
+        [
+          0.204,
+          0.806
+        ],
+        [
+          0.315,
+          0.816
+        ],
+        [
+          0.438,
+          0.843
+        ],
+        [
+          0.564,
+          0.826
+        ],
+        [
+          0.699,
+          0.833
+        ],
+        [
+          0.807,
+          0.821
+        ],
+        [
+          0.91,
+          0.82
+        ],
+        [
+          0.905,
+          0.857
+        ],
+        [
+          0.76,
+          0.867
+        ],
+        [
+          0.633,
+          0.855
+        ],
+        [
+          0.485,
+          0.876
+        ],
+        [
+          0.336,
+          0.855
+        ],
+        [
+          0.207,
+          0.847
+        ],
+        [
+          0.108,
+          0.862
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Broad but distinct lower band of horizontal compression wrinkles and ridge shadows across the red paper, with torn interruptions and blackened creases."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.624,
+    "rationale": "The plate stays expressionist and material-led: one main photo aperture, one spine tear, one left strip, and a lower scar field. It is not empty, but the marks are legible and not generic UI clutter."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-04-split-crimson-j-card-v1"
+}
