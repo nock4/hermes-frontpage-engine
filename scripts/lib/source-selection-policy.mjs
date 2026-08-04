@@ -326,7 +326,16 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (sourceUrls.some((url) => youtubeId(url))) return source.youtube_embed_status !== 'unavailable' && source.embed_status !== 'unavailable'
   if (sourceUrls.some(isDirectRasterImageUrl)) return true
   if (source.image_url && !isLowValueVisualImage(source.image_url)) return true
-  if (classifySource(source.url || source.source_url || '').source_type === 'tweet' && noteHasDirectMediaForSource(source, signalHarvest)) return true
+  const sourceType = classifySource(source.url || source.source_url || '').source_type
+  if (sourceType === 'tweet') {
+    // A provider-hosted tweet iframe is a real source surface even when browser
+    // capture or fxtwitter media enrichment fails to recover attached media.
+    // Raw pbs/video media is blocked above so it cannot become a duplicate
+    // primary window beside its parent tweet.
+    return source.embed_status !== 'unavailable'
+      && source.embed_strategy !== 'never-primary-content-source'
+      && (source.window_type === 'social' || noteHasDirectMediaForSource(source, signalHarvest))
+  }
   return false
 }
 

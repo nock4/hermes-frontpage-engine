@@ -127,6 +127,24 @@ describe('source selection policy', () => {
     ]))
   })
 
+  it('selects provider tweet iframes as real source windows even when media enrichment is empty', () => {
+    const tweet = {
+      ...baseSource,
+      url: 'https://x.com/artist/status/2084367112227725803',
+      source_url: 'https://x.com/artist/status/2084367112227725803',
+      final_url: 'https://x.com/artist/status/2084367112227725803',
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      window_type: 'social',
+      embed_strategy: 'native-iframe-or-media-first',
+      title: '@artist: a real provider tweet surface',
+      image_url: null,
+    }
+
+    expect(sourceHasRenderableCardSurface(tweet)).toBe(true)
+    expect(selectContentSources([tweet], { targetItems: 1 }).map((source) => source.url)).toEqual([tweet.url])
+  })
+
   it('selects renderable creative content ahead of SaaS infrastructure surfaces', () => {
     const creative = {
       ...baseSource,
