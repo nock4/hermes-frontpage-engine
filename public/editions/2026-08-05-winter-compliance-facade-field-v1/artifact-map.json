@@ -1,0 +1,1485 @@
+{
+  "artifact_map_id": "map-2026-08-05-winter-compliance-facade-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "winter-compliance-facade-field",
+  "default_artifact_id": "hero-primary-source-anchor",
+  "artifacts": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "label": "Primary Source Anchor",
+      "artifact_type": "torn-brick-facade-island",
+      "bounds": {
+        "x": 0.0561,
+        "y": 0.2347,
+        "w": 0.3369,
+        "h": 0.4986
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0588,
+          0.2375
+        ],
+        [
+          0.2228,
+          0.2953
+        ],
+        [
+          0.3119,
+          0.3516
+        ],
+        [
+          0.3895,
+          0.4265
+        ],
+        [
+          0.3396,
+          0.6997
+        ],
+        [
+          0.3253,
+          0.719
+        ],
+        [
+          0.3075,
+          0.7304
+        ],
+        [
+          0.2638,
+          0.729
+        ],
+        [
+          0.2193,
+          0.7111
+        ],
+        [
+          0.0766,
+          0.6312
+        ],
+        [
+          0.0588,
+          0.4936
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/hero-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          346,
+          493
+        ],
+        "safe_stage_window_origin_px": [
+          388,
+          539
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0588,
+            0.2375
+          ],
+          [
+            0.2228,
+            0.2953
+          ],
+          [
+            0.3119,
+            0.3516
+          ],
+          [
+            0.3895,
+            0.4265
+          ],
+          [
+            0.3396,
+            0.6997
+          ],
+          [
+            0.3253,
+            0.719
+          ],
+          [
+            0.3075,
+            0.7304
+          ],
+          [
+            0.2638,
+            0.729
+          ],
+          [
+            0.2193,
+            0.7111
+          ],
+          [
+            0.0766,
+            0.6312
+          ],
+          [
+            0.0588,
+            0.4936
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0276,
+            0.2368
+          ],
+          [
+            0.0579,
+            0.2126
+          ],
+          [
+            0.2219,
+            0.271
+          ],
+          [
+            0.2977,
+            0.3181
+          ],
+          [
+            0.4046,
+            0.51
+          ],
+          [
+            0.3699,
+            0.699
+          ],
+          [
+            0.3556,
+            0.7183
+          ],
+          [
+            0.3075,
+            0.7546
+          ],
+          [
+            0.2629,
+            0.7532
+          ],
+          [
+            0.0766,
+            0.6555
+          ],
+          [
+            0.0455,
+            0.6305
+          ],
+          [
+            0.0276,
+            0.4964
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0276,
+          "y": 0.2126,
+          "w": 0.3779,
+          "h": 0.5428
+        },
+        "territory_area_px": 183513,
+        "visible_area_px": 186887,
+        "expansion_ratio": 0.982,
+        "neighbors": [
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 3106,
+            "direction": "down",
+            "distance_px": 217.23
+          },
+          {
+            "artifact_id": "module-distributed-marker-2",
+            "shared_edge_px": 2252,
+            "direction": "right",
+            "distance_px": 223.97
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "label": "Secondary Source Anchor",
+      "artifact_type": "arched-green-window-aperture",
+      "bounds": {
+        "x": 0.469,
+        "y": 0.526,
+        "w": 0.114,
+        "h": 0.198
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.47,
+          0.626
+        ],
+        [
+          0.472,
+          0.584
+        ],
+        [
+          0.485,
+          0.552
+        ],
+        [
+          0.51,
+          0.529
+        ],
+        [
+          0.538,
+          0.525
+        ],
+        [
+          0.564,
+          0.537
+        ],
+        [
+          0.579,
+          0.567
+        ],
+        [
+          0.583,
+          0.626
+        ],
+        [
+          0.581,
+          0.707
+        ],
+        [
+          0.568,
+          0.724
+        ],
+        [
+          0.492,
+          0.723
+        ],
+        [
+          0.477,
+          0.709
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/hero-secondary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-secondary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          808,
+          624
+        ],
+        "safe_stage_window_origin_px": [
+          822,
+          640
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.47,
+            0.626
+          ],
+          [
+            0.472,
+            0.584
+          ],
+          [
+            0.485,
+            0.552
+          ],
+          [
+            0.51,
+            0.529
+          ],
+          [
+            0.538,
+            0.525
+          ],
+          [
+            0.564,
+            0.537
+          ],
+          [
+            0.579,
+            0.567
+          ],
+          [
+            0.583,
+            0.626
+          ],
+          [
+            0.581,
+            0.707
+          ],
+          [
+            0.568,
+            0.724
+          ],
+          [
+            0.492,
+            0.723
+          ],
+          [
+            0.477,
+            0.709
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4394,
+            0.6155
+          ],
+          [
+            0.4412,
+            0.5827
+          ],
+          [
+            0.4545,
+            0.5514
+          ],
+          [
+            0.5098,
+            0.5043
+          ],
+          [
+            0.5374,
+            0.5007
+          ],
+          [
+            0.5936,
+            0.5364
+          ],
+          [
+            0.6087,
+            0.5656
+          ],
+          [
+            0.6132,
+            0.6198
+          ],
+          [
+            0.6105,
+            0.7068
+          ],
+          [
+            0.5677,
+            0.7482
+          ],
+          [
+            0.492,
+            0.7468
+          ],
+          [
+            0.4501,
+            0.7126
+          ],
+          [
+            0.4394,
+            0.6305
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4394,
+          "y": 0.5007,
+          "w": 0.1747,
+          "h": 0.2482
+        },
+        "territory_area_px": 56740,
+        "visible_area_px": 31240,
+        "expansion_ratio": 1.816,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "small-right-window-slit",
+      "bounds": {
+        "x": 0.715,
+        "y": 0.579,
+        "w": 0.048,
+        "h": 0.092
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.715,
+          0.602
+        ],
+        [
+          0.725,
+          0.58
+        ],
+        [
+          0.756,
+          0.579
+        ],
+        [
+          0.763,
+          0.599
+        ],
+        [
+          0.762,
+          0.655
+        ],
+        [
+          0.754,
+          0.67
+        ],
+        [
+          0.722,
+          0.666
+        ],
+        [
+          0.716,
+          0.649
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1135,
+          632
+        ],
+        "safe_stage_window_origin_px": [
+          1141,
+          640
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.715,
+            0.602
+          ],
+          [
+            0.725,
+            0.58
+          ],
+          [
+            0.756,
+            0.579
+          ],
+          [
+            0.763,
+            0.599
+          ],
+          [
+            0.762,
+            0.655
+          ],
+          [
+            0.754,
+            0.67
+          ],
+          [
+            0.722,
+            0.666
+          ],
+          [
+            0.716,
+            0.649
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6791,
+            0.6013
+          ],
+          [
+            0.6889,
+            0.5799
+          ],
+          [
+            0.7246,
+            0.5514
+          ],
+          [
+            0.7558,
+            0.5499
+          ],
+          [
+            0.7914,
+            0.5785
+          ],
+          [
+            0.7986,
+            0.5977
+          ],
+          [
+            0.7968,
+            0.6555
+          ],
+          [
+            0.7888,
+            0.6698
+          ],
+          [
+            0.7531,
+            0.6983
+          ],
+          [
+            0.7219,
+            0.694
+          ],
+          [
+            0.6863,
+            0.6655
+          ],
+          [
+            0.6791,
+            0.6248
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6791,
+          "y": 0.5499,
+          "w": 0.1203,
+          "h": 0.1491
+        },
+        "territory_area_px": 22191,
+        "visible_area_px": 6191,
+        "expansion_ratio": 3.584,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "right-dark-window-void",
+      "bounds": {
+        "x": 0.844,
+        "y": 0.562,
+        "w": 0.08,
+        "h": 0.135
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.844,
+          0.583
+        ],
+        [
+          0.858,
+          0.564
+        ],
+        [
+          0.909,
+          0.562
+        ],
+        [
+          0.923,
+          0.582
+        ],
+        [
+          0.924,
+          0.681
+        ],
+        [
+          0.908,
+          0.697
+        ],
+        [
+          0.858,
+          0.693
+        ],
+        [
+          0.846,
+          0.674
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          634
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          645
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.844,
+            0.583
+          ],
+          [
+            0.858,
+            0.564
+          ],
+          [
+            0.909,
+            0.562
+          ],
+          [
+            0.923,
+            0.582
+          ],
+          [
+            0.924,
+            0.681
+          ],
+          [
+            0.908,
+            0.697
+          ],
+          [
+            0.858,
+            0.693
+          ],
+          [
+            0.846,
+            0.674
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8182,
+            0.5827
+          ],
+          [
+            0.8316,
+            0.5642
+          ],
+          [
+            0.8574,
+            0.5435
+          ],
+          [
+            0.9082,
+            0.5414
+          ],
+          [
+            0.934,
+            0.5621
+          ],
+          [
+            0.9474,
+            0.5813
+          ],
+          [
+            0.9483,
+            0.6312
+          ],
+          [
+            0.9483,
+            0.6805
+          ],
+          [
+            0.934,
+            0.6954
+          ],
+          [
+            0.9073,
+            0.7168
+          ],
+          [
+            0.8574,
+            0.7126
+          ],
+          [
+            0.8324,
+            0.6926
+          ],
+          [
+            0.8209,
+            0.674
+          ],
+          [
+            0.8182,
+            0.5977
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8182,
+          "y": 0.5414,
+          "w": 0.131,
+          "h": 0.1762
+        },
+        "territory_area_px": 30878,
+        "visible_area_px": 15702,
+        "expansion_ratio": 1.967,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "lower-glass-block-window",
+      "bounds": {
+        "x": 0.829,
+        "y": 0.816,
+        "w": 0.089,
+        "h": 0.052
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.829,
+          0.818
+        ],
+        [
+          0.912,
+          0.816
+        ],
+        [
+          0.918,
+          0.831
+        ],
+        [
+          0.917,
+          0.857
+        ],
+        [
+          0.907,
+          0.868
+        ],
+        [
+          0.84,
+          0.867
+        ],
+        [
+          0.831,
+          0.856
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.829,
+            0.818
+          ],
+          [
+            0.912,
+            0.816
+          ],
+          [
+            0.918,
+            0.831
+          ],
+          [
+            0.917,
+            0.857
+          ],
+          [
+            0.907,
+            0.868
+          ],
+          [
+            0.84,
+            0.867
+          ],
+          [
+            0.831,
+            0.856
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8396,
+            0.8773
+          ],
+          [
+            0.8431,
+            0.7974
+          ],
+          [
+            0.9118,
+            0.796
+          ],
+          [
+            0.9367,
+            0.816
+          ],
+          [
+            0.9421,
+            0.8302
+          ],
+          [
+            0.9412,
+            0.8566
+          ],
+          [
+            0.9064,
+            0.8873
+          ],
+          [
+            0.8396,
+            0.8866
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8396,
+          "y": 0.796,
+          "w": 0.1034,
+          "h": 0.092
+        },
+        "territory_area_px": 12989,
+        "visible_area_px": 6720,
+        "expansion_ratio": 1.933,
+        "neighbors": [
+          {
+            "artifact_id": "module-reference-plaque-2",
+            "shared_edge_px": 1884,
+            "direction": "left",
+            "distance_px": 103.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "left-lower-window-stained-pane",
+      "bounds": {
+        "x": 0.142,
+        "y": 0.562,
+        "w": 0.08,
+        "h": 0.135
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.144,
+          0.584
+        ],
+        [
+          0.157,
+          0.564
+        ],
+        [
+          0.207,
+          0.562
+        ],
+        [
+          0.22,
+          0.583
+        ],
+        [
+          0.222,
+          0.682
+        ],
+        [
+          0.209,
+          0.697
+        ],
+        [
+          0.154,
+          0.695
+        ],
+        [
+          0.143,
+          0.676
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          280,
+          634
+        ],
+        "safe_stage_window_origin_px": [
+          289,
+          645
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.144,
+            0.584
+          ],
+          [
+            0.157,
+            0.564
+          ],
+          [
+            0.207,
+            0.562
+          ],
+          [
+            0.22,
+            0.583
+          ],
+          [
+            0.222,
+            0.682
+          ],
+          [
+            0.209,
+            0.697
+          ],
+          [
+            0.154,
+            0.695
+          ],
+          [
+            0.143,
+            0.676
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1176,
+            0.6298
+          ],
+          [
+            0.1185,
+            0.5835
+          ],
+          [
+            0.1435,
+            0.5542
+          ],
+          [
+            0.2335,
+            0.5656
+          ],
+          [
+            0.2442,
+            0.582
+          ],
+          [
+            0.2469,
+            0.6655
+          ],
+          [
+            0.246,
+            0.6833
+          ],
+          [
+            0.2086,
+            0.7168
+          ],
+          [
+            0.1533,
+            0.7147
+          ],
+          [
+            0.1283,
+            0.6947
+          ],
+          [
+            0.1176,
+            0.6762
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1176,
+          "y": 0.5542,
+          "w": 0.1301,
+          "h": 0.1633
+        },
+        "territory_area_px": 29157,
+        "visible_area_px": 15709,
+        "expansion_ratio": 1.856,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 3106,
+            "direction": "up",
+            "distance_px": 217.23
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "iron-fence-comb",
+      "bounds": {
+        "x": 0,
+        "y": 0.787,
+        "w": 0.35,
+        "h": 0.079
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0,
+          0.804
+        ],
+        [
+          0.02,
+          0.804
+        ],
+        [
+          0.02,
+          0.789
+        ],
+        [
+          0.027,
+          0.804
+        ],
+        [
+          0.048,
+          0.804
+        ],
+        [
+          0.048,
+          0.789
+        ],
+        [
+          0.056,
+          0.804
+        ],
+        [
+          0.123,
+          0.804
+        ],
+        [
+          0.123,
+          0.789
+        ],
+        [
+          0.13,
+          0.805
+        ],
+        [
+          0.198,
+          0.804
+        ],
+        [
+          0.198,
+          0.789
+        ],
+        [
+          0.205,
+          0.804
+        ],
+        [
+          0.35,
+          0.803
+        ],
+        [
+          0.349,
+          0.865
+        ],
+        [
+          0,
+          0.866
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          269,
+          840
+        ],
+        "safe_stage_window_origin_px": [
+          312,
+          846
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.804
+          ],
+          [
+            0.02,
+            0.804
+          ],
+          [
+            0.02,
+            0.789
+          ],
+          [
+            0.027,
+            0.804
+          ],
+          [
+            0.048,
+            0.804
+          ],
+          [
+            0.048,
+            0.789
+          ],
+          [
+            0.056,
+            0.804
+          ],
+          [
+            0.123,
+            0.804
+          ],
+          [
+            0.123,
+            0.789
+          ],
+          [
+            0.13,
+            0.805
+          ],
+          [
+            0.198,
+            0.804
+          ],
+          [
+            0.198,
+            0.789
+          ],
+          [
+            0.205,
+            0.804
+          ],
+          [
+            0.35,
+            0.803
+          ],
+          [
+            0.349,
+            0.865
+          ],
+          [
+            0,
+            0.866
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.7839
+          ],
+          [
+            0.0196,
+            0.7689
+          ],
+          [
+            0.1979,
+            0.7689
+          ],
+          [
+            0.3494,
+            0.7825
+          ],
+          [
+            0.3743,
+            0.8024
+          ],
+          [
+            0.3734,
+            0.8645
+          ],
+          [
+            0.3485,
+            0.8845
+          ],
+          [
+            0.0,
+            0.8859
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.7689,
+          "w": 0.3752,
+          "h": 0.1177
+        },
+        "territory_area_px": 60927,
+        "visible_area_px": 34358,
+        "expansion_ratio": 1.773,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-reference-plaque-2",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/module-reference-plaque-2.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6943,
+            0.7596
+          ],
+          [
+            0.7193,
+            0.7397
+          ],
+          [
+            0.8993,
+            0.7397
+          ],
+          [
+            0.9242,
+            0.7596
+          ],
+          [
+            0.9242,
+            0.9194
+          ],
+          [
+            0.8993,
+            0.9394
+          ],
+          [
+            0.7193,
+            0.9394
+          ],
+          [
+            0.6943,
+            0.9194
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6943,
+          "y": 0.7397,
+          "w": 0.2308,
+          "h": 0.2004
+        },
+        "territory_area_px": 59557,
+        "visible_area_px": 45675,
+        "expansion_ratio": 1.304,
+        "neighbors": [
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 1884,
+            "direction": "right",
+            "distance_px": 103.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "winter-compliance-facade-field",
+      "mask_path": "/editions/2026-08-05-winter-compliance-facade-field-v1/assets/masks/module-distributed-marker-2.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2549,
+            0.3395
+          ],
+          [
+            0.2799,
+            0.3195
+          ],
+          [
+            0.4394,
+            0.3195
+          ],
+          [
+            0.4643,
+            0.3395
+          ],
+          [
+            0.4643,
+            0.4893
+          ],
+          [
+            0.4394,
+            0.5093
+          ],
+          [
+            0.3307,
+            0.5093
+          ],
+          [
+            0.2549,
+            0.4151
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2549,
+          "y": 0.3195,
+          "w": 0.2103,
+          "h": 0.1904
+        },
+        "territory_area_px": 56178,
+        "visible_area_px": 37980,
+        "expansion_ratio": 1.479,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 2252,
+            "direction": "left",
+            "distance_px": 223.97
+          }
+        ]
+      }
+    }
+  ]
+}

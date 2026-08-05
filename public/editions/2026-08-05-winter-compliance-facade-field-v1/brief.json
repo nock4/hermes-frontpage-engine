@@ -1,0 +1,64 @@
+{
+  "brief_id": "brief-2026-08-05-winter-compliance-facade-field-v1",
+  "date": "2026-08-05",
+  "signal_cluster_ids": [
+    "f8a40b943f8d",
+    "2460857ebdcc",
+    "888760eea469",
+    "c81ac99da01d",
+    "0b9171c2b62c",
+    "0b5a303cb937",
+    "4faa3696d844",
+    "20be4408324a"
+  ],
+  "research_node_ids": [
+    "research-1-7baf267e",
+    "research-2-d1beb612",
+    "research-3-e537aa89",
+    "research-4-ac1c8973",
+    "research-5-ec61a7eb",
+    "research-6-28be03f5",
+    "research-7-80f7bc4e",
+    "research-8-564523ac",
+    "research-9-59488e12",
+    "research-10-ef465509",
+    "research-11-f1912b14",
+    "research-12-b0e80753"
+  ],
+  "mood": "cold brick under withheld rent light",
+  "material_language": [
+    "weathered red brick grid",
+    "cream limestone or painted masonry trim",
+    "pale overcast sky / municipal paper field",
+    "black iron fence and sign enamel",
+    "dirty snow crust and wet asphalt",
+    "small printed-paper poster scraps from derived Metro Times pages"
+  ],
+  "lighting": "Flat winter daylight: soft, overcast, low-contrast, with no theatrical spotlights. Keep the hero field bright but cold; let brick and fence marks carry darker density. Small window glints may be milky or greenish, like daylight caught in old glass.",
+  "object_inventory": [
+    "Two major structures: a large pale negative field and one lower architectural facade/slab. Secondary marks should be sparse and legible, arranged as window stacks, sign slit, fence rail, curb seam, and a few torn-paper/poster chips.",
+    "Make the anchor article visible through the architecture itself: 6–10 real source windows should read as facade apertures, bay-window panes, a vertical sign cut, fence gaps, snow/curb notches, road-stripe seams, and small compliance-paper repairs. One or two hero-scale source marks can be a large blank window panel or oversized sign-slit; smaller sources can live as pinholes, glints, chips, and edge cuts. Avoid separate cards floating on top of the image.",
+    "mixed geometry",
+    "field-based composition"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no generic office room",
+    "no dashboard cards",
+    "no floating UI",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached",
+    "Do not repeat the Split Crimson J-Card cassette/sleeve split grammar.",
+    "Do not make another torn orange poster wall or dense pasted bill surface.",
+    "Do not repeat a bleached timber section or literal cutaway diagram as the main look.",
+    "Do not use a black-earth slab or heavy charcoal occult procession atmosphere.",
+    "Do not default to a blue ambient field without the Detroit brick/fence/sky evidence.",
+    "Avoid generic dashboard, office-room, municipal-form grid, courtroom symbol, skyline postcard, and polite flat paper seam macro treatments.",
+    "no generic office-room fallback",
+    "no many-prop still life"
+  ]
+}

@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-08-05-winter-compliance-facade-field-v1",
+  "edition_id": "2026-08-05-winter-compliance-facade-field-v1",
+  "plate_read_timestamp": "2026-08-05T13:36:00.382Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A mostly bare plaster sky/wall opens above a broken red-brick street facade. The usable source marks are physical architectural wounds: torn brick edges, window apertures, vertical scars, fence teeth, a green pole, glass blocks, and snow-dark street seams.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "cold brick under withheld rent light",
+      "A mostly bare plaster sky/wall opens above a broken red-brick street facade. The usable source marks are physical architectural wounds: torn brick edges, window apertures, vertical scars, fence teeth, a green pole, glass blocks, and snow-dark street seams.",
+      "https",
+      "seed",
+      "frontpage"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Primary Source Anchor",
+      "Secondary Source Anchor",
+      "Field Marker",
+      "Edge Detail",
+      "Layered Fragment",
+      "Reference Plaque",
+      "Distributed Marker"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "winter-compliance-facade-field",
+      "Two major structures: a large pale negative field and one lower architectural facade/slab. Secondary marks should be sparse and legible, arranged as window stacks, sign slit, fence rail, curb seam, and a few torn-paper/poster chips.",
+      "Make the anchor article visible through the architecture itself: 6–10 real source windows should read as facade apertures, bay-window panes, a vertical sign cut, fence gaps, snow/curb notches, road-stripe seams, and small compliance-paper repairs. One or two hero-scale source marks can be a large blank window panel or oversized sign-slit; smaller sources can live as pinholes, glints, chips, and edge cuts. Avoid separate cards floating on top of the image.",
+      "mixed geometry",
+      "field-based composition",
+      "torn left brick island",
+      "arched green window aperture",
+      "central vertical masonry scar"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: winter-compliance-facade-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "type": "torn-brick-facade-island",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.0561,
+        "y": 0.2347,
+        "w": 0.3369,
+        "h": 0.4986
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "type": "arched-green-window-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.469,
+        "y": 0.526,
+        "w": 0.114,
+        "h": 0.198
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "small-right-window-slit",
+      "strength": 0.8000039999999999,
+      "bounds": {
+        "x": 0.715,
+        "y": 0.579,
+        "w": 0.048,
+        "h": 0.092
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "type": "right-dark-window-void",
+      "strength": 0.7618440000000001,
+      "bounds": {
+        "x": 0.844,
+        "y": 0.562,
+        "w": 0.08,
+        "h": 0.135
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "lower-glass-block-window",
+      "strength": 0.735288,
+      "bounds": {
+        "x": 0.829,
+        "y": 0.816,
+        "w": 0.089,
+        "h": 0.052
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "type": "left-lower-window-stained-pane",
+      "strength": 0.70506,
+      "bounds": {
+        "x": 0.142,
+        "y": 0.562,
+        "w": 0.08,
+        "h": 0.135
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "iron-fence-comb",
+      "strength": 0.6740520000000001,
+      "bounds": {
+        "x": 0,
+        "y": 0.787,
+        "w": 0.35,
+        "h": 0.079
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-2",
+      "kind": "module",
+      "type": "reference-plaque",
+      "strength": 0.644308,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.646276,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0561,
+        "y": 0.2347,
+        "w": 0.3369,
+        "h": 0.4986
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.469,
+        "y": 0.526,
+        "w": 0.114,
+        "h": 0.198
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.715,
+        "y": 0.579,
+        "w": 0.048,
+        "h": 0.092
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.844,
+        "y": 0.562,
+        "w": 0.08,
+        "h": 0.135
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.829,
+        "y": 0.816,
+        "w": 0.089,
+        "h": 0.052
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.142,
+        "y": 0.562,
+        "w": 0.08,
+        "h": 0.135
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.787,
+        "w": 0.35,
+        "h": 0.079
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

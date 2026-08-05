@@ -1,0 +1,487 @@
+{
+  "analysis_id": "analysis-2026-08-05-winter-compliance-facade-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A mostly bare plaster sky/wall opens above a broken red-brick street facade. The usable source marks are physical architectural wounds: torn brick edges, window apertures, vertical scars, fence teeth, a green pole, glass blocks, and snow-dark street seams.",
+  "usable_surfaces": [
+    "torn left brick island",
+    "arched green window aperture",
+    "central vertical masonry scar",
+    "right dark window void",
+    "lower glass-block slit",
+    "black iron fence comb",
+    "green street pole",
+    "snow and asphalt edge"
+  ],
+  "detected_objects": [
+    {
+      "label": "Primary Source Anchor",
+      "artifact_type": "torn-brick-facade-island",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.057,
+        "y": 0.248,
+        "w": 0.337,
+        "h": 0.556
+      },
+      "polygon": [
+        [
+          0.058,
+          0.248
+        ],
+        [
+          0.084,
+          0.262
+        ],
+        [
+          0.106,
+          0.285
+        ],
+        [
+          0.159,
+          0.294
+        ],
+        [
+          0.229,
+          0.314
+        ],
+        [
+          0.309,
+          0.336
+        ],
+        [
+          0.316,
+          0.414
+        ],
+        [
+          0.389,
+          0.438
+        ],
+        [
+          0.389,
+          0.804
+        ],
+        [
+          0.309,
+          0.794
+        ],
+        [
+          0.295,
+          0.726
+        ],
+        [
+          0.242,
+          0.714
+        ],
+        [
+          0.236,
+          0.784
+        ],
+        [
+          0.058,
+          0.779
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "large red-brick mass at left with a jagged plaster-torn roofline, exposed masonry steps, white mortar scars, windows, and a gate edge; it is the strongest source-bearing physical island."
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "arched-green-window-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.469,
+        "y": 0.526,
+        "w": 0.114,
+        "h": 0.198
+      },
+      "polygon": [
+        [
+          0.47,
+          0.626
+        ],
+        [
+          0.472,
+          0.584
+        ],
+        [
+          0.485,
+          0.552
+        ],
+        [
+          0.51,
+          0.529
+        ],
+        [
+          0.538,
+          0.525
+        ],
+        [
+          0.564,
+          0.537
+        ],
+        [
+          0.579,
+          0.567
+        ],
+        [
+          0.583,
+          0.626
+        ],
+        [
+          0.581,
+          0.707
+        ],
+        [
+          0.568,
+          0.724
+        ],
+        [
+          0.492,
+          0.723
+        ],
+        [
+          0.477,
+          0.709
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "central arched window with pale green panes, stone arch, visible mullions, and chipped lower marks; a clear aperture-like surface."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "small-right-window-slit",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.715,
+        "y": 0.579,
+        "w": 0.048,
+        "h": 0.092
+      },
+      "polygon": [
+        [
+          0.715,
+          0.602
+        ],
+        [
+          0.725,
+          0.58
+        ],
+        [
+          0.756,
+          0.579
+        ],
+        [
+          0.763,
+          0.599
+        ],
+        [
+          0.762,
+          0.655
+        ],
+        [
+          0.754,
+          0.67
+        ],
+        [
+          0.722,
+          0.666
+        ],
+        [
+          0.716,
+          0.649
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "small dark rectangular window nested in red brick with a pale cap and sill; a compact slit-like anchor on the right-center wall."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "right-dark-window-void",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.844,
+        "y": 0.562,
+        "w": 0.08,
+        "h": 0.135
+      },
+      "polygon": [
+        [
+          0.844,
+          0.583
+        ],
+        [
+          0.858,
+          0.564
+        ],
+        [
+          0.909,
+          0.562
+        ],
+        [
+          0.923,
+          0.582
+        ],
+        [
+          0.924,
+          0.681
+        ],
+        [
+          0.908,
+          0.697
+        ],
+        [
+          0.858,
+          0.693
+        ],
+        [
+          0.846,
+          0.674
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "tall right-hand blackened window with stone lintel and sill, gridded panes, and a broken dark lower opening."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "lower-glass-block-window",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.829,
+        "y": 0.816,
+        "w": 0.089,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.829,
+          0.818
+        ],
+        [
+          0.912,
+          0.816
+        ],
+        [
+          0.918,
+          0.831
+        ],
+        [
+          0.917,
+          0.857
+        ],
+        [
+          0.907,
+          0.868
+        ],
+        [
+          0.84,
+          0.867
+        ],
+        [
+          0.831,
+          0.856
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "low basement glass-block window embedded in the dirty plaster base, made of small cloudy rectangular panes."
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "left-lower-window-stained-pane",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.142,
+        "y": 0.562,
+        "w": 0.08,
+        "h": 0.135
+      },
+      "polygon": [
+        [
+          0.144,
+          0.584
+        ],
+        [
+          0.157,
+          0.564
+        ],
+        [
+          0.207,
+          0.562
+        ],
+        [
+          0.22,
+          0.583
+        ],
+        [
+          0.222,
+          0.682
+        ],
+        [
+          0.209,
+          0.697
+        ],
+        [
+          0.154,
+          0.695
+        ],
+        [
+          0.143,
+          0.676
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "left lower window with black grid, stone cap/sill, and a stained pale lower pane; reads as a plaque-like surface."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "iron-fence-comb",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.787,
+        "w": 0.35,
+        "h": 0.079
+      },
+      "polygon": [
+        [
+          0,
+          0.804
+        ],
+        [
+          0.02,
+          0.804
+        ],
+        [
+          0.02,
+          0.789
+        ],
+        [
+          0.027,
+          0.804
+        ],
+        [
+          0.048,
+          0.804
+        ],
+        [
+          0.048,
+          0.789
+        ],
+        [
+          0.056,
+          0.804
+        ],
+        [
+          0.123,
+          0.804
+        ],
+        [
+          0.123,
+          0.789
+        ],
+        [
+          0.13,
+          0.805
+        ],
+        [
+          0.198,
+          0.804
+        ],
+        [
+          0.198,
+          0.789
+        ],
+        [
+          0.205,
+          0.804
+        ],
+        [
+          0.35,
+          0.803
+        ],
+        [
+          0.349,
+          0.865
+        ],
+        [
+          0,
+          0.866
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "black iron fence band along the lower left, with repeated pointed vertical pickets and rails forming a distinct distributed edge pattern."
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.268,
+    "rationale": "The plate has a restrained plaster void above and a few strong brick/window forms below, but the facade carries many fine mortar lines, snow textures, fence teeth, and cracks; expressionist enough, not overloaded, but interaction marks should stay tightly anchored."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-05-winter-compliance-facade-field-v1"
+}
