@@ -29,7 +29,7 @@ export function existingPackageSteps(options, editionIds, generationName) {
     {
       name: 'Enrich source images',
       tool: 'Node fetch + provider image rules',
-      command: ['npm', ['run', 'enrich:source-images']],
+      command: ['npm', ['run', 'enrich:source-images', '--', '--edition', editionIds.join(',')]],
     },
   ]
 

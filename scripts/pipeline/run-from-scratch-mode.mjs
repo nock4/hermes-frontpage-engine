@@ -201,7 +201,8 @@ export async function runFromScratchMode({
     {
       name: 'Enrich source images',
       tool: 'Node fetch + provider image rules',
-      command: ['npm', ['run', 'enrich:source-images']],
+      command: ['npm', ['run', 'enrich:source-images', '--', '--edition']],
+      dynamicArgs: () => [context.package.editionId],
     },
     {
       name: 'Prepare loud source visual surfaces',

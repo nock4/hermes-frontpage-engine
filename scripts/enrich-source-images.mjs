@@ -6,6 +6,21 @@ import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl, resolveFetchableImageUrl
 
 const root = process.cwd()
 const editionsRoot = path.join(root, 'public', 'editions')
+const cliEditionIds = new Set()
+for (let index = 2; index < process.argv.length; index += 1) {
+  const arg = process.argv[index]
+  if (arg === '--edition') {
+    const value = process.argv[index + 1]
+    if (!value || value.startsWith('--')) throw new Error('Missing value for --edition')
+    for (const editionId of value.split(',').map((entry) => entry.trim()).filter(Boolean)) cliEditionIds.add(editionId)
+    index += 1
+  } else if (arg === '--help') {
+    console.log('Usage: node scripts/enrich-source-images.mjs [--edition <edition-id[,edition-id...]>]')
+    process.exit(0)
+  } else {
+    throw new Error(`Unknown option: ${arg}`)
+  }
+}
 const manifest = JSON.parse(fs.readFileSync(path.join(editionsRoot, 'index.json'), 'utf8'))
 
 const htmlCache = new Map()
@@ -321,6 +336,7 @@ let updatedBindings = 0
 const updatedEditions = []
 
 for (const item of manifest.editions) {
+  if (cliEditionIds.size && !cliEditionIds.has(item.edition_id)) continue
   const sourceBindingsPath = path.join(root, 'public', item.path.replace(/^\//, ''), 'source-bindings.json')
   const sourceBindings = JSON.parse(fs.readFileSync(sourceBindingsPath, 'utf8'))
   let editionTouched = false
