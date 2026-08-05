@@ -332,12 +332,26 @@ export function allowedStatusPath(line, editionId) {
     || candidate.startsWith(`${editionRoot}/`)
 }
 
+export function generatedAuditPathForOtherEdition(line, editionId) {
+  const candidate = line.slice(3).trim()
+  const match = candidate.match(/^public\/editions\/([^/]+)\/(interpretation|enhancement-plan)\.json$/)
+  if (!match) return null
+  return match[1] === editionId ? null : candidate
+}
+
 async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
-  const status = await run('git', ['status', '--short'], { cwd: worktreeDir, capture: true })
-  const lines = parseStatusLines(status.stdout)
+  const readStatusLines = async () => parseStatusLines((await run('git', ['status', '--short'], { cwd: worktreeDir, capture: true })).stdout)
+  let lines = await readStatusLines()
   if (!lines.length) {
     return { committed: false, commit: null, changed_paths: [] }
   }
+
+  const generatedAuditNoise = lines.map((line) => generatedAuditPathForOtherEdition(line, editionId)).filter(Boolean)
+  if (generatedAuditNoise.length) {
+    await run('git', ['checkout', '--', ...generatedAuditNoise], { cwd: worktreeDir })
+    lines = await readStatusLines()
+  }
+
   const unexpected = lines.filter((line) => !allowedStatusPath(line, editionId))
   if (unexpected.length) {
     throw new Error(`Unexpected changed paths in cron worktree: ${unexpected.join(', ')}`)

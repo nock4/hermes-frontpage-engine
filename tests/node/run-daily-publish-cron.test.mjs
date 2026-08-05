@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { allowedStatusPath, allocateCronUxPort, isSafeCronWorktreePath, isSafeEditionId, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
+import { allowedStatusPath, allocateCronUxPort, generatedAuditPathForOtherEdition, isSafeCronWorktreePath, isSafeEditionId, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
 
 describe('daily publish cron wrapper', () => {
   it('parses an explicit inspiration override option', () => {
@@ -96,6 +96,9 @@ describe('daily publish cron wrapper', () => {
     expect(allowedStatusPath(' M public/editions/index.json', editionId)).toBe(true)
     expect(allowedStatusPath('?? public/editions/2026-08-04-split-crimson-j-card-v1/edition.json', editionId)).toBe(true)
     expect(allowedStatusPath(' M public/editions/2026-08-03-old-edition/interpretation.json', editionId)).toBe(false)
+    expect(generatedAuditPathForOtherEdition(' M public/editions/2026-08-03-old-edition/interpretation.json', editionId)).toBe('public/editions/2026-08-03-old-edition/interpretation.json')
+    expect(generatedAuditPathForOtherEdition(' M public/editions/2026-08-04-split-crimson-j-card-v1/interpretation.json', editionId)).toBeNull()
+    expect(generatedAuditPathForOtherEdition(' M public/editions/2026-08-03-old-edition/source-bindings.json', editionId)).toBeNull()
     expect(allowedStatusPath(' M public/editions/../../scripts/run-daily-publish-cron.mjs', '../../scripts')).toBe(false)
     expect(isSafeEditionId(editionId)).toBe(true)
     expect(isSafeEditionId('../../scripts')).toBe(false)
