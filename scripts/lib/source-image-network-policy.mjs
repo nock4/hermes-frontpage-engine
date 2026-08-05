@@ -206,12 +206,24 @@ export async function fetchVettedRemoteUrl(sourceUrl, {
       const chunks = []
       let total = 0
       response.on('data', (chunk) => {
+        if (settled) return
         total += chunk.length
         if (total > maxBytes) {
-          request.destroy(new Error(`Response exceeded ${maxBytes} bytes`))
+          settled = true
+          clearTimeout(timer)
+          const error = new Error(`Response exceeded ${maxBytes} bytes`)
+          response.destroy(error)
+          request.destroy(error)
+          reject(error)
           return
         }
         chunks.push(chunk)
+      })
+      response.on('error', (error) => {
+        if (settled) return
+        settled = true
+        clearTimeout(timer)
+        reject(error)
       })
       response.on('end', () => {
         if (settled) return
