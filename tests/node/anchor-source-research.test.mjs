@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { buildAnchorQueries, selectAnchorSource } from '../../scripts/lib/anchor-source-research.mjs'
+import { buildAnchorQueries, parseSrcsetImageCandidates, selectAnchorSource } from '../../scripts/lib/anchor-source-research.mjs'
 
 describe('anchor-source-research', () => {
   it('selects a creative anchor over high-score infrastructure', () => {
@@ -114,5 +114,17 @@ describe('anchor-source-research', () => {
     ])
 
     expect(anchor.url).toBe('https://www.youtube.com/watch?v=liked456')
+  })
+
+  it('keeps comma-bearing CDN transform URLs intact when parsing srcset', () => {
+    const srcset = [
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=400,height=400/uploads/16/ff121bea-3e50-4f8e-a00c-e976397791e3.png 400w',
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=800/uploads/16/ff121bea-3e50-4f8e-a00c-e976397791e3.png 800w',
+    ].join(', ')
+
+    expect(parseSrcsetImageCandidates(srcset)).toEqual([
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=400,height=400/uploads/16/ff121bea-3e50-4f8e-a00c-e976397791e3.png',
+      'https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=1,anim=false,background=white,quality=75,width=800,height=800/uploads/16/ff121bea-3e50-4f8e-a00c-e976397791e3.png',
+    ])
   })
 })

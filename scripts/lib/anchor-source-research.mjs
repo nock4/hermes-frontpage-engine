@@ -39,6 +39,13 @@ function absoluteUrl(value, base) {
   }
 }
 
+export function parseSrcsetImageCandidates(srcset) {
+  return String(srcset || '')
+    .split(/,\s+(?=(?:https?:)?\/\/|\/|\.\/|\.\.\/|[A-Za-z0-9._~-]+\/)/)
+    .map((part) => part.trim().split(/\s+/)[0])
+    .filter(Boolean)
+}
+
 function keywordTerms(text, maxTerms = 8) {
   const stop = new Set('about after again also amp and are because been being between from have into more most that the their them then there these this those through with without your you youtube watch video latest official guide source daily frontpage'.split(' '))
   const counts = new Map()
@@ -197,8 +204,8 @@ function extractImageCandidatesFromHtml(html, baseUrl, { lineage = 'direct_link'
     const alt = attrs.match(/\balt=["']([^"']*)["']/i)?.[1]
     const width = Number(attrs.match(/\bwidth=["']?(\d+)/i)?.[1]) || null
     const height = Number(attrs.match(/\bheight=["']?(\d+)/i)?.[1]) || null
-    const srcsetBest = srcset?.split(',').map((part) => part.trim().split(/\s+/)[0]).filter(Boolean).at(-1)
-    const imageUrl = absoluteUrl(decodeHtml(srcsetBest || src), baseUrl)
+    const srcsetBest = parseSrcsetImageCandidates(decodeHtml(srcset)).at(-1)
+    const imageUrl = absoluteUrl(srcsetBest || decodeHtml(src), baseUrl)
     if (!imageUrl || isLowValueVisualImage(imageUrl)) continue
     candidates.push({
       page_url: baseUrl,
