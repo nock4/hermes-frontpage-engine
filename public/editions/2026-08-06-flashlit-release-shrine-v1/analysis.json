@@ -1,0 +1,428 @@
+{
+  "analysis_id": "analysis-2026-08-06-flashlit-release-shrine-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A white-margined flash-photo slab holds a dark cocktail-lounge scene: violet beams cut across wood paneling, a dense bottle wall glows at rear, drinks and seams gather on the glossy table, and small graphic marks sit in the paper margin.",
+  "usable_surfaces": [
+    "central flash-photo aperture",
+    "lower glossy cocktail-table seam",
+    "bottom yellow emblem tab",
+    "violet diagonal beam cuts",
+    "top-right patterned patch",
+    "top margin notch barcode",
+    "rear bottle-wall glow rectangle",
+    "right suit lapel edge",
+    "lower cracked reflection line",
+    "left flash-burn face void"
+  ],
+  "detected_objects": [
+    {
+      "label": "central flash-photo slab",
+      "artifact_type": "hero-scale-photo-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.133,
+        "w": 0.856,
+        "h": 0.711
+      },
+      "polygon": [
+        [
+          0.071,
+          0.133
+        ],
+        [
+          0.927,
+          0.133
+        ],
+        [
+          0.927,
+          0.844
+        ],
+        [
+          0.071,
+          0.844
+        ],
+        [
+          0.071,
+          0.133
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "The dominant rectangular photo aperture is visibly bordered by the surrounding white paper margin and contains the whole lounge scene."
+    },
+    {
+      "label": "foreground cocktail table seam",
+      "artifact_type": "hero-scale-gloss-table-seam",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.316,
+        "y": 0.661,
+        "w": 0.409,
+        "h": 0.166
+      },
+      "polygon": [
+        [
+          0.316,
+          0.661
+        ],
+        [
+          0.386,
+          0.671
+        ],
+        [
+          0.491,
+          0.694
+        ],
+        [
+          0.596,
+          0.737
+        ],
+        [
+          0.682,
+          0.787
+        ],
+        [
+          0.725,
+          0.827
+        ],
+        [
+          0.716,
+          0.832
+        ],
+        [
+          0.655,
+          0.791
+        ],
+        [
+          0.563,
+          0.747
+        ],
+        [
+          0.466,
+          0.709
+        ],
+        [
+          0.369,
+          0.681
+        ],
+        [
+          0.316,
+          0.669
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A bright angular seam and reflection break across the glossy lower table surface, cutting through clustered drink reflections."
+    },
+    {
+      "label": "bottom yellow emblem tab",
+      "artifact_type": "bottom-emblem-tab",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.458,
+        "y": 0.878,
+        "w": 0.073,
+        "h": 0.086
+      },
+      "polygon": [
+        [
+          0.458,
+          0.878
+        ],
+        [
+          0.531,
+          0.878
+        ],
+        [
+          0.531,
+          0.964
+        ],
+        [
+          0.458,
+          0.964
+        ],
+        [
+          0.458,
+          0.878
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "A compact yellow square tab with a black hand-like emblem sits centered in the lower white margin."
+    },
+    {
+      "label": "violet smoke beam cut",
+      "artifact_type": "diagonal-light-cut",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.135,
+        "w": 0.445,
+        "h": 0.376
+      },
+      "confidence": 0.95,
+      "visual_evidence": "A purple-blue diagonal beam enters from the upper-left edge of the photo and slices toward the bottle wall and lounge figures."
+    },
+    {
+      "label": "right violet beam arc",
+      "artifact_type": "curved-light-cut",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.739,
+        "y": 0.133,
+        "w": 0.143,
+        "h": 0.376
+      },
+      "confidence": 0.91,
+      "visual_evidence": "A second violet beam descends as a curved vertical slash through the right wall and lands near the seated figure's shoulder."
+    },
+    {
+      "label": "bag-pattern corner",
+      "artifact_type": "patterned-surface-corner",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.802,
+        "y": 0.133,
+        "w": 0.099,
+        "h": 0.118
+      },
+      "polygon": [
+        [
+          0.802,
+          0.133
+        ],
+        [
+          0.899,
+          0.133
+        ],
+        [
+          0.901,
+          0.249
+        ],
+        [
+          0.884,
+          0.251
+        ],
+        [
+          0.85,
+          0.25
+        ],
+        [
+          0.822,
+          0.25
+        ],
+        [
+          0.803,
+          0.248
+        ],
+        [
+          0.802,
+          0.133
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "A dense dark textured rectangular patch is inset into the upper-right wall, bordered by thin pale torn-looking edges."
+    },
+    {
+      "label": "lapel skill edge",
+      "artifact_type": "dark-lapel-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.765,
+        "y": 0.449,
+        "w": 0.112,
+        "h": 0.148
+      },
+      "polygon": [
+        [
+          0.869,
+          0.449
+        ],
+        [
+          0.877,
+          0.465
+        ],
+        [
+          0.866,
+          0.493
+        ],
+        [
+          0.846,
+          0.529
+        ],
+        [
+          0.818,
+          0.565
+        ],
+        [
+          0.786,
+          0.596
+        ],
+        [
+          0.765,
+          0.59
+        ],
+        [
+          0.798,
+          0.554
+        ],
+        [
+          0.828,
+          0.516
+        ],
+        [
+          0.852,
+          0.477
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "The right seated figure's dark jacket and white shirt form a crisp lapel-shaped edge where the violet beam meets the shoulder."
+    },
+    {
+      "label": "glitch-check reflection",
+      "artifact_type": "floor-reflection-glitch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.797,
+        "w": 0.065,
+        "h": 0.202
+      },
+      "polygon": [
+        [
+          0.642,
+          0.797
+        ],
+        [
+          0.649,
+          0.811
+        ],
+        [
+          0.655,
+          0.835
+        ],
+        [
+          0.658,
+          0.866
+        ],
+        [
+          0.667,
+          0.899
+        ],
+        [
+          0.677,
+          0.929
+        ],
+        [
+          0.691,
+          0.96
+        ],
+        [
+          0.707,
+          0.997
+        ],
+        [
+          0.7,
+          0.999
+        ],
+        [
+          0.683,
+          0.966
+        ],
+        [
+          0.67,
+          0.935
+        ],
+        [
+          0.66,
+          0.904
+        ],
+        [
+          0.651,
+          0.87
+        ],
+        [
+          0.648,
+          0.839
+        ],
+        [
+          0.641,
+          0.811
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A thin broken black crack/reflection descends from the lower edge of the photo into the white margin, continuing the table seam as an intentional flaw."
+    },
+    {
+      "label": "lapel skill edge",
+      "artifact_type": "dark-lapel-edge",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "glitch-check reflection",
+      "artifact_type": "floor-reflection-glitch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.56,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.56,
+          0.34
+        ],
+        [
+          0.72,
+          0.34
+        ],
+        [
+          0.72,
+          0.49
+        ],
+        [
+          0.56,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.945,
+    "rationale": "The plate is image-led with a strong central slab and clean white margin, but the lounge interior contains many bottles, glasses, beams, figures, and reflections; it remains usable but not minimal."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-06-flashlit-release-shrine-v1"
+}

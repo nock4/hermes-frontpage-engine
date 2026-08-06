@@ -1,0 +1,1540 @@
+{
+  "artifact_map_id": "map-2026-08-06-flashlit-release-shrine-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "flashlit-release-shrine",
+  "default_artifact_id": "hero-central-flash-photo-slab",
+  "artifacts": [
+    {
+      "id": "hero-central-flash-photo-slab",
+      "kind": "hero",
+      "label": "central flash-photo slab",
+      "artifact_type": "hero-scale-photo-slab",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.133,
+        "w": 0.856,
+        "h": 0.711
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.071,
+          0.133
+        ],
+        [
+          0.927,
+          0.133
+        ],
+        [
+          0.927,
+          0.844
+        ],
+        [
+          0.071,
+          0.844
+        ],
+        [
+          0.071,
+          0.133
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/hero-central-flash-photo-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-central-flash-photo-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          766,
+          442
+        ],
+        "safe_stage_window_origin_px": [
+          872,
+          500
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.071,
+            0.133
+          ],
+          [
+            0.927,
+            0.133
+          ],
+          [
+            0.927,
+            0.844
+          ],
+          [
+            0.071,
+            0.844
+          ],
+          [
+            0.071,
+            0.133
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0464,
+            0.1328
+          ],
+          [
+            0.0706,
+            0.1025
+          ],
+          [
+            0.9265,
+            0.1025
+          ],
+          [
+            0.9508,
+            0.1328
+          ],
+          [
+            0.9508,
+            0.8431
+          ],
+          [
+            0.9265,
+            0.8734
+          ],
+          [
+            0.0706,
+            0.8734
+          ],
+          [
+            0.0464,
+            0.8431
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0464,
+          "y": 0.1025,
+          "w": 0.9051,
+          "h": 0.7718
+        },
+        "territory_area_px": 1023820,
+        "visible_area_px": 958398,
+        "expansion_ratio": 1.068,
+        "neighbors": [
+          {
+            "artifact_id": "module-violet-smoke-beam-cut",
+            "shared_edge_px": 236264,
+            "direction": "left",
+            "distance_px": 415.41
+          },
+          {
+            "artifact_id": "module-right-violet-beam-arc",
+            "shared_edge_px": 84815,
+            "direction": "right",
+            "distance_px": 446.33
+          },
+          {
+            "artifact_id": "module-glitch-check-reflection-2",
+            "shared_edge_px": 56702,
+            "direction": "right",
+            "distance_px": 219.57
+          },
+          {
+            "artifact_id": "module-lapel-skill-edge-2",
+            "shared_edge_px": 46529,
+            "direction": "left",
+            "distance_px": 192.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-foreground-cocktail-table-seam",
+      "kind": "hero",
+      "label": "foreground cocktail table seam",
+      "artifact_type": "hero-scale-gloss-table-seam",
+      "bounds": {
+        "x": 0.316,
+        "y": 0.661,
+        "w": 0.409,
+        "h": 0.166
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.316,
+          0.661
+        ],
+        [
+          0.386,
+          0.671
+        ],
+        [
+          0.491,
+          0.694
+        ],
+        [
+          0.596,
+          0.737
+        ],
+        [
+          0.682,
+          0.787
+        ],
+        [
+          0.725,
+          0.827
+        ],
+        [
+          0.716,
+          0.832
+        ],
+        [
+          0.655,
+          0.791
+        ],
+        [
+          0.563,
+          0.747
+        ],
+        [
+          0.466,
+          0.709
+        ],
+        [
+          0.369,
+          0.681
+        ],
+        [
+          0.316,
+          0.669
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/hero-foreground-cocktail-table-seam.svg",
+      "source_binding_ids": [
+        "binding-hero-foreground-cocktail-table-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          799,
+          748
+        ],
+        "safe_stage_window_origin_px": [
+          850,
+          762
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.316,
+            0.661
+          ],
+          [
+            0.386,
+            0.671
+          ],
+          [
+            0.491,
+            0.694
+          ],
+          [
+            0.596,
+            0.737
+          ],
+          [
+            0.682,
+            0.787
+          ],
+          [
+            0.725,
+            0.827
+          ],
+          [
+            0.716,
+            0.832
+          ],
+          [
+            0.655,
+            0.791
+          ],
+          [
+            0.563,
+            0.747
+          ],
+          [
+            0.466,
+            0.709
+          ],
+          [
+            0.369,
+            0.681
+          ],
+          [
+            0.316,
+            0.669
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2832,
+            0.664
+          ],
+          [
+            0.4087,
+            0.6346
+          ],
+          [
+            0.4907,
+            0.6524
+          ],
+          [
+            0.5956,
+            0.6952
+          ],
+          [
+            0.6819,
+            0.746
+          ],
+          [
+            0.7575,
+            0.8262
+          ],
+          [
+            0.7154,
+            0.8725
+          ],
+          [
+            0.316,
+            0.7094
+          ],
+          [
+            0.2832,
+            0.6684
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2832,
+          "y": 0.6346,
+          "w": 0.475,
+          "h": 0.2389
+        },
+        "territory_area_px": 63120,
+        "visible_area_px": 12766,
+        "expansion_ratio": 4.944,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 7569,
+            "direction": "up",
+            "distance_px": 294.98
+          },
+          {
+            "artifact_id": "module-glitch-check-reflection",
+            "shared_edge_px": 832,
+            "direction": "right",
+            "distance_px": 268.44
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-bottom-yellow-emblem-tab",
+      "kind": "module",
+      "label": "bottom yellow emblem tab",
+      "artifact_type": "bottom-emblem-tab",
+      "bounds": {
+        "x": 0.458,
+        "y": 0.878,
+        "w": 0.073,
+        "h": 0.086
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.458,
+          0.878
+        ],
+        [
+          0.531,
+          0.878
+        ],
+        [
+          0.531,
+          0.964
+        ],
+        [
+          0.458,
+          0.964
+        ],
+        [
+          0.458,
+          0.878
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/module-bottom-yellow-emblem-tab.svg",
+      "source_binding_ids": [
+        "binding-module-bottom-yellow-emblem-tab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          760,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          769,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.458,
+            0.878
+          ],
+          [
+            0.531,
+            0.878
+          ],
+          [
+            0.531,
+            0.964
+          ],
+          [
+            0.458,
+            0.964
+          ],
+          [
+            0.458,
+            0.878
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4379,
+            0.8779
+          ],
+          [
+            0.4579,
+            0.8529
+          ],
+          [
+            0.5307,
+            0.8529
+          ],
+          [
+            0.5506,
+            0.8779
+          ],
+          [
+            0.5506,
+            0.9635
+          ],
+          [
+            0.5307,
+            0.9884
+          ],
+          [
+            0.4579,
+            0.9884
+          ],
+          [
+            0.4379,
+            0.9635
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4379,
+          "y": 0.8529,
+          "w": 0.1134,
+          "h": 0.1364
+        },
+        "territory_area_px": 22703,
+        "visible_area_px": 9991,
+        "expansion_ratio": 2.272,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 936,
+            "direction": "up",
+            "distance_px": 505.96
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-violet-smoke-beam-cut",
+      "kind": "module",
+      "label": "violet smoke beam cut",
+      "artifact_type": "diagonal-light-cut",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.135,
+        "w": 0.445,
+        "h": 0.376
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.071,
+          0.135
+        ],
+        [
+          0.516,
+          0.135
+        ],
+        [
+          0.516,
+          0.511
+        ],
+        [
+          0.071,
+          0.511
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/module-violet-smoke-beam-cut.svg",
+      "source_binding_ids": [
+        "binding-module-violet-smoke-beam-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          451,
+          300
+        ],
+        "safe_stage_window_origin_px": [
+          505,
+          331
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.071,
+            0.135
+          ],
+          [
+            0.516,
+            0.135
+          ],
+          [
+            0.516,
+            0.511
+          ],
+          [
+            0.071,
+            0.511
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0506,
+            0.1346
+          ],
+          [
+            0.0706,
+            0.1096
+          ],
+          [
+            0.5157,
+            0.1096
+          ],
+          [
+            0.535,
+            0.1337
+          ],
+          [
+            0.3281,
+            0.5357
+          ],
+          [
+            0.0706,
+            0.5357
+          ],
+          [
+            0.0506,
+            0.5107
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0506,
+          "y": 0.1096,
+          "w": 0.485,
+          "h": 0.4269
+        },
+        "territory_area_px": 229831,
+        "visible_area_px": 264375,
+        "expansion_ratio": 0.869,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 236264,
+            "direction": "right",
+            "distance_px": 415.41
+          },
+          {
+            "artifact_id": "module-lapel-skill-edge-2",
+            "shared_edge_px": 2528,
+            "direction": "right",
+            "distance_px": 232.73
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-right-violet-beam-arc",
+      "kind": "module",
+      "label": "right violet beam arc",
+      "artifact_type": "curved-light-cut",
+      "bounds": {
+        "x": 0.739,
+        "y": 0.133,
+        "w": 0.143,
+        "h": 0.376
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.739,
+          0.133
+        ],
+        [
+          0.882,
+          0.133
+        ],
+        [
+          0.882,
+          0.509
+        ],
+        [
+          0.739,
+          0.509
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/module-right-violet-beam-arc.svg",
+      "source_binding_ids": [
+        "binding-module-right-violet-beam-arc"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1245,
+          298
+        ],
+        "safe_stage_window_origin_px": [
+          1262,
+          329
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.739,
+            0.133
+          ],
+          [
+            0.882,
+            0.133
+          ],
+          [
+            0.882,
+            0.509
+          ],
+          [
+            0.739,
+            0.509
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.719,
+            0.1328
+          ],
+          [
+            0.7389,
+            0.1078
+          ],
+          [
+            0.801,
+            0.1078
+          ],
+          [
+            0.9016,
+            0.2736
+          ],
+          [
+            0.9016,
+            0.5089
+          ],
+          [
+            0.8816,
+            0.5339
+          ],
+          [
+            0.7389,
+            0.5339
+          ],
+          [
+            0.7218,
+            0.5125
+          ],
+          [
+            0.719,
+            0.3503
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.719,
+          "y": 0.1078,
+          "w": 0.1833,
+          "h": 0.4269
+        },
+        "territory_area_px": 80247,
+        "visible_area_px": 85023,
+        "expansion_ratio": 0.944,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 84815,
+            "direction": "left",
+            "distance_px": 446.33
+          },
+          {
+            "artifact_id": "module-bag-pattern-corner",
+            "shared_edge_px": 1856,
+            "direction": "up",
+            "distance_px": 192.47
+          },
+          {
+            "artifact_id": "module-lapel-skill-edge",
+            "shared_edge_px": 1526,
+            "direction": "down",
+            "distance_px": 212.73
+          },
+          {
+            "artifact_id": "module-glitch-check-reflection-2",
+            "shared_edge_px": 1356,
+            "direction": "left",
+            "distance_px": 226.87
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-bag-pattern-corner",
+      "kind": "module",
+      "label": "bag-pattern corner",
+      "artifact_type": "patterned-surface-corner",
+      "bounds": {
+        "x": 0.802,
+        "y": 0.133,
+        "w": 0.099,
+        "h": 0.118
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.802,
+          0.133
+        ],
+        [
+          0.899,
+          0.133
+        ],
+        [
+          0.901,
+          0.249
+        ],
+        [
+          0.884,
+          0.251
+        ],
+        [
+          0.85,
+          0.25
+        ],
+        [
+          0.822,
+          0.25
+        ],
+        [
+          0.803,
+          0.248
+        ],
+        [
+          0.802,
+          0.133
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/module-bag-pattern-corner.svg",
+      "source_binding_ids": [
+        "binding-module-bag-pattern-corner"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1308,
+          187
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          197
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.802,
+            0.133
+          ],
+          [
+            0.899,
+            0.133
+          ],
+          [
+            0.901,
+            0.249
+          ],
+          [
+            0.884,
+            0.251
+          ],
+          [
+            0.85,
+            0.25
+          ],
+          [
+            0.822,
+            0.25
+          ],
+          [
+            0.803,
+            0.248
+          ],
+          [
+            0.802,
+            0.133
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7817,
+            0.1328
+          ],
+          [
+            0.8017,
+            0.1078
+          ],
+          [
+            0.8987,
+            0.1078
+          ],
+          [
+            0.9187,
+            0.1328
+          ],
+          [
+            0.9208,
+            0.2299
+          ],
+          [
+            0.9208,
+            0.2487
+          ],
+          [
+            0.9009,
+            0.2736
+          ],
+          [
+            0.8688,
+            0.2745
+          ],
+          [
+            0.7832,
+            0.2326
+          ],
+          [
+            0.7817,
+            0.1898
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7817,
+          "y": 0.1078,
+          "w": 0.1398,
+          "h": 0.1684
+        },
+        "territory_area_px": 32283,
+        "visible_area_px": 18164,
+        "expansion_ratio": 1.777,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 34188,
+            "direction": "left",
+            "distance_px": 594.17
+          },
+          {
+            "artifact_id": "module-right-violet-beam-arc",
+            "shared_edge_px": 1856,
+            "direction": "down",
+            "distance_px": 192.47
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-lapel-skill-edge",
+      "kind": "module",
+      "label": "lapel skill edge",
+      "artifact_type": "dark-lapel-edge",
+      "bounds": {
+        "x": 0.765,
+        "y": 0.449,
+        "w": 0.112,
+        "h": 0.148
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.869,
+          0.449
+        ],
+        [
+          0.877,
+          0.465
+        ],
+        [
+          0.866,
+          0.493
+        ],
+        [
+          0.846,
+          0.529
+        ],
+        [
+          0.818,
+          0.565
+        ],
+        [
+          0.786,
+          0.596
+        ],
+        [
+          0.765,
+          0.59
+        ],
+        [
+          0.798,
+          0.554
+        ],
+        [
+          0.828,
+          0.516
+        ],
+        [
+          0.852,
+          0.477
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/module-lapel-skill-edge.svg",
+      "source_binding_ids": [
+        "binding-module-lapel-skill-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1261,
+          523
+        ],
+        "safe_stage_window_origin_px": [
+          1275,
+          536
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.869,
+            0.449
+          ],
+          [
+            0.877,
+            0.465
+          ],
+          [
+            0.866,
+            0.493
+          ],
+          [
+            0.846,
+            0.529
+          ],
+          [
+            0.818,
+            0.565
+          ],
+          [
+            0.786,
+            0.596
+          ],
+          [
+            0.765,
+            0.59
+          ],
+          [
+            0.798,
+            0.554
+          ],
+          [
+            0.828,
+            0.516
+          ],
+          [
+            0.852,
+            0.477
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7447,
+            0.5891
+          ],
+          [
+            0.8688,
+            0.4234
+          ],
+          [
+            0.8966,
+            0.4643
+          ],
+          [
+            0.8852,
+            0.4947
+          ],
+          [
+            0.8666,
+            0.5276
+          ],
+          [
+            0.8131,
+            0.5936
+          ],
+          [
+            0.7853,
+            0.6203
+          ],
+          [
+            0.7646,
+            0.6141
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7447,
+          "y": 0.4234,
+          "w": 0.1526,
+          "h": 0.1979
+        },
+        "territory_area_px": 17571,
+        "visible_area_px": 5646,
+        "expansion_ratio": 3.112,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 19032,
+            "direction": "left",
+            "distance_px": 468.05
+          },
+          {
+            "artifact_id": "module-right-violet-beam-arc",
+            "shared_edge_px": 1526,
+            "direction": "up",
+            "distance_px": 212.73
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-glitch-check-reflection",
+      "kind": "module",
+      "label": "glitch-check reflection",
+      "artifact_type": "floor-reflection-glitch",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.797,
+        "w": 0.065,
+        "h": 0.202
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.642,
+          0.797
+        ],
+        [
+          0.649,
+          0.811
+        ],
+        [
+          0.655,
+          0.835
+        ],
+        [
+          0.658,
+          0.866
+        ],
+        [
+          0.667,
+          0.899
+        ],
+        [
+          0.677,
+          0.929
+        ],
+        [
+          0.691,
+          0.96
+        ],
+        [
+          0.707,
+          0.997
+        ],
+        [
+          0.7,
+          0.999
+        ],
+        [
+          0.683,
+          0.966
+        ],
+        [
+          0.67,
+          0.935
+        ],
+        [
+          0.66,
+          0.904
+        ],
+        [
+          0.651,
+          0.87
+        ],
+        [
+          0.648,
+          0.839
+        ],
+        [
+          0.641,
+          0.811
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/module-glitch-check-reflection.svg",
+      "source_binding_ids": [
+        "binding-module-glitch-check-reflection"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1036,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1044,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.642,
+            0.797
+          ],
+          [
+            0.649,
+            0.811
+          ],
+          [
+            0.655,
+            0.835
+          ],
+          [
+            0.658,
+            0.866
+          ],
+          [
+            0.667,
+            0.899
+          ],
+          [
+            0.677,
+            0.929
+          ],
+          [
+            0.691,
+            0.96
+          ],
+          [
+            0.707,
+            0.997
+          ],
+          [
+            0.7,
+            0.999
+          ],
+          [
+            0.683,
+            0.966
+          ],
+          [
+            0.67,
+            0.935
+          ],
+          [
+            0.66,
+            0.904
+          ],
+          [
+            0.651,
+            0.87
+          ],
+          [
+            0.648,
+            0.839
+          ],
+          [
+            0.641,
+            0.811
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6205,
+            0.8075
+          ],
+          [
+            0.622,
+            0.7968
+          ],
+          [
+            0.6419,
+            0.7718
+          ],
+          [
+            0.6626,
+            0.7977
+          ],
+          [
+            0.7268,
+            0.9964
+          ],
+          [
+            0.679,
+            0.9973
+          ],
+          [
+            0.6398,
+            0.9046
+          ],
+          [
+            0.6205,
+            0.8111
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6205,
+          "y": 0.7718,
+          "w": 0.107,
+          "h": 0.2282
+        },
+        "territory_area_px": 16451,
+        "visible_area_px": 2880,
+        "expansion_ratio": 5.712,
+        "neighbors": [
+          {
+            "artifact_id": "hero-foreground-cocktail-table-seam",
+            "shared_edge_px": 832,
+            "direction": "left",
+            "distance_px": 268.44
+          },
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 620,
+            "direction": "up",
+            "distance_px": 532.16
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-lapel-skill-edge-2",
+      "kind": "module",
+      "label": "lapel skill edge",
+      "artifact_type": "dark-lapel-edge",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/module-lapel-skill-edge-2.svg",
+      "source_binding_ids": [
+        "binding-module-lapel-skill-edge-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2596,
+            0.4439
+          ],
+          [
+            0.3745,
+            0.3146
+          ],
+          [
+            0.4394,
+            0.3146
+          ],
+          [
+            0.4593,
+            0.3396
+          ],
+          [
+            0.4586,
+            0.3636
+          ],
+          [
+            0.4073,
+            0.5143
+          ],
+          [
+            0.2796,
+            0.5143
+          ],
+          [
+            0.2596,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2596,
+          "y": 0.3146,
+          "w": 0.2004,
+          "h": 0.2005
+        },
+        "territory_area_px": 44303,
+        "visible_area_px": 38025,
+        "expansion_ratio": 1.165,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 46529,
+            "direction": "right",
+            "distance_px": 192.2
+          },
+          {
+            "artifact_id": "module-violet-smoke-beam-cut",
+            "shared_edge_px": 2528,
+            "direction": "left",
+            "distance_px": 232.73
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-glitch-check-reflection-2",
+      "kind": "module",
+      "label": "glitch-check reflection",
+      "artifact_type": "floor-reflection-glitch",
+      "bounds": {
+        "x": 0.56,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 29,
+      "polygon": [
+        [
+          0.56,
+          0.34
+        ],
+        [
+          0.72,
+          0.34
+        ],
+        [
+          0.72,
+          0.49
+        ],
+        [
+          0.56,
+          0.49
+        ]
+      ],
+      "cluster_id": "flashlit-release-shrine",
+      "mask_path": "/editions/2026-08-06-flashlit-release-shrine-v1/assets/masks/module-glitch-check-reflection-2.svg",
+      "source_binding_ids": [
+        "binding-module-glitch-check-reflection-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          983,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          1003,
+          425
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.56,
+            0.34
+          ],
+          [
+            0.72,
+            0.34
+          ],
+          [
+            0.72,
+            0.49
+          ],
+          [
+            0.56,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5399,
+            0.3396
+          ],
+          [
+            0.5599,
+            0.3146
+          ],
+          [
+            0.7183,
+            0.3146
+          ],
+          [
+            0.7397,
+            0.41
+          ],
+          [
+            0.7397,
+            0.4893
+          ],
+          [
+            0.7197,
+            0.5143
+          ],
+          [
+            0.5906,
+            0.5143
+          ],
+          [
+            0.5399,
+            0.3627
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5399,
+          "y": 0.3146,
+          "w": 0.2004,
+          "h": 0.2005
+        },
+        "territory_area_px": 54125,
+        "visible_area_px": 38025,
+        "expansion_ratio": 1.423,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-flash-photo-slab",
+            "shared_edge_px": 56702,
+            "direction": "left",
+            "distance_px": 219.57
+          },
+          {
+            "artifact_id": "module-right-violet-beam-arc",
+            "shared_edge_px": 1356,
+            "direction": "right",
+            "distance_px": 226.87
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-06-flashlit-release-shrine-v1",
+  "edition_id": "2026-08-06-flashlit-release-shrine-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-06-flashlit-release-shrine-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-central-flash-photo-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-central-flash-photo-slab",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-photo-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-foreground-cocktail-table-seam",
+      "target_kind": "artifact",
+      "artifact_id": "hero-foreground-cocktail-table-seam",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-gloss-table-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-bottom-yellow-emblem-tab",
+      "target_kind": "artifact",
+      "artifact_id": "module-bottom-yellow-emblem-tab",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bottom-emblem-tab) selected from interpretation."
+    },
+    {
+      "target_id": "module-violet-smoke-beam-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-violet-smoke-beam-cut",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (diagonal-light-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-violet-beam-arc",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-violet-beam-arc",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curved-light-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-bag-pattern-corner",
+      "target_kind": "artifact",
+      "artifact_id": "module-bag-pattern-corner",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (patterned-surface-corner) selected from interpretation."
+    },
+    {
+      "target_id": "module-lapel-skill-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-lapel-skill-edge",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-lapel-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-glitch-check-reflection",
+      "target_kind": "artifact",
+      "artifact_id": "module-glitch-check-reflection",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (floor-reflection-glitch) selected from interpretation."
+    },
+    {
+      "target_id": "module-lapel-skill-edge-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-lapel-skill-edge-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-lapel-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-glitch-check-reflection-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-glitch-check-reflection-2",
+      "priority": 10,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (floor-reflection-glitch) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 10 artifacts and scene family heuristics."
+}

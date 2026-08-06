@@ -1,0 +1,414 @@
+{
+  "interpretation_id": "interp-2026-08-06-flashlit-release-shrine-v1",
+  "edition_id": "2026-08-06-flashlit-release-shrine-v1",
+  "plate_read_timestamp": "2026-08-06T09:10:58.014Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A white-margined flash-photo slab holds a dark cocktail-lounge scene: violet beams cut across wood paneling, a dense bottle wall glows at rear, drinks and seams gather on the glossy table, and small graphic marks sit in the paper margin.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "A white-bordered social relic opening into a dark polished room, all flash, glass, and coded edge marks.",
+      "A white-margined flash-photo slab holds a dark cocktail-lounge scene: violet beams cut across wood paneling, a dense bottle wall glows at rear, drinks and seams gather on the glossy table, and small graphic marks sit in the paper margin.",
+      "poster-crop",
+      "flash-social",
+      "glossy-apertures"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "central flash-photo slab",
+      "foreground cocktail table seam",
+      "bottom yellow emblem tab",
+      "violet smoke beam cut",
+      "right violet beam arc",
+      "bag-pattern corner",
+      "lapel skill edge",
+      "glitch-check reflection"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "flashlit-release-shrine",
+      "one centered landscape photo-slab as the main spatial event",
+      "inward-facing dark social masses forming a diagonal across the lower half",
+      "lower tabletop and emblem seam carrying bright glass apertures",
+      "upper rear bar shelf and doorway band as depth structure",
+      "small margin glyph notches and policy-card interruptions",
+      "central flash-photo aperture",
+      "lower glossy cocktail-table seam"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: flashlit-release-shrine.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-central-flash-photo-slab",
+      "kind": "hero",
+      "type": "hero-scale-photo-slab",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.071,
+        "y": 0.133,
+        "w": 0.856,
+        "h": 0.711
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-foreground-cocktail-table-seam",
+      "kind": "hero",
+      "type": "hero-scale-gloss-table-seam",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.316,
+        "y": 0.661,
+        "w": 0.409,
+        "h": 0.166
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-yellow-emblem-tab",
+      "kind": "module",
+      "type": "bottom-emblem-tab",
+      "strength": 0.793368,
+      "bounds": {
+        "x": 0.458,
+        "y": 0.878,
+        "w": 0.073,
+        "h": 0.086
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-violet-smoke-beam-cut",
+      "kind": "module",
+      "type": "diagonal-light-cut",
+      "strength": 0.7660440000000001,
+      "bounds": {
+        "x": 0.071,
+        "y": 0.135,
+        "w": 0.445,
+        "h": 0.376
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-violet-beam-arc",
+      "kind": "module",
+      "type": "curved-light-cut",
+      "strength": 0.738216,
+      "bounds": {
+        "x": 0.739,
+        "y": 0.133,
+        "w": 0.143,
+        "h": 0.376
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bag-pattern-corner",
+      "kind": "module",
+      "type": "patterned-surface-corner",
+      "strength": 0.71112,
+      "bounds": {
+        "x": 0.802,
+        "y": 0.133,
+        "w": 0.099,
+        "h": 0.118
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lapel-skill-edge",
+      "kind": "module",
+      "type": "dark-lapel-edge",
+      "strength": 0.6752640000000001,
+      "bounds": {
+        "x": 0.765,
+        "y": 0.449,
+        "w": 0.112,
+        "h": 0.148
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glitch-check-reflection",
+      "kind": "module",
+      "type": "floor-reflection-glitch",
+      "strength": 0.65242,
+      "bounds": {
+        "x": 0.642,
+        "y": 0.797,
+        "w": 0.065,
+        "h": 0.202
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lapel-skill-edge-2",
+      "kind": "module",
+      "type": "dark-lapel-edge",
+      "strength": 0.6630039999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glitch-check-reflection-2",
+      "kind": "module",
+      "type": "floor-reflection-glitch",
+      "strength": 0.661492,
+      "bounds": {
+        "x": 0.56,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-central-flash-photo-slab-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.133,
+        "w": 0.856,
+        "h": 0.711
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-foreground-cocktail-table-seam-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.316,
+        "y": 0.661,
+        "w": 0.409,
+        "h": 0.166
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-yellow-emblem-tab-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.458,
+        "y": 0.878,
+        "w": 0.073,
+        "h": 0.086
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-violet-smoke-beam-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.135,
+        "w": 0.445,
+        "h": 0.376
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-violet-beam-arc-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.739,
+        "y": 0.133,
+        "w": 0.143,
+        "h": 0.376
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bag-pattern-corner-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.802,
+        "y": 0.133,
+        "w": 0.099,
+        "h": 0.118
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lapel-skill-edge-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.765,
+        "y": 0.449,
+        "w": 0.112,
+        "h": 0.148
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glitch-check-reflection-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.797,
+        "w": 0.065,
+        "h": 0.202
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lapel-skill-edge-2-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glitch-check-reflection-2-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.56,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 10 artifacts and scene family heuristics."
+  ]
+}
