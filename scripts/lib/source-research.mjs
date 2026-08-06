@@ -542,6 +542,12 @@ export async function inspectSourceCandidates(signalHarvest, {
       browserHarness,
       maxSources,
     })
+    // Keep the DNS-vetted fetch evidence on the press bed. Autoresearch capture can
+    // legitimately skip raw images or already-fetched provider surfaces when browser
+    // navigation is disabled, but those evidence records are still real renderable
+    // source windows. Dropping them here can turn a fertile evidence field into a
+    // false 0-window failure.
+    inspected = mergeInspectedSources(inspected, fetchEvidence)
     contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
   }
 

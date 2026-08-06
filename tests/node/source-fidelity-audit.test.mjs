@@ -195,6 +195,48 @@ describe('source image fidelity audit', () => {
     expect(audit.blockers).toEqual([])
   })
 
+  it('does not treat negated overcopy language in a pass rationale as a blocker', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-negated-overcopy-'))
+    const platePath = path.join(runDir, 'plate.png')
+    await writeFile(platePath, 'fake plate')
+
+    const audit = await auditSourceImageFidelity(
+      {
+        payload: {
+          source_image_fingerprints: [{
+            title: 'Mall poster portrait',
+            image_url: 'https://assets.example/mall-poster.jpg',
+            preserve_cues: ['white poster border', 'central mall photograph', 'bottom smiley emblem'],
+          }],
+        },
+        platePath,
+      },
+      runDir,
+      {
+        writeJson,
+        createContactSheetImpl: async ({ outputPath }) => {
+          await writeFile(outputPath, 'fake contact sheet')
+          return outputPath
+        },
+        openAiJsonImpl: async () => ({
+          verdict: 'pass',
+          resemblance_score: 1,
+          framing_score: 1,
+          object_relationship_score: 1,
+          context_score: 1,
+          transformation_score: 1,
+          retained_critical_elements: ['white poster border', 'central mall photograph', 'bottom smiley emblem'],
+          missing_critical_elements: ['tote pattern changes'],
+          drift_risks: ['aggressive crop changes the fashion-poster pressure'],
+          rationale: 'The plate transforms the source through scale, crop, surface tearing, figure truncation, and graphic abstraction, so it reads as a recomposed Daily Frontpage plate rather than the same still-life photograph with minor edits.',
+        }),
+      },
+    )
+
+    expect(audit.pass).toBe(true)
+    expect(audit.blockers).toEqual([])
+  })
+
   it('blocks warnings that admit the plate only shares palette/style', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-palette-block-'))
     const platePath = path.join(runDir, 'plate.png')

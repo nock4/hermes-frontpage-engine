@@ -188,6 +188,7 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       .replace(/not (?:an? )?unrelated[^.;]*(?:ambience|metaphor|replacement)?[^.;]*scene[^.;]*[.;]?/g, ' preserved ')
       .replace(/not replaced/g, 'preserved')
       .replace(/rather than replaced[^.;]*/g, 'preserved')
+      .replace(/rather than (?:the )?(?:same|identical|near[- ]?identical|almost identical)[^.;]*(?:photograph|source|image|arrangement|composition|layout|still[- ]?life)[^.;]*/g, 'preserved transformation')
       .replace(/does not replace/g, 'preserves')
       .replace(/do not replace/g, 'preserve')
     : auditText

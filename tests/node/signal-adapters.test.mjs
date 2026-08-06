@@ -92,4 +92,24 @@ describe('signal adapters', () => {
       source_path: 'Inbox/tweets/2026-04-28-post.md',
     })
   })
+
+  it('includes curated active theme captures in obsidian allowlist mode', async () => {
+    const vault = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-vault-active-'))
+    const themeDir = path.join(vault, '01 - Active', 'themes', 'Design & Visual Systems')
+    await fs.mkdir(themeDir, { recursive: true })
+    await fs.writeFile(path.join(themeDir, '2026-04-28-artist-123.md'), '# Saved artwork\nhttps://x.com/artist/status/123')
+
+    const loaded = await loadObsidianAllowlistSignals({
+      inputRoot: vault,
+      date: '2026-04-29',
+      windowDays: 30,
+      daysBetween,
+    })
+
+    expect(loaded.notes).toHaveLength(1)
+    expect(loaded.notes[0]).toMatchObject({
+      source_channel: 'twitter-bookmark',
+      source_path: '01 - Active/themes/Design & Visual Systems/2026-04-28-artist-123.md',
+    })
+  })
 })
