@@ -1,0 +1,1152 @@
+{
+  "artifact_map_id": "map-2026-08-07-sparse-cfp-margin-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "sparse-cfp-margin-field",
+  "default_artifact_id": "hero-hero-charcoal-advice-mass",
+  "artifacts": [
+    {
+      "id": "hero-hero-charcoal-advice-mass",
+      "kind": "hero",
+      "label": "hero charcoal advice mass",
+      "artifact_type": "hero-scale-ink-mass",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.1,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.08,
+          0.1
+        ],
+        [
+          0.4,
+          0.1
+        ],
+        [
+          0.4,
+          0.42
+        ],
+        [
+          0.08,
+          0.42
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/hero-hero-charcoal-advice-mass.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-charcoal-advice-mass"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          369,
+          240
+        ],
+        "safe_stage_window_origin_px": [
+          408,
+          266
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.08,
+            0.1
+          ],
+          [
+            0.4,
+            0.1
+          ],
+          [
+            0.4,
+            0.42
+          ],
+          [
+            0.08,
+            0.42
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0491,
+            0.0996
+          ],
+          [
+            0.0795,
+            0.0754
+          ],
+          [
+            0.4,
+            0.0754
+          ],
+          [
+            0.4304,
+            0.0996
+          ],
+          [
+            0.4304,
+            0.3189
+          ],
+          [
+            0.2536,
+            0.4441
+          ],
+          [
+            0.0795,
+            0.4441
+          ],
+          [
+            0.0491,
+            0.4199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0491,
+          "y": 0.0754,
+          "w": 0.3821,
+          "h": 0.3694
+        },
+        "territory_area_px": 188105,
+        "visible_area_px": 162360,
+        "expansion_ratio": 1.159,
+        "neighbors": [
+          {
+            "artifact_id": "module-lower-right-blue-slash-image-shard",
+            "shared_edge_px": 1927,
+            "direction": "down",
+            "distance_px": 296.34
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-inset-article-border-field",
+      "kind": "hero",
+      "label": "inset article border field",
+      "artifact_type": "hero-scale-border-field",
+      "bounds": {
+        "x": 0.58,
+        "y": 0.12,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.58,
+          0.12
+        ],
+        [
+          0.9,
+          0.12
+        ],
+        [
+          0.9,
+          0.44
+        ],
+        [
+          0.58,
+          0.44
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/hero-inset-article-border-field.svg",
+      "source_binding_ids": [
+        "binding-hero-inset-article-border-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1137,
+          261
+        ],
+        "safe_stage_window_origin_px": [
+          1176,
+          287
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.58,
+            0.12
+          ],
+          [
+            0.9,
+            0.12
+          ],
+          [
+            0.9,
+            0.44
+          ],
+          [
+            0.58,
+            0.44
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5491,
+            0.1196
+          ],
+          [
+            0.5795,
+            0.0954
+          ],
+          [
+            0.9,
+            0.0954
+          ],
+          [
+            0.9304,
+            0.1196
+          ],
+          [
+            0.9304,
+            0.4399
+          ],
+          [
+            0.9,
+            0.4641
+          ],
+          [
+            0.5795,
+            0.4641
+          ],
+          [
+            0.5491,
+            0.4399
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5491,
+          "y": 0.0954,
+          "w": 0.3821,
+          "h": 0.3694
+        },
+        "territory_area_px": 219752,
+        "visible_area_px": 162360,
+        "expansion_ratio": 1.353,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-lower-left-blue-document-slit",
+      "kind": "module",
+      "label": "lower-left blue document slit",
+      "artifact_type": "microfilm-document-cut",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.08,
+          0.52
+        ],
+        [
+          0.3,
+          0.52
+        ],
+        [
+          0.3,
+          0.74
+        ],
+        [
+          0.08,
+          0.74
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/module-lower-left-blue-document-slit.svg",
+      "source_binding_ids": [
+        "binding-module-lower-left-blue-document-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          627
+        ],
+        "safe_stage_window_origin_px": [
+          319,
+          645
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.08,
+            0.52
+          ],
+          [
+            0.3,
+            0.52
+          ],
+          [
+            0.3,
+            0.74
+          ],
+          [
+            0.08,
+            0.74
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0545,
+            0.5196
+          ],
+          [
+            0.0795,
+            0.4996
+          ],
+          [
+            0.2661,
+            0.4996
+          ],
+          [
+            0.3134,
+            0.5103
+          ],
+          [
+            0.325,
+            0.5196
+          ],
+          [
+            0.325,
+            0.595
+          ],
+          [
+            0.3054,
+            0.7552
+          ],
+          [
+            0.3,
+            0.7594
+          ],
+          [
+            0.0795,
+            0.7594
+          ],
+          [
+            0.0545,
+            0.7395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0545,
+          "y": 0.4996,
+          "w": 0.2714,
+          "h": 0.2605
+        },
+        "territory_area_px": 106565,
+        "visible_area_px": 76880,
+        "expansion_ratio": 1.386,
+        "neighbors": [
+          {
+            "artifact_id": "module-canonical-spreadsheet-seam",
+            "shared_edge_px": 2018,
+            "direction": "right",
+            "distance_px": 298.47
+          },
+          {
+            "artifact_id": "module-cloud-underhood-notch",
+            "shared_edge_px": 1254,
+            "direction": "down",
+            "distance_px": 324.43
+          },
+          {
+            "artifact_id": "module-lower-right-blue-slash-image-shard",
+            "shared_edge_px": 354,
+            "direction": "up",
+            "distance_px": 355.79
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-canonical-spreadsheet-seam",
+      "kind": "module",
+      "label": "canonical spreadsheet seam",
+      "artifact_type": "lower-margin-spec-seam",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/module-canonical-spreadsheet-seam.svg",
+      "source_binding_ids": [
+        "binding-module-canonical-spreadsheet-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          691,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          718,
+          666
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.34,
+            0.54
+          ],
+          [
+            0.56,
+            0.54
+          ],
+          [
+            0.56,
+            0.76
+          ],
+          [
+            0.34,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3036,
+            0.7573
+          ],
+          [
+            0.3259,
+            0.5217
+          ],
+          [
+            0.3393,
+            0.511
+          ],
+          [
+            0.5598,
+            0.511
+          ],
+          [
+            0.5946,
+            0.5388
+          ],
+          [
+            0.5938,
+            0.7587
+          ],
+          [
+            0.3937,
+            0.7879
+          ],
+          [
+            0.3393,
+            0.7879
+          ],
+          [
+            0.3036,
+            0.7594
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3036,
+          "y": 0.511,
+          "w": 0.292,
+          "h": 0.2776
+        },
+        "territory_area_px": 110858,
+        "visible_area_px": 76880,
+        "expansion_ratio": 1.442,
+        "neighbors": [
+          {
+            "artifact_id": "module-lower-left-blue-document-slit",
+            "shared_edge_px": 2018,
+            "direction": "left",
+            "distance_px": 298.47
+          },
+          {
+            "artifact_id": "module-value-ledger-hairline",
+            "shared_edge_px": 1872,
+            "direction": "right",
+            "distance_px": 305.11
+          },
+          {
+            "artifact_id": "module-agent-tool-reliquary",
+            "shared_edge_px": 1443,
+            "direction": "down",
+            "distance_px": 312.22
+          },
+          {
+            "artifact_id": "module-lower-right-blue-slash-image-shard",
+            "shared_edge_px": 585,
+            "direction": "up",
+            "distance_px": 331.55
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-value-ledger-hairline",
+      "kind": "module",
+      "label": "value ledger hairline",
+      "artifact_type": "ledger-hairline-rule",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/module-value-ledger-hairline.svg",
+      "source_binding_ids": [
+        "binding-module-value-ledger-hairline"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5946,
+            0.5395
+          ],
+          [
+            0.6196,
+            0.5196
+          ],
+          [
+            0.8393,
+            0.5196
+          ],
+          [
+            0.8643,
+            0.5395
+          ],
+          [
+            0.8643,
+            0.7388
+          ],
+          [
+            0.6937,
+            0.7794
+          ],
+          [
+            0.6259,
+            0.7794
+          ],
+          [
+            0.5946,
+            0.7587
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5946,
+          "y": 0.5196,
+          "w": 0.2705,
+          "h": 0.2605
+        },
+        "territory_area_px": 100509,
+        "visible_area_px": 76570,
+        "expansion_ratio": 1.313,
+        "neighbors": [
+          {
+            "artifact_id": "module-canonical-spreadsheet-seam",
+            "shared_edge_px": 1872,
+            "direction": "left",
+            "distance_px": 305.11
+          },
+          {
+            "artifact_id": "module-peace-prize-pinhole",
+            "shared_edge_px": 1292,
+            "direction": "down",
+            "distance_px": 299.71
+          },
+          {
+            "artifact_id": "module-agent-tool-reliquary",
+            "shared_edge_px": 237,
+            "direction": "down",
+            "distance_px": 391.65
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-cloud-underhood-notch",
+      "kind": "module",
+      "label": "cloud underhood notch",
+      "artifact_type": "corner-infrastructure-notch",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/module-cloud-underhood-notch.svg",
+      "source_binding_ids": [
+        "binding-module-cloud-underhood-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.075,
+            0.7794
+          ],
+          [
+            0.1,
+            0.7594
+          ],
+          [
+            0.2795,
+            0.7594
+          ],
+          [
+            0.3045,
+            0.7794
+          ],
+          [
+            0.3045,
+            0.9395
+          ],
+          [
+            0.2795,
+            0.9594
+          ],
+          [
+            0.1,
+            0.9594
+          ],
+          [
+            0.075,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.075,
+          "y": 0.7594,
+          "w": 0.2304,
+          "h": 0.2007
+        },
+        "territory_area_px": 71132,
+        "visible_area_px": 45652,
+        "expansion_ratio": 1.558,
+        "neighbors": [
+          {
+            "artifact_id": "module-lower-left-blue-document-slit",
+            "shared_edge_px": 1254,
+            "direction": "up",
+            "distance_px": 324.43
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-agent-tool-reliquary",
+      "kind": "module",
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "red-loop-correction-scar",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/module-agent-tool-reliquary.svg",
+      "source_binding_ids": [
+        "binding-module-agent-tool-reliquary"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3946,
+            0.7794
+          ],
+          [
+            0.4098,
+            0.7673
+          ],
+          [
+            0.4527,
+            0.7594
+          ],
+          [
+            0.6,
+            0.7594
+          ],
+          [
+            0.625,
+            0.7794
+          ],
+          [
+            0.625,
+            0.9395
+          ],
+          [
+            0.6,
+            0.9594
+          ],
+          [
+            0.4196,
+            0.9594
+          ],
+          [
+            0.3946,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3946,
+          "y": 0.7594,
+          "w": 0.2313,
+          "h": 0.2007
+        },
+        "territory_area_px": 71191,
+        "visible_area_px": 45878,
+        "expansion_ratio": 1.552,
+        "neighbors": [
+          {
+            "artifact_id": "module-canonical-spreadsheet-seam",
+            "shared_edge_px": 1443,
+            "direction": "up",
+            "distance_px": 312.22
+          },
+          {
+            "artifact_id": "module-value-ledger-hairline",
+            "shared_edge_px": 237,
+            "direction": "up",
+            "distance_px": 391.65
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-peace-prize-pinhole",
+      "kind": "module",
+      "label": "peace-prize pinhole",
+      "artifact_type": "political-pinhole-wound",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/module-peace-prize-pinhole.svg",
+      "source_binding_ids": [
+        "binding-module-peace-prize-pinhole"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6946,
+            0.7651
+          ],
+          [
+            0.7884,
+            0.7395
+          ],
+          [
+            0.9,
+            0.7395
+          ],
+          [
+            0.925,
+            0.7594
+          ],
+          [
+            0.925,
+            0.9196
+          ],
+          [
+            0.9,
+            0.9395
+          ],
+          [
+            0.7196,
+            0.9395
+          ],
+          [
+            0.6946,
+            0.9196
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6946,
+          "y": 0.7395,
+          "w": 0.2313,
+          "h": 0.2007
+        },
+        "territory_area_px": 69901,
+        "visible_area_px": 45878,
+        "expansion_ratio": 1.524,
+        "neighbors": [
+          {
+            "artifact_id": "module-value-ledger-hairline",
+            "shared_edge_px": 1292,
+            "direction": "up",
+            "distance_px": 299.71
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-lower-right-blue-slash-image-shard",
+      "kind": "module",
+      "label": "lower-right blue slash image shard",
+      "artifact_type": "diagonal-image-shard",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "sparse-cfp-margin-field",
+      "mask_path": "/editions/2026-08-07-sparse-cfp-margin-field-v1/assets/masks/module-lower-right-blue-slash-image-shard.svg",
+      "source_binding_ids": [
+        "binding-module-lower-right-blue-slash-image-shard"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2545,
+            0.3594
+          ],
+          [
+            0.3357,
+            0.3196
+          ],
+          [
+            0.4393,
+            0.3196
+          ],
+          [
+            0.4643,
+            0.3395
+          ],
+          [
+            0.4643,
+            0.4897
+          ],
+          [
+            0.4393,
+            0.5096
+          ],
+          [
+            0.2795,
+            0.5096
+          ],
+          [
+            0.2545,
+            0.4897
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2545,
+          "y": 0.3196,
+          "w": 0.2107,
+          "h": 0.1907
+        },
+        "territory_area_px": 59424,
+        "visible_area_px": 38160,
+        "expansion_ratio": 1.557,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-charcoal-advice-mass",
+            "shared_edge_px": 1927,
+            "direction": "up",
+            "distance_px": 296.34
+          },
+          {
+            "artifact_id": "module-canonical-spreadsheet-seam",
+            "shared_edge_px": 585,
+            "direction": "down",
+            "distance_px": 331.55
+          },
+          {
+            "artifact_id": "module-lower-left-blue-document-slit",
+            "shared_edge_px": 354,
+            "direction": "down",
+            "distance_px": 355.79
+          }
+        ]
+      }
+    }
+  ]
+}

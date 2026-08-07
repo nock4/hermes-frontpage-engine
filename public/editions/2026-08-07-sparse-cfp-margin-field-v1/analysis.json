@@ -1,0 +1,302 @@
+{
+  "analysis_id": "analysis-2026-08-07-sparse-cfp-margin-field-v1",
+  "inspection_mode": "planned-artifact-fallback",
+  "inspection_error": "Expected JSON from hermes: Expected ',' or ']' after array element in JSON at position 5030 (line 1 column 5031)\n{\"scene_summary\":\"Minimal archival paper plate: a large black typographic/charcoal pressure mass sits left of center inside a thin ruled border, with marginal red correction, pinholes, cut slits, ruled ledger lines, a blue diagonal shard, and torn paper edges along the lower-right margin.\",\"usable_surfaces\":[\"left-of-center charcoal block mass\",\"thin inset border field\",\"lower-margin ruled seam\",\"two punched vertical slits\",\"red marginal correction scar\",\"lower-right pinhole cluster\",\"diagonal blue slash\",\"right torn paper edge\"],\"detected_objects\":[{\"label\":\"hero charcoal advice mass\",\"artifact_type\":\"hero-scale-ink-mass\",\"role\":\"hero-anchor\",\"bounds\":{\"x\":0.127,\"y\":0.141,\"w\":0.392,\"h\":0.49},\"polygon\":[[0.132,0.141],[0.252,0.141],[0.255,0.175],[0.313,0.176],[0.333,0.245],[0.432,0.245],[0.435,0.319],[0.519,0.319],[0.517,0.472],[0.407,0.472],[0.402,0.563],[0.224,0.561],[0.218,0.631],[0.131,0.629],[0.132,0.482],[0.178,0.482],[0.128,0.319],[0.132,0.141]],\"confidence\":0.94,\"visual_evidence\":\"dominant dark grainy block-and-curve mass on the left, made of dense charcoal-like rectangular and arced forms with visible paper breaks between them\"},{\"label\":\"inset article border field\",\"artifact_type\":\"hero-scale-border-field\",\"role\":\"label-surface\",\"bounds\":{\"x\":0.108,\"y\":0.019,\"w\":0.864,\"h\":0.925},\"polygon\":[[0.108,0.019],[0.972,0.019],[0.972,0.944],[0.108,0.944],[0.108,0.019]],\"confidence\":0.88,\"visual_evidence\":\"large thin gray rectangular rule enclosing the whole quiet paper field, visible as a nested article/page border rather than a card\"},{\"label\":\"lower-left blue document slit\",\"artifact_type\":\"microfilm-document-cut\",\"role\":\"source-pocket\",\"bounds\":{\"x\":0.282,\"y\":0.706,\"w\":0.026,\"h\":0.085},\"polygon\":[[0.285,0.711],[0.303,0.711],[0.307,0.719],[0.306,0.782],[0.300,0.791],[0.285,0.789],[0.281,0.781],[0.282,0.719]],\"confidence\":0.86,\"visual_evidence\":\"narrow vertical punched aperture in the lower-left margin, with shadowed inner edge and rounded cut ends\"},{\"label\":\"canonical spreadsheet seam\",\"artifact_type\":\"lower-margin-spec-seam\",\"role\":\"media-surface\",\"bounds\":{\"x\":0.557,\"y\":0.803,\"w\":0.384,\"h\":0.138},\"polygon\":[[0.558,0.825],[0.941,0.825],[0.941,0.863],[0.562,0.864],[0.562,0.884],[0.941,0.884],[0.941,0.907],[0.558,0.907],[0.558,0.825]],\"confidence\":0.82,\"visual_evidence\":\"cluster of thin ruled horizontal spreadsheet-like lines in the lower-right margin, crossed by a few vertical guide rules\"},{\"label\":\"value ledger hairline\",\"artifact_type\":\"ledger-hairline-rule\",\"role\":\"edge-mark\",\"bounds\":{\"x\":0.108,\"y\":0.715,\"w\":0.864,\"h\":0.004},\"polygon\":[[0.108,0.715],[0.972,0.715],[0.972,0.719],[0.108,0.719],[0.108,0.715]],\"confidence\":0.78,\"visual_evidence\":\"single faint horizontal hairline spanning the page at the top of the lower ledger band, crossing from the left rule to the right border\"},{\"label\":\"cloud underhood notch\",\"artifact_type\":\"corner-infrastructure-notch\",\"role\":\"edge-mark\",\"bounds\":{\"x\":0.967,\"y\":0.739,\"w\":0.026,\"h\":0.065},\"polygon\":[[0.981,0.739],[0.993,0.744],[0.991,0.772],[0.986,0.790],[0.979,0.804],[0.969,0.801],[0.972,0.778],[0.973,0.755]],\"confidence\":0.77,\"visual_evidence\":\"small torn and scraped right-edge notch with exposed rough paper fibers just above the lower-right corner area\"},{\"label\":\"Agent Tool Reliquary\",\"artifact_type\":\"red-loop-correction-scar\",\"role\":\"gesture-mark\",\"bounds\":{\"x\":0.078,\"y\":0.386,\"w\":0.014,\"h\":0.088},\"polygon\":[[0.084,0.386],[0.088,0.402],[0.086,0.421],[0.091,0.441],[0.088,0.459],[0.090,0.474],[0.081,0.472],[0.079,0.451],[0.082,0.432],[0.078,0.410]],\"confidence\":0.91,\"visual_evidence\":\"thin rusty red vertical correction scar in the left margin, built from repeated rough looped strokes hugging the red rule\"},{\"label\":\"peace-prize pinhole\",\"artifact_type\":\"political-pinhole-wound\",\"role\":\"void-mark\",\"bounds\":{\"x\":0.043,\"y\":0.11,\"w\":0.031,\"h\":0.036},\"polygon\":[[0.058,0.110],[0.068,0.115],[0.074,0.126],[0.071,0.139],[0.060,0.146],[0.049,0.143],[0.043,0.132],[0.046,0.119]],\"confidence\":0.74,\"visual_evidence\":\"small dark oval puncture/portrait-like wound near the left red rule in the upper margin, isolated from the main mass\"},{\"label\":\"lower-right blue slash image shard\",\"artifact_type\":\"diagonal-image-shard\",\"role\":\"gesture-mark\",\"bounds\":{\"x\":0.452,\"y\":0.68,\"w\":0.191,\"h\":0.269},\"polygon\":[[0.638,0.680],[0.643,0.681],[0.607,0.755],[0.563,0.835],[0.503,0.925],[0.452,0.949],[0.493,0.866],[0.542,0.783],[0.596,0.715]],\"confidence\":0.93,\"visual_evidence\":\"sharp saturated blue diagonal slash rising through the lower field, a thin image-like shard cutting across pale paper and ruled lines\"},{\"label\":\"lower-right pinhole cluster\",\"artifact_type\":\"political-pinhole-cluster\",\"role\":\"light-mark\",\"bounds\":{\"x\":0.738,\"y\":0.731,\"w\":0.146,\"h\":0.067},\"polygon\":[[0.739,0.775],[0.764,0.748],[0.818,0.732],[0.865,0.751],[0.884,0.782],[0.849,0.799],[0.793,0.792]],\"confidence\":0.81,\"visual_evidence\":\"seven small puncture lights clustered above the ruled lower-right lines, each with a tiny shadowed center and pale rim\"}}],\"complexity_assessment\":{\"status\":\"minimal\",\"dominant_form_count\":3,\"large_region_count\":2,\"mapped_region_coverage\":0.31,\"rationale\":\"The plate is mostly negative paper field. One dominant charcoal mass, one ruled border/ledger zone, and one blue slash carry the composition; the smaller scars, slits, pinholes, and tears remain sparse and readable rather than cluttered.\"}}\n",
+  "scene_summary": "Sparse CFP margin field, poster crop under overhead scan: one warm off-white card inside a hairline border, left red rule, huge empty upper-right. A hero-scale charcoal title-mass sits left-of-center; a second inset article-field holds the lower edge. Tiny avatar pin, red notebook scar, document slots, ledger hairlines, occult pinholes, and one sharp blue diagonal slash carry sources as apertures and edge wounds. Bright flat scan light, paper grain, restrained blue/red accents, no readable text.",
+  "usable_surfaces": [
+    "warm off-white slide-card stock",
+    "pressed charcoal serif ink mass",
+    "hairline registration borders",
+    "dry red correction-pencil rules"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero charcoal advice mass",
+      "artifact_type": "hero-scale-ink-mass",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.1,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "polygon": [
+        [
+          0.08,
+          0.1
+        ],
+        [
+          0.4,
+          0.1
+        ],
+        [
+          0.4,
+          0.42
+        ],
+        [
+          0.08,
+          0.42
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "inset article border field",
+      "artifact_type": "hero-scale-border-field",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.58,
+        "y": 0.12,
+        "w": 0.32,
+        "h": 0.32
+      },
+      "polygon": [
+        [
+          0.58,
+          0.12
+        ],
+        [
+          0.9,
+          0.12
+        ],
+        [
+          0.9,
+          0.44
+        ],
+        [
+          0.58,
+          0.44
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "lower-left blue document slit",
+      "artifact_type": "microfilm-document-cut",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.08,
+          0.52
+        ],
+        [
+          0.3,
+          0.52
+        ],
+        [
+          0.3,
+          0.74
+        ],
+        [
+          0.08,
+          0.74
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "canonical spreadsheet seam",
+      "artifact_type": "lower-margin-spec-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "value ledger hairline",
+      "artifact_type": "ledger-hairline-rule",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "cloud underhood notch",
+      "artifact_type": "corner-infrastructure-notch",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "red-loop-correction-scar",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "peace-prize pinhole",
+      "artifact_type": "political-pinhole-wound",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    },
+    {
+      "label": "lower-right blue slash image shard",
+      "artifact_type": "diagonal-image-shard",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.55,
+      "visual_evidence": "Planned source-bearing mark from the scene brief."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.563,
+    "rationale": "Fallback geometry cannot verify the plate complexity directly."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-07-sparse-cfp-margin-field-v1"
+}
