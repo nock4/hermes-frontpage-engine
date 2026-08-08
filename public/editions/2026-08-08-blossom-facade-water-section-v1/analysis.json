@@ -1,0 +1,447 @@
+{
+  "analysis_id": "analysis-2026-08-08-blossom-facade-water-section-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dense expressionist garden-facade plate: mustard corrugated architecture, cobalt wall pockets, a cobalt pond ribbon, stone islands, stitched red-white rail marks, and blossom-laced upper edges create many real navigable surfaces.",
+  "usable_surfaces": [
+    "mustard corrugated facade panels",
+    "cobalt pond cut through stones",
+    "red-white stitched mezzanine rail",
+    "lower pebble inspection island",
+    "long white balcony rail band",
+    "jagged cobalt vertical recess",
+    "warm red interior side sliver"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero mustard-cobalt facade scaffold",
+      "artifact_type": "hero-scale-facade-panel-system",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.445,
+        "y": 0,
+        "w": 0.5549999999999999,
+        "h": 0.475
+      },
+      "polygon": [
+        [
+          0.445,
+          0.315
+        ],
+        [
+          0.505,
+          0.217
+        ],
+        [
+          0.598,
+          0.168
+        ],
+        [
+          0.598,
+          0.055
+        ],
+        [
+          0.706,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0.475
+        ],
+        [
+          0.748,
+          0.459
+        ],
+        [
+          0.642,
+          0.398
+        ],
+        [
+          0.558,
+          0.394
+        ],
+        [
+          0.505,
+          0.349
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "large mustard and cobalt architectural mass with corrugated vertical siding, black roof cuts, balconies, window apertures, and hard facade edges dominating the upper right plate"
+    },
+    {
+      "label": "hero cobalt pond ribbon",
+      "artifact_type": "hero-scale-water-cut",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.729,
+        "w": 0.748,
+        "h": 0.266
+      },
+      "polygon": [
+        [
+          0,
+          0.773
+        ],
+        [
+          0.104,
+          0.771
+        ],
+        [
+          0.217,
+          0.789
+        ],
+        [
+          0.308,
+          0.818
+        ],
+        [
+          0.397,
+          0.803
+        ],
+        [
+          0.503,
+          0.74
+        ],
+        [
+          0.61,
+          0.735
+        ],
+        [
+          0.748,
+          0.801
+        ],
+        [
+          0.69,
+          0.892
+        ],
+        [
+          0.548,
+          0.936
+        ],
+        [
+          0.422,
+          0.982
+        ],
+        [
+          0.238,
+          0.995
+        ],
+        [
+          0.078,
+          0.971
+        ],
+        [
+          0,
+          0.932
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "continuous dark cobalt water channel winds across the lower garden, visibly bordered by pale stones and planted edges"
+    },
+    {
+      "label": "stitched mezzanine textile notch",
+      "artifact_type": "stitched-balcony-aperture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.493,
+        "w": 0.315,
+        "h": 0.187
+      },
+      "polygon": [
+        [
+          0.373,
+          0.493
+        ],
+        [
+          0.414,
+          0.511
+        ],
+        [
+          0.462,
+          0.524
+        ],
+        [
+          0.505,
+          0.547
+        ],
+        [
+          0.552,
+          0.579
+        ],
+        [
+          0.589,
+          0.611
+        ],
+        [
+          0.628,
+          0.639
+        ],
+        [
+          0.688,
+          0.662
+        ],
+        [
+          0.681,
+          0.68
+        ],
+        [
+          0.625,
+          0.658
+        ],
+        [
+          0.584,
+          0.631
+        ],
+        [
+          0.544,
+          0.598
+        ],
+        [
+          0.498,
+          0.571
+        ],
+        [
+          0.456,
+          0.544
+        ],
+        [
+          0.409,
+          0.529
+        ],
+        [
+          0.375,
+          0.51
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "thin red-and-white stitched zigzag line follows the sloped mezzanine edge across the garden wall"
+    },
+    {
+      "label": "audit prompt pebble island",
+      "artifact_type": "pebble-cell-interruption",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.237,
+        "y": 0.854,
+        "w": 0.295,
+        "h": 0.119
+      },
+      "polygon": [
+        [
+          0.237,
+          0.906
+        ],
+        [
+          0.263,
+          0.872
+        ],
+        [
+          0.331,
+          0.855
+        ],
+        [
+          0.421,
+          0.854
+        ],
+        [
+          0.492,
+          0.87
+        ],
+        [
+          0.532,
+          0.908
+        ],
+        [
+          0.515,
+          0.947
+        ],
+        [
+          0.45,
+          0.967
+        ],
+        [
+          0.352,
+          0.973
+        ],
+        [
+          0.274,
+          0.954
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "oval lower water-edge island made of tight pale pebble cells around a sandy center, clearly readable as an inspection cluster"
+    },
+    {
+      "label": "consensus balcony band",
+      "artifact_type": "horizontal-rail-gesture",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.634,
+        "y": 0.416,
+        "w": 0.366,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.634,
+          0.421
+        ],
+        [
+          0.76,
+          0.421
+        ],
+        [
+          0.77,
+          0.411
+        ],
+        [
+          0.876,
+          0.413
+        ],
+        [
+          0.998,
+          0.416
+        ],
+        [
+          1,
+          0.464
+        ],
+        [
+          0.858,
+          0.461
+        ],
+        [
+          0.744,
+          0.462
+        ],
+        [
+          0.634,
+          0.468
+        ]
+      ],
+      "confidence": 0.85,
+      "visual_evidence": "long pale horizontal balcony slab and rail cuts across the cobalt facade, segmented by posts and shadow lines"
+    },
+    {
+      "label": "geolocation shadow bay",
+      "artifact_type": "cobalt-recessed-window",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.762,
+        "y": 0,
+        "w": 0.047,
+        "h": 0.384
+      },
+      "polygon": [
+        [
+          0.776,
+          0
+        ],
+        [
+          0.792,
+          0
+        ],
+        [
+          0.799,
+          0.059
+        ],
+        [
+          0.792,
+          0.107
+        ],
+        [
+          0.806,
+          0.154
+        ],
+        [
+          0.791,
+          0.218
+        ],
+        [
+          0.804,
+          0.286
+        ],
+        [
+          0.789,
+          0.384
+        ],
+        [
+          0.771,
+          0.353
+        ],
+        [
+          0.777,
+          0.285
+        ],
+        [
+          0.765,
+          0.229
+        ],
+        [
+          0.776,
+          0.166
+        ],
+        [
+          0.762,
+          0.104
+        ],
+        [
+          0.771,
+          0.052
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "jagged vertical cobalt recess tears through the mustard facade with bright rough edges and dark blue interior depth"
+    },
+    {
+      "label": "habitexture interior sliver",
+      "artifact_type": "cropped-interior-panel",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.938,
+        "y": 0.228,
+        "w": 0.062,
+        "h": 0.199
+      },
+      "polygon": [
+        [
+          0.938,
+          0.228
+        ],
+        [
+          1,
+          0.228
+        ],
+        [
+          1,
+          0.427
+        ],
+        [
+          0.938,
+          0.427
+        ],
+        [
+          0.938,
+          0.228
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "warm red-orange vertical side panel at the far right facade, cropped by the image edge and interrupted by a small window slit"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 8,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.606,
+    "rationale": "The plate has strong source-bearing surfaces, but blossom branches, rocks, flowers, windows, rails, and garden stones make the scene visually busy rather than minimal."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-08-blossom-facade-water-section-v1"
+}

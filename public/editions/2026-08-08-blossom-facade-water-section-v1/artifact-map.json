@@ -1,0 +1,1246 @@
+{
+  "artifact_map_id": "map-2026-08-08-blossom-facade-water-section-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "blossom-facade-water-section",
+  "default_artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+  "artifacts": [
+    {
+      "id": "hero-hero-mustard-cobalt-facade-scaffold",
+      "kind": "hero",
+      "label": "hero mustard-cobalt facade scaffold",
+      "artifact_type": "hero-scale-facade-panel-system",
+      "bounds": {
+        "x": 0.4694,
+        "y": 0.0,
+        "w": 0.5306,
+        "h": 0.4766
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.4714,
+          0.2393
+        ],
+        [
+          0.4902,
+          0.1865
+        ],
+        [
+          0.7337,
+          0.002
+        ],
+        [
+          0.998,
+          0.002
+        ],
+        [
+          0.998,
+          0.4678
+        ],
+        [
+          0.7448,
+          0.4697
+        ],
+        [
+          0.4753,
+          0.3848
+        ]
+      ],
+      "cluster_id": "blossom-facade-water-section",
+      "mask_path": "/editions/2026-08-08-blossom-facade-water-section-v1/assets/masks/hero-hero-mustard-cobalt-facade-scaffold.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-mustard-cobalt-facade-scaffold"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1110,
+          204
+        ],
+        "safe_stage_window_origin_px": [
+          1178,
+          243
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.4714,
+            0.2393
+          ],
+          [
+            0.4902,
+            0.1865
+          ],
+          [
+            0.7337,
+            0.002
+          ],
+          [
+            0.998,
+            0.002
+          ],
+          [
+            0.998,
+            0.4678
+          ],
+          [
+            0.7448,
+            0.4697
+          ],
+          [
+            0.4753,
+            0.3848
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4492,
+            0.2393
+          ],
+          [
+            0.4668,
+            0.1865
+          ],
+          [
+            0.4896,
+            0.1523
+          ],
+          [
+            0.6914,
+            0.0
+          ],
+          [
+            0.9993,
+            0.0
+          ],
+          [
+            0.9974,
+            0.501
+          ],
+          [
+            0.7448,
+            0.502
+          ],
+          [
+            0.4753,
+            0.418
+          ],
+          [
+            0.4531,
+            0.3848
+          ],
+          [
+            0.4492,
+            0.251
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4492,
+          "y": 0.0,
+          "w": 0.5508,
+          "h": 0.5029
+        },
+        "territory_area_px": 275961,
+        "visible_area_px": 326756,
+        "expansion_ratio": 0.845,
+        "neighbors": [
+          {
+            "artifact_id": "module-consensus-balcony-band",
+            "shared_edge_px": 5559,
+            "direction": "down",
+            "distance_px": 254.29
+          },
+          {
+            "artifact_id": "module-geolocation-shadow-bay",
+            "shared_edge_px": 3229,
+            "direction": "up",
+            "distance_px": 156.21
+          },
+          {
+            "artifact_id": "module-habitexture-interior-sliver",
+            "shared_edge_px": 1731,
+            "direction": "right",
+            "distance_px": 383.94
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-hero-cobalt-pond-ribbon",
+      "kind": "hero",
+      "label": "hero cobalt pond ribbon",
+      "artifact_type": "hero-scale-water-cut",
+      "bounds": {
+        "x": 0,
+        "y": 0.729,
+        "w": 0.748,
+        "h": 0.266
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.773
+        ],
+        [
+          0.104,
+          0.771
+        ],
+        [
+          0.217,
+          0.789
+        ],
+        [
+          0.308,
+          0.818
+        ],
+        [
+          0.397,
+          0.803
+        ],
+        [
+          0.503,
+          0.74
+        ],
+        [
+          0.61,
+          0.735
+        ],
+        [
+          0.748,
+          0.801
+        ],
+        [
+          0.69,
+          0.892
+        ],
+        [
+          0.548,
+          0.936
+        ],
+        [
+          0.422,
+          0.982
+        ],
+        [
+          0.238,
+          0.995
+        ],
+        [
+          0.078,
+          0.971
+        ],
+        [
+          0,
+          0.932
+        ]
+      ],
+      "cluster_id": "blossom-facade-water-section",
+      "mask_path": "/editions/2026-08-08-blossom-facade-water-section-v1/assets/masks/hero-hero-cobalt-pond-ribbon.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-cobalt-pond-ribbon"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          574,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          666,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.773
+          ],
+          [
+            0.104,
+            0.771
+          ],
+          [
+            0.217,
+            0.789
+          ],
+          [
+            0.308,
+            0.818
+          ],
+          [
+            0.397,
+            0.803
+          ],
+          [
+            0.503,
+            0.74
+          ],
+          [
+            0.61,
+            0.735
+          ],
+          [
+            0.748,
+            0.801
+          ],
+          [
+            0.69,
+            0.892
+          ],
+          [
+            0.548,
+            0.936
+          ],
+          [
+            0.422,
+            0.982
+          ],
+          [
+            0.238,
+            0.995
+          ],
+          [
+            0.078,
+            0.971
+          ],
+          [
+            0,
+            0.932
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.7393
+          ],
+          [
+            0.6094,
+            0.7012
+          ],
+          [
+            0.7474,
+            0.7676
+          ],
+          [
+            0.7695,
+            0.8008
+          ],
+          [
+            0.6895,
+            0.9248
+          ],
+          [
+            0.4648,
+            0.999
+          ],
+          [
+            0.0677,
+            0.999
+          ],
+          [
+            0.0,
+            0.9648
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.7012,
+          "w": 0.7702,
+          "h": 0.2988
+        },
+        "territory_area_px": 234327,
+        "visible_area_px": 209022,
+        "expansion_ratio": 1.121,
+        "neighbors": [
+          {
+            "artifact_id": "module-audit-prompt-pebble-island",
+            "shared_edge_px": 4394,
+            "direction": "right",
+            "distance_px": 156.47
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-stitched-mezzanine-textile-notch",
+      "kind": "module",
+      "label": "stitched mezzanine textile notch",
+      "artifact_type": "stitched-balcony-aperture",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.493,
+        "w": 0.315,
+        "h": 0.187
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.373,
+          0.493
+        ],
+        [
+          0.414,
+          0.511
+        ],
+        [
+          0.462,
+          0.524
+        ],
+        [
+          0.505,
+          0.547
+        ],
+        [
+          0.552,
+          0.579
+        ],
+        [
+          0.589,
+          0.611
+        ],
+        [
+          0.628,
+          0.639
+        ],
+        [
+          0.688,
+          0.662
+        ],
+        [
+          0.681,
+          0.68
+        ],
+        [
+          0.625,
+          0.658
+        ],
+        [
+          0.584,
+          0.631
+        ],
+        [
+          0.544,
+          0.598
+        ],
+        [
+          0.498,
+          0.571
+        ],
+        [
+          0.456,
+          0.544
+        ],
+        [
+          0.409,
+          0.529
+        ],
+        [
+          0.375,
+          0.51
+        ]
+      ],
+      "cluster_id": "blossom-facade-water-section",
+      "mask_path": "/editions/2026-08-08-blossom-facade-water-section-v1/assets/masks/module-stitched-mezzanine-textile-notch.svg",
+      "source_binding_ids": [
+        "binding-module-stitched-mezzanine-textile-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          815,
+          585
+        ],
+        "safe_stage_window_origin_px": [
+          854,
+          601
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.373,
+            0.493
+          ],
+          [
+            0.414,
+            0.511
+          ],
+          [
+            0.462,
+            0.524
+          ],
+          [
+            0.505,
+            0.547
+          ],
+          [
+            0.552,
+            0.579
+          ],
+          [
+            0.589,
+            0.611
+          ],
+          [
+            0.628,
+            0.639
+          ],
+          [
+            0.688,
+            0.662
+          ],
+          [
+            0.681,
+            0.68
+          ],
+          [
+            0.625,
+            0.658
+          ],
+          [
+            0.584,
+            0.631
+          ],
+          [
+            0.544,
+            0.598
+          ],
+          [
+            0.498,
+            0.571
+          ],
+          [
+            0.456,
+            0.544
+          ],
+          [
+            0.409,
+            0.529
+          ],
+          [
+            0.375,
+            0.51
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3542,
+            0.4922
+          ],
+          [
+            0.3724,
+            0.4648
+          ],
+          [
+            0.4616,
+            0.4961
+          ],
+          [
+            0.6875,
+            0.6338
+          ],
+          [
+            0.7057,
+            0.6611
+          ],
+          [
+            0.681,
+            0.707
+          ],
+          [
+            0.625,
+            0.6846
+          ],
+          [
+            0.375,
+            0.5371
+          ],
+          [
+            0.3568,
+            0.5098
+          ],
+          [
+            0.3542,
+            0.4941
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3542,
+          "y": 0.4648,
+          "w": 0.3522,
+          "h": 0.2432
+        },
+        "territory_area_px": 40566,
+        "visible_area_px": 11194,
+        "expansion_ratio": 3.624,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-audit-prompt-pebble-island",
+      "kind": "module",
+      "label": "audit prompt pebble island",
+      "artifact_type": "pebble-cell-interruption",
+      "bounds": {
+        "x": 0.237,
+        "y": 0.854,
+        "w": 0.295,
+        "h": 0.119
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.237,
+          0.906
+        ],
+        [
+          0.263,
+          0.872
+        ],
+        [
+          0.331,
+          0.855
+        ],
+        [
+          0.421,
+          0.854
+        ],
+        [
+          0.492,
+          0.87
+        ],
+        [
+          0.532,
+          0.908
+        ],
+        [
+          0.515,
+          0.947
+        ],
+        [
+          0.45,
+          0.967
+        ],
+        [
+          0.352,
+          0.973
+        ],
+        [
+          0.274,
+          0.954
+        ]
+      ],
+      "cluster_id": "blossom-facade-water-section",
+      "mask_path": "/editions/2026-08-08-blossom-facade-water-section-v1/assets/masks/module-audit-prompt-pebble-island.svg",
+      "source_binding_ids": [
+        "binding-module-audit-prompt-pebble-island"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          591,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          627,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.237,
+            0.906
+          ],
+          [
+            0.263,
+            0.872
+          ],
+          [
+            0.331,
+            0.855
+          ],
+          [
+            0.421,
+            0.854
+          ],
+          [
+            0.492,
+            0.87
+          ],
+          [
+            0.532,
+            0.908
+          ],
+          [
+            0.515,
+            0.947
+          ],
+          [
+            0.45,
+            0.967
+          ],
+          [
+            0.352,
+            0.973
+          ],
+          [
+            0.274,
+            0.954
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3125,
+            0.9902
+          ],
+          [
+            0.3997,
+            0.8271
+          ],
+          [
+            0.4915,
+            0.8418
+          ],
+          [
+            0.5319,
+            0.8799
+          ],
+          [
+            0.5501,
+            0.9072
+          ],
+          [
+            0.5339,
+            0.9453
+          ],
+          [
+            0.515,
+            0.9736
+          ],
+          [
+            0.4499,
+            0.9941
+          ],
+          [
+            0.3477,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3125,
+          "y": 0.8262,
+          "w": 0.2383,
+          "h": 0.1738
+        },
+        "territory_area_px": 43286,
+        "visible_area_px": 42846,
+        "expansion_ratio": 1.01,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-cobalt-pond-ribbon",
+            "shared_edge_px": 4394,
+            "direction": "left",
+            "distance_px": 156.47
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-consensus-balcony-band",
+      "kind": "module",
+      "label": "consensus balcony band",
+      "artifact_type": "horizontal-rail-gesture",
+      "bounds": {
+        "x": 0.634,
+        "y": 0.416,
+        "w": 0.366,
+        "h": 0.052
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.634,
+          0.421
+        ],
+        [
+          0.76,
+          0.421
+        ],
+        [
+          0.77,
+          0.411
+        ],
+        [
+          0.876,
+          0.413
+        ],
+        [
+          0.998,
+          0.416
+        ],
+        [
+          1,
+          0.464
+        ],
+        [
+          0.858,
+          0.461
+        ],
+        [
+          0.744,
+          0.462
+        ],
+        [
+          0.634,
+          0.468
+        ]
+      ],
+      "cluster_id": "blossom-facade-water-section",
+      "mask_path": "/editions/2026-08-08-blossom-facade-water-section-v1/assets/masks/module-consensus-balcony-band.svg",
+      "source_binding_ids": [
+        "binding-module-consensus-balcony-band"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1255,
+          448
+        ],
+        "safe_stage_window_origin_px": [
+          1300,
+          453
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.634,
+            0.421
+          ],
+          [
+            0.76,
+            0.421
+          ],
+          [
+            0.77,
+            0.411
+          ],
+          [
+            0.876,
+            0.413
+          ],
+          [
+            0.998,
+            0.416
+          ],
+          [
+            1,
+            0.464
+          ],
+          [
+            0.858,
+            0.461
+          ],
+          [
+            0.744,
+            0.462
+          ],
+          [
+            0.634,
+            0.468
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6152,
+            0.4512
+          ],
+          [
+            0.709,
+            0.3936
+          ],
+          [
+            0.7695,
+            0.3828
+          ],
+          [
+            0.916,
+            0.3857
+          ],
+          [
+            0.9993,
+            0.4551
+          ],
+          [
+            0.9993,
+            0.4902
+          ],
+          [
+            0.6335,
+            0.4951
+          ],
+          [
+            0.6152,
+            0.4678
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6152,
+          "y": 0.3828,
+          "w": 0.3848,
+          "h": 0.1133
+        },
+        "territory_area_px": 48949,
+        "visible_area_px": 27366,
+        "expansion_ratio": 1.789,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+            "shared_edge_px": 5559,
+            "direction": "up",
+            "distance_px": 254.29
+          },
+          {
+            "artifact_id": "module-habitexture-interior-sliver",
+            "shared_edge_px": 1005,
+            "direction": "right",
+            "distance_px": 274.65
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-geolocation-shadow-bay",
+      "kind": "module",
+      "label": "geolocation shadow bay",
+      "artifact_type": "cobalt-recessed-window",
+      "bounds": {
+        "x": 0.762,
+        "y": 0,
+        "w": 0.047,
+        "h": 0.384
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.776,
+          0
+        ],
+        [
+          0.792,
+          0
+        ],
+        [
+          0.799,
+          0.059
+        ],
+        [
+          0.792,
+          0.107
+        ],
+        [
+          0.806,
+          0.154
+        ],
+        [
+          0.791,
+          0.218
+        ],
+        [
+          0.804,
+          0.286
+        ],
+        [
+          0.789,
+          0.384
+        ],
+        [
+          0.771,
+          0.353
+        ],
+        [
+          0.777,
+          0.285
+        ],
+        [
+          0.765,
+          0.229
+        ],
+        [
+          0.776,
+          0.166
+        ],
+        [
+          0.762,
+          0.104
+        ],
+        [
+          0.771,
+          0.052
+        ]
+      ],
+      "cluster_id": "blossom-facade-water-section",
+      "mask_path": "/editions/2026-08-08-blossom-facade-water-section-v1/assets/masks/module-geolocation-shadow-bay.svg",
+      "source_binding_ids": [
+        "binding-module-geolocation-shadow-bay"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1207,
+          165
+        ],
+        "safe_stage_window_origin_px": [
+          1212,
+          197
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.776,
+            0
+          ],
+          [
+            0.792,
+            0
+          ],
+          [
+            0.799,
+            0.059
+          ],
+          [
+            0.792,
+            0.107
+          ],
+          [
+            0.806,
+            0.154
+          ],
+          [
+            0.791,
+            0.218
+          ],
+          [
+            0.804,
+            0.286
+          ],
+          [
+            0.789,
+            0.384
+          ],
+          [
+            0.771,
+            0.353
+          ],
+          [
+            0.777,
+            0.285
+          ],
+          [
+            0.765,
+            0.229
+          ],
+          [
+            0.776,
+            0.166
+          ],
+          [
+            0.762,
+            0.104
+          ],
+          [
+            0.771,
+            0.052
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7435,
+            0.1025
+          ],
+          [
+            0.7572,
+            0.0
+          ],
+          [
+            0.8099,
+            0.0
+          ],
+          [
+            0.8242,
+            0.1523
+          ],
+          [
+            0.8125,
+            0.2363
+          ],
+          [
+            0.752,
+            0.1982
+          ],
+          [
+            0.7435,
+            0.1045
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7435,
+          "y": 0.0,
+          "w": 0.0814,
+          "h": 0.2373
+        },
+        "territory_area_px": 21926,
+        "visible_area_px": 15700,
+        "expansion_ratio": 1.397,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+            "shared_edge_px": 3229,
+            "direction": "down",
+            "distance_px": 156.21
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-habitexture-interior-sliver",
+      "kind": "module",
+      "label": "habitexture interior sliver",
+      "artifact_type": "cropped-interior-panel",
+      "bounds": {
+        "x": 0.938,
+        "y": 0.228,
+        "w": 0.062,
+        "h": 0.199
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.938,
+          0.228
+        ],
+        [
+          1,
+          0.228
+        ],
+        [
+          1,
+          0.427
+        ],
+        [
+          0.938,
+          0.427
+        ],
+        [
+          0.938,
+          0.228
+        ]
+      ],
+      "cluster_id": "blossom-facade-water-section",
+      "mask_path": "/editions/2026-08-08-blossom-facade-water-section-v1/assets/masks/module-habitexture-interior-sliver.svg",
+      "source_binding_ids": [
+        "binding-module-habitexture-interior-sliver"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          319
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          335
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.938,
+            0.228
+          ],
+          [
+            1,
+            0.228
+          ],
+          [
+            1,
+            0.427
+          ],
+          [
+            0.938,
+            0.427
+          ],
+          [
+            0.938,
+            0.228
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.9193,
+            0.2275
+          ],
+          [
+            0.9375,
+            0.2002
+          ],
+          [
+            0.9993,
+            0.2002
+          ],
+          [
+            0.9993,
+            0.4541
+          ],
+          [
+            0.9375,
+            0.4541
+          ],
+          [
+            0.9193,
+            0.4268
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.9193,
+          "y": 0.2002,
+          "w": 0.0807,
+          "h": 0.2549
+        },
+        "territory_area_px": 31552,
+        "visible_area_px": 19680,
+        "expansion_ratio": 1.603,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+            "shared_edge_px": 1731,
+            "direction": "left",
+            "distance_px": 383.94
+          },
+          {
+            "artifact_id": "module-consensus-balcony-band",
+            "shared_edge_px": 1005,
+            "direction": "left",
+            "distance_px": 274.65
+          }
+        ]
+      }
+    }
+  ]
+}

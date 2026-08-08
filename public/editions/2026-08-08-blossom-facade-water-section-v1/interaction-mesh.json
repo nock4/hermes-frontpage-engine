@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-08-blossom-facade-water-section-v1",
+  "generation": "daily-process-2026-08-08T13-56-00-409Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-08T13-56-00-409Z/2026-08-08-blossom-facade-water-section-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+      "visible_area_px": 326756,
+      "territory_area_px": 275961,
+      "hover_bounds": {
+        "x": 0.4492,
+        "y": 0.0,
+        "w": 0.5508,
+        "h": 0.5029
+      },
+      "hover_polygon": [
+        [
+          0.4492,
+          0.2393
+        ],
+        [
+          0.4668,
+          0.1865
+        ],
+        [
+          0.4896,
+          0.1523
+        ],
+        [
+          0.6914,
+          0.0
+        ],
+        [
+          0.9993,
+          0.0
+        ],
+        [
+          0.9974,
+          0.501
+        ],
+        [
+          0.7448,
+          0.502
+        ],
+        [
+          0.4753,
+          0.418
+        ],
+        [
+          0.4531,
+          0.3848
+        ],
+        [
+          0.4492,
+          0.251
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-consensus-balcony-band",
+          "shared_edge_px": 5559,
+          "direction": "down",
+          "distance_px": 254.29
+        },
+        {
+          "artifact_id": "module-geolocation-shadow-bay",
+          "shared_edge_px": 3229,
+          "direction": "up",
+          "distance_px": 156.21
+        },
+        {
+          "artifact_id": "module-habitexture-interior-sliver",
+          "shared_edge_px": 1731,
+          "direction": "right",
+          "distance_px": 383.94
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-hero-cobalt-pond-ribbon",
+      "visible_area_px": 209022,
+      "territory_area_px": 234327,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.7012,
+        "w": 0.7702,
+        "h": 0.2988
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.7393
+        ],
+        [
+          0.6094,
+          0.7012
+        ],
+        [
+          0.7474,
+          0.7676
+        ],
+        [
+          0.7695,
+          0.8008
+        ],
+        [
+          0.6895,
+          0.9248
+        ],
+        [
+          0.4648,
+          0.999
+        ],
+        [
+          0.0677,
+          0.999
+        ],
+        [
+          0.0,
+          0.9648
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-audit-prompt-pebble-island",
+          "shared_edge_px": 4394,
+          "direction": "right",
+          "distance_px": 156.47
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-stitched-mezzanine-textile-notch",
+      "visible_area_px": 11194,
+      "territory_area_px": 40566,
+      "hover_bounds": {
+        "x": 0.3542,
+        "y": 0.4648,
+        "w": 0.3522,
+        "h": 0.2432
+      },
+      "hover_polygon": [
+        [
+          0.3542,
+          0.4922
+        ],
+        [
+          0.3724,
+          0.4648
+        ],
+        [
+          0.4616,
+          0.4961
+        ],
+        [
+          0.6875,
+          0.6338
+        ],
+        [
+          0.7057,
+          0.6611
+        ],
+        [
+          0.681,
+          0.707
+        ],
+        [
+          0.625,
+          0.6846
+        ],
+        [
+          0.375,
+          0.5371
+        ],
+        [
+          0.3568,
+          0.5098
+        ],
+        [
+          0.3542,
+          0.4941
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-audit-prompt-pebble-island",
+      "visible_area_px": 42846,
+      "territory_area_px": 43286,
+      "hover_bounds": {
+        "x": 0.3125,
+        "y": 0.8262,
+        "w": 0.2383,
+        "h": 0.1738
+      },
+      "hover_polygon": [
+        [
+          0.3125,
+          0.9902
+        ],
+        [
+          0.3997,
+          0.8271
+        ],
+        [
+          0.4915,
+          0.8418
+        ],
+        [
+          0.5319,
+          0.8799
+        ],
+        [
+          0.5501,
+          0.9072
+        ],
+        [
+          0.5339,
+          0.9453
+        ],
+        [
+          0.515,
+          0.9736
+        ],
+        [
+          0.4499,
+          0.9941
+        ],
+        [
+          0.3477,
+          0.999
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-cobalt-pond-ribbon",
+          "shared_edge_px": 4394,
+          "direction": "left",
+          "distance_px": 156.47
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-consensus-balcony-band",
+      "visible_area_px": 27366,
+      "territory_area_px": 48949,
+      "hover_bounds": {
+        "x": 0.6152,
+        "y": 0.3828,
+        "w": 0.3848,
+        "h": 0.1133
+      },
+      "hover_polygon": [
+        [
+          0.6152,
+          0.4512
+        ],
+        [
+          0.709,
+          0.3936
+        ],
+        [
+          0.7695,
+          0.3828
+        ],
+        [
+          0.916,
+          0.3857
+        ],
+        [
+          0.9993,
+          0.4551
+        ],
+        [
+          0.9993,
+          0.4902
+        ],
+        [
+          0.6335,
+          0.4951
+        ],
+        [
+          0.6152,
+          0.4678
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+          "shared_edge_px": 5559,
+          "direction": "up",
+          "distance_px": 254.29
+        },
+        {
+          "artifact_id": "module-habitexture-interior-sliver",
+          "shared_edge_px": 1005,
+          "direction": "right",
+          "distance_px": 274.65
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-geolocation-shadow-bay",
+      "visible_area_px": 15700,
+      "territory_area_px": 21926,
+      "hover_bounds": {
+        "x": 0.7435,
+        "y": 0.0,
+        "w": 0.0814,
+        "h": 0.2373
+      },
+      "hover_polygon": [
+        [
+          0.7435,
+          0.1025
+        ],
+        [
+          0.7572,
+          0.0
+        ],
+        [
+          0.8099,
+          0.0
+        ],
+        [
+          0.8242,
+          0.1523
+        ],
+        [
+          0.8125,
+          0.2363
+        ],
+        [
+          0.752,
+          0.1982
+        ],
+        [
+          0.7435,
+          0.1045
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+          "shared_edge_px": 3229,
+          "direction": "down",
+          "distance_px": 156.21
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-habitexture-interior-sliver",
+      "visible_area_px": 19680,
+      "territory_area_px": 31552,
+      "hover_bounds": {
+        "x": 0.9193,
+        "y": 0.2002,
+        "w": 0.0807,
+        "h": 0.2549
+      },
+      "hover_polygon": [
+        [
+          0.9193,
+          0.2275
+        ],
+        [
+          0.9375,
+          0.2002
+        ],
+        [
+          0.9993,
+          0.2002
+        ],
+        [
+          0.9993,
+          0.4541
+        ],
+        [
+          0.9375,
+          0.4541
+        ],
+        [
+          0.9193,
+          0.4268
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+          "shared_edge_px": 1731,
+          "direction": "left",
+          "distance_px": 383.94
+        },
+        {
+          "artifact_id": "module-consensus-balcony-band",
+          "shared_edge_px": 1005,
+          "direction": "left",
+          "distance_px": 274.65
+        }
+      ]
+    }
+  ]
+}

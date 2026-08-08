@@ -1,0 +1,314 @@
+{
+  "interpretation_id": "interp-2026-08-08-blossom-facade-water-section-v1",
+  "edition_id": "2026-08-08-blossom-facade-water-section-v1",
+  "plate_read_timestamp": "2026-08-08T14:03:46.420Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dense expressionist garden-facade plate: mustard corrugated architecture, cobalt wall pockets, a cobalt pond ribbon, stone islands, stitched red-white rail marks, and blossom-laced upper edges create many real navigable surfaces.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "occult garden architecture under clean museum daylight",
+      "A dense expressionist garden-facade plate: mustard corrugated architecture, cobalt wall pockets, a cobalt pond ribbon, stone islands, stitched red-white rail marks, and blossom-laced upper edges create many real navigable surfaces.",
+      "architectural-section",
+      "blossom-canopy",
+      "cobalt-water"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero mustard-cobalt facade scaffold",
+      "hero cobalt pond ribbon",
+      "stitched mezzanine textile notch",
+      "audit prompt pebble island",
+      "consensus balcony band",
+      "geolocation shadow bay",
+      "habitexture interior sliver"
+    ],
+    "dominant_surfaces": [
+      "water",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "blossom-facade-water-section",
+      "right-heavy stacked facade scaffold with balcony bands and diagonal roof cuts",
+      "upper-left blossom canopy spilling over the architecture",
+      "lower-center cobalt pond ribbons with pebble islands",
+      "stitched textile apertures nested into railings and panel seams",
+      "garden procession of dense botanical marks along paths and water edges",
+      "mustard corrugated facade panels",
+      "cobalt pond cut through stones"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: blossom-facade-water-section.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-mustard-cobalt-facade-scaffold",
+      "kind": "hero",
+      "type": "hero-scale-facade-panel-system",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.4694,
+        "y": 0,
+        "w": 0.5306,
+        "h": 0.4766
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-cobalt-pond-ribbon",
+      "kind": "hero",
+      "type": "hero-scale-water-cut",
+      "strength": 0.9882679999999999,
+      "bounds": {
+        "x": 0,
+        "y": 0.729,
+        "w": 0.748,
+        "h": 0.266
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stitched-mezzanine-textile-notch",
+      "kind": "module",
+      "type": "stitched-balcony-aperture",
+      "strength": 0.790956,
+      "bounds": {
+        "x": 0.373,
+        "y": 0.493,
+        "w": 0.315,
+        "h": 0.187
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-audit-prompt-pebble-island",
+      "kind": "module",
+      "type": "pebble-cell-interruption",
+      "strength": 0.767664,
+      "bounds": {
+        "x": 0.237,
+        "y": 0.854,
+        "w": 0.295,
+        "h": 0.119
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-consensus-balcony-band",
+      "kind": "module",
+      "type": "horizontal-rail-gesture",
+      "strength": 0.72828,
+      "bounds": {
+        "x": 0.634,
+        "y": 0.416,
+        "w": 0.366,
+        "h": 0.052
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-geolocation-shadow-bay",
+      "kind": "module",
+      "type": "cobalt-recessed-window",
+      "strength": 0.710532,
+      "bounds": {
+        "x": 0.762,
+        "y": 0,
+        "w": 0.047,
+        "h": 0.384
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-habitexture-interior-sliver",
+      "kind": "module",
+      "type": "cropped-interior-panel",
+      "strength": 0.6757080000000001,
+      "bounds": {
+        "x": 0.938,
+        "y": 0.228,
+        "w": 0.062,
+        "h": 0.199
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-mustard-cobalt-facade-scaffold-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4694,
+        "y": 0,
+        "w": 0.5306,
+        "h": 0.4766
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-cobalt-pond-ribbon-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.729,
+        "w": 0.748,
+        "h": 0.266
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stitched-mezzanine-textile-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.493,
+        "w": 0.315,
+        "h": 0.187
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-audit-prompt-pebble-island-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.237,
+        "y": 0.854,
+        "w": 0.295,
+        "h": 0.119
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-consensus-balcony-band-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.634,
+        "y": 0.416,
+        "w": 0.366,
+        "h": 0.052
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-geolocation-shadow-bay-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.762,
+        "y": 0,
+        "w": 0.047,
+        "h": 0.384
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-habitexture-interior-sliver-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.938,
+        "y": 0.228,
+        "w": 0.062,
+        "h": 0.199
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 7 artifacts and scene family heuristics."
+  ]
+}

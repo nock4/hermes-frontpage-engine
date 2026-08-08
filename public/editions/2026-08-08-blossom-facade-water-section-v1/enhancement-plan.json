@@ -1,0 +1,196 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-08-blossom-facade-water-section-v1",
+  "edition_id": "2026-08-08-blossom-facade-water-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-08-blossom-facade-water-section-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-mustard-cobalt-facade-scaffold",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-mustard-cobalt-facade-scaffold",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-facade-panel-system) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-cobalt-pond-ribbon",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-cobalt-pond-ribbon",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-water-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-stitched-mezzanine-textile-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-stitched-mezzanine-textile-notch",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stitched-balcony-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-audit-prompt-pebble-island",
+      "target_kind": "artifact",
+      "artifact_id": "module-audit-prompt-pebble-island",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pebble-cell-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "module-consensus-balcony-band",
+      "target_kind": "artifact",
+      "artifact_id": "module-consensus-balcony-band",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (horizontal-rail-gesture) selected from interpretation."
+    },
+    {
+      "target_id": "module-geolocation-shadow-bay",
+      "target_kind": "artifact",
+      "artifact_id": "module-geolocation-shadow-bay",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cobalt-recessed-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-habitexture-interior-sliver",
+      "target_kind": "artifact",
+      "artifact_id": "module-habitexture-interior-sliver",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-interior-panel) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 7 artifacts and scene family heuristics."
+}
