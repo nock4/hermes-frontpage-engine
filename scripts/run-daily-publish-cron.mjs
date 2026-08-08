@@ -11,8 +11,8 @@ const defaultInspirationOverridePath = path.join(primaryRoot, 'tmp', 'next-run-i
 const remoteManifestUrl = 'https://daily.nockgarden.com/editions/index.json'
 const previewSmokePort = 43180
 const defaultCronWindowDays = Number.parseInt(process.env.DFE_CRON_WINDOW_DAYS || '120', 10)
-const defaultCronMaxNotes = Number.parseInt(process.env.DFE_CRON_MAX_NOTES || '80', 10)
-const defaultCronMaxSources = Number.parseInt(process.env.DFE_CRON_MAX_SOURCES || '24', 10)
+const defaultCronMaxNotes = Number.parseInt(process.env.DFE_CRON_MAX_NOTES || '200', 10)
+const defaultCronMaxSources = Number.parseInt(process.env.DFE_CRON_MAX_SOURCES || '60', 10)
 
 export function allocateCronUxPort(seed = process.pid) {
   if (process.env.DFE_UX_PORT) return process.env.DFE_UX_PORT

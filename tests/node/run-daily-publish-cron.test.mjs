@@ -17,8 +17,8 @@ describe('daily publish cron wrapper', () => {
     const options = parseArgs([])
 
     expect(options.windowDays).toBe(120)
-    expect(options.maxNotes).toBe(80)
-    expect(options.maxSources).toBe(24)
+    expect(options.maxNotes).toBe(200)
+    expect(options.maxSources).toBe(60)
   })
 
   it('parses explicit cron source-field limits', () => {
