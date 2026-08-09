@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-08-09-colored-pencil-source-field-v1",
+  "edition_id": "2026-08-09-colored-pencil-source-field-v1",
+  "plate_read_timestamp": "2026-08-09T08:07:30.750Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A spare cream paper plate holds one dense teal-black chair form above a chalky turquoise horizontal band, with pale rail interruptions, a jagged gray lower trim, rubbed smudges, a tiny dark plant-like puncture, and faint pencil ghosts along the bottom margin. The visible source marks are physical edges, seams, hatching breaks, stains, and drawn apertures rather than cards.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright, quiet, handmade, charged at the seams",
+      "A spare cream paper plate holds one dense teal-black chair form above a chalky turquoise horizontal band, with pale rail interruptions, a jagged gray lower trim, rubbed smudges, a tiny dark plant-like puncture, and faint pencil ghosts along the bottom margin. The visible source marks are physical edges, seams, hatching breaks, stains, and drawn apertures rather than cards.",
+      "toothy-paper",
+      "teal-chair-mass",
+      "turquoise-slab"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "right teal mass aperture",
+      "turquoise belief slab",
+      "left white rail cut",
+      "upper arm rubbed notch",
+      "lower gray scallop teeth",
+      "right side rail pocket",
+      "gray-blue drape smudge",
+      "tiny pole-like puncture"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "colored-pencil-source-field",
+      "one right-of-center dark drawn spatial mass",
+      "broad turquoise mid-band crossing the plate",
+      "cool gray-blue lower field with scalloped interruptions",
+      "pale tubular rail geometry cutting through dense pigment",
+      "small rubbed sign-like punctures and diagonal corridor traces",
+      "thin paper border and illegible pencil margin ghosts",
+      "dark chair interior and cushion seam"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: colored-pencil-source-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-right-teal-mass-aperture",
+      "kind": "hero",
+      "type": "hero-scale-pigment-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.3275,
+        "y": 0.2258,
+        "w": 0.4682,
+        "h": 0.3435
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-turquoise-belief-slab",
+      "kind": "hero",
+      "type": "hero-scale-rubbed-horizontal-surface",
+      "strength": 0.986972,
+      "bounds": {
+        "x": 0.015,
+        "y": 0.557,
+        "w": 0.966,
+        "h": 0.175
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-white-rail-cut",
+      "kind": "module",
+      "type": "pale-tubular-edge-window",
+      "strength": 0.7935719999999999,
+      "bounds": {
+        "x": 0.012,
+        "y": 0.397,
+        "w": 0.125,
+        "h": 0.161
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-arm-rubbed-notch",
+      "kind": "module",
+      "type": "rounded-arm-seam",
+      "strength": 0.7688280000000001,
+      "bounds": {
+        "x": 0.301,
+        "y": 0.343,
+        "w": 0.196,
+        "h": 0.217
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-gray-scallop-teeth",
+      "kind": "module",
+      "type": "sawtooth-border-mark",
+      "strength": 0.7306440000000001,
+      "bounds": {
+        "x": 0.134,
+        "y": 0.703,
+        "w": 0.846,
+        "h": 0.057
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-side-rail-pocket",
+      "kind": "module",
+      "type": "vertical-rail-pocket",
+      "strength": 0.696768,
+      "bounds": {
+        "x": 0.785,
+        "y": 0.226,
+        "w": 0.197,
+        "h": 0.362
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gray-blue-drape-smudge",
+      "kind": "module",
+      "type": "soft-lower-panel-smudge",
+      "strength": 0.6750240000000001,
+      "bounds": {
+        "x": 0.759,
+        "y": 0.779,
+        "w": 0.168,
+        "h": 0.141
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tiny-pole-like-puncture",
+      "kind": "module",
+      "type": "thin-vertical-pigment-puncture",
+      "strength": 0.6519999999999999,
+      "bounds": {
+        "x": 0.199,
+        "y": 0.773,
+        "w": 0.078,
+        "h": 0.156
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-margin-ghost",
+      "kind": "module",
+      "type": "illegible-pencil-margin-trace",
+      "strength": 0.646648,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-right-teal-mass-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3275,
+        "y": 0.2258,
+        "w": 0.4682,
+        "h": 0.3435
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-turquoise-belief-slab-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.015,
+        "y": 0.557,
+        "w": 0.966,
+        "h": 0.175
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-white-rail-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.012,
+        "y": 0.397,
+        "w": 0.125,
+        "h": 0.161
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-arm-rubbed-notch-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.301,
+        "y": 0.343,
+        "w": 0.196,
+        "h": 0.217
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-gray-scallop-teeth-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.134,
+        "y": 0.703,
+        "w": 0.846,
+        "h": 0.057
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-side-rail-pocket-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.785,
+        "y": 0.226,
+        "w": 0.197,
+        "h": 0.362
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gray-blue-drape-smudge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.759,
+        "y": 0.779,
+        "w": 0.168,
+        "h": 0.141
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tiny-pole-like-puncture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.199,
+        "y": 0.773,
+        "w": 0.078,
+        "h": 0.156
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-margin-ghost-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,550 @@
+{
+  "analysis_id": "analysis-2026-08-09-colored-pencil-source-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A spare cream paper plate holds one dense teal-black chair form above a chalky turquoise horizontal band, with pale rail interruptions, a jagged gray lower trim, rubbed smudges, a tiny dark plant-like puncture, and faint pencil ghosts along the bottom margin. The visible source marks are physical edges, seams, hatching breaks, stains, and drawn apertures rather than cards.",
+  "usable_surfaces": [
+    "dark chair interior and cushion seam",
+    "chalky turquoise mid-band slab",
+    "left pale tubular rail cut",
+    "upper rounded arm notch",
+    "gray sawtooth lower trim",
+    "right pale rail pocket and side wedge",
+    "lower gray-blue rubbed smudge",
+    "thin plant-like pigment puncture",
+    "faint bottom pencil margin trace"
+  ],
+  "detected_objects": [
+    {
+      "label": "right teal mass aperture",
+      "artifact_type": "hero-scale-pigment-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.405,
+        "y": 0.228,
+        "w": 0.48,
+        "h": 0.338
+      },
+      "polygon": [
+        [
+          0.443,
+          0.229
+        ],
+        [
+          0.603,
+          0.228
+        ],
+        [
+          0.611,
+          0.439
+        ],
+        [
+          0.792,
+          0.443
+        ],
+        [
+          0.789,
+          0.565
+        ],
+        [
+          0.428,
+          0.563
+        ],
+        [
+          0.411,
+          0.493
+        ],
+        [
+          0.317,
+          0.493
+        ],
+        [
+          0.318,
+          0.392
+        ],
+        [
+          0.343,
+          0.353
+        ],
+        [
+          0.413,
+          0.341
+        ],
+        [
+          0.444,
+          0.339
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "The main chair is a large dense teal-black hand-hatched mass with a visible back, cushion, and arms; its dark interior and seat plane form the dominant source-bearing surface."
+    },
+    {
+      "label": "turquoise belief slab",
+      "artifact_type": "hero-scale-rubbed-horizontal-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.015,
+        "y": 0.557,
+        "w": 0.966,
+        "h": 0.175
+      },
+      "polygon": [
+        [
+          0.015,
+          0.557
+        ],
+        [
+          0.98,
+          0.57
+        ],
+        [
+          0.98,
+          0.725
+        ],
+        [
+          0.942,
+          0.724
+        ],
+        [
+          0.847,
+          0.716
+        ],
+        [
+          0.743,
+          0.718
+        ],
+        [
+          0.638,
+          0.715
+        ],
+        [
+          0.526,
+          0.719
+        ],
+        [
+          0.419,
+          0.712
+        ],
+        [
+          0.306,
+          0.713
+        ],
+        [
+          0.206,
+          0.705
+        ],
+        [
+          0.107,
+          0.709
+        ],
+        [
+          0.015,
+          0.704
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A broad chalky turquoise band spans the page with uneven rubbed edges and horizontal crayon pressure, clearly visible as a large slab."
+    },
+    {
+      "label": "left white rail cut",
+      "artifact_type": "pale-tubular-edge-window",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.012,
+        "y": 0.397,
+        "w": 0.125,
+        "h": 0.161
+      },
+      "polygon": [
+        [
+          0.012,
+          0.398
+        ],
+        [
+          0.081,
+          0.398
+        ],
+        [
+          0.113,
+          0.407
+        ],
+        [
+          0.132,
+          0.431
+        ],
+        [
+          0.136,
+          0.558
+        ],
+        [
+          0.123,
+          0.558
+        ],
+        [
+          0.119,
+          0.487
+        ],
+        [
+          0.096,
+          0.477
+        ],
+        [
+          0.014,
+          0.477
+        ],
+        [
+          0.013,
+          0.464
+        ],
+        [
+          0.099,
+          0.465
+        ],
+        [
+          0.115,
+          0.474
+        ],
+        [
+          0.112,
+          0.429
+        ],
+        [
+          0.092,
+          0.413
+        ],
+        [
+          0.012,
+          0.411
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A pale gray-white tubular rail interrupts the blank field and turquoise slab on the left, forming a narrow vertical/curved edge."
+    },
+    {
+      "label": "upper arm rubbed notch",
+      "artifact_type": "rounded-arm-seam",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.301,
+        "y": 0.343,
+        "w": 0.196,
+        "h": 0.217
+      },
+      "polygon": [
+        [
+          0.347,
+          0.343
+        ],
+        [
+          0.419,
+          0.343
+        ],
+        [
+          0.474,
+          0.37
+        ],
+        [
+          0.497,
+          0.419
+        ],
+        [
+          0.496,
+          0.514
+        ],
+        [
+          0.455,
+          0.547
+        ],
+        [
+          0.402,
+          0.56
+        ],
+        [
+          0.363,
+          0.553
+        ],
+        [
+          0.364,
+          0.436
+        ],
+        [
+          0.339,
+          0.438
+        ],
+        [
+          0.305,
+          0.434
+        ],
+        [
+          0.301,
+          0.423
+        ],
+        [
+          0.322,
+          0.417
+        ],
+        [
+          0.321,
+          0.386
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "The left chair arm is a rounded rubbed teal-black volume; a pale horizontal rail and thinning hatching create a small notch/opening along its side."
+    },
+    {
+      "label": "lower gray scallop teeth",
+      "artifact_type": "sawtooth-border-mark",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.134,
+        "y": 0.703,
+        "w": 0.846,
+        "h": 0.057
+      },
+      "confidence": 0.88,
+      "visual_evidence": "A jagged row of gray triangular scallop teeth sits directly below the turquoise slab, with repeated sharp dark outlines embedded in the lower panel."
+    },
+    {
+      "label": "right side rail pocket",
+      "artifact_type": "vertical-rail-pocket",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.785,
+        "y": 0.226,
+        "w": 0.197,
+        "h": 0.362
+      },
+      "polygon": [
+        [
+          0.787,
+          0.226
+        ],
+        [
+          0.801,
+          0.228
+        ],
+        [
+          0.804,
+          0.562
+        ],
+        [
+          0.882,
+          0.563
+        ],
+        [
+          0.886,
+          0.441
+        ],
+        [
+          0.916,
+          0.434
+        ],
+        [
+          0.975,
+          0.434
+        ],
+        [
+          0.981,
+          0.444
+        ],
+        [
+          0.966,
+          0.452
+        ],
+        [
+          0.916,
+          0.451
+        ],
+        [
+          0.908,
+          0.583
+        ],
+        [
+          0.881,
+          0.588
+        ],
+        [
+          0.787,
+          0.579
+        ],
+        [
+          0.774,
+          0.523
+        ],
+        [
+          0.793,
+          0.427
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A pale vertical seam/rail descends through the right side of the chair, adjacent to a dark side wedge and a white tubular arm rail, forming a tight visible pocket."
+    },
+    {
+      "label": "gray-blue drape smudge",
+      "artifact_type": "soft-lower-panel-smudge",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.759,
+        "y": 0.779,
+        "w": 0.168,
+        "h": 0.141
+      },
+      "polygon": [
+        [
+          0.832,
+          0.779
+        ],
+        [
+          0.875,
+          0.793
+        ],
+        [
+          0.907,
+          0.826
+        ],
+        [
+          0.927,
+          0.873
+        ],
+        [
+          0.911,
+          0.914
+        ],
+        [
+          0.859,
+          0.92
+        ],
+        [
+          0.811,
+          0.902
+        ],
+        [
+          0.783,
+          0.867
+        ],
+        [
+          0.759,
+          0.825
+        ],
+        [
+          0.785,
+          0.792
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "In the lower gray-blue panel, a blurred darker charcoal stain appears on the right, with soft speckled edges interrupting the rubbed surface."
+    },
+    {
+      "label": "tiny pole-like puncture",
+      "artifact_type": "thin-vertical-pigment-puncture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.199,
+        "y": 0.773,
+        "w": 0.078,
+        "h": 0.156
+      },
+      "polygon": [
+        [
+          0.223,
+          0.773
+        ],
+        [
+          0.239,
+          0.801
+        ],
+        [
+          0.253,
+          0.821
+        ],
+        [
+          0.271,
+          0.847
+        ],
+        [
+          0.277,
+          0.871
+        ],
+        [
+          0.266,
+          0.878
+        ],
+        [
+          0.248,
+          0.857
+        ],
+        [
+          0.248,
+          0.891
+        ],
+        [
+          0.267,
+          0.921
+        ],
+        [
+          0.257,
+          0.929
+        ],
+        [
+          0.234,
+          0.895
+        ],
+        [
+          0.219,
+          0.857
+        ],
+        [
+          0.207,
+          0.828
+        ],
+        [
+          0.199,
+          0.795
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A thin dark plant/signpost-like vertical pigment mark rises in the lower left gray field, sparse against the rubbed panel."
+    },
+    {
+      "label": "bottom margin ghost",
+      "artifact_type": "illegible-pencil-margin-trace",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.549,
+    "rationale": "The plate is sparse and expressionist: one dominant dark chair, one broad turquoise slab, and one gray lower panel carry most of the visual weight, with small rail cuts, teeth, smudges, and margin ghosts providing controlled interaction anchors without clutter."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-09-colored-pencil-source-field-v1"
+}

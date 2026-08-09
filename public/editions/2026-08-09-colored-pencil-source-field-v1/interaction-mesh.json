@@ -1,0 +1,634 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-09-colored-pencil-source-field-v1",
+  "generation": "daily-process-2026-08-09T08-01-04-840Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1023,
+    "height": 1537
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-09T08-01-04-840Z/2026-08-09-colored-pencil-source-field-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-right-teal-mass-aperture",
+      "visible_area_px": 221854,
+      "territory_area_px": 165670,
+      "hover_bounds": {
+        "x": 0.3382,
+        "y": 0.2062,
+        "w": 0.4809,
+        "h": 0.3448
+      },
+      "hover_polygon": [
+        [
+          0.3382,
+          0.3208
+        ],
+        [
+          0.4164,
+          0.2329
+        ],
+        [
+          0.4506,
+          0.2101
+        ],
+        [
+          0.7771,
+          0.2062
+        ],
+        [
+          0.8113,
+          0.2297
+        ],
+        [
+          0.8182,
+          0.2655
+        ],
+        [
+          0.7517,
+          0.5504
+        ],
+        [
+          0.5015,
+          0.5413
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-right-side-rail-pocket",
+          "shared_edge_px": 3165,
+          "direction": "right",
+          "distance_px": 299.05
+        },
+        {
+          "artifact_id": "module-upper-arm-rubbed-notch",
+          "shared_edge_px": 2163,
+          "direction": "down",
+          "distance_px": 272.47
+        },
+        {
+          "artifact_id": "hero-turquoise-belief-slab",
+          "shared_edge_px": 1558,
+          "direction": "down",
+          "distance_px": 459.25
+        },
+        {
+          "artifact_id": "module-bottom-margin-ghost",
+          "shared_edge_px": 593,
+          "direction": "left",
+          "distance_px": 292.3
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-turquoise-belief-slab",
+      "visible_area_px": 228107,
+      "territory_area_px": 235246,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.5348,
+        "w": 1.0,
+        "h": 0.2004
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.5446
+        ],
+        [
+          0.0147,
+          0.5348
+        ],
+        [
+          0.9795,
+          0.5478
+        ],
+        [
+          0.999,
+          0.5608
+        ],
+        [
+          0.999,
+          0.6968
+        ],
+        [
+          0.35,
+          0.7339
+        ],
+        [
+          0.0274,
+          0.7267
+        ],
+        [
+          0.0,
+          0.7163
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lower-gray-scallop-teeth",
+          "shared_edge_px": 5493,
+          "direction": "right",
+          "distance_px": 243.67
+        },
+        {
+          "artifact_id": "module-right-side-rail-pocket",
+          "shared_edge_px": 1687,
+          "direction": "right",
+          "distance_px": 479.67
+        },
+        {
+          "artifact_id": "hero-right-teal-mass-aperture",
+          "shared_edge_px": 1558,
+          "direction": "up",
+          "distance_px": 459.25
+        },
+        {
+          "artifact_id": "module-upper-arm-rubbed-notch",
+          "shared_edge_px": 1241,
+          "direction": "up",
+          "distance_px": 230.47
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-left-white-rail-cut",
+      "visible_area_px": 8359,
+      "territory_area_px": 32731,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.3793,
+        "w": 0.1642,
+        "h": 0.1971
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.3871
+        ],
+        [
+          0.0117,
+          0.3793
+        ],
+        [
+          0.0802,
+          0.3793
+        ],
+        [
+          0.1124,
+          0.3884
+        ],
+        [
+          0.1408,
+          0.4073
+        ],
+        [
+          0.1593,
+          0.4307
+        ],
+        [
+          0.1632,
+          0.542
+        ],
+        [
+          0.1632,
+          0.5576
+        ],
+        [
+          0.1359,
+          0.5758
+        ],
+        [
+          0.1222,
+          0.5758
+        ],
+        [
+          0.0,
+          0.486
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-turquoise-belief-slab",
+          "shared_edge_px": 840,
+          "direction": "right",
+          "distance_px": 439.52
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-upper-arm-rubbed-notch",
+      "visible_area_px": 45836,
+      "territory_area_px": 40665,
+      "hover_bounds": {
+        "x": 0.3236,
+        "y": 0.3169,
+        "w": 0.2121,
+        "h": 0.2472
+      },
+      "hover_polygon": [
+        [
+          0.3236,
+          0.4945
+        ],
+        [
+          0.3402,
+          0.3208
+        ],
+        [
+          0.346,
+          0.3169
+        ],
+        [
+          0.4184,
+          0.3169
+        ],
+        [
+          0.4262,
+          0.3208
+        ],
+        [
+          0.4624,
+          0.3689
+        ],
+        [
+          0.5347,
+          0.4906
+        ],
+        [
+          0.5347,
+          0.514
+        ],
+        [
+          0.5005,
+          0.5413
+        ],
+        [
+          0.3431,
+          0.5634
+        ],
+        [
+          0.3236,
+          0.5524
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-right-teal-mass-aperture",
+          "shared_edge_px": 2163,
+          "direction": "up",
+          "distance_px": 272.47
+        },
+        {
+          "artifact_id": "module-bottom-margin-ghost",
+          "shared_edge_px": 1863,
+          "direction": "up",
+          "distance_px": 159.57
+        },
+        {
+          "artifact_id": "hero-turquoise-belief-slab",
+          "shared_edge_px": 1241,
+          "direction": "down",
+          "distance_px": 230.47
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-lower-gray-scallop-teeth",
+      "visible_area_px": 77074,
+      "territory_area_px": 103815,
+      "hover_bounds": {
+        "x": 0.1065,
+        "y": 0.6845,
+        "w": 0.8935,
+        "h": 0.0943
+      },
+      "hover_polygon": [
+        [
+          0.1065,
+          0.7313
+        ],
+        [
+          0.5298,
+          0.6845
+        ],
+        [
+          0.9795,
+          0.6845
+        ],
+        [
+          0.999,
+          0.6975
+        ],
+        [
+          0.999,
+          0.7651
+        ],
+        [
+          0.9795,
+          0.7781
+        ],
+        [
+          0.1339,
+          0.7781
+        ],
+        [
+          0.1065,
+          0.7599
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-turquoise-belief-slab",
+          "shared_edge_px": 5493,
+          "direction": "left",
+          "distance_px": 243.67
+        },
+        {
+          "artifact_id": "module-gray-blue-drape-smudge",
+          "shared_edge_px": 678,
+          "direction": "right",
+          "distance_px": 292.76
+        },
+        {
+          "artifact_id": "module-tiny-pole-like-puncture",
+          "shared_edge_px": 475,
+          "direction": "left",
+          "distance_px": 425.11
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-right-side-rail-pocket",
+      "visible_area_px": 20387,
+      "territory_area_px": 63808,
+      "hover_bounds": {
+        "x": 0.7458,
+        "y": 0.2075,
+        "w": 0.2542,
+        "h": 0.3988
+      },
+      "hover_polygon": [
+        [
+          0.7458,
+          0.5205
+        ],
+        [
+          0.7869,
+          0.2075
+        ],
+        [
+          0.8006,
+          0.2095
+        ],
+        [
+          0.828,
+          0.2277
+        ],
+        [
+          0.999,
+          0.432
+        ],
+        [
+          0.999,
+          0.4496
+        ],
+        [
+          0.9345,
+          0.583
+        ],
+        [
+          0.9071,
+          0.6012
+        ],
+        [
+          0.8807,
+          0.6057
+        ],
+        [
+          0.7869,
+          0.5966
+        ],
+        [
+          0.7595,
+          0.5784
+        ],
+        [
+          0.7458,
+          0.5244
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-right-teal-mass-aperture",
+          "shared_edge_px": 3165,
+          "direction": "left",
+          "distance_px": 299.05
+        },
+        {
+          "artifact_id": "hero-turquoise-belief-slab",
+          "shared_edge_px": 1687,
+          "direction": "left",
+          "distance_px": 479.67
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-gray-blue-drape-smudge",
+      "visible_area_px": 25563,
+      "territory_area_px": 42559,
+      "hover_bounds": {
+        "x": 0.7312,
+        "y": 0.7606,
+        "w": 0.2239,
+        "h": 0.1783
+      },
+      "hover_polygon": [
+        [
+          0.7312,
+          0.825
+        ],
+        [
+          0.7566,
+          0.7925
+        ],
+        [
+          0.7849,
+          0.7736
+        ],
+        [
+          0.8319,
+          0.7606
+        ],
+        [
+          0.8749,
+          0.7742
+        ],
+        [
+          0.9032,
+          0.7931
+        ],
+        [
+          0.9345,
+          0.8269
+        ],
+        [
+          0.9541,
+          0.8718
+        ],
+        [
+          0.9374,
+          0.9135
+        ],
+        [
+          0.9101,
+          0.9317
+        ],
+        [
+          0.8583,
+          0.9382
+        ],
+        [
+          0.8104,
+          0.92
+        ],
+        [
+          0.782,
+          0.9011
+        ],
+        [
+          0.7312,
+          0.8256
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lower-gray-scallop-teeth",
+          "shared_edge_px": 678,
+          "direction": "left",
+          "distance_px": 292.76
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-tiny-pole-like-puncture",
+      "visible_area_px": 8215,
+      "territory_area_px": 23676,
+      "hover_bounds": {
+        "x": 0.1711,
+        "y": 0.7547,
+        "w": 0.1339,
+        "h": 0.1926
+      },
+      "hover_polygon": [
+        [
+          0.1711,
+          0.7944
+        ],
+        [
+          0.2229,
+          0.7547
+        ],
+        [
+          0.2512,
+          0.7742
+        ],
+        [
+          0.2981,
+          0.8458
+        ],
+        [
+          0.304,
+          0.8686
+        ],
+        [
+          0.2942,
+          0.9206
+        ],
+        [
+          0.2561,
+          0.9466
+        ],
+        [
+          0.2287,
+          0.9284
+        ],
+        [
+          0.2063,
+          0.8953
+        ],
+        [
+          0.1711,
+          0.7964
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lower-gray-scallop-teeth",
+          "shared_edge_px": 475,
+          "direction": "right",
+          "distance_px": 425.11
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-bottom-margin-ghost",
+      "visible_area_px": 38280,
+      "territory_area_px": 42532,
+      "hover_bounds": {
+        "x": 0.2522,
+        "y": 0.3214,
+        "w": 0.2111,
+        "h": 0.1874
+      },
+      "hover_polygon": [
+        [
+          0.2522,
+          0.3396
+        ],
+        [
+          0.2796,
+          0.3214
+        ],
+        [
+          0.4399,
+          0.3214
+        ],
+        [
+          0.4575,
+          0.3331
+        ],
+        [
+          0.4624,
+          0.3682
+        ],
+        [
+          0.3226,
+          0.5081
+        ],
+        [
+          0.2796,
+          0.5081
+        ],
+        [
+          0.2522,
+          0.4899
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-upper-arm-rubbed-notch",
+          "shared_edge_px": 1863,
+          "direction": "down",
+          "distance_px": 159.57
+        },
+        {
+          "artifact_id": "hero-right-teal-mass-aperture",
+          "shared_edge_px": 593,
+          "direction": "right",
+          "distance_px": 292.3
+        }
+      ]
+    }
+  ]
+}
