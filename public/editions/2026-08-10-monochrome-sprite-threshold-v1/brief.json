@@ -1,0 +1,63 @@
+{
+  "brief_id": "brief-2026-08-10-monochrome-sprite-threshold-v1",
+  "date": "2026-08-10",
+  "signal_cluster_ids": [
+    "f8a40b943f8d",
+    "2460857ebdcc",
+    "888760eea469",
+    "c81ac99da01d",
+    "7b169d200431",
+    "f2c347f3466b",
+    "f5b5d82422c1",
+    "9ec1177225fe"
+  ],
+  "research_node_ids": [
+    "research-1-7c005def",
+    "research-2-c18f597c",
+    "research-3-6431f178",
+    "research-4-907c380b",
+    "research-5-14ac65a9",
+    "research-6-7a72214d",
+    "research-7-fba84807",
+    "research-8-e0539fb6",
+    "research-9-564d47b4",
+    "research-10-ec824e83",
+    "research-11-c55c79a9",
+    "research-12-207e7116"
+  ],
+  "mood": "haunted grayscale game folklore pressed into a public threshold",
+  "material_language": [
+    "dirty off-white gridded glass plate-paper",
+    "pixel-stair sprite ink",
+    "CRT scanline haze",
+    "photocopied halftone dirt",
+    "smoky charcoal bloom"
+  ],
+  "lighting": "flat old-screen glow cut by harsh side-flash on eye slits, blade seams, rim notches, and goblet lips",
+  "object_inventory": [
+    "upper-left smoky mask mass opening like a threshold wall",
+    "dense field of tiny glyph cells cropped into a corridor-like surface",
+    "lower-center object-edge cluster of blade, shield rim, and dark cup silhouette",
+    "broken horizontal rail band with square node apertures",
+    "illegible block masses acting as buried architectural signage"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no readable text, logos, filenames, labels, buttons, or alphanumeric callouts in the image",
+    "no desks, dashboards, office rooms, shelves, cabinets, gallery cards, or realistic prop inventory",
+    "do not copy the exact source image arrangement or recognizable character design",
+    "no saturated lavender or pastel softness; strict grayscale only",
+    "source-bearing marks must be embedded as cuts, glints, seams, cells, defects, and edge apertures, never overlay cards",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached",
+    "do not strip handmade details into generic torn-paper ambience",
+    "do not fragment the primary source objects until their original silhouettes stop reading",
+    "do not replace source candy/wrapper/handwriting cues with unrelated scraps"
+  ]
+}

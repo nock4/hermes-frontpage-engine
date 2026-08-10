@@ -1,0 +1,492 @@
+{
+  "analysis_id": "analysis-2026-08-10-monochrome-sprite-threshold-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A monochrome halftone plate with a black mask mass, two white eye slits, a vertical sword, a round shield rim, a goblet, rail nodes, grid glyphs, smoky stains, torn paper seams, and a small hanging lantern mark. The strongest interaction surfaces are real apertures, cuts, glints, nodes, stains, and edge tears already embedded in the plate.",
+  "usable_surfaces": [
+    "white eye slits inside the smoky mask",
+    "crescent rim and bright rupture on the shield",
+    "small square breaks along the midline rail",
+    "white glints on the vertical blade edge",
+    "black goblet mouth with a bright lip cut",
+    "torn lower paper seam",
+    "smoky halftone bloom at center-left",
+    "individual sprite glyph cells in the grid",
+    "bottom-right hanging lantern aperture"
+  ],
+  "detected_objects": [
+    {
+      "label": "smoky upper-left eye slit",
+      "artifact_type": "glowing-eye-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.04,
+        "y": 0.15,
+        "w": 0.124,
+        "h": 0.074
+      },
+      "polygon": [
+        [
+          0.041,
+          0.151
+        ],
+        [
+          0.068,
+          0.171
+        ],
+        [
+          0.103,
+          0.196
+        ],
+        [
+          0.146,
+          0.221
+        ],
+        [
+          0.165,
+          0.225
+        ],
+        [
+          0.141,
+          0.199
+        ],
+        [
+          0.103,
+          0.169
+        ],
+        [
+          0.064,
+          0.15
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A bright, sharply tapered white slit cuts through the black smoky mask in the upper-left face area; its blade-like contour is a clear source aperture."
+    },
+    {
+      "label": "lower-center shield rim rupture",
+      "artifact_type": "shield-rim-cut",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.456,
+        "y": 0.704,
+        "w": 0.309,
+        "h": 0.237
+      },
+      "polygon": [
+        [
+          0.457,
+          0.941
+        ],
+        [
+          0.462,
+          0.875
+        ],
+        [
+          0.481,
+          0.813
+        ],
+        [
+          0.514,
+          0.766
+        ],
+        [
+          0.558,
+          0.735
+        ],
+        [
+          0.61,
+          0.71
+        ],
+        [
+          0.667,
+          0.704
+        ],
+        [
+          0.713,
+          0.719
+        ],
+        [
+          0.746,
+          0.751
+        ],
+        [
+          0.765,
+          0.801
+        ],
+        [
+          0.759,
+          0.861
+        ],
+        [
+          0.738,
+          0.915
+        ],
+        [
+          0.721,
+          0.941
+        ],
+        [
+          0.69,
+          0.908
+        ],
+        [
+          0.642,
+          0.879
+        ],
+        [
+          0.587,
+          0.856
+        ],
+        [
+          0.525,
+          0.875
+        ],
+        [
+          0.487,
+          0.919
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "The lower-center round shield edge forms a dark crescent with a broken bright rim and jagged internal pixel ruptures, suitable as a large object-edge window."
+    },
+    {
+      "label": "dark goblet mouth glint",
+      "artifact_type": "goblet-lip-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.782,
+        "y": 0.637,
+        "w": 0.171,
+        "h": 0.071
+      },
+      "polygon": [
+        [
+          0.783,
+          0.646
+        ],
+        [
+          0.817,
+          0.64
+        ],
+        [
+          0.863,
+          0.637
+        ],
+        [
+          0.914,
+          0.64
+        ],
+        [
+          0.951,
+          0.649
+        ],
+        [
+          0.939,
+          0.675
+        ],
+        [
+          0.914,
+          0.697
+        ],
+        [
+          0.878,
+          0.708
+        ],
+        [
+          0.837,
+          0.701
+        ],
+        [
+          0.805,
+          0.681
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "The goblet lip is a dark oval mouth with a high-contrast white chip on the right rim, giving a strong media aperture."
+    },
+    {
+      "label": "broken border tooth",
+      "artifact_type": "distressed-border-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.229,
+        "y": 0.884,
+        "w": 0.211,
+        "h": 0.054
+      },
+      "polygon": [
+        [
+          0.229,
+          0.892
+        ],
+        [
+          0.262,
+          0.885
+        ],
+        [
+          0.305,
+          0.888
+        ],
+        [
+          0.341,
+          0.884
+        ],
+        [
+          0.377,
+          0.889
+        ],
+        [
+          0.414,
+          0.889
+        ],
+        [
+          0.44,
+          0.904
+        ],
+        [
+          0.431,
+          0.924
+        ],
+        [
+          0.39,
+          0.929
+        ],
+        [
+          0.342,
+          0.93
+        ],
+        [
+          0.298,
+          0.936
+        ],
+        [
+          0.259,
+          0.93
+        ],
+        [
+          0.231,
+          0.915
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A torn, scalloped lower paper edge cuts across the bottom-left field, with visible tooth-like protrusions and shadowed separations."
+    },
+    {
+      "label": "halftone defect bloom",
+      "artifact_type": "photocopy-grain-window",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.433,
+        "y": 0.354,
+        "w": 0.092,
+        "h": 0.238
+      },
+      "polygon": [
+        [
+          0.469,
+          0.354
+        ],
+        [
+          0.494,
+          0.37
+        ],
+        [
+          0.509,
+          0.407
+        ],
+        [
+          0.524,
+          0.456
+        ],
+        [
+          0.518,
+          0.511
+        ],
+        [
+          0.503,
+          0.571
+        ],
+        [
+          0.476,
+          0.592
+        ],
+        [
+          0.449,
+          0.568
+        ],
+        [
+          0.438,
+          0.523
+        ],
+        [
+          0.433,
+          0.472
+        ],
+        [
+          0.441,
+          0.418
+        ],
+        [
+          0.452,
+          0.38
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A vertical black smoky halftone bloom sits just left of center, visibly denser than the surrounding grid and useful as an illegible grain window."
+    },
+    {
+      "label": "bottom-right hanging mark",
+      "artifact_type": "pendant-edge-aperture",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.943,
+        "y": 0.787,
+        "w": 0.05,
+        "h": 0.147
+      },
+      "polygon": [
+        [
+          0.968,
+          0.787
+        ],
+        [
+          0.983,
+          0.811
+        ],
+        [
+          0.99,
+          0.848
+        ],
+        [
+          0.991,
+          0.904
+        ],
+        [
+          0.979,
+          0.931
+        ],
+        [
+          0.957,
+          0.934
+        ],
+        [
+          0.944,
+          0.908
+        ],
+        [
+          0.943,
+          0.852
+        ],
+        [
+          0.952,
+          0.813
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "The small hanging lantern at the bottom-right margin contains a bright internal aperture and chain connection, making a distinct pendant edge mark."
+    },
+    {
+      "label": "halftone defect bloom",
+      "artifact_type": "photocopy-grain-window",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "tiny glyph cell cluster",
+      "artifact_type": "pixel-glyph-cell",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "bottom-right hanging mark",
+      "artifact_type": "pendant-edge-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.135,
+    "rationale": "The plate is expressionist and source-rich rather than minimal: mask, sword, shield, goblet, grid, rail, and bottom pattern all compete, but the monochrome palette and strong vertical/diagonal structure keep it usable if targets stay tight to visible marks."
+  },
+  "fallback_detected_object_count": 3,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-10-monochrome-sprite-threshold-v1"
+}

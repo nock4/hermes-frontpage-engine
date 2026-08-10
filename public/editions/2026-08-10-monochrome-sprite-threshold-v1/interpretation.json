@@ -1,0 +1,380 @@
+{
+  "interpretation_id": "interp-2026-08-10-monochrome-sprite-threshold-v1",
+  "edition_id": "2026-08-10-monochrome-sprite-threshold-v1",
+  "plate_read_timestamp": "2026-08-10T08:12:24.613Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A monochrome halftone plate with a black mask mass, two white eye slits, a vertical sword, a round shield rim, a goblet, rail nodes, grid glyphs, smoky stains, torn paper seams, and a small hanging lantern mark. The strongest interaction surfaces are real apertures, cuts, glints, nodes, stains, and edge tears already embedded in the plate.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "haunted grayscale game folklore pressed into a public threshold",
+      "A monochrome halftone plate with a black mask mass, two white eye slits, a vertical sword, a round shield rim, a goblet, rail nodes, grid glyphs, smoky stains, torn paper seams, and a small hanging lantern mark. The strongest interaction surfaces are real apertures, cuts, glints, nodes, stains, and edge tears already embedded in the plate.",
+      "grayscale-sprite-grid",
+      "haunted-mask",
+      "scanline-archive"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "smoky upper-left eye slit",
+      "lower-center shield rim rupture",
+      "dark goblet mouth glint",
+      "broken border tooth",
+      "halftone defect bloom",
+      "bottom-right hanging mark",
+      "tiny glyph cell cluster"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "monochrome-sprite-threshold",
+      "upper-left smoky mask mass opening like a threshold wall",
+      "dense field of tiny glyph cells cropped into a corridor-like surface",
+      "lower-center object-edge cluster of blade, shield rim, and dark cup silhouette",
+      "broken horizontal rail band with square node apertures",
+      "illegible block masses acting as buried architectural signage",
+      "white eye slits inside the smoky mask",
+      "crescent rim and bright rupture on the shield"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: monochrome-sprite-threshold.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-smoky-upper-left-eye-slit",
+      "kind": "hero",
+      "type": "glowing-eye-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.04,
+        "y": 0.15,
+        "w": 0.124,
+        "h": 0.074
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-center-shield-rim-rupture",
+      "kind": "hero",
+      "type": "shield-rim-cut",
+      "strength": 0.9840199999999999,
+      "bounds": {
+        "x": 0.456,
+        "y": 0.704,
+        "w": 0.309,
+        "h": 0.237
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dark-goblet-mouth-glint",
+      "kind": "module",
+      "type": "goblet-lip-aperture",
+      "strength": 0.7935599999999999,
+      "bounds": {
+        "x": 0.782,
+        "y": 0.637,
+        "w": 0.171,
+        "h": 0.071
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-broken-border-tooth",
+      "kind": "module",
+      "type": "distressed-border-notch",
+      "strength": 0.770688,
+      "bounds": {
+        "x": 0.229,
+        "y": 0.884,
+        "w": 0.211,
+        "h": 0.054
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-halftone-defect-bloom",
+      "kind": "module",
+      "type": "photocopy-grain-window",
+      "strength": 0.7385160000000001,
+      "bounds": {
+        "x": 0.433,
+        "y": 0.354,
+        "w": 0.092,
+        "h": 0.238
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-right-hanging-mark",
+      "kind": "module",
+      "type": "pendant-edge-aperture",
+      "strength": 0.694512,
+      "bounds": {
+        "x": 0.943,
+        "y": 0.787,
+        "w": 0.05,
+        "h": 0.147
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-halftone-defect-bloom-2",
+      "kind": "module",
+      "type": "photocopy-grain-window",
+      "strength": 0.6651720000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tiny-glyph-cell-cluster",
+      "kind": "module",
+      "type": "pixel-glyph-cell",
+      "strength": 0.651616,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-right-hanging-mark-2",
+      "kind": "module",
+      "type": "pendant-edge-aperture",
+      "strength": 0.6440199999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-smoky-upper-left-eye-slit-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.04,
+        "y": 0.15,
+        "w": 0.124,
+        "h": 0.074
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-center-shield-rim-rupture-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.456,
+        "y": 0.704,
+        "w": 0.309,
+        "h": 0.237
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dark-goblet-mouth-glint-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.782,
+        "y": 0.637,
+        "w": 0.171,
+        "h": 0.071
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-broken-border-tooth-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.229,
+        "y": 0.884,
+        "w": 0.211,
+        "h": 0.054
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-halftone-defect-bloom-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.433,
+        "y": 0.354,
+        "w": 0.092,
+        "h": 0.238
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-right-hanging-mark-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.943,
+        "y": 0.787,
+        "w": 0.05,
+        "h": 0.147
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-halftone-defect-bloom-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-tiny-glyph-cell-cluster-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bottom-right-hanging-mark-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

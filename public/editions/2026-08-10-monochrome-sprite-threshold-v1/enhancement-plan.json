@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-10-monochrome-sprite-threshold-v1",
+  "edition_id": "2026-08-10-monochrome-sprite-threshold-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-10-monochrome-sprite-threshold-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-smoky-upper-left-eye-slit",
+      "target_kind": "artifact",
+      "artifact_id": "hero-smoky-upper-left-eye-slit",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glowing-eye-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lower-center-shield-rim-rupture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-center-shield-rim-rupture",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (shield-rim-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-dark-goblet-mouth-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-dark-goblet-mouth-glint",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (goblet-lip-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-broken-border-tooth",
+      "target_kind": "artifact",
+      "artifact_id": "module-broken-border-tooth",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (distressed-border-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-halftone-defect-bloom",
+      "target_kind": "artifact",
+      "artifact_id": "module-halftone-defect-bloom",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (photocopy-grain-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-bottom-right-hanging-mark",
+      "target_kind": "artifact",
+      "artifact_id": "module-bottom-right-hanging-mark",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pendant-edge-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-halftone-defect-bloom-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-halftone-defect-bloom-2",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (photocopy-grain-window) selected from interpretation."
+    },
+    {
+      "target_id": "module-tiny-glyph-cell-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-tiny-glyph-cell-cluster",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pixel-glyph-cell) selected from interpretation."
+    },
+    {
+      "target_id": "module-bottom-right-hanging-mark-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-bottom-right-hanging-mark-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pendant-edge-aperture) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

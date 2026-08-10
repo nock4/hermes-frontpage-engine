@@ -1,0 +1,1519 @@
+{
+  "artifact_map_id": "map-2026-08-10-monochrome-sprite-threshold-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "monochrome-sprite-threshold",
+  "default_artifact_id": "hero-smoky-upper-left-eye-slit",
+  "artifacts": [
+    {
+      "id": "hero-smoky-upper-left-eye-slit",
+      "kind": "hero",
+      "label": "smoky upper-left eye slit",
+      "artifact_type": "glowing-eye-aperture",
+      "bounds": {
+        "x": 0.04,
+        "y": 0.15,
+        "w": 0.124,
+        "h": 0.074
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.041,
+          0.151
+        ],
+        [
+          0.068,
+          0.171
+        ],
+        [
+          0.103,
+          0.196
+        ],
+        [
+          0.146,
+          0.221
+        ],
+        [
+          0.165,
+          0.225
+        ],
+        [
+          0.141,
+          0.199
+        ],
+        [
+          0.103,
+          0.169
+        ],
+        [
+          0.064,
+          0.15
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/hero-smoky-upper-left-eye-slit.svg",
+      "source_binding_ids": [
+        "binding-hero-smoky-upper-left-eye-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          157,
+          185
+        ],
+        "safe_stage_window_origin_px": [
+          172,
+          191
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.041,
+            0.151
+          ],
+          [
+            0.068,
+            0.171
+          ],
+          [
+            0.103,
+            0.196
+          ],
+          [
+            0.146,
+            0.221
+          ],
+          [
+            0.165,
+            0.225
+          ],
+          [
+            0.141,
+            0.199
+          ],
+          [
+            0.103,
+            0.169
+          ],
+          [
+            0.064,
+            0.15
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0136,
+            0.1507
+          ],
+          [
+            0.0407,
+            0.1236
+          ],
+          [
+            0.0638,
+            0.1228
+          ],
+          [
+            0.1029,
+            0.1411
+          ],
+          [
+            0.1388,
+            0.1699
+          ],
+          [
+            0.1914,
+            0.2249
+          ],
+          [
+            0.1643,
+            0.252
+          ],
+          [
+            0.1093,
+            0.2265
+          ],
+          [
+            0.0415,
+            0.1786
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0136,
+          "y": 0.1228,
+          "w": 0.1786,
+          "h": 0.13
+        },
+        "territory_area_px": 16570,
+        "visible_area_px": 3548,
+        "expansion_ratio": 4.67,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "hero-lower-center-shield-rim-rupture",
+      "kind": "hero",
+      "label": "lower-center shield rim rupture",
+      "artifact_type": "shield-rim-cut",
+      "bounds": {
+        "x": 0.456,
+        "y": 0.704,
+        "w": 0.309,
+        "h": 0.237
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.457,
+          0.941
+        ],
+        [
+          0.462,
+          0.875
+        ],
+        [
+          0.481,
+          0.813
+        ],
+        [
+          0.514,
+          0.766
+        ],
+        [
+          0.558,
+          0.735
+        ],
+        [
+          0.61,
+          0.71
+        ],
+        [
+          0.667,
+          0.704
+        ],
+        [
+          0.713,
+          0.719
+        ],
+        [
+          0.746,
+          0.751
+        ],
+        [
+          0.765,
+          0.801
+        ],
+        [
+          0.759,
+          0.861
+        ],
+        [
+          0.738,
+          0.915
+        ],
+        [
+          0.721,
+          0.941
+        ],
+        [
+          0.69,
+          0.908
+        ],
+        [
+          0.642,
+          0.879
+        ],
+        [
+          0.587,
+          0.856
+        ],
+        [
+          0.525,
+          0.875
+        ],
+        [
+          0.487,
+          0.919
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/hero-lower-center-shield-rim-rupture.svg",
+      "source_binding_ids": [
+        "binding-hero-lower-center-shield-rim-rupture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          938,
+          823
+        ],
+        "safe_stage_window_origin_px": [
+          976,
+          842
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.457,
+            0.941
+          ],
+          [
+            0.462,
+            0.875
+          ],
+          [
+            0.481,
+            0.813
+          ],
+          [
+            0.514,
+            0.766
+          ],
+          [
+            0.558,
+            0.735
+          ],
+          [
+            0.61,
+            0.71
+          ],
+          [
+            0.667,
+            0.704
+          ],
+          [
+            0.713,
+            0.719
+          ],
+          [
+            0.746,
+            0.751
+          ],
+          [
+            0.765,
+            0.801
+          ],
+          [
+            0.759,
+            0.861
+          ],
+          [
+            0.738,
+            0.915
+          ],
+          [
+            0.721,
+            0.941
+          ],
+          [
+            0.69,
+            0.908
+          ],
+          [
+            0.642,
+            0.879
+          ],
+          [
+            0.587,
+            0.856
+          ],
+          [
+            0.525,
+            0.875
+          ],
+          [
+            0.487,
+            0.919
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4514,
+            0.9625
+          ],
+          [
+            0.4952,
+            0.7568
+          ],
+          [
+            0.5144,
+            0.7376
+          ],
+          [
+            0.6093,
+            0.6826
+          ],
+          [
+            0.6667,
+            0.6762
+          ],
+          [
+            0.7129,
+            0.6914
+          ],
+          [
+            0.7305,
+            0.7081
+          ],
+          [
+            0.7592,
+            0.7368
+          ],
+          [
+            0.7464,
+            0.9426
+          ],
+          [
+            0.7209,
+            0.9681
+          ],
+          [
+            0.4569,
+            0.9681
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4514,
+          "y": 0.6762,
+          "w": 0.3086,
+          "h": 0.2927
+        },
+        "territory_area_px": 60127,
+        "visible_area_px": 71312,
+        "expansion_ratio": 0.843,
+        "neighbors": [
+          {
+            "artifact_id": "module-tiny-glyph-cell-cluster",
+            "shared_edge_px": 1978,
+            "direction": "right",
+            "distance_px": 229.32
+          },
+          {
+            "artifact_id": "module-halftone-defect-bloom-2",
+            "shared_edge_px": 1665,
+            "direction": "left",
+            "distance_px": 202.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-dark-goblet-mouth-glint",
+      "kind": "module",
+      "label": "dark goblet mouth glint",
+      "artifact_type": "goblet-lip-aperture",
+      "bounds": {
+        "x": 0.782,
+        "y": 0.637,
+        "w": 0.171,
+        "h": 0.071
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.783,
+          0.646
+        ],
+        [
+          0.817,
+          0.64
+        ],
+        [
+          0.863,
+          0.637
+        ],
+        [
+          0.914,
+          0.64
+        ],
+        [
+          0.951,
+          0.649
+        ],
+        [
+          0.939,
+          0.675
+        ],
+        [
+          0.914,
+          0.697
+        ],
+        [
+          0.878,
+          0.708
+        ],
+        [
+          0.837,
+          0.701
+        ],
+        [
+          0.805,
+          0.681
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/module-dark-goblet-mouth-glint.svg",
+      "source_binding_ids": [
+        "binding-module-dark-goblet-mouth-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          683
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          689
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.783,
+            0.646
+          ],
+          [
+            0.817,
+            0.64
+          ],
+          [
+            0.863,
+            0.637
+          ],
+          [
+            0.914,
+            0.64
+          ],
+          [
+            0.951,
+            0.649
+          ],
+          [
+            0.939,
+            0.675
+          ],
+          [
+            0.914,
+            0.697
+          ],
+          [
+            0.878,
+            0.708
+          ],
+          [
+            0.837,
+            0.701
+          ],
+          [
+            0.805,
+            0.681
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.76,
+            0.6459
+          ],
+          [
+            0.7823,
+            0.6236
+          ],
+          [
+            0.8628,
+            0.614
+          ],
+          [
+            0.9139,
+            0.6172
+          ],
+          [
+            0.9506,
+            0.626
+          ],
+          [
+            0.9729,
+            0.6483
+          ],
+          [
+            0.9609,
+            0.6746
+          ],
+          [
+            0.9187,
+            0.7153
+          ],
+          [
+            0.878,
+            0.7297
+          ],
+          [
+            0.8365,
+            0.7233
+          ],
+          [
+            0.8046,
+            0.7026
+          ],
+          [
+            0.7815,
+            0.6794
+          ],
+          [
+            0.7608,
+            0.6475
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.76,
+          "y": 0.614,
+          "w": 0.2137,
+          "h": 0.1164
+        },
+        "territory_area_px": 27610,
+        "visible_area_px": 13246,
+        "expansion_ratio": 2.084,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-broken-border-tooth",
+      "kind": "module",
+      "label": "broken border tooth",
+      "artifact_type": "distressed-border-notch",
+      "bounds": {
+        "x": 0.229,
+        "y": 0.884,
+        "w": 0.211,
+        "h": 0.054
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.229,
+          0.892
+        ],
+        [
+          0.262,
+          0.885
+        ],
+        [
+          0.305,
+          0.888
+        ],
+        [
+          0.341,
+          0.884
+        ],
+        [
+          0.377,
+          0.889
+        ],
+        [
+          0.414,
+          0.889
+        ],
+        [
+          0.44,
+          0.904
+        ],
+        [
+          0.431,
+          0.924
+        ],
+        [
+          0.39,
+          0.929
+        ],
+        [
+          0.342,
+          0.93
+        ],
+        [
+          0.298,
+          0.936
+        ],
+        [
+          0.259,
+          0.93
+        ],
+        [
+          0.231,
+          0.915
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/module-broken-border-tooth.svg",
+      "source_binding_ids": [
+        "binding-module-broken-border-tooth"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          514,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          540,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.229,
+            0.892
+          ],
+          [
+            0.262,
+            0.885
+          ],
+          [
+            0.305,
+            0.888
+          ],
+          [
+            0.341,
+            0.884
+          ],
+          [
+            0.377,
+            0.889
+          ],
+          [
+            0.414,
+            0.889
+          ],
+          [
+            0.44,
+            0.904
+          ],
+          [
+            0.431,
+            0.924
+          ],
+          [
+            0.39,
+            0.929
+          ],
+          [
+            0.342,
+            0.93
+          ],
+          [
+            0.298,
+            0.936
+          ],
+          [
+            0.259,
+            0.93
+          ],
+          [
+            0.231,
+            0.915
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2065,
+            0.8915
+          ],
+          [
+            0.2289,
+            0.8692
+          ],
+          [
+            0.2616,
+            0.862
+          ],
+          [
+            0.4139,
+            0.866
+          ],
+          [
+            0.4346,
+            0.9394
+          ],
+          [
+            0.4306,
+            0.9458
+          ],
+          [
+            0.2974,
+            0.9577
+          ],
+          [
+            0.2584,
+            0.9522
+          ],
+          [
+            0.2305,
+            0.937
+          ],
+          [
+            0.2081,
+            0.9147
+          ],
+          [
+            0.2065,
+            0.8971
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2065,
+          "y": 0.8612,
+          "w": 0.2289,
+          "h": 0.0973
+        },
+        "territory_area_px": 28441,
+        "visible_area_px": 13411,
+        "expansion_ratio": 2.121,
+        "neighbors": [
+          {
+            "artifact_id": "module-halftone-defect-bloom-2",
+            "shared_edge_px": 938,
+            "direction": "right",
+            "distance_px": 228.36
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-halftone-defect-bloom",
+      "kind": "module",
+      "label": "halftone defect bloom",
+      "artifact_type": "photocopy-grain-window",
+      "bounds": {
+        "x": 0.433,
+        "y": 0.354,
+        "w": 0.092,
+        "h": 0.238
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.469,
+          0.354
+        ],
+        [
+          0.494,
+          0.37
+        ],
+        [
+          0.509,
+          0.407
+        ],
+        [
+          0.524,
+          0.456
+        ],
+        [
+          0.518,
+          0.511
+        ],
+        [
+          0.503,
+          0.571
+        ],
+        [
+          0.476,
+          0.592
+        ],
+        [
+          0.449,
+          0.568
+        ],
+        [
+          0.438,
+          0.523
+        ],
+        [
+          0.433,
+          0.472
+        ],
+        [
+          0.441,
+          0.418
+        ],
+        [
+          0.452,
+          0.38
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/module-halftone-defect-bloom.svg",
+      "source_binding_ids": [
+        "binding-module-halftone-defect-bloom"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          736,
+          465
+        ],
+        "safe_stage_window_origin_px": [
+          747,
+          484
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.469,
+            0.354
+          ],
+          [
+            0.494,
+            0.37
+          ],
+          [
+            0.509,
+            0.407
+          ],
+          [
+            0.524,
+            0.456
+          ],
+          [
+            0.518,
+            0.511
+          ],
+          [
+            0.503,
+            0.571
+          ],
+          [
+            0.476,
+            0.592
+          ],
+          [
+            0.449,
+            0.568
+          ],
+          [
+            0.438,
+            0.523
+          ],
+          [
+            0.433,
+            0.472
+          ],
+          [
+            0.441,
+            0.418
+          ],
+          [
+            0.452,
+            0.38
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4099,
+            0.4689
+          ],
+          [
+            0.4617,
+            0.3381
+          ],
+          [
+            0.4689,
+            0.3309
+          ],
+          [
+            0.5159,
+            0.3692
+          ],
+          [
+            0.5463,
+            0.4545
+          ],
+          [
+            0.5399,
+            0.5112
+          ],
+          [
+            0.5247,
+            0.571
+          ],
+          [
+            0.4753,
+            0.614
+          ],
+          [
+            0.4266,
+            0.5678
+          ],
+          [
+            0.4099,
+            0.4745
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4099,
+          "y": 0.3309,
+          "w": 0.1372,
+          "h": 0.2839
+        },
+        "territory_area_px": 40859,
+        "visible_area_px": 24423,
+        "expansion_ratio": 1.673,
+        "neighbors": [
+          {
+            "artifact_id": "module-bottom-right-hanging-mark-2",
+            "shared_edge_px": 1329,
+            "direction": "left",
+            "distance_px": 186.58
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-bottom-right-hanging-mark",
+      "kind": "module",
+      "label": "bottom-right hanging mark",
+      "artifact_type": "pendant-edge-aperture",
+      "bounds": {
+        "x": 0.943,
+        "y": 0.787,
+        "w": 0.05,
+        "h": 0.147
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.968,
+          0.787
+        ],
+        [
+          0.983,
+          0.811
+        ],
+        [
+          0.99,
+          0.848
+        ],
+        [
+          0.991,
+          0.904
+        ],
+        [
+          0.979,
+          0.931
+        ],
+        [
+          0.957,
+          0.934
+        ],
+        [
+          0.944,
+          0.908
+        ],
+        [
+          0.943,
+          0.852
+        ],
+        [
+          0.952,
+          0.813
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/module-bottom-right-hanging-mark.svg",
+      "source_binding_ids": [
+        "binding-module-bottom-right-hanging-mark"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.968,
+            0.787
+          ],
+          [
+            0.983,
+            0.811
+          ],
+          [
+            0.99,
+            0.848
+          ],
+          [
+            0.991,
+            0.904
+          ],
+          [
+            0.979,
+            0.931
+          ],
+          [
+            0.957,
+            0.934
+          ],
+          [
+            0.944,
+            0.908
+          ],
+          [
+            0.943,
+            0.852
+          ],
+          [
+            0.952,
+            0.813
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.9203,
+            0.8501
+          ],
+          [
+            0.9306,
+            0.8094
+          ],
+          [
+            0.9673,
+            0.764
+          ],
+          [
+            0.9992,
+            0.8014
+          ],
+          [
+            0.9992,
+            0.9322
+          ],
+          [
+            0.9785,
+            0.953
+          ],
+          [
+            0.9569,
+            0.9561
+          ],
+          [
+            0.9338,
+            0.933
+          ],
+          [
+            0.9211,
+            0.9075
+          ],
+          [
+            0.9203,
+            0.8788
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.9203,
+          "y": 0.764,
+          "w": 0.0797,
+          "h": 0.193
+        },
+        "territory_area_px": 19295,
+        "visible_area_px": 8725,
+        "expansion_ratio": 2.211,
+        "neighbors": [
+          {
+            "artifact_id": "module-tiny-glyph-cell-cluster",
+            "shared_edge_px": 637,
+            "direction": "left",
+            "distance_px": 183.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-halftone-defect-bloom-2",
+      "kind": "module",
+      "label": "halftone defect bloom",
+      "artifact_type": "photocopy-grain-window",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/module-halftone-defect-bloom-2.svg",
+      "source_binding_ids": [
+        "binding-module-halftone-defect-bloom-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3971,
+            0.7799
+          ],
+          [
+            0.4195,
+            0.7576
+          ],
+          [
+            0.5359,
+            0.7576
+          ],
+          [
+            0.622,
+            0.8979
+          ],
+          [
+            0.622,
+            0.9394
+          ],
+          [
+            0.5997,
+            0.9617
+          ],
+          [
+            0.4195,
+            0.9617
+          ],
+          [
+            0.4067,
+            0.949
+          ],
+          [
+            0.3971,
+            0.8652
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3971,
+          "y": 0.7576,
+          "w": 0.2257,
+          "h": 0.2049
+        },
+        "territory_area_px": 55355,
+        "visible_area_px": 45627,
+        "expansion_ratio": 1.213,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-center-shield-rim-rupture",
+            "shared_edge_px": 1665,
+            "direction": "right",
+            "distance_px": 202.1
+          },
+          {
+            "artifact_id": "module-broken-border-tooth",
+            "shared_edge_px": 938,
+            "direction": "left",
+            "distance_px": 228.36
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-tiny-glyph-cell-cluster",
+      "kind": "module",
+      "label": "tiny glyph cell cluster",
+      "artifact_type": "pixel-glyph-cell",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/module-tiny-glyph-cell-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-tiny-glyph-cell-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7033,
+            0.9258
+          ],
+          [
+            0.7313,
+            0.7376
+          ],
+          [
+            0.8995,
+            0.7376
+          ],
+          [
+            0.9219,
+            0.76
+          ],
+          [
+            0.9219,
+            0.9195
+          ],
+          [
+            0.8995,
+            0.9418
+          ],
+          [
+            0.7193,
+            0.9418
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7033,
+          "y": 0.7376,
+          "w": 0.2193,
+          "h": 0.2049
+        },
+        "territory_area_px": 65294,
+        "visible_area_px": 45627,
+        "expansion_ratio": 1.431,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-center-shield-rim-rupture",
+            "shared_edge_px": 1978,
+            "direction": "left",
+            "distance_px": 229.32
+          },
+          {
+            "artifact_id": "module-bottom-right-hanging-mark",
+            "shared_edge_px": 637,
+            "direction": "right",
+            "distance_px": 183.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-bottom-right-hanging-mark-2",
+      "kind": "module",
+      "label": "bottom-right hanging mark",
+      "artifact_type": "pendant-edge-aperture",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "monochrome-sprite-threshold",
+      "mask_path": "/editions/2026-08-10-monochrome-sprite-threshold-v1/assets/masks/module-bottom-right-hanging-mark-2.svg",
+      "source_binding_ids": [
+        "binding-module-bottom-right-hanging-mark-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2576,
+            0.3397
+          ],
+          [
+            0.2799,
+            0.3174
+          ],
+          [
+            0.4394,
+            0.3174
+          ],
+          [
+            0.4617,
+            0.3397
+          ],
+          [
+            0.4617,
+            0.3589
+          ],
+          [
+            0.4139,
+            0.512
+          ],
+          [
+            0.2799,
+            0.512
+          ],
+          [
+            0.2576,
+            0.4896
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2576,
+          "y": 0.3174,
+          "w": 0.2049,
+          "h": 0.1954
+        },
+        "territory_area_px": 53439,
+        "visible_area_px": 37989,
+        "expansion_ratio": 1.407,
+        "neighbors": [
+          {
+            "artifact_id": "module-halftone-defect-bloom",
+            "shared_edge_px": 1329,
+            "direction": "right",
+            "distance_px": 186.58
+          }
+        ]
+      }
+    }
+  ]
+}
