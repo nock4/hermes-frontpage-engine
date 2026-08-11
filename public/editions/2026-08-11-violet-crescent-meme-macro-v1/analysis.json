@@ -1,0 +1,453 @@
+{
+  "analysis_id": "analysis-2026-08-11-violet-crescent-meme-macro-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark expressionist plate: black head and shoulder mass between two raised palms, a torn violet crescent rim cutting the right edge, a jagged glowing seam over stacked white inscription slabs, orange blocks at lower right, and small purple glints in palm, eyes, and lower grit.",
+  "usable_surfaces": [
+    "right torn crescent rim",
+    "left palm aperture",
+    "right stop-palm surface",
+    "bottom stacked white ledge",
+    "central poster-slab notch",
+    "jagged violet lower seam",
+    "small low-horizon video fleck",
+    "rear white slit light"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero crescent rim",
+      "artifact_type": "cropped-luminous-rim",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.789,
+        "y": 0,
+        "w": 0.148,
+        "h": 0.794
+      },
+      "polygon": [
+        [
+          0.818,
+          0
+        ],
+        [
+          0.841,
+          0.038
+        ],
+        [
+          0.864,
+          0.103
+        ],
+        [
+          0.887,
+          0.19
+        ],
+        [
+          0.906,
+          0.293
+        ],
+        [
+          0.916,
+          0.391
+        ],
+        [
+          0.915,
+          0.492
+        ],
+        [
+          0.901,
+          0.604
+        ],
+        [
+          0.871,
+          0.708
+        ],
+        [
+          0.839,
+          0.794
+        ],
+        [
+          0.861,
+          0.773
+        ],
+        [
+          0.889,
+          0.67
+        ],
+        [
+          0.915,
+          0.546
+        ],
+        [
+          0.931,
+          0.418
+        ],
+        [
+          0.937,
+          0.292
+        ],
+        [
+          0.927,
+          0.164
+        ],
+        [
+          0.897,
+          0.055
+        ],
+        [
+          0.861,
+          0.002
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "The dominant right-edge violet-white crescent is a real torn luminous rim with black grit along its outside edge and a smooth dark aperture inside."
+    },
+    {
+      "label": "hero palm bracket mass",
+      "artifact_type": "paired-palm-aperture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.784,
+        "y": 0.04,
+        "w": 0.21599999999999997,
+        "h": 0.365
+      },
+      "polygon": [
+        [
+          0.795,
+          0.049
+        ],
+        [
+          0.823,
+          0.04
+        ],
+        [
+          0.847,
+          0.111
+        ],
+        [
+          0.861,
+          0.2
+        ],
+        [
+          0.878,
+          0.204
+        ],
+        [
+          0.907,
+          0.076
+        ],
+        [
+          0.941,
+          0.046
+        ],
+        [
+          0.98,
+          0.182
+        ],
+        [
+          1,
+          0.21
+        ],
+        [
+          1,
+          0.36
+        ],
+        [
+          0.954,
+          0.404
+        ],
+        [
+          0.914,
+          0.389
+        ],
+        [
+          0.872,
+          0.359
+        ],
+        [
+          0.835,
+          0.347
+        ],
+        [
+          0.808,
+          0.288
+        ],
+        [
+          0.793,
+          0.18
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "The raised right hand is visible as a warm stop-palm pressed against the crescent, with fingers and palm creases acting as a clear bracketing gesture."
+    },
+    {
+      "label": "lower inscription ledge",
+      "artifact_type": "stacked-caption-ledge",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.031,
+        "y": 0.624,
+        "w": 0.829,
+        "h": 0.311
+      },
+      "polygon": [
+        [
+          0.046,
+          0.644
+        ],
+        [
+          0.257,
+          0.626
+        ],
+        [
+          0.258,
+          0.791
+        ],
+        [
+          0.373,
+          0.785
+        ],
+        [
+          0.374,
+          0.661
+        ],
+        [
+          0.525,
+          0.724
+        ],
+        [
+          0.526,
+          0.925
+        ],
+        [
+          0.72,
+          0.929
+        ],
+        [
+          0.719,
+          0.783
+        ],
+        [
+          0.86,
+          0.788
+        ],
+        [
+          0.86,
+          0.918
+        ],
+        [
+          0.79,
+          0.926
+        ],
+        [
+          0.613,
+          0.934
+        ],
+        [
+          0.414,
+          0.928
+        ],
+        [
+          0.262,
+          0.901
+        ],
+        [
+          0.034,
+          0.917
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The bottom is built from heavy, rough white blocks stacked like caption strips, with torn edges, black gaps, stains, and a readable ledge-like surface."
+    },
+    {
+      "label": "poster-slab notch",
+      "artifact_type": "matte-white-slab-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.185,
+        "y": 0.626,
+        "w": 0.193,
+        "h": 0.168
+      },
+      "polygon": [
+        [
+          0.186,
+          0.628
+        ],
+        [
+          0.258,
+          0.624
+        ],
+        [
+          0.258,
+          0.674
+        ],
+        [
+          0.378,
+          0.657
+        ],
+        [
+          0.378,
+          0.757
+        ],
+        [
+          0.33,
+          0.76
+        ],
+        [
+          0.33,
+          0.793
+        ],
+        [
+          0.222,
+          0.789
+        ],
+        [
+          0.222,
+          0.739
+        ],
+        [
+          0.186,
+          0.737
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A compact matte-white slab cluster sits above the lower band, cut by black rectangular notches and pressure marks, distinct enough to carry a poster-thread source."
+    },
+    {
+      "label": "left violet seam",
+      "artifact_type": "vertical-light-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.565,
+        "w": 0.526,
+        "h": 0.137
+      },
+      "polygon": [
+        [
+          0,
+          0.582
+        ],
+        [
+          0.065,
+          0.594
+        ],
+        [
+          0.139,
+          0.603
+        ],
+        [
+          0.227,
+          0.623
+        ],
+        [
+          0.337,
+          0.604
+        ],
+        [
+          0.411,
+          0.635
+        ],
+        [
+          0.488,
+          0.647
+        ],
+        [
+          0.526,
+          0.692
+        ],
+        [
+          0.463,
+          0.675
+        ],
+        [
+          0.386,
+          0.642
+        ],
+        [
+          0.321,
+          0.62
+        ],
+        [
+          0.228,
+          0.64
+        ],
+        [
+          0.136,
+          0.614
+        ],
+        [
+          0.054,
+          0.602
+        ],
+        [
+          0,
+          0.589
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A thin torn white-violet seam runs across the left-to-center lower field, glowing at its ripped paper edge and functioning as a narrow navigational cut."
+    },
+    {
+      "label": "left palm aperture",
+      "artifact_type": "burned-palm-void",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.095,
+        "y": 0.443,
+        "w": 0.059,
+        "h": 0.126
+      },
+      "polygon": [
+        [
+          0.106,
+          0.447
+        ],
+        [
+          0.127,
+          0.449
+        ],
+        [
+          0.147,
+          0.471
+        ],
+        [
+          0.154,
+          0.509
+        ],
+        [
+          0.145,
+          0.548
+        ],
+        [
+          0.123,
+          0.568
+        ],
+        [
+          0.104,
+          0.557
+        ],
+        [
+          0.095,
+          0.523
+        ],
+        [
+          0.098,
+          0.481
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "The left palm contains a black burned oval hole with a jagged white rim and purple-white core, a precise aperture within the hand surface."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.566,
+    "rationale": "The plate stays expressionist with a few strong masses: head, paired palms, crescent rim, bottom ledge, and rear grid. Texture and stacked blocks add density, but the source-bearing marks remain legible rather than cluttered."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-11-violet-crescent-meme-macro-v1"
+}

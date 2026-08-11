@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-11-violet-crescent-meme-macro-v1",
+  "generation": "daily-process-2026-08-11T08-01-01-362Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-11T08-01-01-362Z/2026-08-11-violet-crescent-meme-macro-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-hero-crescent-rim",
+      "visible_area_px": 47015,
+      "territory_area_px": 41415,
+      "hover_bounds": {
+        "x": 0.7878,
+        "y": 0.0,
+        "w": 0.1699,
+        "h": 0.457
+      },
+      "hover_polygon": [
+        [
+          0.7878,
+          0.002
+        ],
+        [
+          0.8678,
+          0.0
+        ],
+        [
+          0.9062,
+          0.0566
+        ],
+        [
+          0.957,
+          0.1758
+        ],
+        [
+          0.9447,
+          0.4336
+        ],
+        [
+          0.9297,
+          0.4561
+        ],
+        [
+          0.9167,
+          0.4502
+        ],
+        [
+          0.8874,
+          0.4033
+        ],
+        [
+          0.8392,
+          0.2539
+        ],
+        [
+          0.7878,
+          0.0029
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-palm-bracket-mass",
+          "shared_edge_px": 3878,
+          "direction": "down",
+          "distance_px": 133.59
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-hero-palm-bracket-mass",
+      "visible_area_px": 80377,
+      "territory_area_px": 86591,
+      "hover_bounds": {
+        "x": 0.7708,
+        "y": 0.0127,
+        "w": 0.2292,
+        "h": 0.4248
+      },
+      "hover_polygon": [
+        [
+          0.7708,
+          0.1582
+        ],
+        [
+          0.7728,
+          0.0488
+        ],
+        [
+          0.791,
+          0.0215
+        ],
+        [
+          0.9408,
+          0.0127
+        ],
+        [
+          0.9629,
+          0.0459
+        ],
+        [
+          0.9993,
+          0.1719
+        ],
+        [
+          0.9993,
+          0.3926
+        ],
+        [
+          0.9538,
+          0.4365
+        ],
+        [
+          0.8346,
+          0.3799
+        ],
+        [
+          0.7858,
+          0.2871
+        ],
+        [
+          0.7708,
+          0.1816
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-crescent-rim",
+          "shared_edge_px": 3878,
+          "direction": "up",
+          "distance_px": 133.59
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-lower-inscription-ledge",
+      "visible_area_px": 205479,
+      "territory_area_px": 260273,
+      "hover_bounds": {
+        "x": 0.0156,
+        "y": 0.6367,
+        "w": 0.8626,
+        "h": 0.3252
+      },
+      "hover_polygon": [
+        [
+          0.0156,
+          0.9102
+        ],
+        [
+          0.0267,
+          0.6514
+        ],
+        [
+          0.0319,
+          0.6367
+        ],
+        [
+          0.4414,
+          0.6611
+        ],
+        [
+          0.8594,
+          0.7598
+        ],
+        [
+          0.8776,
+          0.7871
+        ],
+        [
+          0.8776,
+          0.918
+        ],
+        [
+          0.8594,
+          0.9453
+        ],
+        [
+          0.6126,
+          0.9609
+        ],
+        [
+          0.0339,
+          0.9443
+        ],
+        [
+          0.0156,
+          0.917
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-poster-slab-notch",
+          "shared_edge_px": 2907,
+          "direction": "left",
+          "distance_px": 266.24
+        },
+        {
+          "artifact_id": "module-left-violet-seam",
+          "shared_edge_px": 2894,
+          "direction": "up",
+          "distance_px": 304.51
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-poster-slab-notch",
+      "visible_area_px": 37156,
+      "territory_area_px": 43882,
+      "hover_bounds": {
+        "x": 0.1673,
+        "y": 0.5996,
+        "w": 0.1953,
+        "h": 0.2188
+      },
+      "hover_polygon": [
+        [
+          0.1673,
+          0.6279
+        ],
+        [
+          0.1855,
+          0.6006
+        ],
+        [
+          0.2109,
+          0.5996
+        ],
+        [
+          0.362,
+          0.6729
+        ],
+        [
+          0.3535,
+          0.7568
+        ],
+        [
+          0.2786,
+          0.8174
+        ],
+        [
+          0.2214,
+          0.8154
+        ],
+        [
+          0.1673,
+          0.7363
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lower-inscription-ledge",
+          "shared_edge_px": 2907,
+          "direction": "right",
+          "distance_px": 266.24
+        },
+        {
+          "artifact_id": "module-left-violet-seam",
+          "shared_edge_px": 2027,
+          "direction": "up",
+          "distance_px": 98.57
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-left-violet-seam",
+      "visible_area_px": 13528,
+      "territory_area_px": 61250,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.542,
+        "w": 0.5521,
+        "h": 0.1719
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.542
+        ],
+        [
+          0.3366,
+          0.5645
+        ],
+        [
+          0.4876,
+          0.6074
+        ],
+        [
+          0.5514,
+          0.6914
+        ],
+        [
+          0.5365,
+          0.7129
+        ],
+        [
+          0.166,
+          0.6611
+        ],
+        [
+          0.0,
+          0.6279
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lower-inscription-ledge",
+          "shared_edge_px": 2894,
+          "direction": "down",
+          "distance_px": 304.51
+        },
+        {
+          "artifact_id": "module-poster-slab-notch",
+          "shared_edge_px": 2027,
+          "direction": "down",
+          "distance_px": 98.57
+        },
+        {
+          "artifact_id": "module-left-palm-aperture",
+          "shared_edge_px": 636,
+          "direction": "left",
+          "distance_px": 250.96
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-left-palm-aperture",
+      "visible_area_px": 8528,
+      "territory_area_px": 19056,
+      "hover_bounds": {
+        "x": 0.0762,
+        "y": 0.4189,
+        "w": 0.0964,
+        "h": 0.1768
+      },
+      "hover_polygon": [
+        [
+          0.0762,
+          0.5186
+        ],
+        [
+          0.0866,
+          0.4482
+        ],
+        [
+          0.1055,
+          0.4189
+        ],
+        [
+          0.127,
+          0.4209
+        ],
+        [
+          0.1458,
+          0.4424
+        ],
+        [
+          0.1647,
+          0.4707
+        ],
+        [
+          0.1719,
+          0.5078
+        ],
+        [
+          0.1628,
+          0.5479
+        ],
+        [
+          0.1445,
+          0.5752
+        ],
+        [
+          0.1224,
+          0.5947
+        ],
+        [
+          0.1035,
+          0.584
+        ],
+        [
+          0.0853,
+          0.5566
+        ],
+        [
+          0.0762,
+          0.5234
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-left-violet-seam",
+          "shared_edge_px": 636,
+          "direction": "right",
+          "distance_px": 250.96
+        }
+      ]
+    }
+  ]
+}

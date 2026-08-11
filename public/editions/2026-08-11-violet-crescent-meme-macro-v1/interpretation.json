@@ -1,0 +1,284 @@
+{
+  "interpretation_id": "interp-2026-08-11-violet-crescent-meme-macro-v1",
+  "edition_id": "2026-08-11-violet-crescent-meme-macro-v1",
+  "plate_read_timestamp": "2026-08-11T08:07:41.068Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark expressionist plate: black head and shoulder mass between two raised palms, a torn violet crescent rim cutting the right edge, a jagged glowing seam over stacked white inscription slabs, orange blocks at lower right, and small purple glints in palm, eyes, and lower grit.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "occult protocol under cheap violet flash",
+      "A dark expressionist plate: black head and shoulder mass between two raised palms, a torn violet crescent rim cutting the right edge, a jagged glowing seam over stacked white inscription slabs, orange blocks at lower right, and small purple glints in palm, eyes, and lower grit.",
+      "violet-flash",
+      "crescent-rim",
+      "palm-apertures"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero crescent rim",
+      "hero palm bracket mass",
+      "lower inscription ledge",
+      "poster-slab notch",
+      "left violet seam",
+      "left palm aperture"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint",
+      "screen",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "violet-crescent-meme-macro",
+      "massive cropped crescent rim pressing in from the right",
+      "central dark holdfast mass bracketed by two palm-shaped apertures",
+      "stacked lower inscription ledge with illegible white and orange bands",
+      "thin violet-white vertical seam at the left edge",
+      "boxy blue-violet rear planes compressed into web grain",
+      "small reflected nodes along a low glossy horizon",
+      "right torn crescent rim"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: violet-crescent-meme-macro.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-crescent-rim",
+      "kind": "hero",
+      "type": "cropped-luminous-rim",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.8086,
+        "y": 0,
+        "w": 0.1549,
+        "h": 0.4277
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-palm-bracket-mass",
+      "kind": "hero",
+      "type": "paired-palm-aperture",
+      "strength": 0.982772,
+      "bounds": {
+        "x": 0.784,
+        "y": 0.04,
+        "w": 0.21599999999999997,
+        "h": 0.365
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-inscription-ledge",
+      "kind": "module",
+      "type": "stacked-caption-ledge",
+      "strength": 0.7846799999999999,
+      "bounds": {
+        "x": 0.031,
+        "y": 0.624,
+        "w": 0.829,
+        "h": 0.311
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-poster-slab-notch",
+      "kind": "module",
+      "type": "matte-white-slab-cut",
+      "strength": 0.7647120000000001,
+      "bounds": {
+        "x": 0.185,
+        "y": 0.626,
+        "w": 0.193,
+        "h": 0.168
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-violet-seam",
+      "kind": "module",
+      "type": "vertical-light-seam",
+      "strength": 0.727812,
+      "bounds": {
+        "x": 0,
+        "y": 0.565,
+        "w": 0.526,
+        "h": 0.137
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-palm-aperture",
+      "kind": "module",
+      "type": "burned-palm-void",
+      "strength": 0.707004,
+      "bounds": {
+        "x": 0.095,
+        "y": 0.443,
+        "w": 0.059,
+        "h": 0.126
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-crescent-rim-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.8086,
+        "y": 0,
+        "w": 0.1549,
+        "h": 0.4277
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-palm-bracket-mass-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.784,
+        "y": 0.04,
+        "w": 0.21599999999999997,
+        "h": 0.365
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-inscription-ledge-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.031,
+        "y": 0.624,
+        "w": 0.829,
+        "h": 0.311
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-poster-slab-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.185,
+        "y": 0.626,
+        "w": 0.193,
+        "h": 0.168
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-violet-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.565,
+        "w": 0.526,
+        "h": 0.137
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-palm-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.095,
+        "y": 0.443,
+        "w": 0.059,
+        "h": 0.126
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
