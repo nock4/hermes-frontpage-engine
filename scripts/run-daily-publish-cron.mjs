@@ -376,7 +376,11 @@ async function main() {
   const options = parseArgs(process.argv.slice(2))
   let exitCode = 0
   const cronUxPort = allocateCronUxPort()
-  const cronEnv = { ...process.env, DFE_UX_PORT: cronUxPort }
+  const cronEnv = {
+    ...process.env,
+    DFE_UX_PORT: cronUxPort,
+    DFE_ENABLE_UNTRUSTED_BROWSER_SOURCE_INSPECTION: process.env.DFE_ENABLE_UNTRUSTED_BROWSER_SOURCE_INSPECTION || '1',
+  }
   const summary = {
     ok: false,
     worktree_dir: path.resolve(options.worktreeDir),
