@@ -1,0 +1,419 @@
+{
+  "analysis_id": "analysis-2026-08-12-archive-modal-cutwork-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A gray tabletop plate built from archival paper surfaces: a floating white plugin panel sits over a torn orange folder slab, surrounded by checker tile, cream ledgers, pink typed sheets, black photo well, mint scan paper, command-like ticks, and a signal-like orange form. The interface can be mapped through real visible edges, tears, holes, typed rows, scan borders, and paper seams.",
+  "usable_surfaces": [
+    "floating white rounded plugin panel with pale controls and blue button",
+    "torn orange folder slab with punched holes and ragged bite",
+    "upper-left blue checker paper aperture",
+    "top-right cream ledger document frame",
+    "dusty pink typed sheet with compact black rows",
+    "black rectangular photo/text well",
+    "mint-green scan paper field with grid and stamps",
+    "thin striped command-edge paper tick strip",
+    "lower-right orange signal form panel"
+  ],
+  "detected_objects": [
+    {
+      "label": "central floating plugin panel",
+      "artifact_type": "hero-rounded-modal-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.434,
+        "y": 0.289,
+        "w": 0.128,
+        "h": 0.357
+      },
+      "polygon": [
+        [
+          0.454,
+          0.289
+        ],
+        [
+          0.543,
+          0.289
+        ],
+        [
+          0.555,
+          0.294
+        ],
+        [
+          0.562,
+          0.306
+        ],
+        [
+          0.562,
+          0.625
+        ],
+        [
+          0.556,
+          0.638
+        ],
+        [
+          0.545,
+          0.646
+        ],
+        [
+          0.449,
+          0.646
+        ],
+        [
+          0.439,
+          0.64
+        ],
+        [
+          0.434,
+          0.628
+        ],
+        [
+          0.434,
+          0.309
+        ],
+        [
+          0.44,
+          0.296
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "large white rounded modal surface at center with visible header icons, stacked pale control wells, blue rounded button, and soft drop shadow occluding papers underneath"
+    },
+    {
+      "label": "oversized orange folder slab",
+      "artifact_type": "hero-manila-folder-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.244,
+        "y": 0.554,
+        "w": 0.285,
+        "h": 0.153
+      },
+      "polygon": [
+        [
+          0.245,
+          0.554
+        ],
+        [
+          0.358,
+          0.554
+        ],
+        [
+          0.358,
+          0.62
+        ],
+        [
+          0.375,
+          0.62
+        ],
+        [
+          0.384,
+          0.593
+        ],
+        [
+          0.411,
+          0.606
+        ],
+        [
+          0.434,
+          0.618
+        ],
+        [
+          0.435,
+          0.706
+        ],
+        [
+          0.292,
+          0.706
+        ],
+        [
+          0.292,
+          0.684
+        ],
+        [
+          0.245,
+          0.684
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "wide manila-orange folder slab across lower center, with three punched black holes at left, vertical fold crease, worn edges, and a torn bite removed near the modal"
+    },
+    {
+      "label": "upper-left checker tile",
+      "artifact_type": "blue-checker-paper-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.028,
+        "y": 0.015,
+        "w": 0.109,
+        "h": 0.126
+      },
+      "polygon": [
+        [
+          0.029,
+          0.018
+        ],
+        [
+          0.121,
+          0.018
+        ],
+        [
+          0.123,
+          0.049
+        ],
+        [
+          0.136,
+          0.063
+        ],
+        [
+          0.136,
+          0.099
+        ],
+        [
+          0.125,
+          0.108
+        ],
+        [
+          0.125,
+          0.141
+        ],
+        [
+          0.029,
+          0.139
+        ],
+        [
+          0.027,
+          0.077
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "small blue-and-cream checker paper fragment in the upper-left, with torn right notch and irregular bottom wear marks"
+    },
+    {
+      "label": "top-row pale document frame",
+      "artifact_type": "black-framed-cream-document",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.693,
+        "y": 0.02,
+        "w": 0.293,
+        "h": 0.267
+      },
+      "polygon": [
+        [
+          0.693,
+          0.026
+        ],
+        [
+          0.837,
+          0.025
+        ],
+        [
+          0.84,
+          0.02
+        ],
+        [
+          0.981,
+          0.021
+        ],
+        [
+          0.986,
+          0.282
+        ],
+        [
+          0.842,
+          0.284
+        ],
+        [
+          0.839,
+          0.287
+        ],
+        [
+          0.693,
+          0.287
+        ],
+        [
+          0.69,
+          0.145
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "large cream ledger spread at the top right, with black ruled table, central fold seam, punched/scan marks, typed blocks, and dark border-like paper edges"
+    },
+    {
+      "label": "dusty pink typed sheet",
+      "artifact_type": "pink-typewriter-sheet",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.548,
+        "y": 0.022,
+        "w": 0.115,
+        "h": 0.079
+      },
+      "polygon": [
+        [
+          0.548,
+          0.022
+        ],
+        [
+          0.663,
+          0.022
+        ],
+        [
+          0.663,
+          0.101
+        ],
+        [
+          0.548,
+          0.101
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "dusty pink rectangular typed slip near top center-right with compact black monospaced rows and hard clipped archival edges"
+    },
+    {
+      "label": "black photo well",
+      "artifact_type": "dark-photo-frame-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.548,
+        "y": 0.109,
+        "w": 0.115,
+        "h": 0.076
+      },
+      "polygon": [
+        [
+          0.548,
+          0.109
+        ],
+        [
+          0.663,
+          0.109
+        ],
+        [
+          0.663,
+          0.185
+        ],
+        [
+          0.548,
+          0.185
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "black horizontal aperture directly beneath the pink slip, carrying pale typed marks and a dark photo-well surface"
+    },
+    {
+      "label": "mint lower document wash",
+      "artifact_type": "mint-scan-paper-field",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.578,
+        "y": 0.3,
+        "w": 0.156,
+        "h": 0.286
+      },
+      "polygon": [
+        [
+          0.578,
+          0.301
+        ],
+        [
+          0.732,
+          0.301
+        ],
+        [
+          0.734,
+          0.584
+        ],
+        [
+          0.645,
+          0.586
+        ],
+        [
+          0.578,
+          0.585
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "mint-green scan paper field to the right of the modal, with grid/table lines, black stamped rows, fold seam, dark stain at top right, and worn cropped corners"
+    },
+    {
+      "label": "prompt-edge command ticks",
+      "artifact_type": "compact-command-line-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.175,
+        "y": 0.017,
+        "w": 0.057,
+        "h": 0.124
+      },
+      "polygon": [
+        [
+          0.176,
+          0.018
+        ],
+        [
+          0.231,
+          0.018
+        ],
+        [
+          0.232,
+          0.141
+        ],
+        [
+          0.176,
+          0.141
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "narrow vertical cream strip with repeated blue command-like ticks/stripes at the upper-left row, functioning as a compact paper-edge mark rather than a broad card"
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.731,
+        "y": 0.777,
+        "w": 0.257,
+        "h": 0.207
+      },
+      "polygon": [
+        [
+          0.733,
+          0.778
+        ],
+        [
+          0.988,
+          0.779
+        ],
+        [
+          0.988,
+          0.984
+        ],
+        [
+          0.735,
+          0.984
+        ],
+        [
+          0.731,
+          0.965
+        ],
+        [
+          0.731,
+          0.797
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "large lower-right orange form panel with black command bars, table rules, barcode-like bottom ticks, and rounded worn paper corners"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.304,
+    "rationale": "The plate remains legible as an expressionist archive-board collage, but many similarly sized documents compete around the central modal and orange folder; interaction mapping should privilege the hero panel, torn folder, and strongest paper apertures."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-12-archive-modal-cutwork-v1"
+}

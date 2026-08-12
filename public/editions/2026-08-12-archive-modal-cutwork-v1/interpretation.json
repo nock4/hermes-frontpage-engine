@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-08-12-archive-modal-cutwork-v1",
+  "edition_id": "2026-08-12-archive-modal-cutwork-v1",
+  "plate_read_timestamp": "2026-08-12T11:05:05.916Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A gray tabletop plate built from archival paper surfaces: a floating white plugin panel sits over a torn orange folder slab, surrounded by checker tile, cream ledgers, pink typed sheets, black photo well, mint scan paper, command-like ticks, and a signal-like orange form. The interface can be mapped through real visible edges, tears, holes, typed rows, scan borders, and paper seams.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "A quiet tool-world where archival paper is being sorted, cropped, and reweighted by a clean floating panel.",
+      "A gray tabletop plate built from archival paper surfaces: a floating white plugin panel sits over a torn orange folder slab, surrounded by checker tile, cream ledgers, pink typed sheets, black photo well, mint scan paper, command-like ticks, and a signal-like orange form. The interface can be mapped through real visible edges, tears, holes, typed rows, scan borders, and paper seams.",
+      "moodboard-field",
+      "scanned-paper",
+      "floating-modal"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "central floating plugin panel",
+      "oversized orange folder slab",
+      "upper-left checker tile",
+      "top-row pale document frame",
+      "dusty pink typed sheet",
+      "black photo well",
+      "mint lower document wash",
+      "prompt-edge command ticks"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "archive-modal-cutwork",
+      "central floating modal slab occluding the archive field",
+      "oversized manila folder sheet as a hero spatial event",
+      "ring of separated paper and photo islands with uneven grey gutters",
+      "black-framed image apertures and cropped document edges",
+      "illegible line-block fields, stamp smudges, punched holes, and tiny control ticks",
+      "floating white rounded plugin panel with pale controls and blue button",
+      "torn orange folder slab with punched holes and ragged bite"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: archive-modal-cutwork.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-central-floating-plugin-panel",
+      "kind": "hero",
+      "type": "hero-rounded-modal-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.431,
+        "y": 0.2822,
+        "w": 0.1322,
+        "h": 0.3662
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-oversized-orange-folder-slab",
+      "kind": "hero",
+      "type": "hero-manila-folder-slab",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.244,
+        "y": 0.554,
+        "w": 0.285,
+        "h": 0.153
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-left-checker-tile",
+      "kind": "module",
+      "type": "blue-checker-paper-aperture",
+      "strength": 0.799728,
+      "bounds": {
+        "x": 0.0254,
+        "y": 0.0127,
+        "w": 0.1139,
+        "h": 0.1309
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-top-row-pale-document-frame",
+      "kind": "module",
+      "type": "black-framed-cream-document",
+      "strength": 0.7741920000000001,
+      "bounds": {
+        "x": 0.6888,
+        "y": 0.0146,
+        "w": 0.2975,
+        "h": 0.2754
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dusty-pink-typed-sheet",
+      "kind": "module",
+      "type": "pink-typewriter-sheet",
+      "strength": 0.743796,
+      "bounds": {
+        "x": 0.548,
+        "y": 0.022,
+        "w": 0.115,
+        "h": 0.079
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-photo-well",
+      "kind": "module",
+      "type": "dark-photo-frame-aperture",
+      "strength": 0.71112,
+      "bounds": {
+        "x": 0.548,
+        "y": 0.109,
+        "w": 0.115,
+        "h": 0.076
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mint-lower-document-wash",
+      "kind": "module",
+      "type": "mint-scan-paper-field",
+      "strength": 0.6790200000000001,
+      "bounds": {
+        "x": 0.578,
+        "y": 0.3,
+        "w": 0.156,
+        "h": 0.286
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-prompt-edge-command-ticks",
+      "kind": "module",
+      "type": "compact-command-line-edge",
+      "strength": 0.663412,
+      "bounds": {
+        "x": 0.175,
+        "y": 0.017,
+        "w": 0.057,
+        "h": 0.124
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.652516,
+      "bounds": {
+        "x": 0.7272,
+        "y": 0.7744,
+        "w": 0.2604,
+        "h": 0.2129
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-central-floating-plugin-panel-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.431,
+        "y": 0.2822,
+        "w": 0.1322,
+        "h": 0.3662
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-oversized-orange-folder-slab-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.244,
+        "y": 0.554,
+        "w": 0.285,
+        "h": 0.153
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-left-checker-tile-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0254,
+        "y": 0.0127,
+        "w": 0.1139,
+        "h": 0.1309
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-top-row-pale-document-frame-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.6888,
+        "y": 0.0146,
+        "w": 0.2975,
+        "h": 0.2754
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dusty-pink-typed-sheet-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.548,
+        "y": 0.022,
+        "w": 0.115,
+        "h": 0.079
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-photo-well-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.548,
+        "y": 0.109,
+        "w": 0.115,
+        "h": 0.076
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-mint-lower-document-wash-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.578,
+        "y": 0.3,
+        "w": 0.156,
+        "h": 0.286
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-prompt-edge-command-ticks-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.175,
+        "y": 0.017,
+        "w": 0.057,
+        "h": 0.124
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.7272,
+        "y": 0.7744,
+        "w": 0.2604,
+        "h": 0.2129
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
