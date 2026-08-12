@@ -1,0 +1,362 @@
+{
+  "source_binding_set_id": "bindings-2026-08-12-provenance-card-cutaway-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-primary-source-anchor",
+      "artifact_id": "hero-primary-source-anchor",
+      "source_type": "tweet",
+      "source_url": "https://x.com/bakigulai/status/2085977214365896731",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "bakigul (@bakigulai) on X",
+      "kicker": "x.com",
+      "excerpt": "AI agent’lar için açık kaynak Palantir yapmışlar: Semantica. Veriyi knowledge graph’e çeviriyor, agent kararlarını kaydediyor ve sonradan “bu kararı neden verdi?” sorusunun izini sürebiliyorsun. Context Graph + Decision Intelligence + provenance + deterministic reasoning.",
+      "source_title": "bakigul (@bakigulai) on X",
+      "source_summary": "AI agent’lar için açık kaynak Palantir yapmışlar: Semantica. Veriyi knowledge graph’e çeviriyor, agent kararlarını kaydediyor ve sonradan “bu kararı neden verdi?” sorusunun izini sürebiliyorsun. Context Graph + Decision Intelligence + provenance + deterministic reasoning.",
+      "source_domain": "x.com",
+      "source_meta": "@bakigulai: AI agent’lar için açık kaynak Palantir yapmışlar: Semantica. Veriyi knowledge gr...",
+      "source_image_url": "https://pbs.twimg.com/card_img/2087165650452271104/teeCaDch?format=jpg&name=orig",
+      "source_image_alt": "bakigul (@bakigulai) on X preview image",
+      "source_media_url": "https://pbs.twimg.com/card_img/2087165650452271104/teeCaDch?format=jpg&name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/source-posters/binding-hero-primary-source-anchor.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.585
+        },
+        "poster_crop": {
+          "x": 0.0558,
+          "y": 0.0,
+          "width": 0.8883,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 600,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.03371,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-hero-secondary-source-anchor",
+      "artifact_id": "hero-secondary-source-anchor",
+      "source_type": "tweet",
+      "source_url": "https://x.com/zarazhangrui/status/2086758509979316423",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@zarazhangrui: A great way to learn design: Give Codex a well-designed website, ask it to...",
+      "kicker": "x.com",
+      "excerpt": "A great way to learn design: Give Codex a well-designed website, ask it to analyze what makes the design great, then ask it to take a complete screenshot of the website & add annotations on the image that breaks down why the design works Learning from examples is always better than learning from theory!",
+      "source_title": "@zarazhangrui: A great way to learn design: Give Codex a well-designed website, ask it to...",
+      "source_summary": "A great way to learn design: Give Codex a well-designed website, ask it to analyze what makes the design great, then ask it to take a complete screenshot of the website & add annotations on the image that breaks down why the design works Learning from examples is always better than learning from theory! And using the annotation method means you don't have to constantly switch between reading the analysis and viewing the artifact",
+      "source_domain": "x.com",
+      "source_meta": "@zarazhangrui: A great way to learn design: Give Codex a well-designed website, ask it to analy...",
+      "source_image_url": "https://pbs.twimg.com/media/HPWnRlJbgAEvW85.jpg?name=orig",
+      "source_image_alt": "@zarazhangrui: A great way to learn design: Give Codex a well-designed website, ask it to... preview image",
+      "source_media_url": "https://pbs.twimg.com/media/HPWnRlJbgAEvW85.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/source-posters/binding-hero-secondary-source-anchor.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.4426,
+          "y": 0.526
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.1449,
+          "width": 1.0,
+          "height": 0.7103
+        },
+        "image_width": 2066,
+        "image_height": 1636,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.03623,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-signal-panel",
+      "artifact_id": "module-signal-panel",
+      "source_type": "article",
+      "source_url": "https://github.com/anthropics.png?size=120",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Claude Code",
+      "kicker": "github.com",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Claude Code",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "github.com",
+      "source_meta": "Claude Code",
+      "source_image_url": "https://opengraph.githubassets.com/1/anthropics.png",
+      "source_image_alt": "Claude Code preview image",
+      "source_media_url": "https://github.com/anthropics.png?size=120",
+      "source_media_type": "image"
+    },
+    {
+      "id": "binding-module-color-node",
+      "artifact_id": "module-color-node",
+      "source_type": "article",
+      "source_url": "https://github.com/openai.png?size=120",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Codex CLI",
+      "kicker": "github.com",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Codex CLI",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "github.com",
+      "source_meta": "Codex CLI",
+      "source_image_url": "https://opengraph.githubassets.com/1/openai.png",
+      "source_image_alt": "Codex CLI preview image",
+      "source_media_url": "https://github.com/openai.png?size=120",
+      "source_media_type": "image"
+    },
+    {
+      "id": "binding-module-field-marker",
+      "artifact_id": "module-field-marker",
+      "source_type": "article",
+      "source_url": "https://pbs.twimg.com/card_img/2087165650452271104/teeCaDch?format=jpg&name=orig",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "bakigul (@bakigulai) on X — teeCaDch",
+      "kicker": "pbs.twimg.com",
+      "excerpt": "Primary image explicitly supplied by the selected anchor source.",
+      "source_title": "bakigul (@bakigulai) on X — teeCaDch",
+      "source_summary": "Primary image explicitly supplied by the selected anchor source.",
+      "source_domain": "pbs.twimg.com",
+      "source_meta": "bakigul (@bakigulai) on X",
+      "source_image_url": "https://pbs.twimg.com/card_img/2087165650452271104/teeCaDch?format=jpg&name=orig",
+      "source_image_alt": "bakigul (@bakigulai) on X preview image",
+      "source_media_url": "https://pbs.twimg.com/card_img/2087165650452271104/teeCaDch?format=jpg&name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/source-posters/binding-module-field-marker.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.585
+        },
+        "poster_crop": {
+          "x": 0.0558,
+          "y": 0.0,
+          "width": 0.8883,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 600,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.03371,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-edge-detail",
+      "artifact_id": "module-edge-detail",
+      "source_type": "tweet",
+      "source_url": "https://x.com/AISuperDomain/status/2086252298934837564",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "AI超元域 (@AISuperDomain) on X",
+      "kicker": "x.com",
+      "excerpt": "🔥 发现一个很疯狂的开源项目：Paperclip 它不是又一个 AI Agent，而是直接让你组建一家「AI 公司」。 你可以创建 CEO、CTO、工程师、设计师、营销等不同 AI 员工，并为它们设置： • 公司目标与组织架构 • 任务分配与上下级关系 • Token / 成本预算 • 权限、审批与审计 • 定时自主执行任务",
+      "source_title": "AI超元域 (@AISuperDomain) on X",
+      "source_summary": "🔥 发现一个很疯狂的开源项目：Paperclip 它不是又一个 AI Agent，而是直接让你组建一家「AI 公司」。 你可以创建 CEO、CTO、工程师、设计师、营销等不同 AI 员工，并为它们设置： • 公司目标与组织架构 • 任务分配与上下级关系 • Token / 成本预算 • 权限、审批与审计 • 定时自主执行任务",
+      "source_domain": "x.com",
+      "source_meta": "@AISuperDomain: 🔥 发现一个很疯狂的开源项目：Paperclip 它不是又一个 AI Agent，而是直接让你组建一家「AI 公司」。 你可以创建 CEO、CTO、工程师、设计...",
+      "source_image_url": "https://pbs.twimg.com/media/HLwH9lpa0AAKm18.jpg",
+      "source_image_alt": "Source preview image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/source-posters/binding-module-edge-detail.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.6408,
+          "y": 0.5177
+        },
+        "poster_crop": {
+          "x": 0.2208,
+          "y": 0.0,
+          "width": 0.7108,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 480,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.08293,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-reference-plaque",
+      "artifact_id": "module-reference-plaque",
+      "source_type": "article",
+      "source_url": "http://bakigul.substack.com/",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Baki ile AI | Substack",
+      "kicker": "bakigul.substack.com",
+      "excerpt": "AI agent’ları, Claude/ChatGPT workflow’larını ve geliştirici verimliliğini herkesin anlayacağı dille anlatıyorum. Click to read Baki ile AI, by Baki GUL, a Substack publication with thousands of subscribers.",
+      "source_title": "Baki ile AI | Substack",
+      "source_summary": "AI agent’ları, Claude/ChatGPT workflow’larını ve geliştirici verimliliğini herkesin anlayacağı dille anlatıyorum. Click to read Baki ile AI, by Baki GUL, a Substack publication with thousands of subscribers.",
+      "source_domain": "bakigul.substack.com",
+      "source_meta": "bakigul.substack.com",
+      "source_image_url": "https://substackcdn.com/image/fetch/$s_!paH5!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fbakigul.substack.com%2Ftwitter%2Fsubscribe-card.jpg%3Fv%3D1787887068%26version%3D9",
+      "source_image_alt": "Baki ile AI | Substack preview image",
+      "source_media_url": "https://substackcdn.com/image/fetch/$s_!paH5!,f_auto,q_auto:best,fl_progressive:steep/https%3A%2F%2Fbakigul.substack.com%2Ftwitter%2Fsubscribe-card.jpg%3Fv%3D1787887068%26version%3D9",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/source-posters/binding-module-reference-plaque.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.3261,
+          "y": 0.5083
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0021,
+          "width": 0.9272,
+          "height": 0.9979
+        },
+        "image_width": 920,
+        "image_height": 480,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.03289,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-distributed-marker",
+      "artifact_id": "module-distributed-marker",
+      "source_type": "article",
+      "source_url": "https://github.com/cline.png?size=120",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Cline",
+      "kicker": "github.com",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Cline",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "github.com",
+      "source_meta": "Cline",
+      "source_image_url": "https://opengraph.githubassets.com/1/cline.png",
+      "source_image_alt": "Cline preview image",
+      "source_media_url": "https://github.com/cline.png?size=120",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/source-posters/binding-module-distributed-marker.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.4996,
+          "y": 0.5
+        },
+        "poster_crop": {
+          "x": 0.0333,
+          "y": 0.0,
+          "width": 0.9333,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 630,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.00406,
+          "candidate_box_count": 1
+        }
+      }
+    },
+    {
+      "id": "binding-module-distributed-marker-2",
+      "artifact_id": "module-distributed-marker-2",
+      "source_type": "article",
+      "source_url": "https://github.com/continuedev.png?size=120",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Continue",
+      "kicker": "github.com",
+      "excerpt": "Image found on a page derived from the anchor research.",
+      "source_title": "Continue",
+      "source_summary": "Image found on a page derived from the anchor research.",
+      "source_domain": "github.com",
+      "source_meta": "Continue",
+      "source_image_url": "https://images.ctfassets.net/8aevphvgewt8/4pe4eOtUJ0ARpZRE4fNekf/f52b1f9c52f059a33170229883731ed0/GH-Homepage-Universe-img.png",
+      "source_image_alt": "Continue preview image",
+      "source_media_url": "https://github.com/continuedev.png?size=120",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/source-posters/binding-module-distributed-marker-2.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.5548
+        },
+        "poster_crop": {
+          "x": 0.0333,
+          "y": 0.0,
+          "width": 0.9333,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 630,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02381,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

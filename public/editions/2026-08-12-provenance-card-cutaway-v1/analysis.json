@@ -1,0 +1,602 @@
+{
+  "analysis_id": "analysis-2026-08-12-provenance-card-cutaway-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Minimal black-white paper relief plate with a central angular A-like tear system, torn seams, small avatar pins, grey connector lines, and a lower text plaque. Source-bearing surfaces are visible as physical cuts, panels, nodes, and scars rather than generic cards.",
+  "usable_surfaces": [
+    "central black angular paper wedge",
+    "upper-left torn convergence",
+    "top-right folded white-black plaque",
+    "left lower diagonal blue slit",
+    "right black torn-edge tile",
+    "bottom text plaque with ripped right seam",
+    "small blue avatar pin",
+    "small grey avatar pin",
+    "vertical torn seam near top center"
+  ],
+  "detected_objects": [
+    {
+      "label": "Primary Source Anchor",
+      "artifact_type": "torn-radial-convergence",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.268,
+        "h": 0.256
+      },
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.268,
+          0
+        ],
+        [
+          0.267,
+          0.102
+        ],
+        [
+          0.257,
+          0.16
+        ],
+        [
+          0.232,
+          0.199
+        ],
+        [
+          0.199,
+          0.223
+        ],
+        [
+          0.155,
+          0.242
+        ],
+        [
+          0.104,
+          0.252
+        ],
+        [
+          0.046,
+          0.254
+        ],
+        [
+          0,
+          0.254
+        ],
+        [
+          0,
+          0.106
+        ],
+        [
+          0.063,
+          0.129
+        ],
+        [
+          0.142,
+          0.163
+        ],
+        [
+          0.214,
+          0.201
+        ],
+        [
+          0.224,
+          0.205
+        ],
+        [
+          0.188,
+          0.158
+        ],
+        [
+          0.118,
+          0.071
+        ],
+        [
+          0.036,
+          0
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Large black upper-left paper field with multiple white torn rays converging into a visible puncture/tear hub."
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "central-cut-letterform",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.257,
+        "y": 0.238,
+        "w": 0.553,
+        "h": 0.486
+      },
+      "confidence": 0.82,
+      "visual_evidence": "Dominant central black-and-white angular A-like paper cut with deep black wedges and sharp white negative channel."
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "top-right-folded-plaque",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.522,
+        "y": 0.079,
+        "w": 0.348,
+        "h": 0.248
+      },
+      "polygon": [
+        [
+          0.542,
+          0.079
+        ],
+        [
+          0.675,
+          0.079
+        ],
+        [
+          0.708,
+          0.188
+        ],
+        [
+          0.737,
+          0.246
+        ],
+        [
+          0.867,
+          0.267
+        ],
+        [
+          0.868,
+          0.299
+        ],
+        [
+          0.861,
+          0.316
+        ],
+        [
+          0.846,
+          0.326
+        ],
+        [
+          0.656,
+          0.326
+        ],
+        [
+          0.641,
+          0.318
+        ],
+        [
+          0.631,
+          0.298
+        ],
+        [
+          0.606,
+          0.241
+        ],
+        [
+          0.541,
+          0.233
+        ],
+        [
+          0.526,
+          0.221
+        ],
+        [
+          0.522,
+          0.199
+        ],
+        [
+          0.522,
+          0.101
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "Raised rounded white plaque in the upper right with a black folded triangular slash and shadowed lower edge."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "blue-avatar-pin",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.268,
+        "y": 0.827,
+        "w": 0.053,
+        "h": 0.043
+      },
+      "polygon": [
+        [
+          0.294,
+          0.827
+        ],
+        [
+          0.303,
+          0.829
+        ],
+        [
+          0.307,
+          0.836
+        ],
+        [
+          0.306,
+          0.846
+        ],
+        [
+          0.313,
+          0.853
+        ],
+        [
+          0.321,
+          0.861
+        ],
+        [
+          0.312,
+          0.868
+        ],
+        [
+          0.294,
+          0.87
+        ],
+        [
+          0.277,
+          0.867
+        ],
+        [
+          0.268,
+          0.86
+        ],
+        [
+          0.276,
+          0.853
+        ],
+        [
+          0.281,
+          0.846
+        ],
+        [
+          0.281,
+          0.836
+        ],
+        [
+          0.286,
+          0.829
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Small circular pin near bottom-left-center carrying a vivid blue person silhouette."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "diagonal-blue-slit",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.118,
+        "y": 0.609,
+        "w": 0.239,
+        "h": 0.251
+      },
+      "polygon": [
+        [
+          0.118,
+          0.847
+        ],
+        [
+          0.119,
+          0.858
+        ],
+        [
+          0.129,
+          0.843
+        ],
+        [
+          0.161,
+          0.801
+        ],
+        [
+          0.199,
+          0.754
+        ],
+        [
+          0.24,
+          0.709
+        ],
+        [
+          0.283,
+          0.665
+        ],
+        [
+          0.331,
+          0.623
+        ],
+        [
+          0.356,
+          0.609
+        ],
+        [
+          0.346,
+          0.627
+        ],
+        [
+          0.303,
+          0.669
+        ],
+        [
+          0.262,
+          0.711
+        ],
+        [
+          0.224,
+          0.756
+        ],
+        [
+          0.187,
+          0.802
+        ],
+        [
+          0.153,
+          0.844
+        ],
+        [
+          0.13,
+          0.862
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Sharp diagonal torn edge at lower left with a bright blue exposed layer running along the cut."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "right-torn-black-tile",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.84,
+        "y": 0.354,
+        "w": 0.118,
+        "h": 0.161
+      },
+      "polygon": [
+        [
+          0.863,
+          0.354
+        ],
+        [
+          0.929,
+          0.354
+        ],
+        [
+          0.942,
+          0.361
+        ],
+        [
+          0.949,
+          0.378
+        ],
+        [
+          0.955,
+          0.398
+        ],
+        [
+          0.958,
+          0.423
+        ],
+        [
+          0.954,
+          0.45
+        ],
+        [
+          0.941,
+          0.486
+        ],
+        [
+          0.928,
+          0.508
+        ],
+        [
+          0.905,
+          0.515
+        ],
+        [
+          0.863,
+          0.514
+        ],
+        [
+          0.846,
+          0.507
+        ],
+        [
+          0.84,
+          0.493
+        ],
+        [
+          0.84,
+          0.377
+        ],
+        [
+          0.846,
+          0.362
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Small black rounded tile at right with a visibly ragged pale torn edge on its right side."
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "bottom-text-plaque",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.459,
+        "y": 0.729,
+        "w": 0.333,
+        "h": 0.214
+      },
+      "polygon": [
+        [
+          0.484,
+          0.729
+        ],
+        [
+          0.776,
+          0.729
+        ],
+        [
+          0.783,
+          0.748
+        ],
+        [
+          0.79,
+          0.779
+        ],
+        [
+          0.785,
+          0.821
+        ],
+        [
+          0.793,
+          0.872
+        ],
+        [
+          0.785,
+          0.916
+        ],
+        [
+          0.77,
+          0.941
+        ],
+        [
+          0.491,
+          0.942
+        ],
+        [
+          0.471,
+          0.936
+        ],
+        [
+          0.462,
+          0.921
+        ],
+        [
+          0.459,
+          0.751
+        ],
+        [
+          0.467,
+          0.737
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Lower raised white rounded rectangular plaque containing four dark horizontal text bars and a torn right edge."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "grey-avatar-pin",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.895,
+        "y": 0.704,
+        "w": 0.057,
+        "h": 0.049
+      },
+      "polygon": [
+        [
+          0.919,
+          0.704
+        ],
+        [
+          0.929,
+          0.707
+        ],
+        [
+          0.935,
+          0.715
+        ],
+        [
+          0.934,
+          0.727
+        ],
+        [
+          0.941,
+          0.735
+        ],
+        [
+          0.952,
+          0.742
+        ],
+        [
+          0.945,
+          0.751
+        ],
+        [
+          0.925,
+          0.753
+        ],
+        [
+          0.906,
+          0.749
+        ],
+        [
+          0.895,
+          0.742
+        ],
+        [
+          0.905,
+          0.735
+        ],
+        [
+          0.91,
+          0.727
+        ],
+        [
+          0.909,
+          0.716
+        ],
+        [
+          0.913,
+          0.708
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Small round pin on the right carrying a dark grey person silhouette attached by a thin vertical line."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.579,
+    "rationale": "The plate is spare and expressionist: a few large paper cuts dominate, with small pins, seams, and text bars providing legible source windows without crowding the field."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-12-provenance-card-cutaway-v1"
+}

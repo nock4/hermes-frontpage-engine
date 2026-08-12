@@ -1,0 +1,1684 @@
+{
+  "artifact_map_id": "map-2026-08-12-provenance-card-cutaway-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "provenance-card-cutaway",
+  "default_artifact_id": "hero-primary-source-anchor",
+  "artifacts": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "label": "Primary Source Anchor",
+      "artifact_type": "torn-radial-convergence",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.2703,
+        "h": 0.2568
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0016,
+          0.0016
+        ],
+        [
+          0.2671,
+          0.0016
+        ],
+        [
+          0.264,
+          0.1348
+        ],
+        [
+          0.2464,
+          0.1786
+        ],
+        [
+          0.2089,
+          0.2217
+        ],
+        [
+          0.1762,
+          0.2416
+        ],
+        [
+          0.1316,
+          0.2536
+        ],
+        [
+          0.0016,
+          0.2536
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/hero-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          206,
+          110
+        ],
+        "safe_stage_window_origin_px": [
+          239,
+          131
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0016,
+            0.0016
+          ],
+          [
+            0.2671,
+            0.0016
+          ],
+          [
+            0.264,
+            0.1348
+          ],
+          [
+            0.2464,
+            0.1786
+          ],
+          [
+            0.2089,
+            0.2217
+          ],
+          [
+            0.1762,
+            0.2416
+          ],
+          [
+            0.1316,
+            0.2536
+          ],
+          [
+            0.0016,
+            0.2536
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2935,
+            0.0016
+          ],
+          [
+            0.2911,
+            0.1356
+          ],
+          [
+            0.2727,
+            0.1778
+          ],
+          [
+            0.2081,
+            0.2488
+          ],
+          [
+            0.1754,
+            0.2679
+          ],
+          [
+            0.1316,
+            0.2807
+          ],
+          [
+            0.0,
+            0.2791
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.2943,
+          "h": 0.2815
+        },
+        "territory_area_px": 117464,
+        "visible_area_px": 97211,
+        "expansion_ratio": 1.208,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "label": "Secondary Source Anchor",
+      "artifact_type": "central-cut-letterform",
+      "bounds": {
+        "x": 0.257,
+        "y": 0.238,
+        "w": 0.553,
+        "h": 0.486
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.257,
+          0.238
+        ],
+        [
+          0.81,
+          0.238
+        ],
+        [
+          0.81,
+          0.724
+        ],
+        [
+          0.257,
+          0.724
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/hero-secondary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-secondary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          819,
+          453
+        ],
+        "safe_stage_window_origin_px": [
+          887,
+          493
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.257,
+            0.238
+          ],
+          [
+            0.81,
+            0.238
+          ],
+          [
+            0.81,
+            0.724
+          ],
+          [
+            0.257,
+            0.724
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2297,
+            0.2376
+          ],
+          [
+            0.2568,
+            0.2105
+          ],
+          [
+            0.8094,
+            0.2105
+          ],
+          [
+            0.8365,
+            0.2376
+          ],
+          [
+            0.8365,
+            0.7233
+          ],
+          [
+            0.8094,
+            0.7504
+          ],
+          [
+            0.2608,
+            0.7504
+          ],
+          [
+            0.2297,
+            0.685
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2297,
+          "y": 0.2105,
+          "w": 0.6077,
+          "h": 0.5407
+        },
+        "territory_area_px": 415063,
+        "visible_area_px": 423340,
+        "expansion_ratio": 0.98,
+        "neighbors": [
+          {
+            "artifact_id": "module-distributed-marker-2",
+            "shared_edge_px": 60999,
+            "direction": "left",
+            "distance_px": 218.6
+          },
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 3607,
+            "direction": "up",
+            "distance_px": 391.97
+          },
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 2965,
+            "direction": "down",
+            "distance_px": 459.77
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 2247,
+            "direction": "left",
+            "distance_px": 476.16
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "top-right-folded-plaque",
+      "bounds": {
+        "x": 0.522,
+        "y": 0.079,
+        "w": 0.348,
+        "h": 0.248
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.542,
+          0.079
+        ],
+        [
+          0.675,
+          0.079
+        ],
+        [
+          0.708,
+          0.188
+        ],
+        [
+          0.737,
+          0.246
+        ],
+        [
+          0.867,
+          0.267
+        ],
+        [
+          0.868,
+          0.299
+        ],
+        [
+          0.861,
+          0.316
+        ],
+        [
+          0.846,
+          0.326
+        ],
+        [
+          0.656,
+          0.326
+        ],
+        [
+          0.641,
+          0.318
+        ],
+        [
+          0.631,
+          0.298
+        ],
+        [
+          0.606,
+          0.241
+        ],
+        [
+          0.541,
+          0.233
+        ],
+        [
+          0.526,
+          0.221
+        ],
+        [
+          0.522,
+          0.199
+        ],
+        [
+          0.522,
+          0.101
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1069,
+          188
+        ],
+        "safe_stage_window_origin_px": [
+          1112,
+          208
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.542,
+            0.079
+          ],
+          [
+            0.675,
+            0.079
+          ],
+          [
+            0.708,
+            0.188
+          ],
+          [
+            0.737,
+            0.246
+          ],
+          [
+            0.867,
+            0.267
+          ],
+          [
+            0.868,
+            0.299
+          ],
+          [
+            0.861,
+            0.316
+          ],
+          [
+            0.846,
+            0.326
+          ],
+          [
+            0.656,
+            0.326
+          ],
+          [
+            0.641,
+            0.318
+          ],
+          [
+            0.631,
+            0.298
+          ],
+          [
+            0.606,
+            0.241
+          ],
+          [
+            0.541,
+            0.233
+          ],
+          [
+            0.526,
+            0.221
+          ],
+          [
+            0.522,
+            0.199
+          ],
+          [
+            0.522,
+            0.101
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4992,
+            0.1005
+          ],
+          [
+            0.5415,
+            0.0566
+          ],
+          [
+            0.6746,
+            0.0566
+          ],
+          [
+            0.8892,
+            0.2663
+          ],
+          [
+            0.89,
+            0.2831
+          ],
+          [
+            0.8828,
+            0.3158
+          ],
+          [
+            0.8684,
+            0.3301
+          ],
+          [
+            0.8341,
+            0.3477
+          ],
+          [
+            0.6555,
+            0.3477
+          ],
+          [
+            0.5263,
+            0.244
+          ],
+          [
+            0.5032,
+            0.2209
+          ],
+          [
+            0.4992,
+            0.2002
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4992,
+          "y": 0.0566,
+          "w": 0.3915,
+          "h": 0.2919
+        },
+        "territory_area_px": 109560,
+        "visible_area_px": 73661,
+        "expansion_ratio": 1.487,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 3607,
+            "direction": "down",
+            "distance_px": 391.97
+          },
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 294,
+            "direction": "right",
+            "distance_px": 393.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "blue-avatar-pin",
+      "bounds": {
+        "x": 0.268,
+        "y": 0.827,
+        "w": 0.053,
+        "h": 0.043
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.294,
+          0.827
+        ],
+        [
+          0.303,
+          0.829
+        ],
+        [
+          0.307,
+          0.836
+        ],
+        [
+          0.306,
+          0.846
+        ],
+        [
+          0.313,
+          0.853
+        ],
+        [
+          0.321,
+          0.861
+        ],
+        [
+          0.312,
+          0.868
+        ],
+        [
+          0.294,
+          0.87
+        ],
+        [
+          0.277,
+          0.867
+        ],
+        [
+          0.268,
+          0.86
+        ],
+        [
+          0.276,
+          0.853
+        ],
+        [
+          0.281,
+          0.846
+        ],
+        [
+          0.281,
+          0.836
+        ],
+        [
+          0.286,
+          0.829
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          452,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          459,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.294,
+            0.827
+          ],
+          [
+            0.303,
+            0.829
+          ],
+          [
+            0.307,
+            0.836
+          ],
+          [
+            0.306,
+            0.846
+          ],
+          [
+            0.313,
+            0.853
+          ],
+          [
+            0.321,
+            0.861
+          ],
+          [
+            0.312,
+            0.868
+          ],
+          [
+            0.294,
+            0.87
+          ],
+          [
+            0.277,
+            0.867
+          ],
+          [
+            0.268,
+            0.86
+          ],
+          [
+            0.276,
+            0.853
+          ],
+          [
+            0.281,
+            0.846
+          ],
+          [
+            0.281,
+            0.836
+          ],
+          [
+            0.286,
+            0.829
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2456,
+            0.8596
+          ],
+          [
+            0.2624,
+            0.8293
+          ],
+          [
+            0.2855,
+            0.8062
+          ],
+          [
+            0.3022,
+            0.8062
+          ],
+          [
+            0.3254,
+            0.8293
+          ],
+          [
+            0.3429,
+            0.8604
+          ],
+          [
+            0.3118,
+            0.89
+          ],
+          [
+            0.2767,
+            0.8892
+          ],
+          [
+            0.2695,
+            0.8836
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2456,
+          "y": 0.8046,
+          "w": 0.0981,
+          "h": 0.0877
+        },
+        "territory_area_px": 8397,
+        "visible_area_px": 2119,
+        "expansion_ratio": 3.963,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "diagonal-blue-slit",
+      "bounds": {
+        "x": 0.118,
+        "y": 0.609,
+        "w": 0.239,
+        "h": 0.251
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.118,
+          0.847
+        ],
+        [
+          0.119,
+          0.858
+        ],
+        [
+          0.129,
+          0.843
+        ],
+        [
+          0.161,
+          0.801
+        ],
+        [
+          0.199,
+          0.754
+        ],
+        [
+          0.24,
+          0.709
+        ],
+        [
+          0.283,
+          0.665
+        ],
+        [
+          0.331,
+          0.623
+        ],
+        [
+          0.356,
+          0.609
+        ],
+        [
+          0.346,
+          0.627
+        ],
+        [
+          0.303,
+          0.669
+        ],
+        [
+          0.262,
+          0.711
+        ],
+        [
+          0.224,
+          0.756
+        ],
+        [
+          0.187,
+          0.802
+        ],
+        [
+          0.153,
+          0.844
+        ],
+        [
+          0.13,
+          0.862
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          365,
+          732
+        ],
+        "safe_stage_window_origin_px": [
+          394,
+          752
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.118,
+            0.847
+          ],
+          [
+            0.119,
+            0.858
+          ],
+          [
+            0.129,
+            0.843
+          ],
+          [
+            0.161,
+            0.801
+          ],
+          [
+            0.199,
+            0.754
+          ],
+          [
+            0.24,
+            0.709
+          ],
+          [
+            0.283,
+            0.665
+          ],
+          [
+            0.331,
+            0.623
+          ],
+          [
+            0.356,
+            0.609
+          ],
+          [
+            0.346,
+            0.627
+          ],
+          [
+            0.303,
+            0.669
+          ],
+          [
+            0.262,
+            0.711
+          ],
+          [
+            0.224,
+            0.756
+          ],
+          [
+            0.187,
+            0.802
+          ],
+          [
+            0.153,
+            0.844
+          ],
+          [
+            0.13,
+            0.862
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0853,
+            0.8469
+          ],
+          [
+            0.2185,
+            0.697
+          ],
+          [
+            0.3278,
+            0.5933
+          ],
+          [
+            0.3525,
+            0.5789
+          ],
+          [
+            0.3836,
+            0.6156
+          ],
+          [
+            0.1858,
+            0.8421
+          ],
+          [
+            0.1324,
+            0.8915
+          ],
+          [
+            0.1188,
+            0.8892
+          ],
+          [
+            0.0869,
+            0.8573
+          ],
+          [
+            0.0853,
+            0.8493
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0853,
+          "y": 0.5789,
+          "w": 0.299,
+          "h": 0.315
+        },
+        "territory_area_px": 39542,
+        "visible_area_px": 9532,
+        "expansion_ratio": 4.148,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 2247,
+            "direction": "right",
+            "distance_px": 476.16
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "right-torn-black-tile",
+      "bounds": {
+        "x": 0.8373,
+        "y": 0.3509,
+        "w": 0.1156,
+        "h": 0.1643
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.8397,
+          0.3708
+        ],
+        [
+          0.8445,
+          0.3612
+        ],
+        [
+          0.8573,
+          0.3533
+        ],
+        [
+          0.9242,
+          0.3533
+        ],
+        [
+          0.933,
+          0.3573
+        ],
+        [
+          0.9482,
+          0.3907
+        ],
+        [
+          0.9498,
+          0.4378
+        ],
+        [
+          0.9466,
+          0.4785
+        ],
+        [
+          0.933,
+          0.508
+        ],
+        [
+          0.9242,
+          0.512
+        ],
+        [
+          0.8517,
+          0.5112
+        ],
+        [
+          0.8397,
+          0.4992
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          432
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          445
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.8397,
+            0.3708
+          ],
+          [
+            0.8445,
+            0.3612
+          ],
+          [
+            0.8573,
+            0.3533
+          ],
+          [
+            0.9242,
+            0.3533
+          ],
+          [
+            0.933,
+            0.3573
+          ],
+          [
+            0.9482,
+            0.3907
+          ],
+          [
+            0.9498,
+            0.4378
+          ],
+          [
+            0.9466,
+            0.4785
+          ],
+          [
+            0.933,
+            0.508
+          ],
+          [
+            0.9242,
+            0.512
+          ],
+          [
+            0.8517,
+            0.5112
+          ],
+          [
+            0.8397,
+            0.4992
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8166,
+            0.37
+          ],
+          [
+            0.8445,
+            0.3381
+          ],
+          [
+            0.8573,
+            0.3309
+          ],
+          [
+            0.9234,
+            0.3309
+          ],
+          [
+            0.9545,
+            0.3573
+          ],
+          [
+            0.9705,
+            0.3892
+          ],
+          [
+            0.9721,
+            0.4266
+          ],
+          [
+            0.9689,
+            0.4793
+          ],
+          [
+            0.9545,
+            0.508
+          ],
+          [
+            0.929,
+            0.5319
+          ],
+          [
+            0.8517,
+            0.5335
+          ],
+          [
+            0.8166,
+            0.4984
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8166,
+          "y": 0.3309,
+          "w": 0.1563,
+          "h": 0.2041
+        },
+        "territory_area_px": 44241,
+        "visible_area_px": 26125,
+        "expansion_ratio": 1.693,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 1311,
+            "direction": "left",
+            "distance_px": 479.26
+          },
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 294,
+            "direction": "left",
+            "distance_px": 393.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "bottom-text-plaque",
+      "bounds": {
+        "x": 0.459,
+        "y": 0.729,
+        "w": 0.333,
+        "h": 0.214
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.484,
+          0.729
+        ],
+        [
+          0.776,
+          0.729
+        ],
+        [
+          0.783,
+          0.748
+        ],
+        [
+          0.79,
+          0.779
+        ],
+        [
+          0.785,
+          0.821
+        ],
+        [
+          0.793,
+          0.872
+        ],
+        [
+          0.785,
+          0.916
+        ],
+        [
+          0.77,
+          0.941
+        ],
+        [
+          0.491,
+          0.942
+        ],
+        [
+          0.471,
+          0.936
+        ],
+        [
+          0.462,
+          0.921
+        ],
+        [
+          0.459,
+          0.751
+        ],
+        [
+          0.467,
+          0.737
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          961,
+          839
+        ],
+        "safe_stage_window_origin_px": [
+          1002,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.484,
+            0.729
+          ],
+          [
+            0.776,
+            0.729
+          ],
+          [
+            0.783,
+            0.748
+          ],
+          [
+            0.79,
+            0.779
+          ],
+          [
+            0.785,
+            0.821
+          ],
+          [
+            0.793,
+            0.872
+          ],
+          [
+            0.785,
+            0.916
+          ],
+          [
+            0.77,
+            0.941
+          ],
+          [
+            0.491,
+            0.942
+          ],
+          [
+            0.471,
+            0.936
+          ],
+          [
+            0.462,
+            0.921
+          ],
+          [
+            0.459,
+            0.751
+          ],
+          [
+            0.467,
+            0.737
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4362,
+            0.7504
+          ],
+          [
+            0.4665,
+            0.7145
+          ],
+          [
+            0.4833,
+            0.7065
+          ],
+          [
+            0.7759,
+            0.7065
+          ],
+          [
+            0.7982,
+            0.7289
+          ],
+          [
+            0.807,
+            0.756
+          ],
+          [
+            0.815,
+            0.8692
+          ],
+          [
+            0.807,
+            0.9155
+          ],
+          [
+            0.7927,
+            0.9402
+          ],
+          [
+            0.7695,
+            0.9633
+          ],
+          [
+            0.4904,
+            0.9641
+          ],
+          [
+            0.4705,
+            0.9577
+          ],
+          [
+            0.4394,
+            0.9203
+          ],
+          [
+            0.4362,
+            0.7711
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4362,
+          "y": 0.7065,
+          "w": 0.3796,
+          "h": 0.2584
+        },
+        "territory_area_px": 146097,
+        "visible_area_px": 108689,
+        "expansion_ratio": 1.344,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 2965,
+            "direction": "up",
+            "distance_px": 459.77
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "grey-avatar-pin",
+      "bounds": {
+        "x": 0.895,
+        "y": 0.704,
+        "w": 0.057,
+        "h": 0.049
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.919,
+          0.704
+        ],
+        [
+          0.929,
+          0.707
+        ],
+        [
+          0.935,
+          0.715
+        ],
+        [
+          0.934,
+          0.727
+        ],
+        [
+          0.941,
+          0.735
+        ],
+        [
+          0.952,
+          0.742
+        ],
+        [
+          0.945,
+          0.751
+        ],
+        [
+          0.925,
+          0.753
+        ],
+        [
+          0.906,
+          0.749
+        ],
+        [
+          0.895,
+          0.742
+        ],
+        [
+          0.905,
+          0.735
+        ],
+        [
+          0.91,
+          0.727
+        ],
+        [
+          0.909,
+          0.716
+        ],
+        [
+          0.913,
+          0.708
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          742
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          746
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.919,
+            0.704
+          ],
+          [
+            0.929,
+            0.707
+          ],
+          [
+            0.935,
+            0.715
+          ],
+          [
+            0.934,
+            0.727
+          ],
+          [
+            0.941,
+            0.735
+          ],
+          [
+            0.952,
+            0.742
+          ],
+          [
+            0.945,
+            0.751
+          ],
+          [
+            0.925,
+            0.753
+          ],
+          [
+            0.906,
+            0.749
+          ],
+          [
+            0.895,
+            0.742
+          ],
+          [
+            0.905,
+            0.735
+          ],
+          [
+            0.91,
+            0.727
+          ],
+          [
+            0.909,
+            0.716
+          ],
+          [
+            0.913,
+            0.708
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8724,
+            0.7416
+          ],
+          [
+            0.89,
+            0.7073
+          ],
+          [
+            0.9171,
+            0.6818
+          ],
+          [
+            0.9282,
+            0.6842
+          ],
+          [
+            0.9553,
+            0.7121
+          ],
+          [
+            0.9737,
+            0.7416
+          ],
+          [
+            0.945,
+            0.7727
+          ],
+          [
+            0.9242,
+            0.7751
+          ],
+          [
+            0.8947,
+            0.764
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8724,
+          "y": 0.681,
+          "w": 0.1021,
+          "h": 0.0949
+        },
+        "territory_area_px": 9211,
+        "visible_area_px": 2432,
+        "expansion_ratio": 3.787,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "provenance-card-cutaway",
+      "mask_path": "/editions/2026-08-12-provenance-card-cutaway-v1/assets/masks/module-distributed-marker-2.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2576,
+            0.3397
+          ],
+          [
+            0.2799,
+            0.3174
+          ],
+          [
+            0.4394,
+            0.3174
+          ],
+          [
+            0.4617,
+            0.3397
+          ],
+          [
+            0.4617,
+            0.4067
+          ],
+          [
+            0.4219,
+            0.512
+          ],
+          [
+            0.2799,
+            0.512
+          ],
+          [
+            0.2576,
+            0.4896
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2576,
+          "y": 0.3174,
+          "w": 0.2049,
+          "h": 0.1954
+        },
+        "territory_area_px": 58377,
+        "visible_area_px": 37989,
+        "expansion_ratio": 1.537,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 60999,
+            "direction": "right",
+            "distance_px": 218.6
+          }
+        ]
+      }
+    }
+  ]
+}
