@@ -330,6 +330,22 @@ function bestTweetMedia(tweet) {
   return { media_url: null, media_type: null, image_url: null }
 }
 
+function tweetProviderFallback(candidate, classification, reason = 'fxtwitter-unavailable') {
+  return {
+    ...candidate,
+    ...classification,
+    source_url: candidate?.url || null,
+    final_url: candidate?.url || null,
+    title: candidate?.note_title || candidate?.url || 'Tweet source',
+    description: candidate?.note_title || '',
+    image_url: null,
+    media_url: null,
+    media_type: null,
+    fetch_status: `tweet-provider-fallback:${reason}`,
+    tweet_media_count: 0,
+  }
+}
+
 async function inspectTweetWithFxtwitter(candidate, classification) {
   const endpoint = fxtwitterApiUrl(candidate.url)
   if (!endpoint) return null
@@ -571,6 +587,8 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
   if (isTweetStatusUrl(candidate.url)) {
     const tweetSource = await inspectTweetWithFxtwitter(candidate, classification)
     if (tweetSource?.image_url) return tweetSource
+    if (tweetSource) return tweetSource
+    return tweetProviderFallback(candidate, classification)
   }
 
   const fetchable = await resolveFetchableHtmlUrl(candidate.url, { lookup: dns.lookup })

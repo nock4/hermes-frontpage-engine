@@ -144,6 +144,7 @@ export function isLowValueVisualImage(imageUrl) {
     || lower.includes('/support/title/')
     || lower.endsWith('/title.gif')
     || /(?:^|[/_\-.])icon(?:[/_\-.]|$)/.test(lower)
+    || /^github\.com\/[^/?#]+\.png(?:\?|$)/.test(lower)
     || lower.includes('githubassets.com')
     || lower.includes('opengraph.githubassets.com')
 }

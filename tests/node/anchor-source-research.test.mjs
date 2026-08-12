@@ -59,6 +59,36 @@ describe('anchor-source-research', () => {
     expect(anchor.anchor_alternates[0].lane).toBe('ai-tooling-penalized')
   })
 
+  it('selects recent poster/art posts over lower-scoring AI tooling when tweet media is not pre-enriched', () => {
+    const anchor = selectAnchorSource([
+      {
+        url: 'https://x.com/bakigulai/status/2085977214365896731',
+        source_channel: 'twitter-bookmark',
+        source_type: 'tweet',
+        window_type: 'social',
+        title: '@bakigulai: AI agent’lar için açık kaynak Palantir yapmışlar: Semantica',
+        description: 'AI agents knowledge graph open source Palantir GitHub Semantica decision intelligence provenance',
+        note_score: 242,
+        fetch_status: 'tweet-provider-fallback:fxtwitter-unavailable',
+        embed_strategy: 'native-iframe-or-media-first',
+      },
+      {
+        url: 'https://x.com/hollycurates/status/2086982189741195578',
+        source_channel: 'twitter-bookmark',
+        source_type: 'tweet',
+        window_type: 'social',
+        title: '@hollycurates: posters by Ken White for IBM',
+        description: 'posters art design artist IBM graphic archive visual culture',
+        note_score: 248,
+        fetch_status: 'tweet-provider-fallback:fxtwitter-unavailable',
+        embed_strategy: 'native-iframe-or-media-first',
+      },
+    ])
+
+    expect(anchor.url).toBe('https://x.com/hollycurates/status/2086982189741195578')
+    expect(anchor.anchor_selection_lane).toBe('artwork-first')
+  })
+
   it('builds aesthetic expansion queries from the anchor', () => {
     const queries = buildAnchorQueries({ title: 'surreal claymation music video masks' }, ['claymation', 'mask', 'ambient'])
     const joined = queries.join(' ')

@@ -88,7 +88,7 @@ function isAiToolingAnchor(source) {
 function isArtworkAnchor(source) {
   const text = sourceText(source).toLowerCase()
   const url = String(source?.url || source?.source_url || source?.final_url || '').toLowerCase()
-  const artworkLanguage = /\b(artist|artwork|drawings?|painting|paintings|gallery|museum|ceramics?|sculpture|collage|illustration|photography|photo|poster|print|zine|comic|textile|fashion|installation|exhibition|archivepilled|compositioning|monet|jans muskee)\b/.test(text)
+  const artworkLanguage = /\b(artist|artwork|drawings?|painting|paintings|gallery|museum|ceramics?|sculpture|collage|illustration|photography|photo|posters?|prints?|zine|comic|textile|fashion|installation|exhibition|graphic design|visual culture|archivepilled|compositioning|hollycurates|monet|jans muskee|ken white)\b/.test(text)
   const visualHost = /\b(arts?|gallery|museum|wikiart|nga\.gov|moma|metmuseum|artsy|pbs\.twimg\.com|instagram\.com|x\.com)\b/.test(url)
   const hasSurface = sourceHasRenderableCardSurface(source) || (source.image_url && !isLowValueVisualImage(source.image_url))
   return hasSurface && artworkLanguage && !isAiToolingAnchor(source) && (visualHost || source.source_channel === 'twitter-bookmark')
