@@ -523,6 +523,7 @@ except Exception as exc:
 }
 
 export async function inspectWithFetch(candidate, fetchable, classification) {
+  const videoId = youtubeId(candidate?.url) || youtubeId(fetchable)
   try {
     const response = await fetchVettedRemoteUrl(fetchable, {
       lookup: dns.lookup,
@@ -559,11 +560,23 @@ export async function inspectWithFetch(candidate, fetchable, classification) {
       final_url: fetchable,
       title,
       description,
-      image_url: absoluteUrl(image, fetchable),
+      image_url: absoluteUrl(image, fetchable) || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
       source_embed_html: bandcampEmbedHtml || undefined,
       fetch_status: response.ok ? 'fetch-ok' : `fetch-http-${response.status}`,
     }
   } catch (error) {
+    if (videoId) {
+      return {
+        ...candidate,
+        ...classification,
+        source_url: candidate.url,
+        final_url: fetchable,
+        title: candidate.note_title,
+        description: '',
+        image_url: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+        fetch_status: `fetch-error-youtube-thumbnail-fallback: ${error.message}`,
+      }
+    }
     return {
       ...candidate,
       ...classification,

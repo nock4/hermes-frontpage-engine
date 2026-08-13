@@ -181,6 +181,27 @@ describe('source inspection', () => {
     })
   })
 
+  it('keeps YouTube videos renderable when the watch page exceeds the HTML byte cap', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => {
+      throw new Error('Response exceeded 1000001 bytes')
+    }))
+
+    const source = await inspectWithFetch(
+      {
+        url: 'https://www.youtube.com/watch?v=CmrUK_26Xj0',
+        note_title: 'Yuzuru Syogase ‎- 1983-85 (Full Cassette)',
+      },
+      'https://www.youtube.com/watch?v=CmrUK_26Xj0',
+      { source_type: 'youtube', window_type: 'video', kind: 'video' },
+    )
+
+    expect(source).toMatchObject({
+      title: 'Yuzuru Syogase ‎- 1983-85 (Full Cassette)',
+      image_url: 'https://img.youtube.com/vi/CmrUK_26Xj0/hqdefault.jpg',
+      fetch_status: expect.stringContaining('fetch-error-youtube-thumbnail-fallback:'),
+    })
+  })
+
   it('bounds whole source inspection so a hung fetch cannot stall source research', async () => {
     vi.stubGlobal('fetch', vi.fn(() => new Promise(() => {})))
 

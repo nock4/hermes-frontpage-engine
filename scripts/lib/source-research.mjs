@@ -36,7 +36,7 @@ const autoresearchCandidateMultiplier = 4
 // source-material dedupe. High-score recent YouTube and emergency seeds can all be
 // repeats; visually fertile artwork/bookmark material may sit lower in the ranked
 // field and still be the difference between 2 windows and a real 6-window edition.
-const maxAutoresearchCandidates = 80
+const maxAutoresearchCandidates = 160
 
 function isSingleAnchorResearchEnabled() {
   return process.env.DFE_SINGLE_ANCHOR_RESEARCH !== '0'
