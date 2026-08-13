@@ -1,0 +1,556 @@
+{
+  "analysis_id": "analysis-2026-08-13-clinamen-basin-section-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A sectional installation plate: a glowing oval diffuser hangs under exposed trusses, while turquoise basin cuts, ceramic bowls, torn seams, screw holes, masonry bands, and ragged vertical tears form the usable source-window anchors.",
+  "usable_surfaces": [
+    "large glowing oval diffuser underside",
+    "dominant turquoise basin plane",
+    "rear cropped turquoise pool cut",
+    "black truss joint and clipped rigging notch",
+    "tan plywood rim screw hole",
+    "irregular pale splash around ceramic bowl",
+    "ragged torn rim sliver",
+    "small ceiling listening vent",
+    "terracotta masonry counter-band"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero overhead milky diffuser disk",
+      "artifact_type": "hero-scale-ceiling-disk",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.094,
+        "y": 0.254,
+        "w": 0.861,
+        "h": 0.213
+      },
+      "polygon": [
+        [
+          0.107,
+          0.355
+        ],
+        [
+          0.143,
+          0.316
+        ],
+        [
+          0.235,
+          0.285
+        ],
+        [
+          0.365,
+          0.262
+        ],
+        [
+          0.519,
+          0.257
+        ],
+        [
+          0.682,
+          0.267
+        ],
+        [
+          0.825,
+          0.302
+        ],
+        [
+          0.927,
+          0.357
+        ],
+        [
+          0.952,
+          0.408
+        ],
+        [
+          0.907,
+          0.448
+        ],
+        [
+          0.784,
+          0.465
+        ],
+        [
+          0.619,
+          0.467
+        ],
+        [
+          0.449,
+          0.462
+        ],
+        [
+          0.281,
+          0.447
+        ],
+        [
+          0.155,
+          0.413
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "dominant luminous oval underside with dark circular rim, granular milky texture, and cloud-like light inside the disk"
+    },
+    {
+      "label": "hero cropped turquoise basin field",
+      "artifact_type": "hero-scale-basin-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.587,
+        "w": 1,
+        "h": 0.335
+      },
+      "polygon": [
+        [
+          0,
+          0.638
+        ],
+        [
+          0.143,
+          0.613
+        ],
+        [
+          0.309,
+          0.596
+        ],
+        [
+          0.518,
+          0.589
+        ],
+        [
+          0.744,
+          0.592
+        ],
+        [
+          0.928,
+          0.608
+        ],
+        [
+          1,
+          0.626
+        ],
+        [
+          1,
+          0.814
+        ],
+        [
+          0.923,
+          0.867
+        ],
+        [
+          0.748,
+          0.905
+        ],
+        [
+          0.529,
+          0.921
+        ],
+        [
+          0.302,
+          0.91
+        ],
+        [
+          0.109,
+          0.871
+        ],
+        [
+          0,
+          0.812
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "large cropped turquoise water/basin plane bounded by tan circular plywood rim and interrupted by cracks, bowls, and spill marks"
+    },
+    {
+      "label": "black truss joint aperture",
+      "artifact_type": "ceiling-truss-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.753,
+        "y": 0.082,
+        "w": 0.143,
+        "h": 0.137
+      },
+      "polygon": [
+        [
+          0.786,
+          0.084
+        ],
+        [
+          0.829,
+          0.103
+        ],
+        [
+          0.875,
+          0.132
+        ],
+        [
+          0.895,
+          0.169
+        ],
+        [
+          0.878,
+          0.206
+        ],
+        [
+          0.83,
+          0.218
+        ],
+        [
+          0.789,
+          0.195
+        ],
+        [
+          0.759,
+          0.159
+        ],
+        [
+          0.753,
+          0.124
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "black diagonal truss joint with glossy clipped brackets and small pale bolt/chip marks near the upper right ceiling grid"
+    },
+    {
+      "label": "bottom ceramic splash bowl",
+      "artifact_type": "collision-bowl-spill",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.322,
+        "y": 0.736,
+        "w": 0.379,
+        "h": 0.151
+      },
+      "polygon": [
+        [
+          0.467,
+          0.737
+        ],
+        [
+          0.506,
+          0.751
+        ],
+        [
+          0.541,
+          0.744
+        ],
+        [
+          0.57,
+          0.761
+        ],
+        [
+          0.611,
+          0.757
+        ],
+        [
+          0.625,
+          0.784
+        ],
+        [
+          0.681,
+          0.799
+        ],
+        [
+          0.653,
+          0.822
+        ],
+        [
+          0.697,
+          0.855
+        ],
+        [
+          0.626,
+          0.856
+        ],
+        [
+          0.599,
+          0.879
+        ],
+        [
+          0.534,
+          0.868
+        ],
+        [
+          0.481,
+          0.886
+        ],
+        [
+          0.43,
+          0.859
+        ],
+        [
+          0.362,
+          0.856
+        ],
+        [
+          0.386,
+          0.821
+        ],
+        [
+          0.323,
+          0.802
+        ],
+        [
+          0.399,
+          0.779
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "irregular pale plaster-like splash cloud radiating cracks around the large white ceramic bowl near the lower center"
+    },
+    {
+      "label": "mixtape archive sliver in rim",
+      "artifact_type": "cassette-tracklist-slit",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.734,
+        "y": 0.873,
+        "w": 0.073,
+        "h": 0.082
+      },
+      "polygon": [
+        [
+          0.761,
+          0.873
+        ],
+        [
+          0.787,
+          0.884
+        ],
+        [
+          0.807,
+          0.907
+        ],
+        [
+          0.801,
+          0.931
+        ],
+        [
+          0.78,
+          0.955
+        ],
+        [
+          0.748,
+          0.947
+        ],
+        [
+          0.736,
+          0.917
+        ],
+        [
+          0.734,
+          0.891
+        ]
+      ],
+      "confidence": 0.69,
+      "visual_evidence": "ragged pale vertical sliver and torn patch embedded in the tan front rim at a seam, visibly distinct from the smooth plywood surface"
+    },
+    {
+      "label": "upper listening node",
+      "artifact_type": "balcony-microphone-node",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.346,
+        "y": 0.175,
+        "w": 0.067,
+        "h": 0.061
+      },
+      "polygon": [
+        [
+          0.379,
+          0.175
+        ],
+        [
+          0.397,
+          0.181
+        ],
+        [
+          0.411,
+          0.196
+        ],
+        [
+          0.412,
+          0.213
+        ],
+        [
+          0.402,
+          0.228
+        ],
+        [
+          0.384,
+          0.236
+        ],
+        [
+          0.365,
+          0.232
+        ],
+        [
+          0.351,
+          0.219
+        ],
+        [
+          0.346,
+          0.201
+        ],
+        [
+          0.352,
+          0.185
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "small circular ceiling vent or listening bead with concentric dark rings on the upper architectural panel"
+    },
+    {
+      "label": "terracotta masonry counter-band",
+      "artifact_type": "masonry-strata-notch",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.434,
+        "w": 0.998,
+        "h": 0.041
+      },
+      "polygon": [
+        [
+          0,
+          0.438
+        ],
+        [
+          0.108,
+          0.446
+        ],
+        [
+          0.231,
+          0.448
+        ],
+        [
+          0.35,
+          0.454
+        ],
+        [
+          0.485,
+          0.458
+        ],
+        [
+          0.623,
+          0.459
+        ],
+        [
+          0.748,
+          0.455
+        ],
+        [
+          0.86,
+          0.447
+        ],
+        [
+          0.998,
+          0.435
+        ],
+        [
+          0.996,
+          0.462
+        ],
+        [
+          0.843,
+          0.472
+        ],
+        [
+          0.667,
+          0.475
+        ],
+        [
+          0.494,
+          0.474
+        ],
+        [
+          0.318,
+          0.467
+        ],
+        [
+          0.141,
+          0.457
+        ],
+        [
+          0,
+          0.451
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "thin brick-and-cream horizontal masonry band visible behind the diffuser, cutting across the black void and section wall"
+    },
+    {
+      "label": "upper listening node",
+      "artifact_type": "balcony-microphone-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "terracotta masonry counter-band",
+      "artifact_type": "masonry-strata-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.646,
+    "rationale": "The plate remains legible through three strong forms: glowing disk, turquoise basin, and torn vertical seam, but exposed trusses, many bowls, cracks, and rim details add enough marks to require careful tight mapping."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-13-clinamen-basin-section-v1"
+}

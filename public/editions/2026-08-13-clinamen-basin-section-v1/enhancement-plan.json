@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-13-clinamen-basin-section-v1",
+  "edition_id": "2026-08-13-clinamen-basin-section-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-13-clinamen-basin-section-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-overhead-milky-diffuser-disk",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-overhead-milky-diffuser-disk",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-ceiling-disk) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-cropped-turquoise-basin-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-cropped-turquoise-basin-field",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-basin-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-black-truss-joint-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-black-truss-joint-aperture",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ceiling-truss-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-bottom-ceramic-splash-bowl",
+      "target_kind": "artifact",
+      "artifact_id": "module-bottom-ceramic-splash-bowl",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (collision-bowl-spill) selected from interpretation."
+    },
+    {
+      "target_id": "module-mixtape-archive-sliver-in-rim",
+      "target_kind": "artifact",
+      "artifact_id": "module-mixtape-archive-sliver-in-rim",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cassette-tracklist-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-upper-listening-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-upper-listening-node",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (balcony-microphone-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-terracotta-masonry-counter-band",
+      "target_kind": "artifact",
+      "artifact_id": "module-terracotta-masonry-counter-band",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (masonry-strata-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-upper-listening-node-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-upper-listening-node-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (balcony-microphone-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-terracotta-masonry-counter-band-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-terracotta-masonry-counter-band-2",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (masonry-strata-notch) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

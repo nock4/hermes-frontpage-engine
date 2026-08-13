@@ -1,0 +1,643 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-13-clinamen-basin-section-v1",
+  "generation": "daily-process-2026-08-13T11-32-00-204Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1536
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-13T11-32-00-204Z/2026-08-13-clinamen-basin-section-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-hero-overhead-milky-diffuser-disk",
+      "visible_area_px": 218162,
+      "territory_area_px": 200022,
+      "hover_bounds": {
+        "x": 0.0732,
+        "y": 0.2344,
+        "w": 0.9121,
+        "h": 0.2272
+      },
+      "hover_polygon": [
+        [
+          0.0732,
+          0.3548
+        ],
+        [
+          0.1084,
+          0.3164
+        ],
+        [
+          0.1426,
+          0.2936
+        ],
+        [
+          0.2344,
+          0.2624
+        ],
+        [
+          0.3496,
+          0.2422
+        ],
+        [
+          0.5186,
+          0.2344
+        ],
+        [
+          0.6816,
+          0.2448
+        ],
+        [
+          0.8242,
+          0.2793
+        ],
+        [
+          0.96,
+          0.3568
+        ],
+        [
+          0.9844,
+          0.4069
+        ],
+        [
+          0.9717,
+          0.4186
+        ],
+        [
+          0.7461,
+          0.4362
+        ],
+        [
+          0.251,
+          0.4609
+        ],
+        [
+          0.1543,
+          0.4349
+        ],
+        [
+          0.1201,
+          0.4121
+        ],
+        [
+          0.0771,
+          0.36
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-terracotta-masonry-counter-band",
+          "shared_edge_px": 3819,
+          "direction": "down",
+          "distance_px": 184.02
+        },
+        {
+          "artifact_id": "module-terracotta-masonry-counter-band-2",
+          "shared_edge_px": 3147,
+          "direction": "left",
+          "distance_px": 229.61
+        },
+        {
+          "artifact_id": "module-upper-listening-node",
+          "shared_edge_px": 417,
+          "direction": "up",
+          "distance_px": 269.15
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-hero-cropped-turquoise-basin-field",
+      "visible_area_px": 455155,
+      "territory_area_px": 404117,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.5664,
+        "w": 1.0,
+        "h": 0.377
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.6152
+        ],
+        [
+          0.1426,
+          0.5905
+        ],
+        [
+          0.3086,
+          0.5736
+        ],
+        [
+          0.5176,
+          0.5664
+        ],
+        [
+          0.7432,
+          0.5697
+        ],
+        [
+          0.9277,
+          0.5853
+        ],
+        [
+          0.999,
+          0.6035
+        ],
+        [
+          0.999,
+          0.8372
+        ],
+        [
+          0.9277,
+          0.8854
+        ],
+        [
+          0.6836,
+          0.9316
+        ],
+        [
+          0.5283,
+          0.9427
+        ],
+        [
+          0.3018,
+          0.9316
+        ],
+        [
+          0.1084,
+          0.8926
+        ],
+        [
+          0.0,
+          0.834
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-bottom-ceramic-splash-bowl",
+          "shared_edge_px": 5440,
+          "direction": "down",
+          "distance_px": 178.57
+        },
+        {
+          "artifact_id": "module-upper-listening-node-2",
+          "shared_edge_px": 3549,
+          "direction": "right",
+          "distance_px": 402.06
+        },
+        {
+          "artifact_id": "module-mixtape-archive-sliver-in-rim",
+          "shared_edge_px": 222,
+          "direction": "right",
+          "distance_px": 438.16
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-black-truss-joint-aperture",
+      "visible_area_px": 19256,
+      "territory_area_px": 33984,
+      "hover_bounds": {
+        "x": 0.7256,
+        "y": 0.0658,
+        "w": 0.1973,
+        "h": 0.1706
+      },
+      "hover_polygon": [
+        [
+          0.7256,
+          0.1237
+        ],
+        [
+          0.7568,
+          0.0846
+        ],
+        [
+          0.7852,
+          0.0658
+        ],
+        [
+          0.8281,
+          0.0846
+        ],
+        [
+          0.9023,
+          0.1315
+        ],
+        [
+          0.9219,
+          0.168
+        ],
+        [
+          0.9053,
+          0.2057
+        ],
+        [
+          0.8779,
+          0.224
+        ],
+        [
+          0.8291,
+          0.2357
+        ],
+        [
+          0.7598,
+          0.194
+        ],
+        [
+          0.7314,
+          0.1589
+        ],
+        [
+          0.7256,
+          0.1263
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-bottom-ceramic-splash-bowl",
+      "visible_area_px": 50878,
+      "territory_area_px": 58213,
+      "hover_bounds": {
+        "x": 0.2949,
+        "y": 0.7734,
+        "w": 0.3975,
+        "h": 0.1309
+      },
+      "hover_polygon": [
+        [
+          0.2949,
+          0.8014
+        ],
+        [
+          0.3154,
+          0.791
+        ],
+        [
+          0.6416,
+          0.7734
+        ],
+        [
+          0.6787,
+          0.7799
+        ],
+        [
+          0.6914,
+          0.7878
+        ],
+        [
+          0.6914,
+          0.873
+        ],
+        [
+          0.5986,
+          0.8971
+        ],
+        [
+          0.4805,
+          0.9036
+        ],
+        [
+          0.3613,
+          0.8737
+        ],
+        [
+          0.334,
+          0.8555
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-cropped-turquoise-basin-field",
+          "shared_edge_px": 5440,
+          "direction": "up",
+          "distance_px": 178.57
+        },
+        {
+          "artifact_id": "module-upper-listening-node-2",
+          "shared_edge_px": 693,
+          "direction": "right",
+          "distance_px": 311.52
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-mixtape-archive-sliver-in-rim",
+      "visible_area_px": 6727,
+      "territory_area_px": 19296,
+      "hover_bounds": {
+        "x": 0.6943,
+        "y": 0.8639,
+        "w": 0.1523,
+        "h": 0.1172
+      },
+      "hover_polygon": [
+        [
+          0.6943,
+          0.8906
+        ],
+        [
+          0.7373,
+          0.8639
+        ],
+        [
+          0.8281,
+          0.8867
+        ],
+        [
+          0.8457,
+          0.9069
+        ],
+        [
+          0.8379,
+          0.9336
+        ],
+        [
+          0.8193,
+          0.9538
+        ],
+        [
+          0.7793,
+          0.9805
+        ],
+        [
+          0.7471,
+          0.9727
+        ],
+        [
+          0.708,
+          0.9466
+        ],
+        [
+          0.6943,
+          0.8965
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-upper-listening-node-2",
+          "shared_edge_px": 1630,
+          "direction": "up",
+          "distance_px": 156.91
+        },
+        {
+          "artifact_id": "hero-hero-cropped-turquoise-basin-field",
+          "shared_edge_px": 222,
+          "direction": "left",
+          "distance_px": 438.16
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-upper-listening-node",
+      "visible_area_px": 4727,
+      "territory_area_px": 12735,
+      "hover_bounds": {
+        "x": 0.3184,
+        "y": 0.1562,
+        "w": 0.1211,
+        "h": 0.0983
+      },
+      "hover_polygon": [
+        [
+          0.3184,
+          0.1999
+        ],
+        [
+          0.3242,
+          0.1849
+        ],
+        [
+          0.3516,
+          0.1667
+        ],
+        [
+          0.3789,
+          0.1562
+        ],
+        [
+          0.4248,
+          0.1816
+        ],
+        [
+          0.4385,
+          0.2051
+        ],
+        [
+          0.4287,
+          0.2279
+        ],
+        [
+          0.3838,
+          0.2539
+        ],
+        [
+          0.3643,
+          0.25
+        ],
+        [
+          0.3359,
+          0.2311
+        ],
+        [
+          0.3232,
+          0.2188
+        ],
+        [
+          0.3184,
+          0.2018
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-overhead-milky-diffuser-disk",
+          "shared_edge_px": 417,
+          "direction": "down",
+          "distance_px": 269.15
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-terracotta-masonry-counter-band",
+      "visible_area_px": 26049,
+      "territory_area_px": 64286,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.4167,
+        "w": 1.0,
+        "h": 0.0768
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.4193
+        ],
+        [
+          0.999,
+          0.418
+        ],
+        [
+          0.9951,
+          0.4798
+        ],
+        [
+          0.8428,
+          0.4896
+        ],
+        [
+          0.4932,
+          0.4922
+        ],
+        [
+          0.0,
+          0.4688
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-overhead-milky-diffuser-disk",
+          "shared_edge_px": 3819,
+          "direction": "up",
+          "distance_px": 184.02
+        },
+        {
+          "artifact_id": "module-terracotta-masonry-counter-band-2",
+          "shared_edge_px": 837,
+          "direction": "left",
+          "distance_px": 244.45
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-upper-listening-node-2",
+      "visible_area_px": 45695,
+      "territory_area_px": 57549,
+      "hover_bounds": {
+        "x": 0.6924,
+        "y": 0.7415,
+        "w": 0.2354,
+        "h": 0.1973
+      },
+      "hover_polygon": [
+        [
+          0.6924,
+          0.7598
+        ],
+        [
+          0.7197,
+          0.7415
+        ],
+        [
+          0.8994,
+          0.7415
+        ],
+        [
+          0.9268,
+          0.7598
+        ],
+        [
+          0.9268,
+          0.9199
+        ],
+        [
+          0.8994,
+          0.9382
+        ],
+        [
+          0.834,
+          0.9382
+        ],
+        [
+          0.6982,
+          0.9238
+        ],
+        [
+          0.6924,
+          0.9199
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-cropped-turquoise-basin-field",
+          "shared_edge_px": 3549,
+          "direction": "left",
+          "distance_px": 402.06
+        },
+        {
+          "artifact_id": "module-mixtape-archive-sliver-in-rim",
+          "shared_edge_px": 1630,
+          "direction": "down",
+          "distance_px": 156.91
+        },
+        {
+          "artifact_id": "module-bottom-ceramic-splash-bowl",
+          "shared_edge_px": 693,
+          "direction": "left",
+          "distance_px": 311.52
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-terracotta-masonry-counter-band-2",
+      "visible_area_px": 38115,
+      "territory_area_px": 55862,
+      "hover_bounds": {
+        "x": 0.252,
+        "y": 0.3216,
+        "w": 0.2158,
+        "h": 0.1868
+      },
+      "hover_polygon": [
+        [
+          0.252,
+          0.3398
+        ],
+        [
+          0.2793,
+          0.3216
+        ],
+        [
+          0.4023,
+          0.3216
+        ],
+        [
+          0.4668,
+          0.4238
+        ],
+        [
+          0.4639,
+          0.4915
+        ],
+        [
+          0.4395,
+          0.5078
+        ],
+        [
+          0.2793,
+          0.5078
+        ],
+        [
+          0.252,
+          0.4896
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-overhead-milky-diffuser-disk",
+          "shared_edge_px": 3147,
+          "direction": "right",
+          "distance_px": 229.61
+        },
+        {
+          "artifact_id": "module-terracotta-masonry-counter-band",
+          "shared_edge_px": 837,
+          "direction": "right",
+          "distance_px": 244.45
+        }
+      ]
+    }
+  ]
+}
