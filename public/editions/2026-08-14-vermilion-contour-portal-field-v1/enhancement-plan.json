@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-14-vermilion-contour-portal-field-v1",
+  "edition_id": "2026-08-14-vermilion-contour-portal-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-14-vermilion-contour-portal-field-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-primary-vermilion-portal-panel",
+      "target_kind": "artifact",
+      "artifact_id": "hero-primary-vermilion-portal-panel",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-luminous-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-music-model-teal-underpaint-basin",
+      "target_kind": "artifact",
+      "artifact_id": "hero-music-model-teal-underpaint-basin",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-teal-void-basin) selected from interpretation."
+    },
+    {
+      "target_id": "module-open-weights-contour-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-open-weights-contour-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (chalk-contour-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-offboarding-black-pool",
+      "target_kind": "artifact",
+      "artifact_id": "module-offboarding-black-pool",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (matte-black-void-rim) selected from interpretation."
+    },
+    {
+      "target_id": "module-blender-coffee-dry-brush-island",
+      "target_kind": "artifact",
+      "artifact_id": "module-blender-coffee-dry-brush-island",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cream-drybrush-island) selected from interpretation."
+    },
+    {
+      "target_id": "module-aseprite-pixel-notch-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-aseprite-pixel-notch-cluster",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stepped-edge-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-agent-tool-reliquary",
+      "target_kind": "artifact",
+      "artifact_id": "module-agent-tool-reliquary",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (nested-contour-eddy) selected from interpretation."
+    },
+    {
+      "target_id": "module-disco-mansion-black-curve",
+      "target_kind": "artifact",
+      "artifact_id": "module-disco-mansion-black-curve",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossless-arched-void) selected from interpretation."
+    },
+    {
+      "target_id": "module-field-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-field-marker",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (field-marker) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

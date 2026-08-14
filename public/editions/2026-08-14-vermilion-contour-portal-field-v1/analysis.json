@@ -1,0 +1,558 @@
+{
+  "analysis_id": "analysis-2026-08-14-vermilion-contour-portal-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dense expressionist red-orange textile plate with black torn voids, cream spiral dry-brush gestures, teal seams, a glowing amber slit, a long pale diagonal scar, and small bead-like field markers. Source-bearing anchors are legible as physical marks rather than UI cards.",
+  "usable_surfaces": [
+    "glowing amber slit in upper-right center",
+    "large black torn channel along left side",
+    "matte black pool in lower-left center",
+    "long pale diagonal scar across lower middle",
+    "cream spiral dry-brush islands",
+    "teal vertical underpaint basin near center-bottom",
+    "small pink bead cluster near lower-left",
+    "black speckled crater on right-center"
+  ],
+  "detected_objects": [
+    {
+      "label": "primary vermilion portal panel",
+      "artifact_type": "hero-luminous-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.594,
+        "y": 0.245,
+        "w": 0.171,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.595,
+          0.285
+        ],
+        [
+          0.615,
+          0.267
+        ],
+        [
+          0.652,
+          0.247
+        ],
+        [
+          0.706,
+          0.243
+        ],
+        [
+          0.76,
+          0.253
+        ],
+        [
+          0.764,
+          0.269
+        ],
+        [
+          0.742,
+          0.287
+        ],
+        [
+          0.69,
+          0.306
+        ],
+        [
+          0.635,
+          0.318
+        ],
+        [
+          0.602,
+          0.307
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "bright amber glowing slit embedded in the red field, with a sharp luminous center and darker torn rim"
+    },
+    {
+      "label": "music-model teal underpaint basin",
+      "artifact_type": "hero-teal-void-basin",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.529,
+        "y": 0.579,
+        "w": 0.05,
+        "h": 0.185
+      },
+      "polygon": [
+        [
+          0.553,
+          0.579
+        ],
+        [
+          0.567,
+          0.611
+        ],
+        [
+          0.576,
+          0.65
+        ],
+        [
+          0.57,
+          0.693
+        ],
+        [
+          0.564,
+          0.738
+        ],
+        [
+          0.553,
+          0.764
+        ],
+        [
+          0.541,
+          0.722
+        ],
+        [
+          0.532,
+          0.674
+        ],
+        [
+          0.53,
+          0.628
+        ],
+        [
+          0.539,
+          0.594
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "narrow vertical turquoise underpaint pocket cutting through the red surface near the center bottom"
+    },
+    {
+      "label": "open-weights contour seam",
+      "artifact_type": "chalk-contour-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.366,
+        "y": 0.121,
+        "w": 0.255,
+        "h": 0.308
+      },
+      "polygon": [
+        [
+          0.39,
+          0.126
+        ],
+        [
+          0.443,
+          0.143
+        ],
+        [
+          0.5,
+          0.185
+        ],
+        [
+          0.553,
+          0.241
+        ],
+        [
+          0.603,
+          0.309
+        ],
+        [
+          0.62,
+          0.372
+        ],
+        [
+          0.601,
+          0.424
+        ],
+        [
+          0.558,
+          0.426
+        ],
+        [
+          0.518,
+          0.372
+        ],
+        [
+          0.476,
+          0.3
+        ],
+        [
+          0.43,
+          0.224
+        ],
+        [
+          0.368,
+          0.166
+        ]
+      ],
+      "confidence": 0.66,
+      "visual_evidence": "thin teal and dark contour line looping around the central red basin area, visible as a seam rather than a filled panel"
+    },
+    {
+      "label": "offboarding black pool",
+      "artifact_type": "matte-black-void-rim",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.225,
+        "y": 0.644,
+        "w": 0.145,
+        "h": 0.136
+      },
+      "polygon": [
+        [
+          0.254,
+          0.648
+        ],
+        [
+          0.321,
+          0.644
+        ],
+        [
+          0.364,
+          0.681
+        ],
+        [
+          0.356,
+          0.732
+        ],
+        [
+          0.315,
+          0.775
+        ],
+        [
+          0.255,
+          0.773
+        ],
+        [
+          0.226,
+          0.733
+        ],
+        [
+          0.228,
+          0.683
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "irregular matte black void below the diagonal scar with ragged red and teal frayed edges"
+    },
+    {
+      "label": "blender-coffee dry-brush island",
+      "artifact_type": "cream-drybrush-island",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.289,
+        "y": 0.589,
+        "w": 0.213,
+        "h": 0.237
+      },
+      "polygon": [
+        [
+          0.385,
+          0.59
+        ],
+        [
+          0.446,
+          0.611
+        ],
+        [
+          0.488,
+          0.663
+        ],
+        [
+          0.5,
+          0.724
+        ],
+        [
+          0.476,
+          0.782
+        ],
+        [
+          0.425,
+          0.826
+        ],
+        [
+          0.369,
+          0.814
+        ],
+        [
+          0.333,
+          0.768
+        ],
+        [
+          0.302,
+          0.705
+        ],
+        [
+          0.292,
+          0.651
+        ],
+        [
+          0.328,
+          0.607
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "large cream C-shaped dry-brush swirl with scratched red grain, occupying the lower center-left field"
+    },
+    {
+      "label": "aseprite pixel-notch cluster",
+      "artifact_type": "stepped-edge-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.314,
+        "y": 0.703,
+        "w": 0.057,
+        "h": 0.084
+      },
+      "polygon": [
+        [
+          0.328,
+          0.705
+        ],
+        [
+          0.367,
+          0.705
+        ],
+        [
+          0.369,
+          0.721
+        ],
+        [
+          0.35,
+          0.724
+        ],
+        [
+          0.35,
+          0.74
+        ],
+        [
+          0.366,
+          0.743
+        ],
+        [
+          0.362,
+          0.762
+        ],
+        [
+          0.34,
+          0.762
+        ],
+        [
+          0.337,
+          0.782
+        ],
+        [
+          0.316,
+          0.786
+        ],
+        [
+          0.314,
+          0.754
+        ],
+        [
+          0.322,
+          0.731
+        ]
+      ],
+      "confidence": 0.63,
+      "visual_evidence": "small stepped turquoise-and-dark horizontal striations tucked on the edge of the lower-left black pool"
+    },
+    {
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "nested-contour-eddy",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.589,
+        "y": 0.277,
+        "w": 0.286,
+        "h": 0.257
+      },
+      "polygon": [
+        [
+          0.732,
+          0.279
+        ],
+        [
+          0.8,
+          0.302
+        ],
+        [
+          0.858,
+          0.356
+        ],
+        [
+          0.872,
+          0.425
+        ],
+        [
+          0.837,
+          0.49
+        ],
+        [
+          0.774,
+          0.53
+        ],
+        [
+          0.696,
+          0.526
+        ],
+        [
+          0.631,
+          0.486
+        ],
+        [
+          0.592,
+          0.418
+        ],
+        [
+          0.602,
+          0.351
+        ],
+        [
+          0.652,
+          0.301
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "nested cream crescent swirl over red field with black inner pocket and teal flecks, reading as sampled motion inside the textile"
+    },
+    {
+      "label": "disco-mansion black curve",
+      "artifact_type": "glossless-arched-void",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.006,
+        "y": 0,
+        "w": 0.153,
+        "h": 0.472
+      },
+      "polygon": [
+        [
+          0.043,
+          0
+        ],
+        [
+          0.077,
+          0.055
+        ],
+        [
+          0.09,
+          0.126
+        ],
+        [
+          0.113,
+          0.196
+        ],
+        [
+          0.137,
+          0.272
+        ],
+        [
+          0.158,
+          0.354
+        ],
+        [
+          0.139,
+          0.427
+        ],
+        [
+          0.102,
+          0.472
+        ],
+        [
+          0.062,
+          0.415
+        ],
+        [
+          0.041,
+          0.324
+        ],
+        [
+          0.023,
+          0.232
+        ],
+        [
+          0.006,
+          0.139
+        ],
+        [
+          0.018,
+          0.057
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "broad glossless black vertical torn curve along the left edge, bordered by red and cream residue"
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.138,
+        "y": 0.849,
+        "w": 0.107,
+        "h": 0.095
+      },
+      "polygon": [
+        [
+          0.143,
+          0.857
+        ],
+        [
+          0.159,
+          0.849
+        ],
+        [
+          0.177,
+          0.861
+        ],
+        [
+          0.195,
+          0.859
+        ],
+        [
+          0.211,
+          0.875
+        ],
+        [
+          0.228,
+          0.891
+        ],
+        [
+          0.244,
+          0.914
+        ],
+        [
+          0.236,
+          0.939
+        ],
+        [
+          0.207,
+          0.944
+        ],
+        [
+          0.181,
+          0.93
+        ],
+        [
+          0.158,
+          0.912
+        ],
+        [
+          0.139,
+          0.884
+        ]
+      ],
+      "confidence": 0.71,
+      "visual_evidence": "cluster of small pale pink bead-like dots in the lower-left black/red field, a visible set of pinhole markers"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 9,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.331,
+    "rationale": "The plate is expressionist and source-rich, with strong anchors, but the red texture, many cream swirls, and fine teal crack lines create a busy field that needs tight hover territories to avoid clutter."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-14-vermilion-contour-portal-field-v1"
+}
