@@ -1,0 +1,1415 @@
+{
+  "artifact_map_id": "map-2026-08-15-black-lightbox-initiation-room-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "black-lightbox-initiation-room",
+  "default_artifact_id": "hero-central-warm-lightbox-field",
+  "artifacts": [
+    {
+      "id": "hero-central-warm-lightbox-field",
+      "kind": "hero",
+      "label": "central warm lightbox field",
+      "artifact_type": "hero-scale-luminous-panel",
+      "bounds": {
+        "x": 0.2233,
+        "y": 0.3841,
+        "w": 0.4023,
+        "h": 0.2602
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.2254,
+          0.3904
+        ],
+        [
+          0.6198,
+          0.3868
+        ],
+        [
+          0.6227,
+          0.484
+        ],
+        [
+          0.6205,
+          0.6408
+        ],
+        [
+          0.2304,
+          0.6399
+        ],
+        [
+          0.2254,
+          0.6301
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/hero-central-warm-lightbox-field.svg",
+      "source_binding_ids": [
+        "binding-hero-central-warm-lightbox-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          772,
+          506
+        ],
+        "safe_stage_window_origin_px": [
+          841,
+          527
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.2254,
+            0.3904
+          ],
+          [
+            0.6198,
+            0.3868
+          ],
+          [
+            0.6227,
+            0.484
+          ],
+          [
+            0.6205,
+            0.6408
+          ],
+          [
+            0.2304,
+            0.6399
+          ],
+          [
+            0.2254,
+            0.6301
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2011,
+            0.3904
+          ],
+          [
+            0.2254,
+            0.3601
+          ],
+          [
+            0.6191,
+            0.3556
+          ],
+          [
+            0.6255,
+            0.3636
+          ],
+          [
+            0.6262,
+            0.6613
+          ],
+          [
+            0.6198,
+            0.6702
+          ],
+          [
+            0.2304,
+            0.6693
+          ],
+          [
+            0.2011,
+            0.6292
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2011,
+          "y": 0.3556,
+          "w": 0.4258,
+          "h": 0.3155
+        },
+        "territory_area_px": 161666,
+        "visible_area_px": 156705,
+        "expansion_ratio": 1.032,
+        "neighbors": [
+          {
+            "artifact_id": "module-paradise-loading-aperture",
+            "shared_edge_px": 2833,
+            "direction": "up",
+            "distance_px": 182.59
+          },
+          {
+            "artifact_id": "hero-right-lightbox-field-split-by-black-",
+            "shared_edge_px": 2022,
+            "direction": "right",
+            "distance_px": 386.14
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-right-lightbox-field-split-by-black-",
+      "kind": "hero",
+      "label": "right lightbox field split by black mullion",
+      "artifact_type": "split-luminous-panel",
+      "bounds": {
+        "x": 0.6298,
+        "y": 0.3832,
+        "w": 0.1491,
+        "h": 0.2611
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.632,
+          0.4599
+        ],
+        [
+          0.6348,
+          0.3859
+        ],
+        [
+          0.7703,
+          0.3877
+        ],
+        [
+          0.7753,
+          0.3904
+        ],
+        [
+          0.776,
+          0.4073
+        ],
+        [
+          0.7746,
+          0.6399
+        ],
+        [
+          0.6341,
+          0.6408
+        ],
+        [
+          0.632,
+          0.5178
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/hero-right-lightbox-field-split-by-black-.svg",
+      "source_binding_ids": [
+        "binding-hero-right-lightbox-field-split-by-black-"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1087,
+          506
+        ],
+        "safe_stage_window_origin_px": [
+          1105,
+          527
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.632,
+            0.4599
+          ],
+          [
+            0.6348,
+            0.3859
+          ],
+          [
+            0.7703,
+            0.3877
+          ],
+          [
+            0.7753,
+            0.3904
+          ],
+          [
+            0.776,
+            0.4073
+          ],
+          [
+            0.7746,
+            0.6399
+          ],
+          [
+            0.6341,
+            0.6408
+          ],
+          [
+            0.632,
+            0.5178
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6077,
+            0.4483
+          ],
+          [
+            0.6098,
+            0.385
+          ],
+          [
+            0.6341,
+            0.3547
+          ],
+          [
+            0.7468,
+            0.3565
+          ],
+          [
+            0.7953,
+            0.3859
+          ],
+          [
+            0.7996,
+            0.3993
+          ],
+          [
+            0.7981,
+            0.639
+          ],
+          [
+            0.7739,
+            0.6693
+          ],
+          [
+            0.6341,
+            0.6702
+          ],
+          [
+            0.6098,
+            0.6399
+          ],
+          [
+            0.6077,
+            0.5365
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6077,
+          "y": 0.3547,
+          "w": 0.1926,
+          "h": 0.3164
+        },
+        "territory_area_px": 84718,
+        "visible_area_px": 56842,
+        "expansion_ratio": 1.49,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-warm-lightbox-field",
+            "shared_edge_px": 2022,
+            "direction": "left",
+            "distance_px": 386.14
+          },
+          {
+            "artifact_id": "module-vray-shadow-wall-return",
+            "shared_edge_px": 1635,
+            "direction": "right",
+            "distance_px": 242.62
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-optical-square-obstruction-stack",
+      "kind": "module",
+      "label": "optical square obstruction stack",
+      "artifact_type": "charcoal-obstruction-band-plane",
+      "bounds": {
+        "x": 0.121,
+        "y": 0.081,
+        "w": 0.758,
+        "h": 0.184
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.122,
+          0.081
+        ],
+        [
+          0.352,
+          0.082
+        ],
+        [
+          0.352,
+          0.203
+        ],
+        [
+          0.19,
+          0.203
+        ],
+        [
+          0.19,
+          0.226
+        ],
+        [
+          0.878,
+          0.226
+        ],
+        [
+          0.863,
+          0.264
+        ],
+        [
+          0.163,
+          0.264
+        ],
+        [
+          0.163,
+          0.226
+        ],
+        [
+          0.121,
+          0.226
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/module-optical-square-obstruction-stack.svg",
+      "source_binding_ids": [
+        "binding-module-optical-square-obstruction-stack"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          768,
+          162
+        ],
+        "safe_stage_window_origin_px": [
+          861,
+          177
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.122,
+            0.081
+          ],
+          [
+            0.352,
+            0.082
+          ],
+          [
+            0.352,
+            0.203
+          ],
+          [
+            0.19,
+            0.203
+          ],
+          [
+            0.19,
+            0.226
+          ],
+          [
+            0.878,
+            0.226
+          ],
+          [
+            0.863,
+            0.264
+          ],
+          [
+            0.163,
+            0.264
+          ],
+          [
+            0.163,
+            0.226
+          ],
+          [
+            0.121,
+            0.226
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1006,
+            0.1898
+          ],
+          [
+            0.102,
+            0.0802
+          ],
+          [
+            0.122,
+            0.0553
+          ],
+          [
+            0.3516,
+            0.057
+          ],
+          [
+            0.8773,
+            0.2005
+          ],
+          [
+            0.8973,
+            0.2255
+          ],
+          [
+            0.7539,
+            0.2888
+          ],
+          [
+            0.1626,
+            0.2888
+          ],
+          [
+            0.1006,
+            0.2255
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1006,
+          "y": 0.0553,
+          "w": 0.7974,
+          "h": 0.2344
+        },
+        "territory_area_px": 149948,
+        "visible_area_px": 90382,
+        "expansion_ratio": 1.659,
+        "neighbors": [
+          {
+            "artifact_id": "module-vray-shadow-wall-return",
+            "shared_edge_px": 1629,
+            "direction": "right",
+            "distance_px": 703.09
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-weather-rectangle-glow",
+      "kind": "module",
+      "label": "weather-rectangle glow",
+      "artifact_type": "stepped-wall-glow-aperture",
+      "bounds": {
+        "x": 0.085,
+        "y": 0.334,
+        "w": 0.04,
+        "h": 0.118
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.12,
+          0.334
+        ],
+        [
+          0.12,
+          0.359
+        ],
+        [
+          0.11,
+          0.359
+        ],
+        [
+          0.11,
+          0.376
+        ],
+        [
+          0.085,
+          0.376
+        ],
+        [
+          0.085,
+          0.451
+        ],
+        [
+          0.112,
+          0.451
+        ],
+        [
+          0.112,
+          0.479
+        ],
+        [
+          0.121,
+          0.479
+        ],
+        [
+          0.121,
+          0.452
+        ],
+        [
+          0.109,
+          0.448
+        ],
+        [
+          0.109,
+          0.382
+        ],
+        [
+          0.125,
+          0.371
+        ],
+        [
+          0.125,
+          0.337
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/module-weather-rectangle-glow.svg",
+      "source_binding_ids": [
+        "binding-module-weather-rectangle-glow"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          161,
+          393
+        ],
+        "safe_stage_window_origin_px": [
+          166,
+          402
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.12,
+            0.334
+          ],
+          [
+            0.12,
+            0.359
+          ],
+          [
+            0.11,
+            0.359
+          ],
+          [
+            0.11,
+            0.376
+          ],
+          [
+            0.085,
+            0.376
+          ],
+          [
+            0.085,
+            0.451
+          ],
+          [
+            0.112,
+            0.451
+          ],
+          [
+            0.112,
+            0.479
+          ],
+          [
+            0.121,
+            0.479
+          ],
+          [
+            0.121,
+            0.452
+          ],
+          [
+            0.109,
+            0.448
+          ],
+          [
+            0.109,
+            0.382
+          ],
+          [
+            0.125,
+            0.371
+          ],
+          [
+            0.125,
+            0.337
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0649,
+            0.3752
+          ],
+          [
+            0.1198,
+            0.3084
+          ],
+          [
+            0.1448,
+            0.3369
+          ],
+          [
+            0.1405,
+            0.4786
+          ],
+          [
+            0.1205,
+            0.5036
+          ],
+          [
+            0.112,
+            0.5036
+          ],
+          [
+            0.0649,
+            0.451
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0649,
+          "y": 0.3084,
+          "w": 0.0806,
+          "h": 0.1961
+        },
+        "territory_area_px": 16788,
+        "visible_area_px": 4019,
+        "expansion_ratio": 4.177,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-vray-shadow-wall-return",
+      "kind": "module",
+      "label": "vray-shadow-wall-return",
+      "artifact_type": "hard-side-wall-return-shadow",
+      "bounds": {
+        "x": 0.774,
+        "y": 0.229,
+        "w": 0.103,
+        "h": 0.413
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.775,
+          0.229
+        ],
+        [
+          0.876,
+          0.229
+        ],
+        [
+          0.876,
+          0.642
+        ],
+        [
+          0.853,
+          0.642
+        ],
+        [
+          0.852,
+          0.313
+        ],
+        [
+          0.775,
+          0.313
+        ],
+        [
+          0.764,
+          0.377
+        ],
+        [
+          0.764,
+          0.571
+        ],
+        [
+          0.775,
+          0.641
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/module-vray-shadow-wall-return.svg",
+      "source_binding_ids": [
+        "binding-module-vray-shadow-wall-return"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1268,
+          412
+        ],
+        "safe_stage_window_origin_px": [
+          1281,
+          446
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.775,
+            0.229
+          ],
+          [
+            0.876,
+            0.229
+          ],
+          [
+            0.876,
+            0.642
+          ],
+          [
+            0.853,
+            0.642
+          ],
+          [
+            0.852,
+            0.313
+          ],
+          [
+            0.775,
+            0.313
+          ],
+          [
+            0.764,
+            0.377
+          ],
+          [
+            0.764,
+            0.571
+          ],
+          [
+            0.775,
+            0.641
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7439,
+            0.3743
+          ],
+          [
+            0.7546,
+            0.2282
+          ],
+          [
+            0.7746,
+            0.2032
+          ],
+          [
+            0.8759,
+            0.2032
+          ],
+          [
+            0.8959,
+            0.2282
+          ],
+          [
+            0.8959,
+            0.6417
+          ],
+          [
+            0.8759,
+            0.6667
+          ],
+          [
+            0.8524,
+            0.6667
+          ],
+          [
+            0.8324,
+            0.6417
+          ],
+          [
+            0.7439,
+            0.41
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7439,
+          "y": 0.2032,
+          "w": 0.1526,
+          "h": 0.4643
+        },
+        "territory_area_px": 70990,
+        "visible_area_px": 31221,
+        "expansion_ratio": 2.274,
+        "neighbors": [
+          {
+            "artifact_id": "hero-right-lightbox-field-split-by-black-",
+            "shared_edge_px": 1635,
+            "direction": "left",
+            "distance_px": 242.62
+          },
+          {
+            "artifact_id": "module-optical-square-obstruction-stack",
+            "shared_edge_px": 1629,
+            "direction": "left",
+            "distance_px": 703.09
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-splat-stone-floor-notch",
+      "kind": "module",
+      "label": "splat-stone-floor-notch",
+      "artifact_type": "floor-seam-depth-notch",
+      "bounds": {
+        "x": 0.349,
+        "y": 0.741,
+        "w": 0.092,
+        "h": 0.202
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.432,
+          0.741
+        ],
+        [
+          0.426,
+          0.759
+        ],
+        [
+          0.42,
+          0.781
+        ],
+        [
+          0.41,
+          0.806
+        ],
+        [
+          0.401,
+          0.833
+        ],
+        [
+          0.393,
+          0.862
+        ],
+        [
+          0.382,
+          0.889
+        ],
+        [
+          0.371,
+          0.917
+        ],
+        [
+          0.354,
+          0.943
+        ],
+        [
+          0.365,
+          0.908
+        ],
+        [
+          0.376,
+          0.874
+        ],
+        [
+          0.386,
+          0.842
+        ],
+        [
+          0.396,
+          0.811
+        ],
+        [
+          0.406,
+          0.783
+        ],
+        [
+          0.417,
+          0.758
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/module-splat-stone-floor-notch.svg",
+      "source_binding_ids": [
+        "binding-module-splat-stone-floor-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          607,
+          846
+        ],
+        "safe_stage_window_origin_px": [
+          618,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.432,
+            0.741
+          ],
+          [
+            0.426,
+            0.759
+          ],
+          [
+            0.42,
+            0.781
+          ],
+          [
+            0.41,
+            0.806
+          ],
+          [
+            0.401,
+            0.833
+          ],
+          [
+            0.393,
+            0.862
+          ],
+          [
+            0.382,
+            0.889
+          ],
+          [
+            0.371,
+            0.917
+          ],
+          [
+            0.354,
+            0.943
+          ],
+          [
+            0.365,
+            0.908
+          ],
+          [
+            0.376,
+            0.874
+          ],
+          [
+            0.386,
+            0.842
+          ],
+          [
+            0.396,
+            0.811
+          ],
+          [
+            0.406,
+            0.783
+          ],
+          [
+            0.417,
+            0.758
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3252,
+            0.9421
+          ],
+          [
+            0.3873,
+            0.7585
+          ],
+          [
+            0.4315,
+            0.705
+          ],
+          [
+            0.4601,
+            0.7406
+          ],
+          [
+            0.4215,
+            0.8601
+          ],
+          [
+            0.3994,
+            0.9162
+          ],
+          [
+            0.3837,
+            0.9412
+          ],
+          [
+            0.3538,
+            0.9786
+          ],
+          [
+            0.3252,
+            0.943
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3252,
+          "y": 0.705,
+          "w": 0.1355,
+          "h": 0.2745
+        },
+        "territory_area_px": 24960,
+        "visible_area_px": 3440,
+        "expansion_ratio": 7.256,
+        "neighbors": [
+          {
+            "artifact_id": "module-splat-stone-floor-notch-2",
+            "shared_edge_px": 1297,
+            "direction": "right",
+            "distance_px": 185.02
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-splat-stone-floor-notch-2",
+      "kind": "module",
+      "label": "splat-stone-floor-notch",
+      "artifact_type": "floor-seam-depth-notch",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/module-splat-stone-floor-notch-2.svg",
+      "source_binding_ids": [
+        "binding-module-splat-stone-floor-notch-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3909,
+            0.9305
+          ],
+          [
+            0.4593,
+            0.7442
+          ],
+          [
+            0.5999,
+            0.7442
+          ],
+          [
+            0.6284,
+            0.7799
+          ],
+          [
+            0.6284,
+            0.9394
+          ],
+          [
+            0.5999,
+            0.975
+          ],
+          [
+            0.4194,
+            0.975
+          ],
+          [
+            0.3909,
+            0.9394
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3909,
+          "y": 0.7442,
+          "w": 0.2382,
+          "h": 0.2317
+        },
+        "territory_area_px": 73393,
+        "visible_area_px": 45720,
+        "expansion_ratio": 1.605,
+        "neighbors": [
+          {
+            "artifact_id": "module-splat-stone-floor-notch",
+            "shared_edge_px": 1297,
+            "direction": "left",
+            "distance_px": 185.02
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-nadler-collection-corner",
+      "kind": "module",
+      "label": "nadler-collection-corner",
+      "artifact_type": "dark-catalogue-corner-plane",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/module-nadler-collection-corner.svg",
+      "source_binding_ids": [
+        "binding-module-nadler-collection-corner"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6997,
+            0.7594
+          ],
+          [
+            0.7197,
+            0.7344
+          ],
+          [
+            0.8994,
+            0.7344
+          ],
+          [
+            0.9194,
+            0.7594
+          ],
+          [
+            0.9194,
+            0.9198
+          ],
+          [
+            0.8994,
+            0.9447
+          ],
+          [
+            0.7197,
+            0.9447
+          ],
+          [
+            0.6997,
+            0.9198
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6997,
+          "y": 0.7344,
+          "w": 0.2204,
+          "h": 0.2112
+        },
+        "territory_area_px": 71609,
+        "visible_area_px": 45793,
+        "expansion_ratio": 1.564,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-paradise-loading-aperture",
+      "kind": "module",
+      "label": "paradise-loading-aperture",
+      "artifact_type": "pale-loading-void-cut",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "black-lightbox-initiation-room",
+      "mask_path": "/editions/2026-08-15-black-lightbox-initiation-room-v1/assets/masks/module-paradise-loading-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-paradise-loading-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2596,
+            0.3396
+          ],
+          [
+            0.2796,
+            0.3146
+          ],
+          [
+            0.4394,
+            0.3146
+          ],
+          [
+            0.4593,
+            0.3396
+          ],
+          [
+            0.4593,
+            0.3948
+          ],
+          [
+            0.3417,
+            0.5143
+          ],
+          [
+            0.2796,
+            0.5143
+          ],
+          [
+            0.2596,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2596,
+          "y": 0.3146,
+          "w": 0.2004,
+          "h": 0.2005
+        },
+        "territory_area_px": 50919,
+        "visible_area_px": 38025,
+        "expansion_ratio": 1.339,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-warm-lightbox-field",
+            "shared_edge_px": 2833,
+            "direction": "down",
+            "distance_px": 182.59
+          }
+        ]
+      }
+    }
+  ]
+}

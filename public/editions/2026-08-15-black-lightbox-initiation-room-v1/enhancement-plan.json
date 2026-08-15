@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-15-black-lightbox-initiation-room-v1",
+  "edition_id": "2026-08-15-black-lightbox-initiation-room-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-15-black-lightbox-initiation-room-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-central-warm-lightbox-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-central-warm-lightbox-field",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-luminous-panel) selected from interpretation."
+    },
+    {
+      "target_id": "hero-right-lightbox-field-split-by-black-",
+      "target_kind": "artifact",
+      "artifact_id": "hero-right-lightbox-field-split-by-black-",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (split-luminous-panel) selected from interpretation."
+    },
+    {
+      "target_id": "module-optical-square-obstruction-stack",
+      "target_kind": "artifact",
+      "artifact_id": "module-optical-square-obstruction-stack",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (charcoal-obstruction-band-plane) selected from interpretation."
+    },
+    {
+      "target_id": "module-weather-rectangle-glow",
+      "target_kind": "artifact",
+      "artifact_id": "module-weather-rectangle-glow",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stepped-wall-glow-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-vray-shadow-wall-return",
+      "target_kind": "artifact",
+      "artifact_id": "module-vray-shadow-wall-return",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hard-side-wall-return-shadow) selected from interpretation."
+    },
+    {
+      "target_id": "module-splat-stone-floor-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-splat-stone-floor-notch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (floor-seam-depth-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-splat-stone-floor-notch-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-splat-stone-floor-notch-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (floor-seam-depth-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-nadler-collection-corner",
+      "target_kind": "artifact",
+      "artifact_id": "module-nadler-collection-corner",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-catalogue-corner-plane) selected from interpretation."
+    },
+    {
+      "target_id": "module-paradise-loading-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-paradise-loading-aperture",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-loading-void-cut) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
