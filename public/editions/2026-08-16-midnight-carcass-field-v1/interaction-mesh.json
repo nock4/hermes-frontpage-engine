@@ -1,0 +1,635 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-16-midnight-carcass-field-v1",
+  "generation": "daily-process-2026-08-16T08-00-30-120Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1254,
+    "height": 1254
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-16T08-00-30-120Z/2026-08-16-midnight-carcass-field-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-raised-charcoal-wing-edge",
+      "visible_area_px": 174820,
+      "territory_area_px": 200176,
+      "hover_bounds": {
+        "x": 0.0439,
+        "y": 0.0686,
+        "w": 0.3174,
+        "h": 0.638
+      },
+      "hover_polygon": [
+        [
+          0.0439,
+          0.1778
+        ],
+        [
+          0.0726,
+          0.1324
+        ],
+        [
+          0.1356,
+          0.0686
+        ],
+        [
+          0.2081,
+          0.1316
+        ],
+        [
+          0.2488,
+          0.2002
+        ],
+        [
+          0.299,
+          0.3166
+        ],
+        [
+          0.3604,
+          0.634
+        ],
+        [
+          0.3509,
+          0.6675
+        ],
+        [
+          0.3238,
+          0.6946
+        ],
+        [
+          0.2951,
+          0.7057
+        ],
+        [
+          0.1643,
+          0.6818
+        ],
+        [
+          0.0797,
+          0.5989
+        ],
+        [
+          0.0455,
+          0.5064
+        ],
+        [
+          0.0439,
+          0.1818
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-startup-stack-yellow-sliver-2",
+          "shared_edge_px": 1867,
+          "direction": "right",
+          "distance_px": 232.01
+        },
+        {
+          "artifact_id": "module-basement-noise-shadow-mark",
+          "shared_edge_px": 1030,
+          "direction": "down",
+          "distance_px": 455.07
+        },
+        {
+          "artifact_id": "module-obsolete-concrete-scrape",
+          "shared_edge_px": 937,
+          "direction": "right",
+          "distance_px": 394.7
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-lower-red-wound-hinge",
+      "visible_area_px": 75129,
+      "territory_area_px": 84607,
+      "hover_bounds": {
+        "x": 0.4266,
+        "y": 0.6499,
+        "w": 0.2815,
+        "h": 0.2584
+      },
+      "hover_polygon": [
+        [
+          0.4266,
+          0.7464
+        ],
+        [
+          0.4617,
+          0.6762
+        ],
+        [
+          0.4841,
+          0.6539
+        ],
+        [
+          0.5112,
+          0.6499
+        ],
+        [
+          0.5542,
+          0.6531
+        ],
+        [
+          0.63,
+          0.6762
+        ],
+        [
+          0.7073,
+          0.7512
+        ],
+        [
+          0.6962,
+          0.8684
+        ],
+        [
+          0.5112,
+          0.9075
+        ],
+        [
+          0.4378,
+          0.823
+        ],
+        [
+          0.4266,
+          0.7488
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-open-source-access-cut",
+          "shared_edge_px": 1482,
+          "direction": "down",
+          "distance_px": 220.74
+        },
+        {
+          "artifact_id": "module-basement-noise-shadow-mark-2",
+          "shared_edge_px": 909,
+          "direction": "right",
+          "distance_px": 324.76
+        },
+        {
+          "artifact_id": "module-obsolete-concrete-scrape",
+          "shared_edge_px": 260,
+          "direction": "up",
+          "distance_px": 301.75
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-obsolete-concrete-scrape",
+      "visible_area_px": 46916,
+      "territory_area_px": 63706,
+      "hover_bounds": {
+        "x": 0.3134,
+        "y": 0.4585,
+        "w": 0.2767,
+        "h": 0.2033
+      },
+      "hover_polygon": [
+        [
+          0.3134,
+          0.5518
+        ],
+        [
+          0.3174,
+          0.5128
+        ],
+        [
+          0.4458,
+          0.4585
+        ],
+        [
+          0.5008,
+          0.4633
+        ],
+        [
+          0.5614,
+          0.4976
+        ],
+        [
+          0.5837,
+          0.5199
+        ],
+        [
+          0.5893,
+          0.5797
+        ],
+        [
+          0.5215,
+          0.6467
+        ],
+        [
+          0.4418,
+          0.6611
+        ],
+        [
+          0.3644,
+          0.6372
+        ],
+        [
+          0.3421,
+          0.6148
+        ],
+        [
+          0.3134,
+          0.5566
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-startup-stack-yellow-sliver-2",
+          "shared_edge_px": 1118,
+          "direction": "up",
+          "distance_px": 225.09
+        },
+        {
+          "artifact_id": "hero-raised-charcoal-wing-edge",
+          "shared_edge_px": 937,
+          "direction": "left",
+          "distance_px": 394.7
+        },
+        {
+          "artifact_id": "hero-lower-red-wound-hinge",
+          "shared_edge_px": 260,
+          "direction": "down",
+          "distance_px": 301.75
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-open-source-access-cut",
+      "visible_area_px": 49514,
+      "territory_area_px": 61134,
+      "hover_bounds": {
+        "x": 0.4003,
+        "y": 0.8684,
+        "w": 0.4402,
+        "h": 0.1316
+      },
+      "hover_polygon": [
+        [
+          0.4003,
+          0.9378
+        ],
+        [
+          0.4226,
+          0.9155
+        ],
+        [
+          0.701,
+          0.8684
+        ],
+        [
+          0.8389,
+          0.9434
+        ],
+        [
+          0.8174,
+          0.9689
+        ],
+        [
+          0.7719,
+          0.9992
+        ],
+        [
+          0.4474,
+          0.9992
+        ],
+        [
+          0.4011,
+          0.9394
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-lower-red-wound-hinge",
+          "shared_edge_px": 1482,
+          "direction": "up",
+          "distance_px": 220.74
+        },
+        {
+          "artifact_id": "module-basement-noise-shadow-mark-2",
+          "shared_edge_px": 1297,
+          "direction": "right",
+          "distance_px": 292.63
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-basement-noise-shadow-mark",
+      "visible_area_px": 56084,
+      "territory_area_px": 75095,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.6802,
+        "w": 0.3477,
+        "h": 0.1962
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.7544
+        ],
+        [
+          0.0207,
+          0.7337
+        ],
+        [
+          0.0718,
+          0.6994
+        ],
+        [
+          0.1443,
+          0.6826
+        ],
+        [
+          0.2352,
+          0.6802
+        ],
+        [
+          0.3086,
+          0.7121
+        ],
+        [
+          0.3309,
+          0.7344
+        ],
+        [
+          0.3469,
+          0.7935
+        ],
+        [
+          0.2855,
+          0.866
+        ],
+        [
+          0.1874,
+          0.8756
+        ],
+        [
+          0.1069,
+          0.8589
+        ],
+        [
+          0.0391,
+          0.8285
+        ],
+        [
+          0.0,
+          0.7982
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-startup-stack-yellow-sliver",
+          "shared_edge_px": 1192,
+          "direction": "left",
+          "distance_px": 181.51
+        },
+        {
+          "artifact_id": "hero-raised-charcoal-wing-edge",
+          "shared_edge_px": 1030,
+          "direction": "up",
+          "distance_px": 455.07
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-startup-stack-yellow-sliver",
+      "visible_area_px": 7035,
+      "territory_area_px": 16226,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.7687,
+        "w": 0.1356,
+        "h": 0.1691
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.9091
+        ],
+        [
+          0.0128,
+          0.8732
+        ],
+        [
+          0.0734,
+          0.7943
+        ],
+        [
+          0.0997,
+          0.7687
+        ],
+        [
+          0.1348,
+          0.8206
+        ],
+        [
+          0.0981,
+          0.8692
+        ],
+        [
+          0.0447,
+          0.9258
+        ],
+        [
+          0.0207,
+          0.937
+        ],
+        [
+          0.0,
+          0.9163
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-basement-noise-shadow-mark",
+          "shared_edge_px": 1192,
+          "direction": "right",
+          "distance_px": 181.51
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-upper-right-sky-tear",
+      "visible_area_px": 8892,
+      "territory_area_px": 28387,
+      "hover_bounds": {
+        "x": 0.7049,
+        "y": 0.1451,
+        "w": 0.2951,
+        "h": 0.1053
+      },
+      "hover_polygon": [
+        [
+          0.7049,
+          0.2105
+        ],
+        [
+          0.7273,
+          0.1882
+        ],
+        [
+          0.8604,
+          0.1539
+        ],
+        [
+          0.9825,
+          0.1451
+        ],
+        [
+          0.9992,
+          0.1619
+        ],
+        [
+          0.9992,
+          0.173
+        ],
+        [
+          0.9825,
+          0.1898
+        ],
+        [
+          0.941,
+          0.2049
+        ],
+        [
+          0.8134,
+          0.2432
+        ],
+        [
+          0.7528,
+          0.2496
+        ],
+        [
+          0.7273,
+          0.2329
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-basement-noise-shadow-mark-2",
+      "visible_area_px": 45627,
+      "territory_area_px": 67240,
+      "hover_bounds": {
+        "x": 0.697,
+        "y": 0.7376,
+        "w": 0.2257,
+        "h": 0.2049
+      },
+      "hover_polygon": [
+        [
+          0.697,
+          0.8166
+        ],
+        [
+          0.7073,
+          0.7496
+        ],
+        [
+          0.7193,
+          0.7376
+        ],
+        [
+          0.8995,
+          0.7376
+        ],
+        [
+          0.9219,
+          0.76
+        ],
+        [
+          0.9219,
+          0.9195
+        ],
+        [
+          0.8995,
+          0.9418
+        ],
+        [
+          0.752,
+          0.9418
+        ],
+        [
+          0.697,
+          0.8684
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-open-source-access-cut",
+          "shared_edge_px": 1297,
+          "direction": "left",
+          "distance_px": 292.63
+        },
+        {
+          "artifact_id": "hero-lower-red-wound-hinge",
+          "shared_edge_px": 909,
+          "direction": "left",
+          "distance_px": 324.76
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-startup-stack-yellow-sliver-2",
+      "visible_area_px": 37989,
+      "territory_area_px": 50968,
+      "hover_bounds": {
+        "x": 0.2727,
+        "y": 0.3174,
+        "w": 0.1898,
+        "h": 0.1954
+      },
+      "hover_polygon": [
+        [
+          0.2727,
+          0.3246
+        ],
+        [
+          0.2799,
+          0.3174
+        ],
+        [
+          0.4394,
+          0.3174
+        ],
+        [
+          0.4617,
+          0.3397
+        ],
+        [
+          0.4617,
+          0.4593
+        ],
+        [
+          0.3604,
+          0.512
+        ],
+        [
+          0.2863,
+          0.512
+        ],
+        [
+          0.2727,
+          0.3333
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-raised-charcoal-wing-edge",
+          "shared_edge_px": 1867,
+          "direction": "left",
+          "distance_px": 232.01
+        },
+        {
+          "artifact_id": "module-obsolete-concrete-scrape",
+          "shared_edge_px": 1118,
+          "direction": "down",
+          "distance_px": 225.09
+        }
+      ]
+    }
+  ]
+}

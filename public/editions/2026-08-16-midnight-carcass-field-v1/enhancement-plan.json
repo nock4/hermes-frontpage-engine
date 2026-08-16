@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-16-midnight-carcass-field-v1",
+  "edition_id": "2026-08-16-midnight-carcass-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-16-midnight-carcass-field-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-raised-charcoal-wing-edge",
+      "target_kind": "artifact",
+      "artifact_id": "hero-raised-charcoal-wing-edge",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-feather-edge) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lower-red-wound-hinge",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-red-wound-hinge",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-smeared-rupture) selected from interpretation."
+    },
+    {
+      "target_id": "module-obsolete-concrete-scrape",
+      "target_kind": "artifact",
+      "artifact_id": "module-obsolete-concrete-scrape",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scraped-surface-repair) selected from interpretation."
+    },
+    {
+      "target_id": "module-open-source-access-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-open-source-access-cut",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (repaired-edge-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-basement-noise-shadow-mark",
+      "target_kind": "artifact",
+      "artifact_id": "module-basement-noise-shadow-mark",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (charcoal-ground-shadow) selected from interpretation."
+    },
+    {
+      "target_id": "module-startup-stack-yellow-sliver",
+      "target_kind": "artifact",
+      "artifact_id": "module-startup-stack-yellow-sliver",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-yellow-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-upper-right-sky-tear",
+      "target_kind": "artifact",
+      "artifact_id": "module-upper-right-sky-tear",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dark-sky-edge-tear) selected from interpretation."
+    },
+    {
+      "target_id": "module-basement-noise-shadow-mark-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-basement-noise-shadow-mark-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (charcoal-ground-shadow) selected from interpretation."
+    },
+    {
+      "target_id": "module-startup-stack-yellow-sliver-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-startup-stack-yellow-sliver-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-yellow-glint) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

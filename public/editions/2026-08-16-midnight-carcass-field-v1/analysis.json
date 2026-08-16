@@ -1,0 +1,484 @@
+{
+  "analysis_id": "analysis-2026-08-16-midnight-carcass-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark expressionist carrion plate: two black bird-forms over a broken body, with a raised left wing, a red wound hinge at the lower center, scraped concrete ground, a thin ember horizon, pinholes and repaired cuts embedded in the surface.",
+  "usable_surfaces": [
+    "raised black feather edge",
+    "central red wound seam",
+    "scraped concrete floor band",
+    "thin ember horizon line",
+    "small ground pinhole light",
+    "blue-gray torn slab notch",
+    "patched lower edge tear",
+    "charcoal ground shadow smear",
+    "yellow cloth-like sliver"
+  ],
+  "detected_objects": [
+    {
+      "label": "raised charcoal wing edge",
+      "artifact_type": "hero-scale-feather-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.09,
+        "w": 0.283,
+        "h": 0.607
+      },
+      "polygon": [
+        [
+          0.071,
+          0.178
+        ],
+        [
+          0.101,
+          0.132
+        ],
+        [
+          0.136,
+          0.096
+        ],
+        [
+          0.181,
+          0.131
+        ],
+        [
+          0.22,
+          0.196
+        ],
+        [
+          0.261,
+          0.295
+        ],
+        [
+          0.323,
+          0.423
+        ],
+        [
+          0.354,
+          0.568
+        ],
+        [
+          0.324,
+          0.668
+        ],
+        [
+          0.255,
+          0.697
+        ],
+        [
+          0.174,
+          0.665
+        ],
+        [
+          0.107,
+          0.599
+        ],
+        [
+          0.073,
+          0.506
+        ],
+        [
+          0.102,
+          0.417
+        ],
+        [
+          0.083,
+          0.322
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "The largest lifted black wing on the left has a serrated charcoal feather contour, heavy impasto ridges, and a readable cut edge against the dark sky."
+    },
+    {
+      "label": "lower red wound hinge",
+      "artifact_type": "hero-scale-smeared-rupture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.454,
+        "y": 0.676,
+        "w": 0.269,
+        "h": 0.25
+      },
+      "polygon": [
+        [
+          0.49,
+          0.676
+        ],
+        [
+          0.555,
+          0.681
+        ],
+        [
+          0.63,
+          0.704
+        ],
+        [
+          0.689,
+          0.76
+        ],
+        [
+          0.723,
+          0.847
+        ],
+        [
+          0.681,
+          0.912
+        ],
+        [
+          0.599,
+          0.926
+        ],
+        [
+          0.519,
+          0.888
+        ],
+        [
+          0.465,
+          0.823
+        ],
+        [
+          0.454,
+          0.747
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "The central lower body is opened by a dense red-black smeared rupture with wet-looking crimson pigment, jagged edges, and pooled staining below."
+    },
+    {
+      "label": "obsolete concrete scrape",
+      "artifact_type": "scraped-surface-repair",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.336,
+        "y": 0.478,
+        "w": 0.231,
+        "h": 0.161
+      },
+      "polygon": [
+        [
+          0.342,
+          0.489
+        ],
+        [
+          0.413,
+          0.478
+        ],
+        [
+          0.501,
+          0.486
+        ],
+        [
+          0.562,
+          0.52
+        ],
+        [
+          0.567,
+          0.584
+        ],
+        [
+          0.522,
+          0.625
+        ],
+        [
+          0.442,
+          0.639
+        ],
+        [
+          0.365,
+          0.615
+        ],
+        [
+          0.336,
+          0.556
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A low abraded gray-brown concrete band behind the body shows scraped repair texture, horizontal scuffing, and worn pigment islands."
+    },
+    {
+      "label": "open-source access cut",
+      "artifact_type": "repaired-edge-cut",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.423,
+        "y": 0.891,
+        "w": 0.395,
+        "h": 0.10899999999999999
+      },
+      "polygon": [
+        [
+          0.423,
+          0.938
+        ],
+        [
+          0.502,
+          0.923
+        ],
+        [
+          0.601,
+          0.905
+        ],
+        [
+          0.701,
+          0.891
+        ],
+        [
+          0.803,
+          0.898
+        ],
+        [
+          0.818,
+          0.947
+        ],
+        [
+          0.763,
+          0.984
+        ],
+        [
+          0.672,
+          1
+        ],
+        [
+          0.548,
+          1
+        ],
+        [
+          0.452,
+          0.981
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "The lower foreground has a patched brown torn-paper edge, with exposed backing and irregular repair boundary cutting across the bottom of the plate."
+    },
+    {
+      "label": "basement-noise shadow mark",
+      "artifact_type": "charcoal-ground-shadow",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.019,
+        "y": 0.703,
+        "w": 0.306,
+        "h": 0.151
+      },
+      "polygon": [
+        [
+          0.02,
+          0.757
+        ],
+        [
+          0.072,
+          0.722
+        ],
+        [
+          0.145,
+          0.705
+        ],
+        [
+          0.236,
+          0.703
+        ],
+        [
+          0.309,
+          0.735
+        ],
+        [
+          0.325,
+          0.795
+        ],
+        [
+          0.286,
+          0.844
+        ],
+        [
+          0.188,
+          0.854
+        ],
+        [
+          0.086,
+          0.833
+        ],
+        [
+          0.019,
+          0.795
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "A low charcoal-black smear lies beneath the left body mass, spreading as a dark ground shadow against the scratched floor."
+    },
+    {
+      "label": "startup-stack yellow sliver",
+      "artifact_type": "narrow-yellow-glint",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.021,
+        "y": 0.774,
+        "w": 0.116,
+        "h": 0.141
+      },
+      "polygon": [
+        [
+          0.126,
+          0.774
+        ],
+        [
+          0.137,
+          0.788
+        ],
+        [
+          0.108,
+          0.827
+        ],
+        [
+          0.079,
+          0.866
+        ],
+        [
+          0.045,
+          0.904
+        ],
+        [
+          0.021,
+          0.915
+        ],
+        [
+          0.035,
+          0.875
+        ],
+        [
+          0.066,
+          0.833
+        ],
+        [
+          0.098,
+          0.793
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A single ochre-yellow torn sliver protrudes at the lower-left edge, cloth-like and sharply legible against the dark body and ground."
+    },
+    {
+      "label": "upper right sky tear",
+      "artifact_type": "dark-sky-edge-tear",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.728,
+        "y": 0.168,
+        "w": 0.255,
+        "h": 0.06
+      },
+      "polygon": [
+        [
+          0.728,
+          0.211
+        ],
+        [
+          0.792,
+          0.194
+        ],
+        [
+          0.861,
+          0.177
+        ],
+        [
+          0.929,
+          0.171
+        ],
+        [
+          0.983,
+          0.168
+        ],
+        [
+          0.939,
+          0.184
+        ],
+        [
+          0.881,
+          0.203
+        ],
+        [
+          0.814,
+          0.221
+        ],
+        [
+          0.753,
+          0.228
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "A long thin torn black scar crosses the upper-right sky, with frayed tan highlights along its lower edge."
+    },
+    {
+      "label": "basement-noise shadow mark",
+      "artifact_type": "charcoal-ground-shadow",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "startup-stack yellow sliver",
+      "artifact_type": "narrow-yellow-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.397,
+    "rationale": "The plate remains expressionist and source-rich, with a few dominant bird/body/ground forms. It is not generic clutter, but the many scratches, feathers, tears, and wound textures require tight interaction masks to avoid noisy hover fields."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-16-midnight-carcass-field-v1"
+}
