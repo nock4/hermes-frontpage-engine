@@ -1,0 +1,585 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-16-lavender-calibration-rupture-v1",
+  "generation": "daily-process-2026-08-16T12-09-42-361Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-16T12-09-42-361Z/2026-08-16-lavender-calibration-rupture-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-central-pale-aperture-rupture",
+      "visible_area_px": 358334,
+      "territory_area_px": 292171,
+      "hover_bounds": {
+        "x": 0.263,
+        "y": 0.0381,
+        "w": 0.5632,
+        "h": 0.6475
+      },
+      "hover_polygon": [
+        [
+          0.263,
+          0.3252
+        ],
+        [
+          0.2754,
+          0.2578
+        ],
+        [
+          0.2943,
+          0.208
+        ],
+        [
+          0.3171,
+          0.1738
+        ],
+        [
+          0.4115,
+          0.1055
+        ],
+        [
+          0.4486,
+          0.0889
+        ],
+        [
+          0.7168,
+          0.0391
+        ],
+        [
+          0.7839,
+          0.0381
+        ],
+        [
+          0.819,
+          0.0928
+        ],
+        [
+          0.8255,
+          0.1377
+        ],
+        [
+          0.6966,
+          0.6045
+        ],
+        [
+          0.6745,
+          0.6377
+        ],
+        [
+          0.6107,
+          0.6729
+        ],
+        [
+          0.4948,
+          0.6846
+        ],
+        [
+          0.3151,
+          0.5967
+        ],
+        [
+          0.2871,
+          0.54
+        ],
+        [
+          0.263,
+          0.3301
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-bounded-edit-notch-cluster",
+          "shared_edge_px": 3777,
+          "direction": "down",
+          "distance_px": 275.54
+        },
+        {
+          "artifact_id": "module-signal-panel-2",
+          "shared_edge_px": 3404,
+          "direction": "left",
+          "distance_px": 363.46
+        },
+        {
+          "artifact_id": "module-signal-panel",
+          "shared_edge_px": 2736,
+          "direction": "right",
+          "distance_px": 215.38
+        },
+        {
+          "artifact_id": "module-grainy-video-meter-slot",
+          "shared_edge_px": 2417,
+          "direction": "left",
+          "distance_px": 220.72
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-folded-lavender-launch-strip",
+      "visible_area_px": 119667,
+      "territory_area_px": 143983,
+      "hover_bounds": {
+        "x": 0.0026,
+        "y": 0.542,
+        "w": 0.5241,
+        "h": 0.4014
+      },
+      "hover_polygon": [
+        [
+          0.0026,
+          0.7832
+        ],
+        [
+          0.026,
+          0.749
+        ],
+        [
+          0.1706,
+          0.6621
+        ],
+        [
+          0.4388,
+          0.542
+        ],
+        [
+          0.526,
+          0.666
+        ],
+        [
+          0.0697,
+          0.9297
+        ],
+        [
+          0.0247,
+          0.9424
+        ],
+        [
+          0.0026,
+          0.9092
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-pale-aperture-rupture",
+          "shared_edge_px": 1946,
+          "direction": "right",
+          "distance_px": 681.21
+        },
+        {
+          "artifact_id": "module-bounded-edit-notch-cluster",
+          "shared_edge_px": 559,
+          "direction": "right",
+          "distance_px": 565.32
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-grainy-video-meter-slot",
+      "visible_area_px": 57958,
+      "territory_area_px": 24903,
+      "hover_bounds": {
+        "x": 0.2441,
+        "y": 0.332,
+        "w": 0.5072,
+        "h": 0.1436
+      },
+      "hover_polygon": [
+        [
+          0.2441,
+          0.4248
+        ],
+        [
+          0.2454,
+          0.3594
+        ],
+        [
+          0.2637,
+          0.332
+        ],
+        [
+          0.4863,
+          0.332
+        ],
+        [
+          0.7507,
+          0.417
+        ],
+        [
+          0.7507,
+          0.4482
+        ],
+        [
+          0.7331,
+          0.4746
+        ],
+        [
+          0.2611,
+          0.4717
+        ],
+        [
+          0.2441,
+          0.4463
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-pale-aperture-rupture",
+          "shared_edge_px": 2417,
+          "direction": "right",
+          "distance_px": 220.72
+        },
+        {
+          "artifact_id": "module-signal-panel-2",
+          "shared_edge_px": 2355,
+          "direction": "left",
+          "distance_px": 153.79
+        },
+        {
+          "artifact_id": "module-signal-panel",
+          "shared_edge_px": 96,
+          "direction": "right",
+          "distance_px": 380.76
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-bounded-edit-notch-cluster",
+      "visible_area_px": 8880,
+      "territory_area_px": 27360,
+      "hover_bounds": {
+        "x": 0.4674,
+        "y": 0.4688,
+        "w": 0.2331,
+        "h": 0.1816
+      },
+      "hover_polygon": [
+        [
+          0.4674,
+          0.6133
+        ],
+        [
+          0.4857,
+          0.5859
+        ],
+        [
+          0.623,
+          0.4932
+        ],
+        [
+          0.6634,
+          0.4688
+        ],
+        [
+          0.6816,
+          0.4795
+        ],
+        [
+          0.6999,
+          0.5068
+        ],
+        [
+          0.6816,
+          0.5342
+        ],
+        [
+          0.6419,
+          0.5684
+        ],
+        [
+          0.5599,
+          0.6289
+        ],
+        [
+          0.5124,
+          0.6494
+        ],
+        [
+          0.4857,
+          0.6406
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-pale-aperture-rupture",
+          "shared_edge_px": 3777,
+          "direction": "up",
+          "distance_px": 275.54
+        },
+        {
+          "artifact_id": "hero-folded-lavender-launch-strip",
+          "shared_edge_px": 559,
+          "direction": "left",
+          "distance_px": 565.32
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-marketing-pulse-tab",
+      "visible_area_px": 3994,
+      "territory_area_px": 11918,
+      "hover_bounds": {
+        "x": 0.3633,
+        "y": 0.7471,
+        "w": 0.1042,
+        "h": 0.126
+      },
+      "hover_polygon": [
+        [
+          0.3633,
+          0.8115
+        ],
+        [
+          0.4017,
+          0.7471
+        ],
+        [
+          0.4486,
+          0.7754
+        ],
+        [
+          0.4668,
+          0.8027
+        ],
+        [
+          0.4284,
+          0.8721
+        ],
+        [
+          0.3815,
+          0.8389
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-marketing-pulse-tab-2",
+          "shared_edge_px": 1159,
+          "direction": "right",
+          "distance_px": 170.62
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-signal-panel",
+      "visible_area_px": 7198,
+      "territory_area_px": 18762,
+      "hover_bounds": {
+        "x": 0.6367,
+        "y": 0.333,
+        "w": 0.1139,
+        "h": 0.1152
+      },
+      "hover_polygon": [
+        [
+          0.6367,
+          0.3604
+        ],
+        [
+          0.6549,
+          0.333
+        ],
+        [
+          0.7305,
+          0.333
+        ],
+        [
+          0.7487,
+          0.3604
+        ],
+        [
+          0.75,
+          0.4053
+        ],
+        [
+          0.75,
+          0.4199
+        ],
+        [
+          0.7318,
+          0.4473
+        ],
+        [
+          0.6549,
+          0.4463
+        ],
+        [
+          0.6367,
+          0.4189
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-pale-aperture-rupture",
+          "shared_edge_px": 2736,
+          "direction": "left",
+          "distance_px": 215.38
+        },
+        {
+          "artifact_id": "module-grainy-video-meter-slot",
+          "shared_edge_px": 96,
+          "direction": "left",
+          "distance_px": 380.76
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-marketing-pulse-tab-2",
+      "visible_area_px": 45705,
+      "territory_area_px": 64008,
+      "hover_bounds": {
+        "x": 0.4017,
+        "y": 0.752,
+        "w": 0.2168,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.4017,
+          0.8535
+        ],
+        [
+          0.4199,
+          0.752
+        ],
+        [
+          0.5996,
+          0.752
+        ],
+        [
+          0.6178,
+          0.7793
+        ],
+        [
+          0.6178,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.9668
+        ],
+        [
+          0.4199,
+          0.9668
+        ],
+        [
+          0.4017,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-marketing-pulse-tab",
+          "shared_edge_px": 1159,
+          "direction": "left",
+          "distance_px": 170.62
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-secure-tunnel-rail-break",
+      "visible_area_px": 45870,
+      "territory_area_px": 72190,
+      "hover_bounds": {
+        "x": 0.7012,
+        "y": 0.7324,
+        "w": 0.2174,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.7012,
+          0.7598
+        ],
+        [
+          0.7194,
+          0.7324
+        ],
+        [
+          0.8997,
+          0.7324
+        ],
+        [
+          0.918,
+          0.7598
+        ],
+        [
+          0.918,
+          0.9199
+        ],
+        [
+          0.8997,
+          0.9473
+        ],
+        [
+          0.7194,
+          0.9473
+        ],
+        [
+          0.7012,
+          0.9199
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-signal-panel-2",
+      "visible_area_px": 37884,
+      "territory_area_px": 52282,
+      "hover_bounds": {
+        "x": 0.2617,
+        "y": 0.3125,
+        "w": 0.1966,
+        "h": 0.2051
+      },
+      "hover_polygon": [
+        [
+          0.2617,
+          0.3398
+        ],
+        [
+          0.2799,
+          0.3125
+        ],
+        [
+          0.4355,
+          0.3125
+        ],
+        [
+          0.4577,
+          0.4746
+        ],
+        [
+          0.4577,
+          0.4893
+        ],
+        [
+          0.4395,
+          0.5166
+        ],
+        [
+          0.2799,
+          0.5166
+        ],
+        [
+          0.2617,
+          0.4893
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-pale-aperture-rupture",
+          "shared_edge_px": 3404,
+          "direction": "right",
+          "distance_px": 363.46
+        },
+        {
+          "artifact_id": "module-grainy-video-meter-slot",
+          "shared_edge_px": 2355,
+          "direction": "right",
+          "distance_px": 153.79
+        }
+      ]
+    }
+  ]
+}

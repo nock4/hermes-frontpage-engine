@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-16-lavender-calibration-rupture-v1",
+  "edition_id": "2026-08-16-lavender-calibration-rupture-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-16-lavender-calibration-rupture-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-central-pale-aperture-rupture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-central-pale-aperture-rupture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-circular-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-folded-lavender-launch-strip",
+      "target_kind": "artifact",
+      "artifact_id": "hero-folded-lavender-launch-strip",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-diagonal-band) selected from interpretation."
+    },
+    {
+      "target_id": "module-grainy-video-meter-slot",
+      "target_kind": "artifact",
+      "artifact_id": "module-grainy-video-meter-slot",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (grayscale-meter-slot) selected from interpretation."
+    },
+    {
+      "target_id": "module-bounded-edit-notch-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-bounded-edit-notch-cluster",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (clustered-purple-scratches) selected from interpretation."
+    },
+    {
+      "target_id": "module-marketing-pulse-tab",
+      "target_kind": "artifact",
+      "artifact_id": "module-marketing-pulse-tab",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (folded-edge-tab) selected from interpretation."
+    },
+    {
+      "target_id": "module-signal-panel",
+      "target_kind": "artifact",
+      "artifact_id": "module-signal-panel",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (signal-panel) selected from interpretation."
+    },
+    {
+      "target_id": "module-marketing-pulse-tab-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-marketing-pulse-tab-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (folded-edge-tab) selected from interpretation."
+    },
+    {
+      "target_id": "module-secure-tunnel-rail-break",
+      "target_kind": "artifact",
+      "artifact_id": "module-secure-tunnel-rail-break",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (broken-side-rail-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-signal-panel-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-signal-panel-2",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (signal-panel) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
