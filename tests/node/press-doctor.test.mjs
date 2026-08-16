@@ -40,4 +40,14 @@ describe('press doctor failure classifier', () => {
     expect(incident.kind).toBe('proof_failed_after_publish')
     expect(incident.next_action).toBe('recapture_or_fix_live_proof_without_regenerating_plate')
   })
+
+  it('does not mistake a recovered source-fidelity retry for the final failed stage', () => {
+    const incident = classifyCronFailure([
+      '[source-fidelity] Source-image fidelity QA failed: vision verdict failed; regenerating recovery plate 1/2 with audit-guided preserve cues',
+      '{\n  "ok": false,\n  "local_edition_id": "2026-08-16-midnight-carcass-field-v1",\n  "local_publish_status": "live",\n  "push_succeeded": true,\n  "remote_matches": false,\n  "remote_verification": { "ok": false, "error": "remote current_edition_id=old expected=2026-08-16-midnight-carcass-field-v1" }\n}',
+    ].join('\n'))
+
+    expect(incident.kind).toBe('publish_failed')
+    expect(incident.stage).toBe('publish / remote verification')
+  })
 })

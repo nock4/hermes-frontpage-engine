@@ -6,7 +6,7 @@ export function classifyCronFailure(logText) {
   const proof = buildPublishProofFromCronLog(text, { adversarialVisualQa: /adversarial visual qa[^\n]*pass/i.test(text) ? 'pass' : null })
   const pressState = classifyPressState({ summary, proof })
 
-  if (/Source-image fidelity QA failed|source[- ]image fidelity.*failed|missing critical source elements/i.test(text)) {
+  if ((pressState === 'generation_failed' || pressState === 'unknown_failed') && /Source-image fidelity QA failed|source[- ]image fidelity.*failed|missing critical source elements/i.test(text)) {
     return {
       kind: 'source_fidelity_failed',
       stage: 'source-image fidelity audit',

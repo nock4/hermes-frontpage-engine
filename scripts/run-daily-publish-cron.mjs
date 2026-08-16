@@ -242,11 +242,19 @@ async function latestRunDir(worktreeDir) {
   return dirs[0]?.path || null
 }
 
+export function cacheBustedRemoteUrl(remoteUrl, attempt) {
+  const url = new URL(remoteUrl)
+  url.searchParams.set('verify', '1')
+  url.searchParams.set('attempt', String(attempt))
+  url.searchParams.set('ts', String(Date.now()))
+  return url.toString()
+}
+
 async function verifyRemoteManifest(remoteUrl, expectedEditionId, { retries, retryDelayMs }) {
   let lastError = null
   for (let attempt = 1; attempt <= retries; attempt += 1) {
     try {
-      const payload = await fetchJson(remoteUrl)
+      const payload = await fetchJson(cacheBustedRemoteUrl(remoteUrl, attempt))
       if (payload?.current_edition_id === expectedEditionId) {
         return {
           ok: true,
@@ -268,7 +276,13 @@ async function verifyRemoteManifest(remoteUrl, expectedEditionId, { retries, ret
 
 function fetchJson(url) {
   return new Promise((resolve, reject) => {
-    const request = https.get(url, (response) => {
+    const request = https.get(url, {
+      headers: {
+        'Cache-Control': 'no-cache, no-store, max-age=0',
+        Pragma: 'no-cache',
+        'User-Agent': 'DailyFrontpageCronRemoteVerify/1.0',
+      },
+    }, (response) => {
       const statusCode = response.statusCode || 0
       if (statusCode < 200 || statusCode >= 300) {
         response.resume()

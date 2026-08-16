@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { allowedStatusPath, allocateCronUxPort, generatedAuditPathForOtherEdition, isSafeCronWorktreePath, isSafeEditionId, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
+import { allowedStatusPath, allocateCronUxPort, cacheBustedRemoteUrl, generatedAuditPathForOtherEdition, isSafeCronWorktreePath, isSafeEditionId, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
 
 describe('daily publish cron wrapper', () => {
   it('parses an explicit inspiration override option', () => {
@@ -27,6 +27,14 @@ describe('daily publish cron wrapper', () => {
     expect(options.windowDays).toBe(150)
     expect(options.maxNotes).toBe(90)
     expect(options.maxSources).toBe(28)
+  })
+
+  it('cache-busts remote manifest verification probes', () => {
+    const url = new URL(cacheBustedRemoteUrl('https://daily.nockgarden.com/editions/index.json', 3))
+
+    expect(url.searchParams.get('verify')).toBe('1')
+    expect(url.searchParams.get('attempt')).toBe('3')
+    expect(Number(url.searchParams.get('ts'))).toBeGreaterThan(0)
   })
 
   it('passes through an existing explicit inspiration override path', async () => {
