@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-08-17-dark-arena-observatory-v1",
+  "edition_id": "2026-08-17-dark-arena-observatory-v1",
+  "plate_read_timestamp": "2026-08-17T08:08:46.967Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark, image-led plate with a bowed headphone-and-face mass pressed into black space. The usable source marks are mostly small apertures: a cyan vertical slit, a torn black edge, a cold-green dash, a blue node cluster, a lower amber glint, a bottom-right gray twin glyph, and bright crescent seams around the head.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "compressed arena silence; a bowed optical mass held against a large black listening field",
+      "A dark, image-led plate with a bowed headphone-and-face mass pressed into black space. The usable source marks are mostly small apertures: a cyan vertical slit, a torn black edge, a cold-green dash, a blue node cluster, a lower amber glint, a bottom-right gray twin glyph, and bright crescent seams around the head.",
+      "nocturnal-field",
+      "silver-arcs",
+      "compressed-video"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "bowed arena mass",
+      "voxel observatory scar",
+      "alignment tick seam",
+      "large-project contradiction notch",
+      "open-source wallet glint",
+      "Signal Panel"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "dark-arena-observatory",
+      "oversized cropped amber-black portrait pressure abstracted into a nocturnal mass",
+      "two bright partial ring arcs behaving like observatory optics",
+      "severe right-side black field with sparse pinholes and seams",
+      "tiny embedded technical apertures cut into the surface",
+      "one diagonal bowed seam echoing the source-image posture",
+      "bowed headphone/face pressure field",
+      "purple-white crescent rim"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: dark-arena-observatory.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-bowed-arena-mass",
+      "kind": "hero",
+      "type": "hero-scale-compressed-video-mass",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.6499,
+        "h": 0.674
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-voxel-observatory-scar",
+      "kind": "hero",
+      "type": "hero-scale-grid-scar",
+      "strength": 0.987104,
+      "bounds": {
+        "x": 0.849,
+        "y": 0.854,
+        "w": 0.111,
+        "h": 0.064
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-alignment-tick-seam",
+      "kind": "module",
+      "type": "design-system-alignment-tick",
+      "strength": 0.798864,
+      "bounds": {
+        "x": 0.043,
+        "y": 0.028,
+        "w": 0.226,
+        "h": 0.086
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-large-project-contradiction-notch",
+      "kind": "module",
+      "type": "edge-contradiction-notch",
+      "strength": 0.7585440000000001,
+      "bounds": {
+        "x": 0.157,
+        "y": 0.538,
+        "w": 0.065,
+        "h": 0.262
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-open-source-wallet-glint",
+      "kind": "module",
+      "type": "custody-glass-glint",
+      "strength": 0.722616,
+      "bounds": {
+        "x": 0.183,
+        "y": 0.896,
+        "w": 0.086,
+        "h": 0.04
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.69954,
+      "bounds": {
+        "x": 0.848,
+        "y": 0.852,
+        "w": 0.113,
+        "h": 0.068
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-large-project-contradiction-notch-2",
+      "kind": "module",
+      "type": "edge-contradiction-notch",
+      "strength": 0.6698760000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-open-source-wallet-glint-2",
+      "kind": "module",
+      "type": "custody-glass-glint",
+      "strength": 0.6500919999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-2",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.6603159999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-bowed-arena-mass-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.6499,
+        "h": 0.674
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-voxel-observatory-scar-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.849,
+        "y": 0.854,
+        "w": 0.111,
+        "h": 0.064
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-alignment-tick-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.043,
+        "y": 0.028,
+        "w": 0.226,
+        "h": 0.086
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-large-project-contradiction-notch-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.157,
+        "y": 0.538,
+        "w": 0.065,
+        "h": 0.262
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-open-source-wallet-glint-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.183,
+        "y": 0.896,
+        "w": 0.086,
+        "h": 0.04
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.848,
+        "y": 0.852,
+        "w": 0.113,
+        "h": 0.068
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-large-project-contradiction-notch-2-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-open-source-wallet-glint-2-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

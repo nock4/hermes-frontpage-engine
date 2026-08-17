@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-17-dark-arena-observatory-v1",
+  "edition_id": "2026-08-17-dark-arena-observatory-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-17-dark-arena-observatory-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-bowed-arena-mass",
+      "target_kind": "artifact",
+      "artifact_id": "hero-bowed-arena-mass",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-compressed-video-mass) selected from interpretation."
+    },
+    {
+      "target_id": "hero-voxel-observatory-scar",
+      "target_kind": "artifact",
+      "artifact_id": "hero-voxel-observatory-scar",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-grid-scar) selected from interpretation."
+    },
+    {
+      "target_id": "module-alignment-tick-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-alignment-tick-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (design-system-alignment-tick) selected from interpretation."
+    },
+    {
+      "target_id": "module-large-project-contradiction-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-large-project-contradiction-notch",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (edge-contradiction-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-open-source-wallet-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-open-source-wallet-glint",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (custody-glass-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-signal-panel",
+      "target_kind": "artifact",
+      "artifact_id": "module-signal-panel",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (signal-panel) selected from interpretation."
+    },
+    {
+      "target_id": "module-large-project-contradiction-notch-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-large-project-contradiction-notch-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (edge-contradiction-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-open-source-wallet-glint-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-open-source-wallet-glint-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (custody-glass-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-signal-panel-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-signal-panel-2",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (signal-panel) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

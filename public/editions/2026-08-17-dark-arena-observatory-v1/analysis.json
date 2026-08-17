@@ -1,0 +1,455 @@
+{
+  "analysis_id": "analysis-2026-08-17-dark-arena-observatory-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark, image-led plate with a bowed headphone-and-face mass pressed into black space. The usable source marks are mostly small apertures: a cyan vertical slit, a torn black edge, a cold-green dash, a blue node cluster, a lower amber glint, a bottom-right gray twin glyph, and bright crescent seams around the head.",
+  "usable_surfaces": [
+    "bowed headphone/face pressure field",
+    "purple-white crescent rim",
+    "cyan vertical diagnostic slit",
+    "torn black cheek-edge notch",
+    "tiny blue node cluster at nose bridge",
+    "cold-green diagonal pinhole in empty field",
+    "amber lower-edge reflection",
+    "bottom-right gray twin signal glyph"
+  ],
+  "detected_objects": [
+    {
+      "label": "bowed arena mass",
+      "artifact_type": "hero-scale-compressed-video-mass",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.005,
+        "y": 0,
+        "w": 0.617,
+        "h": 0.93
+      },
+      "polygon": [
+        [
+          0.026,
+          0.2
+        ],
+        [
+          0.083,
+          0.104
+        ],
+        [
+          0.183,
+          0.049
+        ],
+        [
+          0.278,
+          0.031
+        ],
+        [
+          0.393,
+          0.047
+        ],
+        [
+          0.525,
+          0.082
+        ],
+        [
+          0.597,
+          0.193
+        ],
+        [
+          0.612,
+          0.337
+        ],
+        [
+          0.556,
+          0.372
+        ],
+        [
+          0.455,
+          0.522
+        ],
+        [
+          0.446,
+          0.705
+        ],
+        [
+          0.348,
+          0.855
+        ],
+        [
+          0.22,
+          0.929
+        ],
+        [
+          0.128,
+          0.773
+        ],
+        [
+          0.098,
+          0.55
+        ],
+        [
+          0.031,
+          0.414
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "large amber-black compressed face and headphone field with bowed diagonal pressure and grain, occupying the left half of the plate"
+    },
+    {
+      "label": "voxel observatory scar",
+      "artifact_type": "hero-scale-grid-scar",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.849,
+        "y": 0.854,
+        "w": 0.111,
+        "h": 0.064
+      },
+      "polygon": [
+        [
+          0.855,
+          0.866
+        ],
+        [
+          0.879,
+          0.853
+        ],
+        [
+          0.914,
+          0.854
+        ],
+        [
+          0.948,
+          0.862
+        ],
+        [
+          0.96,
+          0.887
+        ],
+        [
+          0.945,
+          0.91
+        ],
+        [
+          0.907,
+          0.918
+        ],
+        [
+          0.868,
+          0.912
+        ],
+        [
+          0.85,
+          0.892
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "blurred gray twin-cell glyph near the lower right, reading as a small blocky grid scar embedded in the dark field"
+    },
+    {
+      "label": "alignment tick seam",
+      "artifact_type": "design-system-alignment-tick",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.043,
+        "y": 0.028,
+        "w": 0.226,
+        "h": 0.086
+      },
+      "polygon": [
+        [
+          0.043,
+          0.1
+        ],
+        [
+          0.075,
+          0.083
+        ],
+        [
+          0.116,
+          0.067
+        ],
+        [
+          0.163,
+          0.054
+        ],
+        [
+          0.212,
+          0.042
+        ],
+        [
+          0.263,
+          0.028
+        ],
+        [
+          0.269,
+          0.061
+        ],
+        [
+          0.219,
+          0.077
+        ],
+        [
+          0.166,
+          0.09
+        ],
+        [
+          0.112,
+          0.101
+        ],
+        [
+          0.065,
+          0.113
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "bright cold-white and purple registration-like crescent along the upper-left headphone rim"
+    },
+    {
+      "label": "large-project contradiction notch",
+      "artifact_type": "edge-contradiction-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.157,
+        "y": 0.538,
+        "w": 0.065,
+        "h": 0.262
+      },
+      "polygon": [
+        [
+          0.178,
+          0.538
+        ],
+        [
+          0.158,
+          0.598
+        ],
+        [
+          0.171,
+          0.678
+        ],
+        [
+          0.186,
+          0.761
+        ],
+        [
+          0.214,
+          0.8
+        ],
+        [
+          0.2,
+          0.7
+        ],
+        [
+          0.192,
+          0.617
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "sharp torn black cut reversed against the warm facial mass, forming a jagged vertical pressure notch"
+    },
+    {
+      "label": "open-source wallet glint",
+      "artifact_type": "custody-glass-glint",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.183,
+        "y": 0.896,
+        "w": 0.086,
+        "h": 0.04
+      },
+      "polygon": [
+        [
+          0.183,
+          0.912
+        ],
+        [
+          0.204,
+          0.904
+        ],
+        [
+          0.232,
+          0.896
+        ],
+        [
+          0.26,
+          0.898
+        ],
+        [
+          0.269,
+          0.911
+        ],
+        [
+          0.251,
+          0.926
+        ],
+        [
+          0.221,
+          0.936
+        ],
+        [
+          0.194,
+          0.929
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "guarded amber glint pooled near the lower edge under the torn notch, set into black horizontal smears"
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.848,
+        "y": 0.852,
+        "w": 0.113,
+        "h": 0.068
+      },
+      "polygon": [
+        [
+          0.858,
+          0.858
+        ],
+        [
+          0.889,
+          0.852
+        ],
+        [
+          0.926,
+          0.856
+        ],
+        [
+          0.956,
+          0.867
+        ],
+        [
+          0.961,
+          0.891
+        ],
+        [
+          0.944,
+          0.911
+        ],
+        [
+          0.909,
+          0.92
+        ],
+        [
+          0.872,
+          0.914
+        ],
+        [
+          0.849,
+          0.895
+        ],
+        [
+          0.849,
+          0.873
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "bottom-right gray blurred double aperture reads as a discrete signal panel floating on the dark surface"
+    },
+    {
+      "label": "large-project contradiction notch",
+      "artifact_type": "edge-contradiction-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "open-source wallet glint",
+      "artifact_type": "custody-glass-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 2,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.629,
+    "rationale": "The plate is dominated by one large bowed portrait/headphone mass and one broad empty black field; the remaining source marks are sparse pinholes, slits, seams, and glints rather than clutter."
+  },
+  "fallback_detected_object_count": 3,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-17-dark-arena-observatory-v1"
+}

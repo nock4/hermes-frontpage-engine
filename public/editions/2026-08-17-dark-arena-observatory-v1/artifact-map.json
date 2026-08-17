@@ -1,0 +1,1423 @@
+{
+  "artifact_map_id": "map-2026-08-17-dark-arena-observatory-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "dark-arena-observatory",
+  "default_artifact_id": "hero-bowed-arena-mass",
+  "artifacts": [
+    {
+      "id": "hero-bowed-arena-mass",
+      "kind": "hero",
+      "label": "bowed arena mass",
+      "artifact_type": "hero-scale-compressed-video-mass",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.6499,
+        "h": 0.674
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0014,
+          0.3343
+        ],
+        [
+          0.0117,
+          0.2624
+        ],
+        [
+          0.1188,
+          0.0018
+        ],
+        [
+          0.3902,
+          0.0018
+        ],
+        [
+          0.4627,
+          0.0378
+        ],
+        [
+          0.5615,
+          0.1096
+        ],
+        [
+          0.5808,
+          0.1344
+        ],
+        [
+          0.6008,
+          0.1685
+        ],
+        [
+          0.6471,
+          0.3425
+        ],
+        [
+          0.5055,
+          0.6703
+        ],
+        [
+          0.4358,
+          0.6584
+        ],
+        [
+          0.3315,
+          0.6225
+        ],
+        [
+          0.2058,
+          0.5424
+        ],
+        [
+          0.1133,
+          0.4705
+        ],
+        [
+          0.0014,
+          0.3444
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/hero-bowed-arena-mass.svg",
+      "source_binding_ids": [
+        "binding-hero-bowed-arena-mass"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          482,
+          400
+        ],
+        "safe_stage_window_origin_px": [
+          557,
+          476
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0014,
+            0.3343
+          ],
+          [
+            0.0117,
+            0.2624
+          ],
+          [
+            0.1188,
+            0.0018
+          ],
+          [
+            0.3902,
+            0.0018
+          ],
+          [
+            0.4627,
+            0.0378
+          ],
+          [
+            0.5615,
+            0.1096
+          ],
+          [
+            0.5808,
+            0.1344
+          ],
+          [
+            0.6008,
+            0.1685
+          ],
+          [
+            0.6471,
+            0.3425
+          ],
+          [
+            0.5055,
+            0.6703
+          ],
+          [
+            0.4358,
+            0.6584
+          ],
+          [
+            0.3315,
+            0.6225
+          ],
+          [
+            0.2058,
+            0.5424
+          ],
+          [
+            0.1133,
+            0.4705
+          ],
+          [
+            0.0014,
+            0.3444
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.2311
+          ],
+          [
+            0.096,
+            0.0
+          ],
+          [
+            0.4496,
+            0.0
+          ],
+          [
+            0.5615,
+            0.0783
+          ],
+          [
+            0.605,
+            0.1354
+          ],
+          [
+            0.6243,
+            0.1694
+          ],
+          [
+            0.6706,
+            0.3407
+          ],
+          [
+            0.529,
+            0.6685
+          ],
+          [
+            0.5048,
+            0.7007
+          ],
+          [
+            0.4358,
+            0.6897
+          ],
+          [
+            0.3315,
+            0.6538
+          ],
+          [
+            0.2106,
+            0.5773
+          ],
+          [
+            0.1133,
+            0.5009
+          ],
+          [
+            0.0,
+            0.3738
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.6713,
+          "h": 0.7017
+        },
+        "territory_area_px": 516067,
+        "visible_area_px": 483607,
+        "expansion_ratio": 1.067,
+        "neighbors": [
+          {
+            "artifact_id": "module-signal-panel-2",
+            "shared_edge_px": 51949,
+            "direction": "down",
+            "distance_px": 117.77
+          },
+          {
+            "artifact_id": "module-alignment-tick-seam",
+            "shared_edge_px": 4194,
+            "direction": "up",
+            "distance_px": 386.75
+          },
+          {
+            "artifact_id": "module-large-project-contradiction-notch",
+            "shared_edge_px": 596,
+            "direction": "down",
+            "distance_px": 436.84
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-voxel-observatory-scar",
+      "kind": "hero",
+      "label": "voxel observatory scar",
+      "artifact_type": "hero-scale-grid-scar",
+      "bounds": {
+        "x": 0.849,
+        "y": 0.854,
+        "w": 0.111,
+        "h": 0.064
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.855,
+          0.866
+        ],
+        [
+          0.879,
+          0.853
+        ],
+        [
+          0.914,
+          0.854
+        ],
+        [
+          0.948,
+          0.862
+        ],
+        [
+          0.96,
+          0.887
+        ],
+        [
+          0.945,
+          0.91
+        ],
+        [
+          0.907,
+          0.918
+        ],
+        [
+          0.868,
+          0.912
+        ],
+        [
+          0.85,
+          0.892
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/hero-voxel-observatory-scar.svg",
+      "source_binding_ids": [
+        "binding-hero-voxel-observatory-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.855,
+            0.866
+          ],
+          [
+            0.879,
+            0.853
+          ],
+          [
+            0.914,
+            0.854
+          ],
+          [
+            0.948,
+            0.862
+          ],
+          [
+            0.96,
+            0.887
+          ],
+          [
+            0.945,
+            0.91
+          ],
+          [
+            0.907,
+            0.918
+          ],
+          [
+            0.868,
+            0.912
+          ],
+          [
+            0.85,
+            0.892
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8432,
+            0.9134
+          ],
+          [
+            0.866,
+            0.8287
+          ],
+          [
+            0.8785,
+            0.8214
+          ],
+          [
+            0.9475,
+            0.8306
+          ],
+          [
+            0.9834,
+            0.8867
+          ],
+          [
+            0.9448,
+            0.9411
+          ],
+          [
+            0.9068,
+            0.9484
+          ],
+          [
+            0.8674,
+            0.9429
+          ],
+          [
+            0.8432,
+            0.9144
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8432,
+          "y": 0.8214,
+          "w": 0.1409,
+          "h": 0.128
+        },
+        "territory_area_px": 12185,
+        "visible_area_px": 8805,
+        "expansion_ratio": 1.384,
+        "neighbors": [
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 1847,
+            "direction": "left",
+            "distance_px": 75.42
+          },
+          {
+            "artifact_id": "module-open-source-wallet-glint-2",
+            "shared_edge_px": 907,
+            "direction": "left",
+            "distance_px": 205.88
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-alignment-tick-seam",
+      "kind": "module",
+      "label": "alignment tick seam",
+      "artifact_type": "design-system-alignment-tick",
+      "bounds": {
+        "x": 0.043,
+        "y": 0.028,
+        "w": 0.226,
+        "h": 0.086
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.043,
+          0.1
+        ],
+        [
+          0.075,
+          0.083
+        ],
+        [
+          0.116,
+          0.067
+        ],
+        [
+          0.163,
+          0.054
+        ],
+        [
+          0.212,
+          0.042
+        ],
+        [
+          0.263,
+          0.028
+        ],
+        [
+          0.269,
+          0.061
+        ],
+        [
+          0.219,
+          0.077
+        ],
+        [
+          0.166,
+          0.09
+        ],
+        [
+          0.112,
+          0.101
+        ],
+        [
+          0.065,
+          0.113
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/module-alignment-tick-seam.svg",
+      "source_binding_ids": [
+        "binding-module-alignment-tick-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          240,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          267,
+          80
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.043,
+            0.1
+          ],
+          [
+            0.075,
+            0.083
+          ],
+          [
+            0.116,
+            0.067
+          ],
+          [
+            0.163,
+            0.054
+          ],
+          [
+            0.212,
+            0.042
+          ],
+          [
+            0.263,
+            0.028
+          ],
+          [
+            0.269,
+            0.061
+          ],
+          [
+            0.219,
+            0.077
+          ],
+          [
+            0.166,
+            0.09
+          ],
+          [
+            0.112,
+            0.101
+          ],
+          [
+            0.065,
+            0.113
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0235,
+            0.0994
+          ],
+          [
+            0.0428,
+            0.0737
+          ],
+          [
+            0.0856,
+            0.0525
+          ],
+          [
+            0.2624,
+            0.0018
+          ],
+          [
+            0.2818,
+            0.0276
+          ],
+          [
+            0.288,
+            0.0599
+          ],
+          [
+            0.2686,
+            0.0866
+          ],
+          [
+            0.0649,
+            0.1381
+          ],
+          [
+            0.0428,
+            0.1252
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0235,
+          "y": 0.0018,
+          "w": 0.2652,
+          "h": 0.1372
+        },
+        "territory_area_px": 32005,
+        "visible_area_px": 11313,
+        "expansion_ratio": 2.829,
+        "neighbors": [
+          {
+            "artifact_id": "hero-bowed-arena-mass",
+            "shared_edge_px": 4194,
+            "direction": "down",
+            "distance_px": 386.75
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-large-project-contradiction-notch",
+      "kind": "module",
+      "label": "large-project contradiction notch",
+      "artifact_type": "edge-contradiction-notch",
+      "bounds": {
+        "x": 0.157,
+        "y": 0.538,
+        "w": 0.065,
+        "h": 0.262
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.178,
+          0.538
+        ],
+        [
+          0.158,
+          0.598
+        ],
+        [
+          0.171,
+          0.678
+        ],
+        [
+          0.186,
+          0.761
+        ],
+        [
+          0.214,
+          0.8
+        ],
+        [
+          0.2,
+          0.7
+        ],
+        [
+          0.192,
+          0.617
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/module-large-project-contradiction-notch.svg",
+      "source_binding_ids": [
+        "binding-module-large-project-contradiction-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          291,
+          664
+        ],
+        "safe_stage_window_origin_px": [
+          299,
+          685
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.178,
+            0.538
+          ],
+          [
+            0.158,
+            0.598
+          ],
+          [
+            0.171,
+            0.678
+          ],
+          [
+            0.186,
+            0.761
+          ],
+          [
+            0.214,
+            0.8
+          ],
+          [
+            0.2,
+            0.7
+          ],
+          [
+            0.192,
+            0.617
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1381,
+            0.5967
+          ],
+          [
+            0.1581,
+            0.5378
+          ],
+          [
+            0.1775,
+            0.512
+          ],
+          [
+            0.1968,
+            0.5378
+          ],
+          [
+            0.2113,
+            0.6151
+          ],
+          [
+            0.2327,
+            0.7974
+          ],
+          [
+            0.2134,
+            0.825
+          ],
+          [
+            0.1664,
+            0.7606
+          ],
+          [
+            0.1381,
+            0.5994
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1381,
+          "y": 0.512,
+          "w": 0.0953,
+          "h": 0.314
+        },
+        "territory_area_px": 26841,
+        "visible_area_px": 9313,
+        "expansion_ratio": 2.882,
+        "neighbors": [
+          {
+            "artifact_id": "hero-bowed-arena-mass",
+            "shared_edge_px": 596,
+            "direction": "up",
+            "distance_px": 436.84
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-open-source-wallet-glint",
+      "kind": "module",
+      "label": "open-source wallet glint",
+      "artifact_type": "custody-glass-glint",
+      "bounds": {
+        "x": 0.183,
+        "y": 0.896,
+        "w": 0.086,
+        "h": 0.04
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.183,
+          0.912
+        ],
+        [
+          0.204,
+          0.904
+        ],
+        [
+          0.232,
+          0.896
+        ],
+        [
+          0.26,
+          0.898
+        ],
+        [
+          0.269,
+          0.911
+        ],
+        [
+          0.251,
+          0.926
+        ],
+        [
+          0.221,
+          0.936
+        ],
+        [
+          0.194,
+          0.929
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/module-open-source-wallet-glint.svg",
+      "source_binding_ids": [
+        "binding-module-open-source-wallet-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          347,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          358,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.183,
+            0.912
+          ],
+          [
+            0.204,
+            0.904
+          ],
+          [
+            0.232,
+            0.896
+          ],
+          [
+            0.26,
+            0.898
+          ],
+          [
+            0.269,
+            0.911
+          ],
+          [
+            0.251,
+            0.926
+          ],
+          [
+            0.221,
+            0.936
+          ],
+          [
+            0.194,
+            0.929
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.163,
+            0.9116
+          ],
+          [
+            0.1823,
+            0.8858
+          ],
+          [
+            0.2314,
+            0.8702
+          ],
+          [
+            0.2597,
+            0.872
+          ],
+          [
+            0.288,
+            0.9107
+          ],
+          [
+            0.2521,
+            0.9503
+          ],
+          [
+            0.221,
+            0.9613
+          ],
+          [
+            0.1934,
+            0.954
+          ],
+          [
+            0.1657,
+            0.9162
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.163,
+          "y": 0.8702,
+          "w": 0.1257,
+          "h": 0.0921
+        },
+        "territory_area_px": 12257,
+        "visible_area_px": 3549,
+        "expansion_ratio": 3.454,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "bounds": {
+        "x": 0.848,
+        "y": 0.852,
+        "w": 0.113,
+        "h": 0.068
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.858,
+          0.858
+        ],
+        [
+          0.889,
+          0.852
+        ],
+        [
+          0.926,
+          0.856
+        ],
+        [
+          0.956,
+          0.867
+        ],
+        [
+          0.961,
+          0.891
+        ],
+        [
+          0.944,
+          0.911
+        ],
+        [
+          0.909,
+          0.92
+        ],
+        [
+          0.872,
+          0.914
+        ],
+        [
+          0.849,
+          0.895
+        ],
+        [
+          0.849,
+          0.873
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.858,
+            0.858
+          ],
+          [
+            0.889,
+            0.852
+          ],
+          [
+            0.926,
+            0.856
+          ],
+          [
+            0.956,
+            0.867
+          ],
+          [
+            0.961,
+            0.891
+          ],
+          [
+            0.944,
+            0.911
+          ],
+          [
+            0.909,
+            0.92
+          ],
+          [
+            0.872,
+            0.914
+          ],
+          [
+            0.849,
+            0.895
+          ],
+          [
+            0.849,
+            0.873
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8432,
+            0.9116
+          ],
+          [
+            0.8681,
+            0.8297
+          ],
+          [
+            0.8888,
+            0.826
+          ],
+          [
+            0.9558,
+            0.8407
+          ],
+          [
+            0.9765,
+            0.872
+          ],
+          [
+            0.9157,
+            0.9438
+          ],
+          [
+            0.8715,
+            0.9392
+          ],
+          [
+            0.8432,
+            0.9125
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8432,
+          "y": 0.826,
+          "w": 0.134,
+          "h": 0.1206
+        },
+        "territory_area_px": 8774,
+        "visible_area_px": 9446,
+        "expansion_ratio": 0.929,
+        "neighbors": [
+          {
+            "artifact_id": "hero-voxel-observatory-scar",
+            "shared_edge_px": 1847,
+            "direction": "right",
+            "distance_px": 75.42
+          },
+          {
+            "artifact_id": "module-open-source-wallet-glint-2",
+            "shared_edge_px": 698,
+            "direction": "left",
+            "distance_px": 140.55
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-large-project-contradiction-notch-2",
+      "kind": "module",
+      "label": "large-project contradiction notch",
+      "artifact_type": "edge-contradiction-notch",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/module-large-project-contradiction-notch-2.svg",
+      "source_binding_ids": [
+        "binding-module-large-project-contradiction-notch-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4006,
+            0.7799
+          ],
+          [
+            0.4199,
+            0.7541
+          ],
+          [
+            0.5994,
+            0.7541
+          ],
+          [
+            0.6188,
+            0.7799
+          ],
+          [
+            0.6188,
+            0.9392
+          ],
+          [
+            0.5994,
+            0.965
+          ],
+          [
+            0.4199,
+            0.965
+          ],
+          [
+            0.4006,
+            0.9392
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4006,
+          "y": 0.7541,
+          "w": 0.2189,
+          "h": 0.2118
+        },
+        "territory_area_px": 71286,
+        "visible_area_px": 45414,
+        "expansion_ratio": 1.57,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-open-source-wallet-glint-2",
+      "kind": "module",
+      "label": "open-source wallet glint",
+      "artifact_type": "custody-glass-glint",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/module-open-source-wallet-glint-2.svg",
+      "source_binding_ids": [
+        "binding-module-open-source-wallet-glint-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7003,
+            0.7597
+          ],
+          [
+            0.7196,
+            0.7339
+          ],
+          [
+            0.8999,
+            0.7339
+          ],
+          [
+            0.9192,
+            0.7597
+          ],
+          [
+            0.9192,
+            0.8232
+          ],
+          [
+            0.8867,
+            0.9457
+          ],
+          [
+            0.7196,
+            0.9457
+          ],
+          [
+            0.7003,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7003,
+          "y": 0.7339,
+          "w": 0.2196,
+          "h": 0.2127
+        },
+        "territory_area_px": 59756,
+        "visible_area_px": 45850,
+        "expansion_ratio": 1.303,
+        "neighbors": [
+          {
+            "artifact_id": "hero-voxel-observatory-scar",
+            "shared_edge_px": 907,
+            "direction": "right",
+            "distance_px": 205.88
+          },
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 698,
+            "direction": "right",
+            "distance_px": 140.55
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-signal-panel-2",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "dark-arena-observatory",
+      "mask_path": "/editions/2026-08-17-dark-arena-observatory-v1/assets/masks/module-signal-panel-2.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2604,
+            0.3978
+          ],
+          [
+            0.4427,
+            0.3195
+          ],
+          [
+            0.4593,
+            0.3398
+          ],
+          [
+            0.4593,
+            0.4899
+          ],
+          [
+            0.4399,
+            0.5157
+          ],
+          [
+            0.2797,
+            0.5157
+          ],
+          [
+            0.2604,
+            0.4899
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2604,
+          "y": 0.3195,
+          "w": 0.1996,
+          "h": 0.1971
+        },
+        "territory_area_px": 49408,
+        "visible_area_px": 38212,
+        "expansion_ratio": 1.293,
+        "neighbors": [
+          {
+            "artifact_id": "hero-bowed-arena-mass",
+            "shared_edge_px": 51949,
+            "direction": "up",
+            "distance_px": 117.77
+          }
+        ]
+      }
+    }
+  ]
+}
