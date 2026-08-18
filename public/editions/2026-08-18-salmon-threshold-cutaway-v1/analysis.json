@@ -1,0 +1,483 @@
+{
+  "analysis_id": "analysis-2026-08-18-salmon-threshold-cutaway-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark, distressed press-room plate with a crowded granular rear field, torn vertical seams, gesturing figures, a salmon front apron, scattered papers, console flecks, and a large cyan desk insert. The image is visibly source-rich but closer to figurative collage than minimal expressionist abstraction.",
+  "usable_surfaces": [
+    "lower salmon apron slab",
+    "cyan desk insert",
+    "central white paper strata",
+    "long desk/back-wall threshold seam",
+    "upper mottled crowd field",
+    "vertical torn paper seam",
+    "small blue console nodes",
+    "lower-left square aperture"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero ivory cutaway silhouette",
+      "artifact_type": "hero-scale-silhouette-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.217,
+        "y": 0.257,
+        "w": 0.087,
+        "h": 0.191
+      },
+      "polygon": [
+        [
+          0.224,
+          0.281
+        ],
+        [
+          0.245,
+          0.257
+        ],
+        [
+          0.278,
+          0.26
+        ],
+        [
+          0.3,
+          0.289
+        ],
+        [
+          0.302,
+          0.339
+        ],
+        [
+          0.29,
+          0.399
+        ],
+        [
+          0.268,
+          0.445
+        ],
+        [
+          0.235,
+          0.431
+        ],
+        [
+          0.218,
+          0.386
+        ],
+        [
+          0.217,
+          0.326
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Warm ivory bald head and face edge forms the clearest large cutaway-like silhouette against the dark crowd and black clothing."
+    },
+    {
+      "label": "hero salmon apron section",
+      "artifact_type": "hero-scale-table-apron-cut",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.745,
+        "w": 0.574,
+        "h": 0.255
+      },
+      "polygon": [
+        [
+          0,
+          0.747
+        ],
+        [
+          0.122,
+          0.747
+        ],
+        [
+          0.211,
+          0.761
+        ],
+        [
+          0.324,
+          0.767
+        ],
+        [
+          0.411,
+          0.851
+        ],
+        [
+          0.52,
+          0.834
+        ],
+        [
+          0.574,
+          0.91
+        ],
+        [
+          0.574,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Broad lower salmon front slab with torn pigment edges, cracks, and a public-scale horizontal surface."
+    },
+    {
+      "label": "cyan pressure insert",
+      "artifact_type": "cold-rectangular-inlay",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.572,
+        "y": 0.649,
+        "w": 0.156,
+        "h": 0.204
+      },
+      "polygon": [
+        [
+          0.586,
+          0.649
+        ],
+        [
+          0.721,
+          0.661
+        ],
+        [
+          0.728,
+          0.846
+        ],
+        [
+          0.571,
+          0.813
+        ],
+        [
+          0.579,
+          0.72
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "Large cyan-blue rectangular plate embedded in the lower desk path, sharply interrupting the brown-black surface."
+    },
+    {
+      "label": "zigzag white section plates",
+      "artifact_type": "buried-paper-strata",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.302,
+        "y": 0.606,
+        "w": 0.285,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.313,
+          0.609
+        ],
+        [
+          0.409,
+          0.611
+        ],
+        [
+          0.444,
+          0.648
+        ],
+        [
+          0.481,
+          0.622
+        ],
+        [
+          0.576,
+          0.623
+        ],
+        [
+          0.587,
+          0.704
+        ],
+        [
+          0.508,
+          0.733
+        ],
+        [
+          0.454,
+          0.716
+        ],
+        [
+          0.394,
+          0.754
+        ],
+        [
+          0.304,
+          0.725
+        ],
+        [
+          0.337,
+          0.674
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "Overlapping dirty white paper planes make a jagged buried-paper path across the lower foreground."
+    },
+    {
+      "label": "charcoal rear seam",
+      "artifact_type": "horizontal-threshold-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.113,
+        "y": 0.561,
+        "w": 0.872,
+        "h": 0.05
+      },
+      "polygon": [
+        [
+          0.113,
+          0.565
+        ],
+        [
+          0.249,
+          0.57
+        ],
+        [
+          0.392,
+          0.568
+        ],
+        [
+          0.533,
+          0.572
+        ],
+        [
+          0.675,
+          0.566
+        ],
+        [
+          0.806,
+          0.573
+        ],
+        [
+          0.985,
+          0.568
+        ],
+        [
+          0.984,
+          0.608
+        ],
+        [
+          0.805,
+          0.603
+        ],
+        [
+          0.672,
+          0.597
+        ],
+        [
+          0.531,
+          0.601
+        ],
+        [
+          0.392,
+          0.598
+        ],
+        [
+          0.247,
+          0.604
+        ],
+        [
+          0.114,
+          0.597
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A long dark threshold line separates the back figure/crowd field from the desk and salmon foreground."
+    },
+    {
+      "label": "granular upper noise band",
+      "artifact_type": "mottled-background-field",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.997,
+        "h": 0.572
+      },
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.996,
+          0
+        ],
+        [
+          0.994,
+          0.237
+        ],
+        [
+          0.972,
+          0.332
+        ],
+        [
+          0.93,
+          0.49
+        ],
+        [
+          0.824,
+          0.555
+        ],
+        [
+          0.679,
+          0.527
+        ],
+        [
+          0.556,
+          0.568
+        ],
+        [
+          0.437,
+          0.515
+        ],
+        [
+          0.306,
+          0.55
+        ],
+        [
+          0.177,
+          0.506
+        ],
+        [
+          0.049,
+          0.536
+        ],
+        [
+          0,
+          0.454
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "Dense dark mottled crowd/noise texture fills the upper field, with face-like flecks and smoky compression."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.085,
+        "y": 0.609,
+        "w": 0.159,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.089,
+          0.647
+        ],
+        [
+          0.099,
+          0.623
+        ],
+        [
+          0.15,
+          0.61
+        ],
+        [
+          0.207,
+          0.617
+        ],
+        [
+          0.242,
+          0.646
+        ],
+        [
+          0.232,
+          0.676
+        ],
+        [
+          0.168,
+          0.682
+        ],
+        [
+          0.114,
+          0.671
+        ]
+      ],
+      "confidence": 0.71,
+      "visual_evidence": "Small cyan-lit console buttons and flecks sit inside a dense cluster of rectangular hardware marks."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.083,
+        "y": 0.819,
+        "w": 0.043,
+        "h": 0.065
+      },
+      "polygon": [
+        [
+          0.087,
+          0.821
+        ],
+        [
+          0.119,
+          0.819
+        ],
+        [
+          0.126,
+          0.855
+        ],
+        [
+          0.114,
+          0.881
+        ],
+        [
+          0.087,
+          0.883
+        ],
+        [
+          0.081,
+          0.85
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Small pale blue-gray square aperture embedded in the lower-left salmon apron, outlined by chipped white cracks."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 7,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.866,
+    "rationale": "The plate has multiple human figures, crowd texture, console detail, papers, tears, hands, and several competing slabs; it is source-rich but not minimal or expressionist."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-18-salmon-threshold-cutaway-v1"
+}

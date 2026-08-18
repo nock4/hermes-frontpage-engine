@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-08-18-salmon-threshold-cutaway-v1",
+  "edition_id": "2026-08-18-salmon-threshold-cutaway-v1",
+  "plate_read_timestamp": "2026-08-18T08:11:25.102Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark, distressed press-room plate with a crowded granular rear field, torn vertical seams, gesturing figures, a salmon front apron, scattered papers, console flecks, and a large cyan desk insert. The image is visibly source-rich but closer to figurative collage than minimal expressionist abstraction.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet still-life architecture under sudden pressure",
+      "A dark, distressed press-room plate with a crowded granular rear field, torn vertical seams, gesturing figures, a salmon front apron, scattered papers, console flecks, and a large cyan desk insert. The image is visibly source-rich but closer to figurative collage than minimal expressionist abstraction.",
+      "tabletop-section",
+      "smoky-void",
+      "salmon-slab"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero ivory cutaway silhouette",
+      "hero salmon apron section",
+      "cyan pressure insert",
+      "zigzag white section plates",
+      "charcoal rear seam",
+      "granular upper noise band",
+      "Color Node",
+      "Field Marker"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "salmon-threshold-cutaway",
+      "low frontal public threshold cut through a thick salmon slab",
+      "warm ivory terrain mass with raised crest and bitten edge",
+      "right-side porcelain shaft with exposed oval rim",
+      "zigzag buried white section plates crossing the lower plane",
+      "crumb cracks, bell glints, stains, and apron cuts as source-bearing interruptions",
+      "lower salmon apron slab",
+      "cyan desk insert"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: salmon-threshold-cutaway.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-ivory-cutaway-silhouette",
+      "kind": "hero",
+      "type": "hero-scale-silhouette-edge",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.217,
+        "y": 0.257,
+        "w": 0.087,
+        "h": 0.191
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-salmon-apron-section",
+      "kind": "hero",
+      "type": "hero-scale-table-apron-cut",
+      "strength": 0.988856,
+      "bounds": {
+        "x": 0,
+        "y": 0.745,
+        "w": 0.574,
+        "h": 0.255
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cyan-pressure-insert",
+      "kind": "module",
+      "type": "cold-rectangular-inlay",
+      "strength": 0.78936,
+      "bounds": {
+        "x": 0.572,
+        "y": 0.649,
+        "w": 0.156,
+        "h": 0.204
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-zigzag-white-section-plates",
+      "kind": "module",
+      "type": "buried-paper-strata",
+      "strength": 0.7548840000000001,
+      "bounds": {
+        "x": 0.302,
+        "y": 0.606,
+        "w": 0.285,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-charcoal-rear-seam",
+      "kind": "module",
+      "type": "horizontal-threshold-seam",
+      "strength": 0.7266480000000001,
+      "bounds": {
+        "x": 0.113,
+        "y": 0.561,
+        "w": 0.872,
+        "h": 0.05
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-granular-upper-noise-band",
+      "kind": "module",
+      "type": "mottled-background-field",
+      "strength": 0.7026,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.997,
+        "h": 0.572
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.6771720000000001,
+      "bounds": {
+        "x": 0.085,
+        "y": 0.609,
+        "w": 0.159,
+        "h": 0.073
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.652048,
+      "bounds": {
+        "x": 0.083,
+        "y": 0.819,
+        "w": 0.043,
+        "h": 0.065
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-2",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.654736,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-ivory-cutaway-silhouette-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.217,
+        "y": 0.257,
+        "w": 0.087,
+        "h": 0.191
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-salmon-apron-section-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.745,
+        "w": 0.574,
+        "h": 0.255
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cyan-pressure-insert-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.572,
+        "y": 0.649,
+        "w": 0.156,
+        "h": 0.204
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-zigzag-white-section-plates-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.302,
+        "y": 0.606,
+        "w": 0.285,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-charcoal-rear-seam-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.113,
+        "y": 0.561,
+        "w": 0.872,
+        "h": 0.05
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-granular-upper-noise-band-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.997,
+        "h": 0.572
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.085,
+        "y": 0.609,
+        "w": 0.159,
+        "h": 0.073
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.083,
+        "y": 0.819,
+        "w": 0.043,
+        "h": 0.065
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
