@@ -80,6 +80,34 @@ describe('scene generation image prompt', () => {
     expect(prompt.length).toBeLessThan(1850)
   })
 
+  it('uses effect direction mark grammar instead of the generic torn-paper-adjacent anchor list', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'A wet nocturnal plate built from rainy window research.',
+      lighting: 'streetlight through wet glass',
+      material_language: ['glass', 'water beads'],
+      visual_direction: {
+        composition_archetype: 'cinematic still',
+        camera_plate_grammar: 'oblique window surface',
+        visual_compositional_moves: ['large fogged pane'],
+        effect_direction: {
+          effect_family: 'glass-condensation',
+          source_basis: ['autoresearch named rainy club windows and wet reflective surfaces'],
+          surface_language: ['fogged glass', 'droplet trails'],
+          source_window_mark_types: ['wiped apertures', 'condensation halos', 'edge beads'],
+          avoid_effects: ['torn paper', 'poster paste', 'ripped collage'],
+          motion_behavior: 'slow fog bloom around active marks',
+          prompt_sentence: 'Source windows appear as wiped condensation marks, condensation halos, and edge beads in fogged glass, not torn paper, poster paste, or ripped collage.',
+        },
+      },
+      artifacts: [{ source_url: 'https://example.com/rain' }],
+    })
+
+    expect(prompt).toContain('EFFECT GRAMMAR')
+    expect(prompt).toContain('wiped condensation marks')
+    expect(prompt).toContain('not torn paper')
+    expect(prompt).not.toContain('seams, apertures, cuts, glints, label slivers, scars, defects, traces')
+  })
+
   it('prints source contract blockers into source-image prompts', () => {
     const prompt = buildSceneImagePrompt({
       scene_prompt: 'A source-led transformed plate.',

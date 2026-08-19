@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
+import { inferEffectDirectionFromResearch } from './effect-direction.mjs'
 import { openAiJson } from './openai-json.mjs'
 import { domain, getSourceDisplayTitle } from './source-display.mjs'
 import { getResearchContentSources } from './source-research.mjs'
@@ -223,6 +224,7 @@ function inferVisualDirectionFallback(signalHarvest, researchField, recentEditio
     : 'derive the lighting from the strongest research imagery rather than imposing theatrical darkness'
   const negativeSpaceTarget = densityProfile === 'dense' ? 'let density expand where the sources support it; keep enough breathing room for interaction targets' : densityProfile === 'airy' ? 'preserve open breathing room where the source field feels spacious' : 'balance open space with clustered activity according to the source evidence'
   const materialProfile = buildFallbackMaterialProfile(signalHarvest, researchField)
+  const effectDirection = inferEffectDirectionFromResearch(researchField, recentEditions)
   const avoidPatterns = uniqueNonEmpty([
     repeatedMinimal ? 'avoid repeating the recent minimal dark threshold/gate vocabulary unless the new research clearly reinforces it' : '',
     'avoid generic office-room, dashboard, or card-grid fallback staging',
@@ -241,6 +243,7 @@ function inferVisualDirectionFallback(signalHarvest, researchField, recentEditio
     plate_posture: platePosture,
     palette_profile: paletteProfile,
     material_profile: materialProfile.length ? materialProfile : ['research-shaped surfaces', 'source-led color relationships'],
+    effect_direction: effectDirection,
     lighting_profile: lightingProfile,
     negative_space_guidance: negativeSpaceTarget,
     anchor_strategy: 'derive anchor scale and loudness from the source field; some anchors can be bold islands while others remain embedded details',
@@ -268,6 +271,7 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       'Use source_image_fingerprints as concrete plate-language evidence: preserve crop logic, surface pressure, palette pressure, scale relationships, and edge behavior without copying subjects literally.',
       'When source_audio_material is present, use it as structural evidence for density, pulse, seams, silence fields, pitch-color drift, and source-window mark types; never recommend waveform/equalizer/visualizer UI.',
       'Extract 3 to 5 concrete visible compositional moves from visual_reference, source_image_fingerprints, selected_image_material, and source_audio_material; do not reduce images or audio to vague palette or ambience.',
+      'Choose source-window visual effects from autoresearch evidence: visual_motifs, aesthetic_thesis, capture_notes, source_decisions.why, image fingerprints, and audio material. Do not default to torn paper unless the source field explicitly asks for paper/poster/paste.',
       'Choose one explicit composition archetype and one camera/plate grammar that the image prompt can obey.',
       'Honor plate_posture as the edition-level variety gear. Minimal/abstract postures should still preserve 6 to 10 real source-bearing marks as apertures, seams, notches, glints, cuts, nodes, or surface interruptions.',
       'When plate_posture includes formal_risk or look_avoidance_directive, treat those as hard anti-flatness constraints: choose depth, scale shift, rupture, weather, procession, cutaway, object collision, horizon, or loud source-media fragments instead of another polite material scan.',
@@ -286,6 +290,15 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       visual_compositional_moves: ['3 to 5 concrete visible moves extracted from visual_reference or selected_image_material, e.g. hard left diagonal, blown flash, 16-bit tile density, creased magazine border, fisheye webcam framing'],
       palette_profile: 'plain-language palette guidance grounded in evidence',
       material_profile: ['3 to 6 source-led materials or surface cues'],
+      effect_direction: {
+        effect_family: 'short source-derived effect family, e.g. glass-condensation, audio-light-leak, textile-pressure, screen-burn-tile, film-contact-burn, pigment-repair, architectural-threshold, object-wear, torn-paper only when source evidence requires it',
+        source_basis: ['specific autoresearch motifs, capture notes, image fingerprints, or source-decision reasons that justify the effect'],
+        surface_language: ['3 to 5 physical surfaces for the effect grammar'],
+        source_window_mark_types: ['3 to 5 mark types source windows should use in this edition'],
+        avoid_effects: ['stale or source-inappropriate effects to forbid, including torn paper when not evidence-backed'],
+        motion_behavior: 'one source-native hover/motion behavior, no UI chrome',
+        prompt_sentence: 'one concise sentence to inject into the image prompt naming the mark grammar and forbidden stale effects',
+      },
       lighting_profile: 'plain-language lighting guidance grounded in evidence',
       negative_space_guidance: 'how open or dense the page should feel, based on evidence',
       dominant_structure: 'plain-language description of how many major structures the composition should support',
@@ -307,6 +320,14 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
     autoresearch: {
       synthesis: researchField.autoresearch?.synthesis || null,
       edition_thesis: researchField.autoresearch?.edition_thesis || null,
+      aesthetic_thesis: researchField.autoresearch?.aesthetic_thesis || null,
+      visual_motifs: researchField.autoresearch?.visual_motifs || [],
+      capture_notes: researchField.autoresearch?.capture_notes || [],
+      source_decisions: (researchField.autoresearch?.source_decisions || []).slice(0, 12).map((decision) => ({
+        role: decision?.role || null,
+        why: sanitizeSourceText(decision?.why, '', 220),
+        confidence: decision?.confidence || null,
+      })),
       clusters: researchField.autoresearch?.clusters || [],
       rejected_patterns: researchField.autoresearch?.rejected_patterns || [],
     },
@@ -387,6 +408,9 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       ...inferred,
       plate_posture: platePosture,
       material_profile: normalizeStringArray(inferred.material_profile, fallback.material_profile).slice(0, 6),
+      effect_direction: inferred.effect_direction?.prompt_sentence
+        ? inferred.effect_direction
+        : fallback.effect_direction,
       visual_compositional_moves: normalizeStringArray(inferred.visual_compositional_moves, fallback.visual_compositional_moves).slice(0, 5),
       composition_archetype: String(inferred.composition_archetype || fallback.composition_archetype),
       camera_plate_grammar: String(inferred.camera_plate_grammar || fallback.camera_plate_grammar),

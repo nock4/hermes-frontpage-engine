@@ -561,7 +561,7 @@ function fallbackDailyPayload(signalHarvest, researchField, visualDirection, dat
       audio_posture: 'silent',
       webgl_mode: 'none',
     },
-    scene_prompt: `Full-bleed source-led plate for ${date}. Use ${visualDirection.composition_archetype || 'source-led plate'} with ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}; make ${(visualDirection.visual_compositional_moves || []).slice(0, 2).join('; ') || 'source-shaped edges and apertures'} visible. ${visualDirection.plate_posture ? `${visualDirection.plate_posture.plate_posture}; ${visualDirection.plate_posture.negative_space_bias || ''}.` : ''} ${visualDirection.palette_profile || ''} ${visualDirection.lighting_profile || ''} Anchors are physical marks in the plate, never cards.`,
+    scene_prompt: `Full-bleed source-led plate for ${date}. Use ${visualDirection.composition_archetype || 'source-led plate'} with ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}; make ${(visualDirection.visual_compositional_moves || []).slice(0, 2).join('; ') || 'source-shaped edges and apertures'} visible. ${visualDirection.effect_direction?.prompt_sentence || ''} ${visualDirection.plate_posture ? `${visualDirection.plate_posture.plate_posture}; ${visualDirection.plate_posture.negative_space_bias || ''}.` : ''} ${visualDirection.palette_profile || ''} ${visualDirection.lighting_profile || ''} Anchors are physical marks in the plate, never cards.`,
     visual_direction: visualDirection,
     artifacts: sources.map((source, index) => ({
       label: [
@@ -838,6 +838,28 @@ function describeSourceContract(contract = {}) {
   ].filter(Boolean).join(' ')
 }
 
+function describeEffectDirection(effectDirection) {
+  if (!effectDirection?.prompt_sentence) return ''
+  const avoids = Array.isArray(effectDirection.avoid_effects) && effectDirection.avoid_effects.length
+    ? ` Avoid effects: ${joinLimited(effectDirection.avoid_effects, '', 4)}.`
+    : ''
+  const behavior = effectDirection.motion_behavior ? ` Motion/hover behavior: ${compactText(effectDirection.motion_behavior, 90)}.` : ''
+  return `${compactText(effectDirection.prompt_sentence, 260)}${avoids}${behavior}`
+}
+
+function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection }) {
+  if (effectDirection?.prompt_sentence) {
+    const markTypes = joinLimited(effectDirection.source_window_mark_types, 'source-native marks', 5)
+    const surfaces = joinLimited(effectDirection.surface_language, 'source-native surfaces', 4)
+    return hasSourceImage
+      ? `Add ${anchorCount} source windows as real marks in the recomposed plate using this effect grammar: ${markTypes} in ${surfaces}. They must grow from borrowed source elements, never cards, pasted thumbnails, rings, outlines, pins, numerals, numbered dots, labels, captions, UI badges, or debug markers.`
+      : `Add ${anchorCount} source windows as real marks from the source field using this effect grammar: ${markTypes} in ${surfaces}. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, numerals, numbered dots, labels, UI badges, or debug markers.`
+  }
+  return hasSourceImage
+    ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, rings, outlines, pins, numerals, numbered dots, labels, captions, UI badges, or debug markers.`
+    : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, numerals, numbered dots, labels, UI badges, or debug markers.`
+}
+
 export function buildSceneImagePrompt(payload) {
   const visualDirection = payload.visual_direction || {}
   const platePosture = payload.plate_posture || visualDirection.plate_posture || null
@@ -870,6 +892,8 @@ export function buildSceneImagePrompt(payload) {
     ? describeSourceContract(payload.source_contract)
     : ''
   const sourceAudioMaterial = describeSourceAudioMaterial(payload.source_audio_material)
+  const effectDirection = payload.effect_direction || visualDirection.effect_direction || null
+  const effectGrammar = describeEffectDirection(effectDirection)
   const sourceFidelityGuard = sourceImageFingerprints.length
     ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements — palette, silhouettes, object relationships, surface motifs, light, and edge pressure — then visibly recompose them. Translate crop/placement cues into fragment scale, seam position, silhouette pressure, or negative-space ratio; never reproduce the full layout. ${sourceAspectGuard} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, framed source panel, or near-identical still life with tiny marks.`
     : ''
@@ -898,6 +922,8 @@ export function buildSceneImagePrompt(payload) {
       : `${payload.scene_prompt || payload.mood || 'Turn the source field into a full-bleed source-led artwork.'} ${sourceAudioMaterial ? `Audio material provides hidden structure: ${sourceAudioMaterial}. ` : ''}${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 420),
     sourceAudioMaterial ? 'AUDIO MATERIAL' : '',
     sourceAudioMaterial ? compactText(`Translate the audio into surfaces and marks only: bass ridges, spectral veils, onset punctures, silence apertures, loop folds, pulse seams, pitch-color drift. Do not draw waveforms, equalizer bars, media-player UI, circular visualizers, or charts. ${sourceAudioMaterial}`, 620) : '',
+    effectGrammar ? 'EFFECT GRAMMAR' : '',
+    effectGrammar ? effectGrammar : '',
     '',
     'COMPOSITION',
     hasSourceImage
@@ -905,9 +931,7 @@ export function buildSceneImagePrompt(payload) {
       : `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
     'ANCHORS',
-    hasSourceImage
-      ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, rings, outlines, pins, numerals, numbered dots, labels, captions, UI badges, or debug markers.`
-      : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, numerals, numbered dots, labels, UI badges, or debug markers.`,
+    sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection }),
     '',
     'LIMITS',
     `${payload.lighting || visualDirection.lighting_profile || 'source-led light'}; materials: ${materialLanguage}; palette: ${visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood || 'source-led color'}. ${constraints}`,
