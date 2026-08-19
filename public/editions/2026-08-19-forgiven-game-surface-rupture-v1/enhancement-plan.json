@@ -1,0 +1,217 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-19-forgiven-game-surface-rupture-v1",
+  "edition_id": "2026-08-19-forgiven-game-surface-rupture-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-19-forgiven-game-surface-rupture-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-left-observer-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-left-observer-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-observer-cut) selected from interpretation."
+    },
+    {
+      "target_id": "hero-tower-smoke-surface-tear",
+      "target_kind": "artifact",
+      "artifact_id": "hero-tower-smoke-surface-tear",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-smoke-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-bank-image-scar",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-bank-image-scar",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-image-silt-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-scissor-v-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-scissor-v-seam",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (diagonal-cut-gesture) selected from interpretation."
+    },
+    {
+      "target_id": "module-pale-cel-protrusion",
+      "target_kind": "artifact",
+      "artifact_id": "module-pale-cel-protrusion",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (navy-cel-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-circus-video-bloom",
+      "target_kind": "artifact",
+      "artifact_id": "module-circus-video-bloom",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thumbnail-video-glare) selected from interpretation."
+    },
+    {
+      "target_id": "module-confusion-caption-slabs",
+      "target_kind": "artifact",
+      "artifact_id": "module-confusion-caption-slabs",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (illegible-lower-blocks) selected from interpretation."
+    },
+    {
+      "target_id": "module-central-skyline-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-central-skyline-slit",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ragged-city-window) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 8 artifacts and scene family heuristics."
+}

@@ -1,0 +1,1596 @@
+{
+  "artifact_map_id": "map-2026-08-19-forgiven-game-surface-rupture-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "forgiven-game-surface-rupture",
+  "default_artifact_id": "hero-left-observer-aperture",
+  "artifacts": [
+    {
+      "id": "hero-left-observer-aperture",
+      "kind": "hero",
+      "label": "left observer aperture",
+      "artifact_type": "hero-scale-observer-cut",
+      "bounds": {
+        "x": 0,
+        "y": 0.191,
+        "w": 0.239,
+        "h": 0.75
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.815
+        ],
+        [
+          0.043,
+          0.694
+        ],
+        [
+          0.046,
+          0.509
+        ],
+        [
+          0.079,
+          0.415
+        ],
+        [
+          0.109,
+          0.328
+        ],
+        [
+          0.143,
+          0.308
+        ],
+        [
+          0.176,
+          0.382
+        ],
+        [
+          0.221,
+          0.514
+        ],
+        [
+          0.239,
+          0.742
+        ],
+        [
+          0.195,
+          0.893
+        ],
+        [
+          0.121,
+          0.941
+        ],
+        [
+          0.045,
+          0.918
+        ]
+      ],
+      "cluster_id": "forgiven-game-surface-rupture",
+      "mask_path": "/editions/2026-08-19-forgiven-game-surface-rupture-v1/assets/masks/hero-left-observer-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-left-observer-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          184,
+          518
+        ],
+        "safe_stage_window_origin_px": [
+          213,
+          580
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.815
+          ],
+          [
+            0.043,
+            0.694
+          ],
+          [
+            0.046,
+            0.509
+          ],
+          [
+            0.079,
+            0.415
+          ],
+          [
+            0.109,
+            0.328
+          ],
+          [
+            0.143,
+            0.308
+          ],
+          [
+            0.176,
+            0.382
+          ],
+          [
+            0.221,
+            0.514
+          ],
+          [
+            0.239,
+            0.742
+          ],
+          [
+            0.195,
+            0.893
+          ],
+          [
+            0.121,
+            0.941
+          ],
+          [
+            0.045,
+            0.918
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.7566
+          ],
+          [
+            0.0257,
+            0.5058
+          ],
+          [
+            0.0879,
+            0.3284
+          ],
+          [
+            0.1089,
+            0.2912
+          ],
+          [
+            0.1429,
+            0.271
+          ],
+          [
+            0.1968,
+            0.3826
+          ],
+          [
+            0.241,
+            0.5133
+          ],
+          [
+            0.2578,
+            0.7237
+          ],
+          [
+            0.247,
+            0.7832
+          ],
+          [
+            0.2159,
+            0.8916
+          ],
+          [
+            0.195,
+            0.9288
+          ],
+          [
+            0.1208,
+            0.9766
+          ],
+          [
+            0.0449,
+            0.9532
+          ],
+          [
+            0.0,
+            0.8608
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.271,
+          "w": 0.2584,
+          "h": 0.7067
+        },
+        "territory_area_px": 204982,
+        "visible_area_px": 156685,
+        "expansion_ratio": 1.308,
+        "neighbors": [
+          {
+            "artifact_id": "module-scissor-v-seam",
+            "shared_edge_px": 755,
+            "direction": "right",
+            "distance_px": 368.49
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-tower-smoke-surface-tear",
+      "kind": "hero",
+      "label": "tower smoke surface tear",
+      "artifact_type": "hero-scale-smoke-notch",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.789,
+        "h": 0.285
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.014
+        ],
+        [
+          0.118,
+          0
+        ],
+        [
+          0.214,
+          0.043
+        ],
+        [
+          0.322,
+          0.064
+        ],
+        [
+          0.451,
+          0.108
+        ],
+        [
+          0.548,
+          0.134
+        ],
+        [
+          0.646,
+          0.143
+        ],
+        [
+          0.735,
+          0.142
+        ],
+        [
+          0.789,
+          0.194
+        ],
+        [
+          0.761,
+          0.235
+        ],
+        [
+          0.628,
+          0.253
+        ],
+        [
+          0.496,
+          0.247
+        ],
+        [
+          0.363,
+          0.282
+        ],
+        [
+          0.287,
+          0.207
+        ],
+        [
+          0.143,
+          0.174
+        ],
+        [
+          0,
+          0.133
+        ]
+      ],
+      "cluster_id": "forgiven-game-surface-rupture",
+      "mask_path": "/editions/2026-08-19-forgiven-game-surface-rupture-v1/assets/masks/hero-tower-smoke-surface-tear.svg",
+      "source_binding_ids": [
+        "binding-hero-tower-smoke-surface-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          606,
+          123
+        ],
+        "safe_stage_window_origin_px": [
+          703,
+          146
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.014
+          ],
+          [
+            0.118,
+            0
+          ],
+          [
+            0.214,
+            0.043
+          ],
+          [
+            0.322,
+            0.064
+          ],
+          [
+            0.451,
+            0.108
+          ],
+          [
+            0.548,
+            0.134
+          ],
+          [
+            0.646,
+            0.143
+          ],
+          [
+            0.735,
+            0.142
+          ],
+          [
+            0.789,
+            0.194
+          ],
+          [
+            0.761,
+            0.235
+          ],
+          [
+            0.628,
+            0.253
+          ],
+          [
+            0.496,
+            0.247
+          ],
+          [
+            0.363,
+            0.282
+          ],
+          [
+            0.287,
+            0.207
+          ],
+          [
+            0.143,
+            0.174
+          ],
+          [
+            0,
+            0.133
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0939,
+            0.1955
+          ],
+          [
+            0.1758,
+            0.0
+          ],
+          [
+            0.7344,
+            0.1052
+          ],
+          [
+            0.7889,
+            0.1573
+          ],
+          [
+            0.8092,
+            0.1934
+          ],
+          [
+            0.7608,
+            0.271
+          ],
+          [
+            0.3624,
+            0.3177
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0939,
+          "y": 0.0,
+          "w": 0.7159,
+          "h": 0.3188
+        },
+        "territory_area_px": 165870,
+        "visible_area_px": 169726,
+        "expansion_ratio": 0.977,
+        "neighbors": [
+          {
+            "artifact_id": "module-pale-cel-protrusion",
+            "shared_edge_px": 4085,
+            "direction": "left",
+            "distance_px": 612.03
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-right-bank-image-scar",
+      "kind": "module",
+      "label": "right bank image scar",
+      "artifact_type": "cropped-image-silt-edge",
+      "bounds": {
+        "x": 0.279,
+        "y": 0.522,
+        "w": 0.708,
+        "h": 0.373
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.279,
+          0.522
+        ],
+        [
+          0.398,
+          0.533
+        ],
+        [
+          0.511,
+          0.585
+        ],
+        [
+          0.633,
+          0.618
+        ],
+        [
+          0.778,
+          0.617
+        ],
+        [
+          0.895,
+          0.617
+        ],
+        [
+          0.987,
+          0.638
+        ],
+        [
+          0.98,
+          0.895
+        ],
+        [
+          0.82,
+          0.86
+        ],
+        [
+          0.667,
+          0.829
+        ],
+        [
+          0.524,
+          0.807
+        ],
+        [
+          0.399,
+          0.747
+        ],
+        [
+          0.3,
+          0.643
+        ]
+      ],
+      "cluster_id": "forgiven-game-surface-rupture",
+      "mask_path": "/editions/2026-08-19-forgiven-game-surface-rupture-v1/assets/masks/module-right-bank-image-scar.svg",
+      "source_binding_ids": [
+        "binding-module-right-bank-image-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          972,
+          695
+        ],
+        "safe_stage_window_origin_px": [
+          1059,
+          726
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.279,
+            0.522
+          ],
+          [
+            0.398,
+            0.533
+          ],
+          [
+            0.511,
+            0.585
+          ],
+          [
+            0.633,
+            0.618
+          ],
+          [
+            0.778,
+            0.617
+          ],
+          [
+            0.895,
+            0.617
+          ],
+          [
+            0.987,
+            0.638
+          ],
+          [
+            0.98,
+            0.895
+          ],
+          [
+            0.82,
+            0.86
+          ],
+          [
+            0.667,
+            0.829
+          ],
+          [
+            0.524,
+            0.807
+          ],
+          [
+            0.399,
+            0.747
+          ],
+          [
+            0.3,
+            0.643
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.262,
+            0.5218
+          ],
+          [
+            0.2787,
+            0.492
+          ],
+          [
+            0.3977,
+            0.5027
+          ],
+          [
+            0.8947,
+            0.5866
+          ],
+          [
+            0.9868,
+            0.6079
+          ],
+          [
+            0.9994,
+            0.6302
+          ],
+          [
+            0.9964,
+            0.8948
+          ],
+          [
+            0.9797,
+            0.9245
+          ],
+          [
+            0.619,
+            0.8512
+          ],
+          [
+            0.3529,
+            0.7184
+          ],
+          [
+            0.2961,
+            0.6663
+          ],
+          [
+            0.2829,
+            0.6429
+          ],
+          [
+            0.262,
+            0.5228
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.262,
+          "y": 0.492,
+          "w": 0.738,
+          "h": 0.4336
+        },
+        "territory_area_px": 252635,
+        "visible_area_px": 238741,
+        "expansion_ratio": 1.058,
+        "neighbors": [
+          {
+            "artifact_id": "module-circus-video-bloom",
+            "shared_edge_px": 16103,
+            "direction": "right",
+            "distance_px": 218.27
+          },
+          {
+            "artifact_id": "module-confusion-caption-slabs",
+            "shared_edge_px": 5271,
+            "direction": "left",
+            "distance_px": 370.51
+          },
+          {
+            "artifact_id": "module-scissor-v-seam",
+            "shared_edge_px": 2978,
+            "direction": "left",
+            "distance_px": 607.53
+          },
+          {
+            "artifact_id": "module-central-skyline-slit",
+            "shared_edge_px": 232,
+            "direction": "left",
+            "distance_px": 439.06
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-scissor-v-seam",
+      "kind": "module",
+      "label": "scissor V seam",
+      "artifact_type": "diagonal-cut-gesture",
+      "bounds": {
+        "x": 0.213,
+        "y": 0.43,
+        "w": 0.314,
+        "h": 0.399
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.213,
+          0.829
+        ],
+        [
+          0.239,
+          0.79
+        ],
+        [
+          0.273,
+          0.738
+        ],
+        [
+          0.311,
+          0.672
+        ],
+        [
+          0.356,
+          0.61
+        ],
+        [
+          0.416,
+          0.554
+        ],
+        [
+          0.43,
+          0.43
+        ],
+        [
+          0.442,
+          0.541
+        ],
+        [
+          0.527,
+          0.55
+        ],
+        [
+          0.444,
+          0.579
+        ],
+        [
+          0.386,
+          0.645
+        ],
+        [
+          0.333,
+          0.716
+        ],
+        [
+          0.279,
+          0.78
+        ],
+        [
+          0.237,
+          0.824
+        ]
+      ],
+      "cluster_id": "forgiven-game-surface-rupture",
+      "mask_path": "/editions/2026-08-19-forgiven-game-surface-rupture-v1/assets/masks/module-scissor-v-seam.svg",
+      "source_binding_ids": [
+        "binding-module-scissor-v-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          568,
+          612
+        ],
+        "safe_stage_window_origin_px": [
+          607,
+          645
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.213,
+            0.829
+          ],
+          [
+            0.239,
+            0.79
+          ],
+          [
+            0.273,
+            0.738
+          ],
+          [
+            0.311,
+            0.672
+          ],
+          [
+            0.356,
+            0.61
+          ],
+          [
+            0.416,
+            0.554
+          ],
+          [
+            0.43,
+            0.43
+          ],
+          [
+            0.442,
+            0.541
+          ],
+          [
+            0.527,
+            0.55
+          ],
+          [
+            0.444,
+            0.579
+          ],
+          [
+            0.386,
+            0.645
+          ],
+          [
+            0.333,
+            0.716
+          ],
+          [
+            0.279,
+            0.78
+          ],
+          [
+            0.237,
+            0.824
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2267,
+            0.8555
+          ],
+          [
+            0.247,
+            0.7471
+          ],
+          [
+            0.4294,
+            0.3996
+          ],
+          [
+            0.5437,
+            0.5494
+          ],
+          [
+            0.5179,
+            0.5824
+          ],
+          [
+            0.238,
+            0.8523
+          ],
+          [
+            0.2273,
+            0.8555
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2267,
+          "y": 0.3996,
+          "w": 0.3176,
+          "h": 0.457
+        },
+        "territory_area_px": 39952,
+        "visible_area_px": 24824,
+        "expansion_ratio": 1.609,
+        "neighbors": [
+          {
+            "artifact_id": "module-right-bank-image-scar",
+            "shared_edge_px": 2978,
+            "direction": "right",
+            "distance_px": 607.53
+          },
+          {
+            "artifact_id": "module-central-skyline-slit",
+            "shared_edge_px": 1849,
+            "direction": "right",
+            "distance_px": 265.53
+          },
+          {
+            "artifact_id": "module-confusion-caption-slabs",
+            "shared_edge_px": 1249,
+            "direction": "right",
+            "distance_px": 339.21
+          },
+          {
+            "artifact_id": "hero-left-observer-aperture",
+            "shared_edge_px": 755,
+            "direction": "left",
+            "distance_px": 368.49
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pale-cel-protrusion",
+      "kind": "module",
+      "label": "pale cel protrusion",
+      "artifact_type": "navy-cel-aperture",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.438,
+        "h": 0.283
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0,
+          0.19
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0.116,
+          0
+        ],
+        [
+          0.184,
+          0.035
+        ],
+        [
+          0.26,
+          0.047
+        ],
+        [
+          0.331,
+          0.075
+        ],
+        [
+          0.438,
+          0.135
+        ],
+        [
+          0.365,
+          0.283
+        ],
+        [
+          0.287,
+          0.21
+        ],
+        [
+          0.173,
+          0.175
+        ],
+        [
+          0.071,
+          0.163
+        ]
+      ],
+      "cluster_id": "forgiven-game-surface-rupture",
+      "mask_path": "/editions/2026-08-19-forgiven-game-surface-rupture-v1/assets/masks/module-pale-cel-protrusion.svg",
+      "source_binding_ids": [
+        "binding-module-pale-cel-protrusion"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          336,
+          122
+        ],
+        "safe_stage_window_origin_px": [
+          390,
+          145
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.19
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.116,
+            0
+          ],
+          [
+            0.184,
+            0.035
+          ],
+          [
+            0.26,
+            0.047
+          ],
+          [
+            0.331,
+            0.075
+          ],
+          [
+            0.438,
+            0.135
+          ],
+          [
+            0.365,
+            0.283
+          ],
+          [
+            0.287,
+            0.21
+          ],
+          [
+            0.173,
+            0.175
+          ],
+          [
+            0.071,
+            0.163
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.1752,
+            0.0
+          ],
+          [
+            0.2859,
+            0.0276
+          ],
+          [
+            0.2733,
+            0.2349
+          ],
+          [
+            0.0,
+            0.2189
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.2865,
+          "h": 0.2359
+        },
+        "territory_area_px": 90220,
+        "visible_area_px": 104549,
+        "expansion_ratio": 0.863,
+        "neighbors": [
+          {
+            "artifact_id": "hero-tower-smoke-surface-tear",
+            "shared_edge_px": 4085,
+            "direction": "right",
+            "distance_px": 612.03
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-circus-video-bloom",
+      "kind": "module",
+      "label": "circus video bloom",
+      "artifact_type": "thumbnail-video-glare",
+      "bounds": {
+        "x": 0.812,
+        "y": 0.635,
+        "w": 0.062,
+        "h": 0.092
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.812,
+          0.706
+        ],
+        [
+          0.826,
+          0.636
+        ],
+        [
+          0.842,
+          0.686
+        ],
+        [
+          0.858,
+          0.641
+        ],
+        [
+          0.858,
+          0.68
+        ],
+        [
+          0.874,
+          0.689
+        ],
+        [
+          0.86,
+          0.704
+        ],
+        [
+          0.861,
+          0.727
+        ],
+        [
+          0.841,
+          0.72
+        ],
+        [
+          0.824,
+          0.723
+        ]
+      ],
+      "cluster_id": "forgiven-game-surface-rupture",
+      "mask_path": "/editions/2026-08-19-forgiven-game-surface-rupture-v1/assets/masks/module-circus-video-bloom.svg",
+      "source_binding_ids": [
+        "binding-module-circus-video-bloom"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1295,
+          690
+        ],
+        "safe_stage_window_origin_px": [
+          1302,
+          697
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.812,
+            0.706
+          ],
+          [
+            0.826,
+            0.636
+          ],
+          [
+            0.842,
+            0.686
+          ],
+          [
+            0.858,
+            0.641
+          ],
+          [
+            0.858,
+            0.68
+          ],
+          [
+            0.874,
+            0.689
+          ],
+          [
+            0.86,
+            0.704
+          ],
+          [
+            0.861,
+            0.727
+          ],
+          [
+            0.841,
+            0.72
+          ],
+          [
+            0.824,
+            0.723
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7949,
+            0.7046
+          ],
+          [
+            0.8092,
+            0.6355
+          ],
+          [
+            0.826,
+            0.6057
+          ],
+          [
+            0.8577,
+            0.6111
+          ],
+          [
+            0.8744,
+            0.6408
+          ],
+          [
+            0.8906,
+            0.6886
+          ],
+          [
+            0.8774,
+            0.7269
+          ],
+          [
+            0.8606,
+            0.7566
+          ],
+          [
+            0.8236,
+            0.7524
+          ],
+          [
+            0.7949,
+            0.7056
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7949,
+          "y": 0.6057,
+          "w": 0.0963,
+          "h": 0.152
+        },
+        "territory_area_px": 14897,
+        "visible_area_px": 4550,
+        "expansion_ratio": 3.274,
+        "neighbors": [
+          {
+            "artifact_id": "module-right-bank-image-scar",
+            "shared_edge_px": 16103,
+            "direction": "left",
+            "distance_px": 218.27
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-confusion-caption-slabs",
+      "kind": "module",
+      "label": "confusion caption slabs",
+      "artifact_type": "illegible-lower-blocks",
+      "bounds": {
+        "x": 0.232,
+        "y": 0.745,
+        "w": 0.611,
+        "h": 0.238
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.232,
+          0.82
+        ],
+        [
+          0.323,
+          0.751
+        ],
+        [
+          0.452,
+          0.745
+        ],
+        [
+          0.575,
+          0.773
+        ],
+        [
+          0.694,
+          0.81
+        ],
+        [
+          0.843,
+          0.892
+        ],
+        [
+          0.805,
+          0.983
+        ],
+        [
+          0.611,
+          0.983
+        ],
+        [
+          0.471,
+          0.958
+        ],
+        [
+          0.338,
+          0.959
+        ],
+        [
+          0.27,
+          0.903
+        ]
+      ],
+      "cluster_id": "forgiven-game-surface-rupture",
+      "mask_path": "/editions/2026-08-19-forgiven-game-surface-rupture-v1/assets/masks/module-confusion-caption-slabs.svg",
+      "source_binding_ids": [
+        "binding-module-confusion-caption-slabs"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          826,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          901,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.232,
+            0.82
+          ],
+          [
+            0.323,
+            0.751
+          ],
+          [
+            0.452,
+            0.745
+          ],
+          [
+            0.575,
+            0.773
+          ],
+          [
+            0.694,
+            0.81
+          ],
+          [
+            0.843,
+            0.892
+          ],
+          [
+            0.805,
+            0.983
+          ],
+          [
+            0.611,
+            0.983
+          ],
+          [
+            0.471,
+            0.958
+          ],
+          [
+            0.338,
+            0.959
+          ],
+          [
+            0.27,
+            0.903
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2315,
+            0.8555
+          ],
+          [
+            0.3523,
+            0.7194
+          ],
+          [
+            0.4516,
+            0.7152
+          ],
+          [
+            0.5748,
+            0.7428
+          ],
+          [
+            0.8571,
+            0.898
+          ],
+          [
+            0.8122,
+            0.9989
+          ],
+          [
+            0.5347,
+            0.9989
+          ],
+          [
+            0.3379,
+            0.9883
+          ],
+          [
+            0.2697,
+            0.932
+          ],
+          [
+            0.2327,
+            0.8587
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2315,
+          "y": 0.7152,
+          "w": 0.6262,
+          "h": 0.2848
+        },
+        "territory_area_px": 180425,
+        "visible_area_px": 163148,
+        "expansion_ratio": 1.106,
+        "neighbors": [
+          {
+            "artifact_id": "module-right-bank-image-scar",
+            "shared_edge_px": 5271,
+            "direction": "right",
+            "distance_px": 370.51
+          },
+          {
+            "artifact_id": "module-scissor-v-seam",
+            "shared_edge_px": 1249,
+            "direction": "left",
+            "distance_px": 339.21
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-central-skyline-slit",
+      "kind": "module",
+      "label": "central skyline slit",
+      "artifact_type": "ragged-city-window",
+      "bounds": {
+        "x": 0.43,
+        "y": 0.431,
+        "w": 0.096,
+        "h": 0.124
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.43,
+          0.431
+        ],
+        [
+          0.442,
+          0.434
+        ],
+        [
+          0.459,
+          0.48
+        ],
+        [
+          0.485,
+          0.457
+        ],
+        [
+          0.506,
+          0.476
+        ],
+        [
+          0.526,
+          0.469
+        ],
+        [
+          0.527,
+          0.548
+        ],
+        [
+          0.496,
+          0.553
+        ],
+        [
+          0.467,
+          0.54
+        ],
+        [
+          0.443,
+          0.543
+        ],
+        [
+          0.428,
+          0.506
+        ]
+      ],
+      "cluster_id": "forgiven-game-surface-rupture",
+      "mask_path": "/editions/2026-08-19-forgiven-game-surface-rupture-v1/assets/masks/module-central-skyline-slit.svg",
+      "source_binding_ids": [
+        "binding-module-central-skyline-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          734,
+          495
+        ],
+        "safe_stage_window_origin_px": [
+          746,
+          505
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.43,
+            0.431
+          ],
+          [
+            0.442,
+            0.434
+          ],
+          [
+            0.459,
+            0.48
+          ],
+          [
+            0.485,
+            0.457
+          ],
+          [
+            0.506,
+            0.476
+          ],
+          [
+            0.526,
+            0.469
+          ],
+          [
+            0.527,
+            0.548
+          ],
+          [
+            0.496,
+            0.553
+          ],
+          [
+            0.467,
+            0.54
+          ],
+          [
+            0.443,
+            0.543
+          ],
+          [
+            0.428,
+            0.506
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4109,
+            0.4942
+          ],
+          [
+            0.4127,
+            0.4304
+          ],
+          [
+            0.4294,
+            0.4006
+          ],
+          [
+            0.442,
+            0.4038
+          ],
+          [
+            0.5257,
+            0.4389
+          ],
+          [
+            0.5425,
+            0.4687
+          ],
+          [
+            0.5437,
+            0.5282
+          ],
+          [
+            0.5437,
+            0.5473
+          ],
+          [
+            0.5269,
+            0.577
+          ],
+          [
+            0.4958,
+            0.5824
+          ],
+          [
+            0.4426,
+            0.5717
+          ],
+          [
+            0.4109,
+            0.5058
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4109,
+          "y": 0.4006,
+          "w": 0.1334,
+          "h": 0.1828
+        },
+        "territory_area_px": 28059,
+        "visible_area_px": 12704,
+        "expansion_ratio": 2.209,
+        "neighbors": [
+          {
+            "artifact_id": "module-scissor-v-seam",
+            "shared_edge_px": 1849,
+            "direction": "left",
+            "distance_px": 265.53
+          },
+          {
+            "artifact_id": "module-right-bank-image-scar",
+            "shared_edge_px": 232,
+            "direction": "right",
+            "distance_px": 439.06
+          }
+        ]
+      }
+    }
+  ]
+}
