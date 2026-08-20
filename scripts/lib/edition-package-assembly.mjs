@@ -322,8 +322,12 @@ function buildAboutRecord({ editionId, payload, researchField, signalHarvest, an
 
 async function isPackageEligibleSourceUrl(url) {
   if (!url) return false
-  if (!isYouTubeVideoUrl(url)) return true
-  return await youtubeEmbedStatus(url) !== 'unavailable'
+  // YouTube videos that refuse iframe playback are still legitimate source
+  // windows: package them as poster/linkout surfaces and mark embed_status
+  // during binding assembly. Do not collapse the edition to zero windows just
+  // because the provider blocks native iframe playback.
+  if (isYouTubeVideoUrl(url)) return true
+  return true
 }
 
 export async function assembleEditionPackage({
