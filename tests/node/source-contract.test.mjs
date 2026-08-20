@@ -61,6 +61,26 @@ describe('source contract', () => {
     expect(() => assertSourceContractPromptSafe(contract)).not.toThrow()
   })
 
+  it('does not confuse replacement typography with source replacement', () => {
+    const contract = buildSourceContract({
+      sourceImageFingerprints: [{
+        title: 'Environment sleeve',
+        image_url: 'https://img.youtube.com/vi/BPykMwQ8hBE/hqdefault.jpg',
+        visual_fertility: 'high',
+        preserve_cues: ['centered square cover panel', 'black margins', 'diagonal concrete bridge slab'],
+      }],
+      visualDirection: {
+        composition_archetype: 'architectural section',
+        camera_plate_grammar: 'low upward architectural macro under a bridge slab',
+        visual_compositional_moves: ['white title-like strokes gather near the top as short bands, never readable replacement typography'],
+      },
+      scenePrompt: 'Source-bearing marks are seam cuts and sky glints; no readable text.',
+    })
+
+    expect(contract.prompt_conflicts).toEqual([])
+    expect(() => assertSourceContractPromptSafe(contract)).not.toThrow()
+  })
+
   it('detects source preservation contradictions before image generation', () => {
     const contract = buildSourceContract({
       sourceImageFingerprints: [{

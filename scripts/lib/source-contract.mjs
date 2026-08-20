@@ -72,7 +72,7 @@ export function buildSourceContract({
   ].filter(Boolean).join(' ').toLowerCase()
   const preserveText = preserve.join(' ').toLowerCase()
   const promptConflicts = []
-  const explicitReplacement = /(unrelated|replacement|replace with|instead of the source|rather than the source)/.test(promptText)
+  const explicitReplacement = /(?:unrelated|replace(?:ment)?\s+(?:image|scene|source|subject|plate)|replace\s+with|instead of the source|rather than the source)/.test(promptText)
   const replacementScene = /(macro|landscape|horizon|skyline|city|metaphor|texture field)/.test(promptText)
   if (explicitReplacement && replacementScene
     && /(room|interior|figure|object|square|crop|framing|doorway|window|still[- ]?life|source|chair|painting)/.test(preserveText)) {
