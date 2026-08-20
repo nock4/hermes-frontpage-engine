@@ -553,7 +553,7 @@ export async function inspectSourceCandidates(signalHarvest, {
 
   if (contentSources.length < minContentItems) {
     const capturedKeys = new Set(inspected.map(sourceContentKey))
-    const fillCandidates = fetchEvidence
+    const evidenceFillCandidates = fetchEvidence
       .filter((source) => !capturedKeys.has(sourceContentKey(source)))
       .map((source) => ({
         source,
@@ -566,6 +566,11 @@ export async function inspectSourceCandidates(signalHarvest, {
         return right.score - left.score
       })
       .map((entry) => entry.source)
+
+    const supplementalFillCandidates = selectSourceCandidatesForInspection(signalHarvest, Math.max(maxSources * 4, maxSources + minContentItems), { recentSourceKeys })
+      .filter((source) => !capturedKeys.has(sourceContentKey(source)))
+
+    const fillCandidates = [...evidenceFillCandidates, ...supplementalFillCandidates]
 
     for (const candidate of fillCandidates) {
       if (contentSources.length >= minContentItems) break
