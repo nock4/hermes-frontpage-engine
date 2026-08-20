@@ -73,7 +73,7 @@ describe('source selection policy', () => {
     expect(classifySource('https://github.com/openai/codex')).toMatchObject({ source_type: 'github', window_type: 'web', media_class: 'github-page' })
   })
 
-  it('keeps YouTube poster/linkout surfaces while rejecting disallowed URLs', () => {
+  it('keeps provider-allowed YouTube surfaces while rejecting disallowed URLs', () => {
     expect(isAllowedInspectedSource(baseSource)).toBe(true)
     expect(isAllowedInspectedSource({ ...baseSource, youtube_embed_status: 'unavailable' })).toBe(true)
     expect(isAllowedInspectedSource({ ...baseSource, final_url: 'https://example.com/llm.txt' })).toBe(false)
@@ -126,6 +126,30 @@ describe('source selection policy', () => {
       baseSource.url,
       youtube.url,
     ]))
+  })
+
+  it('does not select YouTube videos that refuse native embedding for strict publish windows', () => {
+    const unavailableYouTube = {
+      ...baseSource,
+      url: 'https://www.youtube.com/watch?v=blocked123',
+      source_url: 'https://www.youtube.com/watch?v=blocked123',
+      final_url: 'https://www.youtube.com/watch?v=blocked123',
+      source_type: 'youtube',
+      source_channel: 'youtube-like',
+      image_url: 'https://img.youtube.com/vi/blocked123/hqdefault.jpg',
+      youtube_embed_status: 'unavailable',
+    }
+    const artwork = {
+      ...baseSource,
+      url: 'https://example.com/field-photo.jpg',
+      source_url: 'https://example.com/field-photo.jpg',
+      final_url: 'https://example.com/field-photo.jpg',
+      source_channel: 'chrome-bookmark',
+      image_url: 'https://example.com/field-photo.jpg',
+    }
+
+    expect(sourceHasRenderableCardSurface(unavailableYouTube)).toBe(false)
+    expect(selectContentSources([unavailableYouTube, artwork], { targetItems: 2 }).map((source) => source.url)).toEqual([artwork.url])
   })
 
   it('selects provider tweet iframes as real source windows even when media enrichment is empty', () => {

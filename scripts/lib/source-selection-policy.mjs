@@ -37,6 +37,10 @@ export function isAllowedInspectedSource(source) {
     .every(isAllowedSourceUrl)
 }
 
+function providerEmbedStatus(source) {
+  return source?.embed_status || source?.youtube_embed_status || null
+}
+
 function preferredCanonicalUrl(source) {
   const urls = [source?.final_url, source?.source_url, source?.url].filter(Boolean)
   const nonShortener = urls.find((url) => !['t.co', 'bit.ly', 'tinyurl.com'].includes(hostnameForUrl(url)))
@@ -324,7 +328,7 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (!isAllowedInspectedSource(source)) return false
   const sourceUrls = [source.url, source.source_url, source.final_url].filter(Boolean)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return false
-  if (sourceUrls.some((url) => youtubeId(url))) return source.embed_status !== 'unavailable'
+  if (sourceUrls.some((url) => youtubeId(url))) return providerEmbedStatus(source) !== 'unavailable'
   if (sourceUrls.some(isDirectRasterImageUrl)) return true
   if (source.image_url && !isLowValueVisualImage(source.image_url)) return true
   const sourceType = classifySource(source.url || source.source_url || '').source_type
@@ -333,7 +337,7 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
     // capture or fxtwitter media enrichment fails to recover attached media.
     // Raw pbs/video media is blocked above so it cannot become a duplicate
     // primary window beside its parent tweet.
-    return source.embed_status !== 'unavailable'
+    return providerEmbedStatus(source) !== 'unavailable'
       && source.embed_strategy !== 'never-primary-content-source'
       && (source.window_type === 'social' || noteHasDirectMediaForSource(source, signalHarvest))
   }
