@@ -1,0 +1,413 @@
+{
+  "analysis_id": "analysis-2026-08-20-painted-terminal-seance-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A cropped black CRT-like object sits on stained cream and violet paper. The usable source marks are the cyan monitor bloom, a scarred black left bezel, a thin purple cassette slit, three small green edge lights, a purple stepped aperture, and a punched glyph panel. The plate is sparse and expressionist, with source windows carried by real apertures, glows, seams, stains, and pinhole clusters rather than cards.",
+  "usable_surfaces": [
+    "cyan CRT glass bloom and ribbed scan surface",
+    "scarred black left bezel seam",
+    "thin purple cassette-label slit",
+    "terminal-green edge pin lights",
+    "stepped purple cutout aperture",
+    "punched glyph pinhole panel",
+    "cream paper vertical fold and horizontal seam",
+    "violet stained paper field"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero monitor-glass occult cover bloom",
+      "artifact_type": "hero-crt-glass-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.515,
+        "y": 0.081,
+        "w": 0.485,
+        "h": 0.408
+      },
+      "polygon": [
+        [
+          0.563,
+          0.09
+        ],
+        [
+          0.997,
+          0.076
+        ],
+        [
+          1,
+          0.47
+        ],
+        [
+          0.93,
+          0.471
+        ],
+        [
+          0.774,
+          0.467
+        ],
+        [
+          0.61,
+          0.466
+        ],
+        [
+          0.547,
+          0.442
+        ],
+        [
+          0.53,
+          0.372
+        ],
+        [
+          0.522,
+          0.266
+        ],
+        [
+          0.522,
+          0.145
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "Large rounded CRT glass surface with green-cyan bloom, horizontal scanline texture, dusty glass edge, and dark recessed frame."
+    },
+    {
+      "label": "hero running-notes ink panel scar",
+      "artifact_type": "hero-painted-panel-seam",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.31,
+        "y": 0.027,
+        "w": 0.196,
+        "h": 0.84
+      },
+      "polygon": [
+        [
+          0.366,
+          0.027
+        ],
+        [
+          0.506,
+          0.018
+        ],
+        [
+          0.504,
+          0.095
+        ],
+        [
+          0.497,
+          0.222
+        ],
+        [
+          0.505,
+          0.405
+        ],
+        [
+          0.493,
+          0.541
+        ],
+        [
+          0.507,
+          0.684
+        ],
+        [
+          0.491,
+          0.858
+        ],
+        [
+          0.356,
+          0.864
+        ],
+        [
+          0.341,
+          0.819
+        ],
+        [
+          0.34,
+          0.645
+        ],
+        [
+          0.326,
+          0.497
+        ],
+        [
+          0.323,
+          0.338
+        ],
+        [
+          0.316,
+          0.196
+        ],
+        [
+          0.309,
+          0.07
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Broad blackened vertical bezel/panel with dusty painted surface, scratches, edge wear, and a visible horizontal seam across it."
+    },
+    {
+      "label": "freeflow cassette-label slit",
+      "artifact_type": "cassette-label-slit",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.476,
+        "y": 0.573,
+        "w": 0.524,
+        "h": 0.075
+      },
+      "polygon": [
+        [
+          0.482,
+          0.583
+        ],
+        [
+          0.553,
+          0.576
+        ],
+        [
+          0.681,
+          0.575
+        ],
+        [
+          0.821,
+          0.575
+        ],
+        [
+          0.965,
+          0.576
+        ],
+        [
+          1,
+          0.582
+        ],
+        [
+          1,
+          0.642
+        ],
+        [
+          0.918,
+          0.646
+        ],
+        [
+          0.783,
+          0.645
+        ],
+        [
+          0.638,
+          0.644
+        ],
+        [
+          0.515,
+          0.647
+        ],
+        [
+          0.477,
+          0.638
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Long recessed horizontal cassette-like slot with a violet illuminated label strip and two dark reel holes."
+    },
+    {
+      "label": "premium-search glyph pinhole",
+      "artifact_type": "glyph-sticker-pinhole",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.703,
+        "y": 0.701,
+        "w": 0.297,
+        "h": 0.087
+      },
+      "polygon": [
+        [
+          0.704,
+          0.704
+        ],
+        [
+          0.81,
+          0.702
+        ],
+        [
+          0.916,
+          0.702
+        ],
+        [
+          0.998,
+          0.703
+        ],
+        [
+          1,
+          0.785
+        ],
+        [
+          0.94,
+          0.788
+        ],
+        [
+          0.82,
+          0.787
+        ],
+        [
+          0.706,
+          0.787
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "Inset black rectangular plate holding punched pinhole glyph clusters with two tiny green glints."
+    },
+    {
+      "label": "stepped purple aperture cut",
+      "artifact_type": "stepped-pixel-void",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.505,
+        "y": 0.707,
+        "w": 0.111,
+        "h": 0.07
+      },
+      "polygon": [
+        [
+          0.558,
+          0.707
+        ],
+        [
+          0.594,
+          0.707
+        ],
+        [
+          0.595,
+          0.724
+        ],
+        [
+          0.614,
+          0.724
+        ],
+        [
+          0.614,
+          0.744
+        ],
+        [
+          0.591,
+          0.744
+        ],
+        [
+          0.591,
+          0.762
+        ],
+        [
+          0.561,
+          0.762
+        ],
+        [
+          0.561,
+          0.777
+        ],
+        [
+          0.527,
+          0.777
+        ],
+        [
+          0.527,
+          0.761
+        ],
+        [
+          0.505,
+          0.761
+        ],
+        [
+          0.505,
+          0.743
+        ],
+        [
+          0.529,
+          0.743
+        ],
+        [
+          0.529,
+          0.724
+        ],
+        [
+          0.558,
+          0.724
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Pixel-stepped cutout in the black surface glowing violet from within, with a sharp stair-step contour."
+    },
+    {
+      "label": "violet paper stain field",
+      "artifact_type": "violet-stained-paper-pool",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.486,
+        "w": 0.342,
+        "h": 0.393
+      },
+      "polygon": [
+        [
+          0.006,
+          0.486
+        ],
+        [
+          0.083,
+          0.505
+        ],
+        [
+          0.156,
+          0.518
+        ],
+        [
+          0.231,
+          0.5
+        ],
+        [
+          0.305,
+          0.52
+        ],
+        [
+          0.342,
+          0.598
+        ],
+        [
+          0.331,
+          0.696
+        ],
+        [
+          0.333,
+          0.822
+        ],
+        [
+          0.263,
+          0.878
+        ],
+        [
+          0.15,
+          0.866
+        ],
+        [
+          0.066,
+          0.831
+        ],
+        [
+          0.01,
+          0.735
+        ],
+        [
+          0,
+          0.612
+        ]
+      ],
+      "confidence": 0.68,
+      "visual_evidence": "Large irregular violet wash and marbled stain on the left paper surface, bounded by visible cracks and tonal pooling."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.57,
+    "rationale": "The plate is led by one cropped CRT mass, one cyan glass bloom, one cassette slit, and quiet paper stain fields. Small pin lights and glyph holes add source anchors without cluttering the empty slab."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-20-painted-terminal-seance-field-v1"
+}
