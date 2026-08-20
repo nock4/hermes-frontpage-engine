@@ -73,9 +73,9 @@ describe('source selection policy', () => {
     expect(classifySource('https://github.com/openai/codex')).toMatchObject({ source_type: 'github', window_type: 'web', media_class: 'github-page' })
   })
 
-  it('rejects inspected sources that point at unavailable embeds or disallowed URLs', () => {
+  it('keeps YouTube poster/linkout surfaces while rejecting disallowed URLs', () => {
     expect(isAllowedInspectedSource(baseSource)).toBe(true)
-    expect(isAllowedInspectedSource({ ...baseSource, youtube_embed_status: 'unavailable' })).toBe(false)
+    expect(isAllowedInspectedSource({ ...baseSource, youtube_embed_status: 'unavailable' })).toBe(true)
     expect(isAllowedInspectedSource({ ...baseSource, final_url: 'https://example.com/llm.txt' })).toBe(false)
   })
 

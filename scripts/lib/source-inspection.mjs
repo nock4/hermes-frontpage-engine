@@ -595,7 +595,6 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
   const classification = classifySource(candidate.url)
   const videoId = youtubeId(candidate.url)
   const embedStatus = videoId ? await youtubeEmbedStatus(candidate.url) : null
-  if (embedStatus === 'unavailable') return null
 
   if (isTweetStatusUrl(candidate.url)) {
     const tweetSource = await inspectTweetWithFxtwitter(candidate, classification)

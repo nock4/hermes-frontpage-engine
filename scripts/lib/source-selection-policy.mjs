@@ -31,7 +31,7 @@ export function classifySource(url) {
 }
 
 export function isAllowedInspectedSource(source) {
-  if (source?.youtube_embed_status === 'unavailable' || source?.embed_status === 'unavailable') return false
+  if (source?.embed_status === 'unavailable') return false
   return [source?.url, source?.source_url, source?.final_url]
     .filter(Boolean)
     .every(isAllowedSourceUrl)
@@ -324,7 +324,7 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (!isAllowedInspectedSource(source)) return false
   const sourceUrls = [source.url, source.source_url, source.final_url].filter(Boolean)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return false
-  if (sourceUrls.some((url) => youtubeId(url))) return source.youtube_embed_status !== 'unavailable' && source.embed_status !== 'unavailable'
+  if (sourceUrls.some((url) => youtubeId(url))) return source.embed_status !== 'unavailable'
   if (sourceUrls.some(isDirectRasterImageUrl)) return true
   if (source.image_url && !isLowValueVisualImage(source.image_url)) return true
   const sourceType = classifySource(source.url || source.source_url || '').source_type
