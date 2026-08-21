@@ -1,0 +1,1701 @@
+{
+  "artifact_map_id": "map-2026-08-21-patio-entity-section-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "patio-entity-section",
+  "default_artifact_id": "hero-patio-glass-entity-field",
+  "artifacts": [
+    {
+      "id": "hero-patio-glass-entity-field",
+      "kind": "hero",
+      "label": "patio-glass-entity-field",
+      "artifact_type": "dark-pane-cloth-aperture",
+      "bounds": {
+        "x": 0.653,
+        "y": 0.154,
+        "w": 0.298,
+        "h": 0.343
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.655,
+          0.169
+        ],
+        [
+          0.705,
+          0.166
+        ],
+        [
+          0.706,
+          0.213
+        ],
+        [
+          0.744,
+          0.227
+        ],
+        [
+          0.775,
+          0.276
+        ],
+        [
+          0.805,
+          0.257
+        ],
+        [
+          0.818,
+          0.194
+        ],
+        [
+          0.859,
+          0.179
+        ],
+        [
+          0.918,
+          0.168
+        ],
+        [
+          0.946,
+          0.177
+        ],
+        [
+          0.949,
+          0.443
+        ],
+        [
+          0.904,
+          0.438
+        ],
+        [
+          0.859,
+          0.429
+        ],
+        [
+          0.817,
+          0.459
+        ],
+        [
+          0.754,
+          0.45
+        ],
+        [
+          0.702,
+          0.427
+        ],
+        [
+          0.664,
+          0.39
+        ],
+        [
+          0.653,
+          0.279
+        ]
+      ],
+      "cluster_id": "patio-entity-section",
+      "mask_path": "/editions/2026-08-21-patio-entity-section-v1/assets/masks/hero-patio-glass-entity-field.svg",
+      "source_binding_ids": [
+        "binding-hero-patio-glass-entity-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1232,
+          305
+        ],
+        "safe_stage_window_origin_px": [
+          1268,
+          333
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.655,
+            0.169
+          ],
+          [
+            0.705,
+            0.166
+          ],
+          [
+            0.706,
+            0.213
+          ],
+          [
+            0.744,
+            0.227
+          ],
+          [
+            0.775,
+            0.276
+          ],
+          [
+            0.805,
+            0.257
+          ],
+          [
+            0.818,
+            0.194
+          ],
+          [
+            0.859,
+            0.179
+          ],
+          [
+            0.918,
+            0.168
+          ],
+          [
+            0.946,
+            0.177
+          ],
+          [
+            0.949,
+            0.443
+          ],
+          [
+            0.904,
+            0.438
+          ],
+          [
+            0.859,
+            0.429
+          ],
+          [
+            0.817,
+            0.459
+          ],
+          [
+            0.754,
+            0.45
+          ],
+          [
+            0.702,
+            0.427
+          ],
+          [
+            0.664,
+            0.39
+          ],
+          [
+            0.653,
+            0.279
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6324,
+            0.2656
+          ],
+          [
+            0.6348,
+            0.1688
+          ],
+          [
+            0.6548,
+            0.1323
+          ],
+          [
+            0.9178,
+            0.1312
+          ],
+          [
+            0.9456,
+            0.1398
+          ],
+          [
+            0.9657,
+            0.1763
+          ],
+          [
+            0.9687,
+            0.4161
+          ],
+          [
+            0.9687,
+            0.4301
+          ],
+          [
+            0.9078,
+            0.4742
+          ],
+          [
+            0.8168,
+            0.4946
+          ],
+          [
+            0.7535,
+            0.486
+          ],
+          [
+            0.7015,
+            0.4634
+          ],
+          [
+            0.6637,
+            0.4258
+          ],
+          [
+            0.6436,
+            0.3892
+          ],
+          [
+            0.6324,
+            0.2806
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6324,
+          "y": 0.129,
+          "w": 0.3369,
+          "h": 0.3667
+        },
+        "territory_area_px": 159572,
+        "visible_area_px": 108575,
+        "expansion_ratio": 1.47,
+        "neighbors": [
+          {
+            "artifact_id": "hero-cropped-blue-chair-node",
+            "shared_edge_px": 2143,
+            "direction": "down",
+            "distance_px": 427.92
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-cropped-blue-chair-node",
+      "kind": "hero",
+      "label": "cropped-blue-chair-node",
+      "artifact_type": "tufted-upholstery-button-field",
+      "bounds": {
+        "x": 0.755,
+        "y": 0.393,
+        "w": 0.244,
+        "h": 0.588
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.779,
+          0.883
+        ],
+        [
+          0.791,
+          0.771
+        ],
+        [
+          0.792,
+          0.668
+        ],
+        [
+          0.807,
+          0.543
+        ],
+        [
+          0.838,
+          0.448
+        ],
+        [
+          0.896,
+          0.406
+        ],
+        [
+          0.966,
+          0.391
+        ],
+        [
+          0.998,
+          0.391
+        ],
+        [
+          0.999,
+          0.982
+        ],
+        [
+          0.76,
+          0.982
+        ],
+        [
+          0.733,
+          0.952
+        ],
+        [
+          0.735,
+          0.915
+        ]
+      ],
+      "cluster_id": "patio-entity-section",
+      "mask_path": "/editions/2026-08-21-patio-entity-section-v1/assets/masks/hero-cropped-blue-chair-node.svg",
+      "source_binding_ids": [
+        "binding-hero-cropped-blue-chair-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          655
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          703
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.779,
+            0.883
+          ],
+          [
+            0.791,
+            0.771
+          ],
+          [
+            0.792,
+            0.668
+          ],
+          [
+            0.807,
+            0.543
+          ],
+          [
+            0.838,
+            0.448
+          ],
+          [
+            0.896,
+            0.406
+          ],
+          [
+            0.966,
+            0.391
+          ],
+          [
+            0.998,
+            0.391
+          ],
+          [
+            0.999,
+            0.982
+          ],
+          [
+            0.76,
+            0.982
+          ],
+          [
+            0.733,
+            0.952
+          ],
+          [
+            0.735,
+            0.915
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7128,
+            0.9462
+          ],
+          [
+            0.7145,
+            0.914
+          ],
+          [
+            0.789,
+            0.5344
+          ],
+          [
+            0.8014,
+            0.4957
+          ],
+          [
+            0.9681,
+            0.3538
+          ],
+          [
+            0.9994,
+            0.357
+          ],
+          [
+            0.9994,
+            0.9989
+          ],
+          [
+            0.7423,
+            0.9989
+          ],
+          [
+            0.7128,
+            0.9516
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7128,
+          "y": 0.3538,
+          "w": 0.2872,
+          "h": 0.6462
+        },
+        "territory_area_px": 193746,
+        "visible_area_px": 187238,
+        "expansion_ratio": 1.035,
+        "neighbors": [
+          {
+            "artifact_id": "hero-patio-glass-entity-field",
+            "shared_edge_px": 2143,
+            "direction": "up",
+            "distance_px": 427.92
+          },
+          {
+            "artifact_id": "module-window-table-ellipse",
+            "shared_edge_px": 1422,
+            "direction": "left",
+            "distance_px": 314.66
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-left-shrine-lace-edge",
+      "kind": "module",
+      "label": "left-shrine-lace-edge",
+      "artifact_type": "lace-scallop-perforation-row",
+      "bounds": {
+        "x": 0.128,
+        "y": 0.641,
+        "w": 0.155,
+        "h": 0.067
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.13,
+          0.662
+        ],
+        [
+          0.142,
+          0.686
+        ],
+        [
+          0.155,
+          0.663
+        ],
+        [
+          0.166,
+          0.692
+        ],
+        [
+          0.178,
+          0.666
+        ],
+        [
+          0.19,
+          0.697
+        ],
+        [
+          0.203,
+          0.663
+        ],
+        [
+          0.216,
+          0.696
+        ],
+        [
+          0.229,
+          0.661
+        ],
+        [
+          0.242,
+          0.693
+        ],
+        [
+          0.255,
+          0.664
+        ],
+        [
+          0.272,
+          0.683
+        ],
+        [
+          0.282,
+          0.656
+        ],
+        [
+          0.281,
+          0.705
+        ],
+        [
+          0.13,
+          0.708
+        ]
+      ],
+      "cluster_id": "patio-entity-section",
+      "mask_path": "/editions/2026-08-21-patio-entity-section-v1/assets/masks/module-left-shrine-lace-edge.svg",
+      "source_binding_ids": [
+        "binding-module-left-shrine-lace-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          316,
+          685
+        ],
+        "safe_stage_window_origin_px": [
+          335,
+          691
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.13,
+            0.662
+          ],
+          [
+            0.142,
+            0.686
+          ],
+          [
+            0.155,
+            0.663
+          ],
+          [
+            0.166,
+            0.692
+          ],
+          [
+            0.178,
+            0.666
+          ],
+          [
+            0.19,
+            0.697
+          ],
+          [
+            0.203,
+            0.663
+          ],
+          [
+            0.216,
+            0.696
+          ],
+          [
+            0.229,
+            0.661
+          ],
+          [
+            0.242,
+            0.693
+          ],
+          [
+            0.255,
+            0.664
+          ],
+          [
+            0.272,
+            0.683
+          ],
+          [
+            0.282,
+            0.656
+          ],
+          [
+            0.281,
+            0.705
+          ],
+          [
+            0.13,
+            0.708
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1129,
+            0.6613
+          ],
+          [
+            0.1294,
+            0.6312
+          ],
+          [
+            0.2819,
+            0.6258
+          ],
+          [
+            0.2985,
+            0.6559
+          ],
+          [
+            0.2973,
+            0.7043
+          ],
+          [
+            0.2807,
+            0.7344
+          ],
+          [
+            0.1294,
+            0.7376
+          ],
+          [
+            0.1129,
+            0.7075
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1129,
+          "y": 0.6258,
+          "w": 0.1862,
+          "h": 0.1129
+        },
+        "territory_area_px": 26472,
+        "visible_area_px": 7237,
+        "expansion_ratio": 3.658,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-central-blanket-section-cut",
+      "kind": "module",
+      "label": "central-blanket-section-cut",
+      "artifact_type": "blue-blanket-dimple-and-fringe-notch",
+      "bounds": {
+        "x": 0.323,
+        "y": 0.378,
+        "w": 0.285,
+        "h": 0.461
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.328,
+          0.463
+        ],
+        [
+          0.358,
+          0.385
+        ],
+        [
+          0.418,
+          0.381
+        ],
+        [
+          0.481,
+          0.393
+        ],
+        [
+          0.53,
+          0.445
+        ],
+        [
+          0.57,
+          0.548
+        ],
+        [
+          0.606,
+          0.707
+        ],
+        [
+          0.596,
+          0.804
+        ],
+        [
+          0.524,
+          0.828
+        ],
+        [
+          0.432,
+          0.839
+        ],
+        [
+          0.35,
+          0.825
+        ],
+        [
+          0.326,
+          0.735
+        ],
+        [
+          0.315,
+          0.604
+        ]
+      ],
+      "cluster_id": "patio-entity-section",
+      "mask_path": "/editions/2026-08-21-patio-entity-section-v1/assets/masks/module-central-blanket-section-cut.svg",
+      "source_binding_ids": [
+        "binding-module-central-blanket-section-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          715,
+          585
+        ],
+        "safe_stage_window_origin_px": [
+          750,
+          623
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.328,
+            0.463
+          ],
+          [
+            0.358,
+            0.385
+          ],
+          [
+            0.418,
+            0.381
+          ],
+          [
+            0.481,
+            0.393
+          ],
+          [
+            0.53,
+            0.445
+          ],
+          [
+            0.57,
+            0.548
+          ],
+          [
+            0.606,
+            0.707
+          ],
+          [
+            0.596,
+            0.804
+          ],
+          [
+            0.524,
+            0.828
+          ],
+          [
+            0.432,
+            0.839
+          ],
+          [
+            0.35,
+            0.825
+          ],
+          [
+            0.326,
+            0.735
+          ],
+          [
+            0.315,
+            0.604
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2979,
+            0.6011
+          ],
+          [
+            0.3109,
+            0.4624
+          ],
+          [
+            0.3404,
+            0.386
+          ],
+          [
+            0.3576,
+            0.3548
+          ],
+          [
+            0.4178,
+            0.3505
+          ],
+          [
+            0.4805,
+            0.3624
+          ],
+          [
+            0.5296,
+            0.414
+          ],
+          [
+            0.5467,
+            0.4452
+          ],
+          [
+            0.5857,
+            0.5452
+          ],
+          [
+            0.6223,
+            0.7054
+          ],
+          [
+            0.6123,
+            0.8032
+          ],
+          [
+            0.5957,
+            0.8333
+          ],
+          [
+            0.5236,
+            0.8581
+          ],
+          [
+            0.4746,
+            0.8634
+          ],
+          [
+            0.3369,
+            0.8312
+          ],
+          [
+            0.3091,
+            0.7355
+          ],
+          [
+            0.2979,
+            0.6065
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2979,
+          "y": 0.3505,
+          "w": 0.3251,
+          "h": 0.514
+        },
+        "territory_area_px": 205143,
+        "visible_area_px": 169465,
+        "expansion_ratio": 1.211,
+        "neighbors": [
+          {
+            "artifact_id": "module-primary-image-material-cut",
+            "shared_edge_px": 2691,
+            "direction": "down",
+            "distance_px": 326.86
+          },
+          {
+            "artifact_id": "module-window-table-ellipse",
+            "shared_edge_px": 446,
+            "direction": "right",
+            "distance_px": 444.69
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-window-table-ellipse",
+      "kind": "module",
+      "label": "window-table-ellipse",
+      "artifact_type": "round-table-rim-reflection",
+      "bounds": {
+        "x": 0.614,
+        "y": 0.551,
+        "w": 0.215,
+        "h": 0.156
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.616,
+          0.618
+        ],
+        [
+          0.635,
+          0.585
+        ],
+        [
+          0.682,
+          0.561
+        ],
+        [
+          0.741,
+          0.553
+        ],
+        [
+          0.798,
+          0.569
+        ],
+        [
+          0.829,
+          0.604
+        ],
+        [
+          0.824,
+          0.648
+        ],
+        [
+          0.781,
+          0.685
+        ],
+        [
+          0.712,
+          0.707
+        ],
+        [
+          0.651,
+          0.69
+        ],
+        [
+          0.619,
+          0.657
+        ]
+      ],
+      "cluster_id": "patio-entity-section",
+      "mask_path": "/editions/2026-08-21-patio-entity-section-v1/assets/masks/module-window-table-ellipse.svg",
+      "source_binding_ids": [
+        "binding-module-window-table-ellipse"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1108,
+          631
+        ],
+        "safe_stage_window_origin_px": [
+          1135,
+          644
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.616,
+            0.618
+          ],
+          [
+            0.635,
+            0.585
+          ],
+          [
+            0.682,
+            0.561
+          ],
+          [
+            0.741,
+            0.553
+          ],
+          [
+            0.798,
+            0.569
+          ],
+          [
+            0.829,
+            0.604
+          ],
+          [
+            0.824,
+            0.648
+          ],
+          [
+            0.781,
+            0.685
+          ],
+          [
+            0.712,
+            0.707
+          ],
+          [
+            0.651,
+            0.69
+          ],
+          [
+            0.619,
+            0.657
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5993,
+            0.6172
+          ],
+          [
+            0.6348,
+            0.5548
+          ],
+          [
+            0.6814,
+            0.5301
+          ],
+          [
+            0.7405,
+            0.5226
+          ],
+          [
+            0.7979,
+            0.5387
+          ],
+          [
+            0.8233,
+            0.5677
+          ],
+          [
+            0.8032,
+            0.6957
+          ],
+          [
+            0.7807,
+            0.7151
+          ],
+          [
+            0.7116,
+            0.7366
+          ],
+          [
+            0.6507,
+            0.7194
+          ],
+          [
+            0.6217,
+            0.6903
+          ],
+          [
+            0.6022,
+            0.657
+          ],
+          [
+            0.5993,
+            0.6204
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5993,
+          "y": 0.5226,
+          "w": 0.2246,
+          "h": 0.2151
+        },
+        "territory_area_px": 58154,
+        "visible_area_px": 38698,
+        "expansion_ratio": 1.503,
+        "neighbors": [
+          {
+            "artifact_id": "hero-cropped-blue-chair-node",
+            "shared_edge_px": 1422,
+            "direction": "right",
+            "distance_px": 314.66
+          },
+          {
+            "artifact_id": "module-central-blanket-section-cut",
+            "shared_edge_px": 446,
+            "direction": "left",
+            "distance_px": 444.69
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-primary-image-material-cut",
+      "kind": "module",
+      "label": "primary-image-material-cut",
+      "artifact_type": "wall-floor-section-ledger",
+      "bounds": {
+        "x": 0.022,
+        "y": 0.76,
+        "w": 0.662,
+        "h": 0.214
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.023,
+          0.839
+        ],
+        [
+          0.089,
+          0.834
+        ],
+        [
+          0.156,
+          0.816
+        ],
+        [
+          0.222,
+          0.827
+        ],
+        [
+          0.281,
+          0.849
+        ],
+        [
+          0.318,
+          0.863
+        ],
+        [
+          0.406,
+          0.86
+        ],
+        [
+          0.487,
+          0.873
+        ],
+        [
+          0.569,
+          0.866
+        ],
+        [
+          0.654,
+          0.849
+        ],
+        [
+          0.684,
+          0.894
+        ],
+        [
+          0.671,
+          0.97
+        ],
+        [
+          0.454,
+          0.975
+        ],
+        [
+          0.251,
+          0.962
+        ],
+        [
+          0.08,
+          0.953
+        ],
+        [
+          0.024,
+          0.925
+        ]
+      ],
+      "cluster_id": "patio-entity-section",
+      "mask_path": "/editions/2026-08-21-patio-entity-section-v1/assets/masks/module-primary-image-material-cut.svg",
+      "source_binding_ids": [
+        "binding-module-primary-image-material-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          542,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          624,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.023,
+            0.839
+          ],
+          [
+            0.089,
+            0.834
+          ],
+          [
+            0.156,
+            0.816
+          ],
+          [
+            0.222,
+            0.827
+          ],
+          [
+            0.281,
+            0.849
+          ],
+          [
+            0.318,
+            0.863
+          ],
+          [
+            0.406,
+            0.86
+          ],
+          [
+            0.487,
+            0.873
+          ],
+          [
+            0.569,
+            0.866
+          ],
+          [
+            0.654,
+            0.849
+          ],
+          [
+            0.684,
+            0.894
+          ],
+          [
+            0.671,
+            0.97
+          ],
+          [
+            0.454,
+            0.975
+          ],
+          [
+            0.251,
+            0.962
+          ],
+          [
+            0.08,
+            0.953
+          ],
+          [
+            0.024,
+            0.925
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0059,
+            0.8387
+          ],
+          [
+            0.0225,
+            0.8086
+          ],
+          [
+            0.1554,
+            0.7849
+          ],
+          [
+            0.6537,
+            0.8183
+          ],
+          [
+            0.7004,
+            0.8935
+          ],
+          [
+            0.6879,
+            0.9677
+          ],
+          [
+            0.6714,
+            0.9989
+          ],
+          [
+            0.3694,
+            0.9989
+          ],
+          [
+            0.0798,
+            0.9828
+          ],
+          [
+            0.0236,
+            0.9548
+          ],
+          [
+            0.0071,
+            0.9247
+          ],
+          [
+            0.0059,
+            0.8591
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0059,
+          "y": 0.7849,
+          "w": 0.695,
+          "h": 0.2151
+        },
+        "territory_area_px": 181500,
+        "visible_area_px": 118014,
+        "expansion_ratio": 1.538,
+        "neighbors": [
+          {
+            "artifact_id": "module-central-blanket-section-cut",
+            "shared_edge_px": 2691,
+            "direction": "up",
+            "distance_px": 326.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "coral-plaster-glow-slit",
+      "bounds": {
+        "x": 0.056,
+        "y": 0.112,
+        "w": 0.056,
+        "h": 0.108
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.061,
+          0.131
+        ],
+        [
+          0.077,
+          0.119
+        ],
+        [
+          0.095,
+          0.119
+        ],
+        [
+          0.102,
+          0.097
+        ],
+        [
+          0.106,
+          0.139
+        ],
+        [
+          0.096,
+          0.154
+        ],
+        [
+          0.1,
+          0.213
+        ],
+        [
+          0.082,
+          0.212
+        ],
+        [
+          0.079,
+          0.175
+        ],
+        [
+          0.058,
+          0.166
+        ]
+      ],
+      "cluster_id": "patio-entity-section",
+      "mask_path": "/editions/2026-08-21-patio-entity-section-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          129,
+          161
+        ],
+        "safe_stage_window_origin_px": [
+          136,
+          170
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.061,
+            0.131
+          ],
+          [
+            0.077,
+            0.119
+          ],
+          [
+            0.095,
+            0.119
+          ],
+          [
+            0.102,
+            0.097
+          ],
+          [
+            0.106,
+            0.139
+          ],
+          [
+            0.096,
+            0.154
+          ],
+          [
+            0.1,
+            0.213
+          ],
+          [
+            0.082,
+            0.212
+          ],
+          [
+            0.079,
+            0.175
+          ],
+          [
+            0.058,
+            0.166
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0343,
+            0.1624
+          ],
+          [
+            0.0372,
+            0.1301
+          ],
+          [
+            0.0609,
+            0.0871
+          ],
+          [
+            0.1017,
+            0.0538
+          ],
+          [
+            0.1253,
+            0.0968
+          ],
+          [
+            0.1294,
+            0.1366
+          ],
+          [
+            0.1235,
+            0.2129
+          ],
+          [
+            0.0999,
+            0.2559
+          ],
+          [
+            0.0816,
+            0.2548
+          ],
+          [
+            0.0343,
+            0.1656
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0343,
+          "y": 0.0538,
+          "w": 0.0957,
+          "h": 0.2032
+        },
+        "territory_area_px": 19994,
+        "visible_area_px": 4719,
+        "expansion_ratio": 4.237,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "broken-plaster-stair-edge",
+      "bounds": {
+        "x": 0.024,
+        "y": 0.277,
+        "w": 0.086,
+        "h": 0.183
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.03,
+          0.285
+        ],
+        [
+          0.064,
+          0.279
+        ],
+        [
+          0.088,
+          0.305
+        ],
+        [
+          0.107,
+          0.302
+        ],
+        [
+          0.108,
+          0.338
+        ],
+        [
+          0.081,
+          0.343
+        ],
+        [
+          0.074,
+          0.389
+        ],
+        [
+          0.109,
+          0.393
+        ],
+        [
+          0.103,
+          0.451
+        ],
+        [
+          0.068,
+          0.46
+        ],
+        [
+          0.045,
+          0.432
+        ],
+        [
+          0.028,
+          0.391
+        ],
+        [
+          0.023,
+          0.328
+        ]
+      ],
+      "cluster_id": "patio-entity-section",
+      "mask_path": "/editions/2026-08-21-patio-entity-section-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          103,
+          362
+        ],
+        "safe_stage_window_origin_px": [
+          113,
+          377
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.03,
+            0.285
+          ],
+          [
+            0.064,
+            0.279
+          ],
+          [
+            0.088,
+            0.305
+          ],
+          [
+            0.107,
+            0.302
+          ],
+          [
+            0.108,
+            0.338
+          ],
+          [
+            0.081,
+            0.343
+          ],
+          [
+            0.074,
+            0.389
+          ],
+          [
+            0.109,
+            0.393
+          ],
+          [
+            0.103,
+            0.451
+          ],
+          [
+            0.068,
+            0.46
+          ],
+          [
+            0.045,
+            0.432
+          ],
+          [
+            0.028,
+            0.391
+          ],
+          [
+            0.023,
+            0.328
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0059,
+            0.3269
+          ],
+          [
+            0.013,
+            0.2849
+          ],
+          [
+            0.0296,
+            0.2548
+          ],
+          [
+            0.0638,
+            0.2484
+          ],
+          [
+            0.107,
+            0.271
+          ],
+          [
+            0.1235,
+            0.3011
+          ],
+          [
+            0.1253,
+            0.3925
+          ],
+          [
+            0.1194,
+            0.4505
+          ],
+          [
+            0.1028,
+            0.4806
+          ],
+          [
+            0.068,
+            0.4892
+          ],
+          [
+            0.0449,
+            0.4613
+          ],
+          [
+            0.0124,
+            0.3935
+          ],
+          [
+            0.0059,
+            0.3312
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0059,
+          "y": 0.2484,
+          "w": 0.12,
+          "h": 0.2419
+        },
+        "territory_area_px": 34634,
+        "visible_area_px": 17102,
+        "expansion_ratio": 2.025,
+        "neighbors": []
+      }
+    }
+  ]
+}

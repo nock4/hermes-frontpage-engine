@@ -1,0 +1,350 @@
+{
+  "interpretation_id": "interp-2026-08-21-patio-entity-section-v1",
+  "edition_id": "2026-08-21-patio-entity-section-v1",
+  "plate_read_timestamp": "2026-08-21T08:11:04.279Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A nocturnal chalk-and-ink room plate: shrine shelves and lace glow on the left, a blue blanket chair and exposed floor strata in the center, a kitchen and round table receding behind it, dark patio panes with lit window marks at right, and a cropped tufted blue chair forming the foreground edge.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "haunted patio glow inside a chalk room",
+      "A nocturnal chalk-and-ink room plate: shrine shelves and lace glow on the left, a blue blanket chair and exposed floor strata in the center, a kitchen and round table receding behind it, dark patio panes with lit window marks at right, and a cropped tufted blue chair forming the foreground edge.",
+      "chalk-room",
+      "patio-glass",
+      "acid-glow"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "patio-glass-entity-field",
+      "cropped-blue-chair-node",
+      "left-shrine-lace-edge",
+      "central-blanket-section-cut",
+      "window-table-ellipse",
+      "primary-image-material-cut",
+      "Color Node",
+      "Edge Detail"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "patio-entity-section",
+      "left devotional clutter wall/table cluster reduced to edge silhouettes and lace perforations",
+      "central padded chair block with blanket-like strata and floral massing",
+      "right sliding patio-glass grid holding a pale entity pressure shape",
+      "cropped foreground upholstery ledge with button-dimple source nodes",
+      "nested rectangles and ellipses moving across wall frame, calendar block, panes, table, and chair seams",
+      "exposed section bands in wall and floor with glowing notches",
+      "right patio glass panes with pale hanging cloth void"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: patio-entity-section.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-patio-glass-entity-field",
+      "kind": "hero",
+      "type": "dark-pane-cloth-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.653,
+        "y": 0.154,
+        "w": 0.298,
+        "h": 0.343
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-cropped-blue-chair-node",
+      "kind": "hero",
+      "type": "tufted-upholstery-button-field",
+      "strength": 0.9723919999999999,
+      "bounds": {
+        "x": 0.755,
+        "y": 0.393,
+        "w": 0.244,
+        "h": 0.588
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-shrine-lace-edge",
+      "kind": "module",
+      "type": "lace-scallop-perforation-row",
+      "strength": 0.792708,
+      "bounds": {
+        "x": 0.128,
+        "y": 0.641,
+        "w": 0.155,
+        "h": 0.067
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-central-blanket-section-cut",
+      "kind": "module",
+      "type": "blue-blanket-dimple-and-fringe-notch",
+      "strength": 0.7458840000000001,
+      "bounds": {
+        "x": 0.323,
+        "y": 0.378,
+        "w": 0.285,
+        "h": 0.461
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-window-table-ellipse",
+      "kind": "module",
+      "type": "round-table-rim-reflection",
+      "strength": 0.7299720000000001,
+      "bounds": {
+        "x": 0.614,
+        "y": 0.551,
+        "w": 0.215,
+        "h": 0.156
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-primary-image-material-cut",
+      "kind": "module",
+      "type": "wall-floor-section-ledger",
+      "strength": 0.70044,
+      "bounds": {
+        "x": 0.022,
+        "y": 0.76,
+        "w": 0.662,
+        "h": 0.214
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "coral-plaster-glow-slit",
+      "strength": 0.6784680000000001,
+      "bounds": {
+        "x": 0.056,
+        "y": 0.112,
+        "w": 0.056,
+        "h": 0.108
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "type": "broken-plaster-stair-edge",
+      "strength": 0.655612,
+      "bounds": {
+        "x": 0.024,
+        "y": 0.277,
+        "w": 0.086,
+        "h": 0.183
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-patio-glass-entity-field-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.653,
+        "y": 0.154,
+        "w": 0.298,
+        "h": 0.343
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-cropped-blue-chair-node-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.755,
+        "y": 0.393,
+        "w": 0.244,
+        "h": 0.588
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-shrine-lace-edge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.128,
+        "y": 0.641,
+        "w": 0.155,
+        "h": 0.067
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-central-blanket-section-cut-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.323,
+        "y": 0.378,
+        "w": 0.285,
+        "h": 0.461
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-window-table-ellipse-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.614,
+        "y": 0.551,
+        "w": 0.215,
+        "h": 0.156
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-primary-image-material-cut-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.022,
+        "y": 0.76,
+        "w": 0.662,
+        "h": 0.214
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.056,
+        "y": 0.112,
+        "w": 0.056,
+        "h": 0.108
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.024,
+        "y": 0.277,
+        "w": 0.086,
+        "h": 0.183
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 8 artifacts and scene family heuristics."
+  ]
+}
