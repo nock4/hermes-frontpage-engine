@@ -1,0 +1,340 @@
+{
+  "analysis_id": "analysis-2026-08-22-obsolete-guidebook-marquee-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A quiet expressionist street plate: a vast cyan sky-screen opens the left side, while a cream vertical marquee slab, black gutter, brick spine apertures, and a tilted yellow pixel sign create the source-bearing edge system on the right. The road seam and tiny sky fleck give small findable gestures inside the broad field.",
+  "usable_surfaces": [
+    "vast cyan sky-glass field at left",
+    "tall cream enamel marquee face",
+    "deep black sign-side gutter",
+    "warm brick wall with stacked dark apertures",
+    "receding asphalt seam and dashed lane trace",
+    "tiny pale pinhole in open sky"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero cream vertical marquee slab",
+      "artifact_type": "hero-scale-marquee-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.552,
+        "y": 0.016,
+        "w": 0.126,
+        "h": 0.697
+      },
+      "polygon": [
+        [
+          0.589,
+          0.017
+        ],
+        [
+          0.676,
+          0.017
+        ],
+        [
+          0.676,
+          0.707
+        ],
+        [
+          0.553,
+          0.707
+        ],
+        [
+          0.553,
+          0.251
+        ],
+        [
+          0.565,
+          0.227
+        ],
+        [
+          0.565,
+          0.047
+        ],
+        [
+          0.589,
+          0.017
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "The tall weathered cream enamel sign face is clearly visible, with chipped edges, red block marks, a blue circular top medallion, and vertical slab geometry."
+    },
+    {
+      "label": "hero persistent glass plate field",
+      "artifact_type": "hero-scale-sky-glass-plate-field",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.001,
+        "y": 0,
+        "w": 0.55,
+        "h": 0.799
+      },
+      "polygon": [
+        [
+          0.003,
+          0.004
+        ],
+        [
+          0.556,
+          0.004
+        ],
+        [
+          0.554,
+          0.205
+        ],
+        [
+          0.551,
+          0.475
+        ],
+        [
+          0.548,
+          0.703
+        ],
+        [
+          0.518,
+          0.79
+        ],
+        [
+          0.376,
+          0.796
+        ],
+        [
+          0.202,
+          0.794
+        ],
+        [
+          0.047,
+          0.786
+        ],
+        [
+          0.003,
+          0.777
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A dominant uninterrupted cyan-blue field occupies the left and upper plate, visibly textured like aged glass or screen surface, bounded by the marquee edge and distant street horizon."
+    },
+    {
+      "label": "architect handoff road seam",
+      "artifact_type": "road-depth-hairline",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.225,
+        "y": 0.889,
+        "w": 0.284,
+        "h": 0.079
+      },
+      "polygon": [
+        [
+          0.224,
+          0.966
+        ],
+        [
+          0.316,
+          0.934
+        ],
+        [
+          0.414,
+          0.907
+        ],
+        [
+          0.506,
+          0.889
+        ],
+        [
+          0.51,
+          0.895
+        ],
+        [
+          0.421,
+          0.915
+        ],
+        [
+          0.319,
+          0.943
+        ],
+        [
+          0.228,
+          0.971
+        ]
+      ],
+      "confidence": 0.73,
+      "visual_evidence": "A thin receding lane/seam trace runs through the lower road surface toward the center distance, visible as a pale directional line broken by asphalt texture."
+    },
+    {
+      "label": "kanban brick-slot aperture",
+      "artifact_type": "brick-window-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.773,
+        "y": 0.074,
+        "w": 0.065,
+        "h": 0.171
+      },
+      "polygon": [
+        [
+          0.775,
+          0.076
+        ],
+        [
+          0.811,
+          0.076
+        ],
+        [
+          0.811,
+          0.101
+        ],
+        [
+          0.83,
+          0.101
+        ],
+        [
+          0.83,
+          0.139
+        ],
+        [
+          0.812,
+          0.139
+        ],
+        [
+          0.812,
+          0.174
+        ],
+        [
+          0.837,
+          0.174
+        ],
+        [
+          0.837,
+          0.224
+        ],
+        [
+          0.817,
+          0.224
+        ],
+        [
+          0.817,
+          0.241
+        ],
+        [
+          0.788,
+          0.241
+        ],
+        [
+          0.788,
+          0.209
+        ],
+        [
+          0.804,
+          0.209
+        ],
+        [
+          0.804,
+          0.145
+        ],
+        [
+          0.773,
+          0.145
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A stair-stepped cluster of dark rectangular brick-wall slots with purple glints appears on the upper right brick spine, reading as stacked apertures rather than UI cards."
+    },
+    {
+      "label": "brains-stack sign shadow",
+      "artifact_type": "black-contour-gutter",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.675,
+        "y": 0.026,
+        "w": 0.071,
+        "h": 0.681
+      },
+      "polygon": [
+        [
+          0.677,
+          0.027
+        ],
+        [
+          0.7,
+          0.055
+        ],
+        [
+          0.746,
+          0.161
+        ],
+        [
+          0.744,
+          0.623
+        ],
+        [
+          0.722,
+          0.708
+        ],
+        [
+          0.686,
+          0.706
+        ],
+        [
+          0.683,
+          0.618
+        ],
+        [
+          0.683,
+          0.431
+        ],
+        [
+          0.681,
+          0.246
+        ],
+        [
+          0.678,
+          0.101
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A deep black vertical gutter sits immediately behind the cream marquee, forming a strong hidden contour and depth layer against the brick wall."
+    },
+    {
+      "label": "published-algorithm pinhole",
+      "artifact_type": "tiny-field-pinhole",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.609,
+    "rationale": "The plate keeps a strong minimal left-field silence, but the right side carries dense brick, marquee, pixel sign, figures, slots, and lights. It remains usable, though the aperture cluster and tilted sign add visual load."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-22-obsolete-guidebook-marquee-v1"
+}

@@ -1,0 +1,177 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-22-obsolete-guidebook-marquee-v1",
+  "edition_id": "2026-08-22-obsolete-guidebook-marquee-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-22-obsolete-guidebook-marquee-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation",
+    "ghost-reflection-treatment",
+    "lens-inspection"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-cream-vertical-marquee-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-cream-vertical-marquee-slab",
+      "priority": 1,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-marquee-edge) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-persistent-glass-plate-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-persistent-glass-plate-field",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-sky-glass-plate-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-architect-handoff-road-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-architect-handoff-road-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (road-depth-hairline) selected from interpretation."
+    },
+    {
+      "target_id": "module-kanban-brick-slot-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-kanban-brick-slot-aperture",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (brick-window-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-brains-stack-sign-shadow",
+      "target_kind": "artifact",
+      "artifact_id": "module-brains-stack-sign-shadow",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-contour-gutter) selected from interpretation."
+    },
+    {
+      "target_id": "module-published-algorithm-pinhole",
+      "target_kind": "artifact",
+      "artifact_id": "module-published-algorithm-pinhole",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-field-pinhole) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}
