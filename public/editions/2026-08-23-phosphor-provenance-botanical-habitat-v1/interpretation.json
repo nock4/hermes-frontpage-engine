@@ -1,0 +1,284 @@
+{
+  "interpretation_id": "interp-2026-08-23-phosphor-provenance-botanical-habitat-v1",
+  "edition_id": "2026-08-23-phosphor-provenance-botanical-habitat-v1",
+  "plate_read_timestamp": "2026-08-23T08:14:12.764Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark overgrown media ruin: curved CRT glass at left, a glowing constellation canopy in the center air, a tiled raised island carrying a transparent cassette, wet moss seams, a green hanging speaker cloth, and a warm mirror-like shard in the foreground.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "humid research growth inside obsolete glass, where citations behave like roots and artifacts surface like wet stones",
+      "A dark overgrown media ruin: curved CRT glass at left, a glowing constellation canopy in the center air, a tiled raised island carrying a transparent cassette, wet moss seams, a green hanging speaker cloth, and a warm mirror-like shard in the foreground.",
+      "phosphor-garden",
+      "provenance-vines",
+      "museum-islands"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero citation canopy",
+      "hero repatriation archipelago",
+      "algorithm seed pod",
+      "answer-first vine slit",
+      "folded instruction leaf",
+      "review mirror shard"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "phosphor-provenance-botanical-habitat",
+      "hero-scale citation canopy grown from notebook-like leaf panes",
+      "hero-scale museum-return archipelago of raised artifact islands",
+      "algorithm seed pods half-buried in mossed glass",
+      "vertical phosphor vine with answer-first apertures",
+      "folded instruction leaves tucked into cassette seams",
+      "mirrorlike review shard catching warm lamp pressure",
+      "left CRT vertical phosphor edge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: phosphor-provenance-botanical-habitat.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-citation-canopy",
+      "kind": "hero",
+      "type": "branching-light-citation-canopy",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.389,
+        "y": 0.178,
+        "w": 0.28,
+        "h": 0.178
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-repatriation-archipelago",
+      "kind": "hero",
+      "type": "raised-wet-tile-map-islands",
+      "strength": 0.9875959999999999,
+      "bounds": {
+        "x": 0.332,
+        "y": 0.466,
+        "w": 0.459,
+        "h": 0.25
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-algorithm-seed-pod",
+      "kind": "module",
+      "type": "moss-buried-speaker-seed-pod",
+      "strength": 0.775512,
+      "bounds": {
+        "x": 0.642,
+        "y": 0.608,
+        "w": 0.193,
+        "h": 0.376
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-answer-first-vine-slit",
+      "kind": "module",
+      "type": "vertical-crt-vine-aperture",
+      "strength": 0.7537560000000001,
+      "bounds": {
+        "x": 0.078,
+        "y": 0.282,
+        "w": 0.043,
+        "h": 0.371
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-folded-instruction-leaf",
+      "kind": "module",
+      "type": "cassette-seam-folded-leaf",
+      "strength": 0.740796,
+      "bounds": {
+        "x": 0.673,
+        "y": 0.441,
+        "w": 0.053,
+        "h": 0.065
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-review-mirror-shard",
+      "kind": "module",
+      "type": "warm-glass-review-shard",
+      "strength": 0.702576,
+      "bounds": {
+        "x": 0.23,
+        "y": 0.75,
+        "w": 0.172,
+        "h": 0.153
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-citation-canopy-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.178,
+        "w": 0.28,
+        "h": 0.178
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-repatriation-archipelago-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.332,
+        "y": 0.466,
+        "w": 0.459,
+        "h": 0.25
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-algorithm-seed-pod-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.608,
+        "w": 0.193,
+        "h": 0.376
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-answer-first-vine-slit-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.078,
+        "y": 0.282,
+        "w": 0.043,
+        "h": 0.371
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-folded-instruction-leaf-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.673,
+        "y": 0.441,
+        "w": 0.053,
+        "h": 0.065
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-review-mirror-shard-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.23,
+        "y": 0.75,
+        "w": 0.172,
+        "h": 0.153
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "source_binding_set_id": "bindings-2026-08-23-phosphor-provenance-botanical-habitat-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-hero-citation-canopy",
+      "artifact_id": "hero-hero-citation-canopy",
+      "source_type": "tweet",
+      "source_url": "https://x.com/DamiDefi/status/2059231280269541772",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@DamiDefi: Claude Code cannot read 300 files at once. So someone built a system that lets it...",
+      "kicker": "x.com",
+      "excerpt": "Claude Code cannot read 300 files at once. So someone built a system that lets it control NotebookLM from the terminal instead. The results are wild. Here is the full workflow nobody is talking about: The Setup → Claude Code connects to NotebookLM via a command line interface → Claude searches YouTube, finds relevant videos, uploads them as sources...",
+      "source_title": "@DamiDefi: Claude Code cannot read 300 files at once. So someone built a system that lets it...",
+      "source_summary": "Claude Code cannot read 300 files at once. So someone built a system that lets it control NotebookLM from the terminal instead. The results are wild. Here is the full workflow nobody is talking about: The Setup → Claude Code connects to NotebookLM via a command line interface → Claude searches YouTube, finds relevant videos, uploads them as sources automatically → NotebookLM processes up to 300 sources simultaneously and returns cited, grounded answers → Everything syncs back into your Obsidian vault with...",
+      "source_domain": "x.com",
+      "source_meta": "@DamiDefi: Claude Code cannot read 300 files at once. So someone built a system that lets i...",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2059230289348444160/img/TbjxBgxjkuKIQQOm.jpg",
+      "source_image_alt": "@DamiDefi: Claude Code cannot read 300 files at once. So someone built a system that lets it... preview image",
+      "source_media_url": "https://video.twimg.com/amplify_video/2059230289348444160/vid/avc1/1920x1078/mDzYnV1mfKuBIUct.mp4?tag=27",
+      "source_media_type": "video",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-23-phosphor-provenance-botanical-habitat-v1/assets/source-posters/binding-hero-hero-citation-canopy.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.4858,
+          "y": 0.523
+        },
+        "poster_crop": {
+          "x": 0.0008,
+          "y": 0.0,
+          "width": 0.9983,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 674,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.01583,
+          "candidate_box_count": 15
+        }
+      }
+    },
+    {
+      "id": "binding-hero-hero-repatriation-archipelago",
+      "artifact_id": "hero-hero-repatriation-archipelago",
+      "source_type": "tweet",
+      "source_url": "https://x.com/Eng_china5/status/2030019449638564201",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@Eng_china5: A Chinese student built an interesting app using vibe coding that visualizes nearly...",
+      "kicker": "x.com",
+      "excerpt": "A Chinese student built an interesting app using vibe coding that visualizes nearly 5,000 artifacts in the British Museum from 99 countries around the world. The app shows: • When these artifacts arrived • Which country they came from • And how the distribution would look if all artifacts were returned to their countries of origin.",
+      "source_title": "@Eng_china5: A Chinese student built an interesting app using vibe coding that visualizes nearly...",
+      "source_summary": "A Chinese student built an interesting app using vibe coding that visualizes nearly 5,000 artifacts in the British Museum from 99 countries around the world. The app shows: • When these artifacts arrived • Which country they came from • And how the distribution would look if all artifacts were returned to their countries of origin.",
+      "source_domain": "x.com",
+      "source_meta": "@Eng_china5: A Chinese student built an interesting app using vibe coding that visualizes nea...",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2030019207929499648/img/xD5Jvv7UIuTXcXPt.jpg",
+      "source_image_alt": "@Eng_china5: A Chinese student built an interesting app using vibe coding that visualizes nearly... preview image",
+      "source_media_url": "https://video.twimg.com/amplify_video/2030019207929499648/vid/avc1/720x906/wHW4aXP7gWbQiHzv.mp4?tag=21",
+      "source_media_type": "video",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-23-phosphor-provenance-botanical-habitat-v1/assets/source-posters/binding-hero-hero-repatriation-archipelago.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.4944,
+          "y": 0.4945
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2759,
+          "width": 1.0,
+          "height": 0.447
+        },
+        "image_width": 720,
+        "image_height": 906,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.06331,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-algorithm-seed-pod",
+      "artifact_id": "module-algorithm-seed-pod",
+      "source_type": "github",
+      "source_url": "https://github.com/xai-org/x-algorithm",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "GitHub - xai-org/x-algorithm: Algorithm powering the For You feed on X",
+      "kicker": "github.com",
+      "excerpt": "Algorithm powering the For You feed on X. Contribute to xai-org/x-algorithm development by creating an account on GitHub.",
+      "source_title": "GitHub - xai-org/x-algorithm: Algorithm powering the For You feed on X",
+      "source_summary": "Algorithm powering the For You feed on X. Contribute to xai-org/x-algorithm development by creating an account on GitHub.",
+      "source_domain": "github.com",
+      "source_meta": "@elonmusk: The latest 𝕏 algorithm has been published to GitHub github.com/xai-org/x-algo…",
+      "source_image_url": "https://avatars.githubusercontent.com/u/130314967?s=400&v=4",
+      "source_image_alt": "GitHub - xai-org/x-algorithm: Algorithm powering the For You feed on X preview image",
+      "source_media_url": "https://avatars.githubusercontent.com/u/130314967?s=400&v=4",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-23-phosphor-provenance-botanical-habitat-v1/assets/source-posters/binding-module-algorithm-seed-pod.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.57,
+          "y": 0.4412
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.16,
+          "width": 1.0,
+          "height": 0.5625
+        },
+        "image_width": 400,
+        "image_height": 400,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.01227,
+          "candidate_box_count": 5
+        }
+      }
+    },
+    {
+      "id": "binding-module-answer-first-vine-slit",
+      "artifact_id": "module-answer-first-vine-slit",
+      "source_type": "tweet",
+      "source_url": "https://x.com/edwardeachday/status/2055468971869053178",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@edwardeachday: This is why you shouldn't let ChatGPT run your SEO. \"How to do SEO for LLMs\" -...",
+      "kicker": "x.com",
+      "excerpt": "This is why you shouldn't let ChatGPT run your SEO. \"How to do SEO for LLMs\" - this is something that a lot of people are asking ChatGPT for right now. Key tactics: “Write answer first content.” So, if you're targeting informational keywords, you should know that AI Overviews reduce clicks by 58%. A lot of the time, AI will cite you, but people won't even...",
+      "source_title": "@edwardeachday: This is why you shouldn't let ChatGPT run your SEO. \"How to do SEO for LLMs\" -...",
+      "source_summary": "This is why you shouldn't let ChatGPT run your SEO. \"How to do SEO for LLMs\" - this is something that a lot of people are asking ChatGPT for right now. Key tactics: “Write answer first content.” So, if you're targeting informational keywords, you should know that AI Overviews reduce clicks by 58%. A lot of the time, AI will cite you, but people won't even care. They just want to get their answer and move on. Instead, you should target high intent keywords. “Structure content clearly,” that's good advice. “Build...",
+      "source_domain": "x.com",
+      "source_meta": "@edwardeachday: This is why you shouldn't let ChatGPT run your SEO. \"How to do SEO for LLMs\" - t...",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2055468701952925696/img/OyAmRojveS66znnh.jpg",
+      "source_image_alt": "@edwardeachday: This is why you shouldn't let ChatGPT run your SEO. \"How to do SEO for LLMs\" -... preview image",
+      "source_media_url": "https://video.twimg.com/amplify_video/2055468701952925696/vid/avc1/2160x3840/_LMDaMpEEtb8jhf6.mp4?tag=27",
+      "source_media_type": "video",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-23-phosphor-provenance-botanical-habitat-v1/assets/source-posters/binding-module-answer-first-vine-slit.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "high",
+        "focal_point": {
+          "x": 0.4993,
+          "y": 0.4838
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.3417,
+          "width": 1.0,
+          "height": 0.3158
+        },
+        "image_width": 675,
+        "image_height": 1200,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.04486,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-folded-instruction-leaf",
+      "artifact_id": "module-folded-instruction-leaf",
+      "source_type": "tweet",
+      "source_url": "https://x.com/Av1dlive/status/2058588647088406931",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@Av1dlive: If you haven't set up Agents.md in Codex yet you can just copy the homework from...",
+      "kicker": "x.com",
+      "excerpt": "If you haven't set up Agents.md in Codex yet you can just copy the homework from Andrej Karpathy.",
+      "source_title": "@Av1dlive: If you haven't set up Agents.md in Codex yet you can just copy the homework from...",
+      "source_summary": "If you haven't set up Agents.md in Codex yet you can just copy the homework from Andrej Karpathy. Here's the exact setup (takes 2 minutes): 1. Go to his repo 2. Copy the 65-line Agents.md config 3. Paste it into Codex App → Global Custom Instructions 4. Done. You're already ahead of 90% of Codex users. It's minimalist. It's effective. Bookmark and Save it no matter. It'll be the most productive thing you will do this weekend",
+      "source_domain": "x.com",
+      "source_meta": "@Av1dlive: If you haven't set up Agents.md in Codex yet you can just copy the homework from...",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2058587463954907136/img/CFZdUkepIMHlXYzE.jpg",
+      "source_image_alt": "@Av1dlive: If you haven't set up Agents.md in Codex yet you can just copy the homework from... preview image",
+      "source_media_url": "https://video.twimg.com/amplify_video/2058587463954907136/vid/avc1/1920x1068/XzvoMzuNgfSLZNUQ.mp4?tag=27",
+      "source_media_type": "video",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-23-phosphor-provenance-botanical-habitat-v1/assets/source-posters/binding-module-folded-instruction-leaf.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5171,
+          "y": 0.5187
+        },
+        "poster_crop": {
+          "x": 0.005,
+          "y": 0.0,
+          "width": 0.9892,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 668,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.04103,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-review-mirror-shard",
+      "artifact_id": "module-review-mirror-shard",
+      "source_type": "tweet",
+      "source_url": "https://x.com/daniel_mac8/status/2058510827477454984",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@daniel_mac8: This is amazing. Do this. Use Codex /goal mode and ask: \"Do a comprehensive review...",
+      "kicker": "x.com",
+      "excerpt": "This is amazing. Do this. Use Codex /goal mode and ask: \"Do a comprehensive review of my project and list areas to improve, simplify and make it more faithful to the plan.\"",
+      "source_title": "@daniel_mac8: This is amazing. Do this. Use Codex /goal mode and ask: \"Do a comprehensive review...",
+      "source_summary": "This is amazing. Do this. Use Codex /goal mode and ask: \"Do a comprehensive review of my project and list areas to improve, simplify and make it more faithful to the plan.\"",
+      "source_domain": "x.com",
+      "source_meta": "@daniel_mac8: This is amazing. Do this. Use Codex /goal mode and ask: \"Do a comprehensive revi...",
+      "source_image_url": "https://pbs.twimg.com/media/HJFCTSxWIAAJ7XT.jpg?name=orig",
+      "source_image_alt": "@daniel_mac8: This is amazing. Do this. Use Codex /goal mode and ask: \"Do a comprehensive review... preview image",
+      "source_media_url": "https://pbs.twimg.com/media/HJFCTSxWIAAJ7XT.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-23-phosphor-provenance-botanical-habitat-v1/assets/source-posters/binding-module-review-mirror-shard.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.4993,
+          "y": 0.4997
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2457,
+          "width": 1.0,
+          "height": 0.5086
+        },
+        "image_width": 1366,
+        "image_height": 1510,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02515,
+          "candidate_box_count": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "analysis_id": "analysis-2026-08-23-phosphor-provenance-botanical-habitat-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark overgrown media ruin: curved CRT glass at left, a glowing constellation canopy in the center air, a tiled raised island carrying a transparent cassette, wet moss seams, a green hanging speaker cloth, and a warm mirror-like shard in the foreground.",
+  "usable_surfaces": [
+    "left CRT vertical phosphor edge",
+    "central suspended light-node canopy",
+    "raised wet tile island edge",
+    "transparent cassette face and seam",
+    "foreground amber mirror shard",
+    "right rear CRT glass glow",
+    "moss-buried cloth speaker pod",
+    "small upright orange light wells"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero citation canopy",
+      "artifact_type": "branching-light-citation-canopy",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.178,
+        "w": 0.28,
+        "h": 0.178
+      },
+      "polygon": [
+        [
+          0.391,
+          0.286
+        ],
+        [
+          0.414,
+          0.254
+        ],
+        [
+          0.441,
+          0.234
+        ],
+        [
+          0.489,
+          0.209
+        ],
+        [
+          0.535,
+          0.193
+        ],
+        [
+          0.584,
+          0.186
+        ],
+        [
+          0.635,
+          0.188
+        ],
+        [
+          0.658,
+          0.213
+        ],
+        [
+          0.628,
+          0.239
+        ],
+        [
+          0.584,
+          0.259
+        ],
+        [
+          0.554,
+          0.292
+        ],
+        [
+          0.518,
+          0.327
+        ],
+        [
+          0.469,
+          0.345
+        ],
+        [
+          0.426,
+          0.326
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Suspended pinhole lights joined by faint filament lines form a branching constellation canopy in the central air."
+    },
+    {
+      "label": "hero repatriation archipelago",
+      "artifact_type": "raised-wet-tile-map-islands",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.332,
+        "y": 0.466,
+        "w": 0.459,
+        "h": 0.25
+      },
+      "polygon": [
+        [
+          0.337,
+          0.524
+        ],
+        [
+          0.398,
+          0.486
+        ],
+        [
+          0.502,
+          0.467
+        ],
+        [
+          0.615,
+          0.472
+        ],
+        [
+          0.724,
+          0.488
+        ],
+        [
+          0.786,
+          0.543
+        ],
+        [
+          0.771,
+          0.613
+        ],
+        [
+          0.705,
+          0.662
+        ],
+        [
+          0.589,
+          0.696
+        ],
+        [
+          0.454,
+          0.714
+        ],
+        [
+          0.365,
+          0.672
+        ],
+        [
+          0.333,
+          0.596
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The broad raised platform is made of wet stone-like tile cells with border seams, reading as island masses and return-path geography."
+    },
+    {
+      "label": "algorithm seed pod",
+      "artifact_type": "moss-buried-speaker-seed-pod",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.608,
+        "w": 0.193,
+        "h": 0.376
+      },
+      "polygon": [
+        [
+          0.653,
+          0.611
+        ],
+        [
+          0.736,
+          0.623
+        ],
+        [
+          0.81,
+          0.649
+        ],
+        [
+          0.835,
+          0.74
+        ],
+        [
+          0.818,
+          0.966
+        ],
+        [
+          0.711,
+          0.984
+        ],
+        [
+          0.648,
+          0.924
+        ],
+        [
+          0.641,
+          0.728
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A dark green cloth pod hangs from the island, moss-buried and punctuated by circular avatar-like speaker openings."
+    },
+    {
+      "label": "answer-first vine slit",
+      "artifact_type": "vertical-crt-vine-aperture",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.078,
+        "y": 0.282,
+        "w": 0.043,
+        "h": 0.371
+      },
+      "polygon": [
+        [
+          0.085,
+          0.292
+        ],
+        [
+          0.102,
+          0.279
+        ],
+        [
+          0.113,
+          0.289
+        ],
+        [
+          0.121,
+          0.391
+        ],
+        [
+          0.12,
+          0.511
+        ],
+        [
+          0.111,
+          0.614
+        ],
+        [
+          0.097,
+          0.651
+        ],
+        [
+          0.09,
+          0.604
+        ],
+        [
+          0.085,
+          0.48
+        ],
+        [
+          0.079,
+          0.356
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "The left CRT has a narrow vertical phosphor-white aperture climbing the curved glass edge like a vine slit."
+    },
+    {
+      "label": "folded instruction leaf",
+      "artifact_type": "cassette-seam-folded-leaf",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.673,
+        "y": 0.441,
+        "w": 0.053,
+        "h": 0.065
+      },
+      "polygon": [
+        [
+          0.674,
+          0.457
+        ],
+        [
+          0.689,
+          0.442
+        ],
+        [
+          0.711,
+          0.445
+        ],
+        [
+          0.725,
+          0.467
+        ],
+        [
+          0.719,
+          0.497
+        ],
+        [
+          0.698,
+          0.505
+        ],
+        [
+          0.681,
+          0.489
+        ]
+      ],
+      "confidence": 0.64,
+      "visual_evidence": "A small triangular folded-looking mark and dark seam sit on the transparent cassette face among the oxidized slots."
+    },
+    {
+      "label": "review mirror shard",
+      "artifact_type": "warm-glass-review-shard",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.23,
+        "y": 0.75,
+        "w": 0.172,
+        "h": 0.153
+      },
+      "polygon": [
+        [
+          0.246,
+          0.793
+        ],
+        [
+          0.289,
+          0.752
+        ],
+        [
+          0.349,
+          0.761
+        ],
+        [
+          0.402,
+          0.822
+        ],
+        [
+          0.361,
+          0.882
+        ],
+        [
+          0.293,
+          0.903
+        ],
+        [
+          0.234,
+          0.861
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A tilted wet glass shard in the foreground catches amber lamp pressure and reflects a bright streak through moss."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.419,
+    "rationale": "The plate is expressionist and coherent, with a few strong media habitats, but many moss seams, cables, tile cells, glints, and light flecks create dense interaction noise. Anchors remain visually separable."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-23-phosphor-provenance-botanical-habitat-v1"
+}

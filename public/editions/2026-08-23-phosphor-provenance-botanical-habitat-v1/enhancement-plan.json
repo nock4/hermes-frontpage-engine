@@ -1,0 +1,178 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-23-phosphor-provenance-botanical-habitat-v1",
+  "edition_id": "2026-08-23-phosphor-provenance-botanical-habitat-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-23-phosphor-provenance-botanical-habitat-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal",
+    "warped-paper-fragment"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation",
+    "ghost-reflection-treatment",
+    "lens-inspection"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-citation-canopy",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-citation-canopy",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (branching-light-citation-canopy) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-repatriation-archipelago",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-repatriation-archipelago",
+      "priority": 2,
+      "techniques": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (raised-wet-tile-map-islands) selected from interpretation."
+    },
+    {
+      "target_id": "module-algorithm-seed-pod",
+      "target_kind": "artifact",
+      "artifact_id": "module-algorithm-seed-pod",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "github"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (moss-buried-speaker-seed-pod) selected from interpretation."
+    },
+    {
+      "target_id": "module-answer-first-vine-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-answer-first-vine-slit",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (vertical-crt-vine-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-folded-instruction-leaf",
+      "target_kind": "artifact",
+      "artifact_id": "module-folded-instruction-leaf",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cassette-seam-folded-leaf) selected from interpretation."
+    },
+    {
+      "target_id": "module-review-mirror-shard",
+      "target_kind": "artifact",
+      "artifact_id": "module-review-mirror-shard",
+      "priority": 6,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (warm-glass-review-shard) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}
