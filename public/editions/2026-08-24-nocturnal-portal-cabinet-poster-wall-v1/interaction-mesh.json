@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-24-nocturnal-portal-cabinet-poster-wall-v1",
+  "generation": "daily-process-2026-08-24T08-00-20-673Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1254,
+    "height": 1254
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-24T08-00-20-673Z/2026-08-24-nocturnal-portal-cabinet-poster-wall-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-primary-source-anchor",
+      "visible_area_px": 238566,
+      "territory_area_px": 289792,
+      "hover_bounds": {
+        "x": 0.2305,
+        "y": 0.138,
+        "w": 0.4091,
+        "h": 0.5359
+      },
+      "hover_polygon": [
+        [
+          0.2305,
+          0.1563
+        ],
+        [
+          0.2488,
+          0.138
+        ],
+        [
+          0.4027,
+          0.1388
+        ],
+        [
+          0.492,
+          0.1643
+        ],
+        [
+          0.5758,
+          0.2097
+        ],
+        [
+          0.6388,
+          0.2935
+        ],
+        [
+          0.6244,
+          0.5367
+        ],
+        [
+          0.5774,
+          0.6188
+        ],
+        [
+          0.5064,
+          0.6571
+        ],
+        [
+          0.3628,
+          0.673
+        ],
+        [
+          0.2584,
+          0.6475
+        ],
+        [
+          0.2313,
+          0.6204
+        ],
+        [
+          0.2305,
+          0.5247
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-secondary-source-anchor",
+          "shared_edge_px": 3356,
+          "direction": "right",
+          "distance_px": 286.29
+        },
+        {
+          "artifact_id": "module-color-node",
+          "shared_edge_px": 1169,
+          "direction": "up",
+          "distance_px": 380.97
+        },
+        {
+          "artifact_id": "module-signal-panel",
+          "shared_edge_px": 174,
+          "direction": "down",
+          "distance_px": 416.54
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-secondary-source-anchor",
+      "visible_area_px": 99012,
+      "territory_area_px": 135797,
+      "hover_bounds": {
+        "x": 0.3884,
+        "y": 0.0598,
+        "w": 0.3939,
+        "h": 0.6364
+      },
+      "hover_polygon": [
+        [
+          0.3884,
+          0.1108
+        ],
+        [
+          0.4155,
+          0.0837
+        ],
+        [
+          0.5223,
+          0.0606
+        ],
+        [
+          0.5869,
+          0.0694
+        ],
+        [
+          0.693,
+          0.201
+        ],
+        [
+          0.7815,
+          0.3852
+        ],
+        [
+          0.7807,
+          0.4864
+        ],
+        [
+          0.7432,
+          0.6244
+        ],
+        [
+          0.7153,
+          0.6531
+        ],
+        [
+          0.6148,
+          0.6954
+        ],
+        [
+          0.5072,
+          0.6571
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-primary-source-anchor",
+          "shared_edge_px": 3356,
+          "direction": "left",
+          "distance_px": 286.29
+        },
+        {
+          "artifact_id": "module-edge-detail",
+          "shared_edge_px": 2445,
+          "direction": "up",
+          "distance_px": 207.18
+        },
+        {
+          "artifact_id": "module-signal-panel",
+          "shared_edge_px": 946,
+          "direction": "down",
+          "distance_px": 449.24
+        },
+        {
+          "artifact_id": "module-color-node",
+          "shared_edge_px": 162,
+          "direction": "left",
+          "distance_px": 514.97
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-signal-panel",
+      "visible_area_px": 10604,
+      "territory_area_px": 23876,
+      "hover_bounds": {
+        "x": 0.4705,
+        "y": 0.6571,
+        "w": 0.1443,
+        "h": 0.1148
+      },
+      "hover_polygon": [
+        [
+          0.4705,
+          0.6914
+        ],
+        [
+          0.4713,
+          0.6794
+        ],
+        [
+          0.4936,
+          0.6571
+        ],
+        [
+          0.5917,
+          0.6579
+        ],
+        [
+          0.614,
+          0.6802
+        ],
+        [
+          0.6132,
+          0.7488
+        ],
+        [
+          0.5909,
+          0.7711
+        ],
+        [
+          0.4936,
+          0.7695
+        ],
+        [
+          0.4713,
+          0.7472
+        ],
+        [
+          0.4705,
+          0.7241
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-secondary-source-anchor",
+          "shared_edge_px": 946,
+          "direction": "up",
+          "distance_px": 449.24
+        },
+        {
+          "artifact_id": "hero-primary-source-anchor",
+          "shared_edge_px": 174,
+          "direction": "up",
+          "distance_px": 416.54
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-color-node",
+      "visible_area_px": 6105,
+      "territory_area_px": 17893,
+      "hover_bounds": {
+        "x": 0.2241,
+        "y": 0.075,
+        "w": 0.1834,
+        "h": 0.0925
+      },
+      "hover_polygon": [
+        [
+          0.2241,
+          0.1116
+        ],
+        [
+          0.2281,
+          0.0973
+        ],
+        [
+          0.2504,
+          0.075
+        ],
+        [
+          0.2584,
+          0.0758
+        ],
+        [
+          0.3557,
+          0.0901
+        ],
+        [
+          0.3844,
+          0.1077
+        ],
+        [
+          0.4067,
+          0.13
+        ],
+        [
+          0.3724,
+          0.1667
+        ],
+        [
+          0.2679,
+          0.1523
+        ],
+        [
+          0.2241,
+          0.1124
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-primary-source-anchor",
+          "shared_edge_px": 1169,
+          "direction": "down",
+          "distance_px": 380.97
+        },
+        {
+          "artifact_id": "hero-secondary-source-anchor",
+          "shared_edge_px": 162,
+          "direction": "right",
+          "distance_px": 514.97
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-edge-detail",
+      "visible_area_px": 27079,
+      "territory_area_px": 61601,
+      "hover_bounds": {
+        "x": 0.5885,
+        "y": 0.0,
+        "w": 0.3293,
+        "h": 0.4729
+      },
+      "hover_polygon": [
+        [
+          0.5885,
+          0.0478
+        ],
+        [
+          0.6093,
+          0.0
+        ],
+        [
+          0.6547,
+          0.0008
+        ],
+        [
+          0.8796,
+          0.3557
+        ],
+        [
+          0.9171,
+          0.4314
+        ],
+        [
+          0.8692,
+          0.4721
+        ],
+        [
+          0.7927,
+          0.4019
+        ],
+        [
+          0.5893,
+          0.1005
+        ],
+        [
+          0.5885,
+          0.0742
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-secondary-source-anchor",
+          "shared_edge_px": 2445,
+          "direction": "down",
+          "distance_px": 207.18
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-left-cable-coil",
+      "visible_area_px": 49864,
+      "territory_area_px": 74532,
+      "hover_bounds": {
+        "x": 0.0016,
+        "y": 0.264,
+        "w": 0.1938,
+        "h": 0.3278
+      },
+      "hover_polygon": [
+        [
+          0.0016,
+          0.4498
+        ],
+        [
+          0.0175,
+          0.3573
+        ],
+        [
+          0.0494,
+          0.3062
+        ],
+        [
+          0.0726,
+          0.2831
+        ],
+        [
+          0.1108,
+          0.264
+        ],
+        [
+          0.1507,
+          0.2775
+        ],
+        [
+          0.173,
+          0.2998
+        ],
+        [
+          0.1946,
+          0.3509
+        ],
+        [
+          0.1858,
+          0.4561
+        ],
+        [
+          0.1675,
+          0.5455
+        ],
+        [
+          0.1443,
+          0.5702
+        ],
+        [
+          0.0909,
+          0.5909
+        ],
+        [
+          0.0431,
+          0.5566
+        ],
+        [
+          0.0199,
+          0.5335
+        ],
+        [
+          0.0016,
+          0.453
+        ]
+      ],
+      "neighbors": []
+    }
+  ]
+}

@@ -1,0 +1,1193 @@
+{
+  "artifact_map_id": "map-2026-08-24-nocturnal-portal-cabinet-poster-wall-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "nocturnal-portal-cabinet-poster-wall",
+  "default_artifact_id": "hero-primary-source-anchor",
+  "artifacts": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "label": "Primary Source Anchor",
+      "artifact_type": "primary-source-anchor",
+      "bounds": {
+        "x": 0.257,
+        "y": 0.154,
+        "w": 0.357,
+        "h": 0.492
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.258,
+          0.157
+        ],
+        [
+          0.403,
+          0.166
+        ],
+        [
+          0.546,
+          0.207
+        ],
+        [
+          0.614,
+          0.273
+        ],
+        [
+          0.607,
+          0.369
+        ],
+        [
+          0.574,
+          0.456
+        ],
+        [
+          0.609,
+          0.575
+        ],
+        [
+          0.502,
+          0.633
+        ],
+        [
+          0.363,
+          0.646
+        ],
+        [
+          0.259,
+          0.621
+        ],
+        [
+          0.258,
+          0.43
+        ],
+        [
+          0.258,
+          0.255
+        ]
+      ],
+      "cluster_id": "nocturnal-portal-cabinet-poster-wall",
+      "mask_path": "/editions/2026-08-24-nocturnal-portal-cabinet-poster-wall-v1/assets/masks/hero-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          669,
+          369
+        ],
+        "safe_stage_window_origin_px": [
+          713,
+          410
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.258,
+            0.157
+          ],
+          [
+            0.403,
+            0.166
+          ],
+          [
+            0.546,
+            0.207
+          ],
+          [
+            0.614,
+            0.273
+          ],
+          [
+            0.607,
+            0.369
+          ],
+          [
+            0.574,
+            0.456
+          ],
+          [
+            0.609,
+            0.575
+          ],
+          [
+            0.502,
+            0.633
+          ],
+          [
+            0.363,
+            0.646
+          ],
+          [
+            0.259,
+            0.621
+          ],
+          [
+            0.258,
+            0.43
+          ],
+          [
+            0.258,
+            0.255
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2305,
+            0.1563
+          ],
+          [
+            0.2488,
+            0.138
+          ],
+          [
+            0.4027,
+            0.1388
+          ],
+          [
+            0.492,
+            0.1643
+          ],
+          [
+            0.5758,
+            0.2097
+          ],
+          [
+            0.6388,
+            0.2935
+          ],
+          [
+            0.6244,
+            0.5367
+          ],
+          [
+            0.5774,
+            0.6188
+          ],
+          [
+            0.5064,
+            0.6571
+          ],
+          [
+            0.3628,
+            0.673
+          ],
+          [
+            0.2584,
+            0.6475
+          ],
+          [
+            0.2313,
+            0.6204
+          ],
+          [
+            0.2305,
+            0.5247
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2305,
+          "y": 0.138,
+          "w": 0.4091,
+          "h": 0.5359
+        },
+        "territory_area_px": 289792,
+        "visible_area_px": 238566,
+        "expansion_ratio": 1.215,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 3356,
+            "direction": "right",
+            "distance_px": 286.29
+          },
+          {
+            "artifact_id": "module-color-node",
+            "shared_edge_px": 1169,
+            "direction": "up",
+            "distance_px": 380.97
+          },
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 174,
+            "direction": "down",
+            "distance_px": 416.54
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "label": "Secondary Source Anchor",
+      "artifact_type": "secondary-source-anchor",
+      "bounds": {
+        "x": 0.413,
+        "y": 0.087,
+        "w": 0.348,
+        "h": 0.585
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.416,
+          0.111
+        ],
+        [
+          0.527,
+          0.087
+        ],
+        [
+          0.642,
+          0.106
+        ],
+        [
+          0.718,
+          0.196
+        ],
+        [
+          0.755,
+          0.323
+        ],
+        [
+          0.754,
+          0.486
+        ],
+        [
+          0.716,
+          0.626
+        ],
+        [
+          0.608,
+          0.672
+        ],
+        [
+          0.492,
+          0.626
+        ],
+        [
+          0.568,
+          0.585
+        ],
+        [
+          0.671,
+          0.548
+        ],
+        [
+          0.698,
+          0.427
+        ],
+        [
+          0.668,
+          0.295
+        ],
+        [
+          0.586,
+          0.186
+        ],
+        [
+          0.474,
+          0.142
+        ]
+      ],
+      "cluster_id": "nocturnal-portal-cabinet-poster-wall",
+      "mask_path": "/editions/2026-08-24-nocturnal-portal-cabinet-poster-wall-v1/assets/masks/hero-secondary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-secondary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          902,
+          341
+        ],
+        "safe_stage_window_origin_px": [
+          944,
+          389
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.416,
+            0.111
+          ],
+          [
+            0.527,
+            0.087
+          ],
+          [
+            0.642,
+            0.106
+          ],
+          [
+            0.718,
+            0.196
+          ],
+          [
+            0.755,
+            0.323
+          ],
+          [
+            0.754,
+            0.486
+          ],
+          [
+            0.716,
+            0.626
+          ],
+          [
+            0.608,
+            0.672
+          ],
+          [
+            0.492,
+            0.626
+          ],
+          [
+            0.568,
+            0.585
+          ],
+          [
+            0.671,
+            0.548
+          ],
+          [
+            0.698,
+            0.427
+          ],
+          [
+            0.668,
+            0.295
+          ],
+          [
+            0.586,
+            0.186
+          ],
+          [
+            0.474,
+            0.142
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3884,
+            0.1108
+          ],
+          [
+            0.4155,
+            0.0837
+          ],
+          [
+            0.5223,
+            0.0606
+          ],
+          [
+            0.5869,
+            0.0694
+          ],
+          [
+            0.693,
+            0.201
+          ],
+          [
+            0.7815,
+            0.3852
+          ],
+          [
+            0.7807,
+            0.4864
+          ],
+          [
+            0.7432,
+            0.6244
+          ],
+          [
+            0.7153,
+            0.6531
+          ],
+          [
+            0.6148,
+            0.6954
+          ],
+          [
+            0.5072,
+            0.6571
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3884,
+          "y": 0.0598,
+          "w": 0.3939,
+          "h": 0.6364
+        },
+        "territory_area_px": 135797,
+        "visible_area_px": 99012,
+        "expansion_ratio": 1.372,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 3356,
+            "direction": "left",
+            "distance_px": 286.29
+          },
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 2445,
+            "direction": "up",
+            "distance_px": 207.18
+          },
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 946,
+            "direction": "down",
+            "distance_px": 449.24
+          },
+          {
+            "artifact_id": "module-color-node",
+            "shared_edge_px": 162,
+            "direction": "left",
+            "distance_px": 514.97
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "bounds": {
+        "x": 0.493,
+        "y": 0.679,
+        "w": 0.099,
+        "h": 0.071
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.494,
+          0.68
+        ],
+        [
+          0.592,
+          0.681
+        ],
+        [
+          0.591,
+          0.749
+        ],
+        [
+          0.494,
+          0.748
+        ],
+        [
+          0.493,
+          0.703
+        ]
+      ],
+      "cluster_id": "nocturnal-portal-cabinet-poster-wall",
+      "mask_path": "/editions/2026-08-24-nocturnal-portal-cabinet-poster-wall-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          833,
+          726
+        ],
+        "safe_stage_window_origin_px": [
+          845,
+          732
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.494,
+            0.68
+          ],
+          [
+            0.592,
+            0.681
+          ],
+          [
+            0.591,
+            0.749
+          ],
+          [
+            0.494,
+            0.748
+          ],
+          [
+            0.493,
+            0.703
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4705,
+            0.6914
+          ],
+          [
+            0.4713,
+            0.6794
+          ],
+          [
+            0.4936,
+            0.6571
+          ],
+          [
+            0.5917,
+            0.6579
+          ],
+          [
+            0.614,
+            0.6802
+          ],
+          [
+            0.6132,
+            0.7488
+          ],
+          [
+            0.5909,
+            0.7711
+          ],
+          [
+            0.4936,
+            0.7695
+          ],
+          [
+            0.4713,
+            0.7472
+          ],
+          [
+            0.4705,
+            0.7241
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4705,
+          "y": 0.6571,
+          "w": 0.1443,
+          "h": 0.1148
+        },
+        "territory_area_px": 23876,
+        "visible_area_px": 10604,
+        "expansion_ratio": 2.252,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 946,
+            "direction": "up",
+            "distance_px": 449.24
+          },
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 174,
+            "direction": "up",
+            "distance_px": 416.54
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "bounds": {
+        "x": 0.247,
+        "y": 0.093,
+        "w": 0.139,
+        "h": 0.053
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.251,
+          0.098
+        ],
+        [
+          0.304,
+          0.103
+        ],
+        [
+          0.356,
+          0.113
+        ],
+        [
+          0.385,
+          0.13
+        ],
+        [
+          0.373,
+          0.145
+        ],
+        [
+          0.319,
+          0.139
+        ],
+        [
+          0.268,
+          0.13
+        ],
+        [
+          0.247,
+          0.113
+        ]
+      ],
+      "cluster_id": "nocturnal-portal-cabinet-poster-wall",
+      "mask_path": "/editions/2026-08-24-nocturnal-portal-cabinet-poster-wall-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          486,
+          118
+        ],
+        "safe_stage_window_origin_px": [
+          503,
+          122
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.251,
+            0.098
+          ],
+          [
+            0.304,
+            0.103
+          ],
+          [
+            0.356,
+            0.113
+          ],
+          [
+            0.385,
+            0.13
+          ],
+          [
+            0.373,
+            0.145
+          ],
+          [
+            0.319,
+            0.139
+          ],
+          [
+            0.268,
+            0.13
+          ],
+          [
+            0.247,
+            0.113
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2241,
+            0.1116
+          ],
+          [
+            0.2281,
+            0.0973
+          ],
+          [
+            0.2504,
+            0.075
+          ],
+          [
+            0.2584,
+            0.0758
+          ],
+          [
+            0.3557,
+            0.0901
+          ],
+          [
+            0.3844,
+            0.1077
+          ],
+          [
+            0.4067,
+            0.13
+          ],
+          [
+            0.3724,
+            0.1667
+          ],
+          [
+            0.2679,
+            0.1523
+          ],
+          [
+            0.2241,
+            0.1124
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2241,
+          "y": 0.075,
+          "w": 0.1834,
+          "h": 0.0925
+        },
+        "territory_area_px": 17893,
+        "visible_area_px": 6105,
+        "expansion_ratio": 2.931,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 1169,
+            "direction": "down",
+            "distance_px": 380.97
+          },
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 162,
+            "direction": "right",
+            "distance_px": 514.97
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "bounds": {
+        "x": 0.611,
+        "y": 0,
+        "w": 0.285,
+        "h": 0.451
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.632,
+          0
+        ],
+        [
+          0.653,
+          0.028
+        ],
+        [
+          0.616,
+          0.041
+        ],
+        [
+          0.627,
+          0.073
+        ],
+        [
+          0.681,
+          0.122
+        ],
+        [
+          0.736,
+          0.173
+        ],
+        [
+          0.763,
+          0.236
+        ],
+        [
+          0.787,
+          0.305
+        ],
+        [
+          0.858,
+          0.356
+        ],
+        [
+          0.895,
+          0.433
+        ],
+        [
+          0.87,
+          0.45
+        ],
+        [
+          0.816,
+          0.403
+        ],
+        [
+          0.773,
+          0.335
+        ],
+        [
+          0.748,
+          0.259
+        ],
+        [
+          0.713,
+          0.196
+        ],
+        [
+          0.662,
+          0.151
+        ],
+        [
+          0.612,
+          0.101
+        ],
+        [
+          0.611,
+          0.049
+        ]
+      ],
+      "cluster_id": "nocturnal-portal-cabinet-poster-wall",
+      "mask_path": "/editions/2026-08-24-nocturnal-portal-cabinet-poster-wall-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1157,
+          194
+        ],
+        "safe_stage_window_origin_px": [
+          1192,
+          231
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.632,
+            0
+          ],
+          [
+            0.653,
+            0.028
+          ],
+          [
+            0.616,
+            0.041
+          ],
+          [
+            0.627,
+            0.073
+          ],
+          [
+            0.681,
+            0.122
+          ],
+          [
+            0.736,
+            0.173
+          ],
+          [
+            0.763,
+            0.236
+          ],
+          [
+            0.787,
+            0.305
+          ],
+          [
+            0.858,
+            0.356
+          ],
+          [
+            0.895,
+            0.433
+          ],
+          [
+            0.87,
+            0.45
+          ],
+          [
+            0.816,
+            0.403
+          ],
+          [
+            0.773,
+            0.335
+          ],
+          [
+            0.748,
+            0.259
+          ],
+          [
+            0.713,
+            0.196
+          ],
+          [
+            0.662,
+            0.151
+          ],
+          [
+            0.612,
+            0.101
+          ],
+          [
+            0.611,
+            0.049
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5885,
+            0.0478
+          ],
+          [
+            0.6093,
+            0.0
+          ],
+          [
+            0.6547,
+            0.0008
+          ],
+          [
+            0.8796,
+            0.3557
+          ],
+          [
+            0.9171,
+            0.4314
+          ],
+          [
+            0.8692,
+            0.4721
+          ],
+          [
+            0.7927,
+            0.4019
+          ],
+          [
+            0.5893,
+            0.1005
+          ],
+          [
+            0.5885,
+            0.0742
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5885,
+          "y": 0.0,
+          "w": 0.3293,
+          "h": 0.4729
+        },
+        "territory_area_px": 61601,
+        "visible_area_px": 27079,
+        "expansion_ratio": 2.275,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 2445,
+            "direction": "down",
+            "distance_px": 207.18
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-left-cable-coil",
+      "kind": "module",
+      "label": "Left Cable Coil",
+      "artifact_type": "coiled-cable-mark",
+      "bounds": {
+        "x": 0.024,
+        "y": 0.286,
+        "w": 0.15,
+        "h": 0.283
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.111,
+          0.287
+        ],
+        [
+          0.151,
+          0.3
+        ],
+        [
+          0.173,
+          0.352
+        ],
+        [
+          0.164,
+          0.455
+        ],
+        [
+          0.145,
+          0.548
+        ],
+        [
+          0.091,
+          0.569
+        ],
+        [
+          0.043,
+          0.534
+        ],
+        [
+          0.024,
+          0.452
+        ],
+        [
+          0.04,
+          0.358
+        ],
+        [
+          0.073,
+          0.306
+        ]
+      ],
+      "cluster_id": "nocturnal-portal-cabinet-poster-wall",
+      "mask_path": "/editions/2026-08-24-nocturnal-portal-cabinet-poster-wall-v1/assets/masks/module-left-cable-coil.svg",
+      "source_binding_ids": [
+        "binding-module-left-cable-coil"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          152,
+          415
+        ],
+        "safe_stage_window_origin_px": [
+          170,
+          438
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.111,
+            0.287
+          ],
+          [
+            0.151,
+            0.3
+          ],
+          [
+            0.173,
+            0.352
+          ],
+          [
+            0.164,
+            0.455
+          ],
+          [
+            0.145,
+            0.548
+          ],
+          [
+            0.091,
+            0.569
+          ],
+          [
+            0.043,
+            0.534
+          ],
+          [
+            0.024,
+            0.452
+          ],
+          [
+            0.04,
+            0.358
+          ],
+          [
+            0.073,
+            0.306
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0016,
+            0.4498
+          ],
+          [
+            0.0175,
+            0.3573
+          ],
+          [
+            0.0494,
+            0.3062
+          ],
+          [
+            0.0726,
+            0.2831
+          ],
+          [
+            0.1108,
+            0.264
+          ],
+          [
+            0.1507,
+            0.2775
+          ],
+          [
+            0.173,
+            0.2998
+          ],
+          [
+            0.1946,
+            0.3509
+          ],
+          [
+            0.1858,
+            0.4561
+          ],
+          [
+            0.1675,
+            0.5455
+          ],
+          [
+            0.1443,
+            0.5702
+          ],
+          [
+            0.0909,
+            0.5909
+          ],
+          [
+            0.0431,
+            0.5566
+          ],
+          [
+            0.0199,
+            0.5335
+          ],
+          [
+            0.0016,
+            0.453
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0016,
+          "y": 0.264,
+          "w": 0.1938,
+          "h": 0.3278
+        },
+        "territory_area_px": 74532,
+        "visible_area_px": 49864,
+        "expansion_ratio": 1.495,
+        "neighbors": []
+      }
+    }
+  ]
+}
