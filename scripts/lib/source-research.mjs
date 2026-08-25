@@ -552,9 +552,22 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
 
   if (contentSources.length < minContentItems) {
-    const capturedKeys = new Set(inspected.map(sourceContentKey))
+    const renderableInspectedKeys = new Set(inspected
+      .filter((source) => sourceHasRenderableCardSurface(source, signalHarvest))
+      .map(sourceContentKey))
+    const browserInspectedKeys = new Set(inspected
+      .filter((source) => String(source?.fetch_status || '').startsWith('browser-harness'))
+      .map(sourceContentKey))
+    const fillSeenKeys = new Set()
+    const canAttemptFill = (source) => {
+      const key = sourceContentKey(source)
+      if (!key || fillSeenKeys.has(key)) return false
+      fillSeenKeys.add(key)
+      if (renderableInspectedKeys.has(key)) return false
+      return !browserInspectedKeys.has(key)
+    }
     const evidenceFillCandidates = fetchEvidence
-      .filter((source) => !capturedKeys.has(sourceContentKey(source)))
+      .filter(canAttemptFill)
       .map((source) => ({
         source,
         renderable: sourceHasRenderableCardSurface(source, signalHarvest),
@@ -568,7 +581,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       .map((entry) => entry.source)
 
     const supplementalFillCandidates = selectSourceCandidatesForInspection(signalHarvest, Math.max(maxSources * 4, maxSources + minContentItems), { recentSourceKeys })
-      .filter((source) => !capturedKeys.has(sourceContentKey(source)))
+      .filter(canAttemptFill)
 
     const fillCandidates = [...evidenceFillCandidates, ...supplementalFillCandidates]
 
