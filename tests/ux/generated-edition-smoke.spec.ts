@@ -99,3 +99,29 @@ test('generated edition route renders artwork and opens a source window', async 
   expect(windowState.hasReachableClose).toBe(true)
   expect(windowState.hasMedia || windowState.hasReadableText).toBe(true)
 })
+
+test('generated edition clicks keep source surfaces in the plate instead of opening linkout chrome', async ({ page }) => {
+  const route = process.env.DFE_SMOKE_ROUTE || '/'
+
+  await page.goto(route, { waitUntil: 'domcontentloaded' })
+  await page.waitForSelector('img.plate', { timeout: 20_000 })
+  await page.waitForSelector('button.artifact', { timeout: 20_000 })
+
+  const artifacts = page.locator('button.artifact')
+  const artifactCount = await artifacts.count()
+  expect(artifactCount).toBeGreaterThanOrEqual(2)
+
+  let popupOpened = false
+  page.once('popup', async (popup) => {
+    popupOpened = true
+    await popup.close().catch(() => undefined)
+  })
+
+  await artifacts.nth(0).click({ force: true })
+  await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveCount(1)
+
+  await artifacts.nth(1).click({ force: true })
+  await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveCount(2)
+
+  expect(popupOpened).toBe(false)
+})

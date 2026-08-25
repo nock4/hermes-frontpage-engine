@@ -180,15 +180,8 @@ function App() {
     setActiveArtifactId(artifactId)
     if (!binding) return
 
-    const descriptor = getSourceWindowDescriptor(binding)
-    if (reviewMode === 'live' && descriptor.kind === 'rich-preview' && descriptor.sourceUrl) {
-      setWindowState((state) => clearPreview(state))
-      window.open(descriptor.sourceUrl, '_blank', 'noopener,noreferrer')
-      return
-    }
-
     setWindowState((state) => pinBinding(state, binding))
-  }, [reviewMode])
+  }, [])
 
   useEffect(() => {
     if (!runtimeWarmupPlan) return
@@ -311,7 +304,7 @@ function App() {
             const bindingRichPreview = binding && bindingDescriptor?.kind === 'rich-preview'
               ? getRichPreviewModel(binding, bindingDescriptor)
               : null
-            const clickOutClass = bindingDescriptor?.kind === 'rich-preview' ? ' artifact--click-out' : ''
+            const clickOutClass = ''
             const previewPlacement = bindingRichPreview
               ? getStageWindowPlacement(artifact, 'preview', { spatialProfile: bindingRichPreview.spatialProfile })
               : null
@@ -403,12 +396,6 @@ function App() {
                   mode="preview"
                   onClose={() => setWindowState((state) => clearPreview(state))}
                   onPreviewAction={() => {
-                    const descriptor = getSourceWindowDescriptor(previewBinding)
-                    if (descriptor.kind === 'rich-preview' && descriptor.sourceUrl) {
-                      setWindowState((state) => clearPreview(state))
-                      window.open(descriptor.sourceUrl, '_blank', 'noopener,noreferrer')
-                      return
-                    }
                     setActiveArtifactId(previewBinding.artifact_id)
                     setWindowState((state) => pinBinding(state, previewBinding))
                   }}
