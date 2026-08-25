@@ -1,0 +1,116 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-08-25-japanese-healing-veil-glyph-macro-v1",
+  "edition_id": "2026-08-25-japanese-healing-veil-glyph-macro-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-primary-source-anchor",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2091684244036960256/img/QxtZO08v0waVh2fq.jpg",
+      "poster_asset_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/source-posters/binding-hero-primary-source-anchor.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-25-japanese-healing-veil-glyph-macro-v1/binding-hero-primary-source-anchor-source-visual-qa.jpg",
+      "image_width": 1200,
+      "image_height": 675,
+      "aspect_ratio": 1.7778,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.4988,
+        "y": 0.4993
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 1.0,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.01614,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-signal-panel",
+      "source_image_url": "https://static.lyl.live/uploads/a4d78472f4029ea89a07f9bad68a8a72.jpeg",
+      "poster_asset_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/source-posters/binding-module-signal-panel.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-25-japanese-healing-veil-glyph-macro-v1/binding-module-signal-panel-source-visual-qa.jpg",
+      "image_width": 500,
+      "image_height": 375,
+      "aspect_ratio": 1.3333,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.1253,
+        "width": 1.0,
+        "height": 0.7493
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.13669,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-edge-detail",
+      "source_image_url": "https://imgproxy.fourthwall.dev/_TlMk4pOY9Nca_n76qdrnbG0uwLSUcgIQvVwdQue37o/w:1200/sm:1/enc/vBOd8608rwDDEx3e/JjdtP2cPK57dZSB1/qsJK1ql_uoXL_ta7/Gz8APZpMNqpDLxL6/yMrX9nlbQBwhcEsP/HVrmfPgdYu_SHvY4/rAsKueU7ClLMJ3P7/CsbRZAc7oyUI22I5/Et4xWtHNi-jtea9C/zIxgzYBHTAOMtlOu/O2zDBP1utX9XW_ho/sdn3tVxR5R6XMLzn/QajjwsOmfUgFTw8S/GM6QsloU3E2kYjUT/27t_kaPz0ugm8W-a/anBvj0sWggEFfbEV.png",
+      "poster_asset_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/source-posters/binding-module-edge-detail.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-25-japanese-healing-veil-glyph-macro-v1/binding-module-edge-detail-source-visual-qa.jpg",
+      "image_width": 1200,
+      "image_height": 630,
+      "aspect_ratio": 1.9048,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.3867,
+        "y": 0.4992
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.9333,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.00525,
+        "candidate_box_count": 10
+      }
+    },
+    {
+      "binding_id": "binding-module-reference-plaque",
+      "source_image_url": "https://mega.nz/rich-file.png",
+      "poster_asset_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/source-posters/binding-module-reference-plaque.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-25-japanese-healing-veil-glyph-macro-v1/binding-module-reference-plaque-source-visual-qa.jpg",
+      "image_width": 600,
+      "image_height": 600,
+      "aspect_ratio": 1.0,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.5625,
+        "y": 0.5025
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2217,
+        "width": 1.0,
+        "height": 0.5617
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.01834,
+        "candidate_box_count": 3
+      }
+    }
+  ],
+  "failures": []
+}

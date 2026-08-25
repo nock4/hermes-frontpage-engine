@@ -1,0 +1,638 @@
+{
+  "analysis_id": "analysis-2026-08-25-japanese-healing-veil-glyph-macro-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A tight macro plate: glossy black cutout surface on the left with pale blue glyphs and small cream apertures, pressed against translucent mint fabric on the right. Gold bead chains, zipper-like plastic teeth, red handwritten strokes, and warm glows form the usable source windows.",
+  "usable_surfaces": [
+    "glossy black mask field with blue glyph edges",
+    "cream oval cutouts in black surface",
+    "translucent mint fabric folds",
+    "vertical plastic zipper tooth seam",
+    "gold bead chain arcs",
+    "red ink gesture strokes on cream ground",
+    "warm slit glow under fabric",
+    "lower-right jeweled edge cluster"
+  ],
+  "detected_objects": [
+    {
+      "label": "Primary Source Anchor",
+      "artifact_type": "black-glyph-plate",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.474,
+        "h": 1
+      },
+      "polygon": [
+        [
+          0.006,
+          0.011
+        ],
+        [
+          0.211,
+          0.002
+        ],
+        [
+          0.344,
+          0.103
+        ],
+        [
+          0.415,
+          0.278
+        ],
+        [
+          0.47,
+          0.458
+        ],
+        [
+          0.43,
+          0.658
+        ],
+        [
+          0.373,
+          0.819
+        ],
+        [
+          0.194,
+          0.972
+        ],
+        [
+          0.006,
+          0.996
+        ],
+        [
+          0,
+          0.831
+        ],
+        [
+          0.151,
+          0.74
+        ],
+        [
+          0.211,
+          0.58
+        ],
+        [
+          0.075,
+          0.466
+        ],
+        [
+          0,
+          0.354
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "dominant glossy black material field at left, carrying pale blue cut glyphs, cream apertures, specular scars, and a hard vertical edge against the fabric"
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "translucent-fabric-fold",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.453,
+        "y": 0,
+        "w": 0.5469999999999999,
+        "h": 0.995
+      },
+      "polygon": [
+        [
+          0.468,
+          0.002
+        ],
+        [
+          0.67,
+          0.001
+        ],
+        [
+          0.807,
+          0.034
+        ],
+        [
+          0.985,
+          0.012
+        ],
+        [
+          0.998,
+          0.195
+        ],
+        [
+          0.919,
+          0.331
+        ],
+        [
+          0.989,
+          0.489
+        ],
+        [
+          0.933,
+          0.634
+        ],
+        [
+          0.991,
+          0.832
+        ],
+        [
+          0.925,
+          0.995
+        ],
+        [
+          0.708,
+          0.986
+        ],
+        [
+          0.607,
+          0.858
+        ],
+        [
+          0.467,
+          0.826
+        ],
+        [
+          0.515,
+          0.647
+        ],
+        [
+          0.485,
+          0.49
+        ],
+        [
+          0.526,
+          0.318
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "large translucent mint textile with visible woven surface, folded ridges, hem seams, and embedded bead-chain shadows across the right side"
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "vertical-zipper-tooth-seam",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.005,
+        "w": 0.168,
+        "h": 0.865
+      },
+      "polygon": [
+        [
+          0.443,
+          0.006
+        ],
+        [
+          0.484,
+          0.043
+        ],
+        [
+          0.492,
+          0.105
+        ],
+        [
+          0.511,
+          0.171
+        ],
+        [
+          0.495,
+          0.226
+        ],
+        [
+          0.536,
+          0.289
+        ],
+        [
+          0.507,
+          0.358
+        ],
+        [
+          0.486,
+          0.441
+        ],
+        [
+          0.469,
+          0.528
+        ],
+        [
+          0.444,
+          0.615
+        ],
+        [
+          0.433,
+          0.701
+        ],
+        [
+          0.406,
+          0.781
+        ],
+        [
+          0.392,
+          0.869
+        ],
+        [
+          0.439,
+          0.868
+        ],
+        [
+          0.462,
+          0.756
+        ],
+        [
+          0.489,
+          0.636
+        ],
+        [
+          0.521,
+          0.49
+        ],
+        [
+          0.556,
+          0.316
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "stack of translucent plastic tabs and zipper-like teeth running vertically where black plate meets cream underlayer"
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "gold-bead-pinhole-chain",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.544,
+        "y": 0.66,
+        "w": 0.253,
+        "h": 0.334
+      },
+      "polygon": [
+        [
+          0.645,
+          0.662
+        ],
+        [
+          0.681,
+          0.699
+        ],
+        [
+          0.719,
+          0.759
+        ],
+        [
+          0.731,
+          0.821
+        ],
+        [
+          0.789,
+          0.881
+        ],
+        [
+          0.795,
+          0.943
+        ],
+        [
+          0.764,
+          0.99
+        ],
+        [
+          0.715,
+          0.966
+        ],
+        [
+          0.697,
+          0.892
+        ],
+        [
+          0.656,
+          0.827
+        ],
+        [
+          0.62,
+          0.768
+        ],
+        [
+          0.584,
+          0.716
+        ],
+        [
+          0.546,
+          0.681
+        ],
+        [
+          0.572,
+          0.662
+        ],
+        [
+          0.612,
+          0.675
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "bright gold bead strand descending through the lower-center fabric fold, each bead a small reflective node"
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "red-ink-gesture-stroke",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.437,
+        "y": 0.365,
+        "w": 0.188,
+        "h": 0.353
+      },
+      "polygon": [
+        [
+          0.545,
+          0.366
+        ],
+        [
+          0.595,
+          0.399
+        ],
+        [
+          0.563,
+          0.451
+        ],
+        [
+          0.552,
+          0.507
+        ],
+        [
+          0.624,
+          0.559
+        ],
+        [
+          0.602,
+          0.604
+        ],
+        [
+          0.56,
+          0.571
+        ],
+        [
+          0.521,
+          0.646
+        ],
+        [
+          0.474,
+          0.716
+        ],
+        [
+          0.455,
+          0.669
+        ],
+        [
+          0.498,
+          0.591
+        ],
+        [
+          0.525,
+          0.529
+        ],
+        [
+          0.479,
+          0.476
+        ],
+        [
+          0.443,
+          0.446
+        ],
+        [
+          0.484,
+          0.411
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "red handwritten mark on the cream ground, visible through and beside the sheer fabric, with sharp slashing strokes"
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "blue-cut-glyph-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.021,
+        "w": 0.288,
+        "h": 0.369
+      },
+      "polygon": [
+        [
+          0.001,
+          0.143
+        ],
+        [
+          0.11,
+          0.079
+        ],
+        [
+          0.214,
+          0.029
+        ],
+        [
+          0.273,
+          0.032
+        ],
+        [
+          0.25,
+          0.106
+        ],
+        [
+          0.172,
+          0.171
+        ],
+        [
+          0.234,
+          0.263
+        ],
+        [
+          0.287,
+          0.375
+        ],
+        [
+          0.228,
+          0.391
+        ],
+        [
+          0.119,
+          0.329
+        ],
+        [
+          0.006,
+          0.349
+        ],
+        [
+          0,
+          0.264
+        ],
+        [
+          0.076,
+          0.193
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "pale blue cutout glyph at upper left with torn-looking angled edges laid over the black glossy field"
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "warm-fabric-slit-glow",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.591,
+        "y": 0.067,
+        "w": 0.215,
+        "h": 0.302
+      },
+      "polygon": [
+        [
+          0.62,
+          0.071
+        ],
+        [
+          0.677,
+          0.112
+        ],
+        [
+          0.711,
+          0.164
+        ],
+        [
+          0.75,
+          0.218
+        ],
+        [
+          0.807,
+          0.286
+        ],
+        [
+          0.776,
+          0.357
+        ],
+        [
+          0.702,
+          0.367
+        ],
+        [
+          0.65,
+          0.318
+        ],
+        [
+          0.609,
+          0.254
+        ],
+        [
+          0.591,
+          0.179
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "warm amber opening under the translucent mint flap, bordered by a curved stitched fold and bead-chain glints"
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "cream-oval-aperture",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.302,
+        "y": 0.16,
+        "w": 0.099,
+        "h": 0.086
+      },
+      "polygon": [
+        [
+          0.325,
+          0.177
+        ],
+        [
+          0.355,
+          0.161
+        ],
+        [
+          0.391,
+          0.168
+        ],
+        [
+          0.403,
+          0.198
+        ],
+        [
+          0.388,
+          0.229
+        ],
+        [
+          0.354,
+          0.245
+        ],
+        [
+          0.326,
+          0.233
+        ],
+        [
+          0.309,
+          0.203
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "small cream oval cutout inside the black plate near upper center-left, a clean aperture-like visible anchor"
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "lower-red-floral-stain-and-jewel-edge",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.648,
+        "y": 0.708,
+        "w": 0.352,
+        "h": 0.292
+      },
+      "polygon": [
+        [
+          0.736,
+          0.724
+        ],
+        [
+          0.835,
+          0.709
+        ],
+        [
+          0.92,
+          0.743
+        ],
+        [
+          0.989,
+          0.832
+        ],
+        [
+          0.998,
+          0.93
+        ],
+        [
+          0.969,
+          0.998
+        ],
+        [
+          0.837,
+          0.998
+        ],
+        [
+          0.725,
+          0.961
+        ],
+        [
+          0.654,
+          0.893
+        ],
+        [
+          0.648,
+          0.807
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "lower-right cluster of red floral/pigment marks, bead reflections, and jeweled edging partially veiled by translucent fabric"
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 4,
+    "large_region_count": 6,
+    "mapped_region_coverage": 1.597,
+    "rationale": "The plate is expressionist and material-led, with a few strong surfaces: black glyph plate, mint fabric mass, seam teeth, and bead chains. Detail density is high in the lower right and along the seam, but the interaction anchors remain legible."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-25-japanese-healing-veil-glyph-macro-v1"
+}

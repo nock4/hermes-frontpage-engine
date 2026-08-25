@@ -1,0 +1,1879 @@
+{
+  "artifact_map_id": "map-2026-08-25-japanese-healing-veil-glyph-macro-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "japanese-healing-veil-glyph-macro",
+  "default_artifact_id": "hero-primary-source-anchor",
+  "artifacts": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "label": "Primary Source Anchor",
+      "artifact_type": "black-glyph-plate",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.474,
+        "h": 1
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.006,
+          0.011
+        ],
+        [
+          0.211,
+          0.002
+        ],
+        [
+          0.344,
+          0.103
+        ],
+        [
+          0.415,
+          0.278
+        ],
+        [
+          0.47,
+          0.458
+        ],
+        [
+          0.43,
+          0.658
+        ],
+        [
+          0.373,
+          0.819
+        ],
+        [
+          0.194,
+          0.972
+        ],
+        [
+          0.006,
+          0.996
+        ],
+        [
+          0,
+          0.831
+        ],
+        [
+          0.151,
+          0.74
+        ],
+        [
+          0.211,
+          0.58
+        ],
+        [
+          0.075,
+          0.466
+        ],
+        [
+          0,
+          0.354
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/hero-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          364,
+          430
+        ],
+        "safe_stage_window_origin_px": [
+          422,
+          512
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.006,
+            0.011
+          ],
+          [
+            0.211,
+            0.002
+          ],
+          [
+            0.344,
+            0.103
+          ],
+          [
+            0.415,
+            0.278
+          ],
+          [
+            0.47,
+            0.458
+          ],
+          [
+            0.43,
+            0.658
+          ],
+          [
+            0.373,
+            0.819
+          ],
+          [
+            0.194,
+            0.972
+          ],
+          [
+            0.006,
+            0.996
+          ],
+          [
+            0,
+            0.831
+          ],
+          [
+            0.151,
+            0.74
+          ],
+          [
+            0.211,
+            0.58
+          ],
+          [
+            0.075,
+            0.466
+          ],
+          [
+            0,
+            0.354
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2406,
+            0.0
+          ],
+          [
+            0.3342,
+            0.0713
+          ],
+          [
+            0.3743,
+            0.1041
+          ],
+          [
+            0.4697,
+            0.3581
+          ],
+          [
+            0.3565,
+            0.8581
+          ],
+          [
+            0.1934,
+            0.9957
+          ],
+          [
+            0.0,
+            0.9993
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4706,
+          "h": 1.0
+        },
+        "territory_area_px": 406064,
+        "visible_area_px": 497707,
+        "expansion_ratio": 0.816,
+        "neighbors": [
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 6713,
+            "direction": "up",
+            "distance_px": 512.14
+          },
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 3835,
+            "direction": "right",
+            "distance_px": 257.45
+          },
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 1992,
+            "direction": "up",
+            "distance_px": 515.39
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 480,
+            "direction": "right",
+            "distance_px": 368.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "label": "Secondary Source Anchor",
+      "artifact_type": "translucent-fabric-fold",
+      "bounds": {
+        "x": 0.453,
+        "y": 0,
+        "w": 0.5469999999999999,
+        "h": 0.995
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.468,
+          0.002
+        ],
+        [
+          0.67,
+          0.001
+        ],
+        [
+          0.807,
+          0.034
+        ],
+        [
+          0.985,
+          0.012
+        ],
+        [
+          0.998,
+          0.195
+        ],
+        [
+          0.919,
+          0.331
+        ],
+        [
+          0.989,
+          0.489
+        ],
+        [
+          0.933,
+          0.634
+        ],
+        [
+          0.991,
+          0.832
+        ],
+        [
+          0.925,
+          0.995
+        ],
+        [
+          0.708,
+          0.986
+        ],
+        [
+          0.607,
+          0.858
+        ],
+        [
+          0.467,
+          0.826
+        ],
+        [
+          0.515,
+          0.647
+        ],
+        [
+          0.485,
+          0.49
+        ],
+        [
+          0.526,
+          0.318
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/hero-secondary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-secondary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1116,
+          428
+        ],
+        "safe_stage_window_origin_px": [
+          1183,
+          509
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.468,
+            0.002
+          ],
+          [
+            0.67,
+            0.001
+          ],
+          [
+            0.807,
+            0.034
+          ],
+          [
+            0.985,
+            0.012
+          ],
+          [
+            0.998,
+            0.195
+          ],
+          [
+            0.919,
+            0.331
+          ],
+          [
+            0.989,
+            0.489
+          ],
+          [
+            0.933,
+            0.634
+          ],
+          [
+            0.991,
+            0.832
+          ],
+          [
+            0.925,
+            0.995
+          ],
+          [
+            0.708,
+            0.986
+          ],
+          [
+            0.607,
+            0.858
+          ],
+          [
+            0.467,
+            0.826
+          ],
+          [
+            0.515,
+            0.647
+          ],
+          [
+            0.485,
+            0.49
+          ],
+          [
+            0.526,
+            0.318
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4483,
+            0.0
+          ],
+          [
+            0.9991,
+            0.0
+          ],
+          [
+            0.9991,
+            0.8124
+          ],
+          [
+            0.7799,
+            0.9993
+          ],
+          [
+            0.6943,
+            0.9993
+          ],
+          [
+            0.4777,
+            0.8524
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4483,
+          "y": 0.0,
+          "w": 0.5517,
+          "h": 1.0
+        },
+        "territory_area_px": 516696,
+        "visible_area_px": 682958,
+        "expansion_ratio": 0.757,
+        "neighbors": [
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 90579,
+            "direction": "up",
+            "distance_px": 210.81
+          },
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 4736,
+            "direction": "left",
+            "distance_px": 430.97
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 3351,
+            "direction": "left",
+            "distance_px": 299.68
+          },
+          {
+            "artifact_id": "module-distributed-marker",
+            "shared_edge_px": 3278,
+            "direction": "down",
+            "distance_px": 709.79
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "vertical-zipper-tooth-seam",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.005,
+        "w": 0.168,
+        "h": 0.865
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.443,
+          0.006
+        ],
+        [
+          0.484,
+          0.043
+        ],
+        [
+          0.492,
+          0.105
+        ],
+        [
+          0.511,
+          0.171
+        ],
+        [
+          0.495,
+          0.226
+        ],
+        [
+          0.536,
+          0.289
+        ],
+        [
+          0.507,
+          0.358
+        ],
+        [
+          0.486,
+          0.441
+        ],
+        [
+          0.469,
+          0.528
+        ],
+        [
+          0.444,
+          0.615
+        ],
+        [
+          0.433,
+          0.701
+        ],
+        [
+          0.406,
+          0.781
+        ],
+        [
+          0.392,
+          0.869
+        ],
+        [
+          0.439,
+          0.868
+        ],
+        [
+          0.462,
+          0.756
+        ],
+        [
+          0.489,
+          0.636
+        ],
+        [
+          0.521,
+          0.49
+        ],
+        [
+          0.556,
+          0.316
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          727,
+          377
+        ],
+        "safe_stage_window_origin_px": [
+          747,
+          448
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.443,
+            0.006
+          ],
+          [
+            0.484,
+            0.043
+          ],
+          [
+            0.492,
+            0.105
+          ],
+          [
+            0.511,
+            0.171
+          ],
+          [
+            0.495,
+            0.226
+          ],
+          [
+            0.536,
+            0.289
+          ],
+          [
+            0.507,
+            0.358
+          ],
+          [
+            0.486,
+            0.441
+          ],
+          [
+            0.469,
+            0.528
+          ],
+          [
+            0.444,
+            0.615
+          ],
+          [
+            0.433,
+            0.701
+          ],
+          [
+            0.406,
+            0.781
+          ],
+          [
+            0.392,
+            0.869
+          ],
+          [
+            0.439,
+            0.868
+          ],
+          [
+            0.462,
+            0.756
+          ],
+          [
+            0.489,
+            0.636
+          ],
+          [
+            0.521,
+            0.49
+          ],
+          [
+            0.556,
+            0.316
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3556,
+            0.8666
+          ],
+          [
+            0.4073,
+            0.0057
+          ],
+          [
+            0.4144,
+            0.0
+          ],
+          [
+            0.4483,
+            0.0007
+          ],
+          [
+            0.5615,
+            0.3559
+          ],
+          [
+            0.5294,
+            0.6127
+          ],
+          [
+            0.4742,
+            0.8673
+          ],
+          [
+            0.4385,
+            0.8959
+          ],
+          [
+            0.3913,
+            0.8973
+          ],
+          [
+            0.3556,
+            0.8688
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3556,
+          "y": 0.0,
+          "w": 0.2068,
+          "h": 0.898
+        },
+        "territory_area_px": 101230,
+        "visible_area_px": 47816,
+        "expansion_ratio": 2.117,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 4736,
+            "direction": "right",
+            "distance_px": 430.97
+          },
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 3835,
+            "direction": "left",
+            "distance_px": 257.45
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 3608,
+            "direction": "right",
+            "distance_px": 131.31
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "gold-bead-pinhole-chain",
+      "bounds": {
+        "x": 0.544,
+        "y": 0.66,
+        "w": 0.253,
+        "h": 0.334
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.645,
+          0.662
+        ],
+        [
+          0.681,
+          0.699
+        ],
+        [
+          0.719,
+          0.759
+        ],
+        [
+          0.731,
+          0.821
+        ],
+        [
+          0.789,
+          0.881
+        ],
+        [
+          0.795,
+          0.943
+        ],
+        [
+          0.764,
+          0.99
+        ],
+        [
+          0.715,
+          0.966
+        ],
+        [
+          0.697,
+          0.892
+        ],
+        [
+          0.656,
+          0.827
+        ],
+        [
+          0.62,
+          0.768
+        ],
+        [
+          0.584,
+          0.716
+        ],
+        [
+          0.546,
+          0.681
+        ],
+        [
+          0.572,
+          0.662
+        ],
+        [
+          0.612,
+          0.675
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1030,
+          819
+        ],
+        "safe_stage_window_origin_px": [
+          1061,
+          847
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.645,
+            0.662
+          ],
+          [
+            0.681,
+            0.699
+          ],
+          [
+            0.719,
+            0.759
+          ],
+          [
+            0.731,
+            0.821
+          ],
+          [
+            0.789,
+            0.881
+          ],
+          [
+            0.795,
+            0.943
+          ],
+          [
+            0.764,
+            0.99
+          ],
+          [
+            0.715,
+            0.966
+          ],
+          [
+            0.697,
+            0.892
+          ],
+          [
+            0.656,
+            0.827
+          ],
+          [
+            0.62,
+            0.768
+          ],
+          [
+            0.584,
+            0.716
+          ],
+          [
+            0.546,
+            0.681
+          ],
+          [
+            0.572,
+            0.662
+          ],
+          [
+            0.612,
+            0.675
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5223,
+            0.6805
+          ],
+          [
+            0.5713,
+            0.6419
+          ],
+          [
+            0.6444,
+            0.6419
+          ],
+          [
+            0.7059,
+            0.6983
+          ],
+          [
+            0.7433,
+            0.7582
+          ],
+          [
+            0.7629,
+            0.8281
+          ],
+          [
+            0.7772,
+            0.9986
+          ],
+          [
+            0.7433,
+            0.9993
+          ],
+          [
+            0.7148,
+            0.9857
+          ],
+          [
+            0.6898,
+            0.9658
+          ],
+          [
+            0.5223,
+            0.6819
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5223,
+          "y": 0.6419,
+          "w": 0.2558,
+          "h": 0.3581
+        },
+        "territory_area_px": 56122,
+        "visible_area_px": 45980,
+        "expansion_ratio": 1.221,
+        "neighbors": [
+          {
+            "artifact_id": "module-distributed-marker",
+            "shared_edge_px": 3715,
+            "direction": "right",
+            "distance_px": 244.43
+          },
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 3184,
+            "direction": "up",
+            "distance_px": 590.29
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 94,
+            "direction": "up",
+            "distance_px": 413.32
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "red-ink-gesture-stroke",
+      "bounds": {
+        "x": 0.437,
+        "y": 0.365,
+        "w": 0.188,
+        "h": 0.353
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.545,
+          0.366
+        ],
+        [
+          0.595,
+          0.399
+        ],
+        [
+          0.563,
+          0.451
+        ],
+        [
+          0.552,
+          0.507
+        ],
+        [
+          0.624,
+          0.559
+        ],
+        [
+          0.602,
+          0.604
+        ],
+        [
+          0.56,
+          0.571
+        ],
+        [
+          0.521,
+          0.646
+        ],
+        [
+          0.474,
+          0.716
+        ],
+        [
+          0.455,
+          0.669
+        ],
+        [
+          0.498,
+          0.591
+        ],
+        [
+          0.525,
+          0.529
+        ],
+        [
+          0.479,
+          0.476
+        ],
+        [
+          0.443,
+          0.446
+        ],
+        [
+          0.484,
+          0.411
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          816,
+          526
+        ],
+        "safe_stage_window_origin_px": [
+          839,
+          554
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.545,
+            0.366
+          ],
+          [
+            0.595,
+            0.399
+          ],
+          [
+            0.563,
+            0.451
+          ],
+          [
+            0.552,
+            0.507
+          ],
+          [
+            0.624,
+            0.559
+          ],
+          [
+            0.602,
+            0.604
+          ],
+          [
+            0.56,
+            0.571
+          ],
+          [
+            0.521,
+            0.646
+          ],
+          [
+            0.474,
+            0.716
+          ],
+          [
+            0.455,
+            0.669
+          ],
+          [
+            0.498,
+            0.591
+          ],
+          [
+            0.525,
+            0.529
+          ],
+          [
+            0.479,
+            0.476
+          ],
+          [
+            0.443,
+            0.446
+          ],
+          [
+            0.484,
+            0.411
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.418,
+            0.4458
+          ],
+          [
+            0.5446,
+            0.3459
+          ],
+          [
+            0.5954,
+            0.3802
+          ],
+          [
+            0.6488,
+            0.5592
+          ],
+          [
+            0.6266,
+            0.6034
+          ],
+          [
+            0.5107,
+            0.6976
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.418,
+          "y": 0.3459,
+          "w": 0.2317,
+          "h": 0.3524
+        },
+        "territory_area_px": 47005,
+        "visible_area_px": 38147,
+        "expansion_ratio": 1.232,
+        "neighbors": [
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 3608,
+            "direction": "left",
+            "distance_px": 131.31
+          },
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 3351,
+            "direction": "right",
+            "distance_px": 299.68
+          },
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 480,
+            "direction": "left",
+            "distance_px": 368.22
+          },
+          {
+            "artifact_id": "module-color-node",
+            "shared_edge_px": 94,
+            "direction": "down",
+            "distance_px": 413.32
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "blue-cut-glyph-edge",
+      "bounds": {
+        "x": 0,
+        "y": 0.021,
+        "w": 0.288,
+        "h": 0.369
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.001,
+          0.143
+        ],
+        [
+          0.11,
+          0.079
+        ],
+        [
+          0.214,
+          0.029
+        ],
+        [
+          0.273,
+          0.032
+        ],
+        [
+          0.25,
+          0.106
+        ],
+        [
+          0.172,
+          0.171
+        ],
+        [
+          0.234,
+          0.263
+        ],
+        [
+          0.287,
+          0.375
+        ],
+        [
+          0.228,
+          0.391
+        ],
+        [
+          0.119,
+          0.329
+        ],
+        [
+          0.006,
+          0.349
+        ],
+        [
+          0,
+          0.264
+        ],
+        [
+          0.076,
+          0.193
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          221,
+          180
+        ],
+        "safe_stage_window_origin_px": [
+          257,
+          210
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.001,
+            0.143
+          ],
+          [
+            0.11,
+            0.079
+          ],
+          [
+            0.214,
+            0.029
+          ],
+          [
+            0.273,
+            0.032
+          ],
+          [
+            0.25,
+            0.106
+          ],
+          [
+            0.172,
+            0.171
+          ],
+          [
+            0.234,
+            0.263
+          ],
+          [
+            0.287,
+            0.375
+          ],
+          [
+            0.228,
+            0.391
+          ],
+          [
+            0.119,
+            0.329
+          ],
+          [
+            0.006,
+            0.349
+          ],
+          [
+            0,
+            0.264
+          ],
+          [
+            0.076,
+            0.193
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.1234
+          ],
+          [
+            0.107,
+            0.0599
+          ],
+          [
+            0.2139,
+            0.0086
+          ],
+          [
+            0.2727,
+            0.0114
+          ],
+          [
+            0.2977,
+            0.0314
+          ],
+          [
+            0.2861,
+            0.3203
+          ],
+          [
+            0.1266,
+            0.3524
+          ],
+          [
+            0.0053,
+            0.3688
+          ],
+          [
+            0.0,
+            0.3645
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0086,
+          "w": 0.2986,
+          "h": 0.3609
+        },
+        "territory_area_px": 115959,
+        "visible_area_px": 94488,
+        "expansion_ratio": 1.227,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 6713,
+            "direction": "down",
+            "distance_px": 512.14
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "warm-fabric-slit-glow",
+      "bounds": {
+        "x": 0.591,
+        "y": 0.067,
+        "w": 0.215,
+        "h": 0.302
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.62,
+          0.071
+        ],
+        [
+          0.677,
+          0.112
+        ],
+        [
+          0.711,
+          0.164
+        ],
+        [
+          0.75,
+          0.218
+        ],
+        [
+          0.807,
+          0.286
+        ],
+        [
+          0.776,
+          0.357
+        ],
+        [
+          0.702,
+          0.367
+        ],
+        [
+          0.65,
+          0.318
+        ],
+        [
+          0.609,
+          0.254
+        ],
+        [
+          0.591,
+          0.179
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1073,
+          198
+        ],
+        "safe_stage_window_origin_px": [
+          1099,
+          223
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.071
+          ],
+          [
+            0.677,
+            0.112
+          ],
+          [
+            0.711,
+            0.164
+          ],
+          [
+            0.75,
+            0.218
+          ],
+          [
+            0.807,
+            0.286
+          ],
+          [
+            0.776,
+            0.357
+          ],
+          [
+            0.702,
+            0.367
+          ],
+          [
+            0.65,
+            0.318
+          ],
+          [
+            0.609,
+            0.254
+          ],
+          [
+            0.591,
+            0.179
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5553,
+            0.1769
+          ],
+          [
+            0.5838,
+            0.0706
+          ],
+          [
+            0.6194,
+            0.0421
+          ],
+          [
+            0.713,
+            0.1127
+          ],
+          [
+            0.8422,
+            0.2853
+          ],
+          [
+            0.8182,
+            0.3409
+          ],
+          [
+            0.6613,
+            0.3623
+          ],
+          [
+            0.6132,
+            0.3167
+          ],
+          [
+            0.5731,
+            0.2539
+          ],
+          [
+            0.5553,
+            0.1797
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5553,
+          "y": 0.0421,
+          "w": 0.2879,
+          "h": 0.321
+        },
+        "territory_area_px": 87405,
+        "visible_area_px": 55119,
+        "expansion_ratio": 1.586,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 90579,
+            "direction": "down",
+            "distance_px": 210.81
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "cream-oval-aperture",
+      "bounds": {
+        "x": 0.302,
+        "y": 0.16,
+        "w": 0.099,
+        "h": 0.086
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.325,
+          0.177
+        ],
+        [
+          0.355,
+          0.161
+        ],
+        [
+          0.391,
+          0.168
+        ],
+        [
+          0.403,
+          0.198
+        ],
+        [
+          0.388,
+          0.229
+        ],
+        [
+          0.354,
+          0.245
+        ],
+        [
+          0.326,
+          0.233
+        ],
+        [
+          0.309,
+          0.203
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          540,
+          201
+        ],
+        "safe_stage_window_origin_px": [
+          552,
+          208
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.325,
+            0.177
+          ],
+          [
+            0.355,
+            0.161
+          ],
+          [
+            0.391,
+            0.168
+          ],
+          [
+            0.403,
+            0.198
+          ],
+          [
+            0.388,
+            0.229
+          ],
+          [
+            0.354,
+            0.245
+          ],
+          [
+            0.326,
+            0.233
+          ],
+          [
+            0.309,
+            0.203
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2834,
+            0.2026
+          ],
+          [
+            0.2995,
+            0.1769
+          ],
+          [
+            0.3547,
+            0.1405
+          ],
+          [
+            0.3904,
+            0.1476
+          ],
+          [
+            0.4153,
+            0.1676
+          ],
+          [
+            0.4278,
+            0.1969
+          ],
+          [
+            0.4127,
+            0.229
+          ],
+          [
+            0.3877,
+            0.2489
+          ],
+          [
+            0.3538,
+            0.2646
+          ],
+          [
+            0.3253,
+            0.2525
+          ],
+          [
+            0.3004,
+            0.2325
+          ],
+          [
+            0.2834,
+            0.2033
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2834,
+          "y": 0.1405,
+          "w": 0.1453,
+          "h": 0.1248
+        },
+        "territory_area_px": 18942,
+        "visible_area_px": 8694,
+        "expansion_ratio": 2.179,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 1992,
+            "direction": "down",
+            "distance_px": 515.39
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "lower-red-floral-stain-and-jewel-edge",
+      "bounds": {
+        "x": 0.648,
+        "y": 0.708,
+        "w": 0.352,
+        "h": 0.292
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.736,
+          0.724
+        ],
+        [
+          0.835,
+          0.709
+        ],
+        [
+          0.92,
+          0.743
+        ],
+        [
+          0.989,
+          0.832
+        ],
+        [
+          0.998,
+          0.93
+        ],
+        [
+          0.969,
+          0.998
+        ],
+        [
+          0.837,
+          0.998
+        ],
+        [
+          0.725,
+          0.961
+        ],
+        [
+          0.654,
+          0.893
+        ],
+        [
+          0.648,
+          0.807
+        ]
+      ],
+      "cluster_id": "japanese-healing-veil-glyph-macro",
+      "mask_path": "/editions/2026-08-25-japanese-healing-veil-glyph-macro-v1/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1266,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1309,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.736,
+            0.724
+          ],
+          [
+            0.835,
+            0.709
+          ],
+          [
+            0.92,
+            0.743
+          ],
+          [
+            0.989,
+            0.832
+          ],
+          [
+            0.998,
+            0.93
+          ],
+          [
+            0.969,
+            0.998
+          ],
+          [
+            0.837,
+            0.998
+          ],
+          [
+            0.725,
+            0.961
+          ],
+          [
+            0.654,
+            0.893
+          ],
+          [
+            0.648,
+            0.807
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6239,
+            0.816
+          ],
+          [
+            0.7353,
+            0.704
+          ],
+          [
+            0.8342,
+            0.689
+          ],
+          [
+            0.9198,
+            0.7225
+          ],
+          [
+            0.9456,
+            0.7432
+          ],
+          [
+            0.9991,
+            0.8131
+          ],
+          [
+            0.9991,
+            0.9857
+          ],
+          [
+            0.992,
+            0.9993
+          ],
+          [
+            0.7807,
+            0.9993
+          ],
+          [
+            0.7246,
+            0.9807
+          ],
+          [
+            0.6283,
+            0.8923
+          ],
+          [
+            0.6239,
+            0.8274
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6239,
+          "y": 0.689,
+          "w": 0.3761,
+          "h": 0.311
+        },
+        "territory_area_px": 121380,
+        "visible_area_px": 123167,
+        "expansion_ratio": 0.985,
+        "neighbors": [
+          {
+            "artifact_id": "module-color-node",
+            "shared_edge_px": 3715,
+            "direction": "left",
+            "distance_px": 244.43
+          },
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 3278,
+            "direction": "up",
+            "distance_px": 709.79
+          }
+        ]
+      }
+    }
+  ]
+}

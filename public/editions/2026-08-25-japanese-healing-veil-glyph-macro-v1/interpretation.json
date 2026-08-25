@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-08-25-japanese-healing-veil-glyph-macro-v1",
+  "edition_id": "2026-08-25-japanese-healing-veil-glyph-macro-v1",
+  "plate_read_timestamp": "2026-08-25T08:35:24.818Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A tight macro plate: glossy black cutout surface on the left with pale blue glyphs and small cream apertures, pressed against translucent mint fabric on the right. Gold bead chains, zipper-like plastic teeth, red handwritten strokes, and warm glows form the usable source windows.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "late-night healing radio under lacquer, veil, and gold",
+      "A tight macro plate: glossy black cutout surface on the left with pale blue glyphs and small cream apertures, pressed against translucent mint fabric on the right. Gold bead chains, zipper-like plastic teeth, red handwritten strokes, and warm glows form the usable source windows.",
+      "https",
+      "status",
+      "date"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Primary Source Anchor",
+      "Secondary Source Anchor",
+      "Signal Panel",
+      "Color Node",
+      "Field Marker",
+      "Edge Detail",
+      "Layered Fragment",
+      "Reference Plaque"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "japanese-healing-veil-glyph-macro",
+      "Support two major structures: a large vertical glyph/black-field mass on the left and a translucent fabric-and-jewel macro field on the right, joined by one red handwritten seam gesture. Smaller source marks orbit these structures rather than forming a grid.",
+      "The Fond/Sound/Japanese Healing Music anchor should appear as the dominant album-sleeve logic: square crop pressure, printed grain, pale-blue glyph mass, veil translucency, and jewel nodes. Supporting sources surface as LYL/radio apertures, forest-healing green seams, merch/sleeve material tabs, download notches, and media-bearing glints embedded into the same physical plate.",
+      "mixed geometry",
+      "gestural composition",
+      "glossy black mask field with blue glyph edges",
+      "cream oval cutouts in black surface",
+      "translucent mint fabric folds"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: japanese-healing-veil-glyph-macro.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "type": "black-glyph-plate",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.474,
+        "h": 1
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "type": "translucent-fabric-fold",
+      "strength": 0.975092,
+      "bounds": {
+        "x": 0.453,
+        "y": 0,
+        "w": 0.5469999999999999,
+        "h": 0.995
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "vertical-zipper-tooth-seam",
+      "strength": 0.77082,
+      "bounds": {
+        "x": 0.389,
+        "y": 0.005,
+        "w": 0.168,
+        "h": 0.865
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "gold-bead-pinhole-chain",
+      "strength": 0.752112,
+      "bounds": {
+        "x": 0.544,
+        "y": 0.66,
+        "w": 0.253,
+        "h": 0.334
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "red-ink-gesture-stroke",
+      "strength": 0.726048,
+      "bounds": {
+        "x": 0.437,
+        "y": 0.365,
+        "w": 0.188,
+        "h": 0.353
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "type": "blue-cut-glyph-edge",
+      "strength": 0.70752,
+      "bounds": {
+        "x": 0,
+        "y": 0.021,
+        "w": 0.288,
+        "h": 0.369
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "warm-fabric-slit-glow",
+      "strength": 0.6795840000000001,
+      "bounds": {
+        "x": 0.591,
+        "y": 0.067,
+        "w": 0.215,
+        "h": 0.302
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "type": "cream-oval-aperture",
+      "strength": 0.663964,
+      "bounds": {
+        "x": 0.302,
+        "y": 0.16,
+        "w": 0.099,
+        "h": 0.086
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "lower-red-floral-stain-and-jewel-edge",
+      "strength": 0.6452439999999999,
+      "bounds": {
+        "x": 0.648,
+        "y": 0.708,
+        "w": 0.352,
+        "h": 0.292
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.474,
+        "h": 1
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.453,
+        "y": 0,
+        "w": 0.5469999999999999,
+        "h": 0.995
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.005,
+        "w": 0.168,
+        "h": 0.865
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.544,
+        "y": 0.66,
+        "w": 0.253,
+        "h": 0.334
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.437,
+        "y": 0.365,
+        "w": 0.188,
+        "h": 0.353
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.021,
+        "w": 0.288,
+        "h": 0.369
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.591,
+        "y": 0.067,
+        "w": 0.215,
+        "h": 0.302
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.302,
+        "y": 0.16,
+        "w": 0.099,
+        "h": 0.086
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.648,
+        "y": 0.708,
+        "w": 0.352,
+        "h": 0.292
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
