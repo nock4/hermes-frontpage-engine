@@ -1,0 +1,420 @@
+{
+  "analysis_id": "analysis-2026-08-25-ambient-contact-healing-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A pale expressionist plate with a large overexposed diagonal light slab crossing a mint-green field, a fine vertical seam near the right third, three small projecting shelf tabs, scattered right-edge registration ticks, and a row of punctured pinholes near the lower left.",
+  "usable_surfaces": [
+    "overexposed diagonal light slab",
+    "sharp diagonal shadow edge",
+    "right vertical paper seam",
+    "three protruding shelf tabs",
+    "right margin registration ticks",
+    "lower-left pinhole row",
+    "translucent vertical tape strip"
+  ],
+  "detected_objects": [
+    {
+      "label": "Primary Source Anchor",
+      "artifact_type": "diagonal-light-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.695,
+        "h": 0.655
+      },
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.695,
+          0
+        ],
+        [
+          0.696,
+          0.43
+        ],
+        [
+          0.659,
+          0.448
+        ],
+        [
+          0.61,
+          0.473
+        ],
+        [
+          0.552,
+          0.503
+        ],
+        [
+          0.477,
+          0.54
+        ],
+        [
+          0.391,
+          0.582
+        ],
+        [
+          0.288,
+          0.63
+        ],
+        [
+          0.177,
+          0.681
+        ],
+        [
+          0.072,
+          0.728
+        ],
+        [
+          0,
+          0.754
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The dominant source-bearing gesture is the blown white diagonal slab, with a hard lower edge cutting across the plate and several small glowing contact points along it."
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "stacked-projecting-tabs",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.758,
+        "y": 0.255,
+        "w": 0.091,
+        "h": 0.133
+      },
+      "polygon": [
+        [
+          0.76,
+          0.256
+        ],
+        [
+          0.846,
+          0.255
+        ],
+        [
+          0.849,
+          0.268
+        ],
+        [
+          0.817,
+          0.27
+        ],
+        [
+          0.785,
+          0.269
+        ],
+        [
+          0.758,
+          0.267
+        ],
+        [
+          0.76,
+          0.256
+        ],
+        [
+          0.76,
+          0.314
+        ],
+        [
+          0.844,
+          0.314
+        ],
+        [
+          0.846,
+          0.326
+        ],
+        [
+          0.816,
+          0.329
+        ],
+        [
+          0.785,
+          0.328
+        ],
+        [
+          0.759,
+          0.326
+        ],
+        [
+          0.76,
+          0.314
+        ],
+        [
+          0.761,
+          0.371
+        ],
+        [
+          0.843,
+          0.371
+        ],
+        [
+          0.845,
+          0.384
+        ],
+        [
+          0.76,
+          0.383
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Three small horizontal cream tabs protrude from the right field, each casting a dark triangular shadow underneath."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "diagonal-shadow-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.421,
+        "w": 0.7,
+        "h": 0.333
+      },
+      "polygon": [
+        [
+          0,
+          0.729
+        ],
+        [
+          0.072,
+          0.699
+        ],
+        [
+          0.156,
+          0.66
+        ],
+        [
+          0.252,
+          0.617
+        ],
+        [
+          0.35,
+          0.572
+        ],
+        [
+          0.448,
+          0.529
+        ],
+        [
+          0.545,
+          0.482
+        ],
+        [
+          0.641,
+          0.436
+        ],
+        [
+          0.7,
+          0.421
+        ],
+        [
+          0.697,
+          0.461
+        ],
+        [
+          0.621,
+          0.493
+        ],
+        [
+          0.521,
+          0.537
+        ],
+        [
+          0.418,
+          0.585
+        ],
+        [
+          0.315,
+          0.633
+        ],
+        [
+          0.207,
+          0.682
+        ],
+        [
+          0.1,
+          0.731
+        ],
+        [
+          0,
+          0.754
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "The lower boundary of the white slab forms a crisp diagonal shadowed edge across the image, with softened green-grey falloff below it."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "translucent-vertical-tape-strip",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.108,
+        "y": 0,
+        "w": 0.247,
+        "h": 0.674
+      },
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.083,
+          0
+        ],
+        [
+          0.113,
+          0.124
+        ],
+        [
+          0.145,
+          0.257
+        ],
+        [
+          0.177,
+          0.394
+        ],
+        [
+          0.212,
+          0.541
+        ],
+        [
+          0.256,
+          0.672
+        ],
+        [
+          0.354,
+          0.674
+        ],
+        [
+          0.311,
+          0.555
+        ],
+        [
+          0.265,
+          0.403
+        ],
+        [
+          0.224,
+          0.251
+        ],
+        [
+          0.181,
+          0.1
+        ],
+        [
+          0.154,
+          0
+        ]
+      ],
+      "confidence": 0.69,
+      "visual_evidence": "A faint translucent vertical strip runs down the left half, visible as a milky band crossing the bright field and continuing into the green area."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.867,
+    "rationale": "The plate is sparse and expressionist: one dominant diagonal light slab, one vertical seam, a small tab stack, and tiny registration/pinhole marks. The field has plenty of quiet space and the mapped anchors are visually distinct rather than cluttered."
+  },
+  "fallback_detected_object_count": 3,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-25-ambient-contact-healing-field-v1"
+}

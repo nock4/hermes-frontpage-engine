@@ -1,0 +1,1150 @@
+{
+  "artifact_map_id": "map-2026-08-25-ambient-contact-healing-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "ambient-contact-healing-field",
+  "default_artifact_id": "hero-primary-source-anchor",
+  "artifacts": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "label": "Primary Source Anchor",
+      "artifact_type": "diagonal-light-slab",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.7041,
+        "h": 0.597
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.002,
+          0.0013
+        ],
+        [
+          0.6963,
+          0.0013
+        ],
+        [
+          0.7002,
+          0.3236
+        ],
+        [
+          0.7002,
+          0.4701
+        ],
+        [
+          0.6914,
+          0.5039
+        ],
+        [
+          0.3945,
+          0.5944
+        ],
+        [
+          0.3037,
+          0.541
+        ],
+        [
+          0.2246,
+          0.4824
+        ],
+        [
+          0.002,
+          0.2799
+        ]
+      ],
+      "cluster_id": "ambient-contact-healing-field",
+      "mask_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/masks/hero-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          534,
+          282
+        ],
+        "safe_stage_window_origin_px": [
+          619,
+          335
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.002,
+            0.0013
+          ],
+          [
+            0.6963,
+            0.0013
+          ],
+          [
+            0.7002,
+            0.3236
+          ],
+          [
+            0.7002,
+            0.4701
+          ],
+          [
+            0.6914,
+            0.5039
+          ],
+          [
+            0.3945,
+            0.5944
+          ],
+          [
+            0.3037,
+            0.541
+          ],
+          [
+            0.2246,
+            0.4824
+          ],
+          [
+            0.002,
+            0.2799
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.7285,
+            0.0
+          ],
+          [
+            0.7334,
+            0.388
+          ],
+          [
+            0.7334,
+            0.4681
+          ],
+          [
+            0.3311,
+            0.5293
+          ],
+          [
+            0.1631,
+            0.457
+          ],
+          [
+            0.0,
+            0.3079
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.7344,
+          "h": 0.5299
+        },
+        "territory_area_px": 461080,
+        "visible_area_px": 540418,
+        "expansion_ratio": 0.853,
+        "neighbors": [
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 6246,
+            "direction": "down",
+            "distance_px": 326.56
+          },
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 2798,
+            "direction": "down",
+            "distance_px": 561.71
+          },
+          {
+            "artifact_id": "hero-signal-panel",
+            "shared_edge_px": 1296,
+            "direction": "right",
+            "distance_px": 445.19
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-signal-panel",
+      "kind": "hero",
+      "label": "Signal Panel",
+      "artifact_type": "stacked-projecting-tabs",
+      "bounds": {
+        "x": 0.758,
+        "y": 0.255,
+        "w": 0.091,
+        "h": 0.133
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.76,
+          0.256
+        ],
+        [
+          0.846,
+          0.255
+        ],
+        [
+          0.849,
+          0.268
+        ],
+        [
+          0.817,
+          0.27
+        ],
+        [
+          0.785,
+          0.269
+        ],
+        [
+          0.758,
+          0.267
+        ],
+        [
+          0.76,
+          0.256
+        ],
+        [
+          0.76,
+          0.314
+        ],
+        [
+          0.844,
+          0.314
+        ],
+        [
+          0.846,
+          0.326
+        ],
+        [
+          0.816,
+          0.329
+        ],
+        [
+          0.785,
+          0.328
+        ],
+        [
+          0.759,
+          0.326
+        ],
+        [
+          0.76,
+          0.314
+        ],
+        [
+          0.761,
+          0.371
+        ],
+        [
+          0.843,
+          0.371
+        ],
+        [
+          0.845,
+          0.384
+        ],
+        [
+          0.76,
+          0.383
+        ]
+      ],
+      "cluster_id": "ambient-contact-healing-field",
+      "mask_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/masks/hero-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-hero-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1234,
+          318
+        ],
+        "safe_stage_window_origin_px": [
+          1245,
+          329
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.76,
+            0.256
+          ],
+          [
+            0.846,
+            0.255
+          ],
+          [
+            0.849,
+            0.268
+          ],
+          [
+            0.817,
+            0.27
+          ],
+          [
+            0.785,
+            0.269
+          ],
+          [
+            0.758,
+            0.267
+          ],
+          [
+            0.76,
+            0.256
+          ],
+          [
+            0.76,
+            0.314
+          ],
+          [
+            0.844,
+            0.314
+          ],
+          [
+            0.846,
+            0.326
+          ],
+          [
+            0.816,
+            0.329
+          ],
+          [
+            0.785,
+            0.328
+          ],
+          [
+            0.759,
+            0.326
+          ],
+          [
+            0.76,
+            0.314
+          ],
+          [
+            0.761,
+            0.371
+          ],
+          [
+            0.843,
+            0.371
+          ],
+          [
+            0.845,
+            0.384
+          ],
+          [
+            0.76,
+            0.383
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7246,
+            0.2643
+          ],
+          [
+            0.7266,
+            0.2559
+          ],
+          [
+            0.7598,
+            0.2337
+          ],
+          [
+            0.8457,
+            0.2324
+          ],
+          [
+            0.8789,
+            0.2546
+          ],
+          [
+            0.8818,
+            0.2656
+          ],
+          [
+            0.8779,
+            0.3835
+          ],
+          [
+            0.8447,
+            0.4056
+          ],
+          [
+            0.7598,
+            0.4049
+          ],
+          [
+            0.7266,
+            0.3828
+          ],
+          [
+            0.7246,
+            0.2669
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7246,
+          "y": 0.2324,
+          "w": 0.1582,
+          "h": 0.1738
+        },
+        "territory_area_px": 36638,
+        "visible_area_px": 5697,
+        "expansion_ratio": 6.431,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 1296,
+            "direction": "left",
+            "distance_px": 445.19
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "diagonal-shadow-edge",
+      "bounds": {
+        "x": 0.1758,
+        "y": 0.4284,
+        "w": 0.5693,
+        "h": 0.2572
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.1787,
+          0.6113
+        ],
+        [
+          0.2451,
+          0.5768
+        ],
+        [
+          0.6982,
+          0.4303
+        ],
+        [
+          0.7412,
+          0.6315
+        ],
+        [
+          0.7393,
+          0.6445
+        ],
+        [
+          0.7227,
+          0.6582
+        ],
+        [
+          0.2969,
+          0.6829
+        ],
+        [
+          0.1943,
+          0.6296
+        ],
+        [
+          0.1787,
+          0.6146
+        ]
+      ],
+      "cluster_id": "ambient-contact-healing-field",
+      "mask_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          538,
+          574
+        ],
+        "safe_stage_window_origin_px": [
+          624,
+          602
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1787,
+            0.6113
+          ],
+          [
+            0.2451,
+            0.5768
+          ],
+          [
+            0.6982,
+            0.4303
+          ],
+          [
+            0.7412,
+            0.6315
+          ],
+          [
+            0.7393,
+            0.6445
+          ],
+          [
+            0.7227,
+            0.6582
+          ],
+          [
+            0.2969,
+            0.6829
+          ],
+          [
+            0.1943,
+            0.6296
+          ],
+          [
+            0.1787,
+            0.6146
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1504,
+            0.6107
+          ],
+          [
+            0.2441,
+            0.5579
+          ],
+          [
+            0.6973,
+            0.4115
+          ],
+          [
+            0.7246,
+            0.4297
+          ],
+          [
+            0.7441,
+            0.5189
+          ],
+          [
+            0.5879,
+            0.6836
+          ],
+          [
+            0.2969,
+            0.7005
+          ],
+          [
+            0.1943,
+            0.6484
+          ],
+          [
+            0.1504,
+            0.6146
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1504,
+          "y": 0.4115,
+          "w": 0.5947,
+          "h": 0.2897
+        },
+        "territory_area_px": 143772,
+        "visible_area_px": 132826,
+        "expansion_ratio": 1.082,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 2798,
+            "direction": "up",
+            "distance_px": 561.71
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 1910,
+            "direction": "right",
+            "distance_px": 306.96
+          },
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 1162,
+            "direction": "up",
+            "distance_px": 386.94
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "translucent-vertical-tape-strip",
+      "bounds": {
+        "x": 0.108,
+        "y": 0,
+        "w": 0.247,
+        "h": 0.674
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.083,
+          0
+        ],
+        [
+          0.113,
+          0.124
+        ],
+        [
+          0.145,
+          0.257
+        ],
+        [
+          0.177,
+          0.394
+        ],
+        [
+          0.212,
+          0.541
+        ],
+        [
+          0.256,
+          0.672
+        ],
+        [
+          0.354,
+          0.674
+        ],
+        [
+          0.311,
+          0.555
+        ],
+        [
+          0.265,
+          0.403
+        ],
+        [
+          0.224,
+          0.251
+        ],
+        [
+          0.181,
+          0.1
+        ],
+        [
+          0.154,
+          0
+        ]
+      ],
+      "cluster_id": "ambient-contact-healing-field",
+      "mask_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          356,
+          290
+        ],
+        "safe_stage_window_origin_px": [
+          386,
+          345
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0
+          ],
+          [
+            0.083,
+            0
+          ],
+          [
+            0.113,
+            0.124
+          ],
+          [
+            0.145,
+            0.257
+          ],
+          [
+            0.177,
+            0.394
+          ],
+          [
+            0.212,
+            0.541
+          ],
+          [
+            0.256,
+            0.672
+          ],
+          [
+            0.354,
+            0.674
+          ],
+          [
+            0.311,
+            0.555
+          ],
+          [
+            0.265,
+            0.403
+          ],
+          [
+            0.224,
+            0.251
+          ],
+          [
+            0.181,
+            0.1
+          ],
+          [
+            0.154,
+            0
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0928,
+            0.1556
+          ],
+          [
+            0.2588,
+            0.2786
+          ],
+          [
+            0.3301,
+            0.5273
+          ],
+          [
+            0.2754,
+            0.6901
+          ],
+          [
+            0.2559,
+            0.6901
+          ],
+          [
+            0.2285,
+            0.6719
+          ],
+          [
+            0.1846,
+            0.5417
+          ],
+          [
+            0.0928,
+            0.1576
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0928,
+          "y": 0.1556,
+          "w": 0.2383,
+          "h": 0.5352
+        },
+        "territory_area_px": 75659,
+        "visible_area_px": 90147,
+        "expansion_ratio": 0.839,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 6246,
+            "direction": "up",
+            "distance_px": 326.56
+          },
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 1162,
+            "direction": "down",
+            "distance_px": 386.94
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "ambient-contact-healing-field",
+      "mask_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5918,
+            0.6536
+          ],
+          [
+            0.6807,
+            0.5215
+          ],
+          [
+            0.8398,
+            0.5215
+          ],
+          [
+            0.8672,
+            0.5397
+          ],
+          [
+            0.8672,
+            0.7598
+          ],
+          [
+            0.8398,
+            0.778
+          ],
+          [
+            0.625,
+            0.778
+          ],
+          [
+            0.5918,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5918,
+          "y": 0.5215,
+          "w": 0.2764,
+          "h": 0.2572
+        },
+        "territory_area_px": 101121,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.314,
+        "neighbors": [
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 1910,
+            "direction": "left",
+            "distance_px": 306.96
+          },
+          {
+            "artifact_id": "module-layered-fragment-2",
+            "shared_edge_px": 228,
+            "direction": "down",
+            "distance_px": 390.23
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-edge-detail-2",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "ambient-contact-healing-field",
+      "mask_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/masks/module-edge-detail-2.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0723,
+            0.7799
+          ],
+          [
+            0.0996,
+            0.7617
+          ],
+          [
+            0.2793,
+            0.7617
+          ],
+          [
+            0.3066,
+            0.7799
+          ],
+          [
+            0.3066,
+            0.9395
+          ],
+          [
+            0.2793,
+            0.9577
+          ],
+          [
+            0.0996,
+            0.9577
+          ],
+          [
+            0.0723,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0723,
+          "y": 0.7617,
+          "w": 0.2354,
+          "h": 0.1966
+        },
+        "territory_area_px": 71158,
+        "visible_area_px": 45510,
+        "expansion_ratio": 1.564,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-layered-fragment-2",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "ambient-contact-healing-field",
+      "mask_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/masks/module-layered-fragment-2.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3926,
+            0.7799
+          ],
+          [
+            0.4199,
+            0.7617
+          ],
+          [
+            0.5996,
+            0.7617
+          ],
+          [
+            0.627,
+            0.7799
+          ],
+          [
+            0.627,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9577
+          ],
+          [
+            0.4199,
+            0.9577
+          ],
+          [
+            0.3926,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3926,
+          "y": 0.7617,
+          "w": 0.2354,
+          "h": 0.1966
+        },
+        "territory_area_px": 71158,
+        "visible_area_px": 45510,
+        "expansion_ratio": 1.564,
+        "neighbors": [
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 228,
+            "direction": "up",
+            "distance_px": 390.23
+          }
+        ]
+      }
+    }
+  ]
+}

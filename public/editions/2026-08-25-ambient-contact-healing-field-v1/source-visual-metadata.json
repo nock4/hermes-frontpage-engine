@@ -1,0 +1,116 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-08-25-ambient-contact-healing-field-v1",
+  "edition_id": "2026-08-25-ambient-contact-healing-field-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-primary-source-anchor",
+      "source_image_url": "https://pbs.twimg.com/media/HIdtdDcbkAAuJ0c.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/source-posters/binding-hero-primary-source-anchor.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-25-ambient-contact-healing-field-v1/binding-hero-primary-source-anchor-source-visual-qa.jpg",
+      "image_width": 1252,
+      "image_height": 1240,
+      "aspect_ratio": 1.0097,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4794
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2161,
+        "width": 1.0,
+        "height": 0.5677
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.08893,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-hero-signal-panel",
+      "source_image_url": "https://pics.paypal.com/00/s/N2VjYWYxZDMtZDg2YS00ZTZhLTkyZTYtMTE1NDY0ZGM4NDFh/file.PNG",
+      "poster_asset_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/source-posters/binding-hero-signal-panel.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-25-ambient-contact-healing-field-v1/binding-hero-signal-panel-source-visual-qa.jpg",
+      "image_width": 400,
+      "image_height": 400,
+      "aspect_ratio": 1.0,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.4975,
+        "y": 0.5162
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.23,
+        "width": 1.0,
+        "height": 0.5625
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02204,
+        "candidate_box_count": 13
+      }
+    },
+    {
+      "binding_id": "binding-module-field-marker",
+      "source_image_url": "https://static.lyl.live/uploads/1961a6c257983f059892c7fb4250bfef.jpg",
+      "poster_asset_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/source-posters/binding-module-field-marker.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-25-ambient-contact-healing-field-v1/binding-module-field-marker-source-visual-qa.jpg",
+      "image_width": 500,
+      "image_height": 257,
+      "aspect_ratio": 1.9455,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.491,
+        "y": 0.5
+      },
+      "poster_crop": {
+        "x": 0.044,
+        "y": 0.0,
+        "width": 0.912,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.04953,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-layered-fragment-2",
+      "source_image_url": "https://yt3.googleusercontent.com/aPKknJjc6zIuorSWc3sPRUo0W9-Dv4f5l6fWpg6kp4jdEcMImK-YSKDSv26RlnxzWKpwGZpY=s900-c-k-c0x00ffffff-no-rj",
+      "poster_asset_path": "/editions/2026-08-25-ambient-contact-healing-field-v1/assets/source-posters/binding-module-layered-fragment-2.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-25-ambient-contact-healing-field-v1/binding-module-layered-fragment-2-source-visual-qa.jpg",
+      "image_width": 900,
+      "image_height": 900,
+      "aspect_ratio": 1.0,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.4978,
+        "y": 0.5161
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2322,
+        "width": 1.0,
+        "height": 0.5622
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.00993,
+        "candidate_box_count": 13
+      }
+    }
+  ],
+  "failures": []
+}
