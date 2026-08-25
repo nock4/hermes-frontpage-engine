@@ -324,6 +324,21 @@ function noteHasDirectMediaForSource(source, signalHarvest) {
   return Boolean(note?.urls?.some((url) => isDirectRasterImageUrl(url) && !isLowValueVisualImage(url)))
 }
 
+function isSourceFramedWebFallback(source) {
+  const status = String(source?.fetch_status || '')
+  if (!['fetch-ok', 'browser-harness-error-fetch-ok', 'browser-harness-disabled-fetch-ok', 'browser-harness-blocked-final-url-fetch-ok'].includes(status)) return false
+  const text = [source?.title, source?.description, source?.visible_text, source?.note_title, source?.note_excerpt]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase()
+  if (!text || text.length < 24) return false
+  const url = String(source?.url || source?.source_url || source?.final_url || '').toLowerCase()
+  if (/instagram\.com\/[^/?#]+\/?(?:$|[?#])/.test(url) || /x\.com\/[^/?#]+\/?(?:$|[?#])/.test(url)) return false
+  if (/\b(301 moved permanently|302 found|403 forbidden|404|page not found|just a moment|vercel security checkpoint|access denied|cookies|privacy policy|terms of service|sign in|log in)\b/.test(text)) return false
+  if (/\b(github|readme|api|sdk|docs|documentation|agent framework|mcp|codex|claude|vibe cod|vibe-coded|prompt guide|seo|growth|crm|pricing)\b/.test(text)) return false
+  return true
+}
+
 export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (!isAllowedInspectedSource(source)) return false
   const sourceUrls = [source.url, source.source_url, source.final_url].filter(Boolean)
@@ -341,7 +356,7 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
       && source.embed_strategy !== 'never-primary-content-source'
       && (source.window_type === 'social' || noteHasDirectMediaForSource(source, signalHarvest))
   }
-  return false
+  return isSourceFramedWebFallback(source)
 }
 
 export function selectContentSources(

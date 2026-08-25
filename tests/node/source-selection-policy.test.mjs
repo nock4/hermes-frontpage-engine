@@ -128,6 +128,37 @@ describe('source selection policy', () => {
     ]))
   })
 
+  it('allows inspected source-framed web fallbacks but rejects profile and error pages', () => {
+    const webFallback = {
+      ...baseSource,
+      url: 'https://www.fondsound.com/mix-35-japanese-healing-music/',
+      source_url: 'https://www.fondsound.com/mix-35-japanese-healing-music/',
+      final_url: 'https://www.fondsound.com/mix-35-japanese-healing-music/',
+      source_type: 'article',
+      fetch_status: 'browser-harness-error-fetch-ok',
+      title: 'Mix: 35. Japanese Healing Music',
+      visible_text: 'A source article with a real music-history surface and enough inspected page text for a compact source-framed fallback.',
+      image_url: null,
+    }
+    const profilePage = {
+      ...webFallback,
+      url: 'https://x.com/BoysClubWorld',
+      source_url: 'https://x.com/BoysClubWorld',
+      final_url: 'https://x.com/BoysClubWorld',
+      title: 'Boys Club on X',
+    }
+    const errorPage = {
+      ...webFallback,
+      url: 'https://example.com/missing',
+      title: 'Page Not Found',
+      visible_text: '404 page not found',
+    }
+
+    expect(sourceHasRenderableCardSurface(webFallback)).toBe(true)
+    expect(sourceHasRenderableCardSurface(profilePage)).toBe(false)
+    expect(sourceHasRenderableCardSurface(errorPage)).toBe(false)
+  })
+
   it('does not select YouTube videos that refuse native embedding for strict publish windows', () => {
     const unavailableYouTube = {
       ...baseSource,
