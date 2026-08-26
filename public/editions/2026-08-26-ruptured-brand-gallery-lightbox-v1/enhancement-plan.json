@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-26-ruptured-brand-gallery-lightbox-v1",
+  "edition_id": "2026-08-26-ruptured-brand-gallery-lightbox-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-26-ruptured-brand-gallery-lightbox-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-buckled-masthead-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-buckled-masthead-slab",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-cropped-typographic-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-pollinator-field-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-pollinator-field-aperture",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-rupture-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-shenzhen-prototype-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-shenzhen-prototype-tile",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (embedded-photo-tile) selected from interpretation."
+    },
+    {
+      "target_id": "module-rebrand-gallery-burn",
+      "target_kind": "artifact",
+      "artifact_id": "module-rebrand-gallery-burn",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (burned-gallery-card) selected from interpretation."
+    },
+    {
+      "target_id": "module-visual-journal-gutter-plate",
+      "target_kind": "artifact",
+      "artifact_id": "module-visual-journal-gutter-plate",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (editorial-grid-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-primary-anchor-post-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-primary-anchor-post-notch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (masthead-counter-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-cobalt-package-gloss-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-cobalt-package-gloss-tile",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-package-label-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-cobalt-package-gloss-tile-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-cobalt-package-gloss-tile-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-package-label-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-source-artifact-9",
+      "target_kind": "artifact",
+      "artifact_id": "module-source-artifact-9",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-divider-glint) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

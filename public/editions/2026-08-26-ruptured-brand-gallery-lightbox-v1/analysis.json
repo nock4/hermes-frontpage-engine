@@ -1,0 +1,416 @@
+{
+  "analysis_id": "analysis-2026-08-26-ruptured-brand-gallery-lightbox-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A white buckled paper-and-plastic plate under a cropped black masthead, cut by folded seams and holding several embedded photo tiles: glossy blue fragments, red/gray cards, a floral field aperture, and pale divider glints.",
+  "usable_surfaces": [
+    "cropped black masthead slab along the top edge",
+    "central buckled white fracture ridge",
+    "upper-left glossy blue photo pocket",
+    "small red-and-cyan rectangular tile",
+    "central pale editorial gutter tile",
+    "right cyan-blue modular image tile",
+    "lower-center pollinator flower aperture",
+    "thin dashed vertical margin seam",
+    "long pale horizontal divider glint"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero buckled masthead slab",
+      "artifact_type": "hero-scale-cropped-typographic-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 0.151
+      },
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.147,
+          0
+        ],
+        [
+          0.15,
+          0.118
+        ],
+        [
+          0.194,
+          0.119
+        ],
+        [
+          0.25,
+          0.104
+        ],
+        [
+          0.337,
+          0.114
+        ],
+        [
+          0.441,
+          0.12
+        ],
+        [
+          0.443,
+          0
+        ],
+        [
+          0.639,
+          0
+        ],
+        [
+          0.638,
+          0.12
+        ],
+        [
+          0.748,
+          0.122
+        ],
+        [
+          0.754,
+          0
+        ],
+        [
+          0.998,
+          0
+        ],
+        [
+          1,
+          0.151
+        ],
+        [
+          0.923,
+          0.151
+        ],
+        [
+          0.002,
+          0.147
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "large cropped dark typographic masses press down from the top edge, their lower contours interrupted by the buckled white slab below"
+    },
+    {
+      "label": "hero pollinator field aperture",
+      "artifact_type": "hero-scale-rupture-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.824,
+        "w": 0.254,
+        "h": 0.176
+      },
+      "polygon": [
+        [
+          0.386,
+          0.824
+        ],
+        [
+          0.635,
+          0.825
+        ],
+        [
+          0.64,
+          0.998
+        ],
+        [
+          0.388,
+          1
+        ],
+        [
+          0.386,
+          0.93
+        ],
+        [
+          0.386,
+          0.865
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "lower-center rectangular opening reveals a real photographic field with pale stems and blue-purple flower heads behind the torn white plate"
+    },
+    {
+      "label": "shenzhen prototype tile",
+      "artifact_type": "embedded-photo-tile",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.119,
+        "y": 0.161,
+        "w": 0.204,
+        "h": 0.086
+      },
+      "polygon": [
+        [
+          0.128,
+          0.161
+        ],
+        [
+          0.307,
+          0.16
+        ],
+        [
+          0.323,
+          0.173
+        ],
+        [
+          0.318,
+          0.245
+        ],
+        [
+          0.119,
+          0.243
+        ],
+        [
+          0.122,
+          0.196
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "upper-left embedded photographic pocket shows glossy blue, black, and white machine-like forms inside a hard rectangular cutout"
+    },
+    {
+      "label": "rebrand gallery burn",
+      "artifact_type": "burned-gallery-card",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.163,
+        "w": 0.084,
+        "h": 0.087
+      },
+      "polygon": [
+        [
+          0.39,
+          0.163
+        ],
+        [
+          0.471,
+          0.166
+        ],
+        [
+          0.473,
+          0.247
+        ],
+        [
+          0.391,
+          0.25
+        ],
+        [
+          0.389,
+          0.211
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "small crisp red-orange rectangular card with a bright cobalt strip sits embedded near the upper middle as a luminous modular surface"
+    },
+    {
+      "label": "visual journal gutter plate",
+      "artifact_type": "editorial-grid-surface",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.471,
+        "y": 0.169,
+        "w": 0.129,
+        "h": 0.089
+      },
+      "polygon": [
+        [
+          0.482,
+          0.169
+        ],
+        [
+          0.6,
+          0.172
+        ],
+        [
+          0.599,
+          0.25
+        ],
+        [
+          0.534,
+          0.258
+        ],
+        [
+          0.471,
+          0.249
+        ],
+        [
+          0.491,
+          0.208
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "central pale tile carries angular gray-white print-like planes and clean gutter spacing under a folded translucent edge"
+    },
+    {
+      "label": "primary anchor post notch",
+      "artifact_type": "masthead-counter-notch",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.476,
+        "y": 0,
+        "w": 0.159,
+        "h": 0.137
+      },
+      "polygon": [
+        [
+          0.481,
+          0
+        ],
+        [
+          0.635,
+          0
+        ],
+        [
+          0.635,
+          0.137
+        ],
+        [
+          0.478,
+          0.137
+        ],
+        [
+          0.477,
+          0.076
+        ],
+        [
+          0.496,
+          0.066
+        ],
+        [
+          0.512,
+          0.039
+        ],
+        [
+          0.517,
+          0
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "a dark rectangular counter-shape is cropped into the oversized black header, bordered by a white curved cut and a thin highlight lip"
+    },
+    {
+      "label": "cobalt package gloss tile",
+      "artifact_type": "glossy-package-label-surface",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.695,
+        "y": 0.3,
+        "w": 0.21,
+        "h": 0.23
+      },
+      "polygon": [
+        [
+          0.696,
+          0.3
+        ],
+        [
+          0.851,
+          0.3
+        ],
+        [
+          0.904,
+          0.324
+        ],
+        [
+          0.897,
+          0.505
+        ],
+        [
+          0.821,
+          0.53
+        ],
+        [
+          0.768,
+          0.481
+        ],
+        [
+          0.725,
+          0.42
+        ],
+        [
+          0.704,
+          0.362
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "right-middle glossy label-like tile holds bright cyan and deep blue angular shapes under a curved white torn edge"
+    },
+    {
+      "label": "cobalt package gloss tile",
+      "artifact_type": "glossy-package-label-surface",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Source Artifact 9",
+      "artifact_type": "pale-divider-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 7,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.302,
+    "rationale": "The plate remains expressionist and image-led, but many folded seams and embedded tiles compete; source windows are usable if kept tight to the visible apertures, glints, notches, and photo surfaces."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-26-ruptured-brand-gallery-lightbox-v1"
+}
