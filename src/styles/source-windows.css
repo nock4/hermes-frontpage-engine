@@ -3898,6 +3898,34 @@
   min-height: min(294px, calc(100dvh - 4.5rem));
 }
 
+@media (max-height: 500px) and (orientation: landscape) {
+  .tweet-embed-fallback {
+    align-content: start;
+    justify-content: start;
+    gap: 0.2rem;
+    min-height: 0;
+    padding: 0.72rem 3.25rem 0.45rem 0.75rem;
+  }
+
+  .tweet-embed-fallback strong {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: clamp(0.82rem, 1.8vw, 1rem);
+    line-height: 1.1;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .tweet-embed-fallback p {
+    display: none;
+  }
+
+  .tweet-embed-fallback__kicker,
+  .tweet-embed-fallback__cta {
+    font-size: 0.62rem;
+  }
+}
+
 .tweet-media-card {
   position: relative;
   display: grid;
