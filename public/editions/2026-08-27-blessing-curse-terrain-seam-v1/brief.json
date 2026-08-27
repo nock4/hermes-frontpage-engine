@@ -1,0 +1,61 @@
+{
+  "brief_id": "brief-2026-08-27-blessing-curse-terrain-seam-v1",
+  "date": "2026-08-27",
+  "signal_cluster_ids": [
+    "fffc33732008",
+    "888760eea469",
+    "e2221ea32f09",
+    "d9cf82d61d80",
+    "c864abad74e9",
+    "fca231c8978e",
+    "51d654523583",
+    "b22158abe8d4"
+  ],
+  "research_node_ids": [
+    "research-1-3e2a9b83",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-cf461952",
+    "research-5-2539dd53",
+    "research-6-aaa018c2",
+    "research-7-71581e0a",
+    "research-8-1e79ddc4",
+    "research-9-e0539fb6",
+    "research-10-907c380b",
+    "research-11-5b752ff5",
+    "research-12-02bbdc89"
+  ],
+  "mood": "a quiet curse split crossing a pale civic gallery-landscape field",
+  "material_language": [
+    "matte gallery plaster field",
+    "painted concrete with scraped undercolor",
+    "raised layered map terrain",
+    "sprite-enamel insets",
+    "thin browser-architecture mesh edges"
+  ],
+  "lighting": "soft high-key gallery wash with low raking shadows along ledges and a controlled dark bruise gathering on one side",
+  "object_inventory": [
+    "one oversized terrain seam dividing blessing and curse climates",
+    "sparse avatar-scale enamel apertures growing into footholds",
+    "paint-chip restoration islands embedded in concrete skin",
+    "shallow diorama strata with cutaway ledges",
+    "thin architectural mesh cuts suspended near the field edge"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no bedside portrait, pillow, glasses, hospital macro, or domestic medical room",
+    "no dashboard cards, labels, source-summary panels, target rings, debug hotspots, or software chrome",
+    "no datacenter procession, machine racks, cable corridors, or blue command-center glow",
+    "no poster-wall collage, archive cabinet, shelf system, desk, or crowded prop inventory",
+    "no legible words, filenames, alphanumeric callouts, or interface typography inside the image",
+    "do not copy the Drifella source image or any supplied media subject literally",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached"
+  ]
+}

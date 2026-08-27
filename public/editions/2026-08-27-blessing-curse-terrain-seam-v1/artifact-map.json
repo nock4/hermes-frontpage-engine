@@ -1,0 +1,1293 @@
+{
+  "artifact_map_id": "map-2026-08-27-blessing-curse-terrain-seam-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "blessing-curse-terrain-seam",
+  "default_artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+  "artifacts": [
+    {
+      "id": "hero-oversized-blessing-curse-terrain-sea",
+      "kind": "hero",
+      "label": "oversized blessing-curse terrain seam",
+      "artifact_type": "hero-scale-threshold-seam",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.998,
+        "h": 0.999
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.998,
+          0
+        ],
+        [
+          0.998,
+          0.999
+        ],
+        [
+          0,
+          0.999
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/hero-oversized-blessing-curse-terrain-sea.svg",
+      "source_binding_ids": [
+        "binding-hero-oversized-blessing-curse-terrain-sea"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          766,
+          430
+        ],
+        "safe_stage_window_origin_px": [
+          889,
+          511
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0
+          ],
+          [
+            0.998,
+            0
+          ],
+          [
+            0.998,
+            0.999
+          ],
+          [
+            0,
+            0.999
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.9993,
+            0.0
+          ],
+          [
+            0.9993,
+            0.9991
+          ],
+          [
+            0.0,
+            0.9991
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 1.0
+        },
+        "territory_area_px": 1094595,
+        "visible_area_px": 1569400,
+        "expansion_ratio": 0.697,
+        "neighbors": [
+          {
+            "artifact_id": "module-new-bad-image-circulation-glint",
+            "shared_edge_px": 74246,
+            "direction": "down",
+            "distance_px": 545.54
+          },
+          {
+            "artifact_id": "module-anchor-image-sprite-pinhole",
+            "shared_edge_px": 58895,
+            "direction": "left",
+            "distance_px": 43.35
+          },
+          {
+            "artifact_id": "hero-scraped-brutalist-color-underlayer",
+            "shared_edge_px": 22054,
+            "direction": "left",
+            "distance_px": 422.66
+          },
+          {
+            "artifact_id": "module-background-memory-ledger",
+            "shared_edge_px": 9453,
+            "direction": "right",
+            "distance_px": 667.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-scraped-brutalist-color-underlayer",
+      "kind": "hero",
+      "label": "scraped Brutalist color underlayer",
+      "artifact_type": "hero-scale-paint-chip-field",
+      "bounds": {
+        "x": 0.055,
+        "y": 0.493,
+        "w": 0.068,
+        "h": 0.099
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.055,
+          0.524
+        ],
+        [
+          0.073,
+          0.491
+        ],
+        [
+          0.1,
+          0.5
+        ],
+        [
+          0.12,
+          0.528
+        ],
+        [
+          0.121,
+          0.58
+        ],
+        [
+          0.097,
+          0.59
+        ],
+        [
+          0.073,
+          0.587
+        ],
+        [
+          0.057,
+          0.559
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/hero-scraped-brutalist-color-underlayer.svg",
+      "source_binding_ids": [
+        "binding-hero-scraped-brutalist-color-underlayer"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          137,
+          547
+        ],
+        "safe_stage_window_origin_px": [
+          145,
+          556
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.055,
+            0.524
+          ],
+          [
+            0.073,
+            0.491
+          ],
+          [
+            0.1,
+            0.5
+          ],
+          [
+            0.12,
+            0.528
+          ],
+          [
+            0.121,
+            0.58
+          ],
+          [
+            0.097,
+            0.59
+          ],
+          [
+            0.073,
+            0.587
+          ],
+          [
+            0.057,
+            0.559
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0307,
+            0.5232
+          ],
+          [
+            0.0728,
+            0.4599
+          ],
+          [
+            0.0999,
+            0.4697
+          ],
+          [
+            0.1277,
+            0.5045
+          ],
+          [
+            0.1441,
+            0.5276
+          ],
+          [
+            0.1448,
+            0.5544
+          ],
+          [
+            0.1448,
+            0.5793
+          ],
+          [
+            0.1205,
+            0.6096
+          ],
+          [
+            0.0963,
+            0.6194
+          ],
+          [
+            0.0728,
+            0.6168
+          ],
+          [
+            0.0328,
+            0.5606
+          ],
+          [
+            0.0307,
+            0.5312
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0307,
+          "y": 0.4599,
+          "w": 0.1148,
+          "h": 0.1604
+        },
+        "territory_area_px": 20716,
+        "visible_area_px": 8068,
+        "expansion_ratio": 2.568,
+        "neighbors": [
+          {
+            "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+            "shared_edge_px": 22054,
+            "direction": "right",
+            "distance_px": 422.66
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-conversation-transcript-folio",
+      "kind": "module",
+      "label": "Conversation Transcript Folio",
+      "artifact_type": "wireframe-terrain-cut",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.833,
+        "w": 0.059,
+        "h": 0.065
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.724,
+          0.837
+        ],
+        [
+          0.779,
+          0.834
+        ],
+        [
+          0.784,
+          0.861
+        ],
+        [
+          0.781,
+          0.895
+        ],
+        [
+          0.749,
+          0.898
+        ],
+        [
+          0.724,
+          0.889
+        ],
+        [
+          0.721,
+          0.861
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/module-conversation-transcript-folio.svg",
+      "source_binding_ids": [
+        "binding-module-conversation-transcript-folio"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1157,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1165,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.724,
+            0.837
+          ],
+          [
+            0.779,
+            0.834
+          ],
+          [
+            0.784,
+            0.861
+          ],
+          [
+            0.781,
+            0.895
+          ],
+          [
+            0.749,
+            0.898
+          ],
+          [
+            0.724,
+            0.889
+          ],
+          [
+            0.721,
+            0.861
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7004,
+            0.8592
+          ],
+          [
+            0.704,
+            0.8369
+          ],
+          [
+            0.724,
+            0.8119
+          ],
+          [
+            0.7682,
+            0.8093
+          ],
+          [
+            0.7946,
+            0.8993
+          ],
+          [
+            0.7803,
+            0.9198
+          ],
+          [
+            0.7489,
+            0.9225
+          ],
+          [
+            0.724,
+            0.9135
+          ],
+          [
+            0.704,
+            0.8886
+          ],
+          [
+            0.7004,
+            0.8636
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7004,
+          "y": 0.8093,
+          "w": 0.0949,
+          "h": 0.1141
+        },
+        "territory_area_px": 12800,
+        "visible_area_px": 5649,
+        "expansion_ratio": 2.266,
+        "neighbors": [
+          {
+            "artifact_id": "module-background-memory-ledger-2",
+            "shared_edge_px": 13961,
+            "direction": "right",
+            "distance_px": 94.2
+          },
+          {
+            "artifact_id": "module-background-memory-ledger",
+            "shared_edge_px": 13961,
+            "direction": "up",
+            "distance_px": 306.02
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-background-memory-ledger",
+      "kind": "module",
+      "label": "Background Memory Ledger",
+      "artifact_type": "memory-ledger",
+      "bounds": {
+        "x": 0.657,
+        "y": 0.269,
+        "w": 0.307,
+        "h": 0.721
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.732,
+          0.276
+        ],
+        [
+          0.837,
+          0.231
+        ],
+        [
+          0.938,
+          0.203
+        ],
+        [
+          0.99,
+          0.254
+        ],
+        [
+          0.996,
+          0.484
+        ],
+        [
+          0.978,
+          0.71
+        ],
+        [
+          0.955,
+          0.979
+        ],
+        [
+          0.806,
+          0.99
+        ],
+        [
+          0.673,
+          0.93
+        ],
+        [
+          0.621,
+          0.768
+        ],
+        [
+          0.617,
+          0.575
+        ],
+        [
+          0.66,
+          0.431
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/module-background-memory-ledger.svg",
+      "source_binding_ids": [
+        "binding-module-background-memory-ledger"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1245,
+          586
+        ],
+        "safe_stage_window_origin_px": [
+          1283,
+          645
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.732,
+            0.276
+          ],
+          [
+            0.837,
+            0.231
+          ],
+          [
+            0.938,
+            0.203
+          ],
+          [
+            0.99,
+            0.254
+          ],
+          [
+            0.996,
+            0.484
+          ],
+          [
+            0.978,
+            0.71
+          ],
+          [
+            0.955,
+            0.979
+          ],
+          [
+            0.806,
+            0.99
+          ],
+          [
+            0.673,
+            0.93
+          ],
+          [
+            0.621,
+            0.768
+          ],
+          [
+            0.617,
+            0.575
+          ],
+          [
+            0.66,
+            0.431
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.612,
+            0.7683
+          ],
+          [
+            0.7233,
+            0.2611
+          ],
+          [
+            0.7318,
+            0.2504
+          ],
+          [
+            0.8367,
+            0.2059
+          ],
+          [
+            0.9379,
+            0.1774
+          ],
+          [
+            0.9993,
+            0.2406
+          ],
+          [
+            0.9993,
+            0.6952
+          ],
+          [
+            0.9743,
+            0.9786
+          ],
+          [
+            0.9579,
+            0.9991
+          ],
+          [
+            0.7725,
+            0.9991
+          ],
+          [
+            0.6726,
+            0.9545
+          ],
+          [
+            0.6512,
+            0.926
+          ],
+          [
+            0.6205,
+            0.8307
+          ],
+          [
+            0.612,
+            0.7692
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.612,
+          "y": 0.1774,
+          "w": 0.388,
+          "h": 0.8226
+        },
+        "territory_area_px": 406913,
+        "visible_area_px": 380860,
+        "expansion_ratio": 1.068,
+        "neighbors": [
+          {
+            "artifact_id": "module-background-memory-ledger-2",
+            "shared_edge_px": 74561,
+            "direction": "down",
+            "distance_px": 253.22
+          },
+          {
+            "artifact_id": "module-right-embedded-source-ledge",
+            "shared_edge_px": 23462,
+            "direction": "left",
+            "distance_px": 114.01
+          },
+          {
+            "artifact_id": "module-conversation-transcript-folio",
+            "shared_edge_px": 13961,
+            "direction": "down",
+            "distance_px": 306.02
+          },
+          {
+            "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+            "shared_edge_px": 9453,
+            "direction": "left",
+            "distance_px": 667.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-right-embedded-source-ledge",
+      "kind": "module",
+      "label": "right embedded source ledge",
+      "artifact_type": "rectangular-media-slit",
+      "bounds": {
+        "x": 0.729,
+        "y": 0.53,
+        "w": 0.109,
+        "h": 0.059
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.73,
+          0.532
+        ],
+        [
+          0.838,
+          0.533
+        ],
+        [
+          0.838,
+          0.588
+        ],
+        [
+          0.73,
+          0.589
+        ],
+        [
+          0.73,
+          0.532
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/module-right-embedded-source-ledge.svg",
+      "source_binding_ids": [
+        "binding-module-right-embedded-source-ledge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1203,
+          568
+        ],
+        "safe_stage_window_origin_px": [
+          1217,
+          573
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.73,
+            0.532
+          ],
+          [
+            0.838,
+            0.533
+          ],
+          [
+            0.838,
+            0.588
+          ],
+          [
+            0.73,
+            0.589
+          ],
+          [
+            0.73,
+            0.532
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7011,
+            0.5312
+          ],
+          [
+            0.7297,
+            0.4955
+          ],
+          [
+            0.8374,
+            0.4973
+          ],
+          [
+            0.8559,
+            0.5205
+          ],
+          [
+            0.7668,
+            0.623
+          ],
+          [
+            0.7297,
+            0.6239
+          ],
+          [
+            0.7011,
+            0.5882
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7011,
+          "y": 0.4955,
+          "w": 0.1555,
+          "h": 0.1292
+        },
+        "territory_area_px": 21941,
+        "visible_area_px": 9502,
+        "expansion_ratio": 2.309,
+        "neighbors": [
+          {
+            "artifact_id": "module-background-memory-ledger",
+            "shared_edge_px": 23462,
+            "direction": "right",
+            "distance_px": 114.01
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-new-bad-image-circulation-glint",
+      "kind": "module",
+      "label": "new-bad-image circulation glint",
+      "artifact_type": "sprite-glint-cluster",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/module-new-bad-image-circulation-glint.svg",
+      "source_binding_ids": [
+        "binding-module-new-bad-image-circulation-glint"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0799,
+            0.7799
+          ],
+          [
+            0.0999,
+            0.7549
+          ],
+          [
+            0.2796,
+            0.7549
+          ],
+          [
+            0.2996,
+            0.7799
+          ],
+          [
+            0.2996,
+            0.9394
+          ],
+          [
+            0.2796,
+            0.9643
+          ],
+          [
+            0.0999,
+            0.9643
+          ],
+          [
+            0.0799,
+            0.9394
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0799,
+          "y": 0.7549,
+          "w": 0.2204,
+          "h": 0.2103
+        },
+        "territory_area_px": 71300,
+        "visible_area_px": 45540,
+        "expansion_ratio": 1.566,
+        "neighbors": [
+          {
+            "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+            "shared_edge_px": 74246,
+            "direction": "up",
+            "distance_px": 545.54
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-postcard-strata-ledge",
+      "kind": "module",
+      "label": "postcard strata ledge",
+      "artifact_type": "cutaway-map-ledge",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/module-postcard-strata-ledge.svg",
+      "source_binding_ids": [
+        "binding-module-postcard-strata-ledge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3994,
+            0.7799
+          ],
+          [
+            0.4194,
+            0.7549
+          ],
+          [
+            0.5999,
+            0.7549
+          ],
+          [
+            0.6198,
+            0.7799
+          ],
+          [
+            0.6198,
+            0.9394
+          ],
+          [
+            0.5999,
+            0.9643
+          ],
+          [
+            0.4194,
+            0.9643
+          ],
+          [
+            0.3994,
+            0.9394
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3994,
+          "y": 0.7549,
+          "w": 0.2211,
+          "h": 0.2103
+        },
+        "territory_area_px": 71536,
+        "visible_area_px": 45720,
+        "expansion_ratio": 1.565,
+        "neighbors": [
+          {
+            "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+            "shared_edge_px": 5466,
+            "direction": "up",
+            "distance_px": 513.81
+          },
+          {
+            "artifact_id": "module-background-memory-ledger",
+            "shared_edge_px": 467,
+            "direction": "right",
+            "distance_px": 525.51
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-background-memory-ledger-2",
+      "kind": "module",
+      "label": "Background Memory Ledger",
+      "artifact_type": "memory-ledger",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/module-background-memory-ledger-2.svg",
+      "source_binding_ids": [
+        "binding-module-background-memory-ledger-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6997,
+            0.7594
+          ],
+          [
+            0.7197,
+            0.7344
+          ],
+          [
+            0.8994,
+            0.7344
+          ],
+          [
+            0.9194,
+            0.7594
+          ],
+          [
+            0.9194,
+            0.9198
+          ],
+          [
+            0.8994,
+            0.9447
+          ],
+          [
+            0.7197,
+            0.9447
+          ],
+          [
+            0.6997,
+            0.9198
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6997,
+          "y": 0.7344,
+          "w": 0.2204,
+          "h": 0.2112
+        },
+        "territory_area_px": 71609,
+        "visible_area_px": 45793,
+        "expansion_ratio": 1.564,
+        "neighbors": [
+          {
+            "artifact_id": "module-background-memory-ledger",
+            "shared_edge_px": 74561,
+            "direction": "up",
+            "distance_px": 253.22
+          },
+          {
+            "artifact_id": "module-conversation-transcript-folio",
+            "shared_edge_px": 13961,
+            "direction": "left",
+            "distance_px": 94.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-anchor-image-sprite-pinhole",
+      "kind": "module",
+      "label": "anchor-image sprite pinhole",
+      "artifact_type": "micro-image-pinhole",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "blessing-curse-terrain-seam",
+      "mask_path": "/editions/2026-08-27-blessing-curse-terrain-seam-v1/assets/masks/module-anchor-image-sprite-pinhole.svg",
+      "source_binding_ids": [
+        "binding-module-anchor-image-sprite-pinhole"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2596,
+            0.3396
+          ],
+          [
+            0.2796,
+            0.3146
+          ],
+          [
+            0.4394,
+            0.3146
+          ],
+          [
+            0.4593,
+            0.3396
+          ],
+          [
+            0.4593,
+            0.3788
+          ],
+          [
+            0.4066,
+            0.5143
+          ],
+          [
+            0.2796,
+            0.5143
+          ],
+          [
+            0.2596,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2596,
+          "y": 0.3146,
+          "w": 0.2004,
+          "h": 0.2005
+        },
+        "territory_area_px": 56321,
+        "visible_area_px": 38025,
+        "expansion_ratio": 1.481,
+        "neighbors": [
+          {
+            "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+            "shared_edge_px": 58895,
+            "direction": "right",
+            "distance_px": 43.35
+          }
+        ]
+      }
+    }
+  ]
+}

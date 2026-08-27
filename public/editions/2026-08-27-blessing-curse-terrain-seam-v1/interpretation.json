@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-08-27-blessing-curse-terrain-seam-v1",
+  "edition_id": "2026-08-27-blessing-curse-terrain-seam-v1",
+  "plate_read_timestamp": "2026-08-27T22:44:45.859Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A restrained concrete-and-plaster terrain plate: pale scraped field on the left, dark rough field on the right, divided by a raised torn diagonal seam. Small apertures, pinholes, purple scars, ledges, and glints are embedded as real interaction anchors.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "a quiet curse split crossing a pale civic gallery-landscape field",
+      "A restrained concrete-and-plaster terrain plate: pale scraped field on the left, dark rough field on the right, divided by a raised torn diagonal seam. Small apertures, pinholes, purple scars, ledges, and glints are embedded as real interaction anchors.",
+      "painted-diorama",
+      "curse-split",
+      "gallery-landscape"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "oversized blessing-curse terrain seam",
+      "scraped Brutalist color underlayer",
+      "Conversation Transcript Folio",
+      "Background Memory Ledger",
+      "right embedded source ledge",
+      "new-bad-image circulation glint",
+      "postcard strata ledge",
+      "anchor-image sprite pinhole"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "blessing-curse-terrain-seam",
+      "one oversized terrain seam dividing blessing and curse climates",
+      "sparse avatar-scale enamel apertures growing into footholds",
+      "paint-chip restoration islands embedded in concrete skin",
+      "shallow diorama strata with cutaway ledges",
+      "thin architectural mesh cuts suspended near the field edge",
+      "raised diagonal torn plaster seam",
+      "pale scraped concrete field"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: blessing-curse-terrain-seam.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-oversized-blessing-curse-terrain-sea",
+      "kind": "hero",
+      "type": "hero-scale-threshold-seam",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.998,
+        "h": 0.999
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-scraped-brutalist-color-underlayer",
+      "kind": "hero",
+      "type": "hero-scale-paint-chip-field",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.055,
+        "y": 0.493,
+        "w": 0.068,
+        "h": 0.099
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-conversation-transcript-folio",
+      "kind": "module",
+      "type": "wireframe-terrain-cut",
+      "strength": 0.791964,
+      "bounds": {
+        "x": 0.724,
+        "y": 0.833,
+        "w": 0.059,
+        "h": 0.065
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-background-memory-ledger",
+      "kind": "module",
+      "type": "memory-ledger",
+      "strength": 0.744564,
+      "bounds": {
+        "x": 0.657,
+        "y": 0.269,
+        "w": 0.307,
+        "h": 0.721
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-embedded-source-ledge",
+      "kind": "module",
+      "type": "rectangular-media-slit",
+      "strength": 0.73092,
+      "bounds": {
+        "x": 0.729,
+        "y": 0.53,
+        "w": 0.109,
+        "h": 0.059
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-new-bad-image-circulation-glint",
+      "kind": "module",
+      "type": "sprite-glint-cluster",
+      "strength": 0.701952,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-postcard-strata-ledge",
+      "kind": "module",
+      "type": "cutaway-map-ledge",
+      "strength": 0.6725160000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-background-memory-ledger-2",
+      "kind": "module",
+      "type": "memory-ledger",
+      "strength": 0.6533199999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-anchor-image-sprite-pinhole",
+      "kind": "module",
+      "type": "micro-image-pinhole",
+      "strength": 0.6626799999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-oversized-blessing-curse-terrain-sea-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.998,
+        "h": 0.999
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-scraped-brutalist-color-underlayer-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.055,
+        "y": 0.493,
+        "w": 0.068,
+        "h": 0.099
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-conversation-transcript-folio-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.833,
+        "w": 0.059,
+        "h": 0.065
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-background-memory-ledger-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.657,
+        "y": 0.269,
+        "w": 0.307,
+        "h": 0.721
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-embedded-source-ledge-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.729,
+        "y": 0.53,
+        "w": 0.109,
+        "h": 0.059
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-new-bad-image-circulation-glint-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-postcard-strata-ledge-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-background-memory-ledger-2-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-anchor-image-sprite-pinhole-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

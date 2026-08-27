@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-27-blessing-curse-terrain-seam-v1",
+  "generation": "daily-process-2026-08-27T22-37-01-096Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1402,
+    "height": 1122
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-27T22-37-01-096Z/2026-08-27-blessing-curse-terrain-seam-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+      "visible_area_px": 1569400,
+      "territory_area_px": 1094595,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.9993,
+          0.0
+        ],
+        [
+          0.9993,
+          0.9991
+        ],
+        [
+          0.0,
+          0.9991
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-new-bad-image-circulation-glint",
+          "shared_edge_px": 74246,
+          "direction": "down",
+          "distance_px": 545.54
+        },
+        {
+          "artifact_id": "module-anchor-image-sprite-pinhole",
+          "shared_edge_px": 58895,
+          "direction": "left",
+          "distance_px": 43.35
+        },
+        {
+          "artifact_id": "hero-scraped-brutalist-color-underlayer",
+          "shared_edge_px": 22054,
+          "direction": "left",
+          "distance_px": 422.66
+        },
+        {
+          "artifact_id": "module-background-memory-ledger",
+          "shared_edge_px": 9453,
+          "direction": "right",
+          "distance_px": 667.2
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-scraped-brutalist-color-underlayer",
+      "visible_area_px": 8068,
+      "territory_area_px": 20716,
+      "hover_bounds": {
+        "x": 0.0307,
+        "y": 0.4599,
+        "w": 0.1148,
+        "h": 0.1604
+      },
+      "hover_polygon": [
+        [
+          0.0307,
+          0.5232
+        ],
+        [
+          0.0728,
+          0.4599
+        ],
+        [
+          0.0999,
+          0.4697
+        ],
+        [
+          0.1277,
+          0.5045
+        ],
+        [
+          0.1441,
+          0.5276
+        ],
+        [
+          0.1448,
+          0.5544
+        ],
+        [
+          0.1448,
+          0.5793
+        ],
+        [
+          0.1205,
+          0.6096
+        ],
+        [
+          0.0963,
+          0.6194
+        ],
+        [
+          0.0728,
+          0.6168
+        ],
+        [
+          0.0328,
+          0.5606
+        ],
+        [
+          0.0307,
+          0.5312
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+          "shared_edge_px": 22054,
+          "direction": "right",
+          "distance_px": 422.66
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-conversation-transcript-folio",
+      "visible_area_px": 5649,
+      "territory_area_px": 12800,
+      "hover_bounds": {
+        "x": 0.7004,
+        "y": 0.8093,
+        "w": 0.0949,
+        "h": 0.1141
+      },
+      "hover_polygon": [
+        [
+          0.7004,
+          0.8592
+        ],
+        [
+          0.704,
+          0.8369
+        ],
+        [
+          0.724,
+          0.8119
+        ],
+        [
+          0.7682,
+          0.8093
+        ],
+        [
+          0.7946,
+          0.8993
+        ],
+        [
+          0.7803,
+          0.9198
+        ],
+        [
+          0.7489,
+          0.9225
+        ],
+        [
+          0.724,
+          0.9135
+        ],
+        [
+          0.704,
+          0.8886
+        ],
+        [
+          0.7004,
+          0.8636
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-background-memory-ledger-2",
+          "shared_edge_px": 13961,
+          "direction": "right",
+          "distance_px": 94.2
+        },
+        {
+          "artifact_id": "module-background-memory-ledger",
+          "shared_edge_px": 13961,
+          "direction": "up",
+          "distance_px": 306.02
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-background-memory-ledger",
+      "visible_area_px": 380860,
+      "territory_area_px": 406913,
+      "hover_bounds": {
+        "x": 0.612,
+        "y": 0.1774,
+        "w": 0.388,
+        "h": 0.8226
+      },
+      "hover_polygon": [
+        [
+          0.612,
+          0.7683
+        ],
+        [
+          0.7233,
+          0.2611
+        ],
+        [
+          0.7318,
+          0.2504
+        ],
+        [
+          0.8367,
+          0.2059
+        ],
+        [
+          0.9379,
+          0.1774
+        ],
+        [
+          0.9993,
+          0.2406
+        ],
+        [
+          0.9993,
+          0.6952
+        ],
+        [
+          0.9743,
+          0.9786
+        ],
+        [
+          0.9579,
+          0.9991
+        ],
+        [
+          0.7725,
+          0.9991
+        ],
+        [
+          0.6726,
+          0.9545
+        ],
+        [
+          0.6512,
+          0.926
+        ],
+        [
+          0.6205,
+          0.8307
+        ],
+        [
+          0.612,
+          0.7692
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-background-memory-ledger-2",
+          "shared_edge_px": 74561,
+          "direction": "down",
+          "distance_px": 253.22
+        },
+        {
+          "artifact_id": "module-right-embedded-source-ledge",
+          "shared_edge_px": 23462,
+          "direction": "left",
+          "distance_px": 114.01
+        },
+        {
+          "artifact_id": "module-conversation-transcript-folio",
+          "shared_edge_px": 13961,
+          "direction": "down",
+          "distance_px": 306.02
+        },
+        {
+          "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+          "shared_edge_px": 9453,
+          "direction": "left",
+          "distance_px": 667.2
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-right-embedded-source-ledge",
+      "visible_area_px": 9502,
+      "territory_area_px": 21941,
+      "hover_bounds": {
+        "x": 0.7011,
+        "y": 0.4955,
+        "w": 0.1555,
+        "h": 0.1292
+      },
+      "hover_polygon": [
+        [
+          0.7011,
+          0.5312
+        ],
+        [
+          0.7297,
+          0.4955
+        ],
+        [
+          0.8374,
+          0.4973
+        ],
+        [
+          0.8559,
+          0.5205
+        ],
+        [
+          0.7668,
+          0.623
+        ],
+        [
+          0.7297,
+          0.6239
+        ],
+        [
+          0.7011,
+          0.5882
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-background-memory-ledger",
+          "shared_edge_px": 23462,
+          "direction": "right",
+          "distance_px": 114.01
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-new-bad-image-circulation-glint",
+      "visible_area_px": 45540,
+      "territory_area_px": 71300,
+      "hover_bounds": {
+        "x": 0.0799,
+        "y": 0.7549,
+        "w": 0.2204,
+        "h": 0.2103
+      },
+      "hover_polygon": [
+        [
+          0.0799,
+          0.7799
+        ],
+        [
+          0.0999,
+          0.7549
+        ],
+        [
+          0.2796,
+          0.7549
+        ],
+        [
+          0.2996,
+          0.7799
+        ],
+        [
+          0.2996,
+          0.9394
+        ],
+        [
+          0.2796,
+          0.9643
+        ],
+        [
+          0.0999,
+          0.9643
+        ],
+        [
+          0.0799,
+          0.9394
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+          "shared_edge_px": 74246,
+          "direction": "up",
+          "distance_px": 545.54
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-postcard-strata-ledge",
+      "visible_area_px": 45720,
+      "territory_area_px": 71536,
+      "hover_bounds": {
+        "x": 0.3994,
+        "y": 0.7549,
+        "w": 0.2211,
+        "h": 0.2103
+      },
+      "hover_polygon": [
+        [
+          0.3994,
+          0.7799
+        ],
+        [
+          0.4194,
+          0.7549
+        ],
+        [
+          0.5999,
+          0.7549
+        ],
+        [
+          0.6198,
+          0.7799
+        ],
+        [
+          0.6198,
+          0.9394
+        ],
+        [
+          0.5999,
+          0.9643
+        ],
+        [
+          0.4194,
+          0.9643
+        ],
+        [
+          0.3994,
+          0.9394
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+          "shared_edge_px": 5466,
+          "direction": "up",
+          "distance_px": 513.81
+        },
+        {
+          "artifact_id": "module-background-memory-ledger",
+          "shared_edge_px": 467,
+          "direction": "right",
+          "distance_px": 525.51
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-background-memory-ledger-2",
+      "visible_area_px": 45793,
+      "territory_area_px": 71609,
+      "hover_bounds": {
+        "x": 0.6997,
+        "y": 0.7344,
+        "w": 0.2204,
+        "h": 0.2112
+      },
+      "hover_polygon": [
+        [
+          0.6997,
+          0.7594
+        ],
+        [
+          0.7197,
+          0.7344
+        ],
+        [
+          0.8994,
+          0.7344
+        ],
+        [
+          0.9194,
+          0.7594
+        ],
+        [
+          0.9194,
+          0.9198
+        ],
+        [
+          0.8994,
+          0.9447
+        ],
+        [
+          0.7197,
+          0.9447
+        ],
+        [
+          0.6997,
+          0.9198
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-background-memory-ledger",
+          "shared_edge_px": 74561,
+          "direction": "up",
+          "distance_px": 253.22
+        },
+        {
+          "artifact_id": "module-conversation-transcript-folio",
+          "shared_edge_px": 13961,
+          "direction": "left",
+          "distance_px": 94.2
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-anchor-image-sprite-pinhole",
+      "visible_area_px": 38025,
+      "territory_area_px": 56321,
+      "hover_bounds": {
+        "x": 0.2596,
+        "y": 0.3146,
+        "w": 0.2004,
+        "h": 0.2005
+      },
+      "hover_polygon": [
+        [
+          0.2596,
+          0.3396
+        ],
+        [
+          0.2796,
+          0.3146
+        ],
+        [
+          0.4394,
+          0.3146
+        ],
+        [
+          0.4593,
+          0.3396
+        ],
+        [
+          0.4593,
+          0.3788
+        ],
+        [
+          0.4066,
+          0.5143
+        ],
+        [
+          0.2796,
+          0.5143
+        ],
+        [
+          0.2596,
+          0.4893
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-oversized-blessing-curse-terrain-sea",
+          "shared_edge_px": 58895,
+          "direction": "right",
+          "distance_px": 43.35
+        }
+      ]
+    }
+  ]
+}
