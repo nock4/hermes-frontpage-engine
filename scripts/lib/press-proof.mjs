@@ -83,6 +83,12 @@ export function checkPressProof(proof = {}) {
   if (!proof.prompt_path) blockers.push('scene prompt proof missing')
   if (proof.qa?.qaPublishPassed !== true) blockers.push('qa:publish proof missing')
   if (proof.qa?.adversarialVisualQa && proof.qa.adversarialVisualQa !== 'pass') blockers.push('adversarial visual QA did not pass')
+  const sourceFidelityVerdict = String(proof.source?.sourceFidelityVerdict || '').toLowerCase()
+  const sourceImageMode = String(proof.source?.sourceImageMode || '').toLowerCase()
+  if (sourceFidelityVerdict === 'fail') blockers.push('source-image fidelity failed')
+  if (sourceFidelityVerdict === 'warn' && blockerLevelSourceFidelityWarning(sourceImageMode)) {
+    blockers.push('source-image fidelity warning requires editorial review')
+  }
 
   if (!liveProof) {
     blockers.push('live preload proof missing')
@@ -163,6 +169,10 @@ function inferPromptPathFromRunDir(text, summary = {}) {
   return worktreeDir ? `${worktreeDir.replace(/\/$/, '')}/${runDirMatch[1]}/scene-prompt.txt` : `${runDirMatch[1]}/scene-prompt.txt`
 }
 
+function blockerLevelSourceFidelityWarning(text) {
+  return /(crop|framing|square|landscape|same palette|related palette|not same source|object relationship|light structure|framed panel|source identity|unrelated ambience|metaphor scene|overcopy|near-copy)/i.test(String(text || ''))
+}
+
 function extractSourceFidelityVerdict(text) {
   const match = text.match(/Source-image fidelity:\s*(pass|warn|fail|skipped)[^\n]*/i)
   return match ? match[1].toLowerCase() : null
@@ -173,7 +183,7 @@ export function classifyPressState({ summary = {}, proof = null } = {}) {
     const blockers = Array.isArray(proof.blockers) ? proof.blockers : checkPressProof(proof).blockers
     const publishSucceeded = summary.ok === true && summary.remote_matches === true && summary.local_publish_status === 'live'
     if (!blockers.length) return 'green'
-    if (publishSucceeded && blockers.some((blocker) => /screenshot|preload|plate|prompt|visual QA|proof|edition id/i.test(blocker))) {
+    if (publishSucceeded && blockers.some((blocker) => /screenshot|preload|plate|prompt|visual QA|proof|edition id|source-image fidelity/i.test(blocker))) {
       return 'proof_failed_after_publish'
     }
   }

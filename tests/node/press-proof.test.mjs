@@ -112,7 +112,7 @@ describe('press proof contract', () => {
     expect(proof.prompt_path).toBe('/tmp/scene-prompt.txt')
   })
 
-  it('blocks proof when the live page edition marker is missing even if the plate URL matches', () => {
+  it('blocks proof when source-image fidelity failed despite remote green', () => {
     const proof = buildPublishProof({
       summary: {
         ok: true,
@@ -122,7 +122,7 @@ describe('press proof contract', () => {
       },
       liveProof: {
         expectedEditionId: 'edition-v1',
-        pageEditionId: null,
+        pageEditionId: 'edition-v1',
         loadedPlateImageCount: 1,
         plate: {
           src: 'https://daily.nockgarden.com/editions/edition-v1/assets/plate.png',
@@ -132,10 +132,29 @@ describe('press proof contract', () => {
       },
       screenshotPath: '/tmp/proof.png',
       qa: { qaPublishPassed: true, adversarialVisualQa: 'pass' },
+      source: { sourceImageMode: 'dominant-source-image', sourceFidelityVerdict: 'fail' },
       promptPath: '/tmp/scene-prompt.txt',
     })
 
     expect(proof.status).toBe('proof_failed_after_publish')
-    expect(checkPressProof(proof).blockers).toContain('live page edition id does not match expected edition')
+    expect(checkPressProof(proof).blockers).toContain('source-image fidelity failed')
+  })
+
+  it('blocks proof on source-fidelity warning lines that admit source drift', async () => {
+    const { buildPublishProofFromCronLog } = await import('../../scripts/lib/press-proof.mjs')
+    const text = [
+      '{\n  "ok": true,\n  "local_edition_id": "edition-v1",\n  "local_publish_status": "live",\n  "remote_matches": true\n}',
+      'Captured success screenshot: /tmp/proof.png',
+      'Actual plate prompt: /tmp/scene-prompt.txt',
+      'Source-image fidelity: warn — same palette but not same source; crop/framing drift',
+      'Live preload proof: {"expectedEditionId":"edition-v1","pageEditionId":"edition-v1","loadedPlateImageCount":1,"plate":{"src":"https://daily.nockgarden.com/editions/edition-v1/assets/plate.png","naturalWidth":1024,"naturalHeight":1536}}',
+      'qa:publish',
+      '  10 passed (37.9s)',
+    ].join('\n')
+
+    const proof = buildPublishProofFromCronLog(text, { adversarialVisualQa: 'pass' })
+
+    expect(proof.status).toBe('proof_failed_after_publish')
+    expect(checkPressProof(proof).blockers).toContain('source-image fidelity warning requires editorial review')
   })
 })

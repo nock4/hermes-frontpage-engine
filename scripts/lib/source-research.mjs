@@ -16,6 +16,7 @@ import { sanitizeSourceText } from './source-text.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 import {
   aestheticSignalScore,
+  isAiToolingContentSource,
   isAllowedInspectedSource,
   isLowValueVisualImage,
   selectContentSources,
@@ -40,6 +41,91 @@ const autoresearchCandidateMultiplier = 6
 // source bed must be wide enough to reach lower-ranked art/music/image surfaces
 // instead of falling back to agent chrome.
 const maxAutoresearchCandidates = 320
+
+function sourceUrlsForDiagnostics(source = {}) {
+  return uniqueNonEmpty([source.url, source.source_url, source.final_url, source.image_url, source.source_image_url, source.source_media_url])
+}
+
+export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = [], contentSources = [], recentSourceKeys = new Set(), signalHarvest = null } = {}) {
+  const allSources = mergeInspectedSources(inspected, fetchEvidence)
+  const buckets = {
+    inspected_total: allSources.length,
+    selected_content_sources: contentSources.length,
+    renderable_surfaces: 0,
+    non_duplicate_renderable_surfaces: 0,
+    repeated_by_archive_ledger: 0,
+    ai_tooling_quarantined: 0,
+    raw_twitter_media_blocked: 0,
+    blocked_or_unavailable: 0,
+    not_renderable: 0,
+  }
+  const fetch_status_counts = {}
+  const examples = {
+    repeated_by_archive_ledger: [],
+    ai_tooling_quarantined: [],
+    not_renderable: [],
+    blocked_or_unavailable: [],
+  }
+  const remember = (bucket, source) => {
+    if (!examples[bucket] || examples[bucket].length >= 5) return
+    examples[bucket].push({
+      title: source.title || source.note_title || source.url || null,
+      url: source.url || source.source_url || source.final_url || null,
+      key: sourceContentKey(source) || null,
+      fetch_status: source.fetch_status || null,
+    })
+  }
+  for (const source of allSources) {
+    const status = source.fetch_status || 'unknown'
+    fetch_status_counts[status] = (fetch_status_counts[status] || 0) + 1
+    const key = sourceContentKey(source)
+    const urls = sourceUrlsForDiagnostics(source).join(' ').toLowerCase()
+    const renderable = sourceHasRenderableCardSurface(source, signalHarvest)
+    if (renderable) buckets.renderable_surfaces += 1
+    if (recentSourceKeys.has(key)) {
+      buckets.repeated_by_archive_ledger += 1
+      remember('repeated_by_archive_ledger', source)
+    }
+    if (isAiToolingContentSource(source)) {
+      buckets.ai_tooling_quarantined += 1
+      remember('ai_tooling_quarantined', source)
+    }
+    if (source.source_channel === 'twitter-bookmark' && /(?:pbs|video)\.twimg\.com/.test(urls)) buckets.raw_twitter_media_blocked += 1
+    if (!isAllowedInspectedSource(source) || source.embed_status === 'unavailable') {
+      buckets.blocked_or_unavailable += 1
+      remember('blocked_or_unavailable', source)
+    }
+    const score = sourceContentScore(source, recentSourceKeys)
+    if (renderable && Number.isFinite(score)) buckets.non_duplicate_renderable_surfaces += 1
+    if (!renderable) {
+      buckets.not_renderable += 1
+      remember('not_renderable', source)
+    }
+  }
+  let primary_constraint = 'unknown'
+  if (buckets.non_duplicate_renderable_surfaces >= minContentItems) primary_constraint = 'selection_logic'
+  else if (buckets.repeated_by_archive_ledger >= Math.max(3, buckets.renderable_surfaces)) primary_constraint = 'archive_repeat_ledger'
+  else if (buckets.ai_tooling_quarantined >= Math.max(3, buckets.renderable_surfaces - buckets.non_duplicate_renderable_surfaces)) primary_constraint = 'ai_tooling_quarantine'
+  else if (buckets.not_renderable > buckets.renderable_surfaces) primary_constraint = 'renderability_or_browser_capture'
+  else if (buckets.blocked_or_unavailable) primary_constraint = 'provider_or_url_unavailable'
+  return {
+    schema_version: 1,
+    min_required_content_sources: minContentItems,
+    primary_constraint,
+    buckets,
+    fetch_status_counts,
+    examples,
+    recommended_action: primary_constraint === 'archive_repeat_ledger'
+      ? 'downrank repeated notes before maxNotes/maxSources and refill from fresh real renderable material'
+      : primary_constraint === 'ai_tooling_quarantine'
+        ? 'keep AI/tooling quarantine and widen/rebalance art/music/image candidate bed'
+        : primary_constraint === 'renderability_or_browser_capture'
+          ? 'inspect browser/fetch evidence and recover real media/provider surfaces'
+          : primary_constraint === 'selection_logic'
+            ? 'repair selectContentSources grouping/scoring without lowering the six-window floor'
+            : 'inspect source-research.json and source-candidate-evidence.json before changing thresholds',
+  }
+}
 
 function isSingleAnchorResearchEnabled() {
   return process.env.DFE_SINGLE_ANCHOR_RESEARCH !== '0'
@@ -698,6 +784,13 @@ export async function inspectSourceCandidates(signalHarvest, {
   const visualReference = inspirationOverride
     ? buildInspirationOverrideVisualReference(inspirationOverride, { fallback: imageMaterialReference || discoveredVisualReference })
     : imageMaterialReference || discoveredVisualReference
+  const sourceFloorDiagnostics = buildSourceFloorDiagnostics({
+    inspected,
+    fetchEvidence,
+    contentSources,
+    recentSourceKeys,
+    signalHarvest,
+  })
 
   const researchField = {
     generated_at: new Date().toISOString(),
@@ -731,6 +824,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     source_image_fingerprints_path: sourceImageArtifacts.source_image_fingerprints_path,
     source_image_contact_sheet_path: sourceImageArtifacts.source_image_contact_sheet_path,
     fetch_evidence_count: fetchEvidence.length,
+    source_floor_diagnostics: sourceFloorDiagnostics,
     source_count: inspected.length,
     manual_inspiration_override: inspirationOverride ? {
       title: inspirationOverride.title,
