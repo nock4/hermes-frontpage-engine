@@ -24,6 +24,7 @@
     "daily:publish:cron": "node scripts/run-daily-publish-cron.mjs",
     "press:proof": "node scripts/check-press-proof.mjs",
     "press:doctor": "node scripts/press-doctor.mjs",
+    "press:stability": "node scripts/press-stability.mjs",
     "daily:set-inspiration-override": "node scripts/set-inspiration-override.mjs",
     "next-run:inspo-override": "node scripts/next-run-inspo-override.mjs",
     "demo:sample": "node scripts/run-daily-process.mjs --use-sample-signals",

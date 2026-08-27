@@ -3,6 +3,35 @@ import { describe, expect, it } from 'vitest'
 import { classifyCronFailure, planPressDoctorActions } from '../../scripts/lib/press-doctor.mjs'
 
 describe('press doctor failure classifier', () => {
+  it('classifies source-floor collapses as a specific recurring source-bed incident', () => {
+    const incident = classifyCronFailure([
+      'Error: Source research produced 3 non-duplicate renderable content sources; expected at least 6.',
+      '{\n  "ok": false,\n  "error": "npm run daily:process -- --publish failed with exit code 1",\n  "latest_run_dir": "/tmp/daily-process-run"\n}',
+    ].join('\n'))
+
+    expect(incident.kind).toBe('source_floor_failed')
+    expect(incident.stage).toBe('source research / source-window floor')
+    expect(planPressDoctorActions(incident).map((step) => step.id)).toEqual([
+      'read_source_research',
+      'measure_dropouts',
+      'rebalance_source_bed',
+      'run_focused_tests',
+      'rerun_existing_cron',
+      'verify_press_proof',
+    ])
+  })
+
+  it('classifies green-but-tooling source editions as editorial failures', () => {
+    const incident = classifyCronFailure([
+      'Source bindings show AI & Agents, Claude Code, MCP workflow, datacenter surfaces.',
+      '{\n  "ok": true,\n  "local_publish_status": "live",\n  "remote_matches": true\n}',
+      'Press proof: green',
+    ].join('\n'))
+
+    expect(incident.kind).toBe('editorial_source_failed')
+    expect(incident.next_action).toBe('quarantine_tooling_sources_and_recut_from_art_music_field')
+  })
+
   it('classifies source-fidelity generation failures as repair-and-rerun incidents', () => {
     const incident = classifyCronFailure([
       'Stage: daily:publish:cron',

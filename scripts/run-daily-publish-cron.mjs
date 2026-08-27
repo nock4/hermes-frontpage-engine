@@ -4,6 +4,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import https from 'node:https'
 
+import { auditPressStability, formatPressStabilityAudit } from './lib/press-stability.mjs'
+
 const primaryRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
 const defaultVaultRoot = '/Users/nickgeorge-studio/Documents/nicks-mind-map'
 const defaultWorktreeDir = process.env.DFE_CRON_WORKTREE_DIR || path.resolve(primaryRoot, '..', 'hermes-frontpage-engine-cron')
@@ -386,6 +388,33 @@ async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
   return { committed: true, commit, changed_paths: cachedPaths }
 }
 
+async function logPressStabilityPreflight() {
+  try {
+    const audit = await auditPressStability({ logsDir: path.join(primaryRoot, 'tmp', 'cron-logs'), limit: 28 })
+    console.log('PRESS_STABILITY_PREFLIGHT_BEGIN')
+    console.log(formatPressStabilityAudit(audit))
+    console.log('PRESS_STABILITY_PREFLIGHT_JSON_BEGIN')
+    console.log(JSON.stringify({
+      inspected_logs: audit.inspected_logs,
+      failed_logs: audit.failed_logs,
+      counts: audit.counts,
+      recurring: audit.recurring,
+      latest_failed: audit.latest_failed ? {
+        file: audit.latest_failed.file,
+        primary: audit.latest_failed.primary,
+        tags: audit.latest_failed.tags,
+        latest_run_dir: audit.latest_failed.latest_run_dir,
+        edition_id: audit.latest_failed.edition_id,
+      } : null,
+      recommendation: audit.recommendation,
+    }, null, 2))
+    console.log('PRESS_STABILITY_PREFLIGHT_JSON_END')
+    console.log('PRESS_STABILITY_PREFLIGHT_END')
+  } catch (error) {
+    console.log(`PRESS_STABILITY_PREFLIGHT_ERROR=${error.message}`)
+  }
+}
+
 async function main() {
   const options = parseArgs(process.argv.slice(2))
   let exitCode = 0
@@ -410,6 +439,7 @@ async function main() {
   }
 
   try {
+    await logPressStabilityPreflight()
     await cleanupPreviewSmokeServer()
     await cleanupPreviewSmokeServer(cronUxPort)
     await ensureWorktree(options)

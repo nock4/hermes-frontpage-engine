@@ -1,10 +1,48 @@
 import { buildPublishProofFromCronLog, classifyPressState, extractLastPublishSummary } from './press-proof.mjs'
+import { classifyPressLogText } from './press-stability.mjs'
 
 export function classifyCronFailure(logText) {
   const text = String(logText || '')
   const summary = extractLastPublishSummary(text) || {}
+  const stability = classifyPressLogText(text)
   const proof = buildPublishProofFromCronLog(text, { adversarialVisualQa: /adversarial visual qa[^\n]*pass/i.test(text) ? 'pass' : null })
   const pressState = classifyPressState({ summary, proof })
+
+  if (stability.tags.includes('source_floor')) {
+    return {
+      kind: 'source_floor_failed',
+      stage: 'source research / source-window floor',
+      summary,
+      latest_run_dir: summary.latest_run_dir || stability.latest_run_dir || null,
+      next_action: 'widen_or_rebalance_source_bed_then_rerun_press',
+      blocker: stability.evidence.source_floor || firstMatchingLine(text, /expected at least 6|non-duplicate renderable content sources/i),
+      stability,
+    }
+  }
+
+  if (stability.tags.includes('editorial_ai_tooling_risk') && stability.tags.includes('green_publish')) {
+    return {
+      kind: 'editorial_source_failed',
+      stage: 'editorial source selection',
+      summary,
+      latest_run_dir: summary.latest_run_dir || stability.latest_run_dir || null,
+      next_action: 'quarantine_tooling_sources_and_recut_from_art_music_field',
+      blocker: stability.evidence.editorial_ai_tooling_risk || firstMatchingLine(text, /ai-tooling-penalized|AI & Agents|Claude Code|Anthropic|datacenter|MCP workflow/i),
+      stability,
+    }
+  }
+
+  if (stability.tags.includes('delivery')) {
+    return {
+      kind: 'delivery_failed',
+      stage: 'Telegram/media delivery',
+      summary,
+      latest_run_dir: summary.latest_run_dir || stability.latest_run_dir || null,
+      next_action: 'copy_media_to_allowed_profile_cache_and_deliver_to_plain_dm',
+      blocker: stability.evidence.delivery || firstMatchingLine(text, /Message thread not found|Skipping unsafe MEDIA|Telegram send failed/i),
+      stability,
+    }
+  }
 
   if ((pressState === 'generation_failed' || pressState === 'unknown_failed') && /Source-image fidelity QA failed|source[- ]image fidelity.*failed|missing critical source elements/i.test(text)) {
     return {
@@ -55,6 +93,32 @@ export function classifyCronFailure(logText) {
 }
 
 export function planPressDoctorActions(incident) {
+  if (incident?.kind === 'source_floor_failed') {
+    return [
+      { id: 'read_source_research', action: 'read latest_run_dir/source-research.json and source-candidate-evidence.json' },
+      { id: 'measure_dropouts', action: 'count browser/renderability/no-repeat/tooling dropouts before changing thresholds' },
+      { id: 'rebalance_source_bed', action: 'patch source mining/selection so at least 6 real non-duplicate source windows survive; never pad with summary cards' },
+      { id: 'run_focused_tests', action: 'run source-research and source-selection regression tests' },
+      { id: 'rerun_existing_cron', action: 'rerun the configured Daily Frontpage cron job without overlap' },
+      { id: 'verify_press_proof', action: 'require publish-proof green, screenshot, preload, QA, and adversarial visual proof' },
+    ]
+  }
+  if (incident?.kind === 'editorial_source_failed') {
+    return [
+      { id: 'read_bindings_and_research', action: 'read source-bindings.json, source-research.json, and scene-prompt.txt for thesis/window mismatch' },
+      { id: 'repair_editorial_gate', action: 'deterministically quarantine rejected tooling/datacenter sources or rerank art/music surfaces ahead of them' },
+      { id: 'run_focused_tests', action: 'run source-selection, anchor-source-research, and scene prompt tests' },
+      { id: 'recut_from_top', action: 'rerun the press from source research, not by hand-editing artifacts' },
+      { id: 'verify_visual_qa', action: 'open actual source windows on desktop and mobile; closed marks alone are not blockers' },
+    ]
+  }
+  if (incident?.kind === 'delivery_failed') {
+    return [
+      { id: 'verify_files_exist', action: 'stat screenshot/source/prompt proof files' },
+      { id: 'copy_safe_media', action: 'copy proof files into the frontpage profile allowed media/document cache' },
+      { id: 'fix_delivery_target', action: 'send to the plain Telegram DM/home channel, not a stale thread' },
+    ]
+  }
   if (incident?.kind === 'source_fidelity_failed') {
     return [
       { id: 'read_failed_audit', action: 'read latest_run_dir/source-fidelity-audit.json plus scene-prompt/source research' },
