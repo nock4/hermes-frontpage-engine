@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-27-concrete-sky-audio-threshold-v1",
+  "edition_id": "2026-08-27-concrete-sky-audio-threshold-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-27-concrete-sky-audio-threshold-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-root-slab-hero",
+      "target_kind": "artifact",
+      "artifact_id": "hero-root-slab-hero",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-concrete-pressure-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-neighboring-sky-hero",
+      "target_kind": "artifact",
+      "artifact_id": "hero-neighboring-sky-hero",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-sky-dropout-field) selected from interpretation."
+    },
+    {
+      "target_id": "module-recusal-shadow-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-recusal-shadow-notch",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (underside-shadow-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-juggalo-pinhole-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-juggalo-pinhole-cluster",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (onset-pinhole-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-design-engineer-support",
+      "target_kind": "artifact",
+      "artifact_id": "module-design-engineer-support",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hairline-structural-support) selected from interpretation."
+    },
+    {
+      "target_id": "module-deep-archive-scratch",
+      "target_kind": "artifact",
+      "artifact_id": "module-deep-archive-scratch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scuffed-video-scratch-veil) selected from interpretation."
+    },
+    {
+      "target_id": "module-article-lip-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-article-lip-slit",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-border-article-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-design-engineer-support-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-design-engineer-support-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hairline-structural-support) selected from interpretation."
+    },
+    {
+      "target_id": "module-deep-archive-scratch-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-deep-archive-scratch-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scuffed-video-scratch-veil) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

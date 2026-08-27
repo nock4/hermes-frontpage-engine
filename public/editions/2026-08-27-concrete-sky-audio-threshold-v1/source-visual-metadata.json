@@ -1,0 +1,89 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-08-27-concrete-sky-audio-threshold-v1",
+  "edition_id": "2026-08-27-concrete-sky-audio-threshold-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-module-article-lip-slit",
+      "source_image_url": "https://pbs.twimg.com/media/HGVuoI-bcAA5IaV.jpg",
+      "poster_asset_path": "/editions/2026-08-27-concrete-sky-audio-threshold-v1/assets/source-posters/binding-module-article-lip-slit.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-27-concrete-sky-audio-threshold-v1/binding-module-article-lip-slit-source-visual-qa.jpg",
+      "image_width": 1200,
+      "image_height": 480,
+      "aspect_ratio": 2.5,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5442,
+        "y": 0.4854
+      },
+      "poster_crop": {
+        "x": 0.145,
+        "y": 0.0,
+        "width": 0.7108,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02935,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-design-engineer-support-2",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2031807132937699328/img/d5uWApML1MH_BUVu?format=webp&name=medium",
+      "poster_asset_path": "/editions/2026-08-27-concrete-sky-audio-threshold-v1/assets/source-posters/binding-module-design-engineer-support-2.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-27-concrete-sky-audio-threshold-v1/binding-module-design-engineer-support-2-source-visual-qa.jpg",
+      "image_width": 1200,
+      "image_height": 669,
+      "aspect_ratio": 1.7937,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5058,
+        "y": 0.4395
+      },
+      "poster_crop": {
+        "x": 0.005,
+        "y": 0.0,
+        "width": 0.9908,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.03982,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-deep-archive-scratch-2",
+      "source_image_url": "https://pbs.twimg.com/media/HFc2mhrXwAABK_G.jpg",
+      "poster_asset_path": "/editions/2026-08-27-concrete-sky-audio-threshold-v1/assets/source-posters/binding-module-deep-archive-scratch-2.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-27-concrete-sky-audio-threshold-v1/binding-module-deep-archive-scratch-2-source-visual-qa.jpg",
+      "image_width": 1200,
+      "image_height": 480,
+      "aspect_ratio": 2.5,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.4996,
+        "y": 0.4813
+      },
+      "poster_crop": {
+        "x": 0.1442,
+        "y": 0.0,
+        "width": 0.7108,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02963,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}
