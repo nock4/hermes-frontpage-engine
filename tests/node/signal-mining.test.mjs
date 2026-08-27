@@ -78,7 +78,7 @@ describe('saved-signal mining', () => {
     ])
   })
 
-  it('downranks notes whose source URLs already appeared in the archive ledger', () => {
+  it('downranks notes whose source URLs already appeared in the archive ledger before maxNotes truncates the field', () => {
     const notes = [
       { id: 'repeat-a', source_channel: 'twitter-bookmark', score: 220, title: 'old painting', urls: ['https://x.com/old/status/1'], excerpt: '', text: '' },
       { id: 'fresh-a', source_channel: 'twitter-bookmark', score: 90, title: 'new gallery', urls: ['https://x.com/new/status/2'], excerpt: '', text: '' },
@@ -93,7 +93,22 @@ describe('saved-signal mining', () => {
     ])
   })
 
-  it('mines manifest signals for public mode', async () => {
+  it('keeps fully repeated notes out of per-channel bootstrap while fresh lower-scored notes exist', () => {
+    const notes = [
+      { id: 'repeat-youtube', source_channel: 'youtube-like', score: 999, title: 'published video', urls: ['https://www.youtube.com/watch?v=old'], excerpt: '', text: '' },
+      { id: 'fresh-youtube', source_channel: 'youtube-like', score: 40, title: 'fresh video', urls: ['https://www.youtube.com/watch?v=fresh'], excerpt: '', text: '' },
+      { id: 'fresh-nts', source_channel: 'nts-like', score: 38, title: 'fresh track', urls: ['https://fresh.bandcamp.com/track/a'], excerpt: '', text: '' },
+    ]
+
+    expect(selectRecentSignalNotes(notes, 2, {
+      recentSourceKeys: new Set(['youtube.com/watch/old']),
+    }).map((note) => note.id)).toEqual([
+      'fresh-youtube',
+      'fresh-nts',
+    ])
+  })
+
+  it('keeps repeat pressure visible on harvested URL records', async () => {
     const rootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-manifest-run-'))
     const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-run-'))
     const manifestPath = path.join(rootDir, 'signals.json')
@@ -118,6 +133,7 @@ describe('saved-signal mining', () => {
       date: '2026-04-27',
       windowDays: 30,
       maxNotes: 10,
+      recentSourceKeys: new Set(['example.com/story']),
     }, runDir)
 
     expect(harvest.input_mode).toBe('manifest')
@@ -127,6 +143,10 @@ describe('saved-signal mining', () => {
       source_channel: 'manual-curation',
     })
     expect(harvest.source_candidates.map((source) => source.url)).toEqual(['https://example.com/story'])
+    expect(harvest.source_candidates[0]).toMatchObject({
+      note_historical_source_penalty: 240,
+      source_repeated_in_archive: true,
+    })
   })
 
   it('mines only recent allowlisted saved-signal notes in legacy obsidian mode', async () => {

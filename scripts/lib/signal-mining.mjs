@@ -49,16 +49,34 @@ function noteDiversityPenalty(note, diversityAvoidTerms = []) {
   return Math.min(36, matches * 12)
 }
 
+function sourceLedgerKeysForNote(note) {
+  return uniqueNonEmpty((note.urls || []).map((url) => canonicalizeSourceUrl(url)))
+}
+
+function historicalSourceStats(note, recentSourceKeys = new Set()) {
+  const candidateKeys = sourceLedgerKeysForNote(note)
+  const repeatedKeys = candidateKeys.filter((key) => recentSourceKeys.has(key))
+  return {
+    candidate_count: candidateKeys.length,
+    repeated_count: repeatedKeys.length,
+    fresh_count: Math.max(0, candidateKeys.length - repeatedKeys.length),
+    repeated_keys: [...new Set(repeatedKeys)].slice(0, 8),
+    all_repeated: Boolean(candidateKeys.length && repeatedKeys.length === candidateKeys.length),
+  }
+}
+
 function historicalSourcePenalty(note, recentSourceKeys = new Set()) {
   if (!recentSourceKeys?.size || !Array.isArray(note.urls) || !note.urls.length) return 0
-  const candidateKeys = note.urls
-    .map((url) => canonicalizeSourceUrl(url))
-    .filter(Boolean)
-  if (!candidateKeys.length) return 0
-  const repeatedCount = candidateKeys.filter((key) => recentSourceKeys.has(key)).length
-  if (!repeatedCount) return 0
-  if (repeatedCount === candidateKeys.length) return 160
-  return Math.min(80, repeatedCount * 24)
+  const stats = historicalSourceStats(note, recentSourceKeys)
+  if (!stats.repeated_count) return 0
+  if (stats.all_repeated) return 240
+  return Math.min(120, stats.repeated_count * 36)
+}
+
+function hasFreshSourceMaterial(note, recentSourceKeys = new Set()) {
+  if (!recentSourceKeys?.size) return true
+  const stats = historicalSourceStats(note, recentSourceKeys)
+  return !stats.candidate_count || stats.fresh_count > 0
 }
 
 function withDiversityScore(note, diversityAvoidTerms = [], recentSourceKeys = new Set()) {
@@ -106,8 +124,9 @@ export function selectRecentSignalNotes(notes, maxNotes, { diversityAvoidTerms =
   const selected = []
   const selectedIds = new Set()
   const channelCounts = new Map()
-  const add = (note) => {
+  const add = (note, { allowFullyRepeated = false } = {}) => {
     if (!note || selectedIds.has(note.id) || selected.length >= maxNotes) return false
+    if (!allowFullyRepeated && !hasFreshSourceMaterial(note, recentSourceKeys)) return false
     selectedIds.add(note.id)
     channelCounts.set(note.source_channel, (channelCounts.get(note.source_channel) || 0) + 1)
     selected.push(note)
@@ -129,6 +148,15 @@ export function selectRecentSignalNotes(notes, maxNotes, { diversityAvoidTerms =
   for (const note of sorted) {
     if (selected.length >= maxNotes) break
     add(note)
+  }
+
+  // Last resort only: if the available signal field is genuinely exhausted, include
+  // already-published notes after every fresh URL had first chance. This preserves
+  // source-window floor diagnostics without letting old plates crowd out new material
+  // before maxNotes truncation.
+  for (const note of sorted) {
+    if (selected.length >= maxNotes) break
+    add(note, { allowFullyRepeated: true })
   }
 
   return selected
@@ -199,6 +227,8 @@ export async function mineSignals({
         note_score: note.selection_score ?? note.score,
         note_raw_score: note.score,
         note_diversity_penalty: note.diversity_penalty || 0,
+        note_historical_source_penalty: note.historical_source_penalty || 0,
+        source_repeated_in_archive: recentSourceKeys.has(canonicalizeSourceUrl(url)),
       })
     }
   }
