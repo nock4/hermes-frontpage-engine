@@ -108,7 +108,7 @@ export function isAiToolingContentSource(source = {}) {
 
   if (!text) return false
   return /(^|\/)ai & agents(\/|$)/.test(text)
-    || /\b(x402|mcp|openrouter|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|model benchmark|vibe cod|vibe-coded|software factory|llm\.txt|sdk|api docs?|quickstart)\b/.test(text)
+    || /\b(x402|mcp|openrouter|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|model benchmark|vibe cod|vibe-coded|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
 }
 
 export function scoreVisualCandidate(candidate) {

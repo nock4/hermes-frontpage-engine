@@ -271,6 +271,9 @@ describe('source selection policy', () => {
       ['https://x.com/Jouhatsu_ai/status/2055666094967320773', 'Formation on construction of Claude agents and Claude Code'],
       ['https://x.com/somewheresy/status/2055102818457977300', 'DEI stands for Datacenter, Electricity and Infrastructure now'],
       ['https://x.com/stylishdawg/status/2055853054906228936', 'being drunk is kind of like claude code for having fun'],
+      ['https://x.com/0xthegipper/status/2051736879066656990', 'was vibing w/ the bushwick waiter, mentioned i work in crypto + ai'],
+      ['https://x.com/jordwalke/status/2032240249171296675', 'great UI/Design Engineer join Replit DMs open ship cool things'],
+      ['https://x.com/COMEUPDREAMZ/status/2046719982499750402', 'Turn based rpg with move sets based entirely on the traits your pupil nft posses'],
     ].map(([url, title], index) => ({
       ...baseSource,
       url,
