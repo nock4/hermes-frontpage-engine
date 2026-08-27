@@ -249,6 +249,7 @@ export function canonicalizeSourceUrl(value) {
   }
 
   if (hostname === 'pbs.twimg.com' && pathname.startsWith('/media/')) {
+    pathname = pathname.replace(/:(?:orig|large|small|medium|thumb)$/i, '')
     return `${hostname}${pathname}`.toLowerCase()
   }
 

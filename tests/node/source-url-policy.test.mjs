@@ -70,5 +70,7 @@ describe('source URL policy', () => {
     expect(canonicalizeSourceUrl('https://twitter.com/person/status/123?s=20')).toBe('x.com/person/status/123')
     expect(canonicalizeSourceUrl('https://img.youtube.com/vi/abc123/hqdefault.jpg')).toBe('youtube.com/watch/abc123')
     expect(canonicalizeSourceUrl('https://www.youtube.com/watch?v=abc123&feature=share')).toBe('youtube.com/watch/abc123')
+    expect(canonicalizeSourceUrl('https://pbs.twimg.com/media/HHP5cUjW0AA71LA.jpg?name=orig')).toBe('pbs.twimg.com/media/hhp5cujw0aa71la.jpg')
+    expect(canonicalizeSourceUrl('https://pbs.twimg.com/media/HHP5cUjW0AA71LA.jpg:large')).toBe('pbs.twimg.com/media/hhp5cujw0aa71la.jpg')
   })
 })
