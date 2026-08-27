@@ -56,7 +56,7 @@ describe('anchor-source-research', () => {
     expect(anchor.url).toBe('https://x.com/compositioning/status/2077410985493606481')
     expect(anchor.anchor_selection_lane).toBe('artwork-first')
     expect(anchor.anchor_selection_reason).toMatch(/Artwork-first anchor lane/)
-    expect(anchor.anchor_alternates[0].lane).toBe('ai-tooling-penalized')
+    expect(anchor.anchor_alternates).toEqual([])
   })
 
   it('selects recent poster/art posts over lower-scoring AI tooling when tweet media is not pre-enriched', () => {

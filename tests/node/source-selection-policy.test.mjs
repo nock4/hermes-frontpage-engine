@@ -5,6 +5,7 @@ import {
   classifySource,
   isAllowedInspectedSource,
   isDirectRasterImageUrl,
+  isAiToolingContentSource,
   isLowValueVisualImage,
   selectBestVisualReference,
   selectContentSources,
@@ -255,8 +256,54 @@ describe('source selection policy', () => {
       image_url: 'https://pbs.twimg.com/media/billiard-aircraft.jpg',
     }
 
+    expect(isAiToolingContentSource(aiTool)).toBe(true)
+    expect(sourceHasRenderableCardSurface(aiTool)).toBe(false)
+    expect(sourceContentScore(aiTool)).toBe(Number.NEGATIVE_INFINITY)
     expect(sourceContentScore(artwork)).toBeGreaterThan(sourceContentScore(aiTool))
     expect(selectContentSources([aiTool, artwork], { targetItems: 2 }).map((source) => source.url)[0]).toBe(artwork.url)
+  })
+
+  it('blocks rejected AI/tooling tweets from fallback-filling the final source windows', () => {
+    const tooling = [
+      ['https://x.com/Must_be_Ash/status/2092372553222455767', 'I pay tested thousands of x402 endpoints and I am open sourcing the whole thing OpenRouter for tools meets n8n, plug-and-play MCPs'],
+      ['https://x.com/0xCodez/status/2091980766372639135', 'SpaceXAI engineer running 10-20 GrokBot agents with a Chief of Staff agent'],
+      ['https://x.com/koylanai/status/2059113412278227328', 'Gradient descent for SKILL.md files and agent harness SkillOpt'],
+      ['https://x.com/Jouhatsu_ai/status/2055666094967320773', 'Formation on construction of Claude agents and Claude Code'],
+      ['https://x.com/somewheresy/status/2055102818457977300', 'DEI stands for Datacenter, Electricity and Infrastructure now'],
+      ['https://x.com/stylishdawg/status/2055853054906228936', 'being drunk is kind of like claude code for having fun'],
+    ].map(([url, title], index) => ({
+      ...baseSource,
+      url,
+      source_url: url,
+      final_url: url,
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      window_type: 'social',
+      note_score: 250 - index,
+      note_id: `tool-${index}`,
+      title,
+      description: title,
+      image_url: `https://pbs.twimg.com/media/tool-${index}.jpg?name=orig`,
+    }))
+    const art = Array.from({ length: 6 }, (_, index) => ({
+      ...baseSource,
+      url: `https://x.com/archivepilled/status/art-${index}`,
+      source_url: `https://x.com/archivepilled/status/art-${index}`,
+      final_url: `https://x.com/archivepilled/status/art-${index}`,
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      window_type: 'social',
+      note_score: 20 + index,
+      note_id: `art-${index}`,
+      title: `Favorited artwork ${index}: painting, gallery, visual archive, image surface`,
+      description: 'artist artwork painting gallery visual culture source image surface',
+      image_url: `https://pbs.twimg.com/media/art-${index}.jpg?name=orig`,
+    }))
+
+    const selected = selectContentSources([...tooling, ...art], { targetItems: 6, maxItems: 6 })
+    expect(selected).toHaveLength(6)
+    expect(selected.every((source) => !isAiToolingContentSource(source))).toBe(true)
+    expect(selected.map((source) => source.url)).toEqual(art.toReversed().map((source) => source.url))
   })
 
   it('lets recent favorited artwork outrank higher-note AI tooling during inspection', () => {

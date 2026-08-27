@@ -93,6 +93,24 @@ export function aestheticSignalScore(candidate = {}) {
   return score
 }
 
+export function isAiToolingContentSource(source = {}) {
+  const text = [
+    source.url,
+    source.source_url,
+    source.final_url,
+    source.title,
+    source.description,
+    source.visible_text,
+    source.note_title,
+    source.note_path,
+    source.note_excerpt,
+  ].filter(Boolean).join(' ').toLowerCase()
+
+  if (!text) return false
+  return /(^|\/)ai & agents(\/|$)/.test(text)
+    || /\b(x402|mcp|openrouter|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|model benchmark|vibe cod|vibe-coded|software factory|llm\.txt|sdk|api docs?|quickstart)\b/.test(text)
+}
+
 export function scoreVisualCandidate(candidate) {
   const text = `${candidate?.note_title || ''} ${candidate?.note_path || ''} ${candidate?.url || ''}`.toLowerCase()
   let score = Number(candidate?.note_score || 0) / 4
@@ -290,6 +308,7 @@ export function sourceContentScore(source, recentSourceKeys = new Set()) {
   if (recentSourceKeys.has(sourceContentKey(source))) return Number.NEGATIVE_INFINITY
   const sourceUrls = sourceUrlsForScoring(source)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return Number.NEGATIVE_INFINITY
+  if (isAiToolingContentSource(source)) return Number.NEGATIVE_INFINITY
   let score = Number(source.note_score || 0) / 2
   if (source.image_url && !isLowValueVisualImage(source.image_url)) score += 12
   if (isDirectRasterImageUrl(source.url) || isDirectRasterImageUrl(source.final_url)) score += 8
@@ -341,6 +360,7 @@ function isSourceFramedWebFallback(source) {
 
 export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (!isAllowedInspectedSource(source)) return false
+  if (isAiToolingContentSource(source)) return false
   const sourceUrls = [source.url, source.source_url, source.final_url].filter(Boolean)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return false
   if (sourceUrls.some((url) => youtubeId(url))) return providerEmbedStatus(source) !== 'unavailable'
