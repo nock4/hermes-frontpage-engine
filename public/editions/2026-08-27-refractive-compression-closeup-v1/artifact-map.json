@@ -1,0 +1,1621 @@
+{
+  "artifact_map_id": "map-2026-08-27-refractive-compression-closeup-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "refractive-compression-closeup",
+  "default_artifact_id": "hero-hero-lens-glare-aperture",
+  "artifacts": [
+    {
+      "id": "hero-hero-lens-glare-aperture",
+      "kind": "hero",
+      "label": "hero lens glare aperture",
+      "artifact_type": "hero-scale-lens-glare-aperture",
+      "bounds": {
+        "x": 0.308,
+        "y": 0.074,
+        "w": 0.462,
+        "h": 0.587
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.402,
+          0.077
+        ],
+        [
+          0.484,
+          0.079
+        ],
+        [
+          0.579,
+          0.156
+        ],
+        [
+          0.682,
+          0.32
+        ],
+        [
+          0.749,
+          0.494
+        ],
+        [
+          0.766,
+          0.593
+        ],
+        [
+          0.727,
+          0.652
+        ],
+        [
+          0.598,
+          0.655
+        ],
+        [
+          0.468,
+          0.591
+        ],
+        [
+          0.367,
+          0.457
+        ],
+        [
+          0.313,
+          0.311
+        ],
+        [
+          0.31,
+          0.198
+        ],
+        [
+          0.338,
+          0.114
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/hero-hero-lens-glare-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-lens-glare-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          828,
+          328
+        ],
+        "safe_stage_window_origin_px": [
+          885,
+          376
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.402,
+            0.077
+          ],
+          [
+            0.484,
+            0.079
+          ],
+          [
+            0.579,
+            0.156
+          ],
+          [
+            0.682,
+            0.32
+          ],
+          [
+            0.749,
+            0.494
+          ],
+          [
+            0.766,
+            0.593
+          ],
+          [
+            0.727,
+            0.652
+          ],
+          [
+            0.598,
+            0.655
+          ],
+          [
+            0.468,
+            0.591
+          ],
+          [
+            0.367,
+            0.457
+          ],
+          [
+            0.313,
+            0.311
+          ],
+          [
+            0.31,
+            0.198
+          ],
+          [
+            0.338,
+            0.114
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2878,
+            0.1973
+          ],
+          [
+            0.3008,
+            0.1592
+          ],
+          [
+            0.3932,
+            0.0479
+          ],
+          [
+            0.4876,
+            0.0479
+          ],
+          [
+            0.5788,
+            0.1221
+          ],
+          [
+            0.7044,
+            0.3203
+          ],
+          [
+            0.7715,
+            0.4951
+          ],
+          [
+            0.7858,
+            0.5801
+          ],
+          [
+            0.7357,
+            0.6709
+          ],
+          [
+            0.4388,
+            0.5859
+          ],
+          [
+            0.3763,
+            0.502
+          ],
+          [
+            0.3027,
+            0.3447
+          ],
+          [
+            0.2904,
+            0.3105
+          ],
+          [
+            0.2878,
+            0.2109
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2878,
+          "y": 0.043,
+          "w": 0.4987,
+          "h": 0.6289
+        },
+        "territory_area_px": 276104,
+        "visible_area_px": 275908,
+        "expansion_ratio": 1.001,
+        "neighbors": [
+          {
+            "artifact_id": "module-stubble-color-memory-grain",
+            "shared_edge_px": 2631,
+            "direction": "down",
+            "distance_px": 379.15
+          },
+          {
+            "artifact_id": "module-hinge-dream-notch",
+            "shared_edge_px": 1235,
+            "direction": "left",
+            "distance_px": 401.07
+          },
+          {
+            "artifact_id": "module-bridge-extraction-smudge",
+            "shared_edge_px": 1187,
+            "direction": "right",
+            "distance_px": 480.05
+          },
+          {
+            "artifact_id": "module-background-memory-ledger",
+            "shared_edge_px": 1170,
+            "direction": "left",
+            "distance_px": 412.23
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-hero-painted-lens-oval",
+      "kind": "hero",
+      "label": "hero painted lens oval",
+      "artifact_type": "hero-scale-rounded-lens-aperture",
+      "bounds": {
+        "x": 0.759,
+        "y": 0.618,
+        "w": 0.24,
+        "h": 0.338
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.792,
+          0.633
+        ],
+        [
+          0.865,
+          0.618
+        ],
+        [
+          0.944,
+          0.648
+        ],
+        [
+          0.99,
+          0.706
+        ],
+        [
+          0.998,
+          0.815
+        ],
+        [
+          0.974,
+          0.91
+        ],
+        [
+          0.92,
+          0.953
+        ],
+        [
+          0.854,
+          0.934
+        ],
+        [
+          0.806,
+          0.862
+        ],
+        [
+          0.772,
+          0.762
+        ],
+        [
+          0.759,
+          0.687
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/hero-hero-painted-lens-oval.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-painted-lens-oval"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          778
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          806
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.792,
+            0.633
+          ],
+          [
+            0.865,
+            0.618
+          ],
+          [
+            0.944,
+            0.648
+          ],
+          [
+            0.99,
+            0.706
+          ],
+          [
+            0.998,
+            0.815
+          ],
+          [
+            0.974,
+            0.91
+          ],
+          [
+            0.92,
+            0.953
+          ],
+          [
+            0.854,
+            0.934
+          ],
+          [
+            0.806,
+            0.862
+          ],
+          [
+            0.772,
+            0.762
+          ],
+          [
+            0.759,
+            0.687
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7363,
+            0.6865
+          ],
+          [
+            0.8066,
+            0.5967
+          ],
+          [
+            0.8646,
+            0.584
+          ],
+          [
+            0.9434,
+            0.6143
+          ],
+          [
+            0.9993,
+            0.6865
+          ],
+          [
+            0.9993,
+            0.8271
+          ],
+          [
+            0.8177,
+            0.9131
+          ],
+          [
+            0.7832,
+            0.8604
+          ],
+          [
+            0.7487,
+            0.7598
+          ],
+          [
+            0.7363,
+            0.6875
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7363,
+          "y": 0.584,
+          "w": 0.2637,
+          "h": 0.3301
+        },
+        "territory_area_px": 79176,
+        "visible_area_px": 92669,
+        "expansion_ratio": 0.854,
+        "neighbors": [
+          {
+            "artifact_id": "module-pillow-folk-fold",
+            "shared_edge_px": 1841,
+            "direction": "down",
+            "distance_px": 194.09
+          },
+          {
+            "artifact_id": "module-bridge-extraction-smudge",
+            "shared_edge_px": 1429,
+            "direction": "left",
+            "distance_px": 195.8
+          },
+          {
+            "artifact_id": "module-stubble-color-memory-grain",
+            "shared_edge_px": 60,
+            "direction": "left",
+            "distance_px": 494.18
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-bridge-extraction-smudge",
+      "kind": "module",
+      "label": "bridge extraction smudge",
+      "artifact_type": "bridge-smudge-cut",
+      "bounds": {
+        "x": 0.705,
+        "y": 0.56,
+        "w": 0.139,
+        "h": 0.141
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.713,
+          0.56
+        ],
+        [
+          0.743,
+          0.568
+        ],
+        [
+          0.778,
+          0.603
+        ],
+        [
+          0.817,
+          0.632
+        ],
+        [
+          0.843,
+          0.678
+        ],
+        [
+          0.831,
+          0.701
+        ],
+        [
+          0.792,
+          0.669
+        ],
+        [
+          0.756,
+          0.635
+        ],
+        [
+          0.724,
+          0.599
+        ],
+        [
+          0.705,
+          0.573
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/module-bridge-extraction-smudge.svg",
+      "source_binding_ids": [
+        "binding-module-bridge-extraction-smudge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1190,
+          634
+        ],
+        "safe_stage_window_origin_px": [
+          1207,
+          646
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.713,
+            0.56
+          ],
+          [
+            0.743,
+            0.568
+          ],
+          [
+            0.778,
+            0.603
+          ],
+          [
+            0.817,
+            0.632
+          ],
+          [
+            0.843,
+            0.678
+          ],
+          [
+            0.831,
+            0.701
+          ],
+          [
+            0.792,
+            0.669
+          ],
+          [
+            0.756,
+            0.635
+          ],
+          [
+            0.724,
+            0.599
+          ],
+          [
+            0.705,
+            0.573
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6862,
+            0.5723
+          ],
+          [
+            0.7129,
+            0.5322
+          ],
+          [
+            0.7428,
+            0.54
+          ],
+          [
+            0.8164,
+            0.6045
+          ],
+          [
+            0.8529,
+            0.6641
+          ],
+          [
+            0.8184,
+            0.7178
+          ],
+          [
+            0.7539,
+            0.6602
+          ],
+          [
+            0.707,
+            0.6035
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6862,
+          "y": 0.5322,
+          "w": 0.1673,
+          "h": 0.1865
+        },
+        "territory_area_px": 22400,
+        "visible_area_px": 10003,
+        "expansion_ratio": 2.239,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-painted-lens-oval",
+            "shared_edge_px": 1429,
+            "direction": "right",
+            "distance_px": 195.8
+          },
+          {
+            "artifact_id": "hero-hero-lens-glare-aperture",
+            "shared_edge_px": 1187,
+            "direction": "left",
+            "distance_px": 480.05
+          },
+          {
+            "artifact_id": "module-stubble-color-memory-grain",
+            "shared_edge_px": 372,
+            "direction": "left",
+            "distance_px": 349.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-hinge-dream-notch",
+      "kind": "module",
+      "label": "hinge dream notch",
+      "artifact_type": "plastic-hinge-notch",
+      "bounds": {
+        "x": 0.274,
+        "y": 0,
+        "w": 0.106,
+        "h": 0.151
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.317,
+          0
+        ],
+        [
+          0.363,
+          0.018
+        ],
+        [
+          0.381,
+          0.076
+        ],
+        [
+          0.366,
+          0.122
+        ],
+        [
+          0.33,
+          0.151
+        ],
+        [
+          0.29,
+          0.124
+        ],
+        [
+          0.274,
+          0.074
+        ],
+        [
+          0.29,
+          0.024
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/module-hinge-dream-notch.svg",
+      "source_binding_ids": [
+        "binding-module-hinge-dream-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          502,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          515,
+          80
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.317,
+            0
+          ],
+          [
+            0.363,
+            0.018
+          ],
+          [
+            0.381,
+            0.076
+          ],
+          [
+            0.366,
+            0.122
+          ],
+          [
+            0.33,
+            0.151
+          ],
+          [
+            0.29,
+            0.124
+          ],
+          [
+            0.274,
+            0.074
+          ],
+          [
+            0.29,
+            0.024
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2552,
+            0.0723
+          ],
+          [
+            0.2715,
+            0.0234
+          ],
+          [
+            0.2871,
+            0.0
+          ],
+          [
+            0.3691,
+            0.0
+          ],
+          [
+            0.3809,
+            0.0176
+          ],
+          [
+            0.3991,
+            0.0742
+          ],
+          [
+            0.3841,
+            0.1211
+          ],
+          [
+            0.3659,
+            0.1484
+          ],
+          [
+            0.3294,
+            0.1777
+          ],
+          [
+            0.2897,
+            0.1504
+          ],
+          [
+            0.2715,
+            0.123
+          ],
+          [
+            0.2552,
+            0.0742
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2552,
+          "y": 0.0,
+          "w": 0.1445,
+          "h": 0.1787
+        },
+        "territory_area_px": 29436,
+        "visible_area_px": 17603,
+        "expansion_ratio": 1.672,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-lens-glare-aperture",
+            "shared_edge_px": 1235,
+            "direction": "right",
+            "distance_px": 401.07
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-stubble-color-memory-grain",
+      "kind": "module",
+      "label": "stubble color-memory grain",
+      "artifact_type": "skin-grain-cluster",
+      "bounds": {
+        "x": 0.3704,
+        "y": 0.6094,
+        "w": 0.3496,
+        "h": 0.2197
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.3724,
+          0.6787
+        ],
+        [
+          0.4056,
+          0.6162
+        ],
+        [
+          0.5163,
+          0.6123
+        ],
+        [
+          0.7142,
+          0.6201
+        ],
+        [
+          0.7174,
+          0.625
+        ],
+        [
+          0.7174,
+          0.7383
+        ],
+        [
+          0.7122,
+          0.7861
+        ],
+        [
+          0.6003,
+          0.8145
+        ],
+        [
+          0.472,
+          0.8252
+        ],
+        [
+          0.431,
+          0.8125
+        ],
+        [
+          0.4154,
+          0.7881
+        ],
+        [
+          0.3724,
+          0.6797
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/module-stubble-color-memory-grain.svg",
+      "source_binding_ids": [
+        "binding-module-stubble-color-memory-grain"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          779,
+          707
+        ],
+        "safe_stage_window_origin_px": [
+          819,
+          741
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.3724,
+            0.6787
+          ],
+          [
+            0.4056,
+            0.6162
+          ],
+          [
+            0.5163,
+            0.6123
+          ],
+          [
+            0.7142,
+            0.6201
+          ],
+          [
+            0.7174,
+            0.625
+          ],
+          [
+            0.7174,
+            0.7383
+          ],
+          [
+            0.7122,
+            0.7861
+          ],
+          [
+            0.6003,
+            0.8145
+          ],
+          [
+            0.472,
+            0.8252
+          ],
+          [
+            0.431,
+            0.8125
+          ],
+          [
+            0.4154,
+            0.7881
+          ],
+          [
+            0.3724,
+            0.6797
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3542,
+            0.6777
+          ],
+          [
+            0.4056,
+            0.5879
+          ],
+          [
+            0.5163,
+            0.584
+          ],
+          [
+            0.6986,
+            0.5918
+          ],
+          [
+            0.735,
+            0.6396
+          ],
+          [
+            0.735,
+            0.7402
+          ],
+          [
+            0.7298,
+            0.7852
+          ],
+          [
+            0.7116,
+            0.8125
+          ],
+          [
+            0.6003,
+            0.8418
+          ],
+          [
+            0.4714,
+            0.8525
+          ],
+          [
+            0.431,
+            0.8398
+          ],
+          [
+            0.3965,
+            0.7871
+          ],
+          [
+            0.3542,
+            0.6797
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3542,
+          "y": 0.584,
+          "w": 0.3815,
+          "h": 0.2695
+        },
+        "territory_area_px": 135842,
+        "visible_area_px": 99387,
+        "expansion_ratio": 1.367,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-lens-glare-aperture",
+            "shared_edge_px": 2631,
+            "direction": "up",
+            "distance_px": 379.15
+          },
+          {
+            "artifact_id": "module-dark-diagonal-fabric-ridge",
+            "shared_edge_px": 869,
+            "direction": "left",
+            "distance_px": 575.81
+          },
+          {
+            "artifact_id": "module-bridge-extraction-smudge",
+            "shared_edge_px": 372,
+            "direction": "right",
+            "distance_px": 349.8
+          },
+          {
+            "artifact_id": "hero-hero-painted-lens-oval",
+            "shared_edge_px": 60,
+            "direction": "right",
+            "distance_px": 494.18
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pillow-folk-fold",
+      "kind": "module",
+      "label": "pillow folk fold",
+      "artifact_type": "compressed-fold-ridge",
+      "bounds": {
+        "x": 0.833,
+        "y": 0.777,
+        "w": 0.166,
+        "h": 0.22299999999999998
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.876,
+          0.777
+        ],
+        [
+          0.945,
+          0.791
+        ],
+        [
+          0.997,
+          0.852
+        ],
+        [
+          0.999,
+          0.999
+        ],
+        [
+          0.883,
+          1
+        ],
+        [
+          0.839,
+          0.944
+        ],
+        [
+          0.833,
+          0.862
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/module-pillow-folk-fold.svg",
+      "source_binding_ids": [
+        "binding-module-pillow-folk-fold"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.876,
+            0.777
+          ],
+          [
+            0.945,
+            0.791
+          ],
+          [
+            0.997,
+            0.852
+          ],
+          [
+            0.999,
+            0.999
+          ],
+          [
+            0.883,
+            1
+          ],
+          [
+            0.839,
+            0.944
+          ],
+          [
+            0.833,
+            0.862
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8164,
+            0.8906
+          ],
+          [
+            0.9688,
+            0.793
+          ],
+          [
+            0.9993,
+            0.8281
+          ],
+          [
+            0.9993,
+            0.999
+          ],
+          [
+            0.8607,
+            0.999
+          ],
+          [
+            0.8203,
+            0.9434
+          ],
+          [
+            0.8164,
+            0.8926
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8164,
+          "y": 0.793,
+          "w": 0.1836,
+          "h": 0.207
+        },
+        "territory_area_px": 44968,
+        "visible_area_px": 47862,
+        "expansion_ratio": 0.94,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-painted-lens-oval",
+            "shared_edge_px": 1841,
+            "direction": "up",
+            "distance_px": 194.09
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-background-memory-ledger",
+      "kind": "module",
+      "label": "Background Memory Ledger",
+      "artifact_type": "layered-wall-seam",
+      "bounds": {
+        "x": 0.17,
+        "y": 0.347,
+        "w": 0.191,
+        "h": 0.215
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.181,
+          0.347
+        ],
+        [
+          0.25,
+          0.368
+        ],
+        [
+          0.33,
+          0.395
+        ],
+        [
+          0.361,
+          0.471
+        ],
+        [
+          0.327,
+          0.562
+        ],
+        [
+          0.243,
+          0.54
+        ],
+        [
+          0.184,
+          0.493
+        ],
+        [
+          0.17,
+          0.414
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/module-background-memory-ledger.svg",
+      "source_binding_ids": [
+        "binding-module-background-memory-ledger"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          408,
+          448
+        ],
+        "safe_stage_window_origin_px": [
+          431,
+          465
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.181,
+            0.347
+          ],
+          [
+            0.25,
+            0.368
+          ],
+          [
+            0.33,
+            0.395
+          ],
+          [
+            0.361,
+            0.471
+          ],
+          [
+            0.327,
+            0.562
+          ],
+          [
+            0.243,
+            0.54
+          ],
+          [
+            0.184,
+            0.493
+          ],
+          [
+            0.17,
+            0.414
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1439,
+            0.4121
+          ],
+          [
+            0.1549,
+            0.3467
+          ],
+          [
+            0.181,
+            0.3076
+          ],
+          [
+            0.3294,
+            0.3555
+          ],
+          [
+            0.3561,
+            0.3955
+          ],
+          [
+            0.3867,
+            0.4707
+          ],
+          [
+            0.3535,
+            0.5605
+          ],
+          [
+            0.3268,
+            0.6006
+          ],
+          [
+            0.2428,
+            0.5781
+          ],
+          [
+            0.1836,
+            0.5312
+          ],
+          [
+            0.1576,
+            0.4922
+          ],
+          [
+            0.1439,
+            0.4141
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1439,
+          "y": 0.3076,
+          "w": 0.2435,
+          "h": 0.2939
+        },
+        "territory_area_px": 77966,
+        "visible_area_px": 43966,
+        "expansion_ratio": 1.773,
+        "neighbors": [
+          {
+            "artifact_id": "module-romcore-compression-blocks",
+            "shared_edge_px": 23957,
+            "direction": "right",
+            "distance_px": 66.87
+          },
+          {
+            "artifact_id": "module-dark-diagonal-fabric-ridge",
+            "shared_edge_px": 1239,
+            "direction": "down",
+            "distance_px": 329.34
+          },
+          {
+            "artifact_id": "hero-hero-lens-glare-aperture",
+            "shared_edge_px": 1170,
+            "direction": "right",
+            "distance_px": 412.23
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-romcore-compression-blocks",
+      "kind": "module",
+      "label": "romcore compression blocks",
+      "artifact_type": "illegible-background-block-grain",
+      "bounds": {
+        "x": 0.203,
+        "y": 0.373,
+        "w": 0.138,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.212,
+          0.373
+        ],
+        [
+          0.259,
+          0.385
+        ],
+        [
+          0.316,
+          0.407
+        ],
+        [
+          0.341,
+          0.468
+        ],
+        [
+          0.323,
+          0.526
+        ],
+        [
+          0.267,
+          0.533
+        ],
+        [
+          0.219,
+          0.506
+        ],
+        [
+          0.203,
+          0.446
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/module-romcore-compression-blocks.svg",
+      "source_binding_ids": [
+        "binding-module-romcore-compression-blocks"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          418,
+          451
+        ],
+        "safe_stage_window_origin_px": [
+          435,
+          464
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.212,
+            0.373
+          ],
+          [
+            0.259,
+            0.385
+          ],
+          [
+            0.316,
+            0.407
+          ],
+          [
+            0.341,
+            0.468
+          ],
+          [
+            0.323,
+            0.526
+          ],
+          [
+            0.267,
+            0.533
+          ],
+          [
+            0.219,
+            0.506
+          ],
+          [
+            0.203,
+            0.446
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2513,
+            0.5498
+          ],
+          [
+            0.2786,
+            0.3652
+          ],
+          [
+            0.3158,
+            0.3789
+          ],
+          [
+            0.3346,
+            0.4072
+          ],
+          [
+            0.3587,
+            0.4678
+          ],
+          [
+            0.3411,
+            0.5254
+          ],
+          [
+            0.3229,
+            0.5527
+          ],
+          [
+            0.2669,
+            0.5596
+          ],
+          [
+            0.2513,
+            0.5508
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2513,
+          "y": 0.3652,
+          "w": 0.1081,
+          "h": 0.1953
+        },
+        "territory_area_px": 22328,
+        "visible_area_px": 25565,
+        "expansion_ratio": 0.873,
+        "neighbors": [
+          {
+            "artifact_id": "module-background-memory-ledger",
+            "shared_edge_px": 23957,
+            "direction": "left",
+            "distance_px": 66.87
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-dark-diagonal-fabric-ridge",
+      "kind": "module",
+      "label": "dark diagonal fabric ridge",
+      "artifact_type": "compressed-dark-cloth-edge",
+      "bounds": {
+        "x": 0,
+        "y": 0.318,
+        "w": 0.447,
+        "h": 0.6819999999999999
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0,
+          0.318
+        ],
+        [
+          0.098,
+          0.424
+        ],
+        [
+          0.203,
+          0.541
+        ],
+        [
+          0.338,
+          0.703
+        ],
+        [
+          0.447,
+          0.878
+        ],
+        [
+          0.414,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "cluster_id": "refractive-compression-closeup",
+      "mask_path": "/editions/2026-08-27-refractive-compression-closeup-v1/assets/masks/module-dark-diagonal-fabric-ridge.svg",
+      "source_binding_ids": [
+        "binding-module-dark-diagonal-fabric-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          343,
+          619
+        ],
+        "safe_stage_window_origin_px": [
+          398,
+          675
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.318
+          ],
+          [
+            0.098,
+            0.424
+          ],
+          [
+            0.203,
+            0.541
+          ],
+          [
+            0.338,
+            0.703
+          ],
+          [
+            0.447,
+            0.878
+          ],
+          [
+            0.414,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.29
+          ],
+          [
+            0.1497,
+            0.4541
+          ],
+          [
+            0.3372,
+            0.6738
+          ],
+          [
+            0.4648,
+            0.8779
+          ],
+          [
+            0.4316,
+            0.999
+          ],
+          [
+            0.0,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.29,
+          "w": 0.4655,
+          "h": 0.71
+        },
+        "territory_area_px": 313144,
+        "visible_area_px": 295888,
+        "expansion_ratio": 1.058,
+        "neighbors": [
+          {
+            "artifact_id": "module-background-memory-ledger",
+            "shared_edge_px": 1239,
+            "direction": "up",
+            "distance_px": 329.34
+          },
+          {
+            "artifact_id": "module-stubble-color-memory-grain",
+            "shared_edge_px": 869,
+            "direction": "right",
+            "distance_px": 575.81
+          }
+        ]
+      }
+    }
+  ]
+}

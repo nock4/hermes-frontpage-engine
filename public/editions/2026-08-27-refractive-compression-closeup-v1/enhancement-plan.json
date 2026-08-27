@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-27-refractive-compression-closeup-v1",
+  "edition_id": "2026-08-27-refractive-compression-closeup-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-27-refractive-compression-closeup-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-lens-glare-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-lens-glare-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-lens-glare-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-painted-lens-oval",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-painted-lens-oval",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-rounded-lens-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-bridge-extraction-smudge",
+      "target_kind": "artifact",
+      "artifact_id": "module-bridge-extraction-smudge",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bridge-smudge-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-hinge-dream-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-hinge-dream-notch",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (plastic-hinge-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-stubble-color-memory-grain",
+      "target_kind": "artifact",
+      "artifact_id": "module-stubble-color-memory-grain",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (skin-grain-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-pillow-folk-fold",
+      "target_kind": "artifact",
+      "artifact_id": "module-pillow-folk-fold",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-fold-ridge) selected from interpretation."
+    },
+    {
+      "target_id": "module-background-memory-ledger",
+      "target_kind": "artifact",
+      "artifact_id": "module-background-memory-ledger",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-wall-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-romcore-compression-blocks",
+      "target_kind": "artifact",
+      "artifact_id": "module-romcore-compression-blocks",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (illegible-background-block-grain) selected from interpretation."
+    },
+    {
+      "target_id": "module-dark-diagonal-fabric-ridge",
+      "target_kind": "artifact",
+      "artifact_id": "module-dark-diagonal-fabric-ridge",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (compressed-dark-cloth-edge) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

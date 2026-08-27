@@ -1,0 +1,485 @@
+{
+  "analysis_id": "analysis-2026-08-27-refractive-compression-closeup-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Monochrome close-up plate of a sleeping face pressed into dark fabric, with clear eyeglass rims crossing the frame, a bright vertical window slit at left, soft wall blocks behind, skin grain across cheek and chin, and a pale pillow/finger fold at lower right.",
+  "usable_surfaces": [
+    "large transparent eyeglass lens rim",
+    "bright vertical left window slit",
+    "clear bridge seam and hinge hardware",
+    "cheek and lower-face stubble grain",
+    "dark diagonal fabric ridge",
+    "soft pale lower-right fold",
+    "blurred background wall blocks"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero lens glare aperture",
+      "artifact_type": "hero-scale-lens-glare-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.308,
+        "y": 0.074,
+        "w": 0.462,
+        "h": 0.587
+      },
+      "polygon": [
+        [
+          0.402,
+          0.077
+        ],
+        [
+          0.484,
+          0.079
+        ],
+        [
+          0.579,
+          0.156
+        ],
+        [
+          0.682,
+          0.32
+        ],
+        [
+          0.749,
+          0.494
+        ],
+        [
+          0.766,
+          0.593
+        ],
+        [
+          0.727,
+          0.652
+        ],
+        [
+          0.598,
+          0.655
+        ],
+        [
+          0.468,
+          0.591
+        ],
+        [
+          0.367,
+          0.457
+        ],
+        [
+          0.313,
+          0.311
+        ],
+        [
+          0.31,
+          0.198
+        ],
+        [
+          0.338,
+          0.114
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "The dominant transparent eyeglass oval is visibly traced by a bright plastic rim and reflection, forming the largest source-bearing aperture on the face."
+    },
+    {
+      "label": "hero painted lens oval",
+      "artifact_type": "hero-scale-rounded-lens-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.759,
+        "y": 0.618,
+        "w": 0.24,
+        "h": 0.338
+      },
+      "polygon": [
+        [
+          0.792,
+          0.633
+        ],
+        [
+          0.865,
+          0.618
+        ],
+        [
+          0.944,
+          0.648
+        ],
+        [
+          0.99,
+          0.706
+        ],
+        [
+          0.998,
+          0.815
+        ],
+        [
+          0.974,
+          0.91
+        ],
+        [
+          0.92,
+          0.953
+        ],
+        [
+          0.854,
+          0.934
+        ],
+        [
+          0.806,
+          0.862
+        ],
+        [
+          0.772,
+          0.762
+        ],
+        [
+          0.759,
+          0.687
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "The cropped second eyeglass lens at lower right is a clear rounded oval edge, partly interrupted by the cheek and pale fold."
+    },
+    {
+      "label": "bridge extraction smudge",
+      "artifact_type": "bridge-smudge-cut",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.705,
+        "y": 0.56,
+        "w": 0.139,
+        "h": 0.141
+      },
+      "polygon": [
+        [
+          0.713,
+          0.56
+        ],
+        [
+          0.743,
+          0.568
+        ],
+        [
+          0.778,
+          0.603
+        ],
+        [
+          0.817,
+          0.632
+        ],
+        [
+          0.843,
+          0.678
+        ],
+        [
+          0.831,
+          0.701
+        ],
+        [
+          0.792,
+          0.669
+        ],
+        [
+          0.756,
+          0.635
+        ],
+        [
+          0.724,
+          0.599
+        ],
+        [
+          0.705,
+          0.573
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A narrow refractive smear runs through the clear glasses bridge, connecting the large lens to the cropped lower-right lens as a physical defect line."
+    },
+    {
+      "label": "hinge dream notch",
+      "artifact_type": "plastic-hinge-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.274,
+        "y": 0,
+        "w": 0.106,
+        "h": 0.151
+      },
+      "polygon": [
+        [
+          0.317,
+          0
+        ],
+        [
+          0.363,
+          0.018
+        ],
+        [
+          0.381,
+          0.076
+        ],
+        [
+          0.366,
+          0.122
+        ],
+        [
+          0.33,
+          0.151
+        ],
+        [
+          0.29,
+          0.124
+        ],
+        [
+          0.274,
+          0.074
+        ],
+        [
+          0.29,
+          0.024
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "The upper-left transparent hinge block and hard corner notch are visibly bounded by bright plastic edges and internal screw-like forms."
+    },
+    {
+      "label": "stubble color-memory grain",
+      "artifact_type": "skin-grain-cluster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.345,
+        "y": 0.517,
+        "w": 0.324,
+        "h": 0.413
+      },
+      "polygon": [
+        [
+          0.43,
+          0.517
+        ],
+        [
+          0.55,
+          0.535
+        ],
+        [
+          0.669,
+          0.636
+        ],
+        [
+          0.649,
+          0.767
+        ],
+        [
+          0.585,
+          0.877
+        ],
+        [
+          0.476,
+          0.93
+        ],
+        [
+          0.373,
+          0.886
+        ],
+        [
+          0.345,
+          0.752
+        ],
+        [
+          0.366,
+          0.622
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "The cheek and lower face contain dense visible tonal specks, pores, and stubble grain beneath the eyeglass rim."
+    },
+    {
+      "label": "pillow folk fold",
+      "artifact_type": "compressed-fold-ridge",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.833,
+        "y": 0.777,
+        "w": 0.166,
+        "h": 0.22299999999999998
+      },
+      "polygon": [
+        [
+          0.876,
+          0.777
+        ],
+        [
+          0.945,
+          0.791
+        ],
+        [
+          0.997,
+          0.852
+        ],
+        [
+          0.999,
+          0.999
+        ],
+        [
+          0.883,
+          1
+        ],
+        [
+          0.839,
+          0.944
+        ],
+        [
+          0.833,
+          0.862
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "The lower-right pale compressed surface shows a rounded fold ridge with soft pressure shadows and highlights."
+    },
+    {
+      "label": "Background Memory Ledger",
+      "artifact_type": "layered-wall-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.17,
+        "y": 0.347,
+        "w": 0.191,
+        "h": 0.215
+      },
+      "polygon": [
+        [
+          0.181,
+          0.347
+        ],
+        [
+          0.25,
+          0.368
+        ],
+        [
+          0.33,
+          0.395
+        ],
+        [
+          0.361,
+          0.471
+        ],
+        [
+          0.327,
+          0.562
+        ],
+        [
+          0.243,
+          0.54
+        ],
+        [
+          0.184,
+          0.493
+        ],
+        [
+          0.17,
+          0.414
+        ]
+      ],
+      "confidence": 0.62,
+      "visual_evidence": "Blurred stacked wall planes and pale rectangular patches sit behind the face, visible as quiet layered background blocks."
+    },
+    {
+      "label": "romcore compression blocks",
+      "artifact_type": "illegible-background-block-grain",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.203,
+        "y": 0.373,
+        "w": 0.138,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.212,
+          0.373
+        ],
+        [
+          0.259,
+          0.385
+        ],
+        [
+          0.316,
+          0.407
+        ],
+        [
+          0.341,
+          0.468
+        ],
+        [
+          0.323,
+          0.526
+        ],
+        [
+          0.267,
+          0.533
+        ],
+        [
+          0.219,
+          0.506
+        ],
+        [
+          0.203,
+          0.446
+        ]
+      ],
+      "confidence": 0.57,
+      "visual_evidence": "Tiny blurred rectangular marks behind the cheek read as emulated-media block noise without legible text."
+    },
+    {
+      "label": "dark diagonal fabric ridge",
+      "artifact_type": "compressed-dark-cloth-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.318,
+        "w": 0.447,
+        "h": 0.6819999999999999
+      },
+      "polygon": [
+        [
+          0,
+          0.318
+        ],
+        [
+          0.098,
+          0.424
+        ],
+        [
+          0.203,
+          0.541
+        ],
+        [
+          0.338,
+          0.703
+        ],
+        [
+          0.447,
+          0.878
+        ],
+        [
+          0.414,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A heavy black fabric mass rises diagonally across the lower-left plate, with a visible pressure edge against the cheek."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.927,
+    "rationale": "The plate is restrained and expressionist: one face, two eyeglass apertures, one dark cloth wedge, and one bright slit carry most of the visual force, while smaller source marks remain legible rather than cluttered."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-27-refractive-compression-closeup-v1"
+}
