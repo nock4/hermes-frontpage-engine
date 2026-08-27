@@ -46,6 +46,52 @@ function sourceUrlsForDiagnostics(source = {}) {
   return uniqueNonEmpty([source.url, source.source_url, source.final_url, source.image_url, source.source_image_url, source.source_media_url])
 }
 
+export function isExactAnchorOverride(inspirationOverride = null) {
+  if (!inspirationOverride?.source_url) return false
+  const biasTerms = Array.isArray(inspirationOverride.prompt_bias_terms)
+    ? inspirationOverride.prompt_bias_terms.map((term) => String(term || '').toLowerCase())
+    : []
+  const text = [inspirationOverride.title, inspirationOverride.note, inspirationOverride.source]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase()
+  return biasTerms.includes('exact-anchor') || /\bexact\s+(rerun\s+)?anchor\b/.test(text)
+}
+
+export function buildExactAnchorSourceMaterialBlocker({ inspirationOverride = null, sourceImageMode = null, imageSourceMaterial = {} } = {}) {
+  if (!isExactAnchorOverride(inspirationOverride)) return null
+  if (sourceImageMode === 'dominant-source-image') return null
+  const rejected = Array.isArray(imageSourceMaterial.rejected_reused_image_material)
+    ? imageSourceMaterial.rejected_reused_image_material
+    : []
+  const selected = Array.isArray(imageSourceMaterial.selected_image_material)
+    ? imageSourceMaterial.selected_image_material
+    : []
+  const candidates = Array.isArray(imageSourceMaterial.image_source_candidates)
+    ? imageSourceMaterial.image_source_candidates
+    : []
+  const demotion = imageSourceMaterial.low_fertility_anchor_demoted || null
+  const allCandidatesRejectedAsReused = candidates.length > 0 && rejected.length >= candidates.length
+  const primaryReason = allCandidatesRejectedAsReused
+    ? 'exact anchor media was already used by the archive ledger'
+    : demotion?.reason || 'exact anchor did not produce a valid dominant source image'
+  return {
+    schema_version: 1,
+    status: 'blocked',
+    reason: primaryReason,
+    anchor_url: inspirationOverride.source_url,
+    anchor_title: inspirationOverride.title || inspirationOverride.source_url,
+    source_image_mode: sourceImageMode,
+    candidate_count: candidates.length,
+    selected_material_count: selected.length,
+    rejected_reused_material_count: rejected.length,
+    rejected_reused_material: rejected,
+    next_action: allCandidatesRejectedAsReused
+      ? 'choose a genuinely unused anchor/source-media item or explicitly override the one-use source-material ledger'
+      : 'repair anchor media capture/material selection before image generation',
+  }
+}
+
 export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = [], contentSources = [], recentSourceKeys = new Set(), signalHarvest = null } = {}) {
   const allSources = mergeInspectedSources(inspected, fetchEvidence)
   const buckets = {
@@ -767,6 +813,11 @@ export async function inspectSourceCandidates(signalHarvest, {
   const sourceImageMode = sourceImageArtifacts.source_image_fingerprints.some((fingerprint) => fingerprint?.image_url && !isLowFertilitySourceFingerprint(fingerprint))
     ? 'dominant-source-image'
     : 'skipped-no-valid-dominant-source-image'
+  const exactAnchorSourceMaterialBlocker = buildExactAnchorSourceMaterialBlocker({
+    inspirationOverride,
+    sourceImageMode,
+    imageSourceMaterial,
+  })
   const imageMaterialReference = selectedImageMaterial[0]
     ? {
         url: selectedImageMaterial[0].page_url || selectedImageMaterial[0].image_url,
@@ -815,10 +866,12 @@ export async function inspectSourceCandidates(signalHarvest, {
     source_image_mode_reason: sourceImageMode === 'dominant-source-image'
       ? 'A visually fertile dominant source image survived pre-generation source-material screening and vision fingerprinting.'
       : (lowFertilityModeReason || 'No valid dominant source image survived source-material screening; visual direction must come from the broader source field.'),
+    exact_anchor_source_material_blocker: exactAnchorSourceMaterialBlocker,
     source_material_verdict: {
       source_image_mode: sourceImageMode,
       valid_dominant_source_image: sourceImageMode === 'dominant-source-image',
       rejected_low_fertility_anchor: imageSourceMaterial.low_fertility_anchor_demoted || null,
+      exact_anchor_source_material_blocker: exactAnchorSourceMaterialBlocker,
     },
     source_image_fingerprints: sourceImageArtifacts.source_image_fingerprints,
     source_image_fingerprints_path: sourceImageArtifacts.source_image_fingerprints_path,
@@ -844,6 +897,9 @@ export async function inspectSourceCandidates(signalHarvest, {
 
   await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
   await writeJson(path.join(runDir, 'source-research.json'), researchField)
+  if (exactAnchorSourceMaterialBlocker) {
+    throw new Error(`Exact anchor source material blocked: ${exactAnchorSourceMaterialBlocker.reason}. Anchor ${exactAnchorSourceMaterialBlocker.anchor_url}. See ${path.relative(root, path.join(runDir, 'source-research.json'))}.`)
+  }
   if (contentSources.length < minContentItems) {
     throw new Error(`Source research produced ${contentSources.length} non-duplicate renderable content sources; expected at least ${minContentItems}. See ${path.relative(root, path.join(runDir, 'source-research.json'))}.`)
   }
