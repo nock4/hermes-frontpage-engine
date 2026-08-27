@@ -1,0 +1,283 @@
+{
+  "interpretation_id": "interp-2026-08-27-cassette-pressure-datacenter-procession-v1",
+  "edition_id": "2026-08-27-cassette-pressure-datacenter-procession-v1",
+  "plate_read_timestamp": "2026-08-27T08:12:06.398Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A close macro plate of cassette plastic and black tape: translucent smoky shell, amber apertures, diagonal oxide bands, puncture slits, glossy edge defects, and chalky circuit-like scars. The source windows can ride real material marks rather than cards.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "dim playback ritual under moss-violet electrical pressure",
+      "A close macro plate of cassette plastic and black tape: translucent smoky shell, amber apertures, diagonal oxide bands, puncture slits, glossy edge defects, and chalky circuit-like scars. The source windows can ride real material marks rather than cards.",
+      "cassette-pressure",
+      "phosphor-sigil",
+      "datacenter-current"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "datacenter-current hero laminate",
+      "x402 service-catalog phosphor cut",
+      "agent-chief tape procession",
+      "skillopt validation punctures",
+      "claude-course dropout slit",
+      "drunk-claude glossy stumble"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "cassette-pressure-datacenter-procession",
+      "oversized cassette-shell terrain cropped into abstract architecture",
+      "crossing black-tape procession seam with bass-ridge pressure",
+      "amber thumbnail apertures embedded in laminate and CRT-like defects",
+      "xeroxed sigil ticks and instructional edge fragments",
+      "puncture clusters and dropout slits through dusty sleeve surfaces",
+      "translucent smoky cassette laminate",
+      "amber embedded apertures"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cassette-pressure-datacenter-procession.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-datacenter-current-hero-laminate",
+      "kind": "hero",
+      "type": "hero-scale-smoky-laminate-ridge",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.184,
+        "y": 0.462,
+        "w": 0.735,
+        "h": 0.485
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-x402-service-catalog-phosphor-cut",
+      "kind": "hero",
+      "type": "hero-scale-amber-crt-aperture",
+      "strength": 0.9894919999999999,
+      "bounds": {
+        "x": 0.303,
+        "y": 0.284,
+        "w": 0.128,
+        "h": 0.179
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-chief-tape-procession",
+      "kind": "module",
+      "type": "diagonal-oxide-procession-seam",
+      "strength": 0.792864,
+      "bounds": {
+        "x": 0.488,
+        "y": 0,
+        "w": 0.43,
+        "h": 0.501
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-skillopt-validation-punctures",
+      "kind": "module",
+      "type": "toner-puncture-cluster",
+      "strength": 0.770892,
+      "bounds": {
+        "x": 0.717,
+        "y": 0.001,
+        "w": 0.187,
+        "h": 0.266
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-claude-course-dropout-slit",
+      "kind": "module",
+      "type": "narrow-video-dropout-slit",
+      "strength": 0.742584,
+      "bounds": {
+        "x": 0.453,
+        "y": 0.128,
+        "w": 0.09,
+        "h": 0.158
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-drunk-claude-glossy-stumble",
+      "kind": "module",
+      "type": "glossy-edge-defect",
+      "strength": 0.703512,
+      "bounds": {
+        "x": 0.787,
+        "y": 0.735,
+        "w": 0.055,
+        "h": 0.063
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-datacenter-current-hero-laminate-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.184,
+        "y": 0.462,
+        "w": 0.735,
+        "h": 0.485
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-x402-service-catalog-phosphor-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.303,
+        "y": 0.284,
+        "w": 0.128,
+        "h": 0.179
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-chief-tape-procession-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.488,
+        "y": 0,
+        "w": 0.43,
+        "h": 0.501
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-skillopt-validation-punctures-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.717,
+        "y": 0.001,
+        "w": 0.187,
+        "h": 0.266
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-claude-course-dropout-slit-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.453,
+        "y": 0.128,
+        "w": 0.09,
+        "h": 0.158
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-drunk-claude-glossy-stumble-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.787,
+        "y": 0.735,
+        "w": 0.055,
+        "h": 0.063
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

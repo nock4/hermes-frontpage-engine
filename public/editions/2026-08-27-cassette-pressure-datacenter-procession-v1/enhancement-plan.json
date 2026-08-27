@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-27-cassette-pressure-datacenter-procession-v1",
+  "edition_id": "2026-08-27-cassette-pressure-datacenter-procession-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-27-cassette-pressure-datacenter-procession-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-datacenter-current-hero-laminate",
+      "target_kind": "artifact",
+      "artifact_id": "hero-datacenter-current-hero-laminate",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-smoky-laminate-ridge) selected from interpretation."
+    },
+    {
+      "target_id": "hero-x402-service-catalog-phosphor-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-x402-service-catalog-phosphor-cut",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-amber-crt-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-agent-chief-tape-procession",
+      "target_kind": "artifact",
+      "artifact_id": "module-agent-chief-tape-procession",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (diagonal-oxide-procession-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-skillopt-validation-punctures",
+      "target_kind": "artifact",
+      "artifact_id": "module-skillopt-validation-punctures",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (toner-puncture-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-claude-course-dropout-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-claude-course-dropout-slit",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-video-dropout-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-drunk-claude-glossy-stumble",
+      "target_kind": "artifact",
+      "artifact_id": "module-drunk-claude-glossy-stumble",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-edge-defect) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

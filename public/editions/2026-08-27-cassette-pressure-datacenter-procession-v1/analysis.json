@@ -1,0 +1,368 @@
+{
+  "analysis_id": "analysis-2026-08-27-cassette-pressure-datacenter-procession-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A close macro plate of cassette plastic and black tape: translucent smoky shell, amber apertures, diagonal oxide bands, puncture slits, glossy edge defects, and chalky circuit-like scars. The source windows can ride real material marks rather than cards.",
+  "usable_surfaces": [
+    "translucent smoky cassette laminate",
+    "amber embedded apertures",
+    "diagonal black oxide tape bands",
+    "upper-right punched slit cluster",
+    "lower-field glossy pressure ridge",
+    "right-side chalk circuit scar",
+    "small bottom-right pinhole glint"
+  ],
+  "detected_objects": [
+    {
+      "label": "datacenter-current hero laminate",
+      "artifact_type": "hero-scale-smoky-laminate-ridge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.184,
+        "y": 0.462,
+        "w": 0.735,
+        "h": 0.485
+      },
+      "polygon": [
+        [
+          0.184,
+          0.699
+        ],
+        [
+          0.276,
+          0.611
+        ],
+        [
+          0.397,
+          0.527
+        ],
+        [
+          0.516,
+          0.462
+        ],
+        [
+          0.664,
+          0.548
+        ],
+        [
+          0.817,
+          0.676
+        ],
+        [
+          0.919,
+          0.824
+        ],
+        [
+          0.886,
+          0.947
+        ],
+        [
+          0.626,
+          0.888
+        ],
+        [
+          0.426,
+          0.796
+        ],
+        [
+          0.272,
+          0.741
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A broad dark lower-field tape-and-laminate pressure surface crosses the plate diagonally, with smoky black sheen, green-black edge buildup, and electrical terrain-like ridges."
+    },
+    {
+      "label": "x402 service-catalog phosphor cut",
+      "artifact_type": "hero-scale-amber-crt-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.303,
+        "y": 0.284,
+        "w": 0.128,
+        "h": 0.179
+      },
+      "polygon": [
+        [
+          0.311,
+          0.334
+        ],
+        [
+          0.335,
+          0.294
+        ],
+        [
+          0.382,
+          0.284
+        ],
+        [
+          0.422,
+          0.313
+        ],
+        [
+          0.431,
+          0.367
+        ],
+        [
+          0.41,
+          0.435
+        ],
+        [
+          0.365,
+          0.463
+        ],
+        [
+          0.319,
+          0.442
+        ],
+        [
+          0.303,
+          0.39
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The large amber rounded cassette opening glows through smoky plastic like a CRT aperture, bounded by a raised translucent rim and dark interior grain."
+    },
+    {
+      "label": "agent-chief tape procession",
+      "artifact_type": "diagonal-oxide-procession-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.488,
+        "y": 0,
+        "w": 0.43,
+        "h": 0.501
+      },
+      "polygon": [
+        [
+          0.538,
+          0
+        ],
+        [
+          0.918,
+          0
+        ],
+        [
+          0.891,
+          0.058
+        ],
+        [
+          0.815,
+          0.14
+        ],
+        [
+          0.742,
+          0.217
+        ],
+        [
+          0.671,
+          0.301
+        ],
+        [
+          0.594,
+          0.4
+        ],
+        [
+          0.535,
+          0.501
+        ],
+        [
+          0.488,
+          0.441
+        ],
+        [
+          0.548,
+          0.329
+        ],
+        [
+          0.626,
+          0.225
+        ],
+        [
+          0.706,
+          0.126
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A fast black diagonal tape path slices from the top edge toward the center, carrying clustered highlights and a managed procession-like seam."
+    },
+    {
+      "label": "skillopt validation punctures",
+      "artifact_type": "toner-puncture-cluster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.717,
+        "y": 0.001,
+        "w": 0.187,
+        "h": 0.266
+      },
+      "polygon": [
+        [
+          0.883,
+          0.001
+        ],
+        [
+          0.904,
+          0.021
+        ],
+        [
+          0.898,
+          0.046
+        ],
+        [
+          0.869,
+          0.038
+        ],
+        [
+          0.827,
+          0.023
+        ],
+        [
+          0.799,
+          0.054
+        ],
+        [
+          0.811,
+          0.096
+        ],
+        [
+          0.785,
+          0.137
+        ],
+        [
+          0.805,
+          0.181
+        ],
+        [
+          0.778,
+          0.227
+        ],
+        [
+          0.735,
+          0.266
+        ],
+        [
+          0.717,
+          0.214
+        ],
+        [
+          0.746,
+          0.146
+        ],
+        [
+          0.741,
+          0.089
+        ],
+        [
+          0.775,
+          0.032
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "The upper-right black cassette strip contains repeated oval puncture/slit marks and short scored cuts, visibly clustered in dusty toner-like scratches."
+    },
+    {
+      "label": "claude-course dropout slit",
+      "artifact_type": "narrow-video-dropout-slit",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.453,
+        "y": 0.128,
+        "w": 0.09,
+        "h": 0.158
+      },
+      "polygon": [
+        [
+          0.469,
+          0.151
+        ],
+        [
+          0.508,
+          0.128
+        ],
+        [
+          0.537,
+          0.154
+        ],
+        [
+          0.543,
+          0.202
+        ],
+        [
+          0.52,
+          0.269
+        ],
+        [
+          0.473,
+          0.286
+        ],
+        [
+          0.453,
+          0.248
+        ],
+        [
+          0.459,
+          0.19
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A narrow amber-brown window sits in the upper cassette sleeve, a small supervised video dropout slit with a dark rim and warm internal glow."
+    },
+    {
+      "label": "drunk-claude glossy stumble",
+      "artifact_type": "glossy-edge-defect",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.787,
+        "y": 0.735,
+        "w": 0.055,
+        "h": 0.063
+      },
+      "polygon": [
+        [
+          0.809,
+          0.735
+        ],
+        [
+          0.827,
+          0.741
+        ],
+        [
+          0.842,
+          0.764
+        ],
+        [
+          0.835,
+          0.788
+        ],
+        [
+          0.811,
+          0.798
+        ],
+        [
+          0.793,
+          0.784
+        ],
+        [
+          0.787,
+          0.758
+        ],
+        [
+          0.797,
+          0.741
+        ]
+      ],
+      "confidence": 0.75,
+      "visual_evidence": "A small warped glossy fleck and pinhole on the lower-right black edge interrupts the otherwise strict tape surface, reading as a wobbling edge defect."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.759,
+    "rationale": "The plate is expressionist and material-led, with strong diagonal tape forms and several real apertures. Texture is dense but the dominant surfaces remain legible; avoid adding chrome or broad fallback zones."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-08-27-cassette-pressure-datacenter-procession-v1"
+}
