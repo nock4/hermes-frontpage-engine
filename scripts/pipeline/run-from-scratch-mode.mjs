@@ -79,7 +79,7 @@ export async function runFromScratchMode({
     platePosture,
   }
   const internalSteps = [
-    createMineSignalsStep({ options, context, recentDiversityAvoidTerms, root, runDir, mineSignals }),
+    createMineSignalsStep({ options, context, recentDiversityAvoidTerms, recentSourceKeys, root, runDir, mineSignals }),
     createResearchSourcesStep({ apiKey, context, inspectSourceCandidates, options, recentSourceKeys, root, runDir }),
     {
       name: 'Prepare source audio material',

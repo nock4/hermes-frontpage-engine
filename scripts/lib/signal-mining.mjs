@@ -11,6 +11,7 @@ import {
 import { loadMarkdownFolderSignals } from './signal-adapters/markdown-folder-adapter.mjs'
 import { annotateSignalHarvestWithInspirationOverride } from './inspiration-override.mjs'
 import { uniqueNonEmpty } from './string-utils.mjs'
+import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 
 async function writeJson(filePath, value) {
   await fs.mkdir(path.dirname(filePath), { recursive: true })
@@ -48,12 +49,26 @@ function noteDiversityPenalty(note, diversityAvoidTerms = []) {
   return Math.min(36, matches * 12)
 }
 
-function withDiversityScore(note, diversityAvoidTerms = []) {
+function historicalSourcePenalty(note, recentSourceKeys = new Set()) {
+  if (!recentSourceKeys?.size || !Array.isArray(note.urls) || !note.urls.length) return 0
+  const candidateKeys = note.urls
+    .map((url) => canonicalizeSourceUrl(url))
+    .filter(Boolean)
+  if (!candidateKeys.length) return 0
+  const repeatedCount = candidateKeys.filter((key) => recentSourceKeys.has(key)).length
+  if (!repeatedCount) return 0
+  if (repeatedCount === candidateKeys.length) return 160
+  return Math.min(80, repeatedCount * 24)
+}
+
+function withDiversityScore(note, diversityAvoidTerms = [], recentSourceKeys = new Set()) {
   const diversity_penalty = noteDiversityPenalty(note, diversityAvoidTerms)
+  const historical_source_penalty = historicalSourcePenalty(note, recentSourceKeys)
   return {
     ...note,
     diversity_penalty,
-    selection_score: note.score - diversity_penalty,
+    historical_source_penalty,
+    selection_score: note.score - diversity_penalty - historical_source_penalty,
   }
 }
 
@@ -77,8 +92,8 @@ function wordFrequencies(notes) {
     .map(([term, count]) => ({ term, count }))
 }
 
-export function selectRecentSignalNotes(notes, maxNotes, { diversityAvoidTerms = [] } = {}) {
-  const scored = notes.map((note) => withDiversityScore(note, diversityAvoidTerms))
+export function selectRecentSignalNotes(notes, maxNotes, { diversityAvoidTerms = [], recentSourceKeys = new Set() } = {}) {
+  const scored = notes.map((note) => withDiversityScore(note, diversityAvoidTerms, recentSourceKeys))
   const sorted = scored.sort((a, b) => b.selection_score - a.selection_score)
   const channelOrder = ['youtube-like', 'nts-like', 'chrome-bookmark', 'twitter-bookmark']
   const minimumPerAvailableChannel = Math.min(4, Math.max(2, Math.floor(maxNotes / 8)))
@@ -149,6 +164,7 @@ export async function mineSignals({
   windowDays,
   maxNotes,
   diversityAvoidTerms = [],
+  recentSourceKeys = new Set(),
   inspirationOverride = null,
 }, runDir) {
   const resolvedInputRoot = inputRoot || vault || null
@@ -161,7 +177,10 @@ export async function mineSignals({
   })
 
   const normalizedDiversityAvoidTerms = normalizeDiversityTerms(diversityAvoidTerms)
-  const selectedNotes = selectRecentSignalNotes(loaded.notes, maxNotes, { diversityAvoidTerms: normalizedDiversityAvoidTerms })
+  const selectedNotes = selectRecentSignalNotes(loaded.notes, maxNotes, {
+    diversityAvoidTerms: normalizedDiversityAvoidTerms,
+    recentSourceKeys,
+  })
     .map(normalizeSelectedNote)
 
   const urlRecords = []
@@ -203,6 +222,9 @@ export async function mineSignals({
         normalizedDiversityAvoidTerms.length
           ? `Variety pressure subtracts points from notes that repeat recent edition language: ${normalizedDiversityAvoidTerms.join(', ')}.`
           : 'Variety pressure is available but no recent edition terms were supplied for this run.',
+        recentSourceKeys?.size
+          ? 'Archive-wide no-repeat pressure subtracts points from notes whose candidate URLs already appeared as published source material.'
+          : 'Archive-wide source-material repeat pressure is available but no historical source ledger was supplied for this run.',
       ],
       diversity_avoid_terms: normalizedDiversityAvoidTerms,
       looked_for: loaded.looked_for,

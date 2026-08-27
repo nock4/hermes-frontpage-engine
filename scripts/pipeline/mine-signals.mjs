@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-export function createMineSignalsStep({ options, context, recentDiversityAvoidTerms, root, runDir, mineSignals }) {
+export function createMineSignalsStep({ options, context, recentDiversityAvoidTerms, recentSourceKeys = new Set(), root, runDir, mineSignals }) {
   return {
     name: 'Mine source signals',
     tool: options.inputMode === 'manifest'
@@ -22,6 +22,7 @@ export function createMineSignalsStep({ options, context, recentDiversityAvoidTe
       context.signalHarvest = await mineSignals({
         ...options,
         diversityAvoidTerms: recentDiversityAvoidTerms,
+        recentSourceKeys,
         inspirationOverride: context.inspirationOverride,
       }, runDir)
       return {

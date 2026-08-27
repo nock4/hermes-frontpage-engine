@@ -78,6 +78,21 @@ describe('saved-signal mining', () => {
     ])
   })
 
+  it('downranks notes whose source URLs already appeared in the archive ledger', () => {
+    const notes = [
+      { id: 'repeat-a', source_channel: 'twitter-bookmark', score: 220, title: 'old painting', urls: ['https://x.com/old/status/1'], excerpt: '', text: '' },
+      { id: 'fresh-a', source_channel: 'twitter-bookmark', score: 90, title: 'new gallery', urls: ['https://x.com/new/status/2'], excerpt: '', text: '' },
+      { id: 'fresh-b', source_channel: 'youtube-like', score: 80, title: 'new video', urls: ['https://www.youtube.com/watch?v=fresh'], excerpt: '', text: '' },
+    ]
+
+    expect(selectRecentSignalNotes(notes, 2, {
+      recentSourceKeys: new Set(['x.com/old/status/1']),
+    }).map((note) => note.id)).toEqual([
+      'fresh-b',
+      'fresh-a',
+    ])
+  })
+
   it('mines manifest signals for public mode', async () => {
     const rootDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-manifest-run-'))
     const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-run-'))
