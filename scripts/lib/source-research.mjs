@@ -31,12 +31,15 @@ const root = process.cwd()
 const minContentItems = 6
 const targetContentItems = 9
 const maxContentItems = 10
-const autoresearchCandidateMultiplier = 4
+const autoresearchCandidateMultiplier = 6
 // Keep enough of the saved-signal field on the press bed to survive archive-wide
 // source-material dedupe. High-score recent YouTube and emergency seeds can all be
 // repeats; visually fertile artwork/bookmark material may sit lower in the ranked
 // field and still be the difference between 2 windows and a real 6-window edition.
-const maxAutoresearchCandidates = 160
+// The archive-wide ledger now also filters AI/tooling fallback sources, so the
+// source bed must be wide enough to reach lower-ranked art/music/image surfaces
+// instead of falling back to agent chrome.
+const maxAutoresearchCandidates = 320
 
 function isSingleAnchorResearchEnabled() {
   return process.env.DFE_SINGLE_ANCHOR_RESEARCH !== '0'

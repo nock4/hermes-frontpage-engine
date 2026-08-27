@@ -12,7 +12,8 @@ describe('source autoresearch prompt', () => {
   })
 
   it('keeps a broad enough candidate bed to survive archive-wide source dedupe', () => {
-    expect(source).toContain('const maxAutoresearchCandidates = 160')
+    expect(source).toContain('const maxAutoresearchCandidates = 320')
     expect(source).toContain('survive archive-wide')
+    expect(source).toContain('instead of falling back to agent chrome')
   })
 })
