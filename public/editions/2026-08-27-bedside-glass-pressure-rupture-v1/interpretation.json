@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-08-27-bedside-glass-pressure-rupture-v1",
+  "edition_id": "2026-08-27-bedside-glass-pressure-rupture-v1",
+  "plate_read_timestamp": "2026-08-27T22:25:21.526Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A grayscale close sleeping face fills the plate: clear eyeglass arcs cross the eye, a pale pillow folds up from the lower right, a black fabric wedge cuts through the left, and a narrow light blade burns at the far left edge. The useful source windows are real edges, glare pools, glass rims, stubble constellations, torn pillow seams, and small wall ticks rather than cards.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet grayscale rupture under bedside light",
+      "A grayscale close sleeping face fills the plate: clear eyeglass arcs cross the eye, a pale pillow folds up from the lower right, a black fabric wedge cuts through the left, and a narrow light blade burns at the far left edge. The useful source windows are real edges, glare pools, glass rims, stubble constellations, torn pillow seams, and small wall ticks rather than cards.",
+      "grayscale-rupture",
+      "tilted-macro",
+      "glass-arcs"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero pale tilted slab",
+      "hero pillow crash fold",
+      "right lens glare node",
+      "left lens rim orbit",
+      "black shoulder edge scar",
+      "stubble-grain constellation",
+      "wall seam gray tick cluster",
+      "Field Marker"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "bedside-glass-pressure-rupture",
+      "one giant right-weighted tilted pale oval slab",
+      "deep black lower-left diagonal wedge",
+      "two oversized transparent lens-rim arcs with flare nodes",
+      "pale lower-right pillow crescent with fold notches",
+      "narrow left-edge light slit and muted wall seams",
+      "dominant pale face slab with skin grain",
+      "soft lower-right pillow crescent and torn seam"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: bedside-glass-pressure-rupture.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-pale-tilted-slab",
+      "kind": "hero",
+      "type": "giant-mottled-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.3208,
+        "y": 0,
+        "w": 0.6792,
+        "h": 0.637
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-pillow-crash-fold",
+      "kind": "hero",
+      "type": "compressed-pillow-fold",
+      "strength": 0.9723439999999999,
+      "bounds": {
+        "x": 0.542,
+        "y": 0.563,
+        "w": 0.456,
+        "h": 0.432
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-lens-glare-node",
+      "kind": "module",
+      "type": "glass-flare-aperture",
+      "strength": 0.7953,
+      "bounds": {
+        "x": 0.802,
+        "y": 0.207,
+        "w": 0.083,
+        "h": 0.201
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-lens-rim-orbit",
+      "kind": "module",
+      "type": "transparent-rim-arc",
+      "strength": 0.7638480000000001,
+      "bounds": {
+        "x": 0.508,
+        "y": 0.106,
+        "w": 0.419,
+        "h": 0.326
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-shoulder-edge-scar",
+      "kind": "module",
+      "type": "matte-fabric-edge-scar",
+      "strength": 0.7123200000000001,
+      "bounds": {
+        "x": 0,
+        "y": 0.272,
+        "w": 0.423,
+        "h": 0.724
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stubble-grain-constellation",
+      "kind": "module",
+      "type": "micro-speckle-glints",
+      "strength": 0.691284,
+      "bounds": {
+        "x": 0.385,
+        "y": 0.572,
+        "w": 0.327,
+        "h": 0.253
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-wall-seam-gray-tick-cluster",
+      "kind": "module",
+      "type": "blurred-wall-seam-ticks",
+      "strength": 0.6715920000000001,
+      "bounds": {
+        "x": 0.205,
+        "y": 0.248,
+        "w": 0.121,
+        "h": 0.197
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "reflective-fabric-scratch",
+      "strength": 0.644284,
+      "bounds": {
+        "x": 0.119,
+        "y": 0.673,
+        "w": 0.121,
+        "h": 0.259
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-2",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.653548,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-pale-tilted-slab-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3208,
+        "y": 0,
+        "w": 0.6792,
+        "h": 0.637
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hero-pillow-crash-fold-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.542,
+        "y": 0.563,
+        "w": 0.456,
+        "h": 0.432
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-lens-glare-node-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.802,
+        "y": 0.207,
+        "w": 0.083,
+        "h": 0.201
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-lens-rim-orbit-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.106,
+        "w": 0.419,
+        "h": 0.326
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-shoulder-edge-scar-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.272,
+        "w": 0.423,
+        "h": 0.724
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stubble-grain-constellation-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.385,
+        "y": 0.572,
+        "w": 0.327,
+        "h": 0.253
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-wall-seam-gray-tick-cluster-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.205,
+        "y": 0.248,
+        "w": 0.121,
+        "h": 0.197
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.119,
+        "y": 0.673,
+        "w": 0.121,
+        "h": 0.259
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

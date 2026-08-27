@@ -1,0 +1,63 @@
+{
+  "brief_id": "brief-2026-08-27-bedside-glass-pressure-rupture-v1",
+  "date": "2026-08-27",
+  "signal_cluster_ids": [
+    "fffc33732008",
+    "888760eea469",
+    "e2221ea32f09",
+    "d9cf82d61d80",
+    "c864abad74e9",
+    "fca231c8978e",
+    "51d654523583",
+    "b22158abe8d4"
+  ],
+  "research_node_ids": [
+    "research-1-747f3d6f",
+    "research-2-d39d9729",
+    "research-3-aee1cc52",
+    "research-4-cf461952",
+    "research-5-7df1dae1",
+    "research-6-aaa018c2",
+    "research-7-71581e0a",
+    "research-8-1e79ddc4",
+    "research-9-e0539fb6",
+    "research-10-907c380b",
+    "research-11-5b752ff5",
+    "research-12-02bbdc89"
+  ],
+  "mood": "quiet grayscale rupture under bedside light",
+  "material_language": [
+    "clear glossy acetate lens rims",
+    "soft compressed cotton pillow fabric",
+    "matte black cotton mass",
+    "smooth mottled plaster-skin surface",
+    "blurred gray wall planes"
+  ],
+  "lighting": "Soft shallow bedside falloff, one hard vertical light blade at the far left, and small cold glare blooms trapped in transparent glass arcs.",
+  "object_inventory": [
+    "one giant right-weighted tilted pale oval slab",
+    "deep black lower-left diagonal wedge",
+    "two oversized transparent lens-rim arcs with flare nodes",
+    "pale lower-right pillow crescent with fold notches",
+    "narrow left-edge light slit and muted wall seams"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "No legible words, logos, usernames, filenames, interface labels, or alphanumeric callouts inside the image.",
+    "Do not reproduce the source person, literal selfie, hospital room, social-media chrome, or readable page text.",
+    "Avoid dashboards, browser windows, cards, posters, shelves, cabinets, desks, galleries, and generic software UI.",
+    "Do not use colorful collage language; keep color nearly monochrome with only faint blue-gray or clinical-green glints.",
+    "Do not pad with fake summary surfaces; every anchor must be a real rim, seam, fold, glare, scar, slit, or material interruption.",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached",
+    "do not strip handmade details into generic torn-paper ambience",
+    "do not fragment the primary source objects until their original silhouettes stop reading",
+    "do not replace source candy/wrapper/handwriting cues with unrelated scraps"
+  ]
+}

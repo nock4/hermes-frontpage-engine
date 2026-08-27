@@ -1,0 +1,488 @@
+{
+  "analysis_id": "analysis-2026-08-27-bedside-glass-pressure-rupture-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A grayscale close sleeping face fills the plate: clear eyeglass arcs cross the eye, a pale pillow folds up from the lower right, a black fabric wedge cuts through the left, and a narrow light blade burns at the far left edge. The useful source windows are real edges, glare pools, glass rims, stubble constellations, torn pillow seams, and small wall ticks rather than cards.",
+  "usable_surfaces": [
+    "dominant pale face slab with skin grain",
+    "soft lower-right pillow crescent and torn seam",
+    "clear eyeglass rim orbit around closed eye",
+    "bright lens glare pool on right glass",
+    "black diagonal shoulder fabric edge",
+    "far-left vertical light slit",
+    "lower-face stubble speckle field",
+    "muted wall seam ticks behind head",
+    "small reflective scratch on black fabric"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero pale tilted slab",
+      "artifact_type": "giant-mottled-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.345,
+        "y": 0.005,
+        "w": 0.626,
+        "h": 0.751
+      },
+      "polygon": [
+        [
+          0.649,
+          0.006
+        ],
+        [
+          0.804,
+          0.016
+        ],
+        [
+          0.934,
+          0.069
+        ],
+        [
+          0.971,
+          0.166
+        ],
+        [
+          0.949,
+          0.303
+        ],
+        [
+          0.853,
+          0.423
+        ],
+        [
+          0.766,
+          0.567
+        ],
+        [
+          0.631,
+          0.716
+        ],
+        [
+          0.486,
+          0.754
+        ],
+        [
+          0.375,
+          0.678
+        ],
+        [
+          0.345,
+          0.535
+        ],
+        [
+          0.389,
+          0.388
+        ],
+        [
+          0.469,
+          0.224
+        ],
+        [
+          0.551,
+          0.089
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The large tilted bald head and cheek mass is the dominant pale mottled surface, with visible pore grain, shallow tonal falloff, and skin texture across the right-weighted plate."
+    },
+    {
+      "label": "hero pillow crash fold",
+      "artifact_type": "compressed-pillow-fold",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.542,
+        "y": 0.563,
+        "w": 0.456,
+        "h": 0.432
+      },
+      "polygon": [
+        [
+          0.891,
+          0.565
+        ],
+        [
+          0.973,
+          0.616
+        ],
+        [
+          0.998,
+          0.736
+        ],
+        [
+          0.969,
+          0.877
+        ],
+        [
+          0.877,
+          0.969
+        ],
+        [
+          0.725,
+          0.995
+        ],
+        [
+          0.596,
+          0.955
+        ],
+        [
+          0.542,
+          0.847
+        ],
+        [
+          0.592,
+          0.748
+        ],
+        [
+          0.666,
+          0.664
+        ],
+        [
+          0.766,
+          0.594
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "A broad pale pillow crescent rises from the lower right and presses into the face, with soft cotton folds and a compressed aperture along the cheek."
+    },
+    {
+      "label": "right lens glare node",
+      "artifact_type": "glass-flare-aperture",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.802,
+        "y": 0.207,
+        "w": 0.083,
+        "h": 0.201
+      },
+      "polygon": [
+        [
+          0.833,
+          0.207
+        ],
+        [
+          0.864,
+          0.218
+        ],
+        [
+          0.883,
+          0.253
+        ],
+        [
+          0.885,
+          0.309
+        ],
+        [
+          0.872,
+          0.363
+        ],
+        [
+          0.846,
+          0.408
+        ],
+        [
+          0.819,
+          0.391
+        ],
+        [
+          0.802,
+          0.338
+        ],
+        [
+          0.805,
+          0.279
+        ],
+        [
+          0.817,
+          0.231
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A bright trapped vertical reflection blooms inside the right side of the glasses lens, visibly bounded by the transparent lens surface."
+    },
+    {
+      "label": "left lens rim orbit",
+      "artifact_type": "transparent-rim-arc",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.106,
+        "w": 0.419,
+        "h": 0.326
+      },
+      "polygon": [
+        [
+          0.538,
+          0.151
+        ],
+        [
+          0.609,
+          0.108
+        ],
+        [
+          0.736,
+          0.119
+        ],
+        [
+          0.854,
+          0.185
+        ],
+        [
+          0.925,
+          0.281
+        ],
+        [
+          0.92,
+          0.363
+        ],
+        [
+          0.852,
+          0.423
+        ],
+        [
+          0.725,
+          0.431
+        ],
+        [
+          0.608,
+          0.393
+        ],
+        [
+          0.529,
+          0.309
+        ],
+        [
+          0.508,
+          0.218
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "The clear acetate eyeglass rim forms a continuous transparent orbit around the closed eye, visible as bright double edges and refracted contour."
+    },
+    {
+      "label": "black shoulder edge scar",
+      "artifact_type": "matte-fabric-edge-scar",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.272,
+        "w": 0.423,
+        "h": 0.724
+      },
+      "polygon": [
+        [
+          0,
+          0.272
+        ],
+        [
+          0.146,
+          0.296
+        ],
+        [
+          0.248,
+          0.399
+        ],
+        [
+          0.338,
+          0.56
+        ],
+        [
+          0.423,
+          0.81
+        ],
+        [
+          0.423,
+          0.996
+        ],
+        [
+          0,
+          0.996
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "The matte black shoulder mass cuts diagonally upward from the left edge, creating a hard dark fabric scar against the pale face and wall."
+    },
+    {
+      "label": "stubble-grain constellation",
+      "artifact_type": "micro-speckle-glints",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.385,
+        "y": 0.572,
+        "w": 0.327,
+        "h": 0.253
+      },
+      "polygon": [
+        [
+          0.449,
+          0.572
+        ],
+        [
+          0.562,
+          0.577
+        ],
+        [
+          0.665,
+          0.622
+        ],
+        [
+          0.712,
+          0.708
+        ],
+        [
+          0.691,
+          0.792
+        ],
+        [
+          0.579,
+          0.825
+        ],
+        [
+          0.456,
+          0.782
+        ],
+        [
+          0.385,
+          0.693
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Dense tiny graphite-like stubble specks and glints collect across the lower cheek, chin, and upper-lip area, forming a visible irregular constellation."
+    },
+    {
+      "label": "wall seam gray tick cluster",
+      "artifact_type": "blurred-wall-seam-ticks",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.205,
+        "y": 0.248,
+        "w": 0.121,
+        "h": 0.197
+      },
+      "polygon": [
+        [
+          0.209,
+          0.249
+        ],
+        [
+          0.303,
+          0.248
+        ],
+        [
+          0.326,
+          0.276
+        ],
+        [
+          0.321,
+          0.444
+        ],
+        [
+          0.258,
+          0.428
+        ],
+        [
+          0.206,
+          0.372
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "A muted rectangular wall patch behind the head carries faint gray tick-like stains and blurred surface marks near the vertical seam."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "reflective-fabric-scratch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.119,
+        "y": 0.673,
+        "w": 0.121,
+        "h": 0.259
+      },
+      "polygon": [
+        [
+          0.12,
+          0.674
+        ],
+        [
+          0.135,
+          0.692
+        ],
+        [
+          0.161,
+          0.753
+        ],
+        [
+          0.189,
+          0.814
+        ],
+        [
+          0.22,
+          0.887
+        ],
+        [
+          0.24,
+          0.932
+        ],
+        [
+          0.219,
+          0.913
+        ],
+        [
+          0.184,
+          0.85
+        ],
+        [
+          0.151,
+          0.774
+        ],
+        [
+          0.128,
+          0.71
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A thin bright torn reflective scar runs through the black lower-left fabric, distinct from the larger shoulder field and tight enough to hold a small source marker."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 4,
+    "large_region_count": 5,
+    "mapped_region_coverage": 1.265,
+    "rationale": "The plate is spare and expressionist: one face slab, one pillow crescent, one black wedge, and one eyeglass orbit dominate. Detail exists as tight glints, grain, seams, and scars, not clutter."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-27-bedside-glass-pressure-rupture-v1"
+}

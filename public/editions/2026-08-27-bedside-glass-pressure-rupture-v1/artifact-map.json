@@ -1,0 +1,1587 @@
+{
+  "artifact_map_id": "map-2026-08-27-bedside-glass-pressure-rupture-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "bedside-glass-pressure-rupture",
+  "default_artifact_id": "hero-hero-pale-tilted-slab",
+  "artifacts": [
+    {
+      "id": "hero-hero-pale-tilted-slab",
+      "kind": "hero",
+      "label": "hero pale tilted slab",
+      "artifact_type": "giant-mottled-surface",
+      "bounds": {
+        "x": 0.3208,
+        "y": 0.0,
+        "w": 0.6792,
+        "h": 0.637
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.3233,
+          0.4003
+        ],
+        [
+          0.325,
+          0.2519
+        ],
+        [
+          0.3935,
+          0.0015
+        ],
+        [
+          0.9975,
+          0.0015
+        ],
+        [
+          0.9975,
+          0.3135
+        ],
+        [
+          0.7586,
+          0.5213
+        ],
+        [
+          0.6408,
+          0.6005
+        ],
+        [
+          0.5572,
+          0.6324
+        ],
+        [
+          0.4812,
+          0.6332
+        ],
+        [
+          0.4135,
+          0.6157
+        ],
+        [
+          0.3977,
+          0.5982
+        ],
+        [
+          0.3467,
+          0.4932
+        ],
+        [
+          0.3233,
+          0.4132
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/hero-hero-pale-tilted-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-pale-tilted-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1011,
+          328
+        ],
+        "safe_stage_window_origin_px": [
+          1088,
+          390
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.3233,
+            0.4003
+          ],
+          [
+            0.325,
+            0.2519
+          ],
+          [
+            0.3935,
+            0.0015
+          ],
+          [
+            0.9975,
+            0.0015
+          ],
+          [
+            0.9975,
+            0.3135
+          ],
+          [
+            0.7586,
+            0.5213
+          ],
+          [
+            0.6408,
+            0.6005
+          ],
+          [
+            0.5572,
+            0.6324
+          ],
+          [
+            0.4812,
+            0.6332
+          ],
+          [
+            0.4135,
+            0.6157
+          ],
+          [
+            0.3977,
+            0.5982
+          ],
+          [
+            0.3467,
+            0.4932
+          ],
+          [
+            0.3233,
+            0.4132
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3058,
+            0.2161
+          ],
+          [
+            0.3659,
+            0.0
+          ],
+          [
+            0.9992,
+            0.0
+          ],
+          [
+            0.9992,
+            0.3371
+          ],
+          [
+            0.7577,
+            0.5472
+          ],
+          [
+            0.6725,
+            0.605
+          ],
+          [
+            0.396,
+            0.6256
+          ],
+          [
+            0.3826,
+            0.6142
+          ],
+          [
+            0.335,
+            0.5122
+          ],
+          [
+            0.3058,
+            0.2192
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3058,
+          "y": 0.0,
+          "w": 0.6942,
+          "h": 0.6263
+        },
+        "territory_area_px": 508684,
+        "visible_area_px": 545358,
+        "expansion_ratio": 0.933,
+        "neighbors": [
+          {
+            "artifact_id": "module-left-lens-rim-orbit",
+            "shared_edge_px": 122086,
+            "direction": "right",
+            "distance_px": 154.52
+          },
+          {
+            "artifact_id": "module-right-lens-glare-node",
+            "shared_edge_px": 38797,
+            "direction": "right",
+            "distance_px": 221.21
+          },
+          {
+            "artifact_id": "module-field-marker-2",
+            "shared_edge_px": 2876,
+            "direction": "left",
+            "distance_px": 415.14
+          },
+          {
+            "artifact_id": "module-stubble-grain-constellation",
+            "shared_edge_px": 2222,
+            "direction": "down",
+            "distance_px": 588.76
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-hero-pillow-crash-fold",
+      "kind": "hero",
+      "label": "hero pillow crash fold",
+      "artifact_type": "compressed-pillow-fold",
+      "bounds": {
+        "x": 0.542,
+        "y": 0.563,
+        "w": 0.456,
+        "h": 0.432
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.891,
+          0.565
+        ],
+        [
+          0.973,
+          0.616
+        ],
+        [
+          0.998,
+          0.736
+        ],
+        [
+          0.969,
+          0.877
+        ],
+        [
+          0.877,
+          0.969
+        ],
+        [
+          0.725,
+          0.995
+        ],
+        [
+          0.596,
+          0.955
+        ],
+        [
+          0.542,
+          0.847
+        ],
+        [
+          0.592,
+          0.748
+        ],
+        [
+          0.666,
+          0.664
+        ],
+        [
+          0.766,
+          0.594
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/hero-hero-pillow-crash-fold.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-pillow-crash-fold"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1183,
+          762
+        ],
+        "safe_stage_window_origin_px": [
+          1239,
+          798
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.891,
+            0.565
+          ],
+          [
+            0.973,
+            0.616
+          ],
+          [
+            0.998,
+            0.736
+          ],
+          [
+            0.969,
+            0.877
+          ],
+          [
+            0.877,
+            0.969
+          ],
+          [
+            0.725,
+            0.995
+          ],
+          [
+            0.596,
+            0.955
+          ],
+          [
+            0.542,
+            0.847
+          ],
+          [
+            0.592,
+            0.748
+          ],
+          [
+            0.666,
+            0.664
+          ],
+          [
+            0.766,
+            0.594
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5129,
+            0.8455
+          ],
+          [
+            0.6892,
+            0.621
+          ],
+          [
+            0.7652,
+            0.5677
+          ],
+          [
+            0.8906,
+            0.5388
+          ],
+          [
+            0.9716,
+            0.589
+          ],
+          [
+            0.9992,
+            0.6142
+          ],
+          [
+            0.9975,
+            0.8744
+          ],
+          [
+            0.8764,
+            0.9947
+          ],
+          [
+            0.6566,
+            0.9992
+          ],
+          [
+            0.5957,
+            0.9802
+          ],
+          [
+            0.5673,
+            0.9543
+          ],
+          [
+            0.5129,
+            0.847
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5129,
+          "y": 0.5388,
+          "w": 0.4871,
+          "h": 0.4612
+        },
+        "territory_area_px": 236992,
+        "visible_area_px": 219488,
+        "expansion_ratio": 1.08,
+        "neighbors": [
+          {
+            "artifact_id": "module-stubble-grain-constellation",
+            "shared_edge_px": 2421,
+            "direction": "left",
+            "distance_px": 345.79
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-right-lens-glare-node",
+      "kind": "module",
+      "label": "right lens glare node",
+      "artifact_type": "glass-flare-aperture",
+      "bounds": {
+        "x": 0.802,
+        "y": 0.207,
+        "w": 0.083,
+        "h": 0.201
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.833,
+          0.207
+        ],
+        [
+          0.864,
+          0.218
+        ],
+        [
+          0.883,
+          0.253
+        ],
+        [
+          0.885,
+          0.309
+        ],
+        [
+          0.872,
+          0.363
+        ],
+        [
+          0.846,
+          0.408
+        ],
+        [
+          0.819,
+          0.391
+        ],
+        [
+          0.802,
+          0.338
+        ],
+        [
+          0.805,
+          0.279
+        ],
+        [
+          0.817,
+          0.231
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/module-right-lens-glare-node.svg",
+      "source_binding_ids": [
+        "binding-module-right-lens-glare-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1296,
+          298
+        ],
+        "safe_stage_window_origin_px": [
+          1306,
+          315
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.833,
+            0.207
+          ],
+          [
+            0.864,
+            0.218
+          ],
+          [
+            0.883,
+            0.253
+          ],
+          [
+            0.885,
+            0.309
+          ],
+          [
+            0.872,
+            0.363
+          ],
+          [
+            0.846,
+            0.408
+          ],
+          [
+            0.819,
+            0.391
+          ],
+          [
+            0.802,
+            0.338
+          ],
+          [
+            0.805,
+            0.279
+          ],
+          [
+            0.817,
+            0.231
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7778,
+            0.3311
+          ],
+          [
+            0.7811,
+            0.2801
+          ],
+          [
+            0.7978,
+            0.223
+          ],
+          [
+            0.8329,
+            0.1849
+          ],
+          [
+            0.8638,
+            0.1963
+          ],
+          [
+            0.8872,
+            0.2177
+          ],
+          [
+            0.9056,
+            0.2519
+          ],
+          [
+            0.9081,
+            0.2998
+          ],
+          [
+            0.8947,
+            0.3623
+          ],
+          [
+            0.8697,
+            0.4072
+          ],
+          [
+            0.8454,
+            0.4292
+          ],
+          [
+            0.7953,
+            0.3904
+          ],
+          [
+            0.7778,
+            0.3387
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7778,
+          "y": 0.1849,
+          "w": 0.1312,
+          "h": 0.2451
+        },
+        "territory_area_px": 36754,
+        "visible_area_px": 19585,
+        "expansion_ratio": 1.877,
+        "neighbors": [
+          {
+            "artifact_id": "module-left-lens-rim-orbit",
+            "shared_edge_px": 38797,
+            "direction": "left",
+            "distance_px": 67.56
+          },
+          {
+            "artifact_id": "hero-hero-pale-tilted-slab",
+            "shared_edge_px": 38797,
+            "direction": "left",
+            "distance_px": 221.21
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-left-lens-rim-orbit",
+      "kind": "module",
+      "label": "left lens rim orbit",
+      "artifact_type": "transparent-rim-arc",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.106,
+        "w": 0.419,
+        "h": 0.326
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.538,
+          0.151
+        ],
+        [
+          0.609,
+          0.108
+        ],
+        [
+          0.736,
+          0.119
+        ],
+        [
+          0.854,
+          0.185
+        ],
+        [
+          0.925,
+          0.281
+        ],
+        [
+          0.92,
+          0.363
+        ],
+        [
+          0.852,
+          0.423
+        ],
+        [
+          0.725,
+          0.431
+        ],
+        [
+          0.608,
+          0.393
+        ],
+        [
+          0.529,
+          0.309
+        ],
+        [
+          0.508,
+          0.218
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/module-left-lens-rim-orbit.svg",
+      "source_binding_ids": [
+        "binding-module-left-lens-rim-orbit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1102,
+          249
+        ],
+        "safe_stage_window_origin_px": [
+          1154,
+          275
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.538,
+            0.151
+          ],
+          [
+            0.609,
+            0.108
+          ],
+          [
+            0.736,
+            0.119
+          ],
+          [
+            0.854,
+            0.185
+          ],
+          [
+            0.925,
+            0.281
+          ],
+          [
+            0.92,
+            0.363
+          ],
+          [
+            0.852,
+            0.423
+          ],
+          [
+            0.725,
+            0.431
+          ],
+          [
+            0.608,
+            0.393
+          ],
+          [
+            0.529,
+            0.309
+          ],
+          [
+            0.508,
+            0.218
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6617,
+            0.0913
+          ],
+          [
+            0.7352,
+            0.0974
+          ],
+          [
+            0.8538,
+            0.1636
+          ],
+          [
+            0.878,
+            0.1857
+          ],
+          [
+            0.9482,
+            0.2808
+          ],
+          [
+            0.9432,
+            0.3623
+          ],
+          [
+            0.8513,
+            0.4437
+          ],
+          [
+            0.7243,
+            0.4521
+          ],
+          [
+            0.6926,
+            0.4414
+          ],
+          [
+            0.6617,
+            0.0959
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6617,
+          "y": 0.0913,
+          "w": 0.2874,
+          "h": 0.3615
+        },
+        "territory_area_px": 118309,
+        "visible_area_px": 158360,
+        "expansion_ratio": 0.747,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-pale-tilted-slab",
+            "shared_edge_px": 122086,
+            "direction": "left",
+            "distance_px": 154.52
+          },
+          {
+            "artifact_id": "module-right-lens-glare-node",
+            "shared_edge_px": 38797,
+            "direction": "right",
+            "distance_px": 67.56
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-black-shoulder-edge-scar",
+      "kind": "module",
+      "label": "black shoulder edge scar",
+      "artifact_type": "matte-fabric-edge-scar",
+      "bounds": {
+        "x": 0,
+        "y": 0.272,
+        "w": 0.423,
+        "h": 0.724
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0,
+          0.272
+        ],
+        [
+          0.146,
+          0.296
+        ],
+        [
+          0.248,
+          0.399
+        ],
+        [
+          0.338,
+          0.56
+        ],
+        [
+          0.423,
+          0.81
+        ],
+        [
+          0.423,
+          0.996
+        ],
+        [
+          0,
+          0.996
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/module-black-shoulder-edge-scar.svg",
+      "source_binding_ids": [
+        "binding-module-black-shoulder-edge-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          325,
+          590
+        ],
+        "safe_stage_window_origin_px": [
+          377,
+          649
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.272
+          ],
+          [
+            0.146,
+            0.296
+          ],
+          [
+            0.248,
+            0.399
+          ],
+          [
+            0.338,
+            0.56
+          ],
+          [
+            0.423,
+            0.81
+          ],
+          [
+            0.423,
+            0.996
+          ],
+          [
+            0,
+            0.996
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.2504
+          ],
+          [
+            0.1454,
+            0.274
+          ],
+          [
+            0.1721,
+            0.2983
+          ],
+          [
+            0.3342,
+            0.5114
+          ],
+          [
+            0.3617,
+            0.5609
+          ],
+          [
+            0.4461,
+            0.809
+          ],
+          [
+            0.4461,
+            0.9954
+          ],
+          [
+            0.4419,
+            0.9992
+          ],
+          [
+            0.0,
+            0.9992
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.2504,
+          "w": 0.447,
+          "h": 0.7496
+        },
+        "territory_area_px": 393209,
+        "visible_area_px": 382870,
+        "expansion_ratio": 1.027,
+        "neighbors": [
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 21746,
+            "direction": "down",
+            "distance_px": 192.71
+          },
+          {
+            "artifact_id": "module-wall-seam-gray-tick-cluster",
+            "shared_edge_px": 1271,
+            "direction": "up",
+            "distance_px": 503.78
+          },
+          {
+            "artifact_id": "module-stubble-grain-constellation",
+            "shared_edge_px": 1226,
+            "direction": "right",
+            "distance_px": 421.48
+          },
+          {
+            "artifact_id": "module-field-marker-2",
+            "shared_edge_px": 847,
+            "direction": "up",
+            "distance_px": 417.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-stubble-grain-constellation",
+      "kind": "module",
+      "label": "stubble-grain constellation",
+      "artifact_type": "micro-speckle-glints",
+      "bounds": {
+        "x": 0.385,
+        "y": 0.572,
+        "w": 0.327,
+        "h": 0.253
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.449,
+          0.572
+        ],
+        [
+          0.562,
+          0.577
+        ],
+        [
+          0.665,
+          0.622
+        ],
+        [
+          0.712,
+          0.708
+        ],
+        [
+          0.691,
+          0.792
+        ],
+        [
+          0.579,
+          0.825
+        ],
+        [
+          0.456,
+          0.782
+        ],
+        [
+          0.385,
+          0.693
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/module-stubble-grain-constellation.svg",
+      "source_binding_ids": [
+        "binding-module-stubble-grain-constellation"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          842,
+          695
+        ],
+        "safe_stage_window_origin_px": [
+          883,
+          715
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.449,
+            0.572
+          ],
+          [
+            0.562,
+            0.577
+          ],
+          [
+            0.665,
+            0.622
+          ],
+          [
+            0.712,
+            0.708
+          ],
+          [
+            0.691,
+            0.792
+          ],
+          [
+            0.579,
+            0.825
+          ],
+          [
+            0.456,
+            0.782
+          ],
+          [
+            0.385,
+            0.693
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3668,
+            0.6811
+          ],
+          [
+            0.4252,
+            0.5715
+          ],
+          [
+            0.4486,
+            0.5502
+          ],
+          [
+            0.5706,
+            0.5594
+          ],
+          [
+            0.665,
+            0.6005
+          ],
+          [
+            0.6884,
+            0.6218
+          ],
+          [
+            0.7084,
+            0.6583
+          ],
+          [
+            0.6257,
+            0.8318
+          ],
+          [
+            0.5789,
+            0.8463
+          ],
+          [
+            0.4553,
+            0.8029
+          ],
+          [
+            0.4311,
+            0.7808
+          ],
+          [
+            0.3668,
+            0.7002
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3668,
+          "y": 0.5502,
+          "w": 0.3425,
+          "h": 0.2968
+        },
+        "territory_area_px": 111420,
+        "visible_area_px": 93428,
+        "expansion_ratio": 1.193,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-pillow-crash-fold",
+            "shared_edge_px": 2421,
+            "direction": "right",
+            "distance_px": 345.79
+          },
+          {
+            "artifact_id": "hero-hero-pale-tilted-slab",
+            "shared_edge_px": 2222,
+            "direction": "up",
+            "distance_px": 588.76
+          },
+          {
+            "artifact_id": "module-black-shoulder-edge-scar",
+            "shared_edge_px": 1226,
+            "direction": "left",
+            "distance_px": 421.48
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-wall-seam-gray-tick-cluster",
+      "kind": "module",
+      "label": "wall seam gray tick cluster",
+      "artifact_type": "blurred-wall-seam-ticks",
+      "bounds": {
+        "x": 0.205,
+        "y": 0.248,
+        "w": 0.121,
+        "h": 0.197
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.209,
+          0.249
+        ],
+        [
+          0.303,
+          0.248
+        ],
+        [
+          0.326,
+          0.276
+        ],
+        [
+          0.321,
+          0.444
+        ],
+        [
+          0.258,
+          0.428
+        ],
+        [
+          0.206,
+          0.372
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/module-wall-seam-gray-tick-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-wall-seam-gray-tick-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          408,
+          339
+        ],
+        "safe_stage_window_origin_px": [
+          423,
+          355
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.209,
+            0.249
+          ],
+          [
+            0.303,
+            0.248
+          ],
+          [
+            0.326,
+            0.276
+          ],
+          [
+            0.321,
+            0.444
+          ],
+          [
+            0.258,
+            0.428
+          ],
+          [
+            0.206,
+            0.372
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1721,
+            0.3562
+          ],
+          [
+            0.1754,
+            0.2489
+          ],
+          [
+            0.2089,
+            0.2184
+          ],
+          [
+            0.3024,
+            0.2169
+          ],
+          [
+            0.3592,
+            0.2755
+          ],
+          [
+            0.3576,
+            0.3326
+          ],
+          [
+            0.2556,
+            0.4566
+          ],
+          [
+            0.1721,
+            0.3714
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1721,
+          "y": 0.2169,
+          "w": 0.188,
+          "h": 0.2405
+        },
+        "territory_area_px": 49250,
+        "visible_area_px": 31394,
+        "expansion_ratio": 1.569,
+        "neighbors": [
+          {
+            "artifact_id": "module-black-shoulder-edge-scar",
+            "shared_edge_px": 1271,
+            "direction": "down",
+            "distance_px": 503.78
+          },
+          {
+            "artifact_id": "module-field-marker-2",
+            "shared_edge_px": 1122,
+            "direction": "down",
+            "distance_px": 198.55
+          },
+          {
+            "artifact_id": "hero-hero-pale-tilted-slab",
+            "shared_edge_px": 803,
+            "direction": "right",
+            "distance_px": 493.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "reflective-fabric-scratch",
+      "bounds": {
+        "x": 0.119,
+        "y": 0.673,
+        "w": 0.121,
+        "h": 0.259
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.12,
+          0.674
+        ],
+        [
+          0.135,
+          0.692
+        ],
+        [
+          0.161,
+          0.753
+        ],
+        [
+          0.189,
+          0.814
+        ],
+        [
+          0.22,
+          0.887
+        ],
+        [
+          0.24,
+          0.932
+        ],
+        [
+          0.219,
+          0.913
+        ],
+        [
+          0.184,
+          0.85
+        ],
+        [
+          0.151,
+          0.774
+        ],
+        [
+          0.128,
+          0.71
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          276,
+          801
+        ],
+        "safe_stage_window_origin_px": [
+          291,
+          822
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.12,
+            0.674
+          ],
+          [
+            0.135,
+            0.692
+          ],
+          [
+            0.161,
+            0.753
+          ],
+          [
+            0.189,
+            0.814
+          ],
+          [
+            0.22,
+            0.887
+          ],
+          [
+            0.24,
+            0.932
+          ],
+          [
+            0.219,
+            0.913
+          ],
+          [
+            0.184,
+            0.85
+          ],
+          [
+            0.151,
+            0.774
+          ],
+          [
+            0.128,
+            0.71
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1161,
+            0.7435
+          ],
+          [
+            0.1813,
+            0.7466
+          ],
+          [
+            0.2632,
+            0.9307
+          ],
+          [
+            0.2398,
+            0.9528
+          ],
+          [
+            0.1947,
+            0.9117
+          ],
+          [
+            0.1587,
+            0.8463
+          ],
+          [
+            0.1186,
+            0.7511
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1161,
+          "y": 0.7435,
+          "w": 0.1479,
+          "h": 0.21
+        },
+        "territory_area_px": 19850,
+        "visible_area_px": 6746,
+        "expansion_ratio": 2.942,
+        "neighbors": [
+          {
+            "artifact_id": "module-black-shoulder-edge-scar",
+            "shared_edge_px": 21746,
+            "direction": "up",
+            "distance_px": 192.71
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker-2",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "bedside-glass-pressure-rupture",
+      "mask_path": "/editions/2026-08-27-bedside-glass-pressure-rupture-v1/assets/masks/module-field-marker-2.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2565,
+            0.4315
+          ],
+          [
+            0.3584,
+            0.3181
+          ],
+          [
+            0.4394,
+            0.3181
+          ],
+          [
+            0.4628,
+            0.3394
+          ],
+          [
+            0.4628,
+            0.4893
+          ],
+          [
+            0.4394,
+            0.5107
+          ],
+          [
+            0.2799,
+            0.5107
+          ],
+          [
+            0.2565,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2565,
+          "y": 0.3181,
+          "w": 0.2072,
+          "h": 0.1933
+        },
+        "territory_area_px": 51441,
+        "visible_area_px": 38016,
+        "expansion_ratio": 1.353,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-pale-tilted-slab",
+            "shared_edge_px": 2876,
+            "direction": "right",
+            "distance_px": 415.14
+          },
+          {
+            "artifact_id": "module-wall-seam-gray-tick-cluster",
+            "shared_edge_px": 1122,
+            "direction": "up",
+            "distance_px": 198.55
+          },
+          {
+            "artifact_id": "module-black-shoulder-edge-scar",
+            "shared_edge_px": 847,
+            "direction": "down",
+            "distance_px": 417.12
+          }
+        ]
+      }
+    }
+  ]
+}
