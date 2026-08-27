@@ -3459,8 +3459,51 @@
 }
 
 .source-window__body--tweet-embed {
+  position: relative;
   gap: 0;
   overflow: visible;
+}
+
+.tweet-embed-fallback {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: grid;
+  align-content: end;
+  gap: 0.45rem;
+  min-height: 12rem;
+  padding: clamp(0.85rem, 2.8vw, 1.25rem);
+  overflow: hidden;
+  border: 1px solid rgba(147, 197, 253, 0.2);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.96)),
+    radial-gradient(circle at 18% 12%, rgba(96, 165, 250, 0.18), transparent 38%);
+  color: rgba(239, 246, 255, 0.96);
+  pointer-events: none;
+}
+
+.tweet-embed-fallback__kicker,
+.tweet-embed-fallback__cta {
+  color: rgba(125, 211, 252, 0.88);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tweet-embed-fallback strong {
+  max-width: 28rem;
+  font-size: clamp(1rem, 0.86rem + 0.55vw, 1.32rem);
+  line-height: 1.12;
+}
+
+.tweet-embed-fallback p {
+  max-width: 30rem;
+  margin: 0;
+  color: rgba(226, 232, 240, 0.84);
+  font-size: clamp(0.78rem, 0.72rem + 0.2vw, 0.94rem);
+  line-height: 1.32;
 }
 
 .source-window--stage.source-window--tweet-embed-native:not(.source-window--preview) {

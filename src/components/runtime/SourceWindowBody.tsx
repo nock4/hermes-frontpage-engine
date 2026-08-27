@@ -335,8 +335,16 @@ export function SourceWindowBody({
 
   if (descriptor.kind === 'tweet-embed') {
     const tweetEmbedUrl = getTweetEmbedUrl(descriptor.sourceUrl)
+    const fallbackTitle = truncateLabel(binding.source_title || binding.title, 112) || binding.title
+    const fallbackCopy = truncateLabel(getSocialBodyCopy(binding, descriptor), 168)
     return (
       <div className="source-window__body source-window__body--tweet-embed">
+        <article aria-hidden="true" className="tweet-embed-fallback">
+          <span className="tweet-embed-fallback__kicker">{binding.kicker || descriptor.platformLabel}</span>
+          <strong>{fallbackTitle}</strong>
+          {fallbackCopy ? <p>{fallbackCopy}</p> : null}
+          <span className="tweet-embed-fallback__cta">open source ↗</span>
+        </article>
         <iframe
           className="tweet-embed-frame"
           loading="eager"
