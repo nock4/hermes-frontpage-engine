@@ -70,4 +70,26 @@ describe('recent-edition-context', () => {
     expect(keys.has(sourceContentKey({ url: 'https://archive.example/old-anchor' }))).toBe(true)
     expect(keys.has(sourceContentKey({ url: 'https://cdn.example/old-anchor.jpg' }))).toBe(true)
   })
+
+  it('can exclude same-date editions from the ledger for publish repair reruns', () => {
+    tmpRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'frontpage-same-date-context-'))
+    writeJson(path.join(tmpRoot, 'public', 'editions', 'index.json'), {
+      editions: [
+        { edition_id: 'today-bad', date: '2026-08-28', title: 'today', slug: 'today', path: '/editions/today-bad' },
+        { edition_id: 'yesterday', date: '2026-08-27', title: 'yesterday', slug: 'yesterday', path: '/editions/yesterday' },
+      ],
+    })
+    seedEdition(tmpRoot, 'today-bad', [{ source_url: 'https://repair.example/source' }])
+    seedEdition(tmpRoot, 'yesterday', [{ source_url: 'https://archive.example/source' }])
+
+    const keys = getHistoricalSourceKeys({
+      root: tmpRoot,
+      fsSync: fs,
+      sourceContentKey,
+      excludeDates: ['2026-08-28'],
+    })
+
+    expect(keys.has(sourceContentKey({ url: 'https://repair.example/source' }))).toBe(false)
+    expect(keys.has(sourceContentKey({ url: 'https://archive.example/source' }))).toBe(true)
+  })
 })

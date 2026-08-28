@@ -124,7 +124,7 @@ async function main() {
     defaultGenerationName,
     getRecentEditionSummaries: (limit = recentDiversityEditionCount) => getRecentEditionSummaries({ root, fsSync, sourceContentKey, limit }),
     getRecentSourceKeys,
-    getHistoricalSourceKeys: () => getHistoricalSourceKeys({ root, fsSync, sourceContentKey }),
+    getHistoricalSourceKeys: (options = {}) => getHistoricalSourceKeys({ root, fsSync, sourceContentKey, ...options }),
     getRecentDiversityAvoidTerms,
     chooseDiversityDirective,
     startManagedBrowserHarnessBrowser: async (runDir, runId) => startManagedBrowserHarnessBrowser({

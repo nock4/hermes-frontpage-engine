@@ -45,7 +45,9 @@ export async function runFromScratchMode({
   const sampleMode = options.useSampleSignals || (options.sampleDataEnabled && options.inputMode === 'manifest')
   const rawRecentEditions = sampleMode ? [] : getRecentEditionSummaries(recentDiversityEditionCount)
   const recentEditions = rawRecentEditions
-  const recentSourceKeys = sampleMode ? new Set() : (getHistoricalSourceKeys ? getHistoricalSourceKeys() : getRecentSourceKeys(recentEditions))
+  const recentSourceKeys = sampleMode ? new Set() : (getHistoricalSourceKeys
+    ? getHistoricalSourceKeys({ excludeDates: options.publish ? [options.date] : [] })
+    : getRecentSourceKeys(recentEditions))
   const recentDiversityAvoidTerms = sampleMode ? [] : getRecentDiversityAvoidTerms(recentEditions)
   const diversityDirective = sampleMode
     ? 'Sample mode: use the public demo signals as-is rather than suppressing them based on prior local archive history.'

@@ -50,10 +50,14 @@ export function getRecentSourceKeys(recentEditions) {
   return new Set(recentEditions.flatMap((edition) => edition.source_keys || []))
 }
 
-export function getHistoricalSourceKeys({ root, fsSync, sourceContentKey }) {
+export function getHistoricalSourceKeys({ root, fsSync, sourceContentKey, excludeDates = [], excludeEditionIds = [] }) {
   const manifest = loadManifest({ root, fsSync })
   const keys = []
+  const excludedDates = new Set(excludeDates.filter(Boolean))
+  const excludedEditionIds = new Set(excludeEditionIds.filter(Boolean))
   for (const item of manifest.editions || []) {
+    if (excludedEditionIds.has(item.edition_id)) continue
+    if (excludedDates.has(item.date)) continue
     const editionDir = path.join(root, 'public', item.path.replace(/^\//, ''))
     const sourceBindings = readJsonSyncIfExists(path.join(editionDir, 'source-bindings.json'), { fsSync })
     keys.push(...sourceKeysForBindings(sourceBindings?.bindings || [], sourceContentKey))
