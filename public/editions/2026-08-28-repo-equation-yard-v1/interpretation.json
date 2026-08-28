@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-08-28-repo-equation-yard-v1",
+  "edition_id": "2026-08-28-repo-equation-yard-v1",
+  "plate_read_timestamp": "2026-08-28T09:00:05.475Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Wide night engine-yard plate with oversized sticker-equation forms laid over wet vehicle ground: a cropped pale laminate slab at left, central plus/knot/equal/dollar glyph chain, blocky lower equation terrain, cyan disk cuts, orange enamel tile, and small headlamp/glow apertures embedded in the yard.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "free engine parts under bright sticker pressure",
+      "Wide night engine-yard plate with oversized sticker-equation forms laid over wet vehicle ground: a cropped pale laminate slab at left, central plus/knot/equal/dollar glyph chain, blocky lower equation terrain, cyan disk cuts, orange enamel tile, and small headlamp/glow apertures embedded in the yard.",
+      "game-engine-yard",
+      "sticker-equation",
+      "repo-laminate"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Data Loom Map pale laminate slab",
+      "small square repo emblem cut",
+      "main engine-yard banner mass",
+      "central equation knot sticker",
+      "oversized cover-equation slab",
+      "editor viewport fracture",
+      "video-compression bloom aperture",
+      "Distributed Marker"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "repo-equation-yard",
+      "wide oblique game-engine yard used as the spatial ground",
+      "left-to-right graphic equation pressed across the horizontal midline",
+      "lower pixel terrain slab crossing through the scene",
+      "clean repo-laminate field with quiet metric islands",
+      "cropped cyan disk aperture with angular white notch",
+      "editor-pane fractures and vehicle-surface cuts",
+      "cropped pale laminate slab with blue rim"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: repo-equation-yard.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-data-loom-map-pale-laminate-slab",
+      "kind": "hero",
+      "type": "near-white-repo-laminate-panel",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.158,
+        "h": 0.366
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-small-square-repo-emblem-cut",
+      "kind": "hero",
+      "type": "black-white-square-vinyl-notch",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0.071,
+        "w": 0.111,
+        "h": 0.228
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-main-engine-yard-banner-mass",
+      "kind": "module",
+      "type": "hero-scale-blurred-engine-yard",
+      "strength": 0.796872,
+      "bounds": {
+        "x": 0.136,
+        "y": 0.002,
+        "w": 0.616,
+        "h": 0.419
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-central-equation-knot-sticker",
+      "kind": "module",
+      "type": "black-white-equation-knot-gesture",
+      "strength": 0.7676040000000001,
+      "bounds": {
+        "x": 0.177,
+        "y": 0.091,
+        "w": 0.129,
+        "h": 0.228
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-oversized-cover-equation-slab",
+      "kind": "module",
+      "type": "hero-scale-vinyl-equation-slab",
+      "strength": 0.737544,
+      "bounds": {
+        "x": 0.151,
+        "y": 0.368,
+        "w": 0.205,
+        "h": 0.124
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-editor-viewport-fracture",
+      "kind": "module",
+      "type": "glass-editor-pane-seam",
+      "strength": 0.7086,
+      "bounds": {
+        "x": 0.722,
+        "y": 0.198,
+        "w": 0.278,
+        "h": 0.149
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-video-compression-bloom-aperture",
+      "kind": "module",
+      "type": "engine-video-still-aperture",
+      "strength": 0.6812280000000001,
+      "bounds": {
+        "x": 0.138,
+        "y": 0.259,
+        "w": 0.059,
+        "h": 0.089
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.65764,
+      "bounds": {
+        "x": 0.393,
+        "y": 0.304,
+        "w": 0.199,
+        "h": 0.07
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.6528999999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-data-loom-map-pale-laminate-slab-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.158,
+        "h": 0.366
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-small-square-repo-emblem-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.071,
+        "w": 0.111,
+        "h": 0.228
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-main-engine-yard-banner-mass-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.136,
+        "y": 0.002,
+        "w": 0.616,
+        "h": 0.419
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-central-equation-knot-sticker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.177,
+        "y": 0.091,
+        "w": 0.129,
+        "h": 0.228
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-oversized-cover-equation-slab-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.151,
+        "y": 0.368,
+        "w": 0.205,
+        "h": 0.124
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-editor-viewport-fracture-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.722,
+        "y": 0.198,
+        "w": 0.278,
+        "h": 0.149
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-video-compression-bloom-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.138,
+        "y": 0.259,
+        "w": 0.059,
+        "h": 0.089
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.393,
+        "y": 0.304,
+        "w": 0.199,
+        "h": 0.07
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

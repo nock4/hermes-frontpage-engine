@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-28-repo-equation-yard-v1",
+  "edition_id": "2026-08-28-repo-equation-yard-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-28-repo-equation-yard-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-data-loom-map-pale-laminate-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-data-loom-map-pale-laminate-slab",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (near-white-repo-laminate-panel) selected from interpretation."
+    },
+    {
+      "target_id": "hero-small-square-repo-emblem-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-small-square-repo-emblem-cut",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-white-square-vinyl-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-main-engine-yard-banner-mass",
+      "target_kind": "artifact",
+      "artifact_id": "module-main-engine-yard-banner-mass",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-blurred-engine-yard) selected from interpretation."
+    },
+    {
+      "target_id": "module-central-equation-knot-sticker",
+      "target_kind": "artifact",
+      "artifact_id": "module-central-equation-knot-sticker",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-white-equation-knot-gesture) selected from interpretation."
+    },
+    {
+      "target_id": "module-oversized-cover-equation-slab",
+      "target_kind": "artifact",
+      "artifact_id": "module-oversized-cover-equation-slab",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-vinyl-equation-slab) selected from interpretation."
+    },
+    {
+      "target_id": "module-editor-viewport-fracture",
+      "target_kind": "artifact",
+      "artifact_id": "module-editor-viewport-fracture",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glass-editor-pane-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-video-compression-bloom-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-video-compression-bloom-aperture",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (engine-video-still-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-distributed-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-distributed-marker",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (distributed-marker) selected from interpretation."
+    },
+    {
+      "target_id": "module-distributed-marker-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-distributed-marker-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (distributed-marker) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

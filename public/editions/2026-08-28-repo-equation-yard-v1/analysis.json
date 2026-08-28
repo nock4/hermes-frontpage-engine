@@ -1,0 +1,603 @@
+{
+  "analysis_id": "analysis-2026-08-28-repo-equation-yard-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Wide night engine-yard plate with oversized sticker-equation forms laid over wet vehicle ground: a cropped pale laminate slab at left, central plus/knot/equal/dollar glyph chain, blocky lower equation terrain, cyan disk cuts, orange enamel tile, and small headlamp/glow apertures embedded in the yard.",
+  "usable_surfaces": [
+    "cropped pale laminate slab with blue rim",
+    "central black-white knot sticker",
+    "lower blocky equation terrain edge",
+    "cyan circular navigation apertures",
+    "orange enamel tile burn",
+    "wet engine-yard headlamp bloom",
+    "right-side vehicle light cluster",
+    "thin diagonal editor-pane seam"
+  ],
+  "detected_objects": [
+    {
+      "label": "Data Loom Map pale laminate slab",
+      "artifact_type": "near-white-repo-laminate-panel",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.158,
+        "h": 0.366
+      },
+      "polygon": [
+        [
+          0,
+          0.036
+        ],
+        [
+          0.098,
+          0.013
+        ],
+        [
+          0.139,
+          0
+        ],
+        [
+          0.157,
+          0.002
+        ],
+        [
+          0.154,
+          0.073
+        ],
+        [
+          0.149,
+          0.14
+        ],
+        [
+          0.15,
+          0.232
+        ],
+        [
+          0.139,
+          0.318
+        ],
+        [
+          0.113,
+          0.351
+        ],
+        [
+          0.058,
+          0.357
+        ],
+        [
+          0.012,
+          0.366
+        ],
+        [
+          0,
+          0.366
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "large cropped off-white worn slab at the left edge with gritty surface, black inset marks, rounded blue-lit rim, and visible dirt scratches"
+    },
+    {
+      "label": "small square repo emblem cut",
+      "artifact_type": "black-white-square-vinyl-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0,
+        "y": 0.071,
+        "w": 0.111,
+        "h": 0.228
+      },
+      "polygon": [
+        [
+          0.013,
+          0.084
+        ],
+        [
+          0.042,
+          0.073
+        ],
+        [
+          0.04,
+          0.181
+        ],
+        [
+          0.069,
+          0.173
+        ],
+        [
+          0.073,
+          0.09
+        ],
+        [
+          0.108,
+          0.082
+        ],
+        [
+          0.104,
+          0.185
+        ],
+        [
+          0.079,
+          0.193
+        ],
+        [
+          0.076,
+          0.294
+        ],
+        [
+          0.045,
+          0.299
+        ],
+        [
+          0.045,
+          0.206
+        ],
+        [
+          0.003,
+          0.223
+        ],
+        [
+          0,
+          0.118
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "cluster of black rounded rectangular vinyl blocks embedded in the pale left slab, reading as a compact emblem-like notch rather than background"
+    },
+    {
+      "label": "main engine-yard banner mass",
+      "artifact_type": "hero-scale-blurred-engine-yard",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.136,
+        "y": 0.002,
+        "w": 0.616,
+        "h": 0.419
+      },
+      "polygon": [
+        [
+          0.154,
+          0.006
+        ],
+        [
+          0.345,
+          0.004
+        ],
+        [
+          0.457,
+          0.01
+        ],
+        [
+          0.597,
+          0.019
+        ],
+        [
+          0.713,
+          0.043
+        ],
+        [
+          0.748,
+          0.095
+        ],
+        [
+          0.724,
+          0.195
+        ],
+        [
+          0.65,
+          0.249
+        ],
+        [
+          0.552,
+          0.288
+        ],
+        [
+          0.442,
+          0.324
+        ],
+        [
+          0.34,
+          0.374
+        ],
+        [
+          0.235,
+          0.42
+        ],
+        [
+          0.151,
+          0.397
+        ],
+        [
+          0.136,
+          0.313
+        ],
+        [
+          0.151,
+          0.203
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "visible wet night engine yard behind the sticker chain, with blurred vehicles, barrels, lamps, and reflective pavement carrying the wide spatial ground"
+    },
+    {
+      "label": "central equation knot sticker",
+      "artifact_type": "black-white-equation-knot-gesture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.177,
+        "y": 0.091,
+        "w": 0.129,
+        "h": 0.228
+      },
+      "polygon": [
+        [
+          0.224,
+          0.091
+        ],
+        [
+          0.257,
+          0.103
+        ],
+        [
+          0.273,
+          0.142
+        ],
+        [
+          0.281,
+          0.186
+        ],
+        [
+          0.306,
+          0.166
+        ],
+        [
+          0.313,
+          0.205
+        ],
+        [
+          0.288,
+          0.247
+        ],
+        [
+          0.266,
+          0.3
+        ],
+        [
+          0.23,
+          0.314
+        ],
+        [
+          0.196,
+          0.295
+        ],
+        [
+          0.18,
+          0.256
+        ],
+        [
+          0.188,
+          0.212
+        ],
+        [
+          0.214,
+          0.184
+        ],
+        [
+          0.191,
+          0.174
+        ],
+        [
+          0.201,
+          0.127
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "dominant central interlocked black-and-white loop gesture outlined by a bright white sticker edge and blue shadow"
+    },
+    {
+      "label": "oversized cover-equation slab",
+      "artifact_type": "hero-scale-vinyl-equation-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.151,
+        "y": 0.368,
+        "w": 0.205,
+        "h": 0.124
+      },
+      "polygon": [
+        [
+          0.154,
+          0.416
+        ],
+        [
+          0.172,
+          0.417
+        ],
+        [
+          0.172,
+          0.383
+        ],
+        [
+          0.195,
+          0.383
+        ],
+        [
+          0.197,
+          0.409
+        ],
+        [
+          0.217,
+          0.408
+        ],
+        [
+          0.219,
+          0.381
+        ],
+        [
+          0.246,
+          0.38
+        ],
+        [
+          0.247,
+          0.397
+        ],
+        [
+          0.265,
+          0.398
+        ],
+        [
+          0.267,
+          0.37
+        ],
+        [
+          0.288,
+          0.37
+        ],
+        [
+          0.289,
+          0.395
+        ],
+        [
+          0.318,
+          0.395
+        ],
+        [
+          0.319,
+          0.376
+        ],
+        [
+          0.348,
+          0.377
+        ],
+        [
+          0.356,
+          0.441
+        ],
+        [
+          0.151,
+          0.49
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "blocky white lower sticker mass with jagged pixel-equation top edge and dark offset shadow, fused into the terrain band"
+    },
+    {
+      "label": "editor viewport fracture",
+      "artifact_type": "glass-editor-pane-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.722,
+        "y": 0.198,
+        "w": 0.278,
+        "h": 0.149
+      },
+      "polygon": [
+        [
+          0.724,
+          0.345
+        ],
+        [
+          0.769,
+          0.323
+        ],
+        [
+          0.812,
+          0.329
+        ],
+        [
+          0.848,
+          0.328
+        ],
+        [
+          0.884,
+          0.283
+        ],
+        [
+          0.918,
+          0.244
+        ],
+        [
+          0.957,
+          0.219
+        ],
+        [
+          0.989,
+          0.2
+        ],
+        [
+          1,
+          0.208
+        ],
+        [
+          0.963,
+          0.237
+        ],
+        [
+          0.921,
+          0.272
+        ],
+        [
+          0.882,
+          0.331
+        ],
+        [
+          0.819,
+          0.332
+        ],
+        [
+          0.77,
+          0.326
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "thin white diagonal fractured pane lines crossing the right yard surface, forming a shard-like viewport seam rather than a UI panel"
+    },
+    {
+      "label": "video-compression bloom aperture",
+      "artifact_type": "engine-video-still-aperture",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.138,
+        "y": 0.259,
+        "w": 0.059,
+        "h": 0.089
+      },
+      "polygon": [
+        [
+          0.148,
+          0.292
+        ],
+        [
+          0.166,
+          0.273
+        ],
+        [
+          0.188,
+          0.259
+        ],
+        [
+          0.197,
+          0.286
+        ],
+        [
+          0.19,
+          0.329
+        ],
+        [
+          0.168,
+          0.348
+        ],
+        [
+          0.145,
+          0.341
+        ],
+        [
+          0.138,
+          0.313
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "left lower vehicle pocket with cage silhouette, red rear lights, and compression-like wet glow embedded in the engine-yard layer"
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.393,
+        "y": 0.304,
+        "w": 0.199,
+        "h": 0.07
+      },
+      "polygon": [
+        [
+          0.395,
+          0.333
+        ],
+        [
+          0.437,
+          0.319
+        ],
+        [
+          0.485,
+          0.314
+        ],
+        [
+          0.529,
+          0.306
+        ],
+        [
+          0.57,
+          0.304
+        ],
+        [
+          0.591,
+          0.322
+        ],
+        [
+          0.584,
+          0.352
+        ],
+        [
+          0.535,
+          0.361
+        ],
+        [
+          0.488,
+          0.369
+        ],
+        [
+          0.441,
+          0.373
+        ],
+        [
+          0.407,
+          0.362
+        ]
+      ],
+      "confidence": 0.62,
+      "visual_evidence": "distributed chain of small orange barrels, reflective wet flecks, and distant glow marks running through the mid-lower yard beneath the equation stickers"
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.457,
+    "rationale": "The plate is expressionist and readable, driven by a few oversized sticker gestures over a dark yard ground, but the many glyphs, rims, lights, and fractured seam lines make it busier than a minimal negative-space plate."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-28-repo-equation-yard-v1"
+}
