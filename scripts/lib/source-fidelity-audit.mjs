@@ -121,6 +121,7 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
     retained_critical_elements: normalizeStringArray(raw?.retained_critical_elements),
     missing_critical_elements: normalizeStringArray(raw?.missing_critical_elements),
     drift_risks: normalizeStringArray(raw?.drift_risks),
+    forbidden_debug_marks: normalizeStringArray(raw?.forbidden_debug_marks),
     rationale: String(raw?.rationale || '').trim(),
   }
 
@@ -134,6 +135,7 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   const auditText = [
     ...normalized.missing_critical_elements,
     ...normalized.drift_risks,
+    ...normalized.forbidden_debug_marks,
     normalized.rationale,
   ].join(' ').toLowerCase()
   const blockerWarningPatterns = [
@@ -173,9 +175,14 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       label: 'source image recreated instead of borrowed',
       pattern: /(same|identical|near[- ]?identical|almost identical|unchanged).{0,120}(arrangement|object positions|still[- ]?life|three[- ]?vase|camera distance|plinth|composition|layout)|(?:borrow|inspiration|inspired).{0,140}(not enough|insufficient|too literal|same image)/,
     },
+    {
+      label: 'debug-looking numbered source-window marks',
+      pattern: /(?:blue|colored|circular|circle|badge|dot|callout|annotation|pin|marker|label|numbered).{0,80}(?:number|numeral|badge|dot|callout|annotation|pin|marker|label|4|5|7|8)|(?:4|5|7|8).{0,80}(?:blue|circle|badge|dot|callout|annotation|pin|marker|label)/,
+    },
   ]
   const passAuditText = [
     ...normalized.drift_risks,
+    ...normalized.forbidden_debug_marks,
     normalized.rationale,
   ].join(' ').toLowerCase()
   const blockerScopeText = normalized.verdict === 'pass'
@@ -277,6 +284,7 @@ export async function auditSourceImageFidelity(
       retained_critical_elements: ['short phrases'],
       missing_critical_elements: ['short phrases'],
       drift_risks: ['short phrases'],
+      forbidden_debug_marks: ['visible numbered badges/callouts/pins/rings/labels in the generated plate that are not present in the source, or []'],
       rationale: 'short editorial reason',
     },
   }

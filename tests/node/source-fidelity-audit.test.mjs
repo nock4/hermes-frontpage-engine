@@ -457,6 +457,52 @@ describe('source image fidelity audit', () => {
     expect(audit.blockers).toEqual([])
   })
 
+  it('blocks debug-looking numbered callout badges that leak into the generated plate', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-numbered-badges-'))
+    const platePath = path.join(runDir, 'plate.png')
+    await writeFile(platePath, 'fake plate')
+
+    await expect(auditSourceImageFidelity(
+      {
+        payload: {
+          source_image_fingerprints: [
+            {
+              title: 'Game engine equation banner',
+              image_url: 'https://assets.example/banner.jpg',
+              preserve_cues: ['wide equation layout', 'OpenAI knot', 'pixel money symbols'],
+            },
+          ],
+        },
+        platePath,
+      },
+      runDir,
+      {
+        writeJson,
+        createContactSheetImpl: async ({ outputPath }) => {
+          await writeFile(outputPath, 'fake contact sheet')
+          return outputPath
+        },
+        openAiJsonImpl: async () => ({
+          verdict: 'pass',
+          resemblance_score: 0.93,
+          framing_score: 0.9,
+          object_relationship_score: 0.88,
+          context_score: 0.84,
+          transformation_score: 0.82,
+          retained_critical_elements: ['wide equation layout', 'OpenAI knot', 'pixel money symbols'],
+          missing_critical_elements: [],
+          drift_risks: ['plate includes blue circular numbered callout badges 4, 5, 7, and 8 that are not present in the source image'],
+          forbidden_debug_marks: ['blue circular numbered badges on source-window marks'],
+          rationale: 'Source identity remains legible, but numbered annotation markers make the live plate look like debug chrome rather than image-native apertures.',
+        }),
+      },
+    )).rejects.toThrow(/Source-image fidelity QA failed/)
+
+    const audit = JSON.parse(await readFile(path.join(runDir, 'source-fidelity-audit.json'), 'utf8'))
+    expect(audit.pass).toBe(false)
+    expect(audit.blockers).toContain('debug-looking numbered source-window marks')
+  })
+
   it('reports skipped source-field mode as not a source-image fidelity pass', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-skip-'))
     const audit = await auditSourceImageFidelity(

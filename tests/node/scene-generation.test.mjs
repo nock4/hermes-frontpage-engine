@@ -171,6 +171,7 @@ describe('scene generation image prompt', () => {
     expect(prompt).not.toContain('no literal depiction of the source reference image')
     expect(prompt).toContain('never cards, pasted thumbnails')
     expect(prompt).toContain('numbered dots')
+    expect(prompt).toContain('No numbered badges')
     expect(prompt).not.toContain('sky/cloud')
     expect(prompt).not.toContain('vertical shafts')
     expect(prompt).toContain('not as a composition to copy')
