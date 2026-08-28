@@ -1,0 +1,1747 @@
+{
+  "artifact_map_id": "map-2026-08-28-open-engine-collision-rupture-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "open-engine-collision-rupture",
+  "default_artifact_id": "hero-tweet-equation-rupture",
+  "artifacts": [
+    {
+      "id": "hero-tweet-equation-rupture",
+      "kind": "hero",
+      "label": "tweet-equation-rupture",
+      "artifact_type": "hero-scale-sticker-viewport-rupture",
+      "bounds": {
+        "x": 0.365,
+        "y": 0.004,
+        "w": 0.294,
+        "h": 0.71
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.494,
+          0.004
+        ],
+        [
+          0.545,
+          0.022
+        ],
+        [
+          0.57,
+          0.055
+        ],
+        [
+          0.611,
+          0.038
+        ],
+        [
+          0.653,
+          0.078
+        ],
+        [
+          0.659,
+          0.226
+        ],
+        [
+          0.633,
+          0.322
+        ],
+        [
+          0.653,
+          0.509
+        ],
+        [
+          0.609,
+          0.654
+        ],
+        [
+          0.534,
+          0.714
+        ],
+        [
+          0.476,
+          0.669
+        ],
+        [
+          0.416,
+          0.699
+        ],
+        [
+          0.369,
+          0.598
+        ],
+        [
+          0.365,
+          0.376
+        ],
+        [
+          0.389,
+          0.236
+        ],
+        [
+          0.428,
+          0.174
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/hero-tweet-equation-rupture.svg",
+      "source_binding_ids": [
+        "binding-hero-tweet-equation-rupture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          786,
+          309
+        ],
+        "safe_stage_window_origin_px": [
+          823,
+          368
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.494,
+            0.004
+          ],
+          [
+            0.545,
+            0.022
+          ],
+          [
+            0.57,
+            0.055
+          ],
+          [
+            0.611,
+            0.038
+          ],
+          [
+            0.653,
+            0.078
+          ],
+          [
+            0.659,
+            0.226
+          ],
+          [
+            0.633,
+            0.322
+          ],
+          [
+            0.653,
+            0.509
+          ],
+          [
+            0.609,
+            0.654
+          ],
+          [
+            0.534,
+            0.714
+          ],
+          [
+            0.476,
+            0.669
+          ],
+          [
+            0.416,
+            0.699
+          ],
+          [
+            0.369,
+            0.598
+          ],
+          [
+            0.365,
+            0.376
+          ],
+          [
+            0.389,
+            0.236
+          ],
+          [
+            0.428,
+            0.174
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3496,
+            0.5208
+          ],
+          [
+            0.3543,
+            0.3325
+          ],
+          [
+            0.371,
+            0.2359
+          ],
+          [
+            0.4776,
+            0.0
+          ],
+          [
+            0.615,
+            0.0
+          ],
+          [
+            0.653,
+            0.0355
+          ],
+          [
+            0.6707,
+            0.077
+          ],
+          [
+            0.6764,
+            0.2188
+          ],
+          [
+            0.6582,
+            0.5501
+          ],
+          [
+            0.6087,
+            0.6944
+          ],
+          [
+            0.5338,
+            0.7555
+          ],
+          [
+            0.3907,
+            0.6858
+          ],
+          [
+            0.3512,
+            0.5978
+          ],
+          [
+            0.3496,
+            0.5281
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3496,
+          "y": 0.0,
+          "w": 0.3273,
+          "h": 0.7567
+        },
+        "territory_area_px": 225941,
+        "visible_area_px": 254086,
+        "expansion_ratio": 0.889,
+        "neighbors": [
+          {
+            "artifact_id": "hero-editor-xray-slab",
+            "shared_edge_px": 3561,
+            "direction": "up",
+            "distance_px": 241.09
+          },
+          {
+            "artifact_id": "module-cyan-disc-plane-cut",
+            "shared_edge_px": 2979,
+            "direction": "right",
+            "distance_px": 210.94
+          },
+          {
+            "artifact_id": "module-sparse-card-ledger",
+            "shared_edge_px": 2650,
+            "direction": "down",
+            "distance_px": 420.37
+          },
+          {
+            "artifact_id": "module-square-logo-notch",
+            "shared_edge_px": 971,
+            "direction": "left",
+            "distance_px": 382.41
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-editor-xray-slab",
+      "kind": "hero",
+      "label": "editor-xray-slab",
+      "artifact_type": "hero-scale-editor-cutaway-surface",
+      "bounds": {
+        "x": 0.43,
+        "y": 0.052,
+        "w": 0.137,
+        "h": 0.167
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.482,
+          0.052
+        ],
+        [
+          0.536,
+          0.067
+        ],
+        [
+          0.567,
+          0.109
+        ],
+        [
+          0.551,
+          0.148
+        ],
+        [
+          0.514,
+          0.177
+        ],
+        [
+          0.471,
+          0.205
+        ],
+        [
+          0.431,
+          0.219
+        ],
+        [
+          0.434,
+          0.155
+        ],
+        [
+          0.455,
+          0.094
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/hero-editor-xray-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-editor-xray-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          766,
+          125
+        ],
+        "safe_stage_window_origin_px": [
+          783,
+          139
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.482,
+            0.052
+          ],
+          [
+            0.536,
+            0.067
+          ],
+          [
+            0.567,
+            0.109
+          ],
+          [
+            0.551,
+            0.148
+          ],
+          [
+            0.514,
+            0.177
+          ],
+          [
+            0.471,
+            0.205
+          ],
+          [
+            0.431,
+            0.219
+          ],
+          [
+            0.434,
+            0.155
+          ],
+          [
+            0.455,
+            0.094
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4131,
+            0.2139
+          ],
+          [
+            0.4173,
+            0.1504
+          ],
+          [
+            0.4547,
+            0.0513
+          ],
+          [
+            0.4818,
+            0.0098
+          ],
+          [
+            0.5359,
+            0.0244
+          ],
+          [
+            0.5666,
+            0.0672
+          ],
+          [
+            0.5843,
+            0.1088
+          ],
+          [
+            0.551,
+            0.1895
+          ],
+          [
+            0.4729,
+            0.2445
+          ],
+          [
+            0.4308,
+            0.2604
+          ],
+          [
+            0.4131,
+            0.2188
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4131,
+          "y": 0.0098,
+          "w": 0.1717,
+          "h": 0.2518
+        },
+        "territory_area_px": 43540,
+        "visible_area_px": 21665,
+        "expansion_ratio": 2.01,
+        "neighbors": [
+          {
+            "artifact_id": "hero-tweet-equation-rupture",
+            "shared_edge_px": 3561,
+            "direction": "down",
+            "distance_px": 241.09
+          },
+          {
+            "artifact_id": "module-cyan-disc-plane-cut",
+            "shared_edge_px": 309,
+            "direction": "right",
+            "distance_px": 225.09
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-wide-cover-sticker-edge",
+      "kind": "module",
+      "label": "wide-cover-sticker-edge",
+      "artifact_type": "wide-sticker-edge-aperture",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0538,
+        "w": 0.2659,
+        "h": 0.6968
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.001,
+          0.0575
+        ],
+        [
+          0.2367,
+          0.1296
+        ],
+        [
+          0.2461,
+          0.1577
+        ],
+        [
+          0.2622,
+          0.2653
+        ],
+        [
+          0.2638,
+          0.412
+        ],
+        [
+          0.2633,
+          0.6247
+        ],
+        [
+          0.2523,
+          0.7115
+        ],
+        [
+          0.2409,
+          0.7408
+        ],
+        [
+          0.1608,
+          0.7457
+        ],
+        [
+          0.001,
+          0.7176
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/module-wide-cover-sticker-edge.svg",
+      "source_binding_ids": [
+        "binding-module-wide-cover-sticker-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          194,
+          332
+        ],
+        "safe_stage_window_origin_px": [
+          225,
+          389
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.001,
+            0.0575
+          ],
+          [
+            0.2367,
+            0.1296
+          ],
+          [
+            0.2461,
+            0.1577
+          ],
+          [
+            0.2622,
+            0.2653
+          ],
+          [
+            0.2638,
+            0.412
+          ],
+          [
+            0.2633,
+            0.6247
+          ],
+          [
+            0.2523,
+            0.7115
+          ],
+          [
+            0.2409,
+            0.7408
+          ],
+          [
+            0.1608,
+            0.7457
+          ],
+          [
+            0.001,
+            0.7176
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0244
+          ],
+          [
+            0.2362,
+            0.0954
+          ],
+          [
+            0.2607,
+            0.1565
+          ],
+          [
+            0.2763,
+            0.2641
+          ],
+          [
+            0.2778,
+            0.5183
+          ],
+          [
+            0.2778,
+            0.6259
+          ],
+          [
+            0.2674,
+            0.7054
+          ],
+          [
+            0.1961,
+            0.7763
+          ],
+          [
+            0.1608,
+            0.7787
+          ],
+          [
+            0.0,
+            0.7494
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0232,
+          "w": 0.2784,
+          "h": 0.7567
+        },
+        "territory_area_px": 248411,
+        "visible_area_px": 259817,
+        "expansion_ratio": 0.956,
+        "neighbors": [
+          {
+            "artifact_id": "module-minimal-repo-tile",
+            "shared_edge_px": 4403,
+            "direction": "down",
+            "distance_px": 225.51
+          },
+          {
+            "artifact_id": "module-sparse-card-ledger",
+            "shared_edge_px": 3195,
+            "direction": "right",
+            "distance_px": 617.18
+          },
+          {
+            "artifact_id": "module-square-logo-notch",
+            "shared_edge_px": 974,
+            "direction": "right",
+            "distance_px": 343.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-sparse-card-ledger",
+      "kind": "module",
+      "label": "sparse-card-ledger",
+      "artifact_type": "off-white-ledger-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.68,
+        "w": 0.724,
+        "h": 0.276
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0,
+          0.681
+        ],
+        [
+          0.08,
+          0.694
+        ],
+        [
+          0.157,
+          0.717
+        ],
+        [
+          0.247,
+          0.743
+        ],
+        [
+          0.35,
+          0.733
+        ],
+        [
+          0.458,
+          0.704
+        ],
+        [
+          0.563,
+          0.707
+        ],
+        [
+          0.661,
+          0.711
+        ],
+        [
+          0.724,
+          0.731
+        ],
+        [
+          0.711,
+          0.94
+        ],
+        [
+          0.541,
+          0.954
+        ],
+        [
+          0.321,
+          0.951
+        ],
+        [
+          0.134,
+          0.94
+        ],
+        [
+          0.003,
+          0.918
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/module-sparse-card-ledger.svg",
+      "source_binding_ids": [
+        "binding-module-sparse-card-ledger"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          556,
+          815
+        ],
+        "safe_stage_window_origin_px": [
+          645,
+          838
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.681
+          ],
+          [
+            0.08,
+            0.694
+          ],
+          [
+            0.157,
+            0.717
+          ],
+          [
+            0.247,
+            0.743
+          ],
+          [
+            0.35,
+            0.733
+          ],
+          [
+            0.458,
+            0.704
+          ],
+          [
+            0.563,
+            0.707
+          ],
+          [
+            0.661,
+            0.711
+          ],
+          [
+            0.724,
+            0.731
+          ],
+          [
+            0.711,
+            0.94
+          ],
+          [
+            0.541,
+            0.954
+          ],
+          [
+            0.321,
+            0.951
+          ],
+          [
+            0.134,
+            0.94
+          ],
+          [
+            0.003,
+            0.918
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.7506
+          ],
+          [
+            0.2206,
+            0.7005
+          ],
+          [
+            0.4579,
+            0.6687
+          ],
+          [
+            0.6608,
+            0.676
+          ],
+          [
+            0.7237,
+            0.6956
+          ],
+          [
+            0.7383,
+            0.7298
+          ],
+          [
+            0.7253,
+            0.9389
+          ],
+          [
+            0.7107,
+            0.9731
+          ],
+          [
+            0.5406,
+            0.9878
+          ],
+          [
+            0.3205,
+            0.9841
+          ],
+          [
+            0.1337,
+            0.9731
+          ],
+          [
+            0.0026,
+            0.9511
+          ],
+          [
+            0.0,
+            0.945
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.6687,
+          "w": 0.7388,
+          "h": 0.3203
+        },
+        "territory_area_px": 298931,
+        "visible_area_px": 258921,
+        "expansion_ratio": 1.155,
+        "neighbors": [
+          {
+            "artifact_id": "module-wide-cover-sticker-edge",
+            "shared_edge_px": 3195,
+            "direction": "left",
+            "distance_px": 617.18
+          },
+          {
+            "artifact_id": "hero-tweet-equation-rupture",
+            "shared_edge_px": 2650,
+            "direction": "up",
+            "distance_px": 420.37
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-cyan-disc-plane-cut",
+      "kind": "module",
+      "label": "cyan-disc-plane-cut",
+      "artifact_type": "cyan-disc-glint",
+      "bounds": {
+        "x": 0.563,
+        "y": 0.165,
+        "w": 0.077,
+        "h": 0.171
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.573,
+          0.165
+        ],
+        [
+          0.604,
+          0.18
+        ],
+        [
+          0.629,
+          0.216
+        ],
+        [
+          0.64,
+          0.272
+        ],
+        [
+          0.626,
+          0.322
+        ],
+        [
+          0.592,
+          0.336
+        ],
+        [
+          0.567,
+          0.308
+        ],
+        [
+          0.563,
+          0.247
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/module-cyan-disc-plane-cut.svg",
+      "source_binding_ids": [
+        "binding-module-cyan-disc-plane-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          924,
+          243
+        ],
+        "safe_stage_window_origin_px": [
+          933,
+          257
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.573,
+            0.165
+          ],
+          [
+            0.604,
+            0.18
+          ],
+          [
+            0.629,
+            0.216
+          ],
+          [
+            0.64,
+            0.272
+          ],
+          [
+            0.626,
+            0.322
+          ],
+          [
+            0.592,
+            0.336
+          ],
+          [
+            0.567,
+            0.308
+          ],
+          [
+            0.563,
+            0.247
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5484,
+            0.2457
+          ],
+          [
+            0.5578,
+            0.1663
+          ],
+          [
+            0.5728,
+            0.1296
+          ],
+          [
+            0.6035,
+            0.1455
+          ],
+          [
+            0.6285,
+            0.1809
+          ],
+          [
+            0.6431,
+            0.2152
+          ],
+          [
+            0.6545,
+            0.2702
+          ],
+          [
+            0.641,
+            0.3203
+          ],
+          [
+            0.6259,
+            0.3557
+          ],
+          [
+            0.5916,
+            0.3692
+          ],
+          [
+            0.5666,
+            0.3411
+          ],
+          [
+            0.5598,
+            0.3252
+          ],
+          [
+            0.551,
+            0.2897
+          ],
+          [
+            0.5484,
+            0.2506
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5484,
+          "y": 0.1296,
+          "w": 0.1067,
+          "h": 0.2408
+        },
+        "territory_area_px": 28411,
+        "visible_area_px": 14983,
+        "expansion_ratio": 1.896,
+        "neighbors": [
+          {
+            "artifact_id": "hero-tweet-equation-rupture",
+            "shared_edge_px": 2979,
+            "direction": "left",
+            "distance_px": 210.94
+          },
+          {
+            "artifact_id": "hero-editor-xray-slab",
+            "shared_edge_px": 309,
+            "direction": "left",
+            "distance_px": 225.09
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-square-logo-notch",
+      "kind": "module",
+      "label": "square-logo-notch",
+      "artifact_type": "black-outline-icon-notch",
+      "bounds": {
+        "x": 0.2747,
+        "y": 0.302,
+        "w": 0.0879,
+        "h": 0.2518
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.2763,
+          0.3826
+        ],
+        [
+          0.3012,
+          0.3056
+        ],
+        [
+          0.3236,
+          0.3068
+        ],
+        [
+          0.3606,
+          0.3814
+        ],
+        [
+          0.3564,
+          0.456
+        ],
+        [
+          0.3273,
+          0.5428
+        ],
+        [
+          0.3096,
+          0.5489
+        ],
+        [
+          0.3002,
+          0.5452
+        ],
+        [
+          0.2763,
+          0.4572
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/module-square-logo-notch.svg",
+      "source_binding_ids": [
+        "binding-module-square-logo-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          487,
+          420
+        ],
+        "safe_stage_window_origin_px": [
+          497,
+          440
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.2763,
+            0.3826
+          ],
+          [
+            0.3012,
+            0.3056
+          ],
+          [
+            0.3236,
+            0.3068
+          ],
+          [
+            0.3606,
+            0.3814
+          ],
+          [
+            0.3564,
+            0.456
+          ],
+          [
+            0.3273,
+            0.5428
+          ],
+          [
+            0.3096,
+            0.5489
+          ],
+          [
+            0.3002,
+            0.5452
+          ],
+          [
+            0.2763,
+            0.4572
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3814
+          ],
+          [
+            0.3007,
+            0.2702
+          ],
+          [
+            0.3231,
+            0.2714
+          ],
+          [
+            0.3751,
+            0.3802
+          ],
+          [
+            0.371,
+            0.456
+          ],
+          [
+            0.3273,
+            0.577
+          ],
+          [
+            0.2997,
+            0.5782
+          ],
+          [
+            0.2846,
+            0.5428
+          ],
+          [
+            0.2617,
+            0.456
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.2702,
+          "w": 0.1139,
+          "h": 0.3142
+        },
+        "territory_area_px": 39319,
+        "visible_area_px": 23779,
+        "expansion_ratio": 1.654,
+        "neighbors": [
+          {
+            "artifact_id": "module-wide-cover-sticker-edge",
+            "shared_edge_px": 974,
+            "direction": "left",
+            "distance_px": 343.12
+          },
+          {
+            "artifact_id": "hero-tweet-equation-rupture",
+            "shared_edge_px": 971,
+            "direction": "right",
+            "distance_px": 382.41
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-minimal-repo-tile",
+      "kind": "module",
+      "label": "minimal-repo-tile",
+      "artifact_type": "thumbnail-collision-tile",
+      "bounds": {
+        "x": 0.007,
+        "y": 0.565,
+        "w": 0.163,
+        "h": 0.104
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.009,
+          0.567
+        ],
+        [
+          0.167,
+          0.565
+        ],
+        [
+          0.17,
+          0.635
+        ],
+        [
+          0.159,
+          0.662
+        ],
+        [
+          0.083,
+          0.669
+        ],
+        [
+          0.009,
+          0.666
+        ],
+        [
+          0.007,
+          0.617
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/module-minimal-repo-tile.svg",
+      "source_binding_ids": [
+        "binding-module-minimal-repo-tile"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          136,
+          623
+        ],
+        "safe_stage_window_origin_px": [
+          156,
+          632
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.009,
+            0.567
+          ],
+          [
+            0.167,
+            0.565
+          ],
+          [
+            0.17,
+            0.635
+          ],
+          [
+            0.159,
+            0.662
+          ],
+          [
+            0.083,
+            0.669
+          ],
+          [
+            0.009,
+            0.666
+          ],
+          [
+            0.007,
+            0.617
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.5526
+          ],
+          [
+            0.0088,
+            0.5318
+          ],
+          [
+            0.1212,
+            0.5318
+          ],
+          [
+            0.1821,
+            0.6015
+          ],
+          [
+            0.1842,
+            0.6296
+          ],
+          [
+            0.1587,
+            0.6956
+          ],
+          [
+            0.0088,
+            0.6993
+          ],
+          [
+            0.0,
+            0.6785
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.5318,
+          "w": 0.1847,
+          "h": 0.1724
+        },
+        "territory_area_px": 43693,
+        "visible_area_px": 25180,
+        "expansion_ratio": 1.735,
+        "neighbors": [
+          {
+            "artifact_id": "module-wide-cover-sticker-edge",
+            "shared_edge_px": 4403,
+            "direction": "up",
+            "distance_px": 225.51
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-video-glare-bite",
+      "kind": "module",
+      "label": "video-glare-bite",
+      "artifact_type": "compressed-video-seam",
+      "bounds": {
+        "x": 0.666,
+        "y": 0.465,
+        "w": 0.074,
+        "h": 0.079
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.671,
+          0.466
+        ],
+        [
+          0.734,
+          0.466
+        ],
+        [
+          0.74,
+          0.495
+        ],
+        [
+          0.732,
+          0.535
+        ],
+        [
+          0.677,
+          0.544
+        ],
+        [
+          0.666,
+          0.518
+        ],
+        [
+          0.672,
+          0.493
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/module-video-glare-bite.svg",
+      "source_binding_ids": [
+        "binding-module-video-glare-bite"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1080,
+          510
+        ],
+        "safe_stage_window_origin_px": [
+          1089,
+          517
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.671,
+            0.466
+          ],
+          [
+            0.734,
+            0.466
+          ],
+          [
+            0.74,
+            0.495
+          ],
+          [
+            0.732,
+            0.535
+          ],
+          [
+            0.677,
+            0.544
+          ],
+          [
+            0.666,
+            0.518
+          ],
+          [
+            0.672,
+            0.493
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6452,
+            0.5171
+          ],
+          [
+            0.6498,
+            0.4658
+          ],
+          [
+            0.6707,
+            0.4169
+          ],
+          [
+            0.7336,
+            0.4169
+          ],
+          [
+            0.7549,
+            0.467
+          ],
+          [
+            0.7607,
+            0.4939
+          ],
+          [
+            0.7523,
+            0.5342
+          ],
+          [
+            0.7315,
+            0.5831
+          ],
+          [
+            0.6769,
+            0.5917
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6452,
+          "y": 0.4169,
+          "w": 0.116,
+          "h": 0.176
+        },
+        "territory_area_px": 24718,
+        "visible_area_px": 7638,
+        "expansion_ratio": 3.236,
+        "neighbors": [
+          {
+            "artifact_id": "module-distributed-marker",
+            "shared_edge_px": 725,
+            "direction": "right",
+            "distance_px": 361.9
+          },
+          {
+            "artifact_id": "hero-tweet-equation-rupture",
+            "shared_edge_px": 587,
+            "direction": "left",
+            "distance_px": 366.01
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.745,
+        "y": 0.063,
+        "w": 0.255,
+        "h": 0.5
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.774,
+          0.063
+        ],
+        [
+          0.818,
+          0.064
+        ],
+        [
+          0.821,
+          0.111
+        ],
+        [
+          0.853,
+          0.111
+        ],
+        [
+          0.855,
+          0.069
+        ],
+        [
+          0.894,
+          0.069
+        ],
+        [
+          0.897,
+          0.119
+        ],
+        [
+          0.932,
+          0.119
+        ],
+        [
+          0.937,
+          0.063
+        ],
+        [
+          0.98,
+          0.067
+        ],
+        [
+          0.998,
+          0.141
+        ],
+        [
+          0.997,
+          0.542
+        ],
+        [
+          0.951,
+          0.559
+        ],
+        [
+          0.903,
+          0.539
+        ],
+        [
+          0.854,
+          0.559
+        ],
+        [
+          0.806,
+          0.536
+        ],
+        [
+          0.758,
+          0.553
+        ],
+        [
+          0.746,
+          0.407
+        ]
+      ],
+      "cluster_id": "open-engine-collision-rupture",
+      "mask_path": "/editions/2026-08-28-open-engine-collision-rupture-v1/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          280
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          321
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.774,
+            0.063
+          ],
+          [
+            0.818,
+            0.064
+          ],
+          [
+            0.821,
+            0.111
+          ],
+          [
+            0.853,
+            0.111
+          ],
+          [
+            0.855,
+            0.069
+          ],
+          [
+            0.894,
+            0.069
+          ],
+          [
+            0.897,
+            0.119
+          ],
+          [
+            0.932,
+            0.119
+          ],
+          [
+            0.937,
+            0.063
+          ],
+          [
+            0.98,
+            0.067
+          ],
+          [
+            0.998,
+            0.141
+          ],
+          [
+            0.997,
+            0.542
+          ],
+          [
+            0.951,
+            0.559
+          ],
+          [
+            0.903,
+            0.539
+          ],
+          [
+            0.854,
+            0.559
+          ],
+          [
+            0.806,
+            0.536
+          ],
+          [
+            0.758,
+            0.553
+          ],
+          [
+            0.746,
+            0.407
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.731,
+            0.4034
+          ],
+          [
+            0.7586,
+            0.066
+          ],
+          [
+            0.7737,
+            0.0281
+          ],
+          [
+            0.9797,
+            0.0318
+          ],
+          [
+            0.9995,
+            0.0868
+          ],
+          [
+            0.9995,
+            0.5697
+          ],
+          [
+            0.9969,
+            0.5758
+          ],
+          [
+            0.9506,
+            0.5929
+          ],
+          [
+            0.7575,
+            0.5868
+          ],
+          [
+            0.744,
+            0.555
+          ],
+          [
+            0.731,
+            0.4083
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.731,
+          "y": 0.0281,
+          "w": 0.269,
+          "h": 0.566
+        },
+        "territory_area_px": 214523,
+        "visible_area_px": 176132,
+        "expansion_ratio": 1.218,
+        "neighbors": [
+          {
+            "artifact_id": "module-video-glare-bite",
+            "shared_edge_px": 725,
+            "direction": "left",
+            "distance_px": 361.9
+          }
+        ]
+      }
+    }
+  ]
+}

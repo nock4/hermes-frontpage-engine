@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-08-28-open-engine-collision-rupture-v1",
+  "edition_id": "2026-08-28-open-engine-collision-rupture-v1",
+  "plate_read_timestamp": "2026-08-28T08:13:10.173Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Wide expressionist collision plate: a torn white sticker mass on the left, a central black-and-white knot aperture, pixel-stone ledge across the bottom, and hard green pixel currency icons on the right over a blurred game-street ground. Visible source windows are carried by sticker seams, inset thumbnail slits, the knot’s inner viewports, square notches, glare cuts, and pixel-block surfaces.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright freeware engine under collision pressure",
+      "Wide expressionist collision plate: a torn white sticker mass on the left, a central black-and-white knot aperture, pixel-stone ledge across the bottom, and hard green pixel currency icons on the right over a blurred game-street ground. Visible source windows are carried by sticker seams, inset thumbnail slits, the knot’s inner viewports, square notches, glare cuts, and pixel-block surfaces.",
+      "game-engine-rupture",
+      "sticker-apertures",
+      "cyan-disc"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "tweet-equation-rupture",
+      "editor-xray-slab",
+      "wide-cover-sticker-edge",
+      "sparse-card-ledger",
+      "cyan-disc-plane-cut",
+      "square-logo-notch",
+      "minimal-repo-tile",
+      "video-glare-bite"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "open-engine-collision-rupture",
+      "one impossible oversized game-surface rupture spanning the plate",
+      "horizontal equation band of four abstract graphic masses",
+      "bottom-edge collision ledge of wheels, barriers, terrain bites, and viewport slabs",
+      "large cyan circular field cut by a white upward-right plane gesture",
+      "sticker-outline apertures and pixel-symbol notches carrying source marks",
+      "x-ray editor cutaways embedded inside the glossy game surface",
+      "left torn white sticker shell with black outline"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: open-engine-collision-rupture.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-tweet-equation-rupture",
+      "kind": "hero",
+      "type": "hero-scale-sticker-viewport-rupture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.365,
+        "y": 0.004,
+        "w": 0.294,
+        "h": 0.71
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-editor-xray-slab",
+      "kind": "hero",
+      "type": "hero-scale-editor-cutaway-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.43,
+        "y": 0.052,
+        "w": 0.137,
+        "h": 0.167
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-wide-cover-sticker-edge",
+      "kind": "module",
+      "type": "wide-sticker-edge-aperture",
+      "strength": 0.786084,
+      "bounds": {
+        "x": 0,
+        "y": 0.0538,
+        "w": 0.2659,
+        "h": 0.6968
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sparse-card-ledger",
+      "kind": "module",
+      "type": "off-white-ledger-surface",
+      "strength": 0.7529520000000001,
+      "bounds": {
+        "x": 0,
+        "y": 0.68,
+        "w": 0.724,
+        "h": 0.276
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-cyan-disc-plane-cut",
+      "kind": "module",
+      "type": "cyan-disc-glint",
+      "strength": 0.741096,
+      "bounds": {
+        "x": 0.563,
+        "y": 0.165,
+        "w": 0.077,
+        "h": 0.171
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-square-logo-notch",
+      "kind": "module",
+      "type": "black-outline-icon-notch",
+      "strength": 0.699144,
+      "bounds": {
+        "x": 0.2747,
+        "y": 0.302,
+        "w": 0.0879,
+        "h": 0.2518
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-minimal-repo-tile",
+      "kind": "module",
+      "type": "thumbnail-collision-tile",
+      "strength": 0.6821880000000001,
+      "bounds": {
+        "x": 0.007,
+        "y": 0.565,
+        "w": 0.163,
+        "h": 0.104
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-video-glare-bite",
+      "kind": "module",
+      "type": "compressed-video-seam",
+      "strength": 0.6501279999999999,
+      "bounds": {
+        "x": 0.666,
+        "y": 0.465,
+        "w": 0.074,
+        "h": 0.079
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.652528,
+      "bounds": {
+        "x": 0.745,
+        "y": 0.063,
+        "w": 0.255,
+        "h": 0.5
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-tweet-equation-rupture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.365,
+        "y": 0.004,
+        "w": 0.294,
+        "h": 0.71
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-editor-xray-slab-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.43,
+        "y": 0.052,
+        "w": 0.137,
+        "h": 0.167
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-wide-cover-sticker-edge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.0538,
+        "w": 0.2659,
+        "h": 0.6968
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sparse-card-ledger-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.68,
+        "w": 0.724,
+        "h": 0.276
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-cyan-disc-plane-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.563,
+        "y": 0.165,
+        "w": 0.077,
+        "h": 0.171
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-square-logo-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2747,
+        "y": 0.302,
+        "w": 0.0879,
+        "h": 0.2518
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-minimal-repo-tile-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.007,
+        "y": 0.565,
+        "w": 0.163,
+        "h": 0.104
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-video-glare-bite-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.666,
+        "y": 0.465,
+        "w": 0.074,
+        "h": 0.079
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.745,
+        "y": 0.063,
+        "w": 0.255,
+        "h": 0.5
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
