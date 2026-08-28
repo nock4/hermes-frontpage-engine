@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-27-botanical-shale-threshold-v1",
+  "edition_id": "2026-08-27-botanical-shale-threshold-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-27-botanical-shale-threshold-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-powder-wing-edge",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-powder-wing-edge",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (powdery-wing-edge) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-shale-bloom-panorama",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-shale-bloom-panorama",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (shale-bloom-panorama) selected from interpretation."
+    },
+    {
+      "target_id": "module-diagonal-branch-gesture",
+      "target_kind": "artifact",
+      "artifact_id": "module-diagonal-branch-gesture",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (foreground-gesture-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-left-pale-rule-stack",
+      "target_kind": "artifact",
+      "artifact_id": "module-left-pale-rule-stack",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (illegible-rule-stack) selected from interpretation."
+    },
+    {
+      "target_id": "module-bean-shaped-bud-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "module-bean-shaped-bud-aperture",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rounded-bud-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-viewfinder-twig-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-viewfinder-twig-node",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (twig-intersection-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-distant-green-civic-ridge",
+      "target_kind": "artifact",
+      "artifact_id": "module-distant-green-civic-ridge",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (background-ridge-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-viewfinder-twig-node-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-viewfinder-twig-node-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (twig-intersection-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-distant-green-civic-ridge-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-distant-green-civic-ridge-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (background-ridge-cut) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

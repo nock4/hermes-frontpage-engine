@@ -1,0 +1,555 @@
+{
+  "analysis_id": "analysis-2026-08-27-botanical-shale-threshold-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark green botanical plate with a large pale butterfly wing, orange bud mound, shale-like lower slope, twig gestures, pale rule stacks, and multiple narrow source slits embedded as physical marks rather than cards.",
+  "usable_surfaces": [
+    "pale butterfly wing and rim speckles",
+    "orange bud mound",
+    "shale and bark foreground slope",
+    "diagonal twig seam across the canopy",
+    "left pale rule stack",
+    "narrow photographic slits",
+    "small orange bud apertures",
+    "twig crossing node near lower right"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero powder-wing edge",
+      "artifact_type": "powdery-wing-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.615,
+        "y": 0.024,
+        "w": 0.37,
+        "h": 0.434
+      },
+      "polygon": [
+        [
+          0.616,
+          0.024
+        ],
+        [
+          0.731,
+          0.024
+        ],
+        [
+          0.853,
+          0.025
+        ],
+        [
+          0.944,
+          0.04
+        ],
+        [
+          0.982,
+          0.103
+        ],
+        [
+          0.982,
+          0.206
+        ],
+        [
+          0.958,
+          0.302
+        ],
+        [
+          0.905,
+          0.386
+        ],
+        [
+          0.809,
+          0.416
+        ],
+        [
+          0.71,
+          0.377
+        ],
+        [
+          0.648,
+          0.294
+        ],
+        [
+          0.625,
+          0.178
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "The large pale butterfly wing dominates the upper right; its powdery surface, black pinholes, orange rim scars, and torn scalloped edge are plainly visible."
+    },
+    {
+      "label": "hero shale-bloom panorama",
+      "artifact_type": "shale-bloom-panorama",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.399,
+        "y": 0.316,
+        "w": 0.599,
+        "h": 0.637
+      },
+      "polygon": [
+        [
+          0.574,
+          0.317
+        ],
+        [
+          0.701,
+          0.371
+        ],
+        [
+          0.83,
+          0.344
+        ],
+        [
+          0.978,
+          0.322
+        ],
+        [
+          0.998,
+          0.432
+        ],
+        [
+          0.963,
+          0.665
+        ],
+        [
+          0.903,
+          0.832
+        ],
+        [
+          0.813,
+          0.924
+        ],
+        [
+          0.645,
+          0.953
+        ],
+        [
+          0.44,
+          0.949
+        ],
+        [
+          0.399,
+          0.861
+        ],
+        [
+          0.464,
+          0.732
+        ],
+        [
+          0.495,
+          0.587
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The right foreground reads as a single terrain event: orange bud bloom rising into a gray bark/shale shelf with cropped pressure along the bottom edge."
+    },
+    {
+      "label": "diagonal branch gesture",
+      "artifact_type": "foreground-gesture-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.013,
+        "y": 0.039,
+        "w": 0.591,
+        "h": 0.158
+      },
+      "polygon": [
+        [
+          0.013,
+          0.071
+        ],
+        [
+          0.098,
+          0.06
+        ],
+        [
+          0.18,
+          0.084
+        ],
+        [
+          0.257,
+          0.105
+        ],
+        [
+          0.357,
+          0.104
+        ],
+        [
+          0.472,
+          0.087
+        ],
+        [
+          0.604,
+          0.083
+        ],
+        [
+          0.6,
+          0.111
+        ],
+        [
+          0.473,
+          0.113
+        ],
+        [
+          0.357,
+          0.132
+        ],
+        [
+          0.248,
+          0.128
+        ],
+        [
+          0.172,
+          0.107
+        ],
+        [
+          0.091,
+          0.083
+        ],
+        [
+          0.016,
+          0.095
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "A thin brown branch crosses the top-left canopy diagonally, with knots and broken twig joints forming a visible seam."
+    },
+    {
+      "label": "left pale rule stack",
+      "artifact_type": "illegible-rule-stack",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.096,
+        "y": 0.256,
+        "w": 0.184,
+        "h": 0.416
+      },
+      "polygon": [
+        [
+          0.097,
+          0.256
+        ],
+        [
+          0.166,
+          0.256
+        ],
+        [
+          0.166,
+          0.282
+        ],
+        [
+          0.096,
+          0.282
+        ],
+        [
+          0.096,
+          0.318
+        ],
+        [
+          0.278,
+          0.319
+        ],
+        [
+          0.28,
+          0.386
+        ],
+        [
+          0.097,
+          0.387
+        ],
+        [
+          0.097,
+          0.417
+        ],
+        [
+          0.244,
+          0.417
+        ],
+        [
+          0.244,
+          0.482
+        ],
+        [
+          0.096,
+          0.482
+        ],
+        [
+          0.096,
+          0.566
+        ],
+        [
+          0.274,
+          0.567
+        ],
+        [
+          0.274,
+          0.626
+        ],
+        [
+          0.098,
+          0.626
+        ],
+        [
+          0.097,
+          0.672
+        ],
+        [
+          0.174,
+          0.672
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "The left side contains stacked pale bars and illegible white marks, separated from the organic image like a rigid social-source rule stack."
+    },
+    {
+      "label": "bean-shaped bud aperture",
+      "artifact_type": "rounded-bud-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.762,
+        "y": 0.421,
+        "w": 0.045,
+        "h": 0.115
+      },
+      "polygon": [
+        [
+          0.781,
+          0.421
+        ],
+        [
+          0.797,
+          0.428
+        ],
+        [
+          0.807,
+          0.454
+        ],
+        [
+          0.805,
+          0.494
+        ],
+        [
+          0.793,
+          0.526
+        ],
+        [
+          0.774,
+          0.536
+        ],
+        [
+          0.763,
+          0.512
+        ],
+        [
+          0.764,
+          0.474
+        ],
+        [
+          0.77,
+          0.441
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "A distinct upright orange bean-shaped bud near the butterfly body is rounded, bright, and isolated enough to function as a tactile aperture."
+    },
+    {
+      "label": "viewfinder twig node",
+      "artifact_type": "twig-intersection-node",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.655,
+        "w": 0.155,
+        "h": 0.18
+      },
+      "polygon": [
+        [
+          0.72,
+          0.716
+        ],
+        [
+          0.756,
+          0.697
+        ],
+        [
+          0.792,
+          0.68
+        ],
+        [
+          0.839,
+          0.656
+        ],
+        [
+          0.849,
+          0.675
+        ],
+        [
+          0.811,
+          0.704
+        ],
+        [
+          0.782,
+          0.729
+        ],
+        [
+          0.874,
+          0.814
+        ],
+        [
+          0.86,
+          0.835
+        ],
+        [
+          0.766,
+          0.749
+        ],
+        [
+          0.733,
+          0.776
+        ],
+        [
+          0.724,
+          0.758
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "Below and left of the circular mark, several twigs cross over the bark shelf, forming a small optical interruption and perspective node."
+    },
+    {
+      "label": "distant green civic ridge",
+      "artifact_type": "background-ridge-cut",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.055,
+        "w": 0.616,
+        "h": 0.877
+      },
+      "polygon": [
+        [
+          0,
+          0.055
+        ],
+        [
+          0.119,
+          0.069
+        ],
+        [
+          0.244,
+          0.135
+        ],
+        [
+          0.369,
+          0.139
+        ],
+        [
+          0.507,
+          0.157
+        ],
+        [
+          0.616,
+          0.223
+        ],
+        [
+          0.589,
+          0.402
+        ],
+        [
+          0.547,
+          0.572
+        ],
+        [
+          0.488,
+          0.725
+        ],
+        [
+          0.368,
+          0.842
+        ],
+        [
+          0.205,
+          0.924
+        ],
+        [
+          0,
+          0.932
+        ]
+      ],
+      "confidence": 0.62,
+      "visual_evidence": "The soft dark-green background forms a broad distant ridge behind the insect and left rule stack; it is visible but diffuse and less precise than the slits or wing edge."
+    },
+    {
+      "label": "viewfinder twig node",
+      "artifact_type": "twig-intersection-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "distant green civic ridge",
+      "artifact_type": "background-ridge-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 4,
+    "mapped_region_coverage": 1.285,
+    "rationale": "The plate remains image-led and expressionist, with four strong masses: wing, bloom, shale slope, and green void. The many small rectangular slits and left rule bars add pressure, so it should be watched for interface clutter, but it is not overbuilt."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-27-botanical-shale-threshold-v1"
+}

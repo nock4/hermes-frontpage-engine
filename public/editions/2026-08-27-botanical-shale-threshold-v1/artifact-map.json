@@ -1,0 +1,1717 @@
+{
+  "artifact_map_id": "map-2026-08-27-botanical-shale-threshold-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "botanical-shale-threshold",
+  "default_artifact_id": "hero-hero-powder-wing-edge",
+  "artifacts": [
+    {
+      "id": "hero-hero-powder-wing-edge",
+      "kind": "hero",
+      "label": "hero powder-wing edge",
+      "artifact_type": "powdery-wing-edge",
+      "bounds": {
+        "x": 0.615,
+        "y": 0.024,
+        "w": 0.37,
+        "h": 0.434
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.616,
+          0.024
+        ],
+        [
+          0.731,
+          0.024
+        ],
+        [
+          0.853,
+          0.025
+        ],
+        [
+          0.944,
+          0.04
+        ],
+        [
+          0.982,
+          0.103
+        ],
+        [
+          0.982,
+          0.206
+        ],
+        [
+          0.958,
+          0.302
+        ],
+        [
+          0.905,
+          0.386
+        ],
+        [
+          0.809,
+          0.416
+        ],
+        [
+          0.71,
+          0.377
+        ],
+        [
+          0.648,
+          0.294
+        ],
+        [
+          0.625,
+          0.178
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/hero-hero-powder-wing-edge.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-powder-wing-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1229,
+          211
+        ],
+        "safe_stage_window_origin_px": [
+          1274,
+          247
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.616,
+            0.024
+          ],
+          [
+            0.731,
+            0.024
+          ],
+          [
+            0.853,
+            0.025
+          ],
+          [
+            0.944,
+            0.04
+          ],
+          [
+            0.982,
+            0.103
+          ],
+          [
+            0.982,
+            0.206
+          ],
+          [
+            0.958,
+            0.302
+          ],
+          [
+            0.905,
+            0.386
+          ],
+          [
+            0.809,
+            0.416
+          ],
+          [
+            0.71,
+            0.377
+          ],
+          [
+            0.648,
+            0.294
+          ],
+          [
+            0.625,
+            0.178
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5951,
+            0.0234
+          ],
+          [
+            0.6083,
+            0.0
+          ],
+          [
+            0.9438,
+            0.0032
+          ],
+          [
+            0.9994,
+            0.0978
+          ],
+          [
+            0.9994,
+            0.2157
+          ],
+          [
+            0.9779,
+            0.3018
+          ],
+          [
+            0.9049,
+            0.4219
+          ],
+          [
+            0.8218,
+            0.4474
+          ],
+          [
+            0.7602,
+            0.423
+          ],
+          [
+            0.6818,
+            0.3741
+          ],
+          [
+            0.6274,
+            0.2933
+          ],
+          [
+            0.6047,
+            0.1785
+          ],
+          [
+            0.5951,
+            0.0276
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5951,
+          "y": 0.0,
+          "w": 0.4049,
+          "h": 0.4485
+        },
+        "territory_area_px": 230941,
+        "visible_area_px": 185734,
+        "expansion_ratio": 1.243,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-shale-bloom-panorama",
+            "shared_edge_px": 2956,
+            "direction": "down",
+            "distance_px": 471.57
+          },
+          {
+            "artifact_id": "module-bean-shaped-bud-aperture",
+            "shared_edge_px": 665,
+            "direction": "down",
+            "distance_px": 267.71
+          },
+          {
+            "artifact_id": "module-diagonal-branch-gesture",
+            "shared_edge_px": 638,
+            "direction": "left",
+            "distance_px": 836.52
+          },
+          {
+            "artifact_id": "module-distant-green-civic-ridge",
+            "shared_edge_px": 562,
+            "direction": "left",
+            "distance_px": 970.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-hero-shale-bloom-panorama",
+      "kind": "hero",
+      "label": "hero shale-bloom panorama",
+      "artifact_type": "shale-bloom-panorama",
+      "bounds": {
+        "x": 0.399,
+        "y": 0.316,
+        "w": 0.599,
+        "h": 0.637
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.574,
+          0.317
+        ],
+        [
+          0.701,
+          0.371
+        ],
+        [
+          0.83,
+          0.344
+        ],
+        [
+          0.978,
+          0.322
+        ],
+        [
+          0.998,
+          0.432
+        ],
+        [
+          0.963,
+          0.665
+        ],
+        [
+          0.903,
+          0.832
+        ],
+        [
+          0.813,
+          0.924
+        ],
+        [
+          0.645,
+          0.953
+        ],
+        [
+          0.44,
+          0.949
+        ],
+        [
+          0.399,
+          0.861
+        ],
+        [
+          0.464,
+          0.732
+        ],
+        [
+          0.495,
+          0.587
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/hero-hero-shale-bloom-panorama.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-shale-bloom-panorama"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1073,
+          598
+        ],
+        "safe_stage_window_origin_px": [
+          1147,
+          650
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.574,
+            0.317
+          ],
+          [
+            0.701,
+            0.371
+          ],
+          [
+            0.83,
+            0.344
+          ],
+          [
+            0.978,
+            0.322
+          ],
+          [
+            0.998,
+            0.432
+          ],
+          [
+            0.963,
+            0.665
+          ],
+          [
+            0.903,
+            0.832
+          ],
+          [
+            0.813,
+            0.924
+          ],
+          [
+            0.645,
+            0.953
+          ],
+          [
+            0.44,
+            0.949
+          ],
+          [
+            0.399,
+            0.861
+          ],
+          [
+            0.464,
+            0.732
+          ],
+          [
+            0.495,
+            0.587
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3792,
+            0.8608
+          ],
+          [
+            0.5526,
+            0.3177
+          ],
+          [
+            0.5736,
+            0.2806
+          ],
+          [
+            0.9809,
+            0.2912
+          ],
+          [
+            0.9994,
+            0.3273
+          ],
+          [
+            0.9994,
+            0.5569
+          ],
+          [
+            0.9827,
+            0.6663
+          ],
+          [
+            0.9169,
+            0.8417
+          ],
+          [
+            0.8128,
+            0.9596
+          ],
+          [
+            0.6447,
+            0.9883
+          ],
+          [
+            0.4396,
+            0.9851
+          ],
+          [
+            0.3792,
+            0.8618
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3792,
+          "y": 0.2806,
+          "w": 0.6208,
+          "h": 0.7088
+        },
+        "territory_area_px": 377258,
+        "visible_area_px": 438418,
+        "expansion_ratio": 0.86,
+        "neighbors": [
+          {
+            "artifact_id": "module-distant-green-civic-ridge",
+            "shared_edge_px": 4150,
+            "direction": "left",
+            "distance_px": 733.65
+          },
+          {
+            "artifact_id": "module-viewfinder-twig-node-2",
+            "shared_edge_px": 3438,
+            "direction": "right",
+            "distance_px": 301.9
+          },
+          {
+            "artifact_id": "hero-hero-powder-wing-edge",
+            "shared_edge_px": 2956,
+            "direction": "up",
+            "distance_px": 471.57
+          },
+          {
+            "artifact_id": "module-viewfinder-twig-node",
+            "shared_edge_px": 2324,
+            "direction": "right",
+            "distance_px": 197.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-diagonal-branch-gesture",
+      "kind": "module",
+      "label": "diagonal branch gesture",
+      "artifact_type": "foreground-gesture-seam",
+      "bounds": {
+        "x": 0.013,
+        "y": 0.039,
+        "w": 0.591,
+        "h": 0.158
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.013,
+          0.071
+        ],
+        [
+          0.098,
+          0.06
+        ],
+        [
+          0.18,
+          0.084
+        ],
+        [
+          0.257,
+          0.105
+        ],
+        [
+          0.357,
+          0.104
+        ],
+        [
+          0.472,
+          0.087
+        ],
+        [
+          0.604,
+          0.083
+        ],
+        [
+          0.6,
+          0.111
+        ],
+        [
+          0.473,
+          0.113
+        ],
+        [
+          0.357,
+          0.132
+        ],
+        [
+          0.248,
+          0.128
+        ],
+        [
+          0.172,
+          0.107
+        ],
+        [
+          0.091,
+          0.083
+        ],
+        [
+          0.016,
+          0.095
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/module-diagonal-branch-gesture.svg",
+      "source_binding_ids": [
+        "binding-module-diagonal-branch-gesture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          474,
+          108
+        ],
+        "safe_stage_window_origin_px": [
+          546,
+          121
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.013,
+            0.071
+          ],
+          [
+            0.098,
+            0.06
+          ],
+          [
+            0.18,
+            0.084
+          ],
+          [
+            0.257,
+            0.105
+          ],
+          [
+            0.357,
+            0.104
+          ],
+          [
+            0.472,
+            0.087
+          ],
+          [
+            0.604,
+            0.083
+          ],
+          [
+            0.6,
+            0.111
+          ],
+          [
+            0.473,
+            0.113
+          ],
+          [
+            0.357,
+            0.132
+          ],
+          [
+            0.248,
+            0.128
+          ],
+          [
+            0.172,
+            0.107
+          ],
+          [
+            0.091,
+            0.083
+          ],
+          [
+            0.016,
+            0.095
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0499
+          ],
+          [
+            0.0126,
+            0.0276
+          ],
+          [
+            0.0975,
+            0.017
+          ],
+          [
+            0.5957,
+            0.0414
+          ],
+          [
+            0.6023,
+            0.1445
+          ],
+          [
+            0.5999,
+            0.153
+          ],
+          [
+            0.3565,
+            0.1743
+          ],
+          [
+            0.2476,
+            0.17
+          ],
+          [
+            0.0156,
+            0.1371
+          ],
+          [
+            0.0,
+            0.1095
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.017,
+          "w": 0.6029,
+          "h": 0.1583
+        },
+        "territory_area_px": 104214,
+        "visible_area_px": 24140,
+        "expansion_ratio": 4.317,
+        "neighbors": [
+          {
+            "artifact_id": "module-distant-green-civic-ridge",
+            "shared_edge_px": 5784,
+            "direction": "down",
+            "distance_px": 401.58
+          },
+          {
+            "artifact_id": "hero-hero-powder-wing-edge",
+            "shared_edge_px": 638,
+            "direction": "right",
+            "distance_px": 836.52
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-left-pale-rule-stack",
+      "kind": "module",
+      "label": "left pale rule stack",
+      "artifact_type": "illegible-rule-stack",
+      "bounds": {
+        "x": 0.096,
+        "y": 0.256,
+        "w": 0.184,
+        "h": 0.416
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.097,
+          0.256
+        ],
+        [
+          0.166,
+          0.256
+        ],
+        [
+          0.166,
+          0.282
+        ],
+        [
+          0.096,
+          0.282
+        ],
+        [
+          0.096,
+          0.318
+        ],
+        [
+          0.278,
+          0.319
+        ],
+        [
+          0.28,
+          0.386
+        ],
+        [
+          0.097,
+          0.387
+        ],
+        [
+          0.097,
+          0.417
+        ],
+        [
+          0.244,
+          0.417
+        ],
+        [
+          0.244,
+          0.482
+        ],
+        [
+          0.096,
+          0.482
+        ],
+        [
+          0.096,
+          0.566
+        ],
+        [
+          0.274,
+          0.567
+        ],
+        [
+          0.274,
+          0.626
+        ],
+        [
+          0.098,
+          0.626
+        ],
+        [
+          0.097,
+          0.672
+        ],
+        [
+          0.174,
+          0.672
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/module-left-pale-rule-stack.svg",
+      "source_binding_ids": [
+        "binding-module-left-pale-rule-stack"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          289,
+          441
+        ],
+        "safe_stage_window_origin_px": [
+          311,
+          475
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.097,
+            0.256
+          ],
+          [
+            0.166,
+            0.256
+          ],
+          [
+            0.166,
+            0.282
+          ],
+          [
+            0.096,
+            0.282
+          ],
+          [
+            0.096,
+            0.318
+          ],
+          [
+            0.278,
+            0.319
+          ],
+          [
+            0.28,
+            0.386
+          ],
+          [
+            0.097,
+            0.387
+          ],
+          [
+            0.097,
+            0.417
+          ],
+          [
+            0.244,
+            0.417
+          ],
+          [
+            0.244,
+            0.482
+          ],
+          [
+            0.096,
+            0.482
+          ],
+          [
+            0.096,
+            0.566
+          ],
+          [
+            0.274,
+            0.567
+          ],
+          [
+            0.274,
+            0.626
+          ],
+          [
+            0.098,
+            0.626
+          ],
+          [
+            0.097,
+            0.672
+          ],
+          [
+            0.174,
+            0.672
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0789,
+            0.2816
+          ],
+          [
+            0.0801,
+            0.255
+          ],
+          [
+            0.0969,
+            0.2253
+          ],
+          [
+            0.1657,
+            0.2253
+          ],
+          [
+            0.2333,
+            0.2891
+          ],
+          [
+            0.2033,
+            0.6557
+          ],
+          [
+            0.1734,
+            0.7014
+          ],
+          [
+            0.0969,
+            0.7014
+          ],
+          [
+            0.0801,
+            0.6716
+          ],
+          [
+            0.0789,
+            0.5654
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0789,
+          "y": 0.2253,
+          "w": 0.1549,
+          "h": 0.4772
+        },
+        "territory_area_px": 92270,
+        "visible_area_px": 57117,
+        "expansion_ratio": 1.615,
+        "neighbors": [
+          {
+            "artifact_id": "module-distant-green-civic-ridge",
+            "shared_edge_px": 96681,
+            "direction": "right",
+            "distance_px": 177.37
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-bean-shaped-bud-aperture",
+      "kind": "module",
+      "label": "bean-shaped bud aperture",
+      "artifact_type": "rounded-bud-aperture",
+      "bounds": {
+        "x": 0.762,
+        "y": 0.421,
+        "w": 0.045,
+        "h": 0.115
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.781,
+          0.421
+        ],
+        [
+          0.797,
+          0.428
+        ],
+        [
+          0.807,
+          0.454
+        ],
+        [
+          0.805,
+          0.494
+        ],
+        [
+          0.793,
+          0.526
+        ],
+        [
+          0.774,
+          0.536
+        ],
+        [
+          0.763,
+          0.512
+        ],
+        [
+          0.764,
+          0.474
+        ],
+        [
+          0.77,
+          0.441
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/module-bean-shaped-bud-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-bean-shaped-bud-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1205,
+          481
+        ],
+        "safe_stage_window_origin_px": [
+          1211,
+          490
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.781,
+            0.421
+          ],
+          [
+            0.797,
+            0.428
+          ],
+          [
+            0.807,
+            0.454
+          ],
+          [
+            0.805,
+            0.494
+          ],
+          [
+            0.793,
+            0.526
+          ],
+          [
+            0.774,
+            0.536
+          ],
+          [
+            0.763,
+            0.512
+          ],
+          [
+            0.764,
+            0.474
+          ],
+          [
+            0.77,
+            0.441
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7458,
+            0.5027
+          ],
+          [
+            0.753,
+            0.44
+          ],
+          [
+            0.7805,
+            0.3911
+          ],
+          [
+            0.7967,
+            0.3974
+          ],
+          [
+            0.8236,
+            0.4538
+          ],
+          [
+            0.8206,
+            0.4952
+          ],
+          [
+            0.7925,
+            0.5547
+          ],
+          [
+            0.7739,
+            0.5654
+          ],
+          [
+            0.7458,
+            0.5112
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7458,
+          "y": 0.3911,
+          "w": 0.0783,
+          "h": 0.1753
+        },
+        "territory_area_px": 14806,
+        "visible_area_px": 5958,
+        "expansion_ratio": 2.485,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-shale-bloom-panorama",
+            "shared_edge_px": 1609,
+            "direction": "left",
+            "distance_px": 235.52
+          },
+          {
+            "artifact_id": "hero-hero-powder-wing-edge",
+            "shared_edge_px": 665,
+            "direction": "up",
+            "distance_px": 267.71
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-viewfinder-twig-node",
+      "kind": "module",
+      "label": "viewfinder twig node",
+      "artifact_type": "twig-intersection-node",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.655,
+        "w": 0.155,
+        "h": 0.18
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.72,
+          0.716
+        ],
+        [
+          0.756,
+          0.697
+        ],
+        [
+          0.792,
+          0.68
+        ],
+        [
+          0.839,
+          0.656
+        ],
+        [
+          0.849,
+          0.675
+        ],
+        [
+          0.811,
+          0.704
+        ],
+        [
+          0.782,
+          0.729
+        ],
+        [
+          0.874,
+          0.814
+        ],
+        [
+          0.86,
+          0.835
+        ],
+        [
+          0.766,
+          0.749
+        ],
+        [
+          0.733,
+          0.776
+        ],
+        [
+          0.724,
+          0.758
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/module-viewfinder-twig-node.svg",
+      "source_binding_ids": [
+        "binding-module-viewfinder-twig-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1225,
+          748
+        ],
+        "safe_stage_window_origin_px": [
+          1244,
+          763
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.716
+          ],
+          [
+            0.756,
+            0.697
+          ],
+          [
+            0.792,
+            0.68
+          ],
+          [
+            0.839,
+            0.656
+          ],
+          [
+            0.849,
+            0.675
+          ],
+          [
+            0.811,
+            0.704
+          ],
+          [
+            0.782,
+            0.729
+          ],
+          [
+            0.874,
+            0.814
+          ],
+          [
+            0.86,
+            0.835
+          ],
+          [
+            0.766,
+            0.749
+          ],
+          [
+            0.733,
+            0.776
+          ],
+          [
+            0.724,
+            0.758
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7183,
+            0.7779
+          ],
+          [
+            0.7626,
+            0.6631
+          ],
+          [
+            0.8385,
+            0.6259
+          ],
+          [
+            0.8654,
+            0.6748
+          ],
+          [
+            0.8487,
+            0.7598
+          ],
+          [
+            0.7877,
+            0.796
+          ],
+          [
+            0.7327,
+            0.8055
+          ],
+          [
+            0.7183,
+            0.78
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7183,
+          "y": 0.6259,
+          "w": 0.1477,
+          "h": 0.1807
+        },
+        "territory_area_px": 23129,
+        "visible_area_px": 14017,
+        "expansion_ratio": 1.65,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-shale-bloom-panorama",
+            "shared_edge_px": 2324,
+            "direction": "left",
+            "distance_px": 197.12
+          },
+          {
+            "artifact_id": "module-viewfinder-twig-node-2",
+            "shared_edge_px": 1578,
+            "direction": "down",
+            "distance_px": 137.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distant-green-civic-ridge",
+      "kind": "module",
+      "label": "distant green civic ridge",
+      "artifact_type": "background-ridge-cut",
+      "bounds": {
+        "x": 0,
+        "y": 0.055,
+        "w": 0.616,
+        "h": 0.877
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0,
+          0.055
+        ],
+        [
+          0.119,
+          0.069
+        ],
+        [
+          0.244,
+          0.135
+        ],
+        [
+          0.369,
+          0.139
+        ],
+        [
+          0.507,
+          0.157
+        ],
+        [
+          0.616,
+          0.223
+        ],
+        [
+          0.589,
+          0.402
+        ],
+        [
+          0.547,
+          0.572
+        ],
+        [
+          0.488,
+          0.725
+        ],
+        [
+          0.368,
+          0.842
+        ],
+        [
+          0.205,
+          0.924
+        ],
+        [
+          0,
+          0.932
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/module-distant-green-civic-ridge.svg",
+      "source_binding_ids": [
+        "binding-module-distant-green-civic-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          473,
+          434
+        ],
+        "safe_stage_window_origin_px": [
+          549,
+          505
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.055
+          ],
+          [
+            0.119,
+            0.069
+          ],
+          [
+            0.244,
+            0.135
+          ],
+          [
+            0.369,
+            0.139
+          ],
+          [
+            0.507,
+            0.157
+          ],
+          [
+            0.616,
+            0.223
+          ],
+          [
+            0.589,
+            0.402
+          ],
+          [
+            0.547,
+            0.572
+          ],
+          [
+            0.488,
+            0.725
+          ],
+          [
+            0.368,
+            0.842
+          ],
+          [
+            0.205,
+            0.924
+          ],
+          [
+            0,
+            0.932
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0244
+          ],
+          [
+            0.552,
+            0.1541
+          ],
+          [
+            0.6059,
+            0.187
+          ],
+          [
+            0.6238,
+            0.2774
+          ],
+          [
+            0.6208,
+            0.2997
+          ],
+          [
+            0.4605,
+            0.7811
+          ],
+          [
+            0.3678,
+            0.8714
+          ],
+          [
+            0.2045,
+            0.9532
+          ],
+          [
+            0.0,
+            0.9617
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0244,
+          "w": 0.6244,
+          "h": 0.9384
+        },
+        "territory_area_px": 614142,
+        "visible_area_px": 656576,
+        "expansion_ratio": 0.935,
+        "neighbors": [
+          {
+            "artifact_id": "module-left-pale-rule-stack",
+            "shared_edge_px": 96681,
+            "direction": "left",
+            "distance_px": 177.37
+          },
+          {
+            "artifact_id": "module-distant-green-civic-ridge-2",
+            "shared_edge_px": 53244,
+            "direction": "right",
+            "distance_px": 237.16
+          },
+          {
+            "artifact_id": "module-diagonal-branch-gesture",
+            "shared_edge_px": 5784,
+            "direction": "up",
+            "distance_px": 401.58
+          },
+          {
+            "artifact_id": "hero-hero-shale-bloom-panorama",
+            "shared_edge_px": 4150,
+            "direction": "right",
+            "distance_px": 733.65
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-viewfinder-twig-node-2",
+      "kind": "module",
+      "label": "viewfinder twig node",
+      "artifact_type": "twig-intersection-node",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/module-viewfinder-twig-node-2.svg",
+      "source_binding_ids": [
+        "binding-module-viewfinder-twig-node-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7028,
+            0.8332
+          ],
+          [
+            0.7267,
+            0.796
+          ],
+          [
+            0.817,
+            0.7301
+          ],
+          [
+            0.8995,
+            0.7301
+          ],
+          [
+            0.9163,
+            0.7598
+          ],
+          [
+            0.9163,
+            0.9192
+          ],
+          [
+            0.8995,
+            0.949
+          ],
+          [
+            0.7195,
+            0.949
+          ],
+          [
+            0.7028,
+            0.9192
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7028,
+          "y": 0.7301,
+          "w": 0.2141,
+          "h": 0.22
+        },
+        "territory_area_px": 59836,
+        "visible_area_px": 45602,
+        "expansion_ratio": 1.312,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-shale-bloom-panorama",
+            "shared_edge_px": 3438,
+            "direction": "left",
+            "distance_px": 301.9
+          },
+          {
+            "artifact_id": "module-viewfinder-twig-node",
+            "shared_edge_px": 1578,
+            "direction": "up",
+            "distance_px": 137.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distant-green-civic-ridge-2",
+      "kind": "module",
+      "label": "distant green civic ridge",
+      "artifact_type": "background-ridge-cut",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "botanical-shale-threshold",
+      "mask_path": "/editions/2026-08-27-botanical-shale-threshold-v1/assets/masks/module-distant-green-civic-ridge-2.svg",
+      "source_binding_ids": [
+        "binding-module-distant-green-civic-ridge-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2793,
+            0.3103
+          ],
+          [
+            0.4396,
+            0.3092
+          ],
+          [
+            0.4563,
+            0.339
+          ],
+          [
+            0.4563,
+            0.4899
+          ],
+          [
+            0.4396,
+            0.5197
+          ],
+          [
+            0.3254,
+            0.5197
+          ],
+          [
+            0.2793,
+            0.3114
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2793,
+          "y": 0.3092,
+          "w": 0.1776,
+          "h": 0.2115
+        },
+        "territory_area_px": 50658,
+        "visible_area_px": 38324,
+        "expansion_ratio": 1.322,
+        "neighbors": [
+          {
+            "artifact_id": "module-distant-green-civic-ridge",
+            "shared_edge_px": 53244,
+            "direction": "left",
+            "distance_px": 237.16
+          }
+        ]
+      }
+    }
+  ]
+}
