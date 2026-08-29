@@ -3587,6 +3587,41 @@
 .source-window--stage.source-window--bleed-embed .visual-source-card__title {
     font-size: clamp(0.62rem, 2.5vw, 0.78rem);
   }
+
+  .source-window--stage.source-window--youtube-linkout .youtube-linkout {
+    width: 100%;
+    max-height: calc(74dvh - 0.4rem);
+    display: grid;
+    grid-template-rows: minmax(min(38dvh, 13.5rem), 1fr) auto;
+  }
+
+  .source-window--stage.source-window--youtube-linkout .youtube-linkout__poster {
+    min-height: min(38dvh, 13.5rem);
+    aspect-ratio: auto;
+  }
+
+  .source-window--stage.source-window--youtube-linkout .youtube-linkout__poster img {
+    object-fit: cover;
+  }
+
+  .source-window--stage.source-window--youtube-linkout .youtube-linkout__copy {
+    gap: 0.24rem;
+    padding: 0.58rem 0.72rem 0.68rem;
+  }
+
+  .source-window--stage.source-window--youtube-linkout .youtube-linkout__status,
+  .source-window--stage.source-window--youtube-linkout .youtube-linkout__cta {
+    font-size: 0.64rem;
+  }
+
+  .source-window--stage.source-window--youtube-linkout .youtube-linkout__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: clamp(0.86rem, 3.2vw, 1.05rem);
+    line-height: 0.96;
+  }
 }
 
 .source-window--stage.source-window--poster-window {
