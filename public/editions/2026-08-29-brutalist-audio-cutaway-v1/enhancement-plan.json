@@ -1,0 +1,196 @@
+{
+  "enhancement_plan_id": "enhance-2026-08-29-brutalist-audio-cutaway-v1",
+  "edition_id": "2026-08-29-brutalist-audio-cutaway-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-08-29-brutalist-audio-cutaway-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-governing-diagonal-slab-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-governing-diagonal-slab-cut",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-diagonal-measure-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lower-walking-pressure-ridge",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-walking-pressure-ridge",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-bass-ridge-band) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-thin-dropout-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-thin-dropout-slit",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-sky-dropout-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-upper-scratch-veil-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-upper-scratch-veil-seam",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scratch-veil-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-cutaway-puncture-cluster",
+      "target_kind": "artifact",
+      "artifact_id": "module-cutaway-puncture-cluster",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (nested-onset-puncture-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-far-sky-support-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-far-sky-support-notch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (support-edge-sky-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-far-sky-support-notch-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-far-sky-support-notch-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (support-edge-sky-notch) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 7 artifacts and scene family heuristics."
+}

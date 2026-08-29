@@ -1,0 +1,1111 @@
+{
+  "artifact_map_id": "map-2026-08-29-brutalist-audio-cutaway-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "brutalist-audio-cutaway",
+  "default_artifact_id": "hero-governing-diagonal-slab-cut",
+  "artifacts": [
+    {
+      "id": "hero-governing-diagonal-slab-cut",
+      "kind": "hero",
+      "label": "governing diagonal slab cut",
+      "artifact_type": "hero-scale-diagonal-measure-slab",
+      "bounds": {
+        "x": 0.154,
+        "y": 0.237,
+        "w": 0.56,
+        "h": 0.534
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.154,
+          0.237
+        ],
+        [
+          0.323,
+          0.238
+        ],
+        [
+          0.466,
+          0.39
+        ],
+        [
+          0.714,
+          0.731
+        ],
+        [
+          0.692,
+          0.771
+        ],
+        [
+          0.51,
+          0.633
+        ],
+        [
+          0.331,
+          0.487
+        ],
+        [
+          0.154,
+          0.435
+        ]
+      ],
+      "cluster_id": "brutalist-audio-cutaway",
+      "mask_path": "/editions/2026-08-29-brutalist-audio-cutaway-v1/assets/masks/hero-governing-diagonal-slab-cut.svg",
+      "source_binding_ids": [
+        "binding-hero-governing-diagonal-slab-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          667,
+          472
+        ],
+        "safe_stage_window_origin_px": [
+          735,
+          516
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.154,
+            0.237
+          ],
+          [
+            0.323,
+            0.238
+          ],
+          [
+            0.466,
+            0.39
+          ],
+          [
+            0.714,
+            0.731
+          ],
+          [
+            0.692,
+            0.771
+          ],
+          [
+            0.51,
+            0.633
+          ],
+          [
+            0.331,
+            0.487
+          ],
+          [
+            0.154,
+            0.435
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1298,
+            0.2366
+          ],
+          [
+            0.1533,
+            0.2053
+          ],
+          [
+            0.3225,
+            0.2063
+          ],
+          [
+            0.4648,
+            0.3573
+          ],
+          [
+            0.7369,
+            0.7302
+          ],
+          [
+            0.692,
+            0.802
+          ],
+          [
+            0.1533,
+            0.4659
+          ],
+          [
+            0.1298,
+            0.4346
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1298,
+          "y": 0.2053,
+          "w": 0.6077,
+          "h": 0.5976
+        },
+        "territory_area_px": 180115,
+        "visible_area_px": 161012,
+        "expansion_ratio": 1.119,
+        "neighbors": [
+          {
+            "artifact_id": "module-upper-scratch-veil-seam",
+            "shared_edge_px": 19977,
+            "direction": "up",
+            "distance_px": 118.5
+          },
+          {
+            "artifact_id": "module-right-thin-dropout-slit",
+            "shared_edge_px": 1965,
+            "direction": "right",
+            "distance_px": 375.15
+          },
+          {
+            "artifact_id": "module-cutaway-puncture-cluster",
+            "shared_edge_px": 1557,
+            "direction": "right",
+            "distance_px": 290.78
+          },
+          {
+            "artifact_id": "module-far-sky-support-notch",
+            "shared_edge_px": 750,
+            "direction": "right",
+            "distance_px": 544.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-lower-walking-pressure-ridge",
+      "kind": "hero",
+      "label": "lower walking pressure ridge",
+      "artifact_type": "hero-scale-bass-ridge-band",
+      "bounds": {
+        "x": 0.154,
+        "y": 0.823,
+        "w": 0.561,
+        "h": 0.075
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.154,
+          0.823
+        ],
+        [
+          0.283,
+          0.825
+        ],
+        [
+          0.446,
+          0.84
+        ],
+        [
+          0.59,
+          0.862
+        ],
+        [
+          0.715,
+          0.884
+        ],
+        [
+          0.715,
+          0.898
+        ],
+        [
+          0.548,
+          0.875
+        ],
+        [
+          0.386,
+          0.852
+        ],
+        [
+          0.154,
+          0.839
+        ]
+      ],
+      "cluster_id": "brutalist-audio-cutaway",
+      "mask_path": "/editions/2026-08-29-brutalist-audio-cutaway-v1/assets/masks/hero-lower-walking-pressure-ridge.svg",
+      "source_binding_ids": [
+        "binding-hero-lower-walking-pressure-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          667,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          736,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.154,
+            0.823
+          ],
+          [
+            0.283,
+            0.825
+          ],
+          [
+            0.446,
+            0.84
+          ],
+          [
+            0.59,
+            0.862
+          ],
+          [
+            0.715,
+            0.884
+          ],
+          [
+            0.715,
+            0.898
+          ],
+          [
+            0.548,
+            0.875
+          ],
+          [
+            0.386,
+            0.852
+          ],
+          [
+            0.154,
+            0.839
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1298,
+            0.8223
+          ],
+          [
+            0.1533,
+            0.791
+          ],
+          [
+            0.2825,
+            0.7928
+          ],
+          [
+            0.4454,
+            0.8085
+          ],
+          [
+            0.7148,
+            0.8527
+          ],
+          [
+            0.7383,
+            0.884
+          ],
+          [
+            0.7383,
+            0.8978
+          ],
+          [
+            0.7148,
+            0.9291
+          ],
+          [
+            0.1533,
+            0.8702
+          ],
+          [
+            0.1298,
+            0.8389
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1298,
+          "y": 0.791,
+          "w": 0.6091,
+          "h": 0.139
+        },
+        "territory_area_px": 55289,
+        "visible_area_px": 16659,
+        "expansion_ratio": 3.319,
+        "neighbors": [
+          {
+            "artifact_id": "module-far-sky-support-notch-2",
+            "shared_edge_px": 2140,
+            "direction": "right",
+            "distance_px": 183.93
+          },
+          {
+            "artifact_id": "module-far-sky-support-notch",
+            "shared_edge_px": 257,
+            "direction": "right",
+            "distance_px": 343.11
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-right-thin-dropout-slit",
+      "kind": "module",
+      "label": "right thin dropout slit",
+      "artifact_type": "pale-sky-dropout-slit",
+      "bounds": {
+        "x": 0.536,
+        "y": 0.238,
+        "w": 0.139,
+        "h": 0.388
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.536,
+          0.238
+        ],
+        [
+          0.675,
+          0.238
+        ],
+        [
+          0.675,
+          0.626
+        ],
+        [
+          0.536,
+          0.626
+        ]
+      ],
+      "cluster_id": "brutalist-audio-cutaway",
+      "mask_path": "/editions/2026-08-29-brutalist-audio-cutaway-v1/assets/masks/module-right-thin-dropout-slit.svg",
+      "source_binding_ids": [
+        "binding-module-right-thin-dropout-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          930,
+          411
+        ],
+        "safe_stage_window_origin_px": [
+          947,
+          442
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.536,
+            0.238
+          ],
+          [
+            0.675,
+            0.238
+          ],
+          [
+            0.675,
+            0.626
+          ],
+          [
+            0.536,
+            0.626
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5083,
+            0.2376
+          ],
+          [
+            0.5359,
+            0.2007
+          ],
+          [
+            0.6747,
+            0.2007
+          ],
+          [
+            0.7023,
+            0.2376
+          ],
+          [
+            0.7023,
+            0.6252
+          ],
+          [
+            0.6747,
+            0.6621
+          ],
+          [
+            0.5359,
+            0.6621
+          ],
+          [
+            0.5297,
+            0.6538
+          ],
+          [
+            0.5083,
+            0.5074
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5083,
+          "y": 0.2007,
+          "w": 0.1948,
+          "h": 0.4622
+        },
+        "territory_area_px": 124850,
+        "visible_area_px": 85244,
+        "expansion_ratio": 1.465,
+        "neighbors": [
+          {
+            "artifact_id": "hero-governing-diagonal-slab-cut",
+            "shared_edge_px": 1965,
+            "direction": "left",
+            "distance_px": 375.15
+          },
+          {
+            "artifact_id": "module-cutaway-puncture-cluster",
+            "shared_edge_px": 1439,
+            "direction": "down",
+            "distance_px": 223.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-upper-scratch-veil-seam",
+      "kind": "module",
+      "label": "upper scratch veil seam",
+      "artifact_type": "scratch-veil-surface",
+      "bounds": {
+        "x": 0.304,
+        "y": 0.241,
+        "w": 0.204,
+        "h": 0.24
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.306,
+          0.241
+        ],
+        [
+          0.321,
+          0.249
+        ],
+        [
+          0.356,
+          0.296
+        ],
+        [
+          0.402,
+          0.352
+        ],
+        [
+          0.459,
+          0.423
+        ],
+        [
+          0.508,
+          0.476
+        ],
+        [
+          0.505,
+          0.481
+        ],
+        [
+          0.45,
+          0.435
+        ],
+        [
+          0.39,
+          0.372
+        ],
+        [
+          0.337,
+          0.309
+        ],
+        [
+          0.304,
+          0.257
+        ]
+      ],
+      "cluster_id": "brutalist-audio-cutaway",
+      "mask_path": "/editions/2026-08-29-brutalist-audio-cutaway-v1/assets/masks/module-upper-scratch-veil-seam.svg",
+      "source_binding_ids": [
+        "binding-module-upper-scratch-veil-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          624,
+          350
+        ],
+        "safe_stage_window_origin_px": [
+          649,
+          370
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.306,
+            0.241
+          ],
+          [
+            0.321,
+            0.249
+          ],
+          [
+            0.356,
+            0.296
+          ],
+          [
+            0.402,
+            0.352
+          ],
+          [
+            0.459,
+            0.423
+          ],
+          [
+            0.508,
+            0.476
+          ],
+          [
+            0.505,
+            0.481
+          ],
+          [
+            0.45,
+            0.435
+          ],
+          [
+            0.39,
+            0.372
+          ],
+          [
+            0.337,
+            0.309
+          ],
+          [
+            0.304,
+            0.257
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2845,
+            0.2551
+          ],
+          [
+            0.2866,
+            0.2403
+          ],
+          [
+            0.3059,
+            0.2145
+          ],
+          [
+            0.3204,
+            0.2228
+          ],
+          [
+            0.462,
+            0.4006
+          ],
+          [
+            0.3936,
+            0.4015
+          ],
+          [
+            0.3384,
+            0.337
+          ],
+          [
+            0.2845,
+            0.2569
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2845,
+          "y": 0.2145,
+          "w": 0.1782,
+          "h": 0.1878
+        },
+        "territory_area_px": 18339,
+        "visible_area_px": 8900,
+        "expansion_ratio": 2.061,
+        "neighbors": [
+          {
+            "artifact_id": "hero-governing-diagonal-slab-cut",
+            "shared_edge_px": 19977,
+            "direction": "down",
+            "distance_px": 118.5
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-cutaway-puncture-cluster",
+      "kind": "module",
+      "label": "cutaway puncture cluster",
+      "artifact_type": "nested-onset-puncture-cluster",
+      "bounds": {
+        "x": 0.472,
+        "y": 0.52,
+        "w": 0.1,
+        "h": 0.118
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.475,
+          0.523
+        ],
+        [
+          0.505,
+          0.533
+        ],
+        [
+          0.532,
+          0.545
+        ],
+        [
+          0.564,
+          0.574
+        ],
+        [
+          0.572,
+          0.608
+        ],
+        [
+          0.552,
+          0.635
+        ],
+        [
+          0.518,
+          0.625
+        ],
+        [
+          0.49,
+          0.601
+        ],
+        [
+          0.472,
+          0.566
+        ]
+      ],
+      "cluster_id": "brutalist-audio-cutaway",
+      "mask_path": "/editions/2026-08-29-brutalist-audio-cutaway-v1/assets/masks/module-cutaway-puncture-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-cutaway-puncture-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          802,
+          583
+        ],
+        "safe_stage_window_origin_px": [
+          814,
+          593
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.475,
+            0.523
+          ],
+          [
+            0.505,
+            0.533
+          ],
+          [
+            0.532,
+            0.545
+          ],
+          [
+            0.564,
+            0.574
+          ],
+          [
+            0.572,
+            0.608
+          ],
+          [
+            0.552,
+            0.635
+          ],
+          [
+            0.518,
+            0.625
+          ],
+          [
+            0.49,
+            0.601
+          ],
+          [
+            0.472,
+            0.566
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4523,
+            0.5608
+          ],
+          [
+            0.4551,
+            0.5221
+          ],
+          [
+            0.4744,
+            0.4963
+          ],
+          [
+            0.5318,
+            0.5184
+          ],
+          [
+            0.5628,
+            0.547
+          ],
+          [
+            0.5829,
+            0.5737
+          ],
+          [
+            0.5912,
+            0.6068
+          ],
+          [
+            0.5518,
+            0.6602
+          ],
+          [
+            0.5207,
+            0.651
+          ],
+          [
+            0.4896,
+            0.6262
+          ],
+          [
+            0.4523,
+            0.5654
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4523,
+          "y": 0.4963,
+          "w": 0.1395,
+          "h": 0.1648
+        },
+        "territory_area_px": 22913,
+        "visible_area_px": 10929,
+        "expansion_ratio": 2.097,
+        "neighbors": [
+          {
+            "artifact_id": "hero-governing-diagonal-slab-cut",
+            "shared_edge_px": 1557,
+            "direction": "left",
+            "distance_px": 290.78
+          },
+          {
+            "artifact_id": "module-right-thin-dropout-slit",
+            "shared_edge_px": 1439,
+            "direction": "up",
+            "distance_px": 223.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-far-sky-support-notch",
+      "kind": "module",
+      "label": "far sky support notch",
+      "artifact_type": "support-edge-sky-notch",
+      "bounds": {
+        "x": 0.608,
+        "y": 0.721,
+        "w": 0.058,
+        "h": 0.112
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.608,
+          0.721
+        ],
+        [
+          0.62,
+          0.727
+        ],
+        [
+          0.633,
+          0.833
+        ],
+        [
+          0.622,
+          0.833
+        ],
+        [
+          0.618,
+          0.756
+        ],
+        [
+          0.613,
+          0.74
+        ]
+      ],
+      "cluster_id": "brutalist-audio-cutaway",
+      "mask_path": "/editions/2026-08-29-brutalist-audio-cutaway-v1/assets/masks/module-far-sky-support-notch.svg",
+      "source_binding_ids": [
+        "binding-module-far-sky-support-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          978,
+          786
+        ],
+        "safe_stage_window_origin_px": [
+          986,
+          796
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.608,
+            0.721
+          ],
+          [
+            0.62,
+            0.727
+          ],
+          [
+            0.633,
+            0.833
+          ],
+          [
+            0.622,
+            0.833
+          ],
+          [
+            0.618,
+            0.756
+          ],
+          [
+            0.613,
+            0.74
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5884,
+            0.721
+          ],
+          [
+            0.6077,
+            0.6952
+          ],
+          [
+            0.6195,
+            0.7007
+          ],
+          [
+            0.6388,
+            0.7265
+          ],
+          [
+            0.6519,
+            0.8297
+          ],
+          [
+            0.6326,
+            0.8582
+          ],
+          [
+            0.6215,
+            0.8582
+          ],
+          [
+            0.6022,
+            0.8324
+          ],
+          [
+            0.5884,
+            0.7219
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5884,
+          "y": 0.6952,
+          "w": 0.0642,
+          "h": 0.1639
+        },
+        "territory_area_px": 10713,
+        "visible_area_px": 1557,
+        "expansion_ratio": 6.881,
+        "neighbors": [
+          {
+            "artifact_id": "hero-governing-diagonal-slab-cut",
+            "shared_edge_px": 750,
+            "direction": "left",
+            "distance_px": 544.5
+          },
+          {
+            "artifact_id": "module-far-sky-support-notch-2",
+            "shared_edge_px": 695,
+            "direction": "left",
+            "distance_px": 177.01
+          },
+          {
+            "artifact_id": "hero-lower-walking-pressure-ridge",
+            "shared_edge_px": 257,
+            "direction": "left",
+            "distance_px": 343.11
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-far-sky-support-notch-2",
+      "kind": "module",
+      "label": "far sky support notch",
+      "artifact_type": "support-edge-sky-notch",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "brutalist-audio-cutaway",
+      "mask_path": "/editions/2026-08-29-brutalist-audio-cutaway-v1/assets/masks/module-far-sky-support-notch-2.svg",
+      "source_binding_ids": [
+        "binding-module-far-sky-support-notch-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4006,
+            0.7799
+          ],
+          [
+            0.4199,
+            0.7541
+          ],
+          [
+            0.5967,
+            0.7541
+          ],
+          [
+            0.6188,
+            0.8554
+          ],
+          [
+            0.6188,
+            0.9392
+          ],
+          [
+            0.5994,
+            0.965
+          ],
+          [
+            0.4199,
+            0.965
+          ],
+          [
+            0.4006,
+            0.9392
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4006,
+          "y": 0.7541,
+          "w": 0.2189,
+          "h": 0.2118
+        },
+        "territory_area_px": 60187,
+        "visible_area_px": 45414,
+        "expansion_ratio": 1.325,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-walking-pressure-ridge",
+            "shared_edge_px": 2140,
+            "direction": "left",
+            "distance_px": 183.93
+          },
+          {
+            "artifact_id": "module-far-sky-support-notch",
+            "shared_edge_px": 695,
+            "direction": "right",
+            "distance_px": 177.01
+          }
+        ]
+      }
+    }
+  ]
+}
