@@ -160,7 +160,7 @@ describe('source selection policy', () => {
     expect(sourceHasRenderableCardSurface(errorPage)).toBe(false)
   })
 
-  it('does not select YouTube videos that refuse native embedding for strict publish windows', () => {
+  it('keeps thumbnail-backed YouTube videos as source surfaces when native embedding is unavailable', () => {
     const unavailableYouTube = {
       ...baseSource,
       url: 'https://www.youtube.com/watch?v=blocked123',
@@ -180,8 +180,11 @@ describe('source selection policy', () => {
       image_url: 'https://example.com/field-photo.jpg',
     }
 
-    expect(sourceHasRenderableCardSurface(unavailableYouTube)).toBe(false)
-    expect(selectContentSources([unavailableYouTube, artwork], { targetItems: 2 }).map((source) => source.url)).toEqual([artwork.url])
+    expect(sourceHasRenderableCardSurface(unavailableYouTube)).toBe(true)
+    expect(new Set(selectContentSources([unavailableYouTube, artwork], { targetItems: 2 }).map((source) => source.url))).toEqual(new Set([
+      artwork.url,
+      unavailableYouTube.url,
+    ]))
   })
 
   it('selects provider tweet iframes as real source windows even when media enrichment is empty', () => {

@@ -331,6 +331,7 @@ export function sourceContentScore(source, recentSourceKeys = new Set()) {
   if (source.source_channel === 'nts-like' && sourceUrls.some(isYouTubeVideoUrl)) score += 30
   if (source.source_channel === 'nts-like' && sourceUrls.some(isBandcampStreamingSourceUrl)) score += 12
   if (source.source_channel === 'nts-like' && sourceUrls.some(isSoundCloudStreamingSourceUrl)) score += 6
+  if (sourceUrls.some(isYouTubeVideoUrl) && providerEmbedStatus(source) === 'unavailable') score -= 72
   return score
 }
 
@@ -363,7 +364,14 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (isAiToolingContentSource(source)) return false
   const sourceUrls = [source.url, source.source_url, source.final_url].filter(Boolean)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return false
-  if (sourceUrls.some((url) => youtubeId(url))) return providerEmbedStatus(source) !== 'unavailable'
+  if (sourceUrls.some((url) => youtubeId(url))) {
+    if (providerEmbedStatus(source) !== 'unavailable') return true
+    // Some saved music/video sources refuse native iframe playback but still carry
+    // a real provider thumbnail. Treat that poster as a source-framed visual
+    // surface so music-heavy days do not collapse below the six-window floor;
+    // package/QA keeps the unavailable embed status visible.
+    return Boolean(source.image_url && !isLowValueVisualImage(source.image_url))
+  }
   if (sourceUrls.some(isDirectRasterImageUrl)) return true
   if (source.image_url && !isLowValueVisualImage(source.image_url)) return true
   const sourceType = classifySource(source.url || source.source_url || '').source_type
