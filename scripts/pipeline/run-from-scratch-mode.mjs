@@ -12,6 +12,12 @@ import { createResearchSourcesStep } from './research-sources.mjs'
 import { buildSourceContract } from '../lib/source-contract.mjs'
 import { prepareSourceAudioMaterial } from '../lib/source-audio-material.mjs'
 
+export function historicalSourceKeyOptionsForRun(options = {}, env = process.env) {
+  return options.publish && env.DFE_EXCLUDE_SAME_DATE_SOURCE_LEDGER === '1'
+    ? { excludeDates: [options.date] }
+    : {}
+}
+
 export async function runFromScratchMode({
   options,
   root,
@@ -45,8 +51,9 @@ export async function runFromScratchMode({
   const sampleMode = options.useSampleSignals || (options.sampleDataEnabled && options.inputMode === 'manifest')
   const rawRecentEditions = sampleMode ? [] : getRecentEditionSummaries(recentDiversityEditionCount)
   const recentEditions = rawRecentEditions
+  const sameDateLedgerExclusion = historicalSourceKeyOptionsForRun(options)
   const recentSourceKeys = sampleMode ? new Set() : (getHistoricalSourceKeys
-    ? getHistoricalSourceKeys({ excludeDates: options.publish ? [options.date] : [] })
+    ? getHistoricalSourceKeys(sameDateLedgerExclusion)
     : getRecentSourceKeys(recentEditions))
   const recentDiversityAvoidTerms = sampleMode ? [] : getRecentDiversityAvoidTerms(recentEditions)
   const diversityDirective = sampleMode

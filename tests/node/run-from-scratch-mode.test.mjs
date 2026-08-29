@@ -1,8 +1,15 @@
 import { describe, expect, it } from 'vitest'
 
-import { buildSourceFidelityRecoveryPayload } from '../../scripts/pipeline/run-from-scratch-mode.mjs'
+import { buildSourceFidelityRecoveryPayload, historicalSourceKeyOptionsForRun } from '../../scripts/pipeline/run-from-scratch-mode.mjs'
 
 describe('from-scratch source-fidelity recovery', () => {
+  it('keeps the archive source ledger active for same-date publish runs by default', () => {
+    expect(historicalSourceKeyOptionsForRun({ publish: true, date: '2026-08-28' }, {})).toEqual({})
+    expect(historicalSourceKeyOptionsForRun({ publish: true, date: '2026-08-28' }, { DFE_EXCLUDE_SAME_DATE_SOURCE_LEDGER: '1' })).toEqual({
+      excludeDates: ['2026-08-28'],
+    })
+  })
+
   it('feeds audit-missing source cues back into the recovery payload', () => {
     const payload = {
       scene_prompt: 'Oblique craft table with mint and magenta paper masses.',
