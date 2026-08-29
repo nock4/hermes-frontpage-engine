@@ -1,0 +1,380 @@
+{
+  "interpretation_id": "interp-2026-08-29-dither-orb-threshold-system-v1",
+  "edition_id": "2026-08-29-dither-orb-threshold-system-v1",
+  "plate_read_timestamp": "2026-08-29T12:31:07.378Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Dense expressionist digital plate with halftone panels, luminous pools, a central torn white pixel-island, thin cuts, edge tears, and small colored marker clusters embedded in a black field.",
+    "dominant_spatial_mode": "contained",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "chromatic threshold machine under soft orb pressure",
+      "Dense expressionist digital plate with halftone panels, luminous pools, a central torn white pixel-island, thin cuts, edge tears, and small colored marker clusters embedded in a black field.",
+      "https",
+      "status",
+      "tags"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Primary Source Anchor",
+      "Secondary Source Anchor",
+      "Signal Panel",
+      "Color Node",
+      "Field Marker",
+      "Layered Fragment",
+      "Reference Plaque",
+      "Distributed Marker"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "dither-orb-threshold-system",
+      "One dominant ruptured dither field should carry the plate, supported by two secondary orb/display clusters and a ring of smaller source-window marks. The system should feel like a broken conversion engine rather than a collage of separate cards.",
+      "The Dither Boy anchor should appear as the largest abstract before/after threshold event: a square-ish image field degrading into pixel tiles, with nearby source marks borrowing download-cover crop pressure, phantom type bars, animated demo seams, and blue-orb glow. Supporting sources become shader layers, color fragments, firewall slits, and album/game pulse nodes embedded as physical interruptions in the image.",
+      "mixed geometry",
+      "distributed composition",
+      "central torn white pixel island",
+      "upper-left halftone panel",
+      "upper-right blue orb with vertical slit"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: dither-orb-threshold-system.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "type": "primary-source-anchor",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.307,
+        "y": 0.18,
+        "w": 0.335,
+        "h": 0.31
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "type": "secondary-source-anchor",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.558,
+        "y": 0.027,
+        "w": 0.22,
+        "h": 0.237
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.8006759999999999,
+      "bounds": {
+        "x": 0.039,
+        "y": 0.024,
+        "w": 0.226,
+        "h": 0.235
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.751008,
+      "bounds": {
+        "x": 0,
+        "y": 0.423,
+        "w": 0.22,
+        "h": 0.331
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.72372,
+      "bounds": {
+        "x": 0.646,
+        "y": 0.703,
+        "w": 0.25,
+        "h": 0.256
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "layered-fragment",
+      "strength": 0.696972,
+      "bounds": {
+        "x": 0.102,
+        "y": 0.765,
+        "w": 0.26,
+        "h": 0.196
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "type": "reference-plaque",
+      "strength": 0.670884,
+      "bounds": {
+        "x": 0.79,
+        "y": 0.337,
+        "w": 0.207,
+        "h": 0.21
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-2",
+      "kind": "module",
+      "type": "reference-plaque",
+      "strength": 0.652876,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.663292,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.307,
+        "y": 0.18,
+        "w": 0.335,
+        "h": 0.31
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.558,
+        "y": 0.027,
+        "w": 0.22,
+        "h": 0.237
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.039,
+        "y": 0.024,
+        "w": 0.226,
+        "h": 0.235
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.423,
+        "w": 0.22,
+        "h": 0.331
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.646,
+        "y": 0.703,
+        "w": 0.25,
+        "h": 0.256
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.102,
+        "y": 0.765,
+        "w": 0.26,
+        "h": 0.196
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.337,
+        "w": 0.207,
+        "h": 0.21
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

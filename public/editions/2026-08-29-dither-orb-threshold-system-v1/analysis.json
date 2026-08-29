@@ -1,0 +1,448 @@
+{
+  "analysis_id": "analysis-2026-08-29-dither-orb-threshold-system-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Dense expressionist digital plate with halftone panels, luminous pools, a central torn white pixel-island, thin cuts, edge tears, and small colored marker clusters embedded in a black field.",
+  "usable_surfaces": [
+    "central torn white pixel island",
+    "upper-left halftone panel",
+    "upper-right blue orb with vertical slit",
+    "lower-left cyan-magenta pool",
+    "bottom-right yellow-green halftone plaque",
+    "thin left horizontal light slit",
+    "bottom-left magenta grid fragment",
+    "right cyan stepped block",
+    "small violet-yellow fleck knot"
+  ],
+  "detected_objects": [
+    {
+      "label": "Primary Source Anchor",
+      "artifact_type": "primary-source-anchor",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.307,
+        "y": 0.18,
+        "w": 0.335,
+        "h": 0.31
+      },
+      "polygon": [
+        [
+          0.337,
+          0.18
+        ],
+        [
+          0.445,
+          0.204
+        ],
+        [
+          0.506,
+          0.247
+        ],
+        [
+          0.575,
+          0.291
+        ],
+        [
+          0.642,
+          0.379
+        ],
+        [
+          0.616,
+          0.455
+        ],
+        [
+          0.526,
+          0.489
+        ],
+        [
+          0.449,
+          0.463
+        ],
+        [
+          0.393,
+          0.413
+        ],
+        [
+          0.331,
+          0.386
+        ],
+        [
+          0.307,
+          0.307
+        ],
+        [
+          0.321,
+          0.239
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "large jagged white torn pixel-island at center, with irregular chipped contour and black square perforations across its surface"
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "secondary-source-anchor",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.558,
+        "y": 0.027,
+        "w": 0.22,
+        "h": 0.237
+      },
+      "polygon": [
+        [
+          0.624,
+          0.032
+        ],
+        [
+          0.697,
+          0.028
+        ],
+        [
+          0.75,
+          0.062
+        ],
+        [
+          0.778,
+          0.132
+        ],
+        [
+          0.759,
+          0.214
+        ],
+        [
+          0.701,
+          0.263
+        ],
+        [
+          0.621,
+          0.25
+        ],
+        [
+          0.576,
+          0.204
+        ],
+        [
+          0.558,
+          0.134
+        ],
+        [
+          0.579,
+          0.067
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "upper-right luminous blue-violet circular pool with pink core and a sharp black vertical seam crossing its right side"
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.039,
+        "y": 0.024,
+        "w": 0.226,
+        "h": 0.235
+      },
+      "polygon": [
+        [
+          0.04,
+          0.025
+        ],
+        [
+          0.262,
+          0.025
+        ],
+        [
+          0.264,
+          0.111
+        ],
+        [
+          0.255,
+          0.258
+        ],
+        [
+          0.15,
+          0.257
+        ],
+        [
+          0.041,
+          0.257
+        ],
+        [
+          0.04,
+          0.149
+        ],
+        [
+          0.039,
+          0.058
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "upper-left square halftone panel of red, magenta, orange, and black dot matrix, with a crisp panel edge"
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.423,
+        "w": 0.22,
+        "h": 0.331
+      },
+      "polygon": [
+        [
+          0.001,
+          0.474
+        ],
+        [
+          0.073,
+          0.424
+        ],
+        [
+          0.16,
+          0.445
+        ],
+        [
+          0.211,
+          0.522
+        ],
+        [
+          0.22,
+          0.64
+        ],
+        [
+          0.164,
+          0.728
+        ],
+        [
+          0.066,
+          0.754
+        ],
+        [
+          0.002,
+          0.728
+        ],
+        [
+          0,
+          0.624
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "large lower-left cyan-to-magenta luminous pool clipped by the image edge, with a soft circular boundary and black pixel bites"
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.646,
+        "y": 0.703,
+        "w": 0.25,
+        "h": 0.256
+      },
+      "polygon": [
+        [
+          0.646,
+          0.704
+        ],
+        [
+          0.893,
+          0.704
+        ],
+        [
+          0.895,
+          0.792
+        ],
+        [
+          0.894,
+          0.959
+        ],
+        [
+          0.775,
+          0.959
+        ],
+        [
+          0.648,
+          0.958
+        ],
+        [
+          0.646,
+          0.86
+        ],
+        [
+          0.646,
+          0.744
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "bottom-right yellow-green rectangular halftone plaque with bright gridded face and darker teal right edge"
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.102,
+        "y": 0.765,
+        "w": 0.26,
+        "h": 0.196
+      },
+      "polygon": [
+        [
+          0.103,
+          0.766
+        ],
+        [
+          0.223,
+          0.764
+        ],
+        [
+          0.312,
+          0.787
+        ],
+        [
+          0.362,
+          0.842
+        ],
+        [
+          0.344,
+          0.948
+        ],
+        [
+          0.239,
+          0.959
+        ],
+        [
+          0.104,
+          0.958
+        ],
+        [
+          0.102,
+          0.866
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "bottom-left magenta and violet gridded fragment, rectangular but broken by black scratches and layered dot fields"
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.337,
+        "w": 0.207,
+        "h": 0.21
+      },
+      "polygon": [
+        [
+          0.872,
+          0.338
+        ],
+        [
+          0.997,
+          0.339
+        ],
+        [
+          0.997,
+          0.468
+        ],
+        [
+          0.946,
+          0.524
+        ],
+        [
+          0.851,
+          0.547
+        ],
+        [
+          0.79,
+          0.515
+        ],
+        [
+          0.813,
+          0.441
+        ],
+        [
+          0.843,
+          0.377
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "right-side cyan stepped block made of dense square pixels, tapering into the dark field and cut by bright blue highlights"
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 8,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.44,
+    "rationale": "The plate is expressionist and source-rich, but dense halftone texture and overlapping glow fields make some smaller marks compete with the hero islands."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-29-dither-orb-threshold-system-v1"
+}
