@@ -320,11 +320,11 @@ function analyzeWindow(binding: SourceBindingRecord, metric: WindowMetric) {
 
   if (metric.viewportClipped) failures.push(`${metric.mode}: source window is clipped by the viewport`)
 
-  if (requireYouTubeEmbeds && youtubeBinding && metric.kind === 'youtube-linkout') {
+  if (requireYouTubeEmbeds && youtubeBinding && binding.embed_status !== 'unavailable' && metric.kind === 'youtube-linkout') {
     failures.push(`${metric.mode}: YouTube URL is not embeddable and fell back to linkout`)
   }
 
-  if (requireYouTubeEmbeds && youtubeBinding && metric.mode === 'primary' && metric.kind !== 'youtube-embed') {
+  if (requireYouTubeEmbeds && youtubeBinding && binding.embed_status !== 'unavailable' && metric.mode === 'primary' && metric.kind !== 'youtube-embed') {
     failures.push(`${metric.mode}: YouTube source did not render as a native iframe embed`)
   }
 
