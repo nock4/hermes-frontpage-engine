@@ -187,6 +187,7 @@ function SourceImageTitleCard({
     .filter(Boolean)
     .join(' · ')
   const edgeTitle = truncateLabel(visualImageUrl ? title : fallbackLabel, 92) || title
+  const fallbackSummary = truncateLabel(binding.source_summary || binding.excerpt || binding.source_meta || binding.source_domain || '', 180)
   const cardBody = (
     <>
       {visualImageUrl ? (
@@ -206,7 +207,13 @@ function SourceImageTitleCard({
             <img alt={binding.source_image_alt ?? title} className="visual-source-card__image" onError={handleSourceImageError} onLoad={handleSourceImageLoad} src={visualImageUrl} style={visualStyle} />
           )}
         </figure>
-      ) : null}
+      ) : (
+        <div className="visual-source-card__text-surface" aria-hidden="true">
+          <span className="visual-source-card__text-kicker">{binding.source_domain || getSourceHostLabel(binding.source_url) || binding.kicker || 'source'}</span>
+          <span className="visual-source-card__text-title">{title}</span>
+          {fallbackSummary ? <span className="visual-source-card__text-summary">{fallbackSummary}</span> : null}
+        </div>
+      )}
       <div className="visual-source-card__caption">
         <strong className="visual-source-card__title">{edgeTitle}</strong>
       </div>
@@ -216,11 +223,11 @@ function SourceImageTitleCard({
   return (
     <div className="source-window__body source-window__body--visual-card">
       {href ? (
-        <a className="visual-source-card" data-source-visual-mode={visualMode} href={href} rel="noreferrer" target="_blank">
+        <a className="visual-source-card" data-has-source-visual={visualImageUrl ? 'true' : 'false'} data-source-visual-mode={visualMode} href={href} rel="noreferrer" target="_blank">
           {cardBody}
         </a>
       ) : (
-        <article className="visual-source-card" data-source-visual-mode={visualMode}>
+        <article className="visual-source-card" data-has-source-visual={visualImageUrl ? 'true' : 'false'} data-source-visual-mode={visualMode}>
           {cardBody}
         </article>
       )}
