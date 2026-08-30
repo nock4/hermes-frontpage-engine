@@ -443,6 +443,65 @@ describe('scene generation Hermes image backend', () => {
     }
   })
 
+  it('normalizes provider-returned portrait or square plates to the requested canvas', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-scene-normalize-'))
+    let normalizedArgs = null
+    try {
+      await generateScenePlate(
+        {
+          payload: {
+            scene_prompt: 'A full-bleed abstract field with visible source apertures.',
+            lighting: 'diffuse studio light',
+            material_language: ['paper', 'ink'],
+            artifacts: [{ source_url: 'https://example.com/source' }],
+          },
+          imageModel: 'gpt-image-2-medium',
+          imageBackend: 'hermes',
+          imageSize: '1536x1024',
+          imageQuality: 'medium',
+        },
+        runDir,
+        {
+          writeJson: async (targetPath, payload) => {
+            await writeFile(targetPath, JSON.stringify(payload, null, 2), 'utf8')
+          },
+          runHermesImageCommand: async () => {
+            await writeFile(path.join(runDir, 'plate.png'), 'provider-returned-image')
+            return {
+              provider: 'openai-codex',
+              model: 'gpt-image-2-medium',
+              source_image: '/tmp/generated.png',
+              aspect_ratio: 'portrait',
+            }
+          },
+          normalizePlateGeometry: async (outputPath, imageSize) => {
+            normalizedArgs = { outputPath, imageSize }
+            return {
+              requested: { width: 1536, height: 1024 },
+              actual_before: { width: 10, height: 20 },
+              actual_after: { width: 1536, height: 1024 },
+              normalized: true,
+              method: 'center-crop-cover',
+            }
+          },
+          sleep: async () => {},
+        },
+      )
+      const sceneGeneration = JSON.parse(await readFile(path.join(runDir, 'scene-generation.json'), 'utf8'))
+      expect(normalizedArgs).toMatchObject({ imageSize: '1536x1024' })
+      expect(normalizedArgs.outputPath).toBe(path.join(runDir, 'plate.png'))
+      expect(sceneGeneration.output_geometry).toMatchObject({
+        requested: { width: 1536, height: 1024 },
+        actual_before: { width: 10, height: 20 },
+        actual_after: { width: 1536, height: 1024 },
+        normalized: true,
+        method: 'center-crop-cover',
+      })
+    } finally {
+      await rm(runDir, { recursive: true, force: true })
+    }
+  })
+
   it('keeps source images as prompt fingerprints by default instead of edit inputs', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-scene-source-image-'))
     let seenArgs = []

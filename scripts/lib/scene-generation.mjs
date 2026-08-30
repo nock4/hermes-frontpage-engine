@@ -247,10 +247,85 @@ export function imageAspectRatioFromSize(size) {
   return width > height ? 'landscape' : 'portrait'
 }
 
+function parseRequestedImageSize(size) {
+  const match = String(size || '').match(/(\d+)x(\d+)/i)
+  if (!match) return { width: 1536, height: 1024 }
+  const width = Number(match[1])
+  const height = Number(match[2])
+  if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0) return { width: 1536, height: 1024 }
+  return { width, height }
+}
+
+async function normalizeGeneratedPlateGeometry(outputPath, requestedSize) {
+  const requested = parseRequestedImageSize(requestedSize)
+  const probe = await runImageGeometryNormalizer(outputPath, requested, false)
+  if (!probe?.ok) return { requested, normalized: false, error: probe?.error || 'unreadable image' }
+  if (probe.width === requested.width && probe.height === requested.height) {
+    return { requested, actual_before: { width: probe.width, height: probe.height }, actual_after: { width: probe.width, height: probe.height }, normalized: false }
+  }
+  const normalized = await runImageGeometryNormalizer(outputPath, requested, true)
+  if (!normalized?.ok) {
+    return { requested, actual_before: { width: probe.width, height: probe.height }, normalized: false, error: normalized?.error || 'normalization failed' }
+  }
+  return {
+    requested,
+    actual_before: { width: probe.width, height: probe.height },
+    actual_after: { width: normalized.width, height: normalized.height },
+    normalized: true,
+    method: 'center-crop-cover',
+  }
+}
+
+function runImageGeometryNormalizer(outputPath, requested, normalize) {
+  const script = String.raw`
+import json, sys
+from pathlib import Path
+from PIL import Image
+image_path = Path(sys.argv[1])
+width = int(sys.argv[2])
+height = int(sys.argv[3])
+normalize = sys.argv[4] == '1'
+try:
+    image = Image.open(image_path).convert('RGB')
+    before = {'ok': True, 'width': image.width, 'height': image.height}
+    if normalize and (image.width != width or image.height != height):
+        scale = max(width / image.width, height / image.height)
+        resized = image.resize((max(1, round(image.width * scale)), max(1, round(image.height * scale))), Image.Resampling.LANCZOS)
+        left = max(0, (resized.width - width) // 2)
+        top = max(0, (resized.height - height) // 2)
+        canvas = resized.crop((left, top, left + width, top + height))
+        canvas.save(image_path)
+        before.update({'width': canvas.width, 'height': canvas.height})
+    print(json.dumps(before))
+except Exception as exc:
+    print(json.dumps({'ok': False, 'error': str(exc)}))
+`
+  return runPythonJson(script, [outputPath, String(requested.width), String(requested.height), normalize ? '1' : '0'])
+}
+
+async function runPythonJson(script, args) {
+  return await new Promise((resolve) => {
+    const child = spawn(hermesImagePython, ['-c', script, ...args], { stdio: ['ignore', 'pipe', 'pipe'] })
+    let stdout = ''
+    let stderr = ''
+    child.stdout.on('data', (chunk) => { stdout += chunk })
+    child.stderr.on('data', (chunk) => { stderr += chunk })
+    child.on('close', (code) => {
+      if (code !== 0) return resolve({ ok: false, error: stderr || `python exited ${code}` })
+      try {
+        resolve(JSON.parse(stdout))
+      } catch {
+        resolve({ ok: false, error: stdout || stderr || 'python returned invalid json' })
+      }
+    })
+    child.on('error', (error) => resolve({ ok: false, error: error.message }))
+  })
+}
+
 export async function generateScenePlate(
   { payload, apiKey, imageModel, imageBackend, imageSize, imageQuality },
   runDir,
-  { writeJson, runHermesImageCommand = runJsonCommand, sleep = delay } = {},
+  { writeJson, runHermesImageCommand = runJsonCommand, sleep = delay, normalizePlateGeometry = normalizeGeneratedPlateGeometry } = {},
 ) {
   if (payload?.source_contract?.mode === 'source-image') {
     assertSourceContractPromptSafe(payload.source_contract)
@@ -325,6 +400,7 @@ export async function generateScenePlate(
         : 'source-field',
       modality: hermesResult.modality || null,
       aspect_ratio: hermesResult.aspect_ratio || imageAspectRatioFromSize(imageSize),
+      output_geometry: await normalizePlateGeometry(outputPath, imageSize),
       attempts: hermesAttempts,
     })
 
@@ -375,6 +451,7 @@ export async function generateScenePlate(
       }
 
       await fs.writeFile(outputPath, buffer)
+      const outputGeometry = await normalizePlateGeometry(outputPath, body.size)
       await writeJson(path.join(runDir, 'scene-generation.json'), {
         backend: 'openai',
         model: imageModel,
@@ -383,6 +460,7 @@ export async function generateScenePlate(
         generated_at: new Date().toISOString(),
         prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
         asset_path: outputPath,
+        output_geometry: outputGeometry,
       })
 
       return {
