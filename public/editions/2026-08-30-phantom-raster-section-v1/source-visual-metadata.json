@@ -1,0 +1,143 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-08-30-phantom-raster-section-v1",
+  "edition_id": "2026-08-30-phantom-raster-section-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-secondary-source-anchor",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2043010334844243968/img/Jn4jDb3BLeF4ptD0.jpg",
+      "poster_asset_path": "/editions/2026-08-30-phantom-raster-section-v1/assets/source-posters/binding-hero-secondary-source-anchor.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-30-phantom-raster-section-v1/binding-hero-secondary-source-anchor-source-visual-qa.jpg",
+      "image_width": 576,
+      "image_height": 1024,
+      "aspect_ratio": 0.5625,
+      "render_mode": "poster-crop",
+      "crop_risk": "high",
+      "focal_point": {
+        "x": 0.4991,
+        "y": 0.502
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.3418,
+        "width": 1.0,
+        "height": 0.3164
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.01347,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-hero-color-node",
+      "source_image_url": "https://pbs.twimg.com/media/HGEUdGGacAA21B1.jpg",
+      "poster_asset_path": "/editions/2026-08-30-phantom-raster-section-v1/assets/source-posters/binding-hero-color-node.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-30-phantom-raster-section-v1/binding-hero-color-node-source-visual-qa.jpg",
+      "image_width": 1200,
+      "image_height": 686,
+      "aspect_ratio": 1.7493,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.4993
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.0087,
+        "width": 1.0,
+        "height": 0.984
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.08221,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-layered-fragment-2",
+      "source_image_url": "https://thehtml.review/images/issue-05.png",
+      "poster_asset_path": "/editions/2026-08-30-phantom-raster-section-v1/assets/source-posters/binding-module-layered-fragment-2.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-30-phantom-raster-section-v1/binding-module-layered-fragment-2-source-visual-qa.jpg",
+      "image_width": 3600,
+      "image_height": 1890,
+      "aspect_ratio": 1.9048,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.7161,
+        "y": 0.5196
+      },
+      "poster_crop": {
+        "x": 0.0667,
+        "y": 0.0,
+        "width": 0.9333,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.01008,
+        "candidate_box_count": 15
+      }
+    },
+    {
+      "binding_id": "binding-module-reference-plaque",
+      "source_image_url": "https://img.youtube.com/vi/kPRhbjpfYbw/hqdefault.jpg",
+      "poster_asset_path": "/editions/2026-08-30-phantom-raster-section-v1/assets/source-posters/binding-module-reference-plaque.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-30-phantom-raster-section-v1/binding-module-reference-plaque-source-visual-qa.jpg",
+      "image_width": 480,
+      "image_height": 360,
+      "aspect_ratio": 1.3333,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.125,
+        "width": 1.0,
+        "height": 0.75
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.0253,
+        "candidate_box_count": 1
+      }
+    },
+    {
+      "binding_id": "binding-module-distributed-marker-2",
+      "source_image_url": "https://everythingi.love/preview.png",
+      "poster_asset_path": "/editions/2026-08-30-phantom-raster-section-v1/assets/source-posters/binding-module-distributed-marker-2.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-30-phantom-raster-section-v1/binding-module-distributed-marker-2-source-visual-qa.jpg",
+      "image_width": 1200,
+      "image_height": 630,
+      "aspect_ratio": 1.9048,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5567,
+        "y": 0.7683
+      },
+      "poster_crop": {
+        "x": 0.0667,
+        "y": 0.0,
+        "width": 0.9333,
+        "height": 1.0
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.00143,
+        "candidate_box_count": 1
+      }
+    }
+  ],
+  "failures": []
+}

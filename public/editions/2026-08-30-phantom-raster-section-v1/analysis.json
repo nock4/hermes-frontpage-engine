@@ -1,0 +1,432 @@
+{
+  "analysis_id": "analysis-2026-08-30-phantom-raster-section-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark, minimal expressionist plate built from stacked ribbed black panels, hard luminous seams, small pinhole clusters, slit-like apertures, and blue-white edge glows. The usable interaction marks are real visible surfaces: bright vertical cuts, punched light holes, block edges, and dense lower fragments.",
+  "usable_surfaces": [
+    "upper-left glowing vertical slit",
+    "central tall white aperture seam",
+    "upper-right six-pinhole cluster",
+    "left lower four-dot cluster",
+    "right black hanging plaque with blue edge",
+    "bottom ribbed fragment row",
+    "left horizontal ledge bar",
+    "lower center white rectangular glow",
+    "right mid-panel recessed slab"
+  ],
+  "detected_objects": [
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "upper-left-glowing-cut",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.099,
+        "y": 0.289,
+        "w": 0.103,
+        "h": 0.128
+      },
+      "polygon": [
+        [
+          0.101,
+          0.29
+        ],
+        [
+          0.166,
+          0.29
+        ],
+        [
+          0.174,
+          0.298
+        ],
+        [
+          0.174,
+          0.412
+        ],
+        [
+          0.198,
+          0.412
+        ],
+        [
+          0.198,
+          0.417
+        ],
+        [
+          0.161,
+          0.417
+        ],
+        [
+          0.16,
+          0.344
+        ],
+        [
+          0.1,
+          0.344
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Upper-left source-bearing luminous L-shaped cut: a bright vertical edge with a short top cap embedded in the ribbed black panel."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "four-dot-light-cluster",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.274,
+        "y": 0.648,
+        "w": 0.041,
+        "h": 0.047
+      },
+      "polygon": [
+        [
+          0.276,
+          0.65
+        ],
+        [
+          0.312,
+          0.65
+        ],
+        [
+          0.315,
+          0.656
+        ],
+        [
+          0.315,
+          0.686
+        ],
+        [
+          0.305,
+          0.695
+        ],
+        [
+          0.281,
+          0.693
+        ],
+        [
+          0.274,
+          0.684
+        ],
+        [
+          0.274,
+          0.657
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Lower-left cluster of four bright punched dots plus a nearby dark dot, sitting on a glowing ribbed panel."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "right-hanging-void-plaque",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.765,
+        "y": 0.648,
+        "w": 0.09,
+        "h": 0.136
+      },
+      "polygon": [
+        [
+          0.768,
+          0.648
+        ],
+        [
+          0.851,
+          0.648
+        ],
+        [
+          0.855,
+          0.655
+        ],
+        [
+          0.854,
+          0.78
+        ],
+        [
+          0.846,
+          0.784
+        ],
+        [
+          0.769,
+          0.782
+        ],
+        [
+          0.765,
+          0.775
+        ],
+        [
+          0.765,
+          0.657
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Right-side black rectangular hanging void with strong blue-white luminous left and right edges, visibly distinct from the surrounding panel stack."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "bottom-fragment-row",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.243,
+        "y": 0.752,
+        "w": 0.469,
+        "h": 0.125
+      },
+      "polygon": [
+        [
+          0.247,
+          0.753
+        ],
+        [
+          0.302,
+          0.753
+        ],
+        [
+          0.303,
+          0.85
+        ],
+        [
+          0.348,
+          0.85
+        ],
+        [
+          0.35,
+          0.758
+        ],
+        [
+          0.462,
+          0.759
+        ],
+        [
+          0.463,
+          0.875
+        ],
+        [
+          0.537,
+          0.875
+        ],
+        [
+          0.538,
+          0.76
+        ],
+        [
+          0.711,
+          0.76
+        ],
+        [
+          0.711,
+          0.861
+        ],
+        [
+          0.684,
+          0.866
+        ],
+        [
+          0.603,
+          0.863
+        ],
+        [
+          0.478,
+          0.887
+        ],
+        [
+          0.362,
+          0.871
+        ],
+        [
+          0.244,
+          0.858
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "Dense lower band of staggered ribbed rectangular fragments, like a city of small source blocks under the main plate."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "right-recessed-panel-slab",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.598,
+        "y": 0.441,
+        "w": 0.252,
+        "h": 0.228
+      },
+      "polygon": [
+        [
+          0.602,
+          0.445
+        ],
+        [
+          0.848,
+          0.444
+        ],
+        [
+          0.849,
+          0.585
+        ],
+        [
+          0.825,
+          0.586
+        ],
+        [
+          0.825,
+          0.662
+        ],
+        [
+          0.767,
+          0.668
+        ],
+        [
+          0.766,
+          0.632
+        ],
+        [
+          0.602,
+          0.632
+        ],
+        [
+          0.598,
+          0.612
+        ],
+        [
+          0.598,
+          0.455
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "Large right recessed ribbed slab with layered seams, dark interior surface, and visible stepped lower-right edge."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.143,
+    "rationale": "The plate is mostly black negative space around a few hard architectural masses. Although the lower band contains many fragments, the dominant read remains minimal: one central aperture, two side masses, and a handful of bright source marks."
+  },
+  "fallback_detected_object_count": 4,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-30-phantom-raster-section-v1"
+}

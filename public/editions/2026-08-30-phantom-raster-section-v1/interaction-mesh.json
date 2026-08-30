@@ -1,0 +1,505 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-08-30-phantom-raster-section-v1",
+  "generation": "daily-process-2026-08-30T08-17-40-542Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1122,
+    "height": 1402
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-08-30T08-17-40-542Z/2026-08-30-phantom-raster-section-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-secondary-source-anchor",
+      "visible_area_px": 8273,
+      "territory_area_px": 28701,
+      "hover_bounds": {
+        "x": 0.0695,
+        "y": 0.2653,
+        "w": 0.1595,
+        "h": 0.1762
+      },
+      "hover_polygon": [
+        [
+          0.0695,
+          0.3174
+        ],
+        [
+          0.0704,
+          0.2896
+        ],
+        [
+          0.1007,
+          0.2653
+        ],
+        [
+          0.1658,
+          0.2653
+        ],
+        [
+          0.2041,
+          0.2974
+        ],
+        [
+          0.2282,
+          0.4116
+        ],
+        [
+          0.1979,
+          0.4408
+        ],
+        [
+          0.1604,
+          0.4408
+        ],
+        [
+          0.1301,
+          0.4165
+        ],
+        [
+          0.0695,
+          0.3438
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "hero-color-node",
+      "visible_area_px": 2772,
+      "territory_area_px": 11646,
+      "hover_bounds": {
+        "x": 0.2433,
+        "y": 0.6255,
+        "w": 0.1025,
+        "h": 0.0942
+      },
+      "hover_polygon": [
+        [
+          0.2433,
+          0.6555
+        ],
+        [
+          0.2754,
+          0.6255
+        ],
+        [
+          0.3119,
+          0.6255
+        ],
+        [
+          0.3449,
+          0.6548
+        ],
+        [
+          0.3449,
+          0.6854
+        ],
+        [
+          0.3048,
+          0.719
+        ],
+        [
+          0.2807,
+          0.7168
+        ],
+        [
+          0.2433,
+          0.6833
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-field-marker",
+      "visible_area_px": 19198,
+      "territory_area_px": 32007,
+      "hover_bounds": {
+        "x": 0.7398,
+        "y": 0.6277,
+        "w": 0.1408,
+        "h": 0.1498
+      },
+      "hover_polygon": [
+        [
+          0.7398,
+          0.6555
+        ],
+        [
+          0.7674,
+          0.6277
+        ],
+        [
+          0.8503,
+          0.6277
+        ],
+        [
+          0.8797,
+          0.6548
+        ],
+        [
+          0.8788,
+          0.7767
+        ],
+        [
+          0.7398,
+          0.7753
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-reference-plaque",
+          "shared_edge_px": 1585,
+          "direction": "down",
+          "distance_px": 204.59
+        },
+        {
+          "artifact_id": "module-distributed-marker",
+          "shared_edge_px": 789,
+          "direction": "up",
+          "distance_px": 261.46
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-layered-fragment",
+      "visible_area_px": 62586,
+      "territory_area_px": 70094,
+      "hover_bounds": {
+        "x": 0.2219,
+        "y": 0.7325,
+        "w": 0.4929,
+        "h": 0.1633
+      },
+      "hover_polygon": [
+        [
+          0.2219,
+          0.7525
+        ],
+        [
+          0.2469,
+          0.7325
+        ],
+        [
+          0.7139,
+          0.7425
+        ],
+        [
+          0.6934,
+          0.8837
+        ],
+        [
+          0.6836,
+          0.8859
+        ],
+        [
+          0.393,
+          0.8951
+        ],
+        [
+          0.3057,
+          0.8845
+        ],
+        [
+          0.2219,
+          0.7589
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-layered-fragment-2",
+          "shared_edge_px": 3663,
+          "direction": "down",
+          "distance_px": 131.32
+        },
+        {
+          "artifact_id": "module-edge-detail",
+          "shared_edge_px": 1473,
+          "direction": "left",
+          "distance_px": 333.49
+        },
+        {
+          "artifact_id": "module-reference-plaque",
+          "shared_edge_px": 1210,
+          "direction": "right",
+          "distance_px": 378.54
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-distributed-marker",
+      "visible_area_px": 75752,
+      "territory_area_px": 100753,
+      "hover_bounds": {
+        "x": 0.5722,
+        "y": 0.4237,
+        "w": 0.3021,
+        "h": 0.229
+      },
+      "hover_polygon": [
+        [
+          0.5722,
+          0.4536
+        ],
+        [
+          0.6016,
+          0.4244
+        ],
+        [
+          0.8476,
+          0.4237
+        ],
+        [
+          0.8725,
+          0.4437
+        ],
+        [
+          0.8734,
+          0.515
+        ],
+        [
+          0.8734,
+          0.5849
+        ],
+        [
+          0.8494,
+          0.627
+        ],
+        [
+          0.7406,
+          0.6519
+        ],
+        [
+          0.6016,
+          0.6519
+        ],
+        [
+          0.5766,
+          0.632
+        ],
+        [
+          0.5722,
+          0.6134
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-field-marker",
+          "shared_edge_px": 789,
+          "direction": "down",
+          "distance_px": 261.46
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-edge-detail",
+      "visible_area_px": 45675,
+      "territory_area_px": 71155,
+      "hover_bounds": {
+        "x": 0.0749,
+        "y": 0.7596,
+        "w": 0.2308,
+        "h": 0.2004
+      },
+      "hover_polygon": [
+        [
+          0.0749,
+          0.7796
+        ],
+        [
+          0.0998,
+          0.7596
+        ],
+        [
+          0.2799,
+          0.7596
+        ],
+        [
+          0.3048,
+          0.7796
+        ],
+        [
+          0.3048,
+          0.9394
+        ],
+        [
+          0.2799,
+          0.9593
+        ],
+        [
+          0.0998,
+          0.9593
+        ],
+        [
+          0.0749,
+          0.9394
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-layered-fragment",
+          "shared_edge_px": 1473,
+          "direction": "right",
+          "distance_px": 333.49
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-layered-fragment-2",
+      "visible_area_px": 45675,
+      "territory_area_px": 48059,
+      "hover_bounds": {
+        "x": 0.3948,
+        "y": 0.7596,
+        "w": 0.2308,
+        "h": 0.2004
+      },
+      "hover_polygon": [
+        [
+          0.3948,
+          0.8738
+        ],
+        [
+          0.4875,
+          0.7596
+        ],
+        [
+          0.5116,
+          0.7596
+        ],
+        [
+          0.6248,
+          0.7939
+        ],
+        [
+          0.6248,
+          0.9394
+        ],
+        [
+          0.5998,
+          0.9593
+        ],
+        [
+          0.4198,
+          0.9593
+        ],
+        [
+          0.3948,
+          0.9394
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-layered-fragment",
+          "shared_edge_px": 3663,
+          "direction": "up",
+          "distance_px": 131.32
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-reference-plaque",
+      "visible_area_px": 45675,
+      "territory_area_px": 62836,
+      "hover_bounds": {
+        "x": 0.6943,
+        "y": 0.7397,
+        "w": 0.2308,
+        "h": 0.2004
+      },
+      "hover_polygon": [
+        [
+          0.6943,
+          0.7596
+        ],
+        [
+          0.7193,
+          0.7397
+        ],
+        [
+          0.8993,
+          0.7397
+        ],
+        [
+          0.9242,
+          0.7596
+        ],
+        [
+          0.9242,
+          0.9194
+        ],
+        [
+          0.8993,
+          0.9394
+        ],
+        [
+          0.7193,
+          0.9394
+        ],
+        [
+          0.6943,
+          0.9194
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-field-marker",
+          "shared_edge_px": 1585,
+          "direction": "up",
+          "distance_px": 204.59
+        },
+        {
+          "artifact_id": "module-layered-fragment",
+          "shared_edge_px": 1210,
+          "direction": "left",
+          "distance_px": 378.54
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-distributed-marker-2",
+      "visible_area_px": 37980,
+      "territory_area_px": 61388,
+      "hover_bounds": {
+        "x": 0.2549,
+        "y": 0.3195,
+        "w": 0.2103,
+        "h": 0.1904
+      },
+      "hover_polygon": [
+        [
+          0.2549,
+          0.3395
+        ],
+        [
+          0.2799,
+          0.3195
+        ],
+        [
+          0.4394,
+          0.3195
+        ],
+        [
+          0.4643,
+          0.3395
+        ],
+        [
+          0.4643,
+          0.4893
+        ],
+        [
+          0.4394,
+          0.5093
+        ],
+        [
+          0.2799,
+          0.5093
+        ],
+        [
+          0.2549,
+          0.4893
+        ]
+      ],
+      "neighbors": []
+    }
+  ]
+}
