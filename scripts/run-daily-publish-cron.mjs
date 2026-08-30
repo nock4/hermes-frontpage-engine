@@ -12,9 +12,13 @@ const defaultWorktreeDir = process.env.DFE_CRON_WORKTREE_DIR || path.resolve(pri
 const defaultInspirationOverridePath = path.join(primaryRoot, 'tmp', 'next-run-inspiration-override.json')
 const remoteManifestUrl = 'https://daily.nockgarden.com/editions/index.json'
 const previewSmokePort = 43180
-const defaultCronWindowDays = Number.parseInt(process.env.DFE_CRON_WINDOW_DAYS || '120', 10)
-const defaultCronMaxNotes = Number.parseInt(process.env.DFE_CRON_MAX_NOTES || '200', 10)
-const defaultCronMaxSources = Number.parseInt(process.env.DFE_CRON_MAX_SOURCES || '60', 10)
+// The archive-wide one-use source ledger has grown large enough that a 120-day /
+// 200-note press bed can be mostly already-spent material. Keep the cron lane
+// broad by default so fresh lower-scored art/music/bookmark surfaces get a real
+// chance before source research enforces the six-window floor.
+const defaultCronWindowDays = Number.parseInt(process.env.DFE_CRON_WINDOW_DAYS || '1000', 10)
+const defaultCronMaxNotes = Number.parseInt(process.env.DFE_CRON_MAX_NOTES || '500', 10)
+const defaultCronMaxSources = Number.parseInt(process.env.DFE_CRON_MAX_SOURCES || '120', 10)
 
 export function allocateCronUxPort(seed = process.pid) {
   if (process.env.DFE_UX_PORT) return process.env.DFE_UX_PORT

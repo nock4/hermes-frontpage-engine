@@ -16,9 +16,9 @@ describe('daily publish cron wrapper', () => {
   it('uses a wider default cron source field than the interactive daily run', () => {
     const options = parseArgs([])
 
-    expect(options.windowDays).toBe(120)
-    expect(options.maxNotes).toBe(200)
-    expect(options.maxSources).toBe(60)
+    expect(options.windowDays).toBe(1000)
+    expect(options.maxNotes).toBe(500)
+    expect(options.maxSources).toBe(120)
   })
 
   it('parses explicit cron source-field limits', () => {
