@@ -137,13 +137,34 @@
         "edge_density": 0.05177,
         "candidate_box_count": 24
       }
-    }
-  ],
-  "failures": [
+    },
     {
       "binding_id": "binding-module-distributed-marker",
-      "source_image_url": "https://c.statcounter.com/6676299/0/8921e975/1/",
-      "error": "Image too small: 1x1"
+      "source_image_url": "https://payload.cargocollective.com/1/2/88505/14471632/prt_200x280_1690912210.jpg",
+      "poster_asset_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/source-posters/binding-module-distributed-marker.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-08-31-raster-poster-pressure-wall-v1/binding-module-distributed-marker-source-visual-qa.jpg",
+      "image_width": 200,
+      "image_height": 280,
+      "aspect_ratio": 0.7143,
+      "render_mode": "poster-crop",
+      "crop_risk": "high",
+      "focal_point": {
+        "x": 0.4925,
+        "y": 0.575
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.3643,
+        "width": 1.0,
+        "height": 0.4
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.05655,
+        "candidate_box_count": 22
+      }
     }
-  ]
+  ],
+  "failures": []
 }

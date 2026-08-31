@@ -60,6 +60,8 @@ const isLowValuePreviewImage = (imageUrl) => {
     || lower.includes('s100x100')
     || /instagram\.com\/v\/t51\.\d+-19\//.test(lower)
     || lower.includes('templatethumbnail')
+    || lower.includes('statcounter.com/')
+    || lower.includes('/_gfx/loadinganim.gif')
     || lower.includes('static/images/x.png')
     || lower.includes('abs.twimg.com/emoji/')
     || lower.includes('/logo')

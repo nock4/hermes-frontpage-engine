@@ -150,6 +150,8 @@ export function isLowValueVisualImage(imageUrl) {
     || lower.includes('/profile/')
     || lower.includes('s100x100')
     || lower.includes('templatethumbnail')
+    || lower.includes('statcounter.com/')
+    || lower.includes('/_gfx/loadinganim.gif')
     || lower.includes('placeholder')
     || lower.includes('%7b%7b')
     || lower.includes('{{')

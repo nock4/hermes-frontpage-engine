@@ -90,6 +90,8 @@ describe('source selection policy', () => {
     expect(isLowValueVisualImage('https://www.wikiart.org/%7B%7BviewModel.ArtworkOfTheDay.ImageDescription.Url%7D%7D')).toBe(true)
     expect(isLowValueVisualImage('https://yt3.googleusercontent.com/ytc/example=s900-c-k-c0x00ffffff-no-rj')).toBe(true)
     expect(isLowValueVisualImage('https://github.com/anthropics.png?size=120')).toBe(true)
+    expect(isLowValueVisualImage('https://c.statcounter.com/6676299/0/8921e975/1/')).toBe(true)
+    expect(isLowValueVisualImage('https://50watts.com/_gfx/loadingAnim.gif')).toBe(true)
     expect(isLowValueVisualImage('https://example.com/field-photo.jpg')).toBe(false)
     expect(isDirectRasterImageUrl('https://pbs.twimg.com/media/abc123?format=jpg&name=large')).toBe(true)
   })
