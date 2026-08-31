@@ -263,6 +263,18 @@ export function SourceWindowBody({
   }
 
   if (descriptor.kind === 'youtube-embed') {
+    if (surface === 'stage' && mode === 'preview') {
+      const sourceImage = getUsableSourceImageUrl(binding) || getYouTubeThumbnailUrl(binding.source_url)
+      return (
+        <SourceImageTitleCard
+          binding={binding}
+          href={binding.source_url}
+          imageUrl={sourceImage}
+          title={binding.source_title || binding.title}
+        />
+      )
+    }
+
     return (
       <div className="source-window__body source-window__body--video">
         <iframe
