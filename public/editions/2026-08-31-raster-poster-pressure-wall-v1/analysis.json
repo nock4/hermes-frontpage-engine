@@ -1,0 +1,496 @@
+{
+  "analysis_id": "analysis-2026-08-31-raster-poster-pressure-wall-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Expressionist torn-wall plate: black silhouettes, blue pigment pools, apertures, dotted seams, and scraped plaster form the source-bearing interface marks.",
+  "usable_surfaces": [
+    "left blue circular aperture",
+    "central torn black silhouette",
+    "upper black disk edge",
+    "cat-head void with tiny eyes",
+    "right blue orb pool",
+    "center dotted signal band",
+    "lower-right pinhole cluster",
+    "bottom torn black ridge",
+    "vertical blue slit"
+  ],
+  "detected_objects": [
+    {
+      "label": "Primary Source Anchor",
+      "artifact_type": "primary-source-anchor",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.167,
+        "y": 0,
+        "w": 0.289,
+        "h": 0.915
+      },
+      "polygon": [
+        [
+          0.231,
+          0
+        ],
+        [
+          0.286,
+          0.018
+        ],
+        [
+          0.307,
+          0.079
+        ],
+        [
+          0.298,
+          0.167
+        ],
+        [
+          0.249,
+          0.26
+        ],
+        [
+          0.199,
+          0.382
+        ],
+        [
+          0.19,
+          0.565
+        ],
+        [
+          0.223,
+          0.749
+        ],
+        [
+          0.201,
+          0.915
+        ],
+        [
+          0.136,
+          0.914
+        ],
+        [
+          0.127,
+          0.719
+        ],
+        [
+          0.102,
+          0.52
+        ],
+        [
+          0.124,
+          0.344
+        ],
+        [
+          0.158,
+          0.223
+        ],
+        [
+          0.143,
+          0.085
+        ],
+        [
+          0.176,
+          0.014
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "large irregular black standing silhouette with scraped, torn contours through the left-center of the plate"
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "secondary-source-anchor",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.728,
+        "y": 0.18,
+        "w": 0.108,
+        "h": 0.206
+      },
+      "polygon": [
+        [
+          0.744,
+          0.377
+        ],
+        [
+          0.744,
+          0.276
+        ],
+        [
+          0.76,
+          0.185
+        ],
+        [
+          0.789,
+          0.271
+        ],
+        [
+          0.829,
+          0.189
+        ],
+        [
+          0.832,
+          0.381
+        ],
+        [
+          0.808,
+          0.377
+        ],
+        [
+          0.788,
+          0.366
+        ],
+        [
+          0.767,
+          0.381
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "black cat-head shaped void with two pointed ears and two small colored eye flecks"
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.384,
+        "w": 0.21,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.377,
+          0.394
+        ],
+        [
+          0.442,
+          0.393
+        ],
+        [
+          0.522,
+          0.397
+        ],
+        [
+          0.578,
+          0.401
+        ],
+        [
+          0.581,
+          0.431
+        ],
+        [
+          0.524,
+          0.449
+        ],
+        [
+          0.445,
+          0.454
+        ],
+        [
+          0.378,
+          0.451
+        ],
+        [
+          0.369,
+          0.425
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "dense horizontal rows of pale dot marks embedded in the central black field"
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.064,
+        "y": 0.396,
+        "w": 0.099,
+        "h": 0.179
+      },
+      "polygon": [
+        [
+          0.113,
+          0.397
+        ],
+        [
+          0.147,
+          0.413
+        ],
+        [
+          0.164,
+          0.453
+        ],
+        [
+          0.157,
+          0.505
+        ],
+        [
+          0.132,
+          0.559
+        ],
+        [
+          0.089,
+          0.57
+        ],
+        [
+          0.056,
+          0.547
+        ],
+        [
+          0.04,
+          0.501
+        ],
+        [
+          0.048,
+          0.447
+        ],
+        [
+          0.075,
+          0.411
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "left circular blue aperture with dark rim and glowing blue interior"
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.73,
+        "y": 0.566,
+        "w": 0.2,
+        "h": 0.3
+      },
+      "polygon": [
+        [
+          0.803,
+          0.562
+        ],
+        [
+          0.865,
+          0.579
+        ],
+        [
+          0.911,
+          0.626
+        ],
+        [
+          0.931,
+          0.704
+        ],
+        [
+          0.912,
+          0.792
+        ],
+        [
+          0.861,
+          0.854
+        ],
+        [
+          0.784,
+          0.867
+        ],
+        [
+          0.728,
+          0.837
+        ],
+        [
+          0.704,
+          0.775
+        ],
+        [
+          0.707,
+          0.686
+        ],
+        [
+          0.743,
+          0.601
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "large right-side blue orb or pool with ragged white torn rim and dark halftone texture"
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.743,
+        "y": 0.304,
+        "w": 0.062,
+        "h": 0.151
+      },
+      "polygon": [
+        [
+          0.745,
+          0.309
+        ],
+        [
+          0.783,
+          0.301
+        ],
+        [
+          0.807,
+          0.319
+        ],
+        [
+          0.803,
+          0.444
+        ],
+        [
+          0.774,
+          0.455
+        ],
+        [
+          0.746,
+          0.438
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "vertical blue scraped slit or inset window beside the cat-head void"
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.584,
+        "y": 0.684,
+        "w": 0.112,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.594,
+          0.689
+        ],
+        [
+          0.619,
+          0.685
+        ],
+        [
+          0.65,
+          0.687
+        ],
+        [
+          0.678,
+          0.693
+        ],
+        [
+          0.693,
+          0.714
+        ],
+        [
+          0.688,
+          0.744
+        ],
+        [
+          0.656,
+          0.755
+        ],
+        [
+          0.617,
+          0.751
+        ],
+        [
+          0.59,
+          0.736
+        ],
+        [
+          0.584,
+          0.708
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "cluster of small black circular pinholes cut into pale plaster near the lower center-right"
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.353,
+        "y": 0.882,
+        "w": 0.37,
+        "h": 0.118
+      },
+      "polygon": [
+        [
+          0.354,
+          0.902
+        ],
+        [
+          0.421,
+          0.895
+        ],
+        [
+          0.502,
+          0.901
+        ],
+        [
+          0.575,
+          0.884
+        ],
+        [
+          0.647,
+          0.89
+        ],
+        [
+          0.715,
+          0.909
+        ],
+        [
+          0.724,
+          1
+        ],
+        [
+          0.351,
+          1
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "long torn black ridge and wrinkled seam across the bottom edge of the plate"
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 6,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.441,
+    "rationale": "The plate is expressionist and source-rich, with clear dominant black and blue forms, but heavy speckle texture and many small scars make it moderately cluttered rather than minimal."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-08-31-raster-poster-pressure-wall-v1"
+}

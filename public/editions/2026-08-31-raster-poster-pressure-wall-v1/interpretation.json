@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-08-31-raster-poster-pressure-wall-v1",
+  "edition_id": "2026-08-31-raster-poster-pressure-wall-v1",
+  "plate_read_timestamp": "2026-08-31T08:23:48.469Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Expressionist torn-wall plate: black silhouettes, blue pigment pools, apertures, dotted seams, and scraped plaster form the source-bearing interface marks.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "fast cobalt paste under bass pressure",
+      "Expressionist torn-wall plate: black silhouettes, blue pigment pools, apertures, dotted seams, and scraped plaster form the source-bearing interface marks.",
+      "https",
+      "status",
+      "tags"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Primary Source Anchor",
+      "Secondary Source Anchor",
+      "Signal Panel",
+      "Field Marker",
+      "Edge Detail",
+      "Layered Fragment",
+      "Reference Plaque",
+      "Distributed Marker"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "raster-poster-pressure-wall",
+      "Support three major structures: a heavy dark lower pressure band, a dense central procession of torn raster posters and measure cuts, and several cobalt orb ruptures that act as visual anchors and source-window territories.",
+      "The Dither Boy anchor should appear through the plate language itself: square GIF crops, dither thresholds, cobalt orb burns, update-fragment residue, and animation-frame shimmer. Supporting sources should occupy real marks embedded in the wall: tweet media as scraped image fragments, YouTube as linear measure cuts and bass ridges, Studio AAA links as pasted update residues, and image materials as square apertures or orb burn-throughs.",
+      "mixed geometry",
+      "collage composition",
+      "left blue circular aperture",
+      "central torn black silhouette",
+      "upper black disk edge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: raster-poster-pressure-wall.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "type": "primary-source-anchor",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.167,
+        "y": 0,
+        "w": 0.289,
+        "h": 0.915
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "type": "secondary-source-anchor",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.728,
+        "y": 0.18,
+        "w": 0.108,
+        "h": 0.206
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.799728,
+      "bounds": {
+        "x": 0.373,
+        "y": 0.384,
+        "w": 0.21,
+        "h": 0.073
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.7651560000000001,
+      "bounds": {
+        "x": 0.064,
+        "y": 0.396,
+        "w": 0.099,
+        "h": 0.179
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "type": "edge-detail",
+      "strength": 0.725028,
+      "bounds": {
+        "x": 0.73,
+        "y": 0.566,
+        "w": 0.2,
+        "h": 0.3
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "layered-fragment",
+      "strength": 0.7128,
+      "bounds": {
+        "x": 0.743,
+        "y": 0.304,
+        "w": 0.062,
+        "h": 0.151
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "type": "reference-plaque",
+      "strength": 0.6776280000000001,
+      "bounds": {
+        "x": 0.584,
+        "y": 0.684,
+        "w": 0.112,
+        "h": 0.073
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.649864,
+      "bounds": {
+        "x": 0.353,
+        "y": 0.882,
+        "w": 0.37,
+        "h": 0.118
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.659956,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.167,
+        "y": 0,
+        "w": 0.289,
+        "h": 0.915
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-secondary-source-anchor-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.728,
+        "y": 0.18,
+        "w": 0.108,
+        "h": 0.206
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.384,
+        "w": 0.21,
+        "h": 0.073
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.064,
+        "y": 0.396,
+        "w": 0.099,
+        "h": 0.179
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-detail-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.73,
+        "y": 0.566,
+        "w": 0.2,
+        "h": 0.3
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.743,
+        "y": 0.304,
+        "w": 0.062,
+        "h": 0.151
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.584,
+        "y": 0.684,
+        "w": 0.112,
+        "h": 0.073
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.353,
+        "y": 0.882,
+        "w": 0.37,
+        "h": 0.118
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

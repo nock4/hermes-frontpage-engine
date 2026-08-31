@@ -1,0 +1,1536 @@
+{
+  "artifact_map_id": "map-2026-08-31-raster-poster-pressure-wall-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "raster-poster-pressure-wall",
+  "default_artifact_id": "hero-primary-source-anchor",
+  "artifacts": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "label": "Primary Source Anchor",
+      "artifact_type": "primary-source-anchor",
+      "bounds": {
+        "x": 0.167,
+        "y": 0,
+        "w": 0.289,
+        "h": 0.915
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.231,
+          0
+        ],
+        [
+          0.286,
+          0.018
+        ],
+        [
+          0.307,
+          0.079
+        ],
+        [
+          0.298,
+          0.167
+        ],
+        [
+          0.249,
+          0.26
+        ],
+        [
+          0.199,
+          0.382
+        ],
+        [
+          0.19,
+          0.565
+        ],
+        [
+          0.223,
+          0.749
+        ],
+        [
+          0.201,
+          0.915
+        ],
+        [
+          0.136,
+          0.914
+        ],
+        [
+          0.127,
+          0.719
+        ],
+        [
+          0.102,
+          0.52
+        ],
+        [
+          0.124,
+          0.344
+        ],
+        [
+          0.158,
+          0.223
+        ],
+        [
+          0.143,
+          0.085
+        ],
+        [
+          0.176,
+          0.014
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/hero-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          478,
+          394
+        ],
+        "safe_stage_window_origin_px": [
+          514,
+          468
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.231,
+            0
+          ],
+          [
+            0.286,
+            0.018
+          ],
+          [
+            0.307,
+            0.079
+          ],
+          [
+            0.298,
+            0.167
+          ],
+          [
+            0.249,
+            0.26
+          ],
+          [
+            0.199,
+            0.382
+          ],
+          [
+            0.19,
+            0.565
+          ],
+          [
+            0.223,
+            0.749
+          ],
+          [
+            0.201,
+            0.915
+          ],
+          [
+            0.136,
+            0.914
+          ],
+          [
+            0.127,
+            0.719
+          ],
+          [
+            0.102,
+            0.52
+          ],
+          [
+            0.124,
+            0.344
+          ],
+          [
+            0.158,
+            0.223
+          ],
+          [
+            0.143,
+            0.085
+          ],
+          [
+            0.176,
+            0.014
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0892,
+            0.5967
+          ],
+          [
+            0.0977,
+            0.373
+          ],
+          [
+            0.1224,
+            0.0801
+          ],
+          [
+            0.1628,
+            0.0
+          ],
+          [
+            0.2962,
+            0.0
+          ],
+          [
+            0.3086,
+            0.0186
+          ],
+          [
+            0.3288,
+            0.0781
+          ],
+          [
+            0.2227,
+            0.9141
+          ],
+          [
+            0.2005,
+            0.9473
+          ],
+          [
+            0.1354,
+            0.9463
+          ],
+          [
+            0.1133,
+            0.9131
+          ],
+          [
+            0.0892,
+            0.5986
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0892,
+          "y": 0.0,
+          "w": 0.2402,
+          "h": 0.9482
+        },
+        "territory_area_px": 191886,
+        "visible_area_px": 142973,
+        "expansion_ratio": 1.342,
+        "neighbors": [
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 1907,
+            "direction": "left",
+            "distance_px": 164.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "label": "Secondary Source Anchor",
+      "artifact_type": "secondary-source-anchor",
+      "bounds": {
+        "x": 0.728,
+        "y": 0.18,
+        "w": 0.108,
+        "h": 0.206
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.744,
+          0.377
+        ],
+        [
+          0.744,
+          0.276
+        ],
+        [
+          0.76,
+          0.185
+        ],
+        [
+          0.789,
+          0.271
+        ],
+        [
+          0.829,
+          0.189
+        ],
+        [
+          0.832,
+          0.381
+        ],
+        [
+          0.808,
+          0.377
+        ],
+        [
+          0.788,
+          0.366
+        ],
+        [
+          0.767,
+          0.381
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/hero-secondary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-secondary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1201,
+          273
+        ],
+        "safe_stage_window_origin_px": [
+          1214,
+          290
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.744,
+            0.377
+          ],
+          [
+            0.744,
+            0.276
+          ],
+          [
+            0.76,
+            0.185
+          ],
+          [
+            0.789,
+            0.271
+          ],
+          [
+            0.829,
+            0.189
+          ],
+          [
+            0.832,
+            0.381
+          ],
+          [
+            0.808,
+            0.377
+          ],
+          [
+            0.788,
+            0.366
+          ],
+          [
+            0.767,
+            0.381
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7214,
+            0.2744
+          ],
+          [
+            0.737,
+            0.1865
+          ],
+          [
+            0.7598,
+            0.1514
+          ],
+          [
+            0.8288,
+            0.1553
+          ],
+          [
+            0.8509,
+            0.1885
+          ],
+          [
+            0.8535,
+            0.3574
+          ],
+          [
+            0.8535,
+            0.3809
+          ],
+          [
+            0.8314,
+            0.4141
+          ],
+          [
+            0.7266,
+            0.3848
+          ],
+          [
+            0.7214,
+            0.377
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7214,
+          "y": 0.1514,
+          "w": 0.1328,
+          "h": 0.2637
+        },
+        "territory_area_px": 35011,
+        "visible_area_px": 20343,
+        "expansion_ratio": 1.721,
+        "neighbors": [
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 1684,
+            "direction": "down",
+            "distance_px": 138.75
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.384,
+        "w": 0.21,
+        "h": 0.073
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.377,
+          0.394
+        ],
+        [
+          0.442,
+          0.393
+        ],
+        [
+          0.522,
+          0.397
+        ],
+        [
+          0.578,
+          0.401
+        ],
+        [
+          0.581,
+          0.431
+        ],
+        [
+          0.524,
+          0.449
+        ],
+        [
+          0.445,
+          0.454
+        ],
+        [
+          0.378,
+          0.451
+        ],
+        [
+          0.369,
+          0.425
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          734,
+          425
+        ],
+        "safe_stage_window_origin_px": [
+          760,
+          431
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.377,
+            0.394
+          ],
+          [
+            0.442,
+            0.393
+          ],
+          [
+            0.522,
+            0.397
+          ],
+          [
+            0.578,
+            0.401
+          ],
+          [
+            0.581,
+            0.431
+          ],
+          [
+            0.524,
+            0.449
+          ],
+          [
+            0.445,
+            0.454
+          ],
+          [
+            0.378,
+            0.451
+          ],
+          [
+            0.369,
+            0.425
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4128,
+            0.4609
+          ],
+          [
+            0.416,
+            0.3662
+          ],
+          [
+            0.5775,
+            0.373
+          ],
+          [
+            0.5957,
+            0.4004
+          ],
+          [
+            0.599,
+            0.4277
+          ],
+          [
+            0.5807,
+            0.458
+          ],
+          [
+            0.5234,
+            0.4756
+          ],
+          [
+            0.4128,
+            0.4785
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4128,
+          "y": 0.3652,
+          "w": 0.1868,
+          "h": 0.1162
+        },
+        "territory_area_px": 29333,
+        "visible_area_px": 17210,
+        "expansion_ratio": 1.704,
+        "neighbors": [
+          {
+            "artifact_id": "module-distributed-marker-2",
+            "shared_edge_px": 1518,
+            "direction": "left",
+            "distance_px": 230.47
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.064,
+        "y": 0.396,
+        "w": 0.099,
+        "h": 0.179
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.113,
+          0.397
+        ],
+        [
+          0.147,
+          0.413
+        ],
+        [
+          0.164,
+          0.453
+        ],
+        [
+          0.157,
+          0.505
+        ],
+        [
+          0.132,
+          0.559
+        ],
+        [
+          0.089,
+          0.57
+        ],
+        [
+          0.056,
+          0.547
+        ],
+        [
+          0.04,
+          0.501
+        ],
+        [
+          0.048,
+          0.447
+        ],
+        [
+          0.075,
+          0.411
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          174,
+          482
+        ],
+        "safe_stage_window_origin_px": [
+          187,
+          497
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.113,
+            0.397
+          ],
+          [
+            0.147,
+            0.413
+          ],
+          [
+            0.164,
+            0.453
+          ],
+          [
+            0.157,
+            0.505
+          ],
+          [
+            0.132,
+            0.559
+          ],
+          [
+            0.089,
+            0.57
+          ],
+          [
+            0.056,
+            0.547
+          ],
+          [
+            0.04,
+            0.501
+          ],
+          [
+            0.048,
+            0.447
+          ],
+          [
+            0.075,
+            0.411
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0215,
+            0.499
+          ],
+          [
+            0.0293,
+            0.4463
+          ],
+          [
+            0.0495,
+            0.416
+          ],
+          [
+            0.0749,
+            0.3828
+          ],
+          [
+            0.1126,
+            0.3691
+          ],
+          [
+            0.1706,
+            0.5137
+          ],
+          [
+            0.1315,
+            0.5859
+          ],
+          [
+            0.0885,
+            0.5967
+          ],
+          [
+            0.056,
+            0.5742
+          ],
+          [
+            0.0371,
+            0.5459
+          ],
+          [
+            0.0215,
+            0.501
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0215,
+          "y": 0.3691,
+          "w": 0.1497,
+          "h": 0.2285
+        },
+        "territory_area_px": 35774,
+        "visible_area_px": 25188,
+        "expansion_ratio": 1.42,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 1907,
+            "direction": "right",
+            "distance_px": 164.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "bounds": {
+        "x": 0.73,
+        "y": 0.566,
+        "w": 0.2,
+        "h": 0.3
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.803,
+          0.562
+        ],
+        [
+          0.865,
+          0.579
+        ],
+        [
+          0.911,
+          0.626
+        ],
+        [
+          0.931,
+          0.704
+        ],
+        [
+          0.912,
+          0.792
+        ],
+        [
+          0.861,
+          0.854
+        ],
+        [
+          0.784,
+          0.867
+        ],
+        [
+          0.728,
+          0.837
+        ],
+        [
+          0.704,
+          0.775
+        ],
+        [
+          0.707,
+          0.686
+        ],
+        [
+          0.743,
+          0.601
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1275,
+          709
+        ],
+        "safe_stage_window_origin_px": [
+          1299,
+          733
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.803,
+            0.562
+          ],
+          [
+            0.865,
+            0.579
+          ],
+          [
+            0.911,
+            0.626
+          ],
+          [
+            0.931,
+            0.704
+          ],
+          [
+            0.912,
+            0.792
+          ],
+          [
+            0.861,
+            0.854
+          ],
+          [
+            0.784,
+            0.867
+          ],
+          [
+            0.728,
+            0.837
+          ],
+          [
+            0.704,
+            0.775
+          ],
+          [
+            0.707,
+            0.686
+          ],
+          [
+            0.743,
+            0.601
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6855,
+            0.7715
+          ],
+          [
+            0.6901,
+            0.6807
+          ],
+          [
+            0.724,
+            0.6016
+          ],
+          [
+            0.7428,
+            0.5732
+          ],
+          [
+            0.8027,
+            0.5342
+          ],
+          [
+            0.8646,
+            0.5508
+          ],
+          [
+            0.9102,
+            0.5977
+          ],
+          [
+            0.929,
+            0.626
+          ],
+          [
+            0.9492,
+            0.7021
+          ],
+          [
+            0.9297,
+            0.792
+          ],
+          [
+            0.8607,
+            0.8809
+          ],
+          [
+            0.7839,
+            0.8936
+          ],
+          [
+            0.7279,
+            0.8643
+          ],
+          [
+            0.709,
+            0.8359
+          ],
+          [
+            0.6855,
+            0.7744
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6855,
+          "y": 0.5342,
+          "w": 0.2643,
+          "h": 0.3604
+        },
+        "territory_area_px": 109623,
+        "visible_area_px": 83501,
+        "expansion_ratio": 1.313,
+        "neighbors": [
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 597,
+            "direction": "left",
+            "distance_px": 273.21
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.743,
+        "y": 0.304,
+        "w": 0.062,
+        "h": 0.151
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.745,
+          0.309
+        ],
+        [
+          0.783,
+          0.301
+        ],
+        [
+          0.807,
+          0.319
+        ],
+        [
+          0.803,
+          0.444
+        ],
+        [
+          0.774,
+          0.455
+        ],
+        [
+          0.746,
+          0.438
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1189,
+          376
+        ],
+        "safe_stage_window_origin_px": [
+          1196,
+          389
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.745,
+            0.309
+          ],
+          [
+            0.783,
+            0.301
+          ],
+          [
+            0.807,
+            0.319
+          ],
+          [
+            0.803,
+            0.444
+          ],
+          [
+            0.774,
+            0.455
+          ],
+          [
+            0.746,
+            0.438
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7266,
+            0.3184
+          ],
+          [
+            0.8236,
+            0.3545
+          ],
+          [
+            0.821,
+            0.4434
+          ],
+          [
+            0.8027,
+            0.4707
+          ],
+          [
+            0.7734,
+            0.4814
+          ],
+          [
+            0.7454,
+            0.4648
+          ],
+          [
+            0.7272,
+            0.4375
+          ],
+          [
+            0.7266,
+            0.3721
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7266,
+          "y": 0.3184,
+          "w": 0.0977,
+          "h": 0.1641
+        },
+        "territory_area_px": 19767,
+        "visible_area_px": 13359,
+        "expansion_ratio": 1.48,
+        "neighbors": [
+          {
+            "artifact_id": "hero-secondary-source-anchor",
+            "shared_edge_px": 1684,
+            "direction": "up",
+            "distance_px": 138.75
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "bounds": {
+        "x": 0.584,
+        "y": 0.684,
+        "w": 0.112,
+        "h": 0.073
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.594,
+          0.689
+        ],
+        [
+          0.619,
+          0.685
+        ],
+        [
+          0.65,
+          0.687
+        ],
+        [
+          0.678,
+          0.693
+        ],
+        [
+          0.693,
+          0.714
+        ],
+        [
+          0.688,
+          0.744
+        ],
+        [
+          0.656,
+          0.755
+        ],
+        [
+          0.617,
+          0.751
+        ],
+        [
+          0.59,
+          0.736
+        ],
+        [
+          0.584,
+          0.708
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          983,
+          732
+        ],
+        "safe_stage_window_origin_px": [
+          997,
+          738
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.594,
+            0.689
+          ],
+          [
+            0.619,
+            0.685
+          ],
+          [
+            0.65,
+            0.687
+          ],
+          [
+            0.678,
+            0.693
+          ],
+          [
+            0.693,
+            0.714
+          ],
+          [
+            0.688,
+            0.744
+          ],
+          [
+            0.656,
+            0.755
+          ],
+          [
+            0.617,
+            0.751
+          ],
+          [
+            0.59,
+            0.736
+          ],
+          [
+            0.584,
+            0.708
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5658,
+            0.707
+          ],
+          [
+            0.5938,
+            0.6611
+          ],
+          [
+            0.6185,
+            0.6572
+          ],
+          [
+            0.6777,
+            0.665
+          ],
+          [
+            0.7109,
+            0.7139
+          ],
+          [
+            0.7057,
+            0.7432
+          ],
+          [
+            0.6875,
+            0.7705
+          ],
+          [
+            0.6556,
+            0.7822
+          ],
+          [
+            0.6165,
+            0.7783
+          ],
+          [
+            0.5898,
+            0.7627
+          ],
+          [
+            0.5716,
+            0.7354
+          ],
+          [
+            0.5658,
+            0.708
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5658,
+          "y": 0.6572,
+          "w": 0.1458,
+          "h": 0.126
+        },
+        "territory_area_px": 21947,
+        "visible_area_px": 9683,
+        "expansion_ratio": 2.267,
+        "neighbors": [
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 597,
+            "direction": "right",
+            "distance_px": 273.21
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.353,
+        "y": 0.882,
+        "w": 0.37,
+        "h": 0.118
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.354,
+          0.902
+        ],
+        [
+          0.421,
+          0.895
+        ],
+        [
+          0.502,
+          0.901
+        ],
+        [
+          0.575,
+          0.884
+        ],
+        [
+          0.647,
+          0.89
+        ],
+        [
+          0.715,
+          0.909
+        ],
+        [
+          0.724,
+          1
+        ],
+        [
+          0.351,
+          1
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          826,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          872,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.354,
+            0.902
+          ],
+          [
+            0.421,
+            0.895
+          ],
+          [
+            0.502,
+            0.901
+          ],
+          [
+            0.575,
+            0.884
+          ],
+          [
+            0.647,
+            0.89
+          ],
+          [
+            0.715,
+            0.909
+          ],
+          [
+            0.724,
+            1
+          ],
+          [
+            0.351,
+            1
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3327,
+            0.9883
+          ],
+          [
+            0.3353,
+            0.9014
+          ],
+          [
+            0.3535,
+            0.874
+          ],
+          [
+            0.5749,
+            0.8564
+          ],
+          [
+            0.6465,
+            0.8623
+          ],
+          [
+            0.7148,
+            0.8809
+          ],
+          [
+            0.7331,
+            0.9082
+          ],
+          [
+            0.7422,
+            0.9971
+          ],
+          [
+            0.3327,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3327,
+          "y": 0.8564,
+          "w": 0.4102,
+          "h": 0.1436
+        },
+        "territory_area_px": 82374,
+        "visible_area_px": 60590,
+        "expansion_ratio": 1.36,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "raster-poster-pressure-wall",
+      "mask_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/masks/module-distributed-marker-2.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3398
+          ],
+          [
+            0.2799,
+            0.3125
+          ],
+          [
+            0.4395,
+            0.3125
+          ],
+          [
+            0.4577,
+            0.3398
+          ],
+          [
+            0.4577,
+            0.4893
+          ],
+          [
+            0.4395,
+            0.5166
+          ],
+          [
+            0.2799,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.1966,
+          "h": 0.2051
+        },
+        "territory_area_px": 53884,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.422,
+        "neighbors": [
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 1518,
+            "direction": "right",
+            "distance_px": 230.47
+          }
+        ]
+      }
+    }
+  ]
+}

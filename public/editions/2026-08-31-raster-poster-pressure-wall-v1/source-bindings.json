@@ -1,0 +1,306 @@
+{
+  "source_binding_set_id": "bindings-2026-08-31-raster-poster-pressure-wall-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-primary-source-anchor",
+      "artifact_id": "hero-primary-source-anchor",
+      "source_type": "tweet",
+      "source_url": "https://x.com/DevGallo/status/2042286726916329484",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@DevGallo: I’m making a single-player bodycam revenge FPS inspired by 90s Hong Kong action...",
+      "kicker": "x.com",
+      "excerpt": "I’m making a single-player bodycam revenge FPS inspired by 90s Hong Kong action cinema I’ve seen people say it feels too raw... honestly, I take that as a compliment. I always wanted it to feel like a real shootout slipping out of control Better Than Dead is getting close to release",
+      "source_title": "@DevGallo: I’m making a single-player bodycam revenge FPS inspired by 90s Hong Kong action...",
+      "source_summary": "I’m making a single-player bodycam revenge FPS inspired by 90s Hong Kong action cinema I’ve seen people say it feels too raw... honestly, I take that as a compliment. I always wanted it to feel like a real shootout slipping out of control Better Than Dead is getting close to release",
+      "source_domain": "x.com",
+      "source_meta": "@DevGallo: Better Than Dead bodycam revenge FPS",
+      "source_image_url": "https://pbs.twimg.com/amplify_video_thumb/2042218206396305408/img/LZfN3dEq82bFdNcJ.jpg",
+      "source_image_alt": "@DevGallo: I’m making a single-player bodycam revenge FPS inspired by 90s Hong Kong action... preview image",
+      "source_media_url": "https://video.twimg.com/amplify_video/2042218206396305408/vid/avc1/1920x1080/kmMZ8xm4UAfhF143.mp4?tag=21",
+      "source_media_type": "video",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/source-posters/binding-hero-primary-source-anchor.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.5067
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1.0,
+          "height": 1.0
+        },
+        "image_width": 1200,
+        "image_height": 675,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02995,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-hero-secondary-source-anchor",
+      "artifact_id": "hero-secondary-source-anchor",
+      "source_type": "tweet",
+      "source_url": "https://x.com/cozybao/status/2047295671301201991",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@cozybao: Adding to this list, my personal favorites are: Kenichiro Isoda - Beach of the...",
+      "kicker": "x.com",
+      "excerpt": "Adding to this list, my personal favorites are: Kenichiro Isoda - Beach of the Pliocene (1990) Toshiya Sukegawa - Bioçic Music: Jewels (1994) Brian Eno - Thursday Afternoon (1985) Takashi Kokubo - Serenity (1999)",
+      "source_title": "@cozybao: Adding to this list, my personal favorites are: Kenichiro Isoda - Beach of the...",
+      "source_summary": "Adding to this list, my personal favorites are: Kenichiro Isoda - Beach of the Pliocene (1990) Toshiya Sukegawa - Bioçic Music: Jewels (1994) Brian Eno - Thursday Afternoon (1985) Takashi Kokubo - Serenity (1999)",
+      "source_domain": "x.com",
+      "source_meta": "@cozybao: adding to this list my personal favorites are kenichiro isoda",
+      "source_image_url": "https://pbs.twimg.com/media/HGlyqBuaYAA8kY8.jpg",
+      "source_image_alt": "@cozybao: Adding to this list, my personal favorites are: Kenichiro Isoda - Beach of the... preview image",
+      "source_media_url": "https://pbs.twimg.com/media/HGlyqBuaYAA8kY8.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/source-posters/binding-hero-secondary-source-anchor.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.506,
+          "y": 0.3591
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.0989,
+          "width": 1.0,
+          "height": 0.5628
+        },
+        "image_width": 1084,
+        "image_height": 1082,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.00776,
+          "candidate_box_count": 22
+        }
+      }
+    },
+    {
+      "id": "binding-module-signal-panel",
+      "artifact_id": "module-signal-panel",
+      "source_type": "youtube",
+      "source_url": "https://www.youtube.com/watch?v=3ikD6HI88vU",
+      "window_type": "video",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "YouTube Playlists",
+      "kicker": "youtube.com",
+      "excerpt": "source-bearing detail",
+      "source_title": "YouTube Playlists",
+      "source_domain": "youtube.com",
+      "source_meta": "YouTube Playlists",
+      "source_image_url": "https://img.youtube.com/vi/3ikD6HI88vU/hqdefault.jpg",
+      "source_image_alt": "YouTube Playlists preview image",
+      "source_media_url": "https://img.youtube.com/vi/3ikD6HI88vU/hqdefault.jpg",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/source-posters/binding-module-signal-panel.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.4885,
+          "y": 0.5014
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.1278,
+          "width": 1.0,
+          "height": 0.75
+        },
+        "image_width": 480,
+        "image_height": 360,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.07274,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-field-marker",
+      "artifact_id": "module-field-marker",
+      "source_type": "article",
+      "source_url": "https://www.linkedin.com/company/studio-aaa/",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Studio AAA | LinkedIn",
+      "kicker": "linkedin.com",
+      "excerpt": "Studio AAA | 189 followers on LinkedIn. Design for the music industry and resources for graphic designers. | \"Studio TRIPLE A\" — Find high-grade, hand-made textures, free downloads, and design resources at http://studioaaa.com",
+      "source_title": "Studio AAA | LinkedIn",
+      "source_summary": "Studio AAA | 189 followers on LinkedIn. Design for the music industry and resources for graphic designers. | \"Studio TRIPLE A\" — Find high-grade, hand-made textures, free downloads, and design resources at http://studioaaa.com",
+      "source_domain": "linkedin.com",
+      "source_meta": "LinkedIn",
+      "source_image_url": "https://media.licdn.com/dms/image/v2/D4E0BAQGinEHzIF16Jg/company-logo_200_200/B4EZU3.BP3GwAM-/0/1740400760536/studio_aaa_logo?e=2147483647&v=beta&t=6WaTuq6hc9hQC81nib3G0iNyxY0HxDsNb7W724d680k",
+      "source_image_alt": "Studio AAA | LinkedIn preview image",
+      "source_media_url": "https://media.licdn.com/dms/image/v2/D4E0BAQGinEHzIF16Jg/company-logo_200_200/B4EZU3.BP3GwAM-/0/1740400760536/studio_aaa_logo?e=2147483647&v=beta&t=6WaTuq6hc9hQC81nib3G0iNyxY0HxDsNb7W724d680k",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/source-posters/binding-module-field-marker.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.22,
+          "width": 1.0,
+          "height": 0.56
+        },
+        "image_width": 200,
+        "image_height": 200,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.1428,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-edge-detail",
+      "artifact_id": "module-edge-detail",
+      "source_type": "article",
+      "source_url": "https://i0.wp.com/studioaaa.com/wp-content/uploads/2025/01/dither-boy-can-do-it-all-animated-2.gif?fit=800%2C800&ssl=1",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 5",
+      "kicker": "i0.wp.com",
+      "excerpt": "Image surfaced directly on the selected anchor page.",
+      "source_title": "Anchor image material 5",
+      "source_summary": "Image surfaced directly on the selected anchor page.",
+      "source_domain": "i0.wp.com",
+      "source_meta": "Anchor image material 5",
+      "source_media_url": "https://i0.wp.com/studioaaa.com/wp-content/uploads/2025/01/dither-boy-can-do-it-all-animated-2.gif?fit=800%2C800&ssl=1",
+      "source_media_type": "image"
+    },
+    {
+      "id": "binding-module-layered-fragment",
+      "artifact_id": "module-layered-fragment",
+      "source_type": "article",
+      "source_url": "https://i0.wp.com/studioaaa.com/wp-content/uploads/2025/01/Blue-orbs-looped-2.gif?fit=800%2C800&ssl=1",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Anchor image material 6",
+      "kicker": "i0.wp.com",
+      "excerpt": "Image surfaced directly on the selected anchor page.",
+      "source_title": "Anchor image material 6",
+      "source_summary": "Image surfaced directly on the selected anchor page.",
+      "source_domain": "i0.wp.com",
+      "source_meta": "Anchor image material 6",
+      "source_media_url": "https://i0.wp.com/studioaaa.com/wp-content/uploads/2025/01/Blue-orbs-looped-2.gif?fit=800%2C800&ssl=1",
+      "source_media_type": "image"
+    },
+    {
+      "id": "binding-module-reference-plaque",
+      "artifact_id": "module-reference-plaque",
+      "source_type": "article",
+      "source_url": "https://images2.dwell.com/photos/6063391372700811264/7435487689141317632/original.jpg?auto=format&q=35&w=1920",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Detroit Is Changing Fast. Here’s What Locals Think Its Future Should Look Like",
+      "kicker": "images2.dwell.com",
+      "excerpt": "source-bearing detail",
+      "source_title": "Detroit Is Changing Fast. Here’s What Locals Think Its Future Should Look Like",
+      "source_domain": "images2.dwell.com",
+      "source_meta": "Detroit Is Changing Fast. Here’s What Locals Think Its Future Should Look Like",
+      "source_image_url": "https://images2.dwell.com/photos/6063391372700811264/7435487689141317632/original.jpg?auto=format&q=35&w=1920",
+      "source_image_alt": "Detroit Is Changing Fast. Here’s What Locals Think Its Future Should Look Like preview image",
+      "source_media_url": "https://images2.dwell.com/photos/6063391372700811264/7435487689141317632/original.jpg?auto=format&q=35&w=1920",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-08-31-raster-poster-pressure-wall-v1/assets/source-posters/binding-module-reference-plaque.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5154,
+          "y": 0.7047
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.1562,
+          "width": 1.0,
+          "height": 0.8438
+        },
+        "image_width": 1920,
+        "image_height": 1280,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.05177,
+          "candidate_box_count": 24
+        }
+      }
+    },
+    {
+      "id": "binding-module-distributed-marker",
+      "artifact_id": "module-distributed-marker",
+      "source_type": "article",
+      "source_url": "https://50watts.com/",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "50 Watts",
+      "kicker": "50watts.com",
+      "excerpt": "Illustration and book art with a literary bent. Focus on international illustrated books and Surrealism.",
+      "source_title": "50 Watts",
+      "source_summary": "Illustration and book art with a literary bent. Focus on international illustrated books and Surrealism.",
+      "source_domain": "50watts.com",
+      "source_meta": "@jstrelioff: today s inspiration 50 watts a growing archive of weird and",
+      "source_image_url": "https://c.statcounter.com/6676299/0/8921e975/1/",
+      "source_image_alt": "Source preview image"
+    },
+    {
+      "id": "binding-module-distributed-marker-2",
+      "artifact_id": "module-distributed-marker-2",
+      "source_type": "article",
+      "source_url": "https://component.gallery/",
+      "window_type": "web",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "The Component Gallery",
+      "kicker": "component.gallery",
+      "excerpt": "An up-to-date repository of interface components based on examples from the world of design systems, designed to be a reference for anyone building user interfaces.",
+      "source_title": "The Component Gallery",
+      "source_summary": "An up-to-date repository of interface components based on examples from the world of design systems, designed to be a reference for anyone building user interfaces.",
+      "source_domain": "component.gallery",
+      "source_meta": "Design & Visual Systems"
+    }
+  ]
+}
