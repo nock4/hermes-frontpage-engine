@@ -41,7 +41,7 @@ const isLowValuePreviewImage = (imageUrl) => {
   let lower = imageUrl.toLowerCase()
   try {
     const parsed = new URL(imageUrl)
-    lower = `${parsed.hostname}${parsed.pathname}`.toLowerCase()
+    lower = `${parsed.hostname}${parsed.pathname}${parsed.search}`.toLowerCase()
   } catch {
     lower = imageUrl.toLowerCase()
   }
@@ -58,6 +58,7 @@ const isLowValuePreviewImage = (imageUrl) => {
     || lower.includes('profile-picture')
     || lower.includes('/profile/')
     || lower.includes('s100x100')
+    || /instagram\.com\/v\/t51\.\d+-19\//.test(lower)
     || lower.includes('templatethumbnail')
     || lower.includes('static/images/x.png')
     || lower.includes('abs.twimg.com/emoji/')

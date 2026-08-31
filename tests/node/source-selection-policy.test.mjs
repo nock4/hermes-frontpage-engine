@@ -148,6 +148,13 @@ describe('source selection policy', () => {
       final_url: 'https://x.com/BoysClubWorld',
       title: 'Boys Club on X',
     }
+    const malformedInstagramProfile = {
+      ...webFallback,
+      url: 'https://www.instagram.com/pure__rave/)**',
+      source_url: 'https://www.instagram.com/pure__rave/)**',
+      final_url: 'https://www.instagram.com/pure__rave/)**',
+      title: 'Pure Rave (@pure__rave) • Instagram photos and videos',
+    }
     const errorPage = {
       ...webFallback,
       url: 'https://example.com/missing',
@@ -157,6 +164,7 @@ describe('source selection policy', () => {
 
     expect(sourceHasRenderableCardSurface(webFallback)).toBe(true)
     expect(sourceHasRenderableCardSurface(profilePage)).toBe(false)
+    expect(sourceHasRenderableCardSurface(malformedInstagramProfile)).toBe(false)
     expect(sourceHasRenderableCardSurface(errorPage)).toBe(false)
   })
 

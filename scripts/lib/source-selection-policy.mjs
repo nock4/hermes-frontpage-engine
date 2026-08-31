@@ -303,6 +303,25 @@ function isTwitterMediaUrl(url) {
   return host === 'pbs.twimg.com' || host === 'video.twimg.com'
 }
 
+function isSocialProfileFallbackUrl(value) {
+  if (!value) return false
+  const cleaned = String(value)
+    .trim()
+    .replace(/[)\]*_`>]+$/g, '')
+  try {
+    const url = new URL(cleaned)
+    const host = url.hostname.replace(/^www\./, '')
+    const parts = url.pathname.split('/').filter(Boolean)
+    if (host === 'instagram.com') return parts.length === 1 || (parts.length === 2 && parts[1] === '')
+    if (host === 'x.com' || host === 'twitter.com') return parts.length === 1
+  } catch {
+    const lower = cleaned.toLowerCase()
+    return /(?:^|https?:\/\/)(?:www\.)?instagram\.com\/[^/?#)\]`*_]+\/?$/.test(lower)
+      || /(?:^|https?:\/\/)(?:www\.)?(?:x|twitter)\.com\/[^/?#)\]`*_]+\/?$/.test(lower)
+  }
+  return false
+}
+
 export function sourceContentScore(source, recentSourceKeys = new Set()) {
   if (!isAllowedInspectedSource(source)) return Number.NEGATIVE_INFINITY
   if (recentSourceKeys.has(sourceContentKey(source))) return Number.NEGATIVE_INFINITY
@@ -352,8 +371,8 @@ function isSourceFramedWebFallback(source) {
     .join(' ')
     .toLowerCase()
   if (!text || text.length < 24) return false
-  const url = String(source?.url || source?.source_url || source?.final_url || '').toLowerCase()
-  if (/instagram\.com\/[^/?#]+\/?(?:$|[?#])/.test(url) || /x\.com\/[^/?#]+\/?(?:$|[?#])/.test(url)) return false
+  const sourceUrls = [source?.url, source?.source_url, source?.final_url].filter(Boolean)
+  if (sourceUrls.some(isSocialProfileFallbackUrl)) return false
   if (/\b(301 moved permanently|302 found|403 forbidden|404|page not found|just a moment|vercel security checkpoint|access denied|cookies|privacy policy|terms of service|sign in|log in)\b/.test(text)) return false
   if (/\b(github|readme|api|sdk|docs|documentation|agent framework|mcp|codex|claude|vibe cod|vibe-coded|prompt guide|seo|growth|crm|pricing)\b/.test(text)) return false
   return true
