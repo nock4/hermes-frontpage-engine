@@ -1,0 +1,1719 @@
+{
+  "artifact_map_id": "map-2026-09-01-threshold-rupture-screen-slab-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "threshold-rupture-screen-slab",
+  "default_artifact_id": "hero-primary-source-anchor",
+  "artifacts": [
+    {
+      "id": "hero-primary-source-anchor",
+      "kind": "hero",
+      "label": "Primary Source Anchor",
+      "artifact_type": "cat-head-silhouette",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.167,
+        "w": 0.394,
+        "h": 0.465
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.386,
+          0.214
+        ],
+        [
+          0.482,
+          0.295
+        ],
+        [
+          0.577,
+          0.296
+        ],
+        [
+          0.722,
+          0.167
+        ],
+        [
+          0.746,
+          0.319
+        ],
+        [
+          0.78,
+          0.366
+        ],
+        [
+          0.699,
+          0.492
+        ],
+        [
+          0.63,
+          0.632
+        ],
+        [
+          0.55,
+          0.601
+        ],
+        [
+          0.477,
+          0.514
+        ],
+        [
+          0.407,
+          0.425
+        ],
+        [
+          0.386,
+          0.214
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/hero-primary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          895,
+          371
+        ],
+        "safe_stage_window_origin_px": [
+          944,
+          409
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.386,
+            0.214
+          ],
+          [
+            0.482,
+            0.295
+          ],
+          [
+            0.577,
+            0.296
+          ],
+          [
+            0.722,
+            0.167
+          ],
+          [
+            0.746,
+            0.319
+          ],
+          [
+            0.78,
+            0.366
+          ],
+          [
+            0.699,
+            0.492
+          ],
+          [
+            0.63,
+            0.632
+          ],
+          [
+            0.55,
+            0.601
+          ],
+          [
+            0.477,
+            0.514
+          ],
+          [
+            0.407,
+            0.425
+          ],
+          [
+            0.386,
+            0.214
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3633,
+            0.2139
+          ],
+          [
+            0.7214,
+            0.1338
+          ],
+          [
+            0.7435,
+            0.167
+          ],
+          [
+            0.8021,
+            0.3652
+          ],
+          [
+            0.6367,
+            0.6543
+          ],
+          [
+            0.5573,
+            0.6367
+          ],
+          [
+            0.4277,
+            0.4844
+          ],
+          [
+            0.3783,
+            0.3604
+          ],
+          [
+            0.3633,
+            0.2168
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3633,
+          "y": 0.1338,
+          "w": 0.4395,
+          "h": 0.5215
+        },
+        "territory_area_px": 175678,
+        "visible_area_px": 156953,
+        "expansion_ratio": 1.119,
+        "neighbors": [
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 3967,
+            "direction": "left",
+            "distance_px": 44.13
+          },
+          {
+            "artifact_id": "module-distributed-marker",
+            "shared_edge_px": 1134,
+            "direction": "left",
+            "distance_px": 476.9
+          },
+          {
+            "artifact_id": "module-signal-panel",
+            "shared_edge_px": 717,
+            "direction": "left",
+            "distance_px": 375.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-secondary-source-anchor",
+      "kind": "hero",
+      "label": "Secondary Source Anchor",
+      "artifact_type": "bright-square-aperture",
+      "bounds": {
+        "x": 0.845,
+        "y": 0.187,
+        "w": 0.079,
+        "h": 0.13
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.849,
+          0.191
+        ],
+        [
+          0.904,
+          0.196
+        ],
+        [
+          0.92,
+          0.228
+        ],
+        [
+          0.924,
+          0.285
+        ],
+        [
+          0.902,
+          0.315
+        ],
+        [
+          0.854,
+          0.305
+        ],
+        [
+          0.845,
+          0.258
+        ],
+        [
+          0.849,
+          0.191
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/hero-secondary-source-anchor.svg",
+      "source_binding_ids": [
+        "binding-hero-secondary-source-anchor"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          247
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          258
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.849,
+            0.191
+          ],
+          [
+            0.904,
+            0.196
+          ],
+          [
+            0.92,
+            0.228
+          ],
+          [
+            0.924,
+            0.285
+          ],
+          [
+            0.902,
+            0.315
+          ],
+          [
+            0.854,
+            0.305
+          ],
+          [
+            0.845,
+            0.258
+          ],
+          [
+            0.849,
+            0.191
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8223,
+            0.2539
+          ],
+          [
+            0.8268,
+            0.1904
+          ],
+          [
+            0.849,
+            0.1572
+          ],
+          [
+            0.9036,
+            0.1621
+          ],
+          [
+            0.9421,
+            0.2275
+          ],
+          [
+            0.946,
+            0.2803
+          ],
+          [
+            0.9017,
+            0.3477
+          ],
+          [
+            0.8535,
+            0.3379
+          ],
+          [
+            0.8314,
+            0.3047
+          ],
+          [
+            0.8223,
+            0.2588
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8223,
+          "y": 0.1572,
+          "w": 0.1243,
+          "h": 0.1914
+        },
+        "territory_area_px": 28837,
+        "visible_area_px": 12857,
+        "expansion_ratio": 2.243,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "label": "Signal Panel",
+      "artifact_type": "blue-vertical-slit",
+      "bounds": {
+        "x": 0.382,
+        "y": 0.071,
+        "w": 0.047,
+        "h": 0.152
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.386,
+          0.073
+        ],
+        [
+          0.424,
+          0.079
+        ],
+        [
+          0.429,
+          0.18
+        ],
+        [
+          0.416,
+          0.222
+        ],
+        [
+          0.39,
+          0.213
+        ],
+        [
+          0.382,
+          0.155
+        ],
+        [
+          0.386,
+          0.073
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/module-signal-panel.svg",
+      "source_binding_ids": [
+        "binding-module-signal-panel"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          623,
+          138
+        ],
+        "safe_stage_window_origin_px": [
+          629,
+          151
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.386,
+            0.073
+          ],
+          [
+            0.424,
+            0.079
+          ],
+          [
+            0.429,
+            0.18
+          ],
+          [
+            0.416,
+            0.222
+          ],
+          [
+            0.39,
+            0.213
+          ],
+          [
+            0.382,
+            0.155
+          ],
+          [
+            0.386,
+            0.073
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3555,
+            0.1484
+          ],
+          [
+            0.3594,
+            0.0723
+          ],
+          [
+            0.3854,
+            0.0332
+          ],
+          [
+            0.4238,
+            0.0391
+          ],
+          [
+            0.4499,
+            0.0781
+          ],
+          [
+            0.4544,
+            0.1729
+          ],
+          [
+            0.4414,
+            0.2217
+          ],
+          [
+            0.4154,
+            0.2607
+          ],
+          [
+            0.39,
+            0.252
+          ],
+          [
+            0.3639,
+            0.2129
+          ],
+          [
+            0.3555,
+            0.1562
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3555,
+          "y": 0.0332,
+          "w": 0.0996,
+          "h": 0.2285
+        },
+        "territory_area_px": 28058,
+        "visible_area_px": 9218,
+        "expansion_ratio": 3.044,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 717,
+            "direction": "right",
+            "distance_px": 375.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "glossy-torn-patch",
+      "bounds": {
+        "x": 0.747,
+        "y": 0.612,
+        "w": 0.18,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.763,
+          0.629
+        ],
+        [
+          0.807,
+          0.605
+        ],
+        [
+          0.869,
+          0.629
+        ],
+        [
+          0.909,
+          0.665
+        ],
+        [
+          0.927,
+          0.756
+        ],
+        [
+          0.887,
+          0.821
+        ],
+        [
+          0.807,
+          0.827
+        ],
+        [
+          0.752,
+          0.781
+        ],
+        [
+          0.747,
+          0.693
+        ],
+        [
+          0.763,
+          0.629
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1286,
+          721
+        ],
+        "safe_stage_window_origin_px": [
+          1308,
+          739
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.763,
+            0.629
+          ],
+          [
+            0.807,
+            0.605
+          ],
+          [
+            0.869,
+            0.629
+          ],
+          [
+            0.909,
+            0.665
+          ],
+          [
+            0.927,
+            0.756
+          ],
+          [
+            0.887,
+            0.821
+          ],
+          [
+            0.807,
+            0.827
+          ],
+          [
+            0.752,
+            0.781
+          ],
+          [
+            0.747,
+            0.693
+          ],
+          [
+            0.763,
+            0.629
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7285,
+            0.6914
+          ],
+          [
+            0.7441,
+            0.6289
+          ],
+          [
+            0.7624,
+            0.6016
+          ],
+          [
+            0.8066,
+            0.5771
+          ],
+          [
+            0.8685,
+            0.6016
+          ],
+          [
+            0.9089,
+            0.6367
+          ],
+          [
+            0.9277,
+            0.666
+          ],
+          [
+            0.9447,
+            0.7549
+          ],
+          [
+            0.8867,
+            0.8477
+          ],
+          [
+            0.8066,
+            0.8535
+          ],
+          [
+            0.752,
+            0.8076
+          ],
+          [
+            0.7337,
+            0.7803
+          ],
+          [
+            0.7285,
+            0.6973
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7285,
+          "y": 0.5771,
+          "w": 0.2168,
+          "h": 0.2773
+        },
+        "territory_area_px": 70959,
+        "visible_area_px": 48419,
+        "expansion_ratio": 1.466,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "translucent-lower-left-plaque",
+      "bounds": {
+        "x": 0.207,
+        "y": 0.595,
+        "w": 0.225,
+        "h": 0.134
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.208,
+          0.597
+        ],
+        [
+          0.402,
+          0.601
+        ],
+        [
+          0.432,
+          0.724
+        ],
+        [
+          0.237,
+          0.729
+        ],
+        [
+          0.211,
+          0.69
+        ],
+        [
+          0.207,
+          0.597
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          491,
+          667
+        ],
+        "safe_stage_window_origin_px": [
+          518,
+          678
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.208,
+            0.597
+          ],
+          [
+            0.402,
+            0.601
+          ],
+          [
+            0.432,
+            0.724
+          ],
+          [
+            0.237,
+            0.729
+          ],
+          [
+            0.211,
+            0.69
+          ],
+          [
+            0.207,
+            0.597
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1882,
+            0.5967
+          ],
+          [
+            0.2064,
+            0.5693
+          ],
+          [
+            0.4017,
+            0.5732
+          ],
+          [
+            0.4206,
+            0.6025
+          ],
+          [
+            0.4499,
+            0.7227
+          ],
+          [
+            0.4316,
+            0.751
+          ],
+          [
+            0.237,
+            0.7559
+          ],
+          [
+            0.1927,
+            0.6895
+          ],
+          [
+            0.1882,
+            0.6025
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1882,
+          "y": 0.5693,
+          "w": 0.2624,
+          "h": 0.1875
+        },
+        "territory_area_px": 66712,
+        "visible_area_px": 41008,
+        "expansion_ratio": 1.627,
+        "neighbors": [
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 1212,
+            "direction": "right",
+            "distance_px": 378.68
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "ragged-left-poster-edge",
+      "bounds": {
+        "x": 0.061,
+        "y": 0,
+        "w": 0.083,
+        "h": 0.996
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.062,
+          0
+        ],
+        [
+          0.096,
+          0
+        ],
+        [
+          0.108,
+          0.125
+        ],
+        [
+          0.112,
+          0.245
+        ],
+        [
+          0.127,
+          0.392
+        ],
+        [
+          0.131,
+          0.55
+        ],
+        [
+          0.144,
+          0.733
+        ],
+        [
+          0.139,
+          0.995
+        ],
+        [
+          0.107,
+          0.994
+        ],
+        [
+          0.093,
+          0.79
+        ],
+        [
+          0.082,
+          0.61
+        ],
+        [
+          0.074,
+          0.43
+        ],
+        [
+          0.067,
+          0.208
+        ],
+        [
+          0.062,
+          0
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          157,
+          428
+        ],
+        "safe_stage_window_origin_px": [
+          168,
+          510
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.062,
+            0
+          ],
+          [
+            0.096,
+            0
+          ],
+          [
+            0.108,
+            0.125
+          ],
+          [
+            0.112,
+            0.245
+          ],
+          [
+            0.127,
+            0.392
+          ],
+          [
+            0.131,
+            0.55
+          ],
+          [
+            0.144,
+            0.733
+          ],
+          [
+            0.139,
+            0.995
+          ],
+          [
+            0.107,
+            0.994
+          ],
+          [
+            0.093,
+            0.79
+          ],
+          [
+            0.082,
+            0.61
+          ],
+          [
+            0.074,
+            0.43
+          ],
+          [
+            0.067,
+            0.208
+          ],
+          [
+            0.062,
+            0
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0436,
+            0.0
+          ],
+          [
+            0.1146,
+            0.0039
+          ],
+          [
+            0.1452,
+            0.3887
+          ],
+          [
+            0.1621,
+            0.7285
+          ],
+          [
+            0.1569,
+            0.9941
+          ],
+          [
+            0.1536,
+            0.999
+          ],
+          [
+            0.0924,
+            0.999
+          ],
+          [
+            0.0885,
+            0.9932
+          ],
+          [
+            0.0625,
+            0.6016
+          ],
+          [
+            0.0436,
+            0.0146
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0436,
+          "y": 0.0,
+          "w": 0.1191,
+          "h": 1.0
+        },
+        "territory_area_px": 132552,
+        "visible_area_px": 74945,
+        "expansion_ratio": 1.769,
+        "neighbors": [
+          {
+            "artifact_id": "module-distributed-marker",
+            "shared_edge_px": 1000,
+            "direction": "right",
+            "distance_px": 288.89
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "diagonal-central-seam",
+      "bounds": {
+        "x": 0.513,
+        "y": 0,
+        "w": 0.125,
+        "h": 0.998
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.513,
+          0
+        ],
+        [
+          0.529,
+          0
+        ],
+        [
+          0.555,
+          0.173
+        ],
+        [
+          0.576,
+          0.344
+        ],
+        [
+          0.597,
+          0.535
+        ],
+        [
+          0.617,
+          0.71
+        ],
+        [
+          0.638,
+          0.998
+        ],
+        [
+          0.622,
+          0.998
+        ],
+        [
+          0.6,
+          0.767
+        ],
+        [
+          0.578,
+          0.573
+        ],
+        [
+          0.554,
+          0.374
+        ],
+        [
+          0.533,
+          0.185
+        ],
+        [
+          0.513,
+          0
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          884,
+          429
+        ],
+        "safe_stage_window_origin_px": [
+          899,
+          511
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.513,
+            0
+          ],
+          [
+            0.529,
+            0
+          ],
+          [
+            0.555,
+            0.173
+          ],
+          [
+            0.576,
+            0.344
+          ],
+          [
+            0.597,
+            0.535
+          ],
+          [
+            0.617,
+            0.71
+          ],
+          [
+            0.638,
+            0.998
+          ],
+          [
+            0.622,
+            0.998
+          ],
+          [
+            0.6,
+            0.767
+          ],
+          [
+            0.578,
+            0.573
+          ],
+          [
+            0.554,
+            0.374
+          ],
+          [
+            0.533,
+            0.185
+          ],
+          [
+            0.513,
+            0
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4863,
+            0.0
+          ],
+          [
+            0.5553,
+            0.0029
+          ],
+          [
+            0.5814,
+            0.1758
+          ],
+          [
+            0.6426,
+            0.708
+          ],
+          [
+            0.6602,
+            0.999
+          ],
+          [
+            0.5957,
+            0.9971
+          ],
+          [
+            0.4863,
+            0.0029
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4863,
+          "y": 0.0,
+          "w": 0.1745,
+          "h": 1.0
+        },
+        "territory_area_px": 66112,
+        "visible_area_px": 35428,
+        "expansion_ratio": 1.866,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 3967,
+            "direction": "right",
+            "distance_px": 44.13
+          },
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 1450,
+            "direction": "down",
+            "distance_px": 493.11
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "bottom-letterform-strokes",
+      "bounds": {
+        "x": 0.244,
+        "y": 0.709,
+        "w": 0.517,
+        "h": 0.286
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.247,
+          0.716
+        ],
+        [
+          0.339,
+          0.722
+        ],
+        [
+          0.345,
+          0.801
+        ],
+        [
+          0.418,
+          0.798
+        ],
+        [
+          0.474,
+          0.817
+        ],
+        [
+          0.523,
+          0.807
+        ],
+        [
+          0.568,
+          0.724
+        ],
+        [
+          0.625,
+          0.744
+        ],
+        [
+          0.644,
+          0.841
+        ],
+        [
+          0.759,
+          0.848
+        ],
+        [
+          0.757,
+          0.994
+        ],
+        [
+          0.681,
+          0.995
+        ],
+        [
+          0.612,
+          0.918
+        ],
+        [
+          0.547,
+          0.995
+        ],
+        [
+          0.424,
+          0.995
+        ],
+        [
+          0.376,
+          0.88
+        ],
+        [
+          0.257,
+          0.873
+        ],
+        [
+          0.247,
+          0.716
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          772,
+          849
+        ],
+        "safe_stage_window_origin_px": [
+          835,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.247,
+            0.716
+          ],
+          [
+            0.339,
+            0.722
+          ],
+          [
+            0.345,
+            0.801
+          ],
+          [
+            0.418,
+            0.798
+          ],
+          [
+            0.474,
+            0.817
+          ],
+          [
+            0.523,
+            0.807
+          ],
+          [
+            0.568,
+            0.724
+          ],
+          [
+            0.625,
+            0.744
+          ],
+          [
+            0.644,
+            0.841
+          ],
+          [
+            0.759,
+            0.848
+          ],
+          [
+            0.757,
+            0.994
+          ],
+          [
+            0.681,
+            0.995
+          ],
+          [
+            0.612,
+            0.918
+          ],
+          [
+            0.547,
+            0.995
+          ],
+          [
+            0.424,
+            0.995
+          ],
+          [
+            0.376,
+            0.88
+          ],
+          [
+            0.257,
+            0.873
+          ],
+          [
+            0.247,
+            0.716
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2305,
+            0.7471
+          ],
+          [
+            0.5677,
+            0.6963
+          ],
+          [
+            0.625,
+            0.7158
+          ],
+          [
+            0.7585,
+            0.8203
+          ],
+          [
+            0.7767,
+            0.8477
+          ],
+          [
+            0.7747,
+            0.9932
+          ],
+          [
+            0.7708,
+            0.999
+          ],
+          [
+            0.4089,
+            0.999
+          ],
+          [
+            0.2565,
+            0.8994
+          ],
+          [
+            0.2383,
+            0.8721
+          ],
+          [
+            0.2305,
+            0.752
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2305,
+          "y": 0.6963,
+          "w": 0.5469,
+          "h": 0.3037
+        },
+        "territory_area_px": 168901,
+        "visible_area_px": 130325,
+        "expansion_ratio": 1.296,
+        "neighbors": [
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 1450,
+            "direction": "up",
+            "distance_px": 493.11
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 1212,
+            "direction": "left",
+            "distance_px": 378.68
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "horizontal-raster-band-cluster",
+      "bounds": {
+        "x": 0.12,
+        "y": 0.369,
+        "w": 0.302,
+        "h": 0.139
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.12,
+          0.374
+        ],
+        [
+          0.23,
+          0.367
+        ],
+        [
+          0.334,
+          0.381
+        ],
+        [
+          0.421,
+          0.396
+        ],
+        [
+          0.416,
+          0.431
+        ],
+        [
+          0.315,
+          0.429
+        ],
+        [
+          0.218,
+          0.416
+        ],
+        [
+          0.126,
+          0.425
+        ],
+        [
+          0.12,
+          0.374
+        ],
+        [
+          0.133,
+          0.476
+        ],
+        [
+          0.237,
+          0.481
+        ],
+        [
+          0.348,
+          0.494
+        ],
+        [
+          0.407,
+          0.506
+        ],
+        [
+          0.41,
+          0.471
+        ],
+        [
+          0.296,
+          0.454
+        ],
+        [
+          0.183,
+          0.448
+        ],
+        [
+          0.128,
+          0.455
+        ]
+      ],
+      "cluster_id": "threshold-rupture-screen-slab",
+      "mask_path": "/editions/2026-09-01-threshold-rupture-screen-slab-v1/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          416,
+          438
+        ],
+        "safe_stage_window_origin_px": [
+          453,
+          449
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.12,
+            0.374
+          ],
+          [
+            0.23,
+            0.367
+          ],
+          [
+            0.334,
+            0.381
+          ],
+          [
+            0.421,
+            0.396
+          ],
+          [
+            0.416,
+            0.431
+          ],
+          [
+            0.315,
+            0.429
+          ],
+          [
+            0.218,
+            0.416
+          ],
+          [
+            0.126,
+            0.425
+          ],
+          [
+            0.12,
+            0.374
+          ],
+          [
+            0.133,
+            0.476
+          ],
+          [
+            0.237,
+            0.481
+          ],
+          [
+            0.348,
+            0.494
+          ],
+          [
+            0.407,
+            0.506
+          ],
+          [
+            0.41,
+            0.471
+          ],
+          [
+            0.296,
+            0.454
+          ],
+          [
+            0.183,
+            0.448
+          ],
+          [
+            0.128,
+            0.455
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1413,
+            0.3447
+          ],
+          [
+            0.2298,
+            0.3389
+          ],
+          [
+            0.4206,
+            0.3682
+          ],
+          [
+            0.4251,
+            0.375
+          ],
+          [
+            0.4277,
+            0.4355
+          ],
+          [
+            0.4251,
+            0.5059
+          ],
+          [
+            0.4069,
+            0.5332
+          ],
+          [
+            0.1484,
+            0.5029
+          ],
+          [
+            0.1413,
+            0.3496
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1413,
+          "y": 0.3389,
+          "w": 0.2871,
+          "h": 0.1953
+        },
+        "territory_area_px": 72554,
+        "visible_area_px": 36136,
+        "expansion_ratio": 2.008,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-source-anchor",
+            "shared_edge_px": 1134,
+            "direction": "right",
+            "distance_px": 476.9
+          },
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 1000,
+            "direction": "left",
+            "distance_px": 288.89
+          }
+        ]
+      }
+    }
+  ]
+}

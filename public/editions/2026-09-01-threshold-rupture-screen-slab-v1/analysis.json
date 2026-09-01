@@ -1,0 +1,583 @@
+{
+  "analysis_id": "analysis-2026-09-01-threshold-rupture-screen-slab-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A tilted black-and-white raster poster plate fills the frame: a pixelated cat-head figure over dense scanline texturing, with a blue vertical slit, a blown white square light, a torn dark glossy patch, a small translucent plaque, bottom lettering, a left torn border, and several hard seams and scratches. The source windows can ride actual marks in the image rather than generic cards.",
+  "usable_surfaces": [
+    "blue slit in upper left-center field",
+    "cat-head black silhouette and white eye apertures",
+    "bright square light in upper right",
+    "translucent plaque over lower-left raster field",
+    "torn glossy patch on right-center",
+    "bottom BOY lettering strokes",
+    "left ragged poster edge",
+    "diagonal central seam",
+    "dense horizontal raster bands"
+  ],
+  "detected_objects": [
+    {
+      "label": "Primary Source Anchor",
+      "artifact_type": "cat-head-silhouette",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.167,
+        "w": 0.394,
+        "h": 0.465
+      },
+      "polygon": [
+        [
+          0.386,
+          0.214
+        ],
+        [
+          0.482,
+          0.295
+        ],
+        [
+          0.577,
+          0.296
+        ],
+        [
+          0.722,
+          0.167
+        ],
+        [
+          0.746,
+          0.319
+        ],
+        [
+          0.78,
+          0.366
+        ],
+        [
+          0.699,
+          0.492
+        ],
+        [
+          0.63,
+          0.632
+        ],
+        [
+          0.55,
+          0.601
+        ],
+        [
+          0.477,
+          0.514
+        ],
+        [
+          0.407,
+          0.425
+        ],
+        [
+          0.386,
+          0.214
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "dominant black pixelated cat-head mass with two pale eye apertures and pointed ears; it is the main source-bearing gesture on the plate."
+    },
+    {
+      "label": "Secondary Source Anchor",
+      "artifact_type": "bright-square-aperture",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.845,
+        "y": 0.187,
+        "w": 0.079,
+        "h": 0.13
+      },
+      "polygon": [
+        [
+          0.849,
+          0.191
+        ],
+        [
+          0.904,
+          0.196
+        ],
+        [
+          0.92,
+          0.228
+        ],
+        [
+          0.924,
+          0.285
+        ],
+        [
+          0.902,
+          0.315
+        ],
+        [
+          0.854,
+          0.305
+        ],
+        [
+          0.845,
+          0.258
+        ],
+        [
+          0.849,
+          0.191
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "overexposed white square glow embedded in the raster grid near the upper-right, with a hard luminous contour."
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "blue-vertical-slit",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.382,
+        "y": 0.071,
+        "w": 0.047,
+        "h": 0.152
+      },
+      "polygon": [
+        [
+          0.386,
+          0.073
+        ],
+        [
+          0.424,
+          0.079
+        ],
+        [
+          0.429,
+          0.18
+        ],
+        [
+          0.416,
+          0.222
+        ],
+        [
+          0.39,
+          0.213
+        ],
+        [
+          0.382,
+          0.155
+        ],
+        [
+          0.386,
+          0.073
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "small electric-blue vertical slit or lit vent set into the otherwise monochrome poster texture."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "glossy-torn-patch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.747,
+        "y": 0.612,
+        "w": 0.18,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.763,
+          0.629
+        ],
+        [
+          0.807,
+          0.605
+        ],
+        [
+          0.869,
+          0.629
+        ],
+        [
+          0.909,
+          0.665
+        ],
+        [
+          0.927,
+          0.756
+        ],
+        [
+          0.887,
+          0.821
+        ],
+        [
+          0.807,
+          0.827
+        ],
+        [
+          0.752,
+          0.781
+        ],
+        [
+          0.747,
+          0.693
+        ],
+        [
+          0.763,
+          0.629
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "raised black glossy torn fragment on the right-center with a ragged bright rim and wrinkled interior surface."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "translucent-lower-left-plaque",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.207,
+        "y": 0.595,
+        "w": 0.225,
+        "h": 0.134
+      },
+      "polygon": [
+        [
+          0.208,
+          0.597
+        ],
+        [
+          0.402,
+          0.601
+        ],
+        [
+          0.432,
+          0.724
+        ],
+        [
+          0.237,
+          0.729
+        ],
+        [
+          0.211,
+          0.69
+        ],
+        [
+          0.207,
+          0.597
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "semi-transparent rectangular plaque laid over the raster field, catching pale reflection and enclosing a small blocky figure."
+    },
+    {
+      "label": "Edge Detail",
+      "artifact_type": "ragged-left-poster-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.061,
+        "y": 0,
+        "w": 0.083,
+        "h": 0.996
+      },
+      "polygon": [
+        [
+          0.062,
+          0
+        ],
+        [
+          0.096,
+          0
+        ],
+        [
+          0.108,
+          0.125
+        ],
+        [
+          0.112,
+          0.245
+        ],
+        [
+          0.127,
+          0.392
+        ],
+        [
+          0.131,
+          0.55
+        ],
+        [
+          0.144,
+          0.733
+        ],
+        [
+          0.139,
+          0.995
+        ],
+        [
+          0.107,
+          0.994
+        ],
+        [
+          0.093,
+          0.79
+        ],
+        [
+          0.082,
+          0.61
+        ],
+        [
+          0.074,
+          0.43
+        ],
+        [
+          0.067,
+          0.208
+        ],
+        [
+          0.062,
+          0
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "visible torn vertical poster boundary at the left with chipped white highlights and dark separating edge."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "diagonal-central-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.513,
+        "y": 0,
+        "w": 0.125,
+        "h": 0.998
+      },
+      "polygon": [
+        [
+          0.513,
+          0
+        ],
+        [
+          0.529,
+          0
+        ],
+        [
+          0.555,
+          0.173
+        ],
+        [
+          0.576,
+          0.344
+        ],
+        [
+          0.597,
+          0.535
+        ],
+        [
+          0.617,
+          0.71
+        ],
+        [
+          0.638,
+          0.998
+        ],
+        [
+          0.622,
+          0.998
+        ],
+        [
+          0.6,
+          0.767
+        ],
+        [
+          0.578,
+          0.573
+        ],
+        [
+          0.554,
+          0.374
+        ],
+        [
+          0.533,
+          0.185
+        ],
+        [
+          0.513,
+          0
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "long pale diagonal seam or crease slicing down the plate through the cat form and raster surface."
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "bottom-letterform-strokes",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.244,
+        "y": 0.709,
+        "w": 0.517,
+        "h": 0.286
+      },
+      "polygon": [
+        [
+          0.247,
+          0.716
+        ],
+        [
+          0.339,
+          0.722
+        ],
+        [
+          0.345,
+          0.801
+        ],
+        [
+          0.418,
+          0.798
+        ],
+        [
+          0.474,
+          0.817
+        ],
+        [
+          0.523,
+          0.807
+        ],
+        [
+          0.568,
+          0.724
+        ],
+        [
+          0.625,
+          0.744
+        ],
+        [
+          0.644,
+          0.841
+        ],
+        [
+          0.759,
+          0.848
+        ],
+        [
+          0.757,
+          0.994
+        ],
+        [
+          0.681,
+          0.995
+        ],
+        [
+          0.612,
+          0.918
+        ],
+        [
+          0.547,
+          0.995
+        ],
+        [
+          0.424,
+          0.995
+        ],
+        [
+          0.376,
+          0.88
+        ],
+        [
+          0.257,
+          0.873
+        ],
+        [
+          0.247,
+          0.716
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "large blocky white-and-black BOY-like letter strokes across the bottom, visibly integrated into the raster poster."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "horizontal-raster-band-cluster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.12,
+        "y": 0.369,
+        "w": 0.302,
+        "h": 0.139
+      },
+      "polygon": [
+        [
+          0.12,
+          0.374
+        ],
+        [
+          0.23,
+          0.367
+        ],
+        [
+          0.334,
+          0.381
+        ],
+        [
+          0.421,
+          0.396
+        ],
+        [
+          0.416,
+          0.431
+        ],
+        [
+          0.315,
+          0.429
+        ],
+        [
+          0.218,
+          0.416
+        ],
+        [
+          0.126,
+          0.425
+        ],
+        [
+          0.12,
+          0.374
+        ],
+        [
+          0.133,
+          0.476
+        ],
+        [
+          0.237,
+          0.481
+        ],
+        [
+          0.348,
+          0.494
+        ],
+        [
+          0.407,
+          0.506
+        ],
+        [
+          0.41,
+          0.471
+        ],
+        [
+          0.296,
+          0.454
+        ],
+        [
+          0.183,
+          0.448
+        ],
+        [
+          0.128,
+          0.455
+        ]
+      ],
+      "confidence": 0.68,
+      "visual_evidence": "dense stacked horizontal raster bands and broken scanline marks on the left-center surface, distinct from the plaque below."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.668,
+    "rationale": "The plate is expressionist and source-rich, led by the cat silhouette, blue slit, bright aperture, and torn patch. It is not empty or minimal; the dense raster grid is busy, but the strong high-contrast anchors keep interaction mapping legible if windows stay tightly tied to marks."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-01-threshold-rupture-screen-slab-v1"
+}
