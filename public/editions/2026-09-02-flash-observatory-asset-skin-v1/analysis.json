@@ -1,0 +1,440 @@
+{
+  "analysis_id": "analysis-2026-09-02-flash-observatory-asset-skin-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A glossy macro plate of laminated plastic and torn enamel: pale sheets peel over grey-white skin, with purple exposed apertures, black compression grain, pinhole fields, slits, seams, and small optical chips acting as source windows.",
+  "usable_surfaces": [
+    "top-right glyph pinhole field",
+    "upper-center torn slit",
+    "top-left purple torn aperture",
+    "central rounded pressure notch",
+    "lower-center dithered ink exposure",
+    "left mineral oval chip",
+    "left vertical curved frame seam",
+    "right glossy optical bubble",
+    "lower-right purple edge tear"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero laminated dither field",
+      "artifact_type": "hero-scale-gloss-defect-field",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.595,
+        "w": 0.204,
+        "h": 0.268
+      },
+      "polygon": [
+        [
+          0.397,
+          0.599
+        ],
+        [
+          0.456,
+          0.598
+        ],
+        [
+          0.527,
+          0.606
+        ],
+        [
+          0.571,
+          0.656
+        ],
+        [
+          0.59,
+          0.737
+        ],
+        [
+          0.571,
+          0.819
+        ],
+        [
+          0.52,
+          0.859
+        ],
+        [
+          0.458,
+          0.84
+        ],
+        [
+          0.412,
+          0.782
+        ],
+        [
+          0.386,
+          0.69
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Large exposed black-and-purple halftone/compression field under the peeled beige laminate; visible dot grain and posterized scars carry the dithered source surface."
+    },
+    {
+      "label": "hero manga ink pressure cut",
+      "artifact_type": "hero-scale-ink-crop-aperture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.155,
+        "y": 0,
+        "w": 0.109,
+        "h": 0.171
+      },
+      "polygon": [
+        [
+          0.191,
+          0
+        ],
+        [
+          0.246,
+          0
+        ],
+        [
+          0.259,
+          0.034
+        ],
+        [
+          0.256,
+          0.099
+        ],
+        [
+          0.244,
+          0.169
+        ],
+        [
+          0.194,
+          0.155
+        ],
+        [
+          0.155,
+          0.126
+        ],
+        [
+          0.164,
+          0.054
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Top-left torn purple aperture with black cut shadow and irregular ink-like contour, close-cropped into the white plastic surface."
+    },
+    {
+      "label": "stone collision notch",
+      "artifact_type": "mineral-edge-pressure-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0,
+        "y": 0.116,
+        "w": 0.558,
+        "h": 0.882
+      },
+      "polygon": [
+        [
+          0,
+          0.116
+        ],
+        [
+          0.157,
+          0.228
+        ],
+        [
+          0.296,
+          0.388
+        ],
+        [
+          0.421,
+          0.551
+        ],
+        [
+          0.552,
+          0.625
+        ],
+        [
+          0.478,
+          0.78
+        ],
+        [
+          0.398,
+          0.924
+        ],
+        [
+          0.216,
+          0.998
+        ],
+        [
+          0,
+          0.998
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "The warm beige mineral-like laminate presses diagonally across the plate, folding and colliding into the white skin with chipped grime along its edges."
+    },
+    {
+      "label": "moma archive crop chip",
+      "artifact_type": "archive-crop-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.264,
+        "y": 0.784,
+        "w": 0.132,
+        "h": 0.214
+      },
+      "polygon": [
+        [
+          0.265,
+          0.786
+        ],
+        [
+          0.298,
+          0.874
+        ],
+        [
+          0.33,
+          0.917
+        ],
+        [
+          0.366,
+          0.89
+        ],
+        [
+          0.396,
+          0.956
+        ],
+        [
+          0.364,
+          0.998
+        ],
+        [
+          0.271,
+          0.998
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "Small triangular lower-left aperture reveals indexed-looking bright cyan, magenta, yellow, and black fragments beneath the torn laminate."
+    },
+    {
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "stress-test-square-notch",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.402,
+        "y": 0.218,
+        "w": 0.36,
+        "h": 0.51
+      },
+      "polygon": [
+        [
+          0.448,
+          0.314
+        ],
+        [
+          0.622,
+          0.258
+        ],
+        [
+          0.718,
+          0.218
+        ],
+        [
+          0.75,
+          0.231
+        ],
+        [
+          0.762,
+          0.268
+        ],
+        [
+          0.755,
+          0.493
+        ],
+        [
+          0.719,
+          0.728
+        ],
+        [
+          0.582,
+          0.619
+        ],
+        [
+          0.402,
+          0.415
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Large pale rounded-corner pressure panel interrupts the glossy plastic, bounded by dark grime on the right edge and a hard geometric cut line."
+    },
+    {
+      "label": "turntable frame sliver",
+      "artifact_type": "rotated-frame-edge-slice",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.073,
+        "y": 0.513,
+        "w": 0.04,
+        "h": 0.416
+      },
+      "polygon": [
+        [
+          0.083,
+          0.513
+        ],
+        [
+          0.09,
+          0.586
+        ],
+        [
+          0.096,
+          0.68
+        ],
+        [
+          0.105,
+          0.785
+        ],
+        [
+          0.113,
+          0.907
+        ],
+        [
+          0.105,
+          0.929
+        ],
+        [
+          0.096,
+          0.815
+        ],
+        [
+          0.088,
+          0.706
+        ],
+        [
+          0.08,
+          0.604
+        ],
+        [
+          0.073,
+          0.538
+        ]
+      ],
+      "confidence": 0.75,
+      "visual_evidence": "Thin curved vertical scraped sliver on the left beige surface, with metallic highlights and grime knots suggesting rotated frame-edge residue."
+    },
+    {
+      "label": "unicode similarity pinholes",
+      "artifact_type": "glyph-like-pinhole-cluster",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.66,
+        "y": 0,
+        "w": 0.287,
+        "h": 0.151
+      },
+      "polygon": [
+        [
+          0.66,
+          0
+        ],
+        [
+          0.929,
+          0
+        ],
+        [
+          0.947,
+          0.151
+        ],
+        [
+          0.786,
+          0.141
+        ],
+        [
+          0.668,
+          0.127
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "Dense top-right field of tiny dark repeated pinholes and glyph-like dots printed across a lifted translucent patch."
+    },
+    {
+      "label": "lower-right purple edge tear",
+      "artifact_type": "cut-vinyl-vector-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.769,
+        "y": 0.917,
+        "w": 0.163,
+        "h": 0.081
+      },
+      "polygon": [
+        [
+          0.787,
+          0.922
+        ],
+        [
+          0.842,
+          0.926
+        ],
+        [
+          0.904,
+          0.931
+        ],
+        [
+          0.932,
+          0.955
+        ],
+        [
+          0.919,
+          0.998
+        ],
+        [
+          0.785,
+          0.998
+        ],
+        [
+          0.769,
+          0.976
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "Bottom-right torn edge exposes a purple underlayer with a serrated white rim and thin violet scratch line trailing from the cut."
+    },
+    {
+      "label": "unicode similarity pinholes",
+      "artifact_type": "glyph-like-pinhole-cluster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.85,
+    "rationale": "The plate is mostly minimal and expressionist, built from a few large glossy folds, but the many small flecks, pinholes, chips, and scratches create a moderately busy interaction field."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-02-flash-observatory-asset-skin-v1"
+}

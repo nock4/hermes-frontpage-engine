@@ -1,0 +1,1444 @@
+{
+  "artifact_map_id": "map-2026-09-02-flash-observatory-asset-skin-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "flash-observatory-asset-skin",
+  "default_artifact_id": "hero-hero-laminated-dither-field",
+  "artifacts": [
+    {
+      "id": "hero-hero-laminated-dither-field",
+      "kind": "hero",
+      "label": "hero laminated dither field",
+      "artifact_type": "hero-scale-gloss-defect-field",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.595,
+        "w": 0.204,
+        "h": 0.268
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.397,
+          0.599
+        ],
+        [
+          0.456,
+          0.598
+        ],
+        [
+          0.527,
+          0.606
+        ],
+        [
+          0.571,
+          0.656
+        ],
+        [
+          0.59,
+          0.737
+        ],
+        [
+          0.571,
+          0.819
+        ],
+        [
+          0.52,
+          0.859
+        ],
+        [
+          0.458,
+          0.84
+        ],
+        [
+          0.412,
+          0.782
+        ],
+        [
+          0.386,
+          0.69
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/hero-hero-laminated-dither-field.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-laminated-dither-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          750,
+          725
+        ],
+        "safe_stage_window_origin_px": [
+          775,
+          746
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.397,
+            0.599
+          ],
+          [
+            0.456,
+            0.598
+          ],
+          [
+            0.527,
+            0.606
+          ],
+          [
+            0.571,
+            0.656
+          ],
+          [
+            0.59,
+            0.737
+          ],
+          [
+            0.571,
+            0.819
+          ],
+          [
+            0.52,
+            0.859
+          ],
+          [
+            0.458,
+            0.84
+          ],
+          [
+            0.412,
+            0.782
+          ],
+          [
+            0.386,
+            0.69
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3704,
+            0.71
+          ],
+          [
+            0.3919,
+            0.5723
+          ],
+          [
+            0.3965,
+            0.5654
+          ],
+          [
+            0.4557,
+            0.5645
+          ],
+          [
+            0.5286,
+            0.5742
+          ],
+          [
+            0.5931,
+            0.6553
+          ],
+          [
+            0.612,
+            0.7354
+          ],
+          [
+            0.5931,
+            0.8184
+          ],
+          [
+            0.571,
+            0.8516
+          ],
+          [
+            0.5195,
+            0.8916
+          ],
+          [
+            0.4551,
+            0.8701
+          ],
+          [
+            0.3893,
+            0.7812
+          ],
+          [
+            0.3704,
+            0.7158
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3704,
+          "y": 0.5645,
+          "w": 0.2422,
+          "h": 0.3281
+        },
+        "territory_area_px": 93833,
+        "visible_area_px": 64175,
+        "expansion_ratio": 1.462,
+        "neighbors": [
+          {
+            "artifact_id": "module-stone-collision-notch",
+            "shared_edge_px": 4783,
+            "direction": "left",
+            "distance_px": 465.16
+          },
+          {
+            "artifact_id": "module-agent-tool-reliquary",
+            "shared_edge_px": 764,
+            "direction": "up",
+            "distance_px": 359.18
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-hero-manga-ink-pressure-cut",
+      "kind": "hero",
+      "label": "hero manga ink pressure cut",
+      "artifact_type": "hero-scale-ink-crop-aperture",
+      "bounds": {
+        "x": 0.155,
+        "y": 0,
+        "w": 0.109,
+        "h": 0.171
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.191,
+          0
+        ],
+        [
+          0.246,
+          0
+        ],
+        [
+          0.259,
+          0.034
+        ],
+        [
+          0.256,
+          0.099
+        ],
+        [
+          0.244,
+          0.169
+        ],
+        [
+          0.194,
+          0.155
+        ],
+        [
+          0.155,
+          0.126
+        ],
+        [
+          0.164,
+          0.054
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/hero-hero-manga-ink-pressure-cut.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-manga-ink-pressure-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          322,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          335,
+          88
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.191,
+            0
+          ],
+          [
+            0.246,
+            0
+          ],
+          [
+            0.259,
+            0.034
+          ],
+          [
+            0.256,
+            0.099
+          ],
+          [
+            0.244,
+            0.169
+          ],
+          [
+            0.194,
+            0.155
+          ],
+          [
+            0.155,
+            0.126
+          ],
+          [
+            0.164,
+            0.054
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1328,
+            0.124
+          ],
+          [
+            0.1413,
+            0.0537
+          ],
+          [
+            0.1686,
+            0.0
+          ],
+          [
+            0.2676,
+            0.0
+          ],
+          [
+            0.2806,
+            0.0332
+          ],
+          [
+            0.278,
+            0.0996
+          ],
+          [
+            0.2663,
+            0.167
+          ],
+          [
+            0.2435,
+            0.2021
+          ],
+          [
+            0.1934,
+            0.1875
+          ],
+          [
+            0.1549,
+            0.1592
+          ],
+          [
+            0.1328,
+            0.126
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1328,
+          "y": 0.0,
+          "w": 0.1484,
+          "h": 0.2031
+        },
+        "territory_area_px": 37723,
+        "visible_area_px": 21607,
+        "expansion_ratio": 1.746,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-stone-collision-notch",
+      "kind": "module",
+      "label": "stone collision notch",
+      "artifact_type": "mineral-edge-pressure-notch",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.125,
+        "w": 0.6094,
+        "h": 0.875
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.0013,
+          0.1279
+        ],
+        [
+          0.0807,
+          0.1621
+        ],
+        [
+          0.3314,
+          0.3301
+        ],
+        [
+          0.4479,
+          0.418
+        ],
+        [
+          0.6068,
+          0.5527
+        ],
+        [
+          0.6068,
+          0.6133
+        ],
+        [
+          0.5482,
+          0.9971
+        ],
+        [
+          0.0013,
+          0.9971
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/module-stone-collision-notch.svg",
+      "source_binding_ids": [
+        "binding-module-stone-collision-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          429,
+          498
+        ],
+        "safe_stage_window_origin_px": [
+          497,
+          570
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0013,
+            0.1279
+          ],
+          [
+            0.0807,
+            0.1621
+          ],
+          [
+            0.3314,
+            0.3301
+          ],
+          [
+            0.4479,
+            0.418
+          ],
+          [
+            0.6068,
+            0.5527
+          ],
+          [
+            0.6068,
+            0.6133
+          ],
+          [
+            0.5482,
+            0.9971
+          ],
+          [
+            0.0013,
+            0.9971
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.1006
+          ],
+          [
+            0.0801,
+            0.1338
+          ],
+          [
+            0.3431,
+            0.3115
+          ],
+          [
+            0.6159,
+            0.6738
+          ],
+          [
+            0.5651,
+            0.999
+          ],
+          [
+            0.0,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0996,
+          "w": 0.6165,
+          "h": 0.9004
+        },
+        "territory_area_px": 454553,
+        "visible_area_px": 629288,
+        "expansion_ratio": 0.722,
+        "neighbors": [
+          {
+            "artifact_id": "module-turntable-frame-sliver",
+            "shared_edge_px": 35506,
+            "direction": "left",
+            "distance_px": 183.12
+          },
+          {
+            "artifact_id": "hero-hero-laminated-dither-field",
+            "shared_edge_px": 4783,
+            "direction": "right",
+            "distance_px": 465.16
+          },
+          {
+            "artifact_id": "module-unicode-similarity-pinholes-2",
+            "shared_edge_px": 3387,
+            "direction": "right",
+            "distance_px": 333.63
+          },
+          {
+            "artifact_id": "module-moma-archive-crop-chip",
+            "shared_edge_px": 3032,
+            "direction": "down",
+            "distance_px": 342.75
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-moma-archive-crop-chip",
+      "kind": "module",
+      "label": "moma archive crop chip",
+      "artifact_type": "archive-crop-glint",
+      "bounds": {
+        "x": 0.2604,
+        "y": 0.7803,
+        "w": 0.1289,
+        "h": 0.2197
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.2624,
+          0.7842
+        ],
+        [
+          0.2936,
+          0.8193
+        ],
+        [
+          0.3867,
+          0.9639
+        ],
+        [
+          0.3457,
+          0.9971
+        ],
+        [
+          0.2624,
+          0.9971
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/module-moma-archive-crop-chip.svg",
+      "source_binding_ids": [
+        "binding-module-moma-archive-crop-chip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          507,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          523,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.2624,
+            0.7842
+          ],
+          [
+            0.2936,
+            0.8193
+          ],
+          [
+            0.3867,
+            0.9639
+          ],
+          [
+            0.3457,
+            0.9971
+          ],
+          [
+            0.2624,
+            0.9971
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2441,
+            0.7949
+          ],
+          [
+            0.2845,
+            0.7812
+          ],
+          [
+            0.4043,
+            0.9639
+          ],
+          [
+            0.3763,
+            0.999
+          ],
+          [
+            0.2441,
+            0.9971
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2441,
+          "y": 0.7812,
+          "w": 0.1608,
+          "h": 0.2188
+        },
+        "territory_area_px": 37305,
+        "visible_area_px": 24150,
+        "expansion_ratio": 1.545,
+        "neighbors": [
+          {
+            "artifact_id": "module-stone-collision-notch",
+            "shared_edge_px": 3032,
+            "direction": "up",
+            "distance_px": 342.75
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-agent-tool-reliquary",
+      "kind": "module",
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "stress-test-square-notch",
+      "bounds": {
+        "x": 0.402,
+        "y": 0.218,
+        "w": 0.36,
+        "h": 0.51
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.448,
+          0.314
+        ],
+        [
+          0.622,
+          0.258
+        ],
+        [
+          0.718,
+          0.218
+        ],
+        [
+          0.75,
+          0.231
+        ],
+        [
+          0.762,
+          0.268
+        ],
+        [
+          0.755,
+          0.493
+        ],
+        [
+          0.719,
+          0.728
+        ],
+        [
+          0.582,
+          0.619
+        ],
+        [
+          0.402,
+          0.415
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/module-agent-tool-reliquary.svg",
+      "source_binding_ids": [
+        "binding-module-agent-tool-reliquary"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          894,
+          443
+        ],
+        "safe_stage_window_origin_px": [
+          938,
+          484
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.448,
+            0.314
+          ],
+          [
+            0.622,
+            0.258
+          ],
+          [
+            0.718,
+            0.218
+          ],
+          [
+            0.75,
+            0.231
+          ],
+          [
+            0.762,
+            0.268
+          ],
+          [
+            0.755,
+            0.493
+          ],
+          [
+            0.719,
+            0.728
+          ],
+          [
+            0.582,
+            0.619
+          ],
+          [
+            0.402,
+            0.415
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.431,
+            0.3115
+          ],
+          [
+            0.4479,
+            0.2861
+          ],
+          [
+            0.7174,
+            0.1904
+          ],
+          [
+            0.75,
+            0.2031
+          ],
+          [
+            0.7682,
+            0.2305
+          ],
+          [
+            0.7799,
+            0.2666
+          ],
+          [
+            0.7728,
+            0.4941
+          ],
+          [
+            0.7376,
+            0.7246
+          ],
+          [
+            0.7188,
+            0.7549
+          ],
+          [
+            0.5938,
+            0.6553
+          ],
+          [
+            0.4525,
+            0.499
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.431,
+          "y": 0.1904,
+          "w": 0.3496,
+          "h": 0.5654
+        },
+        "territory_area_px": 204717,
+        "visible_area_px": 173989,
+        "expansion_ratio": 1.177,
+        "neighbors": [
+          {
+            "artifact_id": "module-unicode-similarity-pinholes-2",
+            "shared_edge_px": 1245,
+            "direction": "left",
+            "distance_px": 418.7
+          },
+          {
+            "artifact_id": "module-stone-collision-notch",
+            "shared_edge_px": 825,
+            "direction": "left",
+            "distance_px": 699.08
+          },
+          {
+            "artifact_id": "hero-hero-laminated-dither-field",
+            "shared_edge_px": 764,
+            "direction": "down",
+            "distance_px": 359.18
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-turntable-frame-sliver",
+      "kind": "module",
+      "label": "turntable frame sliver",
+      "artifact_type": "rotated-frame-edge-slice",
+      "bounds": {
+        "x": 0.073,
+        "y": 0.513,
+        "w": 0.04,
+        "h": 0.416
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.083,
+          0.513
+        ],
+        [
+          0.09,
+          0.586
+        ],
+        [
+          0.096,
+          0.68
+        ],
+        [
+          0.105,
+          0.785
+        ],
+        [
+          0.113,
+          0.907
+        ],
+        [
+          0.105,
+          0.929
+        ],
+        [
+          0.096,
+          0.815
+        ],
+        [
+          0.088,
+          0.706
+        ],
+        [
+          0.08,
+          0.604
+        ],
+        [
+          0.073,
+          0.538
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/module-turntable-frame-sliver.svg",
+      "source_binding_ids": [
+        "binding-module-turntable-frame-sliver"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          143,
+          704
+        ],
+        "safe_stage_window_origin_px": [
+          148,
+          738
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.083,
+            0.513
+          ],
+          [
+            0.09,
+            0.586
+          ],
+          [
+            0.096,
+            0.68
+          ],
+          [
+            0.105,
+            0.785
+          ],
+          [
+            0.113,
+            0.907
+          ],
+          [
+            0.105,
+            0.929
+          ],
+          [
+            0.096,
+            0.815
+          ],
+          [
+            0.088,
+            0.706
+          ],
+          [
+            0.08,
+            0.604
+          ],
+          [
+            0.073,
+            0.538
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0547,
+            0.5371
+          ],
+          [
+            0.0827,
+            0.4854
+          ],
+          [
+            0.1009,
+            0.5127
+          ],
+          [
+            0.1309,
+            0.9014
+          ],
+          [
+            0.1237,
+            0.9277
+          ],
+          [
+            0.1048,
+            0.9561
+          ],
+          [
+            0.0866,
+            0.9287
+          ],
+          [
+            0.0547,
+            0.54
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0547,
+          "y": 0.4854,
+          "w": 0.0768,
+          "h": 0.4717
+        },
+        "territory_area_px": 32590,
+        "visible_area_px": 7110,
+        "expansion_ratio": 4.584,
+        "neighbors": [
+          {
+            "artifact_id": "module-stone-collision-notch",
+            "shared_edge_px": 35506,
+            "direction": "right",
+            "distance_px": 183.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-unicode-similarity-pinholes",
+      "kind": "module",
+      "label": "unicode similarity pinholes",
+      "artifact_type": "glyph-like-pinhole-cluster",
+      "bounds": {
+        "x": 0.6562,
+        "y": 0.0,
+        "w": 0.2884,
+        "h": 0.1553
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.6582,
+          0.04
+        ],
+        [
+          0.668,
+          0.002
+        ],
+        [
+          0.9108,
+          0.002
+        ],
+        [
+          0.9186,
+          0.0166
+        ],
+        [
+          0.9271,
+          0.0537
+        ],
+        [
+          0.9421,
+          0.1445
+        ],
+        [
+          0.9414,
+          0.1504
+        ],
+        [
+          0.9368,
+          0.1514
+        ],
+        [
+          0.6803,
+          0.125
+        ],
+        [
+          0.6745,
+          0.1191
+        ],
+        [
+          0.6608,
+          0.0859
+        ],
+        [
+          0.6582,
+          0.0459
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/module-unicode-similarity-pinholes.svg",
+      "source_binding_ids": [
+        "binding-module-unicode-similarity-pinholes"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1234,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          1269,
+          80
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.6582,
+            0.04
+          ],
+          [
+            0.668,
+            0.002
+          ],
+          [
+            0.9108,
+            0.002
+          ],
+          [
+            0.9186,
+            0.0166
+          ],
+          [
+            0.9271,
+            0.0537
+          ],
+          [
+            0.9421,
+            0.1445
+          ],
+          [
+            0.9414,
+            0.1504
+          ],
+          [
+            0.9368,
+            0.1514
+          ],
+          [
+            0.6803,
+            0.125
+          ],
+          [
+            0.6745,
+            0.1191
+          ],
+          [
+            0.6608,
+            0.0859
+          ],
+          [
+            0.6582,
+            0.0459
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6393,
+            0.0381
+          ],
+          [
+            0.651,
+            0.0
+          ],
+          [
+            0.9271,
+            0.0
+          ],
+          [
+            0.9362,
+            0.0156
+          ],
+          [
+            0.9447,
+            0.0488
+          ],
+          [
+            0.9603,
+            0.1416
+          ],
+          [
+            0.959,
+            0.1504
+          ],
+          [
+            0.9362,
+            0.1787
+          ],
+          [
+            0.6797,
+            0.1523
+          ],
+          [
+            0.6556,
+            0.1172
+          ],
+          [
+            0.6426,
+            0.0869
+          ],
+          [
+            0.6393,
+            0.0498
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6393,
+          "y": 0.0,
+          "w": 0.3216,
+          "h": 0.1797
+        },
+        "territory_area_px": 77766,
+        "visible_area_px": 57034,
+        "expansion_ratio": 1.364,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-lower-right-purple-edge-tear",
+      "kind": "module",
+      "label": "lower-right purple edge tear",
+      "artifact_type": "cut-vinyl-vector-seam",
+      "bounds": {
+        "x": 0.769,
+        "y": 0.917,
+        "w": 0.163,
+        "h": 0.081
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.787,
+          0.922
+        ],
+        [
+          0.842,
+          0.926
+        ],
+        [
+          0.904,
+          0.931
+        ],
+        [
+          0.932,
+          0.955
+        ],
+        [
+          0.919,
+          0.998
+        ],
+        [
+          0.785,
+          0.998
+        ],
+        [
+          0.769,
+          0.976
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/module-lower-right-purple-edge-tear.svg",
+      "source_binding_ids": [
+        "binding-module-lower-right-purple-edge-tear"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1306,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.787,
+            0.922
+          ],
+          [
+            0.842,
+            0.926
+          ],
+          [
+            0.904,
+            0.931
+          ],
+          [
+            0.932,
+            0.955
+          ],
+          [
+            0.919,
+            0.998
+          ],
+          [
+            0.785,
+            0.998
+          ],
+          [
+            0.769,
+            0.976
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7428,
+            0.9746
+          ],
+          [
+            0.7604,
+            0.9219
+          ],
+          [
+            0.7865,
+            0.8828
+          ],
+          [
+            0.9036,
+            0.8916
+          ],
+          [
+            0.9316,
+            0.915
+          ],
+          [
+            0.9577,
+            0.9541
+          ],
+          [
+            0.9434,
+            0.999
+          ],
+          [
+            0.7585,
+            0.999
+          ],
+          [
+            0.7428,
+            0.9756
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7428,
+          "y": 0.8828,
+          "w": 0.2155,
+          "h": 0.1172
+        },
+        "territory_area_px": 32328,
+        "visible_area_px": 16293,
+        "expansion_ratio": 1.984,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-unicode-similarity-pinholes-2",
+      "kind": "module",
+      "label": "unicode similarity pinholes",
+      "artifact_type": "glyph-like-pinhole-cluster",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "flash-observatory-asset-skin",
+      "mask_path": "/editions/2026-09-02-flash-observatory-asset-skin-v1/assets/masks/module-unicode-similarity-pinholes-2.svg",
+      "source_binding_ids": [
+        "binding-module-unicode-similarity-pinholes-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3398
+          ],
+          [
+            0.2799,
+            0.3125
+          ],
+          [
+            0.4395,
+            0.3125
+          ],
+          [
+            0.4577,
+            0.3398
+          ],
+          [
+            0.4577,
+            0.4893
+          ],
+          [
+            0.4395,
+            0.5166
+          ],
+          [
+            0.3001,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.4795
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.1966,
+          "h": 0.2051
+        },
+        "territory_area_px": 61059,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.612,
+        "neighbors": [
+          {
+            "artifact_id": "module-stone-collision-notch",
+            "shared_edge_px": 3387,
+            "direction": "left",
+            "distance_px": 333.63
+          },
+          {
+            "artifact_id": "module-agent-tool-reliquary",
+            "shared_edge_px": 1245,
+            "direction": "right",
+            "distance_px": 418.7
+          }
+        ]
+      }
+    }
+  ]
+}

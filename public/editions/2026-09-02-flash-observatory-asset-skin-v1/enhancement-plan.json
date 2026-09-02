@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-02-flash-observatory-asset-skin-v1",
+  "edition_id": "2026-09-02-flash-observatory-asset-skin-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-02-flash-observatory-asset-skin-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-laminated-dither-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-laminated-dither-field",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-gloss-defect-field) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-manga-ink-pressure-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-manga-ink-pressure-cut",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-ink-crop-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-stone-collision-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-stone-collision-notch",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (mineral-edge-pressure-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-moma-archive-crop-chip",
+      "target_kind": "artifact",
+      "artifact_id": "module-moma-archive-crop-chip",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (archive-crop-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-agent-tool-reliquary",
+      "target_kind": "artifact",
+      "artifact_id": "module-agent-tool-reliquary",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stress-test-square-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-turntable-frame-sliver",
+      "target_kind": "artifact",
+      "artifact_id": "module-turntable-frame-sliver",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rotated-frame-edge-slice) selected from interpretation."
+    },
+    {
+      "target_id": "module-unicode-similarity-pinholes",
+      "target_kind": "artifact",
+      "artifact_id": "module-unicode-similarity-pinholes",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glyph-like-pinhole-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-right-purple-edge-tear",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-right-purple-edge-tear",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cut-vinyl-vector-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-unicode-similarity-pinholes-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-unicode-similarity-pinholes-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glyph-like-pinhole-cluster) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

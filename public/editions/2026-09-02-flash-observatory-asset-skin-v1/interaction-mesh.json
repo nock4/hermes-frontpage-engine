@@ -1,0 +1,555 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-02-flash-observatory-asset-skin-v1",
+  "generation": "daily-process-2026-09-02T08-01-04-394Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-09-02T08-01-04-394Z/2026-09-02-flash-observatory-asset-skin-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-hero-laminated-dither-field",
+      "visible_area_px": 64175,
+      "territory_area_px": 93833,
+      "hover_bounds": {
+        "x": 0.3704,
+        "y": 0.5645,
+        "w": 0.2422,
+        "h": 0.3281
+      },
+      "hover_polygon": [
+        [
+          0.3704,
+          0.71
+        ],
+        [
+          0.3919,
+          0.5723
+        ],
+        [
+          0.3965,
+          0.5654
+        ],
+        [
+          0.4557,
+          0.5645
+        ],
+        [
+          0.5286,
+          0.5742
+        ],
+        [
+          0.5931,
+          0.6553
+        ],
+        [
+          0.612,
+          0.7354
+        ],
+        [
+          0.5931,
+          0.8184
+        ],
+        [
+          0.571,
+          0.8516
+        ],
+        [
+          0.5195,
+          0.8916
+        ],
+        [
+          0.4551,
+          0.8701
+        ],
+        [
+          0.3893,
+          0.7812
+        ],
+        [
+          0.3704,
+          0.7158
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-stone-collision-notch",
+          "shared_edge_px": 4783,
+          "direction": "left",
+          "distance_px": 465.16
+        },
+        {
+          "artifact_id": "module-agent-tool-reliquary",
+          "shared_edge_px": 764,
+          "direction": "up",
+          "distance_px": 359.18
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-hero-manga-ink-pressure-cut",
+      "visible_area_px": 21607,
+      "territory_area_px": 37723,
+      "hover_bounds": {
+        "x": 0.1328,
+        "y": 0.0,
+        "w": 0.1484,
+        "h": 0.2031
+      },
+      "hover_polygon": [
+        [
+          0.1328,
+          0.124
+        ],
+        [
+          0.1413,
+          0.0537
+        ],
+        [
+          0.1686,
+          0.0
+        ],
+        [
+          0.2676,
+          0.0
+        ],
+        [
+          0.2806,
+          0.0332
+        ],
+        [
+          0.278,
+          0.0996
+        ],
+        [
+          0.2663,
+          0.167
+        ],
+        [
+          0.2435,
+          0.2021
+        ],
+        [
+          0.1934,
+          0.1875
+        ],
+        [
+          0.1549,
+          0.1592
+        ],
+        [
+          0.1328,
+          0.126
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-stone-collision-notch",
+      "visible_area_px": 629288,
+      "territory_area_px": 454553,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.0996,
+        "w": 0.6165,
+        "h": 0.9004
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.1006
+        ],
+        [
+          0.0801,
+          0.1338
+        ],
+        [
+          0.3431,
+          0.3115
+        ],
+        [
+          0.6159,
+          0.6738
+        ],
+        [
+          0.5651,
+          0.999
+        ],
+        [
+          0.0,
+          0.999
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-turntable-frame-sliver",
+          "shared_edge_px": 35506,
+          "direction": "left",
+          "distance_px": 183.12
+        },
+        {
+          "artifact_id": "hero-hero-laminated-dither-field",
+          "shared_edge_px": 4783,
+          "direction": "right",
+          "distance_px": 465.16
+        },
+        {
+          "artifact_id": "module-unicode-similarity-pinholes-2",
+          "shared_edge_px": 3387,
+          "direction": "right",
+          "distance_px": 333.63
+        },
+        {
+          "artifact_id": "module-moma-archive-crop-chip",
+          "shared_edge_px": 3032,
+          "direction": "down",
+          "distance_px": 342.75
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-moma-archive-crop-chip",
+      "visible_area_px": 24150,
+      "territory_area_px": 37305,
+      "hover_bounds": {
+        "x": 0.2441,
+        "y": 0.7812,
+        "w": 0.1608,
+        "h": 0.2188
+      },
+      "hover_polygon": [
+        [
+          0.2441,
+          0.7949
+        ],
+        [
+          0.2845,
+          0.7812
+        ],
+        [
+          0.4043,
+          0.9639
+        ],
+        [
+          0.3763,
+          0.999
+        ],
+        [
+          0.2441,
+          0.9971
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-stone-collision-notch",
+          "shared_edge_px": 3032,
+          "direction": "up",
+          "distance_px": 342.75
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-agent-tool-reliquary",
+      "visible_area_px": 173989,
+      "territory_area_px": 204717,
+      "hover_bounds": {
+        "x": 0.431,
+        "y": 0.1904,
+        "w": 0.3496,
+        "h": 0.5654
+      },
+      "hover_polygon": [
+        [
+          0.431,
+          0.3115
+        ],
+        [
+          0.4479,
+          0.2861
+        ],
+        [
+          0.7174,
+          0.1904
+        ],
+        [
+          0.75,
+          0.2031
+        ],
+        [
+          0.7682,
+          0.2305
+        ],
+        [
+          0.7799,
+          0.2666
+        ],
+        [
+          0.7728,
+          0.4941
+        ],
+        [
+          0.7376,
+          0.7246
+        ],
+        [
+          0.7188,
+          0.7549
+        ],
+        [
+          0.5938,
+          0.6553
+        ],
+        [
+          0.4525,
+          0.499
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-unicode-similarity-pinholes-2",
+          "shared_edge_px": 1245,
+          "direction": "left",
+          "distance_px": 418.7
+        },
+        {
+          "artifact_id": "module-stone-collision-notch",
+          "shared_edge_px": 825,
+          "direction": "left",
+          "distance_px": 699.08
+        },
+        {
+          "artifact_id": "hero-hero-laminated-dither-field",
+          "shared_edge_px": 764,
+          "direction": "down",
+          "distance_px": 359.18
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-turntable-frame-sliver",
+      "visible_area_px": 7110,
+      "territory_area_px": 32590,
+      "hover_bounds": {
+        "x": 0.0547,
+        "y": 0.4854,
+        "w": 0.0768,
+        "h": 0.4717
+      },
+      "hover_polygon": [
+        [
+          0.0547,
+          0.5371
+        ],
+        [
+          0.0827,
+          0.4854
+        ],
+        [
+          0.1009,
+          0.5127
+        ],
+        [
+          0.1309,
+          0.9014
+        ],
+        [
+          0.1237,
+          0.9277
+        ],
+        [
+          0.1048,
+          0.9561
+        ],
+        [
+          0.0866,
+          0.9287
+        ],
+        [
+          0.0547,
+          0.54
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-stone-collision-notch",
+          "shared_edge_px": 35506,
+          "direction": "right",
+          "distance_px": 183.12
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-unicode-similarity-pinholes",
+      "visible_area_px": 57034,
+      "territory_area_px": 77766,
+      "hover_bounds": {
+        "x": 0.6393,
+        "y": 0.0,
+        "w": 0.3216,
+        "h": 0.1797
+      },
+      "hover_polygon": [
+        [
+          0.6393,
+          0.0381
+        ],
+        [
+          0.651,
+          0.0
+        ],
+        [
+          0.9271,
+          0.0
+        ],
+        [
+          0.9362,
+          0.0156
+        ],
+        [
+          0.9447,
+          0.0488
+        ],
+        [
+          0.9603,
+          0.1416
+        ],
+        [
+          0.959,
+          0.1504
+        ],
+        [
+          0.9362,
+          0.1787
+        ],
+        [
+          0.6797,
+          0.1523
+        ],
+        [
+          0.6556,
+          0.1172
+        ],
+        [
+          0.6426,
+          0.0869
+        ],
+        [
+          0.6393,
+          0.0498
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-lower-right-purple-edge-tear",
+      "visible_area_px": 16293,
+      "territory_area_px": 32328,
+      "hover_bounds": {
+        "x": 0.7428,
+        "y": 0.8828,
+        "w": 0.2155,
+        "h": 0.1172
+      },
+      "hover_polygon": [
+        [
+          0.7428,
+          0.9746
+        ],
+        [
+          0.7604,
+          0.9219
+        ],
+        [
+          0.7865,
+          0.8828
+        ],
+        [
+          0.9036,
+          0.8916
+        ],
+        [
+          0.9316,
+          0.915
+        ],
+        [
+          0.9577,
+          0.9541
+        ],
+        [
+          0.9434,
+          0.999
+        ],
+        [
+          0.7585,
+          0.999
+        ],
+        [
+          0.7428,
+          0.9756
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-unicode-similarity-pinholes-2",
+      "visible_area_px": 37884,
+      "territory_area_px": 61059,
+      "hover_bounds": {
+        "x": 0.2617,
+        "y": 0.3125,
+        "w": 0.1966,
+        "h": 0.2051
+      },
+      "hover_polygon": [
+        [
+          0.2617,
+          0.3398
+        ],
+        [
+          0.2799,
+          0.3125
+        ],
+        [
+          0.4395,
+          0.3125
+        ],
+        [
+          0.4577,
+          0.3398
+        ],
+        [
+          0.4577,
+          0.4893
+        ],
+        [
+          0.4395,
+          0.5166
+        ],
+        [
+          0.3001,
+          0.5166
+        ],
+        [
+          0.2617,
+          0.4795
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-stone-collision-notch",
+          "shared_edge_px": 3387,
+          "direction": "left",
+          "distance_px": 333.63
+        },
+        {
+          "artifact_id": "module-agent-tool-reliquary",
+          "shared_edge_px": 1245,
+          "direction": "right",
+          "distance_px": 418.7
+        }
+      ]
+    }
+  ]
+}
