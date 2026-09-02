@@ -1,0 +1,521 @@
+{
+  "analysis_id": "analysis-2026-09-02-phosphor-contractor-hinge-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark cyan technical catalogue plate: a full armored suit at left, a large helmet/module cutaway in the center, stacked component cells on the right, and a bottom data strip. Source-bearing anchors are visible as framed panels, glowing slits, bolt rings, cassette seams, dense scanline plates, and the dominant suit silhouette.",
+  "usable_surfaces": [
+    "left full-body armored silhouette edge",
+    "central helmet faceplate and visor glass",
+    "cyan framed square plate above helmet",
+    "thin glowing visor slit on helmet brow",
+    "right-column stacked component cells",
+    "lower-right red scanline cartridge panel",
+    "circular bolt-ring node beside helmet",
+    "bottom-left dense green data plaque",
+    "central horizontal cassette seam",
+    "bottom arc glyph field"
+  ],
+  "detected_objects": [
+    {
+      "label": "Memory Prism Catalogue",
+      "artifact_type": "hero-scale-armored-silhouette",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.029,
+        "y": 0.084,
+        "w": 0.251,
+        "h": 0.706
+      },
+      "polygon": [
+        [
+          0.154,
+          0.086
+        ],
+        [
+          0.112,
+          0.099
+        ],
+        [
+          0.088,
+          0.142
+        ],
+        [
+          0.069,
+          0.219
+        ],
+        [
+          0.035,
+          0.259
+        ],
+        [
+          0.046,
+          0.451
+        ],
+        [
+          0.069,
+          0.622
+        ],
+        [
+          0.049,
+          0.731
+        ],
+        [
+          0.083,
+          0.78
+        ],
+        [
+          0.135,
+          0.785
+        ],
+        [
+          0.147,
+          0.673
+        ],
+        [
+          0.184,
+          0.673
+        ],
+        [
+          0.194,
+          0.786
+        ],
+        [
+          0.247,
+          0.786
+        ],
+        [
+          0.274,
+          0.731
+        ],
+        [
+          0.252,
+          0.614
+        ],
+        [
+          0.268,
+          0.266
+        ],
+        [
+          0.207,
+          0.105
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "Tall left front-facing armored suit mass with visible helmet, hoses, torso cassette, arms, legs, boots, and bright cyan edge traces inside its own catalogue frame."
+    },
+    {
+      "label": "visor sizzle slit",
+      "artifact_type": "visor-media-glint",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.388,
+        "w": 0.214,
+        "h": 0.062
+      },
+      "polygon": [
+        [
+          0.389,
+          0.394
+        ],
+        [
+          0.425,
+          0.386
+        ],
+        [
+          0.51,
+          0.388
+        ],
+        [
+          0.579,
+          0.395
+        ],
+        [
+          0.604,
+          0.411
+        ],
+        [
+          0.594,
+          0.438
+        ],
+        [
+          0.545,
+          0.449
+        ],
+        [
+          0.466,
+          0.446
+        ],
+        [
+          0.414,
+          0.435
+        ],
+        [
+          0.391,
+          0.414
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Broad blue-white visor glass glare across the helmet front, with a curved top edge and bright reflective lower edge."
+    },
+    {
+      "label": "right upper design diagram cell",
+      "artifact_type": "stacked-technical-cell",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.626,
+        "y": 0.092,
+        "w": 0.132,
+        "h": 0.052
+      },
+      "polygon": [
+        [
+          0.627,
+          0.094
+        ],
+        [
+          0.755,
+          0.092
+        ],
+        [
+          0.758,
+          0.103
+        ],
+        [
+          0.758,
+          0.135
+        ],
+        [
+          0.751,
+          0.144
+        ],
+        [
+          0.63,
+          0.144
+        ],
+        [
+          0.625,
+          0.134
+        ],
+        [
+          0.625,
+          0.102
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Separated cyan technical tile above the helmet, containing a narrow luminous horizontal insert and framed like a schematic cell."
+    },
+    {
+      "label": "lower-right shorts burn panel",
+      "artifact_type": "scanline-image-panel",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.838,
+        "y": 0.552,
+        "w": 0.132,
+        "h": 0.056
+      },
+      "polygon": [
+        [
+          0.84,
+          0.555
+        ],
+        [
+          0.863,
+          0.548
+        ],
+        [
+          0.946,
+          0.548
+        ],
+        [
+          0.969,
+          0.557
+        ],
+        [
+          0.97,
+          0.596
+        ],
+        [
+          0.946,
+          0.607
+        ],
+        [
+          0.861,
+          0.606
+        ],
+        [
+          0.838,
+          0.595
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Right-column cartridge panel with a bright red horizontal scanline burn inside a dark mechanical frame."
+    },
+    {
+      "label": "chrome dependency bolt",
+      "artifact_type": "bolt-ring-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.711,
+        "y": 0.338,
+        "w": 0.066,
+        "h": 0.066
+      },
+      "polygon": [
+        [
+          0.744,
+          0.338
+        ],
+        [
+          0.764,
+          0.344
+        ],
+        [
+          0.777,
+          0.359
+        ],
+        [
+          0.778,
+          0.382
+        ],
+        [
+          0.765,
+          0.398
+        ],
+        [
+          0.744,
+          0.405
+        ],
+        [
+          0.723,
+          0.398
+        ],
+        [
+          0.711,
+          0.382
+        ],
+        [
+          0.711,
+          0.359
+        ],
+        [
+          0.724,
+          0.344
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "Distinct circular bolt or hinge ring in a cyan square frame to the right of the helmet, with visible dark center and bright rim nodes."
+    },
+    {
+      "label": "brushed model cassette slot",
+      "artifact_type": "cassette-slot-seam",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.479,
+        "y": 0.774,
+        "w": 0.13,
+        "h": 0.075
+      },
+      "polygon": [
+        [
+          0.478,
+          0.775
+        ],
+        [
+          0.609,
+          0.775
+        ],
+        [
+          0.616,
+          0.783
+        ],
+        [
+          0.616,
+          0.841
+        ],
+        [
+          0.608,
+          0.849
+        ],
+        [
+          0.479,
+          0.849
+        ],
+        [
+          0.47,
+          0.841
+        ],
+        [
+          0.47,
+          0.783
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Bottom-center rectangular cassette-like slot filled with stacked cyan horizontal seam lines beneath the large glyph field."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.648,
+        "y": 0.393,
+        "w": 0.082,
+        "h": 0.107
+      },
+      "polygon": [
+        [
+          0.688,
+          0.394
+        ],
+        [
+          0.711,
+          0.404
+        ],
+        [
+          0.729,
+          0.429
+        ],
+        [
+          0.726,
+          0.462
+        ],
+        [
+          0.704,
+          0.493
+        ],
+        [
+          0.676,
+          0.5
+        ],
+        [
+          0.655,
+          0.481
+        ],
+        [
+          0.647,
+          0.449
+        ],
+        [
+          0.655,
+          0.419
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "Cyan-blue circular glowing node and ring cluster attached to the helmet’s right side, distinct from the nearby bolt square."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.331,
+        "y": 0.656,
+        "w": 0.407,
+        "h": 0.137
+      },
+      "polygon": [
+        [
+          0.331,
+          0.723
+        ],
+        [
+          0.361,
+          0.685
+        ],
+        [
+          0.419,
+          0.666
+        ],
+        [
+          0.489,
+          0.655
+        ],
+        [
+          0.579,
+          0.656
+        ],
+        [
+          0.665,
+          0.674
+        ],
+        [
+          0.719,
+          0.704
+        ],
+        [
+          0.738,
+          0.742
+        ],
+        [
+          0.72,
+          0.783
+        ],
+        [
+          0.644,
+          0.761
+        ],
+        [
+          0.56,
+          0.745
+        ],
+        [
+          0.478,
+          0.747
+        ],
+        [
+          0.397,
+          0.766
+        ],
+        [
+          0.342,
+          0.793
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "Large curved blocky cyan glyph band under the helmet, a dominant field-mark gesture made of broken pixel slabs."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.283,
+    "rationale": "The plate has clear dominant regions—the left suit, central helmet, right component stack, and bottom data rail—but many tiny scanline labels and component cells create dense catalogue noise. Still usable because the major source windows sit on strong visible edges and framed surfaces."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-02-phosphor-contractor-hinge-field-v1"
+}

@@ -1,0 +1,380 @@
+{
+  "interpretation_id": "interp-2026-09-02-phosphor-contractor-hinge-field-v1",
+  "edition_id": "2026-09-02-phosphor-contractor-hinge-field-v1",
+  "plate_read_timestamp": "2026-09-02T11:37:57.230Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark cyan technical catalogue plate: a full armored suit at left, a large helmet/module cutaway in the center, stacked component cells on the right, and a bottom data strip. Source-bearing anchors are visible as framed panels, glowing slits, bolt rings, cassette seams, dense scanline plates, and the dominant suit silhouette.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "cold utilitarian machinery under phosphor pressure",
+      "A dark cyan technical catalogue plate: a full armored suit at left, a large helmet/module cutaway in the center, stacked component cells on the right, and a bottom data strip. Source-bearing anchors are visible as framed panels, glowing slits, bolt rings, cassette seams, dense scanline plates, and the dominant suit silhouette.",
+      "diesel-cassette",
+      "phosphor-glass",
+      "industrial-hinge"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Memory Prism Catalogue",
+      "visor sizzle slit",
+      "right upper design diagram cell",
+      "lower-right shorts burn panel",
+      "chrome dependency bolt",
+      "brushed model cassette slot",
+      "Color Node",
+      "Field Marker"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "phosphor-contractor-hinge-field",
+      "front-facing armored equipment silhouette carrying the left side of the plate",
+      "central cyan-outlined square plate broken by a heavy helmet-module mass",
+      "right-side stack of separated diagram cells with tiny illegible edge glyphs",
+      "oblique chrome barrel and A-frame rod system crossing toward the lower-right",
+      "cassette-slot seams, bolt nodes, visor cuts, and phosphor notches as source-bearing apertures",
+      "left full-body armored silhouette edge",
+      "central helmet faceplate and visor glass"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: phosphor-contractor-hinge-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-memory-prism-catalogue",
+      "kind": "hero",
+      "type": "hero-scale-armored-silhouette",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.029,
+        "y": 0.084,
+        "w": 0.251,
+        "h": 0.706
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-visor-sizzle-slit",
+      "kind": "hero",
+      "type": "visor-media-glint",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.389,
+        "y": 0.388,
+        "w": 0.214,
+        "h": 0.062
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-upper-design-diagram-cell",
+      "kind": "module",
+      "type": "stacked-technical-cell",
+      "strength": 0.799596,
+      "bounds": {
+        "x": 0.626,
+        "y": 0.092,
+        "w": 0.132,
+        "h": 0.052
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-right-shorts-burn-panel",
+      "kind": "module",
+      "type": "scanline-image-panel",
+      "strength": 0.7710480000000001,
+      "bounds": {
+        "x": 0.838,
+        "y": 0.552,
+        "w": 0.132,
+        "h": 0.056
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-chrome-dependency-bolt",
+      "kind": "module",
+      "type": "bolt-ring-node",
+      "strength": 0.740712,
+      "bounds": {
+        "x": 0.711,
+        "y": 0.338,
+        "w": 0.066,
+        "h": 0.066
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-brushed-model-cassette-slot",
+      "kind": "module",
+      "type": "cassette-slot-seam",
+      "strength": 0.70674,
+      "bounds": {
+        "x": 0.479,
+        "y": 0.774,
+        "w": 0.13,
+        "h": 0.075
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.6835800000000001,
+      "bounds": {
+        "x": 0.648,
+        "y": 0.393,
+        "w": 0.082,
+        "h": 0.107
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.64948,
+      "bounds": {
+        "x": 0.331,
+        "y": 0.656,
+        "w": 0.407,
+        "h": 0.137
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-2",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.66226,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-memory-prism-catalogue-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.029,
+        "y": 0.084,
+        "w": 0.251,
+        "h": 0.706
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-visor-sizzle-slit-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.389,
+        "y": 0.388,
+        "w": 0.214,
+        "h": 0.062
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-upper-design-diagram-cell-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.626,
+        "y": 0.092,
+        "w": 0.132,
+        "h": 0.052
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-right-shorts-burn-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.838,
+        "y": 0.552,
+        "w": 0.132,
+        "h": 0.056
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-chrome-dependency-bolt-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.711,
+        "y": 0.338,
+        "w": 0.066,
+        "h": 0.066
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-brushed-model-cassette-slot-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.479,
+        "y": 0.774,
+        "w": 0.13,
+        "h": 0.075
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.648,
+        "y": 0.393,
+        "w": 0.082,
+        "h": 0.107
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.331,
+        "y": 0.656,
+        "w": 0.407,
+        "h": 0.137
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
