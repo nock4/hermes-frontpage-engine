@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-09-03-connector-seed-bank-wall-v1",
+  "edition_id": "2026-09-03-connector-seed-bank-wall-v1",
+  "plate_read_timestamp": "2026-09-03T08:09:03.282Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A raised square anodized panel floats on a blank warm wall, its face built from dense horizontal socket dashes that form a ghostly portrait mass. The strongest source-bearing features are the panel plane, its bottom shadow seam, several rounded black apertures, a dark upper-right density island, a lower-right dropout/scar near the corner, and small edge glints/notches.",
+    "dominant_spatial_mode": "contained",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet aluminum pressure in a blank room",
+      "A raised square anodized panel floats on a blank warm wall, its face built from dense horizontal socket dashes that form a ghostly portrait mass. The strongest source-bearing features are the panel plane, its bottom shadow seam, several rounded black apertures, a dark upper-right density island, a lower-right dropout/scar near the corner, and small edge glints/notches.",
+      "connector-grid",
+      "blank-wall-field",
+      "anodized-panel"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "central connector portrait plate",
+      "low-resolution dog socket",
+      "party-nucleus notch",
+      "isono-canopy density island",
+      "turtle-road dropout",
+      "cowboy-oyster glint bead",
+      "Edge Detail"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "paper"
+    ],
+    "dominant_structures": [
+      "connector-seed-bank-wall",
+      "small raised square connector-density plate",
+      "large uninterrupted warm wall field",
+      "low floor/baseboard bass horizon",
+      "socket omissions forming a semi-legible cropped face mass",
+      "sparse edge notches, punctures, and dropout cuts",
+      "tiny glints and seam repairs carrying saved sources",
+      "raised square connector panel"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: connector-seed-bank-wall.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-central-connector-portrait-plate",
+      "kind": "hero",
+      "type": "hero-scale-anodized-socket-field",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.2441,
+        "y": 0,
+        "w": 0.5098,
+        "h": 0.5459
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-low-resolution-dog-socket",
+      "kind": "hero",
+      "type": "soft-pixel-socket-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.333,
+        "y": 0.412,
+        "w": 0.07,
+        "h": 0.061
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-party-nucleus-notch",
+      "kind": "module",
+      "type": "edge-gathering-notch",
+      "strength": 0.79542,
+      "bounds": {
+        "x": 0.25,
+        "y": 0.224,
+        "w": 0.052,
+        "h": 0.079
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-isono-canopy-density-island",
+      "kind": "module",
+      "type": "dark-grid-canopy-island",
+      "strength": 0.780888,
+      "bounds": {
+        "x": 0.526,
+        "y": 0.022,
+        "w": 0.201,
+        "h": 0.154
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-party-nucleus-notch-2",
+      "kind": "module",
+      "type": "edge-gathering-notch",
+      "strength": 0.725844,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-turtle-road-dropout",
+      "kind": "module",
+      "type": "horizontal-dropout-slit",
+      "strength": 0.70068,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cowboy-oyster-glint-bead",
+      "kind": "module",
+      "type": "rounded-socket-glint",
+      "strength": 0.6699240000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-isono-canopy-density-island-2",
+      "kind": "module",
+      "type": "dark-grid-canopy-island",
+      "strength": 0.650872,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "type": "edge-detail",
+      "strength": 0.66148,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-central-connector-portrait-plate-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2441,
+        "y": 0,
+        "w": 0.5098,
+        "h": 0.5459
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-low-resolution-dog-socket-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.333,
+        "y": 0.412,
+        "w": 0.07,
+        "h": 0.061
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-party-nucleus-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.25,
+        "y": 0.224,
+        "w": 0.052,
+        "h": 0.079
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-isono-canopy-density-island-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.526,
+        "y": 0.022,
+        "w": 0.201,
+        "h": 0.154
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-party-nucleus-notch-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-turtle-road-dropout-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cowboy-oyster-glint-bead-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-isono-canopy-density-island-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-edge-detail-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

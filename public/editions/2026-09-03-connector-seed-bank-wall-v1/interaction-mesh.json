@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-03-connector-seed-bank-wall-v1",
+  "generation": "daily-process-2026-09-03T08-00-28-483Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-09-03T08-00-28-483Z/2026-09-03-connector-seed-bank-wall-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-central-connector-portrait-plate",
+      "visible_area_px": 284617,
+      "territory_area_px": 287098,
+      "hover_bounds": {
+        "x": 0.2139,
+        "y": 0.0,
+        "w": 0.5703,
+        "h": 0.5762
+      },
+      "hover_polygon": [
+        [
+          0.2139,
+          0.002
+        ],
+        [
+          0.7773,
+          0.0
+        ],
+        [
+          0.7832,
+          0.4326
+        ],
+        [
+          0.7822,
+          0.5107
+        ],
+        [
+          0.5908,
+          0.5752
+        ],
+        [
+          0.248,
+          0.5752
+        ],
+        [
+          0.2148,
+          0.542
+        ],
+        [
+          0.2139,
+          0.3584
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-edge-detail",
+          "shared_edge_px": 44423,
+          "direction": "left",
+          "distance_px": 166.22
+        },
+        {
+          "artifact_id": "module-party-nucleus-notch",
+          "shared_edge_px": 12193,
+          "direction": "left",
+          "distance_px": 207.63
+        },
+        {
+          "artifact_id": "hero-low-resolution-dog-socket",
+          "shared_edge_px": 9464,
+          "direction": "down",
+          "distance_px": 188.54
+        },
+        {
+          "artifact_id": "module-isono-canopy-density-island",
+          "shared_edge_px": 3374,
+          "direction": "up",
+          "distance_px": 265.85
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-low-resolution-dog-socket",
+      "visible_area_px": 3544,
+      "territory_area_px": 8471,
+      "hover_bounds": {
+        "x": 0.2998,
+        "y": 0.415,
+        "w": 0.1367,
+        "h": 0.0918
+      },
+      "hover_polygon": [
+        [
+          0.2998,
+          0.4443
+        ],
+        [
+          0.4199,
+          0.415
+        ],
+        [
+          0.4355,
+          0.4424
+        ],
+        [
+          0.4268,
+          0.4658
+        ],
+        [
+          0.3936,
+          0.499
+        ],
+        [
+          0.3574,
+          0.5059
+        ],
+        [
+          0.334,
+          0.4941
+        ],
+        [
+          0.2998,
+          0.4541
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-edge-detail",
+          "shared_edge_px": 9464,
+          "direction": "up",
+          "distance_px": 44.31
+        },
+        {
+          "artifact_id": "hero-central-connector-portrait-plate",
+          "shared_edge_px": 9464,
+          "direction": "up",
+          "distance_px": 188.54
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-party-nucleus-notch",
+      "visible_area_px": 3513,
+      "territory_area_px": 11185,
+      "hover_bounds": {
+        "x": 0.2227,
+        "y": 0.1973,
+        "w": 0.1074,
+        "h": 0.1338
+      },
+      "hover_polygon": [
+        [
+          0.2227,
+          0.2539
+        ],
+        [
+          0.2246,
+          0.2285
+        ],
+        [
+          0.252,
+          0.2012
+        ],
+        [
+          0.2734,
+          0.1973
+        ],
+        [
+          0.2959,
+          0.209
+        ],
+        [
+          0.3232,
+          0.2363
+        ],
+        [
+          0.3291,
+          0.2607
+        ],
+        [
+          0.3213,
+          0.292
+        ],
+        [
+          0.2939,
+          0.3193
+        ],
+        [
+          0.2686,
+          0.3301
+        ],
+        [
+          0.251,
+          0.3242
+        ],
+        [
+          0.2236,
+          0.2969
+        ],
+        [
+          0.2227,
+          0.2783
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-connector-portrait-plate",
+          "shared_edge_px": 12193,
+          "direction": "right",
+          "distance_px": 207.63
+        },
+        {
+          "artifact_id": "module-edge-detail",
+          "shared_edge_px": 270,
+          "direction": "down",
+          "distance_px": 181.1
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-isono-canopy-density-island",
+      "visible_area_px": 26132,
+      "territory_area_px": 43021,
+      "hover_bounds": {
+        "x": 0.498,
+        "y": 0.0,
+        "w": 0.2568,
+        "h": 0.2041
+      },
+      "hover_polygon": [
+        [
+          0.498,
+          0.0879
+        ],
+        [
+          0.5068,
+          0.0381
+        ],
+        [
+          0.5342,
+          0.0107
+        ],
+        [
+          0.582,
+          0.0
+        ],
+        [
+          0.6826,
+          0.0
+        ],
+        [
+          0.75,
+          0.0635
+        ],
+        [
+          0.7539,
+          0.1162
+        ],
+        [
+          0.7539,
+          0.123
+        ],
+        [
+          0.6875,
+          0.1924
+        ],
+        [
+          0.6084,
+          0.2031
+        ],
+        [
+          0.5547,
+          0.1787
+        ],
+        [
+          0.5205,
+          0.1484
+        ],
+        [
+          0.498,
+          0.0908
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-connector-portrait-plate",
+          "shared_edge_px": 3374,
+          "direction": "down",
+          "distance_px": 265.85
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-party-nucleus-notch-2",
+      "visible_area_px": 51529,
+      "territory_area_px": 70617,
+      "hover_bounds": {
+        "x": 0.5918,
+        "y": 0.5117,
+        "w": 0.2764,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.5918,
+          0.5391
+        ],
+        [
+          0.6191,
+          0.5117
+        ],
+        [
+          0.8398,
+          0.5117
+        ],
+        [
+          0.8672,
+          0.5391
+        ],
+        [
+          0.8672,
+          0.7314
+        ],
+        [
+          0.6914,
+          0.7871
+        ],
+        [
+          0.6279,
+          0.7871
+        ],
+        [
+          0.5918,
+          0.751
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-connector-portrait-plate",
+          "shared_edge_px": 1425,
+          "direction": "up",
+          "distance_px": 427.26
+        },
+        {
+          "artifact_id": "module-isono-canopy-density-island-2",
+          "shared_edge_px": 1165,
+          "direction": "down",
+          "distance_px": 230.89
+        },
+        {
+          "artifact_id": "module-cowboy-oyster-glint-bead",
+          "shared_edge_px": 297,
+          "direction": "down",
+          "distance_px": 316.27
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-turtle-road-dropout",
+      "visible_area_px": 30525,
+      "territory_area_px": 61645,
+      "hover_bounds": {
+        "x": 0.0605,
+        "y": 0.7402,
+        "w": 0.2588,
+        "h": 0.2393
+      },
+      "hover_polygon": [
+        [
+          0.0605,
+          0.7793
+        ],
+        [
+          0.0996,
+          0.7402
+        ],
+        [
+          0.2793,
+          0.7402
+        ],
+        [
+          0.3184,
+          0.7793
+        ],
+        [
+          0.3184,
+          0.9395
+        ],
+        [
+          0.2793,
+          0.9785
+        ],
+        [
+          0.0996,
+          0.9785
+        ],
+        [
+          0.0605,
+          0.9395
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-cowboy-oyster-glint-bead",
+      "visible_area_px": 30525,
+      "territory_area_px": 51637,
+      "hover_bounds": {
+        "x": 0.3926,
+        "y": 0.752,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.3926,
+          0.7793
+        ],
+        [
+          0.4199,
+          0.752
+        ],
+        [
+          0.5996,
+          0.752
+        ],
+        [
+          0.627,
+          0.7793
+        ],
+        [
+          0.627,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.9668
+        ],
+        [
+          0.4199,
+          0.9668
+        ],
+        [
+          0.3926,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-party-nucleus-notch-2",
+          "shared_edge_px": 297,
+          "direction": "up",
+          "distance_px": 316.27
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-isono-canopy-density-island-2",
+      "visible_area_px": 30525,
+      "territory_area_px": 49480,
+      "hover_bounds": {
+        "x": 0.6924,
+        "y": 0.7324,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.6924,
+          0.7773
+        ],
+        [
+          0.7988,
+          0.7324
+        ],
+        [
+          0.8994,
+          0.7324
+        ],
+        [
+          0.9268,
+          0.7598
+        ],
+        [
+          0.9268,
+          0.9199
+        ],
+        [
+          0.8994,
+          0.9473
+        ],
+        [
+          0.7197,
+          0.9473
+        ],
+        [
+          0.6924,
+          0.9199
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-party-nucleus-notch-2",
+          "shared_edge_px": 1165,
+          "direction": "up",
+          "distance_px": 230.89
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-edge-detail",
+      "visible_area_px": 25410,
+      "territory_area_px": 42287,
+      "hover_bounds": {
+        "x": 0.252,
+        "y": 0.3125,
+        "w": 0.2158,
+        "h": 0.2051
+      },
+      "hover_polygon": [
+        [
+          0.252,
+          0.3398
+        ],
+        [
+          0.3018,
+          0.3125
+        ],
+        [
+          0.3965,
+          0.3125
+        ],
+        [
+          0.4668,
+          0.3809
+        ],
+        [
+          0.4668,
+          0.4893
+        ],
+        [
+          0.4395,
+          0.5166
+        ],
+        [
+          0.2793,
+          0.5166
+        ],
+        [
+          0.252,
+          0.4893
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-central-connector-portrait-plate",
+          "shared_edge_px": 44423,
+          "direction": "right",
+          "distance_px": 166.22
+        },
+        {
+          "artifact_id": "hero-low-resolution-dog-socket",
+          "shared_edge_px": 9464,
+          "direction": "down",
+          "distance_px": 44.31
+        },
+        {
+          "artifact_id": "module-party-nucleus-notch",
+          "shared_edge_px": 270,
+          "direction": "up",
+          "distance_px": 181.1
+        }
+      ]
+    }
+  ]
+}
