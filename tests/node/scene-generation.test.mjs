@@ -175,6 +175,11 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('Do not convert it into USB ports')
     expect(prompt).toContain('tiny printed dash interruptions')
     expect(prompt).toContain('Preserve crop/framing when the contract names it as source identity')
+    expect(prompt).toContain('offset translucent paper layers')
+    expect(prompt).toContain('missing-dash seams')
+    expect(prompt).toContain('never USB ports')
+    expect(prompt).not.toContain('Build source windows as USB-C port apertures')
+    expect(prompt).not.toContain('Posture: material macro')
   })
 
   it('prints source image fingerprints as plate grammar rather than thumbnail instructions', () => {

@@ -968,8 +968,24 @@ function describeEffectDirection(effectDirection) {
   return `${compactText(effectDirection.prompt_sentence, 260)}${avoids}${behavior}`
 }
 
-function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection }) {
+function dashPanelRecoveryScene(sourceImageFingerprints = []) {
+  const dominant = sourceImageFingerprints[0] || {}
+  const text = [
+    dominant.visual_summary,
+    ...(dominant.preserve_cues || []),
+    ...(dominant.composition_moves || []),
+    ...(dominant.surface_cues || []),
+  ].filter(Boolean).join(' ').toLowerCase()
+  if (!/(white panel|portrait rectangle|gallery wall|wall border|horizontal dash|short black horizontal bars|dash-grid|printed|stenciled)/.test(text)) return ''
+  return 'A new landscape plate built from the wall-mounted dash-grid panel: keep a centered portrait paper field on a pale wall, but split the internal raster into three offset translucent paper layers. Shift the dense upper-right block upward into broken islands, pull the lower-right ledge into a separate stepped seam, and carve a new diagonal missing-dash aperture through the pale figure so the source grammar survives without recreating the original contour.'
+}
+
+function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride = '', sourceImageFingerprints = [] }) {
   const forbiddenDebugMarks = 'No numbered badges/callouts.'
+  const dashRecovery = dominantOverride ? dashPanelRecoveryScene(sourceImageFingerprints) : ''
+  if (dashRecovery) {
+    return `Add ${anchorCount} source windows as real dash-panel marks: missing-dash seams, shifted raster islands, paper-edge cuts, tiny slit interruptions, margin-shadow apertures, and dense-block scars. They must be embedded in the printed panel and wall edge, never USB ports, plug mouths, cables, cards, pasted thumbnails, rings, outlines, pins, numerals, numbered dots, labels, captions, UI badges, or debug markers. ${forbiddenDebugMarks}`
+  }
   if (effectDirection?.prompt_sentence) {
     const markTypes = joinLimited(effectDirection.source_window_mark_types, 'source-native marks', 5)
     const surfaces = joinLimited(effectDirection.surface_language, 'source-native surfaces', 4)
@@ -998,8 +1014,15 @@ export function buildSceneImagePrompt(payload) {
   const anchorCount = artifacts.length
     ? `${Math.min(9, Math.max(6, artifacts.length))}`
     : '6–9'
-  const materialLanguage = joinLimited(payload.material_language, 'source-led physical surfaces', 4)
-  const moves = joinLimited((visualDirection.visual_compositional_moves || []).map((move) => compactText(move, 72)), 'source-shaped seams, apertures, crop edges, and glare', 2)
+  const effectDirection = payload.effect_direction || visualDirection.effect_direction || null
+  const dominantOverride = hasSourceImage ? dominantSourceConflictGuard(sourceImageFingerprints, effectDirection, payload) : ''
+  const dashRecovery = dominantOverride ? dashPanelRecoveryScene(sourceImageFingerprints) : ''
+  const materialLanguage = dashRecovery
+    ? joinLimited((sourceImageFingerprints[0]?.surface_cues || []), 'matte paper panel, printed black dash ink, pale gallery wall, soft panel shadow', 4)
+    : joinLimited(payload.material_language, 'source-led physical surfaces', 4)
+  const moves = dashRecovery
+    ? 'offset translucent paper layers; shifted dense raster islands; diagonal missing-dash aperture; stepped lower-right seam'
+    : joinLimited((visualDirection.visual_compositional_moves || []).map((move) => compactText(move, 72)), 'source-shaped seams, apertures, crop edges, and glare', 2)
   const formalRisk = compactText(platePosture?.formal_risk || visualDirection.formal_risk || 'Choose one visible formal risk: scale shift, rupture, cutaway, horizon, weather, procession, collision, or void.', 150)
   const lookAvoidance = platePosture?.look_avoidance_directive && !/^No strong/i.test(platePosture.look_avoidance_directive)
     ? compactText(platePosture.look_avoidance_directive, 155)
@@ -1012,9 +1035,13 @@ export function buildSceneImagePrompt(payload) {
     ? describeSourceContract(payload.source_contract)
     : ''
   const sourceAudioMaterial = describeSourceAudioMaterial(payload.source_audio_material)
-  const effectDirection = payload.effect_direction || visualDirection.effect_direction || null
-  const effectGrammar = describeEffectDirection(effectDirection)
-  const dominantOverride = hasSourceImage ? dominantSourceConflictGuard(sourceImageFingerprints, effectDirection, payload) : ''
+  const effectGrammar = dashRecovery ? '' : describeEffectDirection(effectDirection)
+  const effectiveLighting = dashRecovery
+    ? 'soft gallery wall light with visible paper thickness and a quiet drop shadow under the centered panel'
+    : payload.lighting || visualDirection.lighting_profile || 'source-led light'
+  const effectivePalette = dashRecovery
+    ? 'warm white paper panel, pale gray wall, near-black dash ink, soft gray shadow; no silver hardware, black phone slab, cable plastic, USB ports, or product-table styling'
+    : visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood || 'source-led color'
   const sourceFidelityGuard = sourceImageFingerprints.length
     ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them. Translate crop/placement into fragment scale, seam position, silhouette pressure, or negative-space ratio; keep named framing cues legible. ${sourceAspectGuard} ${dominantOverride} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks.`
     : ''
@@ -1040,7 +1067,7 @@ export function buildSceneImagePrompt(payload) {
     '',
     'TRANSFORM',
     compactText(hasSourceImage
-      ? `Build a new plate from the BORROW cues: keep source identity through borrowed silhouettes, motifs, palette, lighting, and material edges, but change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. ${sourceAudioMaterial ? `Audio material provides the hidden skeleton: ${sourceAudioMaterial}. ` : ''}${platePosture ? `Posture: ${platePosture.plate_posture}; subordinate posture to source borrowing, not source copying. ` : ''}${payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
+      ? `Build a new plate from the BORROW cues: keep source identity through borrowed silhouettes, motifs, palette, lighting, and material edges, but change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. ${sourceAudioMaterial ? `Audio material provides the hidden skeleton: ${sourceAudioMaterial}. ` : ''}${platePosture && !dashRecovery ? `Posture: ${platePosture.plate_posture}; subordinate posture to source borrowing, not source copying. ` : ''}${dashRecovery || payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
       : `${payload.scene_prompt || payload.mood || 'Turn the source field into a full-bleed source-led artwork.'} ${sourceAudioMaterial ? `Audio material provides hidden structure: ${sourceAudioMaterial}. ` : ''}${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 420),
     sourceAudioMaterial ? 'AUDIO MATERIAL' : '',
     sourceAudioMaterial ? compactText(`Translate the audio into surfaces and marks only: bass ridges, spectral veils, onset punctures, silence apertures, loop folds, pulse seams, pitch-color drift. Do not draw waveforms, equalizer bars, media-player UI, circular visualizers, or charts. ${sourceAudioMaterial}`, 620) : '',
@@ -1049,13 +1076,13 @@ export function buildSceneImagePrompt(payload) {
     '',
     'COMPOSITION',
     hasSourceImage
-      ? `Do not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through ${visualDirection.composition_archetype || 'source-led plate'} / ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk must visibly change the source arrangement while retaining: ${compactText(preserveText, 150)}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`
+      ? `Do not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through ${dashRecovery ? 'flat wall-mounted dash-panel relief' : visualDirection.composition_archetype || 'source-led plate'} / ${dashRecovery ? 'straight-on gallery-object camera' : visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk must visibly change the source arrangement while retaining: ${compactText(preserveText, 150)}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`
       : `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
     'ANCHORS',
-    sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection }),
+    sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride, sourceImageFingerprints }),
     '',
     'LIMITS',
-    `${payload.lighting || visualDirection.lighting_profile || 'source-led light'}; materials: ${materialLanguage}; palette: ${visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood || 'source-led color'}. ${constraints}`,
+    `${effectiveLighting}; materials: ${materialLanguage}; palette: ${effectivePalette}. ${constraints}`,
   ].filter(Boolean).join('\n')
 }
