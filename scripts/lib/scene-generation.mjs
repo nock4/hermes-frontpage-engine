@@ -123,7 +123,7 @@ export async function composeDailyPayload(
     source_image_mode: sourceImageMode,
     source_image_mode_reason: researchField.source_image_mode_reason || null,
     source_visual_reference_instruction: visualReference
-      ? 'Use the attached source image as the primary composition reference, not loose ambience. Preserve its framing, massing, subject/object spacing, palette, light relationship, and edge behavior before adding research-world marks. If it is a graphic/editorial/poster source, preserve the layout as abstract shapes: text-block silhouettes, blob/diagram geometry, route/grid marks, negative space, palette, and light; convert readable text/logos into illegible mass and do not replace the source with a figurative scene, room, landscape, character, or metaphor.'
+      ? 'Use the dominant source image description as the primary composition reference, not loose ambience. Do not photorealistically duplicate the source; preserve its subject/object masses, spacing, crop pressure, palette, light relationship, and edge behavior as abstract plate grammar before adding research-world marks. If it is a graphic/editorial/poster source, preserve the layout as abstract shapes: text-block silhouettes, blob/diagram geometry, route/grid marks, negative space, palette, and light; convert readable text/logos into illegible mass and do not replace the source with a figurative scene, room, landscape, character, or metaphor.'
       : sourceImageMode === 'skipped-no-valid-dominant-source-image'
         ? 'No valid dominant source image survived screening; derive visual direction from the broader source field and report source-image fidelity as skipped, not passed.'
         : 'No source image was available; derive visual direction from source metadata only.',
@@ -185,7 +185,7 @@ export async function composeDailyPayload(
     'Use plate_posture as the edition-level gearshift. Honor minimality_target, abstraction_target, density_target, literalness_limit, formal_risk, negative_space_bias, anchor_strategy_bias, and look_avoidance_directive unless source evidence strongly conflicts.',
     'Make the scene_prompt terse: one dense art-director paragraph, no more than 90 words, using composition_archetype, camera_plate_grammar, and the strongest 1-2 visual_compositional_moves as visible plate grammar.',
     'If source_anchor_research and selected_image_material are present, treat them as the spine of the edition: one deep source field with derived anchors and image-grounded material cues.',
-    'Let the visual reference influence composition structure, geometry, layering, density, palette, and atmosphere when present; do not depict or copy its subject.',
+    'Let the visual reference influence composition structure, geometry, layering, density, palette, and atmosphere when present. Do not photorealistically duplicate the source; preserve subject/object masses, spacing, crop pressure, light, and edge behavior as abstract plate grammar.',
     'Never include legible words, interface labels, filenames, artifact taxonomy, or alphanumeric callouts inside the finished image.',
     'Avoid desks, dashboards, generic software UI, empty landing-page layout, source-summary cards, crowded archives, cabinets, shelves, realistic props, literal objects, and implementation language unless the research field clearly demands them.',
   ].join(' ')
@@ -981,21 +981,21 @@ function dashPanelRecoveryScene(sourceImageFingerprints = []) {
 }
 
 function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride = '', sourceImageFingerprints = [] }) {
-  const forbiddenDebugMarks = 'No numbered badges/callouts.'
+  const forbiddenDebugMarks = 'No visible annotation glyphs or QA chrome.'
   const dashRecovery = dominantOverride ? dashPanelRecoveryScene(sourceImageFingerprints) : ''
   if (dashRecovery) {
-    return `Add ${anchorCount} source windows as real dash-panel marks: missing-dash seams, shifted raster islands, paper-edge cuts, tiny slit interruptions, margin-shadow apertures, and dense-block scars. They must be embedded in the printed panel and wall edge, never USB ports, plug mouths, cables, cards, pasted thumbnails, rings, outlines, pins, numerals, numbered dots, labels, captions, UI badges, or debug markers. ${forbiddenDebugMarks}`
+    return `Add ${anchorCount} source windows as real dash-panel marks: missing-dash seams, shifted raster islands, paper-edge cuts, tiny slit interruptions, margin-shadow apertures, and dense-block scars. They must be embedded in the printed panel and wall edge, never USB ports, plug mouths, cables, cards, pasted thumbnails, visible annotation glyphs, QA chrome, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
   }
   if (effectDirection?.prompt_sentence) {
     const markTypes = joinLimited(effectDirection.source_window_mark_types, 'source-native marks', 5)
     const surfaces = joinLimited(effectDirection.surface_language, 'source-native surfaces', 4)
     return hasSourceImage
-      ? `Add ${anchorCount} source windows as real marks in the recomposed plate using this effect grammar: ${markTypes} in ${surfaces}. They must grow from borrowed source elements, never cards, pasted thumbnails, rings, outlines, pins, numerals, numbered dots, labels, captions, UI badges, or debug markers. ${forbiddenDebugMarks}`
-      : `Add ${anchorCount} source windows as real marks from the source field using this effect grammar: ${markTypes} in ${surfaces}. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, numerals, numbered dots, labels, UI badges, or debug markers. ${forbiddenDebugMarks}`
+      ? `Add ${anchorCount} source windows as real marks in the recomposed plate using this effect grammar: ${markTypes} in ${surfaces}. They must grow from borrowed source elements, never cards, pasted thumbnails, visible annotation glyphs, QA chrome, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
+      : `Add ${anchorCount} source windows as real marks from the source field using this effect grammar: ${markTypes} in ${surfaces}. They must not appear as summary cards, pasted thumbnails, visible annotation glyphs, QA chrome, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
   }
   return hasSourceImage
-    ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, rings, outlines, pins, numerals, numbered dots, labels, captions, UI badges, or debug markers. ${forbiddenDebugMarks}`
-    : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, yellow rings, target circles, hotspot outlines, map pins, numerals, numbered dots, labels, UI badges, or debug markers. ${forbiddenDebugMarks}`
+    ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, visible annotation glyphs, QA chrome, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
+    : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, visible annotation glyphs, QA chrome, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
 }
 
 export function buildSceneImagePrompt(payload) {
@@ -1055,7 +1055,9 @@ export function buildSceneImagePrompt(payload) {
 
   return [
     hasSourceImage
-      ? 'Use the attached source image as inspiration and material grammar, not as a picture to recreate.'
+      ? (process.env.DFE_SOURCE_IMAGE_EDIT_INPUT === '1'
+        ? 'Use the attached source image as inspiration and material grammar, not as a picture to recreate.'
+        : 'Use the dominant source image described below as inspiration and material grammar, not as a picture to recreate.')
       : 'No dominant source image is attached. Build a source-field plate from the supplied research field; do not claim source-image preservation.',
     '',
     hasSourceImage ? 'BORROW' : 'SOURCE FIELD',

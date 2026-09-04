@@ -86,9 +86,9 @@ export function aestheticSignalScore(candidate = {}) {
   if (candidate.source_channel === 'youtube-like') score += 18
   if (candidate.source_channel === 'nts-like') score += 20
 
-  if (/(github|api|sdk|quickstart|docs|documentation|readme|zod|schema|agent framework|\bagents?\b|agentic|workflow node|orchestration|mcp|llm\.txt|benchmark|eval|deployment|inference|vector database|rag|tool call|automation pipeline)/.test(text)) score -= 28
-  if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|software factory|model benchmark|agent workflow|comfy mcp|audio-to-midi model)/.test(text)) score -= 42
-  if (/(seo|growth channel|cold email|sales|crm|b2b|landing page|pricing|waitlist|sign up|product hunt|saas)/.test(text)) score -= 28
+  if (/(github|api|sdk|quickstart|docs|documentation|readme|zod|schema|agent framework|\bagents?\b|agentic|workflow node|orchestration|mcp|llm\.txt|benchmark|eval|deployment|inference|vector database|rag|tool call|automation pipeline|automated cad|automated research|research hackathon|optimization challenge)/.test(text)) score -= 28
+  if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|vibecoding|software factory|model benchmark|agent workflow|comfy mcp|audio-to-midi model|buildanything|production ready apps?)/.test(text)) score -= 42
+  if (/(seo|growth channel|cold email|sales|crm|b2b|landing page|pricing|waitlist|sign up|product hunt|saas|clanker|farcaster|storyprotocol|story protocol|protocol fees?|ecosystem fund|\$clanker|monad|crypto|web3)/.test(text)) score -= 28
 
   return score
 }
@@ -108,7 +108,7 @@ export function isAiToolingContentSource(source = {}) {
 
   if (!text) return false
   return /(^|\/)ai & agents(\/|$)/.test(text)
-    || /\b(x402|mcp|openrouter|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|model benchmark|vibe cod|vibe-coded|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
+    || /\b(x402|mcp|openrouter|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
 }
 
 export function scoreVisualCandidate(candidate) {
@@ -213,7 +213,7 @@ export function selectBestVisualReference(sources, recentSourceKeys = new Set())
 function sourceSelectionScore(candidate, recentSourceKeys = new Set()) {
   if (!isAllowedSourceUrl(candidate?.url)) return Number.NEGATIVE_INFINITY
   const text = `${candidate?.note_title || ''} ${candidate?.note_path || ''}`.toLowerCase()
-  let score = Number(candidate.note_score || 0) + scoreVisualCandidate(candidate) + aestheticSignalScore(candidate)
+  let score = Math.min(140, Number(candidate.note_score || 0) / 12) + scoreVisualCandidate(candidate) + aestheticSignalScore(candidate)
   if (candidate.source_channel === 'youtube-like') score += 18
   if (candidate.source_channel === 'nts-like') score += 16
   if (candidate.source_channel === 'chrome-bookmark') score += 12
@@ -330,7 +330,7 @@ export function sourceContentScore(source, recentSourceKeys = new Set()) {
   const sourceUrls = sourceUrlsForScoring(source)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return Number.NEGATIVE_INFINITY
   if (isAiToolingContentSource(source)) return Number.NEGATIVE_INFINITY
-  let score = Number(source.note_score || 0) / 2
+  let score = Math.min(140, Number(source.note_score || 0) / 12)
   if (source.image_url && !isLowValueVisualImage(source.image_url)) score += 12
   if (isDirectRasterImageUrl(source.url) || isDirectRasterImageUrl(source.final_url)) score += 8
   if (source.fetch_status === 'browser-harness' || source.fetch_status === 'fetch-ok') score += 4
@@ -340,7 +340,7 @@ export function sourceContentScore(source, recentSourceKeys = new Set()) {
   if (source.source_channel === 'chrome-bookmark') score += 12
   if (source.source_channel === 'twitter-bookmark') score += 4
   if (source.source_channel === 'twitter-bookmark' && source.source_type === 'tweet') score += 10
-  if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|software factory|model benchmark|agent workflow|comfy mcp|audio-to-midi model|github|api|sdk|docs|agentic|\bagents?\b|mcp)/i.test([
+  if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|vibecoding|software factory|model benchmark|agent workflow|comfy mcp|audio-to-midi model|buildanything|automated cad|automated research|research hackathon|clanker|farcaster|storyprotocol|story protocol|protocol fees?|ecosystem fund|monad|github|api|sdk|docs|agentic|\bagents?\b|mcp)/i.test([
     source.title,
     source.description,
     source.visible_text,

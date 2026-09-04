@@ -23,6 +23,15 @@ describe('saved-signal mining', () => {
     expect(signalChannelForPath('Private/memory.md')).toBe(null)
   })
 
+
+
+  it('classifies active-theme notes by their URLs instead of blanket tweet priority', () => {
+    expect(signalChannelForPath('01 - Active/themes/Music & Sonic Culture/live-video.md', ['https://www.youtube.com/watch?v=abc123'])).toBe('youtube-like')
+    expect(signalChannelForPath('01 - Active/themes/Music & Sonic Culture/track.md', ['https://artist.bandcamp.com/track/song'])).toBe('nts-like')
+    expect(signalChannelForPath('01 - Active/themes/Music & Sonic Culture/art-tweet.md', ['https://x.com/archivepilled/status/123'])).toBe('twitter-bookmark')
+    expect(signalChannelForPath('01 - Active/themes/Music & Sonic Culture/article.md', ['https://example.com/visual-essay'])).toBe('chrome-bookmark')
+  })
+
   it('keeps only direct NTS streaming sources and ranks YouTube first', () => {
     const urls = extractNtsStreamingSourceUrls(`
 | # | Artist | Track | Best source | Confidence | URL |

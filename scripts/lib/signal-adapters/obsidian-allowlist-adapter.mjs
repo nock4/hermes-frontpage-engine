@@ -39,18 +39,35 @@ function normalizeRelativePath(filePath) {
   return filePath.split(path.sep).join('/')
 }
 
-export function signalChannelForPath(relativePath) {
+export function signalChannelForPath(relativePath, urls = []) {
   const normalized = normalizeRelativePath(relativePath)
   const lower = normalized.toLowerCase()
   if (lower.startsWith('inbox/tweets/')) return 'twitter-bookmark'
   if (lower.startsWith('inbox/youtube/')) return 'youtube-like'
   if (lower.startsWith('00 - capture/tweets/')) return 'twitter-bookmark'
   if (lower.startsWith('00 - capture/youtube/')) return 'youtube-like'
-  if (lower.startsWith('01 - active/themes/')) return 'twitter-bookmark'
+  if (lower.startsWith('01 - active/themes/')) return inferActiveThemeSignalChannel(urls)
   if (lower.startsWith('inbox/nts-liked-tracks-source-map')) return 'nts-like'
   if (lower === 'resources/chrome bookmarks.md' || lower === 'resources/collections/chrome bookmarks.md') return 'chrome-bookmark'
   if (lower === 'resources/collections/youtube likes.md') return 'youtube-like'
   return null
+}
+
+
+function inferActiveThemeSignalChannel(urls = []) {
+  const values = Array.isArray(urls) ? urls : []
+  if (values.some(isYouTubeVideoUrl)) return 'youtube-like'
+  if (values.some(isPreferredNtsStreamingSourceUrl)) return 'nts-like'
+  if (values.some((value) => {
+    try {
+      const url = new URL(value)
+      const host = url.hostname.replace(/^www\./, '')
+      return (host === 'x.com' || host === 'twitter.com') && url.pathname.split('/').filter(Boolean).includes('status')
+    } catch {
+      return false
+    }
+  })) return 'twitter-bookmark'
+  return 'chrome-bookmark'
 }
 
 async function listMarkdownFiles(dir, files = []) {
@@ -142,8 +159,8 @@ export async function loadObsidianAllowlistSignals({ inputRoot, date, windowDays
   for (const filePath of files) {
     const stat = await fs.stat(filePath)
     const relativePath = path.relative(inputRoot, filePath)
-    const source_channel = signalChannelForPath(relativePath)
-    if (!source_channel) continue
+    const preliminarySourceChannel = signalChannelForPath(relativePath)
+    if (!preliminarySourceChannel) continue
     const pathDate = extractDateFromPath(relativePath)
     const mtimeDate = stat.mtime.toISOString().slice(0, 10)
     const noteDate = pathDate || mtimeDate
@@ -151,9 +168,13 @@ export async function loadObsidianAllowlistSignals({ inputRoot, date, windowDays
     if (ageDays < 0 || ageDays > windowDays) continue
 
     const text = await fs.readFile(filePath, 'utf8')
+    const rawUrls = extractUrls(text)
+    const source_channel = normalizeRelativePath(relativePath).toLowerCase().startsWith('01 - active/themes/')
+      ? signalChannelForPath(relativePath, rawUrls)
+      : preliminarySourceChannel
     const urls = source_channel === 'nts-like'
       ? extractNtsStreamingSourceUrls(text)
-      : normalizeNoteUrls(extractUrls(text), source_channel)
+      : normalizeNoteUrls(rawUrls, source_channel)
     if (!urls.length) continue
 
     const title = extractTitle(text, path.basename(filePath))

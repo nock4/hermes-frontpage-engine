@@ -14,6 +14,13 @@ function strings(values, limit = 8) {
   return result
 }
 
+export function normalizeContractMode(sourceImageMode, { dominant = null, lowFertility = false } = {}) {
+  if (sourceImageMode === 'dominant-source-image') return 'source-image'
+  if (sourceImageMode === 'source-image') return 'source-image'
+  if (sourceImageMode === 'source-field' || sourceImageMode === 'skipped-no-valid-dominant-source-image') return 'skipped-no-valid-dominant-source-image'
+  return !dominant || lowFertility ? 'skipped-no-valid-dominant-source-image' : 'source-image'
+}
+
 export function buildSourceContract({
   sourceImageFingerprints = [],
   visualDirection = {},
@@ -23,7 +30,7 @@ export function buildSourceContract({
 } = {}) {
   const dominant = (sourceImageFingerprints || []).find((fingerprint) => fingerprint?.image_url) || null
   const lowFertility = dominant ? isLowFertilitySourceFingerprint(dominant) : false
-  const mode = sourceImageMode || (!dominant || lowFertility ? 'skipped-no-valid-dominant-source-image' : 'source-image')
+  const mode = normalizeContractMode(sourceImageMode, { dominant, lowFertility })
   if (mode !== 'source-image') {
     return {
       schema_version: 1,

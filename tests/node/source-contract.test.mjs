@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { buildSourceContract, assertSourceContractPromptSafe } from '../../scripts/lib/source-contract.mjs'
+import { buildSourceContract, assertSourceContractPromptSafe, normalizeContractMode } from '../../scripts/lib/source-contract.mjs'
 
 describe('source contract', () => {
   it('turns source-image fingerprints into an explicit preserve/transform contract', () => {
@@ -16,12 +16,30 @@ describe('source contract', () => {
       visualDirection: { composition_archetype: 'minimal field', camera_plate_grammar: 'flat square light study' },
     })
 
+    expect(normalizeContractMode('dominant-source-image')).toBe('source-image')
     expect(contract.mode).toBe('source-image')
     expect(contract.must_preserve).toEqual(expect.arrayContaining(['square crop', 'vertical light shafts']))
     expect(contract.must_transform.join(' ')).toContain('arrangement')
     expect(contract.forbidden_drift.join(' ')).toContain('same palette but not the same source')
     expect(contract.forbidden_overcopy.join(' ')).toContain('near-identical')
     expect(contract.prompt_conflicts).toEqual([])
+  })
+
+
+
+  it('treats dominant-source-image as an active source-image contract mode', () => {
+    const contract = buildSourceContract({
+      sourceImageMode: 'dominant-source-image',
+      sourceImageFingerprints: [{
+        title: 'Dominant seed',
+        image_url: 'https://assets.example/source.jpg',
+        visual_fertility: 'high',
+        preserve_cues: ['square crop', 'left hand gesture'],
+      }],
+    })
+
+    expect(contract.mode).toBe('source-image')
+    expect(contract.must_preserve).toEqual(expect.arrayContaining(['square crop']))
   })
 
   it('skips source-image mode for low-fertility dominant image seeds', () => {

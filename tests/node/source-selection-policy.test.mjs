@@ -348,6 +348,61 @@ describe('source selection policy', () => {
     ])
   })
 
+
+
+  it('quarantines protocol/product automation tweets that previously leaked as source windows', () => {
+    const leaked = [
+      ['https://x.com/clanker_world/status/1', 'Clanker Ecosystem Fund on Farcaster generated protocol fees for $CLANKER'],
+      ['https://x.com/danrobinson/status/2', 'Research hackathon around automated research and optimization challenges hosted by Paradigm'],
+      ['https://x.com/EHuanglu/status/3', 'Opus 4.7 has automated CAD for production ready apps'],
+      ['https://x.com/Haezurath/status/4', 'BuildAnything vibecoding Monad production ready apps'],
+      ['https://x.com/ABLO_Official/status/5', 'StoryProtocol event recap with protocol launch materials'],
+    ].map(([url, title], index) => ({
+      ...baseSource,
+      url,
+      source_url: url,
+      final_url: url,
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      window_type: 'social',
+      note_score: 900 - index,
+      title,
+      description: title,
+      note_title: title,
+      image_url: `https://pbs.twimg.com/media/protocol-${index}.jpg?name=orig`,
+    }))
+    const artwork = {
+      ...baseSource,
+      url: 'https://x.com/archivepilled/status/art-fresh',
+      source_url: 'https://x.com/archivepilled/status/art-fresh',
+      final_url: 'https://x.com/archivepilled/status/art-fresh',
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      window_type: 'social',
+      note_score: 30,
+      title: 'Favorited artwork painting, gallery, visual archive, image surface',
+      description: 'artist artwork painting gallery visual culture source image surface',
+      image_url: 'https://pbs.twimg.com/media/fresh-art.jpg?name=orig',
+    }
+
+    expect(leaked.every((source) => isAiToolingContentSource(source))).toBe(true)
+    expect(leaked.every((source) => !sourceHasRenderableCardSurface(source))).toBe(true)
+    expect(selectContentSources([...leaked, artwork], { targetItems: 1, maxItems: 1 }).map((source) => source.url)).toEqual([artwork.url])
+  })
+
+  it('caps note-score pressure so creative material beats high-score product protocol notes during inspection', () => {
+    const signalHarvest = {
+      source_candidates: [
+        { url: 'https://x.com/clanker_world/status/1', source_channel: 'twitter-bookmark', note_score: 1200, note_id: 'protocol', note_title: 'Clanker ecosystem fund protocol fees on Farcaster' },
+        { url: 'https://label.bandcamp.com/album/nocturne', source_channel: 'nts-like', note_score: 24, note_id: 'music', note_title: 'ambient album art and visualizer' },
+      ],
+    }
+
+    expect(selectSourceCandidatesForInspection(signalHarvest, 1).map((source) => source.url)).toEqual([
+      'https://label.bandcamp.com/album/nocturne',
+    ])
+  })
+
   it('keeps a tweet and its extracted media from becoming duplicate content cards', () => {
     const tweet = {
       ...baseSource,

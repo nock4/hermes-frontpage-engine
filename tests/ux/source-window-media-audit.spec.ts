@@ -187,8 +187,31 @@ async function gotoEdition(page: Page, route: string) {
   await page.waitForSelector('button.artifact', { timeout: 20_000 })
 }
 
+
+async function visibleArtifactHitPoint(page: Page, artifactIndex: number) {
+  return page.locator('button.artifact').nth(artifactIndex).evaluate((node) => {
+    const element = node as HTMLElement
+    const rect = element.getBoundingClientRect()
+    const xSteps = [0.5, 0.35, 0.65, 0.2, 0.8]
+    const ySteps = [0.5, 0.35, 0.65, 0.2, 0.8]
+
+    for (const xStep of xSteps) {
+      for (const yStep of ySteps) {
+        const x = rect.left + rect.width * xStep
+        const y = rect.top + rect.height * yStep
+        const hit = document.elementFromPoint(x, y)
+        if (hit === element || element.contains(hit)) return { x, y }
+      }
+    }
+
+    return null
+  })
+}
+
 async function triggerArtifactPreview(page: Page, artifactButton: Locator, artifactIndex: number, windowSelector: string) {
-  await artifactButton.hover({ force: true })
+  const hitPoint = await visibleArtifactHitPoint(page, artifactIndex)
+  if (hitPoint) await page.mouse.move(hitPoint.x, hitPoint.y)
+  else await artifactButton.hover({ force: true })
   await artifactButton.focus()
   await page.waitForTimeout(400)
 
@@ -203,7 +226,9 @@ async function triggerArtifactPreview(page: Page, artifactButton: Locator, artif
 }
 
 async function triggerArtifactPrimary(page: Page, artifactButton: Locator, artifactIndex: number) {
-  await artifactButton.click({ force: true })
+  const hitPoint = await visibleArtifactHitPoint(page, artifactIndex)
+  if (hitPoint) await page.mouse.click(hitPoint.x, hitPoint.y)
+  else await artifactButton.click({ force: true })
   await page.waitForTimeout(300)
   await page.evaluate((index) => {
     const button = document.querySelectorAll('button.artifact')[index]

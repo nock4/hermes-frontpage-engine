@@ -218,8 +218,8 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('Borrow recognizable elements')
     expect(prompt).not.toContain('no literal depiction of the source reference image')
     expect(prompt).toContain('never cards, pasted thumbnails')
-    expect(prompt).toContain('numbered dots')
-    expect(prompt).toContain('No numbered badges')
+    expect(prompt).toContain('visible annotation glyphs')
+    expect(prompt).toContain('No visible annotation glyphs or QA chrome')
     expect(prompt).not.toContain('sky/cloud')
     expect(prompt).not.toContain('vertical shafts')
     expect(prompt).toContain('not as a composition to copy')
@@ -261,7 +261,7 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('silence apertures')
     expect(prompt).toContain('pitch-color drift')
     expect(prompt).toContain('Do not draw waveforms, equalizer bars, media-player UI')
-    expect(prompt).toContain('source image as inspiration')
+    expect(prompt).toContain('dominant source image described below as inspiration')
     expect(prompt).toContain('BORROW')
   })
 
@@ -289,7 +289,7 @@ describe('scene generation image prompt', () => {
       artifacts: Array.from({ length: 9 }, (_, index) => ({ source_url: `https://example.com/${index}` })),
     })
 
-    expect(prompt).toContain('Use the attached source image as inspiration')
+    expect(prompt).toContain('Use the dominant source image described below as inspiration')
     expect(prompt).toContain('not as a picture to recreate')
     expect(prompt).toContain('BORROW')
     expect(prompt).toContain('change at least two of arrangement, scale, object count, crop, surface state, or spatial logic')
@@ -328,7 +328,7 @@ describe('scene generation image prompt', () => {
       artifacts: [{ source_url: 'https://example.com/source', role: 'hero source-bearing anchor' }],
     })
 
-    expect(prompt).toContain('Use the attached source image as inspiration')
+    expect(prompt).toContain('Use the dominant source image described below as inspiration')
     expect(prompt).toContain('wide horizontal crop')
     expect(prompt).toContain('large pale off-white organic island')
     expect(prompt).toContain('graphic/editorial/poster/package reference')
@@ -365,7 +365,7 @@ describe('scene generation image prompt', () => {
 
     expect(prompt).not.toContain('graphic/editorial/poster/package reference')
     expect(prompt).toContain('Preserve source subjects, object relationships, silhouettes')
-    expect(prompt).toContain('numbered dots')
+    expect(prompt).toContain('visible annotation glyphs')
   })
 
   it('does not let recovery mode contradict inspiration-not-copy policy', () => {

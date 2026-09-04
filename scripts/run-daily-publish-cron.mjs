@@ -561,6 +561,10 @@ async function main() {
     summary.push_succeeded = true
     summary.changed_paths = commitResult.changed_paths
 
+    const remoteVerification = await verifyRemoteManifest(options.remoteUrl, summary.local_edition_id, options)
+    summary.remote_matches = remoteVerification.ok
+    summary.remote_verification = remoteVerification
+
     if (options.verifyGitHubRuntimeQa) {
       summary.post_push_runtime_qa = await verifyGitHubRuntimeQaForCommit({
         worktreeDir: options.worktreeDir,
@@ -574,10 +578,8 @@ async function main() {
       }
     }
 
-    const remoteVerification = await verifyRemoteManifest(options.remoteUrl, summary.local_edition_id, options)
-    summary.remote_matches = remoteVerification.ok
-    summary.remote_verification = remoteVerification
-    summary.ok = summary.local_publish_status === 'live' && summary.push_succeeded && summary.remote_matches
+    const runtimeQaOk = !options.verifyGitHubRuntimeQa || summary.post_push_runtime_qa?.ok === true
+    summary.ok = summary.local_publish_status === 'live' && summary.push_succeeded && summary.remote_matches && runtimeQaOk
     console.log(JSON.stringify(summary, null, 2))
     if (!summary.ok) exitCode = 1
   } catch (error) {
