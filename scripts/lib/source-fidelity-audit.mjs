@@ -198,6 +198,8 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       .replace(/rather than (?:the )?(?:same|identical|near[- ]?identical|almost identical)[^.;]*(?:photograph|source|image|arrangement|composition|layout|still[- ]?life)[^.;]*/g, 'preserved transformation')
       .replace(/does not replace/g, 'preserves')
       .replace(/do not replace/g, 'preserve')
+      .replace(/no (?:visible )?(?:numbered |debug[- ]?looking )?[^.;]*(?:badges?|callouts?|pins?|rings?|labels?|markers?|annotations?|numerals?|numbers?)[^.;]*(?:appear|visible|present)[^.;]*[.;]?/g, ' no debug marks ')
+      .replace(/(?:no|without) [^.;]*(?:numbered |debug[- ]?looking )?(?:badges?|callouts?|pins?|rings?|labels?|markers?|annotations?|numerals?|numbers?)[^.;]*[.;]?/g, ' no debug marks ')
     : auditText
   for (const { label, pattern } of blockerWarningPatterns) {
     if (pattern.test(blockerScopeText) && !blockers.includes(label)) blockers.push(label)

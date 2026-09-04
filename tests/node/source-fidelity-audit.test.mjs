@@ -237,6 +237,49 @@ describe('source image fidelity audit', () => {
     expect(audit.blockers).toEqual([])
   })
 
+  it('does not treat negated debug-mark language in a pass rationale as a blocker', async () => {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-negated-debug-'))
+    const platePath = path.join(runDir, 'plate.png')
+    await writeFile(platePath, 'fake plate')
+
+    const audit = await auditSourceImageFidelity(
+      {
+        payload: {
+          source_image_fingerprints: [{
+            title: 'Dash grid panel',
+            image_url: 'https://assets.example/dash-grid.jpg',
+            preserve_cues: ['centered portrait white panel', 'tiny black dash grid'],
+          }],
+        },
+        platePath,
+      },
+      runDir,
+      {
+        writeJson,
+        createContactSheetImpl: async ({ outputPath }) => {
+          await writeFile(outputPath, 'fake contact sheet')
+          return outputPath
+        },
+        openAiJsonImpl: async () => ({
+          verdict: 'pass',
+          resemblance_score: 1,
+          framing_score: 1,
+          object_relationship_score: 1,
+          context_score: 1,
+          transformation_score: 1,
+          retained_critical_elements: ['small isolated black dash marks embedded as source-window seams'],
+          missing_critical_elements: [],
+          drift_risks: [],
+          forbidden_debug_marks: [],
+          rationale: 'No visible numbered badges, callouts, pins, rings, or labels appear.',
+        }),
+      },
+    )
+
+    expect(audit.pass).toBe(true)
+    expect(audit.blockers).toEqual([])
+  })
+
   it('blocks warnings that admit the plate only shares palette/style', async () => {
     const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-source-fidelity-palette-block-'))
     const platePath = path.join(runDir, 'plate.png')
