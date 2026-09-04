@@ -107,9 +107,25 @@ test('generated edition clicks keep source surfaces in the plate instead of open
   await page.waitForSelector('img.plate', { timeout: 20_000 })
   await page.waitForSelector('button.artifact', { timeout: 20_000 })
 
-  const artifacts = page.locator('button.artifact')
-  const artifactCount = await artifacts.count()
-  expect(artifactCount).toBeGreaterThanOrEqual(2)
+  const artifactHitPoints = await page.locator('button.artifact').evaluateAll((nodes) => nodes.map((node, index) => {
+    const element = node as HTMLElement
+    const rect = element.getBoundingClientRect()
+    const xSteps = [0.5, 0.35, 0.65, 0.2, 0.8]
+    const ySteps = [0.5, 0.35, 0.65, 0.2, 0.8]
+
+    for (const xStep of xSteps) {
+      for (const yStep of ySteps) {
+        const x = rect.left + rect.width * xStep
+        const y = rect.top + rect.height * yStep
+        const hit = document.elementFromPoint(x, y)
+        if (hit === element || element.contains(hit)) return { index, x, y }
+      }
+    }
+
+    return null
+  }).filter((point): point is { index: number, x: number, y: number } => Boolean(point)))
+
+  expect(artifactHitPoints.length).toBeGreaterThanOrEqual(2)
 
   let popupOpened = false
   page.once('popup', async (popup) => {
@@ -117,11 +133,16 @@ test('generated edition clicks keep source surfaces in the plate instead of open
     await popup.close().catch(() => undefined)
   })
 
-  await artifacts.nth(0).click({ force: true })
-  await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveCount(1)
+  const openWindows = page.locator('.stage-overlay-windows--live .source-window')
+  const openedArtifactIndexes = new Set<number>()
 
-  await artifacts.nth(1).click({ force: true })
-  await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveCount(2)
+  for (const point of artifactHitPoints) {
+    await page.mouse.click(point.x, point.y)
+    await expect(openWindows).toHaveCount(openedArtifactIndexes.size + 1)
+    openedArtifactIndexes.add(point.index)
+    if (openedArtifactIndexes.size >= 2) break
+  }
 
+  await expect(openWindows).toHaveCount(2)
   expect(popupOpened).toBe(false)
 })
