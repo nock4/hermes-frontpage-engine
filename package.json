@@ -39,7 +39,7 @@
     "test:ux:mobile": "npm run build && playwright test -c playwright.ux.config.ts tests/ux/mobile-edition-smoke.spec.ts",
     "qa:mobile": "npm run test:ux:mobile",
     "qa:source-windows": "npm run validate:editions && npm test && npm run test:ux:media && npm run qa:mobile",
-    "qa:publish": "npm audit --audit-level=moderate && npm audit --omit=dev --audit-level=moderate && npm run audit:codebase && npm run validate:editions && npm test && npm run build && playwright test -c playwright.ux.config.ts tests/ux/generated-edition-smoke.spec.ts tests/ux/source-window-media-audit.spec.ts tests/ux/embed-provider-geometry.spec.ts tests/ux/mobile-edition-smoke.spec.ts",
+    "qa:publish": "node scripts/retry-npm-audit.mjs --audit-level=moderate && node scripts/retry-npm-audit.mjs --omit=dev --audit-level=moderate && npm run audit:codebase && npm run validate:editions && npm test && npm run build && playwright test -c playwright.ux.config.ts tests/ux/generated-edition-smoke.spec.ts tests/ux/source-window-media-audit.spec.ts tests/ux/embed-provider-geometry.spec.ts tests/ux/mobile-edition-smoke.spec.ts",
     "test:ux:update": "npm run build && playwright test -c playwright.ux.config.ts tests/ux/stage-windows.spec.ts --update-snapshots",
     "test:ux:a11y": "npm run build && playwright test -c playwright.ux.config.ts tests/ux/accessibility.spec.ts",
     "video:demo:capture": "node scripts/capture-demo-video.mjs",
