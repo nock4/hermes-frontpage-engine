@@ -528,6 +528,13 @@ a {
 .review-mode--live .artifact {
   border-color: transparent;
   box-shadow: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.review-mode--live .artifact:focus,
+.review-mode--live .artifact:focus-visible {
+  outline: none;
 }
 
 .review-mode--live .artifact span {
