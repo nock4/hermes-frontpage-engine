@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { allowedStatusPath, allocateCronUxPort, cacheBustedRemoteUrl, generatedAuditPathForOtherEdition, isSafeCronWorktreePath, isSafeEditionId, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
+import { allowedStatusPath, allocateCronUxPort, cacheBustedRemoteUrl, generatedAuditPathForOtherEdition, isSafeCronWorktreePath, isSafeEditionId, ownerRepoFromGitRemote, parseArgs, parsePidList, resolveInspirationOverridePath } from '../../scripts/run-daily-publish-cron.mjs'
 
 describe('daily publish cron wrapper', () => {
   it('parses an explicit inspiration override option', () => {
@@ -27,6 +27,18 @@ describe('daily publish cron wrapper', () => {
     expect(options.windowDays).toBe(150)
     expect(options.maxNotes).toBe(90)
     expect(options.maxSources).toBe(28)
+  })
+
+  it('can disable post-push GitHub Runtime QA verification explicitly', () => {
+    const options = parseArgs(['--skip-github-runtime-qa'])
+
+    expect(options.verifyGitHubRuntimeQa).toBe(false)
+  })
+
+  it('parses GitHub owner/repo from frontpage SSH and HTTPS remotes', () => {
+    expect(ownerRepoFromGitRemote('git@github-frontpage:nock4/hermes-frontpage-engine.git')).toBe('nock4/hermes-frontpage-engine')
+    expect(ownerRepoFromGitRemote('https://github.com/nock4/hermes-frontpage-engine.git')).toBe('nock4/hermes-frontpage-engine')
+    expect(ownerRepoFromGitRemote('https://example.com/nock4/hermes-frontpage-engine.git')).toBeNull()
   })
 
   it('cache-busts remote manifest verification probes', () => {

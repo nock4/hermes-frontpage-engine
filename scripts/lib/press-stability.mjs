@@ -31,8 +31,6 @@ const PRESS_STABILITY_PATTERNS = {
       /source[- ]image fidelity.*failed/i,
       /missing critical source elements/i,
       /"verdict"\s*:\s*"fail"/i,
-      /"editorial_pass"\s*:\s*false/i,
-      /skipped-no-valid-dominant-source-image/i,
     ],
   },
   qa_audit_media: {
@@ -45,8 +43,7 @@ const PRESS_STABILITY_PATTERNS = {
       /npm run qa:publish failed/i,
       /Test Files\s+\d+ failed/i,
       /source-window media audit.*failed/i,
-      /real source-window media audit across packaged editions/i,
-      /Knip|unused/i,
+      /Knip.*(?:failed|error)|unused.*(?:failed|error)/i,
     ],
   },
   remote_cache: {
@@ -233,9 +230,12 @@ function pickPrimaryTag(tags) {
 }
 
 function isFailedText(text, tags) {
+  if (tags.includes('green_publish')) {
+    if (tags.includes('editorial_ai_tooling_risk')) return true
+    if (/press proof.*green:\s*false|proof_failed_after_publish|source[- ]image fidelity:\s*(?:fail|warn)/i.test(text)) return true
+    return false
+  }
   if (/"ok"\s*:\s*false|PRESS_RUN_STATUS=failed|failed with exit code 1|Error: /i.test(text)) return true
-  if (tags.includes('editorial_ai_tooling_risk') && tags.includes('green_publish')) return true
-  if (tags.includes('source_fidelity') && tags.includes('green_publish')) return true
   return false
 }
 
@@ -264,6 +264,11 @@ function ruleSummary(tag) {
 
 function buildRecommendation({ failed, recurring }) {
   if (!failed.length && !recurring.length) return 'No repeated red seam detected; keep normal proof gates.'
+  const latest = failed.at(-1)
+  if (latest?.primary && latest.primary !== 'green_publish') {
+    const rule = ruleSummary(latest.primary)
+    return `${rule.stage}: ${rule.next_action}`
+  }
   const top = recurring.find((item) => item.tag !== 'green_publish')
   if (!top) return 'Read latest failed log and classify manually before changing code.'
   return `${top.stage}: ${top.next_action}`

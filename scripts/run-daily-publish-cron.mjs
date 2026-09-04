@@ -40,6 +40,10 @@ export function parseArgs(argv) {
     maxSources: defaultCronMaxSources,
     retries: 18,
     retryDelayMs: 10000,
+    verifyGitHubRuntimeQa: process.env.DFE_VERIFY_GITHUB_RUNTIME_QA !== '0',
+    githubRuntimeQaWorkflow: process.env.DFE_GITHUB_RUNTIME_QA_WORKFLOW || 'Runtime QA',
+    githubRuntimeQaTimeoutMs: Number.parseInt(process.env.DFE_GITHUB_RUNTIME_QA_TIMEOUT_MS || '900000', 10),
+    githubRuntimeQaPollMs: Number.parseInt(process.env.DFE_GITHUB_RUNTIME_QA_POLL_MS || '15000', 10),
   }
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -62,8 +66,12 @@ export function parseArgs(argv) {
     else if (arg === '--max-sources') options.maxSources = Number.parseInt(readValue(), 10)
     else if (arg === '--retries') options.retries = Number.parseInt(readValue(), 10)
     else if (arg === '--retry-delay-ms') options.retryDelayMs = Number.parseInt(readValue(), 10)
+    else if (arg === '--skip-github-runtime-qa') options.verifyGitHubRuntimeQa = false
+    else if (arg === '--github-runtime-qa-workflow') options.githubRuntimeQaWorkflow = readValue()
+    else if (arg === '--github-runtime-qa-timeout-ms') options.githubRuntimeQaTimeoutMs = Number.parseInt(readValue(), 10)
+    else if (arg === '--github-runtime-qa-poll-ms') options.githubRuntimeQaPollMs = Number.parseInt(readValue(), 10)
     else if (arg === '--help') {
-      console.log('Usage: node scripts/run-daily-publish-cron.mjs [--input-root <path>] [--worktree-dir <path>] [--branch <name>] [--remote <name>] [--remote-url <url>] [--inspiration-override <path>] [--window-days <n>] [--max-notes <n>] [--max-sources <n>]')
+      console.log('Usage: node scripts/run-daily-publish-cron.mjs [--input-root <path>] [--worktree-dir <path>] [--branch <name>] [--remote <name>] [--remote-url <url>] [--inspiration-override <path>] [--window-days <n>] [--max-notes <n>] [--max-sources <n>] [--skip-github-runtime-qa]')
       process.exit(0)
     } else {
       throw new Error(`Unknown option: ${arg}`)
@@ -75,6 +83,8 @@ export function parseArgs(argv) {
   if (!Number.isFinite(options.windowDays) || options.windowDays < 1) throw new Error('--window-days must be >= 1')
   if (!Number.isFinite(options.maxNotes) || options.maxNotes < 1) throw new Error('--max-notes must be >= 1')
   if (!Number.isFinite(options.maxSources) || options.maxSources < 1) throw new Error('--max-sources must be >= 1')
+  if (!Number.isFinite(options.githubRuntimeQaTimeoutMs) || options.githubRuntimeQaTimeoutMs < 1) throw new Error('--github-runtime-qa-timeout-ms must be >= 1')
+  if (!Number.isFinite(options.githubRuntimeQaPollMs) || options.githubRuntimeQaPollMs < 1) throw new Error('--github-runtime-qa-poll-ms must be >= 1')
   return options
 }
 
@@ -392,6 +402,74 @@ async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
   return { committed: true, commit, changed_paths: cachedPaths }
 }
 
+export function ownerRepoFromGitRemote(remoteUrl) {
+  const value = String(remoteUrl || '').trim()
+  if (!value) return null
+  const sshMatch = value.match(/github[^:]*:([^/\s]+)\/([^/\s]+?)(?:\.git)?$/)
+  if (sshMatch) return `${sshMatch[1]}/${sshMatch[2]}`
+  try {
+    const url = new URL(value)
+    if (!/(^|\.)github\.com$/i.test(url.hostname)) return null
+    const [owner, repo] = url.pathname.replace(/^\/+/, '').replace(/\.git$/, '').split('/')
+    return owner && repo ? `${owner}/${repo}` : null
+  } catch {
+    return null
+  }
+}
+
+async function githubRuntimeQaRunForCommit({ worktreeDir, commit, workflowName, ownerRepo }) {
+  const result = await run('gh', [
+    'run', 'list',
+    '-R', ownerRepo,
+    '--workflow', workflowName,
+    '--commit', commit,
+    '--limit', '10',
+    '--json', 'databaseId,status,conclusion,headSha,url,name',
+  ], { cwd: worktreeDir, capture: true, allowFailure: true })
+  if (result.code !== 0) throw new Error((result.stderr || result.stdout || 'gh run list failed').trim())
+  const runs = JSON.parse(result.stdout || '[]')
+  return runs.find((entry) => entry.headSha === commit) || null
+}
+
+async function verifyGitHubRuntimeQaForCommit({ worktreeDir, commit, workflowName, timeoutMs, pollMs }) {
+  if (!commit) return { ok: true, skipped: true, reason: 'no publish commit was created' }
+  const ghVersion = await run('gh', ['--version'], { cwd: worktreeDir, capture: true, allowFailure: true })
+  if (ghVersion.code !== 0) {
+    return { ok: false, error: 'gh CLI unavailable; cannot verify GitHub Runtime QA for published commit' }
+  }
+  const remote = await run('git', ['remote', 'get-url', 'origin'], { cwd: worktreeDir, capture: true })
+  const ownerRepo = ownerRepoFromGitRemote(remote.stdout.trim())
+  if (!ownerRepo) return { ok: false, error: `could not derive GitHub owner/repo from origin ${remote.stdout.trim()}` }
+
+  const deadline = Date.now() + timeoutMs
+  let lastRun = null
+  let attempt = 0
+  while (Date.now() <= deadline) {
+    attempt += 1
+    lastRun = await githubRuntimeQaRunForCommit({ worktreeDir, commit, workflowName, ownerRepo })
+    if (lastRun?.status === 'completed') {
+      return {
+        ok: lastRun.conclusion === 'success',
+        status: lastRun.status,
+        conclusion: lastRun.conclusion,
+        run_id: lastRun.databaseId,
+        url: lastRun.url,
+        head_sha: lastRun.headSha,
+        workflow: lastRun.name || workflowName,
+        attempt,
+      }
+    }
+    await sleep(pollMs)
+  }
+  return {
+    ok: false,
+    error: `GitHub Runtime QA did not complete within ${timeoutMs}ms`,
+    last_status: lastRun?.status || 'not-found',
+    run_id: lastRun?.databaseId || null,
+    url: lastRun?.url || null,
+  }
+}
+
 async function logPressStabilityPreflight() {
   try {
     const audit = await auditPressStability({ logsDir: path.join(primaryRoot, 'tmp', 'cron-logs'), limit: 28 })
@@ -482,6 +560,19 @@ async function main() {
     summary.commit = commitResult.commit
     summary.push_succeeded = true
     summary.changed_paths = commitResult.changed_paths
+
+    if (options.verifyGitHubRuntimeQa) {
+      summary.post_push_runtime_qa = await verifyGitHubRuntimeQaForCommit({
+        worktreeDir: options.worktreeDir,
+        commit: summary.commit,
+        workflowName: options.githubRuntimeQaWorkflow,
+        timeoutMs: options.githubRuntimeQaTimeoutMs,
+        pollMs: options.githubRuntimeQaPollMs,
+      })
+      if (!summary.post_push_runtime_qa.ok) {
+        throw new Error(`GitHub Runtime QA failed for published commit: ${summary.post_push_runtime_qa.error || summary.post_push_runtime_qa.conclusion || 'unknown failure'}`)
+      }
+    }
 
     const remoteVerification = await verifyRemoteManifest(options.remoteUrl, summary.local_edition_id, options)
     summary.remote_matches = remoteVerification.ok
