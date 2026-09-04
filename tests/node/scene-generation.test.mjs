@@ -134,6 +134,49 @@ describe('scene generation image prompt', () => {
     expect(prompt).toContain('Forbidden overcopy: near-identical source recreation with tiny seams')
   })
 
+  it('protects portrait wall-mounted dash panels from hardware conversion', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'Bright product-photo rupture: a portrait anodized-metal slab filled with USB-C apertures, one matte white plug, and a braided cable.',
+      lighting: 'clean product-table diffusion',
+      material_language: ['bead-blasted anodized aluminum', 'matte white USB-C plastic'],
+      source_contract: {
+        mode: 'source-image',
+        must_preserve: [
+          'Keep the tall white panel centered with generous pale wall border and a subtle drop shadow under the lower edge.',
+          'Preserve the entire image as dash-grid drawing: thousands of short black horizontal bars, not dots, lines, or texture wash.',
+        ],
+      },
+      source_image_fingerprints: [{
+        title: 'Dash panel',
+        image_url: 'https://assets.example/dash-panel.webp',
+        width: 3277,
+        height: 4096,
+        visual_summary: 'Portrait-oriented white rectangular panel photographed on a pale gallery wall, with a dense field of tiny black horizontal dash marks arranged on an invisible grid.',
+        preserve_cues: [
+          'Keep the tall white panel centered with generous pale wall border and a subtle drop shadow under the lower edge.',
+          'Preserve the entire image as dash-grid drawing: thousands of short black horizontal bars, not dots, lines, or texture wash.',
+        ],
+        surface_cues: ['matte paper or painted panel', 'printed/stenciled ink dashes'],
+      }],
+      visual_direction: {
+        composition_archetype: 'product-photo rupture',
+        camera_plate_grammar: 'oblique product table',
+        effect_direction: {
+          prompt_sentence: 'Build source windows as USB-C port apertures, occupied plug mouths, beveled panel seams, and cable-shadow notches in anodized metal.',
+          source_window_mark_types: ['open black connector apertures', 'occupied plug mouths'],
+          surface_language: ['bead-blasted aluminum faceplate'],
+        },
+      },
+      artifacts: Array.from({ length: 9 }, (_, index) => ({ source_url: `https://example.com/${index}` })),
+    })
+
+    expect(prompt).toContain('SOURCE-ASPECT NOTE: the dominant source is portrait/vertical')
+    expect(prompt).toContain('DOMINANT-SOURCE OVERRIDE')
+    expect(prompt).toContain('Do not convert it into USB ports')
+    expect(prompt).toContain('tiny printed dash interruptions')
+    expect(prompt).toContain('Preserve crop/framing when the contract names it as source identity')
+  })
+
   it('prints source image fingerprints as plate grammar rather than thumbnail instructions', () => {
     const prompt = buildSceneImagePrompt({
       scene_prompt: 'A source-led plate shaped by research image pressure.',

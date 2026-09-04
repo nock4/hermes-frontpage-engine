@@ -907,13 +907,56 @@ function describeSourceContract(contract = {}) {
   const transform = joinLimited(contract.must_transform, '', 4)
   const drift = joinLimited(contract.forbidden_drift, '', 6)
   const overcopy = joinLimited(contract.forbidden_overcopy, '', 5)
+  const preserveText = String(preserve || '').toLowerCase()
+  const framingIsSourceIdentity = /(centered|full|entire|all sides|wall border|portrait rectangle|white panel|source aspect|crop\/framing)/.test(preserveText)
+  const preserveMode = framingIsSourceIdentity
+    ? 'Preserve crop/framing when the contract names it as source identity; transform by changing surface state, seam logic, scale pressure, or source-window interruptions without losing the centered source object.'
+    : 'Preserve as fragments/proportions/gestures, not exact crop, camera distance, or layout.'
   return [
     'SOURCE CONTRACT',
-    preserve ? `Must preserve: ${preserve} — as fragments/proportions/gestures, not exact crop, camera distance, or layout.` : '',
+    preserve ? `Must preserve: ${preserve} — ${preserveMode}` : '',
     transform ? `Must transform: ${transform}.` : '',
     drift ? `Forbidden drift: ${drift}.` : '',
     overcopy ? `Forbidden overcopy: ${overcopy}.` : '',
   ].filter(Boolean).join(' ')
+}
+
+function sourceImageAspectGuard(sourceImageFingerprints = [], preserveText = '') {
+  const dominant = sourceImageFingerprints[0] || {}
+  const width = Number(dominant.width || 0)
+  const height = Number(dominant.height || 0)
+  const text = String(preserveText || '').toLowerCase()
+  if (/\bsquare\b/.test(text) || (width && height && Math.abs(width - height) / Math.max(width, height) < 0.08)) {
+    return 'SOURCE-ASPECT NOTE: the source is square. Do not stretch it into a panorama or paste the square as a framed panel. Borrow its crop pressure, negative-space ratio, and edge logic, but rebuild the plate as a new composition.'
+  }
+  if (/portrait|vertical|tall|all sides|wall border|centered/.test(text) || (width && height && height / width >= 1.12)) {
+    return 'SOURCE-ASPECT NOTE: the dominant source is portrait/vertical. In the landscape plate, keep the portrait source object legible as a centered vertical field with visible margin or breathing room; do not crop it into a horizontal panorama, oblique hardware slab, or edge-only texture.'
+  }
+  return ''
+}
+
+function dominantSourceConflictGuard(sourceImageFingerprints = [], effectDirection = null, payload = {}) {
+  const text = [
+    ...(sourceImageFingerprints || []).slice(0, 1).flatMap((fingerprint) => [
+      fingerprint.visual_summary,
+      ...(fingerprint.preserve_cues || []),
+      ...(fingerprint.composition_moves || []),
+      ...(fingerprint.surface_cues || []),
+    ]),
+  ].filter(Boolean).join(' ').toLowerCase()
+  const candidate = [
+    payload.scene_prompt,
+    payload.mood,
+    effectDirection?.prompt_sentence,
+    ...(effectDirection?.source_window_mark_types || []),
+    ...(effectDirection?.surface_language || []),
+  ].filter(Boolean).join(' ').toLowerCase()
+  const fineMountedDashPanel = /(white panel|portrait rectangle|gallery wall|wall border|horizontal dash|short black horizontal bars|dash-grid|printed|stenciled)/.test(text)
+  const hardwareConversion = /(usb|connector|port|plug|cable|anodized|metal slab|beveled|hardware|product-table|product photo)/.test(candidate)
+  if (fineMountedDashPanel && hardwareConversion) {
+    return 'DOMINANT-SOURCE OVERRIDE: the dominant source is a fine printed dash-grid panel on a wall. Do not convert it into USB ports, plug mouths, cable hardware, oblique metal, or large rounded apertures. Translate any connector language into tiny printed dash interruptions, missing-dash islands, margin shadows, paper/panel edge seams, and subtle source-window cuts that preserve the centered wall-mounted panel.'
+  }
+  return ''
 }
 
 function describeEffectDirection(effectDirection) {
@@ -961,9 +1004,7 @@ export function buildSceneImagePrompt(payload) {
   const lookAvoidance = platePosture?.look_avoidance_directive && !/^No strong/i.test(platePosture.look_avoidance_directive)
     ? compactText(platePosture.look_avoidance_directive, 155)
     : ''
-  const sourceAspectGuard = /\bsquare\b/i.test(preserveText)
-    ? 'SOURCE-ASPECT NOTE: the source is square. Do not stretch it into a panorama or paste the square as a framed panel. Borrow its crop pressure, negative-space ratio, and edge logic, but rebuild the plate as a new composition.'
-    : ''
+  const sourceAspectGuard = sourceImageAspectGuard(sourceImageFingerprints, preserveText)
   const recoveryTransformGuard = process.env.DFE_SOURCE_PRESERVE_PLATE === '1'
     ? 'RECOVERY TRANSFORM: the previous plate failed source QA. Do not rebuild the full source composition and do not return a decorated copy. Keep the named source subjects, figure/object masses, and object relationships legible as abstract silhouettes before adding formal risk. Change at least two of arrangement, scale, object count, crop, surface state, or spatial logic through large seams, cut-through apertures, repaired tears, translucent interruptions, source-window scars, and scale shifts. Do not erase source cues into blank panels, unrelated ambience, or numbered annotation marks; do not keep the same still life/card/photo with tiny marks.'
     : ''
@@ -973,8 +1014,9 @@ export function buildSceneImagePrompt(payload) {
   const sourceAudioMaterial = describeSourceAudioMaterial(payload.source_audio_material)
   const effectDirection = payload.effect_direction || visualDirection.effect_direction || null
   const effectGrammar = describeEffectDirection(effectDirection)
+  const dominantOverride = hasSourceImage ? dominantSourceConflictGuard(sourceImageFingerprints, effectDirection, payload) : ''
   const sourceFidelityGuard = sourceImageFingerprints.length
-    ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements — palette, silhouettes, object relationships, surface motifs, light, and edge pressure — then visibly recompose them. Translate crop/placement cues into fragment scale, seam position, silhouette pressure, or negative-space ratio; never reproduce the full layout. ${sourceAspectGuard} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, framed source panel, or near-identical still life with tiny marks.`
+    ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them. Translate crop/placement into fragment scale, seam position, silhouette pressure, or negative-space ratio; keep named framing cues legible. ${sourceAspectGuard} ${dominantOverride} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks.`
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
@@ -992,6 +1034,7 @@ export function buildSceneImagePrompt(payload) {
     hasSourceImage ? 'BORROW' : 'SOURCE FIELD',
     compactText(preserveText, 520),
     sourceAspectGuard,
+    dominantOverride,
     recoveryTransformGuard,
     graphicEditorialGuard,
     '',
