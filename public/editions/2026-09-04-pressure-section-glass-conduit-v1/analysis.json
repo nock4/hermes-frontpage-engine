@@ -1,0 +1,500 @@
+{
+  "analysis_id": "analysis-2026-09-04-pressure-section-glass-conduit-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A cream perforated slab carries a diagonal pale rupture, a black glass phone-like aperture, QR-density patches, a white cable arc, and a translucent hand/pressure form. The useful interaction anchors are actual cuts, dense void fields, glass edges, stepped notches, slits, and contact shadows rather than generic cards.",
+  "usable_surfaces": [
+    "black diagonal glass aperture",
+    "pale diagonal torn seam through perforations",
+    "upper-left translucent recessed plate over slot grid",
+    "top-right dense pinhole block",
+    "lower-left cable arc and plug",
+    "soft translucent hand pressure shadow",
+    "right lower stepped machined edge",
+    "small left black horizontal slit",
+    "bottom dense perforated source patch"
+  ],
+  "detected_objects": [
+    {
+      "label": "summit-video-cavity",
+      "artifact_type": "translucent-recessed-plate",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.245,
+        "y": 0.009,
+        "w": 0.158,
+        "h": 0.285
+      },
+      "polygon": [
+        [
+          0.246,
+          0.009
+        ],
+        [
+          0.402,
+          0.009
+        ],
+        [
+          0.404,
+          0.286
+        ],
+        [
+          0.248,
+          0.294
+        ],
+        [
+          0.246,
+          0.196
+        ],
+        [
+          0.246,
+          0.081
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "large translucent rectangular plate in the upper-left connector field, visibly covering and muting the dash perforations beneath it"
+    },
+    {
+      "label": "diagonal-glass-media-seam",
+      "artifact_type": "black-rounded-glass-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.482,
+        "y": 0.319,
+        "w": 0.304,
+        "h": 0.388
+      },
+      "polygon": [
+        [
+          0.548,
+          0.321
+        ],
+        [
+          0.574,
+          0.335
+        ],
+        [
+          0.659,
+          0.421
+        ],
+        [
+          0.766,
+          0.522
+        ],
+        [
+          0.784,
+          0.548
+        ],
+        [
+          0.785,
+          0.584
+        ],
+        [
+          0.76,
+          0.69
+        ],
+        [
+          0.733,
+          0.706
+        ],
+        [
+          0.706,
+          0.699
+        ],
+        [
+          0.594,
+          0.596
+        ],
+        [
+          0.501,
+          0.515
+        ],
+        [
+          0.482,
+          0.493
+        ],
+        [
+          0.486,
+          0.464
+        ],
+        [
+          0.523,
+          0.346
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "dominant oblique black glass body with a pale bevel, rounded corners, and a small pinhole near its upper-left edge"
+    },
+    {
+      "label": "anchor-material-slot-field",
+      "artifact_type": "perforated-dash-field",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.214,
+        "y": 0.014,
+        "w": 0.568,
+        "h": 0.966
+      },
+      "polygon": [
+        [
+          0.216,
+          0.014
+        ],
+        [
+          0.545,
+          0.014
+        ],
+        [
+          0.52,
+          0.121
+        ],
+        [
+          0.484,
+          0.292
+        ],
+        [
+          0.374,
+          0.741
+        ],
+        [
+          0.472,
+          0.808
+        ],
+        [
+          0.655,
+          0.808
+        ],
+        [
+          0.655,
+          0.977
+        ],
+        [
+          0.215,
+          0.978
+        ],
+        [
+          0.215,
+          0.284
+        ],
+        [
+          0.194,
+          0.284
+        ],
+        [
+          0.194,
+          0.248
+        ],
+        [
+          0.215,
+          0.248
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "continuous cream slab densely populated by repeated small horizontal dash voids, interrupted by the diagonal blank cut and inset objects"
+    },
+    {
+      "label": "fund-section-notch",
+      "artifact_type": "stepped-machined-edge-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.743,
+        "y": 0.77,
+        "w": 0.062,
+        "h": 0.201
+      },
+      "polygon": [
+        [
+          0.805,
+          0.771
+        ],
+        [
+          0.805,
+          0.971
+        ],
+        [
+          0.743,
+          0.971
+        ],
+        [
+          0.743,
+          0.828
+        ],
+        [
+          0.766,
+          0.828
+        ],
+        [
+          0.766,
+          0.771
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "right lower slab edge has a visible stepped rectangular notch cut into the cream material, with shadowed vertical edges"
+    },
+    {
+      "label": "cad-glass-chip",
+      "artifact_type": "beveled-bright-chip",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.76,
+        "y": 0.612,
+        "w": 0.05,
+        "h": 0.057
+      },
+      "polygon": [
+        [
+          0.76,
+          0.613
+        ],
+        [
+          0.776,
+          0.612
+        ],
+        [
+          0.81,
+          0.643
+        ],
+        [
+          0.81,
+          0.669
+        ],
+        [
+          0.792,
+          0.665
+        ],
+        [
+          0.766,
+          0.639
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "bright beveled connector chip at the lower-right end of the black glass aperture where the cable/socket meets the device"
+    },
+    {
+      "label": "Agent Tool Reliquary",
+      "artifact_type": "curved-white-cable-junction",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.251,
+        "y": 0.705,
+        "w": 0.047,
+        "h": 0.293
+      },
+      "polygon": [
+        [
+          0.286,
+          0.705
+        ],
+        [
+          0.299,
+          0.715
+        ],
+        [
+          0.292,
+          0.744
+        ],
+        [
+          0.278,
+          0.772
+        ],
+        [
+          0.265,
+          0.815
+        ],
+        [
+          0.259,
+          0.868
+        ],
+        [
+          0.265,
+          0.919
+        ],
+        [
+          0.276,
+          0.966
+        ],
+        [
+          0.283,
+          0.996
+        ],
+        [
+          0.276,
+          0.998
+        ],
+        [
+          0.264,
+          0.96
+        ],
+        [
+          0.253,
+          0.915
+        ],
+        [
+          0.25,
+          0.861
+        ],
+        [
+          0.257,
+          0.809
+        ],
+        [
+          0.273,
+          0.759
+        ],
+        [
+          0.279,
+          0.723
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "thin white cable arcs upward from the bottom-left edge into a small white plug resting over the slot grid"
+    },
+    {
+      "label": "spa-riso-pressure-shadow",
+      "artifact_type": "soft-translucent-contact-shadow",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.474,
+        "y": 0.525,
+        "w": 0.282,
+        "h": 0.469
+      },
+      "polygon": [
+        [
+          0.479,
+          0.526
+        ],
+        [
+          0.525,
+          0.554
+        ],
+        [
+          0.564,
+          0.658
+        ],
+        [
+          0.614,
+          0.737
+        ],
+        [
+          0.681,
+          0.826
+        ],
+        [
+          0.73,
+          0.914
+        ],
+        [
+          0.756,
+          0.994
+        ],
+        [
+          0.716,
+          0.992
+        ],
+        [
+          0.665,
+          0.901
+        ],
+        [
+          0.606,
+          0.815
+        ],
+        [
+          0.557,
+          0.753
+        ],
+        [
+          0.526,
+          0.661
+        ],
+        [
+          0.474,
+          0.558
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "pale grainy translucent hand- or pressure-shaped shadow under the glass object, visibly crossing the slab surface"
+    },
+    {
+      "label": "top-right-public-event-knot",
+      "artifact_type": "dense-square-pinhole-cluster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.668,
+        "y": 0.145,
+        "w": 0.084,
+        "h": 0.146
+      },
+      "polygon": [
+        [
+          0.67,
+          0.147
+        ],
+        [
+          0.751,
+          0.146
+        ],
+        [
+          0.752,
+          0.289
+        ],
+        [
+          0.668,
+          0.291
+        ],
+        [
+          0.668,
+          0.247
+        ],
+        [
+          0.667,
+          0.196
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "top-right square field of very dense tiny black voids, distinct from the surrounding regular dash grid"
+    },
+    {
+      "label": "comedy-video-pinvoid",
+      "artifact_type": "small-recessed-pinvoid",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.885,
+    "rationale": "The plate is restrained in color and built from a few strong gestures, but the repeated dash grid plus three dense pinhole blocks make interaction mapping visually busy; still expressionist rather than cluttered because the black glass seam and diagonal rupture dominate."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-04-pressure-section-glass-conduit-v1"
+}

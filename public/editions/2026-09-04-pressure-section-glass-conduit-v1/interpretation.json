@@ -1,0 +1,380 @@
+{
+  "interpretation_id": "interp-2026-09-04-pressure-section-glass-conduit-v1",
+  "edition_id": "2026-09-04-pressure-section-glass-conduit-v1",
+  "plate_read_timestamp": "2026-09-04T12:18:26.684Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A cream perforated slab carries a diagonal pale rupture, a black glass phone-like aperture, QR-density patches, a white cable arc, and a translucent hand/pressure form. The useful interaction anchors are actual cuts, dense void fields, glass edges, stepped notches, slits, and contact shadows rather than generic cards.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright machine relic under hand pressure, precise but bruised by contact",
+      "A cream perforated slab carries a diagonal pale rupture, a black glass phone-like aperture, QR-density patches, a white cable arc, and a translucent hand/pressure form. The useful interaction anchors are actual cuts, dense void fields, glass edges, stepped notches, slits, and contact shadows rather than generic cards.",
+      "cutaway-slab",
+      "connector-voids",
+      "diagonal-glass"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "summit-video-cavity",
+      "diagonal-glass-media-seam",
+      "anchor-material-slot-field",
+      "fund-section-notch",
+      "cad-glass-chip",
+      "Agent Tool Reliquary",
+      "spa-riso-pressure-shadow",
+      "top-right-public-event-knot"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "pressure-section-glass-conduit",
+      "left-heavy perforated section slab with visible thickness",
+      "diagonal black-glass rupture crossing the slab edge",
+      "thin cable arcs threading through cut notches",
+      "partial warm pressure support beneath the glass",
+      "small saturated source glints recessed inside selected apertures",
+      "black diagonal glass aperture",
+      "pale diagonal torn seam through perforations"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: pressure-section-glass-conduit.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-summit-video-cavity",
+      "kind": "hero",
+      "type": "translucent-recessed-plate",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.245,
+        "y": 0.009,
+        "w": 0.158,
+        "h": 0.285
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-diagonal-glass-media-seam",
+      "kind": "hero",
+      "type": "black-rounded-glass-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.4805,
+        "y": 0.3193,
+        "w": 0.3034,
+        "h": 0.3838
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-anchor-material-slot-field",
+      "kind": "module",
+      "type": "perforated-dash-field",
+      "strength": 0.77886,
+      "bounds": {
+        "x": 0.214,
+        "y": 0.014,
+        "w": 0.568,
+        "h": 0.966
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-fund-section-notch",
+      "kind": "module",
+      "type": "stepped-machined-edge-notch",
+      "strength": 0.7587360000000001,
+      "bounds": {
+        "x": 0.743,
+        "y": 0.77,
+        "w": 0.062,
+        "h": 0.201
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cad-glass-chip",
+      "kind": "module",
+      "type": "beveled-bright-chip",
+      "strength": 0.734064,
+      "bounds": {
+        "x": 0.76,
+        "y": 0.612,
+        "w": 0.05,
+        "h": 0.057
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-tool-reliquary",
+      "kind": "module",
+      "type": "curved-white-cable-junction",
+      "strength": 0.695544,
+      "bounds": {
+        "x": 0.251,
+        "y": 0.705,
+        "w": 0.047,
+        "h": 0.293
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spa-riso-pressure-shadow",
+      "kind": "module",
+      "type": "soft-translucent-contact-shadow",
+      "strength": 0.661008,
+      "bounds": {
+        "x": 0.474,
+        "y": 0.525,
+        "w": 0.282,
+        "h": 0.469
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-top-right-public-event-knot",
+      "kind": "module",
+      "type": "dense-square-pinhole-cluster",
+      "strength": 0.664144,
+      "bounds": {
+        "x": 0.668,
+        "y": 0.145,
+        "w": 0.084,
+        "h": 0.146
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-comedy-video-pinvoid",
+      "kind": "module",
+      "type": "small-recessed-pinvoid",
+      "strength": 0.666688,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-summit-video-cavity-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.245,
+        "y": 0.009,
+        "w": 0.158,
+        "h": 0.285
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-diagonal-glass-media-seam-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4805,
+        "y": 0.3193,
+        "w": 0.3034,
+        "h": 0.3838
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-anchor-material-slot-field-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.214,
+        "y": 0.014,
+        "w": 0.568,
+        "h": 0.966
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-fund-section-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.743,
+        "y": 0.77,
+        "w": 0.062,
+        "h": 0.201
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cad-glass-chip-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.76,
+        "y": 0.612,
+        "w": 0.05,
+        "h": 0.057
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-agent-tool-reliquary-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.251,
+        "y": 0.705,
+        "w": 0.047,
+        "h": 0.293
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-spa-riso-pressure-shadow-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.474,
+        "y": 0.525,
+        "w": 0.282,
+        "h": 0.469
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-top-right-public-event-knot-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.668,
+        "y": 0.145,
+        "w": 0.084,
+        "h": 0.146
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-comedy-video-pinvoid-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
