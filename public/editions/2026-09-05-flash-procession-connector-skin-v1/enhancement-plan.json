@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-05-flash-procession-connector-skin-v1",
+  "edition_id": "2026-09-05-flash-procession-connector-skin-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-05-flash-procession-connector-skin-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-cropped-face-connector-pressure",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-cropped-face-connector-pressure",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-usb-c-socket-field) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-diagonal-beat-ridge-procession",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-diagonal-beat-ridge-procession",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-bass-ridge-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-upper-left-thumbnail-ghost-plate",
+      "target_kind": "artifact",
+      "artifact_id": "module-upper-left-thumbnail-ghost-plate",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-video-grain-defect) selected from interpretation."
+    },
+    {
+      "target_id": "module-cold-aperture-in-scratch-veil",
+      "target_kind": "artifact",
+      "artifact_id": "module-cold-aperture-in-scratch-veil",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-dropout-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-annual-web-journal-chamfer-nick",
+      "target_kind": "artifact",
+      "artifact_id": "module-annual-web-journal-chamfer-nick",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (polished-edge-corner-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-detroit-plane-dented-metal-scar",
+      "target_kind": "artifact",
+      "artifact_id": "module-detroit-plane-dented-metal-scar",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dented-aluminum-surface-scar) selected from interpretation."
+    },
+    {
+      "target_id": "module-text-measurement-hairline-comb",
+      "target_kind": "artifact",
+      "artifact_id": "module-text-measurement-hairline-comb",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (fine-machined-measure-cuts) selected from interpretation."
+    },
+    {
+      "target_id": "module-background-memory-ledger",
+      "target_kind": "artifact",
+      "artifact_id": "module-background-memory-ledger",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (repeated-paint-pressure-smear) selected from interpretation."
+    },
+    {
+      "target_id": "module-edge-detail",
+      "target_kind": "artifact",
+      "artifact_id": "module-edge-detail",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (edge-detail) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
