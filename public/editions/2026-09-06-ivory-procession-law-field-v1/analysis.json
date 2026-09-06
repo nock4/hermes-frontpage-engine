@@ -1,0 +1,548 @@
+{
+  "analysis_id": "analysis-2026-09-06-ivory-procession-law-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A minimal expressionist plate: one cropped matte-black angular slab cuts across a gridded left paper field, meeting a soft civic-gray seam and a quiet right sheet with tiny tick constellations. Source-bearing marks are mostly real edges, punched dots, cut slits, dense tick blocks, translucent lifted cells, and pressed ridges rather than cards.",
+  "usable_surfaces": [
+    "matte black cropped angular slab",
+    "soft gray vertical civic seam",
+    "left gridded paper field",
+    "quiet right paper field",
+    "lower black embossed ridge band",
+    "tiny top-right pinhole tick line",
+    "lower-right compact tick rows",
+    "translucent central lifted grid cell",
+    "left-edge repaired paper notch"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero cropped black law glyph",
+      "artifact_type": "hero-scale-ink-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.066,
+        "y": 0.053,
+        "w": 0.546,
+        "h": 0.875
+      },
+      "polygon": [
+        [
+          0.381,
+          0.053
+        ],
+        [
+          0.513,
+          0.053
+        ],
+        [
+          0.51,
+          0.071
+        ],
+        [
+          0.461,
+          0.242
+        ],
+        [
+          0.382,
+          0.484
+        ],
+        [
+          0.298,
+          0.572
+        ],
+        [
+          0.514,
+          0.533
+        ],
+        [
+          0.524,
+          0.861
+        ],
+        [
+          0.589,
+          0.861
+        ],
+        [
+          0.589,
+          0.89
+        ],
+        [
+          0.62,
+          0.89
+        ],
+        [
+          0.62,
+          0.928
+        ],
+        [
+          0.291,
+          0.928
+        ],
+        [
+          0.365,
+          0.691
+        ],
+        [
+          0.066,
+          0.761
+        ],
+        [
+          0.069,
+          0.739
+        ],
+        [
+          0.206,
+          0.45
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "large matte-black cropped angular mass dominates the plate, with visible paper grain and hard torn/cut edges carrying the main source grammar without readable text"
+    },
+    {
+      "label": "hero civic gray edge aperture",
+      "artifact_type": "hero-scale-boundary-haze",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.258,
+        "w": 0.129,
+        "h": 0.38
+      },
+      "polygon": [
+        [
+          0.514,
+          0.258
+        ],
+        [
+          0.535,
+          0.286
+        ],
+        [
+          0.552,
+          0.333
+        ],
+        [
+          0.585,
+          0.386
+        ],
+        [
+          0.617,
+          0.445
+        ],
+        [
+          0.637,
+          0.52
+        ],
+        [
+          0.63,
+          0.585
+        ],
+        [
+          0.602,
+          0.626
+        ],
+        [
+          0.552,
+          0.638
+        ],
+        [
+          0.523,
+          0.603
+        ],
+        [
+          0.514,
+          0.534
+        ],
+        [
+          0.517,
+          0.455
+        ],
+        [
+          0.508,
+          0.37
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "soft smoky gray vertical seam and aperture bloom between the black/grid sheet and the blank right civic field"
+    },
+    {
+      "label": "lower-left walking bass ridge",
+      "artifact_type": "embossed-bass-ridge",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.088,
+        "y": 0.634,
+        "w": 0.424,
+        "h": 0.188
+      },
+      "polygon": [
+        [
+          0.091,
+          0.657
+        ],
+        [
+          0.154,
+          0.647
+        ],
+        [
+          0.23,
+          0.639
+        ],
+        [
+          0.306,
+          0.636
+        ],
+        [
+          0.386,
+          0.634
+        ],
+        [
+          0.459,
+          0.643
+        ],
+        [
+          0.508,
+          0.662
+        ],
+        [
+          0.512,
+          0.72
+        ],
+        [
+          0.459,
+          0.724
+        ],
+        [
+          0.386,
+          0.715
+        ],
+        [
+          0.305,
+          0.723
+        ],
+        [
+          0.226,
+          0.744
+        ],
+        [
+          0.151,
+          0.776
+        ],
+        [
+          0.088,
+          0.822
+        ],
+        [
+          0.088,
+          0.787
+        ],
+        [
+          0.137,
+          0.735
+        ],
+        [
+          0.086,
+          0.705
+        ]
+      ],
+      "confidence": 0.69,
+      "visual_evidence": "shallow horizontal embossed/rippled striations are visible across the lower black form, reading as a pressed walking ridge near the lower paper edge"
+    },
+    {
+      "label": "lower-right fast measure cut",
+      "artifact_type": "linear-measure-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.71,
+        "y": 0.728,
+        "w": 0.147,
+        "h": 0.102
+      },
+      "polygon": [
+        [
+          0.711,
+          0.727
+        ],
+        [
+          0.856,
+          0.727
+        ],
+        [
+          0.856,
+          0.735
+        ],
+        [
+          0.739,
+          0.738
+        ],
+        [
+          0.856,
+          0.752
+        ],
+        [
+          0.856,
+          0.76
+        ],
+        [
+          0.71,
+          0.758
+        ],
+        [
+          0.711,
+          0.779
+        ],
+        [
+          0.857,
+          0.78
+        ],
+        [
+          0.857,
+          0.787
+        ],
+        [
+          0.71,
+          0.789
+        ],
+        [
+          0.71,
+          0.808
+        ],
+        [
+          0.855,
+          0.811
+        ],
+        [
+          0.855,
+          0.819
+        ],
+        [
+          0.71,
+          0.819
+        ],
+        [
+          0.71,
+          0.83
+        ],
+        [
+          0.857,
+          0.83
+        ],
+        [
+          0.857,
+          0.823
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "compact lower-right rows of tiny black rectangular cuts form a fast measure-like sequence near the bottom margin"
+    },
+    {
+      "label": "pigment glint grid cell",
+      "artifact_type": "muted-pigment-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.3,
+        "y": 0.319,
+        "w": 0.175,
+        "h": 0.254
+      },
+      "polygon": [
+        [
+          0.309,
+          0.319
+        ],
+        [
+          0.404,
+          0.319
+        ],
+        [
+          0.431,
+          0.365
+        ],
+        [
+          0.475,
+          0.39
+        ],
+        [
+          0.474,
+          0.528
+        ],
+        [
+          0.423,
+          0.531
+        ],
+        [
+          0.382,
+          0.54
+        ],
+        [
+          0.339,
+          0.573
+        ],
+        [
+          0.3,
+          0.571
+        ],
+        [
+          0.314,
+          0.51
+        ],
+        [
+          0.309,
+          0.441
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "a translucent gray lifted grid cell overlays the black slab and gridded paper, with muted pigment-like opacity and a visible folded lower edge"
+    },
+    {
+      "label": "archive tick block",
+      "artifact_type": "compact-type-tick-field",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.159,
+        "y": 0.779,
+        "w": 0.06,
+        "h": 0.045
+      },
+      "polygon": [
+        [
+          0.16,
+          0.78
+        ],
+        [
+          0.199,
+          0.779
+        ],
+        [
+          0.219,
+          0.786
+        ],
+        [
+          0.219,
+          0.814
+        ],
+        [
+          0.209,
+          0.824
+        ],
+        [
+          0.179,
+          0.822
+        ],
+        [
+          0.16,
+          0.813
+        ],
+        [
+          0.159,
+          0.793
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "dense lower-left block of illegible black horizontal and square tick marks preserves graphic archive rhythm inside the grid"
+    },
+    {
+      "label": "pigment glint grid cell",
+      "artifact_type": "muted-pigment-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "archive tick block",
+      "artifact_type": "compact-type-tick-field",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "paper memory notch",
+      "artifact_type": "small-edge-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 2,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.669,
+    "rationale": "The plate is restrained: one dominant black gesture, one soft gray seam, and a mostly empty right paper field. Small tick clusters and apertures add source anchors without visual clutter."
+  },
+  "fallback_detected_object_count": 3,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-06-ivory-procession-law-field-v1"
+}

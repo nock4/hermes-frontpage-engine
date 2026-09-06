@@ -1,0 +1,1597 @@
+{
+  "artifact_map_id": "map-2026-09-06-ivory-procession-law-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "ivory-procession-law-field",
+  "default_artifact_id": "hero-hero-cropped-black-law-glyph",
+  "artifacts": [
+    {
+      "id": "hero-hero-cropped-black-law-glyph",
+      "kind": "hero",
+      "label": "hero cropped black law glyph",
+      "artifact_type": "hero-scale-ink-slab",
+      "bounds": {
+        "x": 0.0615,
+        "y": 0.0498,
+        "w": 0.5654,
+        "h": 0.8838
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0645,
+          0.7451
+        ],
+        [
+          0.3789,
+          0.0547
+        ],
+        [
+          0.5117,
+          0.0527
+        ],
+        [
+          0.623,
+          0.8926
+        ],
+        [
+          0.6211,
+          0.9297
+        ],
+        [
+          0.291,
+          0.9297
+        ],
+        [
+          0.0684,
+          0.7627
+        ],
+        [
+          0.0645,
+          0.752
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/hero-hero-cropped-black-law-glyph.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-cropped-black-law-glyph"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          521,
+          431
+        ],
+        "safe_stage_window_origin_px": [
+          588,
+          502
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0645,
+            0.7451
+          ],
+          [
+            0.3789,
+            0.0547
+          ],
+          [
+            0.5117,
+            0.0527
+          ],
+          [
+            0.623,
+            0.8926
+          ],
+          [
+            0.6211,
+            0.9297
+          ],
+          [
+            0.291,
+            0.9297
+          ],
+          [
+            0.0684,
+            0.7627
+          ],
+          [
+            0.0645,
+            0.752
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0312,
+            0.7432
+          ],
+          [
+            0.3447,
+            0.0547
+          ],
+          [
+            0.3779,
+            0.0215
+          ],
+          [
+            0.5107,
+            0.0186
+          ],
+          [
+            0.5449,
+            0.0557
+          ],
+          [
+            0.6553,
+            0.8896
+          ],
+          [
+            0.6543,
+            0.9297
+          ],
+          [
+            0.6211,
+            0.9629
+          ],
+          [
+            0.29,
+            0.9629
+          ],
+          [
+            0.0596,
+            0.7871
+          ],
+          [
+            0.0312,
+            0.7529
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0312,
+          "y": 0.0186,
+          "w": 0.625,
+          "h": 0.9453
+        },
+        "territory_area_px": 207288,
+        "visible_area_px": 330707,
+        "expansion_ratio": 0.627,
+        "neighbors": [
+          {
+            "artifact_id": "module-lower-left-walking-bass-ridge",
+            "shared_edge_px": 4910,
+            "direction": "down",
+            "distance_px": 255.36
+          },
+          {
+            "artifact_id": "module-pigment-glint-grid-cell-2",
+            "shared_edge_px": 3719,
+            "direction": "down",
+            "distance_px": 397.89
+          },
+          {
+            "artifact_id": "hero-hero-civic-gray-edge-aperture",
+            "shared_edge_px": 2899,
+            "direction": "right",
+            "distance_px": 200.75
+          },
+          {
+            "artifact_id": "module-pigment-glint-grid-cell",
+            "shared_edge_px": 2115,
+            "direction": "up",
+            "distance_px": 83.75
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-hero-civic-gray-edge-aperture",
+      "kind": "hero",
+      "label": "hero civic gray edge aperture",
+      "artifact_type": "hero-scale-boundary-haze",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.258,
+        "w": 0.129,
+        "h": 0.38
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.514,
+          0.258
+        ],
+        [
+          0.535,
+          0.286
+        ],
+        [
+          0.552,
+          0.333
+        ],
+        [
+          0.585,
+          0.386
+        ],
+        [
+          0.617,
+          0.445
+        ],
+        [
+          0.637,
+          0.52
+        ],
+        [
+          0.63,
+          0.585
+        ],
+        [
+          0.602,
+          0.626
+        ],
+        [
+          0.552,
+          0.638
+        ],
+        [
+          0.523,
+          0.603
+        ],
+        [
+          0.514,
+          0.534
+        ],
+        [
+          0.517,
+          0.455
+        ],
+        [
+          0.508,
+          0.37
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/hero-hero-civic-gray-edge-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-civic-gray-edge-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          879,
+          428
+        ],
+        "safe_stage_window_origin_px": [
+          895,
+          459
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.514,
+            0.258
+          ],
+          [
+            0.535,
+            0.286
+          ],
+          [
+            0.552,
+            0.333
+          ],
+          [
+            0.585,
+            0.386
+          ],
+          [
+            0.617,
+            0.445
+          ],
+          [
+            0.637,
+            0.52
+          ],
+          [
+            0.63,
+            0.585
+          ],
+          [
+            0.602,
+            0.626
+          ],
+          [
+            0.552,
+            0.638
+          ],
+          [
+            0.523,
+            0.603
+          ],
+          [
+            0.514,
+            0.534
+          ],
+          [
+            0.517,
+            0.455
+          ],
+          [
+            0.508,
+            0.37
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4746,
+            0.3604
+          ],
+          [
+            0.4805,
+            0.2578
+          ],
+          [
+            0.5137,
+            0.2246
+          ],
+          [
+            0.5674,
+            0.2852
+          ],
+          [
+            0.6504,
+            0.4463
+          ],
+          [
+            0.6699,
+            0.5186
+          ],
+          [
+            0.6631,
+            0.585
+          ],
+          [
+            0.6357,
+            0.625
+          ],
+          [
+            0.6016,
+            0.6592
+          ],
+          [
+            0.5518,
+            0.6709
+          ],
+          [
+            0.5273,
+            0.6465
+          ],
+          [
+            0.4814,
+            0.5439
+          ],
+          [
+            0.4746,
+            0.3613
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4746,
+          "y": 0.2246,
+          "w": 0.1963,
+          "h": 0.4473
+        },
+        "territory_area_px": 60491,
+        "visible_area_px": 31964,
+        "expansion_ratio": 1.892,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-cropped-black-law-glyph",
+            "shared_edge_px": 2899,
+            "direction": "left",
+            "distance_px": 200.75
+          },
+          {
+            "artifact_id": "module-pigment-glint-grid-cell",
+            "shared_edge_px": 902,
+            "direction": "left",
+            "distance_px": 161.27
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-lower-left-walking-bass-ridge",
+      "kind": "module",
+      "label": "lower-left walking bass ridge",
+      "artifact_type": "embossed-bass-ridge",
+      "bounds": {
+        "x": 0.088,
+        "y": 0.634,
+        "w": 0.424,
+        "h": 0.188
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.091,
+          0.657
+        ],
+        [
+          0.154,
+          0.647
+        ],
+        [
+          0.23,
+          0.639
+        ],
+        [
+          0.306,
+          0.636
+        ],
+        [
+          0.386,
+          0.634
+        ],
+        [
+          0.459,
+          0.643
+        ],
+        [
+          0.508,
+          0.662
+        ],
+        [
+          0.512,
+          0.72
+        ],
+        [
+          0.459,
+          0.724
+        ],
+        [
+          0.386,
+          0.715
+        ],
+        [
+          0.305,
+          0.723
+        ],
+        [
+          0.226,
+          0.744
+        ],
+        [
+          0.151,
+          0.776
+        ],
+        [
+          0.088,
+          0.822
+        ],
+        [
+          0.088,
+          0.787
+        ],
+        [
+          0.137,
+          0.735
+        ],
+        [
+          0.086,
+          0.705
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/module-lower-left-walking-bass-ridge.svg",
+      "source_binding_ids": [
+        "binding-module-lower-left-walking-bass-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          461,
+          730
+        ],
+        "safe_stage_window_origin_px": [
+          513,
+          745
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.091,
+            0.657
+          ],
+          [
+            0.154,
+            0.647
+          ],
+          [
+            0.23,
+            0.639
+          ],
+          [
+            0.306,
+            0.636
+          ],
+          [
+            0.386,
+            0.634
+          ],
+          [
+            0.459,
+            0.643
+          ],
+          [
+            0.508,
+            0.662
+          ],
+          [
+            0.512,
+            0.72
+          ],
+          [
+            0.459,
+            0.724
+          ],
+          [
+            0.386,
+            0.715
+          ],
+          [
+            0.305,
+            0.723
+          ],
+          [
+            0.226,
+            0.744
+          ],
+          [
+            0.151,
+            0.776
+          ],
+          [
+            0.088,
+            0.822
+          ],
+          [
+            0.088,
+            0.787
+          ],
+          [
+            0.137,
+            0.735
+          ],
+          [
+            0.086,
+            0.705
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0586,
+            0.7002
+          ],
+          [
+            0.0635,
+            0.6562
+          ],
+          [
+            0.0908,
+            0.6289
+          ],
+          [
+            0.2295,
+            0.6113
+          ],
+          [
+            0.3047,
+            0.6094
+          ],
+          [
+            0.4824,
+            0.749
+          ],
+          [
+            0.0879,
+            0.8486
+          ],
+          [
+            0.0605,
+            0.8213
+          ],
+          [
+            0.0586,
+            0.7041
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0586,
+          "y": 0.6094,
+          "w": 0.4248,
+          "h": 0.2402
+        },
+        "territory_area_px": 52221,
+        "visible_area_px": 41877,
+        "expansion_ratio": 1.247,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-cropped-black-law-glyph",
+            "shared_edge_px": 4910,
+            "direction": "up",
+            "distance_px": 255.36
+          },
+          {
+            "artifact_id": "module-archive-tick-block",
+            "shared_edge_px": 853,
+            "direction": "down",
+            "distance_px": 106.34
+          },
+          {
+            "artifact_id": "module-pigment-glint-grid-cell-2",
+            "shared_edge_px": 244,
+            "direction": "right",
+            "distance_px": 334.68
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-lower-right-fast-measure-cut",
+      "kind": "module",
+      "label": "lower-right fast measure cut",
+      "artifact_type": "linear-measure-cut",
+      "bounds": {
+        "x": 0.71,
+        "y": 0.728,
+        "w": 0.147,
+        "h": 0.102
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.711,
+          0.727
+        ],
+        [
+          0.856,
+          0.727
+        ],
+        [
+          0.856,
+          0.735
+        ],
+        [
+          0.739,
+          0.738
+        ],
+        [
+          0.856,
+          0.752
+        ],
+        [
+          0.856,
+          0.76
+        ],
+        [
+          0.71,
+          0.758
+        ],
+        [
+          0.711,
+          0.779
+        ],
+        [
+          0.857,
+          0.78
+        ],
+        [
+          0.857,
+          0.787
+        ],
+        [
+          0.71,
+          0.789
+        ],
+        [
+          0.71,
+          0.808
+        ],
+        [
+          0.855,
+          0.811
+        ],
+        [
+          0.855,
+          0.819
+        ],
+        [
+          0.71,
+          0.819
+        ],
+        [
+          0.71,
+          0.83
+        ],
+        [
+          0.857,
+          0.83
+        ],
+        [
+          0.857,
+          0.823
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/module-lower-right-fast-measure-cut.svg",
+      "source_binding_ids": [
+        "binding-module-lower-right-fast-measure-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1203,
+          789
+        ],
+        "safe_stage_window_origin_px": [
+          1222,
+          798
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.711,
+            0.727
+          ],
+          [
+            0.856,
+            0.727
+          ],
+          [
+            0.856,
+            0.735
+          ],
+          [
+            0.739,
+            0.738
+          ],
+          [
+            0.856,
+            0.752
+          ],
+          [
+            0.856,
+            0.76
+          ],
+          [
+            0.71,
+            0.758
+          ],
+          [
+            0.711,
+            0.779
+          ],
+          [
+            0.857,
+            0.78
+          ],
+          [
+            0.857,
+            0.787
+          ],
+          [
+            0.71,
+            0.789
+          ],
+          [
+            0.71,
+            0.808
+          ],
+          [
+            0.855,
+            0.811
+          ],
+          [
+            0.855,
+            0.819
+          ],
+          [
+            0.71,
+            0.819
+          ],
+          [
+            0.71,
+            0.83
+          ],
+          [
+            0.857,
+            0.83
+          ],
+          [
+            0.857,
+            0.823
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6826,
+            0.7578
+          ],
+          [
+            0.6836,
+            0.7266
+          ],
+          [
+            0.7109,
+            0.6992
+          ],
+          [
+            0.8555,
+            0.6992
+          ],
+          [
+            0.8828,
+            0.7266
+          ],
+          [
+            0.8799,
+            0.7627
+          ],
+          [
+            0.71,
+            0.8545
+          ],
+          [
+            0.6826,
+            0.8291
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6826,
+          "y": 0.6992,
+          "w": 0.2012,
+          "h": 0.1562
+        },
+        "territory_area_px": 22789,
+        "visible_area_px": 9416,
+        "expansion_ratio": 2.42,
+        "neighbors": [
+          {
+            "artifact_id": "module-archive-tick-block-2",
+            "shared_edge_px": 1365,
+            "direction": "down",
+            "distance_px": 122.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pigment-glint-grid-cell",
+      "kind": "module",
+      "label": "pigment glint grid cell",
+      "artifact_type": "muted-pigment-aperture",
+      "bounds": {
+        "x": 0.3,
+        "y": 0.319,
+        "w": 0.175,
+        "h": 0.254
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.309,
+          0.319
+        ],
+        [
+          0.404,
+          0.319
+        ],
+        [
+          0.431,
+          0.365
+        ],
+        [
+          0.475,
+          0.39
+        ],
+        [
+          0.474,
+          0.528
+        ],
+        [
+          0.423,
+          0.531
+        ],
+        [
+          0.382,
+          0.54
+        ],
+        [
+          0.339,
+          0.573
+        ],
+        [
+          0.3,
+          0.571
+        ],
+        [
+          0.314,
+          0.51
+        ],
+        [
+          0.309,
+          0.441
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/module-pigment-glint-grid-cell.svg",
+      "source_binding_ids": [
+        "binding-module-pigment-glint-grid-cell"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          595,
+          436
+        ],
+        "safe_stage_window_origin_px": [
+          617,
+          457
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.309,
+            0.319
+          ],
+          [
+            0.404,
+            0.319
+          ],
+          [
+            0.431,
+            0.365
+          ],
+          [
+            0.475,
+            0.39
+          ],
+          [
+            0.474,
+            0.528
+          ],
+          [
+            0.423,
+            0.531
+          ],
+          [
+            0.382,
+            0.54
+          ],
+          [
+            0.339,
+            0.573
+          ],
+          [
+            0.3,
+            0.571
+          ],
+          [
+            0.314,
+            0.51
+          ],
+          [
+            0.309,
+            0.441
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2881,
+            0.3115
+          ],
+          [
+            0.3086,
+            0.291
+          ],
+          [
+            0.4033,
+            0.291
+          ],
+          [
+            0.4912,
+            0.3789
+          ],
+          [
+            0.4805,
+            0.5039
+          ],
+          [
+            0.29,
+            0.5
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2881,
+          "y": 0.291,
+          "w": 0.2041,
+          "h": 0.2139
+        },
+        "territory_area_px": 20052,
+        "visible_area_px": 36280,
+        "expansion_ratio": 0.553,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-cropped-black-law-glyph",
+            "shared_edge_px": 2115,
+            "direction": "down",
+            "distance_px": 83.75
+          },
+          {
+            "artifact_id": "module-paper-memory-notch",
+            "shared_edge_px": 1969,
+            "direction": "left",
+            "distance_px": 88.54
+          },
+          {
+            "artifact_id": "hero-hero-civic-gray-edge-aperture",
+            "shared_edge_px": 902,
+            "direction": "right",
+            "distance_px": 161.27
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-archive-tick-block",
+      "kind": "module",
+      "label": "archive tick block",
+      "artifact_type": "compact-type-tick-field",
+      "bounds": {
+        "x": 0.159,
+        "y": 0.779,
+        "w": 0.06,
+        "h": 0.045
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.16,
+          0.78
+        ],
+        [
+          0.199,
+          0.779
+        ],
+        [
+          0.219,
+          0.786
+        ],
+        [
+          0.219,
+          0.814
+        ],
+        [
+          0.209,
+          0.824
+        ],
+        [
+          0.179,
+          0.822
+        ],
+        [
+          0.16,
+          0.813
+        ],
+        [
+          0.159,
+          0.793
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/module-archive-tick-block.svg",
+      "source_binding_ids": [
+        "binding-module-archive-tick-block"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          290,
+          817
+        ],
+        "safe_stage_window_origin_px": [
+          298,
+          821
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.16,
+            0.78
+          ],
+          [
+            0.199,
+            0.779
+          ],
+          [
+            0.219,
+            0.786
+          ],
+          [
+            0.219,
+            0.814
+          ],
+          [
+            0.209,
+            0.824
+          ],
+          [
+            0.179,
+            0.822
+          ],
+          [
+            0.16,
+            0.813
+          ],
+          [
+            0.159,
+            0.793
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1309,
+            0.7871
+          ],
+          [
+            0.1592,
+            0.752
+          ],
+          [
+            0.1982,
+            0.751
+          ],
+          [
+            0.2188,
+            0.7578
+          ],
+          [
+            0.2461,
+            0.7852
+          ],
+          [
+            0.2461,
+            0.8135
+          ],
+          [
+            0.209,
+            0.8506
+          ],
+          [
+            0.1787,
+            0.8486
+          ],
+          [
+            0.1592,
+            0.8398
+          ],
+          [
+            0.1318,
+            0.8125
+          ],
+          [
+            0.1309,
+            0.8018
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1309,
+          "y": 0.751,
+          "w": 0.1162,
+          "h": 0.1006
+        },
+        "territory_area_px": 9368,
+        "visible_area_px": 2564,
+        "expansion_ratio": 3.654,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-cropped-black-law-glyph",
+            "shared_edge_px": 981,
+            "direction": "up",
+            "distance_px": 359.02
+          },
+          {
+            "artifact_id": "module-lower-left-walking-bass-ridge",
+            "shared_edge_px": 853,
+            "direction": "up",
+            "distance_px": 106.34
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pigment-glint-grid-cell-2",
+      "kind": "module",
+      "label": "pigment glint grid cell",
+      "artifact_type": "muted-pigment-aperture",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/module-pigment-glint-grid-cell-2.svg",
+      "source_binding_ids": [
+        "binding-module-pigment-glint-grid-cell-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3926,
+            0.7793
+          ],
+          [
+            0.4199,
+            0.752
+          ],
+          [
+            0.5996,
+            0.752
+          ],
+          [
+            0.627,
+            0.7793
+          ],
+          [
+            0.627,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9668
+          ],
+          [
+            0.4199,
+            0.9668
+          ],
+          [
+            0.3926,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3926,
+          "y": 0.752,
+          "w": 0.2354,
+          "h": 0.2158
+        },
+        "territory_area_px": 51637,
+        "visible_area_px": 30525,
+        "expansion_ratio": 1.692,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-cropped-black-law-glyph",
+            "shared_edge_px": 3719,
+            "direction": "up",
+            "distance_px": 397.89
+          },
+          {
+            "artifact_id": "module-lower-left-walking-bass-ridge",
+            "shared_edge_px": 244,
+            "direction": "left",
+            "distance_px": 334.68
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-archive-tick-block-2",
+      "kind": "module",
+      "label": "archive tick block",
+      "artifact_type": "compact-type-tick-field",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/module-archive-tick-block-2.svg",
+      "source_binding_ids": [
+        "binding-module-archive-tick-block-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6924,
+            0.8398
+          ],
+          [
+            0.8838,
+            0.7324
+          ],
+          [
+            0.8994,
+            0.7324
+          ],
+          [
+            0.9268,
+            0.7598
+          ],
+          [
+            0.9268,
+            0.9199
+          ],
+          [
+            0.8994,
+            0.9473
+          ],
+          [
+            0.7197,
+            0.9473
+          ],
+          [
+            0.6924,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6924,
+          "y": 0.7324,
+          "w": 0.2354,
+          "h": 0.2158
+        },
+        "territory_area_px": 36121,
+        "visible_area_px": 30525,
+        "expansion_ratio": 1.183,
+        "neighbors": [
+          {
+            "artifact_id": "module-lower-right-fast-measure-cut",
+            "shared_edge_px": 1365,
+            "direction": "up",
+            "distance_px": 122.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-paper-memory-notch",
+      "kind": "module",
+      "label": "paper memory notch",
+      "artifact_type": "small-edge-notch",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "ivory-procession-law-field",
+      "mask_path": "/editions/2026-09-06-ivory-procession-law-field-v1/assets/masks/module-paper-memory-notch.svg",
+      "source_binding_ids": [
+        "binding-module-paper-memory-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.252,
+            0.3398
+          ],
+          [
+            0.2793,
+            0.3125
+          ],
+          [
+            0.4395,
+            0.3125
+          ],
+          [
+            0.4668,
+            0.3398
+          ],
+          [
+            0.4668,
+            0.3574
+          ],
+          [
+            0.2891,
+            0.5
+          ],
+          [
+            0.2656,
+            0.5029
+          ],
+          [
+            0.252,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.252,
+          "y": 0.3125,
+          "w": 0.2158,
+          "h": 0.1914
+        },
+        "territory_area_px": 27053,
+        "visible_area_px": 25410,
+        "expansion_ratio": 1.065,
+        "neighbors": [
+          {
+            "artifact_id": "module-pigment-glint-grid-cell",
+            "shared_edge_px": 1969,
+            "direction": "right",
+            "distance_px": 88.54
+          },
+          {
+            "artifact_id": "hero-hero-cropped-black-law-glyph",
+            "shared_edge_px": 1802,
+            "direction": "down",
+            "distance_px": 119.85
+          }
+        ]
+      }
+    }
+  ]
+}
