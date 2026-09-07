@@ -1,0 +1,495 @@
+{
+  "analysis_id": "analysis-2026-09-07-frosted-systems-bass-ridge-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A minimal expressionist acrylic field: cyan translucent ribs recede across a scuffed grey concrete trough, interrupted by tight slits, notch clusters, round apertures, glass glints, and a large lower oval window.",
+  "usable_surfaces": [
+    "monumental cyan rib slab across center",
+    "deep lower cyan pressure ridge",
+    "matte scuffed concrete trough between ribs",
+    "thin pale dropout slit on left-middle floor",
+    "small dark interval notches on upper rib crest",
+    "round black aperture cluster on central rib",
+    "sharp glass glint embedded in upper-right rib",
+    "large rounded media window in lower-left acrylic edge",
+    "hairline scratch veil across concrete and ribs"
+  ],
+  "detected_objects": [
+    {
+      "label": "dominant prize rib field",
+      "artifact_type": "hero-scale-acrylic-rib-event",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.384,
+        "y": 0.247,
+        "w": 0.498,
+        "h": 0.477
+      },
+      "polygon": [
+        [
+          0.386,
+          0.266
+        ],
+        [
+          0.596,
+          0.213
+        ],
+        [
+          0.881,
+          0.028
+        ],
+        [
+          0.868,
+          0.101
+        ],
+        [
+          0.723,
+          0.274
+        ],
+        [
+          0.642,
+          0.388
+        ],
+        [
+          0.561,
+          0.555
+        ],
+        [
+          0.448,
+          0.709
+        ],
+        [
+          0.386,
+          0.715
+        ],
+        [
+          0.384,
+          0.659
+        ],
+        [
+          0.472,
+          0.514
+        ],
+        [
+          0.514,
+          0.398
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The largest translucent cyan rib occupies the central diagonal field, with visible acrylic depth, beveled edges, cyan glow, and pressure-like recession into the distance."
+    },
+    {
+      "label": "lower bass ridge channel",
+      "artifact_type": "hero-scale-bass-pressure-ridge",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.705,
+        "w": 0.998,
+        "h": 0.293
+      },
+      "polygon": [
+        [
+          0,
+          0.707
+        ],
+        [
+          0.185,
+          0.73
+        ],
+        [
+          0.386,
+          0.753
+        ],
+        [
+          0.607,
+          0.804
+        ],
+        [
+          0.781,
+          0.821
+        ],
+        [
+          0.998,
+          0.863
+        ],
+        [
+          0.998,
+          0.998
+        ],
+        [
+          0,
+          0.998
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A deep saturated cyan band spans the bottom edge, carrying heavy horizontal weight and bass-like pressure through the plate."
+    },
+    {
+      "label": "warm mid-bright measure seam",
+      "artifact_type": "linear-measure-cut",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.43,
+        "y": 0.119,
+        "w": 0.168,
+        "h": 0.072
+      },
+      "polygon": [
+        [
+          0.433,
+          0.131
+        ],
+        [
+          0.548,
+          0.119
+        ],
+        [
+          0.594,
+          0.126
+        ],
+        [
+          0.598,
+          0.147
+        ],
+        [
+          0.551,
+          0.155
+        ],
+        [
+          0.493,
+          0.173
+        ],
+        [
+          0.439,
+          0.191
+        ],
+        [
+          0.43,
+          0.168
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A row of repeated dark teal rectangular cuts sits along the upper acrylic crest like beat-grid measure marks."
+    },
+    {
+      "label": "pale dropout slit",
+      "artifact_type": "silence-aperture-slit",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.193,
+        "y": 0.411,
+        "w": 0.166,
+        "h": 0.144
+      },
+      "polygon": [
+        [
+          0.198,
+          0.544
+        ],
+        [
+          0.351,
+          0.411
+        ],
+        [
+          0.359,
+          0.428
+        ],
+        [
+          0.208,
+          0.555
+        ],
+        [
+          0.193,
+          0.553
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A long thin pale-white diagonal gap cuts between ribs on the left-middle concrete surface, bordered by dark inner shadow."
+    },
+    {
+      "label": "detroit concrete trough",
+      "artifact_type": "scuffed-civic-floor-surface",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.188,
+        "y": 0,
+        "w": 0.617,
+        "h": 0.7
+      },
+      "polygon": [
+        [
+          0.188,
+          0.416
+        ],
+        [
+          0.43,
+          0.247
+        ],
+        [
+          0.472,
+          0.102
+        ],
+        [
+          0.69,
+          0
+        ],
+        [
+          0.805,
+          0
+        ],
+        [
+          0.76,
+          0.151
+        ],
+        [
+          0.637,
+          0.365
+        ],
+        [
+          0.566,
+          0.571
+        ],
+        [
+          0.483,
+          0.7
+        ],
+        [
+          0.283,
+          0.648
+        ],
+        [
+          0.192,
+          0.57
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "The matte grey trough surface between the cyan ribs shows concrete-like scuffs, scratches, stains, and civic-floor grain."
+    },
+    {
+      "label": "autobahn procession notch",
+      "artifact_type": "traffic-flow-edge-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.488,
+        "y": 0.085,
+        "w": 0.101,
+        "h": 0.099
+      },
+      "polygon": [
+        [
+          0.49,
+          0.096
+        ],
+        [
+          0.59,
+          0.085
+        ],
+        [
+          0.589,
+          0.117
+        ],
+        [
+          0.568,
+          0.123
+        ],
+        [
+          0.568,
+          0.154
+        ],
+        [
+          0.548,
+          0.16
+        ],
+        [
+          0.548,
+          0.177
+        ],
+        [
+          0.525,
+          0.184
+        ],
+        [
+          0.525,
+          0.163
+        ],
+        [
+          0.504,
+          0.169
+        ],
+        [
+          0.505,
+          0.139
+        ],
+        [
+          0.489,
+          0.143
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "Small repeated raised dark notches emerge along a rib crest, suggesting traffic intervals or procession ticks."
+    },
+    {
+      "label": "variable-width scratch veil",
+      "artifact_type": "typographic-scratch-veil",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.202,
+        "y": 0.234,
+        "w": 0.486,
+        "h": 0.443
+      },
+      "polygon": [
+        [
+          0.204,
+          0.413
+        ],
+        [
+          0.348,
+          0.315
+        ],
+        [
+          0.452,
+          0.257
+        ],
+        [
+          0.576,
+          0.234
+        ],
+        [
+          0.687,
+          0.278
+        ],
+        [
+          0.672,
+          0.383
+        ],
+        [
+          0.567,
+          0.505
+        ],
+        [
+          0.505,
+          0.646
+        ],
+        [
+          0.389,
+          0.677
+        ],
+        [
+          0.25,
+          0.607
+        ],
+        [
+          0.202,
+          0.505
+        ]
+      ],
+      "confidence": 0.7,
+      "visual_evidence": "Fine variable hairline scratches and marbled grey streaks spread across the central concrete trough and under the ribs without readable text."
+    },
+    {
+      "label": "takeover glass corner",
+      "artifact_type": "embedded-media-glint",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.76,
+        "y": 0.156,
+        "w": 0.101,
+        "h": 0.181
+      },
+      "polygon": [
+        [
+          0.789,
+          0.172
+        ],
+        [
+          0.834,
+          0.156
+        ],
+        [
+          0.86,
+          0.19
+        ],
+        [
+          0.86,
+          0.254
+        ],
+        [
+          0.828,
+          0.3
+        ],
+        [
+          0.79,
+          0.337
+        ],
+        [
+          0.76,
+          0.307
+        ],
+        [
+          0.774,
+          0.229
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A sharp bright cyan glass glint and faceted media-like cut is caught inside the upper-right acrylic rib."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.109,
+        "y": 0.797,
+        "w": 0.289,
+        "h": 0.126
+      },
+      "polygon": [
+        [
+          0.128,
+          0.798
+        ],
+        [
+          0.345,
+          0.798
+        ],
+        [
+          0.382,
+          0.823
+        ],
+        [
+          0.399,
+          0.872
+        ],
+        [
+          0.384,
+          0.918
+        ],
+        [
+          0.165,
+          0.923
+        ],
+        [
+          0.121,
+          0.903
+        ],
+        [
+          0.108,
+          0.864
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A large rounded rectangular dark aperture in the lower-left acrylic edge exposes striped cyan internal material, functioning as a clear physical marker window."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 4,
+    "mapped_region_coverage": 1.29,
+    "rationale": "The plate is built from a few dominant diagonal acrylic ribs, one concrete trough, and sparse precise marks. Detail exists as tight cuts, scratches, notches, glints, and apertures rather than clutter."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-07-frosted-systems-bass-ridge-v1"
+}

@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-09-07-frosted-systems-bass-ridge-v1",
+  "edition_id": "2026-09-07-frosted-systems-bass-ridge-v1",
+  "plate_read_timestamp": "2026-09-07T08:09:29.735Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A minimal expressionist acrylic field: cyan translucent ribs recede across a scuffed grey concrete trough, interrupted by tight slits, notch clusters, round apertures, glass glints, and a large lower oval window.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "frosted systems pressure in blue procession",
+      "A minimal expressionist acrylic field: cyan translucent ribs recede across a scuffed grey concrete trough, interrupted by tight slits, notch clusters, round apertures, glass glints, and a large lower oval window.",
+      "cyan-acrylic",
+      "bass-ridges",
+      "dropout-slits"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "dominant prize rib field",
+      "lower bass ridge channel",
+      "warm mid-bright measure seam",
+      "pale dropout slit",
+      "detroit concrete trough",
+      "autobahn procession notch",
+      "variable-width scratch veil",
+      "takeover glass corner"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "acrylic-systems-bass-ridge",
+      "hero ribbed acrylic slab receding upward",
+      "left-side void of abstracted call-block apertures",
+      "lower-field bass pressure channels",
+      "vertical dropout slits between ribs",
+      "puncture clusters along measure intervals",
+      "small glinting media-glass cuts on rib corners",
+      "monumental cyan rib slab across center"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: acrylic-systems-bass-ridge.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-dominant-prize-rib-field",
+      "kind": "hero",
+      "type": "hero-scale-acrylic-rib-event",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.3118,
+        "y": 0.1729,
+        "w": 0.5495,
+        "h": 0.4639
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-bass-ridge-channel",
+      "kind": "hero",
+      "type": "hero-scale-bass-pressure-ridge",
+      "strength": 0.984968,
+      "bounds": {
+        "x": 0,
+        "y": 0.705,
+        "w": 0.998,
+        "h": 0.293
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-warm-mid-bright-measure-seam",
+      "kind": "module",
+      "type": "linear-measure-cut",
+      "strength": 0.79488,
+      "bounds": {
+        "x": 0.43,
+        "y": 0.119,
+        "w": 0.168,
+        "h": 0.072
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-dropout-slit",
+      "kind": "module",
+      "type": "silence-aperture-slit",
+      "strength": 0.757248,
+      "bounds": {
+        "x": 0.193,
+        "y": 0.411,
+        "w": 0.166,
+        "h": 0.144
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detroit-concrete-trough",
+      "kind": "module",
+      "type": "scuffed-civic-floor-surface",
+      "strength": 0.724224,
+      "bounds": {
+        "x": 0.1823,
+        "y": 0,
+        "w": 0.6745,
+        "h": 0.6406
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-autobahn-procession-notch",
+      "kind": "module",
+      "type": "traffic-flow-edge-notch",
+      "strength": 0.705252,
+      "bounds": {
+        "x": 0.488,
+        "y": 0.085,
+        "w": 0.101,
+        "h": 0.099
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-variable-width-scratch-veil",
+      "kind": "module",
+      "type": "typographic-scratch-veil",
+      "strength": 0.6664200000000001,
+      "bounds": {
+        "x": 0.202,
+        "y": 0.234,
+        "w": 0.486,
+        "h": 0.443
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-takeover-glass-corner",
+      "kind": "module",
+      "type": "embedded-media-glint",
+      "strength": 0.65938,
+      "bounds": {
+        "x": 0.76,
+        "y": 0.156,
+        "w": 0.101,
+        "h": 0.181
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.6544719999999999,
+      "bounds": {
+        "x": 0.109,
+        "y": 0.797,
+        "w": 0.289,
+        "h": 0.126
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-dominant-prize-rib-field-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3118,
+        "y": 0.1729,
+        "w": 0.5495,
+        "h": 0.4639
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-bass-ridge-channel-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.705,
+        "w": 0.998,
+        "h": 0.293
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-warm-mid-bright-measure-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.43,
+        "y": 0.119,
+        "w": 0.168,
+        "h": 0.072
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-dropout-slit-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.193,
+        "y": 0.411,
+        "w": 0.166,
+        "h": 0.144
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detroit-concrete-trough-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1823,
+        "y": 0,
+        "w": 0.6745,
+        "h": 0.6406
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-autobahn-procession-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.488,
+        "y": 0.085,
+        "w": 0.101,
+        "h": 0.099
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-variable-width-scratch-veil-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.202,
+        "y": 0.234,
+        "w": 0.486,
+        "h": 0.443
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-takeover-glass-corner-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.76,
+        "y": 0.156,
+        "w": 0.101,
+        "h": 0.181
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.109,
+        "y": 0.797,
+        "w": 0.289,
+        "h": 0.126
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
