@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-08-green-treemap-silence-field-v1",
+  "generation": "daily-process-2026-09-08T08-13-11-129Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-09-08T08-13-11-129Z/2026-09-08-green-treemap-silence-field-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-hero-green-systems-slab",
+      "visible_area_px": 320108,
+      "territory_area_px": 255749,
+      "hover_bounds": {
+        "x": 0.2018,
+        "y": 0.4141,
+        "w": 0.5964,
+        "h": 0.4453
+      },
+      "hover_polygon": [
+        [
+          0.2018,
+          0.4785
+        ],
+        [
+          0.2057,
+          0.4629
+        ],
+        [
+          0.2448,
+          0.4141
+        ],
+        [
+          0.7546,
+          0.4141
+        ],
+        [
+          0.7904,
+          0.457
+        ],
+        [
+          0.7975,
+          0.5205
+        ],
+        [
+          0.7962,
+          0.7314
+        ],
+        [
+          0.6992,
+          0.8467
+        ],
+        [
+          0.6576,
+          0.8584
+        ],
+        [
+          0.3066,
+          0.8525
+        ],
+        [
+          0.2018,
+          0.7393
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-library-microcell-bloom",
+          "shared_edge_px": 27904,
+          "direction": "up",
+          "distance_px": 77.54
+        },
+        {
+          "artifact_id": "hero-hero-lower-bass-pressure-strip",
+          "shared_edge_px": 5208,
+          "direction": "left",
+          "distance_px": 273.84
+        },
+        {
+          "artifact_id": "module-field-marker-2",
+          "shared_edge_px": 2052,
+          "direction": "left",
+          "distance_px": 323.4
+        },
+        {
+          "artifact_id": "module-weird-archive-enamel-chip",
+          "shared_edge_px": 1239,
+          "direction": "left",
+          "distance_px": 436.35
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-hero-lower-bass-pressure-strip",
+      "visible_area_px": 57121,
+      "territory_area_px": 54933,
+      "hover_bounds": {
+        "x": 0.2051,
+        "y": 0.6963,
+        "w": 0.4857,
+        "h": 0.1445
+      },
+      "hover_polygon": [
+        [
+          0.2051,
+          0.7344
+        ],
+        [
+          0.2279,
+          0.6963
+        ],
+        [
+          0.4733,
+          0.6963
+        ],
+        [
+          0.6901,
+          0.8359
+        ],
+        [
+          0.3066,
+          0.8398
+        ],
+        [
+          0.2051,
+          0.7393
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-green-systems-slab",
+          "shared_edge_px": 5208,
+          "direction": "right",
+          "distance_px": 273.84
+        },
+        {
+          "artifact_id": "module-unavailable-library-black-seam",
+          "shared_edge_px": 1711,
+          "direction": "right",
+          "distance_px": 224.16
+        },
+        {
+          "artifact_id": "module-beyond-visible-vertical-slit",
+          "shared_edge_px": 1335,
+          "direction": "left",
+          "distance_px": 336.77
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-weird-archive-enamel-chip",
+      "visible_area_px": 3287,
+      "territory_area_px": 10763,
+      "hover_bounds": {
+        "x": 0.2266,
+        "y": 0.4219,
+        "w": 0.0723,
+        "h": 0.1172
+      },
+      "hover_polygon": [
+        [
+          0.2266,
+          0.4785
+        ],
+        [
+          0.235,
+          0.4502
+        ],
+        [
+          0.2539,
+          0.4219
+        ],
+        [
+          0.2754,
+          0.4219
+        ],
+        [
+          0.2982,
+          0.4541
+        ],
+        [
+          0.2982,
+          0.5049
+        ],
+        [
+          0.2747,
+          0.5381
+        ],
+        [
+          0.2448,
+          0.5381
+        ],
+        [
+          0.2266,
+          0.5107
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-green-systems-slab",
+          "shared_edge_px": 1239,
+          "direction": "right",
+          "distance_px": 436.35
+        },
+        {
+          "artifact_id": "module-field-marker-2",
+          "shared_edge_px": 747,
+          "direction": "right",
+          "distance_px": 174.3
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-library-microcell-bloom",
+      "visible_area_px": 17035,
+      "territory_area_px": 26146,
+      "hover_bounds": {
+        "x": 0.4896,
+        "y": 0.4219,
+        "w": 0.0951,
+        "h": 0.2197
+      },
+      "hover_polygon": [
+        [
+          0.4896,
+          0.4551
+        ],
+        [
+          0.5104,
+          0.4219
+        ],
+        [
+          0.5625,
+          0.4219
+        ],
+        [
+          0.584,
+          0.4551
+        ],
+        [
+          0.584,
+          0.6289
+        ],
+        [
+          0.5762,
+          0.6406
+        ],
+        [
+          0.4896,
+          0.5596
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-green-systems-slab",
+          "shared_edge_px": 27904,
+          "direction": "down",
+          "distance_px": 77.54
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-field-marker",
+      "visible_area_px": 4368,
+      "territory_area_px": 12652,
+      "hover_bounds": {
+        "x": 0.7122,
+        "y": 0.7051,
+        "w": 0.0801,
+        "h": 0.127
+      },
+      "hover_polygon": [
+        [
+          0.7122,
+          0.7646
+        ],
+        [
+          0.7174,
+          0.7451
+        ],
+        [
+          0.7448,
+          0.7051
+        ],
+        [
+          0.7728,
+          0.7051
+        ],
+        [
+          0.791,
+          0.7324
+        ],
+        [
+          0.7917,
+          0.7568
+        ],
+        [
+          0.7917,
+          0.7803
+        ],
+        [
+          0.7865,
+          0.7939
+        ],
+        [
+          0.7676,
+          0.8252
+        ],
+        [
+          0.7507,
+          0.8311
+        ],
+        [
+          0.7318,
+          0.8311
+        ],
+        [
+          0.7135,
+          0.8037
+        ],
+        [
+          0.7122,
+          0.7744
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-library-microcell-bloom-2",
+          "shared_edge_px": 1530,
+          "direction": "right",
+          "distance_px": 133.09
+        },
+        {
+          "artifact_id": "hero-hero-green-systems-slab",
+          "shared_edge_px": 633,
+          "direction": "left",
+          "distance_px": 376.4
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-beyond-visible-vertical-slit",
+      "visible_area_px": 45870,
+      "territory_area_px": 84430,
+      "hover_bounds": {
+        "x": 0.0736,
+        "y": 0.7402,
+        "w": 0.2331,
+        "h": 0.2393
+      },
+      "hover_polygon": [
+        [
+          0.0736,
+          0.7793
+        ],
+        [
+          0.0996,
+          0.7402
+        ],
+        [
+          0.2799,
+          0.7402
+        ],
+        [
+          0.306,
+          0.7793
+        ],
+        [
+          0.306,
+          0.9395
+        ],
+        [
+          0.2799,
+          0.9785
+        ],
+        [
+          0.0996,
+          0.9785
+        ],
+        [
+          0.0736,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-lower-bass-pressure-strip",
+          "shared_edge_px": 1335,
+          "direction": "right",
+          "distance_px": 336.77
+        },
+        {
+          "artifact_id": "hero-hero-green-systems-slab",
+          "shared_edge_px": 156,
+          "direction": "right",
+          "distance_px": 599.16
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-unavailable-library-black-seam",
+      "visible_area_px": 45705,
+      "territory_area_px": 67447,
+      "hover_bounds": {
+        "x": 0.3939,
+        "y": 0.7402,
+        "w": 0.2324,
+        "h": 0.2393
+      },
+      "hover_polygon": [
+        [
+          0.3939,
+          0.8408
+        ],
+        [
+          0.5443,
+          0.7422
+        ],
+        [
+          0.5996,
+          0.7402
+        ],
+        [
+          0.6257,
+          0.7793
+        ],
+        [
+          0.6257,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.9785
+        ],
+        [
+          0.4199,
+          0.9785
+        ],
+        [
+          0.3939,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-lower-bass-pressure-strip",
+          "shared_edge_px": 1711,
+          "direction": "left",
+          "distance_px": 224.16
+        },
+        {
+          "artifact_id": "hero-hero-green-systems-slab",
+          "shared_edge_px": 1110,
+          "direction": "up",
+          "distance_px": 292.24
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-library-microcell-bloom-2",
+      "visible_area_px": 45870,
+      "territory_area_px": 61547,
+      "hover_bounds": {
+        "x": 0.7012,
+        "y": 0.7324,
+        "w": 0.2174,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.7012,
+          0.7598
+        ],
+        [
+          0.7194,
+          0.7324
+        ],
+        [
+          0.8997,
+          0.7324
+        ],
+        [
+          0.918,
+          0.7598
+        ],
+        [
+          0.918,
+          0.9199
+        ],
+        [
+          0.8997,
+          0.9473
+        ],
+        [
+          0.7194,
+          0.9473
+        ],
+        [
+          0.7012,
+          0.9199
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-field-marker",
+          "shared_edge_px": 1530,
+          "direction": "left",
+          "distance_px": 133.09
+        },
+        {
+          "artifact_id": "hero-hero-green-systems-slab",
+          "shared_edge_px": 850,
+          "direction": "left",
+          "distance_px": 507.76
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-field-marker-2",
+      "visible_area_px": 37884,
+      "territory_area_px": 57003,
+      "hover_bounds": {
+        "x": 0.2617,
+        "y": 0.3125,
+        "w": 0.1966,
+        "h": 0.2051
+      },
+      "hover_polygon": [
+        [
+          0.2617,
+          0.3398
+        ],
+        [
+          0.2799,
+          0.3125
+        ],
+        [
+          0.4395,
+          0.3125
+        ],
+        [
+          0.4577,
+          0.3398
+        ],
+        [
+          0.4577,
+          0.4824
+        ],
+        [
+          0.4336,
+          0.5166
+        ],
+        [
+          0.291,
+          0.5166
+        ],
+        [
+          0.2617,
+          0.4209
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-green-systems-slab",
+          "shared_edge_px": 2052,
+          "direction": "right",
+          "distance_px": 323.4
+        },
+        {
+          "artifact_id": "module-weird-archive-enamel-chip",
+          "shared_edge_px": 747,
+          "direction": "left",
+          "distance_px": 174.3
+        }
+      ]
+    }
+  ]
+}
