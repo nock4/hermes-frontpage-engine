@@ -107,25 +107,30 @@ test('generated edition clicks keep source surfaces in the plate instead of open
   await page.waitForSelector('img.plate', { timeout: 20_000 })
   await page.waitForSelector('button.artifact', { timeout: 20_000 })
 
-  const artifactHitPoints = await page.locator('button.artifact').evaluateAll((nodes) => nodes.map((node, index) => {
-    const element = node as HTMLElement
-    const rect = element.getBoundingClientRect()
+  const findClickableArtifactPoint = async (openedArtifactIndexes: number[]) => page.locator('button.artifact').evaluateAll((nodes, openedIndexes) => {
+    const opened = new Set(openedIndexes)
     const xSteps = [0.5, 0.35, 0.65, 0.2, 0.8]
     const ySteps = [0.5, 0.35, 0.65, 0.2, 0.8]
 
-    for (const xStep of xSteps) {
-      for (const yStep of ySteps) {
-        const x = rect.left + rect.width * xStep
-        const y = rect.top + rect.height * yStep
-        const hit = document.elementFromPoint(x, y)
-        if (hit === element || element.contains(hit)) return { index, x, y }
+    for (const [index, node] of nodes.entries()) {
+      if (opened.has(index)) continue
+
+      const element = node as HTMLElement
+      const rect = element.getBoundingClientRect()
+      if (rect.width <= 0 || rect.height <= 0) continue
+
+      for (const xStep of xSteps) {
+        for (const yStep of ySteps) {
+          const x = rect.left + rect.width * xStep
+          const y = rect.top + rect.height * yStep
+          const hit = document.elementFromPoint(x, y)
+          if (hit === element || element.contains(hit)) return { index, x, y }
+        }
       }
     }
 
     return null
-  }).filter((point): point is { index: number, x: number, y: number } => Boolean(point)))
-
-  expect(artifactHitPoints.length).toBeGreaterThanOrEqual(2)
+  }, openedArtifactIndexes)
 
   let popupOpened = false
   page.once('popup', async (popup) => {
@@ -136,13 +141,17 @@ test('generated edition clicks keep source surfaces in the plate instead of open
   const openWindows = page.locator('.stage-overlay-windows--live .source-window')
   const openedArtifactIndexes = new Set<number>()
 
-  for (const point of artifactHitPoints) {
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const point = await findClickableArtifactPoint([...openedArtifactIndexes])
+    expect(point).not.toBeNull()
+    if (!point) break
+
     await page.mouse.click(point.x, point.y)
-    await expect(openWindows).toHaveCount(openedArtifactIndexes.size + 1)
     openedArtifactIndexes.add(point.index)
-    if (openedArtifactIndexes.size >= 2) break
+    await expect(openWindows).toHaveCount(openedArtifactIndexes.size)
   }
 
+  expect(openedArtifactIndexes.size).toBe(2)
   await expect(openWindows).toHaveCount(2)
   expect(popupOpened).toBe(false)
 })
