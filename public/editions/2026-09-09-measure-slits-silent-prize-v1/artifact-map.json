@@ -1,0 +1,1305 @@
+{
+  "artifact_map_id": "map-2026-09-09-measure-slits-silent-prize-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "audio-measure-slit-prize-field",
+  "default_artifact_id": "hero-hero-lower-bass-ridge-aperture",
+  "artifacts": [
+    {
+      "id": "hero-hero-lower-bass-ridge-aperture",
+      "kind": "hero",
+      "label": "hero lower bass-ridge aperture",
+      "artifact_type": "hero-scale-bass-ridge-aperture",
+      "bounds": {
+        "x": 0,
+        "y": 0.707,
+        "w": 0.668,
+        "h": 0.085
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.708
+        ],
+        [
+          0.069,
+          0.707
+        ],
+        [
+          0.129,
+          0.712
+        ],
+        [
+          0.168,
+          0.721
+        ],
+        [
+          0.264,
+          0.72
+        ],
+        [
+          0.332,
+          0.721
+        ],
+        [
+          0.415,
+          0.725
+        ],
+        [
+          0.53,
+          0.724
+        ],
+        [
+          0.664,
+          0.729
+        ],
+        [
+          0.668,
+          0.768
+        ],
+        [
+          0.549,
+          0.767
+        ],
+        [
+          0.431,
+          0.77
+        ],
+        [
+          0.322,
+          0.77
+        ],
+        [
+          0.221,
+          0.766
+        ],
+        [
+          0.104,
+          0.757
+        ],
+        [
+          0,
+          0.763
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/hero-hero-lower-bass-ridge-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-lower-bass-ridge-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          513,
+          761
+        ],
+        "safe_stage_window_origin_px": [
+          595,
+          767
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.708
+          ],
+          [
+            0.069,
+            0.707
+          ],
+          [
+            0.129,
+            0.712
+          ],
+          [
+            0.168,
+            0.721
+          ],
+          [
+            0.264,
+            0.72
+          ],
+          [
+            0.332,
+            0.721
+          ],
+          [
+            0.415,
+            0.725
+          ],
+          [
+            0.53,
+            0.724
+          ],
+          [
+            0.664,
+            0.729
+          ],
+          [
+            0.668,
+            0.768
+          ],
+          [
+            0.549,
+            0.767
+          ],
+          [
+            0.431,
+            0.77
+          ],
+          [
+            0.322,
+            0.77
+          ],
+          [
+            0.221,
+            0.766
+          ],
+          [
+            0.104,
+            0.757
+          ],
+          [
+            0,
+            0.763
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.6738
+          ],
+          [
+            0.6517,
+            0.6953
+          ],
+          [
+            0.6686,
+            0.7031
+          ],
+          [
+            0.6868,
+            0.7373
+          ],
+          [
+            0.6784,
+            0.7852
+          ],
+          [
+            0.668,
+            0.8008
+          ],
+          [
+            0.0,
+            0.7959
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.6729,
+          "w": 0.6875,
+          "h": 0.1309
+        },
+        "territory_area_px": 90242,
+        "visible_area_px": 48131,
+        "expansion_ratio": 1.875,
+        "neighbors": [
+          {
+            "artifact_id": "module-kingston-booth-seam",
+            "shared_edge_px": 2519,
+            "direction": "right",
+            "distance_px": 331.83
+          },
+          {
+            "artifact_id": "module-orphan-port-puncture-cluster-2",
+            "shared_edge_px": 2219,
+            "direction": "left",
+            "distance_px": 238.73
+          },
+          {
+            "artifact_id": "hero-hero-remote-return-dropout-slit",
+            "shared_edge_px": 294,
+            "direction": "right",
+            "distance_px": 784.27
+          },
+          {
+            "artifact_id": "module-lower-center-double-black-notch",
+            "shared_edge_px": 194,
+            "direction": "right",
+            "distance_px": 562.88
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-hero-remote-return-dropout-slit",
+      "kind": "hero",
+      "label": "hero remote-return dropout slit",
+      "artifact_type": "hero-scale-dropout-slit",
+      "bounds": {
+        "x": 0.709,
+        "y": 0.751,
+        "w": 0.21,
+        "h": 0.055
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.711,
+          0.752
+        ],
+        [
+          0.78,
+          0.751
+        ],
+        [
+          0.842,
+          0.755
+        ],
+        [
+          0.918,
+          0.756
+        ],
+        [
+          0.92,
+          0.801
+        ],
+        [
+          0.858,
+          0.803
+        ],
+        [
+          0.795,
+          0.801
+        ],
+        [
+          0.732,
+          0.794
+        ],
+        [
+          0.709,
+          0.787
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/hero-hero-remote-return-dropout-slit.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-remote-return-dropout-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1250,
+          793
+        ],
+        "safe_stage_window_origin_px": [
+          1276,
+          797
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.711,
+            0.752
+          ],
+          [
+            0.78,
+            0.751
+          ],
+          [
+            0.842,
+            0.755
+          ],
+          [
+            0.918,
+            0.756
+          ],
+          [
+            0.92,
+            0.801
+          ],
+          [
+            0.858,
+            0.803
+          ],
+          [
+            0.795,
+            0.801
+          ],
+          [
+            0.732,
+            0.794
+          ],
+          [
+            0.709,
+            0.787
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.679,
+            0.7812
+          ],
+          [
+            0.681,
+            0.752
+          ],
+          [
+            0.7109,
+            0.707
+          ],
+          [
+            0.918,
+            0.7109
+          ],
+          [
+            0.9479,
+            0.7559
+          ],
+          [
+            0.9499,
+            0.7939
+          ],
+          [
+            0.9186,
+            0.8457
+          ],
+          [
+            0.7005,
+            0.8184
+          ],
+          [
+            0.679,
+            0.7861
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.679,
+          "y": 0.7061,
+          "w": 0.2715,
+          "h": 0.1406
+        },
+        "territory_area_px": 40369,
+        "visible_area_px": 15135,
+        "expansion_ratio": 2.667,
+        "neighbors": [
+          {
+            "artifact_id": "module-disclosure-enamel-pinhole",
+            "shared_edge_px": 2321,
+            "direction": "down",
+            "distance_px": 120.93
+          },
+          {
+            "artifact_id": "hero-hero-lower-bass-ridge-aperture",
+            "shared_edge_px": 294,
+            "direction": "left",
+            "distance_px": 784.27
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-orphan-port-puncture-cluster",
+      "kind": "module",
+      "label": "orphan-port puncture cluster",
+      "artifact_type": "onset-puncture-constellation",
+      "bounds": {
+        "x": 0.248,
+        "y": 0.214,
+        "w": 0.062,
+        "h": 0.134
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.251,
+          0.254
+        ],
+        [
+          0.26,
+          0.214
+        ],
+        [
+          0.276,
+          0.285
+        ],
+        [
+          0.295,
+          0.217
+        ],
+        [
+          0.31,
+          0.338
+        ],
+        [
+          0.282,
+          0.348
+        ],
+        [
+          0.265,
+          0.318
+        ],
+        [
+          0.248,
+          0.286
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/module-orphan-port-puncture-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-orphan-port-puncture-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          429,
+          277
+        ],
+        "safe_stage_window_origin_px": [
+          436,
+          288
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.251,
+            0.254
+          ],
+          [
+            0.26,
+            0.214
+          ],
+          [
+            0.276,
+            0.285
+          ],
+          [
+            0.295,
+            0.217
+          ],
+          [
+            0.31,
+            0.338
+          ],
+          [
+            0.282,
+            0.348
+          ],
+          [
+            0.265,
+            0.318
+          ],
+          [
+            0.248,
+            0.286
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2292,
+            0.2822
+          ],
+          [
+            0.2409,
+            0.2158
+          ],
+          [
+            0.2598,
+            0.1865
+          ],
+          [
+            0.2949,
+            0.1895
+          ],
+          [
+            0.3132,
+            0.2168
+          ],
+          [
+            0.3281,
+            0.3359
+          ],
+          [
+            0.3099,
+            0.3652
+          ],
+          [
+            0.2819,
+            0.375
+          ],
+          [
+            0.2292,
+            0.2852
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2292,
+          "y": 0.1865,
+          "w": 0.0996,
+          "h": 0.1895
+        },
+        "territory_area_px": 20187,
+        "visible_area_px": 7400,
+        "expansion_ratio": 2.728,
+        "neighbors": [
+          {
+            "artifact_id": "module-field-marker-2",
+            "shared_edge_px": 795,
+            "direction": "down",
+            "distance_px": 193.77
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.555,
+        "y": 0,
+        "w": 0.127,
+        "h": 0.593
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.555,
+          0
+        ],
+        [
+          0.682,
+          0
+        ],
+        [
+          0.682,
+          0.593
+        ],
+        [
+          0.555,
+          0.593
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          950,
+          255
+        ],
+        "safe_stage_window_origin_px": [
+          966,
+          304
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.555,
+            0
+          ],
+          [
+            0.682,
+            0
+          ],
+          [
+            0.682,
+            0.593
+          ],
+          [
+            0.555,
+            0.593
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5365,
+            0.0
+          ],
+          [
+            0.6999,
+            0.0
+          ],
+          [
+            0.6999,
+            0.5928
+          ],
+          [
+            0.638,
+            0.6201
+          ],
+          [
+            0.5547,
+            0.6201
+          ],
+          [
+            0.5365,
+            0.5928
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5365,
+          "y": 0.0,
+          "w": 0.1641,
+          "h": 0.6211
+        },
+        "territory_area_px": 157795,
+        "visible_area_px": 119168,
+        "expansion_ratio": 1.324,
+        "neighbors": [
+          {
+            "artifact_id": "module-lower-center-double-black-notch",
+            "shared_edge_px": 578,
+            "direction": "down",
+            "distance_px": 362.82
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-lower-center-double-black-notch",
+      "kind": "module",
+      "label": "lower-center double black notch",
+      "artifact_type": "paired-dropout-notch",
+      "bounds": {
+        "x": 0.653,
+        "y": 0.623,
+        "w": 0.047,
+        "h": 0.057
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.653,
+          0.626
+        ],
+        [
+          0.675,
+          0.623
+        ],
+        [
+          0.699,
+          0.625
+        ],
+        [
+          0.699,
+          0.671
+        ],
+        [
+          0.685,
+          0.678
+        ],
+        [
+          0.666,
+          0.675
+        ],
+        [
+          0.653,
+          0.669
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/module-lower-center-double-black-notch.svg",
+      "source_binding_ids": [
+        "binding-module-lower-center-double-black-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1039,
+          662
+        ],
+        "safe_stage_window_origin_px": [
+          1045,
+          667
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.653,
+            0.626
+          ],
+          [
+            0.675,
+            0.623
+          ],
+          [
+            0.699,
+            0.625
+          ],
+          [
+            0.699,
+            0.671
+          ],
+          [
+            0.685,
+            0.678
+          ],
+          [
+            0.666,
+            0.675
+          ],
+          [
+            0.653,
+            0.669
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6348,
+            0.626
+          ],
+          [
+            0.653,
+            0.5986
+          ],
+          [
+            0.6745,
+            0.5947
+          ],
+          [
+            0.6986,
+            0.5977
+          ],
+          [
+            0.7168,
+            0.625
+          ],
+          [
+            0.7168,
+            0.6709
+          ],
+          [
+            0.6986,
+            0.6982
+          ],
+          [
+            0.6849,
+            0.7051
+          ],
+          [
+            0.6654,
+            0.7021
+          ],
+          [
+            0.653,
+            0.6963
+          ],
+          [
+            0.6348,
+            0.6689
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6348,
+          "y": 0.5947,
+          "w": 0.0827,
+          "h": 0.1113
+        },
+        "territory_area_px": 11785,
+        "visible_area_px": 3693,
+        "expansion_ratio": 3.191,
+        "neighbors": [
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 578,
+            "direction": "up",
+            "distance_px": 362.82
+          },
+          {
+            "artifact_id": "hero-hero-lower-bass-ridge-aperture",
+            "shared_edge_px": 194,
+            "direction": "left",
+            "distance_px": 562.88
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-orphan-port-puncture-cluster-2",
+      "kind": "module",
+      "label": "orphan-port puncture cluster",
+      "artifact_type": "onset-puncture-constellation",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/module-orphan-port-puncture-cluster-2.svg",
+      "source_binding_ids": [
+        "binding-module-orphan-port-puncture-cluster-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0814,
+            0.7793
+          ],
+          [
+            0.0996,
+            0.752
+          ],
+          [
+            0.235,
+            0.752
+          ],
+          [
+            0.2982,
+            0.8027
+          ],
+          [
+            0.2982,
+            0.9395
+          ],
+          [
+            0.2799,
+            0.9668
+          ],
+          [
+            0.0996,
+            0.9668
+          ],
+          [
+            0.0814,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0814,
+          "y": 0.752,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 68425,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.492,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-lower-bass-ridge-aperture",
+            "shared_edge_px": 2219,
+            "direction": "right",
+            "distance_px": 238.73
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-kingston-booth-seam",
+      "kind": "module",
+      "label": "kingston booth seam",
+      "artifact_type": "vertical-studio-seam",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/module-kingston-booth-seam.svg",
+      "source_binding_ids": [
+        "binding-module-kingston-booth-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3939,
+            0.8037
+          ],
+          [
+            0.4316,
+            0.7402
+          ],
+          [
+            0.5996,
+            0.7402
+          ],
+          [
+            0.6257,
+            0.7793
+          ],
+          [
+            0.6257,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9785
+          ],
+          [
+            0.4199,
+            0.9785
+          ],
+          [
+            0.3939,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3939,
+          "y": 0.7402,
+          "w": 0.2324,
+          "h": 0.2393
+        },
+        "territory_area_px": 82085,
+        "visible_area_px": 45705,
+        "expansion_ratio": 1.796,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-lower-bass-ridge-aperture",
+            "shared_edge_px": 2519,
+            "direction": "left",
+            "distance_px": 331.83
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-disclosure-enamel-pinhole",
+      "kind": "module",
+      "label": "disclosure enamel pinhole",
+      "artifact_type": "glinting-source-pinhole",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/module-disclosure-enamel-pinhole.svg",
+      "source_binding_ids": [
+        "binding-module-disclosure-enamel-pinhole"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7012,
+            0.7812
+          ],
+          [
+            0.918,
+            0.835
+          ],
+          [
+            0.918,
+            0.9199
+          ],
+          [
+            0.8997,
+            0.9473
+          ],
+          [
+            0.7194,
+            0.9473
+          ],
+          [
+            0.7012,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7012,
+          "y": 0.7812,
+          "w": 0.2174,
+          "h": 0.167
+        },
+        "territory_area_px": 47223,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.029,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-remote-return-dropout-slit",
+            "shared_edge_px": 2321,
+            "direction": "up",
+            "distance_px": 120.93
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker-2",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "audio-measure-slit-prize-field",
+      "mask_path": "/editions/2026-09-09-measure-slits-silent-prize-v1/assets/masks/module-field-marker-2.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3457
+          ],
+          [
+            0.3255,
+            0.3125
+          ],
+          [
+            0.4395,
+            0.3125
+          ],
+          [
+            0.4577,
+            0.3398
+          ],
+          [
+            0.4577,
+            0.4893
+          ],
+          [
+            0.4395,
+            0.5166
+          ],
+          [
+            0.2799,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.1966,
+          "h": 0.2051
+        },
+        "territory_area_px": 56991,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.504,
+        "neighbors": [
+          {
+            "artifact_id": "module-orphan-port-puncture-cluster",
+            "shared_edge_px": 795,
+            "direction": "up",
+            "distance_px": 193.77
+          }
+        ]
+      }
+    }
+  ]
+}
