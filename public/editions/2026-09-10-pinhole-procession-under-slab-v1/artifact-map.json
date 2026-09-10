@@ -1,0 +1,1449 @@
+{
+  "artifact_map_id": "map-2026-09-10-pinhole-procession-under-slab-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "spectral-cutaway-procession-slab",
+  "default_artifact_id": "hero-off-center-attached-board-hero-apert",
+  "artifacts": [
+    {
+      "id": "hero-off-center-attached-board-hero-apert",
+      "kind": "hero",
+      "label": "off-center attached-board hero aperture",
+      "artifact_type": "hero-scale-cutaway-aperture",
+      "bounds": {
+        "x": 0.5469,
+        "y": 0.0566,
+        "w": 0.3672,
+        "h": 0.5234
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.5488,
+          0.3096
+        ],
+        [
+          0.5638,
+          0.2188
+        ],
+        [
+          0.5833,
+          0.1689
+        ],
+        [
+          0.6074,
+          0.1299
+        ],
+        [
+          0.6615,
+          0.0791
+        ],
+        [
+          0.7201,
+          0.0596
+        ],
+        [
+          0.778,
+          0.0752
+        ],
+        [
+          0.8275,
+          0.1104
+        ],
+        [
+          0.849,
+          0.1406
+        ],
+        [
+          0.9115,
+          0.2754
+        ],
+        [
+          0.8926,
+          0.3662
+        ],
+        [
+          0.8503,
+          0.4893
+        ],
+        [
+          0.7943,
+          0.5527
+        ],
+        [
+          0.7428,
+          0.5742
+        ],
+        [
+          0.6758,
+          0.5703
+        ],
+        [
+          0.6393,
+          0.5498
+        ],
+        [
+          0.6055,
+          0.5156
+        ],
+        [
+          0.5664,
+          0.4395
+        ],
+        [
+          0.5488,
+          0.3398
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/hero-off-center-attached-board-hero-apert.svg",
+      "source_binding_ids": [
+        "binding-hero-off-center-attached-board-hero-apert"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1110,
+          282
+        ],
+        "safe_stage_window_origin_px": [
+          1153,
+          323
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.5488,
+            0.3096
+          ],
+          [
+            0.5638,
+            0.2188
+          ],
+          [
+            0.5833,
+            0.1689
+          ],
+          [
+            0.6074,
+            0.1299
+          ],
+          [
+            0.6615,
+            0.0791
+          ],
+          [
+            0.7201,
+            0.0596
+          ],
+          [
+            0.778,
+            0.0752
+          ],
+          [
+            0.8275,
+            0.1104
+          ],
+          [
+            0.849,
+            0.1406
+          ],
+          [
+            0.9115,
+            0.2754
+          ],
+          [
+            0.8926,
+            0.3662
+          ],
+          [
+            0.8503,
+            0.4893
+          ],
+          [
+            0.7943,
+            0.5527
+          ],
+          [
+            0.7428,
+            0.5742
+          ],
+          [
+            0.6758,
+            0.5703
+          ],
+          [
+            0.6393,
+            0.5498
+          ],
+          [
+            0.6055,
+            0.5156
+          ],
+          [
+            0.5664,
+            0.4395
+          ],
+          [
+            0.5488,
+            0.3398
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.526,
+            0.3076
+          ],
+          [
+            0.543,
+            0.2129
+          ],
+          [
+            0.5599,
+            0.1689
+          ],
+          [
+            0.6068,
+            0.0967
+          ],
+          [
+            0.6615,
+            0.0449
+          ],
+          [
+            0.7201,
+            0.0264
+          ],
+          [
+            0.778,
+            0.042
+          ],
+          [
+            0.8275,
+            0.0771
+          ],
+          [
+            0.8717,
+            0.1406
+          ],
+          [
+            0.9336,
+            0.2754
+          ],
+          [
+            0.901,
+            0.4062
+          ],
+          [
+            0.873,
+            0.4883
+          ],
+          [
+            0.8496,
+            0.5234
+          ],
+          [
+            0.6009,
+            0.541
+          ],
+          [
+            0.5436,
+            0.4395
+          ],
+          [
+            0.526,
+            0.3398
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.526,
+          "y": 0.0264,
+          "w": 0.4082,
+          "h": 0.5156
+        },
+        "territory_area_px": 245613,
+        "visible_area_px": 219939,
+        "expansion_ratio": 1.117,
+        "neighbors": [
+          {
+            "artifact_id": "module-sidewalk-bag-edge-notch",
+            "shared_edge_px": 2315,
+            "direction": "down",
+            "distance_px": 332.55
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-detroit-photo-lower-baffle-hero-mass",
+      "kind": "hero",
+      "label": "detroit-photo lower-baffle hero mass",
+      "artifact_type": "hero-scale-lower-pressure-band",
+      "bounds": {
+        "x": 0,
+        "y": 0.647,
+        "w": 0.997,
+        "h": 0.286
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.653
+        ],
+        [
+          0.044,
+          0.648
+        ],
+        [
+          0.19,
+          0.648
+        ],
+        [
+          0.459,
+          0.649
+        ],
+        [
+          0.539,
+          0.653
+        ],
+        [
+          0.528,
+          0.692
+        ],
+        [
+          0.728,
+          0.694
+        ],
+        [
+          0.826,
+          0.686
+        ],
+        [
+          0.856,
+          0.646
+        ],
+        [
+          0.945,
+          0.596
+        ],
+        [
+          0.997,
+          0.601
+        ],
+        [
+          0.997,
+          0.93
+        ],
+        [
+          0.737,
+          0.926
+        ],
+        [
+          0.522,
+          0.912
+        ],
+        [
+          0.366,
+          0.904
+        ],
+        [
+          0.13,
+          0.858
+        ],
+        [
+          0,
+          0.839
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/hero-detroit-photo-lower-baffle-hero-mass.svg",
+      "source_binding_ids": [
+        "binding-hero-detroit-photo-lower-baffle-hero-mass"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          766,
+          786
+        ],
+        "safe_stage_window_origin_px": [
+          888,
+          809
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.653
+          ],
+          [
+            0.044,
+            0.648
+          ],
+          [
+            0.19,
+            0.648
+          ],
+          [
+            0.459,
+            0.649
+          ],
+          [
+            0.539,
+            0.653
+          ],
+          [
+            0.528,
+            0.692
+          ],
+          [
+            0.728,
+            0.694
+          ],
+          [
+            0.826,
+            0.686
+          ],
+          [
+            0.856,
+            0.646
+          ],
+          [
+            0.945,
+            0.596
+          ],
+          [
+            0.997,
+            0.601
+          ],
+          [
+            0.997,
+            0.93
+          ],
+          [
+            0.737,
+            0.926
+          ],
+          [
+            0.522,
+            0.912
+          ],
+          [
+            0.366,
+            0.904
+          ],
+          [
+            0.13,
+            0.858
+          ],
+          [
+            0,
+            0.839
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.6191
+          ],
+          [
+            0.9447,
+            0.5625
+          ],
+          [
+            0.9993,
+            0.5713
+          ],
+          [
+            0.9967,
+            0.9629
+          ],
+          [
+            0.737,
+            0.959
+          ],
+          [
+            0.3659,
+            0.9365
+          ],
+          [
+            0.0,
+            0.8721
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.5625,
+          "w": 1.0,
+          "h": 0.4014
+        },
+        "territory_area_px": 283550,
+        "visible_area_px": 383952,
+        "expansion_ratio": 0.739,
+        "neighbors": [
+          {
+            "artifact_id": "module-third-youtube-silence-slit-2",
+            "shared_edge_px": 4239,
+            "direction": "right",
+            "distance_px": 518.97
+          },
+          {
+            "artifact_id": "module-preference-specimen-tray-2",
+            "shared_edge_px": 3552,
+            "direction": "left",
+            "distance_px": 468.92
+          },
+          {
+            "artifact_id": "module-second-youtube-onset-puncture",
+            "shared_edge_px": 3478,
+            "direction": "down",
+            "distance_px": 143.46
+          },
+          {
+            "artifact_id": "module-sidewalk-bag-edge-notch",
+            "shared_edge_px": 1381,
+            "direction": "right",
+            "distance_px": 403.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-preference-specimen-tray",
+      "kind": "module",
+      "label": "Preference Specimen Tray",
+      "artifact_type": "scratch-veil-glint",
+      "bounds": {
+        "x": 0.627,
+        "y": 0.717,
+        "w": 0.178,
+        "h": 0.084
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.628,
+          0.769
+        ],
+        [
+          0.671,
+          0.752
+        ],
+        [
+          0.724,
+          0.726
+        ],
+        [
+          0.777,
+          0.717
+        ],
+        [
+          0.805,
+          0.729
+        ],
+        [
+          0.781,
+          0.747
+        ],
+        [
+          0.721,
+          0.773
+        ],
+        [
+          0.666,
+          0.798
+        ],
+        [
+          0.638,
+          0.801
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/module-preference-specimen-tray.svg",
+      "source_binding_ids": [
+        "binding-module-preference-specimen-tray"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1100,
+          770
+        ],
+        "safe_stage_window_origin_px": [
+          1122,
+          777
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.628,
+            0.769
+          ],
+          [
+            0.671,
+            0.752
+          ],
+          [
+            0.724,
+            0.726
+          ],
+          [
+            0.777,
+            0.717
+          ],
+          [
+            0.805,
+            0.729
+          ],
+          [
+            0.781,
+            0.747
+          ],
+          [
+            0.721,
+            0.773
+          ],
+          [
+            0.666,
+            0.798
+          ],
+          [
+            0.638,
+            0.801
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6185,
+            0.7549
+          ],
+          [
+            0.6276,
+            0.7412
+          ],
+          [
+            0.7161,
+            0.7021
+          ],
+          [
+            0.7845,
+            0.7314
+          ],
+          [
+            0.7663,
+            0.7793
+          ],
+          [
+            0.6654,
+            0.8252
+          ],
+          [
+            0.6374,
+            0.8281
+          ],
+          [
+            0.6211,
+            0.8037
+          ],
+          [
+            0.6185,
+            0.7627
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6185,
+          "y": 0.7021,
+          "w": 0.1667,
+          "h": 0.127
+        },
+        "territory_area_px": 21116,
+        "visible_area_px": 10086,
+        "expansion_ratio": 2.094,
+        "neighbors": [
+          {
+            "artifact_id": "module-sidewalk-bag-edge-notch",
+            "shared_edge_px": 1393,
+            "direction": "up",
+            "distance_px": 163.09
+          },
+          {
+            "artifact_id": "hero-detroit-photo-lower-baffle-hero-mass",
+            "shared_edge_px": 1222,
+            "direction": "left",
+            "distance_px": 320.47
+          },
+          {
+            "artifact_id": "module-third-youtube-silence-slit-2",
+            "shared_edge_px": 925,
+            "direction": "right",
+            "distance_px": 207.17
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-third-youtube-silence-slit",
+      "kind": "module",
+      "label": "third-youtube silence slit",
+      "artifact_type": "narrow-silence-aperture",
+      "bounds": {
+        "x": 0.025,
+        "y": 0.258,
+        "w": 0.043,
+        "h": 0.042
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.025,
+          0.259
+        ],
+        [
+          0.048,
+          0.258
+        ],
+        [
+          0.061,
+          0.267
+        ],
+        [
+          0.068,
+          0.284
+        ],
+        [
+          0.058,
+          0.3
+        ],
+        [
+          0.038,
+          0.294
+        ],
+        [
+          0.026,
+          0.281
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/module-third-youtube-silence-slit.svg",
+      "source_binding_ids": [
+        "binding-module-third-youtube-silence-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          90,
+          282
+        ],
+        "safe_stage_window_origin_px": [
+          90,
+          286
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.025,
+            0.259
+          ],
+          [
+            0.048,
+            0.258
+          ],
+          [
+            0.061,
+            0.267
+          ],
+          [
+            0.068,
+            0.284
+          ],
+          [
+            0.058,
+            0.3
+          ],
+          [
+            0.038,
+            0.294
+          ],
+          [
+            0.026,
+            0.281
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0065,
+            0.2588
+          ],
+          [
+            0.0247,
+            0.2314
+          ],
+          [
+            0.0475,
+            0.2305
+          ],
+          [
+            0.0605,
+            0.2393
+          ],
+          [
+            0.0859,
+            0.2832
+          ],
+          [
+            0.0579,
+            0.3271
+          ],
+          [
+            0.0378,
+            0.3213
+          ],
+          [
+            0.026,
+            0.3086
+          ],
+          [
+            0.0072,
+            0.2803
+          ],
+          [
+            0.0065,
+            0.2686
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0065,
+          "y": 0.2305,
+          "w": 0.0801,
+          "h": 0.0977
+        },
+        "territory_area_px": 8214,
+        "visible_area_px": 2082,
+        "expansion_ratio": 3.945,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-sidewalk-bag-edge-notch",
+      "kind": "module",
+      "label": "sidewalk-bag edge notch",
+      "artifact_type": "lower-edge-dropout-notch",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/module-sidewalk-bag-edge-notch.svg",
+      "source_binding_ids": [
+        "binding-module-sidewalk-bag-edge-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6016,
+            0.5391
+          ],
+          [
+            0.6198,
+            0.5117
+          ],
+          [
+            0.8398,
+            0.5117
+          ],
+          [
+            0.8581,
+            0.5391
+          ],
+          [
+            0.8581,
+            0.7314
+          ],
+          [
+            0.6361,
+            0.7373
+          ],
+          [
+            0.6016,
+            0.6582
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6016,
+          "y": 0.5117,
+          "w": 0.2572,
+          "h": 0.2266
+        },
+        "territory_area_px": 82826,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.076,
+        "neighbors": [
+          {
+            "artifact_id": "hero-off-center-attached-board-hero-apert",
+            "shared_edge_px": 2315,
+            "direction": "up",
+            "distance_px": 332.55
+          },
+          {
+            "artifact_id": "module-preference-specimen-tray",
+            "shared_edge_px": 1393,
+            "direction": "down",
+            "distance_px": 163.09
+          },
+          {
+            "artifact_id": "hero-detroit-photo-lower-baffle-hero-mass",
+            "shared_edge_px": 1381,
+            "direction": "left",
+            "distance_px": 403.86
+          },
+          {
+            "artifact_id": "module-third-youtube-silence-slit-2",
+            "shared_edge_px": 708,
+            "direction": "down",
+            "distance_px": 269.04
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-preference-specimen-tray-2",
+      "kind": "module",
+      "label": "Preference Specimen Tray",
+      "artifact_type": "scratch-veil-glint",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/module-preference-specimen-tray-2.svg",
+      "source_binding_ids": [
+        "binding-module-preference-specimen-tray-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0814,
+            0.7793
+          ],
+          [
+            0.0996,
+            0.752
+          ],
+          [
+            0.2799,
+            0.752
+          ],
+          [
+            0.2982,
+            0.7793
+          ],
+          [
+            0.2982,
+            0.9395
+          ],
+          [
+            0.2799,
+            0.9668
+          ],
+          [
+            0.0996,
+            0.9668
+          ],
+          [
+            0.0814,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0814,
+          "y": 0.752,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 72190,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.574,
+        "neighbors": [
+          {
+            "artifact_id": "hero-detroit-photo-lower-baffle-hero-mass",
+            "shared_edge_px": 3552,
+            "direction": "right",
+            "distance_px": 468.92
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-second-youtube-onset-puncture",
+      "kind": "module",
+      "label": "second-youtube onset puncture",
+      "artifact_type": "onset-puncture-cluster",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/module-second-youtube-onset-puncture.svg",
+      "source_binding_ids": [
+        "binding-module-second-youtube-onset-puncture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4017,
+            0.7793
+          ],
+          [
+            0.4121,
+            0.7637
+          ],
+          [
+            0.6178,
+            0.8711
+          ],
+          [
+            0.6178,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9668
+          ],
+          [
+            0.4199,
+            0.9668
+          ],
+          [
+            0.4017,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4017,
+          "y": 0.7637,
+          "w": 0.2168,
+          "h": 0.2041
+        },
+        "territory_area_px": 51208,
+        "visible_area_px": 45705,
+        "expansion_ratio": 1.12,
+        "neighbors": [
+          {
+            "artifact_id": "hero-detroit-photo-lower-baffle-hero-mass",
+            "shared_edge_px": 3478,
+            "direction": "up",
+            "distance_px": 143.46
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-third-youtube-silence-slit-2",
+      "kind": "module",
+      "label": "third-youtube silence slit",
+      "artifact_type": "narrow-silence-aperture",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/module-third-youtube-silence-slit-2.svg",
+      "source_binding_ids": [
+        "binding-module-third-youtube-silence-slit-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7012,
+            0.8096
+          ],
+          [
+            0.7839,
+            0.7324
+          ],
+          [
+            0.8997,
+            0.7324
+          ],
+          [
+            0.918,
+            0.7598
+          ],
+          [
+            0.918,
+            0.9199
+          ],
+          [
+            0.8997,
+            0.9473
+          ],
+          [
+            0.7194,
+            0.9473
+          ],
+          [
+            0.7012,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7012,
+          "y": 0.7324,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 65524,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.428,
+        "neighbors": [
+          {
+            "artifact_id": "hero-detroit-photo-lower-baffle-hero-mass",
+            "shared_edge_px": 4239,
+            "direction": "left",
+            "distance_px": 518.97
+          },
+          {
+            "artifact_id": "module-preference-specimen-tray",
+            "shared_edge_px": 925,
+            "direction": "left",
+            "distance_px": 207.17
+          },
+          {
+            "artifact_id": "module-sidewalk-bag-edge-notch",
+            "shared_edge_px": 708,
+            "direction": "up",
+            "distance_px": 269.04
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-dwell-corner-registration-nick",
+      "kind": "module",
+      "label": "dwell-corner registration nick",
+      "artifact_type": "corner-registration-notch",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "spectral-cutaway-procession-slab",
+      "mask_path": "/editions/2026-09-10-pinhole-procession-under-slab-v1/assets/masks/module-dwell-corner-registration-nick.svg",
+      "source_binding_ids": [
+        "binding-module-dwell-corner-registration-nick"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3398
+          ],
+          [
+            0.2799,
+            0.3125
+          ],
+          [
+            0.4395,
+            0.3125
+          ],
+          [
+            0.4577,
+            0.3398
+          ],
+          [
+            0.4577,
+            0.4893
+          ],
+          [
+            0.4395,
+            0.5166
+          ],
+          [
+            0.2799,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.1966,
+          "h": 0.2051
+        },
+        "territory_area_px": 61796,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.631,
+        "neighbors": []
+      }
+    }
+  ]
+}

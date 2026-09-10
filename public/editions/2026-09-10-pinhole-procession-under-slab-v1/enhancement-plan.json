@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-10-pinhole-procession-under-slab-v1",
+  "edition_id": "2026-09-10-pinhole-procession-under-slab-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-10-pinhole-procession-under-slab-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-off-center-attached-board-hero-apert",
+      "target_kind": "artifact",
+      "artifact_id": "hero-off-center-attached-board-hero-apert",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-cutaway-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-detroit-photo-lower-baffle-hero-mass",
+      "target_kind": "artifact",
+      "artifact_id": "hero-detroit-photo-lower-baffle-hero-mass",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-lower-pressure-band) selected from interpretation."
+    },
+    {
+      "target_id": "module-preference-specimen-tray",
+      "target_kind": "artifact",
+      "artifact_id": "module-preference-specimen-tray",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scratch-veil-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-third-youtube-silence-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-third-youtube-silence-slit",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-silence-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-sidewalk-bag-edge-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-sidewalk-bag-edge-notch",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (lower-edge-dropout-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-preference-specimen-tray-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-preference-specimen-tray-2",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scratch-veil-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-second-youtube-onset-puncture",
+      "target_kind": "artifact",
+      "artifact_id": "module-second-youtube-onset-puncture",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (onset-puncture-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-third-youtube-silence-slit-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-third-youtube-silence-slit-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (narrow-silence-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-dwell-corner-registration-nick",
+      "target_kind": "artifact",
+      "artifact_id": "module-dwell-corner-registration-nick",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (corner-registration-notch) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
