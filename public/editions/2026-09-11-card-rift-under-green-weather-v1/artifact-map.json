@@ -1,0 +1,1569 @@
+{
+  "artifact_map_id": "map-2026-09-11-card-rift-under-green-weather-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "card-rift-pressure-table",
+  "default_artifact_id": "hero-hero-central-player-rift",
+  "artifacts": [
+    {
+      "id": "hero-hero-central-player-rift",
+      "kind": "hero",
+      "label": "hero central player rift",
+      "artifact_type": "hero-scale-eye-line-dropout-rift",
+      "bounds": {
+        "x": 0.2096,
+        "y": 0.0,
+        "w": 0.6178,
+        "h": 0.6338
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.2116,
+          0.333
+        ],
+        [
+          0.2181,
+          0.2363
+        ],
+        [
+          0.3047,
+          0.002
+        ],
+        [
+          0.7233,
+          0.002
+        ],
+        [
+          0.7988,
+          0.293
+        ],
+        [
+          0.8249,
+          0.4375
+        ],
+        [
+          0.7799,
+          0.4805
+        ],
+        [
+          0.7038,
+          0.5361
+        ],
+        [
+          0.5801,
+          0.6074
+        ],
+        [
+          0.5423,
+          0.625
+        ],
+        [
+          0.4837,
+          0.6289
+        ],
+        [
+          0.3874,
+          0.5928
+        ],
+        [
+          0.3008,
+          0.5439
+        ],
+        [
+          0.2396,
+          0.4688
+        ],
+        [
+          0.2194,
+          0.3955
+        ],
+        [
+          0.2116,
+          0.334
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/hero-hero-central-player-rift.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-central-player-rift"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          828,
+          313
+        ],
+        "safe_stage_window_origin_px": [
+          892,
+          373
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.2116,
+            0.333
+          ],
+          [
+            0.2181,
+            0.2363
+          ],
+          [
+            0.3047,
+            0.002
+          ],
+          [
+            0.7233,
+            0.002
+          ],
+          [
+            0.7988,
+            0.293
+          ],
+          [
+            0.8249,
+            0.4375
+          ],
+          [
+            0.7799,
+            0.4805
+          ],
+          [
+            0.7038,
+            0.5361
+          ],
+          [
+            0.5801,
+            0.6074
+          ],
+          [
+            0.5423,
+            0.625
+          ],
+          [
+            0.4837,
+            0.6289
+          ],
+          [
+            0.3874,
+            0.5928
+          ],
+          [
+            0.3008,
+            0.5439
+          ],
+          [
+            0.2396,
+            0.4688
+          ],
+          [
+            0.2194,
+            0.3955
+          ],
+          [
+            0.2116,
+            0.334
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1895,
+            0.3281
+          ],
+          [
+            0.196,
+            0.2354
+          ],
+          [
+            0.2839,
+            0.0
+          ],
+          [
+            0.7435,
+            0.0
+          ],
+          [
+            0.8203,
+            0.292
+          ],
+          [
+            0.8398,
+            0.3975
+          ],
+          [
+            0.834,
+            0.457
+          ],
+          [
+            0.7754,
+            0.5166
+          ],
+          [
+            0.3092,
+            0.5186
+          ],
+          [
+            0.2129,
+            0.4531
+          ],
+          [
+            0.1966,
+            0.3955
+          ],
+          [
+            0.1895,
+            0.3359
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1895,
+          "y": 0.0,
+          "w": 0.651,
+          "h": 0.5195
+        },
+        "territory_area_px": 404288,
+        "visible_area_px": 483121,
+        "expansion_ratio": 0.837,
+        "neighbors": [
+          {
+            "artifact_id": "hero-black-eye-slash-aperture",
+            "shared_edge_px": 48274,
+            "direction": "up",
+            "distance_px": 114.76
+          },
+          {
+            "artifact_id": "module-hero-detroit-green-civic-slab",
+            "shared_edge_px": 4144,
+            "direction": "down",
+            "distance_px": 503.69
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 3692,
+            "direction": "left",
+            "distance_px": 309.92
+          },
+          {
+            "artifact_id": "module-left-hand-red-card",
+            "shared_edge_px": 876,
+            "direction": "left",
+            "distance_px": 483.9
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-black-eye-slash-aperture",
+      "kind": "hero",
+      "label": "black eye slash aperture",
+      "artifact_type": "horizontal-video-scan-rupture",
+      "bounds": {
+        "x": 0.441,
+        "y": 0.117,
+        "w": 0.249,
+        "h": 0.088
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.444,
+          0.151
+        ],
+        [
+          0.478,
+          0.132
+        ],
+        [
+          0.535,
+          0.118
+        ],
+        [
+          0.602,
+          0.116
+        ],
+        [
+          0.666,
+          0.126
+        ],
+        [
+          0.691,
+          0.145
+        ],
+        [
+          0.666,
+          0.181
+        ],
+        [
+          0.607,
+          0.202
+        ],
+        [
+          0.535,
+          0.196
+        ],
+        [
+          0.477,
+          0.181
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/hero-black-eye-slash-aperture.svg",
+      "source_binding_ids": [
+        "binding-hero-black-eye-slash-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          869,
+          158
+        ],
+        "safe_stage_window_origin_px": [
+          899,
+          165
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.444,
+            0.151
+          ],
+          [
+            0.478,
+            0.132
+          ],
+          [
+            0.535,
+            0.118
+          ],
+          [
+            0.602,
+            0.116
+          ],
+          [
+            0.666,
+            0.126
+          ],
+          [
+            0.691,
+            0.145
+          ],
+          [
+            0.666,
+            0.181
+          ],
+          [
+            0.607,
+            0.202
+          ],
+          [
+            0.535,
+            0.196
+          ],
+          [
+            0.477,
+            0.181
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4382,
+            0.125
+          ],
+          [
+            0.4779,
+            0.0986
+          ],
+          [
+            0.5345,
+            0.084
+          ],
+          [
+            0.6016,
+            0.082
+          ],
+          [
+            0.6654,
+            0.0928
+          ],
+          [
+            0.6908,
+            0.1113
+          ],
+          [
+            0.7129,
+            0.1445
+          ],
+          [
+            0.6849,
+            0.1865
+          ],
+          [
+            0.6654,
+            0.2139
+          ],
+          [
+            0.6068,
+            0.2344
+          ],
+          [
+            0.5417,
+            0.2285
+          ],
+          [
+            0.4388,
+            0.126
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4382,
+          "y": 0.082,
+          "w": 0.2754,
+          "h": 0.1533
+        },
+        "territory_area_px": 45718,
+        "visible_area_px": 23973,
+        "expansion_ratio": 1.907,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-central-player-rift",
+            "shared_edge_px": 48274,
+            "direction": "down",
+            "distance_px": 114.76
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-hero-detroit-green-civic-slab",
+      "kind": "module",
+      "label": "hero Detroit green civic slab",
+      "artifact_type": "hero-scale-tabletop-pressure-slab",
+      "bounds": {
+        "x": 0,
+        "y": 0.542,
+        "w": 1,
+        "h": 0.365
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0,
+          0.548
+        ],
+        [
+          0.218,
+          0.547
+        ],
+        [
+          0.413,
+          0.545
+        ],
+        [
+          0.642,
+          0.543
+        ],
+        [
+          0.831,
+          0.541
+        ],
+        [
+          1,
+          0.541
+        ],
+        [
+          1,
+          0.898
+        ],
+        [
+          0.825,
+          0.907
+        ],
+        [
+          0.594,
+          0.906
+        ],
+        [
+          0.366,
+          0.899
+        ],
+        [
+          0.145,
+          0.898
+        ],
+        [
+          0,
+          0.893
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/module-hero-detroit-green-civic-slab.svg",
+      "source_binding_ids": [
+        "binding-module-hero-detroit-green-civic-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          768,
+          712
+        ],
+        "safe_stage_window_origin_px": [
+          891,
+          742
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.548
+          ],
+          [
+            0.218,
+            0.547
+          ],
+          [
+            0.413,
+            0.545
+          ],
+          [
+            0.642,
+            0.543
+          ],
+          [
+            0.831,
+            0.541
+          ],
+          [
+            1,
+            0.541
+          ],
+          [
+            1,
+            0.898
+          ],
+          [
+            0.825,
+            0.907
+          ],
+          [
+            0.594,
+            0.906
+          ],
+          [
+            0.366,
+            0.899
+          ],
+          [
+            0.145,
+            0.898
+          ],
+          [
+            0,
+            0.893
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.5205
+          ],
+          [
+            0.9993,
+            0.5127
+          ],
+          [
+            0.9993,
+            0.9248
+          ],
+          [
+            0.8249,
+            0.9336
+          ],
+          [
+            0.5938,
+            0.9326
+          ],
+          [
+            0.0,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.5127,
+          "w": 1.0,
+          "h": 0.4219
+        },
+        "territory_area_px": 619366,
+        "visible_area_px": 561585,
+        "expansion_ratio": 1.103,
+        "neighbors": [
+          {
+            "artifact_id": "module-right-front-red-tile",
+            "shared_edge_px": 25330,
+            "direction": "right",
+            "distance_px": 532.02
+          },
+          {
+            "artifact_id": "module-paper-sky-ivory-tile",
+            "shared_edge_px": 21723,
+            "direction": "right",
+            "distance_px": 142.23
+          },
+          {
+            "artifact_id": "module-playlist-puncture-row",
+            "shared_edge_px": 12883,
+            "direction": "left",
+            "distance_px": 577.25
+          },
+          {
+            "artifact_id": "hero-hero-central-player-rift",
+            "shared_edge_px": 4144,
+            "direction": "up",
+            "distance_px": 503.69
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-playlist-puncture-row",
+      "kind": "module",
+      "label": "playlist puncture row",
+      "artifact_type": "onset-pip-puncture-cluster",
+      "bounds": {
+        "x": 0.073,
+        "y": 0.776,
+        "w": 0.129,
+        "h": 0.058
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.075,
+          0.781
+        ],
+        [
+          0.083,
+          0.776
+        ],
+        [
+          0.091,
+          0.779
+        ],
+        [
+          0.093,
+          0.786
+        ],
+        [
+          0.088,
+          0.792
+        ],
+        [
+          0.078,
+          0.792
+        ],
+        [
+          0.073,
+          0.787
+        ],
+        [
+          0.113,
+          0.794
+        ],
+        [
+          0.121,
+          0.791
+        ],
+        [
+          0.128,
+          0.796
+        ],
+        [
+          0.126,
+          0.803
+        ],
+        [
+          0.117,
+          0.807
+        ],
+        [
+          0.108,
+          0.803
+        ],
+        [
+          0.149,
+          0.812
+        ],
+        [
+          0.159,
+          0.808
+        ],
+        [
+          0.167,
+          0.814
+        ],
+        [
+          0.166,
+          0.823
+        ],
+        [
+          0.153,
+          0.825
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/module-playlist-puncture-row.svg",
+      "source_binding_ids": [
+        "binding-module-playlist-puncture-row"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          211,
+          820
+        ],
+        "safe_stage_window_origin_px": [
+          227,
+          824
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.075,
+            0.781
+          ],
+          [
+            0.083,
+            0.776
+          ],
+          [
+            0.091,
+            0.779
+          ],
+          [
+            0.093,
+            0.786
+          ],
+          [
+            0.088,
+            0.792
+          ],
+          [
+            0.078,
+            0.792
+          ],
+          [
+            0.073,
+            0.787
+          ],
+          [
+            0.113,
+            0.794
+          ],
+          [
+            0.121,
+            0.791
+          ],
+          [
+            0.128,
+            0.796
+          ],
+          [
+            0.126,
+            0.803
+          ],
+          [
+            0.117,
+            0.807
+          ],
+          [
+            0.108,
+            0.803
+          ],
+          [
+            0.149,
+            0.812
+          ],
+          [
+            0.159,
+            0.808
+          ],
+          [
+            0.167,
+            0.814
+          ],
+          [
+            0.166,
+            0.823
+          ],
+          [
+            0.153,
+            0.825
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0547,
+            0.7861
+          ],
+          [
+            0.0827,
+            0.748
+          ],
+          [
+            0.1667,
+            0.7861
+          ],
+          [
+            0.1849,
+            0.8154
+          ],
+          [
+            0.1654,
+            0.8496
+          ],
+          [
+            0.153,
+            0.8516
+          ],
+          [
+            0.0742,
+            0.8154
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0547,
+          "y": 0.748,
+          "w": 0.1309,
+          "h": 0.1045
+        },
+        "territory_area_px": 11629,
+        "visible_area_px": 1352,
+        "expansion_ratio": 8.601,
+        "neighbors": [
+          {
+            "artifact_id": "module-hero-detroit-green-civic-slab",
+            "shared_edge_px": 12883,
+            "direction": "right",
+            "distance_px": 577.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-sidewinder-suspended-red-card",
+      "kind": "module",
+      "label": "sidewinder suspended red card",
+      "artifact_type": "floating-red-card-aperture",
+      "bounds": {
+        "x": 0.8509,
+        "y": 0.3213,
+        "w": 0.1296,
+        "h": 0.292
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.8529,
+          0.458
+        ],
+        [
+          0.8652,
+          0.332
+        ],
+        [
+          0.8717,
+          0.3242
+        ],
+        [
+          0.9251,
+          0.3291
+        ],
+        [
+          0.9772,
+          0.4326
+        ],
+        [
+          0.9596,
+          0.6074
+        ],
+        [
+          0.9518,
+          0.6094
+        ],
+        [
+          0.8978,
+          0.5947
+        ],
+        [
+          0.8952,
+          0.5889
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/module-sidewinder-suspended-red-card.svg",
+      "source_binding_ids": [
+        "binding-module-sidewinder-suspended-red-card"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          448
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          471
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.8529,
+            0.458
+          ],
+          [
+            0.8652,
+            0.332
+          ],
+          [
+            0.8717,
+            0.3242
+          ],
+          [
+            0.9251,
+            0.3291
+          ],
+          [
+            0.9772,
+            0.4326
+          ],
+          [
+            0.9596,
+            0.6074
+          ],
+          [
+            0.9518,
+            0.6094
+          ],
+          [
+            0.8978,
+            0.5947
+          ],
+          [
+            0.8952,
+            0.5889
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8346,
+            0.4541
+          ],
+          [
+            0.8464,
+            0.3311
+          ],
+          [
+            0.8711,
+            0.2959
+          ],
+          [
+            0.9245,
+            0.3008
+          ],
+          [
+            0.944,
+            0.3301
+          ],
+          [
+            0.9948,
+            0.4316
+          ],
+          [
+            0.9772,
+            0.6064
+          ],
+          [
+            0.959,
+            0.6338
+          ],
+          [
+            0.9512,
+            0.6367
+          ],
+          [
+            0.8978,
+            0.6211
+          ],
+          [
+            0.8783,
+            0.5918
+          ],
+          [
+            0.8346,
+            0.458
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8346,
+          "y": 0.2959,
+          "w": 0.1608,
+          "h": 0.3418
+        },
+        "territory_area_px": 63118,
+        "visible_area_px": 40774,
+        "expansion_ratio": 1.548,
+        "neighbors": [
+          {
+            "artifact_id": "module-hero-detroit-green-civic-slab",
+            "shared_edge_px": 2015,
+            "direction": "left",
+            "distance_px": 702.62
+          },
+          {
+            "artifact_id": "hero-hero-central-player-rift",
+            "shared_edge_px": 425,
+            "direction": "left",
+            "distance_px": 618.56
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-paper-sky-ivory-tile",
+      "kind": "module",
+      "label": "paper-sky ivory tile",
+      "artifact_type": "low-ivory-table-tile",
+      "bounds": {
+        "x": 0.497,
+        "y": 0.736,
+        "w": 0.135,
+        "h": 0.067
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.515,
+          0.739
+        ],
+        [
+          0.615,
+          0.736
+        ],
+        [
+          0.633,
+          0.76
+        ],
+        [
+          0.625,
+          0.793
+        ],
+        [
+          0.519,
+          0.803
+        ],
+        [
+          0.495,
+          0.779
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/module-paper-sky-ivory-tile.svg",
+      "source_binding_ids": [
+        "binding-module-paper-sky-ivory-tile"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          867,
+          782
+        ],
+        "safe_stage_window_origin_px": [
+          884,
+          788
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.515,
+            0.739
+          ],
+          [
+            0.615,
+            0.736
+          ],
+          [
+            0.633,
+            0.76
+          ],
+          [
+            0.625,
+            0.793
+          ],
+          [
+            0.519,
+            0.803
+          ],
+          [
+            0.495,
+            0.779
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5098,
+            0.8193
+          ],
+          [
+            0.5482,
+            0.71
+          ],
+          [
+            0.6146,
+            0.708
+          ],
+          [
+            0.651,
+            0.7598
+          ],
+          [
+            0.6432,
+            0.793
+          ],
+          [
+            0.625,
+            0.8203
+          ],
+          [
+            0.5189,
+            0.8301
+          ],
+          [
+            0.5098,
+            0.8203
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5098,
+          "y": 0.708,
+          "w": 0.1419,
+          "h": 0.123
+        },
+        "territory_area_px": 20163,
+        "visible_area_px": 11788,
+        "expansion_ratio": 1.71,
+        "neighbors": [
+          {
+            "artifact_id": "module-hero-detroit-green-civic-slab",
+            "shared_edge_px": 21723,
+            "direction": "left",
+            "distance_px": 142.23
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-left-hand-red-card",
+      "kind": "module",
+      "label": "left hand red card",
+      "artifact_type": "worn-red-card-hand-gesture",
+      "bounds": {
+        "x": 0.223,
+        "y": 0.364,
+        "w": 0.081,
+        "h": 0.203
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.251,
+          0.365
+        ],
+        [
+          0.304,
+          0.383
+        ],
+        [
+          0.286,
+          0.567
+        ],
+        [
+          0.224,
+          0.531
+        ],
+        [
+          0.235,
+          0.424
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/module-left-hand-red-card.svg",
+      "source_binding_ids": [
+        "binding-module-left-hand-red-card"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          405,
+          460
+        ],
+        "safe_stage_window_origin_px": [
+          415,
+          477
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.251,
+            0.365
+          ],
+          [
+            0.304,
+            0.383
+          ],
+          [
+            0.286,
+            0.567
+          ],
+          [
+            0.224,
+            0.531
+          ],
+          [
+            0.235,
+            0.424
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2057,
+            0.5273
+          ],
+          [
+            0.2161,
+            0.4229
+          ],
+          [
+            0.2324,
+            0.3643
+          ],
+          [
+            0.2507,
+            0.3369
+          ],
+          [
+            0.2923,
+            0.3516
+          ],
+          [
+            0.3151,
+            0.4521
+          ],
+          [
+            0.304,
+            0.5664
+          ],
+          [
+            0.2858,
+            0.5938
+          ],
+          [
+            0.224,
+            0.5576
+          ],
+          [
+            0.2057,
+            0.5303
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2057,
+          "y": 0.3369,
+          "w": 0.11,
+          "h": 0.2578
+        },
+        "territory_area_px": 32398,
+        "visible_area_px": 17786,
+        "expansion_ratio": 1.822,
+        "neighbors": [
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 1324,
+            "direction": "right",
+            "distance_px": 178.46
+          },
+          {
+            "artifact_id": "module-hero-detroit-green-civic-slab",
+            "shared_edge_px": 1287,
+            "direction": "right",
+            "distance_px": 444.79
+          },
+          {
+            "artifact_id": "hero-hero-central-player-rift",
+            "shared_edge_px": 876,
+            "direction": "right",
+            "distance_px": 483.9
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-right-front-red-tile",
+      "kind": "module",
+      "label": "right-front red tile",
+      "artifact_type": "low-red-table-tile",
+      "bounds": {
+        "x": 0.772,
+        "y": 0.753,
+        "w": 0.13,
+        "h": 0.08
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.801,
+          0.754
+        ],
+        [
+          0.902,
+          0.775
+        ],
+        [
+          0.879,
+          0.828
+        ],
+        [
+          0.771,
+          0.812
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/module-right-front-red-tile.svg",
+      "source_binding_ids": [
+        "binding-module-right-front-red-tile"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1286,
+          805
+        ],
+        "safe_stage_window_origin_px": [
+          1302,
+          812
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.801,
+            0.754
+          ],
+          [
+            0.902,
+            0.775
+          ],
+          [
+            0.879,
+            0.828
+          ],
+          [
+            0.771,
+            0.812
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7526,
+            0.8115
+          ],
+          [
+            0.8008,
+            0.7266
+          ],
+          [
+            0.9017,
+            0.7471
+          ],
+          [
+            0.9199,
+            0.7744
+          ],
+          [
+            0.8978,
+            0.8262
+          ],
+          [
+            0.8789,
+            0.8545
+          ],
+          [
+            0.7708,
+            0.8389
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7526,
+          "y": 0.7266,
+          "w": 0.168,
+          "h": 0.1289
+        },
+        "territory_area_px": 23668,
+        "visible_area_px": 9892,
+        "expansion_ratio": 2.393,
+        "neighbors": [
+          {
+            "artifact_id": "module-hero-detroit-green-civic-slab",
+            "shared_edge_px": 25330,
+            "direction": "left",
+            "distance_px": 532.02
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "card-rift-pressure-table",
+      "mask_path": "/editions/2026-09-11-card-rift-under-green-weather-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3398
+          ],
+          [
+            0.2799,
+            0.3125
+          ],
+          [
+            0.4186,
+            0.3125
+          ],
+          [
+            0.4577,
+            0.4248
+          ],
+          [
+            0.4577,
+            0.4893
+          ],
+          [
+            0.4395,
+            0.5166
+          ],
+          [
+            0.3092,
+            0.5166
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.1966,
+          "h": 0.2051
+        },
+        "territory_area_px": 46954,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.239,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-central-player-rift",
+            "shared_edge_px": 3692,
+            "direction": "right",
+            "distance_px": 309.92
+          },
+          {
+            "artifact_id": "module-left-hand-red-card",
+            "shared_edge_px": 1324,
+            "direction": "left",
+            "distance_px": 178.46
+          },
+          {
+            "artifact_id": "module-hero-detroit-green-civic-slab",
+            "shared_edge_px": 1055,
+            "direction": "down",
+            "distance_px": 373.18
+          }
+        ]
+      }
+    }
+  ]
+}

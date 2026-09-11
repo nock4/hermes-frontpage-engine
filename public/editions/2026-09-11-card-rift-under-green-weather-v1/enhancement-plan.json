@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-11-card-rift-under-green-weather-v1",
+  "edition_id": "2026-09-11-card-rift-under-green-weather-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-11-card-rift-under-green-weather-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-central-player-rift",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-central-player-rift",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-eye-line-dropout-rift) selected from interpretation."
+    },
+    {
+      "target_id": "hero-black-eye-slash-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-black-eye-slash-aperture",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (horizontal-video-scan-rupture) selected from interpretation."
+    },
+    {
+      "target_id": "module-hero-detroit-green-civic-slab",
+      "target_kind": "artifact",
+      "artifact_id": "module-hero-detroit-green-civic-slab",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-tabletop-pressure-slab) selected from interpretation."
+    },
+    {
+      "target_id": "module-playlist-puncture-row",
+      "target_kind": "artifact",
+      "artifact_id": "module-playlist-puncture-row",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (onset-pip-puncture-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-sidewinder-suspended-red-card",
+      "target_kind": "artifact",
+      "artifact_id": "module-sidewinder-suspended-red-card",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (floating-red-card-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-paper-sky-ivory-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-paper-sky-ivory-tile",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (low-ivory-table-tile) selected from interpretation."
+    },
+    {
+      "target_id": "module-left-hand-red-card",
+      "target_kind": "artifact",
+      "artifact_id": "module-left-hand-red-card",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (worn-red-card-hand-gesture) selected from interpretation."
+    },
+    {
+      "target_id": "module-right-front-red-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-right-front-red-tile",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (low-red-table-tile) selected from interpretation."
+    },
+    {
+      "target_id": "module-field-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-field-marker",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (field-marker) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

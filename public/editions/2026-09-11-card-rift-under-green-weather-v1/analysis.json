@@ -1,0 +1,480 @@
+{
+  "analysis_id": "analysis-2026-09-11-card-rift-under-green-weather-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark hooded central figure presses over a worn green tabletop. The source-bearing marks are concrete: a torn black eye slit, rough black cloth mass, red worn cards, ivory tiles, pip punctures, horizontal table seams, and small colored lights on the felt.",
+  "usable_surfaces": [
+    "torn black eye aperture",
+    "central draped cloth mass",
+    "green civic felt slab",
+    "front bass ridge seam",
+    "left hand red card",
+    "right suspended red card pair",
+    "ivory tabletop tiles",
+    "colored pip puncture row",
+    "dark wall-table scan seam"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero central player rift",
+      "artifact_type": "hero-scale-eye-line-dropout-rift",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.279,
+        "y": 0,
+        "w": 0.52,
+        "h": 0.728
+      },
+      "polygon": [
+        [
+          0.384,
+          0
+        ],
+        [
+          0.704,
+          0
+        ],
+        [
+          0.756,
+          0.122
+        ],
+        [
+          0.799,
+          0.347
+        ],
+        [
+          0.768,
+          0.512
+        ],
+        [
+          0.677,
+          0.586
+        ],
+        [
+          0.574,
+          0.597
+        ],
+        [
+          0.462,
+          0.727
+        ],
+        [
+          0.297,
+          0.705
+        ],
+        [
+          0.181,
+          0.626
+        ],
+        [
+          0.207,
+          0.397
+        ],
+        [
+          0.252,
+          0.182
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "The dominant black draped figure and cloth pile form the main rupture, with heavy folds, torn edges, and a central void-like body mass over the table."
+    },
+    {
+      "label": "black eye slash aperture",
+      "artifact_type": "horizontal-video-scan-rupture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.441,
+        "y": 0.117,
+        "w": 0.249,
+        "h": 0.088
+      },
+      "polygon": [
+        [
+          0.444,
+          0.151
+        ],
+        [
+          0.478,
+          0.132
+        ],
+        [
+          0.535,
+          0.118
+        ],
+        [
+          0.602,
+          0.116
+        ],
+        [
+          0.666,
+          0.126
+        ],
+        [
+          0.691,
+          0.145
+        ],
+        [
+          0.666,
+          0.181
+        ],
+        [
+          0.607,
+          0.202
+        ],
+        [
+          0.535,
+          0.196
+        ],
+        [
+          0.477,
+          0.181
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A narrow torn black horizontal opening cuts through the hood where an eye line would be, with ragged cloth edges and a deep void interior."
+    },
+    {
+      "label": "hero Detroit green civic slab",
+      "artifact_type": "hero-scale-tabletop-pressure-slab",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.542,
+        "w": 1,
+        "h": 0.365
+      },
+      "polygon": [
+        [
+          0,
+          0.548
+        ],
+        [
+          0.218,
+          0.547
+        ],
+        [
+          0.413,
+          0.545
+        ],
+        [
+          0.642,
+          0.543
+        ],
+        [
+          0.831,
+          0.541
+        ],
+        [
+          1,
+          0.541
+        ],
+        [
+          1,
+          0.898
+        ],
+        [
+          0.825,
+          0.907
+        ],
+        [
+          0.594,
+          0.906
+        ],
+        [
+          0.366,
+          0.899
+        ],
+        [
+          0.145,
+          0.898
+        ],
+        [
+          0,
+          0.893
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The lower half is a worn green felt-like slab, visibly bounded by the rear wall seam and front table edge, carrying cards, pips, scratches, and stains."
+    },
+    {
+      "label": "playlist puncture row",
+      "artifact_type": "onset-pip-puncture-cluster",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.073,
+        "y": 0.776,
+        "w": 0.129,
+        "h": 0.058
+      },
+      "polygon": [
+        [
+          0.075,
+          0.781
+        ],
+        [
+          0.083,
+          0.776
+        ],
+        [
+          0.091,
+          0.779
+        ],
+        [
+          0.093,
+          0.786
+        ],
+        [
+          0.088,
+          0.792
+        ],
+        [
+          0.078,
+          0.792
+        ],
+        [
+          0.073,
+          0.787
+        ],
+        [
+          0.113,
+          0.794
+        ],
+        [
+          0.121,
+          0.791
+        ],
+        [
+          0.128,
+          0.796
+        ],
+        [
+          0.126,
+          0.803
+        ],
+        [
+          0.117,
+          0.807
+        ],
+        [
+          0.108,
+          0.803
+        ],
+        [
+          0.149,
+          0.812
+        ],
+        [
+          0.159,
+          0.808
+        ],
+        [
+          0.167,
+          0.814
+        ],
+        [
+          0.166,
+          0.823
+        ],
+        [
+          0.153,
+          0.825
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A small procession of glossy colored pip punctures appears on the lower-left felt: purple, blue, yellow, and pale green lights."
+    },
+    {
+      "label": "sidewinder suspended red card",
+      "artifact_type": "floating-red-card-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.852,
+        "y": 0.323,
+        "w": 0.126,
+        "h": 0.273
+      },
+      "polygon": [
+        [
+          0.869,
+          0.323
+        ],
+        [
+          0.925,
+          0.333
+        ],
+        [
+          0.921,
+          0.424
+        ],
+        [
+          0.978,
+          0.433
+        ],
+        [
+          0.96,
+          0.596
+        ],
+        [
+          0.897,
+          0.578
+        ],
+        [
+          0.909,
+          0.466
+        ],
+        [
+          0.848,
+          0.462
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "Two upright worn red cards stand at the right edge, their granular surfaces and chipped ivory rims forming a suspended aperture-like source pocket."
+    },
+    {
+      "label": "paper-sky ivory tile",
+      "artifact_type": "low-ivory-table-tile",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.497,
+        "y": 0.736,
+        "w": 0.135,
+        "h": 0.067
+      },
+      "polygon": [
+        [
+          0.515,
+          0.739
+        ],
+        [
+          0.615,
+          0.736
+        ],
+        [
+          0.633,
+          0.76
+        ],
+        [
+          0.625,
+          0.793
+        ],
+        [
+          0.519,
+          0.803
+        ],
+        [
+          0.495,
+          0.779
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A pale rectangular tile lies low near the center of the table, angled slightly, with mottled ivory stains and a raised edge."
+    },
+    {
+      "label": "left hand red card",
+      "artifact_type": "worn-red-card-hand-gesture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.223,
+        "y": 0.364,
+        "w": 0.081,
+        "h": 0.203
+      },
+      "polygon": [
+        [
+          0.251,
+          0.365
+        ],
+        [
+          0.304,
+          0.383
+        ],
+        [
+          0.286,
+          0.567
+        ],
+        [
+          0.224,
+          0.531
+        ],
+        [
+          0.235,
+          0.424
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The left hand grips a worn red card, tilted downward, with scuffed red paint, pale borders, and finger pressure at the top edge."
+    },
+    {
+      "label": "right-front red tile",
+      "artifact_type": "low-red-table-tile",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.772,
+        "y": 0.753,
+        "w": 0.13,
+        "h": 0.08
+      },
+      "polygon": [
+        [
+          0.801,
+          0.754
+        ],
+        [
+          0.902,
+          0.775
+        ],
+        [
+          0.879,
+          0.828
+        ],
+        [
+          0.771,
+          0.812
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A red scuffed tile lies flat on the lower-right slab, distinct from the standing cards, with a tight tilted rectangular contour and chipped corners."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.843,
+    "rationale": "The plate is mostly minimal and expressionist: one black central mass, one green slab, and a few card/tile/pip anchors. It remains readable, though the broad tabletop plus multiple cards make the lower field moderately busy."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-11-card-rift-under-green-weather-v1"
+}

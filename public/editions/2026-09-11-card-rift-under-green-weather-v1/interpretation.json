@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-09-11-card-rift-under-green-weather-v1",
+  "edition_id": "2026-09-11-card-rift-under-green-weather-v1",
+  "plate_read_timestamp": "2026-09-11T08:07:49.129Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark hooded central figure presses over a worn green tabletop. The source-bearing marks are concrete: a torn black eye slit, rough black cloth mass, red worn cards, ivory tiles, pip punctures, horizontal table seams, and small colored lights on the felt.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "a guarded game table pulsing under the paint",
+      "A dark hooded central figure presses over a worn green tabletop. The source-bearing marks are concrete: a torn black eye slit, rough black cloth mass, red worn cards, ivory tiles, pip punctures, horizontal table seams, and small colored lights on the felt.",
+      "card-rift",
+      "green-pressure",
+      "eye-dropout"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "hero central player rift",
+      "black eye slash aperture",
+      "hero Detroit green civic slab",
+      "playlist puncture row",
+      "sidewinder suspended red card",
+      "paper-sky ivory tile",
+      "left hand red card",
+      "right-front red tile"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "card-rift-pressure-table",
+      "one central dark figure-like slab cropped against the wall",
+      "hard horizontal wall-to-table seam carrying lower-field weight",
+      "constellation of card apertures and ivory tiles around the hand zone",
+      "irregular eye-line dropout rift through the central mass",
+      "thin left-edge archive incision and colored pip punctures",
+      "torn black eye aperture",
+      "central draped cloth mass"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: card-rift-pressure-table.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-hero-central-player-rift",
+      "kind": "hero",
+      "type": "hero-scale-eye-line-dropout-rift",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.2096,
+        "y": 0,
+        "w": 0.6178,
+        "h": 0.6338
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-black-eye-slash-aperture",
+      "kind": "hero",
+      "type": "horizontal-video-scan-rupture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.441,
+        "y": 0.117,
+        "w": 0.249,
+        "h": 0.088
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-hero-detroit-green-civic-slab",
+      "kind": "module",
+      "type": "hero-scale-tabletop-pressure-slab",
+      "strength": 0.774312,
+      "bounds": {
+        "x": 0,
+        "y": 0.542,
+        "w": 1,
+        "h": 0.365
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-playlist-puncture-row",
+      "kind": "module",
+      "type": "onset-pip-puncture-cluster",
+      "strength": 0.7687080000000001,
+      "bounds": {
+        "x": 0.073,
+        "y": 0.776,
+        "w": 0.129,
+        "h": 0.058
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sidewinder-suspended-red-card",
+      "kind": "module",
+      "type": "floating-red-card-aperture",
+      "strength": 0.726576,
+      "bounds": {
+        "x": 0.8509,
+        "y": 0.3213,
+        "w": 0.1296,
+        "h": 0.292
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-paper-sky-ivory-tile",
+      "kind": "module",
+      "type": "low-ivory-table-tile",
+      "strength": 0.703872,
+      "bounds": {
+        "x": 0.497,
+        "y": 0.736,
+        "w": 0.135,
+        "h": 0.067
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-left-hand-red-card",
+      "kind": "module",
+      "type": "worn-red-card-hand-gesture",
+      "strength": 0.6769320000000001,
+      "bounds": {
+        "x": 0.223,
+        "y": 0.364,
+        "w": 0.081,
+        "h": 0.203
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-front-red-tile",
+      "kind": "module",
+      "type": "low-red-table-tile",
+      "strength": 0.650836,
+      "bounds": {
+        "x": 0.772,
+        "y": 0.753,
+        "w": 0.13,
+        "h": 0.08
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.6590199999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-hero-central-player-rift-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2096,
+        "y": 0,
+        "w": 0.6178,
+        "h": 0.6338
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-black-eye-slash-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.441,
+        "y": 0.117,
+        "w": 0.249,
+        "h": 0.088
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-hero-detroit-green-civic-slab-surface",
+      "surface_type": "wood",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.542,
+        "w": 1,
+        "h": 0.365
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-playlist-puncture-row-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.073,
+        "y": 0.776,
+        "w": 0.129,
+        "h": 0.058
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sidewinder-suspended-red-card-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.8509,
+        "y": 0.3213,
+        "w": 0.1296,
+        "h": 0.292
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-paper-sky-ivory-tile-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.497,
+        "y": 0.736,
+        "w": 0.135,
+        "h": 0.067
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-left-hand-red-card-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.223,
+        "y": 0.364,
+        "w": 0.081,
+        "h": 0.203
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-right-front-red-tile-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.772,
+        "y": 0.753,
+        "w": 0.13,
+        "h": 0.08
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
