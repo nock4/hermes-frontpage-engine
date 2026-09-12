@@ -1,0 +1,1802 @@
+{
+  "artifact_map_id": "map-2026-09-12-oily-systems-weather-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "oily-rubber-civic-pressure-field",
+  "default_artifact_id": "hero-left-edge-hero-oily-pressure-swell",
+  "artifacts": [
+    {
+      "id": "hero-left-edge-hero-oily-pressure-swell",
+      "kind": "hero",
+      "label": "left-edge hero oily pressure swell",
+      "artifact_type": "hero-scale-oily-rubber-swell",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.3704,
+        "h": 0.7529
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0013,
+          0.002
+        ],
+        [
+          0.3626,
+          0.002
+        ],
+        [
+          0.3678,
+          0.0498
+        ],
+        [
+          0.3392,
+          0.4023
+        ],
+        [
+          0.3255,
+          0.4727
+        ],
+        [
+          0.3086,
+          0.5244
+        ],
+        [
+          0.1283,
+          0.749
+        ],
+        [
+          0.0013,
+          0.7461
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/hero-left-edge-hero-oily-pressure-swell.svg",
+      "source_binding_ids": [
+        "binding-hero-left-edge-hero-oily-pressure-swell"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          290,
+          324
+        ],
+        "safe_stage_window_origin_px": [
+          336,
+          386
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0013,
+            0.002
+          ],
+          [
+            0.3626,
+            0.002
+          ],
+          [
+            0.3678,
+            0.0498
+          ],
+          [
+            0.3392,
+            0.4023
+          ],
+          [
+            0.3255,
+            0.4727
+          ],
+          [
+            0.3086,
+            0.5244
+          ],
+          [
+            0.1283,
+            0.749
+          ],
+          [
+            0.0013,
+            0.7461
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.3828,
+            0.0
+          ],
+          [
+            0.3893,
+            0.0469
+          ],
+          [
+            0.3757,
+            0.2246
+          ],
+          [
+            0.2552,
+            0.623
+          ],
+          [
+            0.1283,
+            0.7812
+          ],
+          [
+            0.0,
+            0.7783
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.39,
+          "h": 0.7822
+        },
+        "territory_area_px": 316548,
+        "visible_area_px": 362493,
+        "expansion_ratio": 0.873,
+        "neighbors": [
+          {
+            "artifact_id": "module-silent-thumbnail-pinhole",
+            "shared_edge_px": 22665,
+            "direction": "down",
+            "distance_px": 65.38
+          },
+          {
+            "artifact_id": "module-night-swim-dropout-slit",
+            "shared_edge_px": 5248,
+            "direction": "right",
+            "distance_px": 278.41
+          },
+          {
+            "artifact_id": "hero-lower-field-hero-bass-ridge",
+            "shared_edge_px": 1645,
+            "direction": "right",
+            "distance_px": 793.63
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-lower-field-hero-bass-ridge",
+      "kind": "hero",
+      "label": "lower-field hero bass ridge",
+      "artifact_type": "hero-scale-bass-ridge",
+      "bounds": {
+        "x": 0,
+        "y": 0.707,
+        "w": 1,
+        "h": 0.293
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.744
+        ],
+        [
+          0.091,
+          0.743
+        ],
+        [
+          0.192,
+          0.758
+        ],
+        [
+          0.286,
+          0.792
+        ],
+        [
+          0.386,
+          0.815
+        ],
+        [
+          0.488,
+          0.802
+        ],
+        [
+          0.579,
+          0.798
+        ],
+        [
+          0.678,
+          0.766
+        ],
+        [
+          0.781,
+          0.727
+        ],
+        [
+          0.892,
+          0.707
+        ],
+        [
+          0.999,
+          0.696
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/hero-lower-field-hero-bass-ridge.svg",
+      "source_binding_ids": [
+        "binding-hero-lower-field-hero-bass-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          768,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          891,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.744
+          ],
+          [
+            0.091,
+            0.743
+          ],
+          [
+            0.192,
+            0.758
+          ],
+          [
+            0.286,
+            0.792
+          ],
+          [
+            0.386,
+            0.815
+          ],
+          [
+            0.488,
+            0.802
+          ],
+          [
+            0.579,
+            0.798
+          ],
+          [
+            0.678,
+            0.766
+          ],
+          [
+            0.781,
+            0.727
+          ],
+          [
+            0.892,
+            0.707
+          ],
+          [
+            0.999,
+            0.696
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.7793
+          ],
+          [
+            0.1758,
+            0.7227
+          ],
+          [
+            0.9993,
+            0.6631
+          ],
+          [
+            0.9993,
+            0.999
+          ],
+          [
+            0.0,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.6621,
+          "w": 1.0,
+          "h": 0.3379
+        },
+        "territory_area_px": 337552,
+        "visible_area_px": 374953,
+        "expansion_ratio": 0.9,
+        "neighbors": [
+          {
+            "artifact_id": "module-detroit-rain-stone-aperture",
+            "shared_edge_px": 5406,
+            "direction": "up",
+            "distance_px": 241.52
+          },
+          {
+            "artifact_id": "module-woven-chip-seam-cluster",
+            "shared_edge_px": 2987,
+            "direction": "left",
+            "distance_px": 134.34
+          },
+          {
+            "artifact_id": "hero-left-edge-hero-oily-pressure-swell",
+            "shared_edge_px": 1645,
+            "direction": "left",
+            "distance_px": 793.63
+          },
+          {
+            "artifact_id": "module-second-procession-measure-cut",
+            "shared_edge_px": 1000,
+            "direction": "down",
+            "distance_px": 72.55
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-upper-right-pixel-duel-notch",
+      "kind": "module",
+      "label": "upper-right pixel duel notch",
+      "artifact_type": "edge-notch-glint",
+      "bounds": {
+        "x": 0.849,
+        "y": 0.033,
+        "w": 0.143,
+        "h": 0.352
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.862,
+          0.034
+        ],
+        [
+          0.886,
+          0.065
+        ],
+        [
+          0.909,
+          0.097
+        ],
+        [
+          0.932,
+          0.134
+        ],
+        [
+          0.955,
+          0.173
+        ],
+        [
+          0.981,
+          0.22
+        ],
+        [
+          0.991,
+          0.264
+        ],
+        [
+          0.985,
+          0.322
+        ],
+        [
+          0.962,
+          0.384
+        ],
+        [
+          0.947,
+          0.337
+        ],
+        [
+          0.924,
+          0.281
+        ],
+        [
+          0.896,
+          0.218
+        ],
+        [
+          0.873,
+          0.153
+        ],
+        [
+          0.849,
+          0.075
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/module-upper-right-pixel-duel-notch.svg",
+      "source_binding_ids": [
+        "binding-module-upper-right-pixel-duel-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          185
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          214
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.862,
+            0.034
+          ],
+          [
+            0.886,
+            0.065
+          ],
+          [
+            0.909,
+            0.097
+          ],
+          [
+            0.932,
+            0.134
+          ],
+          [
+            0.955,
+            0.173
+          ],
+          [
+            0.981,
+            0.22
+          ],
+          [
+            0.991,
+            0.264
+          ],
+          [
+            0.985,
+            0.322
+          ],
+          [
+            0.962,
+            0.384
+          ],
+          [
+            0.947,
+            0.337
+          ],
+          [
+            0.924,
+            0.281
+          ],
+          [
+            0.896,
+            0.218
+          ],
+          [
+            0.873,
+            0.153
+          ],
+          [
+            0.849,
+            0.075
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8307,
+            0.0732
+          ],
+          [
+            0.8438,
+            0.0332
+          ],
+          [
+            0.862,
+            0.0059
+          ],
+          [
+            0.931,
+            0.1025
+          ],
+          [
+            0.9993,
+            0.2217
+          ],
+          [
+            0.9993,
+            0.3311
+          ],
+          [
+            0.9805,
+            0.3828
+          ],
+          [
+            0.9616,
+            0.4111
+          ],
+          [
+            0.9434,
+            0.3838
+          ],
+          [
+            0.877,
+            0.2168
+          ],
+          [
+            0.8307,
+            0.0752
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8307,
+          "y": 0.0059,
+          "w": 0.1693,
+          "h": 0.4062
+        },
+        "territory_area_px": 50987,
+        "visible_area_px": 29992,
+        "expansion_ratio": 1.7,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-woven-chip-seam-cluster",
+      "kind": "module",
+      "label": "woven chip seam cluster",
+      "artifact_type": "woven-seam-repair",
+      "bounds": {
+        "x": 0.379,
+        "y": 0.833,
+        "w": 0.183,
+        "h": 0.128
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.38,
+          0.871
+        ],
+        [
+          0.407,
+          0.84
+        ],
+        [
+          0.438,
+          0.833
+        ],
+        [
+          0.468,
+          0.849
+        ],
+        [
+          0.492,
+          0.832
+        ],
+        [
+          0.523,
+          0.844
+        ],
+        [
+          0.552,
+          0.878
+        ],
+        [
+          0.562,
+          0.921
+        ],
+        [
+          0.535,
+          0.952
+        ],
+        [
+          0.493,
+          0.961
+        ],
+        [
+          0.455,
+          0.944
+        ],
+        [
+          0.423,
+          0.928
+        ],
+        [
+          0.394,
+          0.909
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/module-woven-chip-seam-cluster.svg",
+      "source_binding_ids": [
+        "binding-module-woven-chip-seam-cluster"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          723,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          745,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.38,
+            0.871
+          ],
+          [
+            0.407,
+            0.84
+          ],
+          [
+            0.438,
+            0.833
+          ],
+          [
+            0.468,
+            0.849
+          ],
+          [
+            0.492,
+            0.832
+          ],
+          [
+            0.523,
+            0.844
+          ],
+          [
+            0.552,
+            0.878
+          ],
+          [
+            0.562,
+            0.921
+          ],
+          [
+            0.535,
+            0.952
+          ],
+          [
+            0.493,
+            0.961
+          ],
+          [
+            0.455,
+            0.944
+          ],
+          [
+            0.423,
+            0.928
+          ],
+          [
+            0.394,
+            0.909
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3535,
+            0.8701
+          ],
+          [
+            0.4069,
+            0.8008
+          ],
+          [
+            0.4375,
+            0.793
+          ],
+          [
+            0.4837,
+            0.7998
+          ],
+          [
+            0.4935,
+            0.8623
+          ],
+          [
+            0.4928,
+            0.999
+          ],
+          [
+            0.3939,
+            0.9473
+          ],
+          [
+            0.3672,
+            0.9072
+          ],
+          [
+            0.3555,
+            0.876
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3535,
+          "y": 0.793,
+          "w": 0.1406,
+          "h": 0.207
+        },
+        "territory_area_px": 31091,
+        "visible_area_px": 25832,
+        "expansion_ratio": 1.204,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-field-hero-bass-ridge",
+            "shared_edge_px": 2987,
+            "direction": "right",
+            "distance_px": 134.34
+          },
+          {
+            "artifact_id": "module-second-procession-measure-cut",
+            "shared_edge_px": 832,
+            "direction": "right",
+            "distance_px": 140.28
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-night-swim-dropout-slit",
+      "kind": "module",
+      "label": "night-swim dropout slit",
+      "artifact_type": "video-dropout-slit",
+      "bounds": {
+        "x": 0.266,
+        "y": 0,
+        "w": 0.108,
+        "h": 0.723
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.277,
+          0
+        ],
+        [
+          0.304,
+          0
+        ],
+        [
+          0.327,
+          0.07
+        ],
+        [
+          0.345,
+          0.166
+        ],
+        [
+          0.354,
+          0.286
+        ],
+        [
+          0.356,
+          0.413
+        ],
+        [
+          0.345,
+          0.547
+        ],
+        [
+          0.324,
+          0.664
+        ],
+        [
+          0.294,
+          0.723
+        ],
+        [
+          0.276,
+          0.698
+        ],
+        [
+          0.286,
+          0.575
+        ],
+        [
+          0.295,
+          0.443
+        ],
+        [
+          0.298,
+          0.318
+        ],
+        [
+          0.293,
+          0.197
+        ],
+        [
+          0.282,
+          0.084
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/module-night-swim-dropout-slit.svg",
+      "source_binding_ids": [
+        "binding-module-night-swim-dropout-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          492,
+          311
+        ],
+        "safe_stage_window_origin_px": [
+          505,
+          370
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.277,
+            0
+          ],
+          [
+            0.304,
+            0
+          ],
+          [
+            0.327,
+            0.07
+          ],
+          [
+            0.345,
+            0.166
+          ],
+          [
+            0.354,
+            0.286
+          ],
+          [
+            0.356,
+            0.413
+          ],
+          [
+            0.345,
+            0.547
+          ],
+          [
+            0.324,
+            0.664
+          ],
+          [
+            0.294,
+            0.723
+          ],
+          [
+            0.276,
+            0.698
+          ],
+          [
+            0.286,
+            0.575
+          ],
+          [
+            0.295,
+            0.443
+          ],
+          [
+            0.298,
+            0.318
+          ],
+          [
+            0.293,
+            0.197
+          ],
+          [
+            0.282,
+            0.084
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2493,
+            0.6943
+          ],
+          [
+            0.2578,
+            0.0918
+          ],
+          [
+            0.265,
+            0.0
+          ],
+          [
+            0.3294,
+            0.0
+          ],
+          [
+            0.3535,
+            0.0713
+          ],
+          [
+            0.3711,
+            0.1699
+          ],
+          [
+            0.3796,
+            0.2812
+          ],
+          [
+            0.3815,
+            0.3916
+          ],
+          [
+            0.3704,
+            0.5479
+          ],
+          [
+            0.3496,
+            0.6631
+          ],
+          [
+            0.321,
+            0.7207
+          ],
+          [
+            0.2949,
+            0.7598
+          ],
+          [
+            0.2493,
+            0.6973
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2493,
+          "y": 0.0,
+          "w": 0.1328,
+          "h": 0.7607
+        },
+        "territory_area_px": 118250,
+        "visible_area_px": 58471,
+        "expansion_ratio": 2.022,
+        "neighbors": [
+          {
+            "artifact_id": "hero-left-edge-hero-oily-pressure-swell",
+            "shared_edge_px": 5248,
+            "direction": "left",
+            "distance_px": 278.41
+          },
+          {
+            "artifact_id": "module-detroit-rain-stone-aperture",
+            "shared_edge_px": 986,
+            "direction": "right",
+            "distance_px": 502.53
+          },
+          {
+            "artifact_id": "hero-lower-field-hero-bass-ridge",
+            "shared_edge_px": 60,
+            "direction": "down",
+            "distance_px": 607.35
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-detroit-rain-stone-aperture",
+      "kind": "module",
+      "label": "detroit rain-stone aperture",
+      "artifact_type": "civic-stone-aperture",
+      "bounds": {
+        "x": 0.343,
+        "y": 0.486,
+        "w": 0.636,
+        "h": 0.292
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.343,
+          0.563
+        ],
+        [
+          0.423,
+          0.545
+        ],
+        [
+          0.525,
+          0.539
+        ],
+        [
+          0.623,
+          0.549
+        ],
+        [
+          0.724,
+          0.556
+        ],
+        [
+          0.829,
+          0.555
+        ],
+        [
+          0.937,
+          0.568
+        ],
+        [
+          0.979,
+          0.615
+        ],
+        [
+          0.935,
+          0.693
+        ],
+        [
+          0.82,
+          0.728
+        ],
+        [
+          0.7,
+          0.75
+        ],
+        [
+          0.585,
+          0.769
+        ],
+        [
+          0.474,
+          0.778
+        ],
+        [
+          0.378,
+          0.748
+        ],
+        [
+          0.352,
+          0.666
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/module-detroit-rain-stone-aperture.svg",
+      "source_binding_ids": [
+        "binding-module-detroit-rain-stone-aperture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1015,
+          623
+        ],
+        "safe_stage_window_origin_px": [
+          1093,
+          647
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.343,
+            0.563
+          ],
+          [
+            0.423,
+            0.545
+          ],
+          [
+            0.525,
+            0.539
+          ],
+          [
+            0.623,
+            0.549
+          ],
+          [
+            0.724,
+            0.556
+          ],
+          [
+            0.829,
+            0.555
+          ],
+          [
+            0.937,
+            0.568
+          ],
+          [
+            0.979,
+            0.615
+          ],
+          [
+            0.935,
+            0.693
+          ],
+          [
+            0.82,
+            0.728
+          ],
+          [
+            0.7,
+            0.75
+          ],
+          [
+            0.585,
+            0.769
+          ],
+          [
+            0.474,
+            0.778
+          ],
+          [
+            0.378,
+            0.748
+          ],
+          [
+            0.352,
+            0.666
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3398,
+            0.6836
+          ],
+          [
+            0.3724,
+            0.5293
+          ],
+          [
+            0.4225,
+            0.5176
+          ],
+          [
+            0.5247,
+            0.5107
+          ],
+          [
+            0.7585,
+            0.5283
+          ],
+          [
+            0.9922,
+            0.6074
+          ],
+          [
+            0.9967,
+            0.6143
+          ],
+          [
+            0.9349,
+            0.7197
+          ],
+          [
+            0.8197,
+            0.7549
+          ],
+          [
+            0.6029,
+            0.793
+          ],
+          [
+            0.3776,
+            0.7744
+          ],
+          [
+            0.3594,
+            0.7471
+          ],
+          [
+            0.3398,
+            0.6865
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3398,
+          "y": 0.5107,
+          "w": 0.6576,
+          "h": 0.2832
+        },
+        "territory_area_px": 172833,
+        "visible_area_px": 184241,
+        "expansion_ratio": 0.938,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-field-hero-bass-ridge",
+            "shared_edge_px": 5406,
+            "direction": "down",
+            "distance_px": 241.52
+          },
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 3372,
+            "direction": "right",
+            "distance_px": 427.74
+          },
+          {
+            "artifact_id": "module-night-swim-dropout-slit",
+            "shared_edge_px": 986,
+            "direction": "left",
+            "distance_px": 502.53
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-silent-thumbnail-pinhole",
+      "kind": "module",
+      "label": "silent thumbnail pinhole",
+      "artifact_type": "pale-glass-pinhole",
+      "bounds": {
+        "x": 0.081,
+        "y": 0.335,
+        "w": 0.071,
+        "h": 0.147
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.089,
+          0.344
+        ],
+        [
+          0.11,
+          0.335
+        ],
+        [
+          0.133,
+          0.347
+        ],
+        [
+          0.149,
+          0.374
+        ],
+        [
+          0.152,
+          0.415
+        ],
+        [
+          0.143,
+          0.455
+        ],
+        [
+          0.12,
+          0.482
+        ],
+        [
+          0.096,
+          0.471
+        ],
+        [
+          0.083,
+          0.434
+        ],
+        [
+          0.081,
+          0.386
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/module-silent-thumbnail-pinhole.svg",
+      "source_binding_ids": [
+        "binding-module-silent-thumbnail-pinhole"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          179,
+          406
+        ],
+        "safe_stage_window_origin_px": [
+          188,
+          418
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.089,
+            0.344
+          ],
+          [
+            0.11,
+            0.335
+          ],
+          [
+            0.133,
+            0.347
+          ],
+          [
+            0.149,
+            0.374
+          ],
+          [
+            0.152,
+            0.415
+          ],
+          [
+            0.143,
+            0.455
+          ],
+          [
+            0.12,
+            0.482
+          ],
+          [
+            0.096,
+            0.471
+          ],
+          [
+            0.083,
+            0.434
+          ],
+          [
+            0.081,
+            0.386
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0625,
+            0.3848
+          ],
+          [
+            0.0703,
+            0.3438
+          ],
+          [
+            0.0885,
+            0.3164
+          ],
+          [
+            0.099,
+            0.3125
+          ],
+          [
+            0.1693,
+            0.415
+          ],
+          [
+            0.1608,
+            0.4541
+          ],
+          [
+            0.1198,
+            0.5088
+          ],
+          [
+            0.0957,
+            0.498
+          ],
+          [
+            0.0768,
+            0.4697
+          ],
+          [
+            0.0645,
+            0.4336
+          ],
+          [
+            0.0625,
+            0.3936
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0625,
+          "y": 0.3125,
+          "w": 0.1074,
+          "h": 0.1973
+        },
+        "territory_area_px": 21291,
+        "visible_area_px": 12666,
+        "expansion_ratio": 1.681,
+        "neighbors": [
+          {
+            "artifact_id": "hero-left-edge-hero-oily-pressure-swell",
+            "shared_edge_px": 22665,
+            "direction": "up",
+            "distance_px": 65.38
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-second-procession-measure-cut",
+      "kind": "module",
+      "label": "second procession measure cut",
+      "artifact_type": "linear-measure-cut",
+      "bounds": {
+        "x": 0.482,
+        "y": 0.799,
+        "w": 0.055,
+        "h": 0.197
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.502,
+          0.799
+        ],
+        [
+          0.519,
+          0.827
+        ],
+        [
+          0.529,
+          0.865
+        ],
+        [
+          0.537,
+          0.912
+        ],
+        [
+          0.534,
+          0.962
+        ],
+        [
+          0.523,
+          0.996
+        ],
+        [
+          0.509,
+          0.995
+        ],
+        [
+          0.497,
+          0.955
+        ],
+        [
+          0.49,
+          0.905
+        ],
+        [
+          0.482,
+          0.858
+        ],
+        [
+          0.487,
+          0.82
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/module-second-procession-measure-cut.svg",
+      "source_binding_ids": [
+        "binding-module-second-procession-measure-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          789,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.502,
+            0.799
+          ],
+          [
+            0.519,
+            0.827
+          ],
+          [
+            0.529,
+            0.865
+          ],
+          [
+            0.537,
+            0.912
+          ],
+          [
+            0.534,
+            0.962
+          ],
+          [
+            0.523,
+            0.996
+          ],
+          [
+            0.509,
+            0.995
+          ],
+          [
+            0.497,
+            0.955
+          ],
+          [
+            0.49,
+            0.905
+          ],
+          [
+            0.482,
+            0.858
+          ],
+          [
+            0.487,
+            0.82
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4876,
+            0.9756
+          ],
+          [
+            0.4941,
+            0.8662
+          ],
+          [
+            0.554,
+            0.9297
+          ],
+          [
+            0.5521,
+            0.9619
+          ],
+          [
+            0.5384,
+            0.999
+          ],
+          [
+            0.4935,
+            0.999
+          ],
+          [
+            0.4876,
+            0.9863
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4876,
+          "y": 0.8662,
+          "w": 0.0671,
+          "h": 0.1338
+        },
+        "territory_area_px": 9855,
+        "visible_area_px": 11257,
+        "expansion_ratio": 0.875,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-field-hero-bass-ridge",
+            "shared_edge_px": 1000,
+            "direction": "up",
+            "distance_px": 72.55
+          },
+          {
+            "artifact_id": "module-woven-chip-seam-cluster",
+            "shared_edge_px": 832,
+            "direction": "left",
+            "distance_px": 140.28
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.537,
+        "w": 0.255,
+        "h": 0.139
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.724,
+          0.581
+        ],
+        [
+          0.764,
+          0.553
+        ],
+        [
+          0.822,
+          0.537
+        ],
+        [
+          0.886,
+          0.538
+        ],
+        [
+          0.943,
+          0.552
+        ],
+        [
+          0.979,
+          0.591
+        ],
+        [
+          0.965,
+          0.635
+        ],
+        [
+          0.905,
+          0.66
+        ],
+        [
+          0.838,
+          0.676
+        ],
+        [
+          0.777,
+          0.667
+        ],
+        [
+          0.738,
+          0.635
+        ]
+      ],
+      "cluster_id": "oily-rubber-civic-pressure-field",
+      "mask_path": "/editions/2026-09-12-oily-systems-weather-field-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1308,
+          610
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          621
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.724,
+            0.581
+          ],
+          [
+            0.764,
+            0.553
+          ],
+          [
+            0.822,
+            0.537
+          ],
+          [
+            0.886,
+            0.538
+          ],
+          [
+            0.943,
+            0.552
+          ],
+          [
+            0.979,
+            0.591
+          ],
+          [
+            0.965,
+            0.635
+          ],
+          [
+            0.905,
+            0.66
+          ],
+          [
+            0.838,
+            0.676
+          ],
+          [
+            0.777,
+            0.667
+          ],
+          [
+            0.738,
+            0.635
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7331,
+            0.5469
+          ],
+          [
+            0.7637,
+            0.5254
+          ],
+          [
+            0.8216,
+            0.5088
+          ],
+          [
+            0.8854,
+            0.5098
+          ],
+          [
+            0.9427,
+            0.5244
+          ],
+          [
+            0.9967,
+            0.5908
+          ],
+          [
+            0.9831,
+            0.6348
+          ],
+          [
+            0.9648,
+            0.6621
+          ],
+          [
+            0.9049,
+            0.6865
+          ],
+          [
+            0.8379,
+            0.7031
+          ],
+          [
+            0.7767,
+            0.6943
+          ],
+          [
+            0.7441,
+            0.666
+          ],
+          [
+            0.7331,
+            0.5479
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7331,
+          "y": 0.5088,
+          "w": 0.2643,
+          "h": 0.1953
+        },
+        "territory_area_px": 63599,
+        "visible_area_px": 42259,
+        "expansion_ratio": 1.505,
+        "neighbors": [
+          {
+            "artifact_id": "module-detroit-rain-stone-aperture",
+            "shared_edge_px": 3372,
+            "direction": "left",
+            "distance_px": 427.74
+          }
+        ]
+      }
+    }
+  ]
+}

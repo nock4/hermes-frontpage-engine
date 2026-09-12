@@ -1,0 +1,626 @@
+{
+  "analysis_id": "analysis-2026-09-12-oily-systems-weather-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark, wet expressionist plate: a large oily swollen form presses in from the left, a black bass-like ridge crosses the lower edge, and a rain-stained stone field recedes into a scratched upper-right wall. Source-bearing marks are visible as slits, pinholes, glints, apertures, seams, and low reflective cuts.",
+  "usable_surfaces": [
+    "left oily pressure swell",
+    "lower black perforated ridge",
+    "dark vertical petal slit",
+    "upper-right scratched rain wall",
+    "wet stone floor aperture",
+    "tiny pale pinhole cluster",
+    "thin lower measure cuts",
+    "right-edge triangular glint field"
+  ],
+  "detected_objects": [
+    {
+      "label": "left-edge hero oily pressure swell",
+      "artifact_type": "hero-scale-oily-rubber-swell",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.377,
+        "h": 0.754
+      },
+      "polygon": [
+        [
+          0.001,
+          0.006
+        ],
+        [
+          0.061,
+          0.021
+        ],
+        [
+          0.143,
+          0.012
+        ],
+        [
+          0.216,
+          0
+        ],
+        [
+          0.265,
+          0.048
+        ],
+        [
+          0.304,
+          0.157
+        ],
+        [
+          0.332,
+          0.281
+        ],
+        [
+          0.348,
+          0.418
+        ],
+        [
+          0.336,
+          0.558
+        ],
+        [
+          0.299,
+          0.681
+        ],
+        [
+          0.24,
+          0.735
+        ],
+        [
+          0.154,
+          0.753
+        ],
+        [
+          0.066,
+          0.748
+        ],
+        [
+          0,
+          0.725
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "Dominant glossy flesh-toned pressure mass entering from the left edge, with bruised pigment, wet highlights, and folded swollen contours."
+    },
+    {
+      "label": "lower-field hero bass ridge",
+      "artifact_type": "hero-scale-bass-ridge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.707,
+        "w": 1,
+        "h": 0.293
+      },
+      "polygon": [
+        [
+          0,
+          0.744
+        ],
+        [
+          0.091,
+          0.743
+        ],
+        [
+          0.192,
+          0.758
+        ],
+        [
+          0.286,
+          0.792
+        ],
+        [
+          0.386,
+          0.815
+        ],
+        [
+          0.488,
+          0.802
+        ],
+        [
+          0.579,
+          0.798
+        ],
+        [
+          0.678,
+          0.766
+        ],
+        [
+          0.781,
+          0.727
+        ],
+        [
+          0.892,
+          0.707
+        ],
+        [
+          0.999,
+          0.696
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A broad black wet ridge runs across the lower field, carrying oval holes, glossy highlights, and low-pressure rhythmic cuts."
+    },
+    {
+      "label": "upper-right pixel duel notch",
+      "artifact_type": "edge-notch-glint",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.849,
+        "y": 0.033,
+        "w": 0.143,
+        "h": 0.352
+      },
+      "polygon": [
+        [
+          0.862,
+          0.034
+        ],
+        [
+          0.886,
+          0.065
+        ],
+        [
+          0.909,
+          0.097
+        ],
+        [
+          0.932,
+          0.134
+        ],
+        [
+          0.955,
+          0.173
+        ],
+        [
+          0.981,
+          0.22
+        ],
+        [
+          0.991,
+          0.264
+        ],
+        [
+          0.985,
+          0.322
+        ],
+        [
+          0.962,
+          0.384
+        ],
+        [
+          0.947,
+          0.337
+        ],
+        [
+          0.924,
+          0.281
+        ],
+        [
+          0.896,
+          0.218
+        ],
+        [
+          0.873,
+          0.153
+        ],
+        [
+          0.849,
+          0.075
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Upper-right wall contains hard, pale diagonal scratches and stepped glints against the dark field, reading as a small notched source edge."
+    },
+    {
+      "label": "woven chip seam cluster",
+      "artifact_type": "woven-seam-repair",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.379,
+        "y": 0.833,
+        "w": 0.183,
+        "h": 0.128
+      },
+      "polygon": [
+        [
+          0.38,
+          0.871
+        ],
+        [
+          0.407,
+          0.84
+        ],
+        [
+          0.438,
+          0.833
+        ],
+        [
+          0.468,
+          0.849
+        ],
+        [
+          0.492,
+          0.832
+        ],
+        [
+          0.523,
+          0.844
+        ],
+        [
+          0.552,
+          0.878
+        ],
+        [
+          0.562,
+          0.921
+        ],
+        [
+          0.535,
+          0.952
+        ],
+        [
+          0.493,
+          0.961
+        ],
+        [
+          0.455,
+          0.944
+        ],
+        [
+          0.423,
+          0.928
+        ],
+        [
+          0.394,
+          0.909
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "Lower central ridge shows interlaced wet chips and repaired-looking folds, with small crossing cuts and glossy seams."
+    },
+    {
+      "label": "night-swim dropout slit",
+      "artifact_type": "video-dropout-slit",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.266,
+        "y": 0,
+        "w": 0.108,
+        "h": 0.723
+      },
+      "polygon": [
+        [
+          0.277,
+          0
+        ],
+        [
+          0.304,
+          0
+        ],
+        [
+          0.327,
+          0.07
+        ],
+        [
+          0.345,
+          0.166
+        ],
+        [
+          0.354,
+          0.286
+        ],
+        [
+          0.356,
+          0.413
+        ],
+        [
+          0.345,
+          0.547
+        ],
+        [
+          0.324,
+          0.664
+        ],
+        [
+          0.294,
+          0.723
+        ],
+        [
+          0.276,
+          0.698
+        ],
+        [
+          0.286,
+          0.575
+        ],
+        [
+          0.295,
+          0.443
+        ],
+        [
+          0.298,
+          0.318
+        ],
+        [
+          0.293,
+          0.197
+        ],
+        [
+          0.282,
+          0.084
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A long dark waterlike vertical slit with a cold wet rim separates the left swelling lobes from the darker inner fold."
+    },
+    {
+      "label": "detroit rain-stone aperture",
+      "artifact_type": "civic-stone-aperture",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.343,
+        "y": 0.486,
+        "w": 0.636,
+        "h": 0.292
+      },
+      "polygon": [
+        [
+          0.343,
+          0.563
+        ],
+        [
+          0.423,
+          0.545
+        ],
+        [
+          0.525,
+          0.539
+        ],
+        [
+          0.623,
+          0.549
+        ],
+        [
+          0.724,
+          0.556
+        ],
+        [
+          0.829,
+          0.555
+        ],
+        [
+          0.937,
+          0.568
+        ],
+        [
+          0.979,
+          0.615
+        ],
+        [
+          0.935,
+          0.693
+        ],
+        [
+          0.82,
+          0.728
+        ],
+        [
+          0.7,
+          0.75
+        ],
+        [
+          0.585,
+          0.769
+        ],
+        [
+          0.474,
+          0.778
+        ],
+        [
+          0.378,
+          0.748
+        ],
+        [
+          0.352,
+          0.666
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "Rain-dulled stone floor and wall transition forms a broad dark architectural aperture with reflective pooled edges and civic-scale surface texture."
+    },
+    {
+      "label": "silent thumbnail pinhole",
+      "artifact_type": "pale-glass-pinhole",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.081,
+        "y": 0.335,
+        "w": 0.071,
+        "h": 0.147
+      },
+      "polygon": [
+        [
+          0.089,
+          0.344
+        ],
+        [
+          0.11,
+          0.335
+        ],
+        [
+          0.133,
+          0.347
+        ],
+        [
+          0.149,
+          0.374
+        ],
+        [
+          0.152,
+          0.415
+        ],
+        [
+          0.143,
+          0.455
+        ],
+        [
+          0.12,
+          0.482
+        ],
+        [
+          0.096,
+          0.471
+        ],
+        [
+          0.083,
+          0.434
+        ],
+        [
+          0.081,
+          0.386
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A compact cluster of small round black pinholes on the left swollen surface, each with wet pale rims and dark centers."
+    },
+    {
+      "label": "second procession measure cut",
+      "artifact_type": "linear-measure-cut",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.482,
+        "y": 0.799,
+        "w": 0.055,
+        "h": 0.197
+      },
+      "polygon": [
+        [
+          0.502,
+          0.799
+        ],
+        [
+          0.519,
+          0.827
+        ],
+        [
+          0.529,
+          0.865
+        ],
+        [
+          0.537,
+          0.912
+        ],
+        [
+          0.534,
+          0.962
+        ],
+        [
+          0.523,
+          0.996
+        ],
+        [
+          0.509,
+          0.995
+        ],
+        [
+          0.497,
+          0.955
+        ],
+        [
+          0.49,
+          0.905
+        ],
+        [
+          0.482,
+          0.858
+        ],
+        [
+          0.487,
+          0.82
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "A thin vertical measure-like cut in the lower black ridge, bright-edged and narrow, reads as a rhythmic procession incision."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.537,
+        "w": 0.255,
+        "h": 0.139
+      },
+      "polygon": [
+        [
+          0.724,
+          0.581
+        ],
+        [
+          0.764,
+          0.553
+        ],
+        [
+          0.822,
+          0.537
+        ],
+        [
+          0.886,
+          0.538
+        ],
+        [
+          0.943,
+          0.552
+        ],
+        [
+          0.979,
+          0.591
+        ],
+        [
+          0.965,
+          0.635
+        ],
+        [
+          0.905,
+          0.66
+        ],
+        [
+          0.838,
+          0.676
+        ],
+        [
+          0.777,
+          0.667
+        ],
+        [
+          0.738,
+          0.635
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "Right-middle wet field contains a low horizontal reflective stain with small pale glints and dark pooled edges, suitable as a compact field marker."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.972,
+    "rationale": "The plate is image-led and restrained: one dominant left pressure mass, one lower black ridge, and one receding rain-stone field. Detail is concentrated in slits, pinholes, scratches, and pooled edges rather than spread as clutter."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-12-oily-systems-weather-field-v1"
+}

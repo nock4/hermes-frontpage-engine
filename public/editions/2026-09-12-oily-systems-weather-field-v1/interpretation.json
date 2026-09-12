@@ -1,0 +1,380 @@
+{
+  "interpretation_id": "interp-2026-09-12-oily-systems-weather-field-v1",
+  "edition_id": "2026-09-12-oily-systems-weather-field-v1",
+  "plate_read_timestamp": "2026-09-12T08:07:40.517Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark, wet expressionist plate: a large oily swollen form presses in from the left, a black bass-like ridge crosses the lower edge, and a rain-stained stone field recedes into a scratched upper-right wall. Source-bearing marks are visible as slits, pinholes, glints, apertures, seams, and low reflective cuts.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "hazed pressure under quiet systems, like a rain-dark public surface holding one swollen signal and several precise cuts",
+      "A dark, wet expressionist plate: a large oily swollen form presses in from the left, a black bass-like ridge crosses the lower edge, and a rain-stained stone field recedes into a scratched upper-right wall. Source-bearing marks are visible as slits, pinholes, glints, apertures, seams, and low reflective cuts.",
+      "oily-rubber",
+      "minimal-field",
+      "bass-ridge"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "left-edge hero oily pressure swell",
+      "lower-field hero bass ridge",
+      "upper-right pixel duel notch",
+      "woven chip seam cluster",
+      "night-swim dropout slit",
+      "detroit rain-stone aperture",
+      "silent thumbnail pinhole",
+      "second procession measure cut"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "oily-rubber-civic-pressure-field",
+      "one oversized cropped amorphous pressure swell entering from the left edge",
+      "one low civic bass ridge running near the lower field",
+      "sparse procession of onset punctures and measure cuts",
+      "hairline registration seams embedded in organic flow",
+      "small glassy apertures and repaired slits along edges",
+      "left oily pressure swell",
+      "lower black perforated ridge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: oily-rubber-civic-pressure-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-left-edge-hero-oily-pressure-swell",
+      "kind": "hero",
+      "type": "hero-scale-oily-rubber-swell",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.3704,
+        "h": 0.7529
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-field-hero-bass-ridge",
+      "kind": "hero",
+      "type": "hero-scale-bass-ridge",
+      "strength": 0.9824599999999999,
+      "bounds": {
+        "x": 0,
+        "y": 0.707,
+        "w": 1,
+        "h": 0.293
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-right-pixel-duel-notch",
+      "kind": "module",
+      "type": "edge-notch-glint",
+      "strength": 0.7934519999999999,
+      "bounds": {
+        "x": 0.849,
+        "y": 0.033,
+        "w": 0.143,
+        "h": 0.352
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-woven-chip-seam-cluster",
+      "kind": "module",
+      "type": "woven-seam-repair",
+      "strength": 0.7646160000000001,
+      "bounds": {
+        "x": 0.379,
+        "y": 0.833,
+        "w": 0.183,
+        "h": 0.128
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-night-swim-dropout-slit",
+      "kind": "module",
+      "type": "video-dropout-slit",
+      "strength": 0.7298880000000001,
+      "bounds": {
+        "x": 0.266,
+        "y": 0,
+        "w": 0.108,
+        "h": 0.723
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detroit-rain-stone-aperture",
+      "kind": "module",
+      "type": "civic-stone-aperture",
+      "strength": 0.694332,
+      "bounds": {
+        "x": 0.343,
+        "y": 0.486,
+        "w": 0.636,
+        "h": 0.292
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-silent-thumbnail-pinhole",
+      "kind": "module",
+      "type": "pale-glass-pinhole",
+      "strength": 0.6778200000000001,
+      "bounds": {
+        "x": 0.081,
+        "y": 0.335,
+        "w": 0.071,
+        "h": 0.147
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-second-procession-measure-cut",
+      "kind": "module",
+      "type": "linear-measure-cut",
+      "strength": 0.6482319999999999,
+      "bounds": {
+        "x": 0.482,
+        "y": 0.799,
+        "w": 0.055,
+        "h": 0.197
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.6542319999999999,
+      "bounds": {
+        "x": 0.724,
+        "y": 0.537,
+        "w": 0.255,
+        "h": 0.139
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-left-edge-hero-oily-pressure-swell-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.3704,
+        "h": 0.7529
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-field-hero-bass-ridge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.707,
+        "w": 1,
+        "h": 0.293
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-right-pixel-duel-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.849,
+        "y": 0.033,
+        "w": 0.143,
+        "h": 0.352
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-woven-chip-seam-cluster-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.379,
+        "y": 0.833,
+        "w": 0.183,
+        "h": 0.128
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-night-swim-dropout-slit-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.266,
+        "y": 0,
+        "w": 0.108,
+        "h": 0.723
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detroit-rain-stone-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.343,
+        "y": 0.486,
+        "w": 0.636,
+        "h": 0.292
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-silent-thumbnail-pinhole-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.081,
+        "y": 0.335,
+        "w": 0.071,
+        "h": 0.147
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-second-procession-measure-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.482,
+        "y": 0.799,
+        "w": 0.055,
+        "h": 0.197
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.724,
+        "y": 0.537,
+        "w": 0.255,
+        "h": 0.139
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
