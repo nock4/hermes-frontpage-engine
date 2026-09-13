@@ -1,0 +1,647 @@
+{
+  "analysis_id": "analysis-2026-09-13-glazed-prize-habitat-wall-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A calm white plaster-paper field with torn apertures, lifted curled edges, pigment islands, gold foil, rainbow film, black rubbed seams, pink scraped margins, and a crowned glazed figure rising from the lower edge. The plate is image-first and mostly minimal, with source windows carried by real tears, chips, stains, and exposed underlayers rather than cards.",
+  "usable_surfaces": [
+    "central white plaster-paper calm field",
+    "lower crowned glazed figure and crown chip",
+    "left flower aperture with torn white rim",
+    "lower-left rainbow film tear",
+    "right vertical sunset slit",
+    "right gold foil lifted slab",
+    "right pink scraped paper margin",
+    "left black rubbed seam and red pigment edge",
+    "upper-center brown scratch cluster"
+  ],
+  "detected_objects": [
+    {
+      "label": "royal-mowch-crown-glint",
+      "artifact_type": "hero-scale-glazed-crown-chip",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.404,
+        "y": 0.807,
+        "w": 0.177,
+        "h": 0.191
+      },
+      "polygon": [
+        [
+          0.405,
+          0.941
+        ],
+        [
+          0.415,
+          0.906
+        ],
+        [
+          0.452,
+          0.899
+        ],
+        [
+          0.469,
+          0.862
+        ],
+        [
+          0.47,
+          0.815
+        ],
+        [
+          0.49,
+          0.812
+        ],
+        [
+          0.505,
+          0.837
+        ],
+        [
+          0.519,
+          0.808
+        ],
+        [
+          0.53,
+          0.856
+        ],
+        [
+          0.556,
+          0.893
+        ],
+        [
+          0.58,
+          0.903
+        ],
+        [
+          0.582,
+          0.948
+        ],
+        [
+          0.557,
+          0.986
+        ],
+        [
+          0.501,
+          0.997
+        ],
+        [
+          0.447,
+          0.989
+        ],
+        [
+          0.419,
+          0.97
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "The bottom-center glazed dark figure with round ears and a small gold crown is visibly cropped by the lower edge; the crown tips and worn gold highlights form the strongest hero-scale chip."
+    },
+    {
+      "label": "detroit-photo-paper-slab",
+      "artifact_type": "hero-scale-lifted-photo-slab",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.206,
+        "y": 0,
+        "w": 0.626,
+        "h": 0.815
+      },
+      "polygon": [
+        [
+          0.205,
+          0.028
+        ],
+        [
+          0.346,
+          0.046
+        ],
+        [
+          0.505,
+          0.028
+        ],
+        [
+          0.664,
+          0
+        ],
+        [
+          0.823,
+          0
+        ],
+        [
+          0.832,
+          0.16
+        ],
+        [
+          0.816,
+          0.34
+        ],
+        [
+          0.837,
+          0.529
+        ],
+        [
+          0.791,
+          0.724
+        ],
+        [
+          0.656,
+          0.813
+        ],
+        [
+          0.498,
+          0.802
+        ],
+        [
+          0.335,
+          0.783
+        ],
+        [
+          0.223,
+          0.714
+        ],
+        [
+          0.207,
+          0.529
+        ],
+        [
+          0.229,
+          0.323
+        ],
+        [
+          0.217,
+          0.142
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A broad off-white architectural paper/plaster slab dominates the center with subtle wrinkles, seams, stains, and lifted paper edges around its perimeter."
+    },
+    {
+      "label": "playlist-white-edge-tear",
+      "artifact_type": "torn-video-thumbnail-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.034,
+        "y": 0.596,
+        "w": 0.095,
+        "h": 0.261
+      },
+      "polygon": [
+        [
+          0.035,
+          0.629
+        ],
+        [
+          0.059,
+          0.603
+        ],
+        [
+          0.09,
+          0.596
+        ],
+        [
+          0.117,
+          0.626
+        ],
+        [
+          0.129,
+          0.691
+        ],
+        [
+          0.113,
+          0.754
+        ],
+        [
+          0.121,
+          0.823
+        ],
+        [
+          0.091,
+          0.858
+        ],
+        [
+          0.07,
+          0.807
+        ],
+        [
+          0.047,
+          0.789
+        ],
+        [
+          0.057,
+          0.723
+        ],
+        [
+          0.036,
+          0.682
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A pale torn strip curls over the lower-left black area beside the rainbow exposed surface; its irregular white edge is a clear thumbnail-like tear."
+    },
+    {
+      "label": "norm-short-black-seam",
+      "artifact_type": "cropped-motion-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.541,
+        "w": 0.244,
+        "h": 0.457
+      },
+      "polygon": [
+        [
+          0,
+          0.545
+        ],
+        [
+          0.094,
+          0.548
+        ],
+        [
+          0.151,
+          0.579
+        ],
+        [
+          0.22,
+          0.56
+        ],
+        [
+          0.244,
+          0.615
+        ],
+        [
+          0.226,
+          0.735
+        ],
+        [
+          0.251,
+          0.862
+        ],
+        [
+          0.211,
+          0.997
+        ],
+        [
+          0.079,
+          0.997
+        ],
+        [
+          0,
+          0.979
+        ],
+        [
+          0,
+          0.87
+        ],
+        [
+          0.086,
+          0.844
+        ],
+        [
+          0.042,
+          0.769
+        ],
+        [
+          0,
+          0.723
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "The lower-left quadrant contains rubbed black paint seams with chipped white paper and red residue, reading as a dark cropped motion-pressure band."
+    },
+    {
+      "label": "opencode-glass-plate-scratch",
+      "artifact_type": "electric-image-scratch",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.055,
+        "y": 0.569,
+        "w": 0.088,
+        "h": 0.195
+      },
+      "polygon": [
+        [
+          0.06,
+          0.589
+        ],
+        [
+          0.087,
+          0.575
+        ],
+        [
+          0.125,
+          0.569
+        ],
+        [
+          0.143,
+          0.614
+        ],
+        [
+          0.134,
+          0.666
+        ],
+        [
+          0.12,
+          0.723
+        ],
+        [
+          0.099,
+          0.762
+        ],
+        [
+          0.075,
+          0.738
+        ],
+        [
+          0.057,
+          0.698
+        ],
+        [
+          0.067,
+          0.647
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A bright holographic rainbow shard exposed in the lower-left tear creates electric glassy scratches and saturated spectral flecks."
+    },
+    {
+      "label": "willow-transcription-pink-curl",
+      "artifact_type": "lifted-video-corner",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.831,
+        "y": 0,
+        "w": 0.167,
+        "h": 0.996
+      },
+      "polygon": [
+        [
+          0.945,
+          0
+        ],
+        [
+          0.995,
+          0
+        ],
+        [
+          0.998,
+          0.093
+        ],
+        [
+          0.965,
+          0.196
+        ],
+        [
+          0.998,
+          0.327
+        ],
+        [
+          0.964,
+          0.474
+        ],
+        [
+          0.991,
+          0.627
+        ],
+        [
+          0.957,
+          0.799
+        ],
+        [
+          0.997,
+          0.936
+        ],
+        [
+          0.957,
+          0.996
+        ],
+        [
+          0.883,
+          0.951
+        ],
+        [
+          0.833,
+          0.839
+        ],
+        [
+          0.858,
+          0.674
+        ],
+        [
+          0.835,
+          0.514
+        ],
+        [
+          0.856,
+          0.328
+        ],
+        [
+          0.842,
+          0.143
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "The far-right edge is a torn candy-pink scraped paper wall with curled white corners, black scars, and exposed fragments, matching the lifted pink video-corner artifact."
+    },
+    {
+      "label": "walkcycle-frame-ribbon",
+      "artifact_type": "stuttered-frame-ribbon",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.883,
+        "y": 0.064,
+        "w": 0.053,
+        "h": 0.408
+      },
+      "polygon": [
+        [
+          0.909,
+          0.065
+        ],
+        [
+          0.933,
+          0.09
+        ],
+        [
+          0.928,
+          0.154
+        ],
+        [
+          0.935,
+          0.214
+        ],
+        [
+          0.928,
+          0.292
+        ],
+        [
+          0.935,
+          0.36
+        ],
+        [
+          0.922,
+          0.438
+        ],
+        [
+          0.895,
+          0.472
+        ],
+        [
+          0.886,
+          0.407
+        ],
+        [
+          0.891,
+          0.333
+        ],
+        [
+          0.886,
+          0.265
+        ],
+        [
+          0.89,
+          0.194
+        ],
+        [
+          0.885,
+          0.121
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A narrow vertical slit on the right reveals stacked bands of ocean/sunset imagery, functioning as a stuttered frame ribbon inside a torn seam."
+    },
+    {
+      "label": "gaussian-dot-glaze-stain",
+      "artifact_type": "pixel-dust-stain",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.646,
+        "y": 0,
+        "w": 0.112,
+        "h": 0.354
+      },
+      "polygon": [
+        [
+          0.703,
+          0
+        ],
+        [
+          0.728,
+          0.025
+        ],
+        [
+          0.75,
+          0.08
+        ],
+        [
+          0.737,
+          0.139
+        ],
+        [
+          0.719,
+          0.197
+        ],
+        [
+          0.707,
+          0.257
+        ],
+        [
+          0.69,
+          0.328
+        ],
+        [
+          0.671,
+          0.354
+        ],
+        [
+          0.657,
+          0.298
+        ],
+        [
+          0.668,
+          0.233
+        ],
+        [
+          0.651,
+          0.176
+        ],
+        [
+          0.665,
+          0.116
+        ],
+        [
+          0.646,
+          0.057
+        ],
+        [
+          0.671,
+          0.015
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "Upper-center brown speckled drag marks and dot clusters sit on the white field like enlarged pixel dust or glossy stain residue."
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.789,
+        "y": 0.498,
+        "w": 0.174,
+        "h": 0.262
+      },
+      "polygon": [
+        [
+          0.885,
+          0.501
+        ],
+        [
+          0.964,
+          0.53
+        ],
+        [
+          0.942,
+          0.596
+        ],
+        [
+          0.917,
+          0.673
+        ],
+        [
+          0.895,
+          0.756
+        ],
+        [
+          0.843,
+          0.731
+        ],
+        [
+          0.808,
+          0.71
+        ],
+        [
+          0.791,
+          0.653
+        ],
+        [
+          0.815,
+          0.584
+        ],
+        [
+          0.852,
+          0.546
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A raised gold foil slab on the mid-right is framed by peeled white paper flaps and adjacent pink wall, making a distinct signal-like panel surface."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 5,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.971,
+    "rationale": "The plate is mostly a large quiet white field with a few strong torn apertures and pigment islands; edges are active but not cluttered, and the source-bearing marks remain legible."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-13-glazed-prize-habitat-wall-v1"
+}

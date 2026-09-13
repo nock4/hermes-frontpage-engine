@@ -1,0 +1,587 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-13-glazed-prize-habitat-wall-v1",
+  "generation": "daily-process-2026-09-13T08-00-50-612Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-09-13T08-00-50-612Z/2026-09-13-glazed-prize-habitat-wall-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-royal-mowch-crown-glint",
+      "visible_area_px": 31994,
+      "territory_area_px": 53200,
+      "hover_bounds": {
+        "x": 0.3828,
+        "y": 0.7744,
+        "w": 0.2214,
+        "h": 0.2256
+      },
+      "hover_polygon": [
+        [
+          0.3828,
+          0.9395
+        ],
+        [
+          0.3926,
+          0.9053
+        ],
+        [
+          0.4694,
+          0.7812
+        ],
+        [
+          0.5189,
+          0.7744
+        ],
+        [
+          0.6016,
+          0.9023
+        ],
+        [
+          0.6035,
+          0.9404
+        ],
+        [
+          0.5697,
+          0.999
+        ],
+        [
+          0.416,
+          0.999
+        ],
+        [
+          0.3828,
+          0.9404
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "hero-detroit-photo-paper-slab",
+      "visible_area_px": 678640,
+      "territory_area_px": 643219,
+      "hover_bounds": {
+        "x": 0.1126,
+        "y": 0.0,
+        "w": 0.8014,
+        "h": 0.6885
+      },
+      "hover_polygon": [
+        [
+          0.1126,
+          0.1221
+        ],
+        [
+          0.1191,
+          0.0
+        ],
+        [
+          0.9095,
+          0.0
+        ],
+        [
+          0.9134,
+          0.0146
+        ],
+        [
+          0.8177,
+          0.5293
+        ],
+        [
+          0.6823,
+          0.627
+        ],
+        [
+          0.584,
+          0.6729
+        ],
+        [
+          0.528,
+          0.6846
+        ],
+        [
+          0.4831,
+          0.6875
+        ],
+        [
+          0.4017,
+          0.668
+        ],
+        [
+          0.3001,
+          0.6123
+        ],
+        [
+          0.1836,
+          0.5283
+        ],
+        [
+          0.1374,
+          0.4854
+        ],
+        [
+          0.1139,
+          0.4502
+        ],
+        [
+          0.1126,
+          0.4375
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-gaussian-dot-glaze-stain",
+          "shared_edge_px": 4704,
+          "direction": "right",
+          "distance_px": 382.3
+        },
+        {
+          "artifact_id": "module-willow-transcription-pink-curl",
+          "shared_edge_px": 3234,
+          "direction": "right",
+          "distance_px": 717.77
+        },
+        {
+          "artifact_id": "module-norm-short-black-seam",
+          "shared_edge_px": 755,
+          "direction": "left",
+          "distance_px": 686.85
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-playlist-white-edge-tear",
+      "visible_area_px": 25992,
+      "territory_area_px": 17057,
+      "hover_bounds": {
+        "x": 0.0163,
+        "y": 0.5938,
+        "w": 0.1126,
+        "h": 0.2246
+      },
+      "hover_polygon": [
+        [
+          0.0163,
+          0.6289
+        ],
+        [
+          0.0417,
+          0.5938
+        ],
+        [
+          0.1283,
+          0.7051
+        ],
+        [
+          0.0495,
+          0.8174
+        ],
+        [
+          0.0286,
+          0.7881
+        ],
+        [
+          0.0163,
+          0.6416
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-norm-short-black-seam",
+          "shared_edge_px": 18718,
+          "direction": "right",
+          "distance_px": 117.41
+        },
+        {
+          "artifact_id": "module-opencode-glass-plate-scratch",
+          "shared_edge_px": 1166,
+          "direction": "up",
+          "distance_px": 117.62
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-norm-short-black-seam",
+      "visible_area_px": 150110,
+      "territory_area_px": 192789,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.5059,
+        "w": 0.2773,
+        "h": 0.4941
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.5059
+        ],
+        [
+          0.2194,
+          0.5205
+        ],
+        [
+          0.2461,
+          0.5605
+        ],
+        [
+          0.2695,
+          0.6143
+        ],
+        [
+          0.2767,
+          0.8604
+        ],
+        [
+          0.235,
+          0.999
+        ],
+        [
+          0.0,
+          0.999
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-opencode-glass-plate-scratch",
+          "shared_edge_px": 23800,
+          "direction": "up",
+          "distance_px": 149.15
+        },
+        {
+          "artifact_id": "module-playlist-white-edge-tear",
+          "shared_edge_px": 18718,
+          "direction": "left",
+          "distance_px": 117.41
+        },
+        {
+          "artifact_id": "hero-detroit-photo-paper-slab",
+          "shared_edge_px": 755,
+          "direction": "right",
+          "distance_px": 686.85
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-opencode-glass-plate-scratch",
+      "visible_area_px": 18304,
+      "territory_area_px": 22255,
+      "hover_bounds": {
+        "x": 0.0417,
+        "y": 0.541,
+        "w": 0.1198,
+        "h": 0.1641
+      },
+      "hover_polygon": [
+        [
+          0.0417,
+          0.5889
+        ],
+        [
+          0.0632,
+          0.5596
+        ],
+        [
+          0.0866,
+          0.5469
+        ],
+        [
+          0.125,
+          0.541
+        ],
+        [
+          0.1439,
+          0.5693
+        ],
+        [
+          0.1608,
+          0.6133
+        ],
+        [
+          0.1445,
+          0.6963
+        ],
+        [
+          0.127,
+          0.7041
+        ],
+        [
+          0.0469,
+          0.6572
+        ],
+        [
+          0.0417,
+          0.5908
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-norm-short-black-seam",
+          "shared_edge_px": 23800,
+          "direction": "down",
+          "distance_px": 149.15
+        },
+        {
+          "artifact_id": "module-playlist-white-edge-tear",
+          "shared_edge_px": 1166,
+          "direction": "down",
+          "distance_px": 117.62
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-willow-transcription-pink-curl",
+      "visible_area_px": 192108,
+      "territory_area_px": 210041,
+      "hover_bounds": {
+        "x": 0.8145,
+        "y": 0.0,
+        "w": 0.1855,
+        "h": 1.0
+      },
+      "hover_polygon": [
+        [
+          0.8145,
+          0.8369
+        ],
+        [
+          0.8236,
+          0.1426
+        ],
+        [
+          0.9251,
+          0.0
+        ],
+        [
+          0.9993,
+          0.0
+        ],
+        [
+          0.9993,
+          0.959
+        ],
+        [
+          0.972,
+          0.999
+        ],
+        [
+          0.918,
+          0.999
+        ],
+        [
+          0.8841,
+          0.9785
+        ],
+        [
+          0.8639,
+          0.9492
+        ],
+        [
+          0.8145,
+          0.8389
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-walkcycle-frame-ribbon",
+          "shared_edge_px": 42376,
+          "direction": "up",
+          "distance_px": 262.96
+        },
+        {
+          "artifact_id": "hero-detroit-photo-paper-slab",
+          "shared_edge_px": 3234,
+          "direction": "left",
+          "distance_px": 717.77
+        },
+        {
+          "artifact_id": "module-signal-panel",
+          "shared_edge_px": 2979,
+          "direction": "down",
+          "distance_px": 200.25
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-walkcycle-frame-ribbon",
+      "visible_area_px": 25162,
+      "territory_area_px": 39841,
+      "hover_bounds": {
+        "x": 0.8665,
+        "y": 0.0371,
+        "w": 0.0872,
+        "h": 0.3467
+      },
+      "hover_polygon": [
+        [
+          0.8665,
+          0.1201
+        ],
+        [
+          0.89,
+          0.0654
+        ],
+        [
+          0.9089,
+          0.0371
+        ],
+        [
+          0.9323,
+          0.0615
+        ],
+        [
+          0.9512,
+          0.0898
+        ],
+        [
+          0.9531,
+          0.2119
+        ],
+        [
+          0.9505,
+          0.376
+        ],
+        [
+          0.8691,
+          0.3828
+        ],
+        [
+          0.8665,
+          0.124
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-willow-transcription-pink-curl",
+          "shared_edge_px": 42376,
+          "direction": "down",
+          "distance_px": 262.96
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-gaussian-dot-glaze-stain",
+      "visible_area_px": 32941,
+      "territory_area_px": 54563,
+      "hover_bounds": {
+        "x": 0.6276,
+        "y": 0.0,
+        "w": 0.1413,
+        "h": 0.3818
+      },
+      "hover_polygon": [
+        [
+          0.6276,
+          0.0566
+        ],
+        [
+          0.6621,
+          0.0
+        ],
+        [
+          0.7298,
+          0.0
+        ],
+        [
+          0.7467,
+          0.0254
+        ],
+        [
+          0.7682,
+          0.0791
+        ],
+        [
+          0.7083,
+          0.3252
+        ],
+        [
+          0.6706,
+          0.3809
+        ],
+        [
+          0.6523,
+          0.3535
+        ],
+        [
+          0.6387,
+          0.2988
+        ],
+        [
+          0.6276,
+          0.0576
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-detroit-photo-paper-slab",
+          "shared_edge_px": 4704,
+          "direction": "left",
+          "distance_px": 382.3
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-signal-panel",
+      "visible_area_px": 40621,
+      "territory_area_px": 47501,
+      "hover_bounds": {
+        "x": 0.7721,
+        "y": 0.5244,
+        "w": 0.1849,
+        "h": 0.2598
+      },
+      "hover_polygon": [
+        [
+          0.7721,
+          0.6523
+        ],
+        [
+          0.7956,
+          0.585
+        ],
+        [
+          0.8151,
+          0.5557
+        ],
+        [
+          0.8457,
+          0.5244
+        ],
+        [
+          0.9564,
+          0.6055
+        ],
+        [
+          0.9128,
+          0.7559
+        ],
+        [
+          0.8945,
+          0.7832
+        ],
+        [
+          0.8079,
+          0.7373
+        ],
+        [
+          0.7897,
+          0.71
+        ],
+        [
+          0.7721,
+          0.6533
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-willow-transcription-pink-curl",
+          "shared_edge_px": 2979,
+          "direction": "up",
+          "distance_px": 200.25
+        }
+      ]
+    }
+  ]
+}

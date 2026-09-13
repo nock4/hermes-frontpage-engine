@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-09-13-glazed-prize-habitat-wall-v1",
+  "edition_id": "2026-09-13-glazed-prize-habitat-wall-v1",
+  "plate_read_timestamp": "2026-09-13T08:07:27.330Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A calm white plaster-paper field with torn apertures, lifted curled edges, pigment islands, gold foil, rainbow film, black rubbed seams, pink scraped margins, and a crowned glazed figure rising from the lower edge. The plate is image-first and mostly minimal, with source windows carried by real tears, chips, stains, and exposed underlayers rather than cards.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright enamel wall with torn-system pressure",
+      "A calm white plaster-paper field with torn apertures, lifted curled edges, pigment islands, gold foil, rainbow film, black rubbed seams, pink scraped margins, and a crowned glazed figure rising from the lower edge. The plate is image-first and mostly minimal, with source windows carried by real tears, chips, stains, and exposed underlayers rather than cards.",
+      "glazed-poster",
+      "white-calm-field",
+      "crown-glint"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "royal-mowch-crown-glint",
+      "detroit-photo-paper-slab",
+      "playlist-white-edge-tear",
+      "norm-short-black-seam",
+      "opencode-glass-plate-scratch",
+      "willow-transcription-pink-curl",
+      "walkcycle-frame-ribbon",
+      "gaussian-dot-glaze-stain"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "glazed-poster-chip-prize-wall",
+      "low-center crowned abstract silhouette with rounded side lobes",
+      "dense ring of torn poster strata pressing inward",
+      "lifted enamel chips with hidden color undersides",
+      "cropped video and image residue caught in seams",
+      "gold foil notches and soot-soft scratches",
+      "central white plaster-paper calm field",
+      "lower crowned glazed figure and crown chip"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: glazed-poster-chip-prize-wall.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-royal-mowch-crown-glint",
+      "kind": "hero",
+      "type": "hero-scale-glazed-crown-chip",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.404,
+        "y": 0.807,
+        "w": 0.177,
+        "h": 0.191
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-detroit-photo-paper-slab",
+      "kind": "hero",
+      "type": "hero-scale-lifted-photo-slab",
+      "strength": 0.9844639999999999,
+      "bounds": {
+        "x": 0.1335,
+        "y": 0,
+        "w": 0.7624,
+        "h": 0.6582
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-playlist-white-edge-tear",
+      "kind": "module",
+      "type": "torn-video-thumbnail-edge",
+      "strength": 0.7872359999999999,
+      "bounds": {
+        "x": 0.034,
+        "y": 0.596,
+        "w": 0.095,
+        "h": 0.261
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-norm-short-black-seam",
+      "kind": "module",
+      "type": "cropped-motion-seam",
+      "strength": 0.7493280000000001,
+      "bounds": {
+        "x": 0,
+        "y": 0.541,
+        "w": 0.244,
+        "h": 0.457
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-opencode-glass-plate-scratch",
+      "kind": "module",
+      "type": "electric-image-scratch",
+      "strength": 0.736344,
+      "bounds": {
+        "x": 0.055,
+        "y": 0.569,
+        "w": 0.088,
+        "h": 0.195
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-willow-transcription-pink-curl",
+      "kind": "module",
+      "type": "lifted-video-corner",
+      "strength": 0.681792,
+      "bounds": {
+        "x": 0.831,
+        "y": 0,
+        "w": 0.167,
+        "h": 0.996
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-walkcycle-frame-ribbon",
+      "kind": "module",
+      "type": "stuttered-frame-ribbon",
+      "strength": 0.672444,
+      "bounds": {
+        "x": 0.883,
+        "y": 0.064,
+        "w": 0.053,
+        "h": 0.408
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gaussian-dot-glaze-stain",
+      "kind": "module",
+      "type": "pixel-dust-stain",
+      "strength": 0.6639759999999999,
+      "bounds": {
+        "x": 0.646,
+        "y": 0,
+        "w": 0.112,
+        "h": 0.354
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.648892,
+      "bounds": {
+        "x": 0.789,
+        "y": 0.498,
+        "w": 0.174,
+        "h": 0.262
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-royal-mowch-crown-glint-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.404,
+        "y": 0.807,
+        "w": 0.177,
+        "h": 0.191
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-detroit-photo-paper-slab-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1335,
+        "y": 0,
+        "w": 0.7624,
+        "h": 0.6582
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-playlist-white-edge-tear-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.034,
+        "y": 0.596,
+        "w": 0.095,
+        "h": 0.261
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-norm-short-black-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.541,
+        "w": 0.244,
+        "h": 0.457
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-opencode-glass-plate-scratch-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.055,
+        "y": 0.569,
+        "w": 0.088,
+        "h": 0.195
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-willow-transcription-pink-curl-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.831,
+        "y": 0,
+        "w": 0.167,
+        "h": 0.996
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-walkcycle-frame-ribbon-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.883,
+        "y": 0.064,
+        "w": 0.053,
+        "h": 0.408
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-gaussian-dot-glaze-stain-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.646,
+        "y": 0,
+        "w": 0.112,
+        "h": 0.354
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.789,
+        "y": 0.498,
+        "w": 0.174,
+        "h": 0.262
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
