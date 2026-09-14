@@ -1,0 +1,511 @@
+{
+  "analysis_id": "analysis-2026-09-14-ivory-civic-cutaway-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A minimal expressionist civic plate: a heavy black cut slab crosses a pale drafting grid, with narrow vertical section slots, pinhole clusters, scratch veils, and small dash labels suspended in the right negative field.",
+  "usable_surfaces": [
+    "black diagonal civic slab with cropped interior edge",
+    "lower black bass-like horizontal ridge",
+    "left pale drafting grid notch beside slab",
+    "thin vertical slots along central pale seam",
+    "pinhole clusters on black slab and pale field",
+    "right-field dash label groups",
+    "fine scratch veil across black and ivory surfaces",
+    "quiet vertical dropout cuts near the seam"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero black civic cut slab",
+      "artifact_type": "hero-scale-cutaway-slab",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.512,
+        "h": 1
+      },
+      "polygon": [
+        [
+          0.399,
+          0
+        ],
+        [
+          0.511,
+          0
+        ],
+        [
+          0.511,
+          0.274
+        ],
+        [
+          0.323,
+          0.565
+        ],
+        [
+          0.511,
+          0.565
+        ],
+        [
+          0.511,
+          0.779
+        ],
+        [
+          0.471,
+          0.755
+        ],
+        [
+          0.471,
+          0.681
+        ],
+        [
+          0.255,
+          0.681
+        ],
+        [
+          0.156,
+          0.858
+        ],
+        [
+          0.081,
+          0.891
+        ],
+        [
+          0,
+          0.891
+        ],
+        [
+          0,
+          0.595
+        ],
+        [
+          0.16,
+          0.369
+        ],
+        [
+          0.399,
+          0
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "dominant black angular slab with a cropped diagonal face, recessed gray edge shadows, and broad physical mass crossing the grid"
+    },
+    {
+      "label": "hero lower bass procession ridge",
+      "artifact_type": "hero-scale-bass-ridge",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.565,
+        "w": 0.511,
+        "h": 0.137
+      },
+      "polygon": [
+        [
+          0,
+          0.565
+        ],
+        [
+          0.292,
+          0.565
+        ],
+        [
+          0.292,
+          0.586
+        ],
+        [
+          0.255,
+          0.681
+        ],
+        [
+          0.471,
+          0.681
+        ],
+        [
+          0.471,
+          0.702
+        ],
+        [
+          0.25,
+          0.702
+        ],
+        [
+          0.157,
+          0.858
+        ],
+        [
+          0.081,
+          0.891
+        ],
+        [
+          0,
+          0.891
+        ],
+        [
+          0,
+          0.702
+        ],
+        [
+          0.161,
+          0.702
+        ],
+        [
+          0.236,
+          0.565
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "broad black horizontal pressure band in the lower half, cut by a notch and continuing into the diagonal slab like a section ridge"
+    },
+    {
+      "label": "left grid civic image notch",
+      "artifact_type": "grid-bay-image-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.285,
+        "y": 0.164,
+        "w": 0.067,
+        "h": 0.31
+      },
+      "polygon": [
+        [
+          0.307,
+          0.164
+        ],
+        [
+          0.352,
+          0.164
+        ],
+        [
+          0.352,
+          0.281
+        ],
+        [
+          0.328,
+          0.281
+        ],
+        [
+          0.328,
+          0.474
+        ],
+        [
+          0.287,
+          0.474
+        ],
+        [
+          0.287,
+          0.366
+        ],
+        [
+          0.299,
+          0.366
+        ],
+        [
+          0.299,
+          0.282
+        ],
+        [
+          0.307,
+          0.282
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "stepped rectangular pale-gray recess cut into the left side of the black slab, visibly nested in the drafting grid bay"
+    },
+    {
+      "label": "Preference Specimen Tray",
+      "artifact_type": "specimen-tray",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.705,
+        "y": 0.776,
+        "w": 0.075,
+        "h": 0.069
+      },
+      "polygon": [
+        [
+          0.706,
+          0.776
+        ],
+        [
+          0.775,
+          0.776
+        ],
+        [
+          0.775,
+          0.782
+        ],
+        [
+          0.722,
+          0.782
+        ],
+        [
+          0.722,
+          0.791
+        ],
+        [
+          0.78,
+          0.791
+        ],
+        [
+          0.78,
+          0.798
+        ],
+        [
+          0.706,
+          0.798
+        ],
+        [
+          0.706,
+          0.814
+        ],
+        [
+          0.775,
+          0.814
+        ],
+        [
+          0.775,
+          0.822
+        ],
+        [
+          0.706,
+          0.822
+        ],
+        [
+          0.706,
+          0.838
+        ],
+        [
+          0.757,
+          0.838
+        ],
+        [
+          0.757,
+          0.845
+        ],
+        [
+          0.706,
+          0.845
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "compact tray of short black dash rows in the right lower negative field, arranged like a thin specimen label grid"
+    },
+    {
+      "label": "optical-drift scratch veil",
+      "artifact_type": "scratch-veil-glint",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.055,
+        "y": 0.377,
+        "w": 0.378,
+        "h": 0.292
+      },
+      "polygon": [
+        [
+          0.055,
+          0.667
+        ],
+        [
+          0.083,
+          0.631
+        ],
+        [
+          0.121,
+          0.627
+        ],
+        [
+          0.151,
+          0.577
+        ],
+        [
+          0.185,
+          0.518
+        ],
+        [
+          0.234,
+          0.391
+        ],
+        [
+          0.28,
+          0.377
+        ],
+        [
+          0.33,
+          0.418
+        ],
+        [
+          0.369,
+          0.462
+        ],
+        [
+          0.433,
+          0.492
+        ],
+        [
+          0.421,
+          0.534
+        ],
+        [
+          0.357,
+          0.508
+        ],
+        [
+          0.302,
+          0.48
+        ],
+        [
+          0.254,
+          0.506
+        ],
+        [
+          0.216,
+          0.574
+        ],
+        [
+          0.162,
+          0.647
+        ],
+        [
+          0.101,
+          0.669
+        ]
+      ],
+      "confidence": 0.59,
+      "visual_evidence": "fine high-frequency pale scratches and glints scattered across the black slab, especially from lower-left toward mid-slab"
+    },
+    {
+      "label": "Preference Specimen Tray",
+      "artifact_type": "specimen-tray",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "optical-drift scratch veil",
+      "artifact_type": "scratch-veil-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "document-experiment section slot",
+      "artifact_type": "plaster-edge-slot",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "topographic-threshold slit",
+      "artifact_type": "right-field-dropout-slit",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 2,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.718,
+    "rationale": "The plate is spare: one dominant black cut slab, one pale grid field, and one large right negative field. Small slots, pinholes, scratches, and dash labels provide usable source windows without cluttering the surface."
+  },
+  "fallback_detected_object_count": 4,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-14-ivory-civic-cutaway-field-v1"
+}

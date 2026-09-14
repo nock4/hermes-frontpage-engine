@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-14-ivory-civic-cutaway-field-v1",
+  "edition_id": "2026-09-14-ivory-civic-cutaway-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-14-ivory-civic-cutaway-field-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-black-civic-cut-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-black-civic-cut-slab",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-cutaway-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-lower-bass-procession-ridge",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-lower-bass-procession-ridge",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-bass-ridge) selected from interpretation."
+    },
+    {
+      "target_id": "module-left-grid-civic-image-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-left-grid-civic-image-notch",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (grid-bay-image-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-preference-specimen-tray",
+      "target_kind": "artifact",
+      "artifact_id": "module-preference-specimen-tray",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (specimen-tray) selected from interpretation."
+    },
+    {
+      "target_id": "module-optical-drift-scratch-veil",
+      "target_kind": "artifact",
+      "artifact_id": "module-optical-drift-scratch-veil",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scratch-veil-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-preference-specimen-tray-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-preference-specimen-tray-2",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (specimen-tray) selected from interpretation."
+    },
+    {
+      "target_id": "module-optical-drift-scratch-veil-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-optical-drift-scratch-veil-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scratch-veil-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-document-experiment-section-slot",
+      "target_kind": "artifact",
+      "artifact_id": "module-document-experiment-section-slot",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (plaster-edge-slot) selected from interpretation."
+    },
+    {
+      "target_id": "module-topographic-threshold-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-topographic-threshold-slit",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (right-field-dropout-slit) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

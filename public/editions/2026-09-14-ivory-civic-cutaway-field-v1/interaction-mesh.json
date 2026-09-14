@@ -1,0 +1,528 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-14-ivory-civic-cutaway-field-v1",
+  "generation": "daily-process-2026-09-14T08-00-12-919Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-09-14T08-00-12-919Z/2026-09-14-ivory-civic-cutaway-field-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-hero-black-civic-cut-slab",
+      "visible_area_px": 415949,
+      "territory_area_px": 250413,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.5449,
+        "h": 1.0
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.5195
+        ],
+        [
+          0.3633,
+          0.0
+        ],
+        [
+          0.541,
+          0.0
+        ],
+        [
+          0.5439,
+          0.1357
+        ],
+        [
+          0.543,
+          0.9971
+        ],
+        [
+          0.0,
+          0.999
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-lower-bass-procession-ridge",
+          "shared_edge_px": 4036,
+          "direction": "left",
+          "distance_px": 341.53
+        },
+        {
+          "artifact_id": "module-optical-drift-scratch-veil",
+          "shared_edge_px": 3839,
+          "direction": "left",
+          "distance_px": 141.29
+        },
+        {
+          "artifact_id": "module-preference-specimen-tray-2",
+          "shared_edge_px": 2871,
+          "direction": "down",
+          "distance_px": 412.19
+        },
+        {
+          "artifact_id": "module-optical-drift-scratch-veil-2",
+          "shared_edge_px": 2868,
+          "direction": "down",
+          "distance_px": 406.98
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-hero-lower-bass-procession-ridge",
+      "visible_area_px": 53852,
+      "territory_area_px": 55146,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.5312,
+        "w": 0.2988,
+        "h": 0.3936
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.5312
+        ],
+        [
+          0.0684,
+          0.5312
+        ],
+        [
+          0.2979,
+          0.7344
+        ],
+        [
+          0.0713,
+          0.9238
+        ],
+        [
+          0.0,
+          0.9238
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-black-civic-cut-slab",
+          "shared_edge_px": 4036,
+          "direction": "right",
+          "distance_px": 341.53
+        },
+        {
+          "artifact_id": "module-preference-specimen-tray-2",
+          "shared_edge_px": 1753,
+          "direction": "down",
+          "distance_px": 178.21
+        },
+        {
+          "artifact_id": "module-optical-drift-scratch-veil",
+          "shared_edge_px": 526,
+          "direction": "up",
+          "distance_px": 245.87
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-left-grid-civic-image-notch",
+      "visible_area_px": 13083,
+      "territory_area_px": 23653,
+      "hover_bounds": {
+        "x": 0.2588,
+        "y": 0.1357,
+        "w": 0.1211,
+        "h": 0.2627
+      },
+      "hover_polygon": [
+        [
+          0.2588,
+          0.3652
+        ],
+        [
+          0.2793,
+          0.1631
+        ],
+        [
+          0.3066,
+          0.1357
+        ],
+        [
+          0.3516,
+          0.1357
+        ],
+        [
+          0.3789,
+          0.1631
+        ],
+        [
+          0.3789,
+          0.2803
+        ],
+        [
+          0.3545,
+          0.3574
+        ],
+        [
+          0.2588,
+          0.3975
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-black-civic-cut-slab",
+          "shared_edge_px": 2379,
+          "direction": "down",
+          "distance_px": 249.33
+        },
+        {
+          "artifact_id": "module-topographic-threshold-slit",
+          "shared_edge_px": 1508,
+          "direction": "down",
+          "distance_px": 172.9
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-preference-specimen-tray",
+      "visible_area_px": 2452,
+      "territory_area_px": 12120,
+      "hover_bounds": {
+        "x": 0.6777,
+        "y": 0.748,
+        "w": 0.1201,
+        "h": 0.125
+      },
+      "hover_polygon": [
+        [
+          0.6777,
+          0.7754
+        ],
+        [
+          0.7051,
+          0.748
+        ],
+        [
+          0.7744,
+          0.748
+        ],
+        [
+          0.7969,
+          0.7705
+        ],
+        [
+          0.749,
+          0.8721
+        ],
+        [
+          0.7051,
+          0.8721
+        ],
+        [
+          0.6777,
+          0.8447
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-document-experiment-section-slot",
+          "shared_edge_px": 1636,
+          "direction": "right",
+          "distance_px": 110.79
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-optical-drift-scratch-veil",
+      "visible_area_px": 30150,
+      "territory_area_px": 28718,
+      "hover_bounds": {
+        "x": 0.0273,
+        "y": 0.3623,
+        "w": 0.3145,
+        "h": 0.3057
+      },
+      "hover_polygon": [
+        [
+          0.0273,
+          0.667
+        ],
+        [
+          0.2061,
+          0.3906
+        ],
+        [
+          0.2363,
+          0.3623
+        ],
+        [
+          0.3408,
+          0.5068
+        ],
+        [
+          0.0508,
+          0.667
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-black-civic-cut-slab",
+          "shared_edge_px": 3839,
+          "direction": "right",
+          "distance_px": 141.29
+        },
+        {
+          "artifact_id": "module-topographic-threshold-slit",
+          "shared_edge_px": 912,
+          "direction": "right",
+          "distance_px": 213.67
+        },
+        {
+          "artifact_id": "hero-hero-lower-bass-procession-ridge",
+          "shared_edge_px": 526,
+          "direction": "down",
+          "distance_px": 245.87
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-preference-specimen-tray-2",
+      "visible_area_px": 30525,
+      "territory_area_px": 42138,
+      "hover_bounds": {
+        "x": 0.0723,
+        "y": 0.752,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.0723,
+          0.8359
+        ],
+        [
+          0.2539,
+          0.752
+        ],
+        [
+          0.2793,
+          0.752
+        ],
+        [
+          0.3066,
+          0.7793
+        ],
+        [
+          0.3066,
+          0.9395
+        ],
+        [
+          0.2793,
+          0.9668
+        ],
+        [
+          0.0996,
+          0.9668
+        ],
+        [
+          0.0723,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-black-civic-cut-slab",
+          "shared_edge_px": 2871,
+          "direction": "up",
+          "distance_px": 412.19
+        },
+        {
+          "artifact_id": "hero-hero-lower-bass-procession-ridge",
+          "shared_edge_px": 1753,
+          "direction": "up",
+          "distance_px": 178.21
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-optical-drift-scratch-veil-2",
+      "visible_area_px": 30525,
+      "territory_area_px": 51637,
+      "hover_bounds": {
+        "x": 0.3926,
+        "y": 0.752,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.3926,
+          0.7793
+        ],
+        [
+          0.4199,
+          0.752
+        ],
+        [
+          0.5996,
+          0.752
+        ],
+        [
+          0.627,
+          0.7793
+        ],
+        [
+          0.627,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.9668
+        ],
+        [
+          0.4199,
+          0.9668
+        ],
+        [
+          0.3926,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-black-civic-cut-slab",
+          "shared_edge_px": 2868,
+          "direction": "up",
+          "distance_px": 406.98
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-document-experiment-section-slot",
+      "visible_area_px": 30525,
+      "territory_area_px": 40807,
+      "hover_bounds": {
+        "x": 0.6924,
+        "y": 0.7324,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.6924,
+          0.7598
+        ],
+        [
+          0.7197,
+          0.7324
+        ],
+        [
+          0.8994,
+          0.7324
+        ],
+        [
+          0.9268,
+          0.7598
+        ],
+        [
+          0.9268,
+          0.9199
+        ],
+        [
+          0.8994,
+          0.9473
+        ],
+        [
+          0.7197,
+          0.9473
+        ],
+        [
+          0.6924,
+          0.9199
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-preference-specimen-tray",
+          "shared_edge_px": 1636,
+          "direction": "left",
+          "distance_px": 110.79
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-topographic-threshold-slit",
+      "visible_area_px": 25410,
+      "territory_area_px": 38351,
+      "hover_bounds": {
+        "x": 0.2402,
+        "y": 0.3008,
+        "w": 0.2393,
+        "h": 0.2285
+      },
+      "hover_polygon": [
+        [
+          0.2402,
+          0.3398
+        ],
+        [
+          0.2705,
+          0.3096
+        ],
+        [
+          0.3594,
+          0.3008
+        ],
+        [
+          0.4395,
+          0.3008
+        ],
+        [
+          0.4785,
+          0.3398
+        ],
+        [
+          0.4785,
+          0.4893
+        ],
+        [
+          0.4395,
+          0.5283
+        ],
+        [
+          0.3955,
+          0.5283
+        ],
+        [
+          0.3418,
+          0.5068
+        ],
+        [
+          0.2402,
+          0.3857
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-hero-black-civic-cut-slab",
+          "shared_edge_px": 2860,
+          "direction": "down",
+          "distance_px": 99.81
+        },
+        {
+          "artifact_id": "module-left-grid-civic-image-notch",
+          "shared_edge_px": 1508,
+          "direction": "up",
+          "distance_px": 172.9
+        },
+        {
+          "artifact_id": "module-optical-drift-scratch-veil",
+          "shared_edge_px": 912,
+          "direction": "left",
+          "distance_px": 213.67
+        }
+      ]
+    }
+  ]
+}

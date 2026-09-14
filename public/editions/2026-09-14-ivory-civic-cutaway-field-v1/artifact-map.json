@@ -1,0 +1,1457 @@
+{
+  "artifact_map_id": "map-2026-09-14-ivory-civic-cutaway-field-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "ivory-civic-cutaway-field",
+  "default_artifact_id": "hero-hero-black-civic-cut-slab",
+  "artifacts": [
+    {
+      "id": "hero-hero-black-civic-cut-slab",
+      "kind": "hero",
+      "label": "hero black civic cut slab",
+      "artifact_type": "hero-scale-cutaway-slab",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.5156,
+        "h": 1.0
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.002,
+          0.5645
+        ],
+        [
+          0.3955,
+          0.002
+        ],
+        [
+          0.5107,
+          0.002
+        ],
+        [
+          0.5117,
+          0.2686
+        ],
+        [
+          0.5107,
+          0.9971
+        ],
+        [
+          0.002,
+          0.9971
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/hero-hero-black-civic-cut-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-black-civic-cut-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          393,
+          430
+        ],
+        "safe_stage_window_origin_px": [
+          456,
+          512
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.002,
+            0.5645
+          ],
+          [
+            0.3955,
+            0.002
+          ],
+          [
+            0.5107,
+            0.002
+          ],
+          [
+            0.5117,
+            0.2686
+          ],
+          [
+            0.5107,
+            0.9971
+          ],
+          [
+            0.002,
+            0.9971
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.5195
+          ],
+          [
+            0.3633,
+            0.0
+          ],
+          [
+            0.541,
+            0.0
+          ],
+          [
+            0.5439,
+            0.1357
+          ],
+          [
+            0.543,
+            0.9971
+          ],
+          [
+            0.0,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.5449,
+          "h": 1.0
+        },
+        "territory_area_px": 250413,
+        "visible_area_px": 415949,
+        "expansion_ratio": 0.602,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-lower-bass-procession-ridge",
+            "shared_edge_px": 4036,
+            "direction": "left",
+            "distance_px": 341.53
+          },
+          {
+            "artifact_id": "module-optical-drift-scratch-veil",
+            "shared_edge_px": 3839,
+            "direction": "left",
+            "distance_px": 141.29
+          },
+          {
+            "artifact_id": "module-preference-specimen-tray-2",
+            "shared_edge_px": 2871,
+            "direction": "down",
+            "distance_px": 412.19
+          },
+          {
+            "artifact_id": "module-optical-drift-scratch-veil-2",
+            "shared_edge_px": 2868,
+            "direction": "down",
+            "distance_px": 406.98
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-hero-lower-bass-procession-ridge",
+      "kind": "hero",
+      "label": "hero lower bass procession ridge",
+      "artifact_type": "hero-scale-bass-ridge",
+      "bounds": {
+        "x": 0,
+        "y": 0.565,
+        "w": 0.511,
+        "h": 0.137
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.565
+        ],
+        [
+          0.292,
+          0.565
+        ],
+        [
+          0.292,
+          0.586
+        ],
+        [
+          0.255,
+          0.681
+        ],
+        [
+          0.471,
+          0.681
+        ],
+        [
+          0.471,
+          0.702
+        ],
+        [
+          0.25,
+          0.702
+        ],
+        [
+          0.157,
+          0.858
+        ],
+        [
+          0.081,
+          0.891
+        ],
+        [
+          0,
+          0.891
+        ],
+        [
+          0,
+          0.702
+        ],
+        [
+          0.161,
+          0.702
+        ],
+        [
+          0.236,
+          0.565
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/hero-hero-lower-bass-procession-ridge.svg",
+      "source_binding_ids": [
+        "binding-hero-hero-lower-bass-procession-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          392,
+          637
+        ],
+        "safe_stage_window_origin_px": [
+          455,
+          649
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.565
+          ],
+          [
+            0.292,
+            0.565
+          ],
+          [
+            0.292,
+            0.586
+          ],
+          [
+            0.255,
+            0.681
+          ],
+          [
+            0.471,
+            0.681
+          ],
+          [
+            0.471,
+            0.702
+          ],
+          [
+            0.25,
+            0.702
+          ],
+          [
+            0.157,
+            0.858
+          ],
+          [
+            0.081,
+            0.891
+          ],
+          [
+            0,
+            0.891
+          ],
+          [
+            0,
+            0.702
+          ],
+          [
+            0.161,
+            0.702
+          ],
+          [
+            0.236,
+            0.565
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.5312
+          ],
+          [
+            0.0684,
+            0.5312
+          ],
+          [
+            0.2979,
+            0.7344
+          ],
+          [
+            0.0713,
+            0.9238
+          ],
+          [
+            0.0,
+            0.9238
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.5312,
+          "w": 0.2988,
+          "h": 0.3936
+        },
+        "territory_area_px": 55146,
+        "visible_area_px": 53852,
+        "expansion_ratio": 1.024,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-black-civic-cut-slab",
+            "shared_edge_px": 4036,
+            "direction": "right",
+            "distance_px": 341.53
+          },
+          {
+            "artifact_id": "module-preference-specimen-tray-2",
+            "shared_edge_px": 1753,
+            "direction": "down",
+            "distance_px": 178.21
+          },
+          {
+            "artifact_id": "module-optical-drift-scratch-veil",
+            "shared_edge_px": 526,
+            "direction": "up",
+            "distance_px": 245.87
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-left-grid-civic-image-notch",
+      "kind": "module",
+      "label": "left grid civic image notch",
+      "artifact_type": "grid-bay-image-notch",
+      "bounds": {
+        "x": 0.285,
+        "y": 0.164,
+        "w": 0.067,
+        "h": 0.31
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.307,
+          0.164
+        ],
+        [
+          0.352,
+          0.164
+        ],
+        [
+          0.352,
+          0.281
+        ],
+        [
+          0.328,
+          0.281
+        ],
+        [
+          0.328,
+          0.474
+        ],
+        [
+          0.287,
+          0.474
+        ],
+        [
+          0.287,
+          0.366
+        ],
+        [
+          0.299,
+          0.366
+        ],
+        [
+          0.299,
+          0.282
+        ],
+        [
+          0.307,
+          0.282
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/module-left-grid-civic-image-notch.svg",
+      "source_binding_ids": [
+        "binding-module-left-grid-civic-image-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          489,
+          301
+        ],
+        "safe_stage_window_origin_px": [
+          497,
+          327
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.307,
+            0.164
+          ],
+          [
+            0.352,
+            0.164
+          ],
+          [
+            0.352,
+            0.281
+          ],
+          [
+            0.328,
+            0.281
+          ],
+          [
+            0.328,
+            0.474
+          ],
+          [
+            0.287,
+            0.474
+          ],
+          [
+            0.287,
+            0.366
+          ],
+          [
+            0.299,
+            0.366
+          ],
+          [
+            0.299,
+            0.282
+          ],
+          [
+            0.307,
+            0.282
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2588,
+            0.3652
+          ],
+          [
+            0.2793,
+            0.1631
+          ],
+          [
+            0.3066,
+            0.1357
+          ],
+          [
+            0.3516,
+            0.1357
+          ],
+          [
+            0.3789,
+            0.1631
+          ],
+          [
+            0.3789,
+            0.2803
+          ],
+          [
+            0.3545,
+            0.3574
+          ],
+          [
+            0.2588,
+            0.3975
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2588,
+          "y": 0.1357,
+          "w": 0.1211,
+          "h": 0.2627
+        },
+        "territory_area_px": 23653,
+        "visible_area_px": 13083,
+        "expansion_ratio": 1.808,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-black-civic-cut-slab",
+            "shared_edge_px": 2379,
+            "direction": "down",
+            "distance_px": 249.33
+          },
+          {
+            "artifact_id": "module-topographic-threshold-slit",
+            "shared_edge_px": 1508,
+            "direction": "down",
+            "distance_px": 172.9
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-preference-specimen-tray",
+      "kind": "module",
+      "label": "Preference Specimen Tray",
+      "artifact_type": "specimen-tray",
+      "bounds": {
+        "x": 0.705,
+        "y": 0.776,
+        "w": 0.075,
+        "h": 0.069
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.706,
+          0.776
+        ],
+        [
+          0.775,
+          0.776
+        ],
+        [
+          0.775,
+          0.782
+        ],
+        [
+          0.722,
+          0.782
+        ],
+        [
+          0.722,
+          0.791
+        ],
+        [
+          0.78,
+          0.791
+        ],
+        [
+          0.78,
+          0.798
+        ],
+        [
+          0.706,
+          0.798
+        ],
+        [
+          0.706,
+          0.814
+        ],
+        [
+          0.775,
+          0.814
+        ],
+        [
+          0.775,
+          0.822
+        ],
+        [
+          0.706,
+          0.822
+        ],
+        [
+          0.706,
+          0.838
+        ],
+        [
+          0.757,
+          0.838
+        ],
+        [
+          0.757,
+          0.845
+        ],
+        [
+          0.706,
+          0.845
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/module-preference-specimen-tray.svg",
+      "source_binding_ids": [
+        "binding-module-preference-specimen-tray"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1140,
+          824
+        ],
+        "safe_stage_window_origin_px": [
+          1150,
+          830
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.706,
+            0.776
+          ],
+          [
+            0.775,
+            0.776
+          ],
+          [
+            0.775,
+            0.782
+          ],
+          [
+            0.722,
+            0.782
+          ],
+          [
+            0.722,
+            0.791
+          ],
+          [
+            0.78,
+            0.791
+          ],
+          [
+            0.78,
+            0.798
+          ],
+          [
+            0.706,
+            0.798
+          ],
+          [
+            0.706,
+            0.814
+          ],
+          [
+            0.775,
+            0.814
+          ],
+          [
+            0.775,
+            0.822
+          ],
+          [
+            0.706,
+            0.822
+          ],
+          [
+            0.706,
+            0.838
+          ],
+          [
+            0.757,
+            0.838
+          ],
+          [
+            0.757,
+            0.845
+          ],
+          [
+            0.706,
+            0.845
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6777,
+            0.7754
+          ],
+          [
+            0.7051,
+            0.748
+          ],
+          [
+            0.7744,
+            0.748
+          ],
+          [
+            0.7969,
+            0.7705
+          ],
+          [
+            0.749,
+            0.8721
+          ],
+          [
+            0.7051,
+            0.8721
+          ],
+          [
+            0.6777,
+            0.8447
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6777,
+          "y": 0.748,
+          "w": 0.1201,
+          "h": 0.125
+        },
+        "territory_area_px": 12120,
+        "visible_area_px": 2452,
+        "expansion_ratio": 4.943,
+        "neighbors": [
+          {
+            "artifact_id": "module-document-experiment-section-slot",
+            "shared_edge_px": 1636,
+            "direction": "right",
+            "distance_px": 110.79
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-optical-drift-scratch-veil",
+      "kind": "module",
+      "label": "optical-drift scratch veil",
+      "artifact_type": "scratch-veil-glint",
+      "bounds": {
+        "x": 0.055,
+        "y": 0.377,
+        "w": 0.378,
+        "h": 0.292
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.055,
+          0.667
+        ],
+        [
+          0.083,
+          0.631
+        ],
+        [
+          0.121,
+          0.627
+        ],
+        [
+          0.151,
+          0.577
+        ],
+        [
+          0.185,
+          0.518
+        ],
+        [
+          0.234,
+          0.391
+        ],
+        [
+          0.28,
+          0.377
+        ],
+        [
+          0.33,
+          0.418
+        ],
+        [
+          0.369,
+          0.462
+        ],
+        [
+          0.433,
+          0.492
+        ],
+        [
+          0.421,
+          0.534
+        ],
+        [
+          0.357,
+          0.508
+        ],
+        [
+          0.302,
+          0.48
+        ],
+        [
+          0.254,
+          0.506
+        ],
+        [
+          0.216,
+          0.574
+        ],
+        [
+          0.162,
+          0.647
+        ],
+        [
+          0.101,
+          0.669
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/module-optical-drift-scratch-veil.svg",
+      "source_binding_ids": [
+        "binding-module-optical-drift-scratch-veil"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          375,
+          512
+        ],
+        "safe_stage_window_origin_px": [
+          421,
+          536
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.055,
+            0.667
+          ],
+          [
+            0.083,
+            0.631
+          ],
+          [
+            0.121,
+            0.627
+          ],
+          [
+            0.151,
+            0.577
+          ],
+          [
+            0.185,
+            0.518
+          ],
+          [
+            0.234,
+            0.391
+          ],
+          [
+            0.28,
+            0.377
+          ],
+          [
+            0.33,
+            0.418
+          ],
+          [
+            0.369,
+            0.462
+          ],
+          [
+            0.433,
+            0.492
+          ],
+          [
+            0.421,
+            0.534
+          ],
+          [
+            0.357,
+            0.508
+          ],
+          [
+            0.302,
+            0.48
+          ],
+          [
+            0.254,
+            0.506
+          ],
+          [
+            0.216,
+            0.574
+          ],
+          [
+            0.162,
+            0.647
+          ],
+          [
+            0.101,
+            0.669
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0273,
+            0.667
+          ],
+          [
+            0.2061,
+            0.3906
+          ],
+          [
+            0.2363,
+            0.3623
+          ],
+          [
+            0.3408,
+            0.5068
+          ],
+          [
+            0.0508,
+            0.667
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0273,
+          "y": 0.3623,
+          "w": 0.3145,
+          "h": 0.3057
+        },
+        "territory_area_px": 28718,
+        "visible_area_px": 30150,
+        "expansion_ratio": 0.953,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-black-civic-cut-slab",
+            "shared_edge_px": 3839,
+            "direction": "right",
+            "distance_px": 141.29
+          },
+          {
+            "artifact_id": "module-topographic-threshold-slit",
+            "shared_edge_px": 912,
+            "direction": "right",
+            "distance_px": 213.67
+          },
+          {
+            "artifact_id": "hero-hero-lower-bass-procession-ridge",
+            "shared_edge_px": 526,
+            "direction": "down",
+            "distance_px": 245.87
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-preference-specimen-tray-2",
+      "kind": "module",
+      "label": "Preference Specimen Tray",
+      "artifact_type": "specimen-tray",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/module-preference-specimen-tray-2.svg",
+      "source_binding_ids": [
+        "binding-module-preference-specimen-tray-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0723,
+            0.8359
+          ],
+          [
+            0.2539,
+            0.752
+          ],
+          [
+            0.2793,
+            0.752
+          ],
+          [
+            0.3066,
+            0.7793
+          ],
+          [
+            0.3066,
+            0.9395
+          ],
+          [
+            0.2793,
+            0.9668
+          ],
+          [
+            0.0996,
+            0.9668
+          ],
+          [
+            0.0723,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0723,
+          "y": 0.752,
+          "w": 0.2354,
+          "h": 0.2158
+        },
+        "territory_area_px": 42138,
+        "visible_area_px": 30525,
+        "expansion_ratio": 1.38,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-black-civic-cut-slab",
+            "shared_edge_px": 2871,
+            "direction": "up",
+            "distance_px": 412.19
+          },
+          {
+            "artifact_id": "hero-hero-lower-bass-procession-ridge",
+            "shared_edge_px": 1753,
+            "direction": "up",
+            "distance_px": 178.21
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-optical-drift-scratch-veil-2",
+      "kind": "module",
+      "label": "optical-drift scratch veil",
+      "artifact_type": "scratch-veil-glint",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/module-optical-drift-scratch-veil-2.svg",
+      "source_binding_ids": [
+        "binding-module-optical-drift-scratch-veil-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3926,
+            0.7793
+          ],
+          [
+            0.4199,
+            0.752
+          ],
+          [
+            0.5996,
+            0.752
+          ],
+          [
+            0.627,
+            0.7793
+          ],
+          [
+            0.627,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9668
+          ],
+          [
+            0.4199,
+            0.9668
+          ],
+          [
+            0.3926,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3926,
+          "y": 0.752,
+          "w": 0.2354,
+          "h": 0.2158
+        },
+        "territory_area_px": 51637,
+        "visible_area_px": 30525,
+        "expansion_ratio": 1.692,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-black-civic-cut-slab",
+            "shared_edge_px": 2868,
+            "direction": "up",
+            "distance_px": 406.98
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-document-experiment-section-slot",
+      "kind": "module",
+      "label": "document-experiment section slot",
+      "artifact_type": "plaster-edge-slot",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/module-document-experiment-section-slot.svg",
+      "source_binding_ids": [
+        "binding-module-document-experiment-section-slot"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6924,
+            0.7598
+          ],
+          [
+            0.7197,
+            0.7324
+          ],
+          [
+            0.8994,
+            0.7324
+          ],
+          [
+            0.9268,
+            0.7598
+          ],
+          [
+            0.9268,
+            0.9199
+          ],
+          [
+            0.8994,
+            0.9473
+          ],
+          [
+            0.7197,
+            0.9473
+          ],
+          [
+            0.6924,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6924,
+          "y": 0.7324,
+          "w": 0.2354,
+          "h": 0.2158
+        },
+        "territory_area_px": 40807,
+        "visible_area_px": 30525,
+        "expansion_ratio": 1.337,
+        "neighbors": [
+          {
+            "artifact_id": "module-preference-specimen-tray",
+            "shared_edge_px": 1636,
+            "direction": "left",
+            "distance_px": 110.79
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-topographic-threshold-slit",
+      "kind": "module",
+      "label": "topographic-threshold slit",
+      "artifact_type": "right-field-dropout-slit",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "ivory-civic-cutaway-field",
+      "mask_path": "/editions/2026-09-14-ivory-civic-cutaway-field-v1/assets/masks/module-topographic-threshold-slit.svg",
+      "source_binding_ids": [
+        "binding-module-topographic-threshold-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2402,
+            0.3398
+          ],
+          [
+            0.2705,
+            0.3096
+          ],
+          [
+            0.3594,
+            0.3008
+          ],
+          [
+            0.4395,
+            0.3008
+          ],
+          [
+            0.4785,
+            0.3398
+          ],
+          [
+            0.4785,
+            0.4893
+          ],
+          [
+            0.4395,
+            0.5283
+          ],
+          [
+            0.3955,
+            0.5283
+          ],
+          [
+            0.3418,
+            0.5068
+          ],
+          [
+            0.2402,
+            0.3857
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2402,
+          "y": 0.3008,
+          "w": 0.2393,
+          "h": 0.2285
+        },
+        "territory_area_px": 38351,
+        "visible_area_px": 25410,
+        "expansion_ratio": 1.509,
+        "neighbors": [
+          {
+            "artifact_id": "hero-hero-black-civic-cut-slab",
+            "shared_edge_px": 2860,
+            "direction": "down",
+            "distance_px": 99.81
+          },
+          {
+            "artifact_id": "module-left-grid-civic-image-notch",
+            "shared_edge_px": 1508,
+            "direction": "up",
+            "distance_px": 172.9
+          },
+          {
+            "artifact_id": "module-optical-drift-scratch-veil",
+            "shared_edge_px": 912,
+            "direction": "left",
+            "distance_px": 213.67
+          }
+        ]
+      }
+    }
+  ]
+}
