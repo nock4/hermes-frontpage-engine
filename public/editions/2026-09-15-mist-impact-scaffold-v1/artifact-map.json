@@ -1,0 +1,1719 @@
+{
+  "artifact_map_id": "map-2026-09-15-mist-impact-scaffold-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "low-poly-impact-scaffold",
+  "default_artifact_id": "hero-primary-pink-bead-collision-mass",
+  "artifacts": [
+    {
+      "id": "hero-primary-pink-bead-collision-mass",
+      "kind": "hero",
+      "label": "primary pink bead collision mass",
+      "artifact_type": "hero-scale-bead-cluster",
+      "bounds": {
+        "x": 0.501,
+        "y": 0.385,
+        "w": 0.245,
+        "h": 0.238
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.509,
+          0.448
+        ],
+        [
+          0.527,
+          0.407
+        ],
+        [
+          0.558,
+          0.387
+        ],
+        [
+          0.592,
+          0.397
+        ],
+        [
+          0.613,
+          0.422
+        ],
+        [
+          0.646,
+          0.414
+        ],
+        [
+          0.683,
+          0.434
+        ],
+        [
+          0.723,
+          0.476
+        ],
+        [
+          0.746,
+          0.538
+        ],
+        [
+          0.725,
+          0.594
+        ],
+        [
+          0.675,
+          0.615
+        ],
+        [
+          0.623,
+          0.584
+        ],
+        [
+          0.594,
+          0.542
+        ],
+        [
+          0.553,
+          0.532
+        ],
+        [
+          0.519,
+          0.5
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/hero-primary-pink-bead-collision-mass.svg",
+      "source_binding_ids": [
+        "binding-hero-primary-pink-bead-collision-mass"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          958,
+          497
+        ],
+        "safe_stage_window_origin_px": [
+          988,
+          516
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.509,
+            0.448
+          ],
+          [
+            0.527,
+            0.407
+          ],
+          [
+            0.558,
+            0.387
+          ],
+          [
+            0.592,
+            0.397
+          ],
+          [
+            0.613,
+            0.422
+          ],
+          [
+            0.646,
+            0.414
+          ],
+          [
+            0.683,
+            0.434
+          ],
+          [
+            0.723,
+            0.476
+          ],
+          [
+            0.746,
+            0.538
+          ],
+          [
+            0.725,
+            0.594
+          ],
+          [
+            0.675,
+            0.615
+          ],
+          [
+            0.623,
+            0.584
+          ],
+          [
+            0.594,
+            0.542
+          ],
+          [
+            0.553,
+            0.532
+          ],
+          [
+            0.519,
+            0.5
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4863,
+            0.4473
+          ],
+          [
+            0.5391,
+            0.3652
+          ],
+          [
+            0.5579,
+            0.3535
+          ],
+          [
+            0.5918,
+            0.3633
+          ],
+          [
+            0.6829,
+            0.4004
+          ],
+          [
+            0.7454,
+            0.4766
+          ],
+          [
+            0.7676,
+            0.5371
+          ],
+          [
+            0.7474,
+            0.5928
+          ],
+          [
+            0.7246,
+            0.627
+          ],
+          [
+            0.6934,
+            0.6396
+          ],
+          [
+            0.5189,
+            0.5332
+          ],
+          [
+            0.5033,
+            0.5098
+          ],
+          [
+            0.4863,
+            0.4482
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4863,
+          "y": 0.3535,
+          "w": 0.2819,
+          "h": 0.2871
+        },
+        "territory_area_px": 59946,
+        "visible_area_px": 51635,
+        "expansion_ratio": 1.161,
+        "neighbors": [
+          {
+            "artifact_id": "module-shorts-onset-yellow-chip",
+            "shared_edge_px": 2080,
+            "direction": "down",
+            "distance_px": 148.04
+          },
+          {
+            "artifact_id": "module-diagonal-warrior-procession-blade-gl",
+            "shared_edge_px": 781,
+            "direction": "left",
+            "distance_px": 390.77
+          },
+          {
+            "artifact_id": "module-unicode-bead-similarity-chain",
+            "shared_edge_px": 539,
+            "direction": "up",
+            "distance_px": 298.68
+          },
+          {
+            "artifact_id": "hero-bass-weight-lower-scaffold-ridge",
+            "shared_edge_px": 497,
+            "direction": "left",
+            "distance_px": 451.46
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-bass-weight-lower-scaffold-ridge",
+      "kind": "hero",
+      "label": "bass-weight lower scaffold ridge",
+      "artifact_type": "hero-scale-log-ridge",
+      "bounds": {
+        "x": 0.206,
+        "y": 0.492,
+        "w": 0.334,
+        "h": 0.103
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.207,
+          0.516
+        ],
+        [
+          0.257,
+          0.497
+        ],
+        [
+          0.332,
+          0.493
+        ],
+        [
+          0.432,
+          0.497
+        ],
+        [
+          0.521,
+          0.508
+        ],
+        [
+          0.54,
+          0.542
+        ],
+        [
+          0.518,
+          0.581
+        ],
+        [
+          0.42,
+          0.592
+        ],
+        [
+          0.315,
+          0.584
+        ],
+        [
+          0.233,
+          0.563
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/hero-bass-weight-lower-scaffold-ridge.svg",
+      "source_binding_ids": [
+        "binding-hero-bass-weight-lower-scaffold-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          573,
+          548
+        ],
+        "safe_stage_window_origin_px": [
+          614,
+          557
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.207,
+            0.516
+          ],
+          [
+            0.257,
+            0.497
+          ],
+          [
+            0.332,
+            0.493
+          ],
+          [
+            0.432,
+            0.497
+          ],
+          [
+            0.521,
+            0.508
+          ],
+          [
+            0.54,
+            0.542
+          ],
+          [
+            0.518,
+            0.581
+          ],
+          [
+            0.42,
+            0.592
+          ],
+          [
+            0.315,
+            0.584
+          ],
+          [
+            0.233,
+            0.563
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1842,
+            0.5156
+          ],
+          [
+            0.2064,
+            0.4824
+          ],
+          [
+            0.2565,
+            0.4629
+          ],
+          [
+            0.4316,
+            0.4629
+          ],
+          [
+            0.5,
+            0.4727
+          ],
+          [
+            0.528,
+            0.5566
+          ],
+          [
+            0.5091,
+            0.6143
+          ],
+          [
+            0.3672,
+            0.6211
+          ],
+          [
+            0.3145,
+            0.6172
+          ],
+          [
+            0.2324,
+            0.5957
+          ],
+          [
+            0.1862,
+            0.5195
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1842,
+          "y": 0.459,
+          "w": 0.3444,
+          "h": 0.1631
+        },
+        "territory_area_px": 62105,
+        "visible_area_px": 41186,
+        "expansion_ratio": 1.508,
+        "neighbors": [
+          {
+            "artifact_id": "module-design-md-rope-knot",
+            "shared_edge_px": 1528,
+            "direction": "right",
+            "distance_px": 121.2
+          },
+          {
+            "artifact_id": "module-shorts-onset-yellow-chip",
+            "shared_edge_px": 532,
+            "direction": "right",
+            "distance_px": 364.11
+          },
+          {
+            "artifact_id": "hero-primary-pink-bead-collision-mass",
+            "shared_edge_px": 497,
+            "direction": "right",
+            "distance_px": 451.46
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-detroit-cliff-platform-cut",
+      "kind": "module",
+      "label": "detroit cliff-platform cut",
+      "artifact_type": "cliff-edge-aperture",
+      "bounds": {
+        "x": 0.841,
+        "y": 0.07,
+        "w": 0.129,
+        "h": 0.258
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.865,
+          0.073
+        ],
+        [
+          0.908,
+          0.085
+        ],
+        [
+          0.952,
+          0.122
+        ],
+        [
+          0.969,
+          0.188
+        ],
+        [
+          0.951,
+          0.274
+        ],
+        [
+          0.918,
+          0.326
+        ],
+        [
+          0.884,
+          0.309
+        ],
+        [
+          0.893,
+          0.226
+        ],
+        [
+          0.875,
+          0.198
+        ],
+        [
+          0.854,
+          0.249
+        ],
+        [
+          0.841,
+          0.205
+        ],
+        [
+          0.849,
+          0.126
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/module-detroit-cliff-platform-cut.svg",
+      "source_binding_ids": [
+        "binding-module-detroit-cliff-platform-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          183
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          204
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.865,
+            0.073
+          ],
+          [
+            0.908,
+            0.085
+          ],
+          [
+            0.952,
+            0.122
+          ],
+          [
+            0.969,
+            0.188
+          ],
+          [
+            0.951,
+            0.274
+          ],
+          [
+            0.918,
+            0.326
+          ],
+          [
+            0.884,
+            0.309
+          ],
+          [
+            0.893,
+            0.226
+          ],
+          [
+            0.875,
+            0.198
+          ],
+          [
+            0.854,
+            0.249
+          ],
+          [
+            0.841,
+            0.205
+          ],
+          [
+            0.849,
+            0.126
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8223,
+            0.2012
+          ],
+          [
+            0.8307,
+            0.125
+          ],
+          [
+            0.8464,
+            0.0723
+          ],
+          [
+            0.8646,
+            0.0449
+          ],
+          [
+            0.9076,
+            0.0576
+          ],
+          [
+            0.9518,
+            0.0938
+          ],
+          [
+            0.9701,
+            0.1211
+          ],
+          [
+            0.987,
+            0.1865
+          ],
+          [
+            0.9688,
+            0.2734
+          ],
+          [
+            0.918,
+            0.3525
+          ],
+          [
+            0.8835,
+            0.3359
+          ],
+          [
+            0.8652,
+            0.3086
+          ],
+          [
+            0.8353,
+            0.248
+          ],
+          [
+            0.8223,
+            0.2051
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8223,
+          "y": 0.0449,
+          "w": 0.1654,
+          "h": 0.3086
+        },
+        "territory_area_px": 54459,
+        "visible_area_px": 32382,
+        "expansion_ratio": 1.682,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-personal-site-sky-dropout",
+      "kind": "module",
+      "label": "personal-site sky dropout",
+      "artifact_type": "mist-slit",
+      "bounds": {
+        "x": 0.424,
+        "y": 0.036,
+        "w": 0.192,
+        "h": 0.121
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.424,
+          0.047
+        ],
+        [
+          0.467,
+          0.037
+        ],
+        [
+          0.524,
+          0.041
+        ],
+        [
+          0.59,
+          0.066
+        ],
+        [
+          0.616,
+          0.104
+        ],
+        [
+          0.594,
+          0.143
+        ],
+        [
+          0.535,
+          0.157
+        ],
+        [
+          0.477,
+          0.143
+        ],
+        [
+          0.437,
+          0.105
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/module-personal-site-sky-dropout.svg",
+      "source_binding_ids": [
+        "binding-module-personal-site-sky-dropout"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          799,
+          89
+        ],
+        "safe_stage_window_origin_px": [
+          822,
+          99
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.424,
+            0.047
+          ],
+          [
+            0.467,
+            0.037
+          ],
+          [
+            0.524,
+            0.041
+          ],
+          [
+            0.59,
+            0.066
+          ],
+          [
+            0.616,
+            0.104
+          ],
+          [
+            0.594,
+            0.143
+          ],
+          [
+            0.535,
+            0.157
+          ],
+          [
+            0.477,
+            0.143
+          ],
+          [
+            0.437,
+            0.105
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3978,
+            0.0469
+          ],
+          [
+            0.4238,
+            0.0078
+          ],
+          [
+            0.4551,
+            0.0
+          ],
+          [
+            0.5234,
+            0.001
+          ],
+          [
+            0.5898,
+            0.0264
+          ],
+          [
+            0.6419,
+            0.1035
+          ],
+          [
+            0.5938,
+            0.1816
+          ],
+          [
+            0.5345,
+            0.1953
+          ],
+          [
+            0.4766,
+            0.1816
+          ],
+          [
+            0.4368,
+            0.1436
+          ],
+          [
+            0.4108,
+            0.1045
+          ],
+          [
+            0.3978,
+            0.0479
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3978,
+          "y": 0.0,
+          "w": 0.2448,
+          "h": 0.1963
+        },
+        "territory_area_px": 54634,
+        "visible_area_px": 26043,
+        "expansion_ratio": 2.098,
+        "neighbors": [
+          {
+            "artifact_id": "module-unicode-bead-similarity-chain",
+            "shared_edge_px": 190,
+            "direction": "right",
+            "distance_px": 261.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-unicode-bead-similarity-chain",
+      "kind": "module",
+      "label": "unicode bead similarity chain",
+      "artifact_type": "pink-bead-chain",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.014,
+        "w": 0.075,
+        "h": 0.567
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.671,
+          0.014
+        ],
+        [
+          0.697,
+          0.039
+        ],
+        [
+          0.712,
+          0.084
+        ],
+        [
+          0.704,
+          0.13
+        ],
+        [
+          0.676,
+          0.151
+        ],
+        [
+          0.664,
+          0.184
+        ],
+        [
+          0.69,
+          0.22
+        ],
+        [
+          0.704,
+          0.27
+        ],
+        [
+          0.691,
+          0.322
+        ],
+        [
+          0.663,
+          0.347
+        ],
+        [
+          0.656,
+          0.391
+        ],
+        [
+          0.681,
+          0.442
+        ],
+        [
+          0.691,
+          0.506
+        ],
+        [
+          0.67,
+          0.561
+        ],
+        [
+          0.646,
+          0.581
+        ],
+        [
+          0.642,
+          0.5
+        ],
+        [
+          0.65,
+          0.274
+        ],
+        [
+          0.654,
+          0.08
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/module-unicode-bead-similarity-chain.svg",
+      "source_binding_ids": [
+        "binding-module-unicode-bead-similarity-chain"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1044,
+          258
+        ],
+        "safe_stage_window_origin_px": [
+          1053,
+          305
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.671,
+            0.014
+          ],
+          [
+            0.697,
+            0.039
+          ],
+          [
+            0.712,
+            0.084
+          ],
+          [
+            0.704,
+            0.13
+          ],
+          [
+            0.676,
+            0.151
+          ],
+          [
+            0.664,
+            0.184
+          ],
+          [
+            0.69,
+            0.22
+          ],
+          [
+            0.704,
+            0.27
+          ],
+          [
+            0.691,
+            0.322
+          ],
+          [
+            0.663,
+            0.347
+          ],
+          [
+            0.656,
+            0.391
+          ],
+          [
+            0.681,
+            0.442
+          ],
+          [
+            0.691,
+            0.506
+          ],
+          [
+            0.67,
+            0.561
+          ],
+          [
+            0.646,
+            0.581
+          ],
+          [
+            0.642,
+            0.5
+          ],
+          [
+            0.65,
+            0.274
+          ],
+          [
+            0.654,
+            0.08
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6276,
+            0.3779
+          ],
+          [
+            0.6354,
+            0.0781
+          ],
+          [
+            0.6523,
+            0.0137
+          ],
+          [
+            0.6615,
+            0.0
+          ],
+          [
+            0.6875,
+            0.002
+          ],
+          [
+            0.7148,
+            0.0381
+          ],
+          [
+            0.7298,
+            0.083
+          ],
+          [
+            0.722,
+            0.2705
+          ],
+          [
+            0.709,
+            0.3213
+          ],
+          [
+            0.6803,
+            0.4033
+          ],
+          [
+            0.6276,
+            0.3838
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6276,
+          "y": 0.0,
+          "w": 0.1029,
+          "h": 0.4043
+        },
+        "territory_area_px": 44872,
+        "visible_area_px": 31382,
+        "expansion_ratio": 1.43,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-pink-bead-collision-mass",
+            "shared_edge_px": 539,
+            "direction": "down",
+            "distance_px": 298.68
+          },
+          {
+            "artifact_id": "module-personal-site-sky-dropout",
+            "shared_edge_px": 190,
+            "direction": "left",
+            "distance_px": 261.12
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-design-md-rope-knot",
+      "kind": "module",
+      "label": "design-md rope knot",
+      "artifact_type": "rope-knot-aperture",
+      "bounds": {
+        "x": 0.391,
+        "y": 0.529,
+        "w": 0.053,
+        "h": 0.106
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.399,
+          0.532
+        ],
+        [
+          0.424,
+          0.529
+        ],
+        [
+          0.442,
+          0.548
+        ],
+        [
+          0.444,
+          0.585
+        ],
+        [
+          0.435,
+          0.624
+        ],
+        [
+          0.41,
+          0.635
+        ],
+        [
+          0.393,
+          0.614
+        ],
+        [
+          0.391,
+          0.572
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/module-design-md-rope-knot.svg",
+      "source_binding_ids": [
+        "binding-module-design-md-rope-knot"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          641,
+          587
+        ],
+        "safe_stage_window_origin_px": [
+          648,
+          596
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.399,
+            0.532
+          ],
+          [
+            0.424,
+            0.529
+          ],
+          [
+            0.442,
+            0.548
+          ],
+          [
+            0.444,
+            0.585
+          ],
+          [
+            0.435,
+            0.624
+          ],
+          [
+            0.41,
+            0.635
+          ],
+          [
+            0.393,
+            0.614
+          ],
+          [
+            0.391,
+            0.572
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3743,
+            0.6104
+          ],
+          [
+            0.4245,
+            0.502
+          ],
+          [
+            0.4596,
+            0.5479
+          ],
+          [
+            0.4616,
+            0.5791
+          ],
+          [
+            0.4531,
+            0.623
+          ],
+          [
+            0.4349,
+            0.6504
+          ],
+          [
+            0.4095,
+            0.6621
+          ],
+          [
+            0.3743,
+            0.6133
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3743,
+          "y": 0.502,
+          "w": 0.0879,
+          "h": 0.1611
+        },
+        "territory_area_px": 13498,
+        "visible_area_px": 7149,
+        "expansion_ratio": 1.888,
+        "neighbors": [
+          {
+            "artifact_id": "hero-bass-weight-lower-scaffold-ridge",
+            "shared_edge_px": 1528,
+            "direction": "left",
+            "distance_px": 121.2
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-shorts-onset-yellow-chip",
+      "kind": "module",
+      "label": "shorts-onset yellow chip",
+      "artifact_type": "impact-chip",
+      "bounds": {
+        "x": 0.525,
+        "y": 0.455,
+        "w": 0.184,
+        "h": 0.276
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.526,
+          0.497
+        ],
+        [
+          0.563,
+          0.492
+        ],
+        [
+          0.594,
+          0.458
+        ],
+        [
+          0.612,
+          0.505
+        ],
+        [
+          0.67,
+          0.471
+        ],
+        [
+          0.643,
+          0.53
+        ],
+        [
+          0.704,
+          0.559
+        ],
+        [
+          0.641,
+          0.572
+        ],
+        [
+          0.676,
+          0.643
+        ],
+        [
+          0.61,
+          0.596
+        ],
+        [
+          0.586,
+          0.729
+        ],
+        [
+          0.565,
+          0.605
+        ],
+        [
+          0.526,
+          0.622
+        ],
+        [
+          0.547,
+          0.557
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/module-shorts-onset-yellow-chip.svg",
+      "source_binding_ids": [
+        "binding-module-shorts-onset-yellow-chip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          948,
+          585
+        ],
+        "safe_stage_window_origin_px": [
+          970,
+          607
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.526,
+            0.497
+          ],
+          [
+            0.563,
+            0.492
+          ],
+          [
+            0.594,
+            0.458
+          ],
+          [
+            0.612,
+            0.505
+          ],
+          [
+            0.67,
+            0.471
+          ],
+          [
+            0.643,
+            0.53
+          ],
+          [
+            0.704,
+            0.559
+          ],
+          [
+            0.641,
+            0.572
+          ],
+          [
+            0.676,
+            0.643
+          ],
+          [
+            0.61,
+            0.596
+          ],
+          [
+            0.586,
+            0.729
+          ],
+          [
+            0.565,
+            0.605
+          ],
+          [
+            0.526,
+            0.622
+          ],
+          [
+            0.547,
+            0.557
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5072,
+            0.4961
+          ],
+          [
+            0.5254,
+            0.4688
+          ],
+          [
+            0.5547,
+            0.4668
+          ],
+          [
+            0.6719,
+            0.5918
+          ],
+          [
+            0.694,
+            0.6426
+          ],
+          [
+            0.6758,
+            0.6699
+          ],
+          [
+            0.5859,
+            0.7559
+          ],
+          [
+            0.5072,
+            0.6211
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5072,
+          "y": 0.4658,
+          "w": 0.1875,
+          "h": 0.291
+        },
+        "territory_area_px": 41111,
+        "visible_area_px": 28827,
+        "expansion_ratio": 1.426,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-pink-bead-collision-mass",
+            "shared_edge_px": 2080,
+            "direction": "up",
+            "distance_px": 148.04
+          },
+          {
+            "artifact_id": "hero-bass-weight-lower-scaffold-ridge",
+            "shared_edge_px": 532,
+            "direction": "left",
+            "distance_px": 364.11
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-diagonal-warrior-procession-blade-gl",
+      "kind": "module",
+      "label": "diagonal warrior-procession blade glint",
+      "artifact_type": "specular-blade-glint",
+      "bounds": {
+        "x": 0.304,
+        "y": 0.241,
+        "w": 0.224,
+        "h": 0.173
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.304,
+          0.241
+        ],
+        [
+          0.528,
+          0.241
+        ],
+        [
+          0.528,
+          0.414
+        ],
+        [
+          0.304,
+          0.414
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/module-diagonal-warrior-procession-blade-gl.svg",
+      "source_binding_ids": [
+        "binding-module-diagonal-warrior-procession-blade-gl"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          639,
+          321
+        ],
+        "safe_stage_window_origin_px": [
+          667,
+          335
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.304,
+            0.241
+          ],
+          [
+            0.528,
+            0.241
+          ],
+          [
+            0.528,
+            0.414
+          ],
+          [
+            0.304,
+            0.414
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2852,
+            0.2402
+          ],
+          [
+            0.3034,
+            0.2129
+          ],
+          [
+            0.528,
+            0.2129
+          ],
+          [
+            0.5462,
+            0.2402
+          ],
+          [
+            0.5462,
+            0.3604
+          ],
+          [
+            0.5124,
+            0.4404
+          ],
+          [
+            0.3034,
+            0.4404
+          ],
+          [
+            0.2852,
+            0.4131
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2852,
+          "y": 0.2129,
+          "w": 0.2617,
+          "h": 0.2285
+        },
+        "territory_area_px": 90333,
+        "visible_area_px": 61588,
+        "expansion_ratio": 1.467,
+        "neighbors": [
+          {
+            "artifact_id": "hero-primary-pink-bead-collision-mass",
+            "shared_edge_px": 781,
+            "direction": "right",
+            "distance_px": 390.77
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-dwell-image-log-ring-portal",
+      "kind": "module",
+      "label": "dwell-image log-ring portal",
+      "artifact_type": "log-rim-cut",
+      "bounds": {
+        "x": 0.221,
+        "y": 0.762,
+        "w": 0.151,
+        "h": 0.171
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.244,
+          0.784
+        ],
+        [
+          0.291,
+          0.762
+        ],
+        [
+          0.338,
+          0.778
+        ],
+        [
+          0.371,
+          0.818
+        ],
+        [
+          0.367,
+          0.878
+        ],
+        [
+          0.326,
+          0.924
+        ],
+        [
+          0.272,
+          0.933
+        ],
+        [
+          0.232,
+          0.899
+        ],
+        [
+          0.221,
+          0.844
+        ]
+      ],
+      "cluster_id": "low-poly-impact-scaffold",
+      "mask_path": "/editions/2026-09-15-mist-impact-scaffold-v1/assets/masks/module-dwell-image-log-ring-portal.svg",
+      "source_binding_ids": [
+        "binding-module-dwell-image-log-ring-portal"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          455,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          474,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.244,
+            0.784
+          ],
+          [
+            0.291,
+            0.762
+          ],
+          [
+            0.338,
+            0.778
+          ],
+          [
+            0.371,
+            0.818
+          ],
+          [
+            0.367,
+            0.878
+          ],
+          [
+            0.326,
+            0.924
+          ],
+          [
+            0.272,
+            0.933
+          ],
+          [
+            0.232,
+            0.899
+          ],
+          [
+            0.221,
+            0.844
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2025,
+            0.8438
+          ],
+          [
+            0.2246,
+            0.7842
+          ],
+          [
+            0.2435,
+            0.7559
+          ],
+          [
+            0.2904,
+            0.7344
+          ],
+          [
+            0.3379,
+            0.75
+          ],
+          [
+            0.3887,
+            0.8174
+          ],
+          [
+            0.3848,
+            0.8779
+          ],
+          [
+            0.3659,
+            0.9062
+          ],
+          [
+            0.3255,
+            0.9512
+          ],
+          [
+            0.2715,
+            0.96
+          ],
+          [
+            0.2318,
+            0.9258
+          ],
+          [
+            0.2135,
+            0.8984
+          ],
+          [
+            0.2025,
+            0.8447
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2025,
+          "y": 0.7344,
+          "w": 0.1868,
+          "h": 0.2266
+        },
+        "territory_area_px": 48207,
+        "visible_area_px": 30287,
+        "expansion_ratio": 1.592,
+        "neighbors": []
+      }
+    }
+  ]
+}

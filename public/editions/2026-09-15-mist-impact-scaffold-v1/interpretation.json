@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-09-15-mist-impact-scaffold-v1",
+  "edition_id": "2026-09-15-mist-impact-scaffold-v1",
+  "plate_read_timestamp": "2026-09-15T10:41:04.822Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A bright expressionist scaffold-ravine plate: log towers and rope joints carry bead-like combat figures across a cyan waterfall void, with a yellow impact burst and distant cliff apertures as source-bearing marks.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "misty toy-combat over a ravine, bright and crowded at the edges with open cyan air above",
+      "A bright expressionist scaffold-ravine plate: log towers and rope joints carry bead-like combat figures across a cyan waterfall void, with a yellow impact burst and distant cliff apertures as source-bearing marks.",
+      "game-space",
+      "log-scaffold",
+      "pink-bead-chain"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "primary pink bead collision mass",
+      "bass-weight lower scaffold ridge",
+      "detroit cliff-platform cut",
+      "personal-site sky dropout",
+      "unicode bead similarity chain",
+      "design-md rope knot",
+      "shorts-onset yellow chip",
+      "diagonal warrior-procession blade glint"
+    ],
+    "dominant_surfaces": [
+      "water",
+      "fog",
+      "paint"
+    ],
+    "dominant_structures": [
+      "low-poly-impact-scaffold",
+      "left-bottom vertical obstacle scaffold of log rims, ropes, and stacked decks",
+      "bubblegum bead columns and collision clusters suspended in open air",
+      "diagonal fighter procession spine crossing from lower left to upper right",
+      "waterfall dropout and ravine cut through the lower center",
+      "yellow-purple impact hinge at the platform edge",
+      "pale cyan sky field held open as breathing space",
+      "pink bead collision mass at the combat hinge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: low-poly-impact-scaffold.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-primary-pink-bead-collision-mass",
+      "kind": "hero",
+      "type": "hero-scale-bead-cluster",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.501,
+        "y": 0.385,
+        "w": 0.245,
+        "h": 0.238
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-bass-weight-lower-scaffold-ridge",
+      "kind": "hero",
+      "type": "hero-scale-log-ridge",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.206,
+        "y": 0.492,
+        "w": 0.334,
+        "h": 0.103
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detroit-cliff-platform-cut",
+      "kind": "module",
+      "type": "cliff-edge-aperture",
+      "strength": 0.801408,
+      "bounds": {
+        "x": 0.841,
+        "y": 0.07,
+        "w": 0.129,
+        "h": 0.258
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-personal-site-sky-dropout",
+      "kind": "module",
+      "type": "mist-slit",
+      "strength": 0.775452,
+      "bounds": {
+        "x": 0.424,
+        "y": 0.036,
+        "w": 0.192,
+        "h": 0.121
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-unicode-bead-similarity-chain",
+      "kind": "module",
+      "type": "pink-bead-chain",
+      "strength": 0.725388,
+      "bounds": {
+        "x": 0.642,
+        "y": 0.014,
+        "w": 0.075,
+        "h": 0.567
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-design-md-rope-knot",
+      "kind": "module",
+      "type": "rope-knot-aperture",
+      "strength": 0.708048,
+      "bounds": {
+        "x": 0.391,
+        "y": 0.529,
+        "w": 0.053,
+        "h": 0.106
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shorts-onset-yellow-chip",
+      "kind": "module",
+      "type": "impact-chip",
+      "strength": 0.6672960000000001,
+      "bounds": {
+        "x": 0.525,
+        "y": 0.455,
+        "w": 0.184,
+        "h": 0.276
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-diagonal-warrior-procession-blade-gl",
+      "kind": "module",
+      "type": "specular-blade-glint",
+      "strength": 0.658924,
+      "bounds": {
+        "x": 0.304,
+        "y": 0.241,
+        "w": 0.224,
+        "h": 0.173
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dwell-image-log-ring-portal",
+      "kind": "module",
+      "type": "log-rim-cut",
+      "strength": 0.6532,
+      "bounds": {
+        "x": 0.221,
+        "y": 0.762,
+        "w": 0.151,
+        "h": 0.171
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-primary-pink-bead-collision-mass-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.501,
+        "y": 0.385,
+        "w": 0.245,
+        "h": 0.238
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-bass-weight-lower-scaffold-ridge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.206,
+        "y": 0.492,
+        "w": 0.334,
+        "h": 0.103
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detroit-cliff-platform-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.841,
+        "y": 0.07,
+        "w": 0.129,
+        "h": 0.258
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-personal-site-sky-dropout-surface",
+      "surface_type": "fog",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.424,
+        "y": 0.036,
+        "w": 0.192,
+        "h": 0.121
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-unicode-bead-similarity-chain-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.642,
+        "y": 0.014,
+        "w": 0.075,
+        "h": 0.567
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-design-md-rope-knot-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.391,
+        "y": 0.529,
+        "w": 0.053,
+        "h": 0.106
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shorts-onset-yellow-chip-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.525,
+        "y": 0.455,
+        "w": 0.184,
+        "h": 0.276
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-diagonal-warrior-procession-blade-gl-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.304,
+        "y": 0.241,
+        "w": 0.224,
+        "h": 0.173
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dwell-image-log-ring-portal-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.221,
+        "y": 0.762,
+        "w": 0.151,
+        "h": 0.171
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
