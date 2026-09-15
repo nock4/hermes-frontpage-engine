@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-15-pressure-meadow-filing-v1",
+  "edition_id": "2026-09-15-pressure-meadow-filing-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-15-pressure-meadow-filing-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-lower-greenhouse-bass-ridge",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-greenhouse-bass-ridge",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-bass-ridge) selected from interpretation."
+    },
+    {
+      "target_id": "hero-bluebell-shadow-pressure-fold",
+      "target_kind": "artifact",
+      "artifact_id": "hero-bluebell-shadow-pressure-fold",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-botanical-fold) selected from interpretation."
+    },
+    {
+      "target_id": "module-maximal-color-pinhole-spray",
+      "target_kind": "artifact",
+      "artifact_id": "module-maximal-color-pinhole-spray",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (onset-pinhole-spray) selected from interpretation."
+    },
+    {
+      "target_id": "module-moma-index-edge-tile",
+      "target_kind": "artifact",
+      "artifact_id": "module-moma-index-edge-tile",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (nested-edge-calibration-tile) selected from interpretation."
+    },
+    {
+      "target_id": "module-turntable-measure-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-turntable-measure-notch",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rotational-measure-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-streamed-pixel-dropout-slit",
+      "target_kind": "artifact",
+      "artifact_id": "module-streamed-pixel-dropout-slit",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (dropout-silence-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-maximal-color-pinhole-spray-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-maximal-color-pinhole-spray-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (onset-pinhole-spray) selected from interpretation."
+    },
+    {
+      "target_id": "module-moma-index-edge-tile-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-moma-index-edge-tile-2",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (nested-edge-calibration-tile) selected from interpretation."
+    },
+    {
+      "target_id": "module-turntable-measure-notch-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-turntable-measure-notch-2",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rotational-measure-notch) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

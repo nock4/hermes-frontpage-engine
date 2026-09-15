@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-09-15-pressure-meadow-filing-v1",
+  "edition_id": "2026-09-15-pressure-meadow-filing-v1",
+  "plate_read_timestamp": "2026-09-15T08:08:20.922Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A minimal expressionist slab: warm rubbed plaster above a dark lower bass ridge, cut by vertical seams, small drilled holes, colored slits, a blue-violet shadow void, and a stacked edge tile along the lower right.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "quiet legal pulse under a warm meadow skin",
+      "A minimal expressionist slab: warm rubbed plaster above a dark lower bass ridge, cut by vertical seams, small drilled holes, colored slits, a blue-violet shadow void, and a stacked edge tile along the lower right.",
+      "minimal-field",
+      "botanical-pressure",
+      "audio-measure"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "lower greenhouse bass ridge",
+      "bluebell shadow pressure fold",
+      "maximal-color pinhole spray",
+      "moma-index edge tile",
+      "turntable measure notch",
+      "streamed-pixel dropout slit"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "dry-measure-meadow-filing",
+      "one severe open meadow-like filing slab",
+      "one oversized lower pressure ridge carrying two hero marks",
+      "thin uneven measure seams crossing the field",
+      "small drilled onset pinhole constellations",
+      "edge-fold calibration tiles",
+      "cool pixel-pollen glints embedded in repairs",
+      "dark rubbed lower ridge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: dry-measure-meadow-filing.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-lower-greenhouse-bass-ridge",
+      "kind": "hero",
+      "type": "hero-scale-bass-ridge",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0.665,
+        "w": 0.998,
+        "h": 0.334
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-bluebell-shadow-pressure-fold",
+      "kind": "hero",
+      "type": "hero-scale-botanical-fold",
+      "strength": 0.989768,
+      "bounds": {
+        "x": 0.06,
+        "y": 0.729,
+        "w": 0.226,
+        "h": 0.096
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-maximal-color-pinhole-spray",
+      "kind": "module",
+      "type": "onset-pinhole-spray",
+      "strength": 0.780924,
+      "bounds": {
+        "x": 0.009,
+        "y": 0.024,
+        "w": 0.957,
+        "h": 0.719
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-moma-index-edge-tile",
+      "kind": "module",
+      "type": "nested-edge-calibration-tile",
+      "strength": 0.767112,
+      "bounds": {
+        "x": 0.699,
+        "y": 0.725,
+        "w": 0.268,
+        "h": 0.119
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-turntable-measure-notch",
+      "kind": "module",
+      "type": "rotational-measure-notch",
+      "strength": 0.738936,
+      "bounds": {
+        "x": 0.301,
+        "y": 0.733,
+        "w": 0.172,
+        "h": 0.062
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-streamed-pixel-dropout-slit",
+      "kind": "module",
+      "type": "dropout-silence-slit",
+      "strength": 0.704208,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-maximal-color-pinhole-spray-2",
+      "kind": "module",
+      "type": "onset-pinhole-spray",
+      "strength": 0.67422,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-moma-index-edge-tile-2",
+      "kind": "module",
+      "type": "nested-edge-calibration-tile",
+      "strength": 0.6566799999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-turntable-measure-notch-2",
+      "kind": "module",
+      "type": "rotational-measure-notch",
+      "strength": 0.6624399999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-lower-greenhouse-bass-ridge-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.665,
+        "w": 0.998,
+        "h": 0.334
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-bluebell-shadow-pressure-fold-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.06,
+        "y": 0.729,
+        "w": 0.226,
+        "h": 0.096
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-maximal-color-pinhole-spray-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.009,
+        "y": 0.024,
+        "w": 0.957,
+        "h": 0.719
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-moma-index-edge-tile-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.699,
+        "y": 0.725,
+        "w": 0.268,
+        "h": 0.119
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-turntable-measure-notch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.301,
+        "y": 0.733,
+        "w": 0.172,
+        "h": 0.062
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-streamed-pixel-dropout-slit-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-maximal-color-pinhole-spray-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-moma-index-edge-tile-2-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-turntable-measure-notch-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,1483 @@
+{
+  "artifact_map_id": "map-2026-09-15-pressure-meadow-filing-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "dry-measure-meadow-filing",
+  "default_artifact_id": "hero-lower-greenhouse-bass-ridge",
+  "artifacts": [
+    {
+      "id": "hero-lower-greenhouse-bass-ridge",
+      "kind": "hero",
+      "label": "lower greenhouse bass ridge",
+      "artifact_type": "hero-scale-bass-ridge",
+      "bounds": {
+        "x": 0,
+        "y": 0.665,
+        "w": 0.998,
+        "h": 0.334
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.703
+        ],
+        [
+          0.055,
+          0.699
+        ],
+        [
+          0.129,
+          0.681
+        ],
+        [
+          0.246,
+          0.678
+        ],
+        [
+          0.351,
+          0.705
+        ],
+        [
+          0.493,
+          0.735
+        ],
+        [
+          0.618,
+          0.728
+        ],
+        [
+          0.754,
+          0.704
+        ],
+        [
+          0.903,
+          0.699
+        ],
+        [
+          0.998,
+          0.71
+        ],
+        [
+          0.996,
+          0.999
+        ],
+        [
+          0.002,
+          0.999
+        ],
+        [
+          0,
+          0.703
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/hero-lower-greenhouse-bass-ridge.svg",
+      "source_binding_ids": [
+        "binding-hero-lower-greenhouse-bass-ridge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          766,
+          825
+        ],
+        "safe_stage_window_origin_px": [
+          889,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.703
+          ],
+          [
+            0.055,
+            0.699
+          ],
+          [
+            0.129,
+            0.681
+          ],
+          [
+            0.246,
+            0.678
+          ],
+          [
+            0.351,
+            0.705
+          ],
+          [
+            0.493,
+            0.735
+          ],
+          [
+            0.618,
+            0.728
+          ],
+          [
+            0.754,
+            0.704
+          ],
+          [
+            0.903,
+            0.699
+          ],
+          [
+            0.998,
+            0.71
+          ],
+          [
+            0.996,
+            0.999
+          ],
+          [
+            0.002,
+            0.999
+          ],
+          [
+            0,
+            0.703
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.6689
+          ],
+          [
+            0.071,
+            0.6611
+          ],
+          [
+            0.903,
+            0.665
+          ],
+          [
+            0.9993,
+            0.6797
+          ],
+          [
+            0.9993,
+            0.999
+          ],
+          [
+            0.0,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.6611,
+          "w": 1.0,
+          "h": 0.3389
+        },
+        "territory_area_px": 502121,
+        "visible_area_px": 459900,
+        "expansion_ratio": 1.092,
+        "neighbors": [
+          {
+            "artifact_id": "module-streamed-pixel-dropout-slit",
+            "shared_edge_px": 62557,
+            "direction": "left",
+            "distance_px": 465.69
+          },
+          {
+            "artifact_id": "module-moma-index-edge-tile-2",
+            "shared_edge_px": 55979,
+            "direction": "right",
+            "distance_px": 446.27
+          },
+          {
+            "artifact_id": "module-moma-index-edge-tile",
+            "shared_edge_px": 43288,
+            "direction": "right",
+            "distance_px": 589.65
+          },
+          {
+            "artifact_id": "hero-bluebell-shadow-pressure-fold",
+            "shared_edge_px": 42720,
+            "direction": "left",
+            "distance_px": 532.45
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-bluebell-shadow-pressure-fold",
+      "kind": "hero",
+      "label": "bluebell shadow pressure fold",
+      "artifact_type": "hero-scale-botanical-fold",
+      "bounds": {
+        "x": 0.06,
+        "y": 0.729,
+        "w": 0.226,
+        "h": 0.096
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.063,
+          0.77
+        ],
+        [
+          0.08,
+          0.74
+        ],
+        [
+          0.119,
+          0.729
+        ],
+        [
+          0.197,
+          0.73
+        ],
+        [
+          0.257,
+          0.743
+        ],
+        [
+          0.285,
+          0.776
+        ],
+        [
+          0.278,
+          0.804
+        ],
+        [
+          0.229,
+          0.823
+        ],
+        [
+          0.153,
+          0.824
+        ],
+        [
+          0.088,
+          0.807
+        ],
+        [
+          0.063,
+          0.77
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/hero-bluebell-shadow-pressure-fold.svg",
+      "source_binding_ids": [
+        "binding-hero-bluebell-shadow-pressure-fold"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          266,
+          788
+        ],
+        "safe_stage_window_origin_px": [
+          293,
+          796
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.063,
+            0.77
+          ],
+          [
+            0.08,
+            0.74
+          ],
+          [
+            0.119,
+            0.729
+          ],
+          [
+            0.197,
+            0.73
+          ],
+          [
+            0.257,
+            0.743
+          ],
+          [
+            0.285,
+            0.776
+          ],
+          [
+            0.278,
+            0.804
+          ],
+          [
+            0.229,
+            0.823
+          ],
+          [
+            0.153,
+            0.824
+          ],
+          [
+            0.088,
+            0.807
+          ],
+          [
+            0.063,
+            0.77
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0404,
+            0.7695
+          ],
+          [
+            0.0794,
+            0.7061
+          ],
+          [
+            0.1185,
+            0.6953
+          ],
+          [
+            0.1966,
+            0.6963
+          ],
+          [
+            0.2565,
+            0.709
+          ],
+          [
+            0.2839,
+            0.7412
+          ],
+          [
+            0.2897,
+            0.7715
+          ],
+          [
+            0.1152,
+            0.8457
+          ],
+          [
+            0.0879,
+            0.8398
+          ],
+          [
+            0.0742,
+            0.8203
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0404,
+          "y": 0.6953,
+          "w": 0.2513,
+          "h": 0.1514
+        },
+        "territory_area_px": 40314,
+        "visible_area_px": 26617,
+        "expansion_ratio": 1.515,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-greenhouse-bass-ridge",
+            "shared_edge_px": 42720,
+            "direction": "right",
+            "distance_px": 532.45
+          },
+          {
+            "artifact_id": "module-streamed-pixel-dropout-slit",
+            "shared_edge_px": 2025,
+            "direction": "down",
+            "distance_px": 148.07
+          },
+          {
+            "artifact_id": "module-turntable-measure-notch",
+            "shared_edge_px": 153,
+            "direction": "right",
+            "distance_px": 331.37
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-maximal-color-pinhole-spray",
+      "kind": "module",
+      "label": "maximal-color pinhole spray",
+      "artifact_type": "onset-pinhole-spray",
+      "bounds": {
+        "x": 0.009,
+        "y": 0.024,
+        "w": 0.957,
+        "h": 0.719
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.172,
+          0.033
+        ],
+        [
+          0.16,
+          0.117
+        ],
+        [
+          0.161,
+          0.155
+        ],
+        [
+          0.16,
+          0.253
+        ],
+        [
+          0.399,
+          0.314
+        ],
+        [
+          0.887,
+          0.493
+        ],
+        [
+          0.939,
+          0.58
+        ],
+        [
+          0.888,
+          0.648
+        ],
+        [
+          0.943,
+          0.743
+        ],
+        [
+          0.059,
+          0.632
+        ],
+        [
+          0.02,
+          0.631
+        ],
+        [
+          0.01,
+          0.155
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/module-maximal-color-pinhole-spray.svg",
+      "source_binding_ids": [
+        "binding-module-maximal-color-pinhole-spray"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          749,
+          334
+        ],
+        "safe_stage_window_origin_px": [
+          866,
+          393
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.172,
+            0.033
+          ],
+          [
+            0.16,
+            0.117
+          ],
+          [
+            0.161,
+            0.155
+          ],
+          [
+            0.16,
+            0.253
+          ],
+          [
+            0.399,
+            0.314
+          ],
+          [
+            0.887,
+            0.493
+          ],
+          [
+            0.939,
+            0.58
+          ],
+          [
+            0.888,
+            0.648
+          ],
+          [
+            0.943,
+            0.743
+          ],
+          [
+            0.059,
+            0.632
+          ],
+          [
+            0.02,
+            0.631
+          ],
+          [
+            0.01,
+            0.155
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.1416
+          ],
+          [
+            0.0098,
+            0.127
+          ],
+          [
+            0.1719,
+            0.0049
+          ],
+          [
+            0.8867,
+            0.4648
+          ],
+          [
+            0.957,
+            0.5791
+          ],
+          [
+            0.9167,
+            0.666
+          ],
+          [
+            0.5098,
+            0.7002
+          ],
+          [
+            0.3796,
+            0.6992
+          ],
+          [
+            0.0195,
+            0.6582
+          ],
+          [
+            0.0013,
+            0.6309
+          ],
+          [
+            0.0,
+            0.583
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0049,
+          "w": 0.9577,
+          "h": 0.6963
+        },
+        "territory_area_px": 566231,
+        "visible_area_px": 508153,
+        "expansion_ratio": 1.114,
+        "neighbors": [
+          {
+            "artifact_id": "module-turntable-measure-notch-2",
+            "shared_edge_px": 47154,
+            "direction": "up",
+            "distance_px": 92.57
+          },
+          {
+            "artifact_id": "hero-lower-greenhouse-bass-ridge",
+            "shared_edge_px": 7872,
+            "direction": "down",
+            "distance_px": 426.56
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-moma-index-edge-tile",
+      "kind": "module",
+      "label": "moma-index edge tile",
+      "artifact_type": "nested-edge-calibration-tile",
+      "bounds": {
+        "x": 0.699,
+        "y": 0.725,
+        "w": 0.268,
+        "h": 0.119
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.702,
+          0.794
+        ],
+        [
+          0.782,
+          0.785
+        ],
+        [
+          0.797,
+          0.733
+        ],
+        [
+          0.913,
+          0.721
+        ],
+        [
+          0.967,
+          0.747
+        ],
+        [
+          0.964,
+          0.815
+        ],
+        [
+          0.876,
+          0.812
+        ],
+        [
+          0.876,
+          0.842
+        ],
+        [
+          0.749,
+          0.835
+        ],
+        [
+          0.699,
+          0.826
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/module-moma-index-edge-tile.svg",
+      "source_binding_ids": [
+        "binding-module-moma-index-edge-tile"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1279,
+          794
+        ],
+        "safe_stage_window_origin_px": [
+          1312,
+          803
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.702,
+            0.794
+          ],
+          [
+            0.782,
+            0.785
+          ],
+          [
+            0.797,
+            0.733
+          ],
+          [
+            0.913,
+            0.721
+          ],
+          [
+            0.967,
+            0.747
+          ],
+          [
+            0.964,
+            0.815
+          ],
+          [
+            0.876,
+            0.812
+          ],
+          [
+            0.876,
+            0.842
+          ],
+          [
+            0.749,
+            0.835
+          ],
+          [
+            0.699,
+            0.826
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6803,
+            0.8223
+          ],
+          [
+            0.6836,
+            0.7939
+          ],
+          [
+            0.7005,
+            0.7686
+          ],
+          [
+            0.7969,
+            0.7051
+          ],
+          [
+            0.9128,
+            0.6934
+          ],
+          [
+            0.9668,
+            0.7188
+          ],
+          [
+            0.985,
+            0.7461
+          ],
+          [
+            0.9818,
+            0.8145
+          ],
+          [
+            0.9635,
+            0.8418
+          ],
+          [
+            0.8757,
+            0.8691
+          ],
+          [
+            0.6986,
+            0.8525
+          ],
+          [
+            0.6803,
+            0.8252
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6803,
+          "y": 0.6934,
+          "w": 0.3053,
+          "h": 0.1768
+        },
+        "territory_area_px": 40597,
+        "visible_area_px": 33209,
+        "expansion_ratio": 1.222,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-greenhouse-bass-ridge",
+            "shared_edge_px": 43288,
+            "direction": "left",
+            "distance_px": 589.65
+          },
+          {
+            "artifact_id": "module-moma-index-edge-tile-2",
+            "shared_edge_px": 1899,
+            "direction": "left",
+            "distance_px": 165.97
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-turntable-measure-notch",
+      "kind": "module",
+      "label": "turntable measure notch",
+      "artifact_type": "rotational-measure-notch",
+      "bounds": {
+        "x": 0.301,
+        "y": 0.733,
+        "w": 0.172,
+        "h": 0.062
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.302,
+          0.758
+        ],
+        [
+          0.316,
+          0.737
+        ],
+        [
+          0.335,
+          0.731
+        ],
+        [
+          0.357,
+          0.741
+        ],
+        [
+          0.377,
+          0.74
+        ],
+        [
+          0.39,
+          0.752
+        ],
+        [
+          0.405,
+          0.748
+        ],
+        [
+          0.428,
+          0.759
+        ],
+        [
+          0.471,
+          0.76
+        ],
+        [
+          0.473,
+          0.781
+        ],
+        [
+          0.45,
+          0.794
+        ],
+        [
+          0.398,
+          0.79
+        ],
+        [
+          0.353,
+          0.777
+        ],
+        [
+          0.319,
+          0.777
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/module-turntable-measure-notch.svg",
+      "source_binding_ids": [
+        "binding-module-turntable-measure-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          594,
+          777
+        ],
+        "safe_stage_window_origin_px": [
+          616,
+          782
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.302,
+            0.758
+          ],
+          [
+            0.316,
+            0.737
+          ],
+          [
+            0.335,
+            0.731
+          ],
+          [
+            0.357,
+            0.741
+          ],
+          [
+            0.377,
+            0.74
+          ],
+          [
+            0.39,
+            0.752
+          ],
+          [
+            0.405,
+            0.748
+          ],
+          [
+            0.428,
+            0.759
+          ],
+          [
+            0.471,
+            0.76
+          ],
+          [
+            0.473,
+            0.781
+          ],
+          [
+            0.45,
+            0.794
+          ],
+          [
+            0.398,
+            0.79
+          ],
+          [
+            0.353,
+            0.777
+          ],
+          [
+            0.319,
+            0.777
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2832,
+            0.7578
+          ],
+          [
+            0.3158,
+            0.709
+          ],
+          [
+            0.3346,
+            0.7031
+          ],
+          [
+            0.4655,
+            0.7324
+          ],
+          [
+            0.4342,
+            0.8193
+          ],
+          [
+            0.3184,
+            0.8037
+          ],
+          [
+            0.3021,
+            0.7861
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2832,
+          "y": 0.7031,
+          "w": 0.1829,
+          "h": 0.1172
+        },
+        "territory_area_px": 22336,
+        "visible_area_px": 9724,
+        "expansion_ratio": 2.297,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-greenhouse-bass-ridge",
+            "shared_edge_px": 24163,
+            "direction": "right",
+            "distance_px": 210.5
+          },
+          {
+            "artifact_id": "module-streamed-pixel-dropout-slit",
+            "shared_edge_px": 166,
+            "direction": "left",
+            "distance_px": 298.7
+          },
+          {
+            "artifact_id": "hero-bluebell-shadow-pressure-fold",
+            "shared_edge_px": 153,
+            "direction": "left",
+            "distance_px": 331.37
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-streamed-pixel-dropout-slit",
+      "kind": "module",
+      "label": "streamed-pixel dropout slit",
+      "artifact_type": "dropout-silence-slit",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/module-streamed-pixel-dropout-slit.svg",
+      "source_binding_ids": [
+        "binding-module-streamed-pixel-dropout-slit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0736,
+            0.8203
+          ],
+          [
+            0.2904,
+            0.7715
+          ],
+          [
+            0.306,
+            0.791
+          ],
+          [
+            0.306,
+            0.9395
+          ],
+          [
+            0.2799,
+            0.9785
+          ],
+          [
+            0.0996,
+            0.9785
+          ],
+          [
+            0.0736,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0736,
+          "y": 0.7715,
+          "w": 0.2331,
+          "h": 0.208
+        },
+        "territory_area_px": 59569,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.299,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-greenhouse-bass-ridge",
+            "shared_edge_px": 62557,
+            "direction": "right",
+            "distance_px": 465.69
+          },
+          {
+            "artifact_id": "hero-bluebell-shadow-pressure-fold",
+            "shared_edge_px": 2025,
+            "direction": "up",
+            "distance_px": 148.07
+          },
+          {
+            "artifact_id": "module-turntable-measure-notch",
+            "shared_edge_px": 166,
+            "direction": "right",
+            "distance_px": 298.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-maximal-color-pinhole-spray-2",
+      "kind": "module",
+      "label": "maximal-color pinhole spray",
+      "artifact_type": "onset-pinhole-spray",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/module-maximal-color-pinhole-spray-2.svg",
+      "source_binding_ids": [
+        "binding-module-maximal-color-pinhole-spray-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4779,
+            0.9668
+          ],
+          [
+            0.5228,
+            0.752
+          ],
+          [
+            0.5996,
+            0.752
+          ],
+          [
+            0.6178,
+            0.7793
+          ],
+          [
+            0.6178,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9668
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4779,
+          "y": 0.752,
+          "w": 0.1406,
+          "h": 0.2158
+        },
+        "territory_area_px": 39247,
+        "visible_area_px": 45705,
+        "expansion_ratio": 0.859,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-greenhouse-bass-ridge",
+            "shared_edge_px": 41506,
+            "direction": "left",
+            "distance_px": 91.76
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-moma-index-edge-tile-2",
+      "kind": "module",
+      "label": "moma-index edge tile",
+      "artifact_type": "nested-edge-calibration-tile",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/module-moma-index-edge-tile-2.svg",
+      "source_binding_ids": [
+        "binding-module-moma-index-edge-tile-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7012,
+            0.7598
+          ],
+          [
+            0.7194,
+            0.7324
+          ],
+          [
+            0.778,
+            0.7324
+          ],
+          [
+            0.918,
+            0.8408
+          ],
+          [
+            0.918,
+            0.9199
+          ],
+          [
+            0.8997,
+            0.9473
+          ],
+          [
+            0.7194,
+            0.9473
+          ],
+          [
+            0.7012,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7012,
+          "y": 0.7324,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 53198,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.16,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-greenhouse-bass-ridge",
+            "shared_edge_px": 55979,
+            "direction": "left",
+            "distance_px": 446.27
+          },
+          {
+            "artifact_id": "module-moma-index-edge-tile",
+            "shared_edge_px": 1899,
+            "direction": "right",
+            "distance_px": 165.97
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-turntable-measure-notch-2",
+      "kind": "module",
+      "label": "turntable measure notch",
+      "artifact_type": "rotational-measure-notch",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "dry-measure-meadow-filing",
+      "mask_path": "/editions/2026-09-15-pressure-meadow-filing-v1/assets/masks/module-turntable-measure-notch-2.svg",
+      "source_binding_ids": [
+        "binding-module-turntable-measure-notch-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3398
+          ],
+          [
+            0.2799,
+            0.3125
+          ],
+          [
+            0.4395,
+            0.3125
+          ],
+          [
+            0.457,
+            0.3389
+          ],
+          [
+            0.3346,
+            0.5166
+          ],
+          [
+            0.2799,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.196,
+          "h": 0.2051
+        },
+        "territory_area_px": 44871,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.184,
+        "neighbors": [
+          {
+            "artifact_id": "module-maximal-color-pinhole-spray",
+            "shared_edge_px": 47154,
+            "direction": "down",
+            "distance_px": 92.57
+          }
+        ]
+      }
+    }
+  ]
+}
