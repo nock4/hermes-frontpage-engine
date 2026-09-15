@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
-import { buildExactAnchorSourceMaterialBlocker, isExactAnchorOverride } from '../../scripts/lib/source-research.mjs'
+import { buildExactAnchorSourceMaterialBlocker, buildPromotedVisualAnchorMaterial, isExactAnchorOverride } from '../../scripts/lib/source-research.mjs'
 
 const source = readFileSync(new URL('../../scripts/lib/source-research.mjs', import.meta.url), 'utf8')
 
@@ -75,6 +75,56 @@ describe('source autoresearch prompt', () => {
       },
       sourceImageMode: 'skipped-no-valid-dominant-source-image',
       imageSourceMaterial: { image_source_candidates: [{ image_url: 'https://example.com/image.jpg' }] },
+    })).toBe(null)
+  })
+
+  it('promotes a nearby visual anchor when the thesis anchor has no valid image', () => {
+    const promoted = buildPromotedVisualAnchorMaterial({
+      url: 'https://example.com/visual-story',
+      title: 'Blue garden study',
+      description: 'A strong image-led alternate from the same source field.',
+      image_url: 'https://example.com/blue-garden.jpg',
+      visual_reference_score: 44,
+      selection_reason: 'Best image-bearing source from the primary inspected source set.',
+    }, {
+      anchorResearch: {
+        anchor_source: {
+          url: 'https://x.com/text/status/1',
+          title: 'Text-only thesis anchor',
+          why_selected: 'Strong editorial thesis but no fresh image.',
+        },
+      },
+      imageSourceMaterial: {
+        selected_image_material: [],
+        low_fertility_anchor_demoted: {
+          reason: 'All selected image material already appeared in a published edition; do not use repeated anchor source material as the dominant plate seed.',
+        },
+      },
+    })
+
+    expect(promoted.candidate).toMatchObject({
+      page_url: 'https://example.com/visual-story',
+      image_url: 'https://example.com/blue-garden.jpg',
+      lineage: 'promoted_visual_anchor',
+      promoted_visual_anchor: true,
+      thesis_anchor_url: 'https://x.com/text/status/1',
+    })
+    expect(promoted.relationship).toMatchObject({
+      mode: 'thesis-anchor-promoted-visual-anchor',
+      thesis_anchor: { url: 'https://x.com/text/status/1' },
+      visual_anchor: { image_url: 'https://example.com/blue-garden.jpg' },
+    })
+  })
+
+  it('does not promote a nearby visual anchor for an exact-anchor contract', () => {
+    expect(buildPromotedVisualAnchorMaterial({
+      url: 'https://example.com/visual-story',
+      image_url: 'https://example.com/blue-garden.jpg',
+    }, {
+      inspirationOverride: {
+        source_url: 'https://x.com/exact/status/1',
+        prompt_bias_terms: ['exact-anchor'],
+      },
     })).toBe(null)
   })
 })

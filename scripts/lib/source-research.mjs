@@ -274,6 +274,56 @@ function imageMaterialAlreadyUsed(candidate, recentSourceKeys = new Set()) {
   return keys.some((key) => recentSourceKeys.has(key))
 }
 
+export function buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
+  anchorResearch = null,
+  imageSourceMaterial = {},
+  inspirationOverride = null,
+  recentSourceKeys = new Set(),
+} = {}) {
+  if (isExactAnchorOverride(inspirationOverride)) return null
+  if (!discoveredVisualReference?.image_url) return null
+  const candidate = {
+    page_url: discoveredVisualReference.url || discoveredVisualReference.source_url || discoveredVisualReference.final_url || null,
+    image_url: discoveredVisualReference.image_url,
+    title: getSourceDisplayTitle(discoveredVisualReference, 'Promoted visual anchor'),
+    caption: discoveredVisualReference.description || discoveredVisualReference.title || '',
+    lineage: 'promoted_visual_anchor',
+    query: null,
+    visual_reason: [
+      'Promoted as the visual anchor because the thesis anchor did not yield a valid fresh dominant image.',
+      discoveredVisualReference.selection_reason || null,
+    ].filter(Boolean).join(' '),
+    score: discoveredVisualReference.visual_reference_score || null,
+    thesis_anchor_url: anchorResearch?.anchor_source?.url || null,
+    thesis_anchor_title: anchorResearch?.anchor_source?.title || null,
+    promoted_visual_anchor: true,
+  }
+  if (imageMaterialAlreadyUsed(candidate, recentSourceKeys)) return null
+  if (isLowFertilitySourceImageCandidate(candidate)) return null
+  const demoted = imageSourceMaterial.low_fertility_anchor_demoted || null
+  return {
+    candidate,
+    relationship: {
+      schema_version: 1,
+      mode: 'thesis-anchor-promoted-visual-anchor',
+      thesis_anchor: anchorResearch?.anchor_source
+        ? {
+            url: anchorResearch.anchor_source.url || null,
+            title: anchorResearch.anchor_source.title || null,
+            why_selected: anchorResearch.anchor_source.why_selected || null,
+          }
+        : null,
+      visual_anchor: {
+        url: candidate.page_url,
+        image_url: candidate.image_url,
+        title: candidate.title,
+        selection_reason: candidate.visual_reason,
+      },
+      reason: demoted?.reason || 'The selected thesis anchor had no valid dominant image; promoted the strongest nearby image-bearing source instead of falling back to an ungrounded source field.',
+    },
+  }
+}
+
 function buildImageMaterialContentSources(imageMaterial, anchorSource) {
   const selected = imageMaterial?.selected_image_material || []
   return selected.map((candidate, index) => {
@@ -313,9 +363,11 @@ function forcedAnchorSourceFromInspirationOverride(inspirationOverride, fetchEvi
   const existing = fetchEvidence.find((source) => [source.url, source.source_url, source.final_url]
     .filter(Boolean)
     .some((url) => canonicalizeSourceUrl(url) === wantedKey))
+  const overrideImageUrl = inspirationOverride.image_url || (/^https?:\/\//i.test(inspirationOverride.image_data_url || '') ? inspirationOverride.image_data_url : null)
   if (existing) {
     return {
       ...existing,
+      image_url: overrideImageUrl || existing.image_url || null,
       why_selected: `Exact manual inspiration override requested by Nick: ${sourceUrl}`,
       manual_anchor_override: true,
     }
@@ -326,6 +378,7 @@ function forcedAnchorSourceFromInspirationOverride(inspirationOverride, fetchEvi
     final_url: sourceUrl,
     title: inspirationOverride.title || sourceUrl,
     description: inspirationOverride.note || 'Exact manual inspiration override requested by Nick.',
+    image_url: overrideImageUrl,
     excerpt: inspirationOverride.note || '',
     note_context: inspirationOverride.note || '',
     source_type: 'manual-inspiration-override',
@@ -733,6 +786,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
 
   const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
+  let promotedVisualAnchorRelationship = null
   let selectedImageMaterial = imageSourceMaterial.selected_image_material
     .filter((candidate) => !imageMaterialAlreadyUsed(candidate, recentSourceKeys))
     .filter((candidate) => !isLowFertilitySourceImageCandidate(candidate))
@@ -774,6 +828,29 @@ export async function inspectSourceCandidates(signalHarvest, {
           ? 'Filtered source image material that already appeared in a published edition; do not use repeated source media as the dominant plate seed.'
           : 'Filtered low-fertility UI chrome, buttons, ads, spacers, or blank page furniture out of dominant plate source material.',
       },
+    }
+  }
+  if (!selectedImageMaterial.length) {
+    const promoted = buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
+      anchorResearch,
+      imageSourceMaterial,
+      inspirationOverride,
+      recentSourceKeys,
+    })
+    if (promoted?.candidate) {
+      selectedImageMaterial = [promoted.candidate]
+      promotedVisualAnchorRelationship = promoted.relationship
+      imageSourceMaterial = {
+        ...imageSourceMaterial,
+        selected_image_material: selectedImageMaterial,
+        promoted_visual_anchor: promoted.relationship,
+        low_fertility_anchor_demoted: {
+          ...(imageSourceMaterial.low_fertility_anchor_demoted || {}),
+          promoted_title: promoted.candidate.title,
+          promoted_image_url: promoted.candidate.image_url,
+          reason: promoted.relationship.reason,
+        },
+      }
     }
   }
   let sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
@@ -826,9 +903,11 @@ export async function inspectSourceCandidates(signalHarvest, {
         title: selectedImageMaterial[0].title || selectedImageMaterial[0].caption || 'Anchor image source material',
         description: selectedImageMaterial[0].visual_reason || '',
         image_url: selectedImageMaterial[0].image_url,
-        selection_reason: imageSourceMaterial.low_fertility_anchor_demoted
-          ? `Promoted visually fertile image material after demoting low-fertility text/wordmark anchor: ${imageSourceMaterial.low_fertility_anchor_demoted.demoted_title || 'primary anchor image'}.`
-          : 'Top image source material discovered from single-anchor deep research.',
+        selection_reason: promotedVisualAnchorRelationship
+          ? promotedVisualAnchorRelationship.reason
+          : imageSourceMaterial.low_fertility_anchor_demoted
+            ? `Promoted visually fertile image material after demoting low-fertility text/wordmark anchor: ${imageSourceMaterial.low_fertility_anchor_demoted.demoted_title || 'primary anchor image'}.`
+            : 'Top image source material discovered from single-anchor deep research.',
         visual_reference_score: selectedImageMaterial[0].score || null,
       }
     : null
@@ -867,10 +946,12 @@ export async function inspectSourceCandidates(signalHarvest, {
       ? 'A visually fertile dominant source image survived pre-generation source-material screening and vision fingerprinting.'
       : (lowFertilityModeReason || 'No valid dominant source image survived source-material screening; visual direction must come from the broader source field.'),
     exact_anchor_source_material_blocker: exactAnchorSourceMaterialBlocker,
+    source_material_relationship: promotedVisualAnchorRelationship,
     source_material_verdict: {
       source_image_mode: sourceImageMode,
       valid_dominant_source_image: sourceImageMode === 'dominant-source-image',
       rejected_low_fertility_anchor: imageSourceMaterial.low_fertility_anchor_demoted || null,
+      promoted_visual_anchor: promotedVisualAnchorRelationship,
       exact_anchor_source_material_blocker: exactAnchorSourceMaterialBlocker,
     },
     source_image_fingerprints: sourceImageArtifacts.source_image_fingerprints,
