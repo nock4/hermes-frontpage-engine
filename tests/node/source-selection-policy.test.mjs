@@ -276,6 +276,39 @@ describe('source selection policy', () => {
     expect(selectContentSources([aiTool, artwork], { targetItems: 2 }).map((source) => source.url)[0]).toBe(artwork.url)
   })
 
+  it('quarantines auxiliary-model / Hermes Agent tips even when they have strong YouTube thumbnails', () => {
+    const auxiliary = {
+      ...baseSource,
+      url: 'https://www.youtube.com/watch?v=NoF-YajElIM',
+      source_url: 'https://www.youtube.com/watch?v=NoF-YajElIM',
+      final_url: 'https://www.youtube.com/watch?v=NoF-YajElIM',
+      source_channel: 'youtube-like',
+      source_type: 'youtube',
+      note_score: 240,
+      title: '@Teknium: Tip of the day: Learn about Auxiliary Models and save big money with Hermes Agent',
+      description: 'Auxiliary models and Hermes Agent prompt routing tutorial with terminal cover art',
+      image_url: 'https://img.youtube.com/vi/NoF-YajElIM/hqdefault.jpg',
+      youtube_embed_status: 'ok',
+    }
+    const artwork = {
+      ...baseSource,
+      url: 'https://x.com/archivepilled/status/fresh-art',
+      source_url: 'https://x.com/archivepilled/status/fresh-art',
+      final_url: 'https://x.com/archivepilled/status/fresh-art',
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      note_score: 20,
+      title: 'Fresh favorited artwork painting gallery visual archive image surface',
+      description: 'artist artwork painting gallery visual culture source image surface',
+      image_url: 'https://pbs.twimg.com/media/fresh-art.jpg?name=orig',
+    }
+
+    expect(isAiToolingContentSource(auxiliary)).toBe(true)
+    expect(sourceHasRenderableCardSurface(auxiliary)).toBe(false)
+    expect(sourceContentScore(auxiliary)).toBe(Number.NEGATIVE_INFINITY)
+    expect(selectContentSources([auxiliary, artwork], { targetItems: 2 }).map((source) => source.url)).toEqual([artwork.url])
+  })
+
   it('blocks rejected AI/tooling tweets from fallback-filling the final source windows', () => {
     const tooling = [
       ['https://x.com/Must_be_Ash/status/2092372553222455767', 'I pay tested thousands of x402 endpoints and I am open sourcing the whole thing OpenRouter for tools meets n8n, plug-and-play MCPs'],

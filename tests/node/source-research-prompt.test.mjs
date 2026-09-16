@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
-import { buildExactAnchorSourceMaterialBlocker, buildPromotedVisualAnchorMaterial, isExactAnchorOverride } from '../../scripts/lib/source-research.mjs'
+import { buildExactAnchorSourceMaterialBlocker, buildPromotedVisualAnchorMaterial, isAiToolingImageMaterial, isExactAnchorOverride } from '../../scripts/lib/source-research.mjs'
 
 const source = readFileSync(new URL('../../scripts/lib/source-research.mjs', import.meta.url), 'utf8')
 
@@ -76,6 +76,15 @@ describe('source autoresearch prompt', () => {
       sourceImageMode: 'skipped-no-valid-dominant-source-image',
       imageSourceMaterial: { image_source_candidates: [{ image_url: 'https://example.com/image.jpg' }] },
     })).toBe(null)
+  })
+
+  it('quarantines auxiliary-model image material before it can become the plate seed', () => {
+    expect(isAiToolingImageMaterial({
+      page_url: 'https://www.youtube.com/watch?v=NoF-YajElIM',
+      image_url: 'https://img.youtube.com/vi/NoF-YajElIM/hqdefault.jpg',
+      title: '@Teknium: Tip of the day: Learn about Auxiliary Models and save big money with Hermes Agent',
+      visual_reason: 'YouTube thumbnail surfaced from auxiliary model prompt-routing tutorial.',
+    })).toBe(true)
   })
 
   it('promotes a nearby visual anchor when the thesis anchor has no valid image', () => {

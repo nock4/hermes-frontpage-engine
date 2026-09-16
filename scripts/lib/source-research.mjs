@@ -274,6 +274,18 @@ function imageMaterialAlreadyUsed(candidate, recentSourceKeys = new Set()) {
   return keys.some((key) => recentSourceKeys.has(key))
 }
 
+export function isAiToolingImageMaterial(candidate = {}) {
+  return isAiToolingContentSource({
+    url: candidate.page_url || candidate.url || candidate.image_url,
+    source_url: candidate.page_url || candidate.url || candidate.image_url,
+    final_url: candidate.page_url || candidate.url || candidate.image_url,
+    title: candidate.title || candidate.caption || '',
+    description: candidate.visual_reason || candidate.caption || '',
+    visible_text: [candidate.caption, candidate.visual_reason, candidate.query, candidate.lineage].filter(Boolean).join(' '),
+    image_url: candidate.image_url || null,
+  })
+}
+
 export function buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
   anchorResearch = null,
   imageSourceMaterial = {},
@@ -299,6 +311,7 @@ export function buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
     promoted_visual_anchor: true,
   }
   if (imageMaterialAlreadyUsed(candidate, recentSourceKeys)) return null
+  if (isAiToolingImageMaterial(candidate)) return null
   if (isLowFertilitySourceImageCandidate(candidate)) return null
   const demoted = imageSourceMaterial.low_fertility_anchor_demoted || null
   return {
@@ -789,6 +802,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   let promotedVisualAnchorRelationship = null
   let selectedImageMaterial = imageSourceMaterial.selected_image_material
     .filter((candidate) => !imageMaterialAlreadyUsed(candidate, recentSourceKeys))
+    .filter((candidate) => !isAiToolingImageMaterial(candidate))
     .filter((candidate) => !isLowFertilitySourceImageCandidate(candidate))
   const reusedImageMaterial = imageSourceMaterial.selected_image_material
     .filter((candidate) => imageMaterialAlreadyUsed(candidate, recentSourceKeys))
@@ -804,8 +818,23 @@ export async function inspectSourceCandidates(signalHarvest, {
       rejected_reused_image_material: reusedImageMaterial,
     }
   }
+  const quarantinedAiToolingImageMaterial = imageSourceMaterial.selected_image_material
+    .filter((candidate) => isAiToolingImageMaterial(candidate))
+    .map((candidate) => ({
+      title: candidate.title || candidate.caption || candidate.image_url || candidate.page_url || null,
+      page_url: candidate.page_url || null,
+      image_url: candidate.image_url || null,
+      reason: 'AI/tooling or auxiliary-model material is quarantined; it cannot anchor another plate.',
+    }))
+  if (quarantinedAiToolingImageMaterial.length) {
+    imageSourceMaterial = {
+      ...imageSourceMaterial,
+      rejected_ai_tooling_image_material: quarantinedAiToolingImageMaterial,
+    }
+  }
   if (!selectedImageMaterial.length && imageSourceMaterial.selected_image_material[0]) {
     const allSelectedMaterialWasReused = reusedImageMaterial.length === imageSourceMaterial.selected_image_material.length
+    const allSelectedMaterialWasAiTooling = quarantinedAiToolingImageMaterial.length === imageSourceMaterial.selected_image_material.length
     imageSourceMaterial = {
       ...imageSourceMaterial,
       selected_image_material: [],
@@ -814,7 +843,9 @@ export async function inspectSourceCandidates(signalHarvest, {
         promoted_title: null,
         reason: allSelectedMaterialWasReused
           ? 'All selected image material already appeared in a published edition; do not use repeated anchor source material as the dominant plate seed.'
-          : 'All selected image material was low-fertility UI chrome, buttons, ads, spacers, or blank page furniture; do not use it as dominant plate source material.',
+          : allSelectedMaterialWasAiTooling
+            ? 'All selected image material was AI/tooling or auxiliary-model material; do not use repeated agent chrome as the dominant plate seed.'
+            : 'All selected image material was low-fertility UI chrome, buttons, ads, spacers, or blank page furniture; do not use it as dominant plate source material.',
       },
     }
   } else if (selectedImageMaterial.length !== imageSourceMaterial.selected_image_material.length) {

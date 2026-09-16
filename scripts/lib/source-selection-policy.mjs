@@ -108,7 +108,7 @@ export function isAiToolingContentSource(source = {}) {
 
   if (!text) return false
   return /(^|\/)ai & agents(\/|$)/.test(text)
-    || /\b(x402|mcp|openrouter|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
+    || /\b(x402|mcp|openrouter|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|hermes agents?|auxiliary models?|local models?|model routing|model savings?|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
 }
 
 export function scoreVisualCandidate(candidate) {
@@ -340,7 +340,7 @@ export function sourceContentScore(source, recentSourceKeys = new Set()) {
   if (source.source_channel === 'chrome-bookmark') score += 12
   if (source.source_channel === 'twitter-bookmark') score += 4
   if (source.source_channel === 'twitter-bookmark' && source.source_type === 'tweet') score += 10
-  if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|vibecoding|software factory|model benchmark|agent workflow|comfy mcp|audio-to-midi model|buildanything|automated cad|automated research|research hackathon|clanker|farcaster|storyprotocol|story protocol|protocol fees?|ecosystem fund|monad|github|api|sdk|docs|agentic|\bagents?\b|mcp)/i.test([
+  if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|vibecoding|software factory|auxiliary models?|hermes agents?|local models?|model routing|model savings?|model benchmark|agent workflow|comfy mcp|audio-to-midi model|buildanything|automated cad|automated research|research hackathon|clanker|farcaster|storyprotocol|story protocol|protocol fees?|ecosystem fund|monad|github|api|sdk|docs|agentic|\bagents?\b|mcp)/i.test([
     source.title,
     source.description,
     source.visible_text,
