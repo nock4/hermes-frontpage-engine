@@ -1,0 +1,519 @@
+{
+  "analysis_id": "analysis-2026-09-16-pressure-span-weather-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A minimal expressionist architectural plate: pale sky field, translucent bridge span, black lower bass shelf, amber media apertures, pinhole clusters, vertical joint hardware, dithered cuts, and a few cyan/white glints. The visible interaction anchors are real surfaces and edge marks rather than cards.",
+  "usable_surfaces": [
+    "dark lower pressure shelf with amber apertures",
+    "translucent bridge span and expansion-joint band",
+    "warm laminate panel face across midline",
+    "left sky pinhole cluster",
+    "right sky pinhole cluster",
+    "narrow black shelf cuts beneath the span",
+    "vertical bolted joint plate",
+    "small cyan glints and dropout notches"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero bass-ridge video shelf",
+      "artifact_type": "hero-scale-bass-ridge-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.035,
+        "y": 0.688,
+        "w": 0.393,
+        "h": 0.134
+      },
+      "polygon": [
+        [
+          0.035,
+          0.793
+        ],
+        [
+          0.052,
+          0.72
+        ],
+        [
+          0.084,
+          0.69
+        ],
+        [
+          0.384,
+          0.69
+        ],
+        [
+          0.414,
+          0.707
+        ],
+        [
+          0.428,
+          0.758
+        ],
+        [
+          0.417,
+          0.799
+        ],
+        [
+          0.39,
+          0.817
+        ],
+        [
+          0.07,
+          0.822
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "Large rounded amber-lit horizontal aperture cut into the black lower shelf; repeated glowing interior bands read as buried audio/video grain."
+    },
+    {
+      "label": "hero civic bridge span",
+      "artifact_type": "hero-scale-bridge-section-span",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.424,
+        "y": 0.509,
+        "w": 0.462,
+        "h": 0.164
+      },
+      "polygon": [
+        [
+          0.424,
+          0.616
+        ],
+        [
+          0.436,
+          0.539
+        ],
+        [
+          0.46,
+          0.512
+        ],
+        [
+          0.687,
+          0.507
+        ],
+        [
+          0.724,
+          0.514
+        ],
+        [
+          0.753,
+          0.552
+        ],
+        [
+          0.798,
+          0.622
+        ],
+        [
+          0.886,
+          0.646
+        ],
+        [
+          0.87,
+          0.673
+        ],
+        [
+          0.76,
+          0.662
+        ],
+        [
+          0.716,
+          0.626
+        ],
+        [
+          0.452,
+          0.627
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "Large pale bridge-like cut-through under the translucent wall, with curved right abutment and horizontal civic span."
+    },
+    {
+      "label": "modern dwelling plane",
+      "artifact_type": "warm-laminate-architecture-plane",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.303,
+        "w": 0.887,
+        "h": 0.201
+      },
+      "polygon": [
+        [
+          0.071,
+          0.303
+        ],
+        [
+          0.226,
+          0.313
+        ],
+        [
+          0.371,
+          0.33
+        ],
+        [
+          0.569,
+          0.346
+        ],
+        [
+          0.741,
+          0.365
+        ],
+        [
+          0.958,
+          0.384
+        ],
+        [
+          0.957,
+          0.503
+        ],
+        [
+          0.734,
+          0.492
+        ],
+        [
+          0.514,
+          0.48
+        ],
+        [
+          0.289,
+          0.459
+        ],
+        [
+          0.074,
+          0.446
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Broad translucent warm architectural panel crossing the plate, scratched and laminated, with a clean designed material sheen."
+    },
+    {
+      "label": "dither pressure chip",
+      "artifact_type": "low-resolution-dither-chip",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.797,
+        "y": 0.145,
+        "w": 0.128,
+        "h": 0.151
+      },
+      "polygon": [
+        [
+          0.799,
+          0.185
+        ],
+        [
+          0.814,
+          0.181
+        ],
+        [
+          0.814,
+          0.167
+        ],
+        [
+          0.833,
+          0.166
+        ],
+        [
+          0.837,
+          0.188
+        ],
+        [
+          0.855,
+          0.185
+        ],
+        [
+          0.861,
+          0.205
+        ],
+        [
+          0.884,
+          0.204
+        ],
+        [
+          0.884,
+          0.225
+        ],
+        [
+          0.905,
+          0.226
+        ],
+        [
+          0.922,
+          0.259
+        ],
+        [
+          0.899,
+          0.296
+        ],
+        [
+          0.852,
+          0.28
+        ],
+        [
+          0.819,
+          0.253
+        ],
+        [
+          0.797,
+          0.222
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "Right sky contains a blocky cluster of tiny dark and violet square holes, like low-resolution dither pixels interrupting the pale field."
+    },
+    {
+      "label": "course-procession seam",
+      "artifact_type": "staggered-measure-cut",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.082,
+        "y": 0.452,
+        "w": 0.876,
+        "h": 0.054
+      },
+      "polygon": [
+        [
+          0.082,
+          0.456
+        ],
+        [
+          0.178,
+          0.462
+        ],
+        [
+          0.276,
+          0.468
+        ],
+        [
+          0.366,
+          0.471
+        ],
+        [
+          0.481,
+          0.476
+        ],
+        [
+          0.601,
+          0.48
+        ],
+        [
+          0.713,
+          0.486
+        ],
+        [
+          0.825,
+          0.491
+        ],
+        [
+          0.958,
+          0.497
+        ],
+        [
+          0.957,
+          0.506
+        ],
+        [
+          0.828,
+          0.5
+        ],
+        [
+          0.711,
+          0.496
+        ],
+        [
+          0.602,
+          0.491
+        ],
+        [
+          0.481,
+          0.486
+        ],
+        [
+          0.363,
+          0.481
+        ],
+        [
+          0.275,
+          0.477
+        ],
+        [
+          0.174,
+          0.47
+        ],
+        [
+          0.082,
+          0.466
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "Long staggered horizontal measure cut beneath the translucent span, broken by repeated black rectangular gaps."
+    },
+    {
+      "label": "bookmark dropout notch",
+      "artifact_type": "silence-dropout-notch",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.846,
+        "y": 0.734,
+        "w": 0.107,
+        "h": 0.097
+      },
+      "polygon": [
+        [
+          0.846,
+          0.759
+        ],
+        [
+          0.896,
+          0.758
+        ],
+        [
+          0.896,
+          0.736
+        ],
+        [
+          0.953,
+          0.737
+        ],
+        [
+          0.953,
+          0.829
+        ],
+        [
+          0.909,
+          0.83
+        ],
+        [
+          0.908,
+          0.791
+        ],
+        [
+          0.846,
+          0.791
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Small dark rectangular opening along the lower right shelf, a quiet dropout notch under the heavy black stone ledge."
+    },
+    {
+      "label": "left pinhole constellation",
+      "artifact_type": "sky-field-pinhole-cluster",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.135,
+        "y": 0.126,
+        "w": 0.17,
+        "h": 0.176
+      },
+      "polygon": [
+        [
+          0.136,
+          0.189
+        ],
+        [
+          0.167,
+          0.16
+        ],
+        [
+          0.21,
+          0.126
+        ],
+        [
+          0.254,
+          0.169
+        ],
+        [
+          0.305,
+          0.247
+        ],
+        [
+          0.26,
+          0.302
+        ],
+        [
+          0.201,
+          0.277
+        ],
+        [
+          0.157,
+          0.239
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "Left upper sky field has a constellation of visible square punctures and tiny black specks, including several larger dark holes and pale inserts."
+    },
+    {
+      "label": "bookmark dropout notch",
+      "artifact_type": "silence-dropout-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "bookmark pitch glint",
+      "artifact_type": "pale-cyan-puncture-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.414,
+    "rationale": "The plate is spare and expressionist: one dark shelf, one translucent span, one pale sky field, and a few puncture clusters. Detail exists as seams, scratches, pinholes, and glints, not broad clutter."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-16-pressure-span-weather-v1"
+}

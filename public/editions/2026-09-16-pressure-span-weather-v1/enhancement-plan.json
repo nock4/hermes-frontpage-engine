@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-16-pressure-span-weather-v1",
+  "edition_id": "2026-09-16-pressure-span-weather-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-16-pressure-span-weather-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-hero-bass-ridge-video-shelf",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-bass-ridge-video-shelf",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-bass-ridge-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hero-civic-bridge-span",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hero-civic-bridge-span",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-bridge-section-span) selected from interpretation."
+    },
+    {
+      "target_id": "module-modern-dwelling-plane",
+      "target_kind": "artifact",
+      "artifact_id": "module-modern-dwelling-plane",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (warm-laminate-architecture-plane) selected from interpretation."
+    },
+    {
+      "target_id": "module-dither-pressure-chip",
+      "target_kind": "artifact",
+      "artifact_id": "module-dither-pressure-chip",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (low-resolution-dither-chip) selected from interpretation."
+    },
+    {
+      "target_id": "module-course-procession-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-course-procession-seam",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (staggered-measure-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-bookmark-dropout-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-bookmark-dropout-notch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (silence-dropout-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-left-pinhole-constellation",
+      "target_kind": "artifact",
+      "artifact_id": "module-left-pinhole-constellation",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (sky-field-pinhole-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-bookmark-dropout-notch-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-bookmark-dropout-notch-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (silence-dropout-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-bookmark-pitch-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-bookmark-pitch-glint",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-cyan-puncture-glint) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
