@@ -188,6 +188,7 @@ export function isDirectRasterImageUrl(sourceUrl) {
 }
 
 export function visualReferenceScore(source, recentSourceKeys = new Set()) {
+  if (isAiToolingContentSource(source)) return Number.NEGATIVE_INFINITY
   if (isLowValueVisualImage(source?.image_url)) return Number.NEGATIVE_INFINITY
   let score = scoreVisualCandidate(source)
   const sourceUrls = sourceUrlsForScoring(source)

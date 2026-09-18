@@ -13,6 +13,7 @@ import {
   sourceContentKey,
   sourceContentScore,
   sourceHasRenderableCardSurface,
+  visualReferenceScore,
 } from '../../scripts/lib/source-selection-policy.mjs'
 
 const baseSource = {
@@ -338,6 +339,7 @@ describe('source selection policy', () => {
     expect(isAiToolingContentSource(auxiliary)).toBe(true)
     expect(sourceHasRenderableCardSurface(auxiliary)).toBe(false)
     expect(sourceContentScore(auxiliary)).toBe(Number.NEGATIVE_INFINITY)
+    expect(visualReferenceScore(auxiliary)).toBe(Number.NEGATIVE_INFINITY)
     expect(selectContentSources([auxiliary, artwork], { targetItems: 2 }).map((source) => source.url)).toEqual([artwork.url])
   })
 
