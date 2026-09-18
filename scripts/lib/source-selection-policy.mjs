@@ -300,6 +300,12 @@ function sourceUrlsForScoring(source) {
   return [source?.url, source?.source_url, source?.final_url].filter(Boolean)
 }
 
+function sourceHasRecentUrlOrImage(source, recentSourceKeys = new Set()) {
+  return [source?.url, source?.source_url, source?.final_url, source?.image_url]
+    .filter(Boolean)
+    .some((url) => recentSourceKeys.has(canonicalizeSourceUrl(url)) || recentSourceKeys.has(sourceContentKey({ url, source_url: url })))
+}
+
 function isTwitterMediaUrl(url) {
   const host = hostnameForUrl(url)
   return host === 'pbs.twimg.com' || host === 'video.twimg.com'
@@ -326,7 +332,7 @@ function isSocialProfileFallbackUrl(value) {
 
 export function sourceContentScore(source, recentSourceKeys = new Set()) {
   if (!isAllowedInspectedSource(source)) return Number.NEGATIVE_INFINITY
-  if (recentSourceKeys.has(sourceContentKey(source))) return Number.NEGATIVE_INFINITY
+  if (sourceHasRecentUrlOrImage(source, recentSourceKeys)) return Number.NEGATIVE_INFINITY
   const sourceUrls = sourceUrlsForScoring(source)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return Number.NEGATIVE_INFINITY
   if (isAiToolingContentSource(source)) return Number.NEGATIVE_INFINITY

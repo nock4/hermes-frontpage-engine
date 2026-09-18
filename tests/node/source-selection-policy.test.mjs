@@ -276,6 +276,38 @@ describe('source selection policy', () => {
     expect(selectContentSources([aiTool, artwork], { targetItems: 2 }).map((source) => source.url)[0]).toBe(artwork.url)
   })
 
+  it('blocks sources whose attached image URL was already used by the archive ledger', () => {
+    const spentImageUrl = 'https://pbs.twimg.com/card_img/2097854880991825931/snYFSs2-?format=webp&name=medium'
+    const repeatedImageAnchor = {
+      ...baseSource,
+      url: 'https://x.com/ystrickler/status/2036847086277214214',
+      source_url: 'https://x.com/ystrickler/status/2036847086277214214',
+      final_url: 'https://x.com/ystrickler/status/2036847086277214214',
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      note_score: 400,
+      title: '@ystrickler: A-Corp source with a previously used card image',
+      description: 'artist company law article preview surface',
+      image_url: spentImageUrl,
+    }
+    const fresh = {
+      ...baseSource,
+      url: 'https://x.com/archivepilled/status/fresh-image-led-source',
+      source_url: 'https://x.com/archivepilled/status/fresh-image-led-source',
+      final_url: 'https://x.com/archivepilled/status/fresh-image-led-source',
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      note_score: 20,
+      title: 'Fresh favorited artwork painting gallery visual archive image surface',
+      description: 'artist artwork painting gallery visual culture source image surface',
+      image_url: 'https://pbs.twimg.com/media/fresh-image-led-source.jpg?name=orig',
+    }
+    const recentSourceKeys = new Set([sourceContentKey({ url: spentImageUrl, source_url: spentImageUrl })])
+
+    expect(sourceContentScore(repeatedImageAnchor, recentSourceKeys)).toBe(Number.NEGATIVE_INFINITY)
+    expect(selectContentSources([repeatedImageAnchor, fresh], { targetItems: 2, recentSourceKeys }).map((source) => source.url)).toEqual([fresh.url])
+  })
+
   it('quarantines auxiliary-model / Hermes Agent tips even when they have strong YouTube thumbnails', () => {
     const auxiliary = {
       ...baseSource,
