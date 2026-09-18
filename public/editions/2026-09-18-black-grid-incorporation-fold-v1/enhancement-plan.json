@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-18-black-grid-incorporation-fold-v1",
+  "edition_id": "2026-09-18-black-grid-incorporation-fold-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-18-black-grid-incorporation-fold-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-dominant-black-incorporation-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-dominant-black-incorporation-slab",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-ink-slab) selected from interpretation."
+    },
+    {
+      "target_id": "hero-knowledge-graph-repair-stamp",
+      "target_kind": "artifact",
+      "artifact_id": "hero-knowledge-graph-repair-stamp",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-stamped-island) selected from interpretation."
+    },
+    {
+      "target_id": "module-hudson-section-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-hudson-section-cut",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-architectural-edge-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-music-bookmark-pinhole-one",
+      "target_kind": "artifact",
+      "artifact_id": "module-music-bookmark-pinhole-one",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (grid-intersection-pinhole) selected from interpretation."
+    },
+    {
+      "target_id": "module-music-bookmark-pinhole-two",
+      "target_kind": "artifact",
+      "artifact_id": "module-music-bookmark-pinhole-two",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-edge-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-knowledge-graph-repair-stamp",
+      "target_kind": "artifact",
+      "artifact_id": "module-knowledge-graph-repair-stamp",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (tiny-stamped-island) selected from interpretation."
+    },
+    {
+      "target_id": "module-explora-seam-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-explora-seam-glint",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (seam-glint-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-fair-vc-lower-registration-dot",
+      "target_kind": "artifact",
+      "artifact_id": "module-fair-vc-lower-registration-dot",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (lower-panel-registration-dot) selected from interpretation."
+    },
+    {
+      "target_id": "module-hooeem-grid-repair",
+      "target_kind": "artifact",
+      "artifact_id": "module-hooeem-grid-repair",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (small-grid-repair-patch) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
