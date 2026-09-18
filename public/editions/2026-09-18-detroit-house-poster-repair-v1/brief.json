@@ -1,0 +1,66 @@
+{
+  "brief_id": "brief-2026-09-18-detroit-house-poster-repair-v1",
+  "date": "2026-09-18",
+  "signal_cluster_ids": [
+    "a56e75b92e63",
+    "e2221ea32f09",
+    "2ab36e02f7bb",
+    "d43af312dca0",
+    "b22158abe8d4",
+    "04391c2b9cd9",
+    "d22fb1e9cf9c",
+    "4cccc4262179"
+  ],
+  "research_node_ids": [
+    "research-1-2110ae45",
+    "research-2-67487183",
+    "research-3-8c747b4b",
+    "research-4-8624729b",
+    "research-5-d0727915",
+    "research-6-1103b34d",
+    "research-7-8e4bc721",
+    "research-8-bf830a9c",
+    "research-9-3ea66039",
+    "research-10-96c354ce",
+    "research-11-47c2ed9c",
+    "research-12-b0cb205c"
+  ],
+  "mood": "weathered civic salvage under pale overcast sky",
+  "material_language": [
+    "crosshatched editorial newsprint with rubbed paste",
+    "weathered gray-green painted wood and splintered siding",
+    "rust-orange cart enamel with chipped crescent edges",
+    "cobalt blueprint paper with crisp plan-line cuts",
+    "powdery snow and dry grass scratches",
+    "charcoal utility-wire shadows and soot stains"
+  ],
+  "lighting": "soft washed Detroit winter daylight on old paper, shallow shadows under lifted paste, darker charcoal cuts from wires, poles, siding gaps, and torn poster edges",
+  "object_inventory": [
+    "leaning mound of nested house polygons rising from lower left toward upper center",
+    "rust-orange curved basin pressed behind gray-green roof planes",
+    "pale sky and snow-wash corridor held open on the right",
+    "lower debris band of sunflower disks, footprints, scratches, nail holes, and grass knots",
+    "cobalt blueprint scraps tucked into torn seams",
+    "thin horizon wires, poles, tiny figures, and smoke-scale marks"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no legible words, logos, publisher names, date blocks, filenames, labels, or alphanumeric callouts inside the image",
+    "no web-card collage, browser chrome, dashboard layout, desk, office room, cabinet, shelf, or generic software UI",
+    "do not photorealistically duplicate the Guardian illustration or copy identifiable people; preserve only abstract mass, crop pressure, palette, and edge behavior",
+    "no black grid incorporation fold, terminal threshold, bass scaffold, fog corridor, pinlight gate, or minimal ambient interior language",
+    "do not pad anchors with summary cards; every source-bearing point must be a real tear, seam, chip, crack, aperture, stain, knot, or edge in the plate",
+    "avoid clean decorative torn paper detached from Detroit ruin, siding, snow, cart, and civic repair evidence",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached",
+    "do not strip handmade details into generic torn-paper ambience",
+    "do not fragment the primary source objects until their original silhouettes stop reading",
+    "do not replace source candy/wrapper/handwriting cues with unrelated scraps"
+  ]
+}

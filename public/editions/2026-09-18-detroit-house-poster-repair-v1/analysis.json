@@ -1,0 +1,493 @@
+{
+  "analysis_id": "analysis-2026-09-18-detroit-house-poster-repair-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A distressed square poster plate: a leaning mound of old houses sits inside a rust-orange cart or boat crescent, with cracked pale sky to the right, snow and weeds below, a blue torn window patch in the upper-left house face, a diagonal wire cutting the upper-right field, and a yellow pasted panel over dark blue at the lower right.",
+  "usable_surfaces": [
+    "central crosshatched house pile",
+    "rust-orange crescent hull lip",
+    "lower-left torn paper and weed edge",
+    "upper-right pale cracked sky strip",
+    "central-right snow track aperture",
+    "diagonal utility wire cut",
+    "yellow pasted signal panel",
+    "blue broken window node",
+    "small dark pinhole cluster on left wall"
+  ],
+  "detected_objects": [
+    {
+      "label": "house-cart-mound",
+      "artifact_type": "hero-scale-crosshatched-house-mass",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.018,
+        "y": 0.025,
+        "w": 0.654,
+        "h": 0.636
+      },
+      "polygon": [
+        [
+          0.035,
+          0.35
+        ],
+        [
+          0.068,
+          0.2
+        ],
+        [
+          0.148,
+          0.139
+        ],
+        [
+          0.229,
+          0.08
+        ],
+        [
+          0.326,
+          0.026
+        ],
+        [
+          0.402,
+          0.081
+        ],
+        [
+          0.481,
+          0.173
+        ],
+        [
+          0.572,
+          0.248
+        ],
+        [
+          0.645,
+          0.364
+        ],
+        [
+          0.667,
+          0.552
+        ],
+        [
+          0.556,
+          0.623
+        ],
+        [
+          0.394,
+          0.65
+        ],
+        [
+          0.23,
+          0.606
+        ],
+        [
+          0.089,
+          0.516
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "The dominant leaning pile of roof planes, clapboard walls, brick rectangles, chimneys, and dark window cuts forms a clear central house mound."
+    },
+    {
+      "label": "packard-rupture-crescent",
+      "artifact_type": "hero-scale-rust-factory-tear",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.02,
+        "y": 0.516,
+        "w": 0.782,
+        "h": 0.223
+      },
+      "polygon": [
+        [
+          0.02,
+          0.631
+        ],
+        [
+          0.11,
+          0.604
+        ],
+        [
+          0.245,
+          0.574
+        ],
+        [
+          0.392,
+          0.55
+        ],
+        [
+          0.554,
+          0.532
+        ],
+        [
+          0.711,
+          0.516
+        ],
+        [
+          0.785,
+          0.533
+        ],
+        [
+          0.801,
+          0.587
+        ],
+        [
+          0.766,
+          0.661
+        ],
+        [
+          0.634,
+          0.702
+        ],
+        [
+          0.463,
+          0.725
+        ],
+        [
+          0.278,
+          0.738
+        ],
+        [
+          0.116,
+          0.715
+        ],
+        [
+          0.041,
+          0.678
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "A broad rust-orange torn basin arcs across the lower middle with corroded speckles, black scars, and a raised rim."
+    },
+    {
+      "label": "primary-illustration-edge",
+      "artifact_type": "pasted-image-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.596,
+        "w": 0.302,
+        "h": 0.381
+      },
+      "polygon": [
+        [
+          0,
+          0.61
+        ],
+        [
+          0.048,
+          0.594
+        ],
+        [
+          0.091,
+          0.645
+        ],
+        [
+          0.137,
+          0.691
+        ],
+        [
+          0.184,
+          0.758
+        ],
+        [
+          0.262,
+          0.811
+        ],
+        [
+          0.301,
+          0.895
+        ],
+        [
+          0.282,
+          0.969
+        ],
+        [
+          0.16,
+          0.982
+        ],
+        [
+          0.035,
+          0.954
+        ],
+        [
+          0,
+          0.896
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "The lower-left edge is a dense torn print zone: snow, exposed paper, weed stalks, and dark cutout holes meet the plate edge."
+    },
+    {
+      "label": "motor-city-sky-strip",
+      "artifact_type": "pale-horizon-poster-strip",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.684,
+        "y": 0.016,
+        "w": 0.295,
+        "h": 0.516
+      },
+      "polygon": [
+        [
+          0.691,
+          0.019
+        ],
+        [
+          0.95,
+          0.009
+        ],
+        [
+          0.979,
+          0.08
+        ],
+        [
+          0.977,
+          0.219
+        ],
+        [
+          0.953,
+          0.345
+        ],
+        [
+          0.975,
+          0.501
+        ],
+        [
+          0.878,
+          0.526
+        ],
+        [
+          0.758,
+          0.501
+        ],
+        [
+          0.704,
+          0.431
+        ],
+        [
+          0.688,
+          0.292
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "The upper-right field is a pale blue-gray cracked sky/poster strip with distant tiny tree marks and sparse scale figures."
+    },
+    {
+      "label": "poletown-snow-path",
+      "artifact_type": "snow-track-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.465,
+        "y": 0.682,
+        "w": 0.221,
+        "h": 0.294
+      },
+      "polygon": [
+        [
+          0.57,
+          0.684
+        ],
+        [
+          0.639,
+          0.706
+        ],
+        [
+          0.686,
+          0.775
+        ],
+        [
+          0.66,
+          0.842
+        ],
+        [
+          0.619,
+          0.907
+        ],
+        [
+          0.591,
+          0.974
+        ],
+        [
+          0.522,
+          0.95
+        ],
+        [
+          0.47,
+          0.88
+        ],
+        [
+          0.494,
+          0.808
+        ],
+        [
+          0.534,
+          0.737
+        ]
+      ],
+      "confidence": 0.76,
+      "visual_evidence": "A central-right pale snow and torn-paper aperture contains gray track-like strokes and a narrow path through the lower dense surface."
+    },
+    {
+      "label": "music-bookmark-wire-cut",
+      "artifact_type": "thin-utility-wire-cut",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.075,
+        "w": 0.491,
+        "h": 0.231
+      },
+      "confidence": 0.83,
+      "visual_evidence": "A taut dark diagonal wire slices from the roof peak area across the pale right field."
+    },
+    {
+      "label": "Signal Panel",
+      "artifact_type": "signal-panel",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.744,
+        "y": 0.714,
+        "w": 0.149,
+        "h": 0.202
+      },
+      "polygon": [
+        [
+          0.746,
+          0.718
+        ],
+        [
+          0.83,
+          0.715
+        ],
+        [
+          0.892,
+          0.72
+        ],
+        [
+          0.891,
+          0.812
+        ],
+        [
+          0.883,
+          0.913
+        ],
+        [
+          0.743,
+          0.913
+        ],
+        [
+          0.744,
+          0.82
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A bright yellow rectangular pasted panel sits at the lower right, cracked and weathered but visually distinct."
+    },
+    {
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.213,
+        "y": 0.192,
+        "w": 0.178,
+        "h": 0.135
+      },
+      "polygon": [
+        [
+          0.222,
+          0.214
+        ],
+        [
+          0.293,
+          0.19
+        ],
+        [
+          0.367,
+          0.208
+        ],
+        [
+          0.389,
+          0.265
+        ],
+        [
+          0.361,
+          0.322
+        ],
+        [
+          0.286,
+          0.318
+        ],
+        [
+          0.226,
+          0.286
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A saturated blue torn window or tarp-like patch interrupts the muted house wall, with white grid lines and jagged edges."
+    },
+    {
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.142,
+        "y": 0.384,
+        "w": 0.088,
+        "h": 0.095
+      },
+      "polygon": [
+        [
+          0.146,
+          0.414
+        ],
+        [
+          0.161,
+          0.397
+        ],
+        [
+          0.181,
+          0.39
+        ],
+        [
+          0.207,
+          0.397
+        ],
+        [
+          0.224,
+          0.42
+        ],
+        [
+          0.228,
+          0.451
+        ],
+        [
+          0.211,
+          0.473
+        ],
+        [
+          0.18,
+          0.478
+        ],
+        [
+          0.153,
+          0.462
+        ],
+        [
+          0.142,
+          0.438
+        ]
+      ],
+      "confidence": 0.68,
+      "visual_evidence": "A small cluster of dark round pinholes and stains is visible on the left green wall surface beneath the blue patch."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 5,
+    "mapped_region_coverage": 1.098,
+    "rationale": "The plate has a strong three-part structure—house mound, rust crescent, pale sky—but the lower snow, weeds, tears, and pasted panels add dense texture. It remains expressionist and mappable, not overloaded."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-18-detroit-house-poster-repair-v1"
+}

@@ -1,0 +1,379 @@
+{
+  "interpretation_id": "interp-2026-09-18-detroit-house-poster-repair-v1",
+  "edition_id": "2026-09-18-detroit-house-poster-repair-v1",
+  "plate_read_timestamp": "2026-09-18T08:47:57.622Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A distressed square poster plate: a leaning mound of old houses sits inside a rust-orange cart or boat crescent, with cracked pale sky to the right, snow and weeds below, a blue torn window patch in the upper-left house face, a diagonal wire cutting the upper-right field, and a yellow pasted panel over dark blue at the lower right.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "weathered civic salvage under pale overcast sky",
+      "A distressed square poster plate: a leaning mound of old houses sits inside a rust-orange cart or boat crescent, with cracked pale sky to the right, snow and weeds below, a blue torn window patch in the upper-left house face, a diagonal wire cutting the upper-right field, and a yellow pasted panel over dark blue at the lower right.",
+      "detroit-salvage",
+      "torn-poster-wall",
+      "rust-cart-crescent"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "house-cart-mound",
+      "packard-rupture-crescent",
+      "primary-illustration-edge",
+      "motor-city-sky-strip",
+      "poletown-snow-path",
+      "music-bookmark-wire-cut",
+      "Signal Panel",
+      "Color Node"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "detroit-house-poster-repair",
+      "leaning mound of nested house polygons rising from lower left toward upper center",
+      "rust-orange curved basin pressed behind gray-green roof planes",
+      "pale sky and snow-wash corridor held open on the right",
+      "lower debris band of sunflower disks, footprints, scratches, nail holes, and grass knots",
+      "cobalt blueprint scraps tucked into torn seams",
+      "thin horizon wires, poles, tiny figures, and smoke-scale marks",
+      "central crosshatched house pile"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: detroit-house-poster-repair.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-house-cart-mound",
+      "kind": "hero",
+      "type": "hero-scale-crosshatched-house-mass",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.018,
+        "y": 0.025,
+        "w": 0.654,
+        "h": 0.636
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-packard-rupture-crescent",
+      "kind": "hero",
+      "type": "hero-scale-rust-factory-tear",
+      "strength": 0.9833839999999999,
+      "bounds": {
+        "x": 0.02,
+        "y": 0.516,
+        "w": 0.782,
+        "h": 0.223
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-primary-illustration-edge",
+      "kind": "module",
+      "type": "pasted-image-edge",
+      "strength": 0.784536,
+      "bounds": {
+        "x": 0,
+        "y": 0.596,
+        "w": 0.302,
+        "h": 0.381
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-motor-city-sky-strip",
+      "kind": "module",
+      "type": "pale-horizon-poster-strip",
+      "strength": 0.765264,
+      "bounds": {
+        "x": 0.684,
+        "y": 0.016,
+        "w": 0.295,
+        "h": 0.516
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-poletown-snow-path",
+      "kind": "module",
+      "type": "snow-track-aperture",
+      "strength": 0.73014,
+      "bounds": {
+        "x": 0.465,
+        "y": 0.682,
+        "w": 0.221,
+        "h": 0.294
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-music-bookmark-wire-cut",
+      "kind": "module",
+      "type": "thin-utility-wire-cut",
+      "strength": 0.705192,
+      "bounds": {
+        "x": 0.508,
+        "y": 0.075,
+        "w": 0.491,
+        "h": 0.231
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel",
+      "kind": "module",
+      "type": "signal-panel",
+      "strength": 0.6693720000000001,
+      "bounds": {
+        "x": 0.744,
+        "y": 0.714,
+        "w": 0.149,
+        "h": 0.202
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "type": "color-node",
+      "strength": 0.664744,
+      "bounds": {
+        "x": 0.213,
+        "y": 0.192,
+        "w": 0.178,
+        "h": 0.135
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "type": "distributed-marker",
+      "strength": 0.6609879999999999,
+      "bounds": {
+        "x": 0.142,
+        "y": 0.384,
+        "w": 0.088,
+        "h": 0.095
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-house-cart-mound-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.018,
+        "y": 0.025,
+        "w": 0.654,
+        "h": 0.636
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-packard-rupture-crescent-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.02,
+        "y": 0.516,
+        "w": 0.782,
+        "h": 0.223
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-primary-illustration-edge-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.596,
+        "w": 0.302,
+        "h": 0.381
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-motor-city-sky-strip-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.684,
+        "y": 0.016,
+        "w": 0.295,
+        "h": 0.516
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-poletown-snow-path-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.465,
+        "y": 0.682,
+        "w": 0.221,
+        "h": 0.294
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-music-bookmark-wire-cut-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.075,
+        "w": 0.491,
+        "h": 0.231
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-signal-panel-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.744,
+        "y": 0.714,
+        "w": 0.149,
+        "h": 0.202
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-color-node-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.213,
+        "y": 0.192,
+        "w": 0.178,
+        "h": 0.135
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-distributed-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.142,
+        "y": 0.384,
+        "w": 0.088,
+        "h": 0.095
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

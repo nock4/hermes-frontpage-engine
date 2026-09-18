@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-18-detroit-house-poster-repair-v1",
+  "edition_id": "2026-09-18-detroit-house-poster-repair-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-18-detroit-house-poster-repair-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-house-cart-mound",
+      "target_kind": "artifact",
+      "artifact_id": "hero-house-cart-mound",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-crosshatched-house-mass) selected from interpretation."
+    },
+    {
+      "target_id": "hero-packard-rupture-crescent",
+      "target_kind": "artifact",
+      "artifact_id": "hero-packard-rupture-crescent",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-rust-factory-tear) selected from interpretation."
+    },
+    {
+      "target_id": "module-primary-illustration-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-primary-illustration-edge",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pasted-image-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-motor-city-sky-strip",
+      "target_kind": "artifact",
+      "artifact_id": "module-motor-city-sky-strip",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pale-horizon-poster-strip) selected from interpretation."
+    },
+    {
+      "target_id": "module-poletown-snow-path",
+      "target_kind": "artifact",
+      "artifact_id": "module-poletown-snow-path",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (snow-track-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-music-bookmark-wire-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-music-bookmark-wire-cut",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (thin-utility-wire-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-signal-panel",
+      "target_kind": "artifact",
+      "artifact_id": "module-signal-panel",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (signal-panel) selected from interpretation."
+    },
+    {
+      "target_id": "module-color-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-color-node",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (color-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-distributed-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-distributed-marker",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (distributed-marker) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
