@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import {
   buildJevDecisionPayload,
   normalizeJevDecision,
+  resolveJevApiKey,
   shouldUseJevDecisionModel,
 } from '../../scripts/lib/decision-model.mjs'
 
@@ -49,5 +50,13 @@ describe('decision model adapter', () => {
         evidence: ['image_url matched archive ledger'],
       },
     })
+  })
+
+  it('resolves Jev API keys from explicit env or an op secret reference without logging secret values', async () => {
+    await expect(resolveJevApiKey({ env: { JEV_API_KEY: 'direct-key' } })).resolves.toBe('direct-key')
+    await expect(resolveJevApiKey({
+      env: { JEV_API_KEY_OP_REF: 'op://Dev Secrets/Jev API Credential/credential' },
+      opRead: async (ref) => `secret-for:${ref}`,
+    })).resolves.toBe('secret-for:op://Dev Secrets/Jev API Credential/credential')
   })
 })
