@@ -202,21 +202,22 @@ test.describe('live-stage window UX baselines', () => {
     await expect(page.locator('.stage-overlay-windows--live .source-window iframe')).toHaveCount(1)
   })
 
-  test('forest breath cabinet top-right about button unfurls the pipeline note', async ({ page }) => {
-    await gotoEdition(page, '/archive/forest-breath-cabinet-v2')
+  test('current edition top-right about button opens the plain-language edge note', async ({ page }) => {
+    await gotoEdition(page, '/')
 
-    const aboutButton = page.getByRole('button', { name: 'About' })
+    const aboutButton = page.locator('button.about-unfurl__button', { hasText: 'About' })
     const aboutPanel = page.locator('#about-panel')
 
     await expect(aboutButton).toHaveAttribute('aria-expanded', 'false')
     await expect(aboutPanel).toBeHidden()
 
-    await aboutButton.click()
+    await aboutButton.click({ force: true })
 
     await expect(aboutButton).toHaveAttribute('aria-expanded', 'true')
     await expect(aboutPanel).toBeVisible()
-    await expect(aboutPanel).toContainText('Content signals are collected in Obsidian first.')
-    await expect(aboutPanel).toContainText('2026-04-23-forest-breath-cabinet-v2')
+    await expect(aboutPanel).toContainText('About the Daily Frontpage')
+    await expect(aboutPanel).toContainText('Tap or hover over parts of the page to see the content sources the design is inspired by.')
+    await expect(aboutPanel).toContainText('This picture is called')
   })
 
   test('forest breath cabinet pinned youtube opens in a cabinet-native player shell', async ({ page }) => {
@@ -675,8 +676,10 @@ test.describe('live-stage window UX baselines', () => {
     const castWhimsy = await page.locator('.stage-overlay-windows--live .source-window').evaluate((node) => {
       const beam = window.getComputedStyle(node, '::before')
       const contact = window.getComputedStyle(node, '::after')
-      const seam = window.getComputedStyle(node.querySelector('.source-window__body--text-bloom'), '::after')
-      const title = window.getComputedStyle(node.querySelector('.text-bloom__title'))
+      const body = node.querySelector('.source-window__body--text-bloom') as Element
+      const titleElement = node.querySelector('.text-bloom__title') as Element
+      const seam = window.getComputedStyle(body, '::after')
+      const title = window.getComputedStyle(titleElement)
       return {
         beamAnimation: beam.animationName,
         seamAnimation: seam.animationName,

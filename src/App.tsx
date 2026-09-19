@@ -201,6 +201,8 @@ function App() {
   const heroes = loaded.artifactMap.artifacts.filter((artifact) => artifact.kind === 'hero')
   const modules = loaded.artifactMap.artifacts.filter((artifact) => artifact.kind === 'module')
   const editionTypographyStyle = getAboutTypographyStyle(loaded.about)
+  const sourcePlaceCount = loaded.sourceBindings.bindings.length
+  const sourcePlaceLabel = sourcePlaceCount === 1 ? '1 place' : `${sourcePlaceCount} places`
 
   return (
     <main className={`runtime-shell review-mode--${reviewMode} ${runtimeAmbienceClasses}${presentation.showSidebar ? '' : ' runtime-shell--immersive'}${presentation.stageFillViewport ? ' runtime-shell--stage-fill' : ''}`} data-edition-id={loaded.edition.edition_id} style={editionTypographyStyle}>
@@ -279,14 +281,13 @@ function App() {
                 </section>
               ) : null}
               {loaded.about ? (
-                <section className={`about-unfurl__panel${aboutOpen ? ' is-visible' : ''}`} id="about-panel">
-                  {loaded.about.kicker ? <div className="about-unfurl__kicker">{loaded.about.kicker}</div> : null}
-                  <h2>{loaded.about.title}</h2>
-                  <p className="about-unfurl__blurb">{loaded.about.short_blurb}</p>
-                  <div className="about-unfurl__body">
-                    {loaded.about.body.map((paragraph, index) => (
-                      <p key={`${loaded.about?.about_id ?? 'about'}-${index}`}>{paragraph}</p>
-                    ))}
+                <section className={`about-unfurl__panel about-unfurl__panel--about-edge${aboutOpen ? ' is-visible' : ''}`} id="about-panel">
+                  <div className="about-unfurl__kicker">About today</div>
+                  <h2>About the Daily Frontpage</h2>
+                  <div className="about-unfurl__body about-unfurl__body--plain">
+                    <p>Every day, saved links become one new front page.</p>
+                    <p>Tap or hover over parts of the page to see the content sources the design is inspired by.</p>
+                    <p>This picture is called <span>{loaded.edition.title}</span>. It has {sourcePlaceLabel} you can open.</p>
                   </div>
                 </section>
               ) : null}
