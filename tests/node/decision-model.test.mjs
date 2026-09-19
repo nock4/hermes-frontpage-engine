@@ -21,33 +21,50 @@ describe('decision model adapter', () => {
     })
 
     expect(payload).toMatchObject({
-      primitive: 'Choice',
-      question: 'Should this source anchor the edition?',
-      choices: ['accept', 'reject', 'needs_review'],
+      model: 'jev-latest',
+      state: { source_url: 'https://example.com/source', image_url: 'https://example.com/image.jpg' },
+      questions: {
+        press_decision: {
+          type: 'choice',
+          instructions: 'Should this source anchor the edition?',
+          criteria: {
+            accept: null,
+            reject: null,
+            needs_review: null,
+          },
+        },
+      },
     })
-    expect(payload.state.source_url).toBe('https://example.com/source')
   })
 
   it('normalizes Jev-like choice probability responses into press decisions', () => {
     const normalized = normalizeJevDecision({
-      choice: 'reject',
-      probability: 0.91,
-      reason_code: 'spent_material_family',
-      evidence: ['image_url matched archive ledger'],
+      answers: {
+        press_decision: {
+          type: 'choice',
+          choice: 'reject',
+          confidence: 0.91,
+          probabilities: { reject: 0.91, accept: 0.04, needs_review: 0.05 },
+        },
+      },
     })
 
     expect(normalized).toEqual({
       schema_version: 1,
       model: 'jev',
       decision: 'reject',
-      reason_code: 'spent_material_family',
+      reason_code: 'jev_choice_reject',
       confidence: 0.91,
-      evidence: ['image_url matched archive ledger'],
+      evidence: ['Jev choice probability: {"reject":0.91,"accept":0.04,"needs_review":0.05}'],
       raw: {
-        choice: 'reject',
-        probability: 0.91,
-        reason_code: 'spent_material_family',
-        evidence: ['image_url matched archive ledger'],
+        answers: {
+          press_decision: {
+            type: 'choice',
+            choice: 'reject',
+            confidence: 0.91,
+            probabilities: { reject: 0.91, accept: 0.04, needs_review: 0.05 },
+          },
+        },
       },
     })
   })

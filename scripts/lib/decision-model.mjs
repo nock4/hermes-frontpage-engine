@@ -8,27 +8,38 @@ export function shouldUseJevDecisionModel(env = process.env) {
 
 export function buildJevDecisionPayload({ question, choices, state }) {
   return {
-    primitive: 'Choice',
-    question,
-    choices,
+    model: 'jev-latest',
     state,
+    questions: {
+      press_decision: {
+        type: 'choice',
+        instructions: question,
+        criteria: Object.fromEntries(choices.map((choice) => [choice, null])),
+      },
+    },
   }
 }
 
 export function normalizeJevDecision(raw) {
-  const decision = raw?.choice || raw?.decision || raw?.answer || 'needs_review'
-  const confidence = Number.isFinite(Number(raw?.probability))
-    ? Number(raw.probability)
-    : Number.isFinite(Number(raw?.confidence))
-      ? Number(raw.confidence)
+  const answer = raw?.answers?.press_decision || raw
+  const decision = answer?.choice || answer?.decision || answer?.answer || 'needs_review'
+  const confidence = Number.isFinite(Number(answer?.confidence))
+    ? Number(answer.confidence)
+    : Number.isFinite(Number(answer?.probability))
+      ? Number(answer.probability)
       : null
+  const probabilities = answer?.probabilities || null
   return {
     schema_version: JEV_DECISION_SCHEMA_VERSION,
     model: 'jev',
     decision,
-    reason_code: raw?.reason_code || raw?.reasonCode || 'jev_decision',
+    reason_code: answer?.reason_code || answer?.reasonCode || `jev_choice_${decision}`,
     confidence,
-    evidence: Array.isArray(raw?.evidence) ? raw.evidence : [],
+    evidence: Array.isArray(answer?.evidence)
+      ? answer.evidence
+      : probabilities
+        ? [`Jev choice probability: ${JSON.stringify(probabilities)}`]
+        : [],
     raw,
   }
 }
