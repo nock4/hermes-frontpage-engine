@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-19-storm-registry-observatory-v1",
+  "edition_id": "2026-09-19-storm-registry-observatory-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-19-storm-registry-observatory-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-left-brick-storm-slab",
+      "target_kind": "artifact",
+      "artifact_id": "hero-left-brick-storm-slab",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-brick-collision) selected from interpretation."
+    },
+    {
+      "target_id": "hero-profile-glass-vitrine",
+      "target_kind": "artifact",
+      "artifact_id": "hero-profile-glass-vitrine",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-scale-boarded-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-bookmark-black-void-one",
+      "target_kind": "artifact",
+      "artifact_id": "module-bookmark-black-void-one",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (black-glass-void-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-folded-gable-shadow-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-folded-gable-shadow-cut",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (gable-shadow-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-tar-window-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-tar-window-edge",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-window-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-rust-mesh-node-left",
+      "target_kind": "artifact",
+      "artifact_id": "module-rust-mesh-node-left",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (chain-link-seam-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-rust-mesh-node-right",
+      "target_kind": "artifact",
+      "artifact_id": "module-rust-mesh-node-right",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (chain-link-seam-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-tar-window-edge-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-tar-window-edge-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glossy-window-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-source-artifact-9",
+      "target_kind": "artifact",
+      "artifact_id": "module-source-artifact-9",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (peeling-siding-scar) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
