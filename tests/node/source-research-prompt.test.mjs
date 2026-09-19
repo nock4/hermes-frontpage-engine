@@ -19,6 +19,12 @@ describe('source autoresearch prompt', () => {
     expect(source).toContain('instead of falling back to agent chrome')
   })
 
+  it('writes typed source decision audits before image generation can use bad material', () => {
+    expect(source).toContain('source-decision-audit.json')
+    expect(source).toContain('decideAnchorEligibility')
+    expect(source).toContain('Source decision gate blocked image generation')
+  })
+
   it('treats exact-anchor overrides as source-material contracts', () => {
     expect(isExactAnchorOverride({
       source_url: 'https://x.com/artist/status/1',

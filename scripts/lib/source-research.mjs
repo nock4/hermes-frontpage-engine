@@ -9,7 +9,9 @@ import {
   selectAnchorSource,
 } from './anchor-source-research.mjs'
 import { buildInspirationOverrideVisualReference } from './inspiration-override.mjs'
+import { buildJevDecisionPayload, callJevDecision, shouldUseJevDecisionModel } from './decision-model.mjs'
 import { openAiJson } from './openai-json.mjs'
+import { buildSourceDecisionAudit, decideAnchorEligibility, decideVisualAnchorAction, writeSourceDecisionAudit } from './source-decision-gates.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
 import { isLowFertilitySourceFingerprint, isLowFertilitySourceImageCandidate, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
@@ -926,6 +928,34 @@ export async function inspectSourceCandidates(signalHarvest, {
     sourceImageMode,
     imageSourceMaterial,
   })
+  const anchorDecision = decideAnchorEligibility({ anchorSource, recentSourceKeys })
+  const visualAnchorDecision = decideVisualAnchorAction({
+    anchorDecision,
+    sourceImageMode,
+    promotedVisualAnchor: promotedVisualAnchorRelationship,
+    exactAnchorBlocker: exactAnchorSourceMaterialBlocker,
+  })
+  const jevDecision = shouldUseJevDecisionModel()
+    ? await callJevDecision(buildJevDecisionPayload({
+      question: 'Should this Daily Frontpage source selection proceed to image generation?',
+      choices: ['accept', 'reject', 'needs_review'],
+      state: {
+        anchor_source: anchorSource,
+        anchor_decision: anchorDecision,
+        visual_anchor_decision: visualAnchorDecision,
+        source_image_mode: sourceImageMode,
+        selected_image_material: selectedImageMaterial,
+        promoted_visual_anchor: promotedVisualAnchorRelationship,
+        exact_anchor_source_material_blocker: exactAnchorSourceMaterialBlocker,
+      },
+    }))
+    : null
+  const sourceDecisionAudit = buildSourceDecisionAudit({
+    anchorDecision,
+    visualAnchorDecision,
+    jevDecision,
+  })
+  const sourceDecisionAuditPath = await writeSourceDecisionAudit(runDir, sourceDecisionAudit) // source-decision-audit.json
   const imageMaterialReference = selectedImageMaterial[0]
     ? {
         url: selectedImageMaterial[0].page_url || selectedImageMaterial[0].image_url,
@@ -985,6 +1015,8 @@ export async function inspectSourceCandidates(signalHarvest, {
       promoted_visual_anchor: promotedVisualAnchorRelationship,
       exact_anchor_source_material_blocker: exactAnchorSourceMaterialBlocker,
     },
+    source_decision_audit: sourceDecisionAudit,
+    source_decision_audit_path: sourceDecisionAuditPath,
     source_image_fingerprints: sourceImageArtifacts.source_image_fingerprints,
     source_image_fingerprints_path: sourceImageArtifacts.source_image_fingerprints_path,
     source_image_contact_sheet_path: sourceImageArtifacts.source_image_contact_sheet_path,
@@ -1009,6 +1041,10 @@ export async function inspectSourceCandidates(signalHarvest, {
 
   await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
   await writeJson(path.join(runDir, 'source-research.json'), researchField)
+  if (sourceDecisionAudit.status === 'blocked') {
+    const reasons = sourceDecisionAudit.hard_blockers.map((blocker) => blocker.reason_code).join(', ')
+    throw new Error(`Source decision gate blocked image generation: ${reasons}. See ${path.relative(root, sourceDecisionAuditPath)}.`)
+  }
   if (exactAnchorSourceMaterialBlocker) {
     throw new Error(`Exact anchor source material blocked: ${exactAnchorSourceMaterialBlocker.reason}. Anchor ${exactAnchorSourceMaterialBlocker.anchor_url}. See ${path.relative(root, path.join(runDir, 'source-research.json'))}.`)
   }
