@@ -1,0 +1,1267 @@
+{
+  "artifact_map_id": "map-2026-09-20-nocturne-registration-atlas-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "archive-scan-registration-atlas",
+  "default_artifact_id": "hero-central-legal-form-rupture",
+  "artifacts": [
+    {
+      "id": "hero-central-legal-form-rupture",
+      "kind": "hero",
+      "label": "central legal-form rupture",
+      "artifact_type": "folded-legal-form-aperture",
+      "bounds": {
+        "x": 0.1608,
+        "y": 0.0,
+        "w": 0.7103,
+        "h": 0.6729
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.1628,
+          0.4014
+        ],
+        [
+          0.1654,
+          0.3574
+        ],
+        [
+          0.4948,
+          0.002
+        ],
+        [
+          0.5091,
+          0.002
+        ],
+        [
+          0.8392,
+          0.3447
+        ],
+        [
+          0.8685,
+          0.3857
+        ],
+        [
+          0.8633,
+          0.4473
+        ],
+        [
+          0.5677,
+          0.6533
+        ],
+        [
+          0.4883,
+          0.6689
+        ],
+        [
+          0.3555,
+          0.6348
+        ],
+        [
+          0.2832,
+          0.5879
+        ],
+        [
+          0.1797,
+          0.4785
+        ],
+        [
+          0.1706,
+          0.4619
+        ],
+        [
+          0.1628,
+          0.4072
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/hero-central-legal-form-rupture.svg",
+      "source_binding_ids": [
+        "binding-hero-central-legal-form-rupture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          763,
+          411
+        ],
+        "safe_stage_window_origin_px": [
+          844,
+          489
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1628,
+            0.4014
+          ],
+          [
+            0.1654,
+            0.3574
+          ],
+          [
+            0.4948,
+            0.002
+          ],
+          [
+            0.5091,
+            0.002
+          ],
+          [
+            0.8392,
+            0.3447
+          ],
+          [
+            0.8685,
+            0.3857
+          ],
+          [
+            0.8633,
+            0.4473
+          ],
+          [
+            0.5677,
+            0.6533
+          ],
+          [
+            0.4883,
+            0.6689
+          ],
+          [
+            0.3555,
+            0.6348
+          ],
+          [
+            0.2832,
+            0.5879
+          ],
+          [
+            0.1797,
+            0.4785
+          ],
+          [
+            0.1706,
+            0.4619
+          ],
+          [
+            0.1628,
+            0.4072
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1406,
+            0.3965
+          ],
+          [
+            0.1432,
+            0.3564
+          ],
+          [
+            0.166,
+            0.3223
+          ],
+          [
+            0.4655,
+            0.0
+          ],
+          [
+            0.5397,
+            0.001
+          ],
+          [
+            0.8385,
+            0.3096
+          ],
+          [
+            0.8906,
+            0.3848
+          ],
+          [
+            0.8854,
+            0.4473
+          ],
+          [
+            0.8633,
+            0.4805
+          ],
+          [
+            0.5794,
+            0.6768
+          ],
+          [
+            0.3203,
+            0.6455
+          ],
+          [
+            0.2826,
+            0.6211
+          ],
+          [
+            0.1803,
+            0.5117
+          ],
+          [
+            0.1484,
+            0.4609
+          ],
+          [
+            0.1406,
+            0.4082
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1406,
+          "y": 0.0,
+          "w": 0.7507,
+          "h": 0.6777
+        },
+        "territory_area_px": 374012,
+        "visible_area_px": 445315,
+        "expansion_ratio": 0.84,
+        "neighbors": [
+          {
+            "artifact_id": "module-short-tax-folder-block-2",
+            "shared_edge_px": 4299,
+            "direction": "left",
+            "distance_px": 283.82
+          },
+          {
+            "artifact_id": "module-scanner-bar-dark-seam",
+            "shared_edge_px": 3046,
+            "direction": "down",
+            "distance_px": 446.21
+          },
+          {
+            "artifact_id": "module-folder-tab-taste-notch",
+            "shared_edge_px": 2821,
+            "direction": "down",
+            "distance_px": 358.67
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-translucent-document-corner",
+      "kind": "hero",
+      "label": "translucent document corner",
+      "artifact_type": "preservation-film-corner",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.187,
+        "h": 0.073
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.001
+        ],
+        [
+          0.185,
+          0
+        ],
+        [
+          0.188,
+          0.047
+        ],
+        [
+          0.161,
+          0.073
+        ],
+        [
+          0.061,
+          0.073
+        ],
+        [
+          0,
+          0.067
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/hero-translucent-document-corner.svg",
+      "source_binding_ids": [
+        "binding-hero-translucent-document-corner"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          144,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          167,
+          80
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.001
+          ],
+          [
+            0.185,
+            0
+          ],
+          [
+            0.188,
+            0.047
+          ],
+          [
+            0.161,
+            0.073
+          ],
+          [
+            0.061,
+            0.073
+          ],
+          [
+            0,
+            0.067
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.207,
+            0.0
+          ],
+          [
+            0.2096,
+            0.042
+          ],
+          [
+            0.1875,
+            0.0801
+          ],
+          [
+            0.1608,
+            0.1055
+          ],
+          [
+            0.0,
+            0.0996
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.2103,
+          "h": 0.1064
+        },
+        "territory_area_px": 32747,
+        "visible_area_px": 20410,
+        "expansion_ratio": 1.604,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-short-tax-folder-block",
+      "kind": "module",
+      "label": "short tax-folder block",
+      "artifact_type": "folder-block-edge",
+      "bounds": {
+        "x": 0.794,
+        "y": 0.723,
+        "w": 0.068,
+        "h": 0.118
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.802,
+          0.723
+        ],
+        [
+          0.862,
+          0.724
+        ],
+        [
+          0.862,
+          0.84
+        ],
+        [
+          0.808,
+          0.84
+        ],
+        [
+          0.795,
+          0.823
+        ],
+        [
+          0.795,
+          0.748
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/module-short-tax-folder-block.svg",
+      "source_binding_ids": [
+        "binding-module-short-tax-folder-block"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1272,
+          791
+        ],
+        "safe_stage_window_origin_px": [
+          1280,
+          801
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.802,
+            0.723
+          ],
+          [
+            0.862,
+            0.724
+          ],
+          [
+            0.862,
+            0.84
+          ],
+          [
+            0.808,
+            0.84
+          ],
+          [
+            0.795,
+            0.823
+          ],
+          [
+            0.795,
+            0.748
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7767,
+            0.7461
+          ],
+          [
+            0.7832,
+            0.7227
+          ],
+          [
+            0.8014,
+            0.6953
+          ],
+          [
+            0.862,
+            0.6963
+          ],
+          [
+            0.8802,
+            0.7236
+          ],
+          [
+            0.8802,
+            0.8398
+          ],
+          [
+            0.873,
+            0.8506
+          ],
+          [
+            0.7767,
+            0.7773
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7767,
+          "y": 0.6953,
+          "w": 0.1042,
+          "h": 0.1562
+        },
+        "territory_area_px": 18657,
+        "visible_area_px": 12171,
+        "expansion_ratio": 1.533,
+        "neighbors": [
+          {
+            "artifact_id": "module-cyan-tag-orbit",
+            "shared_edge_px": 1898,
+            "direction": "down",
+            "distance_px": 111.04
+          },
+          {
+            "artifact_id": "module-scanner-bar-dark-seam",
+            "shared_edge_px": 876,
+            "direction": "left",
+            "distance_px": 220.8
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-folder-tab-taste-notch",
+      "kind": "module",
+      "label": "folder-tab taste notch",
+      "artifact_type": "folder-tab-notch",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/module-folder-tab-taste-notch.svg",
+      "source_binding_ids": [
+        "binding-module-folder-tab-taste-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          691,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          718,
+          666
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.34,
+            0.54
+          ],
+          [
+            0.56,
+            0.54
+          ],
+          [
+            0.56,
+            0.76
+          ],
+          [
+            0.34,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3216,
+            0.5391
+          ],
+          [
+            0.3359,
+            0.5176
+          ],
+          [
+            0.4772,
+            0.5117
+          ],
+          [
+            0.5781,
+            0.5547
+          ],
+          [
+            0.5781,
+            0.751
+          ],
+          [
+            0.4284,
+            0.7871
+          ],
+          [
+            0.3398,
+            0.7871
+          ],
+          [
+            0.3216,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3216,
+          "y": 0.5117,
+          "w": 0.2572,
+          "h": 0.2764
+        },
+        "territory_area_px": 99735,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.296,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-legal-form-rupture",
+            "shared_edge_px": 2821,
+            "direction": "up",
+            "distance_px": 358.67
+          },
+          {
+            "artifact_id": "module-translucent-document-corner",
+            "shared_edge_px": 1656,
+            "direction": "down",
+            "distance_px": 245.97
+          },
+          {
+            "artifact_id": "module-short-tax-folder-block-2",
+            "shared_edge_px": 1026,
+            "direction": "up",
+            "distance_px": 276.58
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-scanner-bar-dark-seam",
+      "kind": "module",
+      "label": "scanner-bar dark seam",
+      "artifact_type": "ocr-scan-bar-seam",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/module-scanner-bar-dark-seam.svg",
+      "source_binding_ids": [
+        "binding-module-scanner-bar-dark-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5938,
+            0.5527
+          ],
+          [
+            0.6224,
+            0.5
+          ],
+          [
+            0.8398,
+            0.5
+          ],
+          [
+            0.8659,
+            0.5391
+          ],
+          [
+            0.8659,
+            0.7012
+          ],
+          [
+            0.7116,
+            0.7988
+          ],
+          [
+            0.6198,
+            0.7988
+          ],
+          [
+            0.5938,
+            0.751
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5938,
+          "y": 0.5,
+          "w": 0.2728,
+          "h": 0.2998
+        },
+        "territory_area_px": 108193,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.406,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-legal-form-rupture",
+            "shared_edge_px": 3046,
+            "direction": "up",
+            "distance_px": 446.21
+          },
+          {
+            "artifact_id": "module-short-tax-folder-block",
+            "shared_edge_px": 876,
+            "direction": "right",
+            "distance_px": 220.8
+          },
+          {
+            "artifact_id": "module-cyan-tag-orbit",
+            "shared_edge_px": 741,
+            "direction": "down",
+            "distance_px": 272.39
+          },
+          {
+            "artifact_id": "module-translucent-document-corner",
+            "shared_edge_px": 366,
+            "direction": "left",
+            "distance_px": 394.77
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-red-orange-permission-cut",
+      "kind": "module",
+      "label": "red-orange permission cut",
+      "artifact_type": "permission-cutaway",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/module-red-orange-permission-cut.svg",
+      "source_binding_ids": [
+        "binding-module-red-orange-permission-cut"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0814,
+            0.7793
+          ],
+          [
+            0.0996,
+            0.752
+          ],
+          [
+            0.2799,
+            0.752
+          ],
+          [
+            0.2982,
+            0.7793
+          ],
+          [
+            0.2982,
+            0.9395
+          ],
+          [
+            0.2799,
+            0.9668
+          ],
+          [
+            0.0996,
+            0.9668
+          ],
+          [
+            0.0814,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0814,
+          "y": 0.752,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 72190,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.574,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-translucent-document-corner",
+      "kind": "module",
+      "label": "translucent document corner",
+      "artifact_type": "preservation-film-corner",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/module-translucent-document-corner.svg",
+      "source_binding_ids": [
+        "binding-module-translucent-document-corner"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4017,
+            0.7881
+          ],
+          [
+            0.4837,
+            0.752
+          ],
+          [
+            0.5996,
+            0.752
+          ],
+          [
+            0.6178,
+            0.7793
+          ],
+          [
+            0.6178,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9668
+          ],
+          [
+            0.4199,
+            0.9668
+          ],
+          [
+            0.4017,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4017,
+          "y": 0.752,
+          "w": 0.2168,
+          "h": 0.2158
+        },
+        "territory_area_px": 69255,
+        "visible_area_px": 45705,
+        "expansion_ratio": 1.515,
+        "neighbors": [
+          {
+            "artifact_id": "module-folder-tab-taste-notch",
+            "shared_edge_px": 1656,
+            "direction": "up",
+            "distance_px": 245.97
+          },
+          {
+            "artifact_id": "module-scanner-bar-dark-seam",
+            "shared_edge_px": 366,
+            "direction": "right",
+            "distance_px": 394.77
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-cyan-tag-orbit",
+      "kind": "module",
+      "label": "cyan tag orbit",
+      "artifact_type": "tag-orbit-node",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/module-cyan-tag-orbit.svg",
+      "source_binding_ids": [
+        "binding-module-cyan-tag-orbit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7012,
+            0.7998
+          ],
+          [
+            0.7786,
+            0.7363
+          ],
+          [
+            0.8997,
+            0.7324
+          ],
+          [
+            0.918,
+            0.7598
+          ],
+          [
+            0.918,
+            0.9199
+          ],
+          [
+            0.8997,
+            0.9473
+          ],
+          [
+            0.7194,
+            0.9473
+          ],
+          [
+            0.7012,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7012,
+          "y": 0.7324,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 53795,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.173,
+        "neighbors": [
+          {
+            "artifact_id": "module-short-tax-folder-block",
+            "shared_edge_px": 1898,
+            "direction": "up",
+            "distance_px": 111.04
+          },
+          {
+            "artifact_id": "module-scanner-bar-dark-seam",
+            "shared_edge_px": 741,
+            "direction": "up",
+            "distance_px": 272.39
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-short-tax-folder-block-2",
+      "kind": "module",
+      "label": "short tax-folder block",
+      "artifact_type": "folder-block-edge",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "archive-scan-registration-atlas",
+      "mask_path": "/editions/2026-09-20-nocturne-registration-atlas-v1/assets/masks/module-short-tax-folder-block-2.svg",
+      "source_binding_ids": [
+        "binding-module-short-tax-folder-block-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3398
+          ],
+          [
+            0.2799,
+            0.3125
+          ],
+          [
+            0.4199,
+            0.3125
+          ],
+          [
+            0.4453,
+            0.5049
+          ],
+          [
+            0.4434,
+            0.5107
+          ],
+          [
+            0.4225,
+            0.5166
+          ],
+          [
+            0.2799,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.1842,
+          "h": 0.2051
+        },
+        "territory_area_px": 54535,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.44,
+        "neighbors": [
+          {
+            "artifact_id": "hero-central-legal-form-rupture",
+            "shared_edge_px": 4299,
+            "direction": "right",
+            "distance_px": 283.82
+          },
+          {
+            "artifact_id": "module-folder-tab-taste-notch",
+            "shared_edge_px": 1026,
+            "direction": "down",
+            "distance_px": 276.58
+          }
+        ]
+      }
+    }
+  ]
+}
