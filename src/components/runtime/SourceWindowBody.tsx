@@ -166,6 +166,27 @@ function getSourceVisualStyle(binding: SourceBindingRecord) {
   return { objectPosition: `${x}% ${y}%` }
 }
 
+function SourceTweetHoverCard({ binding, descriptor }: { binding: SourceBindingRecord; descriptor: SourceWindowDescriptor }) {
+  const sourceHost = binding.source_domain || getSourceHostLabel(binding.source_url) || binding.kicker || descriptor.platformLabel
+  const title = truncateLabel(binding.source_title || binding.title, 86) || descriptor.platformLabel
+  const rawCopy = getSocialBodyCopy(binding, descriptor)
+  const copyBeforeLink = collapseWhitespace(rawCopy.split(/https?:\/\//i)[0])
+  const copy = copyBeforeLink && copyBeforeLink !== collapseWhitespace(title)
+    ? truncateLabel(copyBeforeLink, 96)
+    : null
+
+  return (
+    <div className="source-window__body source-window__body--tweet-provenance">
+      <article className="tweet-provenance-card">
+        <span className="tweet-provenance-card__source">{sourceHost}</span>
+        <strong>{title}</strong>
+        {copy ? <p>{copy}</p> : null}
+        <span className="tweet-provenance-card__cue">open source ↗</span>
+      </article>
+    </div>
+  )
+}
+
 function SourceImageTitleCard({
   binding,
   imageUrl,
@@ -339,6 +360,10 @@ export function SourceWindowBody({
   const visualCardTitle = binding.source_title || binding.title
   const visualCardHref = 'sourceUrl' in descriptor ? descriptor.sourceUrl : binding.source_url
   const shouldUseVisualCard = Boolean(visualCardMediaUrl) || surface === 'stage'
+
+  if (descriptor.kind === 'tweet-embed' && surface === 'stage' && !visualCardMediaUrl) {
+    return <SourceTweetHoverCard binding={binding} descriptor={descriptor} />
+  }
 
   if (visualCardMediaUrl && descriptor.kind !== 'audio-dock' && descriptor.kind !== 'bandcamp-card') {
     return (

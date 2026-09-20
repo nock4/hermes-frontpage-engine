@@ -220,6 +220,27 @@ test.describe('live-stage window UX baselines', () => {
     await expect(aboutPanel).toContainText('This picture is called')
   })
 
+  test('text-only tweet source opens as a quiet provenance edge note', async ({ page }) => {
+    await gotoEdition(page, '/archive/nocturnal-observatory-plain-language-stars-v1')
+
+    const artifact = page.getByRole('button', { name: 'Concealed-Egg Signal Vessel' })
+    await artifact.hover({ force: true })
+    await page.waitForTimeout(500)
+
+    const previewWindow = page.locator('.stage-overlay-windows--live .source-window--preview')
+    await expect(previewWindow).toHaveClass(/source-window--tweet-provenance/)
+    await expect(previewWindow.locator('iframe')).toHaveCount(0)
+    await expect(previewWindow.locator('.tweet-provenance-card')).toContainText('open source')
+
+    await artifact.click({ force: true })
+    await page.waitForTimeout(500)
+
+    const primaryWindow = page.locator('.stage-overlay-windows--live .source-window--primary')
+    await expect(primaryWindow).toHaveClass(/source-window--tweet-provenance/)
+    await expect(primaryWindow.locator('iframe')).toHaveCount(0)
+    await expect(primaryWindow.locator('.tweet-provenance-card')).toContainText('@atarutin grill-me write-a-prd tdd agent-browser')
+  })
+
   test('forest breath cabinet pinned youtube opens in a cabinet-native player shell', async ({ page }) => {
     await gotoEdition(page, '/archive/forest-breath-cabinet-v2')
 
