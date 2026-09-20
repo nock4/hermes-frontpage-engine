@@ -2,6 +2,12 @@ import { spawn } from 'node:child_process'
 
 const JEV_DECISION_SCHEMA_VERSION = 1
 
+function redactSecretReference(text = '') {
+  return String(text || '')
+    .replace(/op:\/\/[^\s'"`]+/g, 'op://[REDACTED]')
+    .replace(/(api[_-]?key|credential|token|secret)(=|:)[^\s'"`]+/gi, '$1$2[REDACTED]')
+}
+
 export function shouldUseJevDecisionModel(env = process.env) {
   return String(env.DFE_DECISION_MODEL || '').trim().toLowerCase() === 'jev'
 }
@@ -44,6 +50,20 @@ export function normalizeJevDecision(raw) {
   }
 }
 
+export function buildUnavailableJevDecision(error) {
+  return {
+    schema_version: JEV_DECISION_SCHEMA_VERSION,
+    model: 'jev',
+    decision: 'needs_review',
+    reason_code: 'jev_unavailable_deterministic_fallback',
+    confidence: null,
+    evidence: [
+      'Jev decision model was configured but unavailable; deterministic source gates remained active.',
+      redactSecretReference(error?.message || error || 'unknown Jev decision model failure'),
+    ],
+  }
+}
+
 function jevEndpoint(env = process.env) {
   return String(env.JEV_API_URL || env.TYPESAFE_AI_JEV_API_URL || '').trim()
 }
@@ -81,12 +101,12 @@ export async function resolveJevApiKey({ env = process.env, opRead = readOpSecre
   return opRead(opRef)
 }
 
-export async function callJevDecision(payload, { env = process.env, fetchImpl = globalThis.fetch } = {}) {
+async function callJevDecision(payload, { env = process.env, fetchImpl = globalThis.fetch, opRead = readOpSecret } = {}) {
   const endpoint = jevEndpoint(env)
   if (!endpoint) return null
   if (!fetchImpl) throw new Error('Jev decision model requires fetch.')
 
-  const apiKey = await resolveJevApiKey({ env })
+  const apiKey = await resolveJevApiKey({ env, opRead })
   const response = await fetchImpl(endpoint, {
     method: 'POST',
     headers: {
@@ -99,4 +119,12 @@ export async function callJevDecision(payload, { env = process.env, fetchImpl = 
     throw new Error(`Jev decision request failed: HTTP ${response.status}`)
   }
   return normalizeJevDecision(await response.json())
+}
+
+export async function callJevDecisionWithFallback(payload, options = {}) {
+  try {
+    return await callJevDecision(payload, options)
+  } catch (error) {
+    return buildUnavailableJevDecision(error)
+  }
 }

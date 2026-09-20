@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest'
 
 import {
   buildJevDecisionPayload,
+  buildUnavailableJevDecision,
+  callJevDecisionWithFallback,
   normalizeJevDecision,
   resolveJevApiKey,
   shouldUseJevDecisionModel,
@@ -75,5 +77,32 @@ describe('decision model adapter', () => {
       env: { JEV_API_KEY_OP_REF: 'op://Dev Secrets/Jev API Credential/credential' },
       opRead: async (ref) => `secret-for:${ref}`,
     })).resolves.toBe('secret-for:op://Dev Secrets/Jev API Credential/credential')
+  })
+
+  it('turns Jev outages into a non-blocking deterministic-fallback decision with redacted evidence', async () => {
+    const unavailable = buildUnavailableJevDecision(new Error('authorization timeout for op://Dev Secrets/Jev API Credential/credential'))
+    expect(unavailable).toMatchObject({
+      model: 'jev',
+      decision: 'needs_review',
+      reason_code: 'jev_unavailable_deterministic_fallback',
+    })
+    expect(unavailable.evidence.join(' ')).toContain('deterministic source gates remained active')
+    expect(unavailable.evidence.join(' ')).not.toContain('Dev Secrets')
+
+    await expect(callJevDecisionWithFallback({ question: 'Proceed?' }, {
+      env: {
+        JEV_API_URL: 'https://jev.example.test/decide',
+        JEV_API_KEY_OP_REF: 'op://Dev Secrets/Jev API Credential/credential',
+      },
+      opRead: async () => {
+        throw new Error('authorization timeout for op://Dev Secrets/Jev API Credential/credential')
+      },
+      fetchImpl: async () => {
+        throw new Error('fetch should not run when op read fails')
+      },
+    })).resolves.toMatchObject({
+      decision: 'needs_review',
+      reason_code: 'jev_unavailable_deterministic_fallback',
+    })
   })
 })

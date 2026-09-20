@@ -24,7 +24,7 @@ export default defineConfig({
   use: {
     baseURL: uxPreviewUrl,
     viewport: { width: 1440, height: 980 },
-    trace: isCI ? 'on-first-retry' : 'on',
+    trace: process.env.DFE_UX_TRACE === 'on' ? 'on' : 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     bypassCSP: true,

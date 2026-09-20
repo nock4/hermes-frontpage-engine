@@ -9,7 +9,7 @@ import {
   selectAnchorSource,
 } from './anchor-source-research.mjs'
 import { buildInspirationOverrideVisualReference } from './inspiration-override.mjs'
-import { buildJevDecisionPayload, callJevDecision, shouldUseJevDecisionModel } from './decision-model.mjs'
+import { buildJevDecisionPayload, callJevDecisionWithFallback, shouldUseJevDecisionModel } from './decision-model.mjs'
 import { openAiJson } from './openai-json.mjs'
 import { buildSourceDecisionAudit, decideAnchorEligibility, decideVisualAnchorAction, writeSourceDecisionAudit } from './source-decision-gates.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
@@ -936,7 +936,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     exactAnchorBlocker: exactAnchorSourceMaterialBlocker,
   })
   const jevDecision = shouldUseJevDecisionModel()
-    ? await callJevDecision(buildJevDecisionPayload({
+    ? await callJevDecisionWithFallback(buildJevDecisionPayload({
       question: 'Should this Daily Frontpage source selection proceed to image generation?',
       choices: ['accept', 'reject', 'needs_review'],
       state: {
