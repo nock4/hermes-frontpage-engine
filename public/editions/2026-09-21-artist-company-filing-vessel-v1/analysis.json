@@ -1,0 +1,444 @@
+{
+  "analysis_id": "analysis-2026-09-21-artist-company-filing-vessel-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A cutaway civic filing vessel set inside a monumental archive hall: stacked papers, compressed file strata, glowing scanner rails, a stamped registry slab, a dark pressure cavity, a round glass inspection port, a teal-tabbed file pocket, and a small blue branching conduit are all visible and mappable as source windows.",
+  "usable_surfaces": [
+    "large oxidized registry slab with circular seal",
+    "upper document strata and paper stacks",
+    "cyan horizontal glass scan rail",
+    "small cyan-lit scanner slot",
+    "round glass inspection port on right wall",
+    "teal file-tab pocket on right shelf",
+    "dark vertical conduit with blue nodes",
+    "deep graphite cavity behind right shelving",
+    "narrow black register slit above slab"
+  ],
+  "detected_objects": [
+    {
+      "label": "artist-company-registry-slab",
+      "artifact_type": "oxidized-registry-slab-with-civic-seal",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.244,
+        "w": 0.582,
+        "h": 0.108
+      },
+      "polygon": [
+        [
+          0.071,
+          0.246
+        ],
+        [
+          0.638,
+          0.244
+        ],
+        [
+          0.653,
+          0.253
+        ],
+        [
+          0.653,
+          0.341
+        ],
+        [
+          0.641,
+          0.351
+        ],
+        [
+          0.076,
+          0.352
+        ],
+        [
+          0.071,
+          0.343
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A broad dark metal legal-looking slab spans the lower middle with rust-blue patina and an embossed circular capitol seal at center."
+    },
+    {
+      "label": "paperless-receipt-archive-shelf",
+      "artifact_type": "stacked-document-strata-shelf",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.456,
+        "h": 0.075
+      },
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.073,
+          0.002
+        ],
+        [
+          0.153,
+          0
+        ],
+        [
+          0.252,
+          0.006
+        ],
+        [
+          0.334,
+          0
+        ],
+        [
+          0.435,
+          0.008
+        ],
+        [
+          0.456,
+          0.064
+        ],
+        [
+          0.405,
+          0.074
+        ],
+        [
+          0.287,
+          0.066
+        ],
+        [
+          0.19,
+          0.071
+        ],
+        [
+          0.09,
+          0.065
+        ],
+        [
+          0,
+          0.071
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "Loose papers and receipt-like sheets sit visibly across the top-left shelf, forming a real document archive surface."
+    },
+    {
+      "label": "misc-kindness-file-tab",
+      "artifact_type": "teal-file-tab-notch",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.661,
+        "y": 0.27,
+        "w": 0.089,
+        "h": 0.043
+      },
+      "polygon": [
+        [
+          0.662,
+          0.271
+        ],
+        [
+          0.746,
+          0.271
+        ],
+        [
+          0.748,
+          0.284
+        ],
+        [
+          0.722,
+          0.284
+        ],
+        [
+          0.718,
+          0.312
+        ],
+        [
+          0.67,
+          0.313
+        ],
+        [
+          0.667,
+          0.284
+        ],
+        [
+          0.661,
+          0.281
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "A distinct turquoise file-tab notch is embedded on the right paper folder, cleanly separated from the surrounding tan files."
+    },
+    {
+      "label": "design-article-inspection-port",
+      "artifact_type": "round-glass-inspection-port",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.543,
+        "y": 0.087,
+        "w": 0.069,
+        "h": 0.07
+      },
+      "polygon": [
+        [
+          0.578,
+          0.087
+        ],
+        [
+          0.596,
+          0.092
+        ],
+        [
+          0.609,
+          0.105
+        ],
+        [
+          0.612,
+          0.124
+        ],
+        [
+          0.606,
+          0.141
+        ],
+        [
+          0.592,
+          0.154
+        ],
+        [
+          0.574,
+          0.157
+        ],
+        [
+          0.557,
+          0.151
+        ],
+        [
+          0.545,
+          0.137
+        ],
+        [
+          0.543,
+          0.119
+        ],
+        [
+          0.549,
+          0.102
+        ],
+        [
+          0.561,
+          0.091
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A circular glass porthole set into the right wall, with cyan reflection and internal horizontal lines, reads as a clear inspection aperture."
+    },
+    {
+      "label": "systemic-pressure-shadow-cavity",
+      "artifact_type": "deep-graphite-shelving-cavity",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.756,
+        "y": 0.092,
+        "w": 0.06,
+        "h": 0.147
+      },
+      "polygon": [
+        [
+          0.759,
+          0.093
+        ],
+        [
+          0.805,
+          0.093
+        ],
+        [
+          0.815,
+          0.108
+        ],
+        [
+          0.814,
+          0.235
+        ],
+        [
+          0.792,
+          0.239
+        ],
+        [
+          0.767,
+          0.231
+        ],
+        [
+          0.756,
+          0.208
+        ],
+        [
+          0.761,
+          0.163
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A deep black structural void appears behind the right shelf wall, with hard vertical shelving edges and shadowed recesses."
+    },
+    {
+      "label": "plant-incubator-seed-bay",
+      "artifact_type": "small-sealed-warm-paper-bay",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.495,
+        "y": 0.261,
+        "w": 0.164,
+        "h": 0.091
+      },
+      "polygon": [
+        [
+          0.496,
+          0.263
+        ],
+        [
+          0.638,
+          0.262
+        ],
+        [
+          0.657,
+          0.27
+        ],
+        [
+          0.656,
+          0.343
+        ],
+        [
+          0.646,
+          0.351
+        ],
+        [
+          0.502,
+          0.352
+        ],
+        [
+          0.495,
+          0.341
+        ]
+      ],
+      "confidence": 0.8,
+      "visual_evidence": "A compact tan file bay on the right lower shelf is sealed by vertical document edges and capped with the teal mineral-like tab."
+    },
+    {
+      "label": "Source Artifact 9",
+      "artifact_type": "blue-branching-conduit-knot",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.263,
+        "y": 0.195,
+        "w": 0.04,
+        "h": 0.051
+      },
+      "polygon": [
+        [
+          0.278,
+          0.196
+        ],
+        [
+          0.293,
+          0.197
+        ],
+        [
+          0.302,
+          0.213
+        ],
+        [
+          0.298,
+          0.235
+        ],
+        [
+          0.287,
+          0.246
+        ],
+        [
+          0.273,
+          0.243
+        ],
+        [
+          0.264,
+          0.228
+        ],
+        [
+          0.263,
+          0.208
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A narrow vertical dark conduit between drawers contains repeated blue glowing nodes and branching circuit-like marks."
+    },
+    {
+      "label": "glass plate-capture-scan-rail",
+      "artifact_type": "cool-scanner-rail",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Source Artifact 9",
+      "artifact_type": "source-artifact",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.131,
+    "rationale": "The plate is legible and strongly sectional, but many stacked papers, rails, bays, and architectural recesses create a dense archive machine rather than a minimal expressionist field."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-21-artist-company-filing-vessel-v1"
+}

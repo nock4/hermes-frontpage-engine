@@ -1,0 +1,1393 @@
+{
+  "artifact_map_id": "map-2026-09-21-artist-company-filing-vessel-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "artist-company-document-cutaway",
+  "default_artifact_id": "hero-artist-company-registry-slab",
+  "artifacts": [
+    {
+      "id": "hero-artist-company-registry-slab",
+      "kind": "hero",
+      "label": "artist-company-registry-slab",
+      "artifact_type": "oxidized-registry-slab-with-civic-seal",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.244,
+        "w": 0.582,
+        "h": 0.108
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.071,
+          0.246
+        ],
+        [
+          0.638,
+          0.244
+        ],
+        [
+          0.653,
+          0.253
+        ],
+        [
+          0.653,
+          0.341
+        ],
+        [
+          0.641,
+          0.351
+        ],
+        [
+          0.076,
+          0.352
+        ],
+        [
+          0.071,
+          0.343
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/hero-artist-company-registry-slab.svg",
+      "source_binding_ids": [
+        "binding-hero-artist-company-registry-slab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          556,
+          296
+        ],
+        "safe_stage_window_origin_px": [
+          628,
+          305
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.071,
+            0.246
+          ],
+          [
+            0.638,
+            0.244
+          ],
+          [
+            0.653,
+            0.253
+          ],
+          [
+            0.653,
+            0.341
+          ],
+          [
+            0.641,
+            0.351
+          ],
+          [
+            0.076,
+            0.352
+          ],
+          [
+            0.071,
+            0.343
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0488,
+            0.2451
+          ],
+          [
+            0.071,
+            0.2119
+          ],
+          [
+            0.6374,
+            0.21
+          ],
+          [
+            0.668,
+            0.2422
+          ],
+          [
+            0.6751,
+            0.3398
+          ],
+          [
+            0.6406,
+            0.3838
+          ],
+          [
+            0.0755,
+            0.3848
+          ],
+          [
+            0.0488,
+            0.3428
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0488,
+          "y": 0.21,
+          "w": 0.627,
+          "h": 0.1758
+        },
+        "territory_area_px": 111082,
+        "visible_area_px": 97776,
+        "expansion_ratio": 1.136,
+        "neighbors": [
+          {
+            "artifact_id": "module-plant-incubator-seed-bay",
+            "shared_edge_px": 3864,
+            "direction": "right",
+            "distance_px": 438.4
+          },
+          {
+            "artifact_id": "module-source-artifact-9-2",
+            "shared_edge_px": 2172,
+            "direction": "down",
+            "distance_px": 187.65
+          },
+          {
+            "artifact_id": "module-source-artifact-9",
+            "shared_edge_px": 920,
+            "direction": "up",
+            "distance_px": 74.46
+          },
+          {
+            "artifact_id": "module-misc-kindness-file-tab",
+            "shared_edge_px": 134,
+            "direction": "right",
+            "distance_px": 642.37
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-paperless-receipt-archive-shelf",
+      "kind": "hero",
+      "label": "paperless-receipt-archive-shelf",
+      "artifact_type": "stacked-document-strata-shelf",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.456,
+        "h": 0.075
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.073,
+          0.002
+        ],
+        [
+          0.153,
+          0
+        ],
+        [
+          0.252,
+          0.006
+        ],
+        [
+          0.334,
+          0
+        ],
+        [
+          0.435,
+          0.008
+        ],
+        [
+          0.456,
+          0.064
+        ],
+        [
+          0.405,
+          0.074
+        ],
+        [
+          0.287,
+          0.066
+        ],
+        [
+          0.19,
+          0.071
+        ],
+        [
+          0.09,
+          0.065
+        ],
+        [
+          0,
+          0.071
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/hero-paperless-receipt-archive-shelf.svg",
+      "source_binding_ids": [
+        "binding-hero-paperless-receipt-archive-shelf"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          350,
+          80
+        ],
+        "safe_stage_window_origin_px": [
+          406,
+          80
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0
+          ],
+          [
+            0.073,
+            0.002
+          ],
+          [
+            0.153,
+            0
+          ],
+          [
+            0.252,
+            0.006
+          ],
+          [
+            0.334,
+            0
+          ],
+          [
+            0.435,
+            0.008
+          ],
+          [
+            0.456,
+            0.064
+          ],
+          [
+            0.405,
+            0.074
+          ],
+          [
+            0.287,
+            0.066
+          ],
+          [
+            0.19,
+            0.071
+          ],
+          [
+            0.09,
+            0.065
+          ],
+          [
+            0,
+            0.071
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.4518,
+            0.0
+          ],
+          [
+            0.4779,
+            0.0635
+          ],
+          [
+            0.4557,
+            0.0967
+          ],
+          [
+            0.4049,
+            0.1064
+          ],
+          [
+            0.0,
+            0.1035
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4785,
+          "h": 0.1074
+        },
+        "territory_area_px": 74670,
+        "visible_area_px": 46051,
+        "expansion_ratio": 1.621,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-misc-kindness-file-tab",
+      "kind": "module",
+      "label": "misc-kindness-file-tab",
+      "artifact_type": "teal-file-tab-notch",
+      "bounds": {
+        "x": 0.661,
+        "y": 0.27,
+        "w": 0.089,
+        "h": 0.043
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.662,
+          0.271
+        ],
+        [
+          0.746,
+          0.271
+        ],
+        [
+          0.748,
+          0.284
+        ],
+        [
+          0.722,
+          0.284
+        ],
+        [
+          0.718,
+          0.312
+        ],
+        [
+          0.67,
+          0.313
+        ],
+        [
+          0.667,
+          0.284
+        ],
+        [
+          0.661,
+          0.281
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/module-misc-kindness-file-tab.svg",
+      "source_binding_ids": [
+        "binding-module-misc-kindness-file-tab"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1084,
+          295
+        ],
+        "safe_stage_window_origin_px": [
+          1095,
+          298
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.662,
+            0.271
+          ],
+          [
+            0.746,
+            0.271
+          ],
+          [
+            0.748,
+            0.284
+          ],
+          [
+            0.722,
+            0.284
+          ],
+          [
+            0.718,
+            0.312
+          ],
+          [
+            0.67,
+            0.313
+          ],
+          [
+            0.667,
+            0.284
+          ],
+          [
+            0.661,
+            0.281
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6426,
+            0.2764
+          ],
+          [
+            0.6615,
+            0.2432
+          ],
+          [
+            0.7454,
+            0.2432
+          ],
+          [
+            0.7656,
+            0.2812
+          ],
+          [
+            0.7474,
+            0.3105
+          ],
+          [
+            0.7174,
+            0.3389
+          ],
+          [
+            0.6699,
+            0.3398
+          ],
+          [
+            0.6517,
+            0.3125
+          ],
+          [
+            0.6426,
+            0.2803
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6426,
+          "y": 0.2432,
+          "w": 0.1237,
+          "h": 0.0977
+        },
+        "territory_area_px": 14621,
+        "visible_area_px": 4132,
+        "expansion_ratio": 3.538,
+        "neighbors": [
+          {
+            "artifact_id": "module-plant-incubator-seed-bay",
+            "shared_edge_px": 642,
+            "direction": "left",
+            "distance_px": 205.34
+          },
+          {
+            "artifact_id": "hero-artist-company-registry-slab",
+            "shared_edge_px": 134,
+            "direction": "left",
+            "distance_px": 642.37
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-design-article-inspection-port",
+      "kind": "module",
+      "label": "design-article-inspection-port",
+      "artifact_type": "round-glass-inspection-port",
+      "bounds": {
+        "x": 0.543,
+        "y": 0.087,
+        "w": 0.069,
+        "h": 0.07
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.578,
+          0.087
+        ],
+        [
+          0.596,
+          0.092
+        ],
+        [
+          0.609,
+          0.105
+        ],
+        [
+          0.612,
+          0.124
+        ],
+        [
+          0.606,
+          0.141
+        ],
+        [
+          0.592,
+          0.154
+        ],
+        [
+          0.574,
+          0.157
+        ],
+        [
+          0.557,
+          0.151
+        ],
+        [
+          0.545,
+          0.137
+        ],
+        [
+          0.543,
+          0.119
+        ],
+        [
+          0.549,
+          0.102
+        ],
+        [
+          0.561,
+          0.091
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/module-design-article-inspection-port.svg",
+      "source_binding_ids": [
+        "binding-module-design-article-inspection-port"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          887,
+          119
+        ],
+        "safe_stage_window_origin_px": [
+          896,
+          125
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.578,
+            0.087
+          ],
+          [
+            0.596,
+            0.092
+          ],
+          [
+            0.609,
+            0.105
+          ],
+          [
+            0.612,
+            0.124
+          ],
+          [
+            0.606,
+            0.141
+          ],
+          [
+            0.592,
+            0.154
+          ],
+          [
+            0.574,
+            0.157
+          ],
+          [
+            0.557,
+            0.151
+          ],
+          [
+            0.545,
+            0.137
+          ],
+          [
+            0.543,
+            0.119
+          ],
+          [
+            0.549,
+            0.102
+          ],
+          [
+            0.561,
+            0.091
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5247,
+            0.1182
+          ],
+          [
+            0.5488,
+            0.0742
+          ],
+          [
+            0.5605,
+            0.0635
+          ],
+          [
+            0.5775,
+            0.0596
+          ],
+          [
+            0.5957,
+            0.0645
+          ],
+          [
+            0.6087,
+            0.0771
+          ],
+          [
+            0.627,
+            0.1045
+          ],
+          [
+            0.6302,
+            0.1221
+          ],
+          [
+            0.6055,
+            0.168
+          ],
+          [
+            0.5918,
+            0.1807
+          ],
+          [
+            0.5736,
+            0.1836
+          ],
+          [
+            0.5566,
+            0.1777
+          ],
+          [
+            0.5456,
+            0.165
+          ],
+          [
+            0.5267,
+            0.1367
+          ],
+          [
+            0.5247,
+            0.1211
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5247,
+          "y": 0.0596,
+          "w": 0.1061,
+          "h": 0.125
+        },
+        "territory_area_px": 14681,
+        "visible_area_px": 5833,
+        "expansion_ratio": 2.517,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-systemic-pressure-shadow-cavity",
+      "kind": "module",
+      "label": "systemic-pressure-shadow-cavity",
+      "artifact_type": "deep-graphite-shelving-cavity",
+      "bounds": {
+        "x": 0.756,
+        "y": 0.092,
+        "w": 0.06,
+        "h": 0.147
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.759,
+          0.093
+        ],
+        [
+          0.805,
+          0.093
+        ],
+        [
+          0.815,
+          0.108
+        ],
+        [
+          0.814,
+          0.235
+        ],
+        [
+          0.792,
+          0.239
+        ],
+        [
+          0.767,
+          0.231
+        ],
+        [
+          0.756,
+          0.208
+        ],
+        [
+          0.761,
+          0.163
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/module-systemic-pressure-shadow-cavity.svg",
+      "source_binding_ids": [
+        "binding-module-systemic-pressure-shadow-cavity"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1207,
+          157
+        ],
+        "safe_stage_window_origin_px": [
+          1215,
+          169
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.759,
+            0.093
+          ],
+          [
+            0.805,
+            0.093
+          ],
+          [
+            0.815,
+            0.108
+          ],
+          [
+            0.814,
+            0.235
+          ],
+          [
+            0.792,
+            0.239
+          ],
+          [
+            0.767,
+            0.231
+          ],
+          [
+            0.756,
+            0.208
+          ],
+          [
+            0.761,
+            0.163
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7376,
+            0.2041
+          ],
+          [
+            0.7402,
+            0.0928
+          ],
+          [
+            0.7585,
+            0.0654
+          ],
+          [
+            0.8047,
+            0.0654
+          ],
+          [
+            0.8327,
+            0.1074
+          ],
+          [
+            0.832,
+            0.2344
+          ],
+          [
+            0.8138,
+            0.2617
+          ],
+          [
+            0.7917,
+            0.2656
+          ],
+          [
+            0.7669,
+            0.2578
+          ],
+          [
+            0.7376,
+            0.207
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7376,
+          "y": 0.0654,
+          "w": 0.0957,
+          "h": 0.2012
+        },
+        "territory_area_px": 25935,
+        "visible_area_px": 12299,
+        "expansion_ratio": 2.109,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-plant-incubator-seed-bay",
+      "kind": "module",
+      "label": "plant-incubator-seed-bay",
+      "artifact_type": "small-sealed-warm-paper-bay",
+      "bounds": {
+        "x": 0.495,
+        "y": 0.261,
+        "w": 0.164,
+        "h": 0.091
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.496,
+          0.263
+        ],
+        [
+          0.638,
+          0.262
+        ],
+        [
+          0.657,
+          0.27
+        ],
+        [
+          0.656,
+          0.343
+        ],
+        [
+          0.646,
+          0.351
+        ],
+        [
+          0.502,
+          0.352
+        ],
+        [
+          0.495,
+          0.341
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/module-plant-incubator-seed-bay.svg",
+      "source_binding_ids": [
+        "binding-module-plant-incubator-seed-bay"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          886,
+          306
+        ],
+        "safe_stage_window_origin_px": [
+          906,
+          314
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.496,
+            0.263
+          ],
+          [
+            0.638,
+            0.262
+          ],
+          [
+            0.657,
+            0.27
+          ],
+          [
+            0.656,
+            0.343
+          ],
+          [
+            0.646,
+            0.351
+          ],
+          [
+            0.502,
+            0.352
+          ],
+          [
+            0.495,
+            0.341
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4766,
+            0.3027
+          ],
+          [
+            0.4772,
+            0.2627
+          ],
+          [
+            0.4954,
+            0.2354
+          ],
+          [
+            0.6374,
+            0.2344
+          ],
+          [
+            0.6589,
+            0.2451
+          ],
+          [
+            0.6738,
+            0.3398
+          ],
+          [
+            0.6458,
+            0.3779
+          ],
+          [
+            0.502,
+            0.3789
+          ],
+          [
+            0.4766,
+            0.3408
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4766,
+          "y": 0.2344,
+          "w": 0.1979,
+          "h": 0.1455
+        },
+        "territory_area_px": 39134,
+        "visible_area_px": 22390,
+        "expansion_ratio": 1.748,
+        "neighbors": [
+          {
+            "artifact_id": "hero-artist-company-registry-slab",
+            "shared_edge_px": 3864,
+            "direction": "left",
+            "distance_px": 438.4
+          },
+          {
+            "artifact_id": "module-misc-kindness-file-tab",
+            "shared_edge_px": 642,
+            "direction": "right",
+            "distance_px": 205.34
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-source-artifact-9",
+      "kind": "module",
+      "label": "Source Artifact 9",
+      "artifact_type": "blue-branching-conduit-knot",
+      "bounds": {
+        "x": 0.263,
+        "y": 0.195,
+        "w": 0.04,
+        "h": 0.051
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.278,
+          0.196
+        ],
+        [
+          0.293,
+          0.197
+        ],
+        [
+          0.302,
+          0.213
+        ],
+        [
+          0.298,
+          0.235
+        ],
+        [
+          0.287,
+          0.246
+        ],
+        [
+          0.273,
+          0.243
+        ],
+        [
+          0.264,
+          0.228
+        ],
+        [
+          0.263,
+          0.208
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/module-source-artifact-9.svg",
+      "source_binding_ids": [
+        "binding-module-source-artifact-9"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          435,
+          222
+        ],
+        "safe_stage_window_origin_px": [
+          440,
+          226
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.278,
+            0.196
+          ],
+          [
+            0.293,
+            0.197
+          ],
+          [
+            0.302,
+            0.213
+          ],
+          [
+            0.298,
+            0.235
+          ],
+          [
+            0.287,
+            0.246
+          ],
+          [
+            0.273,
+            0.243
+          ],
+          [
+            0.264,
+            0.228
+          ],
+          [
+            0.263,
+            0.208
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2441,
+            0.207
+          ],
+          [
+            0.2624,
+            0.1797
+          ],
+          [
+            0.278,
+            0.168
+          ],
+          [
+            0.293,
+            0.1689
+          ],
+          [
+            0.3197,
+            0.2129
+          ],
+          [
+            0.3158,
+            0.2344
+          ],
+          [
+            0.2865,
+            0.2725
+          ],
+          [
+            0.2728,
+            0.2695
+          ],
+          [
+            0.2454,
+            0.2275
+          ],
+          [
+            0.2441,
+            0.2119
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2441,
+          "y": 0.168,
+          "w": 0.0762,
+          "h": 0.1055
+        },
+        "territory_area_px": 8476,
+        "visible_area_px": 2372,
+        "expansion_ratio": 3.573,
+        "neighbors": [
+          {
+            "artifact_id": "hero-artist-company-registry-slab",
+            "shared_edge_px": 920,
+            "direction": "down",
+            "distance_px": 74.46
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-glass-plate-capture-scan-rail",
+      "kind": "module",
+      "label": "glass plate-capture-scan-rail",
+      "artifact_type": "cool-scanner-rail",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/module-glass-plate-capture-scan-rail.svg",
+      "source_binding_ids": [
+        "binding-module-glass-plate-capture-scan-rail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7012,
+            0.7598
+          ],
+          [
+            0.7194,
+            0.7324
+          ],
+          [
+            0.8997,
+            0.7324
+          ],
+          [
+            0.918,
+            0.7598
+          ],
+          [
+            0.918,
+            0.9199
+          ],
+          [
+            0.8997,
+            0.9473
+          ],
+          [
+            0.7194,
+            0.9473
+          ],
+          [
+            0.7012,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7012,
+          "y": 0.7324,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 72190,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.574,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-source-artifact-9-2",
+      "kind": "module",
+      "label": "Source Artifact 9",
+      "artifact_type": "source-artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "artist-company-document-cutaway",
+      "mask_path": "/editions/2026-09-21-artist-company-filing-vessel-v1/assets/masks/module-source-artifact-9-2.svg",
+      "source_binding_ids": [
+        "binding-module-source-artifact-9-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3516
+          ],
+          [
+            0.4577,
+            0.3613
+          ],
+          [
+            0.4577,
+            0.4893
+          ],
+          [
+            0.4395,
+            0.5166
+          ],
+          [
+            0.2799,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3516,
+          "w": 0.1966,
+          "h": 0.166
+        },
+        "territory_area_px": 48999,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.293,
+        "neighbors": [
+          {
+            "artifact_id": "hero-artist-company-registry-slab",
+            "shared_edge_px": 2172,
+            "direction": "up",
+            "distance_px": 187.65
+          }
+        ]
+      }
+    }
+  ]
+}

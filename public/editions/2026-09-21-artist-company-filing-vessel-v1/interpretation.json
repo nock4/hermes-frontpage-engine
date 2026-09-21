@@ -1,0 +1,382 @@
+{
+  "interpretation_id": "interp-2026-09-21-artist-company-filing-vessel-v1",
+  "edition_id": "2026-09-21-artist-company-filing-vessel-v1",
+  "plate_read_timestamp": "2026-09-21T08:22:13.726Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A cutaway civic filing vessel set inside a monumental archive hall: stacked papers, compressed file strata, glowing scanner rails, a stamped registry slab, a dark pressure cavity, a round glass inspection port, a teal-tabbed file pocket, and a small blue branching conduit are all visible and mappable as source windows.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "a civic archive machine learning to recognize artists",
+      "A cutaway civic filing vessel set inside a monumental archive hall: stacked papers, compressed file strata, glowing scanner rails, a stamped registry slab, a dark pressure cavity, a round glass inspection port, a teal-tabbed file pocket, and a small blue branching conduit are all visible and mappable as source windows.",
+      "civic-cutaway",
+      "document-strata",
+      "scanner-light"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "artist-company-registry-slab",
+      "paperless-receipt-archive-shelf",
+      "misc-kindness-file-tab",
+      "design-article-inspection-port",
+      "systemic-pressure-shadow-cavity",
+      "plant-incubator-seed-bay",
+      "Source Artifact 9",
+      "glass plate-capture-scan-rail"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "artist-company-document-cutaway",
+      "one public-scale filing vessel cut open in architectural section",
+      "an inserted artist-company registry slab interrupting older strata",
+      "receipt and contract layers compressed into readable seams",
+      "local preservation chamber with server-vent glints",
+      "colored tab notches and seal cavities acting as source-bearing apertures",
+      "large oxidized registry slab with circular seal",
+      "upper document strata and paper stacks"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: artist-company-document-cutaway.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-artist-company-registry-slab",
+      "kind": "hero",
+      "type": "oxidized-registry-slab-with-civic-seal",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.071,
+        "y": 0.244,
+        "w": 0.582,
+        "h": 0.108
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-paperless-receipt-archive-shelf",
+      "kind": "hero",
+      "type": "stacked-document-strata-shelf",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.456,
+        "h": 0.075
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-misc-kindness-file-tab",
+      "kind": "module",
+      "type": "teal-file-tab-notch",
+      "strength": 0.792024,
+      "bounds": {
+        "x": 0.661,
+        "y": 0.27,
+        "w": 0.089,
+        "h": 0.043
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-design-article-inspection-port",
+      "kind": "module",
+      "type": "round-glass-inspection-port",
+      "strength": 0.766224,
+      "bounds": {
+        "x": 0.543,
+        "y": 0.087,
+        "w": 0.069,
+        "h": 0.07
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-systemic-pressure-shadow-cavity",
+      "kind": "module",
+      "type": "deep-graphite-shelving-cavity",
+      "strength": 0.735096,
+      "bounds": {
+        "x": 0.756,
+        "y": 0.092,
+        "w": 0.06,
+        "h": 0.147
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-plant-incubator-seed-bay",
+      "kind": "module",
+      "type": "small-sealed-warm-paper-bay",
+      "strength": 0.697008,
+      "bounds": {
+        "x": 0.495,
+        "y": 0.261,
+        "w": 0.164,
+        "h": 0.091
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-source-artifact-9",
+      "kind": "module",
+      "type": "blue-branching-conduit-knot",
+      "strength": 0.6835200000000001,
+      "bounds": {
+        "x": 0.263,
+        "y": 0.195,
+        "w": 0.04,
+        "h": 0.051
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glass-plate-capture-scan-rail",
+      "kind": "module",
+      "type": "cool-scanner-rail",
+      "strength": 0.64984,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-source-artifact-9-2",
+      "kind": "module",
+      "type": "source-artifact",
+      "strength": 0.66382,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-artist-company-registry-slab-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.244,
+        "w": 0.582,
+        "h": 0.108
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-paperless-receipt-archive-shelf-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.456,
+        "h": 0.075
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-misc-kindness-file-tab-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.661,
+        "y": 0.27,
+        "w": 0.089,
+        "h": 0.043
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-design-article-inspection-port-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.543,
+        "y": 0.087,
+        "w": 0.069,
+        "h": 0.07
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-systemic-pressure-shadow-cavity-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.756,
+        "y": 0.092,
+        "w": 0.06,
+        "h": 0.147
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-plant-incubator-seed-bay-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.495,
+        "y": 0.261,
+        "w": 0.164,
+        "h": 0.091
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-source-artifact-9-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.263,
+        "y": 0.195,
+        "w": 0.04,
+        "h": 0.051
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-glass-plate-capture-scan-rail-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    },
+    {
+      "id": "module-source-artifact-9-2-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
