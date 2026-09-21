@@ -231,6 +231,7 @@ test.describe('live-stage window UX baselines', () => {
     await expect(previewWindow).toHaveClass(/source-window--tweet-provenance/)
     await expect(previewWindow.locator('iframe')).toHaveCount(0)
     await expect(previewWindow.locator('.tweet-provenance-card')).toContainText('open source')
+    await expect(previewWindow.locator('.source-window__close')).toBeVisible()
 
     await artifact.click({ force: true })
     await page.waitForTimeout(500)
