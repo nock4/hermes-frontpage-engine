@@ -1,0 +1,464 @@
+{
+  "analysis_id": "analysis-2026-09-22-botanical-memory-appliance-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A cutaway greige appliance body frames a convex rounded CRT glass aperture filled with a dense botanical scene: violet sky haze, lime foliage, orange-red flower flecks, black nested bevels, exposed sidewall conduits, perforated metal, lower slab slots, and small molded button nodes.",
+  "usable_surfaces": [
+    "convex rounded botanical glass",
+    "black nested inner bevel",
+    "greige molded casing cut edge",
+    "right exposed sidewall recess",
+    "dark lower conduit seam",
+    "perforated metal side plaque",
+    "lower molded button row",
+    "left copper conduit gesture",
+    "bottom base slot and shadow"
+  ],
+  "detected_objects": [
+    {
+      "label": "hero rounded glass botanical aperture",
+      "artifact_type": "rounded-crt-glass-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.313,
+        "y": 0.179,
+        "w": 0.406,
+        "h": 0.488
+      },
+      "polygon": [
+        [
+          0.346,
+          0.195
+        ],
+        [
+          0.418,
+          0.182
+        ],
+        [
+          0.603,
+          0.184
+        ],
+        [
+          0.689,
+          0.207
+        ],
+        [
+          0.716,
+          0.291
+        ],
+        [
+          0.716,
+          0.55
+        ],
+        [
+          0.686,
+          0.632
+        ],
+        [
+          0.603,
+          0.663
+        ],
+        [
+          0.397,
+          0.661
+        ],
+        [
+          0.331,
+          0.632
+        ],
+        [
+          0.314,
+          0.56
+        ],
+        [
+          0.315,
+          0.292
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "Large convex rounded screen with glossy edge, white specular highlights, and botanical image visible behind glass."
+    },
+    {
+      "label": "hero greige casing section cut",
+      "artifact_type": "molded-plastic-section-cut",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.157,
+        "y": 0.085,
+        "w": 0.684,
+        "h": 0.762
+      },
+      "polygon": [
+        [
+          0.193,
+          0.086
+        ],
+        [
+          0.806,
+          0.086
+        ],
+        [
+          0.839,
+          0.101
+        ],
+        [
+          0.842,
+          0.177
+        ],
+        [
+          0.815,
+          0.181
+        ],
+        [
+          0.815,
+          0.639
+        ],
+        [
+          0.841,
+          0.641
+        ],
+        [
+          0.841,
+          0.815
+        ],
+        [
+          0.807,
+          0.846
+        ],
+        [
+          0.181,
+          0.846
+        ],
+        [
+          0.158,
+          0.823
+        ],
+        [
+          0.158,
+          0.117
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Outer greige molded plastic shell with rounded corners, cutaway cavities, bevels, stains, and exposed appliance casing mass."
+    },
+    {
+      "label": "violet sky foliage strip",
+      "artifact_type": "posterized-botanical-glass-plate-band",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.336,
+        "y": 0.193,
+        "w": 0.362,
+        "h": 0.2
+      },
+      "polygon": [
+        [
+          0.348,
+          0.207
+        ],
+        [
+          0.417,
+          0.194
+        ],
+        [
+          0.555,
+          0.195
+        ],
+        [
+          0.664,
+          0.201
+        ],
+        [
+          0.697,
+          0.227
+        ],
+        [
+          0.69,
+          0.306
+        ],
+        [
+          0.648,
+          0.35
+        ],
+        [
+          0.568,
+          0.385
+        ],
+        [
+          0.463,
+          0.392
+        ],
+        [
+          0.374,
+          0.359
+        ],
+        [
+          0.34,
+          0.311
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Upper internal screen band shows violet-blue sky haze broken by dark branches, lime foliage, and chromatic bloom."
+    },
+    {
+      "label": "sidewall memory thumbnail recess",
+      "artifact_type": "cutaway-thumbnail-recess",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.756,
+        "y": 0.325,
+        "w": 0.055,
+        "h": 0.259
+      },
+      "polygon": [
+        [
+          0.77,
+          0.328
+        ],
+        [
+          0.797,
+          0.337
+        ],
+        [
+          0.809,
+          0.389
+        ],
+        [
+          0.804,
+          0.482
+        ],
+        [
+          0.797,
+          0.573
+        ],
+        [
+          0.771,
+          0.583
+        ],
+        [
+          0.758,
+          0.538
+        ],
+        [
+          0.76,
+          0.424
+        ]
+      ],
+      "confidence": 0.75,
+      "visual_evidence": "Right-side vertical recessed chamber contains dark strata, wires, and soft compressed color behind the casing edge."
+    },
+    {
+      "label": "Preference Specimen Tray",
+      "artifact_type": "inner-bevel-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.287,
+        "y": 0.687,
+        "w": 0.104,
+        "h": 0.045
+      },
+      "polygon": [
+        [
+          0.288,
+          0.689
+        ],
+        [
+          0.351,
+          0.689
+        ],
+        [
+          0.35,
+          0.697
+        ],
+        [
+          0.389,
+          0.7
+        ],
+        [
+          0.39,
+          0.722
+        ],
+        [
+          0.348,
+          0.722
+        ],
+        [
+          0.348,
+          0.731
+        ],
+        [
+          0.29,
+          0.729
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "Small interruptions and tabs along the lower black/greige nested frame form a restrained notch in the border."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.19,
+        "y": 0.113,
+        "w": 0.137,
+        "h": 0.619
+      },
+      "polygon": [
+        [
+          0.196,
+          0.116
+        ],
+        [
+          0.321,
+          0.116
+        ],
+        [
+          0.322,
+          0.144
+        ],
+        [
+          0.291,
+          0.151
+        ],
+        [
+          0.291,
+          0.694
+        ],
+        [
+          0.324,
+          0.7
+        ],
+        [
+          0.32,
+          0.728
+        ],
+        [
+          0.197,
+          0.728
+        ],
+        [
+          0.192,
+          0.596
+        ],
+        [
+          0.207,
+          0.594
+        ],
+        [
+          0.207,
+          0.238
+        ],
+        [
+          0.192,
+          0.234
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "Left-side layered cutaway fragment shows stacked casing ledges, copper tubes, brackets, dark cavities, and torn appliance section edges."
+    },
+    {
+      "label": "vision-model button node",
+      "artifact_type": "lower-right-molded-button-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "ansi-video base slot",
+      "artifact_type": "base-slot-glint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.895,
+    "rationale": "The plate stays centered and legible around one dominant CRT aperture and appliance casing, but dense botanical texture plus exposed sidewall cavities create many small competing marks."
+  },
+  "fallback_detected_object_count": 3,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-22-botanical-memory-appliance-v1"
+}
