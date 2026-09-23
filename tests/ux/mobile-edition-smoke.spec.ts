@@ -111,6 +111,15 @@ async function collectStageState(page: Page) {
   })
 }
 
+async function waitForSourceWindowSettle(page: Page, bindingId: string) {
+  await page.waitForFunction(({ expectedBindingId }) => {
+    const node = document.querySelector(`.stage-overlay-windows--live .source-window[data-binding-id="${expectedBindingId}"]`)
+    if (!node) return false
+    const animations = (node as HTMLElement).getAnimations({ subtree: true })
+    return animations.every((animation) => animation.playState === 'finished' || animation.playState === 'idle')
+  }, { expectedBindingId: bindingId }, { timeout: 1_800 }).catch(() => undefined)
+}
+
 async function collectWindowMetric(page: Page, bindingId: string, artifactLabel: string): Promise<MobileWindowMetric> {
   return await page.evaluate(({ expectedBindingId, expectedArtifactLabel }) => {
     const node = document.querySelector(`.stage-overlay-windows--live .source-window[data-binding-id="${expectedBindingId}"]`)
@@ -214,6 +223,7 @@ for (const viewport of mobileViewports) {
       const artifactButton = page.locator('button.artifact').nth(artifactIndex)
       await artifactButton.focus()
       await page.waitForTimeout(250)
+      await waitForSourceWindowSettle(page, binding.id)
 
       let metric = await collectWindowMetric(page, binding.id, label)
       if (!metric.exists) {
@@ -223,6 +233,7 @@ for (const viewport of mobileViewports) {
           button?.dispatchEvent(new MouseEvent('mouseover', { bubbles: true, cancelable: true }))
         }, artifactIndex)
         await page.waitForTimeout(350)
+        await waitForSourceWindowSettle(page, binding.id)
         metric = await collectWindowMetric(page, binding.id, label)
       }
 
