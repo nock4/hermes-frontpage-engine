@@ -1,0 +1,487 @@
+{
+  "analysis_id": "analysis-2026-09-23-browserless-website-garden-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "An isometric white-field garden plate with a dominant glossy charcoal ribbon cropped along the right edge, pale greenhouse and ruin surfaces scattered through the field, small colored registration blooms, ponds, kiosks, arches, stairs, and stippled terrain islands. The usable source marks are real visible apertures, facades, pools, overprint blocks, and garden-island contours rather than empty quadrants.",
+  "usable_surfaces": [
+    "upper oval void inside the black glossy ribbon",
+    "washed greenhouse facade cluster near the upper center",
+    "small glass garden kiosk with colored panels",
+    "lower-right translucent pyramid and CMY pocket",
+    "lower-center stippled rock-and-tree island",
+    "left-bottom ruined arch seam",
+    "lower-right serpentine charcoal road cut",
+    "right-center lily-pool halftone basin",
+    "central vertical CMY overprint sliver"
+  ],
+  "detected_objects": [
+    {
+      "label": "black curve aperture",
+      "artifact_type": "glossy-charcoal-oval-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.736,
+        "y": 0,
+        "w": 0.254,
+        "h": 0.226
+      },
+      "polygon": [
+        [
+          0.765,
+          0
+        ],
+        [
+          0.824,
+          0.004
+        ],
+        [
+          0.886,
+          0.018
+        ],
+        [
+          0.936,
+          0.047
+        ],
+        [
+          0.97,
+          0.09
+        ],
+        [
+          0.974,
+          0.137
+        ],
+        [
+          0.948,
+          0.184
+        ],
+        [
+          0.892,
+          0.215
+        ],
+        [
+          0.821,
+          0.222
+        ],
+        [
+          0.758,
+          0.199
+        ],
+        [
+          0.729,
+          0.149
+        ],
+        [
+          0.731,
+          0.086
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "The large black cropped ribbon at the upper-right contains a clear pale oval opening; its glossy dark rim and white interior read as a physical aperture into the source field."
+    },
+    {
+      "label": "pale web facade cluster",
+      "artifact_type": "washed-cyan-greenhouse-facade-cluster",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.383,
+        "y": 0.067,
+        "w": 0.184,
+        "h": 0.168
+      },
+      "polygon": [
+        [
+          0.407,
+          0.199
+        ],
+        [
+          0.391,
+          0.16
+        ],
+        [
+          0.408,
+          0.112
+        ],
+        [
+          0.447,
+          0.078
+        ],
+        [
+          0.498,
+          0.073
+        ],
+        [
+          0.54,
+          0.096
+        ],
+        [
+          0.561,
+          0.144
+        ],
+        [
+          0.552,
+          0.196
+        ],
+        [
+          0.509,
+          0.225
+        ],
+        [
+          0.449,
+          0.229
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "A pale arched greenhouse/web facade with green linework, pink-blue halftone wash, and dense garden ornament is visible near the upper center."
+    },
+    {
+      "label": "butterfly map kiosk",
+      "artifact_type": "miniature-glass-garden-kiosk",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.522,
+        "y": 0.584,
+        "w": 0.099,
+        "h": 0.137
+      },
+      "polygon": [
+        [
+          0.552,
+          0.585
+        ],
+        [
+          0.603,
+          0.612
+        ],
+        [
+          0.615,
+          0.681
+        ],
+        [
+          0.586,
+          0.713
+        ],
+        [
+          0.537,
+          0.707
+        ],
+        [
+          0.523,
+          0.657
+        ],
+        [
+          0.531,
+          0.61
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A small upright glass kiosk with turquoise framing, pink flowers, and colored panels stands near the lower middle-right as a discrete world object."
+    },
+    {
+      "label": "plastic pocket terrain",
+      "artifact_type": "coral-teal-magenta-pocket-terrain",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.612,
+        "y": 0.655,
+        "w": 0.147,
+        "h": 0.129
+      },
+      "polygon": [
+        [
+          0.636,
+          0.756
+        ],
+        [
+          0.617,
+          0.71
+        ],
+        [
+          0.646,
+          0.666
+        ],
+        [
+          0.702,
+          0.656
+        ],
+        [
+          0.748,
+          0.682
+        ],
+        [
+          0.756,
+          0.735
+        ],
+        [
+          0.713,
+          0.779
+        ],
+        [
+          0.666,
+          0.782
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "The lower-right translucent pyramid garden includes visible coral, teal, yellow, and magenta registration fragments embedded as a small terrain pocket."
+    },
+    {
+      "label": "primary atlas island",
+      "artifact_type": "stippled-rock-tree-terrain-island",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.312,
+        "y": 0.666,
+        "w": 0.205,
+        "h": 0.207
+      },
+      "polygon": [
+        [
+          0.333,
+          0.808
+        ],
+        [
+          0.321,
+          0.744
+        ],
+        [
+          0.356,
+          0.694
+        ],
+        [
+          0.424,
+          0.669
+        ],
+        [
+          0.487,
+          0.688
+        ],
+        [
+          0.514,
+          0.746
+        ],
+        [
+          0.493,
+          0.815
+        ],
+        [
+          0.434,
+          0.861
+        ],
+        [
+          0.365,
+          0.852
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A dominant lower-center garden island has stippled rocks, clustered trees, steps, and halftone color at its base, making it a strong source-bearing surface."
+    },
+    {
+      "label": "cathedral wash seam",
+      "artifact_type": "washed-blue-ruined-arch-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.74,
+        "w": 0.153,
+        "h": 0.201
+      },
+      "polygon": [
+        [
+          0,
+          0.872
+        ],
+        [
+          0.022,
+          0.784
+        ],
+        [
+          0.064,
+          0.747
+        ],
+        [
+          0.118,
+          0.76
+        ],
+        [
+          0.148,
+          0.814
+        ],
+        [
+          0.138,
+          0.901
+        ],
+        [
+          0.092,
+          0.936
+        ],
+        [
+          0.038,
+          0.924
+        ]
+      ],
+      "confidence": 0.81,
+      "visual_evidence": "The lower-left cropped ruin shows pale blue architectural wash, broken arch edges, stone uprights, and pink stipple dissolving into the white field."
+    },
+    {
+      "label": "charcoal road cut",
+      "artifact_type": "serpentine-charcoal-path-cut",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.78,
+        "y": 0.46,
+        "w": 0.21999999999999997,
+        "h": 0.54
+      },
+      "polygon": [
+        [
+          0.959,
+          0.465
+        ],
+        [
+          0.993,
+          0.52
+        ],
+        [
+          0.97,
+          0.607
+        ],
+        [
+          0.919,
+          0.693
+        ],
+        [
+          0.876,
+          0.776
+        ],
+        [
+          0.887,
+          0.88
+        ],
+        [
+          0.947,
+          1
+        ],
+        [
+          0.812,
+          1
+        ],
+        [
+          0.789,
+          0.905
+        ],
+        [
+          0.796,
+          0.805
+        ],
+        [
+          0.839,
+          0.701
+        ],
+        [
+          0.888,
+          0.608
+        ],
+        [
+          0.891,
+          0.523
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "The lower portion of the black ribbon forms a distinct serpentine cut through the right side of the plate, with a ragged charcoal texture and cropped edge."
+    },
+    {
+      "label": "exhibition overprint tile",
+      "artifact_type": "vertical-cmy-overprint-sliver",
+      "role": "label-surface",
+      "bounds": {
+        "x": 0.611,
+        "y": 0.298,
+        "w": 0.055,
+        "h": 0.086
+      },
+      "polygon": [
+        [
+          0.618,
+          0.301
+        ],
+        [
+          0.657,
+          0.319
+        ],
+        [
+          0.664,
+          0.365
+        ],
+        [
+          0.64,
+          0.383
+        ],
+        [
+          0.611,
+          0.363
+        ],
+        [
+          0.613,
+          0.325
+        ]
+      ],
+      "confidence": 0.72,
+      "visual_evidence": "A compact cyan-yellow-magenta vertical overprint block sits just right of the central garden mass, visibly cropped and tile-like at the plate edge of a local cluster."
+    },
+    {
+      "label": "memory cloud pool",
+      "artifact_type": "blue-green-halftone-lily-pool",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.708,
+        "y": 0.42,
+        "w": 0.113,
+        "h": 0.119
+      },
+      "polygon": [
+        [
+          0.718,
+          0.481
+        ],
+        [
+          0.728,
+          0.44
+        ],
+        [
+          0.764,
+          0.421
+        ],
+        [
+          0.804,
+          0.435
+        ],
+        [
+          0.819,
+          0.474
+        ],
+        [
+          0.803,
+          0.518
+        ],
+        [
+          0.76,
+          0.535
+        ],
+        [
+          0.724,
+          0.516
+        ]
+      ],
+      "confidence": 0.85,
+      "visual_evidence": "A small right-center blue-green pond with lily pads, ragged cyan halos, and stippled edge detail reads as a watery halftone pool."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 9,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.331,
+    "rationale": "The plate keeps a strong white field and one dominant black gesture, but the many miniature gardens, ruins, figures, color blooms, and repeated ponds make the scene dense enough to require careful tight mapping."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-23-browserless-website-garden-v1"
+}

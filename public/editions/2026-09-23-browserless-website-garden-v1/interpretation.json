@@ -1,0 +1,381 @@
+{
+  "interpretation_id": "interp-2026-09-23-browserless-website-garden-v1",
+  "edition_id": "2026-09-23-browserless-website-garden-v1",
+  "plate_read_timestamp": "2026-09-23T08:28:40.740Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "An isometric white-field garden plate with a dominant glossy charcoal ribbon cropped along the right edge, pale greenhouse and ruin surfaces scattered through the field, small colored registration blooms, ponds, kiosks, arches, stairs, and stippled terrain islands. The usable source marks are real visible apertures, facades, pools, overprint blocks, and garden-island contours rather than empty quadrants.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "bright web-garden misregistration with playful public-threshold pressure",
+      "An isometric white-field garden plate with a dominant glossy charcoal ribbon cropped along the right edge, pale greenhouse and ruin surfaces scattered through the field, small colored registration blooms, ponds, kiosks, arches, stairs, and stippled terrain islands. The usable source marks are real visible apertures, facades, pools, overprint blocks, and garden-island contours rather than empty quadrants.",
+      "risograph-atlas",
+      "white-field",
+      "web-garden"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "black curve aperture",
+      "pale web facade cluster",
+      "butterfly map kiosk",
+      "plastic pocket terrain",
+      "primary atlas island",
+      "cathedral wash seam",
+      "charcoal road cut",
+      "exhibition overprint tile"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "browserless-risograph-website-garden",
+      "heavy cropped black organic path mass at the right edge",
+      "distributed miniature web-garden kiosks and public threshold fragments",
+      "cyan and magenta registration seams around terrain islands",
+      "halftone garden pools, benches, railings, and pavilion silhouettes",
+      "edge-cropped media fragments partly leaving the panoramic field",
+      "upper oval void inside the black glossy ribbon",
+      "washed greenhouse facade cluster near the upper center"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: browserless-risograph-website-garden.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-black-curve-aperture",
+      "kind": "hero",
+      "type": "glossy-charcoal-oval-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.736,
+        "y": 0,
+        "w": 0.254,
+        "h": 0.226
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-pale-web-facade-cluster",
+      "kind": "hero",
+      "type": "washed-cyan-greenhouse-facade-cluster",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.383,
+        "y": 0.067,
+        "w": 0.184,
+        "h": 0.168
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-butterfly-map-kiosk",
+      "kind": "module",
+      "type": "miniature-glass-garden-kiosk",
+      "strength": 0.7865759999999999,
+      "bounds": {
+        "x": 0.522,
+        "y": 0.584,
+        "w": 0.099,
+        "h": 0.137
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-plastic-pocket-terrain",
+      "kind": "module",
+      "type": "coral-teal-magenta-pocket-terrain",
+      "strength": 0.7622760000000001,
+      "bounds": {
+        "x": 0.612,
+        "y": 0.655,
+        "w": 0.147,
+        "h": 0.129
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-primary-atlas-island",
+      "kind": "module",
+      "type": "stippled-rock-tree-terrain-island",
+      "strength": 0.730116,
+      "bounds": {
+        "x": 0.312,
+        "y": 0.666,
+        "w": 0.205,
+        "h": 0.207
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cathedral-wash-seam",
+      "kind": "module",
+      "type": "washed-blue-ruined-arch-seam",
+      "strength": 0.704028,
+      "bounds": {
+        "x": 0,
+        "y": 0.74,
+        "w": 0.153,
+        "h": 0.201
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-charcoal-road-cut",
+      "kind": "module",
+      "type": "serpentine-charcoal-path-cut",
+      "strength": 0.6534960000000001,
+      "bounds": {
+        "x": 0.78,
+        "y": 0.46,
+        "w": 0.21999999999999997,
+        "h": 0.54
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-exhibition-overprint-tile",
+      "kind": "module",
+      "type": "vertical-cmy-overprint-sliver",
+      "strength": 0.6623439999999999,
+      "bounds": {
+        "x": 0.611,
+        "y": 0.298,
+        "w": 0.055,
+        "h": 0.086
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-memory-cloud-pool",
+      "kind": "module",
+      "type": "blue-green-halftone-lily-pool",
+      "strength": 0.6539919999999999,
+      "bounds": {
+        "x": 0.708,
+        "y": 0.42,
+        "w": 0.113,
+        "h": 0.119
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-black-curve-aperture-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.736,
+        "y": 0,
+        "w": 0.254,
+        "h": 0.226
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-pale-web-facade-cluster-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.383,
+        "y": 0.067,
+        "w": 0.184,
+        "h": 0.168
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-butterfly-map-kiosk-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.522,
+        "y": 0.584,
+        "w": 0.099,
+        "h": 0.137
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-plastic-pocket-terrain-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.612,
+        "y": 0.655,
+        "w": 0.147,
+        "h": 0.129
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "pigment-crack-annotation"
+      ]
+    },
+    {
+      "id": "module-primary-atlas-island-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.312,
+        "y": 0.666,
+        "w": 0.205,
+        "h": 0.207
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cathedral-wash-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.74,
+        "w": 0.153,
+        "h": 0.201
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-charcoal-road-cut-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.78,
+        "y": 0.46,
+        "w": 0.21999999999999997,
+        "h": 0.54
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-exhibition-overprint-tile-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.611,
+        "y": 0.298,
+        "w": 0.055,
+        "h": 0.086
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-memory-cloud-pool-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.708,
+        "y": 0.42,
+        "w": 0.113,
+        "h": 0.119
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}
