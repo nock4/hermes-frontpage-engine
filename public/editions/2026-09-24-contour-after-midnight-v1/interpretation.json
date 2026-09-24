@@ -1,0 +1,279 @@
+{
+  "interpretation_id": "interp-2026-09-24-contour-after-midnight-v1",
+  "edition_id": "2026-09-24-contour-after-midnight-v1",
+  "plate_read_timestamp": "2026-09-24T08:11:15.897Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark field of fine horizontal contour lines gathers into a pale, sharply rising central relief. The surrounding stepped ridges are interrupted by black cutaways and a few small colored glints.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "A nocturnal relief interrupted by measured color.",
+      "A dark field of fine horizontal contour lines gathers into a pale, sharply rising central relief. The surrounding stepped ridges are interrupted by black cutaways and a few small colored glints.",
+      "digital-relief",
+      "chromatic-contours",
+      "black-voids"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Central pale relief",
+      "Broken lower trace",
+      "Stepped left ridge",
+      "Fine contour glint",
+      "Upper ridge fragment",
+      "Left lower sloped trace"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "chromatic-contour-night-relief",
+      "dominant central relief peak",
+      "separated low ridge bands",
+      "hard black apertures",
+      "broken lower-third color trace",
+      "sparse isolated pulse marks",
+      "central pale peak and descending contour",
+      "interrupted lavender-white lower ridge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: chromatic-contour-night-relief.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-central-pale-relief",
+      "kind": "hero",
+      "type": "raised-contour-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.378,
+        "y": 0.027,
+        "w": 0.208,
+        "h": 0.508
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-broken-lower-trace",
+      "kind": "hero",
+      "type": "chromatic-ridge-seam",
+      "strength": 0.985412,
+      "bounds": {
+        "x": 0.391,
+        "y": 0.481,
+        "w": 0.367,
+        "h": 0.249
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stepped-left-ridge",
+      "kind": "module",
+      "type": "pixel-edge-cutaway",
+      "strength": 0.780636,
+      "bounds": {
+        "x": 0.234,
+        "y": 0.289,
+        "w": 0.115,
+        "h": 0.167
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fine-contour-glint",
+      "kind": "module",
+      "type": "contour-line-aperture",
+      "strength": 0.76854,
+      "bounds": {
+        "x": 0.431,
+        "y": 0.337,
+        "w": 0.092,
+        "h": 0.109
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-ridge-fragment",
+      "kind": "module",
+      "type": "chromatic-edge-glint",
+      "strength": 0.724044,
+      "bounds": {
+        "x": 0.646,
+        "y": 0.033,
+        "w": 0.315,
+        "h": 0.231
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-lower-sloped-trace",
+      "kind": "module",
+      "type": "chromatic-ridge-seam",
+      "strength": 0.682416,
+      "bounds": {
+        "x": 0.028,
+        "y": 0.637,
+        "w": 0.289,
+        "h": 0.195
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-central-pale-relief-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.378,
+        "y": 0.027,
+        "w": 0.208,
+        "h": 0.508
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-broken-lower-trace-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.391,
+        "y": 0.481,
+        "w": 0.367,
+        "h": 0.249
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stepped-left-ridge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.234,
+        "y": 0.289,
+        "w": 0.115,
+        "h": 0.167
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-fine-contour-glint-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.431,
+        "y": 0.337,
+        "w": 0.092,
+        "h": 0.109
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-ridge-fragment-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.646,
+        "y": 0.033,
+        "w": 0.315,
+        "h": 0.231
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-left-lower-sloped-trace-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.028,
+        "y": 0.637,
+        "w": 0.289,
+        "h": 0.195
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
