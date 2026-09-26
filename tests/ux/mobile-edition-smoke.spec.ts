@@ -43,6 +43,7 @@ type MobileWindowMetric = {
   titleVisible: boolean
   mediaAreaRatio: number
   sourceVisualMode: string | null
+  sourceVisualImageUrl: string | null
   hasAmbientFill: boolean
 }
 
@@ -150,6 +151,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
         titleVisible: false,
         mediaAreaRatio: 0,
         sourceVisualMode: null,
+        sourceVisualImageUrl: null,
         hasAmbientFill: false,
       }
     }
@@ -215,6 +217,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
     const text = (node.textContent || '').replace(/\s+/g, ' ').trim()
     const visualCard = node.querySelector('.visual-source-card')
     const sourceVisualMode = visualCard?.getAttribute('data-source-visual-mode') || null
+    const sourceVisualImageUrl = visualCard?.querySelector('img.visual-source-card__image')?.getAttribute('src') || null
     const figure = visualCard?.querySelector('.visual-source-card__figure')
     const ambientStyle = figure ? window.getComputedStyle(figure, '::before') : null
     const hasAmbientFill = Boolean(ambientStyle
@@ -239,6 +242,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       titleVisible,
       mediaAreaRatio: rect.width > 0 && rect.height > 0 ? largestMediaArea / (rect.width * rect.height) : 0,
       sourceVisualMode,
+      sourceVisualImageUrl,
       hasAmbientFill,
     }
   }, { expectedBindingId: bindingId, expectedArtifactLabel: artifactLabel })
@@ -318,6 +322,8 @@ for (const viewport of mobileViewports) {
       if (viewport.name === 'mobile-landscape' && binding.source_media_type !== 'video' && (binding.source_media_url || binding.source_image_url)) {
         if (metric.sourceVisualMode !== 'raw') failures.push(`${viewport.name} / ${label}: still-image source must use contained raw media in short landscape (mode=${metric.sourceVisualMode})`)
         if (!metric.hasAmbientFill) failures.push(`${viewport.name} / ${label}: contained landscape source is missing blurred ambient fill`)
+        const expectedRawImageUrl = binding.source_media_url || binding.source_image_url || null
+        if (expectedRawImageUrl && metric.sourceVisualImageUrl !== expectedRawImageUrl) failures.push(`${viewport.name} / ${label}: landscape still must render the original source image, not its poster crop`)
         if (metric.sourceVisualMode === 'raw' && metric.height < viewport.height * 0.55) failures.push(`${viewport.name} / ${label}: landscape source aperture is too short to show the image (${Math.round(metric.height)}px < ${Math.round(viewport.height * 0.55)}px)`)
       }
 
@@ -364,6 +370,8 @@ for (const viewport of mobileViewports) {
           if (!primaryMetric.closeOverRawCard) failures.push(`${viewport.name} / primary source: close control is not anchored over the media card`)
           if (viewport.name === 'mobile-landscape' && primaryBinding.source_media_type !== 'video') {
             if (primaryMetric.sourceVisualMode !== 'raw' || !primaryMetric.hasAmbientFill) failures.push(`${viewport.name} / primary source: short-landscape raw media mode/ambient fill is missing`)
+            const expectedRawImageUrl = primaryBinding.source_media_url || primaryBinding.source_image_url || null
+            if (expectedRawImageUrl && primaryMetric.sourceVisualImageUrl !== expectedRawImageUrl) failures.push(`${viewport.name} / primary source: landscape still must render the original source image, not its poster crop`)
             if (primaryMetric.height < viewport.height * 0.55) failures.push(`${viewport.name} / primary source: clicked source aperture is too short (${Math.round(primaryMetric.height)}px < ${Math.round(viewport.height * 0.55)}px)`)
           }
           await page.screenshot({ path: path.join(reportRoot, `${viewport.name}-primary-open.png`), fullPage: false })

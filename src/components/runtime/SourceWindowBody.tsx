@@ -140,7 +140,7 @@ function shouldBypassPosterCrop(binding: SourceBindingRecord, fallbackUrl: strin
 }
 
 export function getSourceVisualImageUrl(binding: SourceBindingRecord, fallbackUrl: string | null) {
-  if (shouldBypassPosterCrop(binding, fallbackUrl)) return fallbackUrl
+  if (shouldBypassPosterCrop(binding, fallbackUrl) || isShortLandscapeViewport()) return fallbackUrl
   return binding.source_visual?.poster_asset_path || fallbackUrl
 }
 

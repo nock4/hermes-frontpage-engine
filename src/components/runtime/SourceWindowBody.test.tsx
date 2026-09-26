@@ -31,7 +31,7 @@ describe('source visual crop fallback', () => {
     const binding = makeBinding('low')
 
     try {
-      expect(getSourceVisualImageUrl(binding, binding.source_media_url ?? null)).toBe('/editions/test/assets/source-poster.jpg')
+      expect(getSourceVisualImageUrl(binding, binding.source_media_url ?? null)).toBe(binding.source_media_url)
       expect(getSourceVisualMode(binding, binding.source_media_url ?? null)).toBe('raw')
     } finally {
       vi.unstubAllGlobals()
