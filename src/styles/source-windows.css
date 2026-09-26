@@ -4980,6 +4980,28 @@
   .source-window--stage.source-window--preview .visual-source-card__caption {
     display: none !important;
   }
+
+  .source-window--stage.source-window--primary.source-window--rich-preview-stage {
+    left: 0.5rem !important;
+    right: auto !important;
+    width: min(24rem, calc(100vw - 1rem)) !important;
+    max-width: calc(100vw - 1rem) !important;
+    max-height: min(82dvh, calc(100dvh - 1rem)) !important;
+  }
+
+  .source-window--stage.source-window--primary.source-window--rich-preview-stage .source-window__floating-actions {
+    top: 0.4rem !important;
+    right: 0.4rem !important;
+    z-index: 8 !important;
+  }
+
+  .source-window--stage.source-window--primary.source-window--rich-preview-stage .source-window__close--floating {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    border-color: rgba(255, 255, 255, 0.72);
+    background: rgba(0, 0, 0, 0.86);
+    color: #fff;
+  }
 }
 
 

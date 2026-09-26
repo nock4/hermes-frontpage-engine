@@ -40,6 +40,7 @@ type MobileWindowMetric = {
   hasVisibleClose: boolean
   closeOverRawCard: boolean
   captionVisible: boolean
+  titleVisible: boolean
   mediaAreaRatio: number
   sourceVisualMode: string | null
   hasAmbientFill: boolean
@@ -146,6 +147,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
         hasVisibleClose: false,
         closeOverRawCard: false,
         captionVisible: false,
+        titleVisible: false,
         mediaAreaRatio: 0,
         sourceVisualMode: null,
         hasAmbientFill: false,
@@ -196,6 +198,20 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       && captionStyle.display !== 'none'
       && captionStyle.visibility !== 'hidden'
       && Number(captionStyle.opacity || '1') > 0.01)
+    const title = node.querySelector('.visual-source-card__title') as HTMLElement | null
+    const titleRect = title?.getBoundingClientRect()
+    const titleStyle = title ? window.getComputedStyle(title) : null
+    const titleVisible = Boolean(titleRect
+      && titleStyle
+      && titleStyle.display !== 'none'
+      && titleStyle.visibility !== 'hidden'
+      && Number(titleStyle.opacity || '1') > 0.01
+      && titleRect.width >= 24
+      && titleRect.height >= 8
+      && titleRect.left >= -1
+      && titleRect.top >= -1
+      && titleRect.right <= window.innerWidth + 1
+      && titleRect.bottom <= window.innerHeight + 1)
     const text = (node.textContent || '').replace(/\s+/g, ' ').trim()
     const visualCard = node.querySelector('.visual-source-card')
     const sourceVisualMode = visualCard?.getAttribute('data-source-visual-mode') || null
@@ -220,6 +236,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       hasVisibleClose,
       closeOverRawCard,
       captionVisible,
+      titleVisible,
       mediaAreaRatio: rect.width > 0 && rect.height > 0 ? largestMediaArea / (rect.width * rect.height) : 0,
       sourceVisualMode,
       hasAmbientFill,
@@ -258,6 +275,7 @@ for (const viewport of mobileViewports) {
     const artifactMap = readEditionJson<{ artifacts: ArtifactRecord[] }>(currentEdition, 'artifact-map.json')
     const metrics: MobileWindowMetric[] = []
     const failures: string[] = []
+    let primaryMetric: MobileWindowMetric | null = null
 
     for (const binding of sourceBindings.bindings) {
       const artifactIndex = artifactMap.artifacts.findIndex((artifact) => artifact.id === binding.artifact_id)
@@ -308,9 +326,54 @@ for (const viewport of mobileViewports) {
       }
     }
 
+    const primaryBinding = sourceBindings.bindings[0]
+    if (primaryBinding) {
+      const primaryArtifactIndex = artifactMap.artifacts.findIndex((artifact) => artifact.id === primaryBinding.artifact_id)
+      if (primaryArtifactIndex < 0) {
+        failures.push(`${viewport.name} / ${primaryBinding.artifact_id}: primary source binding has no artifact`)
+      } else {
+        await gotoLiveEdition(page)
+        const primaryArtifactButton = page.locator('button.artifact').nth(primaryArtifactIndex)
+        const point = await primaryArtifactButton.evaluate((node) => {
+          const element = node as HTMLElement
+          const rect = element.getBoundingClientRect()
+          for (const xStep of [0.5, 0.35, 0.65, 0.2, 0.8]) {
+            for (const yStep of [0.5, 0.35, 0.65, 0.2, 0.8]) {
+              const x = rect.left + rect.width * xStep
+              const y = rect.top + rect.height * yStep
+              const hit = document.elementFromPoint(x, y)
+              if (hit === element || element.contains(hit)) return { x, y }
+            }
+          }
+          return null
+        })
+        if (!point) {
+          failures.push(`${viewport.name} / ${primaryBinding.artifact_id}: no visible hit point to open primary source window`)
+        } else {
+          await page.mouse.click(point.x, point.y)
+          const primaryWindow = page.locator(`.stage-overlay-windows--live .source-window[data-binding-id="${primaryBinding.id}"]`)
+          await expect(primaryWindow).toHaveAttribute('data-source-window-mode', 'primary', { timeout: 8_000 })
+          await waitForSourceWindowSettle(page, primaryBinding.id)
+          primaryMetric = await collectWindowMetric(page, primaryBinding.id, primaryBinding.title || primaryBinding.artifact_id)
+          if (!primaryMetric.exists) failures.push(`${viewport.name} / primary source: clicked source window did not open`)
+          if (primaryMetric.clipped) failures.push(`${viewport.name} / primary source: clicked source window is clipped by mobile viewport`)
+          if (primaryMetric.width < Math.min(240, viewport.width - 24)) failures.push(`${viewport.name} / primary source: clicked source window is too narrow (${Math.round(primaryMetric.width)}px)`)
+          if (!primaryMetric.hasVisibleMedia || primaryMetric.mediaAreaRatio < 0.22) failures.push(`${viewport.name} / primary source: clicked source window does not keep media dominant (${primaryMetric.mediaAreaRatio.toFixed(2)})`)
+          if (!primaryMetric.titleVisible) failures.push(`${viewport.name} / primary source: compact source title is not fully visible`)
+          if (!primaryMetric.hasReachableClose || !primaryMetric.hasVisibleClose) failures.push(`${viewport.name} / primary source: close control is not visible and reachable`)
+          if (!primaryMetric.closeOverRawCard) failures.push(`${viewport.name} / primary source: close control is not anchored over the media card`)
+          if (viewport.name === 'mobile-landscape' && primaryBinding.source_media_type !== 'video') {
+            if (primaryMetric.sourceVisualMode !== 'raw' || !primaryMetric.hasAmbientFill) failures.push(`${viewport.name} / primary source: short-landscape raw media mode/ambient fill is missing`)
+            if (primaryMetric.height < viewport.height * 0.55) failures.push(`${viewport.name} / primary source: clicked source aperture is too short (${Math.round(primaryMetric.height)}px < ${Math.round(viewport.height * 0.55)}px)`)
+          }
+          await page.screenshot({ path: path.join(reportRoot, `${viewport.name}-primary-open.png`), fullPage: false })
+        }
+      }
+    }
+
     fs.writeFileSync(
       path.join(reportRoot, `${viewport.name}-report.json`),
-      `${JSON.stringify({ viewport, edition: currentEdition.edition_id, metrics, failures, popups }, null, 2)}\n`,
+      `${JSON.stringify({ viewport, edition: currentEdition.edition_id, metrics, primaryMetric, failures, popups }, null, 2)}\n`,
     )
 
     expect(failures).toEqual([])
