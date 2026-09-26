@@ -134,11 +134,12 @@ function shouldBypassPosterCrop(binding: SourceBindingRecord, fallbackUrl: strin
   return Boolean(
     fallbackUrl
     && binding.source_visual?.render_mode === 'poster-crop'
-    && binding.source_visual?.crop_risk === 'high',
+    && binding.source_visual?.crop_risk
+    && binding.source_visual.crop_risk !== 'low',
   )
 }
 
-function getSourceVisualImageUrl(binding: SourceBindingRecord, fallbackUrl: string | null) {
+export function getSourceVisualImageUrl(binding: SourceBindingRecord, fallbackUrl: string | null) {
   if (shouldBypassPosterCrop(binding, fallbackUrl)) return fallbackUrl
   return binding.source_visual?.poster_asset_path || fallbackUrl
 }
@@ -152,9 +153,9 @@ function getSourceMediaType(binding: SourceBindingRecord) {
   return binding.source_media_type === 'video' ? 'video' : 'image'
 }
 
-function getSourceVisualMode(binding: SourceBindingRecord, fallbackUrl: string | null) {
-  if (binding.source_media_url) return 'poster-crop'
+export function getSourceVisualMode(binding: SourceBindingRecord, fallbackUrl: string | null) {
   if (shouldBypassPosterCrop(binding, fallbackUrl)) return 'raw'
+  if (binding.source_media_url) return 'poster-crop'
   return binding.source_visual?.render_mode || 'raw'
 }
 
