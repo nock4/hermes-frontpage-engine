@@ -40,6 +40,7 @@ type MobileWindowMetric = {
   hasVisibleClose: boolean
   closeOverRawCard: boolean
   captionVisible: boolean
+  captionOverMedia: boolean
   titleVisible: boolean
   mediaAreaRatio: number
   sourceVisualMode: string | null
@@ -148,6 +149,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
         hasVisibleClose: false,
         closeOverRawCard: false,
         captionVisible: false,
+        captionOverMedia: false,
         titleVisible: false,
         mediaAreaRatio: 0,
         sourceVisualMode: null,
@@ -188,6 +190,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       && Number(closeStyle.opacity || '1') > 0.5
       && (close === closeHitTarget || close?.contains(closeHitTarget)))
     const rawCard = node.querySelector('.visual-source-card[data-source-visual-mode="raw"]')
+    const visualCard = node.querySelector('.visual-source-card')
     const rawCardRect = rawCard?.getBoundingClientRect()
     const closeOverRawCard = !rawCard || Boolean(closeRect && rawCardRect
       && closeRect.left >= rawCardRect.left - 1
@@ -200,7 +203,19 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       && captionStyle.display !== 'none'
       && captionStyle.visibility !== 'hidden'
       && Number(captionStyle.opacity || '1') > 0.01)
-    const title = node.querySelector('.visual-source-card__title') as HTMLElement | null
+    const captionRect = caption?.getBoundingClientRect()
+    const figureRect = visualCard?.querySelector('.visual-source-card__figure')?.getBoundingClientRect()
+    const captionOverlapWidth = captionRect && figureRect
+      ? Math.max(0, Math.min(captionRect.right, figureRect.right) - Math.max(captionRect.left, figureRect.left))
+      : 0
+    const captionOverlapHeight = captionRect && figureRect
+      ? Math.max(0, Math.min(captionRect.bottom, figureRect.bottom) - Math.max(captionRect.top, figureRect.top))
+      : 0
+    const captionOverMedia = captionVisible && captionOverlapWidth * captionOverlapHeight > 12
+    const isPreviewMode = node.getAttribute('data-source-window-mode') === 'preview'
+    const title = (isPreviewMode
+      ? node.querySelector('.visual-source-card__edge-title')
+      : node.querySelector('.visual-source-card__title')) as HTMLElement | null
     const titleRect = title?.getBoundingClientRect()
     const titleStyle = title ? window.getComputedStyle(title) : null
     const titleVisible = Boolean(titleRect
@@ -208,14 +223,14 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       && titleStyle.display !== 'none'
       && titleStyle.visibility !== 'hidden'
       && Number(titleStyle.opacity || '1') > 0.01
-      && titleRect.width >= 24
-      && titleRect.height >= 8
+      && Number.parseFloat(titleStyle.fontSize) >= 10
+      && titleRect.width >= 64
+      && titleRect.height >= 12
       && titleRect.left >= -1
       && titleRect.top >= -1
       && titleRect.right <= window.innerWidth + 1
       && titleRect.bottom <= window.innerHeight + 1)
     const text = (node.textContent || '').replace(/\s+/g, ' ').trim()
-    const visualCard = node.querySelector('.visual-source-card')
     const sourceVisualMode = visualCard?.getAttribute('data-source-visual-mode') || null
     const sourceVisualImageUrl = visualCard?.querySelector('img.visual-source-card__image')?.getAttribute('src') || null
     const figure = visualCard?.querySelector('.visual-source-card__figure')
@@ -239,6 +254,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       hasVisibleClose,
       closeOverRawCard,
       captionVisible,
+      captionOverMedia,
       titleVisible,
       mediaAreaRatio: rect.width > 0 && rect.height > 0 ? largestMediaArea / (rect.width * rect.height) : 0,
       sourceVisualMode,
@@ -316,7 +332,8 @@ for (const viewport of mobileViewports) {
       if (!metric.hasReachableClose) failures.push(`${viewport.name} / ${label}: source window close control is not reachable on mobile`)
       if (!metric.hasVisibleClose) failures.push(`${viewport.name} / ${label}: source window close control is not visibly on top of the source surface`)
       if (!metric.closeOverRawCard) failures.push(`${viewport.name} / ${label}: close control is not anchored to the raw-media card`)
-      if (metric.captionVisible) failures.push(`${viewport.name} / ${label}: source caption overlays the media surface`)
+      if (metric.captionOverMedia) failures.push(`${viewport.name} / ${label}: source title overlaps and obscures the media surface`)
+      if (metrics.length === 1 && metric.sourceVisualMode && !metric.titleVisible) failures.push(`${viewport.name} / ${label}: image-backed preview has no readable source title`)
       if (!metric.hasVisibleMedia && !metric.hasReadableText) failures.push(`${viewport.name} / ${label}: source window has no visible media or readable fallback`)
       if (metric.hasVisibleMedia && metric.mediaAreaRatio < 0.22) failures.push(`${viewport.name} / ${label}: source media is too small in the mobile source window (${metric.mediaAreaRatio.toFixed(2)} < 0.22)`)
       if (viewport.name === 'mobile-landscape' && binding.source_media_type !== 'video' && (binding.source_media_url || binding.source_image_url)) {

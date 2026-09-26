@@ -251,6 +251,7 @@ function SourceImageTitleCard({
       <div className="visual-source-card__caption">
         <strong className="visual-source-card__title">{edgeTitle}</strong>
       </div>
+      <div className="visual-source-card__edge-title">{edgeTitle}</div>
     </>
   )
 

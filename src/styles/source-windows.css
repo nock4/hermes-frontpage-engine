@@ -3917,6 +3917,10 @@
   gap: 0.34rem;
 }
 
+.visual-source-card__edge-title {
+  display: none;
+}
+
 .source-window--stage.source-window--poster-window .visual-source-card__caption,
 .source-window--stage.source-window--bleed-embed .visual-source-card__caption {
   position: absolute;
@@ -4977,8 +4981,57 @@
     pointer-events: auto !important;
   }
 
-  .source-window--stage.source-window--preview .visual-source-card__caption {
+  .source-window--stage.source-window--preview:not(:has(.visual-source-card[data-has-source-visual='true'])) .visual-source-card__caption {
     display: none !important;
+  }
+
+  .source-window--stage.source-window--preview:has(.visual-source-card[data-source-visual-mode='raw']) .visual-source-card {
+    width: min(82vh, 20rem, calc(100vw - 1.25rem)) !important;
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    margin-inline: auto;
+  }
+
+  .source-window--stage.source-window--preview:has(.visual-source-card[data-source-visual-mode='raw']) .visual-source-card__figure {
+    min-height: 0 !important;
+    height: min(52vh, 20rem) !important;
+    max-height: min(52vh, 20rem) !important;
+    aspect-ratio: auto !important;
+  }
+
+  .source-window--stage.source-window--preview:has(.visual-source-card[data-source-visual-mode='poster-crop']) .visual-source-card {
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+  }
+
+  .source-window--stage.source-window--preview:has(.visual-source-card[data-has-source-visual='true']) .visual-source-card__caption {
+    display: none !important;
+  }
+
+  .source-window--stage.source-window--preview:has(.visual-source-card[data-has-source-visual='true']) .visual-source-card__edge-title {
+    position: relative;
+    z-index: 2;
+    display: block !important;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+    padding: 0.28rem 0.42rem 0.32rem;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 244, 218, 0.2);
+    background: linear-gradient(90deg, rgba(8, 8, 9, 0.9), rgba(8, 8, 9, 0.66));
+    color: rgba(255, 250, 238, 0.92);
+    font-family: var(--source-card-title-font, 'DFE Fraunces', 'DFE Newsreader', Georgia, serif);
+    font-size: clamp(0.68rem, 0.58rem + 0.35vw, 0.82rem) !important;
+    font-weight: 650;
+    line-height: 1.2 !important;
+    letter-spacing: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+    pointer-events: none;
   }
 
   .source-window--stage.source-window--primary.source-window--rich-preview-stage {
