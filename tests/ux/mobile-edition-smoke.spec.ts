@@ -34,6 +34,9 @@ type MobileWindowMetric = {
   hasVisibleMedia: boolean
   hasReadableText: boolean
   hasReachableClose: boolean
+  hasVisibleClose: boolean
+  closeOverRawCard: boolean
+  captionVisible: boolean
   mediaAreaRatio: number
 }
 
@@ -135,6 +138,9 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
         hasVisibleMedia: false,
         hasReadableText: false,
         hasReachableClose: false,
+        hasVisibleClose: false,
+        closeOverRawCard: false,
+        captionVisible: false,
         mediaAreaRatio: 0,
       }
     }
@@ -151,7 +157,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       if (visible) largestMediaArea = Math.max(largestMediaArea, mediaRect.width * mediaRect.height)
       return visible
     })
-    const close = node.querySelector('.source-window__close')
+    const close = node.querySelector('.source-window__close') as HTMLElement | null
     const closeRect = close?.getBoundingClientRect()
     const hasReachableClose = Boolean(closeRect
       && closeRect.width >= 32
@@ -160,6 +166,29 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       && closeRect.top >= -1
       && closeRect.right <= window.innerWidth + 1
       && closeRect.bottom <= window.innerHeight + 1)
+    const closeStyle = close ? window.getComputedStyle(close) : null
+    const closeCenterX = closeRect ? closeRect.left + closeRect.width / 2 : -1
+    const closeCenterY = closeRect ? closeRect.top + closeRect.height / 2 : -1
+    const closeHitTarget = closeRect ? document.elementFromPoint(closeCenterX, closeCenterY) : null
+    const hasVisibleClose = Boolean(hasReachableClose
+      && closeStyle
+      && closeStyle.display !== 'none'
+      && closeStyle.visibility === 'visible'
+      && Number(closeStyle.opacity || '1') > 0.5
+      && (close === closeHitTarget || close?.contains(closeHitTarget)))
+    const rawCard = node.querySelector('.visual-source-card[data-source-visual-mode="raw"]')
+    const rawCardRect = rawCard?.getBoundingClientRect()
+    const closeOverRawCard = !rawCard || Boolean(closeRect && rawCardRect
+      && closeRect.left >= rawCardRect.left - 1
+      && closeRect.right <= rawCardRect.right + 1
+      && closeCenterX > rawCardRect.left + rawCardRect.width * 0.68
+      && closeCenterY < rawCardRect.top + rawCardRect.height * 0.25)
+    const caption = node.querySelector('.visual-source-card__caption') as HTMLElement | null
+    const captionStyle = caption ? window.getComputedStyle(caption) : null
+    const captionVisible = Boolean(captionStyle
+      && captionStyle.display !== 'none'
+      && captionStyle.visibility !== 'hidden'
+      && Number(captionStyle.opacity || '1') > 0.01)
     const text = (node.textContent || '').replace(/\s+/g, ' ').trim()
 
     return {
@@ -173,6 +202,9 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       hasVisibleMedia: visibleMedia,
       hasReadableText: text.length >= 12,
       hasReachableClose,
+      hasVisibleClose,
+      closeOverRawCard,
+      captionVisible,
       mediaAreaRatio: rect.width > 0 && rect.height > 0 ? largestMediaArea / (rect.width * rect.height) : 0,
     }
   }, { expectedBindingId: bindingId, expectedArtifactLabel: artifactLabel })
@@ -243,6 +275,9 @@ for (const viewport of mobileViewports) {
       if (metric.width < minimumReadableWidth - 1) failures.push(`${viewport.name} / ${label}: source window too narrow for readable source card (${Math.round(metric.width)}px < ${minimumReadableWidth}px)`)
       if (metric.clipped) failures.push(`${viewport.name} / ${label}: source window clipped by mobile viewport`)
       if (!metric.hasReachableClose) failures.push(`${viewport.name} / ${label}: source window close control is not reachable on mobile`)
+      if (!metric.hasVisibleClose) failures.push(`${viewport.name} / ${label}: source window close control is not visibly on top of the source surface`)
+      if (!metric.closeOverRawCard) failures.push(`${viewport.name} / ${label}: close control is not anchored to the raw-media card`)
+      if (metric.captionVisible) failures.push(`${viewport.name} / ${label}: source caption overlays the media surface`)
       if (!metric.hasVisibleMedia && !metric.hasReadableText) failures.push(`${viewport.name} / ${label}: source window has no visible media or readable fallback`)
       if (metric.hasVisibleMedia && metric.mediaAreaRatio < 0.22) failures.push(`${viewport.name} / ${label}: source media is too small in the mobile source window (${metric.mediaAreaRatio.toFixed(2)} < 0.22)`)
 

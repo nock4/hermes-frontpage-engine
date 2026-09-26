@@ -108,6 +108,7 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
     not_renderable: 0,
   }
   const fetch_status_counts = {}
+  const countedRenderableKeys = new Set()
   const examples = {
     repeated_by_archive_ledger: [],
     ai_tooling_quarantined: [],
@@ -144,7 +145,10 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
       remember('blocked_or_unavailable', source)
     }
     const score = sourceContentScore(source, recentSourceKeys)
-    if (renderable && Number.isFinite(score)) buckets.non_duplicate_renderable_surfaces += 1
+    if (renderable && Number.isFinite(score) && key && !countedRenderableKeys.has(key)) {
+      countedRenderableKeys.add(key)
+      buckets.non_duplicate_renderable_surfaces += 1
+    }
     if (!renderable) {
       buckets.not_renderable += 1
       remember('not_renderable', source)

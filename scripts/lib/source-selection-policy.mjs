@@ -42,7 +42,7 @@ function providerEmbedStatus(source) {
 }
 
 function preferredCanonicalUrl(source) {
-  const urls = [source?.final_url, source?.source_url, source?.url].filter(Boolean)
+  const urls = [source?.source_url, source?.url, source?.final_url].filter(Boolean)
   const nonShortener = urls.find((url) => !['t.co', 'bit.ly', 'tinyurl.com'].includes(hostnameForUrl(url)))
   return nonShortener || urls[0] || ''
 }
@@ -86,9 +86,9 @@ export function aestheticSignalScore(candidate = {}) {
   if (candidate.source_channel === 'youtube-like') score += 18
   if (candidate.source_channel === 'nts-like') score += 20
 
-  if (/(github|api|sdk|quickstart|docs|documentation|readme|zod|schema|agent framework|\bagents?\b|agentic|workflow node|orchestration|mcp|llm\.txt|benchmark|eval|deployment|inference|vector database|rag|tool call|automation pipeline|automated cad|automated research|research hackathon|optimization challenge)/.test(text)) score -= 28
+  if (/(github|api|sdk|quickstart|docs|documentation|readme|zod|schema|agent framework|\bagents?\b|agentic|workflow node|orchestration|mcp|llm\.txt|benchmark|eval|deployment|inference|vector database|rag|tool call|automation pipeline|automated cad|automated research|research hackathon|optimization challenge|openclaw)/.test(text)) score -= 28
   if (/(ai assistant|prompt guide|claude fable|claude|codex|vibe cod|vibe-coded|vibecoding|software factory|model benchmark|agent workflow|comfy mcp|audio-to-midi model|buildanything|production ready apps?)/.test(text)) score -= 42
-  if (/(seo|growth channel|cold email|sales|crm|b2b|landing page|pricing|waitlist|sign up|product hunt|saas|clanker|farcaster|storyprotocol|story protocol|protocol fees?|ecosystem fund|\$clanker|monad|crypto|web3)/.test(text)) score -= 28
+  if (/(seo|growth channel|cold email|sales|crm|b2b|landing page|pricing|waitlist|sign up|product hunt|saas|clanker|farcaster|storyprotocol|story protocol|protocol fees?|ecosystem fund|\$clanker|monad|crypto|solana|blockchain|smart contracts?|web3)/.test(text)) score -= 28
 
   return score
 }
@@ -108,7 +108,7 @@ export function isAiToolingContentSource(source = {}) {
 
   if (!text) return false
   return /(^|\/)ai & agents(\/|$)/.test(text)
-    || /\b(x402|mcp|openrouter|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|hermes agents?|auxiliary models?|local models?|model routing|model savings?|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
+    || /\b(x402|mcp|openrouter|openclaw|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|hermes agents?|auxiliary models?|local models?|model routing|model savings?|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|solana|blockchain|smart contracts?|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
 }
 
 export function scoreVisualCandidate(candidate) {
@@ -139,6 +139,8 @@ export function isLowValueVisualImage(imageUrl) {
 
   return /\.svg(?:$|[?#])/.test(lower)
     || /\.ico(?:$|[?#])/.test(lower)
+    || lower.includes('/ico/')
+    || /(?:^|[/_.-])(?:hamburger|singleplayer|multiplayer|achievements?|steamcloud)(?:[/.?#_-]|$)/.test(lower)
     || lower.includes('abs.twimg.com')
     || lower.includes('favicon')
     || lower.includes('apple-touch-icon')
@@ -389,6 +391,7 @@ function isSourceFramedWebFallback(source) {
 
 export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (!isAllowedInspectedSource(source)) return false
+  if (source.source_channel === 'anchor-derived') return false
   if (isAiToolingContentSource(source)) return false
   const sourceUrls = [source.url, source.source_url, source.final_url].filter(Boolean)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return false
@@ -400,7 +403,8 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
     // package/QA keeps the unavailable embed status visible.
     return Boolean(source.image_url && !isLowValueVisualImage(source.image_url))
   }
-  if (sourceUrls.some(isDirectRasterImageUrl)) return true
+  const directRasterUrls = sourceUrls.filter(isDirectRasterImageUrl)
+  if (directRasterUrls.some((url) => !isLowValueVisualImage(url))) return true
   if (source.image_url && !isLowValueVisualImage(source.image_url)) return true
   const sourceType = classifySource(source.url || source.source_url || '').source_type
   if (sourceType === 'tweet') {

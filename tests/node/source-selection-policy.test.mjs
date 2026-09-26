@@ -94,6 +94,8 @@ describe('source selection policy', () => {
     expect(isLowValueVisualImage('https://c.statcounter.com/6676299/0/8921e975/1/')).toBe(true)
     expect(isLowValueVisualImage('https://50watts.com/_gfx/loadingAnim.gif')).toBe(true)
     expect(isLowValueVisualImage('https://example.com/field-photo.jpg')).toBe(false)
+    expect(isLowValueVisualImage('https://store.akamai.steamstatic.com/public/shared/images/responsive/header_menu_hamburger.png')).toBe(true)
+    expect(isLowValueVisualImage('https://store.akamai.steamstatic.com/public/images/v6/ico/ico_singlePlayer.png')).toBe(true)
     expect(isDirectRasterImageUrl('https://pbs.twimg.com/media/abc123?format=jpg&name=large')).toBe(true)
   })
 
@@ -103,6 +105,20 @@ describe('source selection policy', () => {
       url: 'https://t.co/short',
       final_url: 'https://www.youtube.com/watch?v=abc123&feature=share',
     })).toBe('youtube.com/watch/abc123')
+    const redirectedSteamPage = {
+      url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match/',
+      source_url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match/',
+      final_url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match_The_VAR_Game/',
+    }
+    const sameSteamPage = {
+      ...redirectedSteamPage,
+      final_url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match/',
+    }
+    expect(sourceContentKey(redirectedSteamPage)).toBe(sourceContentKey(sameSteamPage))
+    expect(selectContentSources([
+      { ...baseSource, ...redirectedSteamPage },
+      { ...baseSource, ...sameSteamPage, title: 'Same Steam listing after redirect' },
+    ], { targetItems: 2, maxItems: 2 })).toHaveLength(1)
   })
 
   it('selects renderable visual and native-media sources ahead of text-only sources', () => {
@@ -130,6 +146,48 @@ describe('source selection policy', () => {
       baseSource.url,
       youtube.url,
     ]))
+  })
+
+  it('does not count anchor-derived images as independent content windows', () => {
+    const anchor = {
+      ...baseSource,
+      url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match/',
+      source_url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match/',
+      final_url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match_The_VAR_Game/',
+      source_channel: 'twitter-bookmark',
+      source_type: 'article',
+      note_id: 'anchor-note',
+      title: 'Eye of the Match: The VAR Game on Steam',
+    }
+    const derivedAssets = [
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3799530/capsule.jpg',
+      'https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3799530/header.jpg',
+      'https://store.akamai.steamstatic.com/public/shared/images/responsive/header_menu_hamburger.png',
+    ].map((url, index) => ({
+      ...baseSource,
+      url,
+      source_url: url,
+      final_url: url,
+      source_channel: 'anchor-derived',
+      source_type: 'image',
+      note_id: `anchor-image-${index}`,
+      title: `Anchor image material ${index + 1}`,
+      image_url: url,
+    }))
+    const unrelatedSources = Array.from({ length: 4 }, (_, index) => ({
+      ...baseSource,
+      url: `https://art${index}.example.com/works/${index}`,
+      source_url: `https://art${index}.example.com/works/${index}`,
+      final_url: `https://art${index}.example.com/works/${index}`,
+      note_id: `art-${index}`,
+      title: `Artwork archive ${index}`,
+      image_url: `https://art${index}.example.com/works/${index}.jpg`,
+    }))
+
+    expect(derivedAssets.every((source) => !sourceHasRenderableCardSurface(source))).toBe(true)
+    const selected = selectContentSources([anchor, ...derivedAssets, ...unrelatedSources], { targetItems: 6, maxItems: 6 })
+    expect(selected).toHaveLength(5)
+    expect(selected.every((source) => source.source_channel !== 'anchor-derived')).toBe(true)
   })
 
   it('allows inspected source-framed web fallbacks but rejects profile and error pages', () => {
@@ -424,6 +482,7 @@ describe('source selection policy', () => {
       ['https://x.com/EHuanglu/status/3', 'Opus 4.7 has automated CAD for production ready apps'],
       ['https://x.com/Haezurath/status/4', 'BuildAnything vibecoding Monad production ready apps'],
       ['https://x.com/ABLO_Official/status/5', 'StoryProtocol event recap with protocol launch materials'],
+      ['https://x.com/danielgothits/status/2027053149131882632', 'OpenClaw sending lowball offers on Zillow all day'],
     ].map(([url, title], index) => ({
       ...baseSource,
       url,
@@ -451,10 +510,24 @@ describe('source selection policy', () => {
       description: 'artist artwork painting gallery visual culture source image surface',
       image_url: 'https://pbs.twimg.com/media/fresh-art.jpg?name=orig',
     }
+    const solanaBotTutorial = {
+      ...baseSource,
+      url: 'https://www.helius.dev/blog/create-a-solana-telegram-bot-in-less-than-100-lines-of-code',
+      source_url: 'https://www.helius.dev/blog/create-a-solana-telegram-bot-in-less-than-100-lines-of-code',
+      final_url: 'https://www.helius.dev/blog/create-a-solana-telegram-bot-in-less-than-100-lines-of-code',
+      source_channel: 'twitter-bookmark',
+      source_type: 'article',
+      title: 'Create a Solana Telegram Bot in Less Than 100 Lines of Code',
+      note_title: 'it seems the kids are using tg bots to do stuff these days',
+      description: 'Tutorial for creating a Solana Telegram bot with source code.',
+      image_url: 'https://www.helius.dev/og/create-a-solana-telegram-bot-in-less-than-100-lines-of-code.webp',
+    }
 
     expect(leaked.every((source) => isAiToolingContentSource(source))).toBe(true)
     expect(leaked.every((source) => !sourceHasRenderableCardSurface(source))).toBe(true)
-    expect(selectContentSources([...leaked, artwork], { targetItems: 1, maxItems: 1 }).map((source) => source.url)).toEqual([artwork.url])
+    expect(isAiToolingContentSource(solanaBotTutorial)).toBe(true)
+    expect(sourceHasRenderableCardSurface(solanaBotTutorial)).toBe(false)
+    expect(selectContentSources([...leaked, solanaBotTutorial, artwork], { targetItems: 1, maxItems: 1 }).map((source) => source.url)).toEqual([artwork.url])
   })
 
   it('caps note-score pressure so creative material beats high-score product protocol notes during inspection', () => {

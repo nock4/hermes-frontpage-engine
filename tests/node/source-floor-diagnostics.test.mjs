@@ -25,6 +25,29 @@ describe('source floor diagnostics', () => {
     expect(diagnostics.recommended_action).toContain('downrank repeated notes before maxNotes')
   })
 
+  it('counts one saved page once when the final URL differs by slug', () => {
+    const original = {
+      url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match/',
+      source_url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match/',
+      final_url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match_The_VAR_Game/',
+      title: 'Eye of the Match: The VAR Game',
+      fetch_status: 'fetch-ok',
+      source_channel: 'twitter-bookmark',
+      source_type: 'article',
+      note_score: 80,
+      image_url: 'https://shared.steamstatic.com/capsule.jpg',
+    }
+    const duplicate = {
+      ...original,
+      final_url: 'https://store.steampowered.com/app/3799530/Eye_of_the_Match/',
+      image_url: 'https://shared.steamstatic.com/header.jpg',
+    }
+    const diagnostics = buildSourceFloorDiagnostics({ inspected: [original, duplicate], contentSources: [] })
+
+    expect(diagnostics.buckets.renderable_surfaces).toBe(1)
+    expect(diagnostics.buckets.non_duplicate_renderable_surfaces).toBe(1)
+  })
+
   it('names AI/tooling quarantine when renderable surfaces are deliberately excluded', () => {
     const sources = Array.from({ length: 4 }, (_, index) => ({
       url: `https://x.com/tooling/status/${index}`,
