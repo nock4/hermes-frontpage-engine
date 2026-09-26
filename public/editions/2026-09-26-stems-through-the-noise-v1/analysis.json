@@ -1,0 +1,390 @@
+{
+  "analysis_id": "analysis-2026-09-26-stems-through-the-noise-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A warm-lit, torn lavender paper-like mass stands in a shadowed botanical installation. A bright irregular aperture pierces its left side; branching stems cross the surface, with a detached violet leaf and a curled fragment on the floor.",
+  "usable_surfaces": [
+    "Ragged outer contour of the central lavender mass",
+    "Bright irregular aperture at left-center",
+    "Stepped, illuminated edge on the mass’s right side",
+    "Dark branching stem crossing the central surface",
+    "Small oval translucent mark near the lower-right of the mass",
+    "Detached violet leaf on the foreground floor",
+    "Curled fragment at lower right"
+  ],
+  "detected_objects": [
+    {
+      "label": "Illustrated canopy mass",
+      "artifact_type": "hero-scale-organic-form",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.105,
+        "y": 0,
+        "w": 0.596,
+        "h": 0.825
+      },
+      "polygon": [
+        [
+          0.231,
+          0.335
+        ],
+        [
+          0.274,
+          0.142
+        ],
+        [
+          0.329,
+          0
+        ],
+        [
+          0.414,
+          0
+        ],
+        [
+          0.48,
+          0.116
+        ],
+        [
+          0.578,
+          0.326
+        ],
+        [
+          0.693,
+          0.581
+        ],
+        [
+          0.685,
+          0.69
+        ],
+        [
+          0.625,
+          0.791
+        ],
+        [
+          0.497,
+          0.827
+        ],
+        [
+          0.35,
+          0.785
+        ],
+        [
+          0.224,
+          0.659
+        ],
+        [
+          0.11,
+          0.472
+        ],
+        [
+          0.153,
+          0.392
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "Large irregular lavender-and-cream fibrous form dominates the center-left, with a torn, stepped outline and mottled pigment."
+    },
+    {
+      "label": "Ancestral field interruption",
+      "artifact_type": "irregular-contour-break",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.158,
+        "y": 0.279,
+        "w": 0.096,
+        "h": 0.149
+      },
+      "polygon": [
+        [
+          0.208,
+          0.282
+        ],
+        [
+          0.231,
+          0.286
+        ],
+        [
+          0.246,
+          0.319
+        ],
+        [
+          0.252,
+          0.36
+        ],
+        [
+          0.238,
+          0.395
+        ],
+        [
+          0.215,
+          0.423
+        ],
+        [
+          0.19,
+          0.414
+        ],
+        [
+          0.167,
+          0.386
+        ],
+        [
+          0.159,
+          0.354
+        ],
+        [
+          0.175,
+          0.321
+        ],
+        [
+          0.193,
+          0.299
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "A clearly bounded, irregular opening in the dark torn patch exposes bright background light; its ragged edge is visible."
+    },
+    {
+      "label": "Pixel-stepped edge interruption",
+      "artifact_type": "hero-scale-pixel-contour",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.411,
+        "y": 0.025,
+        "w": 0.292,
+        "h": 0.592
+      },
+      "polygon": [
+        [
+          0.411,
+          0.025
+        ],
+        [
+          0.436,
+          0.065
+        ],
+        [
+          0.46,
+          0.111
+        ],
+        [
+          0.486,
+          0.163
+        ],
+        [
+          0.516,
+          0.215
+        ],
+        [
+          0.55,
+          0.268
+        ],
+        [
+          0.58,
+          0.326
+        ],
+        [
+          0.615,
+          0.391
+        ],
+        [
+          0.649,
+          0.456
+        ],
+        [
+          0.685,
+          0.526
+        ],
+        [
+          0.703,
+          0.584
+        ],
+        [
+          0.692,
+          0.617
+        ],
+        [
+          0.675,
+          0.574
+        ],
+        [
+          0.649,
+          0.518
+        ],
+        [
+          0.617,
+          0.455
+        ],
+        [
+          0.584,
+          0.393
+        ],
+        [
+          0.548,
+          0.334
+        ],
+        [
+          0.515,
+          0.277
+        ],
+        [
+          0.481,
+          0.22
+        ],
+        [
+          0.452,
+          0.163
+        ],
+        [
+          0.43,
+          0.106
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "The illuminated right-hand contour breaks into conspicuous small square, stair-step protrusions against the dark background."
+    },
+    {
+      "label": "Flowing stem seam",
+      "artifact_type": "flowing-edge-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.424,
+        "y": 0,
+        "w": 0.259,
+        "h": 0.999
+      },
+      "confidence": 0.91,
+      "visual_evidence": "A thin dark botanical stem rises from near the bottom-center and angles toward the upper-right, with visible branching junctions across the plate."
+    },
+    {
+      "label": "Translucent oval surface mark",
+      "artifact_type": "small-oval-stain",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.519,
+        "y": 0.516,
+        "w": 0.07,
+        "h": 0.125
+      },
+      "polygon": [
+        [
+          0.553,
+          0.516
+        ],
+        [
+          0.571,
+          0.526
+        ],
+        [
+          0.585,
+          0.547
+        ],
+        [
+          0.589,
+          0.574
+        ],
+        [
+          0.582,
+          0.605
+        ],
+        [
+          0.567,
+          0.63
+        ],
+        [
+          0.55,
+          0.64
+        ],
+        [
+          0.536,
+          0.628
+        ],
+        [
+          0.524,
+          0.601
+        ],
+        [
+          0.519,
+          0.572
+        ],
+        [
+          0.526,
+          0.542
+        ],
+        [
+          0.539,
+          0.524
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A distinct, muted oval imprint with a small plant-like silhouette appears on the lower-right portion of the central mass."
+    },
+    {
+      "label": "Detached violet leaf",
+      "artifact_type": "pigment-island",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.572,
+        "y": 0.817,
+        "w": 0.149,
+        "h": 0.075
+      },
+      "polygon": [
+        [
+          0.572,
+          0.841
+        ],
+        [
+          0.593,
+          0.824
+        ],
+        [
+          0.628,
+          0.818
+        ],
+        [
+          0.665,
+          0.828
+        ],
+        [
+          0.699,
+          0.844
+        ],
+        [
+          0.721,
+          0.85
+        ],
+        [
+          0.693,
+          0.867
+        ],
+        [
+          0.657,
+          0.885
+        ],
+        [
+          0.621,
+          0.887
+        ],
+        [
+          0.591,
+          0.872
+        ],
+        [
+          0.579,
+          0.858
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "A single purple leaf lies detached on the foreground floor, with a visible pointed outline and central vein."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.978,
+    "rationale": "The plate reads as a focused, expressive installation: one dominant torn mass, its aperture and stepped edge, plus a few detached floor forms. Fine botanical stems and textured background add detail but do not overwhelm the main silhouette."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-26-stems-through-the-noise-v1"
+}

@@ -1,0 +1,281 @@
+{
+  "interpretation_id": "interp-2026-09-26-stems-through-the-noise-v1",
+  "edition_id": "2026-09-26-stems-through-the-noise-v1",
+  "plate_read_timestamp": "2026-09-26T06:18:22.368Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A warm-lit, torn lavender paper-like mass stands in a shadowed botanical installation. A bright irregular aperture pierces its left side; branching stems cross the surface, with a detached violet leaf and a curled fragment on the floor.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Lush twilight, fine-grained noise, and one stubborn absurdity.",
+      "A warm-lit, torn lavender paper-like mass stands in a shadowed botanical installation. A bright irregular aperture pierces its left side; branching stems cross the surface, with a detached violet leaf and a curled fragment on the floor.",
+      "indigo-stems",
+      "warm-paper",
+      "pixel-fracture"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Illustrated canopy mass",
+      "Ancestral field interruption",
+      "Pixel-stepped edge interruption",
+      "Flowing stem seam",
+      "Translucent oval surface mark",
+      "Detached violet leaf"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "twilight-ink-field",
+      "an enlarged illustrated organic mass",
+      "a fine botanical crossing",
+      "an irregular pixel-edged contour",
+      "small measured black apertures",
+      "a compact engraved interruption",
+      "Ragged outer contour of the central lavender mass",
+      "Bright irregular aperture at left-center"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: twilight-ink-field.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-illustrated-canopy-mass",
+      "kind": "hero",
+      "type": "hero-scale-organic-form",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.1074,
+        "y": 0,
+        "w": 0.5924,
+        "h": 0.8477
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-ancestral-field-interruption",
+      "kind": "hero",
+      "type": "irregular-contour-break",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.158,
+        "y": 0.279,
+        "w": 0.096,
+        "h": 0.149
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pixel-stepped-edge-interruption",
+      "kind": "module",
+      "type": "hero-scale-pixel-contour",
+      "strength": 0.787596,
+      "bounds": {
+        "x": 0.411,
+        "y": 0.025,
+        "w": 0.292,
+        "h": 0.592
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-flowing-stem-seam",
+      "kind": "module",
+      "type": "flowing-edge-seam",
+      "strength": 0.7337880000000001,
+      "bounds": {
+        "x": 0.424,
+        "y": 0,
+        "w": 0.259,
+        "h": 0.999
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-translucent-oval-surface-mark",
+      "kind": "module",
+      "type": "small-oval-stain",
+      "strength": 0.73128,
+      "bounds": {
+        "x": 0.519,
+        "y": 0.516,
+        "w": 0.07,
+        "h": 0.125
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detached-violet-leaf",
+      "kind": "module",
+      "type": "pigment-island",
+      "strength": 0.701472,
+      "bounds": {
+        "x": 0.572,
+        "y": 0.817,
+        "w": 0.149,
+        "h": 0.075
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-illustrated-canopy-mass-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1074,
+        "y": 0,
+        "w": 0.5924,
+        "h": 0.8477
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-ancestral-field-interruption-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.158,
+        "y": 0.279,
+        "w": 0.096,
+        "h": 0.149
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pixel-stepped-edge-interruption-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.411,
+        "y": 0.025,
+        "w": 0.292,
+        "h": 0.592
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-flowing-stem-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.424,
+        "y": 0,
+        "w": 0.259,
+        "h": 0.999
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-translucent-oval-surface-mark-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.519,
+        "y": 0.516,
+        "w": 0.07,
+        "h": 0.125
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detached-violet-leaf-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.572,
+        "y": 0.817,
+        "w": 0.149,
+        "h": 0.075
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

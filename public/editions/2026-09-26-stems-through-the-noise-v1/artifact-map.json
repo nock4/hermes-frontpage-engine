@@ -1,0 +1,1226 @@
+{
+  "artifact_map_id": "map-2026-09-26-stems-through-the-noise-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "twilight-ink-field",
+  "default_artifact_id": "hero-illustrated-canopy-mass",
+  "artifacts": [
+    {
+      "id": "hero-illustrated-canopy-mass",
+      "kind": "hero",
+      "label": "Illustrated canopy mass",
+      "artifact_type": "hero-scale-organic-form",
+      "bounds": {
+        "x": 0.1074,
+        "y": 0.0,
+        "w": 0.5924,
+        "h": 0.8477
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.1094,
+          0.4004
+        ],
+        [
+          0.1159,
+          0.3672
+        ],
+        [
+          0.2311,
+          0.002
+        ],
+        [
+          0.401,
+          0.002
+        ],
+        [
+          0.4961,
+          0.0439
+        ],
+        [
+          0.6921,
+          0.1572
+        ],
+        [
+          0.6973,
+          0.5244
+        ],
+        [
+          0.6947,
+          0.624
+        ],
+        [
+          0.6478,
+          0.792
+        ],
+        [
+          0.4674,
+          0.8428
+        ],
+        [
+          0.1908,
+          0.8389
+        ],
+        [
+          0.1354,
+          0.8223
+        ],
+        [
+          0.1309,
+          0.8115
+        ],
+        [
+          0.1094,
+          0.416
+        ]
+      ],
+      "cluster_id": "twilight-ink-field",
+      "mask_path": "/editions/2026-09-26-stems-through-the-noise-v1/assets/masks/hero-illustrated-canopy-mass.svg",
+      "source_binding_ids": [
+        "binding-hero-illustrated-canopy-mass"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          619,
+          355
+        ],
+        "safe_stage_window_origin_px": [
+          692,
+          422
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1094,
+            0.4004
+          ],
+          [
+            0.1159,
+            0.3672
+          ],
+          [
+            0.2311,
+            0.002
+          ],
+          [
+            0.401,
+            0.002
+          ],
+          [
+            0.4961,
+            0.0439
+          ],
+          [
+            0.6921,
+            0.1572
+          ],
+          [
+            0.6973,
+            0.5244
+          ],
+          [
+            0.6947,
+            0.624
+          ],
+          [
+            0.6478,
+            0.792
+          ],
+          [
+            0.4674,
+            0.8428
+          ],
+          [
+            0.1908,
+            0.8389
+          ],
+          [
+            0.1354,
+            0.8223
+          ],
+          [
+            0.1309,
+            0.8115
+          ],
+          [
+            0.1094,
+            0.416
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0872,
+            0.3994
+          ],
+          [
+            0.2096,
+            0.0
+          ],
+          [
+            0.4733,
+            0.0
+          ],
+          [
+            0.5501,
+            0.041
+          ],
+          [
+            0.7142,
+            0.1562
+          ],
+          [
+            0.7194,
+            0.501
+          ],
+          [
+            0.7168,
+            0.624
+          ],
+          [
+            0.7096,
+            0.6494
+          ],
+          [
+            0.4108,
+            0.875
+          ],
+          [
+            0.1908,
+            0.8721
+          ],
+          [
+            0.1348,
+            0.8555
+          ],
+          [
+            0.1087,
+            0.8105
+          ],
+          [
+            0.0872,
+            0.4209
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0872,
+          "y": 0.0,
+          "w": 0.6328,
+          "h": 0.876
+        },
+        "territory_area_px": 477469,
+        "visible_area_px": 677523,
+        "expansion_ratio": 0.705,
+        "neighbors": [
+          {
+            "artifact_id": "hero-ancestral-field-interruption",
+            "shared_edge_px": 30764,
+            "direction": "left",
+            "distance_px": 166.86
+          },
+          {
+            "artifact_id": "module-flowing-stem-seam",
+            "shared_edge_px": 8084,
+            "direction": "right",
+            "distance_px": 449.85
+          },
+          {
+            "artifact_id": "module-pixel-stepped-edge-interruption",
+            "shared_edge_px": 3409,
+            "direction": "right",
+            "distance_px": 387.83
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-ancestral-field-interruption",
+      "kind": "hero",
+      "label": "Ancestral field interruption",
+      "artifact_type": "irregular-contour-break",
+      "bounds": {
+        "x": 0.158,
+        "y": 0.279,
+        "w": 0.096,
+        "h": 0.149
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.208,
+          0.282
+        ],
+        [
+          0.231,
+          0.286
+        ],
+        [
+          0.246,
+          0.319
+        ],
+        [
+          0.252,
+          0.36
+        ],
+        [
+          0.238,
+          0.395
+        ],
+        [
+          0.215,
+          0.423
+        ],
+        [
+          0.19,
+          0.414
+        ],
+        [
+          0.167,
+          0.386
+        ],
+        [
+          0.159,
+          0.354
+        ],
+        [
+          0.175,
+          0.321
+        ],
+        [
+          0.193,
+          0.299
+        ]
+      ],
+      "cluster_id": "twilight-ink-field",
+      "mask_path": "/editions/2026-09-26-stems-through-the-noise-v1/assets/masks/hero-ancestral-field-interruption.svg",
+      "source_binding_ids": [
+        "binding-hero-ancestral-field-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          316,
+          350
+        ],
+        "safe_stage_window_origin_px": [
+          328,
+          362
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.208,
+            0.282
+          ],
+          [
+            0.231,
+            0.286
+          ],
+          [
+            0.246,
+            0.319
+          ],
+          [
+            0.252,
+            0.36
+          ],
+          [
+            0.238,
+            0.395
+          ],
+          [
+            0.215,
+            0.423
+          ],
+          [
+            0.19,
+            0.414
+          ],
+          [
+            0.167,
+            0.386
+          ],
+          [
+            0.159,
+            0.354
+          ],
+          [
+            0.175,
+            0.321
+          ],
+          [
+            0.193,
+            0.299
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1367,
+            0.3535
+          ],
+          [
+            0.1751,
+            0.2861
+          ],
+          [
+            0.2077,
+            0.248
+          ],
+          [
+            0.2305,
+            0.252
+          ],
+          [
+            0.2533,
+            0.2861
+          ],
+          [
+            0.2676,
+            0.3184
+          ],
+          [
+            0.2741,
+            0.3574
+          ],
+          [
+            0.2604,
+            0.3936
+          ],
+          [
+            0.2148,
+            0.4561
+          ],
+          [
+            0.1895,
+            0.4463
+          ],
+          [
+            0.1673,
+            0.4199
+          ],
+          [
+            0.1445,
+            0.3857
+          ],
+          [
+            0.1367,
+            0.3545
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1367,
+          "y": 0.248,
+          "w": 0.138,
+          "h": 0.209
+        },
+        "territory_area_px": 29210,
+        "visible_area_px": 14114,
+        "expansion_ratio": 2.07,
+        "neighbors": [
+          {
+            "artifact_id": "hero-illustrated-canopy-mass",
+            "shared_edge_px": 30764,
+            "direction": "right",
+            "distance_px": 166.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pixel-stepped-edge-interruption",
+      "kind": "module",
+      "label": "Pixel-stepped edge interruption",
+      "artifact_type": "hero-scale-pixel-contour",
+      "bounds": {
+        "x": 0.411,
+        "y": 0.025,
+        "w": 0.292,
+        "h": 0.592
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.411,
+          0.025
+        ],
+        [
+          0.436,
+          0.065
+        ],
+        [
+          0.46,
+          0.111
+        ],
+        [
+          0.486,
+          0.163
+        ],
+        [
+          0.516,
+          0.215
+        ],
+        [
+          0.55,
+          0.268
+        ],
+        [
+          0.58,
+          0.326
+        ],
+        [
+          0.615,
+          0.391
+        ],
+        [
+          0.649,
+          0.456
+        ],
+        [
+          0.685,
+          0.526
+        ],
+        [
+          0.703,
+          0.584
+        ],
+        [
+          0.692,
+          0.617
+        ],
+        [
+          0.675,
+          0.574
+        ],
+        [
+          0.649,
+          0.518
+        ],
+        [
+          0.617,
+          0.455
+        ],
+        [
+          0.584,
+          0.393
+        ],
+        [
+          0.548,
+          0.334
+        ],
+        [
+          0.515,
+          0.277
+        ],
+        [
+          0.481,
+          0.22
+        ],
+        [
+          0.452,
+          0.163
+        ],
+        [
+          0.43,
+          0.106
+        ]
+      ],
+      "cluster_id": "twilight-ink-field",
+      "mask_path": "/editions/2026-09-26-stems-through-the-noise-v1/assets/masks/module-pixel-stepped-edge-interruption.svg",
+      "source_binding_ids": [
+        "binding-module-pixel-stepped-edge-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          856,
+          280
+        ],
+        "safe_stage_window_origin_px": [
+          891,
+          329
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.411,
+            0.025
+          ],
+          [
+            0.436,
+            0.065
+          ],
+          [
+            0.46,
+            0.111
+          ],
+          [
+            0.486,
+            0.163
+          ],
+          [
+            0.516,
+            0.215
+          ],
+          [
+            0.55,
+            0.268
+          ],
+          [
+            0.58,
+            0.326
+          ],
+          [
+            0.615,
+            0.391
+          ],
+          [
+            0.649,
+            0.456
+          ],
+          [
+            0.685,
+            0.526
+          ],
+          [
+            0.703,
+            0.584
+          ],
+          [
+            0.692,
+            0.617
+          ],
+          [
+            0.675,
+            0.574
+          ],
+          [
+            0.649,
+            0.518
+          ],
+          [
+            0.617,
+            0.455
+          ],
+          [
+            0.584,
+            0.393
+          ],
+          [
+            0.548,
+            0.334
+          ],
+          [
+            0.515,
+            0.277
+          ],
+          [
+            0.481,
+            0.22
+          ],
+          [
+            0.452,
+            0.163
+          ],
+          [
+            0.43,
+            0.106
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3926,
+            0.0244
+          ],
+          [
+            0.4128,
+            0.0
+          ],
+          [
+            0.4551,
+            0.0664
+          ],
+          [
+            0.6484,
+            0.4199
+          ],
+          [
+            0.7096,
+            0.5469
+          ],
+          [
+            0.7207,
+            0.583
+          ],
+          [
+            0.7096,
+            0.6162
+          ],
+          [
+            0.5273,
+            0.3311
+          ],
+          [
+            0.4329,
+            0.1611
+          ],
+          [
+            0.4108,
+            0.1035
+          ],
+          [
+            0.3926,
+            0.0254
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3926,
+          "y": 0.0,
+          "w": 0.3288,
+          "h": 0.6172
+        },
+        "territory_area_px": 43496,
+        "visible_area_px": 28326,
+        "expansion_ratio": 1.536,
+        "neighbors": [
+          {
+            "artifact_id": "hero-illustrated-canopy-mass",
+            "shared_edge_px": 3409,
+            "direction": "left",
+            "distance_px": 387.83
+          },
+          {
+            "artifact_id": "module-flowing-stem-seam",
+            "shared_edge_px": 3215,
+            "direction": "down",
+            "distance_px": 341.04
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-flowing-stem-seam",
+      "kind": "module",
+      "label": "Flowing stem seam",
+      "artifact_type": "flowing-edge-seam",
+      "bounds": {
+        "x": 0.424,
+        "y": 0,
+        "w": 0.259,
+        "h": 0.999
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.424,
+          0
+        ],
+        [
+          0.683,
+          0
+        ],
+        [
+          0.683,
+          0.999
+        ],
+        [
+          0.424,
+          0.999
+        ]
+      ],
+      "cluster_id": "twilight-ink-field",
+      "mask_path": "/editions/2026-09-26-stems-through-the-noise-v1/assets/masks/module-flowing-stem-seam.svg",
+      "source_binding_ids": [
+        "binding-module-flowing-stem-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          850,
+          430
+        ],
+        "safe_stage_window_origin_px": [
+          882,
+          511
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.424,
+            0
+          ],
+          [
+            0.683,
+            0
+          ],
+          [
+            0.683,
+            0.999
+          ],
+          [
+            0.424,
+            0.999
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3978,
+            0.876
+          ],
+          [
+            0.474,
+            0.0
+          ],
+          [
+            0.709,
+            0.0
+          ],
+          [
+            0.709,
+            0.998
+          ],
+          [
+            0.3978,
+            0.998
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3978,
+          "y": 0.0,
+          "w": 0.3118,
+          "h": 1.0
+        },
+        "territory_area_px": 331118,
+        "visible_area_px": 408177,
+        "expansion_ratio": 0.811,
+        "neighbors": [
+          {
+            "artifact_id": "module-translucent-oval-surface-mark",
+            "shared_edge_px": 17316,
+            "direction": "left",
+            "distance_px": 63.92
+          },
+          {
+            "artifact_id": "hero-illustrated-canopy-mass",
+            "shared_edge_px": 8084,
+            "direction": "left",
+            "distance_px": 449.85
+          },
+          {
+            "artifact_id": "module-pixel-stepped-edge-interruption",
+            "shared_edge_px": 3215,
+            "direction": "up",
+            "distance_px": 341.04
+          },
+          {
+            "artifact_id": "module-detached-violet-leaf",
+            "shared_edge_px": 2935,
+            "direction": "down",
+            "distance_px": 323.19
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-translucent-oval-surface-mark",
+      "kind": "module",
+      "label": "Translucent oval surface mark",
+      "artifact_type": "small-oval-stain",
+      "bounds": {
+        "x": 0.519,
+        "y": 0.516,
+        "w": 0.07,
+        "h": 0.125
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.553,
+          0.516
+        ],
+        [
+          0.571,
+          0.526
+        ],
+        [
+          0.585,
+          0.547
+        ],
+        [
+          0.589,
+          0.574
+        ],
+        [
+          0.582,
+          0.605
+        ],
+        [
+          0.567,
+          0.63
+        ],
+        [
+          0.55,
+          0.64
+        ],
+        [
+          0.536,
+          0.628
+        ],
+        [
+          0.524,
+          0.601
+        ],
+        [
+          0.519,
+          0.572
+        ],
+        [
+          0.526,
+          0.542
+        ],
+        [
+          0.539,
+          0.524
+        ]
+      ],
+      "cluster_id": "twilight-ink-field",
+      "mask_path": "/editions/2026-09-26-stems-through-the-noise-v1/assets/masks/module-translucent-oval-surface-mark.svg",
+      "source_binding_ids": [
+        "binding-module-translucent-oval-surface-mark"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          851,
+          582
+        ],
+        "safe_stage_window_origin_px": [
+          860,
+          592
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.553,
+            0.516
+          ],
+          [
+            0.571,
+            0.526
+          ],
+          [
+            0.585,
+            0.547
+          ],
+          [
+            0.589,
+            0.574
+          ],
+          [
+            0.582,
+            0.605
+          ],
+          [
+            0.567,
+            0.63
+          ],
+          [
+            0.55,
+            0.64
+          ],
+          [
+            0.536,
+            0.628
+          ],
+          [
+            0.524,
+            0.601
+          ],
+          [
+            0.519,
+            0.572
+          ],
+          [
+            0.526,
+            0.542
+          ],
+          [
+            0.539,
+            0.524
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5007,
+            0.5703
+          ],
+          [
+            0.5098,
+            0.5381
+          ],
+          [
+            0.597,
+            0.5381
+          ],
+          [
+            0.6029,
+            0.5469
+          ],
+          [
+            0.6068,
+            0.5713
+          ],
+          [
+            0.5996,
+            0.6045
+          ],
+          [
+            0.5872,
+            0.626
+          ],
+          [
+            0.5664,
+            0.6572
+          ],
+          [
+            0.5495,
+            0.667
+          ],
+          [
+            0.5169,
+            0.627
+          ],
+          [
+            0.5052,
+            0.6006
+          ],
+          [
+            0.5007,
+            0.5732
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5007,
+          "y": 0.5381,
+          "w": 0.1068,
+          "h": 0.1299
+        },
+        "territory_area_px": 16023,
+        "visible_area_px": 9764,
+        "expansion_ratio": 1.641,
+        "neighbors": [
+          {
+            "artifact_id": "module-flowing-stem-seam",
+            "shared_edge_px": 17316,
+            "direction": "right",
+            "distance_px": 63.92
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-detached-violet-leaf",
+      "kind": "module",
+      "label": "Detached violet leaf",
+      "artifact_type": "pigment-island",
+      "bounds": {
+        "x": 0.572,
+        "y": 0.817,
+        "w": 0.149,
+        "h": 0.075
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.572,
+          0.841
+        ],
+        [
+          0.593,
+          0.824
+        ],
+        [
+          0.628,
+          0.818
+        ],
+        [
+          0.665,
+          0.828
+        ],
+        [
+          0.699,
+          0.844
+        ],
+        [
+          0.721,
+          0.85
+        ],
+        [
+          0.693,
+          0.867
+        ],
+        [
+          0.657,
+          0.885
+        ],
+        [
+          0.621,
+          0.887
+        ],
+        [
+          0.591,
+          0.872
+        ],
+        [
+          0.579,
+          0.858
+        ]
+      ],
+      "cluster_id": "twilight-ink-field",
+      "mask_path": "/editions/2026-09-26-stems-through-the-noise-v1/assets/masks/module-detached-violet-leaf.svg",
+      "source_binding_ids": [
+        "binding-module-detached-violet-leaf"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          993,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1011,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.572,
+            0.841
+          ],
+          [
+            0.593,
+            0.824
+          ],
+          [
+            0.628,
+            0.818
+          ],
+          [
+            0.665,
+            0.828
+          ],
+          [
+            0.699,
+            0.844
+          ],
+          [
+            0.721,
+            0.85
+          ],
+          [
+            0.693,
+            0.867
+          ],
+          [
+            0.657,
+            0.885
+          ],
+          [
+            0.621,
+            0.887
+          ],
+          [
+            0.591,
+            0.872
+          ],
+          [
+            0.579,
+            0.858
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5534,
+            0.8408
+          ],
+          [
+            0.5716,
+            0.8135
+          ],
+          [
+            0.5924,
+            0.7959
+          ],
+          [
+            0.6276,
+            0.79
+          ],
+          [
+            0.7207,
+            0.8223
+          ],
+          [
+            0.7389,
+            0.8496
+          ],
+          [
+            0.7207,
+            0.877
+          ],
+          [
+            0.6947,
+            0.8926
+          ],
+          [
+            0.6569,
+            0.9121
+          ],
+          [
+            0.6204,
+            0.9141
+          ],
+          [
+            0.5885,
+            0.8965
+          ],
+          [
+            0.554,
+            0.8428
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5534,
+          "y": 0.79,
+          "w": 0.1862,
+          "h": 0.125
+        },
+        "territory_area_px": 24874,
+        "visible_area_px": 10258,
+        "expansion_ratio": 2.425,
+        "neighbors": [
+          {
+            "artifact_id": "module-flowing-stem-seam",
+            "shared_edge_px": 2935,
+            "direction": "up",
+            "distance_px": 323.19
+          }
+        ]
+      }
+    }
+  ]
+}
