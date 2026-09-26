@@ -66,7 +66,7 @@ function noteSelectionKey(record, sourceKey) {
 }
 
 export function aestheticSignalScore(candidate = {}) {
-  const text = [
+  const contentText = [
     candidate.url,
     candidate.final_url,
     candidate.source_url,
@@ -74,9 +74,9 @@ export function aestheticSignalScore(candidate = {}) {
     candidate.description,
     candidate.visible_text,
     candidate.note_title,
-    candidate.note_path,
     candidate.note_excerpt,
   ].filter(Boolean).join(' ').toLowerCase()
+  const text = contentText
 
   let score = 0
 
@@ -102,13 +102,50 @@ export function isAiToolingContentSource(source = {}) {
     source.description,
     source.visible_text,
     source.note_title,
-    source.note_path,
     source.note_excerpt,
   ].filter(Boolean).join(' ').toLowerCase()
 
   if (!text) return false
-  return /(^|\/)ai & agents(\/|$)/.test(text)
-    || /\b(x402|mcp|openrouter|openclaw|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|hermes agents?|auxiliary models?|local models?|model routing|model savings?|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|solana|blockchain|smart contracts?|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
+  const highConfidenceToolPhrases = [
+    'try this prompt',
+    'multiple model outputs',
+    'synthetic image studio',
+    'onchain startup',
+    'on-chain startup',
+    'launch your token',
+    'launch the token',
+    'turboquant',
+    'llm key-value cache',
+    'key-value cache memory',
+    'ai video generator',
+    'ai image generator',
+    'if you start an app now',
+    'one-shot a linear clone',
+    'how to create this kind of video game interface animation',
+    'openai charges',
+    'open sourced a tool that',
+    'open-sourced a tool that',
+    'cost per minute',
+    'mirofish',
+    'image-to-3d model',
+    'classic art theory to evaluate images',
+    'steer generative systems',
+    'recurring cloud-based jobs for claude',
+    'smart llm router',
+    'ai inference costs',
+    'clawrouter',
+    'no html, no layout engine, no code',
+    'streamed live directly from a model',
+    'hyperagents',
+    'introducing subq',
+    'sub-quadratic sparse-attention',
+    'animations.dev',
+    'anthropic found a way to make their skills',
+    'software entropy',
+    'de-slop a codebase',
+  ]
+  if (highConfidenceToolPhrases.some((phrase) => text.includes(phrase))) return true
+  return /\b(x402|mcp|openrouter|openclaw|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|hermes agents?|auxiliary models?|local models?|model routing|model savings?|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|solana|blockchain|smart contracts?|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
 }
 
 export function scoreVisualCandidate(candidate) {

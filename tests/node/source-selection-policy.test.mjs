@@ -335,6 +335,75 @@ describe('source selection policy', () => {
     expect(selectContentSources([aiTool, artwork], { targetItems: 2 }).map((source) => source.url)[0]).toBe(artwork.url)
   })
 
+  it('does not quarantine renderable creative media solely because its note is filed under AI & Agents', () => {
+    const pixelArt = {
+      ...baseSource,
+      url: 'https://x.com/chongdashu/status/2051310176737652850',
+      source_url: 'https://x.com/chongdashu/status/2051310176737652850',
+      final_url: 'https://x.com/chongdashu/status/2051310176737652850',
+      source_channel: 'twitter-bookmark',
+      source_type: 'tweet',
+      window_type: 'social',
+      note_path: '01 - Active/themes/AI & Agents/chongdashu-ai-generated-pixel-art-pipeline.md',
+      note_title: 'AI-generated pixel art cleanup pipeline',
+      title: 'Experimenting with a pipeline to fix AI-generated pixel art',
+      description: 'Side-by-side pixel art comparison showing original and pixel-snapped character art.',
+      image_url: 'https://pbs.twimg.com/media/HHe3DpZXEAAIW3D.jpg?name=orig',
+    }
+    const actualTool = {
+      ...pixelArt,
+      title: 'OpenClaw MCP agent orchestration API documentation',
+      note_title: 'AI agent workflow and MCP API quickstart',
+      description: 'Tool calls and orchestration for autonomous agent workflows.',
+    }
+
+    expect(isAiToolingContentSource(pixelArt)).toBe(false)
+    expect(aestheticSignalScore(pixelArt)).toBeGreaterThan(0)
+    expect(sourceHasRenderableCardSurface(pixelArt)).toBe(true)
+    expect(Number.isFinite(sourceContentScore(pixelArt))).toBe(true)
+    expect(isAiToolingContentSource(actualTool)).toBe(true)
+    expect(sourceHasRenderableCardSurface(actualTool)).toBe(false)
+  })
+
+  it('quarantines specific prompt-output, synthetic-studio, token-launch, and LLM-tooling surfaces', () => {
+    const toolPhrases = [
+      ['https://promptsref.com/tool/prompt', 'Try This Prompt • Get Multiple Model Outputs'],
+      ['https://example.com/menace', 'MENACE — Synthetic Image Studio'],
+      ['https://example.com/tokens', 'Launching your onchain startup; launch the token'],
+      ['https://x.com/GoogleResearch/status/turboquant', 'TurboQuant compression algorithm for the LLM key-value cache'],
+      ['https://promptsref.com/tool/AI-Video-Generator/share/example', 'AI Video Generator'],
+      ['https://x.com/melvynx/status/example', "If you start an app now, please don't use Supabase"],
+      ['https://x.com/SherryYanJiang/status/example', 'One-shot a Linear clone in 10 minutes, 95% cheaper than Claude'],
+      ['https://x.com/0xInk_/status/example', 'How to create this kind of video game interface animation with GPT Image'],
+      ['https://x.com/heynavtoor/status/example', 'OpenAI charges $0.006/minute; an open-sourced tool that does it for $0'],
+      ['https://x.com/aaronjmars/status/example', 'MiroFish sanitized version with improved simulation flow and recommended models'],
+      ['https://x.com/kimmonismus/status/example', 'Microsoft introduces a 4B image-to-3D model producing textured assets'],
+      ['https://x.com/mccoyspace/status/example', 'Classic art theory to evaluate images and steer generative systems'],
+      ['https://x.com/noahzweben/status/example', 'Use schedule to create recurring cloud-based jobs for Claude from the terminal'],
+      ['https://x.com/ihtesham2005/status/example', 'Smart LLM router that automatically cuts your AI inference costs; called ClawRouter'],
+      ['https://x.com/zan2434/status/example', 'Streamed live directly from a model. No HTML, no layout engine, no code'],
+      ['https://x.com/jennyzhangzt/status/example', 'Hyperagents: a paper and code repo for AI orchestration'],
+      ['https://x.com/alex_whedon/status/example', 'Introducing SubQ, a sub-quadratic sparse-attention LLM'],
+      ['https://animations.dev/', 'animations.dev'],
+      ['https://x.com/itsolelehmann/status/example', 'Anthropic found a way to make their skills better'],
+      ['https://x.com/mattpocockuk/status/example', 'Software entropy and de-slop a codebase with one skill'],
+    ]
+    const tools = toolPhrases.map(([url, title]) => ({
+      ...baseSource,
+      url,
+      source_url: url,
+      final_url: url,
+      title,
+      note_title: title,
+      description: title,
+      source_channel: 'chrome-bookmark',
+      image_url: 'https://example.com/og-image.jpg',
+    }))
+
+    expect(tools.every(isAiToolingContentSource)).toBe(true)
+    expect(tools.every((source) => !sourceHasRenderableCardSurface(source))).toBe(true)
+  })
+
   it('blocks sources whose attached image URL was already used by the archive ledger', () => {
     const spentImageUrl = 'https://pbs.twimg.com/card_img/2097854880991825931/snYFSs2-?format=webp&name=medium'
     const repeatedImageAnchor = {

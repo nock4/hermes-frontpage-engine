@@ -13,12 +13,12 @@ describe('daily publish cron wrapper', () => {
     expect(options.inspirationOverride).toBe('/tmp/manual-override.json')
   })
 
-  it('uses a wider default cron source field than the interactive daily run', () => {
+  it('uses a wide default cron source field that includes the current full scan', () => {
     const options = parseArgs([])
 
     expect(options.windowDays).toBe(1000)
-    expect(options.maxNotes).toBe(500)
-    expect(options.maxSources).toBe(120)
+    expect(options.maxNotes).toBe(1209)
+    expect(options.maxSources).toBe(240)
   })
 
   it('parses explicit cron source-field limits', () => {
