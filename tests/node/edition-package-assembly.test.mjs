@@ -65,8 +65,27 @@ describe('edition package assembly', () => {
           title: 'Gallery Story',
           description: 'A concise visual reference for the package test.',
           image_url: 'https://example.com/gallery/lead.jpg',
+          media_url: 'https://example.com/gallery/logo.jpg',
+          media_type: 'image',
           note_title: 'Gallery bookmark',
         }],
+        selected_image_material: [
+          {
+            page_url: sourceUrl,
+            image_url: 'https://example.com/gallery/wordmark.jpg',
+            title: 'Matéria logo wordmark',
+            lineage: 'primary_anchor_image',
+            width: 1200,
+            height: 342,
+          },
+          {
+            page_url: sourceUrl,
+            image_url: 'https://example.com/gallery/artwork.jpg',
+            title: 'DABLS painting',
+            caption: 'DABLS abstract artwork detail',
+            lineage: 'direct_link',
+          },
+        ],
         visual_reference: {
           url: sourceUrl,
           image_url: 'https://example.com/gallery/lead.jpg',
@@ -119,7 +138,10 @@ describe('edition package assembly', () => {
     expect(bindings.bindings[0]).toMatchObject({
       source_url: sourceUrl,
       title: 'Gallery Story',
-      source_image_url: 'https://example.com/gallery/lead.jpg',
+      source_image_url: 'https://example.com/gallery/artwork.jpg',
+      source_image_alt: 'DABLS painting',
+      source_media_url: 'https://example.com/gallery/artwork.jpg',
+      source_media_type: 'image',
     })
     expect(about.body).toHaveLength(2)
     expect(manifest.editions[0].edition_id).toBe(result.editionId)

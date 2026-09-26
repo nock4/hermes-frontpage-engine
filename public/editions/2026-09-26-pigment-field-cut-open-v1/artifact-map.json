@@ -239,12 +239,6 @@
         "expansion_ratio": 0.768,
         "neighbors": [
           {
-            "artifact_id": "module-voice-contour-node",
-            "shared_edge_px": 22714,
-            "direction": "right",
-            "distance_px": 122.53
-          },
-          {
             "artifact_id": "module-clumsy-redraw-scrape",
             "shared_edge_px": 18232,
             "direction": "left",
@@ -261,6 +255,12 @@
             "shared_edge_px": 2897,
             "direction": "right",
             "distance_px": 433.54
+          },
+          {
+            "artifact_id": "module-puzzle-grid-interruption",
+            "shared_edge_px": 2543,
+            "direction": "left",
+            "distance_px": 408.95
           }
         ]
       }
@@ -1300,201 +1300,6 @@
             "shared_edge_px": 103,
             "direction": "right",
             "distance_px": 392.16
-          }
-        ]
-      }
-    },
-    {
-      "id": "module-voice-contour-node",
-      "kind": "module",
-      "label": "Voice contour node",
-      "artifact_type": "crimson-node",
-      "bounds": {
-        "x": 0.674,
-        "y": 0.613,
-        "w": 0.078,
-        "h": 0.121
-      },
-      "z_index": 26,
-      "polygon": [
-        [
-          0.701,
-          0.618
-        ],
-        [
-          0.727,
-          0.613
-        ],
-        [
-          0.744,
-          0.63
-        ],
-        [
-          0.751,
-          0.66
-        ],
-        [
-          0.739,
-          0.69
-        ],
-        [
-          0.733,
-          0.721
-        ],
-        [
-          0.712,
-          0.734
-        ],
-        [
-          0.691,
-          0.717
-        ],
-        [
-          0.678,
-          0.688
-        ],
-        [
-          0.674,
-          0.657
-        ],
-        [
-          0.684,
-          0.633
-        ]
-      ],
-      "cluster_id": "detroit-pigment-fragment-rupture",
-      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/module-voice-contour-node.svg",
-      "source_binding_ids": [
-        "binding-module-voice-contour-node"
-      ],
-      "geometry": {
-        "safe_hover_origin_px": [
-          1095,
-          680
-        ],
-        "safe_stage_window_origin_px": [
-          1105,
-          690
-        ],
-        "preferred_expansion_label": "left"
-      },
-      "interaction_mesh": {
-        "schema_version": 1,
-        "visible_polygon": [
-          [
-            0.701,
-            0.618
-          ],
-          [
-            0.727,
-            0.613
-          ],
-          [
-            0.744,
-            0.63
-          ],
-          [
-            0.751,
-            0.66
-          ],
-          [
-            0.739,
-            0.69
-          ],
-          [
-            0.733,
-            0.721
-          ],
-          [
-            0.712,
-            0.734
-          ],
-          [
-            0.691,
-            0.717
-          ],
-          [
-            0.678,
-            0.688
-          ],
-          [
-            0.674,
-            0.657
-          ],
-          [
-            0.684,
-            0.633
-          ]
-        ],
-        "hover_polygon": [
-          [
-            0.6556,
-            0.6562
-          ],
-          [
-            0.6836,
-            0.6055
-          ],
-          [
-            0.7005,
-            0.5898
-          ],
-          [
-            0.7266,
-            0.585
-          ],
-          [
-            0.7617,
-            0.6299
-          ],
-          [
-            0.7689,
-            0.6582
-          ],
-          [
-            0.7507,
-            0.7207
-          ],
-          [
-            0.7324,
-            0.748
-          ],
-          [
-            0.7116,
-            0.7607
-          ],
-          [
-            0.6908,
-            0.7441
-          ],
-          [
-            0.6719,
-            0.7158
-          ],
-          [
-            0.6595,
-            0.6875
-          ],
-          [
-            0.6556,
-            0.6582
-          ]
-        ],
-        "hover_bounds": {
-          "x": 0.6556,
-          "y": 0.585,
-          "w": 0.1139,
-          "h": 0.1768
-        },
-        "territory_area_px": 21349,
-        "visible_area_px": 10345,
-        "expansion_ratio": 2.064,
-        "neighbors": [
-          {
-            "artifact_id": "hero-gallery-pigment-ground",
-            "shared_edge_px": 22714,
-            "direction": "left",
-            "distance_px": 122.53
           }
         ]
       }

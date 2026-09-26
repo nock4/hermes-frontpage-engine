@@ -4963,6 +4963,13 @@
   font-size: 1.35rem;
 }
 
+@media (max-height: 500px) and (orientation: landscape) {
+  .source-window--stage.source-window--preview.source-window--poster-window,
+  .source-window--stage.source-window--preview.source-window--bleed-embed {
+    max-height: min(82dvh, calc(100dvh - 1rem)) !important;
+  }
+}
+
 @media (max-width: 680px), (max-height: 480px) {
   .source-window--stage .source-window__floating-actions,
   .source-window--stage .source-window__close {

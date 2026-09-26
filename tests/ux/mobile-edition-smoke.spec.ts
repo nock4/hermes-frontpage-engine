@@ -21,6 +21,9 @@ type SourceBindingRecord = {
   source_url?: string
   window_type?: string
   title?: string
+  source_media_type?: string
+  source_media_url?: string
+  source_image_url?: string
 }
 
 type MobileWindowMetric = {
@@ -38,6 +41,8 @@ type MobileWindowMetric = {
   closeOverRawCard: boolean
   captionVisible: boolean
   mediaAreaRatio: number
+  sourceVisualMode: string | null
+  hasAmbientFill: boolean
 }
 
 const root = process.cwd()
@@ -142,6 +147,8 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
         closeOverRawCard: false,
         captionVisible: false,
         mediaAreaRatio: 0,
+        sourceVisualMode: null,
+        hasAmbientFill: false,
       }
     }
 
@@ -190,6 +197,14 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       && captionStyle.visibility !== 'hidden'
       && Number(captionStyle.opacity || '1') > 0.01)
     const text = (node.textContent || '').replace(/\s+/g, ' ').trim()
+    const visualCard = node.querySelector('.visual-source-card')
+    const sourceVisualMode = visualCard?.getAttribute('data-source-visual-mode') || null
+    const figure = visualCard?.querySelector('.visual-source-card__figure')
+    const ambientStyle = figure ? window.getComputedStyle(figure, '::before') : null
+    const hasAmbientFill = Boolean(ambientStyle
+      && ambientStyle.content !== 'none'
+      && ambientStyle.backgroundImage !== 'none'
+      && ambientStyle.backgroundImage.includes('url('))
 
     return {
       bindingId: expectedBindingId,
@@ -206,6 +221,8 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       closeOverRawCard,
       captionVisible,
       mediaAreaRatio: rect.width > 0 && rect.height > 0 ? largestMediaArea / (rect.width * rect.height) : 0,
+      sourceVisualMode,
+      hasAmbientFill,
     }
   }, { expectedBindingId: bindingId, expectedArtifactLabel: artifactLabel })
 }
@@ -280,6 +297,11 @@ for (const viewport of mobileViewports) {
       if (metric.captionVisible) failures.push(`${viewport.name} / ${label}: source caption overlays the media surface`)
       if (!metric.hasVisibleMedia && !metric.hasReadableText) failures.push(`${viewport.name} / ${label}: source window has no visible media or readable fallback`)
       if (metric.hasVisibleMedia && metric.mediaAreaRatio < 0.22) failures.push(`${viewport.name} / ${label}: source media is too small in the mobile source window (${metric.mediaAreaRatio.toFixed(2)} < 0.22)`)
+      if (viewport.name === 'mobile-landscape' && binding.source_media_type !== 'video' && (binding.source_media_url || binding.source_image_url)) {
+        if (metric.sourceVisualMode !== 'raw') failures.push(`${viewport.name} / ${label}: still-image source must use contained raw media in short landscape (mode=${metric.sourceVisualMode})`)
+        if (!metric.hasAmbientFill) failures.push(`${viewport.name} / ${label}: contained landscape source is missing blurred ambient fill`)
+        if (metric.sourceVisualMode === 'raw' && metric.height < viewport.height * 0.55) failures.push(`${viewport.name} / ${label}: landscape source aperture is too short to show the image (${Math.round(metric.height)}px < ${Math.round(viewport.height * 0.55)}px)`)
+      }
 
       if (metrics.length === 1 && metric.exists) {
         await page.screenshot({ path: path.join(reportRoot, `${viewport.name}-window-open.png`), fullPage: false })

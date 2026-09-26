@@ -378,6 +378,7 @@ describe('source selection policy', () => {
       ['https://x.com/heynavtoor/status/example', 'OpenAI charges $0.006/minute; an open-sourced tool that does it for $0'],
       ['https://x.com/aaronjmars/status/example', 'MiroFish sanitized version with improved simulation flow and recommended models'],
       ['https://x.com/kimmonismus/status/example', 'Microsoft introduces a 4B image-to-3D model producing textured assets'],
+      ['https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice', 'Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice is a text-to-speech model'],
       ['https://x.com/mccoyspace/status/example', 'Classic art theory to evaluate images and steer generative systems'],
       ['https://x.com/noahzweben/status/example', 'Use schedule to create recurring cloud-based jobs for Claude from the terminal'],
       ['https://x.com/ihtesham2005/status/example', 'Smart LLM router that automatically cuts your AI inference costs; called ClawRouter'],

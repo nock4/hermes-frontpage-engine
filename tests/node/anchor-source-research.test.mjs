@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { buildAnchorQueries, parseSrcsetImageCandidates, selectAnchorSource } from '../../scripts/lib/anchor-source-research.mjs'
+import { buildAnchorQueries, discoverImageSourceMaterial, normalizeWixImageCandidate, parseSrcsetImageCandidates, selectAnchorSource } from '../../scripts/lib/anchor-source-research.mjs'
 
 describe('anchor-source-research', () => {
   it('selects a creative anchor over high-score infrastructure', () => {
@@ -121,6 +121,37 @@ describe('anchor-source-research', () => {
 
     expect(joined).toMatch(/works|artist|visual archive|music video|genre|scene|album art|animation|screenshots/)
     expect(joined).not.toMatch(/github screenshots assets/)
+  })
+
+  it('upgrades blurred Wix artwork variants while preserving preview lineage and skipping tiny icons', async () => {
+    const asset = '5537eb_artwork~mv2.jpg'
+    const previewUrl = `https://static.wixstatic.com/media/${asset}/v1/fill/w_147,h_100,al_c,blur_2/${asset}`
+    const fullFitUrl = `https://static.wixstatic.com/media/${asset}/v1/fit/w_2200,h_2200,al_c,q_88/${asset}`
+    const candidate = {
+      page_url: 'https://gallery.example/',
+      image_url: previewUrl,
+      caption: 'DABLS painting detail',
+      lineage: 'direct_link',
+      width: 980,
+      height: 786,
+    }
+
+    expect(normalizeWixImageCandidate(candidate)).toMatchObject({
+      image_url: fullFitUrl,
+      source_image_preview_url: previewUrl,
+    })
+    const result = await discoverImageSourceMaterial({
+      direct_image_candidates: [candidate],
+      anchor_research: { visual_motifs: [], entities: [], outbound_links: [], image_search_queries: [] },
+    })
+    expect(result.selected_image_material[0]).toMatchObject({
+      image_url: fullFitUrl,
+      source_image_preview_url: previewUrl,
+    })
+
+    const iconAsset = '5537eb_icon~mv2.png'
+    const iconUrl = `https://static.wixstatic.com/media/${iconAsset}/v1/fill/w_50,h_50,al_c/${iconAsset}`
+    expect(normalizeWixImageCandidate({ image_url: iconUrl, width: 25, height: 25 }).image_url).toBe(iconUrl)
   })
 
   it('selects a rich renderable anchor over weak profile pages', () => {

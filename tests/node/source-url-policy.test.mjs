@@ -72,5 +72,8 @@ describe('source URL policy', () => {
     expect(canonicalizeSourceUrl('https://www.youtube.com/watch?v=abc123&feature=share')).toBe('youtube.com/watch/abc123')
     expect(canonicalizeSourceUrl('https://pbs.twimg.com/media/HHP5cUjW0AA71LA.jpg?name=orig')).toBe('pbs.twimg.com/media/hhp5cujw0aa71la.jpg')
     expect(canonicalizeSourceUrl('https://pbs.twimg.com/media/HHP5cUjW0AA71LA.jpg:large')).toBe('pbs.twimg.com/media/hhp5cujw0aa71la.jpg')
+    const wixAssetKey = 'static.wixstatic.com/media/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg'
+    expect(canonicalizeSourceUrl('https://static.wixstatic.com/media/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg/v1/fill/w_147,h_100,al_c,blur_2/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg')).toBe(wixAssetKey)
+    expect(canonicalizeSourceUrl('https://static.wixstatic.com/media/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg/v1/fit/w_2200,h_2200,al_c,q_88/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg')).toBe(wixAssetKey)
   })
 })

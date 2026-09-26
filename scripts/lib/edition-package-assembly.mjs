@@ -15,9 +15,10 @@ import {
   isDirectRasterImageUrl,
   isLowValueVisualImage,
 } from './source-selection-policy.mjs'
+import { isLowFertilitySourceImageCandidate } from './source-image-fingerprints.mjs'
 import { domain, getDistinctSourceDisplayTitle, getSourceDisplayTitle } from './source-display.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
-import { isYouTubeVideoUrl } from './source-url-policy.mjs'
+import { canonicalizeSourceUrl, isYouTubeVideoUrl } from './source-url-policy.mjs'
 import { sentenceList, slugify, uniqueNonEmpty } from './string-utils.mjs'
 
 const DEFAULT_MAX_CONTENT_ITEMS = 10
@@ -137,8 +138,26 @@ function getRedirectSiblingImageUrl(source, researchField) {
   return getDirectSourceImageUrl(sibling) || (!isLowValueVisualImage(sibling.image_url) ? sibling.image_url : null)
 }
 
+function getSelectedImageMaterialForSource(source, researchField) {
+  const sourceKeys = new Set(uniqueNonEmpty([
+    source?.url,
+    source?.source_url,
+    source?.final_url,
+  ].map(canonicalizeSourceUrl)))
+  if (!sourceKeys.size) return null
+
+  return (researchField?.selected_image_material || []).find((candidate) => {
+    if (!candidate?.image_url || isLowValueVisualImage(candidate.image_url)) return false
+    if (isLowFertilitySourceImageCandidate(candidate)) return false
+    return sourceKeys.has(canonicalizeSourceUrl(candidate.page_url))
+  }) || null
+}
+
 function getSourceImageForBinding(source, researchField, signalHarvest = null) {
   if (!source) return null
+
+  const selectedImageMaterial = getSelectedImageMaterialForSource(source, researchField)
+  if (selectedImageMaterial?.image_url) return selectedImageMaterial.image_url
 
   const directSourceImage = getDirectSourceImageUrl(source)
   if (directSourceImage) return directSourceImage
@@ -168,11 +187,9 @@ function getSourceImageForBinding(source, researchField, signalHarvest = null) {
 
 function getSourceMediaForBinding(source, sourceImageUrl) {
   if (!source?.media_url || !source?.media_type) return { mediaUrl: sourceImageUrl, mediaType: sourceImageUrl ? 'image' : null }
-  if (source.media_type !== 'video' && source.media_type !== 'image') return { mediaUrl: sourceImageUrl, mediaType: sourceImageUrl ? 'image' : null }
-  return {
-    mediaUrl: source.media_url,
-    mediaType: source.media_type,
-  }
+  if (source.media_type === 'video') return { mediaUrl: source.media_url, mediaType: 'video' }
+  if (source.media_type === 'image') return { mediaUrl: sourceImageUrl || source.media_url, mediaType: 'image' }
+  return { mediaUrl: sourceImageUrl, mediaType: sourceImageUrl ? 'image' : null }
 }
 
 function chooseAboutTypography(payload) {
@@ -403,6 +420,7 @@ export async function assembleEditionPackage({
     const url = sourceUrls[index]
     const source = sourceByUrl.get(url)
     const classification = classifySource(url)
+    const sourceImageMaterial = getSelectedImageMaterialForSource(source, researchField)
     const sourceImageUrl = getSourceImageForBinding(source, researchField, signalHarvest)
     const sourceMedia = getSourceMediaForBinding(source, sourceImageUrl)
     const displayTitle = getDistinctSourceDisplayTitle(source, eligibleArtifacts[index]?.label || artifact.label, usedBindingTitles)
@@ -426,7 +444,7 @@ export async function assembleEditionPackage({
       source_meta: source?.note_title || undefined,
       source_embed_html: source?.source_embed_html || undefined,
       source_image_url: sourceImageUrl || undefined,
-      source_image_alt: sourceImageUrl ? `${getSourceDisplayTitle(source, artifact.label)} preview image` : undefined,
+      source_image_alt: sourceImageUrl ? (sourceImageMaterial?.title || sourceImageMaterial?.caption || `${getSourceDisplayTitle(source, artifact.label)} preview image`) : undefined,
       source_media_url: sourceMedia.mediaUrl || undefined,
       source_media_type: sourceMedia.mediaType || undefined,
       ...(embedStatus === 'unavailable' ? { embed_status: 'unavailable' } : {}),

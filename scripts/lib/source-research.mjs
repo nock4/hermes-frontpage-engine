@@ -274,8 +274,10 @@ function imageMaterialAlreadyUsed(candidate, recentSourceKeys = new Set()) {
   const keys = uniqueNonEmpty([
     sourceContentKey({ url: candidate?.page_url, source_url: candidate?.page_url }),
     sourceContentKey({ url: candidate?.image_url, source_url: candidate?.image_url }),
+    sourceContentKey({ url: candidate?.source_image_preview_url, source_url: candidate?.source_image_preview_url }),
     canonicalizeSourceUrl(candidate?.page_url),
     canonicalizeSourceUrl(candidate?.image_url),
+    canonicalizeSourceUrl(candidate?.source_image_preview_url),
   ])
   return keys.some((key) => recentSourceKeys.has(key))
 }

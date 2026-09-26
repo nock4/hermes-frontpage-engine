@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { getSourceVisualImageUrl, getSourceVisualMode } from './SourceWindowBody'
 import type { SourceBindingRecord } from '../../types/runtime'
 
@@ -24,5 +24,28 @@ describe('source visual crop fallback', () => {
 
     expect(getSourceVisualImageUrl(binding, binding.source_media_url ?? null)).toBe('/editions/test/assets/source-poster.jpg')
     expect(getSourceVisualMode(binding, binding.source_media_url ?? null)).toBe('poster-crop')
+  })
+
+  it('uses contained raw media with ambient fill on short landscape screens', () => {
+    vi.stubGlobal('window', { matchMedia: vi.fn().mockReturnValue({ matches: true }) })
+    const binding = makeBinding('low')
+
+    try {
+      expect(getSourceVisualImageUrl(binding, binding.source_media_url ?? null)).toBe('/editions/test/assets/source-poster.jpg')
+      expect(getSourceVisualMode(binding, binding.source_media_url ?? null)).toBe('raw')
+    } finally {
+      vi.unstubAllGlobals()
+    }
+  })
+
+  it('does not force video players into contained still-image mode', () => {
+    vi.stubGlobal('window', { matchMedia: vi.fn().mockReturnValue({ matches: true }) })
+    const binding = { ...makeBinding('low'), source_media_type: 'video' } as SourceBindingRecord
+
+    try {
+      expect(getSourceVisualMode(binding, binding.source_media_url ?? null)).toBe('poster-crop')
+    } finally {
+      vi.unstubAllGlobals()
+    }
   })
 })

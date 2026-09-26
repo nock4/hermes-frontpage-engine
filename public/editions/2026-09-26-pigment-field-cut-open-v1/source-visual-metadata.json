@@ -5,29 +5,29 @@
   "records": [
     {
       "binding_id": "binding-hero-gallery-pigment-ground",
-      "source_image_url": "https://static.wixstatic.com/media/5537eb_502d452345d142228d3b3561425d0188%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/5537eb_502d452345d142228d3b3561425d0188%7Emv2.jpg",
+      "source_image_url": "https://static.wixstatic.com/media/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg/v1/fit/w_2200,h_2200,al_c,q_88/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg",
       "poster_asset_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/source-posters/binding-hero-gallery-pigment-ground.jpg",
       "review_asset_path": "tmp/source-visual-qa/2026-09-26-pigment-field-cut-open-v1/binding-hero-gallery-pigment-ground-source-visual-qa.jpg",
-      "image_width": 1200,
-      "image_height": 342,
-      "aspect_ratio": 3.5088,
+      "image_width": 2200,
+      "image_height": 1496,
+      "aspect_ratio": 1.4706,
       "render_mode": "poster-crop",
-      "crop_risk": "medium",
+      "crop_risk": "low",
       "focal_point": {
-        "x": 0.4992,
-        "y": 0.5029
+        "x": 0.5,
+        "y": 0.4843
       },
       "poster_crop": {
-        "x": 0.2467,
-        "y": 0.0,
-        "width": 0.5067,
-        "height": 1.0
+        "x": 0.0,
+        "y": 0.0869,
+        "width": 1.0,
+        "height": 0.8269
       },
       "analysis": {
         "method": "supervision-contour-union",
         "supervision_version": "0.28.0",
-        "edge_density": 0.02462,
-        "candidate_box_count": 10
+        "edge_density": 0.16297,
+        "candidate_box_count": 24
       }
     },
     {
@@ -135,33 +135,6 @@
         "method": "supervision-contour-union",
         "supervision_version": "0.28.0",
         "edge_density": 0.0423,
-        "candidate_box_count": 24
-      }
-    },
-    {
-      "binding_id": "binding-module-voice-contour-node",
-      "source_image_url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice.png",
-      "poster_asset_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/source-posters/binding-module-voice-contour-node.jpg",
-      "review_asset_path": "tmp/source-visual-qa/2026-09-26-pigment-field-cut-open-v1/binding-module-voice-contour-node-source-visual-qa.jpg",
-      "image_width": 1200,
-      "image_height": 648,
-      "aspect_ratio": 1.8519,
-      "render_mode": "poster-crop",
-      "crop_risk": "low",
-      "focal_point": {
-        "x": 0.3379,
-        "y": 0.5386
-      },
-      "poster_crop": {
-        "x": 0.0,
-        "y": 0.0,
-        "width": 0.96,
-        "height": 1.0
-      },
-      "analysis": {
-        "method": "supervision-contour-union",
-        "supervision_version": "0.28.0",
-        "edge_density": 0.01374,
         "candidate_box_count": 24
       }
     },

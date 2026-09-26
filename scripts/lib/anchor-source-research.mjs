@@ -1,7 +1,7 @@
 import dns from 'node:dns/promises'
 
 import { getSourceDisplayTitle } from './source-display.mjs'
-import { extractUrls, hostnameForUrl, isAllowedSourceUrl, youtubeId } from './source-url-policy.mjs'
+import { canonicalizeSourceUrl, extractUrls, hostnameForUrl, isAllowedSourceUrl, youtubeId } from './source-url-policy.mjs'
 import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl } from './source-image-network-policy.mjs'
 import {
   aestheticSignalScore,
@@ -396,6 +396,45 @@ function scoreImageCandidate(candidate, anchorResearch) {
   return score
 }
 
+export function normalizeWixImageCandidate(candidate = {}) {
+  const originalUrl = String(candidate.image_url || '').trim()
+  if (!originalUrl) return candidate
+
+  let parsed
+  try {
+    parsed = new URL(originalUrl)
+  } catch {
+    return candidate
+  }
+  if (parsed.hostname !== 'static.wixstatic.com') return candidate
+
+  const segments = parsed.pathname.split('/').filter(Boolean)
+  if (segments[0] !== 'media' || segments[2] !== 'v1') return candidate
+
+  let assetId
+  try {
+    assetId = decodeURIComponent(segments[1] || '')
+  } catch {
+    return candidate
+  }
+  if (!/\.(?:jpe?g|png|webp|avif)$/i.test(assetId)) return candidate
+
+  const transform = segments.slice(3, -1).join('/')
+  const width = Number(transform.match(/(?:^|[,/])w_(\d+)(?:[,/]|$)/i)?.[1] || 0)
+  const height = Number(transform.match(/(?:^|[,/])h_(\d+)(?:[,/]|$)/i)?.[1] || 0)
+  const blurred = /blur_\d+/i.test(transform)
+  const smallVariant = (width > 0 && width < 400) || (height > 0 && height < 400)
+  if ((!blurred && !smallVariant) || (width > 0 && width < 96 && height > 0 && height < 96)) return candidate
+  if ((Number(candidate.width) > 0 && Number(candidate.width) < 48) || (Number(candidate.height) > 0 && Number(candidate.height) < 40)) return candidate
+
+  const safeAssetId = encodeURIComponent(assetId).replace(/%7E/gi, '~')
+  return {
+    ...candidate,
+    image_url: `${parsed.origin}/media/${safeAssetId}/v1/fit/w_2200,h_2200,al_c,q_88/${safeAssetId}`,
+    source_image_preview_url: candidate.source_image_preview_url || originalUrl,
+  }
+}
+
 export async function discoverImageSourceMaterial(anchorResearch, derivedCandidates = [], { maxCandidates = MAX_IMAGE_CANDIDATES, maxSelected = 8 } = {}) {
   const imageCandidates = [...(anchorResearch.direct_image_candidates || [])]
   const pagesToInspect = uniqueNonEmpty([
@@ -434,9 +473,10 @@ export async function discoverImageSourceMaterial(anchorResearch, derivedCandida
 
   const seenImages = new Set()
   const deduped = imageCandidates
+    .map(normalizeWixImageCandidate)
     .filter((candidate) => candidate?.image_url && !isLowValueVisualImage(candidate.image_url))
     .filter((candidate) => {
-      const key = candidate.image_url.toLowerCase()
+      const key = canonicalizeSourceUrl(candidate.image_url)
       if (seenImages.has(key)) return false
       seenImages.add(key)
       return true

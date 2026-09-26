@@ -7,7 +7,7 @@
     "width": 1536,
     "height": 1024
   },
-  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-09-26T16-20-16-268Z/2026-09-26-pigment-field-cut-open-v1/interaction-mesh-audit-board.png",
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine/tmp/interaction-mesh-generations/daily-process-2026-09-26T16-20-16-268Z/2026-09-26-pigment-field-cut-open-v1/interaction-mesh-audit-board.png",
   "cells": [
     {
       "artifact_id": "hero-gallery-pigment-ground",
@@ -95,12 +95,6 @@
       ],
       "neighbors": [
         {
-          "artifact_id": "module-voice-contour-node",
-          "shared_edge_px": 22714,
-          "direction": "right",
-          "distance_px": 122.53
-        },
-        {
           "artifact_id": "module-clumsy-redraw-scrape",
           "shared_edge_px": 18232,
           "direction": "left",
@@ -117,6 +111,12 @@
           "shared_edge_px": 2897,
           "direction": "right",
           "distance_px": 433.54
+        },
+        {
+          "artifact_id": "module-puzzle-grid-interruption",
+          "shared_edge_px": 2543,
+          "direction": "left",
+          "distance_px": 408.95
         }
       ]
     },
@@ -474,79 +474,6 @@
           "shared_edge_px": 103,
           "direction": "right",
           "distance_px": 392.16
-        }
-      ]
-    },
-    {
-      "artifact_id": "module-voice-contour-node",
-      "visible_area_px": 10345,
-      "territory_area_px": 21349,
-      "hover_bounds": {
-        "x": 0.6556,
-        "y": 0.585,
-        "w": 0.1139,
-        "h": 0.1768
-      },
-      "hover_polygon": [
-        [
-          0.6556,
-          0.6562
-        ],
-        [
-          0.6836,
-          0.6055
-        ],
-        [
-          0.7005,
-          0.5898
-        ],
-        [
-          0.7266,
-          0.585
-        ],
-        [
-          0.7617,
-          0.6299
-        ],
-        [
-          0.7689,
-          0.6582
-        ],
-        [
-          0.7507,
-          0.7207
-        ],
-        [
-          0.7324,
-          0.748
-        ],
-        [
-          0.7116,
-          0.7607
-        ],
-        [
-          0.6908,
-          0.7441
-        ],
-        [
-          0.6719,
-          0.7158
-        ],
-        [
-          0.6595,
-          0.6875
-        ],
-        [
-          0.6556,
-          0.6582
-        ]
-      ],
-      "neighbors": [
-        {
-          "artifact_id": "hero-gallery-pigment-ground",
-          "shared_edge_px": 22714,
-          "direction": "left",
-          "distance_px": 122.53
         }
       ]
     },

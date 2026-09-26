@@ -18,31 +18,31 @@
       "source_summary": "Matéria is a Contemporary Art Gallery in Detroit. Previously known as Simone DeSousa Gallery, the gallery has operated since 2010. Matéria Exhibitions is located in Detroit's historic Eastern Market, awith an additional office in Cass Corridor.",
       "source_domain": "materia-art.com",
       "source_meta": "Detroit Is Changing Fast. Here’s What Locals Think Its Future Should Look Like",
-      "source_image_url": "https://static.wixstatic.com/media/5537eb_502d452345d142228d3b3561425d0188%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/5537eb_502d452345d142228d3b3561425d0188%7Emv2.jpg",
-      "source_image_alt": "Matéria | Contemporary Art Gallery | Eastern Market and Cass Corridor Detroit preview image",
-      "source_media_url": "https://static.wixstatic.com/media/5537eb_502d452345d142228d3b3561425d0188%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/5537eb_502d452345d142228d3b3561425d0188%7Emv2.jpg",
+      "source_image_url": "https://static.wixstatic.com/media/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg/v1/fit/w_2200,h_2200,al_c,q_88/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg",
+      "source_image_alt": "Abstract DABLS artwork from Matéria Gallery",
+      "source_media_url": "https://static.wixstatic.com/media/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg/v1/fit/w_2200,h_2200,al_c,q_88/5537eb_18751ef4b096477b8335d6dd11afb323~mv2.jpg",
       "source_media_type": "image",
       "source_visual": {
         "poster_asset_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/source-posters/binding-hero-gallery-pigment-ground.jpg",
         "render_mode": "poster-crop",
-        "crop_risk": "medium",
+        "crop_risk": "low",
         "focal_point": {
-          "x": 0.4992,
-          "y": 0.5029
+          "x": 0.5,
+          "y": 0.4843
         },
         "poster_crop": {
-          "x": 0.2467,
-          "y": 0.0,
-          "width": 0.5067,
-          "height": 1.0
+          "x": 0.0,
+          "y": 0.0869,
+          "width": 1.0,
+          "height": 0.8269
         },
-        "image_width": 1200,
-        "image_height": 342,
+        "image_width": 2200,
+        "image_height": 1496,
         "analysis": {
           "method": "supervision-contour-union",
           "supervision_version": "0.28.0",
-          "edge_density": 0.02462,
-          "candidate_box_count": 10
+          "edge_density": 0.16297,
+          "candidate_box_count": 24
         }
       }
     },
@@ -240,51 +240,6 @@
           "method": "supervision-contour-union",
           "supervision_version": "0.28.0",
           "edge_density": 0.0423,
-          "candidate_box_count": 24
-        }
-      }
-    },
-    {
-      "id": "binding-module-voice-contour-node",
-      "artifact_id": "module-voice-contour-node",
-      "source_type": "article",
-      "source_url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice",
-      "window_type": "web",
-      "hover_behavior": "preview",
-      "click_behavior": "pin-open",
-      "playback_persistence": true,
-      "fallback_type": "rich-preview",
-      "title": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice · Hugging Face",
-      "kicker": "huggingface.co",
-      "excerpt": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
-      "source_title": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice · Hugging Face",
-      "source_summary": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
-      "source_domain": "huggingface.co",
-      "source_meta": "You can now clone voices that sound actually real.",
-      "source_image_url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice.png",
-      "source_image_alt": "Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice · Hugging Face preview image",
-      "source_media_url": "https://cdn-thumbnails.huggingface.co/social-thumbnails/models/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice.png",
-      "source_media_type": "image",
-      "source_visual": {
-        "poster_asset_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/source-posters/binding-module-voice-contour-node.jpg",
-        "render_mode": "poster-crop",
-        "crop_risk": "low",
-        "focal_point": {
-          "x": 0.3379,
-          "y": 0.5386
-        },
-        "poster_crop": {
-          "x": 0.0,
-          "y": 0.0,
-          "width": 0.96,
-          "height": 1.0
-        },
-        "image_width": 1200,
-        "image_height": 648,
-        "analysis": {
-          "method": "supervision-contour-union",
-          "supervision_version": "0.28.0",
-          "edge_density": 0.01374,
           "candidate_box_count": 24
         }
       }

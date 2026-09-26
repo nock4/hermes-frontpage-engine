@@ -153,8 +153,15 @@ function getSourceMediaType(binding: SourceBindingRecord) {
   return binding.source_media_type === 'video' ? 'video' : 'image'
 }
 
+function isShortLandscapeViewport() {
+  return typeof window !== 'undefined'
+    && typeof window.matchMedia === 'function'
+    && window.matchMedia('(orientation: landscape) and (max-height: 500px)').matches
+}
+
 export function getSourceVisualMode(binding: SourceBindingRecord, fallbackUrl: string | null) {
   if (shouldBypassPosterCrop(binding, fallbackUrl)) return 'raw'
+  if (fallbackUrl && binding.source_media_type !== 'video' && isShortLandscapeViewport()) return 'raw'
   if (binding.source_media_url) return 'poster-crop'
   return binding.source_visual?.render_mode || 'raw'
 }

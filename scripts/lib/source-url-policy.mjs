@@ -248,6 +248,19 @@ export function canonicalizeSourceUrl(value) {
     hostname = 'x.com'
   }
 
+  if (hostname === 'static.wixstatic.com' && pathname.startsWith('/media/')) {
+    const assetId = pathname.match(/^\/media\/([^/]+)/i)?.[1]
+    if (assetId) {
+      let decodedAssetId = assetId
+      try {
+        decodedAssetId = decodeURIComponent(assetId)
+      } catch {
+        // Keep the encoded asset key if a malformed escape appears.
+      }
+      return `${hostname}/media/${decodedAssetId}`.toLowerCase()
+    }
+  }
+
   if (hostname === 'pbs.twimg.com' && pathname.startsWith('/media/')) {
     pathname = pathname.replace(/:(?:orig|large|small|medium|thumb)$/i, '')
     return `${hostname}${pathname}`.toLowerCase()
