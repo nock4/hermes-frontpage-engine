@@ -1,0 +1,377 @@
+{
+  "interpretation_id": "interp-2026-09-26-pigment-field-cut-open-v1",
+  "edition_id": "2026-09-26-pigment-field-cut-open-v1",
+  "plate_read_timestamp": "2026-09-26T16:31:11.836Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dense torn-paper or flaked-pigment field of ochre, rust, crimson, black, cream, and gray. Jagged seams and exposed dark voids cut between overlapping color masses; no literal text, sprites, or grid is visible.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "A dense, tactile field broken by crisp, deliberate interruptions.",
+      "A dense torn-paper or flaked-pigment field of ochre, rust, crimson, black, cream, and gray. Jagged seams and exposed dark voids cut between overlapping color masses; no literal text, sprites, or grid is visible.",
+      "mottled-pigment",
+      "crimson-interruption",
+      "charcoal-notch"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Gallery pigment ground",
+      "Mid-century connection seam",
+      "Pixel-snapped break",
+      "Clumsy redraw scrape",
+      "Sprite silhouette slash",
+      "Match-cut field",
+      "Voice contour node",
+      "Generated-pose fold"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "detroit-pigment-fragment-rupture",
+      "continuous irregular fragment field",
+      "overscale cutaway seam",
+      "detached diagonal slash",
+      "crimson zigzag apertures",
+      "pixel-snapped tile breaks",
+      "large ochre fragment across the upper center",
+      "rust-red and crimson pigment fields"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: detroit-pigment-fragment-rupture.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-gallery-pigment-ground",
+      "kind": "hero",
+      "type": "mottled-fragment-field",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.286,
+        "y": 0.142,
+        "w": 0.714,
+        "h": 0.858
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-mid-century-connection-seam",
+      "kind": "hero",
+      "type": "cutaway-seam",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.395,
+        "y": 0.145,
+        "w": 0.149,
+        "h": 0.274
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pixel-snapped-break",
+      "kind": "module",
+      "type": "pixel-tile-break",
+      "strength": 0.786168,
+      "bounds": {
+        "x": 0.029,
+        "y": 0.409,
+        "w": 0.309,
+        "h": 0.365
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-clumsy-redraw-scrape",
+      "kind": "module",
+      "type": "scribbled-aperture",
+      "strength": 0.7663080000000001,
+      "bounds": {
+        "x": 0.466,
+        "y": 0.499,
+        "w": 0.077,
+        "h": 0.094
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sprite-silhouette-slash",
+      "kind": "module",
+      "type": "detached-diagonal-slash",
+      "strength": 0.727944,
+      "bounds": {
+        "x": 0.786,
+        "y": 0.294,
+        "w": 0.052,
+        "h": 0.219
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-match-cut-field",
+      "kind": "module",
+      "type": "angular-field-notch",
+      "strength": 0.704988,
+      "bounds": {
+        "x": 0.628,
+        "y": 0.169,
+        "w": 0.205,
+        "h": 0.219
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-voice-contour-node",
+      "kind": "module",
+      "type": "crimson-node",
+      "strength": 0.6744120000000001,
+      "bounds": {
+        "x": 0.674,
+        "y": 0.613,
+        "w": 0.078,
+        "h": 0.121
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-generated-pose-fold",
+      "kind": "module",
+      "type": "folded-pose-seam",
+      "strength": 0.642988,
+      "bounds": {
+        "x": 0.7865,
+        "y": 0.3525,
+        "w": 0.2135,
+        "h": 0.2832
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-puzzle-grid-interruption",
+      "kind": "module",
+      "type": "broken-tile-cluster",
+      "strength": 0.638644,
+      "bounds": {
+        "x": 0.323,
+        "y": 0.607,
+        "w": 0.171,
+        "h": 0.393
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-gallery-pigment-ground-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.286,
+        "y": 0.142,
+        "w": 0.714,
+        "h": 0.858
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-mid-century-connection-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.145,
+        "w": 0.149,
+        "h": 0.274
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pixel-snapped-break-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.029,
+        "y": 0.409,
+        "w": 0.309,
+        "h": 0.365
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-clumsy-redraw-scrape-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.466,
+        "y": 0.499,
+        "w": 0.077,
+        "h": 0.094
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sprite-silhouette-slash-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.786,
+        "y": 0.294,
+        "w": 0.052,
+        "h": 0.219
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-match-cut-field-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.628,
+        "y": 0.169,
+        "w": 0.205,
+        "h": 0.219
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-voice-contour-node-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.674,
+        "y": 0.613,
+        "w": 0.078,
+        "h": 0.121
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-generated-pose-fold-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.7865,
+        "y": 0.3525,
+        "w": 0.2135,
+        "h": 0.2832
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-puzzle-grid-interruption-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.323,
+        "y": 0.607,
+        "w": 0.171,
+        "h": 0.393
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

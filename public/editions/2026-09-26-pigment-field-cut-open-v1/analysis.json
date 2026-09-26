@@ -1,0 +1,625 @@
+{
+  "analysis_id": "analysis-2026-09-26-pigment-field-cut-open-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dense torn-paper or flaked-pigment field of ochre, rust, crimson, black, cream, and gray. Jagged seams and exposed dark voids cut between overlapping color masses; no literal text, sprites, or grid is visible.",
+  "usable_surfaces": [
+    "large ochre fragment across the upper center",
+    "rust-red and crimson pigment fields",
+    "angular gray fragment in the upper-right center",
+    "black tapered tear near the upper center",
+    "stair-stepped ochre edge at lower left",
+    "narrow cream tear on the right",
+    "small cream-and-gray fracture below center"
+  ],
+  "detected_objects": [
+    {
+      "label": "Gallery pigment ground",
+      "artifact_type": "mottled-fragment-field",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.286,
+        "y": 0.142,
+        "w": 0.714,
+        "h": 0.858
+      },
+      "polygon": [
+        [
+          0.307,
+          0.153
+        ],
+        [
+          0.435,
+          0.145
+        ],
+        [
+          0.523,
+          0.205
+        ],
+        [
+          0.69,
+          0.256
+        ],
+        [
+          0.815,
+          0.337
+        ],
+        [
+          0.948,
+          0.375
+        ],
+        [
+          0.997,
+          0.535
+        ],
+        [
+          0.901,
+          0.702
+        ],
+        [
+          0.992,
+          0.859
+        ],
+        [
+          0.846,
+          0.999
+        ],
+        [
+          0.681,
+          0.956
+        ],
+        [
+          0.523,
+          0.815
+        ],
+        [
+          0.382,
+          0.741
+        ],
+        [
+          0.294,
+          0.553
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "Connected, densely mottled red, ochre, and brown pigment fragments dominate the central and right portions of the plate, with torn, uneven boundaries."
+    },
+    {
+      "label": "Mid-century connection seam",
+      "artifact_type": "cutaway-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.145,
+        "w": 0.149,
+        "h": 0.274
+      },
+      "polygon": [
+        [
+          0.411,
+          0.151
+        ],
+        [
+          0.451,
+          0.158
+        ],
+        [
+          0.476,
+          0.181
+        ],
+        [
+          0.529,
+          0.177
+        ],
+        [
+          0.544,
+          0.202
+        ],
+        [
+          0.526,
+          0.236
+        ],
+        [
+          0.512,
+          0.278
+        ],
+        [
+          0.486,
+          0.328
+        ],
+        [
+          0.458,
+          0.409
+        ],
+        [
+          0.442,
+          0.383
+        ],
+        [
+          0.428,
+          0.333
+        ],
+        [
+          0.411,
+          0.273
+        ],
+        [
+          0.398,
+          0.216
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "A conspicuous tapered black opening descends between torn fragments near the upper center; its irregular pale edges make it read as a cut or rupture."
+    },
+    {
+      "label": "Pixel-snapped break",
+      "artifact_type": "pixel-tile-break",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.029,
+        "y": 0.409,
+        "w": 0.309,
+        "h": 0.365
+      },
+      "polygon": [
+        [
+          0.031,
+          0.449
+        ],
+        [
+          0.079,
+          0.439
+        ],
+        [
+          0.098,
+          0.415
+        ],
+        [
+          0.139,
+          0.43
+        ],
+        [
+          0.173,
+          0.408
+        ],
+        [
+          0.221,
+          0.427
+        ],
+        [
+          0.278,
+          0.414
+        ],
+        [
+          0.337,
+          0.445
+        ],
+        [
+          0.322,
+          0.507
+        ],
+        [
+          0.307,
+          0.582
+        ],
+        [
+          0.291,
+          0.678
+        ],
+        [
+          0.261,
+          0.751
+        ],
+        [
+          0.211,
+          0.773
+        ],
+        [
+          0.151,
+          0.738
+        ],
+        [
+          0.092,
+          0.7
+        ],
+        [
+          0.03,
+          0.648
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "The large lower-left ochre fragment has a sharply broken, uneven perimeter with several angular steps; there are no clean pixel tiles, so this maps only to the visible edge."
+    },
+    {
+      "label": "Clumsy redraw scrape",
+      "artifact_type": "scribbled-aperture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.466,
+        "y": 0.499,
+        "w": 0.077,
+        "h": 0.094
+      },
+      "polygon": [
+        [
+          0.478,
+          0.507
+        ],
+        [
+          0.499,
+          0.499
+        ],
+        [
+          0.518,
+          0.51
+        ],
+        [
+          0.536,
+          0.526
+        ],
+        [
+          0.541,
+          0.551
+        ],
+        [
+          0.528,
+          0.578
+        ],
+        [
+          0.51,
+          0.59
+        ],
+        [
+          0.489,
+          0.58
+        ],
+        [
+          0.471,
+          0.559
+        ],
+        [
+          0.466,
+          0.536
+        ]
+      ],
+      "confidence": 0.58,
+      "visual_evidence": "A small irregular pale, scratchy patch interrupts the red-and-ochre boundary below the central black tear. It resembles a rough surface scuff, not a literal drawn aperture."
+    },
+    {
+      "label": "Sprite silhouette slash",
+      "artifact_type": "detached-diagonal-slash",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.786,
+        "y": 0.294,
+        "w": 0.052,
+        "h": 0.219
+      },
+      "polygon": [
+        [
+          0.804,
+          0.298
+        ],
+        [
+          0.829,
+          0.307
+        ],
+        [
+          0.835,
+          0.346
+        ],
+        [
+          0.827,
+          0.387
+        ],
+        [
+          0.819,
+          0.426
+        ],
+        [
+          0.825,
+          0.465
+        ],
+        [
+          0.818,
+          0.501
+        ],
+        [
+          0.799,
+          0.513
+        ],
+        [
+          0.786,
+          0.483
+        ],
+        [
+          0.794,
+          0.442
+        ],
+        [
+          0.798,
+          0.399
+        ],
+        [
+          0.792,
+          0.353
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "A narrow cream-colored torn strip cuts down through the red field on the right, with a tapered, irregular outline; no sprite silhouette is visible."
+    },
+    {
+      "label": "Match-cut field",
+      "artifact_type": "angular-field-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.628,
+        "y": 0.169,
+        "w": 0.205,
+        "h": 0.219
+      },
+      "polygon": [
+        [
+          0.657,
+          0.171
+        ],
+        [
+          0.704,
+          0.184
+        ],
+        [
+          0.757,
+          0.202
+        ],
+        [
+          0.815,
+          0.219
+        ],
+        [
+          0.833,
+          0.25
+        ],
+        [
+          0.817,
+          0.293
+        ],
+        [
+          0.806,
+          0.346
+        ],
+        [
+          0.778,
+          0.383
+        ],
+        [
+          0.735,
+          0.366
+        ],
+        [
+          0.69,
+          0.346
+        ],
+        [
+          0.648,
+          0.326
+        ],
+        [
+          0.628,
+          0.29
+        ],
+        [
+          0.635,
+          0.233
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "A distinct angular gray fragment sits against the red and ochre field. Its ragged polygonal edges form a bounded interruption; it is not a screen."
+    },
+    {
+      "label": "Voice contour node",
+      "artifact_type": "crimson-node",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.674,
+        "y": 0.613,
+        "w": 0.078,
+        "h": 0.121
+      },
+      "polygon": [
+        [
+          0.701,
+          0.618
+        ],
+        [
+          0.727,
+          0.613
+        ],
+        [
+          0.744,
+          0.63
+        ],
+        [
+          0.751,
+          0.66
+        ],
+        [
+          0.739,
+          0.69
+        ],
+        [
+          0.733,
+          0.721
+        ],
+        [
+          0.712,
+          0.734
+        ],
+        [
+          0.691,
+          0.717
+        ],
+        [
+          0.678,
+          0.688
+        ],
+        [
+          0.674,
+          0.657
+        ],
+        [
+          0.684,
+          0.633
+        ]
+      ],
+      "confidence": 0.63,
+      "visual_evidence": "A compact, saturated dark-crimson pigment island is visible in the lower central-right field, distinguishable from the surrounding rust-red texture; no isolated luminous point is present."
+    },
+    {
+      "label": "Generated-pose fold",
+      "artifact_type": "folded-pose-seam",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.774,
+        "y": 0.406,
+        "w": 0.22599999999999998,
+        "h": 0.375
+      },
+      "polygon": [
+        [
+          0.789,
+          0.411
+        ],
+        [
+          0.834,
+          0.438
+        ],
+        [
+          0.879,
+          0.478
+        ],
+        [
+          0.914,
+          0.53
+        ],
+        [
+          0.954,
+          0.579
+        ],
+        [
+          0.997,
+          0.614
+        ],
+        [
+          0.988,
+          0.636
+        ],
+        [
+          0.95,
+          0.616
+        ],
+        [
+          0.914,
+          0.581
+        ],
+        [
+          0.877,
+          0.546
+        ],
+        [
+          0.837,
+          0.511
+        ],
+        [
+          0.799,
+          0.479
+        ],
+        [
+          0.774,
+          0.447
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "A long dark, broken diagonal boundary runs across the lower-right red fragments, with pale torn edges and a visible kink; it reads as a seam, not literal motion."
+    },
+    {
+      "label": "Puzzle-grid interruption",
+      "artifact_type": "broken-tile-cluster",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.323,
+        "y": 0.607,
+        "w": 0.171,
+        "h": 0.393
+      },
+      "polygon": [
+        [
+          0.365,
+          0.61
+        ],
+        [
+          0.409,
+          0.623
+        ],
+        [
+          0.449,
+          0.659
+        ],
+        [
+          0.481,
+          0.71
+        ],
+        [
+          0.478,
+          0.776
+        ],
+        [
+          0.458,
+          0.839
+        ],
+        [
+          0.47,
+          0.902
+        ],
+        [
+          0.451,
+          0.964
+        ],
+        [
+          0.414,
+          0.999
+        ],
+        [
+          0.37,
+          0.963
+        ],
+        [
+          0.347,
+          0.908
+        ],
+        [
+          0.336,
+          0.841
+        ],
+        [
+          0.323,
+          0.775
+        ],
+        [
+          0.336,
+          0.704
+        ]
+      ],
+      "confidence": 0.67,
+      "visual_evidence": "An elongated gray-green fragment below the left ochre mass is interrupted by pale tears and a dark edge. There is no regular tile or board pattern."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 8,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.991,
+    "rationale": "The plate is expressionist and materially coherent, but many overlapping high-contrast fragments and seams make it visually dense rather than minimal."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-26-pigment-field-cut-open-v1"
+}

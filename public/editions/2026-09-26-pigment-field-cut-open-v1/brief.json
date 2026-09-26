@@ -1,0 +1,62 @@
+{
+  "brief_id": "brief-2026-09-26-pigment-field-cut-open-v1",
+  "date": "2026-09-26",
+  "signal_cluster_ids": [
+    "a56e75b92e63",
+    "e2221ea32f09",
+    "2ab36e02f7bb",
+    "456913452b21",
+    "b22158abe8d4",
+    "4cccc4262179",
+    "04391c2b9cd9",
+    "d22fb1e9cf9c"
+  ],
+  "research_node_ids": [
+    "research-1-15f2b7f4",
+    "research-2-2603ed49",
+    "research-3-66422eb8",
+    "research-4-6ca08819",
+    "research-5-f420a254",
+    "research-6-5b313e97",
+    "research-7-02bbdc89",
+    "research-8-9c7eaf9b",
+    "research-9-5f7fe91b",
+    "research-10-e6c757e1",
+    "research-11-5a780dd9",
+    "research-12-0a8c5620"
+  ],
+  "mood": "A dense, tactile field broken by crisp, deliberate interruptions.",
+  "material_language": [
+    "soft-focus mottled pigment",
+    "mustard and bright yellow color masses",
+    "brick red and burgundy fragments",
+    "warm gray and off-white intervals",
+    "matte charcoal cuts"
+  ],
+  "lighting": "Even overhead scan light across the field; sharp contrast reserved for crimson and charcoal marks, with clean pale gaps.",
+  "object_inventory": [
+    "continuous irregular fragment field",
+    "overscale cutaway seam",
+    "detached diagonal slash",
+    "crimson zigzag apertures",
+    "pixel-snapped tile breaks"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "No literal gallery, room, artwork copy, logo, or legible lettering.",
+    "No desks, dashboards, cards, shelves, cabinets, or realistic props.",
+    "No symmetrical orbit, uniform decorative tiling, waveform, or empty central field.",
+    "Do not reproduce source images literally; translate their color, crop, and edge behavior into abstract marks.",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached",
+    "do not strip handmade details into generic torn-paper ambience",
+    "do not fragment the primary source objects until their original silhouettes stop reading",
+    "do not replace source candy/wrapper/handwriting cues with unrelated scraps"
+  ]
+}

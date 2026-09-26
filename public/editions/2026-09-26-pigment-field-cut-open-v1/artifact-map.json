@@ -1,0 +1,1913 @@
+{
+  "artifact_map_id": "map-2026-09-26-pigment-field-cut-open-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "detroit-pigment-fragment-rupture",
+  "default_artifact_id": "hero-gallery-pigment-ground",
+  "artifacts": [
+    {
+      "id": "hero-gallery-pigment-ground",
+      "kind": "hero",
+      "label": "Gallery pigment ground",
+      "artifact_type": "mottled-fragment-field",
+      "bounds": {
+        "x": 0.286,
+        "y": 0.142,
+        "w": 0.714,
+        "h": 0.858
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.307,
+          0.153
+        ],
+        [
+          0.435,
+          0.145
+        ],
+        [
+          0.523,
+          0.205
+        ],
+        [
+          0.69,
+          0.256
+        ],
+        [
+          0.815,
+          0.337
+        ],
+        [
+          0.948,
+          0.375
+        ],
+        [
+          0.997,
+          0.535
+        ],
+        [
+          0.901,
+          0.702
+        ],
+        [
+          0.992,
+          0.859
+        ],
+        [
+          0.846,
+          0.999
+        ],
+        [
+          0.681,
+          0.956
+        ],
+        [
+          0.523,
+          0.815
+        ],
+        [
+          0.382,
+          0.741
+        ],
+        [
+          0.294,
+          0.553
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/hero-gallery-pigment-ground.svg",
+      "source_binding_ids": [
+        "binding-hero-gallery-pigment-ground"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          988,
+          514
+        ],
+        "safe_stage_window_origin_px": [
+          1075,
+          585
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.307,
+            0.153
+          ],
+          [
+            0.435,
+            0.145
+          ],
+          [
+            0.523,
+            0.205
+          ],
+          [
+            0.69,
+            0.256
+          ],
+          [
+            0.815,
+            0.337
+          ],
+          [
+            0.948,
+            0.375
+          ],
+          [
+            0.997,
+            0.535
+          ],
+          [
+            0.901,
+            0.702
+          ],
+          [
+            0.992,
+            0.859
+          ],
+          [
+            0.846,
+            0.999
+          ],
+          [
+            0.681,
+            0.956
+          ],
+          [
+            0.523,
+            0.815
+          ],
+          [
+            0.382,
+            0.741
+          ],
+          [
+            0.294,
+            0.553
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2767,
+            0.3828
+          ],
+          [
+            0.2845,
+            0.1523
+          ],
+          [
+            0.3066,
+            0.1191
+          ],
+          [
+            0.3385,
+            0.1172
+          ],
+          [
+            0.4049,
+            0.1133
+          ],
+          [
+            0.9479,
+            0.3418
+          ],
+          [
+            0.9701,
+            0.375
+          ],
+          [
+            0.9883,
+            0.4336
+          ],
+          [
+            0.9993,
+            0.834
+          ],
+          [
+            0.9993,
+            0.8799
+          ],
+          [
+            0.9915,
+            0.8916
+          ],
+          [
+            0.8796,
+            0.999
+          ],
+          [
+            0.722,
+            0.999
+          ],
+          [
+            0.681,
+            0.9883
+          ],
+          [
+            0.4818,
+            0.8262
+          ],
+          [
+            0.3268,
+            0.6709
+          ],
+          [
+            0.3151,
+            0.6455
+          ],
+          [
+            0.2767,
+            0.3857
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2767,
+          "y": 0.1133,
+          "w": 0.7233,
+          "h": 0.8867
+        },
+        "territory_area_px": 492379,
+        "visible_area_px": 641398,
+        "expansion_ratio": 0.768,
+        "neighbors": [
+          {
+            "artifact_id": "module-voice-contour-node",
+            "shared_edge_px": 22714,
+            "direction": "right",
+            "distance_px": 122.53
+          },
+          {
+            "artifact_id": "module-clumsy-redraw-scrape",
+            "shared_edge_px": 18232,
+            "direction": "left",
+            "distance_px": 224.4
+          },
+          {
+            "artifact_id": "hero-mid-century-connection-seam",
+            "shared_edge_px": 3771,
+            "direction": "up",
+            "distance_px": 463.4
+          },
+          {
+            "artifact_id": "module-generated-pose-fold",
+            "shared_edge_px": 2897,
+            "direction": "right",
+            "distance_px": 433.54
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-mid-century-connection-seam",
+      "kind": "hero",
+      "label": "Mid-century connection seam",
+      "artifact_type": "cutaway-seam",
+      "bounds": {
+        "x": 0.395,
+        "y": 0.145,
+        "w": 0.149,
+        "h": 0.274
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.411,
+          0.151
+        ],
+        [
+          0.451,
+          0.158
+        ],
+        [
+          0.476,
+          0.181
+        ],
+        [
+          0.529,
+          0.177
+        ],
+        [
+          0.544,
+          0.202
+        ],
+        [
+          0.526,
+          0.236
+        ],
+        [
+          0.512,
+          0.278
+        ],
+        [
+          0.486,
+          0.328
+        ],
+        [
+          0.458,
+          0.409
+        ],
+        [
+          0.442,
+          0.383
+        ],
+        [
+          0.428,
+          0.333
+        ],
+        [
+          0.411,
+          0.273
+        ],
+        [
+          0.398,
+          0.216
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/hero-mid-century-connection-seam.svg",
+      "source_binding_ids": [
+        "binding-hero-mid-century-connection-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          721,
+          266
+        ],
+        "safe_stage_window_origin_px": [
+          739,
+          289
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.411,
+            0.151
+          ],
+          [
+            0.451,
+            0.158
+          ],
+          [
+            0.476,
+            0.181
+          ],
+          [
+            0.529,
+            0.177
+          ],
+          [
+            0.544,
+            0.202
+          ],
+          [
+            0.526,
+            0.236
+          ],
+          [
+            0.512,
+            0.278
+          ],
+          [
+            0.486,
+            0.328
+          ],
+          [
+            0.458,
+            0.409
+          ],
+          [
+            0.442,
+            0.383
+          ],
+          [
+            0.428,
+            0.333
+          ],
+          [
+            0.411,
+            0.273
+          ],
+          [
+            0.398,
+            0.216
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3678,
+            0.2148
+          ],
+          [
+            0.3809,
+            0.1504
+          ],
+          [
+            0.4108,
+            0.1055
+          ],
+          [
+            0.5286,
+            0.1318
+          ],
+          [
+            0.5736,
+            0.2012
+          ],
+          [
+            0.4883,
+            0.4072
+          ],
+          [
+            0.4577,
+            0.4531
+          ],
+          [
+            0.4115,
+            0.3828
+          ],
+          [
+            0.3678,
+            0.2168
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3678,
+          "y": 0.1055,
+          "w": 0.2064,
+          "h": 0.3486
+        },
+        "territory_area_px": 67782,
+        "visible_area_px": 32086,
+        "expansion_ratio": 2.113,
+        "neighbors": [
+          {
+            "artifact_id": "hero-gallery-pigment-ground",
+            "shared_edge_px": 3771,
+            "direction": "down",
+            "distance_px": 463.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pixel-snapped-break",
+      "kind": "module",
+      "label": "Pixel-snapped break",
+      "artifact_type": "pixel-tile-break",
+      "bounds": {
+        "x": 0.029,
+        "y": 0.409,
+        "w": 0.309,
+        "h": 0.365
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.031,
+          0.449
+        ],
+        [
+          0.079,
+          0.439
+        ],
+        [
+          0.098,
+          0.415
+        ],
+        [
+          0.139,
+          0.43
+        ],
+        [
+          0.173,
+          0.408
+        ],
+        [
+          0.221,
+          0.427
+        ],
+        [
+          0.278,
+          0.414
+        ],
+        [
+          0.337,
+          0.445
+        ],
+        [
+          0.322,
+          0.507
+        ],
+        [
+          0.307,
+          0.582
+        ],
+        [
+          0.291,
+          0.678
+        ],
+        [
+          0.261,
+          0.751
+        ],
+        [
+          0.211,
+          0.773
+        ],
+        [
+          0.151,
+          0.738
+        ],
+        [
+          0.092,
+          0.7
+        ],
+        [
+          0.03,
+          0.648
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/module-pixel-snapped-break.svg",
+      "source_binding_ids": [
+        "binding-module-pixel-snapped-break"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          282,
+          576
+        ],
+        "safe_stage_window_origin_px": [
+          320,
+          606
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.031,
+            0.449
+          ],
+          [
+            0.079,
+            0.439
+          ],
+          [
+            0.098,
+            0.415
+          ],
+          [
+            0.139,
+            0.43
+          ],
+          [
+            0.173,
+            0.408
+          ],
+          [
+            0.221,
+            0.427
+          ],
+          [
+            0.278,
+            0.414
+          ],
+          [
+            0.337,
+            0.445
+          ],
+          [
+            0.322,
+            0.507
+          ],
+          [
+            0.307,
+            0.582
+          ],
+          [
+            0.291,
+            0.678
+          ],
+          [
+            0.261,
+            0.751
+          ],
+          [
+            0.211,
+            0.773
+          ],
+          [
+            0.151,
+            0.738
+          ],
+          [
+            0.092,
+            0.7
+          ],
+          [
+            0.03,
+            0.648
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0117,
+            0.5488
+          ],
+          [
+            0.0124,
+            0.4482
+          ],
+          [
+            0.0306,
+            0.4209
+          ],
+          [
+            0.0977,
+            0.3867
+          ],
+          [
+            0.1725,
+            0.3799
+          ],
+          [
+            0.278,
+            0.3857
+          ],
+          [
+            0.3366,
+            0.417
+          ],
+          [
+            0.3548,
+            0.4443
+          ],
+          [
+            0.3092,
+            0.6758
+          ],
+          [
+            0.2793,
+            0.75
+          ],
+          [
+            0.2604,
+            0.7783
+          ],
+          [
+            0.209,
+            0.7988
+          ],
+          [
+            0.0892,
+            0.7246
+          ],
+          [
+            0.0299,
+            0.6748
+          ],
+          [
+            0.0117,
+            0.6475
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0117,
+          "y": 0.3799,
+          "w": 0.3438,
+          "h": 0.4209
+        },
+        "territory_area_px": 170978,
+        "visible_area_px": 131778,
+        "expansion_ratio": 1.297,
+        "neighbors": [
+          {
+            "artifact_id": "hero-gallery-pigment-ground",
+            "shared_edge_px": 1989,
+            "direction": "right",
+            "distance_px": 712.44
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-clumsy-redraw-scrape",
+      "kind": "module",
+      "label": "Clumsy redraw scrape",
+      "artifact_type": "scribbled-aperture",
+      "bounds": {
+        "x": 0.466,
+        "y": 0.499,
+        "w": 0.077,
+        "h": 0.094
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.478,
+          0.507
+        ],
+        [
+          0.499,
+          0.499
+        ],
+        [
+          0.518,
+          0.51
+        ],
+        [
+          0.536,
+          0.526
+        ],
+        [
+          0.541,
+          0.551
+        ],
+        [
+          0.528,
+          0.578
+        ],
+        [
+          0.51,
+          0.59
+        ],
+        [
+          0.489,
+          0.58
+        ],
+        [
+          0.471,
+          0.559
+        ],
+        [
+          0.466,
+          0.536
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/module-clumsy-redraw-scrape.svg",
+      "source_binding_ids": [
+        "binding-module-clumsy-redraw-scrape"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          775,
+          551
+        ],
+        "safe_stage_window_origin_px": [
+          784,
+          559
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.478,
+            0.507
+          ],
+          [
+            0.499,
+            0.499
+          ],
+          [
+            0.518,
+            0.51
+          ],
+          [
+            0.536,
+            0.526
+          ],
+          [
+            0.541,
+            0.551
+          ],
+          [
+            0.528,
+            0.578
+          ],
+          [
+            0.51,
+            0.59
+          ],
+          [
+            0.489,
+            0.58
+          ],
+          [
+            0.471,
+            0.559
+          ],
+          [
+            0.466,
+            0.536
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4473,
+            0.5352
+          ],
+          [
+            0.4779,
+            0.4795
+          ],
+          [
+            0.4987,
+            0.4707
+          ],
+          [
+            0.5358,
+            0.498
+          ],
+          [
+            0.554,
+            0.5254
+          ],
+          [
+            0.5586,
+            0.5498
+          ],
+          [
+            0.528,
+            0.6045
+          ],
+          [
+            0.5098,
+            0.6172
+          ],
+          [
+            0.4889,
+            0.6064
+          ],
+          [
+            0.4714,
+            0.5869
+          ],
+          [
+            0.4525,
+            0.5586
+          ],
+          [
+            0.4473,
+            0.5361
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4473,
+          "y": 0.4707,
+          "w": 0.112,
+          "h": 0.1475
+        },
+        "territory_area_px": 17023,
+        "visible_area_px": 7475,
+        "expansion_ratio": 2.277,
+        "neighbors": [
+          {
+            "artifact_id": "hero-gallery-pigment-ground",
+            "shared_edge_px": 18232,
+            "direction": "right",
+            "distance_px": 224.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-sprite-silhouette-slash",
+      "kind": "module",
+      "label": "Sprite silhouette slash",
+      "artifact_type": "detached-diagonal-slash",
+      "bounds": {
+        "x": 0.786,
+        "y": 0.294,
+        "w": 0.052,
+        "h": 0.219
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.804,
+          0.298
+        ],
+        [
+          0.829,
+          0.307
+        ],
+        [
+          0.835,
+          0.346
+        ],
+        [
+          0.827,
+          0.387
+        ],
+        [
+          0.819,
+          0.426
+        ],
+        [
+          0.825,
+          0.465
+        ],
+        [
+          0.818,
+          0.501
+        ],
+        [
+          0.799,
+          0.513
+        ],
+        [
+          0.786,
+          0.483
+        ],
+        [
+          0.794,
+          0.442
+        ],
+        [
+          0.798,
+          0.399
+        ],
+        [
+          0.792,
+          0.353
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/module-sprite-silhouette-slash.svg",
+      "source_binding_ids": [
+        "binding-module-sprite-silhouette-slash"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1247,
+          395
+        ],
+        "safe_stage_window_origin_px": [
+          1254,
+          413
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.804,
+            0.298
+          ],
+          [
+            0.829,
+            0.307
+          ],
+          [
+            0.835,
+            0.346
+          ],
+          [
+            0.827,
+            0.387
+          ],
+          [
+            0.819,
+            0.426
+          ],
+          [
+            0.825,
+            0.465
+          ],
+          [
+            0.818,
+            0.501
+          ],
+          [
+            0.799,
+            0.513
+          ],
+          [
+            0.786,
+            0.483
+          ],
+          [
+            0.794,
+            0.442
+          ],
+          [
+            0.798,
+            0.399
+          ],
+          [
+            0.792,
+            0.353
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7676,
+            0.4814
+          ],
+          [
+            0.7734,
+            0.3516
+          ],
+          [
+            0.7799,
+            0.3213
+          ],
+          [
+            0.8099,
+            0.2773
+          ],
+          [
+            0.8177,
+            0.2754
+          ],
+          [
+            0.8288,
+            0.2793
+          ],
+          [
+            0.847,
+            0.3066
+          ],
+          [
+            0.8529,
+            0.3438
+          ],
+          [
+            0.8424,
+            0.4697
+          ],
+          [
+            0.8158,
+            0.5283
+          ],
+          [
+            0.7988,
+            0.54
+          ],
+          [
+            0.7676,
+            0.4824
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7676,
+          "y": 0.2744,
+          "w": 0.0859,
+          "h": 0.2666
+        },
+        "territory_area_px": 24619,
+        "visible_area_px": 10375,
+        "expansion_ratio": 2.373,
+        "neighbors": [
+          {
+            "artifact_id": "module-generated-pose-fold",
+            "shared_edge_px": 1674,
+            "direction": "right",
+            "distance_px": 195.0
+          },
+          {
+            "artifact_id": "module-match-cut-field",
+            "shared_edge_px": 1086,
+            "direction": "up",
+            "distance_px": 198.75
+          },
+          {
+            "artifact_id": "hero-gallery-pigment-ground",
+            "shared_edge_px": 699,
+            "direction": "left",
+            "distance_px": 339.78
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-match-cut-field",
+      "kind": "module",
+      "label": "Match-cut field",
+      "artifact_type": "angular-field-notch",
+      "bounds": {
+        "x": 0.628,
+        "y": 0.169,
+        "w": 0.205,
+        "h": 0.219
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.657,
+          0.171
+        ],
+        [
+          0.704,
+          0.184
+        ],
+        [
+          0.757,
+          0.202
+        ],
+        [
+          0.815,
+          0.219
+        ],
+        [
+          0.833,
+          0.25
+        ],
+        [
+          0.817,
+          0.293
+        ],
+        [
+          0.806,
+          0.346
+        ],
+        [
+          0.778,
+          0.383
+        ],
+        [
+          0.735,
+          0.366
+        ],
+        [
+          0.69,
+          0.346
+        ],
+        [
+          0.648,
+          0.326
+        ],
+        [
+          0.628,
+          0.29
+        ],
+        [
+          0.635,
+          0.233
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/module-match-cut-field.svg",
+      "source_binding_ids": [
+        "binding-module-match-cut-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1122,
+          267
+        ],
+        "safe_stage_window_origin_px": [
+          1147,
+          285
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.657,
+            0.171
+          ],
+          [
+            0.704,
+            0.184
+          ],
+          [
+            0.757,
+            0.202
+          ],
+          [
+            0.815,
+            0.219
+          ],
+          [
+            0.833,
+            0.25
+          ],
+          [
+            0.817,
+            0.293
+          ],
+          [
+            0.806,
+            0.346
+          ],
+          [
+            0.778,
+            0.383
+          ],
+          [
+            0.735,
+            0.366
+          ],
+          [
+            0.69,
+            0.346
+          ],
+          [
+            0.648,
+            0.326
+          ],
+          [
+            0.628,
+            0.29
+          ],
+          [
+            0.635,
+            0.233
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6094,
+            0.2871
+          ],
+          [
+            0.6165,
+            0.2324
+          ],
+          [
+            0.638,
+            0.1719
+          ],
+          [
+            0.6569,
+            0.1436
+          ],
+          [
+            0.8145,
+            0.1914
+          ],
+          [
+            0.8509,
+            0.25
+          ],
+          [
+            0.778,
+            0.4092
+          ],
+          [
+            0.6478,
+            0.3525
+          ],
+          [
+            0.6094,
+            0.2891
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6094,
+          "y": 0.1436,
+          "w": 0.2422,
+          "h": 0.2666
+        },
+        "territory_area_px": 62205,
+        "visible_area_px": 46102,
+        "expansion_ratio": 1.349,
+        "neighbors": [
+          {
+            "artifact_id": "hero-gallery-pigment-ground",
+            "shared_edge_px": 2057,
+            "direction": "down",
+            "distance_px": 379.15
+          },
+          {
+            "artifact_id": "module-sprite-silhouette-slash",
+            "shared_edge_px": 1086,
+            "direction": "down",
+            "distance_px": 198.75
+          },
+          {
+            "artifact_id": "module-generated-pose-fold",
+            "shared_edge_px": 103,
+            "direction": "right",
+            "distance_px": 392.16
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-voice-contour-node",
+      "kind": "module",
+      "label": "Voice contour node",
+      "artifact_type": "crimson-node",
+      "bounds": {
+        "x": 0.674,
+        "y": 0.613,
+        "w": 0.078,
+        "h": 0.121
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.701,
+          0.618
+        ],
+        [
+          0.727,
+          0.613
+        ],
+        [
+          0.744,
+          0.63
+        ],
+        [
+          0.751,
+          0.66
+        ],
+        [
+          0.739,
+          0.69
+        ],
+        [
+          0.733,
+          0.721
+        ],
+        [
+          0.712,
+          0.734
+        ],
+        [
+          0.691,
+          0.717
+        ],
+        [
+          0.678,
+          0.688
+        ],
+        [
+          0.674,
+          0.657
+        ],
+        [
+          0.684,
+          0.633
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/module-voice-contour-node.svg",
+      "source_binding_ids": [
+        "binding-module-voice-contour-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1095,
+          680
+        ],
+        "safe_stage_window_origin_px": [
+          1105,
+          690
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.701,
+            0.618
+          ],
+          [
+            0.727,
+            0.613
+          ],
+          [
+            0.744,
+            0.63
+          ],
+          [
+            0.751,
+            0.66
+          ],
+          [
+            0.739,
+            0.69
+          ],
+          [
+            0.733,
+            0.721
+          ],
+          [
+            0.712,
+            0.734
+          ],
+          [
+            0.691,
+            0.717
+          ],
+          [
+            0.678,
+            0.688
+          ],
+          [
+            0.674,
+            0.657
+          ],
+          [
+            0.684,
+            0.633
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6556,
+            0.6562
+          ],
+          [
+            0.6836,
+            0.6055
+          ],
+          [
+            0.7005,
+            0.5898
+          ],
+          [
+            0.7266,
+            0.585
+          ],
+          [
+            0.7617,
+            0.6299
+          ],
+          [
+            0.7689,
+            0.6582
+          ],
+          [
+            0.7507,
+            0.7207
+          ],
+          [
+            0.7324,
+            0.748
+          ],
+          [
+            0.7116,
+            0.7607
+          ],
+          [
+            0.6908,
+            0.7441
+          ],
+          [
+            0.6719,
+            0.7158
+          ],
+          [
+            0.6595,
+            0.6875
+          ],
+          [
+            0.6556,
+            0.6582
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6556,
+          "y": 0.585,
+          "w": 0.1139,
+          "h": 0.1768
+        },
+        "territory_area_px": 21349,
+        "visible_area_px": 10345,
+        "expansion_ratio": 2.064,
+        "neighbors": [
+          {
+            "artifact_id": "hero-gallery-pigment-ground",
+            "shared_edge_px": 22714,
+            "direction": "left",
+            "distance_px": 122.53
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-generated-pose-fold",
+      "kind": "module",
+      "label": "Generated-pose fold",
+      "artifact_type": "folded-pose-seam",
+      "bounds": {
+        "x": 0.7865,
+        "y": 0.3525,
+        "w": 0.2135,
+        "h": 0.2832
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.7884,
+          0.4424
+        ],
+        [
+          0.806,
+          0.3574
+        ],
+        [
+          0.8424,
+          0.3604
+        ],
+        [
+          0.998,
+          0.4805
+        ],
+        [
+          0.998,
+          0.6006
+        ],
+        [
+          0.9746,
+          0.6211
+        ],
+        [
+          0.9492,
+          0.6318
+        ],
+        [
+          0.9193,
+          0.6279
+        ],
+        [
+          0.8125,
+          0.501
+        ],
+        [
+          0.7884,
+          0.4434
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/module-generated-pose-fold.svg",
+      "source_binding_ids": [
+        "binding-module-generated-pose-fold"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          577
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          608
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.7884,
+            0.4424
+          ],
+          [
+            0.806,
+            0.3574
+          ],
+          [
+            0.8424,
+            0.3604
+          ],
+          [
+            0.998,
+            0.4805
+          ],
+          [
+            0.998,
+            0.6006
+          ],
+          [
+            0.9746,
+            0.6211
+          ],
+          [
+            0.9492,
+            0.6318
+          ],
+          [
+            0.9193,
+            0.6279
+          ],
+          [
+            0.8125,
+            0.501
+          ],
+          [
+            0.7884,
+            0.4434
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7617,
+            0.4414
+          ],
+          [
+            0.7689,
+            0.4072
+          ],
+          [
+            0.8509,
+            0.3281
+          ],
+          [
+            0.9993,
+            0.4443
+          ],
+          [
+            0.9993,
+            0.6367
+          ],
+          [
+            0.974,
+            0.6602
+          ],
+          [
+            0.9486,
+            0.6699
+          ],
+          [
+            0.9193,
+            0.666
+          ],
+          [
+            0.8132,
+            0.541
+          ],
+          [
+            0.7617,
+            0.4434
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7617,
+          "y": 0.3281,
+          "w": 0.2383,
+          "h": 0.3428
+        },
+        "territory_area_px": 67042,
+        "visible_area_px": 55332,
+        "expansion_ratio": 1.212,
+        "neighbors": [
+          {
+            "artifact_id": "hero-gallery-pigment-ground",
+            "shared_edge_px": 2897,
+            "direction": "left",
+            "distance_px": 433.54
+          },
+          {
+            "artifact_id": "module-sprite-silhouette-slash",
+            "shared_edge_px": 1674,
+            "direction": "left",
+            "distance_px": 195.0
+          },
+          {
+            "artifact_id": "module-match-cut-field",
+            "shared_edge_px": 103,
+            "direction": "left",
+            "distance_px": 392.16
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-puzzle-grid-interruption",
+      "kind": "module",
+      "label": "Puzzle-grid interruption",
+      "artifact_type": "broken-tile-cluster",
+      "bounds": {
+        "x": 0.323,
+        "y": 0.607,
+        "w": 0.171,
+        "h": 0.393
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.365,
+          0.61
+        ],
+        [
+          0.409,
+          0.623
+        ],
+        [
+          0.449,
+          0.659
+        ],
+        [
+          0.481,
+          0.71
+        ],
+        [
+          0.478,
+          0.776
+        ],
+        [
+          0.458,
+          0.839
+        ],
+        [
+          0.47,
+          0.902
+        ],
+        [
+          0.451,
+          0.964
+        ],
+        [
+          0.414,
+          0.999
+        ],
+        [
+          0.37,
+          0.963
+        ],
+        [
+          0.347,
+          0.908
+        ],
+        [
+          0.336,
+          0.841
+        ],
+        [
+          0.323,
+          0.775
+        ],
+        [
+          0.336,
+          0.704
+        ]
+      ],
+      "cluster_id": "detroit-pigment-fragment-rupture",
+      "mask_path": "/editions/2026-09-26-pigment-field-cut-open-v1/assets/masks/module-puzzle-grid-interruption.svg",
+      "source_binding_ids": [
+        "binding-module-puzzle-grid-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          627,
+          791
+        ],
+        "safe_stage_window_origin_px": [
+          648,
+          823
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.365,
+            0.61
+          ],
+          [
+            0.409,
+            0.623
+          ],
+          [
+            0.449,
+            0.659
+          ],
+          [
+            0.481,
+            0.71
+          ],
+          [
+            0.478,
+            0.776
+          ],
+          [
+            0.458,
+            0.839
+          ],
+          [
+            0.47,
+            0.902
+          ],
+          [
+            0.451,
+            0.964
+          ],
+          [
+            0.414,
+            0.999
+          ],
+          [
+            0.37,
+            0.963
+          ],
+          [
+            0.347,
+            0.908
+          ],
+          [
+            0.336,
+            0.841
+          ],
+          [
+            0.323,
+            0.775
+          ],
+          [
+            0.336,
+            0.704
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3047,
+            0.7734
+          ],
+          [
+            0.3177,
+            0.7021
+          ],
+          [
+            0.3431,
+            0.6191
+          ],
+          [
+            0.3646,
+            0.582
+          ],
+          [
+            0.4089,
+            0.5947
+          ],
+          [
+            0.4466,
+            0.6289
+          ],
+          [
+            0.4987,
+            0.71
+          ],
+          [
+            0.4876,
+            0.9023
+          ],
+          [
+            0.4688,
+            0.9639
+          ],
+          [
+            0.4421,
+            0.999
+          ],
+          [
+            0.3809,
+            0.999
+          ],
+          [
+            0.3509,
+            0.9619
+          ],
+          [
+            0.3281,
+            0.9072
+          ],
+          [
+            0.3047,
+            0.7754
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3047,
+          "y": 0.582,
+          "w": 0.1947,
+          "h": 0.418
+        },
+        "territory_area_px": 95044,
+        "visible_area_px": 68688,
+        "expansion_ratio": 1.384,
+        "neighbors": [
+          {
+            "artifact_id": "hero-gallery-pigment-ground",
+            "shared_edge_px": 2543,
+            "direction": "right",
+            "distance_px": 408.95
+          }
+        ]
+      }
+    }
+  ]
+}
