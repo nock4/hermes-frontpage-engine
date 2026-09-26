@@ -660,7 +660,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   let inspected = []
 
   const forcedAnchorSource = forcedAnchorSourceFromInspirationOverride(inspirationOverride, fetchEvidence)
-  const anchorSource = isSingleAnchorResearchEnabled()
+  let anchorSource = isSingleAnchorResearchEnabled()
     ? (forcedAnchorSource || selectAnchorSource(fetchEvidence, { recentSourceKeys, signalHarvest }))
     : null
   if (anchorSource) {
@@ -797,6 +797,17 @@ export async function inspectSourceCandidates(signalHarvest, {
       })
       inspected.push(...added)
       contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
+    }
+  }
+
+  if (!anchorSource && contentSources.length >= minContentItems) {
+    const fieldAnchor = selectAnchorSource(contentSources, { recentSourceKeys, signalHarvest })
+    if (fieldAnchor?.anchor_selection_lane === 'artwork-first') {
+      anchorSource = {
+        ...fieldAnchor,
+        anchor_selection_reason: 'Artwork-first fallback selected from the validated renderable source field after no candidate in the initial fetch-evidence bed qualified as an anchor.',
+        anchor_selection_lane: 'source-field-artwork-first',
+      }
     }
   }
 

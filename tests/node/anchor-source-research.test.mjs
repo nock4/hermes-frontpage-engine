@@ -59,6 +59,32 @@ describe('anchor-source-research', () => {
     expect(anchor.anchor_alternates).toEqual([])
   })
 
+  it('recognizes fresh Hiroo Isono image bookmarks as artwork-first anchors', () => {
+    const anchor = selectAnchorSource([
+      {
+        url: 'https://twitter.com/JoshKale/status/2037900758750761053',
+        source_channel: 'twitter-bookmark',
+        source_type: 'tweet',
+        title: '@JoshKale: Every website you’ve ever used is broken in a way you never noticed',
+        description: 'A Midjourney engineer finally fixed a layout library for websites',
+        image_url: 'https://pbs.twimg.com/amplify_video_thumb/2037900691575025664/img/example.jpg',
+        fetch_status: 'fxtwitter-fetch-ok',
+      },
+      {
+        url: 'https://x.com/ElliottBlackwe3/status/2030372975187276220',
+        source_channel: 'twitter-bookmark',
+        source_type: 'tweet',
+        title: '@ElliottBlackwe3: Hirō Isono',
+        note_title: 'Hirō Isono',
+        image_url: 'https://pbs.twimg.com/media/HC1VdiSbsAALigO.jpg?name=orig',
+        fetch_status: 'fxtwitter-fetch-ok',
+      },
+    ])
+
+    expect(anchor.url).toBe('https://x.com/ElliottBlackwe3/status/2030372975187276220')
+    expect(anchor.anchor_selection_lane).toBe('artwork-first')
+  })
+
   it('selects recent poster/art posts over lower-scoring AI tooling when tweet media is not pre-enriched', () => {
     const anchor = selectAnchorSource([
       {
