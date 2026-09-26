@@ -3872,9 +3872,23 @@
   pointer-events: none;
 }
 
+.visual-source-card__figure[data-source-visual-mode='raw']::before {
+  content: '';
+  position: absolute;
+  inset: -8%;
+  z-index: 0;
+  background-image: var(--source-ambient-image);
+  background-position: center;
+  background-size: cover;
+  filter: blur(1.25rem) brightness(0.58) saturate(0.82);
+  opacity: 0.82;
+  pointer-events: none;
+}
+
 .visual-source-card__image {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   max-height: min(52vh, 20rem);
@@ -4908,4 +4922,21 @@
 .source-window--stage.source-window--preview.source-window--bleed-embed .visual-source-card__figure {
   min-height: min(34vh, 15rem);
   height: min(34vh, 15rem);
+}
+
+.source-window--stage.source-window--preview.source-window--poster-window .visual-source-card[data-source-visual-mode='raw'],
+.source-window--stage.source-window--preview.source-window--bleed-embed .visual-source-card[data-source-visual-mode='raw'] {
+  width: min(82vh, 20rem, calc(100vw - 1.25rem));
+  min-height: 0;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+}
+
+.source-window--stage.source-window--preview.source-window--poster-window .visual-source-card[data-source-visual-mode='raw'] .visual-source-card__figure,
+.source-window--stage.source-window--preview.source-window--bleed-embed .visual-source-card[data-source-visual-mode='raw'] .visual-source-card__figure {
+  min-height: 0;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 1 / 1;
 }

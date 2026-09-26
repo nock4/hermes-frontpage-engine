@@ -1,4 +1,4 @@
-import type { SyntheticEvent } from 'react'
+import type { CSSProperties, SyntheticEvent } from 'react'
 
 import { getRichPreviewModel } from '../../lib/richPreviewModel'
 import { getYouTubeThumbnailUrl } from '../../lib/sourceWindowContent'
@@ -159,6 +159,11 @@ export function getSourceVisualMode(binding: SourceBindingRecord, fallbackUrl: s
   return binding.source_visual?.render_mode || 'raw'
 }
 
+function getSourceAmbientStyle(visualMode: string, imageUrl: string | null): CSSProperties | undefined {
+  if (visualMode !== 'raw' || !imageUrl) return undefined
+  return { '--source-ambient-image': `url(${JSON.stringify(imageUrl)})` } as CSSProperties
+}
+
 function getSourceVisualStyle(binding: SourceBindingRecord) {
   const focal = binding.source_visual?.focal_point
   if (!focal) return undefined
@@ -213,7 +218,7 @@ function SourceImageTitleCard({
   const cardBody = (
     <>
       {visualImageUrl ? (
-        <figure className="visual-source-card__figure" data-source-visual-mode={visualMode} data-source-media-type={resolvedMediaType}>
+        <figure className="visual-source-card__figure" data-source-visual-mode={visualMode} data-source-media-type={resolvedMediaType} style={getSourceAmbientStyle(visualMode, visualImageUrl)}>
           {resolvedMediaType === 'video' ? (
             <video
               className="visual-source-card__image visual-source-card__video"
