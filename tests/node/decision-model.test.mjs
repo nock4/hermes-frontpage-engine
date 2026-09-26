@@ -105,4 +105,20 @@ describe('decision model adapter', () => {
       reason_code: 'jev_unavailable_deterministic_fallback',
     })
   })
+
+  it('bounds a stalled Jev decision request and falls back without blocking source research', async () => {
+    const decision = await callJevDecisionWithFallback({ question: 'Proceed?' }, {
+      env: { JEV_API_URL: 'https://jev.example.test/decide', JEV_API_KEY: 'test-key' },
+      timeoutMs: 10,
+      fetchImpl: (_url, { signal }) => new Promise((_resolve, reject) => {
+        signal.addEventListener('abort', () => reject(signal.reason), { once: true })
+      }),
+    })
+
+    expect(decision).toMatchObject({
+      decision: 'needs_review',
+      reason_code: 'jev_unavailable_deterministic_fallback',
+    })
+    expect(decision.evidence.join(' ')).toContain('deterministic source gates remained active')
+  })
 })

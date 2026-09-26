@@ -68,7 +68,7 @@ function jevEndpoint(env = process.env) {
   return String(env.JEV_API_URL || env.TYPESAFE_AI_JEV_API_URL || '').trim()
 }
 
-function readOpSecret(ref) {
+function readOpSecret(ref, { timeoutMs = 15_000 } = {}) {
   return new Promise((resolve, reject) => {
     const child = spawn('op', ['read', ref], {
       stdio: ['ignore', 'pipe', 'pipe'],
@@ -76,19 +76,32 @@ function readOpSecret(ref) {
     })
     let stdout = ''
     let stderr = ''
+    let settled = false
+    const finish = (callback, value) => {
+      if (settled) return
+      settled = true
+      clearTimeout(timer)
+      callback(value)
+    }
+    const timer = setTimeout(() => {
+      child.kill('SIGTERM')
+      setTimeout(() => child.kill('SIGKILL'), 1_000).unref()
+      finish(reject, new Error(`1Password secret lookup timed out after ${timeoutMs}ms`))
+    }, timeoutMs)
+    timer.unref()
     child.stdout.on('data', (chunk) => {
       stdout += chunk.toString()
     })
     child.stderr.on('data', (chunk) => {
       stderr += chunk.toString()
     })
-    child.on('error', reject)
+    child.on('error', (error) => finish(reject, error))
     child.on('close', (code) => {
       if (code !== 0) {
-        reject(new Error(`Unable to read Jev API key from 1Password reference: ${(stderr || `op exited ${code}`).trim()}`))
+        finish(reject, new Error(`Unable to read Jev API key from 1Password reference: ${(stderr || `op exited ${code}`).trim()}`))
         return
       }
-      resolve(stdout.trim())
+      finish(resolve, stdout.trim())
     })
   })
 }
@@ -101,12 +114,13 @@ export async function resolveJevApiKey({ env = process.env, opRead = readOpSecre
   return opRead(opRef)
 }
 
-async function callJevDecision(payload, { env = process.env, fetchImpl = globalThis.fetch, opRead = readOpSecret } = {}) {
+async function callJevDecision(payload, { env = process.env, fetchImpl = globalThis.fetch, opRead = readOpSecret, timeoutMs = 30_000 } = {}) {
   const endpoint = jevEndpoint(env)
   if (!endpoint) return null
   if (!fetchImpl) throw new Error('Jev decision model requires fetch.')
 
   const apiKey = await resolveJevApiKey({ env, opRead })
+  const signal = AbortSignal.timeout(timeoutMs)
   const response = await fetchImpl(endpoint, {
     method: 'POST',
     headers: {
@@ -114,6 +128,7 @@ async function callJevDecision(payload, { env = process.env, fetchImpl = globalT
       ...(apiKey ? { authorization: `Bearer ${apiKey}` } : {}),
     },
     body: JSON.stringify(payload),
+    signal,
   })
   if (!response.ok) {
     throw new Error(`Jev decision request failed: HTTP ${response.status}`)
