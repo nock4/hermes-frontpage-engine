@@ -1,4 +1,4 @@
-import type { CSSProperties, SyntheticEvent } from 'react'
+import { useEffect, useState, type CSSProperties, type SyntheticEvent } from 'react'
 
 import { getRichPreviewModel } from '../../lib/richPreviewModel'
 import { getYouTubeThumbnailUrl } from '../../lib/sourceWindowContent'
@@ -213,7 +213,10 @@ function SourceImageTitleCard({
   title: string
   href?: string | null
 }) {
-  const visualImageUrl = getSourceMediaUrl(binding, imageUrl)
+  const [videoFailed, setVideoFailed] = useState(false)
+  useEffect(() => setVideoFailed(false), [binding.id, binding.source_url, binding.source_media_url])
+  const providerFallback = videoFailed ? getTweetEmbedUrl(binding.source_url || '') : null
+  const visualImageUrl = videoFailed && !providerFallback ? binding.source_image_url || null : getSourceMediaUrl(binding, imageUrl)
   const visualStyle = getSourceVisualStyle(binding)
   const visualMode = getSourceVisualMode(binding, imageUrl)
   const resolvedMediaType = visualImageUrl && mediaType === 'video' ? 'video' : 'image'
@@ -226,8 +229,13 @@ function SourceImageTitleCard({
     <>
       {visualImageUrl ? (
         <figure className="visual-source-card__figure" data-source-visual-mode={visualMode} data-source-media-type={resolvedMediaType} style={getSourceAmbientStyle(visualMode, visualImageUrl)}>
-          {resolvedMediaType === 'video' ? (
+          {providerFallback ? (
+            <div className="provider-video-scroll" tabIndex={0} role="region" aria-label="Full provider post — scroll for video and source" style={{ position: 'absolute', inset: 0, overflowY: 'auto', overscrollBehavior: 'contain', background: '#fff' }}>
+              <iframe data-video-fallback="provider" src={providerFallback} title={title} sandbox={TWEET_EMBED_SANDBOX} allow="autoplay; fullscreen" allowFullScreen style={{ display: 'block', width: '100%', height: 800, minHeight: 800, border: 0 }} />
+            </div>
+          ) : resolvedMediaType === 'video' && !videoFailed ? (
             <video
+              onError={() => setVideoFailed(true)}
               className="visual-source-card__image visual-source-card__video"
               controls
               loop
@@ -249,7 +257,7 @@ function SourceImageTitleCard({
         </div>
       )}
       <div className="visual-source-card__caption">
-        <strong className="visual-source-card__title">{edgeTitle}</strong>
+        {mediaType === 'video' && href ? <a className="visual-source-card__title" href={href} rel="noreferrer" target="_blank">{providerFallback ? '↕ Scroll full post · ' : ''}{edgeTitle} ↗</a> : <strong className="visual-source-card__title">{edgeTitle}</strong>}
       </div>
       <div className="visual-source-card__edge-title">{edgeTitle}</div>
     </>
@@ -257,7 +265,7 @@ function SourceImageTitleCard({
 
   return (
     <div className="source-window__body source-window__body--visual-card">
-      {href ? (
+      {href && mediaType !== 'video' ? (
         <a className="visual-source-card" data-has-source-visual={visualImageUrl ? 'true' : 'false'} data-source-visual-mode={visualMode} href={href} rel="noreferrer" target="_blank">
           {cardBody}
         </a>

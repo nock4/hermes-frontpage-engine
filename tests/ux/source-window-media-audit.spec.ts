@@ -290,7 +290,12 @@ async function collectWindowMetric(page: Page, locator: Locator, mode: 'hover' |
 
     const frameMetrics: WindowFrameMetric[] = Array.from(node.querySelectorAll('iframe, video')).map((media) => {
       const element = media as HTMLIFrameElement | HTMLVideoElement
-      const rect = element.getBoundingClientRect()
+      // A complete provider document is intentionally taller than its explicit
+      // scrollport. Audit the visible aperture, not the scrollable document.
+      const scrollport = element.closest('.provider-video-scroll')
+      const scrollStyle = scrollport && getComputedStyle(scrollport)
+      const rect = scrollport && scrollStyle?.overflowY === 'auto'
+        ? scrollport.getBoundingClientRect() : element.getBoundingClientRect()
       const src = element instanceof HTMLVideoElement ? (element.currentSrc || element.src) : element.src
       return {
         src: src || null,
@@ -451,6 +456,29 @@ test('real source-window media audit across packaged editions', async ({ page })
         const primaryWindow = page.locator(`${windowSelector}[data-source-window-mode="primary"]`)
         await waitForWindowMedia(page, `${windowSelector}[data-source-window-mode="primary"]`)
         primary = await collectWindowMetric(page, primaryWindow, 'primary')
+        if (binding.source_media_type === 'video') {
+          // A poster, preload request, or iframe rectangle is not playback proof.
+          const provider = primaryWindow.locator('iframe[data-video-fallback="provider"]')
+          const video = await provider.count()
+            ? provider.contentFrame().locator('video').first()
+            : primaryWindow.locator('video').first()
+          let playbackError: string | null = null
+          try {
+            await video.waitFor({ timeout: 15_000 })
+            await video.scrollIntoViewIfNeeded()
+            const box = await video.boundingBox()
+            if (!box) throw new Error('No visible video hit target')
+            await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2)
+            const start = await video.evaluate((v: HTMLVideoElement) => v.currentTime)
+            await expect.poll(() => video.evaluate((v: HTMLVideoElement, start: number) => ({
+              advanced: v.currentTime > start + 0.2,
+              decoded: v.getVideoPlaybackQuality().totalVideoFrames > 0,
+              dimensions: v.videoWidth > 0 && v.videoHeight > 0,
+              error: v.error?.message || null,
+            }), start), { timeout: 15_000 }).toEqual({ advanced: true, decoded: true, dimensions: true, error: null })
+          } catch (error) { playbackError = String(error) }
+          if (playbackError) failures.push(`${edition.slug} / ${binding.id}: native video playback failed: ${playbackError}`)
+        }
         const primaryShot = await screenshotWindow(primaryWindow, path.join(editionDir, `${artifactSlug}-primary.png`))
         if (primaryShot) screenshots.primary = primaryShot
       }
