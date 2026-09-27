@@ -106,6 +106,8 @@ export function isAiToolingContentSource(source = {}) {
   ].filter(Boolean).join(' ').toLowerCase()
 
   if (!text) return false
+  if (/\bai spritesheets?\b/.test(text)) return true
+  if ([source.url, source.source_url, source.final_url].filter(Boolean).some((url) => /^(?:www\.)?(?:taalas\.com|trynoah\.ai)$/.test(hostnameForUrl(url)))) return true
   const highConfidenceToolPhrases = [
     'try this prompt',
     'multiple model outputs',

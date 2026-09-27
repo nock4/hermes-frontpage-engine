@@ -6,7 +6,7 @@ for (const viewport of [{ width: 375, height: 667 }, { width: 852, height: 393 }
     await page.setViewportSize(viewport)
     await page.goto('/')
     await page.waitForSelector('.stage')
-    for (const variant of ['tweet-embed-native source-window--bleed-embed', 'rich-preview-stage source-window--poster-window']) {
+    for (const variant of ['tweet-embed-native source-window--bleed-embed', 'rich-preview-stage source-window--poster-window', 'rich-preview-stage']) {
       await page.locator('.stage').evaluate((stage, provider) => {
         const surface = document.createElement('div')
         surface.className = `source-window source-window--stage source-window--primary source-window--${provider}`

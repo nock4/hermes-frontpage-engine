@@ -2,12 +2,13 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import { openAiJson } from './openai-json.mjs'
+import { measureSourceImage, withoutSourceUiCues } from './source-image-geometry.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
 
 const literalCopyRule = 'Do not reproduce logos, legible text, identifiable subjects, or page chrome from this source image.'
 
 const sourceImageVisionInstructions = `Inspect the source image for a Daily Frontpage plate. Return concrete visual facts, not vibes.
-Describe the exact composition identity the generated plate must preserve: subject/object placement, crop/framing, massing, dominant shapes, text/logo silhouettes as illegible masses, palette, light, surface/material, and distinctive marks.
+Describe the exact composition identity the generated plate must preserve: subject/object placement, crop/framing, massing, dominant shapes, text/logo silhouettes as illegible masses, palette, light, surface/material, and distinctive marks. Omit game HUD, sliders, control panels and debug overlays from preserve cues even when present in the screenshot.
 If the image is an album/package/editorial/poster cover, preserve the cover layout and portrait/figure/image masses as abstract shapes; readable text can become illegible marks, but the plate must not replace the image with unrelated macro texture or metaphor.
 Also judge whether the image is visually fertile enough to be the main plate seed. A near-empty text/wordmark/logo cover can be useful as a supporting cue, but is usually too sterile to anchor the whole edition.\nReturn concise JSON with keys: visual_summary string, preserve_cues array of 3-6 strings, palette_cues array, surface_cues array, composition_moves array, visual_fertility \"high|medium|low\", low_fertility_reason string.`
 
@@ -172,7 +173,7 @@ async function visionFingerprint(candidate, fingerprint, analyzer = openAiJson) 
   return {
     ...fingerprint,
     visual_summary: cleanText(response.visual_summary || '', ''),
-    preserve_cues: arrayOfStrings(response.preserve_cues, []),
+    preserve_cues: withoutSourceUiCues(arrayOfStrings(response.preserve_cues, [])),
     palette_cues: arrayOfStrings(response.palette_cues, fingerprint.palette_cues).slice(0, 4),
     surface_cues: arrayOfStrings(response.surface_cues, fingerprint.surface_cues).slice(0, 4),
     composition_moves: arrayOfStrings(response.composition_moves, fingerprint.composition_moves).slice(0, 5),
@@ -181,11 +182,12 @@ async function visionFingerprint(candidate, fingerprint, analyzer = openAiJson) 
   }
 }
 
-export async function enrichSourceImageFingerprints(selectedImageMaterial = [], fingerprints = [], { analyzer = openAiJson, limit = 3 } = {}) {
+export async function enrichSourceImageFingerprints(selectedImageMaterial = [], fingerprints = [], { analyzer = openAiJson, limit = 3, measureImage = null } = {}) {
   const enriched = []
   for (let index = 0; index < fingerprints.length; index += 1) {
-    const fingerprint = fingerprints[index]
+    let fingerprint = fingerprints[index]
     const candidate = selectedImageMaterial[index]
+    if (measureImage) fingerprint = { ...fingerprint, ...await measureImage(candidate.image_url) }
     if (index >= limit) {
       enriched.push(fingerprint)
       continue
@@ -244,7 +246,7 @@ export function buildSourceImageContactSheetSvg(fingerprints = []) {
 
 export async function writeSourceImageArtifacts(runDir, selectedImageMaterial = [], options = {}) {
   const baseFingerprints = buildSourceImageFingerprints(selectedImageMaterial)
-  const fingerprints = await enrichSourceImageFingerprints(selectedImageMaterial, baseFingerprints, options)
+  const fingerprints = await enrichSourceImageFingerprints(selectedImageMaterial, baseFingerprints, { measureImage: measureSourceImage, ...options })
   const fingerprintPath = path.join(runDir, 'source-image-fingerprints.json')
   const contactSheetPath = path.join(runDir, 'source-image-contact-sheet.svg')
   await fs.writeFile(fingerprintPath, `${JSON.stringify({ generated_at: new Date().toISOString(), fingerprints }, null, 2)}\n`, 'utf8')

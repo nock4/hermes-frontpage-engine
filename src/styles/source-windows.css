@@ -5062,6 +5062,8 @@
   }
 
   .source-window--stage.source-window--primary:has(.visual-source-card) .visual-source-card__caption {
+    /* Plain rich previews retain a nested grid; constrain its nowrap title too. */
+    grid-template-columns: minmax(0, 1fr);
     position: relative;
     inset: auto;
     padding: 0.35rem 0.5rem;
@@ -5078,6 +5080,8 @@
     font-size: 0.75rem;
     line-height: 1.25;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     opacity: 1;
   }
 

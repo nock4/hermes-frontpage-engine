@@ -170,7 +170,7 @@ describe('scene generation image prompt', () => {
       artifacts: Array.from({ length: 9 }, (_, index) => ({ source_url: `https://example.com/${index}` })),
     })
 
-    expect(prompt).toContain('SOURCE-ASPECT NOTE: the dominant source is portrait/vertical')
+    expect(prompt).toContain('SOURCE-ASPECT NOTE: measured source is portrait/vertical (3277x4096)')
     expect(prompt).toContain('DOMINANT-SOURCE OVERRIDE')
     expect(prompt).toContain('Do not convert it into USB ports')
     expect(prompt).toContain('tiny printed dash interruptions')

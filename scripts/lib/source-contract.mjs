@@ -1,4 +1,5 @@
 import { isLowFertilitySourceFingerprint } from './source-image-fingerprints.mjs'
+import { sourceGeometryGuard, withoutSourceUiCues } from './source-image-geometry.mjs'
 
 function strings(values, limit = 8) {
   const result = []
@@ -49,7 +50,8 @@ export function buildSourceContract({
   }
 
   const preserve = strings([
-    ...(dominant.preserve_cues || []),
+    sourceGeometryGuard(dominant),
+    ...withoutSourceUiCues(dominant.preserve_cues || []),
     dominant.visual_summary,
     ...(dominant.composition_moves || []),
   ], 8)

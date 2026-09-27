@@ -1,4 +1,5 @@
 import crypto from 'node:crypto'
+import { sourceGeometryGuard, withoutSourceUiCues } from './source-image-geometry.mjs'
 import fsSync from 'node:fs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -796,11 +797,13 @@ function normalizeSourceImageFingerprints(value) {
     .map((fingerprint, index) => ({
       title: String(fingerprint.title || `Source image ${index + 1}`),
       image_url: fingerprint.image_url,
+      width: fingerprint.width || null,
+      height: fingerprint.height || null,
       source_role: String(fingerprint.source_role || (index === 0 ? 'dominant plate seed' : 'supporting plate seed')),
       palette_cues: normalizeStringArray(fingerprint.palette_cues, []).slice(0, 3),
       surface_cues: normalizeStringArray(fingerprint.surface_cues, []).slice(0, 3),
       composition_moves: normalizeStringArray(fingerprint.composition_moves, []).slice(0, 4),
-      preserve_cues: normalizeStringArray(fingerprint.preserve_cues, []).slice(0, 6),
+      preserve_cues: withoutSourceUiCues(normalizeStringArray(fingerprint.preserve_cues, [])).slice(0, 6),
       visual_summary: String(fingerprint.visual_summary || '').trim(),
       do_not_copy_literally: normalizeStringArray(fingerprint.do_not_copy_literally, []).slice(0, 2),
     }))
@@ -869,7 +872,7 @@ function joinLimited(values, fallback, limit = 4) {
 }
 
 function sourceReferencePreserveText(payload, fallback) {
-  const preserve = normalizeStringArray(payload.source_reference_preserve, [])
+  const preserve = withoutSourceUiCues(normalizeStringArray(payload.source_reference_preserve, []))
     .slice(0, 5)
     .map((cue) => compactText(cue, 95))
   return uniqueNonEmpty([...preserve, fallback]).join('; ')
@@ -886,6 +889,7 @@ function looksLikeGraphicEditorialSource(payload, referenceText) {
       ...(fingerprint.composition_moves || []),
     ]),
   ].filter(Boolean).join(' ').toLowerCase()
+  if (/\b(voxel|game scene|game screenshot|three.js|3d render)\b/.test(text)) return false
   const representationalSceneCues = /(photograph|photo|photographic|painting|painted|figurative|interior|room|domestic|doorway|window|pool|seated|standing|kneeling|figure|body|torso|legs|arms|head|foot|feet|chair|curtain|wall picture|still[- ]?life)/.test(text)
   const graphicCues = /\b(editorial|poster|cover|typographic|headline|text block|type mass|letterform)\b/.test(text)
   const diagramCues = /(blob|island|grid|route|diagram|left[- ]?right|negative space)/.test(text)
@@ -903,7 +907,7 @@ function describeSourceAudioMaterial(material = {}) {
 }
 
 function describeSourceContract(contract = {}) {
-  const preserve = joinLimited(contract.must_preserve, '', 8)
+  const preserve = joinLimited(withoutSourceUiCues(contract.must_preserve), '', 8)
   const transform = joinLimited(contract.must_transform, '', 4)
   const drift = joinLimited(contract.forbidden_drift, '', 6)
   const overcopy = joinLimited(contract.forbidden_overcopy, '', 5)
@@ -921,18 +925,8 @@ function describeSourceContract(contract = {}) {
   ].filter(Boolean).join(' ')
 }
 
-function sourceImageAspectGuard(sourceImageFingerprints = [], preserveText = '') {
-  const dominant = sourceImageFingerprints[0] || {}
-  const width = Number(dominant.width || 0)
-  const height = Number(dominant.height || 0)
-  const text = String(preserveText || '').toLowerCase()
-  if (/\bsquare\b/.test(text) || (width && height && Math.abs(width - height) / Math.max(width, height) < 0.08)) {
-    return 'SOURCE-ASPECT NOTE: the source is square. Do not stretch it into a panorama or paste the square as a framed panel. Borrow its crop pressure, negative-space ratio, and edge logic, but rebuild the plate as a new composition.'
-  }
-  if (/portrait|vertical|tall|all sides|wall border|centered/.test(text) || (width && height && height / width >= 1.12)) {
-    return 'SOURCE-ASPECT NOTE: the dominant source is portrait/vertical. In the landscape plate, keep the portrait source object legible as a centered vertical field with visible margin or breathing room; do not crop it into a horizontal panorama, oblique hardware slab, or edge-only texture.'
-  }
-  return ''
+function sourceImageAspectGuard(sourceImageFingerprints = []) {
+  return sourceGeometryGuard(sourceImageFingerprints[0])
 }
 
 function dominantSourceConflictGuard(sourceImageFingerprints = [], effectDirection = null, payload = {}) {
@@ -1048,7 +1042,7 @@ export function buildSceneImagePrompt(payload) {
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
     hasSourceImage
-      ? 'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, photoreal identity copying, or same-photo restaging. Preserve source subjects, object relationships, silhouettes, edge cues, and surfaces as recomposed fragments.'
+      ? 'No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. Preserve source subjects, object relationships, silhouettes, edge cues, and surfaces as recomposed fragments.'
       : 'No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, fake summary cards, or literal UI. Since no dominant source image is attached, make anchors from the broader source field: media surfaces, source edges, gestures, apertures, cuts, traces, and material marks.',
     ...(payload.negative_constraints || []).slice(0, 1).map((constraint) => compactText(constraint, 80)),
   ]).join(' ')
