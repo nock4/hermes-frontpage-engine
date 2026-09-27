@@ -5034,7 +5034,10 @@
     pointer-events: none;
   }
 
-  .source-window--stage.source-window--primary.source-window--rich-preview-stage {
+  /* The aperture belongs to the visual surface, not its provider descriptor.
+     Tweet-backed videos do not carry rich-preview-stage. */
+  .source-window--stage.source-window--primary:has(.visual-source-card) {
+    top: clamp(0.5rem, 8dvh, 4rem) !important;
     left: 0.5rem !important;
     right: auto !important;
     width: min(24rem, calc(100vw - 1rem)) !important;
@@ -5042,7 +5045,48 @@
     max-height: min(82dvh, calc(100dvh - 1rem)) !important;
   }
 
-  .source-window--stage.source-window--primary.source-window--rich-preview-stage .source-window__floating-actions {
+  .source-window--stage.source-window--primary:has(.visual-source-card) .visual-source-card {
+    /* A nowrap caption must not expand the implicit grid track past the aperture. */
+    grid-template-columns: minmax(0, 1fr);
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+  }
+
+  .source-window--stage.source-window--primary:has(.visual-source-card) .visual-source-card__figure {
+    min-height: 0 !important;
+    height: min(62dvh, 24rem) !important;
+    max-height: min(62dvh, 24rem) !important;
+    aspect-ratio: auto !important;
+  }
+
+  .source-window--stage.source-window--primary:has(.visual-source-card) .visual-source-card__caption {
+    position: relative;
+    inset: auto;
+    padding: 0.35rem 0.5rem;
+    background: rgba(8, 8, 9, 0.9);
+  }
+
+  .source-window--stage.source-window--primary:has(.visual-source-card) .visual-source-card__title {
+    position: static;
+    display: block;
+    width: 100%;
+    max-width: none;
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 0.75rem;
+    line-height: 1.25;
+    white-space: nowrap;
+    opacity: 1;
+  }
+
+  .source-window--stage.source-window--primary:has(.visual-source-card) .visual-source-card__source,
+  .source-window--stage.source-window--primary:has(.visual-source-card) .visual-source-card__cta {
+    display: none;
+  }
+
+  .source-window--stage.source-window--primary:has(.visual-source-card) .source-window__floating-actions {
     top: 0.4rem !important;
     right: 0.4rem !important;
     z-index: 8 !important;
