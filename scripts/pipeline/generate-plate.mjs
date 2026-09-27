@@ -3,12 +3,10 @@ import path from 'node:path'
 function sourceLockedImageSize(payload, fallbackSize) {
   if (process.env.DFE_SOURCE_ASPECT_LOCK_IMAGE_SIZE === '0') return fallbackSize
   const fingerprints = Array.isArray(payload?.source_image_fingerprints) ? payload.source_image_fingerprints : []
-  const sourceText = fingerprints.slice(0, 1).map((fingerprint) => [
-    fingerprint?.visual_summary,
-    ...(Array.isArray(fingerprint?.preserve_cues) ? fingerprint.preserve_cues : []),
-    ...(Array.isArray(fingerprint?.composition_moves) ? fingerprint.composition_moves : []),
-  ].filter(Boolean).join(' ')).join(' ').toLowerCase()
-  if (/\bsquare\b/.test(sourceText)) return '1024x1024'
+  const width = Number(fingerprints[0]?.width)
+  const height = Number(fingerprints[0]?.height)
+  // Object adjectives (square paving/posts) do not describe image geometry.
+  if (width > 0 && height > 0 && Math.abs(width - height) / Math.max(width, height) < 0.08) return '1024x1024'
   return fallbackSize
 }
 
