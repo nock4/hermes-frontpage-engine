@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-27-a-crossing-holds-its-breath-v1",
+  "edition_id": "2026-09-27-a-crossing-holds-its-breath-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-27-a-crossing-holds-its-breath-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-displaced-crossing-face-gate-pillar-",
+      "target_kind": "artifact",
+      "artifact_id": "hero-displaced-crossing-face-gate-pillar-",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (vermilion-pillar-face) selected from interpretation."
+    },
+    {
+      "target_id": "hero-layered-fragment",
+      "target_kind": "artifact",
+      "artifact_id": "hero-layered-fragment",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-stone-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-playfield-socket",
+      "target_kind": "artifact",
+      "artifact_id": "module-playfield-socket",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (missing-tile-socket) selected from interpretation."
+    },
+    {
+      "target_id": "module-sequence-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-sequence-notch",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (notched-ledge-end) selected from interpretation."
+    },
+    {
+      "target_id": "module-path-joint",
+      "target_kind": "artifact",
+      "artifact_id": "module-path-joint",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (offset-paving-joint) selected from interpretation."
+    },
+    {
+      "target_id": "module-blush-edge-interruption",
+      "target_kind": "artifact",
+      "artifact_id": "module-blush-edge-interruption",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (exposed-cubic-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-turquoise-viewing-cut",
+      "target_kind": "artifact",
+      "artifact_id": "module-turquoise-viewing-cut",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (square-inset-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "module-interrupted-tile-cadence",
+      "target_kind": "artifact",
+      "artifact_id": "module-interrupted-tile-cadence",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (recessed-tile-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-layered-fragment",
+      "target_kind": "artifact",
+      "artifact_id": "module-layered-fragment",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-fragment) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

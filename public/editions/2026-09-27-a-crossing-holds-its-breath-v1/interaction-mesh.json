@@ -1,0 +1,620 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-27-a-crossing-holds-its-breath-v1",
+  "generation": "daily-process-2026-09-27T13-18-30-475Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-09-27T13-18-30-475Z/2026-09-27-a-crossing-holds-its-breath-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-displaced-crossing-face-gate-pillar-",
+      "visible_area_px": 17680,
+      "territory_area_px": 37002,
+      "hover_bounds": {
+        "x": 0.3177,
+        "y": 0.5215,
+        "w": 0.0996,
+        "h": 0.2939
+      },
+      "hover_polygon": [
+        [
+          0.3177,
+          0.5547
+        ],
+        [
+          0.3398,
+          0.5215
+        ],
+        [
+          0.3978,
+          0.5469
+        ],
+        [
+          0.4167,
+          0.7402
+        ],
+        [
+          0.416,
+          0.7812
+        ],
+        [
+          0.3939,
+          0.8145
+        ],
+        [
+          0.3398,
+          0.7852
+        ],
+        [
+          0.3177,
+          0.752
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-sequence-notch",
+          "shared_edge_px": 2412,
+          "direction": "right",
+          "distance_px": 191.77
+        },
+        {
+          "artifact_id": "module-playfield-socket",
+          "shared_edge_px": 1182,
+          "direction": "left",
+          "distance_px": 275.39
+        },
+        {
+          "artifact_id": "module-turquoise-viewing-cut",
+          "shared_edge_px": 135,
+          "direction": "right",
+          "distance_px": 299.21
+        },
+        {
+          "artifact_id": "module-layered-fragment",
+          "shared_edge_px": 6,
+          "direction": "up",
+          "distance_px": 261.79
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-layered-fragment",
+      "visible_area_px": 5965,
+      "territory_area_px": 18485,
+      "hover_bounds": {
+        "x": 0.5996,
+        "y": 0.7666,
+        "w": 0.1087,
+        "h": 0.1738
+      },
+      "hover_polygon": [
+        [
+          0.5996,
+          0.8389
+        ],
+        [
+          0.6003,
+          0.8213
+        ],
+        [
+          0.6354,
+          0.7666
+        ],
+        [
+          0.6725,
+          0.7832
+        ],
+        [
+          0.6947,
+          0.8164
+        ],
+        [
+          0.7077,
+          0.8623
+        ],
+        [
+          0.7051,
+          0.8965
+        ],
+        [
+          0.6706,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.8545
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-interrupted-tile-cadence",
+          "shared_edge_px": 660,
+          "direction": "right",
+          "distance_px": 249.54
+        },
+        {
+          "artifact_id": "module-turquoise-viewing-cut",
+          "shared_edge_px": 594,
+          "direction": "left",
+          "distance_px": 223.02
+        },
+        {
+          "artifact_id": "module-path-joint",
+          "shared_edge_px": 536,
+          "direction": "up",
+          "distance_px": 240.95
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-playfield-socket",
+      "visible_area_px": 76614,
+      "territory_area_px": 103432,
+      "hover_bounds": {
+        "x": 0.0612,
+        "y": 0.4922,
+        "w": 0.2572,
+        "h": 0.2754
+      },
+      "hover_polygon": [
+        [
+          0.0612,
+          0.5195
+        ],
+        [
+          0.0794,
+          0.4922
+        ],
+        [
+          0.263,
+          0.4922
+        ],
+        [
+          0.3177,
+          0.5195
+        ],
+        [
+          0.3171,
+          0.7402
+        ],
+        [
+          0.2995,
+          0.7666
+        ],
+        [
+          0.0794,
+          0.7666
+        ],
+        [
+          0.0612,
+          0.7393
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-blush-edge-interruption",
+          "shared_edge_px": 1890,
+          "direction": "down",
+          "distance_px": 239.79
+        },
+        {
+          "artifact_id": "hero-displaced-crossing-face-gate-pillar-",
+          "shared_edge_px": 1182,
+          "direction": "right",
+          "distance_px": 275.39
+        },
+        {
+          "artifact_id": "module-layered-fragment",
+          "shared_edge_px": 528,
+          "direction": "right",
+          "distance_px": 340.92
+        },
+        {
+          "artifact_id": "module-sequence-notch",
+          "shared_edge_px": 10,
+          "direction": "right",
+          "distance_px": 459.38
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-sequence-notch",
+      "visible_area_px": 76953,
+      "territory_area_px": 68573,
+      "hover_bounds": {
+        "x": 0.3216,
+        "y": 0.5117,
+        "w": 0.2572,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.3216,
+          0.5391
+        ],
+        [
+          0.3359,
+          0.5176
+        ],
+        [
+          0.4284,
+          0.5117
+        ],
+        [
+          0.5599,
+          0.5117
+        ],
+        [
+          0.5781,
+          0.5391
+        ],
+        [
+          0.5781,
+          0.751
+        ],
+        [
+          0.4284,
+          0.7871
+        ],
+        [
+          0.3398,
+          0.7871
+        ],
+        [
+          0.3216,
+          0.7598
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-displaced-crossing-face-gate-pillar-",
+          "shared_edge_px": 2412,
+          "direction": "left",
+          "distance_px": 191.77
+        },
+        {
+          "artifact_id": "module-turquoise-viewing-cut",
+          "shared_edge_px": 1551,
+          "direction": "down",
+          "distance_px": 240.34
+        },
+        {
+          "artifact_id": "module-layered-fragment",
+          "shared_edge_px": 1026,
+          "direction": "up",
+          "distance_px": 296.34
+        },
+        {
+          "artifact_id": "module-playfield-socket",
+          "shared_edge_px": 10,
+          "direction": "left",
+          "distance_px": 459.38
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-path-joint",
+      "visible_area_px": 76953,
+      "territory_area_px": 98963,
+      "hover_bounds": {
+        "x": 0.6016,
+        "y": 0.5117,
+        "w": 0.2572,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.6016,
+          0.5391
+        ],
+        [
+          0.6198,
+          0.5117
+        ],
+        [
+          0.8398,
+          0.5117
+        ],
+        [
+          0.8581,
+          0.5391
+        ],
+        [
+          0.8581,
+          0.7197
+        ],
+        [
+          0.7246,
+          0.7871
+        ],
+        [
+          0.6198,
+          0.7871
+        ],
+        [
+          0.6016,
+          0.7539
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-interrupted-tile-cadence",
+          "shared_edge_px": 1548,
+          "direction": "down",
+          "distance_px": 259.04
+        },
+        {
+          "artifact_id": "hero-layered-fragment",
+          "shared_edge_px": 536,
+          "direction": "down",
+          "distance_px": 240.95
+        },
+        {
+          "artifact_id": "module-turquoise-viewing-cut",
+          "shared_edge_px": 228,
+          "direction": "left",
+          "distance_px": 401.16
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-blush-edge-interruption",
+      "visible_area_px": 45870,
+      "territory_area_px": 72190,
+      "hover_bounds": {
+        "x": 0.0814,
+        "y": 0.752,
+        "w": 0.2174,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.0814,
+          0.7793
+        ],
+        [
+          0.0996,
+          0.752
+        ],
+        [
+          0.2799,
+          0.752
+        ],
+        [
+          0.2982,
+          0.7793
+        ],
+        [
+          0.2982,
+          0.9395
+        ],
+        [
+          0.2799,
+          0.9668
+        ],
+        [
+          0.0996,
+          0.9668
+        ],
+        [
+          0.0814,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-playfield-socket",
+          "shared_edge_px": 1890,
+          "direction": "up",
+          "distance_px": 239.79
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-turquoise-viewing-cut",
+      "visible_area_px": 45705,
+      "territory_area_px": 67302,
+      "hover_bounds": {
+        "x": 0.4017,
+        "y": 0.752,
+        "w": 0.2168,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.4017,
+          0.8037
+        ],
+        [
+          0.4121,
+          0.7881
+        ],
+        [
+          0.4837,
+          0.752
+        ],
+        [
+          0.5996,
+          0.752
+        ],
+        [
+          0.6178,
+          0.7793
+        ],
+        [
+          0.6178,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.9668
+        ],
+        [
+          0.4199,
+          0.9668
+        ],
+        [
+          0.4017,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-sequence-notch",
+          "shared_edge_px": 1551,
+          "direction": "up",
+          "distance_px": 240.34
+        },
+        {
+          "artifact_id": "hero-layered-fragment",
+          "shared_edge_px": 594,
+          "direction": "right",
+          "distance_px": 223.02
+        },
+        {
+          "artifact_id": "module-path-joint",
+          "shared_edge_px": 228,
+          "direction": "right",
+          "distance_px": 401.16
+        },
+        {
+          "artifact_id": "hero-displaced-crossing-face-gate-pillar-",
+          "shared_edge_px": 135,
+          "direction": "left",
+          "distance_px": 299.21
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-interrupted-tile-cadence",
+      "visible_area_px": 45870,
+      "territory_area_px": 76907,
+      "hover_bounds": {
+        "x": 0.6934,
+        "y": 0.7207,
+        "w": 0.2331,
+        "h": 0.2393
+      },
+      "hover_polygon": [
+        [
+          0.6934,
+          0.7881
+        ],
+        [
+          0.7956,
+          0.7207
+        ],
+        [
+          0.8997,
+          0.7207
+        ],
+        [
+          0.9258,
+          0.7598
+        ],
+        [
+          0.9258,
+          0.9199
+        ],
+        [
+          0.8997,
+          0.959
+        ],
+        [
+          0.7194,
+          0.959
+        ],
+        [
+          0.6934,
+          0.9199
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-path-joint",
+          "shared_edge_px": 1548,
+          "direction": "up",
+          "distance_px": 259.04
+        },
+        {
+          "artifact_id": "hero-layered-fragment",
+          "shared_edge_px": 660,
+          "direction": "left",
+          "distance_px": 249.54
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-layered-fragment",
+      "visible_area_px": 37884,
+      "territory_area_px": 61649,
+      "hover_bounds": {
+        "x": 0.2617,
+        "y": 0.3125,
+        "w": 0.1966,
+        "h": 0.2051
+      },
+      "hover_polygon": [
+        [
+          0.2617,
+          0.3398
+        ],
+        [
+          0.2799,
+          0.3125
+        ],
+        [
+          0.4395,
+          0.3125
+        ],
+        [
+          0.4577,
+          0.3398
+        ],
+        [
+          0.4577,
+          0.4893
+        ],
+        [
+          0.4434,
+          0.5107
+        ],
+        [
+          0.4225,
+          0.5166
+        ],
+        [
+          0.2799,
+          0.5166
+        ],
+        [
+          0.2617,
+          0.4893
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-sequence-notch",
+          "shared_edge_px": 1026,
+          "direction": "down",
+          "distance_px": 296.34
+        },
+        {
+          "artifact_id": "module-playfield-socket",
+          "shared_edge_px": 528,
+          "direction": "left",
+          "distance_px": 340.92
+        },
+        {
+          "artifact_id": "hero-displaced-crossing-face-gate-pillar-",
+          "shared_edge_px": 6,
+          "direction": "down",
+          "distance_px": 261.79
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,347 @@
+{
+  "analysis_id": "analysis-2026-09-27-a-crossing-holds-its-breath-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A highly detailed voxel garden surrounds a two-storey pavilion, with a large vermilion gate in the foreground, teal tiled roofs, pink flowering trees, stone paths, lanterns, figures and turquoise water. Several discrete surfaces and recesses can support interaction, but the plate is a literal architectural diorama rather than a minimal expressionist terrain. Some planned anchors have visible analogues, not exact realizations; the broad rear-right competition recess and clearly offset sage path joint are not confidently identifiable.",
+  "usable_surfaces": [
+    "Broad vermilion foreground gate-pillar face",
+    "Small dark recess between teal roof tiles",
+    "Cream-sided missing paving tile",
+    "Stepped interruption in the right teal roof",
+    "Exposed cream cube in the right pink canopy",
+    "Dark square cut in the foreground turquoise pool",
+    "Short recessed joint behind a cream paving block",
+    "Layered stone fragment beside the foreground pool"
+  ],
+  "detected_objects": [
+    {
+      "label": "Displaced crossing face — gate-pillar analogue",
+      "artifact_type": "vermilion-pillar-face",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.555,
+        "w": 0.057,
+        "h": 0.227
+      },
+      "polygon": [
+        [
+          0.34,
+          0.555
+        ],
+        [
+          0.367,
+          0.57
+        ],
+        [
+          0.396,
+          0.578
+        ],
+        [
+          0.396,
+          0.68
+        ],
+        [
+          0.394,
+          0.782
+        ],
+        [
+          0.366,
+          0.768
+        ],
+        [
+          0.34,
+          0.752
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "The central foreground gate pillar has a broad exposed red face below a projecting red cap block. Its vertical edges, cubic divisions and shadowed upper contact are clearly visible. This is a gate-pillar surface, not a displaced collision-debris face; the lower square aperture is excluded from the mapped surface."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-stone-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.622,
+        "y": 0.8,
+        "w": 0.064,
+        "h": 0.107
+      },
+      "polygon": [
+        [
+          0.636,
+          0.8
+        ],
+        [
+          0.673,
+          0.817
+        ],
+        [
+          0.673,
+          0.852
+        ],
+        [
+          0.686,
+          0.863
+        ],
+        [
+          0.683,
+          0.897
+        ],
+        [
+          0.671,
+          0.907
+        ],
+        [
+          0.663,
+          0.881
+        ],
+        [
+          0.65,
+          0.875
+        ],
+        [
+          0.64,
+          0.862
+        ],
+        [
+          0.622,
+          0.855
+        ],
+        [
+          0.623,
+          0.822
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "An irregular stack of pale gray stone cubes stands between the foreground shrub and the pool. A larger upper block, lower projecting block and offset right-hand block form a visible stepped fragment. The contour stops where vegetation occludes the lower stones."
+    },
+    {
+      "label": "Playfield socket",
+      "artifact_type": "missing-tile-socket",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.08,
+          0.52
+        ],
+        [
+          0.3,
+          0.52
+        ],
+        [
+          0.3,
+          0.74
+        ],
+        [
+          0.08,
+          0.74
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Sequence notch",
+      "artifact_type": "notched-ledge-end",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Path joint",
+      "artifact_type": "offset-paving-joint",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Blush edge interruption",
+      "artifact_type": "exposed-cubic-edge",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Turquoise viewing cut",
+      "artifact_type": "square-inset-interruption",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Interrupted tile cadence",
+      "artifact_type": "recessed-tile-seam",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 5,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.02,
+    "rationale": "The gate, pavilion and three prominent pink canopies compete amid densely tiled paths, water, figures, lanterns, shrubs and a detailed distant landscape. These counts are coarse visual groupings and coverage is an approximate visual estimate. Small pockets are mappable, but most supporting anchors are tiny relative to the plate. The scene is coherent as a voxel garden illustration, not minimal or expressionist; the planned two broad terrain anchors are not both realized."
+  },
+  "fallback_detected_object_count": 7,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-27-a-crossing-holds-its-breath-v1"
+}
