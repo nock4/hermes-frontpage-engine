@@ -268,7 +268,7 @@ function isTweetStatusUrl(sourceUrl) {
   try {
     const parsed = new URL(sourceUrl)
     const host = parsed.hostname.replace(/^www\./, '').toLowerCase()
-    return (host === 'x.com' || host === 'twitter.com') && /^\/[^/]+\/status\/\d+/.test(parsed.pathname)
+    return (host === 'x.com' || host === 'twitter.com') && /^\/(?:[^/]+\/|i\/web\/)?status\/\d+(?:\/|$)/.test(parsed.pathname)
   } catch {
     return false
   }
@@ -277,9 +277,11 @@ function isTweetStatusUrl(sourceUrl) {
 function fxtwitterApiUrl(sourceUrl) {
   try {
     const parsed = new URL(sourceUrl)
-    const match = parsed.pathname.match(/^\/([^/]+)\/status\/(\d+)/)
+    if (!isTweetStatusUrl(sourceUrl)) return null
+    const match = parsed.pathname.match(/\/status\/(\d+)(?:\/|$)/)
     if (!match) return null
-    return `https://api.fxtwitter.com/${match[1]}/status/${match[2]}`
+    // The provider resolves authorless saved permalinks by status id too.
+    return `https://api.fxtwitter.com/status/${match[1]}`
   } catch {
     return null
   }

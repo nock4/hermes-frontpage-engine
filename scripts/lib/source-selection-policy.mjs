@@ -107,7 +107,11 @@ export function isAiToolingContentSource(source = {}) {
 
   if (!text) return false
   if (/\bai spritesheets?\b/.test(text)) return true
-  if ([source.url, source.source_url, source.final_url].filter(Boolean).some((url) => /^(?:www\.)?(?:taalas\.com|trynoah\.ai)$/.test(hostnameForUrl(url)))) return true
+  // Classify the inspected product, not its folder or the mere mention of AI.
+  // Derived chatbot links can have no image or retain only a product title.
+  if (/\b(?:llm|large language model)(?:[- ]powered)?\s+(?:(?:web|chat)\s+)?(?:interface|client|chatbot)\b|\bai[- ]chatbots?\b|\bdata[- ]cent(?:er|re)s?\b/.test(text)) return true
+  if (/\bautocritic\b/.test(text) && /\b(?:open source system|generative systems|evaluate images)\b/.test(text)) return true
+  if ([source.url, source.source_url, source.final_url].filter(Boolean).some((url) => /^(?:www\.)?(?:taalas\.com|trynoah\.ai|chatjimmy\.ai)$/.test(hostnameForUrl(url)))) return true
   const highConfidenceToolPhrases = [
     'try this prompt',
     'multiple model outputs',

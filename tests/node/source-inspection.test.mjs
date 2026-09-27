@@ -114,7 +114,7 @@ describe('source inspection', () => {
     expect(source.source_embed_html).toContain('artwork=small')
   })
 
-  it('extracts tweet video media plus thumbnail through fxtwitter', async () => {
+  it.each(['https://x.com/maker/status/12345', 'https://x.com/status/12345', 'https://x.com/i/web/status/12345'])('extracts tweet media through fxtwitter for %s', async (tweetUrl) => {
     vi.stubGlobal('fetch', vi.fn(async (url) => {
       const href = String(url)
       if (href.includes('api.fxtwitter.com')) {
@@ -147,7 +147,7 @@ describe('source inspection', () => {
     }))
 
     const source = await inspectCandidateSource(
-      { url: 'https://x.com/maker/status/12345', note_title: 'Tweet with video' },
+      { url: tweetUrl, note_title: 'Tweet with video' },
       { sourceTool: 'fetch', browserHarness: null },
     )
 
