@@ -343,7 +343,15 @@ function App() {
                   height: `${hitBounds.h * 100}%`,
                   clipPath,
                   WebkitClipPath: clipPath,
-                  zIndex: artifact.z_index,
+                  // Exported mesh outlines can overlap (notably convex-hull
+                  // fallbacks). Keep small source marks above broad territories
+                  // rather than letting decorative artwork z-order swallow them.
+                  zIndex: 1 + loaded.artifactMap.artifacts.filter((other) => {
+                    const bounds = other.interaction_mesh?.hover_bounds ?? other.bounds
+                    const area = bounds.w * bounds.h
+                    const hitArea = hitBounds.w * hitBounds.h
+                    return area > hitArea || (area === hitArea && other.z_index < artifact.z_index)
+                  }).length,
                   ...sceneReactionStyle,
                 }}
                 onMouseEnter={() => previewArtifactBinding(artifact.id, binding)}
