@@ -1,0 +1,65 @@
+{
+  "brief_id": "brief-2026-09-28-the-edge-outlasts-the-day-v1",
+  "date": "2026-09-28",
+  "signal_cluster_ids": [
+    "ecdf721d0f38",
+    "5df57ce77802",
+    "a56e75b92e63",
+    "e2221ea32f09",
+    "b22158abe8d4",
+    "4cccc4262179",
+    "04391c2b9cd9",
+    "d22fb1e9cf9c"
+  ],
+  "research_node_ids": [
+    "research-1-3b607172",
+    "research-2-ac2523f5",
+    "research-3-f420a254",
+    "research-4-9c7eaf9b",
+    "research-5-6ad756e0",
+    "research-6-e8f858c0",
+    "research-7-3815b845",
+    "research-8-8d523d37",
+    "research-9-cab4d940",
+    "research-10-efeb24a6",
+    "research-11-aa8aeb5d",
+    "research-12-02bbdc89"
+  ],
+  "mood": "An immense optical edge suspends the last warmth of the day above a dark, slowly accumulating pressure field.",
+  "material_language": [
+    "Silver optical coating with isolated diffraction",
+    "Thin translucent polycarbonate bevel",
+    "Weathered matte burnt-orange finish",
+    "Fine photographic grain across chalk and peach fields",
+    "Charcoal matte pressure ridges"
+  ],
+  "lighting": "Diffuse cool light leaves the broad chalk upper field quiet. Amber grazing light catches the compressed lower ridges, with peach warmth inside their intervals. A narrow spectral reflection defines the tilted arc; its exposed underside and displaced charcoal shadow establish impossible scale without luminous haze.",
+  "object_inventory": [
+    "One immense tilted optical arc cropped beyond the right and bottom boundaries",
+    "A compressed lower pressure band broken into uneven processional seams",
+    "A narrow amber vertical face cropped against the left edge",
+    "A broad pale expanse interrupted by one compact cobalt reflection",
+    "Two unequal source-bearing interruptions: a broad beveled notch and an extended scratch-veiled dropout"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 7,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "No legible words, lettering, filenames, numbers, labels, logos or callouts inside the image.",
+    "No reproduced sleeve layout, car, roadside rail, coastal panorama or literal compact disc.",
+    "No desks, cabinets, shelves, glasshouses, botanical forms, dashboards, source-summary cards or realistic prop inventory.",
+    "No waveform, equalizer, spectrogram, plotted beat grid or playback-control graphics.",
+    "No torn-paper treatment, pasted posters, uniform neon contour, rainbow wash, target ring or outlined hotspot.",
+    "Do not subdivide the pale upper field into panels or distribute marks at equal intervals.",
+    "Exactly two hero-scale anchors belong to the same optical event; do not create a second giant object to represent the second source.",
+    "Do not infer exact silence positions, musical events or pitch-to-color correspondences from the supplied audio summaries.",
+    "Source-image fidelity is skipped: no valid dominant source image or fingerprint is supplied. Use the supplied visual-direction metadata without claiming image preservation.",
+    "Retain only the two musically supported source bindings rather than padding to six with unrelated tweets. The supplied research does not establish six distinct sources with verified anchor lineage; the second music source is a structural companion, not a claimed derivative of the primary compilation.",
+    "The Flying Saucer Attack source has unavailable YouTube embed status in the supplied metadata; retain its original source binding without implying verified native playback.",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects"
+  ]
+}

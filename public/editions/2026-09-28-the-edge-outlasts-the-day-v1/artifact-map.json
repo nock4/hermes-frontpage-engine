@@ -1,0 +1,1726 @@
+{
+  "artifact_map_id": "map-2026-09-28-the-edge-outlasts-the-day-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "overscale-optical-edge-procession",
+  "default_artifact_id": "hero-broad-diffraction-notch",
+  "artifacts": [
+    {
+      "id": "hero-broad-diffraction-notch",
+      "kind": "hero",
+      "label": "Broad diffraction notch",
+      "artifact_type": "beveled-optical-notch",
+      "bounds": {
+        "x": 0.148,
+        "y": 0.224,
+        "w": 0.105,
+        "h": 0.155
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.149,
+          0.224
+        ],
+        [
+          0.17,
+          0.234
+        ],
+        [
+          0.211,
+          0.231
+        ],
+        [
+          0.22,
+          0.251
+        ],
+        [
+          0.229,
+          0.28
+        ],
+        [
+          0.242,
+          0.301
+        ],
+        [
+          0.244,
+          0.315
+        ],
+        [
+          0.216,
+          0.322
+        ],
+        [
+          0.23,
+          0.347
+        ],
+        [
+          0.253,
+          0.374
+        ],
+        [
+          0.237,
+          0.379
+        ],
+        [
+          0.213,
+          0.351
+        ],
+        [
+          0.193,
+          0.329
+        ],
+        [
+          0.171,
+          0.3
+        ],
+        [
+          0.154,
+          0.274
+        ],
+        [
+          0.148,
+          0.247
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/hero-broad-diffraction-notch.svg",
+      "source_binding_ids": [
+        "binding-hero-broad-diffraction-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          308,
+          296
+        ],
+        "safe_stage_window_origin_px": [
+          321,
+          309
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.149,
+            0.224
+          ],
+          [
+            0.17,
+            0.234
+          ],
+          [
+            0.211,
+            0.231
+          ],
+          [
+            0.22,
+            0.251
+          ],
+          [
+            0.229,
+            0.28
+          ],
+          [
+            0.242,
+            0.301
+          ],
+          [
+            0.244,
+            0.315
+          ],
+          [
+            0.216,
+            0.322
+          ],
+          [
+            0.23,
+            0.347
+          ],
+          [
+            0.253,
+            0.374
+          ],
+          [
+            0.237,
+            0.379
+          ],
+          [
+            0.213,
+            0.351
+          ],
+          [
+            0.193,
+            0.329
+          ],
+          [
+            0.171,
+            0.3
+          ],
+          [
+            0.154,
+            0.274
+          ],
+          [
+            0.148,
+            0.247
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1257,
+            0.2354
+          ],
+          [
+            0.1263,
+            0.2236
+          ],
+          [
+            0.1484,
+            0.1904
+          ],
+          [
+            0.2109,
+            0.1973
+          ],
+          [
+            0.2337,
+            0.2314
+          ],
+          [
+            0.2637,
+            0.3008
+          ],
+          [
+            0.2721,
+            0.3691
+          ],
+          [
+            0.2526,
+            0.4062
+          ],
+          [
+            0.237,
+            0.4121
+          ],
+          [
+            0.1719,
+            0.335
+          ],
+          [
+            0.1315,
+            0.2734
+          ],
+          [
+            0.1257,
+            0.2471
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1257,
+          "y": 0.1904,
+          "w": 0.1471,
+          "h": 0.2227
+        },
+        "territory_area_px": 29846,
+        "visible_area_px": 11709,
+        "expansion_ratio": 2.549,
+        "neighbors": [
+          {
+            "artifact_id": "module-distributed-marker-2",
+            "shared_edge_px": 288,
+            "direction": "right",
+            "distance_px": 275.72
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-scratch-veiled-pressure-gap",
+      "kind": "hero",
+      "label": "Scratch-veiled pressure gap",
+      "artifact_type": "scratch-veiled-dropout",
+      "bounds": {
+        "x": 0.202,
+        "y": 0.721,
+        "w": 0.249,
+        "h": 0.058
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.202,
+          0.735
+        ],
+        [
+          0.224,
+          0.726
+        ],
+        [
+          0.263,
+          0.721
+        ],
+        [
+          0.301,
+          0.729
+        ],
+        [
+          0.346,
+          0.728
+        ],
+        [
+          0.391,
+          0.733
+        ],
+        [
+          0.431,
+          0.734
+        ],
+        [
+          0.451,
+          0.744
+        ],
+        [
+          0.438,
+          0.758
+        ],
+        [
+          0.413,
+          0.767
+        ],
+        [
+          0.379,
+          0.773
+        ],
+        [
+          0.342,
+          0.772
+        ],
+        [
+          0.31,
+          0.779
+        ],
+        [
+          0.273,
+          0.775
+        ],
+        [
+          0.238,
+          0.759
+        ],
+        [
+          0.215,
+          0.751
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/hero-scratch-veiled-pressure-gap.svg",
+      "source_binding_ids": [
+        "binding-hero-scratch-veiled-pressure-gap"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          502,
+          763
+        ],
+        "safe_stage_window_origin_px": [
+          532,
+          768
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.202,
+            0.735
+          ],
+          [
+            0.224,
+            0.726
+          ],
+          [
+            0.263,
+            0.721
+          ],
+          [
+            0.301,
+            0.729
+          ],
+          [
+            0.346,
+            0.728
+          ],
+          [
+            0.391,
+            0.733
+          ],
+          [
+            0.431,
+            0.734
+          ],
+          [
+            0.451,
+            0.744
+          ],
+          [
+            0.438,
+            0.758
+          ],
+          [
+            0.413,
+            0.767
+          ],
+          [
+            0.379,
+            0.773
+          ],
+          [
+            0.342,
+            0.772
+          ],
+          [
+            0.31,
+            0.779
+          ],
+          [
+            0.273,
+            0.775
+          ],
+          [
+            0.238,
+            0.759
+          ],
+          [
+            0.215,
+            0.751
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1797,
+            0.7344
+          ],
+          [
+            0.2018,
+            0.7012
+          ],
+          [
+            0.2624,
+            0.6875
+          ],
+          [
+            0.431,
+            0.7002
+          ],
+          [
+            0.4505,
+            0.71
+          ],
+          [
+            0.4727,
+            0.7432
+          ],
+          [
+            0.4375,
+            0.791
+          ],
+          [
+            0.4128,
+            0.7998
+          ],
+          [
+            0.3099,
+            0.8115
+          ],
+          [
+            0.2728,
+            0.8076
+          ],
+          [
+            0.2148,
+            0.7842
+          ],
+          [
+            0.2031,
+            0.7695
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1797,
+          "y": 0.6875,
+          "w": 0.2936,
+          "h": 0.125
+        },
+        "territory_area_px": 43203,
+        "visible_area_px": 14864,
+        "expansion_ratio": 2.907,
+        "neighbors": [
+          {
+            "artifact_id": "module-field-marker",
+            "shared_edge_px": 830,
+            "direction": "right",
+            "distance_px": 154.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-color-node",
+      "kind": "module",
+      "label": "Color Node",
+      "artifact_type": "color-node",
+      "bounds": {
+        "x": 0.901,
+        "y": 0.593,
+        "w": 0.076,
+        "h": 0.171
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.901,
+          0.593
+        ],
+        [
+          0.916,
+          0.605
+        ],
+        [
+          0.934,
+          0.635
+        ],
+        [
+          0.95,
+          0.669
+        ],
+        [
+          0.961,
+          0.701
+        ],
+        [
+          0.977,
+          0.764
+        ],
+        [
+          0.962,
+          0.741
+        ],
+        [
+          0.947,
+          0.714
+        ],
+        [
+          0.934,
+          0.682
+        ],
+        [
+          0.918,
+          0.652
+        ],
+        [
+          0.906,
+          0.626
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/module-color-node.svg",
+      "source_binding_ids": [
+        "binding-module-color-node"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          681
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          695
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.901,
+            0.593
+          ],
+          [
+            0.916,
+            0.605
+          ],
+          [
+            0.934,
+            0.635
+          ],
+          [
+            0.95,
+            0.669
+          ],
+          [
+            0.961,
+            0.701
+          ],
+          [
+            0.977,
+            0.764
+          ],
+          [
+            0.962,
+            0.741
+          ],
+          [
+            0.947,
+            0.714
+          ],
+          [
+            0.934,
+            0.682
+          ],
+          [
+            0.918,
+            0.652
+          ],
+          [
+            0.906,
+            0.626
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8822,
+            0.5928
+          ],
+          [
+            0.9004,
+            0.5654
+          ],
+          [
+            0.9154,
+            0.5771
+          ],
+          [
+            0.9368,
+            0.6094
+          ],
+          [
+            0.9688,
+            0.6699
+          ],
+          [
+            0.9948,
+            0.7627
+          ],
+          [
+            0.9766,
+            0.791
+          ],
+          [
+            0.9277,
+            0.7129
+          ],
+          [
+            0.888,
+            0.6279
+          ],
+          [
+            0.8822,
+            0.5947
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8822,
+          "y": 0.5654,
+          "w": 0.1133,
+          "h": 0.2266
+        },
+        "territory_area_px": 16370,
+        "visible_area_px": 4638,
+        "expansion_ratio": 3.53,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.312,
+        "y": 0.828,
+        "w": 0.16,
+        "h": 0.056
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.312,
+          0.839
+        ],
+        [
+          0.33,
+          0.833
+        ],
+        [
+          0.356,
+          0.836
+        ],
+        [
+          0.381,
+          0.834
+        ],
+        [
+          0.406,
+          0.828
+        ],
+        [
+          0.43,
+          0.831
+        ],
+        [
+          0.453,
+          0.829
+        ],
+        [
+          0.465,
+          0.84
+        ],
+        [
+          0.472,
+          0.861
+        ],
+        [
+          0.463,
+          0.881
+        ],
+        [
+          0.431,
+          0.884
+        ],
+        [
+          0.395,
+          0.879
+        ],
+        [
+          0.36,
+          0.873
+        ],
+        [
+          0.331,
+          0.862
+        ],
+        [
+          0.318,
+          0.851
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          602,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          622,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.312,
+            0.839
+          ],
+          [
+            0.33,
+            0.833
+          ],
+          [
+            0.356,
+            0.836
+          ],
+          [
+            0.381,
+            0.834
+          ],
+          [
+            0.406,
+            0.828
+          ],
+          [
+            0.43,
+            0.831
+          ],
+          [
+            0.453,
+            0.829
+          ],
+          [
+            0.465,
+            0.84
+          ],
+          [
+            0.472,
+            0.861
+          ],
+          [
+            0.463,
+            0.881
+          ],
+          [
+            0.431,
+            0.884
+          ],
+          [
+            0.395,
+            0.879
+          ],
+          [
+            0.36,
+            0.873
+          ],
+          [
+            0.331,
+            0.862
+          ],
+          [
+            0.318,
+            0.851
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2936,
+            0.8389
+          ],
+          [
+            0.3118,
+            0.8115
+          ],
+          [
+            0.4056,
+            0.7998
+          ],
+          [
+            0.4525,
+            0.8008
+          ],
+          [
+            0.4831,
+            0.8398
+          ],
+          [
+            0.4896,
+            0.8604
+          ],
+          [
+            0.4629,
+            0.9082
+          ],
+          [
+            0.431,
+            0.9111
+          ],
+          [
+            0.3307,
+            0.8887
+          ],
+          [
+            0.3177,
+            0.8779
+          ],
+          [
+            0.2949,
+            0.8418
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2936,
+          "y": 0.7998,
+          "w": 0.1966,
+          "h": 0.1123
+        },
+        "territory_area_px": 26183,
+        "visible_area_px": 10276,
+        "expansion_ratio": 2.548,
+        "neighbors": [
+          {
+            "artifact_id": "hero-scratch-veiled-pressure-gap",
+            "shared_edge_px": 830,
+            "direction": "left",
+            "distance_px": 154.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-edge-detail",
+      "kind": "module",
+      "label": "Edge Detail",
+      "artifact_type": "edge-detail",
+      "bounds": {
+        "x": 0.843,
+        "y": 0.703,
+        "w": 0.053,
+        "h": 0.073
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.858,
+          0.703
+        ],
+        [
+          0.871,
+          0.71
+        ],
+        [
+          0.886,
+          0.713
+        ],
+        [
+          0.89,
+          0.737
+        ],
+        [
+          0.886,
+          0.75
+        ],
+        [
+          0.896,
+          0.761
+        ],
+        [
+          0.885,
+          0.776
+        ],
+        [
+          0.862,
+          0.769
+        ],
+        [
+          0.843,
+          0.761
+        ],
+        [
+          0.848,
+          0.742
+        ],
+        [
+          0.853,
+          0.721
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/module-edge-detail.svg",
+      "source_binding_ids": [
+        "binding-module-edge-detail"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          751
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          757
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.858,
+            0.703
+          ],
+          [
+            0.871,
+            0.71
+          ],
+          [
+            0.886,
+            0.713
+          ],
+          [
+            0.89,
+            0.737
+          ],
+          [
+            0.886,
+            0.75
+          ],
+          [
+            0.896,
+            0.761
+          ],
+          [
+            0.885,
+            0.776
+          ],
+          [
+            0.862,
+            0.769
+          ],
+          [
+            0.843,
+            0.761
+          ],
+          [
+            0.848,
+            0.742
+          ],
+          [
+            0.853,
+            0.721
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8242,
+            0.7598
+          ],
+          [
+            0.8392,
+            0.7021
+          ],
+          [
+            0.8574,
+            0.6748
+          ],
+          [
+            0.8854,
+            0.6855
+          ],
+          [
+            0.9036,
+            0.7129
+          ],
+          [
+            0.9141,
+            0.7607
+          ],
+          [
+            0.8848,
+            0.8027
+          ],
+          [
+            0.8424,
+            0.7881
+          ],
+          [
+            0.8242,
+            0.7607
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8242,
+          "y": 0.6748,
+          "w": 0.0905,
+          "h": 0.1289
+        },
+        "territory_area_px": 12112,
+        "visible_area_px": 3899,
+        "expansion_ratio": 3.106,
+        "neighbors": [
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 1142,
+            "direction": "down",
+            "distance_px": 149.21
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.553,
+        "y": 0.563,
+        "w": 0.084,
+        "h": 0.101
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.553,
+          0.604
+        ],
+        [
+          0.576,
+          0.592
+        ],
+        [
+          0.599,
+          0.577
+        ],
+        [
+          0.613,
+          0.563
+        ],
+        [
+          0.623,
+          0.579
+        ],
+        [
+          0.623,
+          0.598
+        ],
+        [
+          0.63,
+          0.612
+        ],
+        [
+          0.637,
+          0.634
+        ],
+        [
+          0.632,
+          0.654
+        ],
+        [
+          0.617,
+          0.664
+        ],
+        [
+          0.594,
+          0.653
+        ],
+        [
+          0.572,
+          0.641
+        ],
+        [
+          0.556,
+          0.624
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          914,
+          620
+        ],
+        "safe_stage_window_origin_px": [
+          924,
+          628
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.553,
+            0.604
+          ],
+          [
+            0.576,
+            0.592
+          ],
+          [
+            0.599,
+            0.577
+          ],
+          [
+            0.613,
+            0.563
+          ],
+          [
+            0.623,
+            0.579
+          ],
+          [
+            0.623,
+            0.598
+          ],
+          [
+            0.63,
+            0.612
+          ],
+          [
+            0.637,
+            0.634
+          ],
+          [
+            0.632,
+            0.654
+          ],
+          [
+            0.617,
+            0.664
+          ],
+          [
+            0.594,
+            0.653
+          ],
+          [
+            0.572,
+            0.641
+          ],
+          [
+            0.556,
+            0.624
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5345,
+            0.6035
+          ],
+          [
+            0.5527,
+            0.5762
+          ],
+          [
+            0.6126,
+            0.5352
+          ],
+          [
+            0.6406,
+            0.5781
+          ],
+          [
+            0.6549,
+            0.6328
+          ],
+          [
+            0.6497,
+            0.6533
+          ],
+          [
+            0.6315,
+            0.6807
+          ],
+          [
+            0.6165,
+            0.6904
+          ],
+          [
+            0.5697,
+            0.666
+          ],
+          [
+            0.5378,
+            0.623
+          ],
+          [
+            0.5345,
+            0.6045
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5345,
+          "y": 0.5352,
+          "w": 0.1211,
+          "h": 0.1562
+        },
+        "territory_area_px": 18455,
+        "visible_area_px": 7843,
+        "expansion_ratio": 2.353,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-distributed-marker",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.773,
+        "y": 0.315,
+        "w": 0.097,
+        "h": 0.148
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.773,
+          0.315
+        ],
+        [
+          0.791,
+          0.327
+        ],
+        [
+          0.813,
+          0.333
+        ],
+        [
+          0.822,
+          0.35
+        ],
+        [
+          0.839,
+          0.365
+        ],
+        [
+          0.843,
+          0.389
+        ],
+        [
+          0.861,
+          0.409
+        ],
+        [
+          0.863,
+          0.435
+        ],
+        [
+          0.87,
+          0.447
+        ],
+        [
+          0.867,
+          0.463
+        ],
+        [
+          0.852,
+          0.458
+        ],
+        [
+          0.836,
+          0.437
+        ],
+        [
+          0.825,
+          0.424
+        ],
+        [
+          0.804,
+          0.414
+        ],
+        [
+          0.792,
+          0.392
+        ],
+        [
+          0.798,
+          0.364
+        ],
+        [
+          0.792,
+          0.346
+        ],
+        [
+          0.778,
+          0.338
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/module-distributed-marker.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1262,
+          386
+        ],
+        "safe_stage_window_origin_px": [
+          1274,
+          398
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.773,
+            0.315
+          ],
+          [
+            0.791,
+            0.327
+          ],
+          [
+            0.813,
+            0.333
+          ],
+          [
+            0.822,
+            0.35
+          ],
+          [
+            0.839,
+            0.365
+          ],
+          [
+            0.843,
+            0.389
+          ],
+          [
+            0.861,
+            0.409
+          ],
+          [
+            0.863,
+            0.435
+          ],
+          [
+            0.87,
+            0.447
+          ],
+          [
+            0.867,
+            0.463
+          ],
+          [
+            0.852,
+            0.458
+          ],
+          [
+            0.836,
+            0.437
+          ],
+          [
+            0.825,
+            0.424
+          ],
+          [
+            0.804,
+            0.414
+          ],
+          [
+            0.792,
+            0.392
+          ],
+          [
+            0.798,
+            0.364
+          ],
+          [
+            0.792,
+            0.346
+          ],
+          [
+            0.778,
+            0.338
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7546,
+            0.3145
+          ],
+          [
+            0.7728,
+            0.2871
+          ],
+          [
+            0.8125,
+            0.3047
+          ],
+          [
+            0.8568,
+            0.3643
+          ],
+          [
+            0.8789,
+            0.4082
+          ],
+          [
+            0.888,
+            0.4463
+          ],
+          [
+            0.8848,
+            0.4629
+          ],
+          [
+            0.8665,
+            0.4902
+          ],
+          [
+            0.8516,
+            0.4844
+          ],
+          [
+            0.8034,
+            0.4404
+          ],
+          [
+            0.7734,
+            0.3916
+          ],
+          [
+            0.7546,
+            0.3154
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7546,
+          "y": 0.2871,
+          "w": 0.1341,
+          "h": 0.2041
+        },
+        "territory_area_px": 21654,
+        "visible_area_px": 8446,
+        "expansion_ratio": 2.564,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7012,
+            0.7598
+          ],
+          [
+            0.7194,
+            0.7324
+          ],
+          [
+            0.8307,
+            0.7324
+          ],
+          [
+            0.9069,
+            0.7432
+          ],
+          [
+            0.918,
+            0.7598
+          ],
+          [
+            0.918,
+            0.9199
+          ],
+          [
+            0.8997,
+            0.9473
+          ],
+          [
+            0.7194,
+            0.9473
+          ],
+          [
+            0.7012,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7012,
+          "y": 0.7324,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 64836,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.413,
+        "neighbors": [
+          {
+            "artifact_id": "module-edge-detail",
+            "shared_edge_px": 1142,
+            "direction": "up",
+            "distance_px": 149.21
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-distributed-marker-2",
+      "kind": "module",
+      "label": "Distributed Marker",
+      "artifact_type": "distributed-marker",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "overscale-optical-edge-procession",
+      "mask_path": "/editions/2026-09-28-the-edge-outlasts-the-day-v1/assets/masks/module-distributed-marker-2.svg",
+      "source_binding_ids": [
+        "binding-module-distributed-marker-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3398
+          ],
+          [
+            0.2799,
+            0.3125
+          ],
+          [
+            0.4395,
+            0.3125
+          ],
+          [
+            0.4577,
+            0.3398
+          ],
+          [
+            0.4577,
+            0.4893
+          ],
+          [
+            0.4395,
+            0.5166
+          ],
+          [
+            0.2799,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.4893
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.1966,
+          "h": 0.2051
+        },
+        "territory_area_px": 61407,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.621,
+        "neighbors": [
+          {
+            "artifact_id": "hero-broad-diffraction-notch",
+            "shared_edge_px": 288,
+            "direction": "left",
+            "distance_px": 275.72
+          }
+        ]
+      }
+    }
+  ]
+}
