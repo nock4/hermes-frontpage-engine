@@ -161,7 +161,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
     }
 
     const rect = node.getBoundingClientRect()
-    const clipped = rect.left < -1
+    let clipped = rect.left < -1
       || rect.top < -1
       || rect.right > window.innerWidth + 1
       || rect.bottom > window.innerHeight + 1
@@ -220,7 +220,23 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
       : node.querySelector('.visual-source-card__title, .source-window__media-title')) as HTMLElement | null
     const titleRect = title?.getBoundingClientRect()
     const titleStyle = title ? window.getComputedStyle(title) : null
-    const titleVisible = Boolean(titleRect
+    // Viewport-safe DOM bounds do not prove painted visibility: bloom retains
+    // a clip-path on the source window after animation. Check media/title
+    // against every clipping ancestor as well, not only the viewport.
+    let contentClipped = false
+    for (const element of [visualCard?.querySelector('.visual-source-card__figure'), title]) {
+      if (!element) continue
+      const content = element.getBoundingClientRect()
+      for (let ancestor = element.parentElement; ancestor; ancestor = ancestor.parentElement) {
+        const style = getComputedStyle(ancestor)
+        if (!/(hidden|clip|auto|scroll)/.test(style.overflowY) && style.clipPath === 'none') continue
+        const boundary = ancestor.getBoundingClientRect()
+        if (content.left < boundary.left - 1 || content.right > boundary.right + 1
+          || content.top < boundary.top - 1 || content.bottom > boundary.bottom + 1) contentClipped = true
+      }
+    }
+    clipped ||= contentClipped
+    const titleVisible = Boolean(!contentClipped && titleRect
       && titleStyle
       && titleStyle.display !== 'none'
       && titleStyle.visibility !== 'hidden'
@@ -335,7 +351,7 @@ for (const viewport of mobileViewports) {
       if (!metric.hasVisibleClose) failures.push(`${viewport.name} / ${label}: source window close control is not visibly on top of the source surface`)
       if (!metric.closeOverRawCard) failures.push(`${viewport.name} / ${label}: close control is not anchored to the raw-media card`)
       if (metric.captionOverMedia) failures.push(`${viewport.name} / ${label}: source title overlaps and obscures the media surface`)
-      if (metrics.length === 1 && metric.sourceVisualMode && !metric.titleVisible) failures.push(`${viewport.name} / ${label}: image-backed preview has no readable source title`)
+      if (metric.sourceVisualMode && !metric.titleVisible) failures.push(`${viewport.name} / ${label}: image-backed preview has no readable source title`)
       if (!metric.hasVisibleMedia && !metric.hasReadableText) failures.push(`${viewport.name} / ${label}: source window has no visible media or readable fallback`)
       if (metric.hasVisibleMedia && metric.mediaAreaRatio < 0.22) failures.push(`${viewport.name} / ${label}: source media is too small in the mobile source window (${metric.mediaAreaRatio.toFixed(2)} < 0.22)`)
       if (viewport.name === 'mobile-landscape' && binding.source_media_type !== 'video' && (binding.source_media_url || binding.source_image_url)) {

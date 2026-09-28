@@ -1,4 +1,56 @@
+import fs from 'node:fs'
+import path from 'node:path'
 import { expect, test } from '@playwright/test'
+
+// These exact published surfaces exposed a false green: the window rectangle
+// fit, but its overflow-hidden body cut off both the image and the edge title.
+for (const viewport of [{ width: 375, height: 667 }, { width: 393, height: 852 }, { width: 360, height: 740 }, { width: 852, height: 393 }]) {
+  for (const source of [{ id: 'module-color-node', label: 'Color Node' }, { id: 'module-field-marker', label: 'Field Marker' }]) {
+    test(`Sept28 focused preview keeps ${source.label} whole at ${viewport.width}px`, async ({ page }, testInfo) => {
+      await page.setViewportSize(viewport)
+      await page.goto('/?edition=2026-09-28-the-edge-outlasts-the-day-v1')
+      await page.getByRole('button', { name: source.label, exact: true }).focus()
+      const surface = page.locator(`.stage-overlay-windows--live .source-window[data-artifact-id="${source.id}"]`)
+      await expect(surface).toHaveAttribute('data-source-window-mode', 'preview')
+      await expect(surface.locator('.visual-source-card__image')).toBeVisible()
+      await surface.locator('.visual-source-card__image').evaluate(async (media) => {
+        if (media instanceof HTMLImageElement) await media.decode()
+      })
+      await page.waitForTimeout(2500)
+      const geometry = await surface.evaluate(node => {
+        const card = node.querySelector('.visual-source-card')!
+        const figure = card.querySelector('.visual-source-card__figure')!
+        const title = card.querySelector('.visual-source-card__edge-title')!
+        const rect = (element: Element) => element.getBoundingClientRect().toJSON()
+        const clippingAncestors = []
+        for (let ancestor = title.parentElement; ancestor; ancestor = ancestor.parentElement) {
+          const style = getComputedStyle(ancestor)
+          if (/(hidden|clip|auto|scroll)/.test(style.overflowY) || style.clipPath !== 'none') clippingAncestors.push({ className: ancestor.className, rect: rect(ancestor), clipPath: style.clipPath })
+        }
+        return { surface: rect(node), body: rect(node.querySelector('.source-window__body')!), card: rect(card), figure: rect(figure), title: rect(title), clippingAncestors, inlineStyle: node.getAttribute('style') }
+      })
+      const proofRoot = process.env.DFE_FOCUS_QA_DIR || testInfo.outputPath('focus-proof')
+      fs.mkdirSync(proofRoot, { recursive: true })
+      const stem = path.join(proofRoot, `${viewport.width}-${source.id}`)
+      fs.writeFileSync(`${stem}.json`, JSON.stringify(geometry, null, 2))
+      await page.screenshot({ path: `${stem}.png` })
+      await testInfo.attach('focused-preview', { path: `${stem}.png`, contentType: 'image/png' })
+      expect(geometry.surface.top).toBeGreaterThanOrEqual(0)
+      expect(geometry.surface.bottom).toBeLessThanOrEqual(viewport.height)
+      expect(geometry.title.width).toBeGreaterThan(64)
+      expect(geometry.title.height).toBeGreaterThan(12)
+      expect(geometry.title.top).toBeGreaterThanOrEqual(geometry.figure.bottom - 1)
+      for (const part of [geometry.figure, geometry.title]) {
+        expect.soft(part.bottom, 'content must fit inside the actual body, not only the viewport').toBeLessThanOrEqual(geometry.body.bottom + 1)
+        expect.soft(part.bottom).toBeLessThanOrEqual(viewport.height)
+        expect.soft(part.right).toBeLessThanOrEqual(viewport.width)
+        for (const ancestor of geometry.clippingAncestors) {
+          expect.soft(part.bottom, `content clipped by ${ancestor.className}`).toBeLessThanOrEqual(ancestor.rect.bottom + 1)
+        }
+      }
+    })
+  }
+}
 
 // Provider classes must not opt out of the common mobile visual-card aperture.
 for (const viewport of [{ width: 375, height: 667 }, { width: 852, height: 393 }]) {

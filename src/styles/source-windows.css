@@ -5015,6 +5015,13 @@
     display: none !important;
   }
 
+  /* Desktop artifact-relative max-height is inline. Mobile previews need room
+     for the actual media + edge title; otherwise the settled bloom clip-path
+     still cuts overflowing content even though the window rect is in bounds. */
+  .source-window--stage.source-window--preview:has(.visual-source-card) {
+    max-height: min(74dvh, calc(100dvh - clamp(0.5rem, 10dvh, 4.75rem) - 0.5rem)) !important;
+  }
+
   .source-window--stage.source-window--preview:has(.visual-source-card[data-source-visual-mode='raw']) .visual-source-card {
     width: min(82vh, 20rem, calc(100vw - 1.25rem)) !important;
     min-height: 0 !important;
