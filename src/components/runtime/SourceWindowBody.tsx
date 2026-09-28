@@ -329,6 +329,7 @@ export function SourceWindowBody({
           src={descriptor.embedUrl}
           title={binding.title}
         />
+        {surface === 'stage' ? <strong className="source-window__media-title">{binding.source_title || binding.title}</strong> : null}
       </div>
     )
   }
@@ -340,6 +341,12 @@ export function SourceWindowBody({
       : binding.embed_status === 'unavailable'
         ? 'Open on YouTube'
         : null
+
+    // A linkout is still imagery, not a native player. Share the contained
+    // aperture and caption geometry used by other source-linked images.
+    if (surface === 'stage') {
+      return <SourceImageTitleCard binding={binding} imageUrl={sourceImage} href={descriptor.sourceUrl} title={[statusLabel, binding.source_title || binding.title].filter(Boolean).join(' · ')} />
+    }
 
     return (
       <div className="source-window__body source-window__body--youtube-linkout">

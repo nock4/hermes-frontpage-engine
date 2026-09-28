@@ -2,6 +2,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 import { expect, test, type Page } from '@playwright/test'
+import { getSourceWindowDescriptor } from '../../src/lib/sourceWindowContent'
+import type { SourceBindingRecord as RuntimeBinding } from '../../src/types/runtime'
 
 type ManifestItem = {
   edition_id: string
@@ -215,7 +217,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
     const isPreviewMode = node.getAttribute('data-source-window-mode') === 'preview'
     const title = (isPreviewMode
       ? node.querySelector('.visual-source-card__edge-title')
-      : node.querySelector('.visual-source-card__title')) as HTMLElement | null
+      : node.querySelector('.visual-source-card__title, .source-window__media-title')) as HTMLElement | null
     const titleRect = title?.getBoundingClientRect()
     const titleStyle = title ? window.getComputedStyle(title) : null
     const titleVisible = Boolean(titleRect
@@ -385,7 +387,20 @@ for (const viewport of mobileViewports) {
           if (!primaryMetric.titleVisible) failures.push(`${viewport.name} / primary source: compact source title is not fully visible`)
           if (!primaryMetric.hasReachableClose || !primaryMetric.hasVisibleClose) failures.push(`${viewport.name} / primary source: close control is not visible and reachable`)
           if (!primaryMetric.closeOverRawCard) failures.push(`${viewport.name} / primary source: close control is not anchored over the media card`)
-          if (viewport.name === 'mobile-landscape' && primaryBinding.source_media_type !== 'video') {
+          // A YouTube thumbnail is image metadata, not the opened player's
+          // media type. Require the native iframe instead of a raw poster.
+          const primaryDescriptor = getSourceWindowDescriptor(primaryBinding as RuntimeBinding)
+          if (primaryDescriptor.kind === 'youtube-embed') {
+            await expect(primaryWindow.locator('.source-window__body--video iframe')).toHaveAttribute('src', primaryDescriptor.embedUrl)
+            await expect(primaryWindow.locator('.source-window__body--video iframe')).toBeVisible()
+            const player = await primaryWindow.locator('.source-window__body--video iframe').boundingBox()
+            expect(player).not.toBeNull()
+            expect(player!.x).toBeGreaterThanOrEqual(0)
+            expect(player!.y).toBeGreaterThanOrEqual(0)
+            expect(player!.x + player!.width).toBeLessThanOrEqual(viewport.width)
+            expect(player!.y + player!.height).toBeLessThanOrEqual(viewport.height)
+            if (viewport.name === 'mobile-landscape') expect(primaryMetric.height).toBeGreaterThanOrEqual(viewport.height * 0.55)
+          } else if (viewport.name === 'mobile-landscape' && primaryBinding.source_media_type !== 'video') {
             if (primaryMetric.sourceVisualMode !== 'raw' || !primaryMetric.hasAmbientFill) failures.push(`${viewport.name} / primary source: short-landscape raw media mode/ambient fill is missing`)
             const expectedRawImageUrl = primaryBinding.source_media_url || primaryBinding.source_image_url || null
             if (expectedRawImageUrl && primaryMetric.sourceVisualImageUrl !== expectedRawImageUrl) failures.push(`${viewport.name} / primary source: landscape still must render the original source image, not its poster crop`)

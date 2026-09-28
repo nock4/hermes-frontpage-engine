@@ -3032,6 +3032,36 @@
   background: rgba(8, 9, 12, 0.82);
 }
 
+/* Native players need source provenance outside the cross-origin iframe. */
+.source-window__media-title {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.35rem 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  color: rgba(255, 250, 238, 0.92);
+  background: rgba(8, 8, 9, 0.9);
+}
+
+@media (max-width: 900px), (max-height: 500px) and (orientation: landscape) {
+  .source-window--stage.source-window--primary .source-window__body--video {
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .source-window--stage.source-window--primary .source-window__body--video iframe {
+    /* The landscape aperture cannot fit a full-width 16:9 player plus title. */
+    height: min(48dvh, calc((100vw - 2rem) * 9 / 16));
+    min-height: 0;
+    aspect-ratio: auto;
+  }
+}
+
 .source-window__body--cabinet-player {
   position: relative;
   width: min(100%, 34rem);

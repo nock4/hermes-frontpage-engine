@@ -1,4 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
+import { createElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
+import { SourceWindow } from './SourceWindow'
 import { getSourceVisualImageUrl, getSourceVisualMode } from './SourceWindowBody'
 import type { SourceBindingRecord } from '../../types/runtime'
 
@@ -10,6 +13,35 @@ const makeBinding = (cropRisk: 'low' | 'medium' | 'high'): SourceBindingRecord =
     crop_risk: cropRisk,
   },
 } as SourceBindingRecord)
+
+describe('YouTube stage surfaces', () => {
+  const binding = {
+    ...makeBinding('low'), id: 'youtube', artifact_id: 'hero', source_type: 'youtube',
+    source_url: 'https://www.youtube.com/watch?v=prYhH_jDOVQ', window_type: 'video',
+    title: 'Ambient music from forgotten CDs', kicker: 'youtube.com',
+    source_image_url: 'https://media.example/source.jpg', source_media_type: 'image',
+  } as SourceBindingRecord
+
+  it('keeps native playback and an external readable primary title', () => {
+    const html = renderToStaticMarkup(createElement(SourceWindow, { binding, mode: 'primary', surface: 'stage', onClose() {} }))
+    expect(html).toContain('<iframe')
+    expect(html).toContain('class="source-window__media-title"')
+    expect(html).not.toContain('class="visual-source-card"')
+  })
+
+  it.each(['preview', 'primary'] as const)('contains unavailable YouTube imagery in landscape %s', (mode) => {
+    vi.stubGlobal('window', { matchMedia: vi.fn().mockReturnValue({ matches: true }) })
+    try {
+      const html = renderToStaticMarkup(createElement(SourceWindow, { binding: { ...binding, embed_status: 'unavailable' }, mode, surface: 'stage', onClose() {} }))
+      expect(html).toContain('data-source-visual-mode="raw"')
+      expect(html).toContain('--source-ambient-image:')
+      expect(html).toContain('Open on YouTube')
+      expect(html).toContain('href="https://www.youtube.com/watch?v=prYhH_jDOVQ"')
+      expect(html).not.toContain('<iframe')
+      expect(html).not.toContain('/editions/test/assets/source-poster.jpg')
+    } finally { vi.unstubAllGlobals() }
+  })
+})
 
 describe('source visual crop fallback', () => {
   it.each(['medium', 'high'] as const)('uses contained raw media for %s-risk poster crops', (cropRisk) => {
