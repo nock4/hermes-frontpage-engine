@@ -8,14 +8,37 @@ for (const viewport of [{ width: 375, height: 667 }, { width: 393, height: 852 }
   for (const source of [{ id: 'module-color-node', label: 'Color Node' }, { id: 'module-field-marker', label: 'Field Marker' }]) {
     test(`Sept28 focused preview keeps ${source.label} whole at ${viewport.width}px`, async ({ page }, testInfo) => {
       await page.setViewportSize(viewport)
+      // Reproduce CI's denied direct MP4 without depending on CDN policy.
+      // The canonical provider remains real; bindings/media are never rewritten.
+      if (source.id === 'module-color-node') {
+        await page.route('https://video.twimg.com/amplify_video/2104019244769755136/vid/avc1/1080x1080/YHQzcZEeZdbQLRZ1.mp4?tag=29', route => route.fulfill({ status: 403, body: 'Forbidden' }))
+      }
       await page.goto('/?edition=2026-09-28-the-edge-outlasts-the-day-v1')
       await page.getByRole('button', { name: source.label, exact: true }).focus()
       const surface = page.locator(`.stage-overlay-windows--live .source-window[data-artifact-id="${source.id}"]`)
       await expect(surface).toHaveAttribute('data-source-window-mode', 'preview')
-      await expect(surface.locator('.visual-source-card__image')).toBeVisible()
-      await surface.locator('.visual-source-card__image').evaluate(async (media) => {
-        if (media instanceof HTMLImageElement) await media.decode()
-      })
+      if (source.id === 'module-color-node') {
+        // A denied MP4 intentionally becomes a scrollable native tweet, not an
+        // image/video element. Require that exact recovery, not any visible box.
+        const provider = surface.locator('iframe[data-video-fallback="provider"]')
+        await expect(provider).toBeVisible()
+        await expect(provider).toHaveAttribute('src', /platform\.twitter\.com\/embed\/Tweet\.html\?id=2104019261588902230&/)
+        await expect(surface.locator('video')).toHaveCount(0)
+        const scroll = surface.locator('.provider-video-scroll')
+        await expect(scroll).toBeVisible()
+        expect(await scroll.evaluate(el => getComputedStyle(el).overflowY)).toBe('auto')
+        expect(await scroll.evaluate(el => {
+          el.scrollTop = el.scrollHeight
+          const reachable = el.scrollTop > 0 && el.scrollTop + el.clientHeight >= el.scrollHeight - 1
+          el.scrollTop = 0
+          return reachable
+        })).toBe(true)
+      } else {
+        await expect(surface.locator('.visual-source-card__image')).toBeVisible()
+        await surface.locator('.visual-source-card__image').evaluate(async (media) => {
+          if (media instanceof HTMLImageElement) await media.decode()
+        })
+      }
       await page.waitForTimeout(2500)
       const geometry = await surface.evaluate(node => {
         const card = node.querySelector('.visual-source-card')!
