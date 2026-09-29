@@ -1,0 +1,1424 @@
+{
+  "artifact_map_id": "map-2026-09-29-the-sky-keeps-the-silence-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "ochre-drone-sky-gap",
+  "default_artifact_id": "hero-lower-pressure-mass",
+  "artifacts": [
+    {
+      "id": "hero-lower-pressure-mass",
+      "kind": "hero",
+      "label": "Lower pressure mass",
+      "artifact_type": "cropped-overprint-mass",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.5052,
+        "h": 1.0
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0013,
+          0.002
+        ],
+        [
+          0.2148,
+          0.002
+        ],
+        [
+          0.3236,
+          0.0801
+        ],
+        [
+          0.3411,
+          0.1133
+        ],
+        [
+          0.4727,
+          0.7725
+        ],
+        [
+          0.5026,
+          0.9971
+        ],
+        [
+          0.0013,
+          0.9971
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/hero-lower-pressure-mass.svg",
+      "source_binding_ids": [
+        "binding-hero-lower-pressure-mass"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          379,
+          430
+        ],
+        "safe_stage_window_origin_px": [
+          440,
+          512
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0013,
+            0.002
+          ],
+          [
+            0.2148,
+            0.002
+          ],
+          [
+            0.3236,
+            0.0801
+          ],
+          [
+            0.3411,
+            0.1133
+          ],
+          [
+            0.4727,
+            0.7725
+          ],
+          [
+            0.5026,
+            0.9971
+          ],
+          [
+            0.0013,
+            0.9971
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.2578,
+            0.0
+          ],
+          [
+            0.3236,
+            0.0469
+          ],
+          [
+            0.347,
+            0.082
+          ],
+          [
+            0.3633,
+            0.1152
+          ],
+          [
+            0.4017,
+            0.3066
+          ],
+          [
+            0.5241,
+            0.9951
+          ],
+          [
+            0.0,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.5247,
+          "h": 1.0
+        },
+        "territory_area_px": 545537,
+        "visible_area_px": 644616,
+        "expansion_ratio": 0.846,
+        "neighbors": [
+          {
+            "artifact_id": "module-contour-silence",
+            "shared_edge_px": 87580,
+            "direction": "down",
+            "distance_px": 349.76
+          },
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 2834,
+            "direction": "right",
+            "distance_px": 305.17
+          },
+          {
+            "artifact_id": "module-occluded-puncture",
+            "shared_edge_px": 2247,
+            "direction": "right",
+            "distance_px": 436.02
+          },
+          {
+            "artifact_id": "module-field-marker-2",
+            "shared_edge_px": 2050,
+            "direction": "right",
+            "distance_px": 623.79
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-opening-contour",
+      "kind": "hero",
+      "label": "Opening contour",
+      "artifact_type": "split-shadow-mass",
+      "bounds": {
+        "x": 0.567,
+        "y": 0.425,
+        "w": 0.433,
+        "h": 0.575
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.567,
+          1
+        ],
+        [
+          0.605,
+          0.908
+        ],
+        [
+          0.696,
+          0.874
+        ],
+        [
+          0.753,
+          0.866
+        ],
+        [
+          0.717,
+          0.819
+        ],
+        [
+          0.722,
+          0.738
+        ],
+        [
+          0.756,
+          0.624
+        ],
+        [
+          0.794,
+          0.524
+        ],
+        [
+          0.837,
+          0.456
+        ],
+        [
+          0.898,
+          0.43
+        ],
+        [
+          0.95,
+          0.425
+        ],
+        [
+          0.983,
+          0.452
+        ],
+        [
+          1,
+          0.477
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0.781,
+          1
+        ],
+        [
+          0.757,
+          0.953
+        ],
+        [
+          0.74,
+          0.991
+        ],
+        [
+          0.699,
+          1
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/hero-opening-contour.svg",
+      "source_binding_ids": [
+        "binding-hero-opening-contour"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1203,
+          682
+        ],
+        "safe_stage_window_origin_px": [
+          1257,
+          730
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.567,
+            1
+          ],
+          [
+            0.605,
+            0.908
+          ],
+          [
+            0.696,
+            0.874
+          ],
+          [
+            0.753,
+            0.866
+          ],
+          [
+            0.717,
+            0.819
+          ],
+          [
+            0.722,
+            0.738
+          ],
+          [
+            0.756,
+            0.624
+          ],
+          [
+            0.794,
+            0.524
+          ],
+          [
+            0.837,
+            0.456
+          ],
+          [
+            0.898,
+            0.43
+          ],
+          [
+            0.95,
+            0.425
+          ],
+          [
+            0.983,
+            0.452
+          ],
+          [
+            1,
+            0.477
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0.781,
+            1
+          ],
+          [
+            0.757,
+            0.953
+          ],
+          [
+            0.74,
+            0.991
+          ],
+          [
+            0.699,
+            1
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5449,
+            0.998
+          ],
+          [
+            0.7793,
+            0.5107
+          ],
+          [
+            0.8366,
+            0.4219
+          ],
+          [
+            0.8978,
+            0.3965
+          ],
+          [
+            0.9499,
+            0.3916
+          ],
+          [
+            0.9993,
+            0.4424
+          ],
+          [
+            0.9993,
+            0.999
+          ],
+          [
+            0.5449,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5449,
+          "y": 0.3916,
+          "w": 0.4551,
+          "h": 0.6084
+        },
+        "territory_area_px": 188121,
+        "visible_area_px": 242147,
+        "expansion_ratio": 0.777,
+        "neighbors": [
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 4195,
+            "direction": "down",
+            "distance_px": 182.76
+          },
+          {
+            "artifact_id": "module-ridge-interruption",
+            "shared_edge_px": 2032,
+            "direction": "left",
+            "distance_px": 269.05
+          },
+          {
+            "artifact_id": "module-field-marker-2",
+            "shared_edge_px": 1024,
+            "direction": "left",
+            "distance_px": 567.52
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "saucer-shaped-field-mark",
+      "bounds": {
+        "x": 0.509,
+        "y": 0.087,
+        "w": 0.254,
+        "h": 0.092
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.509,
+          0.136
+        ],
+        [
+          0.515,
+          0.122
+        ],
+        [
+          0.536,
+          0.111
+        ],
+        [
+          0.567,
+          0.099
+        ],
+        [
+          0.604,
+          0.09
+        ],
+        [
+          0.65,
+          0.087
+        ],
+        [
+          0.695,
+          0.101
+        ],
+        [
+          0.738,
+          0.118
+        ],
+        [
+          0.761,
+          0.127
+        ],
+        [
+          0.763,
+          0.139
+        ],
+        [
+          0.749,
+          0.15
+        ],
+        [
+          0.715,
+          0.163
+        ],
+        [
+          0.668,
+          0.175
+        ],
+        [
+          0.625,
+          0.179
+        ],
+        [
+          0.579,
+          0.175
+        ],
+        [
+          0.54,
+          0.163
+        ],
+        [
+          0.514,
+          0.152
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/module-field-marker.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          977,
+          129
+        ],
+        "safe_stage_window_origin_px": [
+          1008,
+          136
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.509,
+            0.136
+          ],
+          [
+            0.515,
+            0.122
+          ],
+          [
+            0.536,
+            0.111
+          ],
+          [
+            0.567,
+            0.099
+          ],
+          [
+            0.604,
+            0.09
+          ],
+          [
+            0.65,
+            0.087
+          ],
+          [
+            0.695,
+            0.101
+          ],
+          [
+            0.738,
+            0.118
+          ],
+          [
+            0.761,
+            0.127
+          ],
+          [
+            0.763,
+            0.139
+          ],
+          [
+            0.749,
+            0.15
+          ],
+          [
+            0.715,
+            0.163
+          ],
+          [
+            0.668,
+            0.175
+          ],
+          [
+            0.625,
+            0.179
+          ],
+          [
+            0.579,
+            0.175
+          ],
+          [
+            0.54,
+            0.163
+          ],
+          [
+            0.514,
+            0.152
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4902,
+            0.1357
+          ],
+          [
+            0.515,
+            0.0938
+          ],
+          [
+            0.5358,
+            0.083
+          ],
+          [
+            0.6035,
+            0.0625
+          ],
+          [
+            0.6497,
+            0.0596
+          ],
+          [
+            0.7604,
+            0.0996
+          ],
+          [
+            0.7786,
+            0.127
+          ],
+          [
+            0.7806,
+            0.1387
+          ],
+          [
+            0.7487,
+            0.1768
+          ],
+          [
+            0.668,
+            0.2021
+          ],
+          [
+            0.625,
+            0.2061
+          ],
+          [
+            0.5788,
+            0.2021
+          ],
+          [
+            0.5182,
+            0.1807
+          ],
+          [
+            0.4954,
+            0.1514
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4902,
+          "y": 0.0596,
+          "w": 0.291,
+          "h": 0.1475
+        },
+        "territory_area_px": 49891,
+        "visible_area_px": 25811,
+        "expansion_ratio": 1.933,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-occluded-puncture",
+      "kind": "module",
+      "label": "Occluded puncture",
+      "artifact_type": "irregular-puncture",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/module-occluded-puncture.svg",
+      "source_binding_ids": [
+        "binding-module-occluded-puncture"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          691,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          718,
+          666
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.34,
+            0.54
+          ],
+          [
+            0.56,
+            0.54
+          ],
+          [
+            0.56,
+            0.76
+          ],
+          [
+            0.34,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3216,
+            0.6416
+          ],
+          [
+            0.3464,
+            0.5176
+          ],
+          [
+            0.5599,
+            0.5117
+          ],
+          [
+            0.5781,
+            0.5391
+          ],
+          [
+            0.5781,
+            0.751
+          ],
+          [
+            0.4284,
+            0.7871
+          ],
+          [
+            0.3398,
+            0.7871
+          ],
+          [
+            0.3216,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3216,
+          "y": 0.5117,
+          "w": 0.2572,
+          "h": 0.2764
+        },
+        "territory_area_px": 100604,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.307,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-pressure-mass",
+            "shared_edge_px": 2247,
+            "direction": "left",
+            "distance_px": 436.02
+          },
+          {
+            "artifact_id": "module-field-marker-2",
+            "shared_edge_px": 1656,
+            "direction": "down",
+            "distance_px": 244.18
+          },
+          {
+            "artifact_id": "module-reference-plaque",
+            "shared_edge_px": 928,
+            "direction": "up",
+            "distance_px": 272.61
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-ridge-interruption",
+      "kind": "module",
+      "label": "Ridge interruption",
+      "artifact_type": "ridge-notch",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/module-ridge-interruption.svg",
+      "source_binding_ids": [
+        "binding-module-ridge-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6016,
+            0.5391
+          ],
+          [
+            0.6198,
+            0.5117
+          ],
+          [
+            0.8398,
+            0.5117
+          ],
+          [
+            0.8561,
+            0.5361
+          ],
+          [
+            0.778,
+            0.7363
+          ],
+          [
+            0.7246,
+            0.7871
+          ],
+          [
+            0.6198,
+            0.7871
+          ],
+          [
+            0.6016,
+            0.7539
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6016,
+          "y": 0.5117,
+          "w": 0.2552,
+          "h": 0.2764
+        },
+        "territory_area_px": 88858,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.155,
+        "neighbors": [
+          {
+            "artifact_id": "hero-opening-contour",
+            "shared_edge_px": 2032,
+            "direction": "right",
+            "distance_px": 269.05
+          },
+          {
+            "artifact_id": "module-layered-fragment",
+            "shared_edge_px": 732,
+            "direction": "down",
+            "distance_px": 269.56
+          },
+          {
+            "artifact_id": "module-field-marker-2",
+            "shared_edge_px": 228,
+            "direction": "left",
+            "distance_px": 380.29
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-contour-silence",
+      "kind": "module",
+      "label": "Contour silence",
+      "artifact_type": "short-dropout-slit",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/module-contour-silence.svg",
+      "source_binding_ids": [
+        "binding-module-contour-silence"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0736,
+            0.7793
+          ],
+          [
+            0.0996,
+            0.7402
+          ],
+          [
+            0.2799,
+            0.7402
+          ],
+          [
+            0.306,
+            0.7793
+          ],
+          [
+            0.306,
+            0.9395
+          ],
+          [
+            0.2799,
+            0.9785
+          ],
+          [
+            0.0996,
+            0.9785
+          ],
+          [
+            0.0736,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0736,
+          "y": 0.7402,
+          "w": 0.2331,
+          "h": 0.2393
+        },
+        "territory_area_px": 84430,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.841,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-pressure-mass",
+            "shared_edge_px": 87580,
+            "direction": "up",
+            "distance_px": 349.76
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-field-marker-2",
+      "kind": "module",
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/module-field-marker-2.svg",
+      "source_binding_ids": [
+        "binding-module-field-marker-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4017,
+            0.7881
+          ],
+          [
+            0.4837,
+            0.752
+          ],
+          [
+            0.5996,
+            0.752
+          ],
+          [
+            0.6178,
+            0.7793
+          ],
+          [
+            0.6178,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9668
+          ],
+          [
+            0.4199,
+            0.9668
+          ],
+          [
+            0.4017,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4017,
+          "y": 0.752,
+          "w": 0.2168,
+          "h": 0.2158
+        },
+        "territory_area_px": 69255,
+        "visible_area_px": 45705,
+        "expansion_ratio": 1.515,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-pressure-mass",
+            "shared_edge_px": 2050,
+            "direction": "left",
+            "distance_px": 623.79
+          },
+          {
+            "artifact_id": "module-occluded-puncture",
+            "shared_edge_px": 1656,
+            "direction": "up",
+            "distance_px": 244.18
+          },
+          {
+            "artifact_id": "hero-opening-contour",
+            "shared_edge_px": 1024,
+            "direction": "right",
+            "distance_px": 567.52
+          },
+          {
+            "artifact_id": "module-ridge-interruption",
+            "shared_edge_px": 228,
+            "direction": "right",
+            "distance_px": 380.29
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 27,
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/module-layered-fragment.svg",
+      "source_binding_ids": [
+        "binding-module-layered-fragment"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1244,
+          847
+        ],
+        "safe_stage_window_origin_px": [
+          1266,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.72,
+            0.76
+          ],
+          [
+            0.9,
+            0.76
+          ],
+          [
+            0.9,
+            0.92
+          ],
+          [
+            0.72,
+            0.92
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7012,
+            0.7881
+          ],
+          [
+            0.778,
+            0.7373
+          ],
+          [
+            0.918,
+            0.9004
+          ],
+          [
+            0.918,
+            0.9199
+          ],
+          [
+            0.8997,
+            0.9473
+          ],
+          [
+            0.7194,
+            0.9473
+          ],
+          [
+            0.7012,
+            0.9199
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7012,
+          "y": 0.7373,
+          "w": 0.2174,
+          "h": 0.2109
+        },
+        "territory_area_px": 49236,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.073,
+        "neighbors": [
+          {
+            "artifact_id": "hero-opening-contour",
+            "shared_edge_px": 4195,
+            "direction": "up",
+            "distance_px": 182.76
+          },
+          {
+            "artifact_id": "module-ridge-interruption",
+            "shared_edge_px": 732,
+            "direction": "up",
+            "distance_px": 269.56
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "z_index": 28,
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "cluster_id": "ochre-drone-sky-gap",
+      "mask_path": "/editions/2026-09-29-the-sky-keeps-the-silence-v1/assets/masks/module-reference-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-reference-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          553,
+          413
+        ],
+        "safe_stage_window_origin_px": [
+          573,
+          425
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.28,
+            0.34
+          ],
+          [
+            0.44,
+            0.34
+          ],
+          [
+            0.44,
+            0.49
+          ],
+          [
+            0.28,
+            0.49
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2617,
+            0.3398
+          ],
+          [
+            0.2799,
+            0.3125
+          ],
+          [
+            0.4395,
+            0.3125
+          ],
+          [
+            0.4577,
+            0.3398
+          ],
+          [
+            0.4577,
+            0.4893
+          ],
+          [
+            0.4434,
+            0.5107
+          ],
+          [
+            0.4225,
+            0.5166
+          ],
+          [
+            0.3001,
+            0.5166
+          ],
+          [
+            0.2617,
+            0.417
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2617,
+          "y": 0.3125,
+          "w": 0.1966,
+          "h": 0.2051
+        },
+        "territory_area_px": 58993,
+        "visible_area_px": 37884,
+        "expansion_ratio": 1.557,
+        "neighbors": [
+          {
+            "artifact_id": "hero-lower-pressure-mass",
+            "shared_edge_px": 2834,
+            "direction": "left",
+            "distance_px": 305.17
+          },
+          {
+            "artifact_id": "module-occluded-puncture",
+            "shared_edge_px": 928,
+            "direction": "down",
+            "distance_px": 272.61
+          }
+        ]
+      }
+    }
+  ]
+}

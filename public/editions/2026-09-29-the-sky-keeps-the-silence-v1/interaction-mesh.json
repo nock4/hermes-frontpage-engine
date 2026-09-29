@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-29-the-sky-keeps-the-silence-v1",
+  "generation": "daily-process-2026-09-29T08-39-02-194Z",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/daily-process-2026-09-29T08-39-02-194Z/2026-09-29-the-sky-keeps-the-silence-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-lower-pressure-mass",
+      "visible_area_px": 644616,
+      "territory_area_px": 545537,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.5247,
+        "h": 1.0
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.2578,
+          0.0
+        ],
+        [
+          0.3236,
+          0.0469
+        ],
+        [
+          0.347,
+          0.082
+        ],
+        [
+          0.3633,
+          0.1152
+        ],
+        [
+          0.4017,
+          0.3066
+        ],
+        [
+          0.5241,
+          0.9951
+        ],
+        [
+          0.0,
+          0.999
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-contour-silence",
+          "shared_edge_px": 87580,
+          "direction": "down",
+          "distance_px": 349.76
+        },
+        {
+          "artifact_id": "module-reference-plaque",
+          "shared_edge_px": 2834,
+          "direction": "right",
+          "distance_px": 305.17
+        },
+        {
+          "artifact_id": "module-occluded-puncture",
+          "shared_edge_px": 2247,
+          "direction": "right",
+          "distance_px": 436.02
+        },
+        {
+          "artifact_id": "module-field-marker-2",
+          "shared_edge_px": 2050,
+          "direction": "right",
+          "distance_px": 623.79
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-opening-contour",
+      "visible_area_px": 242147,
+      "territory_area_px": 188121,
+      "hover_bounds": {
+        "x": 0.5449,
+        "y": 0.3916,
+        "w": 0.4551,
+        "h": 0.6084
+      },
+      "hover_polygon": [
+        [
+          0.5449,
+          0.998
+        ],
+        [
+          0.7793,
+          0.5107
+        ],
+        [
+          0.8366,
+          0.4219
+        ],
+        [
+          0.8978,
+          0.3965
+        ],
+        [
+          0.9499,
+          0.3916
+        ],
+        [
+          0.9993,
+          0.4424
+        ],
+        [
+          0.9993,
+          0.999
+        ],
+        [
+          0.5449,
+          0.999
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-layered-fragment",
+          "shared_edge_px": 4195,
+          "direction": "down",
+          "distance_px": 182.76
+        },
+        {
+          "artifact_id": "module-ridge-interruption",
+          "shared_edge_px": 2032,
+          "direction": "left",
+          "distance_px": 269.05
+        },
+        {
+          "artifact_id": "module-field-marker-2",
+          "shared_edge_px": 1024,
+          "direction": "left",
+          "distance_px": 567.52
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-field-marker",
+      "visible_area_px": 25811,
+      "territory_area_px": 49891,
+      "hover_bounds": {
+        "x": 0.4902,
+        "y": 0.0596,
+        "w": 0.291,
+        "h": 0.1475
+      },
+      "hover_polygon": [
+        [
+          0.4902,
+          0.1357
+        ],
+        [
+          0.515,
+          0.0938
+        ],
+        [
+          0.5358,
+          0.083
+        ],
+        [
+          0.6035,
+          0.0625
+        ],
+        [
+          0.6497,
+          0.0596
+        ],
+        [
+          0.7604,
+          0.0996
+        ],
+        [
+          0.7786,
+          0.127
+        ],
+        [
+          0.7806,
+          0.1387
+        ],
+        [
+          0.7487,
+          0.1768
+        ],
+        [
+          0.668,
+          0.2021
+        ],
+        [
+          0.625,
+          0.2061
+        ],
+        [
+          0.5788,
+          0.2021
+        ],
+        [
+          0.5182,
+          0.1807
+        ],
+        [
+          0.4954,
+          0.1514
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-occluded-puncture",
+      "visible_area_px": 76953,
+      "territory_area_px": 100604,
+      "hover_bounds": {
+        "x": 0.3216,
+        "y": 0.5117,
+        "w": 0.2572,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.3216,
+          0.6416
+        ],
+        [
+          0.3464,
+          0.5176
+        ],
+        [
+          0.5599,
+          0.5117
+        ],
+        [
+          0.5781,
+          0.5391
+        ],
+        [
+          0.5781,
+          0.751
+        ],
+        [
+          0.4284,
+          0.7871
+        ],
+        [
+          0.3398,
+          0.7871
+        ],
+        [
+          0.3216,
+          0.7598
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-lower-pressure-mass",
+          "shared_edge_px": 2247,
+          "direction": "left",
+          "distance_px": 436.02
+        },
+        {
+          "artifact_id": "module-field-marker-2",
+          "shared_edge_px": 1656,
+          "direction": "down",
+          "distance_px": 244.18
+        },
+        {
+          "artifact_id": "module-reference-plaque",
+          "shared_edge_px": 928,
+          "direction": "up",
+          "distance_px": 272.61
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-ridge-interruption",
+      "visible_area_px": 76953,
+      "territory_area_px": 88858,
+      "hover_bounds": {
+        "x": 0.6016,
+        "y": 0.5117,
+        "w": 0.2552,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.6016,
+          0.5391
+        ],
+        [
+          0.6198,
+          0.5117
+        ],
+        [
+          0.8398,
+          0.5117
+        ],
+        [
+          0.8561,
+          0.5361
+        ],
+        [
+          0.778,
+          0.7363
+        ],
+        [
+          0.7246,
+          0.7871
+        ],
+        [
+          0.6198,
+          0.7871
+        ],
+        [
+          0.6016,
+          0.7539
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-opening-contour",
+          "shared_edge_px": 2032,
+          "direction": "right",
+          "distance_px": 269.05
+        },
+        {
+          "artifact_id": "module-layered-fragment",
+          "shared_edge_px": 732,
+          "direction": "down",
+          "distance_px": 269.56
+        },
+        {
+          "artifact_id": "module-field-marker-2",
+          "shared_edge_px": 228,
+          "direction": "left",
+          "distance_px": 380.29
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-contour-silence",
+      "visible_area_px": 45870,
+      "territory_area_px": 84430,
+      "hover_bounds": {
+        "x": 0.0736,
+        "y": 0.7402,
+        "w": 0.2331,
+        "h": 0.2393
+      },
+      "hover_polygon": [
+        [
+          0.0736,
+          0.7793
+        ],
+        [
+          0.0996,
+          0.7402
+        ],
+        [
+          0.2799,
+          0.7402
+        ],
+        [
+          0.306,
+          0.7793
+        ],
+        [
+          0.306,
+          0.9395
+        ],
+        [
+          0.2799,
+          0.9785
+        ],
+        [
+          0.0996,
+          0.9785
+        ],
+        [
+          0.0736,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-lower-pressure-mass",
+          "shared_edge_px": 87580,
+          "direction": "up",
+          "distance_px": 349.76
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-field-marker-2",
+      "visible_area_px": 45705,
+      "territory_area_px": 69255,
+      "hover_bounds": {
+        "x": 0.4017,
+        "y": 0.752,
+        "w": 0.2168,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.4017,
+          0.7881
+        ],
+        [
+          0.4837,
+          0.752
+        ],
+        [
+          0.5996,
+          0.752
+        ],
+        [
+          0.6178,
+          0.7793
+        ],
+        [
+          0.6178,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.9668
+        ],
+        [
+          0.4199,
+          0.9668
+        ],
+        [
+          0.4017,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-lower-pressure-mass",
+          "shared_edge_px": 2050,
+          "direction": "left",
+          "distance_px": 623.79
+        },
+        {
+          "artifact_id": "module-occluded-puncture",
+          "shared_edge_px": 1656,
+          "direction": "up",
+          "distance_px": 244.18
+        },
+        {
+          "artifact_id": "hero-opening-contour",
+          "shared_edge_px": 1024,
+          "direction": "right",
+          "distance_px": 567.52
+        },
+        {
+          "artifact_id": "module-ridge-interruption",
+          "shared_edge_px": 228,
+          "direction": "right",
+          "distance_px": 380.29
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-layered-fragment",
+      "visible_area_px": 45870,
+      "territory_area_px": 49236,
+      "hover_bounds": {
+        "x": 0.7012,
+        "y": 0.7373,
+        "w": 0.2174,
+        "h": 0.2109
+      },
+      "hover_polygon": [
+        [
+          0.7012,
+          0.7881
+        ],
+        [
+          0.778,
+          0.7373
+        ],
+        [
+          0.918,
+          0.9004
+        ],
+        [
+          0.918,
+          0.9199
+        ],
+        [
+          0.8997,
+          0.9473
+        ],
+        [
+          0.7194,
+          0.9473
+        ],
+        [
+          0.7012,
+          0.9199
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-opening-contour",
+          "shared_edge_px": 4195,
+          "direction": "up",
+          "distance_px": 182.76
+        },
+        {
+          "artifact_id": "module-ridge-interruption",
+          "shared_edge_px": 732,
+          "direction": "up",
+          "distance_px": 269.56
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-reference-plaque",
+      "visible_area_px": 37884,
+      "territory_area_px": 58993,
+      "hover_bounds": {
+        "x": 0.2617,
+        "y": 0.3125,
+        "w": 0.1966,
+        "h": 0.2051
+      },
+      "hover_polygon": [
+        [
+          0.2617,
+          0.3398
+        ],
+        [
+          0.2799,
+          0.3125
+        ],
+        [
+          0.4395,
+          0.3125
+        ],
+        [
+          0.4577,
+          0.3398
+        ],
+        [
+          0.4577,
+          0.4893
+        ],
+        [
+          0.4434,
+          0.5107
+        ],
+        [
+          0.4225,
+          0.5166
+        ],
+        [
+          0.3001,
+          0.5166
+        ],
+        [
+          0.2617,
+          0.417
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-lower-pressure-mass",
+          "shared_edge_px": 2834,
+          "direction": "left",
+          "distance_px": 305.17
+        },
+        {
+          "artifact_id": "module-occluded-puncture",
+          "shared_edge_px": 928,
+          "direction": "down",
+          "distance_px": 272.61
+        }
+      ]
+    }
+  ]
+}

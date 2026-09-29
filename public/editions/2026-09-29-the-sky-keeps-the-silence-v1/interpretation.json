@@ -1,0 +1,377 @@
+{
+  "interpretation_id": "interp-2026-09-29-the-sky-keeps-the-silence-v1",
+  "edition_id": "2026-09-29-the-sky-keeps-the-silence-v1",
+  "plate_read_timestamp": "2026-09-29T08:51:03.289Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A distressed mustard-yellow and dark-brown photographic collage, not a purely abstract plate. Two cropped portraits dominate the left and lower-right edges. A forest, distant ridge, small car, and hovering saucer occupy the central landscape. Narrow yellow dropouts and isolated punctures interrupt the photographic overprint. Several planned anchors have visible counterparts, but the generic Layered Fragment and Reference Plaque do not have clearly distinguishable matching surfaces.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "A grain-heavy transmission held beneath a stubbornly empty sky.",
+      "A distressed mustard-yellow and dark-brown photographic collage, not a purely abstract plate. Two cropped portraits dominate the left and lower-right edges. A forest, distant ridge, small car, and hovering saucer occupy the central landscape. Narrow yellow dropouts and isolated punctures interrupt the photographic overprint. Several planned anchors have visible counterparts, but the generic Layered Fragment and Reference Plaque do not have clearly distinguishable matching surfaces.",
+      "ochre-void",
+      "duotone-overprint",
+      "broken-contours"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Lower pressure mass",
+      "Opening contour",
+      "Field Marker",
+      "Occluded puncture",
+      "Ridge interruption",
+      "Contour silence",
+      "Layered Fragment",
+      "Reference Plaque"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "ochre-drone-sky-gap",
+      "Two unequal lower-edge contour masses separated by a severe yellow interval",
+      "A compact ridge island with one narrow pale vertical interruption",
+      "A subordinate flattened rimmed silhouette suspended off-center",
+      "Localized dropout openings and irregular punctures within the lower overprint",
+      "Irregular dark overprint around the large left portrait",
+      "Smaller right portrait with a sweeping dark hair contour",
+      "Narrow yellow slit within the left overprint"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: ochre-drone-sky-gap.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-lower-pressure-mass",
+      "kind": "hero",
+      "type": "cropped-overprint-mass",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.5052,
+        "h": 1
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-opening-contour",
+      "kind": "hero",
+      "type": "split-shadow-mass",
+      "strength": 0.9696199999999999,
+      "bounds": {
+        "x": 0.567,
+        "y": 0.425,
+        "w": 0.433,
+        "h": 0.575
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker",
+      "kind": "module",
+      "type": "saucer-shaped-field-mark",
+      "strength": 0.798084,
+      "bounds": {
+        "x": 0.509,
+        "y": 0.087,
+        "w": 0.254,
+        "h": 0.092
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-occluded-puncture",
+      "kind": "module",
+      "type": "irregular-puncture",
+      "strength": 0.754932,
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ridge-interruption",
+      "kind": "module",
+      "type": "ridge-notch",
+      "strength": 0.717912,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-contour-silence",
+      "kind": "module",
+      "type": "short-dropout-slit",
+      "strength": 0.697368,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-2",
+      "kind": "module",
+      "type": "field-marker",
+      "strength": 0.66066,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "layered-fragment",
+      "strength": 0.63586,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "type": "reference-plaque",
+      "strength": 0.6480999999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-lower-pressure-mass-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.5052,
+        "h": 1
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-opening-contour-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.567,
+        "y": 0.425,
+        "w": 0.433,
+        "h": 0.575
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.509,
+        "y": 0.087,
+        "w": 0.254,
+        "h": 0.092
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-occluded-puncture-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ridge-interruption-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-contour-silence-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-field-marker-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

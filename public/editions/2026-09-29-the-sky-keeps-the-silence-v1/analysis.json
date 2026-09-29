@@ -1,0 +1,470 @@
+{
+  "analysis_id": "analysis-2026-09-29-the-sky-keeps-the-silence-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A distressed mustard-yellow and dark-brown photographic collage, not a purely abstract plate. Two cropped portraits dominate the left and lower-right edges. A forest, distant ridge, small car, and hovering saucer occupy the central landscape. Narrow yellow dropouts and isolated punctures interrupt the photographic overprint. Several planned anchors have visible counterparts, but the generic Layered Fragment and Reference Plaque do not have clearly distinguishable matching surfaces.",
+  "usable_surfaces": [
+    "Irregular dark overprint around the large left portrait",
+    "Smaller right portrait with a sweeping dark hair contour",
+    "Narrow yellow slit within the left overprint",
+    "Isolated yellow puncture above the right hair contour",
+    "Yellow notch interrupting the distant ridge",
+    "Separated yellow slit inside the right hair",
+    "Flattened saucer-shaped field mark above the ridge"
+  ],
+  "detected_objects": [
+    {
+      "label": "Lower pressure mass",
+      "artifact_type": "cropped-overprint-mass",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.494,
+        "h": 1
+      },
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          0.046,
+          0
+        ],
+        [
+          0.058,
+          0.056
+        ],
+        [
+          0.106,
+          0
+        ],
+        [
+          0.239,
+          0
+        ],
+        [
+          0.263,
+          0.076
+        ],
+        [
+          0.31,
+          0.077
+        ],
+        [
+          0.349,
+          0.13
+        ],
+        [
+          0.332,
+          0.223
+        ],
+        [
+          0.36,
+          0.225
+        ],
+        [
+          0.367,
+          0.281
+        ],
+        [
+          0.343,
+          0.447
+        ],
+        [
+          0.321,
+          0.536
+        ],
+        [
+          0.282,
+          0.604
+        ],
+        [
+          0.324,
+          0.649
+        ],
+        [
+          0.453,
+          0.692
+        ],
+        [
+          0.494,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "The large left-hand form is a visibly photographic portrait with round glasses, dense hair, a torn-looking right silhouette, and a dark shoulder continuing to the lower edge. Its ragged contour supports the planned large anchor, but it is not an anonymous abstract pigment mass."
+    },
+    {
+      "label": "Opening contour",
+      "artifact_type": "split-shadow-mass",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.567,
+        "y": 0.425,
+        "w": 0.433,
+        "h": 0.575
+      },
+      "polygon": [
+        [
+          0.567,
+          1
+        ],
+        [
+          0.605,
+          0.908
+        ],
+        [
+          0.696,
+          0.874
+        ],
+        [
+          0.753,
+          0.866
+        ],
+        [
+          0.717,
+          0.819
+        ],
+        [
+          0.722,
+          0.738
+        ],
+        [
+          0.756,
+          0.624
+        ],
+        [
+          0.794,
+          0.524
+        ],
+        [
+          0.837,
+          0.456
+        ],
+        [
+          0.898,
+          0.43
+        ],
+        [
+          0.95,
+          0.425
+        ],
+        [
+          0.983,
+          0.452
+        ],
+        [
+          1,
+          0.477
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0.781,
+          1
+        ],
+        [
+          0.757,
+          0.953
+        ],
+        [
+          0.74,
+          0.991
+        ],
+        [
+          0.699,
+          1
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The smaller right mass is a cropped photographic portrait. Dark hair forms a broad curved boundary against the yellow field; an angular yellow collar opening interrupts the lower dark silhouette. No independent packaging or opening-object illustration is visible."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "saucer-shaped-field-mark",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.509,
+        "y": 0.087,
+        "w": 0.254,
+        "h": 0.092
+      },
+      "polygon": [
+        [
+          0.509,
+          0.136
+        ],
+        [
+          0.515,
+          0.122
+        ],
+        [
+          0.536,
+          0.111
+        ],
+        [
+          0.567,
+          0.099
+        ],
+        [
+          0.604,
+          0.09
+        ],
+        [
+          0.65,
+          0.087
+        ],
+        [
+          0.695,
+          0.101
+        ],
+        [
+          0.738,
+          0.118
+        ],
+        [
+          0.761,
+          0.127
+        ],
+        [
+          0.763,
+          0.139
+        ],
+        [
+          0.749,
+          0.15
+        ],
+        [
+          0.715,
+          0.163
+        ],
+        [
+          0.668,
+          0.175
+        ],
+        [
+          0.625,
+          0.179
+        ],
+        [
+          0.579,
+          0.175
+        ],
+        [
+          0.54,
+          0.163
+        ],
+        [
+          0.514,
+          0.152
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A dark, flattened saucer-shaped mark floats in the yellow sky above the ridge. Its tapered ends, curved upper and lower edges, and streaked internal yellow openings form a discrete visible anchor. The generic planned label does not establish a more specific source association."
+    },
+    {
+      "label": "Occluded puncture",
+      "artifact_type": "irregular-puncture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Ridge interruption",
+      "artifact_type": "ridge-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Contour silence",
+      "artifact_type": "short-dropout-slit",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Field Marker",
+      "artifact_type": "field-marker",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Layered Fragment",
+      "artifact_type": "layered-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Reference Plaque",
+      "artifact_type": "reference-plaque",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.766,
+    "rationale": "Estimated coverage includes nested small marks within the portrait territories. The restricted yellow-brown palette and broad sky preserve visual hierarchy, but two recognizable faces, a forest and ridge band, a small car, a saucer, and dense distressed texture make this a photographic collage rather than a minimal expressionist plate. Layered Fragment and Reference Plaque were not mapped because no distinct layered object or plaque is clearly visible. Small dropout territories should take interaction precedence over their enclosing hero surfaces."
+  },
+  "fallback_detected_object_count": 6,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-29-the-sky-keeps-the-silence-v1"
+}

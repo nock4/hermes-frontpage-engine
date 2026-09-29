@@ -1,0 +1,238 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-29-the-sky-keeps-the-silence-v1",
+  "edition_id": "2026-09-29-the-sky-keeps-the-silence-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-29-the-sky-keeps-the-silence-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-lower-pressure-mass",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-pressure-mass",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-overprint-mass) selected from interpretation."
+    },
+    {
+      "target_id": "hero-opening-contour",
+      "target_kind": "artifact",
+      "artifact_id": "hero-opening-contour",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (split-shadow-mass) selected from interpretation."
+    },
+    {
+      "target_id": "module-field-marker",
+      "target_kind": "artifact",
+      "artifact_id": "module-field-marker",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (saucer-shaped-field-mark) selected from interpretation."
+    },
+    {
+      "target_id": "module-occluded-puncture",
+      "target_kind": "artifact",
+      "artifact_id": "module-occluded-puncture",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (irregular-puncture) selected from interpretation."
+    },
+    {
+      "target_id": "module-ridge-interruption",
+      "target_kind": "artifact",
+      "artifact_id": "module-ridge-interruption",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ridge-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-contour-silence",
+      "target_kind": "artifact",
+      "artifact_id": "module-contour-silence",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (short-dropout-slit) selected from interpretation."
+    },
+    {
+      "target_id": "module-field-marker-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-field-marker-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (field-marker) selected from interpretation."
+    },
+    {
+      "target_id": "module-layered-fragment",
+      "target_kind": "artifact",
+      "artifact_id": "module-layered-fragment",
+      "priority": 8,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-reference-plaque",
+      "target_kind": "artifact",
+      "artifact_id": "module-reference-plaque",
+      "priority": 9,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (reference-plaque) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
