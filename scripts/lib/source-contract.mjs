@@ -1,5 +1,6 @@
 import { isLowFertilitySourceFingerprint } from './source-image-fingerprints.mjs'
 import { sourceGeometryGuard, withoutSourceUiCues } from './source-image-geometry.mjs'
+import { isRepresentationalSource, recomposeSourceCues, recompositionRule } from './source-recomposition.mjs'
 
 function strings(values, limit = 8) {
   const result = []
@@ -51,12 +52,13 @@ export function buildSourceContract({
 
   const preserve = strings([
     sourceGeometryGuard(dominant),
-    ...withoutSourceUiCues(dominant.preserve_cues || []),
+    ...(isRepresentationalSource(dominant) ? recomposeSourceCues(withoutSourceUiCues(dominant.preserve_cues || [])) : withoutSourceUiCues(dominant.preserve_cues || [])),
     dominant.visual_summary,
     ...(dominant.composition_moves || []),
   ], 8)
   const transform = strings([
     'change at least two of arrangement, scale, object count, crop, surface state, or spatial logic',
+    recompositionRule,
     'make source-window seams/apertures/marks edition-native rather than pasted annotations',
     platePosture?.plate_posture ? `subordinate ${platePosture.plate_posture} posture to source identity` : '',
   ], 5)

@@ -13,6 +13,7 @@ import { getResearchContentSources, } from './source-research.mjs'
 import { inferVisualDirection, selectFallbackMotifTerms } from './visual-direction.mjs'
 import { slugify, uniqueNonEmpty } from './string-utils.mjs'
 import { assertSourceContractPromptSafe } from './source-contract.mjs'
+import { isRepresentationalSource, recomposeSourceCues, recompositionRule, photoGrammarRule } from './source-recomposition.mjs'
 
 const hermesImageGenerateScript = fileURLToPath(new URL('./hermes_image_generate.py', import.meta.url))
 const hermesAgentPythonCandidates = [
@@ -130,6 +131,8 @@ export async function composeDailyPayload(
         : 'No source image was available; derive visual direction from source metadata only.',
     scene_prompting_rules: [
       'Write the scene_prompt as art direction for one finished still image, not as product strategy or app documentation.',
+      photoGrammarRule,
+      recompositionRule,
       'Let the supplied inferred_visual_direction decide brightness, density, geometry, composition, material language, and openness.',
       'Let plate_posture decide the day’s formal posture: minimal field, abstract system, material macro, diagrammatic section, poster wall, balanced source world, or wildcard rupture.',
       'Start from the visual world implied by the research field rather than a stock room, desk, gallery wall, dashboard, or software mockup.',
@@ -906,13 +909,13 @@ function describeSourceAudioMaterial(material = {}) {
   return compactText([briefText, guidance].filter(Boolean).join(' '), 700)
 }
 
-function describeSourceContract(contract = {}) {
+function describeSourceContract(contract = {}, representational = false) {
   const preserve = joinLimited(withoutSourceUiCues(contract.must_preserve), '', 8)
   const transform = joinLimited(contract.must_transform, '', 4)
   const drift = joinLimited(contract.forbidden_drift, '', 6)
   const overcopy = joinLimited(contract.forbidden_overcopy, '', 5)
   const preserveText = String(preserve || '').toLowerCase()
-  const framingIsSourceIdentity = /(centered|full|entire|all sides|wall border|portrait rectangle|white panel|source aspect|crop\/framing)/.test(preserveText)
+  const framingIsSourceIdentity = !representational && /(centered|full|entire|all sides|wall border|portrait rectangle|white panel)/.test(preserveText)
   const preserveMode = framingIsSourceIdentity
     ? 'Preserve crop/framing when the contract names it as source identity; transform by changing surface state, seam logic, scale pressure, or source-window interruptions without losing the centered source object.'
     : 'Preserve as fragments/proportions/gestures, not exact crop, camera distance, or layout.'
@@ -999,6 +1002,8 @@ export function buildSceneImagePrompt(payload) {
   const artifacts = Array.isArray(payload.artifacts) ? payload.artifacts : []
   const sourceImageFingerprints = normalizeSourceImageFingerprints(payload.source_image_fingerprints).slice(0, 1)
   const hasSourceImage = sourceImageFingerprints.length > 0
+  const representational = isRepresentationalSource(sourceImageFingerprints[0])
+  if (representational) sourceImageFingerprints[0].preserve_cues = recomposeSourceCues(sourceImageFingerprints[0].preserve_cues)
   const referenceUse = hasSourceImage
     ? sourceImageFingerprints.map(describeSourceImageFingerprint).join(' | ')
     : compactText(`${payload.scene_prompt || payload.mood || 'source field'}; ${visualDirection.evidence_summary || ''}; ${joinLimited(payload.material_language, 'source-led surfaces', 3)}; ${(visualDirection.visual_compositional_moves || []).slice(0, 2).join('; ')}`, 520)
@@ -1027,7 +1032,7 @@ export function buildSceneImagePrompt(payload) {
     ? 'RECOVERY TRANSFORM: the previous plate failed source QA. Do not rebuild the full source composition and do not return a decorated copy. Keep the named source subjects, figure/object masses, and object relationships legible as abstract silhouettes before adding formal risk. Change at least two of arrangement, scale, object count, crop, surface state, or spatial logic through large seams, cut-through apertures, repaired tears, translucent interruptions, source-window scars, and scale shifts. Do not erase source cues into blank panels, unrelated ambience, or numbered annotation marks; do not keep the same still life/card/photo with tiny marks.'
     : ''
   const sourceContract = sourceImageFingerprints.length && payload.source_contract?.mode === 'source-image'
-    ? describeSourceContract(payload.source_contract)
+    ? describeSourceContract(payload.source_contract, representational)
     : ''
   const sourceAudioMaterial = describeSourceAudioMaterial(payload.source_audio_material)
   const effectGrammar = dashRecovery ? '' : describeEffectDirection(effectDirection)
@@ -1061,6 +1066,8 @@ export function buildSceneImagePrompt(payload) {
     dominantOverride,
     recoveryTransformGuard,
     graphicEditorialGuard,
+    representational ? photoGrammarRule : '',
+    representational ? recompositionRule : '',
     '',
     'TRANSFORM',
     compactText(hasSourceImage

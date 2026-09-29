@@ -11,6 +11,7 @@ import { buildSmokeRoute, maskPipelineArgs, pipelinePython, postPackageSteps } f
 import { createResearchSourcesStep } from './research-sources.mjs'
 import { buildSourceContract } from '../lib/source-contract.mjs'
 import { prepareSourceAudioMaterial } from '../lib/source-audio-material.mjs'
+import { recompositionRule, photoGrammarRule, recomposeSourceCues } from '../lib/source-recomposition.mjs'
 
 export function historicalSourceKeyOptionsForRun(options = {}, env = process.env) {
   return options.publish && env.DFE_EXCLUDE_SAME_DATE_SOURCE_LEDGER === '1'
@@ -342,6 +343,24 @@ export function buildSourceFidelityRecoveryPayload(payload, audit, attempt = 1) 
   const risks = Array.isArray(audit?.drift_risks) ? audit.drift_risks : []
   const blockers = Array.isArray(audit?.blockers) ? audit.blockers : []
   const retained = Array.isArray(audit?.retained_critical_elements) ? audit.retained_critical_elements : []
+  // An overcopy verdict needs a new structure, not another instruction to restore
+  // the same lineup. Do not recycle the failed scene paragraph or keep-list.
+  const overcopy = /anchor copied without edition transformation|source image recreated instead of borrowed|overcopy|near[- ]?copy/i.test([...blockers, ...risks].join(' '))
+  if (overcopy) {
+    return {
+      ...payload,
+      source_reference_preserve: uniqueStrings([
+        photoGrammarRule,
+        ...recomposeSourceCues(payload?.source_image_fingerprints?.[0]?.preserve_cues || []),
+        ...missing.map((cue) => `Recover as a recomposed source-derived form, not its original placement: ${cue}`),
+      ], 12),
+      negative_constraints: uniqueStrings([
+        'no complete source lineup, same-photo restaging, or surface-only decorated copy',
+        ...(payload?.negative_constraints || []),
+      ], 16),
+      scene_prompt: `Source-fidelity recovery pass ${attempt}: build a new composition from the concrete source fragments. ${recompositionRule} ${photoGrammarRule} Grow source-window marks from the new structure; no labels, rings, pins, or pasted cards.`,
+    }
+  }
   const failureCueText = [
     ...missing.map((cue) => `Recover missing source cue: ${cue}`),
     ...risks.slice(0, 3).map((cue) => `Avoid drift: ${cue}`),

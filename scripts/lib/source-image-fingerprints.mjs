@@ -4,12 +4,14 @@ import path from 'node:path'
 import { openAiJson } from './openai-json.mjs'
 import { measureSourceImage, withoutSourceUiCues } from './source-image-geometry.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
+import { photoGrammarRule, recompositionRule } from './source-recomposition.mjs'
 
 const literalCopyRule = 'Do not reproduce logos, legible text, identifiable subjects, or page chrome from this source image.'
 
 const sourceImageVisionInstructions = `Inspect the source image for a Daily Frontpage plate. Return concrete visual facts, not vibes.
-Describe the exact composition identity the generated plate must preserve: subject/object placement, crop/framing, massing, dominant shapes, text/logo silhouettes as illegible masses, palette, light, surface/material, and distinctive marks. Omit game HUD, sliders, control panels and debug overlays from preserve cues even when present in the screenshot.
-If the image is an album/package/editorial/poster cover, preserve the cover layout and portrait/figure/image masses as abstract shapes; readable text can become illegible marks, but the plate must not replace the image with unrelated macro texture or metaphor.
+Describe concrete source grammar: distinctive subject/object silhouettes, crop pressure, massing, text/logo silhouettes as illegible masses, palette, light, surface/material, and distinctive marks. Record original placements as observations, not commands to keep their coordinates. Omit game HUD, sliders, control panels and debug overlays from preserve cues even when present in the screenshot.
+${photoGrammarRule} ${recompositionRule}
+If the image is an album/package/editorial/poster cover, borrow its layout grammar and portrait/figure/image masses as recomposed shapes; readable text can become illegible marks, but the plate must not replace the source with unrelated macro texture or metaphor.
 Also judge whether the image is visually fertile enough to be the main plate seed. A near-empty text/wordmark/logo cover can be useful as a supporting cue, but is usually too sterile to anchor the whole edition.\nReturn concise JSON with keys: visual_summary string, preserve_cues array of 3-6 strings, palette_cues array, surface_cues array, composition_moves array, visual_fertility \"high|medium|low\", low_fertility_reason string.`
 
 function cleanText(value, fallback = '') {
