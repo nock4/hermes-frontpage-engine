@@ -182,6 +182,74 @@ describe('scene generation image prompt', () => {
     expect(prompt).not.toContain('Posture: material macro')
   })
 
+  it.each(['printed', 'stenciled'])('does not turn a %s band photograph into a legacy dash panel during recovery', (surface) => {
+    const previous = process.env.DFE_SOURCE_PRESERVE_PLATE
+    process.env.DFE_SOURCE_PRESERVE_PLATE = '1'
+    try {
+      const prompt = buildSceneImagePrompt({
+        scene_prompt: 'A substantial compositional transformation beyond reproducing the original group portrait.',
+        lighting: 'Flattened yellow photographic daylight',
+        material_language: ['Mustard-tinted photographic emulsion'],
+        source_image_fingerprints: [{
+          title: 'FLYING SAUCER ATTACK John Peel 1st March 1996',
+          image_url: 'https://img.youtube.com/vi/AHjyQBp4RK8/hqdefault.jpg',
+          width: 480,
+          height: 360,
+          visual_summary: 'Grainy, mustard-yellow and dark reddish-brown band photograph presented as a wide horizontal strip between black top and bottom bands.',
+          surface_cues: [`Coarse photographic grain and stippled ${surface} texture`],
+          preserve_cues: ['Keep the five overlapping head-and-shoulder masses at unequal scales.'],
+        }],
+        visual_direction: {
+          composition_archetype: 'cinematic still',
+          camera_plate_grammar: 'frontal wide still with cropped foreground silhouettes',
+          palette_profile: 'mustard and ochre with deep burgundy-brown masses',
+          effect_direction: {
+            prompt_sentence: 'Build source-bearing exposure apertures into ochre-and-burgundy photographic masses.',
+            source_window_mark_types: ['Irregular pale exposure apertures'],
+          },
+        },
+      })
+      expect(prompt).not.toMatch(/DOMINANT-SOURCE OVERRIDE|dash-panel|dash-grid|gallery wall|gallery-object|missing-dash/)
+      expect(prompt).not.toContain('graphic/editorial/poster/package reference')
+      expect(prompt).toContain('FLYING SAUCER ATTACK')
+      expect(prompt).toContain('five overlapping head-and-shoulder masses')
+      expect(prompt).toContain('cinematic still / frontal wide still')
+      expect(prompt).toContain('Flattened yellow photographic daylight')
+      expect(prompt).toContain('mustard and ochre with deep burgundy-brown masses')
+      expect(prompt).toContain('Irregular pale exposure apertures')
+      expect(prompt).toContain('RECOVERY TRANSFORM')
+      expect(prompt).toContain('Do not rebuild the full source composition')
+      expect(prompt).toContain('change at least two of arrangement, scale, object count, crop, surface state, or spatial logic')
+    } finally {
+      if (previous === undefined) delete process.env.DFE_SOURCE_PRESERVE_PLATE
+      else process.env.DFE_SOURCE_PRESERVE_PLATE = previous
+    }
+  })
+
+  it.each([
+    'A printed photograph of a band on a gallery wall with a white panel border.',
+    'A stenciled portrait rectangle on a pale gallery wall.',
+    'An unmounted textile swatch patterned with horizontal dashes on a dash-grid.',
+  ])('requires both mounted-panel and dash-pattern evidence before overriding: %s', (visual_summary) => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'Recompose the source with USB-C port apertures.',
+      source_image_fingerprints: [{ image_url: 'https://assets.example/source.jpg', visual_summary }],
+    })
+    expect(prompt).not.toContain('DOMINANT-SOURCE OVERRIDE')
+    expect(prompt).not.toContain('flat wall-mounted dash-panel relief')
+  })
+
+  it.each(['portrait', 'supports', 'portions'])('does not mistake %s for hardware even on a real dash panel', (word) => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: `Recompose ${word} through shifted ink masses.`,
+      source_image_fingerprints: [{
+        image_url: 'https://assets.example/panel.jpg',
+        visual_summary: 'A white panel on a gallery wall bearing thousands of short black horizontal bars in a dash-grid.',
+      }],
+    })
+    expect(prompt).not.toContain('DOMINANT-SOURCE OVERRIDE')
+  })
+
   it('prints source image fingerprints as plate grammar rather than thumbnail instructions', () => {
     const prompt = buildSceneImagePrompt({
       scene_prompt: 'A source-led plate shaped by research image pressure.',

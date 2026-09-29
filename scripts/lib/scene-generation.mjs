@@ -929,15 +929,22 @@ function sourceImageAspectGuard(sourceImageFingerprints = []) {
   return sourceGeometryGuard(sourceImageFingerprints[0])
 }
 
-function dominantSourceConflictGuard(sourceImageFingerprints = [], effectDirection = null, payload = {}) {
+function looksLikeMountedDashPanel(sourceImageFingerprints = []) {
+  const dominant = sourceImageFingerprints[0] || {}
   const text = [
-    ...(sourceImageFingerprints || []).slice(0, 1).flatMap((fingerprint) => [
-      fingerprint.visual_summary,
-      ...(fingerprint.preserve_cues || []),
-      ...(fingerprint.composition_moves || []),
-      ...(fingerprint.surface_cues || []),
-    ]),
+    dominant.visual_summary,
+    ...(dominant.preserve_cues || []),
+    ...(dominant.composition_moves || []),
+    ...(dominant.surface_cues || []),
   ].filter(Boolean).join(' ').toLowerCase()
+  // Printed/stenciled grain also describes photographs: require both the
+  // distinctive dash pattern and its panel/wall context before asserting identity.
+  const dashPattern = /\b(dash[- ]grid|horizontal dash(?:es)?|short black horizontal bars|(?:printed|stenciled)(?: ink)? dashes)\b/.test(text)
+  const mountedPanel = /\b(white panel|portrait rectangle|gallery wall|wall border|wall[- ]mounted (?:dash[- ]grid )?panel)\b/.test(text)
+  return dashPattern && mountedPanel
+}
+
+function dominantSourceConflictGuard(sourceImageFingerprints = [], effectDirection = null, payload = {}) {
   const candidate = [
     payload.scene_prompt,
     payload.mood,
@@ -945,8 +952,9 @@ function dominantSourceConflictGuard(sourceImageFingerprints = [], effectDirecti
     ...(effectDirection?.source_window_mark_types || []),
     ...(effectDirection?.surface_language || []),
   ].filter(Boolean).join(' ').toLowerCase()
-  const fineMountedDashPanel = /(white panel|portrait rectangle|gallery wall|wall border|horizontal dash|short black horizontal bars|dash-grid|printed|stenciled)/.test(text)
-  const hardwareConversion = /(usb|connector|port|plug|cable|anodized|metal slab|beveled|hardware|product-table|product photo)/.test(candidate)
+  const fineMountedDashPanel = looksLikeMountedDashPanel(sourceImageFingerprints)
+  // A portrait, support, or proportion is not a hardware port.
+  const hardwareConversion = /\b(usb(?:-[ac])?|connectors?|ports?|plugs?|cables?|anodized|metal slab|beveled|hardware|product[- ]table|product[- ]photo)\b/.test(candidate)
   if (fineMountedDashPanel && hardwareConversion) {
     return 'DOMINANT-SOURCE OVERRIDE: the dominant source is a fine printed dash-grid panel on a wall. Do not convert it into USB ports, plug mouths, cable hardware, oblique metal, or large rounded apertures. Translate any connector language into tiny printed dash interruptions, missing-dash islands, margin shadows, paper/panel edge seams, and subtle source-window cuts that preserve the centered wall-mounted panel.'
   }
@@ -963,14 +971,7 @@ function describeEffectDirection(effectDirection) {
 }
 
 function dashPanelRecoveryScene(sourceImageFingerprints = []) {
-  const dominant = sourceImageFingerprints[0] || {}
-  const text = [
-    dominant.visual_summary,
-    ...(dominant.preserve_cues || []),
-    ...(dominant.composition_moves || []),
-    ...(dominant.surface_cues || []),
-  ].filter(Boolean).join(' ').toLowerCase()
-  if (!/(white panel|portrait rectangle|gallery wall|wall border|horizontal dash|short black horizontal bars|dash-grid|printed|stenciled)/.test(text)) return ''
+  if (!looksLikeMountedDashPanel(sourceImageFingerprints)) return ''
   return 'A new landscape plate built from the wall-mounted dash-grid panel: keep a centered portrait paper field on a pale wall, but split the internal raster into three offset translucent paper layers. Shift the dense upper-right block upward into broken islands, pull the lower-right ledge into a separate stepped seam, and carve a new diagonal missing-dash aperture through the pale figure so the source grammar survives without recreating the original contour.'
 }
 
