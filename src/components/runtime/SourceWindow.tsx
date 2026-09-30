@@ -98,6 +98,9 @@ export function SourceWindow({
       data-source-window-kind={descriptor.kind}
       data-source-window-mode={mode}
       onMouseDown={mode === 'preview' && onPreviewAction ? (event) => {
+        // Dismiss must reach its click handler, not promote/remount the preview
+        // between the compatibility mousedown and mouseup of a touch tap.
+        if ((event.target as HTMLElement).closest('.source-window__close')) return
         event.preventDefault()
         event.stopPropagation()
         onPreviewAction()
