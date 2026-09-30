@@ -62,6 +62,21 @@ it.each(['0', '1'])('passes archive keys through source research with single-anc
   expect(state.attempts).toHaveLength(6)
   expect(state.attempts.every(url => !recentSourceKeys.has(sourceContentKey({ url })))).toBe(true)
 })
+it.each(['0', '1'])('fetches the existing supplemental bed before spending pixel attempts in anchor mode %s', async mode => {
+  // Reproduce the production 320 initial cutoff with a smaller supplemental bed
+  // (480 here; the actual maxSources=240 run permits 960). Late artwork starved.
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', mode)
+  const promos = Array.from({ length: 320 }, (_, i) => ({
+    ...sources[0], url: `https://promo${i}.example/work`, image_url: `https://promo${i}.example/work.png`,
+    note_id: `promo-${i}`, title: 'New photo tool platform', note_title: 'New photo tool platform', note_score: 99999,
+  }))
+  const artwork = sources.slice(18).map(source => ({ ...source, note_score: 1 }))
+  await inspectSourceCandidates({ source_candidates: [...promos, ...artwork], notes_selected: [], motif_terms: [] }, {
+    maxSources: 120, runDir, sourceTool: 'fetch', date: '2026-09-30',
+  }).catch(() => {}) // The assertion is scheduling, not a fabricated publish proof.
+  expect(state.attempts.slice(0, 6)).toEqual(artwork.map(source => source.url))
+  expect(state.attempts.length).toBeLessThanOrEqual(24)
+})
 it('inspects the existing renderable bed through the final bounded batch without browser refill', async () => {
   const result = await inspect()
   expect(result.content_source_count).toBe(6)

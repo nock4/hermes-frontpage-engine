@@ -712,7 +712,14 @@ export async function inspectSourceCandidates(signalHarvest, {
   inspirationOverride = null,
 }) {
   const candidateLimit = Math.max(maxSources, Math.min(maxSources * autoresearchCandidateMultiplier, maxAutoresearchCandidates))
-  const candidates = selectSourceCandidatesForInspection(signalHarvest, candidateLimit, { recentSourceKeys })
+  // Fetch the same bounded supplemental field that browser repair can reach,
+  // before spending pixel attempts. Previously its lower-ranked artwork arrived
+  // only after the 24-attempt cap had already been consumed by the first 320.
+  const supplementalCandidates = selectSourceCandidatesForInspection(signalHarvest, Math.max(maxSources * 4, maxSources + minContentItems), { recentSourceKeys })
+  const candidates = [...new Map([
+    ...selectSourceCandidatesForInspection(signalHarvest, candidateLimit, { recentSourceKeys }),
+    ...supplementalCandidates,
+  ].map(source => [sourceContentKey(source), source])).values()]
   const fetchEvidence = await collectFetchEvidenceForAutoresearch(candidates, {
     recentSourceKeys,
     signalHarvest,
@@ -724,7 +731,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   let derivedCandidates = []
   let imageSourceMaterial = { image_source_candidates: [], selected_image_material: [] }
   let autoresearch = null
-  let inspected = []
+  let inspected = [...fetchEvidence]
 
   const forcedAnchorSource = forcedAnchorSourceFromInspirationOverride(inspirationOverride, fetchEvidence)
   let anchorSource = isSingleAnchorResearchEnabled()
@@ -865,8 +872,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       })
       .map((entry) => entry.source)
 
-    const supplementalFillCandidates = selectSourceCandidatesForInspection(signalHarvest, Math.max(maxSources * 4, maxSources + minContentItems), { recentSourceKeys })
-      .filter(canAttemptFill)
+    const supplementalFillCandidates = supplementalCandidates.filter(canAttemptFill)
 
     const fillCandidates = [...evidenceFillCandidates, ...supplementalFillCandidates]
 
