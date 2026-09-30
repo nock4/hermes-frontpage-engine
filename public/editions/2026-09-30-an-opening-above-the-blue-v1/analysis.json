@@ -1,0 +1,443 @@
+{
+  "analysis_id": "analysis-2026-09-30-an-opening-above-the-blue-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A densely rendered masonry labyrinth contains stacked landings, stair cuts, black pipework and crossing rails. A crowd of upward-looking men in dark blue clothing occupies the lower-left opening, with another figure framed in the right wall. Six distinct interaction anchors are visible, but the plate is literal, architectural and crowded rather than minimal or expressionist.",
+  "usable_surfaces": [
+    "Exposed blue lapel and shoulder above the diagonal foreground rail",
+    "Central landing floor terminating against deep vertical walls",
+    "Unequal stepped cuts along the upper-left landing edge",
+    "Upper-right doorway beneath an illuminated stone reveal",
+    "Black pipe elbow entering the lower-right wall",
+    "Warm lower-right recess partially crossed by a thin railing"
+  ],
+  "detected_objects": [
+    {
+      "label": "Blue fold beneath the opening",
+      "artifact_type": "cloth-fold-opening",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.135,
+        "y": 0.545,
+        "w": 0.156,
+        "h": 0.156
+      },
+      "polygon": [
+        [
+          0.135,
+          0.56
+        ],
+        [
+          0.166,
+          0.545
+        ],
+        [
+          0.177,
+          0.572
+        ],
+        [
+          0.197,
+          0.596
+        ],
+        [
+          0.221,
+          0.641
+        ],
+        [
+          0.245,
+          0.604
+        ],
+        [
+          0.258,
+          0.568
+        ],
+        [
+          0.279,
+          0.59
+        ],
+        [
+          0.291,
+          0.625
+        ],
+        [
+          0.284,
+          0.669
+        ],
+        [
+          0.28,
+          0.701
+        ],
+        [
+          0.248,
+          0.671
+        ],
+        [
+          0.214,
+          0.64
+        ],
+        [
+          0.174,
+          0.605
+        ],
+        [
+          0.144,
+          0.58
+        ]
+      ],
+      "confidence": 0.82,
+      "visual_evidence": "The central gray-bearded figure wears a visibly folded navy shirt. Its shoulder and open lapels form an irregular blue surface above the large diagonal rail. This is an actual garment on a literal figure, not an abstract blue mass or a broad unoccupied cloth opening."
+    },
+    {
+      "label": "Landing cut into depth",
+      "artifact_type": "exposed-landing-section",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.508,
+        "y": 0.63,
+        "w": 0.198,
+        "h": 0.331
+      },
+      "polygon": [
+        [
+          0.51,
+          0.732
+        ],
+        [
+          0.576,
+          0.681
+        ],
+        [
+          0.589,
+          0.637
+        ],
+        [
+          0.603,
+          0.63
+        ],
+        [
+          0.64,
+          0.67
+        ],
+        [
+          0.665,
+          0.699
+        ],
+        [
+          0.704,
+          0.734
+        ],
+        [
+          0.706,
+          0.857
+        ],
+        [
+          0.679,
+          0.892
+        ],
+        [
+          0.675,
+          0.961
+        ],
+        [
+          0.643,
+          0.938
+        ],
+        [
+          0.616,
+          0.905
+        ],
+        [
+          0.587,
+          0.851
+        ],
+        [
+          0.552,
+          0.818
+        ],
+        [
+          0.508,
+          0.783
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "A gray landing floor occupies the central lower shaft, widening toward the viewer between a left parapet and the projecting right masonry wall. Its outline has genuine interruptions from wall bases and descending steps. Thin rails cross its view; the selected target is the floor, not the entire shaft."
+    },
+    {
+      "label": "Stepped joint",
+      "artifact_type": "stepped-section-notch",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.183,
+        "y": 0.299,
+        "w": 0.121,
+        "h": 0.101
+      },
+      "polygon": [
+        [
+          0.183,
+          0.299
+        ],
+        [
+          0.204,
+          0.314
+        ],
+        [
+          0.222,
+          0.304
+        ],
+        [
+          0.223,
+          0.345
+        ],
+        [
+          0.244,
+          0.335
+        ],
+        [
+          0.26,
+          0.328
+        ],
+        [
+          0.262,
+          0.369
+        ],
+        [
+          0.293,
+          0.351
+        ],
+        [
+          0.304,
+          0.363
+        ],
+        [
+          0.26,
+          0.4
+        ],
+        [
+          0.25,
+          0.383
+        ],
+        [
+          0.25,
+          0.349
+        ],
+        [
+          0.218,
+          0.369
+        ],
+        [
+          0.212,
+          0.35
+        ],
+        [
+          0.211,
+          0.324
+        ],
+        [
+          0.19,
+          0.338
+        ],
+        [
+          0.184,
+          0.324
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Two unequal step-shaped interruptions break the front edge of the upper-left landing. Pale horizontal stone surfaces meet darker exposed vertical faces. The polygon tracks the joint itself rather than enclosing the whole platform."
+    },
+    {
+      "label": "Recess below the light",
+      "artifact_type": "recessed-masonry-aperture",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.839,
+        "y": 0.013,
+        "w": 0.11,
+        "h": 0.224
+      },
+      "polygon": [
+        [
+          0.839,
+          0.013
+        ],
+        [
+          0.902,
+          0.033
+        ],
+        [
+          0.948,
+          0.048
+        ],
+        [
+          0.949,
+          0.15
+        ],
+        [
+          0.94,
+          0.167
+        ],
+        [
+          0.911,
+          0.191
+        ],
+        [
+          0.901,
+          0.215
+        ],
+        [
+          0.843,
+          0.237
+        ],
+        [
+          0.841,
+          0.15
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "The upper-right doorway has a nearly black interior beside a strongly lit ochre inner reveal and pale threshold. A railing crosses the opening. The irregular aperture boundary follows its lintel, jambs and perspective-cut threshold; it does not include the surrounding wall."
+    },
+    {
+      "label": "Interrupted elbow",
+      "artifact_type": "exposed-pipe-mouth",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.772,
+        "y": 0.667,
+        "w": 0.085,
+        "h": 0.076
+      },
+      "polygon": [
+        [
+          0.773,
+          0.693
+        ],
+        [
+          0.781,
+          0.677
+        ],
+        [
+          0.795,
+          0.667
+        ],
+        [
+          0.807,
+          0.671
+        ],
+        [
+          0.822,
+          0.688
+        ],
+        [
+          0.835,
+          0.694
+        ],
+        [
+          0.842,
+          0.678
+        ],
+        [
+          0.856,
+          0.685
+        ],
+        [
+          0.857,
+          0.723
+        ],
+        [
+          0.846,
+          0.738
+        ],
+        [
+          0.833,
+          0.743
+        ],
+        [
+          0.815,
+          0.732
+        ],
+        [
+          0.791,
+          0.715
+        ],
+        [
+          0.786,
+          0.728
+        ],
+        [
+          0.772,
+          0.724
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A glossy black pipe bends outward and then enters the right wall above the lower illuminated recess. Bright curved highlights and collar rings distinguish its contour. The directional break is visible, but an open pipe mouth is not clearly exposed."
+    },
+    {
+      "label": "Edge behind the rail",
+      "artifact_type": "rail-shadow-recess",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.714,
+        "w": 0.07,
+        "h": 0.177
+      },
+      "polygon": [
+        [
+          0.795,
+          0.714
+        ],
+        [
+          0.816,
+          0.734
+        ],
+        [
+          0.835,
+          0.744
+        ],
+        [
+          0.852,
+          0.732
+        ],
+        [
+          0.86,
+          0.744
+        ],
+        [
+          0.86,
+          0.834
+        ],
+        [
+          0.843,
+          0.824
+        ],
+        [
+          0.83,
+          0.848
+        ],
+        [
+          0.813,
+          0.875
+        ],
+        [
+          0.79,
+          0.891
+        ],
+        [
+          0.791,
+          0.809
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Immediately below the right pipe elbow, a warm stone reveal and dark inner edge form a narrow physical recess. A thin foreground rail crosses it diagonally and turns downward. This target is the visible recess below the pipe, separate from the pipe contour and the upper doorway."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 8,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.146,
+    "rationale": "Visually estimated coverage. Repeated stairs, several apertures, multiple faces, granular masonry and overlapping rails compete for attention across almost the entire frame. Six distinct anchors can be mapped, but several are small or occluded. The blue anchor is fragmented across literal bodies rather than expressed as one dominant gesture, and the plate has little quiet negative space."
+  },
+  "fallback_detected_object_count": 0,
+  "edition_id": "2026-09-30-an-opening-above-the-blue-v1"
+}

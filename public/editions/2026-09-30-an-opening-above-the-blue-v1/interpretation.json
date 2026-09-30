@@ -1,0 +1,280 @@
+{
+  "interpretation_id": "interp-2026-09-30-an-opening-above-the-blue-v1",
+  "edition_id": "2026-09-30-an-opening-above-the-blue-v1",
+  "plate_read_timestamp": "2026-09-30T10:19:19.148Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A densely rendered masonry labyrinth contains stacked landings, stair cuts, black pipework and crossing rails. A crowd of upward-looking men in dark blue clothing occupies the lower-left opening, with another figure framed in the right wall. Six distinct interaction anchors are visible, but the plate is literal, architectural and crowded rather than minimal or expressionist.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Worn blue gathers beneath an unseen opening; the empty interval holds the light at a distance.",
+      "A densely rendered masonry labyrinth contains stacked landings, stair cuts, black pipework and crossing rails. A crowd of upward-looking men in dark blue clothing occupies the lower-left opening, with another figure framed in the right wall. Six distinct interaction anchors are visible, but the plate is literal, architectural and crowded rather than minimal or expressionist.",
+      "offset-sections",
+      "petroleum-blue",
+      "overhead-opening"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Blue fold beneath the opening",
+      "Landing cut into depth",
+      "Stepped joint",
+      "Recess below the light",
+      "Interrupted elbow",
+      "Edge behind the rail"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "blue-cloth-masonry-cutaway",
+      "Two offset, thick masonry sections enclosing a broad empty depth interval",
+      "An off-center blue-fold cluster and one separated upward-tilted bodily fragment",
+      "Short pale stair runs terminating at exposed section cuts",
+      "One oversized foreground rail extending from occupied space into the gap",
+      "Recessed landing apertures, a pipe-mouth interruption and a shadowed edge notch",
+      "Exposed blue lapel and shoulder above the diagonal foreground rail",
+      "Central landing floor terminating against deep vertical walls"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: blue-cloth-masonry-cutaway.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-blue-fold-beneath-the-opening",
+      "kind": "hero",
+      "type": "cloth-fold-opening",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.135,
+        "y": 0.545,
+        "w": 0.156,
+        "h": 0.156
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-landing-cut-into-depth",
+      "kind": "hero",
+      "type": "exposed-landing-section",
+      "strength": 0.9765919999999999,
+      "bounds": {
+        "x": 0.5052,
+        "y": 0.625,
+        "w": 0.2031,
+        "h": 0.3057
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stepped-joint",
+      "kind": "module",
+      "type": "stepped-section-notch",
+      "strength": 0.794724,
+      "bounds": {
+        "x": 0.183,
+        "y": 0.299,
+        "w": 0.121,
+        "h": 0.101
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-recess-below-the-light",
+      "kind": "module",
+      "type": "recessed-masonry-aperture",
+      "strength": 0.7695000000000001,
+      "bounds": {
+        "x": 0.839,
+        "y": 0.013,
+        "w": 0.11,
+        "h": 0.224
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-interrupted-elbow",
+      "kind": "module",
+      "type": "exposed-pipe-mouth",
+      "strength": 0.7353120000000001,
+      "bounds": {
+        "x": 0.772,
+        "y": 0.667,
+        "w": 0.085,
+        "h": 0.076
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-behind-the-rail",
+      "kind": "module",
+      "type": "rail-shadow-recess",
+      "strength": 0.688728,
+      "bounds": {
+        "x": 0.791,
+        "y": 0.7148,
+        "w": 0.0729,
+        "h": 0.1807
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-blue-fold-beneath-the-opening-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.135,
+        "y": 0.545,
+        "w": 0.156,
+        "h": 0.156
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-landing-cut-into-depth-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.5052,
+        "y": 0.625,
+        "w": 0.2031,
+        "h": 0.3057
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stepped-joint-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.183,
+        "y": 0.299,
+        "w": 0.121,
+        "h": 0.101
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-recess-below-the-light-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.839,
+        "y": 0.013,
+        "w": 0.11,
+        "h": 0.224
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-interrupted-elbow-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.772,
+        "y": 0.667,
+        "w": 0.085,
+        "h": 0.076
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-edge-behind-the-rail-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.791,
+        "y": 0.7148,
+        "w": 0.0729,
+        "h": 0.1807
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
