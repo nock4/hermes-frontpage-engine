@@ -190,9 +190,14 @@ async function writeJson(filePath, value) {
 }
 
 export function getResearchContentSources(researchField) {
-  return Array.isArray(researchField.content_sources) && researchField.content_sources.length
-    ? researchField.content_sources
-    : selectContentSources(researchField.sources || [])
+  if (Array.isArray(researchField.content_sources) && researchField.content_sources.length) {
+    const merged = mergeInspectedSources(researchField.content_sources, researchField.sources || [])
+    const byKey = new Map(merged.map((source) => [sourceContentKey(source), source]))
+    return researchField.content_sources
+      .map((source) => byKey.get(sourceContentKey(source)) || source)
+      .filter((source) => !isAiToolingContentSource(source))
+  }
+  return selectContentSources(researchField.sources || [])
 }
 
 function noteLookupForSignalHarvest(signalHarvest) {
@@ -434,15 +439,20 @@ function forcedAnchorSourceFromInspirationOverride(inspirationOverride, fetchEvi
 }
 
 function mergeInspectedSources(...groups) {
-  const merged = []
-  const seen = new Set()
+  const merged = new Map()
   for (const source of groups.flat()) {
     const key = sourceContentKey(source)
-    if (!key || seen.has(key)) continue
-    seen.add(key)
-    merged.push(source)
+    if (!key) continue
+    const first = merged.get(key)
+    if (first) {
+      // Preserve the preferred capture/media record, but never discard fuller
+      // editorial evidence merely because another inspection arrived first.
+      merged.set(key, { ...first, editorial_evidence: [...(first.editorial_evidence || []), source] })
+    } else {
+      merged.set(key, source)
+    }
   }
-  return merged
+  return [...merged.values()]
 }
 
 function normalizeAutoresearchSelection(autoresearch, evidenceSources, {

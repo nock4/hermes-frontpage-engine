@@ -104,19 +104,42 @@ export function aestheticSignalScore(candidate = {}) {
   return score
 }
 
-export function isAiToolingContentSource(source = {}) {
-  const text = [
-    source.url,
-    source.source_url,
-    source.final_url,
-    source.title,
-    source.description,
-    source.visible_text,
-    source.note_title,
-    source.note_excerpt,
+// Read source evidence, not generated artifact labels or thematic folder names.
+// Keep parent records and binding aliases: media enrichment can rename the title
+// while the original workflow pitch survives only in a summary or saved note.
+function editorialProvenanceText(source, signalHarvest = null, seen = new Set()) {
+  if (!source || typeof source !== 'object' || seen.has(source)) return ''
+  seen.add(source)
+  const note = signalHarvest?.notes_selected?.find((candidate) => (
+    (source.note_id && candidate.id === source.note_id)
+    || (source.note_path && candidate.path === source.note_path)
+    || (source.note_title && candidate.title === source.note_title)
+  ))
+  return [
+    source.url, source.source_url, source.final_url, source.resolved_url, source.page_url,
+    source.title, source.description, source.visible_text, source.note_title, source.note_excerpt,
+    source.source_title, source.source_summary, source.source_meta, source.excerpt,
+    source.caption, source.visual_reason, source.visual_summary,
+    note?.title, note?.excerpt,
+    editorialProvenanceText(source.parent_source, signalHarvest, seen),
+    ...(Array.isArray(source.editorial_evidence) ? source.editorial_evidence : [])
+      .map((record) => editorialProvenanceText(record, signalHarvest, seen)),
   ].filter(Boolean).join(' ').toLowerCase()
+}
+
+export function isAiToolingContentSource(source = {}, signalHarvest = null) {
+  const text = editorialProvenanceText(source, signalHarvest)
 
   if (!text) return false
+  // The documentation gate previously protected plate seeds only, not windows.
+  if (isDocumentationUiSource({ description: text })) return true
+  if (/\b(?:open[- ]generative[- ]ai|cloakbrowser|anti[- ]detect browsers?|stealth (?:chromium|browsers?)|scraping browsers?)\b/.test(text)) return true
+  if (/\bai (?:cinema (?:and )?)?(?:image |video )?studio\b/.test(text)
+    && /\b(?:models?|self[- ]hosted|open[- ]sourced?|text[- ]to[- ]video)\b/.test(text)) return true
+  // Tool attribution alone is not a rejection: the source must promote a
+  // prompting workflow/tutorial or the software itself rather than the artwork.
+  if (/\b(?:hyperframes|claude design)\b/.test(text)
+    && /\b(?:tutorial|prompts?|star (?:it|us|the repo) on github)\b/.test(text)) return true
   // Prompt/output advice is tooling even without a named model or author.
   // Do not quarantine the mere mention of LLMs in an artwork or code project.
   if (/\b(?:ask|tell|instruct|prompt)\s+(?:(?:your|the|an?)\s+)?(?:llms?|large language models?)\s+(?:to|for)\b/.test(text)) return true
@@ -453,7 +476,7 @@ function isSourceFramedWebFallback(source) {
 export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (!isAllowedInspectedSource(source)) return false
   if (source.source_channel === 'anchor-derived') return false
-  if (isAiToolingContentSource(source)) return false
+  if (isAiToolingContentSource(source, signalHarvest)) return false
   const sourceUrls = [source.url, source.source_url, source.final_url].filter(Boolean)
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return false
   if (sourceUrls.some((url) => youtubeId(url))) {

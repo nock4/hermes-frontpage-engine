@@ -12,6 +12,7 @@ import {
 import { youtubeEmbedStatus } from './source-inspection.mjs'
 import {
   classifySource,
+  isAiToolingContentSource,
   isDirectRasterImageUrl,
   isLowValueVisualImage,
 } from './source-selection-policy.mjs'
@@ -358,6 +359,18 @@ export async function assembleEditionPackage({
   runDir,
   maxContentItems = DEFAULT_MAX_CONTENT_ITEMS,
 }, stepMeta = {}) {
+  // Recheck enriched research before any package writes. A stale payload or
+  // aesthetic relabel must not bypass selection; fail rather than silently
+  // dropping windows below the floor or remapping plate objects to other sources.
+  const evidence = [...(researchField.sources || []), ...(researchField.content_sources || [])]
+  for (const artifact of payload.artifacts) {
+    const key = canonicalizeSourceUrl(artifact.source_url)
+    const matching = evidence.filter((source) => [source.url, source.source_url, source.final_url, source.resolved_url]
+      .some((url) => url && canonicalizeSourceUrl(url) === key))
+    if ([artifact, ...matching].some((source) => isAiToolingContentSource(source, signalHarvest))) {
+      throw new Error(`Editorial quarantine: prohibited workflow/service/component-library source ${artifact.source_url}`)
+    }
+  }
   const manifestPath = path.join(root, 'public', 'editions', 'index.json')
   const manifest = await readJson(manifestPath)
   const slugBase = slugify(payload.slug_base || payload.scene_family)

@@ -83,21 +83,21 @@ export function decideAnchorEligibility({ anchorSource = null, recentSourceKeys 
     })
   }
 
-  if (isAiToolingContentSource(anchorSource)) {
-    return decision({
-      decision: 'reject',
-      reason_code: 'ai_tooling_or_auxiliary_models',
-      confidence: 0.94,
-      evidence: ['anchor matches AI/tooling, Hermes Agent, auxiliary-model, prompt, model, agent, or infrastructure patterns'],
-    })
-  }
-
   if (isDocumentationUiSource(anchorSource)) {
     return decision({
       decision: 'reject',
       reason_code: 'documentation_ui_material',
       confidence: 0.94,
       evidence: ['documentation or component-library UI is not a creative image-led anchor'],
+    })
+  }
+
+  if (isAiToolingContentSource(anchorSource)) {
+    return decision({
+      decision: 'reject',
+      reason_code: 'ai_tooling_or_auxiliary_models',
+      confidence: 0.94,
+      evidence: ['anchor matches AI/tooling, Hermes Agent, auxiliary-model, prompt, model, agent, or infrastructure patterns'],
     })
   }
 
