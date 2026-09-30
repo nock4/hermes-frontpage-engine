@@ -7,6 +7,8 @@ import {
   youtubeEmbedStatus,
 } from '../../scripts/lib/source-inspection.mjs'
 
+import { isAiToolingContentSource, isAutoresearchExcluded } from '../../scripts/lib/source-selection-policy.mjs'
+
 const previousTestFetchMode = process.env.DFE_TEST_USE_GLOBAL_FETCH
 process.env.DFE_TEST_USE_GLOBAL_FETCH = '1'
 
@@ -20,6 +22,18 @@ afterAll(() => {
 })
 
 describe('source inspection', () => {
+  it('retains pre-enrichment rejection and workflow evidence when metadata is replaced', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      ok: true, status: 200,
+      text: async () => '<html><meta property="og:title" content="Beautiful colors"><meta property="og:description" content="Images"><meta property="og:image" content="/art.jpg"></html>',
+    })))
+    const candidate = { url: 'https://example.com/story', title: 'Deploy these skills using AI', description: 'pip install new-tool', autoresearch_role: 'reject' }
+    const source = await inspectCandidateSource(candidate, { sourceTool: 'fetch' })
+    expect(source.title).toBe('Beautiful colors')
+    expect(isAiToolingContentSource(source)).toBe(true)
+    expect(isAutoresearchExcluded(source)).toBe(true)
+  })
+
   it('checks YouTube embeddability through oEmbed', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => ({
       ok: true,

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { isAiToolingContentSource, isDocumentationUiSource, sourceContentKey } from './source-selection-policy.mjs'
+import { isAiToolingContentSource, isAutoresearchExcluded, isDocumentationUiSource, selectContentSources, sourceContentKey } from './source-selection-policy.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 
 const SOURCE_DECISION_SCHEMA_VERSION = 1
@@ -52,7 +52,11 @@ function decision({ decision, reason_code: reasonCode, confidence, evidence = []
   }
 }
 
-export function decideAnchorEligibility({ anchorSource = null, recentSourceKeys = new Set() } = {}) {
+export function decideAnchorEligibility({ anchorSource = null, recentSourceKeys = new Set(), autoresearch = null } = {}) {
+  if (isAutoresearchExcluded(anchorSource, autoresearch)) return decision({
+    decision: 'reject', reason_code: 'autoresearch_excluded_anchor', confidence: 1,
+    evidence: ['autoresearch assigned this source family reject or supporting-only'],
+  })
   if (!anchorSource) {
     return decision({
       decision: 'reject',
@@ -177,8 +181,17 @@ export function decideVisualAnchorAction({
   })
 }
 
-export function buildSourceDecisionAudit({ anchorDecision, visualAnchorDecision, jevDecision = null } = {}) {
+export function buildSourceDecisionAudit({ anchorDecision, visualAnchorDecision, jevDecision = null, contentSources = null, autoresearch = null, recentSourceKeys = new Set(), signalHarvest = null } = {}) {
   const decisions = [anchorDecision, visualAnchorDecision, jevDecision].filter(Boolean)
+  if (Array.isArray(contentSources)) {
+    const eligible = selectContentSources(contentSources, { autoresearch, recentSourceKeys, signalHarvest })
+    if (eligible.length < 6) decisions.push(decision({
+      decision: 'block_and_rerun',
+      reason_code: 'insufficient_eligible_source_media',
+      confidence: 1,
+      evidence: [`${eligible.length} eligible non-duplicate media sources; require 6`, 'Do not fill the deficit with tooling, rejected/supporting sources, or text-only surfaces.'],
+    }))
+  }
   const hardBlockers = decisions.filter((item) => item.decision === 'reject' || item.decision === 'block_and_rerun')
   return {
     schema_version: SOURCE_DECISION_SCHEMA_VERSION,

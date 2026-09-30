@@ -18,6 +18,7 @@ import { sanitizeSourceText } from './source-text.mjs'
 import { canonicalizeSourceUrl, hostnameForUrl } from './source-url-policy.mjs'
 import {
   aestheticSignalScore,
+  isAutoresearchExcluded,
   isAiToolingContentSource,
   isDocumentationUiSource,
   isAllowedInspectedSource,
@@ -95,7 +96,7 @@ export function buildExactAnchorSourceMaterialBlocker({ inspirationOverride = nu
   }
 }
 
-export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = [], contentSources = [], recentSourceKeys = new Set(), signalHarvest = null } = {}) {
+export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = [], contentSources = [], recentSourceKeys = new Set(), signalHarvest = null, autoresearch = null } = {}) {
   const allSources = mergeInspectedSources(inspected, fetchEvidence)
   const buckets = {
     inspected_total: allSources.length,
@@ -104,6 +105,7 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
     non_duplicate_renderable_surfaces: 0,
     repeated_by_archive_ledger: 0,
     ai_tooling_quarantined: 0,
+    autoresearch_excluded: 0,
     raw_twitter_media_blocked: 0,
     blocked_or_unavailable: 0,
     not_renderable: 0,
@@ -113,6 +115,7 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
   const examples = {
     repeated_by_archive_ledger: [],
     ai_tooling_quarantined: [],
+    autoresearch_excluded: [],
     not_renderable: [],
     blocked_or_unavailable: [],
   }
@@ -146,7 +149,12 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
       remember('blocked_or_unavailable', source)
     }
     const score = sourceContentScore(source, recentSourceKeys)
-    if (renderable && Number.isFinite(score) && key && !countedRenderableKeys.has(key)) {
+    const excluded = isAutoresearchExcluded(source, autoresearch)
+    if (excluded) {
+      buckets.autoresearch_excluded += 1
+      remember('autoresearch_excluded', source)
+    }
+    if (!excluded && renderable && Number.isFinite(score) && key && !countedRenderableKeys.has(key)) {
       countedRenderableKeys.add(key)
       buckets.non_duplicate_renderable_surfaces += 1
     }
@@ -164,6 +172,8 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
   return {
     schema_version: 1,
     min_required_content_sources: minContentItems,
+    eligible_source_urls: [...countedRenderableKeys],
+    missing_content_sources: Math.max(0, minContentItems - buckets.non_duplicate_renderable_surfaces),
     primary_constraint,
     buckets,
     fetch_status_counts,
@@ -195,9 +205,10 @@ export function getResearchContentSources(researchField) {
     const byKey = new Map(merged.map((source) => [sourceContentKey(source), source]))
     return researchField.content_sources
       .map((source) => byKey.get(sourceContentKey(source)) || source)
-      .filter((source) => !isAiToolingContentSource(source))
+      .filter((source) => !isAutoresearchExcluded(source, researchField.autoresearch))
+      .filter((source) => sourceHasRenderableCardSurface(source))
   }
-  return selectContentSources(researchField.sources || [])
+  return selectContentSources(researchField.sources || [], { autoresearch: researchField.autoresearch })
 }
 
 function noteLookupForSignalHarvest(signalHarvest) {
@@ -466,6 +477,7 @@ function normalizeAutoresearchSelection(autoresearch, evidenceSources, {
   const seenTwitterNotes = new Set()
   const addSource = (source) => {
     if (!source || selected.length >= maxSources) return
+    if (isAutoresearchExcluded(source, autoresearch) || isAiToolingContentSource(source, signalHarvest)) return
     const key = sourceContentKey(source)
     if (!key || seen.has(key)) return
     if (recentSourceKeys.has(key)) return
@@ -760,7 +772,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     await writeJson(path.join(runDir, 'source-autoresearch.json'), autoresearch)
   }
 
-  let contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
+  let contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
 
   if (contentSources.length < minContentItems) {
     researchMode = anchorSource ? 'single-anchor-derived-pool-fallback-autoresearch' : 'fallback-autoresearch'
@@ -790,7 +802,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     // source windows. Dropping them here can turn a fertile evidence field into a
     // false 0-window failure.
     inspected = mergeInspectedSources(inspected, fetchEvidence)
-    contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
+    contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
   }
 
   if (contentSources.length < minContentItems) {
@@ -802,6 +814,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       .map(sourceContentKey))
     const fillSeenKeys = new Set()
     const canAttemptFill = (source) => {
+      if (isAutoresearchExcluded(source, autoresearch) || isAiToolingContentSource(source, signalHarvest)) return false
       const key = sourceContentKey(source)
       if (!key || fillSeenKeys.has(key)) return false
       fillSeenKeys.add(key)
@@ -835,7 +848,7 @@ export async function inspectSourceCandidates(signalHarvest, {
         maxSources: 1,
       })
       inspected.push(...added)
-      contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest })
+      contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
     }
   }
 
@@ -850,10 +863,16 @@ export async function inspectSourceCandidates(signalHarvest, {
     }
   }
 
-  const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
+  // Visual enrichment must not undo an editorial rejection through another lane.
+  const eligibleForEnrichment = (source) => !isAutoresearchExcluded(source, autoresearch)
+    && !isAiToolingContentSource(source, signalHarvest)
+  const visualHarvest = { ...signalHarvest, source_candidates: signalHarvest.source_candidates.filter(eligibleForEnrichment) }
+  const proposedVisualReference = await findVisualReference(visualHarvest, inspected.filter(eligibleForEnrichment), { sourceTool, browserHarness, recentSourceKeys })
+  const discoveredVisualReference = eligibleForEnrichment(proposedVisualReference) ? proposedVisualReference : null
   const imageMaterialEvidence = { evidenceSources: [anchorSource, ...fetchEvidence, ...inspected].filter(Boolean) }
   let promotedVisualAnchorRelationship = null
   let selectedImageMaterial = imageSourceMaterial.selected_image_material
+    .filter(eligibleForEnrichment)
     .filter((candidate) => !imageMaterialAlreadyUsed(candidate, recentSourceKeys))
     .filter((candidate) => !isAiToolingImageMaterial(candidate, imageMaterialEvidence))
     .filter((candidate) => !isLowFertilitySourceImageCandidate(candidate))
@@ -972,7 +991,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     sourceImageMode,
     imageSourceMaterial,
   })
-  const anchorDecision = decideAnchorEligibility({ anchorSource, recentSourceKeys })
+  const anchorDecision = decideAnchorEligibility({ anchorSource, recentSourceKeys, autoresearch })
   const visualAnchorDecision = decideVisualAnchorAction({
     anchorDecision,
     sourceImageMode,
@@ -998,6 +1017,10 @@ export async function inspectSourceCandidates(signalHarvest, {
     anchorDecision,
     visualAnchorDecision,
     jevDecision,
+    contentSources,
+    autoresearch,
+    recentSourceKeys,
+    signalHarvest,
   })
   const sourceDecisionAuditPath = await writeSourceDecisionAudit(runDir, sourceDecisionAudit) // source-decision-audit.json
   const imageMaterialReference = selectedImageMaterial[0]
@@ -1029,6 +1052,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     contentSources,
     recentSourceKeys,
     signalHarvest,
+    autoresearch,
   })
 
   const researchField = {

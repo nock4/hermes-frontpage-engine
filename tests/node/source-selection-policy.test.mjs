@@ -190,7 +190,7 @@ describe('source selection policy', () => {
     expect(selected.every((source) => source.source_channel !== 'anchor-derived')).toBe(true)
   })
 
-  it('allows inspected source-framed web fallbacks but rejects profile and error pages', () => {
+  it('rejects text-only web fallbacks along with profile and error pages', () => {
     const webFallback = {
       ...baseSource,
       url: 'https://www.fondsound.com/mix-35-japanese-healing-music/',
@@ -223,7 +223,7 @@ describe('source selection policy', () => {
       visible_text: '404 page not found',
     }
 
-    expect(sourceHasRenderableCardSurface(webFallback)).toBe(true)
+    expect(sourceHasRenderableCardSurface(webFallback)).toBe(false)
     expect(sourceHasRenderableCardSurface(profilePage)).toBe(false)
     expect(sourceHasRenderableCardSurface(malformedInstagramProfile)).toBe(false)
     expect(sourceHasRenderableCardSurface(errorPage)).toBe(false)
@@ -256,7 +256,7 @@ describe('source selection policy', () => {
     ]))
   })
 
-  it('selects provider tweet iframes as real source windows even when media enrichment is empty', () => {
+  it('does not select provider tweet iframes when media enrichment is empty', () => {
     const tweet = {
       ...baseSource,
       url: 'https://x.com/artist/status/2084367112227725803',
@@ -270,8 +270,8 @@ describe('source selection policy', () => {
       image_url: null,
     }
 
-    expect(sourceHasRenderableCardSurface(tweet)).toBe(true)
-    expect(selectContentSources([tweet], { targetItems: 1 }).map((source) => source.url)).toEqual([tweet.url])
+    expect(sourceHasRenderableCardSurface(tweet)).toBe(false)
+    expect(selectContentSources([tweet], { targetItems: 1 })).toEqual([])
   })
 
   it('selects renderable creative content ahead of SaaS infrastructure surfaces', () => {
@@ -623,7 +623,7 @@ describe('source selection policy', () => {
       source_channel: 'twitter-bookmark',
       note_id: 'tweet-a',
       title: '@mamosdigital: my game is for retro open world fans',
-      image_url: null,
+      image_url: 'https://pbs.twimg.com/amplify_video_thumb/2038660307678011392/img/vW_abto9HcLH8vVZ.jpg',
     }
     const extractedMedia = {
       ...baseSource,

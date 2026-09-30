@@ -658,11 +658,14 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
 
 export async function inspectCandidateSource(candidate, { sourceTool, browserHarness, timeoutMs = 35_000 } = {}) {
   try {
-    return await withTimeout(
+    const source = await withTimeout(
       inspectCandidateSourceInner(candidate, { sourceTool, browserHarness }),
       timeoutMs,
       `Source inspection timed out after ${timeoutMs}ms: ${candidate?.url || 'unknown source'}`,
     )
+    // Metadata enrichment is additive evidence, not permission to erase the
+    // candidate's original editorial role, workflow pitch, or parent identity.
+    return source ? { ...source, editorial_evidence: [...(source.editorial_evidence || []), candidate] } : null
   } catch (error) {
     return {
       ...candidate,

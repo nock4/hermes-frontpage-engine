@@ -131,6 +131,15 @@ export function isAiToolingContentSource(source = {}, signalHarvest = null) {
   const text = editorialProvenanceText(source, signalHarvest)
 
   if (!text) return false
+  // Explicit instructional/product classes, independent of author/package names.
+  // Training as an artistic technique alone is not model research.
+  if (/\b(?:pip3?|npm|pnpm|yarn|bun|uv)\s+(?:pip\s+)?(?:install|add)\s+[\w@.-]+/.test(text)) return true
+  if (/\b(?:skill[s]?[- ]repo(?:sitory)?|deploy (?:these |the |your )?skills)\b/.test(text)
+    && /\b(?:ai|llms?|obsidian|knowledge database)\b/.test(text)) return true
+  if (/\b(?:research|paper|benchmark|internal representations?|interpretability)\b/.test(text)
+    && /\b(?:llms?|large language models?|language[- ]model|model behavior)\b/.test(text)) return true
+  if (/\bagent[-_ ]?(?:secrets?|credentials?|auth|tokens?)\b/.test(text)
+    || (/\b(?:credentials?|secrets?)\b/.test(text) && /\b(?:agents?|llms?)\b/.test(text))) return true
   // The documentation gate previously protected plate seeds only, not windows.
   if (isDocumentationUiSource({ description: text })) return true
   if (/\b(?:open[- ]generative[- ]ai|cloakbrowser|anti[- ]detect browsers?|stealth (?:chromium|browsers?)|scraping browsers?)\b/.test(text)) return true
@@ -449,35 +458,12 @@ export function sourceContentScore(source, recentSourceKeys = new Set()) {
   return score
 }
 
-function noteHasDirectMediaForSource(source, signalHarvest) {
-  if (!signalHarvest?.notes_selected) return false
-  const lookupValues = new Set([source.note_id, source.note_path, source.note_title].filter(Boolean))
-  const note = signalHarvest.notes_selected.find((candidate) => (
-    lookupValues.has(candidate.id) || lookupValues.has(candidate.path) || lookupValues.has(candidate.title)
-  ))
-  return Boolean(note?.urls?.some((url) => isDirectRasterImageUrl(url) && !isLowValueVisualImage(url)))
-}
-
-function isSourceFramedWebFallback(source) {
-  const status = String(source?.fetch_status || '')
-  if (!['fetch-ok', 'browser-harness-error-fetch-ok', 'browser-harness-disabled-fetch-ok', 'browser-harness-blocked-final-url-fetch-ok'].includes(status)) return false
-  const text = [source?.title, source?.description, source?.visible_text, source?.note_title, source?.note_excerpt]
-    .filter(Boolean)
-    .join(' ')
-    .toLowerCase()
-  if (!text || text.length < 24) return false
-  const sourceUrls = [source?.url, source?.source_url, source?.final_url].filter(Boolean)
-  if (sourceUrls.some(isSocialProfileFallbackUrl)) return false
-  if (/\b(301 moved permanently|302 found|403 forbidden|404|page not found|just a moment|vercel security checkpoint|access denied|cookies|privacy policy|terms of service|sign in|log in)\b/.test(text)) return false
-  if (/\b(github|readme|api|sdk|docs|documentation|agent framework|mcp|codex|claude|vibe cod|vibe-coded|prompt guide|seo|growth|crm|pricing)\b/.test(text)) return false
-  return true
-}
-
 export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   if (!isAllowedInspectedSource(source)) return false
   if (source.source_channel === 'anchor-derived') return false
   if (isAiToolingContentSource(source, signalHarvest)) return false
   const sourceUrls = [source.url, source.source_url, source.final_url].filter(Boolean)
+  if (sourceUrls.some(isSocialProfileFallbackUrl)) return false
   if (source.source_channel === 'twitter-bookmark' && sourceUrls.some(isTwitterMediaUrl)) return false
   if (sourceUrls.some((url) => youtubeId(url))) {
     if (providerEmbedStatus(source) !== 'unavailable') return true
@@ -490,17 +476,33 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
   const directRasterUrls = sourceUrls.filter(isDirectRasterImageUrl)
   if (directRasterUrls.some((url) => !isLowValueVisualImage(url))) return true
   if (source.image_url && !isLowValueVisualImage(source.image_url)) return true
-  const sourceType = classifySource(source.url || source.source_url || '').source_type
-  if (sourceType === 'tweet') {
-    // A provider-hosted tweet iframe is a real source surface even when browser
-    // capture or fxtwitter media enrichment fails to recover attached media.
-    // Raw pbs/video media is blocked above so it cannot become a duplicate
-    // primary window beside its parent tweet.
-    return providerEmbedStatus(source) !== 'unavailable'
-      && source.embed_strategy !== 'never-primary-content-source'
-      && (source.window_type === 'social' || noteHasDirectMediaForSource(source, signalHarvest))
-  }
-  return isSourceFramedWebFallback(source)
+  if (source.media_url && ['image', 'video', 'audio'].includes(source.media_type)
+    && isAllowedSourceUrl(source.media_url) && !isLowValueVisualImage(source.media_url)) return true
+  // A tweet iframe or an extracted essay is provenance, not media evidence.
+  // Audio providers are genuine playable surfaces, unlike generic web embeds.
+  return sourceUrls.some((url) => isBandcampStreamingSourceUrl(url) || isSoundCloudStreamingSourceUrl(url))
+}
+
+function researchIdentity(url) {
+  const host = hostnameForUrl(url)
+  const id = /^(?:www\.)?(?:x\.com|twitter\.com)$/.test(host)
+    ? String(url).match(/\/status\/(\d+)(?:[/?#]|$)/)?.[1] : null
+  return id ? `tweet:${id}` : canonicalizeSourceUrl(url)
+}
+
+// Rejections and supporting-only decisions survive enrichment, redirects, and
+// attached-media promotion. They are constraints, never mere ranking penalties.
+export function isAutoresearchExcluded(source, autoresearch = null, seen = new Set()) {
+  if (!source || seen.has(source)) return false
+  seen.add(source)
+  const rejected = new Set((autoresearch?.source_decisions || [])
+    .filter((decision) => ['reject', 'supporting'].includes(decision.role))
+    .map((decision) => researchIdentity(decision.url)))
+  const urls = [source.url, source.source_url, source.final_url, source.page_url, source.resolved_url]
+  return ['reject', 'supporting'].includes(source.autoresearch_role)
+    || urls.filter(Boolean).some((url) => rejected.has(researchIdentity(url)))
+    || [source.parent_source, ...(source.editorial_evidence || [])]
+      .some((parent) => isAutoresearchExcluded(parent, autoresearch, seen))
 }
 
 export function selectContentSources(
@@ -510,6 +512,7 @@ export function selectContentSources(
     maxItems = DEFAULT_MAX_CONTENT_ITEMS,
     targetItems = DEFAULT_TARGET_CONTENT_ITEMS,
     signalHarvest = null,
+    autoresearch = null,
   } = {},
 ) {
   const duplicateGroupKey = (source) => {
@@ -520,6 +523,7 @@ export function selectContentSources(
   }
   const ranked = [...sources]
     .filter((source) => source?.url)
+    .filter((source) => !isAutoresearchExcluded(source, autoresearch))
     .filter((source) => sourceHasRenderableCardSurface(source, signalHarvest))
     .map((source) => ({ source, score: sourceContentScore(source, recentSourceKeys) }))
     .filter((entry) => Number.isFinite(entry.score))

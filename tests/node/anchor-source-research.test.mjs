@@ -85,7 +85,7 @@ describe('anchor-source-research', () => {
     expect(anchor.anchor_selection_lane).toBe('artwork-first')
   })
 
-  it('selects recent poster/art posts over lower-scoring AI tooling when tweet media is not pre-enriched', () => {
+  it('withholds a promising poster anchor until actual media is enriched', () => {
     const anchor = selectAnchorSource([
       {
         url: 'https://x.com/bakigulai/status/2085977214365896731',
@@ -111,8 +111,7 @@ describe('anchor-source-research', () => {
       },
     ])
 
-    expect(anchor.url).toBe('https://x.com/hollycurates/status/2086982189741195578')
-    expect(anchor.anchor_selection_lane).toBe('artwork-first')
+    expect(anchor).toBeNull()
   })
 
   it('builds aesthetic expansion queries from the anchor', () => {
