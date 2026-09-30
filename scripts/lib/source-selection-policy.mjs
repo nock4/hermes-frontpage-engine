@@ -117,6 +117,9 @@ export function isAiToolingContentSource(source = {}) {
   ].filter(Boolean).join(' ').toLowerCase()
 
   if (!text) return false
+  // Prompt/output advice is tooling even without a named model or author.
+  // Do not quarantine the mere mention of LLMs in an artwork or code project.
+  if (/\b(?:ask|tell|instruct|prompt)\s+(?:(?:your|the|an?)\s+)?(?:llms?|large language models?)\s+(?:to|for)\b/.test(text)) return true
   if (/\bai spritesheets?\b/.test(text)) return true
   // Classify the inspected product, not its folder or the mere mention of AI.
   // Derived chatbot links can have no image or retain only a product title.

@@ -15,7 +15,7 @@ import { buildSourceDecisionAudit, decideAnchorEligibility, decideVisualAnchorAc
 import { getSourceDisplayTitle } from './source-display.mjs'
 import { isLowFertilitySourceFingerprint, isLowFertilitySourceImageCandidate, screenSourceImageMaterial, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
-import { canonicalizeSourceUrl } from './source-url-policy.mjs'
+import { canonicalizeSourceUrl, hostnameForUrl } from './source-url-policy.mjs'
 import {
   aestheticSignalScore,
   isAiToolingContentSource,
@@ -283,14 +283,26 @@ function imageMaterialAlreadyUsed(candidate, recentSourceKeys = new Set()) {
   return keys.some((key) => recentSourceKeys.has(key))
 }
 
-export function isAiToolingImageMaterial(candidate = {}) {
+export function isAiToolingImageMaterial(candidate = {}, { evidenceSources = [] } = {}) {
+  // Attached rasters often have empty captions. Classify their actual parent,
+  // not a CDN filename or the generic "Image surfaced" extraction label.
+  const parentKey = (url) => {
+    const host = hostnameForUrl(url)
+    const tweetId = /^(?:www\.)?(?:x\.com|twitter\.com)$/.test(host)
+      ? String(url).match(/\/status\/(\d+)(?:[/?#]|$)/)?.[1] : null
+    return tweetId ? `tweet:${tweetId}` : canonicalizeSourceUrl(url)
+  }
+  const key = parentKey(candidate.page_url || candidate.source_url || candidate.url)
+  const parents = [candidate.parent_source, ...evidenceSources.filter((source) => key
+    && [source.url, source.source_url, source.final_url].some((url) => url && parentKey(url) === key))]
+  if (parents.some((source) => source && isAiToolingContentSource(source))) return true
   return isAiToolingContentSource({
     url: candidate.page_url || candidate.url || candidate.image_url,
     source_url: candidate.page_url || candidate.url || candidate.image_url,
     final_url: candidate.page_url || candidate.url || candidate.image_url,
     title: candidate.title || candidate.caption || '',
     description: candidate.visual_reason || candidate.caption || '',
-    visible_text: [candidate.caption, candidate.visual_reason, candidate.query, candidate.lineage].filter(Boolean).join(' '),
+    visible_text: [candidate.visible_text, candidate.description, candidate.note_title, candidate.note_excerpt, candidate.caption, candidate.visual_reason, candidate.query, candidate.lineage].filter(Boolean).join(' '),
     image_url: candidate.image_url || null,
   })
 }
@@ -300,9 +312,11 @@ export function buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
   imageSourceMaterial = {},
   inspirationOverride = null,
   recentSourceKeys = new Set(),
+  evidenceSources = [],
 } = {}) {
   if (isExactAnchorOverride(inspirationOverride)) return null
   if (!discoveredVisualReference?.image_url) return null
+  if (isAiToolingImageMaterial(discoveredVisualReference, { evidenceSources })) return null
   if (isDocumentationUiSource(discoveredVisualReference)) return null
   // A derived raster must not resurrect a rejected parent material family.
   const rejectedImages = [
@@ -827,10 +841,11 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
 
   const discoveredVisualReference = await findVisualReference(signalHarvest, inspected, { sourceTool, browserHarness, recentSourceKeys })
+  const imageMaterialEvidence = { evidenceSources: [anchorSource, ...fetchEvidence, ...inspected].filter(Boolean) }
   let promotedVisualAnchorRelationship = null
   let selectedImageMaterial = imageSourceMaterial.selected_image_material
     .filter((candidate) => !imageMaterialAlreadyUsed(candidate, recentSourceKeys))
-    .filter((candidate) => !isAiToolingImageMaterial(candidate))
+    .filter((candidate) => !isAiToolingImageMaterial(candidate, imageMaterialEvidence))
     .filter((candidate) => !isLowFertilitySourceImageCandidate(candidate))
   const reusedImageMaterial = imageSourceMaterial.selected_image_material
     .filter((candidate) => imageMaterialAlreadyUsed(candidate, recentSourceKeys))
@@ -847,7 +862,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     }
   }
   const quarantinedAiToolingImageMaterial = imageSourceMaterial.selected_image_material
-    .filter((candidate) => isAiToolingImageMaterial(candidate))
+    .filter((candidate) => isAiToolingImageMaterial(candidate, imageMaterialEvidence))
     .map((candidate) => ({
       title: candidate.title || candidate.caption || candidate.image_url || candidate.page_url || null,
       page_url: candidate.page_url || null,
@@ -891,6 +906,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
   if (!selectedImageMaterial.length) {
     const promoted = buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
+      ...imageMaterialEvidence,
       anchorResearch,
       imageSourceMaterial,
       inspirationOverride,
@@ -992,7 +1008,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     : null
   const rejectedReference = screenedMaterial.rejected_image_fingerprints.some((fingerprint) => fingerprint.image_url === discoveredVisualReference?.image_url)
   const safeDiscoveredVisualReference = !rejectedReference && buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
-    imageSourceMaterial, recentSourceKeys,
+    ...imageMaterialEvidence, imageSourceMaterial, recentSourceKeys,
   }) ? discoveredVisualReference : null
   const visualReference = inspirationOverride
     ? buildInspirationOverrideVisualReference(inspirationOverride, { fallback: imageMaterialReference || safeDiscoveredVisualReference })
