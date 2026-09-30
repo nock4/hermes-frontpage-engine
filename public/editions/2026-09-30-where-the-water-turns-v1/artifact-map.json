@@ -1,0 +1,1258 @@
+{
+  "artifact_map_id": "map-2026-09-30-where-the-water-turns-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "birch-water-bank-section",
+  "default_artifact_id": "hero-birch-reflection-opening",
+  "artifacts": [
+    {
+      "id": "hero-birch-reflection-opening",
+      "kind": "hero",
+      "label": "Birch reflection opening",
+      "artifact_type": "interrupted-reflection-patch",
+      "bounds": {
+        "x": 0.15,
+        "y": 0.468,
+        "w": 0.272,
+        "h": 0.225
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.153,
+          0.472
+        ],
+        [
+          0.215,
+          0.481
+        ],
+        [
+          0.281,
+          0.468
+        ],
+        [
+          0.349,
+          0.482
+        ],
+        [
+          0.411,
+          0.484
+        ],
+        [
+          0.382,
+          0.514
+        ],
+        [
+          0.418,
+          0.537
+        ],
+        [
+          0.388,
+          0.557
+        ],
+        [
+          0.422,
+          0.591
+        ],
+        [
+          0.398,
+          0.627
+        ],
+        [
+          0.407,
+          0.662
+        ],
+        [
+          0.38,
+          0.693
+        ],
+        [
+          0.3,
+          0.666
+        ],
+        [
+          0.283,
+          0.638
+        ],
+        [
+          0.216,
+          0.613
+        ],
+        [
+          0.177,
+          0.568
+        ],
+        [
+          0.183,
+          0.521
+        ],
+        [
+          0.15,
+          0.494
+        ]
+      ],
+      "cluster_id": "birch-water-bank-section",
+      "mask_path": "/editions/2026-09-30-where-the-water-turns-v1/assets/masks/hero-birch-reflection-opening.svg",
+      "source_binding_ids": [
+        "binding-hero-birch-reflection-opening"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          439,
+          576
+        ],
+        "safe_stage_window_origin_px": [
+          473,
+          594
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.153,
+            0.472
+          ],
+          [
+            0.215,
+            0.481
+          ],
+          [
+            0.281,
+            0.468
+          ],
+          [
+            0.349,
+            0.482
+          ],
+          [
+            0.411,
+            0.484
+          ],
+          [
+            0.382,
+            0.514
+          ],
+          [
+            0.418,
+            0.537
+          ],
+          [
+            0.388,
+            0.557
+          ],
+          [
+            0.422,
+            0.591
+          ],
+          [
+            0.398,
+            0.627
+          ],
+          [
+            0.407,
+            0.662
+          ],
+          [
+            0.38,
+            0.693
+          ],
+          [
+            0.3,
+            0.666
+          ],
+          [
+            0.283,
+            0.638
+          ],
+          [
+            0.216,
+            0.613
+          ],
+          [
+            0.177,
+            0.568
+          ],
+          [
+            0.183,
+            0.521
+          ],
+          [
+            0.15,
+            0.494
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1162,
+            0.4902
+          ],
+          [
+            0.1191,
+            0.4714
+          ],
+          [
+            0.1523,
+            0.4492
+          ],
+          [
+            0.2803,
+            0.4453
+          ],
+          [
+            0.4102,
+            0.4616
+          ],
+          [
+            0.4434,
+            0.4837
+          ],
+          [
+            0.4551,
+            0.5905
+          ],
+          [
+            0.4395,
+            0.6615
+          ],
+          [
+            0.4141,
+            0.6921
+          ],
+          [
+            0.3799,
+            0.7148
+          ],
+          [
+            0.2998,
+            0.6875
+          ],
+          [
+            0.1816,
+            0.612
+          ],
+          [
+            0.1436,
+            0.5677
+          ],
+          [
+            0.1162,
+            0.4935
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1162,
+          "y": 0.4453,
+          "w": 0.3398,
+          "h": 0.2702
+        },
+        "territory_area_px": 97537,
+        "visible_area_px": 61484,
+        "expansion_ratio": 1.586,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "hero-foremost-birch-scar",
+      "kind": "hero",
+      "label": "Foremost birch scar",
+      "artifact_type": "bark-scar-surface",
+      "bounds": {
+        "x": 0.215,
+        "y": 0.076,
+        "w": 0.059,
+        "h": 0.117
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.241,
+          0.076
+        ],
+        [
+          0.251,
+          0.091
+        ],
+        [
+          0.257,
+          0.108
+        ],
+        [
+          0.269,
+          0.122
+        ],
+        [
+          0.274,
+          0.14
+        ],
+        [
+          0.26,
+          0.157
+        ],
+        [
+          0.258,
+          0.179
+        ],
+        [
+          0.244,
+          0.193
+        ],
+        [
+          0.235,
+          0.171
+        ],
+        [
+          0.225,
+          0.161
+        ],
+        [
+          0.227,
+          0.144
+        ],
+        [
+          0.215,
+          0.128
+        ],
+        [
+          0.226,
+          0.109
+        ],
+        [
+          0.231,
+          0.089
+        ]
+      ],
+      "cluster_id": "birch-water-bank-section",
+      "mask_path": "/editions/2026-09-30-where-the-water-turns-v1/assets/masks/hero-foremost-birch-scar.svg",
+      "source_binding_ids": [
+        "binding-hero-foremost-birch-scar"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          376,
+          128
+        ],
+        "safe_stage_window_origin_px": [
+          383,
+          138
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.241,
+            0.076
+          ],
+          [
+            0.251,
+            0.091
+          ],
+          [
+            0.257,
+            0.108
+          ],
+          [
+            0.269,
+            0.122
+          ],
+          [
+            0.274,
+            0.14
+          ],
+          [
+            0.26,
+            0.157
+          ],
+          [
+            0.258,
+            0.179
+          ],
+          [
+            0.244,
+            0.193
+          ],
+          [
+            0.235,
+            0.171
+          ],
+          [
+            0.225,
+            0.161
+          ],
+          [
+            0.227,
+            0.144
+          ],
+          [
+            0.215,
+            0.128
+          ],
+          [
+            0.226,
+            0.109
+          ],
+          [
+            0.231,
+            0.089
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1816,
+            0.127
+          ],
+          [
+            0.207,
+            0.0755
+          ],
+          [
+            0.2402,
+            0.0534
+          ],
+          [
+            0.2734,
+            0.0755
+          ],
+          [
+            0.3066,
+            0.1387
+          ],
+          [
+            0.29,
+            0.1797
+          ],
+          [
+            0.2432,
+            0.2148
+          ],
+          [
+            0.209,
+            0.1914
+          ],
+          [
+            0.1816,
+            0.1283
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1816,
+          "y": 0.0534,
+          "w": 0.126,
+          "h": 0.1621
+        },
+        "territory_area_px": 20421,
+        "visible_area_px": 5801,
+        "expansion_ratio": 3.52,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-lower-left-exposed-rock-face",
+      "kind": "module",
+      "label": "Lower-left exposed rock face",
+      "artifact_type": "angular-shore-rock-surface",
+      "bounds": {
+        "x": 0.002,
+        "y": 0.717,
+        "w": 0.231,
+        "h": 0.073
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.002,
+          0.717
+        ],
+        [
+          0.038,
+          0.727
+        ],
+        [
+          0.067,
+          0.724
+        ],
+        [
+          0.099,
+          0.732
+        ],
+        [
+          0.138,
+          0.735
+        ],
+        [
+          0.159,
+          0.746
+        ],
+        [
+          0.193,
+          0.749
+        ],
+        [
+          0.212,
+          0.761
+        ],
+        [
+          0.233,
+          0.777
+        ],
+        [
+          0.19,
+          0.784
+        ],
+        [
+          0.155,
+          0.778
+        ],
+        [
+          0.119,
+          0.79
+        ],
+        [
+          0.081,
+          0.787
+        ],
+        [
+          0.046,
+          0.779
+        ],
+        [
+          0.018,
+          0.782
+        ],
+        [
+          0.002,
+          0.771
+        ]
+      ],
+      "cluster_id": "birch-water-bank-section",
+      "mask_path": "/editions/2026-09-30-where-the-water-turns-v1/assets/masks/module-lower-left-exposed-rock-face.svg",
+      "source_binding_ids": [
+        "binding-module-lower-left-exposed-rock-face"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          180,
+          766
+        ],
+        "safe_stage_window_origin_px": [
+          209,
+          772
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.002,
+            0.717
+          ],
+          [
+            0.038,
+            0.727
+          ],
+          [
+            0.067,
+            0.724
+          ],
+          [
+            0.099,
+            0.732
+          ],
+          [
+            0.138,
+            0.735
+          ],
+          [
+            0.159,
+            0.746
+          ],
+          [
+            0.193,
+            0.749
+          ],
+          [
+            0.212,
+            0.761
+          ],
+          [
+            0.233,
+            0.777
+          ],
+          [
+            0.19,
+            0.784
+          ],
+          [
+            0.155,
+            0.778
+          ],
+          [
+            0.119,
+            0.79
+          ],
+          [
+            0.081,
+            0.787
+          ],
+          [
+            0.046,
+            0.779
+          ],
+          [
+            0.018,
+            0.782
+          ],
+          [
+            0.002,
+            0.771
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.6999
+          ],
+          [
+            0.1377,
+            0.7161
+          ],
+          [
+            0.1924,
+            0.7305
+          ],
+          [
+            0.2471,
+            0.7663
+          ],
+          [
+            0.1689,
+            0.7982
+          ],
+          [
+            0.1182,
+            0.8079
+          ],
+          [
+            0.0176,
+            0.8001
+          ],
+          [
+            0.0,
+            0.7884
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.6986,
+          "w": 0.248,
+          "h": 0.11
+        },
+        "territory_area_px": 28874,
+        "visible_area_px": 16448,
+        "expansion_ratio": 1.755,
+        "neighbors": [
+          {
+            "artifact_id": "module-shadowed-earth-cleft",
+            "shared_edge_px": 1145,
+            "direction": "down",
+            "distance_px": 199.41
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pink-flowers-at-the-right-bank-tip",
+      "kind": "module",
+      "label": "Pink flowers at the right bank tip",
+      "artifact_type": "flower-cluster-edge",
+      "bounds": {
+        "x": 0.874,
+        "y": 0.466,
+        "w": 0.126,
+        "h": 0.072
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.874,
+          0.504
+        ],
+        [
+          0.886,
+          0.489
+        ],
+        [
+          0.894,
+          0.49
+        ],
+        [
+          0.902,
+          0.472
+        ],
+        [
+          0.914,
+          0.49
+        ],
+        [
+          0.93,
+          0.483
+        ],
+        [
+          0.939,
+          0.466
+        ],
+        [
+          0.95,
+          0.483
+        ],
+        [
+          0.964,
+          0.468
+        ],
+        [
+          0.972,
+          0.487
+        ],
+        [
+          0.985,
+          0.478
+        ],
+        [
+          1,
+          0.482
+        ],
+        [
+          1,
+          0.524
+        ],
+        [
+          0.975,
+          0.517
+        ],
+        [
+          0.951,
+          0.526
+        ],
+        [
+          0.928,
+          0.524
+        ],
+        [
+          0.903,
+          0.538
+        ],
+        [
+          0.888,
+          0.519
+        ]
+      ],
+      "cluster_id": "birch-water-bank-section",
+      "mask_path": "/editions/2026-09-30-where-the-water-turns-v1/assets/masks/module-pink-flowers-at-the-right-bank-tip.svg",
+      "source_binding_ids": [
+        "binding-module-pink-flowers-at-the-right-bank-tip"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          508
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          514
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.874,
+            0.504
+          ],
+          [
+            0.886,
+            0.489
+          ],
+          [
+            0.894,
+            0.49
+          ],
+          [
+            0.902,
+            0.472
+          ],
+          [
+            0.914,
+            0.49
+          ],
+          [
+            0.93,
+            0.483
+          ],
+          [
+            0.939,
+            0.466
+          ],
+          [
+            0.95,
+            0.483
+          ],
+          [
+            0.964,
+            0.468
+          ],
+          [
+            0.972,
+            0.487
+          ],
+          [
+            0.985,
+            0.478
+          ],
+          [
+            1,
+            0.482
+          ],
+          [
+            1,
+            0.524
+          ],
+          [
+            0.975,
+            0.517
+          ],
+          [
+            0.951,
+            0.526
+          ],
+          [
+            0.928,
+            0.524
+          ],
+          [
+            0.903,
+            0.538
+          ],
+          [
+            0.888,
+            0.519
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8457,
+            0.5039
+          ],
+          [
+            0.874,
+            0.4714
+          ],
+          [
+            0.9014,
+            0.4531
+          ],
+          [
+            0.9385,
+            0.4473
+          ],
+          [
+            0.9639,
+            0.4492
+          ],
+          [
+            0.999,
+            0.4635
+          ],
+          [
+            0.999,
+            0.541
+          ],
+          [
+            0.9023,
+            0.556
+          ],
+          [
+            0.874,
+            0.5371
+          ],
+          [
+            0.8467,
+            0.5052
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8457,
+          "y": 0.4473,
+          "w": 0.1543,
+          "h": 0.1094
+        },
+        "territory_area_px": 18477,
+        "visible_area_px": 8416,
+        "expansion_ratio": 2.195,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-foreground-violet-flower-spikes",
+      "kind": "module",
+      "label": "Foreground violet flower spikes",
+      "artifact_type": "violet-flower-spike-cluster",
+      "bounds": {
+        "x": 0.899,
+        "y": 0.725,
+        "w": 0.10099999999999998,
+        "h": 0.14
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.899,
+          0.837
+        ],
+        [
+          0.907,
+          0.78
+        ],
+        [
+          0.919,
+          0.759
+        ],
+        [
+          0.927,
+          0.802
+        ],
+        [
+          0.937,
+          0.747
+        ],
+        [
+          0.943,
+          0.732
+        ],
+        [
+          0.952,
+          0.778
+        ],
+        [
+          0.962,
+          0.742
+        ],
+        [
+          0.969,
+          0.725
+        ],
+        [
+          0.978,
+          0.784
+        ],
+        [
+          0.988,
+          0.752
+        ],
+        [
+          1,
+          0.731
+        ],
+        [
+          1,
+          0.838
+        ],
+        [
+          0.98,
+          0.823
+        ],
+        [
+          0.963,
+          0.859
+        ],
+        [
+          0.946,
+          0.838
+        ],
+        [
+          0.923,
+          0.865
+        ],
+        [
+          0.911,
+          0.828
+        ]
+      ],
+      "cluster_id": "birch-water-bank-section",
+      "mask_path": "/editions/2026-09-30-where-the-water-turns-v1/assets/masks/module-foreground-violet-flower-spikes.svg",
+      "source_binding_ids": [
+        "binding-module-foreground-violet-flower-spikes"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          803
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          814
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.899,
+            0.837
+          ],
+          [
+            0.907,
+            0.78
+          ],
+          [
+            0.919,
+            0.759
+          ],
+          [
+            0.927,
+            0.802
+          ],
+          [
+            0.937,
+            0.747
+          ],
+          [
+            0.943,
+            0.732
+          ],
+          [
+            0.952,
+            0.778
+          ],
+          [
+            0.962,
+            0.742
+          ],
+          [
+            0.969,
+            0.725
+          ],
+          [
+            0.978,
+            0.784
+          ],
+          [
+            0.988,
+            0.752
+          ],
+          [
+            1,
+            0.731
+          ],
+          [
+            1,
+            0.838
+          ],
+          [
+            0.98,
+            0.823
+          ],
+          [
+            0.963,
+            0.859
+          ],
+          [
+            0.946,
+            0.838
+          ],
+          [
+            0.923,
+            0.865
+          ],
+          [
+            0.911,
+            0.828
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.8711,
+            0.8333
+          ],
+          [
+            0.8789,
+            0.7793
+          ],
+          [
+            0.915,
+            0.7318
+          ],
+          [
+            0.9424,
+            0.7135
+          ],
+          [
+            0.9688,
+            0.7064
+          ],
+          [
+            0.999,
+            0.7135
+          ],
+          [
+            0.999,
+            0.8555
+          ],
+          [
+            0.9629,
+            0.877
+          ],
+          [
+            0.9229,
+            0.8828
+          ],
+          [
+            0.8955,
+            0.8646
+          ],
+          [
+            0.8711,
+            0.8366
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.8711,
+          "y": 0.7064,
+          "w": 0.1289,
+          "h": 0.1771
+        },
+        "territory_area_px": 26914,
+        "visible_area_px": 13069,
+        "expansion_ratio": 2.059,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-shadowed-earth-cleft",
+      "kind": "module",
+      "label": "Shadowed earth cleft",
+      "artifact_type": "section-face-cleft",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "birch-water-bank-section",
+      "mask_path": "/editions/2026-09-30-where-the-water-turns-v1/assets/masks/module-shadowed-earth-cleft.svg",
+      "source_binding_ids": [
+        "binding-module-shadowed-earth-cleft"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0723,
+            0.8034
+          ],
+          [
+            0.2422,
+            0.7617
+          ],
+          [
+            0.2793,
+            0.7617
+          ],
+          [
+            0.3066,
+            0.7799
+          ],
+          [
+            0.3066,
+            0.9395
+          ],
+          [
+            0.2793,
+            0.9577
+          ],
+          [
+            0.0996,
+            0.9577
+          ],
+          [
+            0.0723,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0723,
+          "y": 0.7617,
+          "w": 0.2354,
+          "h": 0.1966
+        },
+        "territory_area_px": 62571,
+        "visible_area_px": 45510,
+        "expansion_ratio": 1.375,
+        "neighbors": [
+          {
+            "artifact_id": "module-lower-left-exposed-rock-face",
+            "shared_edge_px": 1145,
+            "direction": "up",
+            "distance_px": 199.41
+          }
+        ]
+      }
+    }
+  ]
+}

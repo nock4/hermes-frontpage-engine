@@ -1,0 +1,282 @@
+{
+  "interpretation_id": "interp-2026-09-30-where-the-water-turns-v1",
+  "edition_id": "2026-09-30-where-the-water-turns-v1",
+  "plate_read_timestamp": "2026-09-30T15:38:36.697Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A detailed, naturalistic lake scene with pale birches on the left, broken trunk reflections in cobalt water, rocky grass-covered banks, pink flowers on small right-hand promontories, and violet flower spikes in the lower-right foreground. Several useful visible anchors exist, but the planned sectional-bank aperture, porous pink earth lip, and isolated earth cleft are not clearly present. The image is painterly and spatially connected, but not minimal or strongly expressionist.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Electric garden calm, with the near shore opened to reveal its depth.",
+      "A detailed, naturalistic lake scene with pale birches on the left, broken trunk reflections in cobalt water, rocky grass-covered banks, pink flowers on small right-hand promontories, and violet flower spikes in the lower-right foreground. Several useful visible anchors exist, but the planned sectional-bank aperture, porous pink earth lip, and isolated earth cleft are not clearly present. The image is painterly and spatially connected, but not minimal or strongly expressionist.",
+      "connected-wetland",
+      "reflection-shear",
+      "scarred-birch"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Birch reflection opening",
+      "Foremost birch scar",
+      "Lower-left exposed rock face",
+      "Pink flowers at the right bank tip",
+      "Foreground violet flower spikes",
+      "Shadowed earth cleft"
+    ],
+    "dominant_surfaces": [
+      "water",
+      "paint"
+    ],
+    "dominant_structures": [
+      "birch-water-bank-section",
+      "One continuous reflective channel threading three unequal planted banks",
+      "A cropped pale-trunk cluster with horizontally interrupted reflections",
+      "A shallow exposed bank section following an irregular shoreline",
+      "Separated flower-bearing notches and combed grass fringes",
+      "One locally eroded granular lip",
+      "Broken pale birch reflections in the left-center water",
+      "Elongated dark-edged scar on the foremost birch"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: birch-water-bank-section.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-birch-reflection-opening",
+      "kind": "hero",
+      "type": "interrupted-reflection-patch",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.15,
+        "y": 0.468,
+        "w": 0.272,
+        "h": 0.225
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-foremost-birch-scar",
+      "kind": "hero",
+      "type": "bark-scar-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.215,
+        "y": 0.076,
+        "w": 0.059,
+        "h": 0.117
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-left-exposed-rock-face",
+      "kind": "module",
+      "type": "angular-shore-rock-surface",
+      "strength": 0.7961039999999999,
+      "bounds": {
+        "x": 0.002,
+        "y": 0.717,
+        "w": 0.231,
+        "h": 0.073
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pink-flowers-at-the-right-bank-tip",
+      "kind": "module",
+      "type": "flower-cluster-edge",
+      "strength": 0.767148,
+      "bounds": {
+        "x": 0.874,
+        "y": 0.466,
+        "w": 0.126,
+        "h": 0.072
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-foreground-violet-flower-spikes",
+      "kind": "module",
+      "type": "violet-flower-spike-cluster",
+      "strength": 0.733344,
+      "bounds": {
+        "x": 0.899,
+        "y": 0.725,
+        "w": 0.10099999999999998,
+        "h": 0.14
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shadowed-earth-cleft",
+      "kind": "module",
+      "type": "section-face-cleft",
+      "strength": 0.7000919999999999,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-birch-reflection-opening-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.15,
+        "y": 0.468,
+        "w": 0.272,
+        "h": 0.225
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-foremost-birch-scar-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.215,
+        "y": 0.076,
+        "w": 0.059,
+        "h": 0.117
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-lower-left-exposed-rock-face-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.002,
+        "y": 0.717,
+        "w": 0.231,
+        "h": 0.073
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pink-flowers-at-the-right-bank-tip-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.874,
+        "y": 0.466,
+        "w": 0.126,
+        "h": 0.072
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-foreground-violet-flower-spikes-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.899,
+        "y": 0.725,
+        "w": 0.10099999999999998,
+        "h": 0.14
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shadowed-earth-cleft-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

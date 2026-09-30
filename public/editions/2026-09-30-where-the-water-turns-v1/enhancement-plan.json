@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-09-30-where-the-water-turns-v1",
+  "edition_id": "2026-09-30-where-the-water-turns-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-09-30-where-the-water-turns-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-birch-reflection-opening",
+      "target_kind": "artifact",
+      "artifact_id": "hero-birch-reflection-opening",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (interrupted-reflection-patch) selected from interpretation."
+    },
+    {
+      "target_id": "hero-foremost-birch-scar",
+      "target_kind": "artifact",
+      "artifact_id": "hero-foremost-birch-scar",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bark-scar-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-lower-left-exposed-rock-face",
+      "target_kind": "artifact",
+      "artifact_id": "module-lower-left-exposed-rock-face",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (angular-shore-rock-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-pink-flowers-at-the-right-bank-tip",
+      "target_kind": "artifact",
+      "artifact_id": "module-pink-flowers-at-the-right-bank-tip",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (flower-cluster-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-foreground-violet-flower-spikes",
+      "target_kind": "artifact",
+      "artifact_id": "module-foreground-violet-flower-spikes",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (violet-flower-spike-cluster) selected from interpretation."
+    },
+    {
+      "target_id": "module-shadowed-earth-cleft",
+      "target_kind": "artifact",
+      "artifact_id": "module-shadowed-earth-cleft",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (section-face-cleft) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

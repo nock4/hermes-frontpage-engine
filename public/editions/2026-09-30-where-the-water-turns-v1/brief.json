@@ -1,0 +1,64 @@
+{
+  "brief_id": "brief-2026-09-30-where-the-water-turns-v1",
+  "date": "2026-09-30",
+  "signal_cluster_ids": [
+    "ecdf721d0f38",
+    "a56e75b92e63",
+    "e2221ea32f09",
+    "b22158abe8d4",
+    "4cccc4262179",
+    "04391c2b9cd9",
+    "d22fb1e9cf9c",
+    "c864abad74e9"
+  ],
+  "research_node_ids": [
+    "research-1-a9299079",
+    "research-2-ebecb436",
+    "research-3-8cc6bc15",
+    "research-4-fca4044c",
+    "research-5-b3fff861",
+    "research-6-623eee38",
+    "research-7-79675e93",
+    "research-8-5d608841",
+    "research-9-10acde16",
+    "research-10-25552e3e",
+    "research-11-efb5478c",
+    "research-12-117b9072"
+  ],
+  "mood": "Electric garden calm, with the near shore opened to reveal its depth.",
+  "material_language": [
+    "Glossy painted water with cobalt and lavender reflection zones",
+    "Chalk-pale bark interrupted by charcoal-brown scars",
+    "Combed grass over soft moss-green banks and exposed earth",
+    "Opaque orange, coral and violet flower daubs",
+    "Porous pink granulation confined to one sectional lip"
+  ],
+  "lighting": "Diffuse painterly daylight; luminous cobalt water and chalk trunks counterweight brown-green woodland shadows. Lavender-pink reflected light softens the quieter channel, while restrained occlusion beneath the near bank establishes sectional depth.",
+  "object_inventory": [
+    "One continuous reflective channel threading three unequal planted banks",
+    "A cropped pale-trunk cluster with horizontally interrupted reflections",
+    "A shallow exposed bank section following an irregular shoreline",
+    "Separated flower-bearing notches and combed grass fringes",
+    "One locally eroded granular lip"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 4,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "No stacked diptych, straight horizontal scene divider or reconstruction of either source landscape.",
+    "No legible words, logos, filenames, alphanumeric callouts, diagram labels or visible hotspot rings.",
+    "No source-summary cards, floating panels, software windows or debug chrome.",
+    "No desks, shelves, cabinets, checked cloth, masonry arches, towers or cozy-room staging.",
+    "No isolated sample slabs, rectangular display plinths, voxel stepping or game-board geometry.",
+    "No full-frame chromatic glitch, uniform neon outlines, torn-paper borders or unsupported condensation.",
+    "No invented visual traits for uninspected supporting media; supporting marks locate sources rather than illustrate their claims.",
+    "No duplicated source bindings or additional anchors made from alternate encodings of the same image.",
+    "No audio-derived geometry or sonic-analysis claims.",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects",
+    "no unrelated replacement image or metaphorical scene when a source image is attached"
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-09-30-where-the-water-turns-v1",
+  "generation": "cron-1790781135661-28146",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1536
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1790781135661-28146/2026-09-30-where-the-water-turns-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-birch-reflection-opening",
+      "visible_area_px": 61484,
+      "territory_area_px": 97537,
+      "hover_bounds": {
+        "x": 0.1162,
+        "y": 0.4453,
+        "w": 0.3398,
+        "h": 0.2702
+      },
+      "hover_polygon": [
+        [
+          0.1162,
+          0.4902
+        ],
+        [
+          0.1191,
+          0.4714
+        ],
+        [
+          0.1523,
+          0.4492
+        ],
+        [
+          0.2803,
+          0.4453
+        ],
+        [
+          0.4102,
+          0.4616
+        ],
+        [
+          0.4434,
+          0.4837
+        ],
+        [
+          0.4551,
+          0.5905
+        ],
+        [
+          0.4395,
+          0.6615
+        ],
+        [
+          0.4141,
+          0.6921
+        ],
+        [
+          0.3799,
+          0.7148
+        ],
+        [
+          0.2998,
+          0.6875
+        ],
+        [
+          0.1816,
+          0.612
+        ],
+        [
+          0.1436,
+          0.5677
+        ],
+        [
+          0.1162,
+          0.4935
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "hero-foremost-birch-scar",
+      "visible_area_px": 5801,
+      "territory_area_px": 20421,
+      "hover_bounds": {
+        "x": 0.1816,
+        "y": 0.0534,
+        "w": 0.126,
+        "h": 0.1621
+      },
+      "hover_polygon": [
+        [
+          0.1816,
+          0.127
+        ],
+        [
+          0.207,
+          0.0755
+        ],
+        [
+          0.2402,
+          0.0534
+        ],
+        [
+          0.2734,
+          0.0755
+        ],
+        [
+          0.3066,
+          0.1387
+        ],
+        [
+          0.29,
+          0.1797
+        ],
+        [
+          0.2432,
+          0.2148
+        ],
+        [
+          0.209,
+          0.1914
+        ],
+        [
+          0.1816,
+          0.1283
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-lower-left-exposed-rock-face",
+      "visible_area_px": 16448,
+      "territory_area_px": 28874,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.6986,
+        "w": 0.248,
+        "h": 0.11
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.6999
+        ],
+        [
+          0.1377,
+          0.7161
+        ],
+        [
+          0.1924,
+          0.7305
+        ],
+        [
+          0.2471,
+          0.7663
+        ],
+        [
+          0.1689,
+          0.7982
+        ],
+        [
+          0.1182,
+          0.8079
+        ],
+        [
+          0.0176,
+          0.8001
+        ],
+        [
+          0.0,
+          0.7884
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-shadowed-earth-cleft",
+          "shared_edge_px": 1145,
+          "direction": "down",
+          "distance_px": 199.41
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-pink-flowers-at-the-right-bank-tip",
+      "visible_area_px": 8416,
+      "territory_area_px": 18477,
+      "hover_bounds": {
+        "x": 0.8457,
+        "y": 0.4473,
+        "w": 0.1543,
+        "h": 0.1094
+      },
+      "hover_polygon": [
+        [
+          0.8457,
+          0.5039
+        ],
+        [
+          0.874,
+          0.4714
+        ],
+        [
+          0.9014,
+          0.4531
+        ],
+        [
+          0.9385,
+          0.4473
+        ],
+        [
+          0.9639,
+          0.4492
+        ],
+        [
+          0.999,
+          0.4635
+        ],
+        [
+          0.999,
+          0.541
+        ],
+        [
+          0.9023,
+          0.556
+        ],
+        [
+          0.874,
+          0.5371
+        ],
+        [
+          0.8467,
+          0.5052
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-foreground-violet-flower-spikes",
+      "visible_area_px": 13069,
+      "territory_area_px": 26914,
+      "hover_bounds": {
+        "x": 0.8711,
+        "y": 0.7064,
+        "w": 0.1289,
+        "h": 0.1771
+      },
+      "hover_polygon": [
+        [
+          0.8711,
+          0.8333
+        ],
+        [
+          0.8789,
+          0.7793
+        ],
+        [
+          0.915,
+          0.7318
+        ],
+        [
+          0.9424,
+          0.7135
+        ],
+        [
+          0.9688,
+          0.7064
+        ],
+        [
+          0.999,
+          0.7135
+        ],
+        [
+          0.999,
+          0.8555
+        ],
+        [
+          0.9629,
+          0.877
+        ],
+        [
+          0.9229,
+          0.8828
+        ],
+        [
+          0.8955,
+          0.8646
+        ],
+        [
+          0.8711,
+          0.8366
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-shadowed-earth-cleft",
+      "visible_area_px": 45510,
+      "territory_area_px": 62571,
+      "hover_bounds": {
+        "x": 0.0723,
+        "y": 0.7617,
+        "w": 0.2354,
+        "h": 0.1966
+      },
+      "hover_polygon": [
+        [
+          0.0723,
+          0.8034
+        ],
+        [
+          0.2422,
+          0.7617
+        ],
+        [
+          0.2793,
+          0.7617
+        ],
+        [
+          0.3066,
+          0.7799
+        ],
+        [
+          0.3066,
+          0.9395
+        ],
+        [
+          0.2793,
+          0.9577
+        ],
+        [
+          0.0996,
+          0.9577
+        ],
+        [
+          0.0723,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lower-left-exposed-rock-face",
+          "shared_edge_px": 1145,
+          "direction": "up",
+          "distance_px": 199.41
+        }
+      ]
+    }
+  ]
+}

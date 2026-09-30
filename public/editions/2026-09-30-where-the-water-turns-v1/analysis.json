@@ -1,0 +1,468 @@
+{
+  "analysis_id": "analysis-2026-09-30-where-the-water-turns-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A detailed, naturalistic lake scene with pale birches on the left, broken trunk reflections in cobalt water, rocky grass-covered banks, pink flowers on small right-hand promontories, and violet flower spikes in the lower-right foreground. Several useful visible anchors exist, but the planned sectional-bank aperture, porous pink earth lip, and isolated earth cleft are not clearly present. The image is painterly and spatially connected, but not minimal or strongly expressionist.",
+  "usable_surfaces": [
+    "Broken pale birch reflections in the left-center water",
+    "Elongated dark-edged scar on the foremost birch",
+    "Exposed angular rock face on the lower-left bank",
+    "Pink flower cluster at the tip of the middle-right bank",
+    "Violet flower spikes above the foreground shoreline",
+    "Dark undercut beneath the middle-right rocky promontory"
+  ],
+  "detected_objects": [
+    {
+      "label": "Birch reflection opening",
+      "artifact_type": "interrupted-reflection-patch",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.15,
+        "y": 0.468,
+        "w": 0.272,
+        "h": 0.225
+      },
+      "polygon": [
+        [
+          0.153,
+          0.472
+        ],
+        [
+          0.215,
+          0.481
+        ],
+        [
+          0.281,
+          0.468
+        ],
+        [
+          0.349,
+          0.482
+        ],
+        [
+          0.411,
+          0.484
+        ],
+        [
+          0.382,
+          0.514
+        ],
+        [
+          0.418,
+          0.537
+        ],
+        [
+          0.388,
+          0.557
+        ],
+        [
+          0.422,
+          0.591
+        ],
+        [
+          0.398,
+          0.627
+        ],
+        [
+          0.407,
+          0.662
+        ],
+        [
+          0.38,
+          0.693
+        ],
+        [
+          0.3,
+          0.666
+        ],
+        [
+          0.283,
+          0.638
+        ],
+        [
+          0.216,
+          0.613
+        ],
+        [
+          0.177,
+          0.568
+        ],
+        [
+          0.183,
+          0.521
+        ],
+        [
+          0.15,
+          0.494
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "A contiguous passage of pale, laterally displaced trunk reflections and intervening cobalt water sits below the left birch group. Ripple breaks create irregular edges rather than an enclosed opening. This is the closest visible correspondence to the planned reflection anchor."
+    },
+    {
+      "label": "Foremost birch scar",
+      "artifact_type": "bark-scar-surface",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.215,
+        "y": 0.076,
+        "w": 0.059,
+        "h": 0.117
+      },
+      "polygon": [
+        [
+          0.241,
+          0.076
+        ],
+        [
+          0.251,
+          0.091
+        ],
+        [
+          0.257,
+          0.108
+        ],
+        [
+          0.269,
+          0.122
+        ],
+        [
+          0.274,
+          0.14
+        ],
+        [
+          0.26,
+          0.157
+        ],
+        [
+          0.258,
+          0.179
+        ],
+        [
+          0.244,
+          0.193
+        ],
+        [
+          0.235,
+          0.171
+        ],
+        [
+          0.225,
+          0.161
+        ],
+        [
+          0.227,
+          0.144
+        ],
+        [
+          0.215,
+          0.128
+        ],
+        [
+          0.226,
+          0.109
+        ],
+        [
+          0.231,
+          0.089
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "The thick left birch has a conspicuous elongated bark wound with dark margins, a muted violet interior, and a rust-colored lower tip. It is a real discrete scar, although it is higher on the visible trunk and larger than the planned compact lower-trunk charcoal scar."
+    },
+    {
+      "label": "Lower-left exposed rock face",
+      "artifact_type": "angular-shore-rock-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.002,
+        "y": 0.717,
+        "w": 0.231,
+        "h": 0.073
+      },
+      "polygon": [
+        [
+          0.002,
+          0.717
+        ],
+        [
+          0.038,
+          0.727
+        ],
+        [
+          0.067,
+          0.724
+        ],
+        [
+          0.099,
+          0.732
+        ],
+        [
+          0.138,
+          0.735
+        ],
+        [
+          0.159,
+          0.746
+        ],
+        [
+          0.193,
+          0.749
+        ],
+        [
+          0.212,
+          0.761
+        ],
+        [
+          0.233,
+          0.777
+        ],
+        [
+          0.19,
+          0.784
+        ],
+        [
+          0.155,
+          0.778
+        ],
+        [
+          0.119,
+          0.79
+        ],
+        [
+          0.081,
+          0.787
+        ],
+        [
+          0.046,
+          0.779
+        ],
+        [
+          0.018,
+          0.782
+        ],
+        [
+          0.002,
+          0.771
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A faceted pale-gray and ochre rock face projects into the lake from the lower-left bank, bounded above by vegetation and below by a dark waterline. This is a usable physical surface, not the planned expansive grass-fringed earth aperture; no such aperture is clearly visible."
+    },
+    {
+      "label": "Pink flowers at the right bank tip",
+      "artifact_type": "flower-cluster-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.874,
+        "y": 0.466,
+        "w": 0.126,
+        "h": 0.072
+      },
+      "polygon": [
+        [
+          0.874,
+          0.504
+        ],
+        [
+          0.886,
+          0.489
+        ],
+        [
+          0.894,
+          0.49
+        ],
+        [
+          0.902,
+          0.472
+        ],
+        [
+          0.914,
+          0.49
+        ],
+        [
+          0.93,
+          0.483
+        ],
+        [
+          0.939,
+          0.466
+        ],
+        [
+          0.95,
+          0.483
+        ],
+        [
+          0.964,
+          0.468
+        ],
+        [
+          0.972,
+          0.487
+        ],
+        [
+          0.985,
+          0.478
+        ],
+        [
+          1,
+          0.482
+        ],
+        [
+          1,
+          0.524
+        ],
+        [
+          0.975,
+          0.517
+        ],
+        [
+          0.951,
+          0.526
+        ],
+        [
+          0.928,
+          0.524
+        ],
+        [
+          0.903,
+          0.538
+        ],
+        [
+          0.888,
+          0.519
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "Small bright pink blossoms and their stems form an irregular cluster above the right-edge middle-distance bank. These are visibly flowers, not a porous pink interruption in an exposed sectional lip. The polygon follows this alternative visible anchor without asserting the planned granular feature exists."
+    },
+    {
+      "label": "Foreground violet flower spikes",
+      "artifact_type": "violet-flower-spike-cluster",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.899,
+        "y": 0.725,
+        "w": 0.10099999999999998,
+        "h": 0.14
+      },
+      "polygon": [
+        [
+          0.899,
+          0.837
+        ],
+        [
+          0.907,
+          0.78
+        ],
+        [
+          0.919,
+          0.759
+        ],
+        [
+          0.927,
+          0.802
+        ],
+        [
+          0.937,
+          0.747
+        ],
+        [
+          0.943,
+          0.732
+        ],
+        [
+          0.952,
+          0.778
+        ],
+        [
+          0.962,
+          0.742
+        ],
+        [
+          0.969,
+          0.725
+        ],
+        [
+          0.978,
+          0.784
+        ],
+        [
+          0.988,
+          0.752
+        ],
+        [
+          1,
+          0.731
+        ],
+        [
+          1,
+          0.838
+        ],
+        [
+          0.98,
+          0.823
+        ],
+        [
+          0.963,
+          0.859
+        ],
+        [
+          0.946,
+          0.838
+        ],
+        [
+          0.923,
+          0.865
+        ],
+        [
+          0.911,
+          0.828
+        ]
+      ],
+      "confidence": 0.85,
+      "visual_evidence": "Tall violet spikes rise from the lower-right shoreline against pink-blue water. Their tips and stems provide a visible clustered gesture. They are on the foreground bank, not a violet-accented notch on the smaller middle-distance bank, so the planned notch is not confirmed."
+    },
+    {
+      "label": "Shadowed earth cleft",
+      "artifact_type": "section-face-cleft",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 5,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.108,
+    "rationale": "Approximate visual coverage only. Open water creates a coherent central field, but the image contains dense foliage, many bark marks, individual flowers, faceted rocks, distant trees, and extensive high-frequency reflections. It reads as a richly illustrated naturalistic landscape rather than a minimal expressionist plate. Six distinct visible territories are available, but several are alternatives to missing planned features and should not be treated as confirmed source bindings."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-09-30-where-the-water-turns-v1"
+}
