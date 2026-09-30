@@ -4,6 +4,7 @@ import path from 'node:path'
 import { openAiJson } from './openai-json.mjs'
 import { measureSourceImage, withoutSourceUiCues } from './source-image-geometry.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
+import { isDocumentationUiSource } from './source-selection-policy.mjs'
 import { photoGrammarRule, recompositionRule } from './source-recomposition.mjs'
 
 const literalCopyRule = 'Do not reproduce logos, legible text, identifiable subjects, or page chrome from this source image.'
@@ -83,7 +84,15 @@ function roleForIndex(index) {
   return 'supporting plate seed'
 }
 
+function hasVisionFacts(fingerprint = {}) {
+  return !fingerprint.vision_error && Boolean(cleanText(fingerprint.visual_summary))
+    && Array.isArray(fingerprint.preserve_cues)
+    && withoutSourceUiCues(arrayOfStrings(fingerprint.preserve_cues)).length > 0
+}
+
 export function isLowFertilitySourceFingerprint(fingerprint = {}) {
+  if (!hasVisionFacts(fingerprint)) return true
+  if (isDocumentationUiSource(fingerprint)) return true
   const url = String(fingerprint.image_url || '').toLowerCase()
   const width = Number(fingerprint.width || 0)
   const height = Number(fingerprint.height || 0)
@@ -107,6 +116,7 @@ export function isLowFertilitySourceFingerprint(fingerprint = {}) {
 }
 
 export function isLowFertilitySourceImageCandidate(candidate = {}) {
+  if (isDocumentationUiSource(candidate)) return true
   const url = String(candidate.image_url || '').toLowerCase()
   const text = [candidate.title, candidate.caption, candidate.visual_reason, candidate.lineage, url].filter(Boolean).join(' ').toLowerCase()
   const width = Number(candidate.width || 0)
@@ -246,9 +256,26 @@ export function buildSourceImageContactSheetSvg(fingerprints = []) {
 `
 }
 
+export function screenSourceImageMaterial(selectedImageMaterial = [], fingerprints = []) {
+  const accepted = fingerprints.filter((fingerprint) => !isLowFertilitySourceFingerprint(fingerprint)
+    && selectedImageMaterial.some((candidate) => candidate.image_url === fingerprint.image_url))
+  const rejected = fingerprints.filter((fingerprint) => !accepted.includes(fingerprint))
+  if (selectedImageMaterial.length && !accepted.length
+    && (!fingerprints.length || fingerprints.some((fingerprint) => !hasVisionFacts(fingerprint)))) {
+    throw new Error('Source image vision failed or returned no usable preserve cues; retry source research before image generation. See source-image-fingerprints.json.')
+  }
+  return {
+    selected_image_material: accepted.map((fingerprint) => selectedImageMaterial.find((candidate) => candidate.image_url === fingerprint.image_url)),
+    source_image_fingerprints: accepted.map((fingerprint, index) => ({ ...fingerprint, source_role: roleForIndex(index) })),
+    rejected_image_fingerprints: rejected,
+  }
+}
+
 export async function writeSourceImageArtifacts(runDir, selectedImageMaterial = [], options = {}) {
   const baseFingerprints = buildSourceImageFingerprints(selectedImageMaterial)
-  const fingerprints = await enrichSourceImageFingerprints(selectedImageMaterial, baseFingerprints, { measureImage: measureSourceImage, ...options })
+  // Reordering already-inspected material must not trigger a second vision call
+  // whose failure could replace the evidence that justified its promotion.
+  const fingerprints = options.fingerprints ?? await enrichSourceImageFingerprints(selectedImageMaterial, baseFingerprints, { measureImage: measureSourceImage, ...options })
   const fingerprintPath = path.join(runDir, 'source-image-fingerprints.json')
   const contactSheetPath = path.join(runDir, 'source-image-contact-sheet.svg')
   await fs.writeFile(fingerprintPath, `${JSON.stringify({ generated_at: new Date().toISOString(), fingerprints }, null, 2)}\n`, 'utf8')

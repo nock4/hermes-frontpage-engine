@@ -7,6 +7,7 @@ describe('source contract', () => {
     const contract = buildSourceContract({
       sourceImageFingerprints: [{
         title: 'Sky Box',
+        visual_summary: 'Square light study with vertical shafts and lower flare nodes',
         image_url: 'https://assets.example/sky-box.jpg',
         visual_fertility: 'high',
         preserve_cues: ['square crop', 'vertical light shafts', 'lower flare nodes', 'horizontal beam'],
@@ -32,6 +33,7 @@ describe('source contract', () => {
       sourceImageMode: 'dominant-source-image',
       sourceImageFingerprints: [{
         title: 'Dominant seed',
+        visual_summary: 'Square image with a left hand gesture',
         image_url: 'https://assets.example/source.jpg',
         visual_fertility: 'high',
         preserve_cues: ['square crop', 'left hand gesture'],
@@ -62,6 +64,7 @@ describe('source contract', () => {
     const contract = buildSourceContract({
       sourceImageFingerprints: [{
         title: 'Van Gogh chair',
+        visual_summary: 'Yellow-green wooden chair with a woven seat against a turquoise wall',
         image_url: 'https://uploads0.wikiart.org/images/vincent-van-gogh/van-gogh-s-chair-1889.jpg!Large.jpg',
         visual_fertility: 'high',
         preserve_cues: ['Central yellow-green wooden chair', 'rush woven seat', 'turquoise wall field'],
@@ -83,6 +86,7 @@ describe('source contract', () => {
     const contract = buildSourceContract({
       sourceImageFingerprints: [{
         title: 'Environment sleeve',
+        visual_summary: 'Square cover showing a diagonal concrete bridge slab against the sky',
         image_url: 'https://img.youtube.com/vi/BPykMwQ8hBE/hqdefault.jpg',
         visual_fertility: 'high',
         preserve_cues: ['centered square cover panel', 'black margins', 'diagonal concrete bridge slab'],
@@ -103,6 +107,7 @@ describe('source contract', () => {
     const contract = buildSourceContract({
       sourceImageFingerprints: [{
         title: 'Interior source',
+        visual_summary: 'Wide interior room with a left doorway and right seated figure',
         image_url: 'https://assets.example/interior.jpg',
         preserve_cues: ['wide room framing', 'left doorway', 'right seated figure'],
       }],

@@ -15,6 +15,25 @@ function recentKeysFor(...urls) {
 }
 
 describe('source decision gates', () => {
+  it('rejects documentation UI even with an image and gallery wording', () => {
+    expect(decideAnchorEligibility({ anchorSource: {
+      url: 'https://component.gallery/', title: 'Component Gallery', image_url: freshImageUrl,
+    } })).toMatchObject({ decision: 'reject', reason_code: 'documentation_ui_material' })
+  })
+
+  it('does not count an unverified proposed visual anchor as a successful promotion', () => {
+    expect(decideVisualAnchorAction({
+      sourceImageMode: 'skipped-no-valid-dominant-source-image',
+      promotedVisualAnchor: { reason: 'proposed before vision' },
+    })).toMatchObject({ decision: 'block_and_rerun', reason_code: 'unverified_visual_anchor' })
+  })
+
+  it('reports a verified promoted visual anchor separately from thesis-anchor media', () => {
+    expect(decideVisualAnchorAction({
+      sourceImageMode: 'dominant-source-image',
+      promotedVisualAnchor: { reason: 'fresh artwork passed vision' },
+    })).toMatchObject({ decision: 'promote_visual_anchor', reason_code: 'fresh_promoted_visual_anchor' })
+  })
   it('rejects an anchor whose attached image is already in the archive ledger', () => {
     const decision = decideAnchorEligibility({
       anchorSource: {

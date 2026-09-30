@@ -5,6 +5,7 @@ import { canonicalizeSourceUrl, extractUrls, hostnameForUrl, isAllowedSourceUrl,
 import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl } from './source-image-network-policy.mjs'
 import {
   aestheticSignalScore,
+  isDocumentationUiSource,
   isLowValueVisualImage,
   sourceContentKey,
   sourceContentScore,
@@ -115,6 +116,7 @@ function anchorSelectionEntry(source, { recentSourceKeys = new Set(), signalHarv
 export function selectAnchorSource(evidenceSources, { recentSourceKeys = new Set(), signalHarvest = null } = {}) {
   const ranked = [...(evidenceSources || [])]
     .filter((source) => source?.url && !recentSourceKeys.has(sourceContentKey(source)))
+    .filter((source) => !isDocumentationUiSource(source))
     .filter((source) => sourceHasRenderableCardSurface(source, signalHarvest))
     .map((source) => anchorSelectionEntry(source, { recentSourceKeys, signalHarvest }))
     .filter((entry) => Number.isFinite(entry.score))

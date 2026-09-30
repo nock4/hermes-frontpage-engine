@@ -65,6 +65,17 @@ function noteSelectionKey(record, sourceKey) {
   return noteKey
 }
 
+// Documentation screenshots are supporting references, not artwork. Inspect
+// parent provenance and saved-link text too: opaque CDN assets lose this context.
+export function isDocumentationUiSource(source = {}) {
+  const text = [source.url, source.source_url, source.final_url, source.page_url,
+    source.image_url, source.title, source.description, source.visible_text,
+    source.note_title, source.note_excerpt, source.caption, source.visual_reason,
+    source.visual_summary].filter(Boolean).join(' ').toLowerCase()
+  return /\bcomponent\.gallery\b/.test(text)
+    || /\b(?:developer[- ]documentation|documentation (?:page|screenshot)|(?:ui|user interface|web) components?|component librar(?:y|ies)|design[- ]system (?:components?|librar(?:y|ies))|(?:ui|interface) screenshots?)\b/.test(text)
+}
+
 export function aestheticSignalScore(candidate = {}) {
   const contentText = [
     candidate.url,
@@ -236,6 +247,7 @@ export function isDirectRasterImageUrl(sourceUrl) {
 }
 
 export function visualReferenceScore(source, recentSourceKeys = new Set()) {
+  if (isDocumentationUiSource(source)) return Number.NEGATIVE_INFINITY
   if (isAiToolingContentSource(source)) return Number.NEGATIVE_INFINITY
   if (isLowValueVisualImage(source?.image_url)) return Number.NEGATIVE_INFINITY
   let score = scoreVisualCandidate(source)

@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { isAiToolingContentSource, sourceContentKey } from './source-selection-policy.mjs'
+import { isAiToolingContentSource, isDocumentationUiSource, sourceContentKey } from './source-selection-policy.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 
 const SOURCE_DECISION_SCHEMA_VERSION = 1
@@ -92,6 +92,15 @@ export function decideAnchorEligibility({ anchorSource = null, recentSourceKeys 
     })
   }
 
+  if (isDocumentationUiSource(anchorSource)) {
+    return decision({
+      decision: 'reject',
+      reason_code: 'documentation_ui_material',
+      confidence: 0.94,
+      evidence: ['documentation or component-library UI is not a creative image-led anchor'],
+    })
+  }
+
   if (looksImageLed(anchorSource)) {
     return decision({
       decision: 'accept',
@@ -126,8 +135,8 @@ export function decideVisualAnchorAction({
 
   if (sourceImageMode === 'dominant-source-image') {
     return decision({
-      decision: 'use_thesis_anchor_image',
-      reason_code: 'valid_dominant_source_image',
+      decision: promotedVisualAnchor ? 'promote_visual_anchor' : 'use_thesis_anchor_image',
+      reason_code: promotedVisualAnchor ? 'fresh_promoted_visual_anchor' : 'valid_dominant_source_image',
       confidence: 0.86,
       evidence: ['a dominant source image survived screening and fingerprinting'],
     })
@@ -135,10 +144,10 @@ export function decideVisualAnchorAction({
 
   if (promotedVisualAnchor) {
     return decision({
-      decision: 'promote_visual_anchor',
-      reason_code: 'fresh_promoted_visual_anchor',
-      confidence: 0.82,
-      evidence: [promotedVisualAnchor.reason || 'a nearby fresh image-bearing source was promoted'],
+      decision: 'block_and_rerun',
+      reason_code: 'unverified_visual_anchor',
+      confidence: 0.98,
+      evidence: ['a proposed visual anchor did not survive source-image screening'],
     })
   }
 

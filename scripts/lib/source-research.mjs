@@ -13,12 +13,13 @@ import { buildJevDecisionPayload, callJevDecisionWithFallback, shouldUseJevDecis
 import { openAiJson } from './openai-json.mjs'
 import { buildSourceDecisionAudit, decideAnchorEligibility, decideVisualAnchorAction, writeSourceDecisionAudit } from './source-decision-gates.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
-import { isLowFertilitySourceFingerprint, isLowFertilitySourceImageCandidate, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
+import { isLowFertilitySourceFingerprint, isLowFertilitySourceImageCandidate, screenSourceImageMaterial, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 import {
   aestheticSignalScore,
   isAiToolingContentSource,
+  isDocumentationUiSource,
   isAllowedInspectedSource,
   isLowValueVisualImage,
   selectContentSources,
@@ -302,8 +303,16 @@ export function buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
 } = {}) {
   if (isExactAnchorOverride(inspirationOverride)) return null
   if (!discoveredVisualReference?.image_url) return null
+  if (isDocumentationUiSource(discoveredVisualReference)) return null
+  // A derived raster must not resurrect a rejected parent material family.
+  const rejectedImages = [
+    ...(imageSourceMaterial.rejected_reused_image_material || []),
+    ...(imageSourceMaterial.rejected_ai_tooling_image_material || []),
+  ]
+  if (rejectedImages.some((entry) => canonicalizeSourceUrl(entry.image_url)
+    === canonicalizeSourceUrl(discoveredVisualReference.image_url))) return null
   const candidate = {
-    page_url: discoveredVisualReference.url || discoveredVisualReference.source_url || discoveredVisualReference.final_url || null,
+    page_url: discoveredVisualReference.page_url || discoveredVisualReference.source_url || discoveredVisualReference.url || discoveredVisualReference.final_url || null,
     image_url: discoveredVisualReference.image_url,
     title: getSourceDisplayTitle(discoveredVisualReference, 'Promoted visual anchor'),
     caption: discoveredVisualReference.description || discoveredVisualReference.title || '',
@@ -905,37 +914,29 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
   let sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
   let lowFertilityModeReason = imageSourceMaterial.low_fertility_anchor_demoted?.reason || null
-  const fertileIndex = sourceImageArtifacts.source_image_fingerprints.findIndex((fingerprint) => !isLowFertilitySourceFingerprint(fingerprint))
-  if (fertileIndex > 0) {
-    selectedImageMaterial = [
-      selectedImageMaterial[fertileIndex],
-      ...selectedImageMaterial.slice(0, fertileIndex),
-      ...selectedImageMaterial.slice(fertileIndex + 1),
-    ].filter(Boolean)
+  const screenedMaterial = screenSourceImageMaterial(selectedImageMaterial, sourceImageArtifacts.source_image_fingerprints)
+  if (screenedMaterial.rejected_image_fingerprints.length) {
+    const demotedTitle = sourceImageArtifacts.source_image_fingerprints[0]?.title || selectedImageMaterial[0]?.title || null
+    selectedImageMaterial = screenedMaterial.selected_image_material
+    lowFertilityModeReason = selectedImageMaterial.length
+      ? 'Filtered unverified or low-fertility image material; retained only vision-verified fertile plate seeds.'
+      : 'All inspected selected image material was low-fertility after vision fingerprinting; switching to source-field mode instead of preserving sterile UI/page chrome or copy-prone image seeds.'
+    // A proposed promotion is not evidence if vision rejected its image.
+    if (!selectedImageMaterial.length) promotedVisualAnchorRelationship = null
     imageSourceMaterial = {
       ...imageSourceMaterial,
       selected_image_material: selectedImageMaterial,
-      low_fertility_anchor_demoted: {
-        demoted_title: sourceImageArtifacts.source_image_fingerprints[0]?.title || null,
-        promoted_title: sourceImageArtifacts.source_image_fingerprints[fertileIndex]?.title || null,
-        reason: 'Primary image material was a low-fertility text/wordmark/blank-field surface; promoted the first visually fertile source image for the plate seed.',
-      },
-    }
-    sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
-  } else if (sourceImageArtifacts.source_image_fingerprints.length && fertileIndex < 0) {
-    const demotedTitle = sourceImageArtifacts.source_image_fingerprints[0]?.title || selectedImageMaterial[0]?.title || selectedImageMaterial[0]?.caption || selectedImageMaterial[0]?.image_url || null
-    lowFertilityModeReason = 'All inspected selected image material was low-fertility after vision fingerprinting; switching to source-field mode instead of preserving sterile UI/page chrome or copy-prone image seeds.'
-    selectedImageMaterial = []
-    imageSourceMaterial = {
-      ...imageSourceMaterial,
-      selected_image_material: [],
+      promoted_visual_anchor: promotedVisualAnchorRelationship,
+      rejected_image_fingerprints: screenedMaterial.rejected_image_fingerprints,
       low_fertility_anchor_demoted: {
         demoted_title: demotedTitle,
-        promoted_title: null,
+        promoted_title: selectedImageMaterial[0]?.title || null,
         reason: lowFertilityModeReason,
       },
     }
-    sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial)
+    sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial, {
+      fingerprints: screenedMaterial.source_image_fingerprints,
+    })
   }
   const sourceImageMode = sourceImageArtifacts.source_image_fingerprints.some((fingerprint) => fingerprint?.image_url && !isLowFertilitySourceFingerprint(fingerprint))
     ? 'dominant-source-image'
@@ -989,9 +990,13 @@ export async function inspectSourceCandidates(signalHarvest, {
         visual_reference_score: selectedImageMaterial[0].score || null,
       }
     : null
+  const rejectedReference = screenedMaterial.rejected_image_fingerprints.some((fingerprint) => fingerprint.image_url === discoveredVisualReference?.image_url)
+  const safeDiscoveredVisualReference = !rejectedReference && buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
+    imageSourceMaterial, recentSourceKeys,
+  }) ? discoveredVisualReference : null
   const visualReference = inspirationOverride
-    ? buildInspirationOverrideVisualReference(inspirationOverride, { fallback: imageMaterialReference || discoveredVisualReference })
-    : imageMaterialReference || discoveredVisualReference
+    ? buildInspirationOverrideVisualReference(inspirationOverride, { fallback: imageMaterialReference || safeDiscoveredVisualReference })
+    : imageMaterialReference || safeDiscoveredVisualReference
   const sourceFloorDiagnostics = buildSourceFloorDiagnostics({
     inspected,
     fetchEvidence,
