@@ -343,12 +343,18 @@ export function buildSourceFidelityRecoveryPayload(payload, audit, attempt = 1) 
   const risks = Array.isArray(audit?.drift_risks) ? audit.drift_risks : []
   const blockers = Array.isArray(audit?.blockers) ? audit.blockers : []
   const retained = Array.isArray(audit?.retained_critical_elements) ? audit.retained_critical_elements : []
+  const recoveryCues = uniqueStrings([
+    ...missing.map((cue) => `Recover missing source cue: ${cue}`),
+    ...risks.map((cue) => `Avoid drift: ${cue}`),
+    ...retained.map((cue) => `Keep retained source cue: ${cue}`),
+  ], 36)
   // An overcopy verdict needs a new structure, not another instruction to restore
   // the same lineup. Do not recycle the failed scene paragraph or keep-list.
   const overcopy = /anchor copied without edition transformation|source image recreated instead of borrowed|overcopy|near[- ]?copy/i.test([...blockers, ...risks].join(' '))
   if (overcopy) {
     return {
       ...payload,
+      source_fidelity_recovery_cues: recoveryCues,
       source_reference_preserve: uniqueStrings([
         photoGrammarRule,
         ...recomposeSourceCues(payload?.source_image_fingerprints?.[0]?.preserve_cues || []),
@@ -390,6 +396,7 @@ export function buildSourceFidelityRecoveryPayload(payload, audit, attempt = 1) 
 
   return {
     ...payload,
+    source_fidelity_recovery_cues: recoveryCues,
     source_reference_preserve: sourceReferencePreserve,
     negative_constraints: negativeConstraints,
     scene_prompt: scenePrompt,

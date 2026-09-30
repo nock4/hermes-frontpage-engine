@@ -4,6 +4,7 @@ import { createGeneratePlateStep } from '../../scripts/pipeline/generate-plate.m
 for (const [description, fingerprint, expected] of [
   ['landscape with square paving', { width: 1200, height: 675, visual_summary: 'square posts and square paving' }, '1536x1024'],
   ['unknown aspect with square objects', { visual_summary: 'square posts' }, '1536x1024'],
+  ['measured portrait shore', { width: 900, height: 1200 }, '1024x1536'],
   ['measured square', { width: 900, height: 900 }, '1024x1024'],
 ]) {
   test(`plate generation uses measured geometry: ${description}`, async () => {

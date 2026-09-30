@@ -7,6 +7,7 @@ function sourceLockedImageSize(payload, fallbackSize) {
   const height = Number(fingerprints[0]?.height)
   // Object adjectives (square paving/posts) do not describe image geometry.
   if (width > 0 && height > 0 && Math.abs(width - height) / Math.max(width, height) < 0.08) return '1024x1024'
+  if (width > 0 && height > 0) return height > width ? '1024x1536' : '1536x1024'
   return fallbackSize
 }
 

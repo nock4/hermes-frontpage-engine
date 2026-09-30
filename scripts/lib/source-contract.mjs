@@ -16,6 +16,14 @@ function strings(values, limit = 8) {
   return result
 }
 
+// A source's explicit connected-space move outranks a sampled collage posture.
+export function connectedSourceComposition(source = {}) {
+  const moves = source.composition_moves || []
+  return moves.some((move) => /\b(?:one|single|connected|continuous)\b.{0,80}\b(?:shore|waterscape|water field|channel|landscape space)\b/i.test(move))
+    ? moves.join(' ')
+    : ''
+}
+
 export function normalizeContractMode(sourceImageMode, { dominant = null, lowFertility = false } = {}) {
   if (sourceImageMode === 'dominant-source-image') return 'source-image'
   if (sourceImageMode === 'source-image') return 'source-image'
@@ -60,8 +68,9 @@ export function buildSourceContract({
     'change at least two of arrangement, scale, object count, crop, surface state, or spatial logic',
     recompositionRule,
     'make source-window seams/apertures/marks edition-native rather than pasted annotations',
+    ...((dominant.composition_moves || []).slice(0, 4)),
     platePosture?.plate_posture ? `subordinate ${platePosture.plate_posture} posture to source identity` : '',
-  ], 5)
+  ], 8)
   const forbiddenDrift = strings([
     'same palette but not the same source',
     'lost crop/framing or source aspect when that destroys identity',

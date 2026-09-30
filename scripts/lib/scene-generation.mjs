@@ -12,7 +12,7 @@ import { sourceContentKey } from './source-selection-policy.mjs'
 import { getResearchContentSources, } from './source-research.mjs'
 import { inferVisualDirection, selectFallbackMotifTerms } from './visual-direction.mjs'
 import { slugify, uniqueNonEmpty } from './string-utils.mjs'
-import { assertSourceContractPromptSafe } from './source-contract.mjs'
+import { assertSourceContractPromptSafe, connectedSourceComposition } from './source-contract.mjs'
 import { isRepresentationalSource, recomposeSourceCues, recompositionRule, photoGrammarRule } from './source-recomposition.mjs'
 
 const hermesImageGenerateScript = fileURLToPath(new URL('./hermes_image_generate.py', import.meta.url))
@@ -875,6 +875,7 @@ function joinLimited(values, fallback, limit = 4) {
 }
 
 function sourceReferencePreserveText(payload, fallback) {
+  if (payload.source_fidelity_recovery_cues?.length) return fallback
   const preserve = withoutSourceUiCues(normalizeStringArray(payload.source_reference_preserve, []))
     .slice(0, 5)
     .map((cue) => compactText(cue, 95))
@@ -911,7 +912,7 @@ function describeSourceAudioMaterial(material = {}) {
 
 function describeSourceContract(contract = {}, representational = false) {
   const preserve = joinLimited(withoutSourceUiCues(contract.must_preserve), '', 8)
-  const transform = joinLimited(contract.must_transform, '', 4)
+  const transform = joinLimited(contract.must_transform, '', 8)
   const drift = joinLimited(contract.forbidden_drift, '', 6)
   const overcopy = joinLimited(contract.forbidden_overcopy, '', 5)
   const preserveText = String(preserve || '').toLowerCase()
@@ -997,6 +998,28 @@ function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirecti
 }
 
 export function buildSceneImagePrompt(payload) {
+  const dominant = payload.source_image_fingerprints?.[0]
+  const connectedComposition = connectedSourceComposition(dominant)
+  if (connectedComposition) {
+    // Remove conflicting positive directions, rather than appending a ban after
+    // still commanding paper panels in composition, lighting and anchor surfaces.
+    payload = {
+      ...payload,
+      scene_prompt: connectedComposition,
+      plate_posture: { plate_posture: 'source-led connected space' },
+      effect_direction: null,
+      material_language: dominant.surface_cues,
+      lighting: 'source-native light across a continuous spatial field',
+      visual_direction: {
+        ...payload.visual_direction,
+        composition_archetype: 'connected source-native space',
+        camera_plate_grammar: 'full-bleed spatial field, no paper-panel conversion',
+        visual_compositional_moves: dominant.composition_moves,
+        palette_profile: (dominant.palette_cues || []).join('; '),
+        effect_direction: null,
+      },
+    }
+  }
   const visualDirection = payload.visual_direction || {}
   const platePosture = payload.plate_posture || visualDirection.plate_posture || null
   const artifacts = Array.isArray(payload.artifacts) ? payload.artifacts : []
@@ -1029,7 +1052,7 @@ export function buildSceneImagePrompt(payload) {
     : ''
   const sourceAspectGuard = sourceImageAspectGuard(sourceImageFingerprints, preserveText)
   const recoveryTransformGuard = process.env.DFE_SOURCE_PRESERVE_PLATE === '1'
-    ? 'RECOVERY TRANSFORM: the previous plate failed source QA. Do not rebuild the full source composition and do not return a decorated copy. Keep the named source subjects, figure/object masses, and object relationships legible as abstract silhouettes before adding formal risk. Change at least two of arrangement, scale, object count, crop, surface state, or spatial logic through large seams, cut-through apertures, repaired tears, translucent interruptions, source-window scars, and scale shifts. Do not erase source cues into blank panels, unrelated ambience, or numbered annotation marks; do not keep the same still life/card/photo with tiny marks.'
+    ? 'RECOVERY TRANSFORM: the previous plate failed source QA. Do not rebuild the full source composition and do not return a decorated copy. Keep the named source subjects, figure/object masses, and object relationships legible before adding formal risk. Change at least two of arrangement, scale, object count, crop, surface state, or spatial logic through source-native regrouping, negative space, and scale shifts. Do not erase source cues into blank panels, unrelated ambience, or numbered annotation marks; do not keep the same still life/card/photo with tiny marks.'
     : ''
   const sourceContract = sourceImageFingerprints.length && payload.source_contract?.mode === 'source-image'
     ? describeSourceContract(payload.source_contract, representational)
@@ -1065,6 +1088,8 @@ export function buildSceneImagePrompt(payload) {
     sourceAspectGuard,
     dominantOverride,
     recoveryTransformGuard,
+    payload.source_fidelity_recovery_cues?.length ? `RECOVERY DIAGNOSTICS (complete cues; not commands to reproduce the failed treatment):\n${payload.source_fidelity_recovery_cues.join('\n')}` : '',
+    connectedComposition ? `SOURCE SPATIAL TRANSFORM: ${connectedComposition} Keep one continuous spatial field; no paper edges, curled flaps, cast-shadow collage panels, or wall conversion. Source windows must grow from native reflections, vegetation gaps and shoreline interruptions.` : '',
     graphicEditorialGuard,
     representational ? photoGrammarRule : '',
     representational ? recompositionRule : '',

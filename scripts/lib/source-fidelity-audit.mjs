@@ -5,10 +5,22 @@ import path from 'node:path'
 
 import { openAiJson } from './openai-json.mjs'
 
-function normalizeNumber(value, fallback = 0) {
-  const number = Number(value)
-  if (!Number.isFinite(number)) return fallback
-  return Math.max(0, Math.min(1, number))
+function normalizeNumber(value) {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 1 ? value : null
+}
+
+// Salvage only independently valid JSON string fields for recovery diagnostics.
+// Never repair numeric words, infer scores, or use salvaged text as a verdict.
+function recoverAuditDiagnostics(text) {
+  const diagnostics = {}
+  for (const key of ['retained_critical_elements', 'missing_critical_elements', 'drift_risks', 'forbidden_debug_marks', 'rationale']) {
+    const stringToken = '"(?:[^"\\\\]|\\\\.)*"'
+    const valuePattern = key === 'rationale' ? stringToken : `\\[\\s*(?:${stringToken}(?:\\s*,\\s*${stringToken})*)?\\s*\\]`
+    const match = String(text || '').match(new RegExp(`"${key}"\\s*:\\s*(${valuePattern})`))
+    if (!match) continue
+    try { diagnostics[key] = JSON.parse(match[1]) } catch { /* leave unparseable diagnostics absent */ }
+  }
+  return diagnostics
 }
 
 function normalizeStringArray(value) {
@@ -113,11 +125,11 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
     source_image_url: sourceImageUrl,
     contact_sheet_path: contactSheetPath,
     verdict,
-    resemblance_score: normalizeNumber(raw?.resemblance_score, 0),
-    framing_score: normalizeNumber(raw?.framing_score, 0),
-    object_relationship_score: normalizeNumber(raw?.object_relationship_score, 0),
-    context_score: normalizeNumber(raw?.context_score, 0),
-    transformation_score: normalizeNumber(raw?.transformation_score, 1),
+    resemblance_score: normalizeNumber(raw?.resemblance_score),
+    framing_score: normalizeNumber(raw?.framing_score),
+    object_relationship_score: normalizeNumber(raw?.object_relationship_score),
+    context_score: normalizeNumber(raw?.context_score),
+    transformation_score: normalizeNumber(raw?.transformation_score),
     retained_critical_elements: normalizeStringArray(raw?.retained_critical_elements),
     missing_critical_elements: normalizeStringArray(raw?.missing_critical_elements),
     drift_risks: normalizeStringArray(raw?.drift_risks),
@@ -126,12 +138,15 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   }
 
   const blockers = []
+  for (const key of ['resemblance_score', 'framing_score', 'object_relationship_score', 'context_score', 'transformation_score']) {
+    if (normalized[key] === null) blockers.push(`invalid ${key}: expected a JSON number from 0 to 1`)
+  }
   if (normalized.verdict === 'fail') blockers.push('vision verdict failed')
-  if (normalized.resemblance_score < 0.62) blockers.push(`resemblance_score ${normalized.resemblance_score} < 0.62`)
-  if (normalized.framing_score < 0.55) blockers.push(`framing_score ${normalized.framing_score} < 0.55`)
-  if (normalized.object_relationship_score < 0.55) blockers.push(`object_relationship_score ${normalized.object_relationship_score} < 0.55`)
-  if (normalized.context_score < 0.45 && normalized.missing_critical_elements.length >= 2) blockers.push('lost source context and multiple critical elements')
-  if (normalized.transformation_score < 0.35) blockers.push(`transformation_score ${normalized.transformation_score} < 0.35`)
+  if (normalized.resemblance_score !== null && normalized.resemblance_score < 0.62) blockers.push(`resemblance_score ${normalized.resemblance_score} < 0.62`)
+  if (normalized.framing_score !== null && normalized.framing_score < 0.55) blockers.push(`framing_score ${normalized.framing_score} < 0.55`)
+  if (normalized.object_relationship_score !== null && normalized.object_relationship_score < 0.55) blockers.push(`object_relationship_score ${normalized.object_relationship_score} < 0.55`)
+  if (normalized.context_score !== null && normalized.context_score < 0.45 && normalized.missing_critical_elements.length >= 2) blockers.push('lost source context and multiple critical elements')
+  if (normalized.transformation_score !== null && normalized.transformation_score < 0.35) blockers.push(`transformation_score ${normalized.transformation_score} < 0.35`)
   const auditText = [
     ...normalized.missing_critical_elements,
     ...normalized.drift_risks,
@@ -262,6 +277,7 @@ export async function auditSourceImageFidelity(
   const prompt = {
     task: 'Compare the LEFT source material image with the RIGHT generated plate. Judge whether the generated plate borrows recognizable source elements while becoming a new Daily Frontpage plate, not a recreation of the same image.',
     rules: [
+      'All five scores must be JSON numbers from 0 to 1 inclusive (for example 0.85), never percentages, numeric strings, or spelled-out words. Return valid JSON only.',
       'This is not a generic style-similarity check and not a copy-tolerance check. The generated plate may use the source image as inspiration, but it must not recreate the same photograph/product shot/still life with small marks added.',
       'A pass should borrow source identity: palette, silhouettes, motifs, material behavior, light, edge pressure, or a few object relationships. It should visibly change at least two of arrangement, scale, object count, crop, surface state, or spatial logic.',
       'Do not require exact crop, framing, camera distance, or object layout. Deliberate recomposition is good when the borrowed source identity remains legible.',
@@ -309,15 +325,19 @@ export async function auditSourceImageFidelity(
       maxOutputTokens: 2200,
     })
   } catch (error) {
+    const rawResponse = typeof error.rawResponse === 'string' ? error.rawResponse : ''
     const failed = {
       audit_id: `source-fidelity-${Date.now()}`,
       inspection_mode: 'vision-error',
+      raw_response: rawResponse,
+      diagnostic_origin: 'unvalidated-response-text; not a scored audit',
+      ...recoverAuditDiagnostics(rawResponse),
       pass: false,
       verdict: 'fail',
       source_image_url: fingerprint.image_url,
       contact_sheet_path: contactSheetPath,
       blockers: [`vision source-fidelity audit failed: ${error.message}`],
-      rationale: 'Source-image fidelity cannot be verified because the vision QA pass failed.',
+      failure_reason: 'Source-image fidelity cannot be verified because the vision QA pass failed.',
     }
     await writeJson(auditPath, failed)
     throw new Error(`Source-image fidelity QA failed: ${failed.blockers.join('; ')}`)

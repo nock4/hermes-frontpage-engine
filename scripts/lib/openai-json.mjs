@@ -171,7 +171,9 @@ async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
       try {
         resolve(firstJsonObject(extractJsonText(stdout)))
       } catch (error) {
-        reject(new Error(`Expected JSON from ${command}: ${error.message}\n${stdout}`))
+        reject(Object.assign(new Error(`Expected JSON from ${command}: ${error.message}\n${stdout}`), {
+          rawResponse: stdout.trim(),
+        }))
       }
     })
   })
