@@ -32,6 +32,65 @@ it('skips an archived prefix and exclusions before spending the bounded inspecti
   expect(research.source_decisions.filter(row => row.inspection).map(row => row.url)).toEqual(fresh.slice(0, 24).map(row => row.url))
  } finally { await fs.rm(runDir, { recursive: true, force: true }); openAiJson.mockClear() }
 })
+it('prioritizes fresh creative media over a high-score tool promo and folder-only hints', async () => {
+ const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'ingestion-priority-'))
+ try {
+  const promo = { ...source, url: 'https://example.com/promo', title: 'A new AI writing tool demo', note_score: 99999 }
+  const folderOnly = { ...source, url: 'https://example.com/plain', note_path: 'themes/artwork/painting/gallery.md', note_score: 99999 }
+  const creative = { ...source, url: 'https://x.com/painter/status/123', title: 'A painting in my new exhibition', note_score: 1 }
+  const stale = { ...creative, url: 'https://x.com/painter/status/124', image_url: 'https://example.com/spent.jpg' }
+  const quarantined = { ...creative, url: 'https://x.com/painter/status/125', note_id: 'tool' }
+  fetchVettedRemoteUrl.mockImplementation(async () => new Response(bytes, { headers: { 'content-type': 'image/png' } }))
+  openAiJson.mockReset().mockResolvedValue({ status: 'ambiguous' })
+  const r = await inspectCreativeArtifacts([promo, folderOnly, stale, quarantined, creative], {}, {
+   runDir, maxInspections: 1, recentSourceKeys: new Set([sourceContentKey(stale)]),
+   signalHarvest: { notes_selected: [{ id: 'tool', excerpt: 'Claude Code MCP agent workflow' }] },
+  })
+  expect(r.source_decisions.map(row => row.url)).toEqual([creative.url])
+  expect(hasCreativeArtifactEvidence(creative, r)).toBe(false)
+ } finally { await fs.rm(runDir, { recursive: true, force: true }); openAiJson.mockClear() }
+})
+it('does not let photo language in a tool promo outrank actual game media', async () => {
+ const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'ingestion-promo-'))
+ try {
+  const promo = { ...source, url: 'https://x.com/example/status/123', title: 'AI tool tracks your location: upload a photo to get coordinates', note_score: 99999 }
+  const game = { ...source, url: 'https://x.com/example/status/124', title: 'A relaxing bird game over the ocean', note_score: 1 }
+  fetchVettedRemoteUrl.mockImplementation(async () => new Response(bytes, { headers: { 'content-type': 'image/png' } }))
+  openAiJson.mockReset().mockResolvedValue({ status: 'ambiguous' })
+  const r = await inspectCreativeArtifacts([promo, game], {}, { runDir, maxInspections: 1 })
+  expect(r.source_decisions.map(row => row.url)).toEqual([game.url])
+ } finally { await fs.rm(runDir, { recursive: true, force: true }); openAiJson.mockClear() }
+})
+it.each(['rejected', 'ambiguous', 'unknown'])('dedupes named/authorless tweet %s attempts across batches only for identical media', async status => {
+ const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'ingestion-family-'))
+ try {
+  const named = { ...source, url: 'https://twitter.com/painter/status/123', media_type: 'video', media_url: 'https://example.com/video.mp4' }
+  const alias = { ...named, url: 'https://x.com/status/123' }
+  fetchVettedRemoteUrl.mockImplementation(async () => new Response(bytes, { headers: { 'content-type': 'image/png' } }))
+  openAiJson.mockReset().mockResolvedValue({ status })
+  let r = await inspectCreativeArtifacts([named, alias], {}, { runDir })
+  expect(openAiJson).toHaveBeenCalledTimes(1)
+  r = await inspectCreativeArtifacts([alias], r, { runDir })
+  expect(openAiJson).toHaveBeenCalledTimes(1)
+  r = await inspectCreativeArtifacts([{ ...alias, image_url: source.image_url + '?changed=1' }, { ...alias, media_url: 'https://example.com/other.mp4' }, { ...alias, url: 'https://example.com/status/123' }], r, { runDir })
+  expect(openAiJson).toHaveBeenCalledTimes(4)
+  expect(hasCreativeArtifactEvidence(alias, r)).toBe(false)
+ } finally { await fs.rm(runDir, { recursive: true, force: true }); openAiJson.mockClear() }
+})
+it('honors legacy family failures without refunding actual attempts from the run cap', async () => {
+ const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'ingestion-legacy-'))
+ try {
+  const named = 'https://twitter.com/painter/status/123'
+  const alias = { ...source, url: 'https://x.com/status/123' }
+  const inspection = { source_url: named, media_url: source.image_url, status: 'unknown', attempt_key: JSON.stringify([named, source.image_url, source.image_url]) }
+  const research = { source_decisions: Array.from({ length: 23 }, () => ({ url: named, inspection })) }
+  fetchVettedRemoteUrl.mockImplementation(async () => new Response(bytes, { headers: { 'content-type': 'image/png' } }))
+  openAiJson.mockReset().mockResolvedValue({ status: 'unknown' })
+  const r = await inspectCreativeArtifacts([alias, { ...source, url: 'https://example.com/fresh' }, { ...source, url: 'https://example.com/another' }], research, { runDir })
+  expect(openAiJson).toHaveBeenCalledTimes(1)
+  expect(r.source_decisions.at(-1).url).toBe('https://example.com/fresh')
+ } finally { await fs.rm(runDir, { recursive: true, force: true }); openAiJson.mockClear() }
+})
 it('passes exact raster bytes to model, caches failures and caps a batch',async()=>{
  const runDir=await fs.mkdtemp(path.join(os.tmpdir(),'ingestion-'))
  fetchVettedRemoteUrl.mockImplementation(async()=>new Response(bytes,{headers:{'content-type':'image/png'}}))

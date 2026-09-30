@@ -3,6 +3,8 @@ import path from 'node:path'
 import dns from 'node:dns/promises'
 import { createHash } from 'node:crypto'
 import { openAiJson } from './openai-json.mjs'
+import { selectAnchorSource } from './anchor-source-research.mjs'
+import { canonicalizeSourceUrl, hostnameForUrl } from './source-url-policy.mjs'
 import { fetchVettedRemoteUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
 import { hasCreativeArtifactEvidence, isAutoresearchExcluded, sourceContentScore, sourceHasRenderableCardSurface } from './source-selection-policy.mjs'
 
@@ -25,24 +27,63 @@ function parentEvidence(source, signalHarvest, seen = new Set(), depth = 0, budg
   return result
 }
 
+// Collapse only source aliases, never media URLs: changed pixels or representative
+// video/audio must get a new attempt rather than inheriting a family rejection.
+function attemptKey(url, imageUrl, mediaUrl) {
+  const tweetId = /^(?:www\.)?(?:x\.com|twitter\.com)$/.test(hostnameForUrl(url))
+    ? String(url).match(/\/status\/(\d+)(?:[/?#]|$)/)?.[1] : null
+  const family = tweetId ? `tweet:${tweetId}` : canonicalizeSourceUrl(url)
+  return JSON.stringify([family, imageUrl, mediaUrl && mediaUrl !== imageUrl ? mediaUrl : null])
+}
+
+function previousAttemptKey(inspection) {
+  if (inspection.attempt_key_version === 2) return inspection.attempt_key
+  // Older audits used a literal source/media tuple. Re-key it without changing
+  // the original audit or refunding any calls already spent by that run.
+  try {
+    const tuple = JSON.parse(inspection.attempt_key)
+    if (Array.isArray(tuple) && tuple.length === 3) return attemptKey(...tuple)
+  } catch { /* Legacy records may have only the stamped evidence fields. */ }
+  return attemptKey(inspection.source_url, inspection.media_url, inspection.representative_media_url)
+}
+
 // Text research may nominate sources, never attest to pixels it did not see.
 // Identity, capture path and digest are stamped here, not accepted from the model.
 export async function inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, recentSourceKeys = new Set(), maxInspections = 10, inspectionTimeoutMs = 60000 } = {}) {
   const result = { ...research, source_decisions: [...(research?.source_decisions || [])] }
-  // Attempts live in the run audit, including failures: refill must not retry them.
-  const key = source => JSON.stringify([source.source_url || source.url, source.image_url, source.media_url || null])
-  const attempted = new Set(result.source_decisions.filter(row => row.inspection).map(row => row.inspection.attempt_key || JSON.stringify([row.inspection.source_url, row.inspection.media_url, row.inspection.representative_media_url || null])))
-  let remaining = Math.max(0, Math.min(10, Number(maxInspections) || 0, 24 - attempted.size))
+  const key = source => attemptKey(source.source_url || source.url, source.image_url, source.media_url)
+  const previousAttempts = result.source_decisions.filter(row => row.inspection)
+  const attempted = new Set(previousAttempts.map(row => previousAttemptKey(row.inspection)))
+  let remaining = Math.max(0, Math.min(10, Number(maxInspections) || 0, 24 - previousAttempts.length))
   const captureDir = path.join(runDir, 'creative-inspections')
   await fs.mkdir(captureDir, { recursive: true })
-  for (const source of sources) {
-    if (!source.image_url || !sourceHasRenderableCardSurface(source, signalHarvest)
-      || !Number.isFinite(sourceContentScore(source, recentSourceKeys))
-      || isAutoresearchExcluded(source, result) || hasCreativeArtifactEvidence(source, result, signalHarvest)) continue
+  // Apply archive, signal-aware quarantine, and research exclusions BEFORE
+  // ranking. Reuse the artwork-first anchor heuristic only to order inspections;
+  // it cannot confer eligibility, and thematic paths are not ranking evidence.
+  const candidates = sources.filter(source => source.image_url
+    && sourceHasRenderableCardSurface(source, signalHarvest)
+    && Number.isFinite(sourceContentScore(source, recentSourceKeys))
+    && !isAutoresearchExcluded(source, result)
+    && !hasCreativeArtifactEvidence(source, result, signalHarvest)
+    && !attempted.has(key(source)))
+    .map(source => {
+      const rank = selectAnchorSource([source], { recentSourceKeys, signalHarvest })
+      // Soft scheduling penalty, NOT a new exclusion: generic photo/game words
+      // in a product pitch must not hijack the artwork-first heuristic. Retain
+      // parent/note text but never thematic paths; AI-made work remains inspectable.
+      const text = JSON.stringify(parentEvidence(source, signalHarvest))
+      const promo = /\b(?:tools?|platform|software|workflow|prompts?|models?|api|sdk)\b|\bupload (?:a )?photo\b/i.test(text)
+      const priority = promo || rank?.anchor_selection_lane === 'ai-tooling-penalized' ? -1
+        : rank?.anchor_selection_lane === 'artwork-first' ? 1 : 0
+      return { source, rank, priority }
+    })
+    .sort((left, right) => right.priority - left.priority
+      || (right.rank?.anchor_selection_score ?? -Infinity) - (left.rank?.anchor_selection_score ?? -Infinity))
+  for (const { source } of candidates) {
     if (!remaining) break
     if (attempted.has(key(source))) continue
     attempted.add(key(source)); remaining -= 1
-    const inspection = { version: 1, source_url: source.url, media_url: source.image_url, representative_media_url: ['video', 'audio'].includes(source.media_type) ? source.media_url : undefined, attempt_key: key(source), inspector: 'creative-artifact-vision', status: 'unknown' }
+    const inspection = { version: 1, source_url: source.url, media_url: source.image_url, representative_media_url: ['video', 'audio'].includes(source.media_type) ? source.media_url : undefined, attempt_key: key(source), attempt_key_version: 2, inspector: 'creative-artifact-vision', status: 'unknown' }
     try {
       const url = await resolveFetchableImageUrl(source.image_url, { lookup: dns.lookup })
       if (!url) throw new Error('Blocked inspection media')
