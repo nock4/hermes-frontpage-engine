@@ -27,6 +27,15 @@ function parentEvidence(source, signalHarvest, seen = new Set(), depth = 0, budg
   return result
 }
 
+// Only scheduling sees this copy. Keep unrelated saved-note wikilinks out of
+// lexical ranking, but retain them verbatim in the actual inspector payload.
+function rankingEvidence(value) {
+  if (typeof value === 'string') return value.replace(/###\s+Related\s*(?:-\s*\[\[[^\]]+\]\]\s*)+/gi, '')
+  if (Array.isArray(value)) return value.map(rankingEvidence)
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, entry]) => [key, rankingEvidence(entry)]))
+  return value
+}
+
 // Collapse only source aliases, never media URLs: changed pixels or representative
 // video/audio must get a new attempt rather than inheriting a family rejection.
 function attemptKey(url, imageUrl, mediaUrl) {
@@ -67,13 +76,17 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
     && !hasCreativeArtifactEvidence(source, result, signalHarvest)
     && !attempted.has(key(source)))
     .map(source => {
-      const rank = selectAnchorSource([source], { recentSourceKeys, signalHarvest })
-      // Soft scheduling penalty, NOT a new exclusion: generic photo/game words
-      // in a product pitch must not hijack the artwork-first heuristic. Retain
-      // parent/note text but never thematic paths; AI-made work remains inspectable.
-      const text = JSON.stringify(parentEvidence(source, signalHarvest))
-      const promo = /\b(?:tools?|platform|software|workflow|prompts?|models?|api|sdk)\b|\bupload (?:a )?photo\b/i.test(text)
-      const priority = promo || rank?.anchor_selection_lane === 'ai-tooling-penalized' ? -1
+      const rank = selectAnchorSource([rankingEvidence(source)], { recentSourceKeys, signalHarvest: rankingEvidence(signalHarvest) })
+      // Soft scheduling only: a concrete scene-creation request is not a generic
+      // prompt exemption. Product/workflow evidence still wins over scene words.
+      const text = JSON.stringify(rankingEvidence(parentEvidence(source, signalHarvest)))
+      const product = /\b(?:tools?|platform|software|workflow|models?|api|sdk)\b|\bupload (?:a )?photo\b/i.test(text)
+      const sceneCreation = !product
+        && /\bcreate\b[^.!?\n]{0,100}\b(?:isometric|3d)\b[^.!?\n]{0,60}\b(?:room|scene|diorama)\b/i.test(text)
+        && /\b(?:ambient animations|lighting|textures|furniture)\b/i.test(text)
+      const promo = product || (/\bprompts?\b/i.test(text) && !sceneCreation)
+      const priority = promo ? -1 : sceneCreation ? 1
+        : rank?.anchor_selection_lane === 'ai-tooling-penalized' ? -1
         : rank?.anchor_selection_lane === 'artwork-first' ? 1 : 0
       return { source, rank, priority }
     })
