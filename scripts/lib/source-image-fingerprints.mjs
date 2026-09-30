@@ -194,7 +194,7 @@ async function visionFingerprint(candidate, fingerprint, analyzer = openAiJson) 
   }
 }
 
-export async function enrichSourceImageFingerprints(selectedImageMaterial = [], fingerprints = [], { analyzer = openAiJson, limit = 3, measureImage = null } = {}) {
+export async function enrichSourceImageFingerprints(selectedImageMaterial = [], fingerprints = [], { analyzer = openAiJson, limit = fingerprints.length, measureImage = null } = {}) {
   const enriched = []
   for (let index = 0; index < fingerprints.length; index += 1) {
     let fingerprint = fingerprints[index]

@@ -22,6 +22,15 @@ const derived = {
 }
 
 describe('dominant source material eligibility', () => {
+  it('inspects every selected seed so a fertile fourth image is not an unverified fallback', async () => {
+    const candidates = Array.from({ length: 5 }, (_, i) => ({ image_url: `https://art.example/${i}.jpg` }))
+    let calls = 0
+    const result = await enrichSourceImageFingerprints(candidates, buildSourceImageFingerprints(candidates), {
+      analyzer: async () => ({ visual_summary: 'Red figure on blue ground', preserve_cues: ['red figure', 'blue ground'], visual_fertility: ++calls === 4 ? 'high' : 'low' }),
+    })
+    expect(calls).toBe(5)
+    expect(fingerprintsModule.screenSourceImageMaterial(candidates, result).selected_image_material).toEqual([candidates[3]])
+  })
   it('blocks generation on failed vision rather than silently dropping fidelity into source-field mode', () => {
     const failed = { image_url: derived.image_url, vision_error: 'Malformed JSON', preserve_cues: [], visual_summary: '' }
     expect(() => fingerprintsModule.screenSourceImageMaterial([derived], [failed])).toThrow(/vision.*before image generation/i)
