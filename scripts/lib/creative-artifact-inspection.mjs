@@ -4,7 +4,7 @@ import dns from 'node:dns/promises'
 import { createHash } from 'node:crypto'
 import { openAiJson } from './openai-json.mjs'
 import { fetchVettedRemoteUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
-import { hasCreativeArtifactEvidence, isAutoresearchExcluded, sourceHasRenderableCardSurface } from './source-selection-policy.mjs'
+import { hasCreativeArtifactEvidence, isAutoresearchExcluded, sourceContentScore, sourceHasRenderableCardSurface } from './source-selection-policy.mjs'
 
 // Whitelist source evidence, never folder labels. Bound depth, records and text.
 function parentEvidence(source, signalHarvest, seen = new Set(), depth = 0, budget = { records: 8 }) {
@@ -27,7 +27,7 @@ function parentEvidence(source, signalHarvest, seen = new Set(), depth = 0, budg
 
 // Text research may nominate sources, never attest to pixels it did not see.
 // Identity, capture path and digest are stamped here, not accepted from the model.
-export async function inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, maxInspections = 10, inspectionTimeoutMs = 60000 } = {}) {
+export async function inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, recentSourceKeys = new Set(), maxInspections = 10, inspectionTimeoutMs = 60000 } = {}) {
   const result = { ...research, source_decisions: [...(research?.source_decisions || [])] }
   // Attempts live in the run audit, including failures: refill must not retry them.
   const key = source => JSON.stringify([source.source_url || source.url, source.image_url, source.media_url || null])
@@ -37,6 +37,7 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
   await fs.mkdir(captureDir, { recursive: true })
   for (const source of sources) {
     if (!source.image_url || !sourceHasRenderableCardSurface(source, signalHarvest)
+      || !Number.isFinite(sourceContentScore(source, recentSourceKeys))
       || isAutoresearchExcluded(source, result) || hasCreativeArtifactEvidence(source, result, signalHarvest)) continue
     if (!remaining) break
     if (attempted.has(key(source))) continue

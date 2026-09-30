@@ -7,9 +7,31 @@ vi.mock('../../scripts/lib/source-image-network-policy.mjs',()=>({resolveFetchab
 import { openAiJson } from '../../scripts/lib/openai-json.mjs'
 import { fetchVettedRemoteUrl } from '../../scripts/lib/source-image-network-policy.mjs'
 import { inspectCreativeArtifacts } from '../../scripts/lib/creative-artifact-inspection.mjs'
-import { hasCreativeArtifactEvidence } from '../../scripts/lib/source-selection-policy.mjs'
+import { sourceContentKey, hasCreativeArtifactEvidence } from '../../scripts/lib/source-selection-policy.mjs'
 const bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII=','base64')
 const source={url:'https://art.example/work',image_url:'https://art.example/art.png'}
+it('skips an archived prefix and exclusions before spending the bounded inspection budget', async () => {
+ const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'ingestion-archive-'))
+ try {
+  const archived = Array.from({ length: 30 }, (_, i) => ({ url: `https://archive${i}.example/work`, image_url: `https://archive${i}.example/art.png` }))
+  const fresh = Array.from({ length: 30 }, (_, i) => ({ url: `https://fresh${i}.example/work`, image_url: `https://fresh${i}.example/art.png` }))
+  const staleImage = { ...source, image_url: archived[0].image_url }
+  const rejected = { ...source, url: 'https://rejected.example/work' }
+  const quarantined = { ...source, note_id: 'tool' }
+  const sources = [...archived, staleImage, rejected, quarantined, ...fresh]
+  const recentSourceKeys = new Set(archived.map(sourceContentKey))
+  recentSourceKeys.add(sourceContentKey({ url: archived[0].image_url }))
+  const options = { runDir, recentSourceKeys, maxInspections: 100, signalHarvest: { notes_selected: [{ id: 'tool', excerpt: 'Claude Code MCP agent workflow' }] } }
+  fetchVettedRemoteUrl.mockImplementation(async () => new Response(bytes, { headers: { 'content-type': 'image/png' } }))
+  openAiJson.mockReset().mockResolvedValue({ status: 'ambiguous' })
+  let research = { source_decisions: [{ url: rejected.url, role: 'reject' }] }
+  for (const count of [10, 20, 24, 24]) {
+   research = await inspectCreativeArtifacts(sources, research, options)
+   expect(openAiJson).toHaveBeenCalledTimes(count)
+  }
+  expect(research.source_decisions.filter(row => row.inspection).map(row => row.url)).toEqual(fresh.slice(0, 24).map(row => row.url))
+ } finally { await fs.rm(runDir, { recursive: true, force: true }); openAiJson.mockClear() }
+})
 it('passes exact raster bytes to model, caches failures and caps a batch',async()=>{
  const runDir=await fs.mkdtemp(path.join(os.tmpdir(),'ingestion-'))
  fetchVettedRemoteUrl.mockImplementation(async()=>new Response(bytes,{headers:{'content-type':'image/png'}}))

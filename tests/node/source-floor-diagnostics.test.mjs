@@ -1,8 +1,31 @@
 import { describe, expect, it } from 'vitest'
 
+import { inspectedDecision } from '../fixtures/creative-inspection.mjs'
 import { buildSourceFloorDiagnostics } from '../../scripts/lib/source-research.mjs'
 
 describe('source floor diagnostics', () => {
+  it('counts verified tweet families with the same dedupe policy as selection', () => {
+    const sources = Array.from({ length: 6 }, (_, i) => ({
+      url: `https://x.com/artist/status/${100 + i}`, image_url: `https://images.example/art-${i}.jpg`,
+      title: `Painting ${i}`, source_channel: 'twitter-bookmark', source_type: 'tweet', note_id: 'one-saved-story',
+    }))
+    const diagnostics = buildSourceFloorDiagnostics({ inspected: sources, autoresearch: { source_decisions: sources.map(source => inspectedDecision(source)) } })
+    expect(diagnostics.eligible_source_urls).toHaveLength(1)
+    expect(diagnostics.buckets.eligible_creative_surfaces).toBe(1)
+    expect(diagnostics.missing_content_sources).toBe(5)
+  })
+  it('separates potential renderable surfaces from affirmative eligible sources', () => {
+    const sources = Array.from({ length: 8 }, (_, i) => ({ url: `https://artist${i}.example/work`, image_url: `https://artist${i}.example/work.jpg`, title: `Painting ${i}` }))
+    const autoresearch = { source_decisions: [inspectedDecision(sources[0]), { url: sources[1].url, role: 'reject' }] }
+    const diagnostics = buildSourceFloorDiagnostics({ inspected: sources, autoresearch })
+    expect(diagnostics.buckets.non_duplicate_renderable_surfaces).toBe(7)
+    expect(diagnostics.potential_source_urls).toHaveLength(7)
+    expect(diagnostics.eligible_source_urls).toHaveLength(1)
+    expect(diagnostics.buckets.eligible_creative_surfaces).toBe(1)
+    expect(diagnostics.missing_content_sources).toBe(5)
+    expect(diagnostics.primary_constraint).toBe('creative_inspection')
+    expect(buildSourceFloorDiagnostics({ inspected: sources }).eligible_source_urls).toEqual([])
+  })
   it('names archive repeat pressure before the six-window floor fails', () => {
     const sources = Array.from({ length: 6 }, (_, index) => ({
       url: `https://example.com/art-${index}.jpg`,

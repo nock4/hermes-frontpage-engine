@@ -6,11 +6,14 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 vi.mock('../../scripts/lib/creative-artifact-inspection.mjs', () => ({
   inspectCreativeArtifacts: async (sources, research) => {
     const { inspectedDecision } = await import('../fixtures/creative-inspection.mjs')
-    return { ...research, source_decisions: [...(research?.source_decisions || []), ...sources.map(source => inspectedDecision(source))] }
+    const attempted = new Set((research?.source_decisions || []).filter(row => row.inspection).map(row => row.url))
+    const batch = sources.filter(source => !attempted.has(source.url)).slice(0, state.batchSize)
+    state.inspections.push(batch.map(source => source.url))
+    return { ...research, source_decisions: [...(research?.source_decisions || []), ...batch.map(source => inspectedDecision(source))] }
   },
 }))
 
-const state = vi.hoisted(() => ({ materials: [], reference: null, analyzer: vi.fn() }))
+const state = vi.hoisted(() => ({ materials: [], reference: null, analyzer: vi.fn(), batchSize: Infinity, inspections: [], followAnchor: false }))
 vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
   inspectCandidateSource: async (source) => source,
   findVisualReference: async () => state.reference,
@@ -19,7 +22,10 @@ vi.mock('../../scripts/lib/anchor-source-research.mjs', async (importOriginal) =
   ...await importOriginal(),
   buildAnchorResearch: async (anchor) => ({ anchor_source: anchor, anchor_research: { summary: 'Painting study', thesis: 'Color and gesture' } }),
   discoverDerivedSourceCandidates: async () => [],
-  discoverImageSourceMaterial: async () => ({ image_source_candidates: state.materials, selected_image_material: state.materials }),
+  discoverImageSourceMaterial: async ({ anchor_source: anchor }) => {
+    const materials = state.followAnchor ? [{ title: anchor.title, page_url: anchor.url, image_url: anchor.image_url }] : state.materials
+    return { image_source_candidates: materials, selected_image_material: materials }
+  },
 }))
 vi.mock('../../scripts/lib/openai-json.mjs', () => ({ openAiJson: (...args) => state.analyzer(...args) }))
 vi.mock('../../scripts/lib/source-image-geometry.mjs', async (importOriginal) => ({
@@ -42,6 +48,9 @@ beforeEach(async () => {
   vi.stubEnv('DFE_DECISION_MODEL', 'openai')
   state.materials = [material]
   state.reference = { ...sources[0], page_url: material.page_url }
+  state.batchSize = Infinity
+  state.inspections = []
+  state.followAnchor = false
   state.analyzer.mockReset()
 })
 afterEach(async () => {
@@ -53,6 +62,32 @@ const inspect = () => inspectSourceCandidates({ source_candidates: sources, note
 })
 
 describe('source research vision boundary', () => {
+  it('refills already-renderable evidence and rebuilds an excluded automatic anchor before vision', async () => {
+    state.batchSize = 2
+    state.followAnchor = true
+    state.reference = null
+    state.analyzer.mockImplementation(async ({ instructions }) => instructions.includes('source-research editor')
+      ? { source_decisions: [{ url: sources[0].url, role: 'reject' }], selected_content_urls: [] }
+      : fertile)
+    const extra = { ...sources[5], url: 'https://artist6.example/work', image_url: 'https://artist6.example/work.jpg', note_id: 'note-6' }
+    const candidates = [...sources, extra].map(source => ({ ...source, source_channel: 'twitter-bookmark' }))
+    const result = await inspectSourceCandidates({ source_candidates: candidates, notes_selected: [], motif_terms: [] }, {
+      maxSources: 7, runDir, sourceTool: 'fetch', date: '2026-09-30',
+    })
+    expect(result.content_source_count).toBe(6)
+    expect(state.inspections.filter(batch => batch.length)).toHaveLength(4)
+    const replacement = result.anchor_research.anchor_source
+    expect(replacement.url).not.toBe(sources[0].url)
+    expect(result.content_sources.map(source => source.url)).toContain(replacement.url)
+    for (const filename of ['anchor-research.json', 'image-source-material.json', 'source-image-fingerprints.json']) {
+      const artifact = await fs.readFile(path.join(runDir, filename), 'utf8')
+      expect(artifact).toContain(replacement.image_url)
+      expect(artifact).not.toContain(sources[0].image_url)
+    }
+    expect(result.selected_image_material[0].page_url).toBe(replacement.url)
+    expect(result.source_image_fingerprints[0].image_url).toBe(replacement.image_url)
+  })
+
   it('stops before returning generation input and preserves malformed-vision evidence', async () => {
     state.analyzer.mockRejectedValue(new Error('Malformed JSON from vision'))
     await expect(inspect()).rejects.toThrow(/vision.*before image generation/)

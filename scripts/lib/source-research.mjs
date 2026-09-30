@@ -106,6 +106,7 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
     selected_content_sources: contentSources.length,
     renderable_surfaces: 0,
     non_duplicate_renderable_surfaces: 0,
+    eligible_creative_surfaces: 0,
     repeated_by_archive_ledger: 0,
     ai_tooling_quarantined: 0,
     autoresearch_excluded: 0,
@@ -115,6 +116,11 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
   }
   const fetch_status_counts = {}
   const countedRenderableKeys = new Set()
+  // Use the real selector so affirmative evidence cannot inflate the floor via
+  // multiple URLs from one saved tweet family or other selection constraints.
+  const eligibleKeys = new Set(selectContentSources(allSources, {
+    recentSourceKeys, signalHarvest, autoresearch: autoresearch || { source_decisions: [] },
+  }).map(sourceContentKey))
   const examples = {
     repeated_by_archive_ledger: [],
     ai_tooling_quarantined: [],
@@ -142,7 +148,7 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
       buckets.repeated_by_archive_ledger += 1
       remember('repeated_by_archive_ledger', source)
     }
-    if (isAiToolingContentSource(source)) {
+    if (isAiToolingContentSource(source, signalHarvest)) {
       buckets.ai_tooling_quarantined += 1
       remember('ai_tooling_quarantined', source)
     }
@@ -167,7 +173,9 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
     }
   }
   let primary_constraint = 'unknown'
-  if (buckets.non_duplicate_renderable_surfaces >= minContentItems) primary_constraint = 'selection_logic'
+  buckets.eligible_creative_surfaces = eligibleKeys.size
+  if (eligibleKeys.size >= minContentItems) primary_constraint = 'selection_logic'
+  else if (buckets.non_duplicate_renderable_surfaces >= minContentItems) primary_constraint = 'creative_inspection'
   else if (buckets.repeated_by_archive_ledger >= Math.max(3, buckets.renderable_surfaces)) primary_constraint = 'archive_repeat_ledger'
   else if (buckets.ai_tooling_quarantined >= Math.max(3, buckets.renderable_surfaces - buckets.non_duplicate_renderable_surfaces)) primary_constraint = 'ai_tooling_quarantine'
   else if (buckets.not_renderable > buckets.renderable_surfaces) primary_constraint = 'renderability_or_browser_capture'
@@ -175,13 +183,16 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
   return {
     schema_version: 1,
     min_required_content_sources: minContentItems,
-    eligible_source_urls: [...countedRenderableKeys],
-    missing_content_sources: Math.max(0, minContentItems - buckets.non_duplicate_renderable_surfaces),
+    potential_source_urls: [...countedRenderableKeys],
+    eligible_source_urls: [...eligibleKeys],
+    missing_content_sources: Math.max(0, minContentItems - eligibleKeys.size),
     primary_constraint,
     buckets,
     fetch_status_counts,
     examples,
-    recommended_action: primary_constraint === 'archive_repeat_ledger'
+    recommended_action: primary_constraint === 'creative_inspection'
+      ? 'inspect fresh renderable candidates within the bounded budget; only affirmative actual-media evidence earns eligibility'
+      : primary_constraint === 'archive_repeat_ledger'
       ? 'downrank repeated notes before maxNotes/maxSources and refill from fresh real renderable material'
       : primary_constraint === 'ai_tooling_quarantine'
         ? 'keep AI/tooling quarantine and widen/rebalance art/music/image candidate bed'
@@ -777,7 +788,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     await writeJson(path.join(runDir, 'source-autoresearch.json'), autoresearch)
   }
 
-  autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest })
+  autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest, recentSourceKeys })
   let contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
 
   if (contentSources.length < minContentItems) {
@@ -810,8 +821,18 @@ export async function inspectSourceCandidates(signalHarvest, {
     // source windows. Dropping them here can turn a fertile evidence field into a
     // false 0-window failure.
     inspected = mergeInspectedSources(inspected, fetchEvidence)
-    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest })
+    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest, recentSourceKeys })
     contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
+  }
+
+  // Renderable fetch results still need affirmative pixel evidence. Exhaust the
+  // bounded inspection bed before browser repair; negative attempts are progress
+  // but never retried. The inspector owns the ten-per-batch / 24-total limits.
+  while (contentSources.length < minContentItems) {
+    const previousAttempts = autoresearch.source_decisions.filter(row => row.inspection).length
+    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest, recentSourceKeys })
+    contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
+    if (autoresearch.source_decisions.filter(row => row.inspection).length === previousAttempts) break
   }
 
   if (contentSources.length < minContentItems) {
@@ -857,19 +878,39 @@ export async function inspectSourceCandidates(signalHarvest, {
         maxSources: 1,
       })
       inspected.push(...added)
-      autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest })
+      autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest, recentSourceKeys })
       contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
     }
   }
 
+  // Later research can invalidate an automatic nomination. Clear its old
+  // artifacts before reselecting, but keep exact overrides blocking.
+  if (!forcedAnchorSource && !isExactAnchorOverride(inspirationOverride)
+    && anchorSource && isAutoresearchExcluded(anchorSource, autoresearch)) {
+    anchorSource = null
+    anchorResearch = null
+    derivedCandidates = []
+    imageSourceMaterial = { image_source_candidates: [], selected_image_material: [] }
+    await fs.rm(path.join(runDir, 'anchor-research.json'), { force: true })
+  }
   if (!anchorSource && contentSources.length >= minContentItems) {
-    const fieldAnchor = selectAnchorSource(contentSources, { recentSourceKeys, signalHarvest })
+    const verifiedAnchors = contentSources.filter(source => hasCreativeArtifactEvidence(source, autoresearch, signalHarvest)
+      && decideAnchorEligibility({ anchorSource: source, recentSourceKeys, autoresearch }).decision === 'accept')
+    const fieldAnchor = selectAnchorSource(verifiedAnchors, { recentSourceKeys, signalHarvest })
     if (fieldAnchor?.anchor_selection_lane === 'artwork-first') {
       anchorSource = {
         ...fieldAnchor,
-        anchor_selection_reason: 'Artwork-first fallback selected from the validated renderable source field after no candidate in the initial fetch-evidence bed qualified as an anchor.',
+        anchor_selection_reason: 'Artwork-first fallback selected from the verified eligible source field after the initial automatic anchor was absent or excluded.',
         anchor_selection_lane: 'source-field-artwork-first',
       }
+      anchorResearch = await buildAnchorResearch(anchorSource, { runDate: date })
+      await writeJson(path.join(runDir, 'anchor-research.json'), anchorResearch)
+      // The verified field supplies the windows; rebuild anchor artifacts without
+      // reopening derived discovery or admitting uninspected content sources.
+      imageSourceMaterial = await discoverImageSourceMaterial(anchorResearch, [], {
+        maxCandidates: 32,
+        maxSelected: 8,
+      })
     }
   }
 
