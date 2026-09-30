@@ -24,6 +24,7 @@ import {
   isAllowedInspectedSource,
   isLowValueVisualImage,
   selectContentSources,
+  hasCreativeArtifactEvidence,
   selectSourceCandidatesForInspection,
   sourceContentKey,
   sourceContentScore,
@@ -34,6 +35,8 @@ import { uniqueNonEmpty } from './string-utils.mjs'
 
 const root = process.cwd()
 const minContentItems = 6
+import { inspectCreativeArtifacts } from './creative-artifact-inspection.mjs'
+
 const targetContentItems = 9
 const maxContentItems = 10
 const autoresearchCandidateMultiplier = 6
@@ -206,6 +209,7 @@ export function getResearchContentSources(researchField) {
     return researchField.content_sources
       .map((source) => byKey.get(sourceContentKey(source)) || source)
       .filter((source) => !isAutoresearchExcluded(source, researchField.autoresearch))
+      .filter((source) => !researchField.autoresearch || hasCreativeArtifactEvidence(source, researchField.autoresearch))
       .filter((source) => sourceHasRenderableCardSurface(source))
   }
   return selectContentSources(researchField.sources || [], { autoresearch: researchField.autoresearch })
@@ -554,6 +558,7 @@ async function runSourceAutoresearch({
     workflow: 'aesthetic-field autoresearch: read all candidate source evidence, find the most visually fertile creative through-line, imagine the edition as a coherent aesthetic world, choose renderable source windows with provenance, and avoid infrastructure/tooling links unless they carry strong visible artifacts.',
     hard_rules: [
       'Use only URLs present in candidate_sources. Do not invent outside URLs.',
+      'These are text nominations, not verified visual eligibility. Never return an inspection record; actual media is independently captured and inspected after nomination.',
       'Public content must come only from recent saved-signal channels: Twitter bookmarks, YouTube likes, NTS resolved streaming sources, and Chrome bookmarks.',
       'Never select local files, text documents, NTS pages, unresolved search locators, or URLs that are not in the candidate list.',
       `Select ${minContentItems} to ${maxContentItems} content URLs when enough suitable sources exist; ${targetContentItems} is ideal.`,
@@ -772,10 +777,12 @@ export async function inspectSourceCandidates(signalHarvest, {
     await writeJson(path.join(runDir, 'source-autoresearch.json'), autoresearch)
   }
 
+  autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest })
   let contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
 
   if (contentSources.length < minContentItems) {
     researchMode = anchorSource ? 'single-anchor-derived-pool-fallback-autoresearch' : 'fallback-autoresearch'
+    const previousDecisions = autoresearch?.source_decisions || []
     autoresearch = await runSourceAutoresearch({
       signalHarvest,
       evidenceSources: fetchEvidence,
@@ -786,6 +793,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       recentSourceKeys,
       inspirationOverride,
     }, runDir)
+    autoresearch.source_decisions = [...previousDecisions, ...(autoresearch.source_decisions || []).map(({ inspection, ...decision }) => decision)]
     const selectedForCapture = normalizeAutoresearchSelection(autoresearch, fetchEvidence, {
       maxSources,
       recentSourceKeys,
@@ -802,6 +810,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     // source windows. Dropping them here can turn a fertile evidence field into a
     // false 0-window failure.
     inspected = mergeInspectedSources(inspected, fetchEvidence)
+    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest })
     contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
   }
 
@@ -848,6 +857,7 @@ export async function inspectSourceCandidates(signalHarvest, {
         maxSources: 1,
       })
       inspected.push(...added)
+      autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest })
       contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
     }
   }

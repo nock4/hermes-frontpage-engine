@@ -3,6 +3,13 @@ import os from 'node:os'
 import path from 'node:path'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
+vi.mock('../../scripts/lib/creative-artifact-inspection.mjs', () => ({
+  inspectCreativeArtifacts: async (sources, research) => {
+    const { inspectedDecision } = await import('../fixtures/creative-inspection.mjs')
+    return { ...research, source_decisions: [...(research?.source_decisions || []), ...sources.map(source => inspectedDecision(source))] }
+  },
+}))
+
 const state = vi.hoisted(() => ({ materials: [], reference: null, analyzer: vi.fn() }))
 vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
   inspectCandidateSource: async (source) => source,

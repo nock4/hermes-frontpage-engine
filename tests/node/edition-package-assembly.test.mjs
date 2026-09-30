@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { inspectedDecision } from '../fixtures/creative-inspection.mjs'
 import os from 'node:os'
 import path from 'node:path'
 
@@ -57,6 +58,7 @@ describe('edition package assembly', () => {
         }],
       },
       researchField: {
+        autoresearch: { source_decisions: [inspectedDecision({url: sourceUrl, image_url: 'https://example.com/gallery/lead.jpg'})] },
         source_count: 1,
         sources: [{
           url: sourceUrl,
@@ -204,6 +206,7 @@ describe('edition package assembly', () => {
         artifacts,
       },
       researchField: {
+        autoresearch: { source_decisions: sources.map(source => inspectedDecision(source)) },
         source_count: sources.length,
         sources,
         visual_reference: sources[0],

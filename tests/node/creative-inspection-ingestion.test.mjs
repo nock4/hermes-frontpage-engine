@@ -1,0 +1,61 @@
+import { it, expect, vi } from 'vitest'
+import fs from 'node:fs/promises'
+import os from 'node:os'
+import path from 'node:path'
+vi.mock('../../scripts/lib/openai-json.mjs',()=>({openAiJson:vi.fn()}))
+vi.mock('../../scripts/lib/source-image-network-policy.mjs',()=>({resolveFetchableImageUrl:vi.fn(async u=>u),fetchVettedRemoteUrl:vi.fn()}))
+import { openAiJson } from '../../scripts/lib/openai-json.mjs'
+import { fetchVettedRemoteUrl } from '../../scripts/lib/source-image-network-policy.mjs'
+import { inspectCreativeArtifacts } from '../../scripts/lib/creative-artifact-inspection.mjs'
+import { hasCreativeArtifactEvidence } from '../../scripts/lib/source-selection-policy.mjs'
+const bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII=','base64')
+const source={url:'https://art.example/work',image_url:'https://art.example/art.png'}
+it('passes exact raster bytes to model, caches failures and caps a batch',async()=>{
+ const runDir=await fs.mkdtemp(path.join(os.tmpdir(),'ingestion-'))
+ fetchVettedRemoteUrl.mockImplementation(async()=>new Response(bytes,{headers:{'content-type':'image/png'}}))
+ openAiJson.mockResolvedValue({status:'unknown'})
+ let r=await inspectCreativeArtifacts([source,{...source,url:source.url+'2'}],{}, {runDir,maxInspections:1})
+ expect(openAiJson).toHaveBeenCalledTimes(1)
+ const image=openAiJson.mock.calls[0][0].input[0].content[1].image_url
+ expect(Buffer.from(image.split(',')[1],'base64')).toEqual(bytes)
+ expect(await fs.readFile(r.source_decisions[0].inspection.capture_path)).toEqual(bytes)
+ r=await inspectCreativeArtifacts([source],r,{runDir})
+ expect(openAiJson).toHaveBeenCalledTimes(1)
+ expect(hasCreativeArtifactEvidence(source,r)).toBe(false)
+ expect(JSON.parse(await fs.readFile(path.join(runDir,'source-autoresearch.json'),'utf8'))).toEqual(r)
+})
+it('propagates inspection deadline and caches timeout as ineligible without retry', async()=>{
+ const runDir=await fs.mkdtemp(path.join(os.tmpdir(),'ingestion-timeout-'))
+ openAiJson.mockReset().mockRejectedValue(new Error('Hermes inspection timed out after 25ms'))
+ let r=await inspectCreativeArtifacts([source],{}, {runDir,inspectionTimeoutMs:25})
+ expect(openAiJson.mock.calls[0][0].timeoutMs).toBe(25)
+ expect(r.source_decisions[0].inspection.error).toContain('timed out')
+ expect(hasCreativeArtifactEvidence(source,r)).toBe(false)
+ r=await inspectCreativeArtifacts([source],r,{runDir,inspectionTimeoutMs:25})
+ expect(openAiJson).toHaveBeenCalledTimes(1)
+})
+it('supplies bounded retained parent and matched note evidence for a benign poster rejection', async()=>{
+ const runDir=await fs.mkdtemp(path.join(os.tmpdir(),'ingestion-parent-'))
+ const poster={...source,title:'Blue composition',visible_text:'Geometric shapes',note_id:'saved',note_path:'THEMATIC_FOLDER',parent_source:{description:'Sponsored event advertisement; complete registration form'},editorial_evidence:[{visible_text:'Administrative CTA'}]}
+ openAiJson.mockReset().mockImplementation(async({input})=>{
+  const payload=JSON.parse(input[0].content[0].text)
+  expect(payload.parent_source.description).toContain('registration form')
+  expect(payload.editorial_evidence[0].visible_text).toBe('Administrative CTA')
+  expect(payload.matched_saved_note.excerpt).toContain('Promo booking')
+  expect(payload.visible_text).toBe('Geometric shapes')
+  expect(JSON.stringify(payload)).not.toContain('THEMATIC_FOLDER')
+  expect(payload.matched_saved_note.excerpt.length).toBeLessThanOrEqual(2000)
+  return {status:'rejected',artifact_kind:'product',confidence:'high',observation:'Parent establishes promotional administrative content'}
+ })
+ const r=await inspectCreativeArtifacts([poster],{},{runDir,signalHarvest:{notes_selected:[{id:'saved',excerpt:'Promo booking '+ 'x'.repeat(10000)}]}})
+ expect(openAiJson).toHaveBeenCalledTimes(1)
+ expect(r.source_decisions[0].inspection.status).toBe('rejected')
+ expect(hasCreativeArtifactEvidence(poster,r)).toBe(false)
+})
+it.each([null,{}, {status:'ambiguous'}, {status:'verified',artifact_kind:'unknown',confidence:'high'}, new Error('offline')])('rejects malformed/unknown/model failure %j',async observed=>{
+ const runDir=await fs.mkdtemp(path.join(os.tmpdir(),'ingestion-'))
+ openAiJson.mockReset()
+ if(observed instanceof Error) openAiJson.mockRejectedValue(observed);else openAiJson.mockResolvedValue(observed)
+ const r=await inspectCreativeArtifacts([source],{},{runDir})
+ expect(hasCreativeArtifactEvidence(source,r)).toBe(false)
+})

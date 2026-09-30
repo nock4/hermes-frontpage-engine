@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs'
+import { createHash } from 'node:crypto'
 import {
   canonicalizeSourceUrl,
   hostnameForUrl,
@@ -496,13 +498,71 @@ export function isAutoresearchExcluded(source, autoresearch = null, seen = new S
   if (!source || seen.has(source)) return false
   seen.add(source)
   const rejected = new Set((autoresearch?.source_decisions || [])
-    .filter((decision) => ['reject', 'supporting'].includes(decision.role))
+    .filter((decision) => ['reject', 'supporting', 'supporting-only', 'supporting_only', 'supporting only'].includes(decision.role))
     .map((decision) => researchIdentity(decision.url)))
   const urls = [source.url, source.source_url, source.final_url, source.page_url, source.resolved_url]
-  return ['reject', 'supporting'].includes(source.autoresearch_role)
+  return ['reject', 'supporting', 'supporting-only', 'supporting_only', 'supporting only'].includes(source.autoresearch_role)
     || urls.filter(Boolean).some((url) => rejected.has(researchIdentity(url)))
     || [source.parent_source, ...(source.editorial_evidence || [])]
       .some((parent) => isAutoresearchExcluded(parent, autoresearch, seen))
+}
+
+// A score and a working poster do not establish creative eligibility. In a
+// researched run, only an affirmative inspection of the actual artifact earns
+// a window; unknown/refill candidates must return to research, not bypass it.
+export function hasCreativeArtifactEvidence(source, autoresearch, signalHarvest = null) {
+  if (!sourceHasRenderableCardSurface(source, signalHarvest)
+    || isAutoresearchExcluded(source, autoresearch)) return false
+  const identities = [source.url, source.source_url, source.final_url, source.resolved_url]
+    .filter(Boolean).map(researchIdentity)
+  return (autoresearch?.source_decisions || []).some((decision) => {
+    if (!identities.includes(researchIdentity(decision.url))
+      || !['content', 'anchor'].includes(decision.role)
+      || decision.confidence !== 'high') return false
+    const proof = decision.inspection
+    return proof?.version === 1 && proof.status === 'verified'
+      && proof.inspector === 'creative-artifact-vision'
+      && proof.confidence === 'high'
+      && ['artwork', 'game', 'animation', 'music', 'performance', 'film', 'photography', 'textile'].includes(proof.artifact_kind)
+      && identities.includes(researchIdentity(proof.source_url))
+      && proof.media_url === source.image_url
+      && typeof proof.observation === 'string' && proof.observation.trim().length > 0
+      && /^[a-f0-9]{64}$/.test(proof.capture_sha256 || '')
+      && typeof proof.capture_path === 'string' && proof.capture_path.length > 0
+  })
+}
+
+export function assertEditorialBindings(bindings, researchField = {}, signalHarvest = null, { minimum = 6, finalMedia = false } = {}) {
+  const evidence = [...(researchField.sources || []), ...(researchField.content_sources || [])]
+  const identities = new Set()
+  for (const binding of bindings || []) {
+    const identity = researchIdentity(binding.source_url)
+    const matching = evidence.filter((source) => [source.url, source.source_url, source.final_url, source.resolved_url]
+      .filter(Boolean).some((url) => researchIdentity(url) === identity))
+    if (identities.has(identity) || !matching.length
+      || [binding, ...matching].some((source) => isAiToolingContentSource(source, signalHarvest)
+        || isAutoresearchExcluded(source, researchField.autoresearch))
+      || !matching.some((source) => hasCreativeArtifactEvidence(source, researchField.autoresearch, signalHarvest))) {
+      throw new Error(`Editorial eligibility: unverified, excluded or duplicate source ${binding.source_url}`)
+    }
+    if (finalMedia) {
+      const verified = matching.some(source => (researchField.autoresearch?.source_decisions || []).some(decision => {
+        const proof = decision.inspection
+        if (!hasCreativeArtifactEvidence({ ...source, image_url: binding.source_image_url }, { source_decisions: [decision] }, signalHarvest)) return false
+        // A poster attests its associated video/audio identity, not unseen frames.
+        if (binding.source_media_url) {
+          const expected = ['video', 'audio'].includes(binding.source_media_type)
+            ? proof.representative_media_url : proof.media_url
+          if (!expected || binding.source_media_url !== expected) return false
+        }
+        try { return createHash('sha256').update(readFileSync(proof.capture_path)).digest('hex') === proof.capture_sha256 }
+        catch { return false }
+      }))
+      if (!verified) throw new Error(`Editorial eligibility: final media or capture integrity mismatch ${binding.source_url}`)
+    }
+    identities.add(identity)
+  }
+  if (identities.size < minimum) throw new Error(`Editorial eligibility: ${identities.size} verified creative sources; minimum ${minimum}`)
 }
 
 export function selectContentSources(
@@ -524,6 +584,7 @@ export function selectContentSources(
   const ranked = [...sources]
     .filter((source) => source?.url)
     .filter((source) => !isAutoresearchExcluded(source, autoresearch))
+    .filter((source) => !autoresearch || hasCreativeArtifactEvidence(source, autoresearch, signalHarvest))
     .filter((source) => sourceHasRenderableCardSurface(source, signalHarvest))
     .map((source) => ({ source, score: sourceContentScore(source, recentSourceKeys) }))
     .filter((entry) => Number.isFinite(entry.score))

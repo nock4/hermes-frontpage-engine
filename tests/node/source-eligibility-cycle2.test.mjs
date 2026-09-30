@@ -6,6 +6,9 @@ import { buildSourceDecisionAudit, decideAnchorEligibility } from '../../scripts
 
 const { content_sources: sources, autoresearch } = JSON.parse(readFileSync(new URL('../fixtures/source-eligibility-cycle2.json', import.meta.url)))
 
+import { inspectedDecision } from '../fixtures/creative-inspection.mjs'
+autoresearch.source_decisions.push(inspectedDecision(sources[0])) // synthetic contract fixture only
+
 describe('failed September source bed: eligibility is not a six-window quota', () => {
   it('blocks the decision audit even with an accepted anchor when public media falls below six', () => {
     const audit = buildSourceDecisionAudit({ contentSources: sources, autoresearch })

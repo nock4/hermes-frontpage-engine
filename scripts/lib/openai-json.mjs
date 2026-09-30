@@ -129,7 +129,7 @@ function resolveHermesCommand() {
   return String(process.env.HERMES_BIN || 'hermes').trim() || 'hermes'
 }
 
-async function runHermesJsonQuery({ query, needsVision = false }) {
+async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
   const command = resolveHermesCommand()
   const args = buildHermesCommandArgs({ query, needsVision })
   return new Promise((resolve, reject) => {
@@ -141,14 +141,29 @@ async function runHermesJsonQuery({ query, needsVision = false }) {
 
     let stdout = ''
     let stderr = ''
+    let timedOut = false
+    let killTimer
+    const deadline = Number.isFinite(timeoutMs) && timeoutMs > 0 ? setTimeout(() => {
+      timedOut = true
+      child.kill('SIGTERM')
+      killTimer = setTimeout(() => child.kill('SIGKILL'), 1000)
+    }, timeoutMs) : null
     child.stdout.on('data', (chunk) => {
       stdout += chunk.toString()
     })
     child.stderr.on('data', (chunk) => {
       stderr += chunk.toString()
     })
-    child.on('error', reject)
+    child.on('error', (error) => {
+      clearTimeout(deadline)
+      clearTimeout(killTimer)
+      reject(error)
+    })
     child.on('close', (code) => {
+      clearTimeout(deadline)
+      clearTimeout(killTimer)
+      // Reject only after close: the timed-out child has actually been reaped.
+      if (timedOut) return reject(new Error(`Hermes inspection timed out after ${timeoutMs}ms`))
       if (code !== 0) {
         reject(new Error((stderr || stdout || `${command} exited ${code}`).trim()))
         return
@@ -162,7 +177,7 @@ async function runHermesJsonQuery({ query, needsVision = false }) {
   })
 }
 
-export async function openAiJson({ instructions, input, maxOutputTokens = 5000 }) {
+export async function openAiJson({ instructions, input, maxOutputTokens = 5000, timeoutMs }) {
   const { text, imageUrl } = extractTextAndImage(input)
   const { imagePath, remoteImageUrl } = await materializeImage(imageUrl)
   const query = buildHermesQuery({
@@ -172,5 +187,5 @@ export async function openAiJson({ instructions, input, maxOutputTokens = 5000 }
     imagePath,
     remoteImageUrl,
   })
-  return runHermesJsonQuery({ query, needsVision: Boolean(imagePath || remoteImageUrl) })
+  return runHermesJsonQuery({ query, needsVision: Boolean(imagePath || remoteImageUrl), timeoutMs })
 }

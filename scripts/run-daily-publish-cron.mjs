@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 import https from 'node:https'
 
 import { auditPressStability, formatPressStabilityAudit } from './lib/press-stability.mjs'
+import { assertEditorialBindings } from './lib/source-selection-policy.mjs'
 
 const primaryRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
 const defaultVaultRoot = '/Users/nickgeorge-studio/Documents/nicks-mind-map'
@@ -242,20 +243,12 @@ async function readJson(filePath) {
   return JSON.parse(await fs.readFile(filePath, 'utf8'))
 }
 
-async function latestRunDir(worktreeDir) {
-  const runsRoot = path.join(worktreeDir, 'tmp', 'daily-process-runs')
-  if (!(await exists(runsRoot))) return null
-  const entries = await fs.readdir(runsRoot, { withFileTypes: true })
-  const dirs = []
-  for (const entry of entries) {
-    if (!entry.isDirectory()) continue
-    const fullPath = path.join(runsRoot, entry.name)
-    const stat = await fs.stat(fullPath)
-    dirs.push({ path: fullPath, mtimeMs: stat.mtimeMs })
+export function assertRunEditionProvenance(editionId, packageSummary, bindingSet) {
+  if (!isSafeEditionId(editionId) || packageSummary?.edition_id !== editionId || bindingSet?.source_binding_set_id !== `bindings-${editionId}`) {
+    throw new Error('Editorial provenance: exact run/package/binding edition mismatch')
   }
-  dirs.sort((a, b) => b.mtimeMs - a.mtimeMs)
-  return dirs[0]?.path || null
 }
+
 
 export function cacheBustedRemoteUrl(remoteUrl, attempt) {
   const url = new URL(remoteUrl)
@@ -525,8 +518,11 @@ async function main() {
     await cleanupPreviewSmokeServer(cronUxPort)
     await ensureWorktree(options)
 
+    const generationName = `cron-${Date.now()}-${process.pid}`
+    summary.latest_run_dir = path.join(options.worktreeDir, 'tmp', 'daily-process-runs', generationName)
     const processArgs = [
       'run', 'daily:process', '--',
+      '--generation-name', generationName,
       '--input-mode', 'obsidian-allowlist',
       '--input-root', options.inputRoot,
       '--window-days', String(options.windowDays),
@@ -554,6 +550,15 @@ async function main() {
       ? manifest.editions.find((edition) => (edition.id || edition.edition_id) === manifest.current_edition_id)
       : null
     summary.local_publish_status = liveEdition?.is_live === true ? 'live' : 'not-live'
+
+    // Re-read final bindings after enrichment and QA, before git add/commit/push.
+    // Missing research or unknown final sources fail closed, independent of UI QA.
+    const packageSummary = await readJson(path.join(summary.latest_run_dir, 'edition-package-summary.json'))
+    const finalResearch = await readJson(path.join(summary.latest_run_dir, 'source-research.json'))
+    const finalHarvest = await readJson(path.join(summary.latest_run_dir, 'signal-harvest.json'))
+    const finalBindings = await readJson(path.join(options.worktreeDir, 'public', 'editions', summary.local_edition_id, 'source-bindings.json'))
+    assertRunEditionProvenance(summary.local_edition_id, packageSummary, finalBindings)
+    assertEditorialBindings(finalBindings.bindings, finalResearch, finalHarvest, { finalMedia: true })
 
     const commitResult = await commitPublishedArtifacts(options.worktreeDir, summary.local_edition_id || new Date().toISOString().slice(0, 10), options.branch)
     summary.commit = commitResult.commit
@@ -583,7 +588,7 @@ async function main() {
     if (!summary.ok) exitCode = 1
   } catch (error) {
     summary.error = error.message
-    summary.latest_run_dir = await latestRunDir(options.worktreeDir)
+    // Keep the invocation's exact run directory even on failure; never guess by mtime.
     console.log(JSON.stringify(summary, null, 2))
     exitCode = 1
   } finally {

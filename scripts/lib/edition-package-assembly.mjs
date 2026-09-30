@@ -12,6 +12,7 @@ import {
 import { youtubeEmbedStatus } from './source-inspection.mjs'
 import {
   classifySource,
+  assertEditorialBindings,
   isAiToolingContentSource,
   isDirectRasterImageUrl,
   isLowValueVisualImage,
@@ -371,6 +372,7 @@ export async function assembleEditionPackage({
       throw new Error(`Editorial quarantine: prohibited workflow/service/component-library source ${artifact.source_url}`)
     }
   }
+  assertEditorialBindings(payload.artifacts, researchField, signalHarvest, { minimum: options.publish === false ? 1 : 6 })
   const manifestPath = path.join(root, 'public', 'editions', 'index.json')
   const manifest = await readJson(manifestPath)
   const slugBase = slugify(payload.slug_base || payload.scene_family)
