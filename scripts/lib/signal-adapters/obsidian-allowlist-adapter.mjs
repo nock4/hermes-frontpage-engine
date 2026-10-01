@@ -21,6 +21,10 @@ const allowedSignalFiles = [
   'Inbox/nts-liked-tracks-source-map-batch-1.md',
   'Inbox/nts-liked-tracks-source-map-batch-2.md',
   'Inbox/nts-liked-tracks-source-map-batch-3.md',
+  '00 - Capture/nts-liked-tracks-source-map.md',
+  '00 - Capture/nts-liked-tracks-source-map-batch-1.md',
+  '00 - Capture/nts-liked-tracks-source-map-batch-2.md',
+  '00 - Capture/nts-liked-tracks-source-map-batch-3.md',
   'Resources/Chrome Bookmarks.md',
   'Resources/Collections/Chrome Bookmarks.md',
   'Resources/Collections/YouTube Likes.md',
@@ -48,6 +52,7 @@ export function signalChannelForPath(relativePath, urls = []) {
   if (lower.startsWith('00 - capture/youtube/')) return 'youtube-like'
   if (lower.startsWith('01 - active/themes/')) return inferActiveThemeSignalChannel(urls)
   if (lower.startsWith('inbox/nts-liked-tracks-source-map')) return 'nts-like'
+  if (lower.startsWith('00 - capture/nts-liked-tracks-source-map')) return 'nts-like'
   if (lower === 'resources/chrome bookmarks.md' || lower === 'resources/collections/chrome bookmarks.md') return 'chrome-bookmark'
   if (lower === 'resources/collections/youtube likes.md') return 'youtube-like'
   return null

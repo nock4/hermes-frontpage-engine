@@ -158,6 +158,43 @@ describe('saved-signal mining', () => {
     })
   })
 
+  it('mines exactly the four relocated NTS maps while preserving direct-stream row exclusions', async () => {
+    const vault = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-nts-vault-'))
+    const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-nts-run-'))
+    const names = ['', '-batch-1', '-batch-2', '-batch-3'].map((suffix) => `nts-liked-tracks-source-map${suffix}.md`)
+    const expectedPaths = names.map((name) => `00 - Capture/${name}`)
+    const recent = new Date('2026-04-26T12:00:00Z')
+    try {
+      await fs.mkdir(path.join(vault, '00 - Capture'), { recursive: true })
+      for (const [index, name] of [...names, 'nts-liked-tracks-source-map-batch-4.md', 'unrelated.md'].entries()) {
+        const file = path.join(vault, '00 - Capture', name)
+        await fs.writeFile(file, [
+          '| # | Artist | Track | Best source | Confidence | URL |',
+          `| 1 | Artist | Track | YouTube | high | https://www.youtube.com/watch?v=track${index} |`,
+          `| 2 | Artist | Track | Bandcamp | medium | https://artist.bandcamp.com/track/song${index} |`,
+          '| 3 | Artist | Track | SoundCloud | low | https://soundcloud.com/artist/low |',
+          '| 4 | Artist | Track | Search | high | https://www.youtube.com/results?search_query=artist |',
+          '| 5 | Artist | Track | Unverified YouTube | high | https://www.youtube.com/watch?v=unverified |',
+          '| 6 | Artist | Track | Search | high | https://artist.bandcamp.com/track/search-hit |',
+          '| 7 | Artist | Track | Website | high | https://example.com/not-streaming |',
+        ].join('\n'))
+        await fs.utimes(file, recent, recent)
+      }
+      const harvest = await mineSignals({ inputMode: 'obsidian-allowlist', inputRoot: vault, date: '2026-04-27', windowDays: 30, maxNotes: 10 }, runDir)
+      expect(harvest.markdown_files_seen).toBe(4)
+      expect(harvest.notes_selected.map((note) => note.path).sort()).toEqual(expectedPaths.sort())
+      expect(harvest.notes_selected.every((note) => note.source_channel === 'nts-like')).toBe(true)
+      expect(harvest.source_candidates.map((source) => source.url).sort()).toEqual(names.flatMap((_, index) => [
+        `https://www.youtube.com/watch?v=track${index}`,
+        `https://artist.bandcamp.com/track/song${index}`,
+      ]).sort())
+      for (const relativePath of expectedPaths) expect(signalChannelForPath(relativePath)).toBe('nts-like')
+    } finally {
+      await fs.rm(vault, { recursive: true, force: true })
+      await fs.rm(runDir, { recursive: true, force: true })
+    }
+  })
+
   it('mines only recent allowlisted saved-signal notes in legacy obsidian mode', async () => {
     const vault = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-signal-vault-'))
     const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-signal-run-'))
