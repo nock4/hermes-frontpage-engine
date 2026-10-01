@@ -113,7 +113,7 @@ export function buildHermesQuery({ instructions, inputText, maxOutputTokens, ima
   ].join('\n')
 }
 
-export function buildHermesCommandArgs({ query, needsVision = false }) {
+export function buildHermesCommandArgs({ needsVision = false }) {
   const args = [
     'chat',
     '-Q',
@@ -121,7 +121,7 @@ export function buildHermesCommandArgs({ query, needsVision = false }) {
     '--max-turns', '12',
   ]
   if (needsVision) args.push('-t', 'vision')
-  args.push('-q', query)
+  args.push('--query-file', '-')
   return args
 }
 
@@ -131,16 +131,17 @@ function resolveHermesCommand() {
 
 async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
   const command = resolveHermesCommand()
-  const args = buildHermesCommandArgs({ query, needsVision })
+  const args = buildHermesCommandArgs({ needsVision })
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, {
       cwd: process.cwd(),
       env: { ...process.env },
-      stdio: ['ignore', 'pipe', 'pipe'],
+      stdio: ['pipe', 'pipe', 'pipe'],
     })
 
     let stdout = ''
     let stderr = ''
+    let stdinError = null
     let timedOut = false
     let killTimer
     const deadline = Number.isFinite(timeoutMs) && timeoutMs > 0 ? setTimeout(() => {
@@ -153,6 +154,11 @@ async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
     })
     child.stderr.on('data', (chunk) => {
       stderr += chunk.toString()
+    })
+    // An early exit or timeout can close the pipe mid-write. Keep the child's
+    // exit diagnostic authoritative and reject only after it has been reaped.
+    child.stdin.on('error', (error) => {
+      stdinError = error
     })
     child.on('error', (error) => {
       clearTimeout(deadline)
@@ -168,6 +174,7 @@ async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
         reject(new Error((stderr || stdout || `${command} exited ${code}`).trim()))
         return
       }
+      if (stdinError) return reject(stdinError)
       try {
         resolve(firstJsonObject(extractJsonText(stdout)))
       } catch (error) {
@@ -176,6 +183,8 @@ async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
         }))
       }
     })
+    // Saved-source evidence can exceed OS argv limits; never truncate it.
+    child.stdin.end(query, 'utf8')
   })
 }
 

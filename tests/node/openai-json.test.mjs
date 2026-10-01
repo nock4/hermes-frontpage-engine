@@ -13,7 +13,7 @@ describe('openAiJson', () => {
       maxOutputTokens: 120,
       imagePath: null,
     })
-    const args = buildHermesCommandArgs({ query, needsVision: false })
+    const args = buildHermesCommandArgs({ needsVision: false })
 
     expect(query).toContain('Return exactly one JSON object and nothing else.')
     expect(query).toContain('Return strict JSON only.')
@@ -23,7 +23,7 @@ describe('openAiJson', () => {
       '-Q',
       '--source', 'tool',
       '--max-turns', '12',
-      '-q', query,
+      '--query-file', '-',
     ])
   })
 
@@ -34,7 +34,7 @@ describe('openAiJson', () => {
       maxOutputTokens: 120,
       imagePath: '/tmp/example.png',
     })
-    const args = buildHermesCommandArgs({ query, needsVision: true })
+    const args = buildHermesCommandArgs({ needsVision: true })
 
     expect(query).toContain('Use the vision_analyze tool on that image before answering.')
     expect(query).toContain('Image reference: /tmp/example.png')
@@ -44,7 +44,7 @@ describe('openAiJson', () => {
       '--source', 'tool',
       '--max-turns', '12',
       '-t', 'vision',
-      '-q', query,
+      '--query-file', '-',
     ])
   })
 
