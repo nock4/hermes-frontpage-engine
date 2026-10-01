@@ -20,6 +20,7 @@ vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
 }))
 vi.mock('../../scripts/lib/anchor-source-research.mjs', async (importOriginal) => ({
   ...await importOriginal(),
+  selectAnchorSource: ((original) => (...args) => state.noAnchor ? null : original.selectAnchorSource(...args))(await importOriginal()),
   buildAnchorResearch: async (anchor) => ({ anchor_source: anchor, anchor_research: { summary: 'Painting study', thesis: 'Color and gesture' } }),
   discoverDerivedSourceCandidates: async () => [],
   discoverImageSourceMaterial: async ({ anchor_source: anchor }) => {
@@ -33,6 +34,7 @@ vi.mock('../../scripts/lib/source-image-geometry.mjs', async (importOriginal) =>
 }))
 
 import { inspectSourceCandidates } from '../../scripts/lib/source-research.mjs'
+import { canonicalizeSourceUrl } from '../../scripts/lib/source-url-policy.mjs'
 
 const sources = Array.from({ length: 6 }, (_, index) => ({
   url: `https://artist${index}.example/work`, title: `Painting ${index}`,
@@ -51,17 +53,130 @@ beforeEach(async () => {
   state.batchSize = Infinity
   state.inspections = []
   state.followAnchor = false
+  state.noAnchor = false
   state.analyzer.mockReset()
 })
 afterEach(async () => {
   vi.unstubAllEnvs()
   await fs.rm(runDir, { recursive: true, force: true })
 })
-const inspect = () => inspectSourceCandidates({ source_candidates: sources, notes_selected: [] }, {
-  maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-09-30',
+const inspect = (options = {}, candidates = sources) => inspectSourceCandidates({ source_candidates: candidates, notes_selected: [], motif_terms: [] }, {
+  maxSources: candidates.length, runDir, sourceTool: 'fetch', date: '2026-09-30', ...options,
 })
 
 describe('source research vision boundary', () => {
+  it('tries a verified field alternate after the first promotion fails fertility and rebuilds a missing anchor', async () => {
+    state.noAnchor = true
+    state.materials = []
+    const seen = []
+    state.analyzer.mockImplementation(async ({ instructions, input }) => {
+      if (instructions.includes('source-research editor')) return { source_decisions: [], selected_content_urls: [] }
+      seen.push(input)
+      return seen.length === 1 ? { ...fertile, visual_fertility: 'low' } : fertile
+    })
+    const result = await inspect()
+    expect(seen).toHaveLength(2)
+    expect(result.selected_image_material[0].image_url).not.toBe(material.image_url)
+    expect(result.source_image_mode).toBe('dominant-source-image')
+    expect(result.anchor_research.anchor_source.image_url).toBe(result.selected_image_material[0].image_url)
+    expect(result.source_decision_audit.status).toBe('ok')
+    expect(result.source_image_fingerprints[0].preserve_cues).toEqual(fertile.preserve_cues)
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    expect(images.rejected_image_fingerprints[0].image_url).toBe(material.image_url)
+    expect(images.alternate_visual_anchor_attempts).toHaveLength(1)
+    expect(images.alternate_visual_anchor_attempts[0].status).toBe('accepted')
+  })
+
+  it('bounds fertility fallback to three distinct alternate images and keeps missing-anchor failure closed', async () => {
+    state.noAnchor = true
+    state.materials = []
+    let visions = 0
+    state.analyzer.mockImplementation(async ({ instructions }) => {
+      if (instructions.includes('source-research editor')) return { source_decisions: [], selected_content_urls: [] }
+      visions++
+      return { ...fertile, visual_fertility: 'low' }
+    })
+    await expect(inspect()).rejects.toThrow('missing_anchor_source')
+    expect(visions).toBe(4)
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    expect(images.alternate_visual_anchor_attempts).toHaveLength(3)
+    expect(new Set(images.rejected_image_fingerprints.map(row => row.image_url)).size).toBe(4)
+    expect(images.selected_image_material).toEqual([])
+    expect(images.promoted_visual_anchor).toBeNull()
+  })
+
+  it('can nominate verified music material with a needs-review text score without weakening the final gate', async () => {
+    state.noAnchor = true
+    state.materials = []
+    const music = sources.map((source, index) => ({ ...source,
+      url: `https://label${index}.bandcamp.com/track/record`, title: `Record ${index}`, note_title: `Record ${index}`,
+      image_url: `https://cdn.example/record${index}.jpg`,
+    }))
+    state.reference = music[0]
+    state.analyzer.mockResolvedValueOnce({ ...fertile, visual_fertility: 'low' }).mockResolvedValue(fertile)
+    const result = await inspect({}, music)
+    expect(result.source_decision_audit.decisions[0].decision).toBe('needs_review')
+    expect(result.source_decision_audit.status).toBe('ok')
+    expect(result.selected_image_material[0].image_url).toBe(music[1].image_url)
+  })
+
+  it('does not replace an exact override with a fertile field alternate', async () => {
+    state.analyzer.mockResolvedValue({ ...fertile, visual_fertility: 'low' })
+    await expect(inspect({ inspirationOverride: { source_url: sources[0].url, prompt_bias_terms: ['exact-anchor'] } }))
+      .rejects.toThrow(/exact_anchor_material_blocked/)
+    expect(state.analyzer).toHaveBeenCalledTimes(1)
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    expect(images.alternate_visual_anchor_attempts).toBeUndefined()
+  })
+
+  it('does not spend alternate attempts on unverified content', async () => {
+    state.batchSize = 0
+    state.materials = []
+    state.analyzer.mockResolvedValue({ ...fertile, visual_fertility: 'low' })
+    await expect(inspect()).rejects.toThrow('insufficient_eligible_source_media')
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    expect(images.alternate_visual_anchor_attempts).toEqual([])
+  })
+
+  it('keeps alternate vision failure blocking with the failed fingerprint saved', async () => {
+    state.materials = []
+    state.analyzer.mockResolvedValueOnce({ ...fertile, visual_fertility: 'low' })
+      .mockRejectedValue(new Error('alternate vision unavailable'))
+    await expect(inspect()).rejects.toThrow(/vision.*before image generation/)
+    expect(state.analyzer).toHaveBeenCalledTimes(2)
+    const evidence = JSON.parse(await fs.readFile(path.join(runDir, 'source-image-fingerprints.json'), 'utf8'))
+    expect(evidence.fingerprints[0].vision_error).toContain('alternate vision unavailable')
+  })
+
+  it('skips spent image aliases, editorial exclusions, and duplicate images before the bounded vision budget', async () => {
+    state.materials = []
+    state.noAnchor = true
+    const extras = Array.from({ length: 6 }, (_, index) => ({
+      ...sources[0], url: `https://extra${index}.example/work`, note_id: `extra-${index}`,
+      image_url: `https://extra${index}.example/work.jpg`, title: `Painting extra ${index}`,
+    }))
+    const candidates = [
+      sources[0],
+      { ...sources[1], image_url: sources[0].image_url },
+      sources[2],
+      { ...sources[3], title: 'AI agent workflow tutorial' },
+      { ...sources[4], autoresearch_role: 'supporting-only' },
+      ...extras,
+    ]
+    let visions = 0
+    state.analyzer.mockImplementation(async ({ instructions }) => {
+      if (instructions.includes('source-research editor')) return { source_decisions: [{ url: sources[4].url, role: 'reject' }], selected_content_urls: [] }
+      visions++
+      return { ...fertile, visual_fertility: 'low' }
+    })
+    await expect(inspect({ recentSourceKeys: new Set([canonicalizeSourceUrl(sources[2].image_url)]) }, candidates)).rejects.toThrow('missing_anchor_source')
+    expect(visions).toBe(4)
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    const attempts = images.alternate_visual_anchor_attempts
+    expect(attempts).toHaveLength(3)
+    expect(attempts.filter(row => !extras.some(source => source.image_url === row.image_url))).toEqual([])
+  })
+
   it('refills already-renderable evidence and rebuilds an excluded automatic anchor before vision', async () => {
     state.batchSize = 2
     state.followAnchor = true

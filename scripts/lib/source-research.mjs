@@ -1040,6 +1040,66 @@ export async function inspectSourceCandidates(signalHarvest, {
       fingerprints: screenedMaterial.source_image_fingerprints,
     })
   }
+  // The first visual reference is only a nomination. A successful low-fertility
+  // verdict may try a bounded set of already-verified field images, never new
+  // discovery, unknown refill, an exact override, or a failed vision response.
+  if (!selectedImageMaterial.length && screenedMaterial.rejected_image_fingerprints.length
+    && !isExactAnchorOverride(inspirationOverride)) {
+    const attemptedImages = new Set(screenedMaterial.rejected_image_fingerprints
+      .map((fingerprint) => canonicalizeSourceUrl(fingerprint.image_url)))
+    const alternates = selectContentSources(contentSources, { recentSourceKeys, signalHarvest, autoresearch })
+      .filter((source) => hasCreativeArtifactEvidence(source, autoresearch, signalHarvest))
+      .filter(eligibleForEnrichment)
+      .filter((source) => decideAnchorEligibility({ anchorSource: source, recentSourceKeys, autoresearch }).decision !== 'reject')
+      .map((source) => ({ source, score: visualReferenceScore(source, recentSourceKeys) }))
+      .filter(({ score }) => Number.isFinite(score))
+      .sort((left, right) => right.score - left.score)
+    imageSourceMaterial.alternate_visual_anchor_attempts = []
+    for (const { source, score } of alternates) {
+      if (imageSourceMaterial.alternate_visual_anchor_attempts.length >= 3) break
+      const imageKey = canonicalizeSourceUrl(source.image_url)
+      if (!imageKey || attemptedImages.has(imageKey)) continue
+      const promoted = buildPromotedVisualAnchorMaterial({ ...source, visual_reference_score: score }, {
+        ...imageMaterialEvidence, anchorResearch, imageSourceMaterial, inspirationOverride, recentSourceKeys,
+      })
+      if (!promoted) continue
+      attemptedImages.add(imageKey)
+      const attempt = { page_url: promoted.candidate.page_url, image_url: promoted.candidate.image_url, status: 'inspecting' }
+      imageSourceMaterial.alternate_visual_anchor_attempts.push(attempt)
+      // Persist the attempt before vision; its existing fail-closed error retains
+      // the failed fingerprint and must not silently move on to another seed.
+      await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
+      sourceImageArtifacts = await writeSourceImageArtifacts(runDir, [promoted.candidate])
+      const screenedAlternate = screenSourceImageMaterial([promoted.candidate], sourceImageArtifacts.source_image_fingerprints)
+      imageSourceMaterial.rejected_image_fingerprints.push(...screenedAlternate.rejected_image_fingerprints)
+      selectedImageMaterial = screenedAlternate.selected_image_material
+      attempt.status = selectedImageMaterial.length ? 'accepted' : 'rejected-low-fertility'
+      sourceImageArtifacts = await writeSourceImageArtifacts(runDir, selectedImageMaterial, {
+        fingerprints: screenedAlternate.source_image_fingerprints,
+      })
+      if (!selectedImageMaterial.length) continue
+      if (!anchorSource && !forcedAnchorSource) {
+        anchorSource = { ...source, anchor_selection_lane: 'verified-fertile-source-field',
+          anchor_selection_reason: 'Selected from verified eligible content sources after the first visual seed failed fertility.' }
+        anchorResearch = await buildAnchorResearch(anchorSource, { runDate: date })
+        await writeJson(path.join(runDir, 'anchor-research.json'), anchorResearch)
+      }
+      promotedVisualAnchorRelationship = promoted.relationship
+      promotedVisualAnchorRelationship.reason = 'Promoted a fresh verified content-source image after earlier image material failed fertility; alternate survived vision screening.'
+      imageSourceMaterial = {
+        ...imageSourceMaterial,
+        selected_image_material: selectedImageMaterial,
+        promoted_visual_anchor: promotedVisualAnchorRelationship,
+        low_fertility_anchor_demoted: {
+          ...imageSourceMaterial.low_fertility_anchor_demoted,
+          promoted_title: promoted.candidate.title,
+          promoted_image_url: promoted.candidate.image_url,
+          reason: promotedVisualAnchorRelationship.reason,
+        },
+      }
+      break
+    }
+  }
   const sourceImageMode = sourceImageArtifacts.source_image_fingerprints.some((fingerprint) => fingerprint?.image_url && !isLowFertilitySourceFingerprint(fingerprint))
     ? 'dominant-source-image'
     : 'skipped-no-valid-dominant-source-image'
