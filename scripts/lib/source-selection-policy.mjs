@@ -106,6 +106,16 @@ export function aestheticSignalScore(candidate = {}) {
   return score
 }
 
+// Saved-note navigation is not source prose. Match only the consecutive
+// wikilink bullets under a Related heading (including flattened excerpts),
+// never the rest of the section: a following pitch must still quarantine.
+// Do not apply this to inspected descriptions, captions, or other source text.
+function savedNoteProse(value) {
+  return typeof value === 'string'
+    ? value.replace(/(^|\s)#{2,3}\s+Related\s*(?:-\s*\[\[[^\]\r\n]+\]\]\s*)+/gi, '$1')
+    : value
+}
+
 // Read source evidence, not generated artifact labels or thematic folder names.
 // Keep parent records and binding aliases: media enrichment can rename the title
 // while the original workflow pitch survives only in a summary or saved note.
@@ -119,10 +129,10 @@ function editorialProvenanceText(source, signalHarvest = null, seen = new Set())
   ))
   return [
     source.url, source.source_url, source.final_url, source.resolved_url, source.page_url,
-    source.title, source.description, source.visible_text, source.note_title, source.note_excerpt,
+    source.title, source.description, source.visible_text, source.note_title, savedNoteProse(source.note_excerpt),
     source.source_title, source.source_summary, source.source_meta, source.excerpt,
     source.caption, source.visual_reason, source.visual_summary,
-    note?.title, note?.excerpt,
+    note?.title, savedNoteProse(note?.excerpt),
     editorialProvenanceText(source.parent_source, signalHarvest, seen),
     ...(Array.isArray(source.editorial_evidence) ? source.editorial_evidence : [])
       .map((record) => editorialProvenanceText(record, signalHarvest, seen)),
