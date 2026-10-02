@@ -1,0 +1,230 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-02-a-pulse-inside-the-opening-v1",
+  "edition_id": "2026-10-02-a-pulse-inside-the-opening-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-02-a-pulse-inside-the-opening-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-ivory-contour-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-ivory-contour-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (contour-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-displaced-cleft",
+      "target_kind": "artifact",
+      "artifact_id": "hero-displaced-cleft",
+      "priority": 2,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (displacement-cleft) selected from interpretation."
+    },
+    {
+      "target_id": "module-interrupted-pulse-pocket",
+      "target_kind": "artifact",
+      "artifact_id": "module-interrupted-pulse-pocket",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (incised-puncture-pocket) selected from interpretation."
+    },
+    {
+      "target_id": "module-folded-haze-lip",
+      "target_kind": "artifact",
+      "artifact_id": "module-folded-haze-lip",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (folded-rim) selected from interpretation."
+    },
+    {
+      "target_id": "module-open-hinge",
+      "target_kind": "artifact",
+      "artifact_id": "module-open-hinge",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hinged-contour-loop) selected from interpretation."
+    },
+    {
+      "target_id": "module-offset-crescent-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-offset-crescent-notch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (offset-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-blunt-light-recess",
+      "target_kind": "artifact",
+      "artifact_id": "module-blunt-light-recess",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (haze-lit-recess) selected from interpretation."
+    },
+    {
+      "target_id": "module-broken-contour-return",
+      "target_kind": "artifact",
+      "artifact_id": "module-broken-contour-return",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (interrupted-contour-return) selected from interpretation."
+    },
+    {
+      "target_id": "module-inset-shadow-island",
+      "target_kind": "artifact",
+      "artifact_id": "module-inset-shadow-island",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (shadow-pocket) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
