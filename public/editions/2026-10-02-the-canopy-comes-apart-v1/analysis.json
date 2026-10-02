@@ -1,0 +1,639 @@
+{
+  "analysis_id": "analysis-2026-10-02-the-canopy-comes-apart-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A densely detailed botanical basin surrounds a large black central opening. A peach-lit treetop crown fills the upper left; forest shelves, fine waterfalls, oversized ribbed leaves, two separated coral bird processions, and a thin green eclipse rim occupy the remaining field. The image is representational and intricate rather than minimal expressionist. Several planned anchors have visible botanical counterparts, but the oblique translucent lemon-pink plane and a discrete close-cut nick cluster are not visible. The cyan accents read as waterfalls, not an isolated broken painted stroke.",
+  "usable_surfaces": [
+    "Peach-lit scalloped outer canopy edge",
+    "Lower-left scalloped leaf overlap",
+    "Dark notch beneath a green leaf",
+    "Lower coral bird procession",
+    "Curved black cleft between mossy lower banks",
+    "Ribbed leaf tip beside a dark contact gap",
+    "Thin illuminated crescent around the upper dark disc",
+    "Narrow cyan waterfall on the right bank"
+  ],
+  "detected_objects": [
+    {
+      "label": "Peach-lit lifted canopy rim",
+      "artifact_type": "lifted-canopy-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.344,
+        "y": 0.04,
+        "w": 0.259,
+        "h": 0.188
+      },
+      "polygon": [
+        [
+          0.344,
+          0.04
+        ],
+        [
+          0.385,
+          0.047
+        ],
+        [
+          0.427,
+          0.062
+        ],
+        [
+          0.465,
+          0.075
+        ],
+        [
+          0.489,
+          0.103
+        ],
+        [
+          0.531,
+          0.117
+        ],
+        [
+          0.558,
+          0.143
+        ],
+        [
+          0.583,
+          0.162
+        ],
+        [
+          0.599,
+          0.189
+        ],
+        [
+          0.603,
+          0.208
+        ],
+        [
+          0.587,
+          0.228
+        ],
+        [
+          0.568,
+          0.219
+        ],
+        [
+          0.557,
+          0.192
+        ],
+        [
+          0.524,
+          0.178
+        ],
+        [
+          0.501,
+          0.15
+        ],
+        [
+          0.468,
+          0.117
+        ],
+        [
+          0.408,
+          0.085
+        ],
+        [
+          0.357,
+          0.067
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A continuous warm peach and pale yellow band follows the scalloped outside of the upper-left crown, descending toward the central opening. It is visibly treetop foliage rather than a freestanding painted canopy."
+    },
+    {
+      "label": "Stepped lower pressure ridge",
+      "artifact_type": "scalloped-leaf-overlap",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.004,
+        "y": 0.869,
+        "w": 0.307,
+        "h": 0.087
+      },
+      "polygon": [
+        [
+          0.004,
+          0.877
+        ],
+        [
+          0.05,
+          0.869
+        ],
+        [
+          0.087,
+          0.896
+        ],
+        [
+          0.111,
+          0.916
+        ],
+        [
+          0.141,
+          0.916
+        ],
+        [
+          0.179,
+          0.906
+        ],
+        [
+          0.211,
+          0.896
+        ],
+        [
+          0.248,
+          0.903
+        ],
+        [
+          0.279,
+          0.923
+        ],
+        [
+          0.302,
+          0.931
+        ],
+        [
+          0.311,
+          0.95
+        ],
+        [
+          0.294,
+          0.956
+        ],
+        [
+          0.268,
+          0.932
+        ],
+        [
+          0.236,
+          0.927
+        ],
+        [
+          0.207,
+          0.918
+        ],
+        [
+          0.162,
+          0.939
+        ],
+        [
+          0.109,
+          0.946
+        ],
+        [
+          0.061,
+          0.898
+        ]
+      ],
+      "confidence": 0.73,
+      "visual_evidence": "The large lower-left leaf has a broad stepped and scalloped bottom edge with a dark leaf underneath. This is a real lower overlap, but it is ribbed botanical material, not an unambiguous compressed pigment ridge with punctures."
+    },
+    {
+      "label": "Emerald underlap notch",
+      "artifact_type": "foliage-overlap-notch",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.081,
+        "y": 0.766,
+        "w": 0.05,
+        "h": 0.055
+      },
+      "polygon": [
+        [
+          0.081,
+          0.772
+        ],
+        [
+          0.098,
+          0.766
+        ],
+        [
+          0.119,
+          0.775
+        ],
+        [
+          0.131,
+          0.789
+        ],
+        [
+          0.119,
+          0.805
+        ],
+        [
+          0.12,
+          0.821
+        ],
+        [
+          0.104,
+          0.815
+        ],
+        [
+          0.091,
+          0.797
+        ]
+      ],
+      "confidence": 0.78,
+      "visual_evidence": "A small irregular black notch cuts into the underside of the green leaf on the lower-left margin, above the larger fan leaf. The notch is visibly bounded by foliage and is separate from the scalloped lower overlap."
+    },
+    {
+      "label": "Coral crossing interruption",
+      "artifact_type": "wing-gesture-cluster",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.3,
+        "y": 0.489,
+        "w": 0.206,
+        "h": 0.075
+      },
+      "polygon": [
+        [
+          0.302,
+          0.489
+        ],
+        [
+          0.329,
+          0.496
+        ],
+        [
+          0.341,
+          0.51
+        ],
+        [
+          0.354,
+          0.516
+        ],
+        [
+          0.399,
+          0.509
+        ],
+        [
+          0.425,
+          0.523
+        ],
+        [
+          0.397,
+          0.529
+        ],
+        [
+          0.426,
+          0.543
+        ],
+        [
+          0.478,
+          0.541
+        ],
+        [
+          0.494,
+          0.554
+        ],
+        [
+          0.506,
+          0.559
+        ],
+        [
+          0.47,
+          0.564
+        ],
+        [
+          0.427,
+          0.555
+        ],
+        [
+          0.411,
+          0.559
+        ],
+        [
+          0.392,
+          0.539
+        ],
+        [
+          0.35,
+          0.529
+        ],
+        [
+          0.306,
+          0.52
+        ],
+        [
+          0.32,
+          0.507
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "Five small orange-coral wing-like birds form a short descending procession in the left-center of the black basin. The polygon follows this lower group as one territory; the separate upper-right procession is excluded."
+    },
+    {
+      "label": "Moss-channel cleft",
+      "artifact_type": "moss-lined-cleft",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.689,
+        "y": 0.848,
+        "w": 0.181,
+        "h": 0.152
+      },
+      "polygon": [
+        [
+          0.815,
+          0.848
+        ],
+        [
+          0.837,
+          0.852
+        ],
+        [
+          0.855,
+          0.862
+        ],
+        [
+          0.868,
+          0.861
+        ],
+        [
+          0.87,
+          0.88
+        ],
+        [
+          0.844,
+          0.895
+        ],
+        [
+          0.829,
+          0.919
+        ],
+        [
+          0.802,
+          0.938
+        ],
+        [
+          0.773,
+          0.969
+        ],
+        [
+          0.748,
+          1
+        ],
+        [
+          0.694,
+          1
+        ],
+        [
+          0.689,
+          0.98
+        ],
+        [
+          0.711,
+          0.952
+        ],
+        [
+          0.742,
+          0.931
+        ],
+        [
+          0.769,
+          0.918
+        ],
+        [
+          0.782,
+          0.891
+        ],
+        [
+          0.777,
+          0.873
+        ],
+        [
+          0.795,
+          0.86
+        ]
+      ],
+      "confidence": 0.91,
+      "visual_evidence": "An irregular deep black channel curves down through the lower-right vegetation to the bottom edge. Teal and moss-green banks define its sides, separating it from the lower-left leaf ridge."
+    },
+    {
+      "label": "Ribbed-leaf lifted corner",
+      "artifact_type": "ribbed-leaf-corner",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.578,
+        "y": 0.901,
+        "w": 0.122,
+        "h": 0.085
+      },
+      "polygon": [
+        [
+          0.578,
+          0.901
+        ],
+        [
+          0.609,
+          0.906
+        ],
+        [
+          0.638,
+          0.916
+        ],
+        [
+          0.662,
+          0.929
+        ],
+        [
+          0.682,
+          0.947
+        ],
+        [
+          0.7,
+          0.971
+        ],
+        [
+          0.691,
+          0.986
+        ],
+        [
+          0.67,
+          0.979
+        ],
+        [
+          0.65,
+          0.963
+        ],
+        [
+          0.624,
+          0.954
+        ],
+        [
+          0.601,
+          0.941
+        ],
+        [
+          0.585,
+          0.922
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "The rightward tip of the dark teal ribbed leaf near the bottom center extends toward the lower-right cleft. Pale transverse ribs and a narrow dark boundary distinguish this corner from the surrounding moss."
+    },
+    {
+      "label": "Upper eclipse rim",
+      "artifact_type": "crescent-light-rim",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.689,
+        "y": 0.032,
+        "w": 0.074,
+        "h": 0.08
+      },
+      "polygon": [
+        [
+          0.742,
+          0.032
+        ],
+        [
+          0.756,
+          0.047
+        ],
+        [
+          0.763,
+          0.066
+        ],
+        [
+          0.76,
+          0.081
+        ],
+        [
+          0.748,
+          0.095
+        ],
+        [
+          0.728,
+          0.106
+        ],
+        [
+          0.704,
+          0.112
+        ],
+        [
+          0.689,
+          0.111
+        ],
+        [
+          0.72,
+          0.102
+        ],
+        [
+          0.74,
+          0.09
+        ],
+        [
+          0.752,
+          0.077
+        ],
+        [
+          0.756,
+          0.062
+        ],
+        [
+          0.75,
+          0.044
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "A thin yellow-green illuminated arc traces the right and lower-right edge of the dark circular body near the top. This is an additional visible anchor, not a substitute identification for a missing planned seam."
+    },
+    {
+      "label": "Right-bank cyan waterfall",
+      "artifact_type": "vertical-water-thread",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.765,
+        "y": 0.78,
+        "w": 0.05,
+        "h": 0.082
+      },
+      "polygon": [
+        [
+          0.802,
+          0.78
+        ],
+        [
+          0.815,
+          0.785
+        ],
+        [
+          0.805,
+          0.805
+        ],
+        [
+          0.802,
+          0.834
+        ],
+        [
+          0.793,
+          0.855
+        ],
+        [
+          0.775,
+          0.862
+        ],
+        [
+          0.765,
+          0.855
+        ],
+        [
+          0.77,
+          0.833
+        ],
+        [
+          0.775,
+          0.805
+        ],
+        [
+          0.786,
+          0.789
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Several close cyan-white threads fall vertically from the lower-right forest shelf and stop above the dark channel. This is a waterfall surface; it does not substantiate the planned short broken stroke below a translucent plane."
+    },
+    {
+      "label": "Ribbed-leaf lifted corner",
+      "artifact_type": "ribbed-leaf-corner",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 5,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.142,
+    "rationale": "Estimated mapped coverage is small because territories follow actual edges and marks. The central black basin provides substantial negative space, but the surrounding forest contains dense branching, many tiny crowns, repeated waterfalls, ribbed leaves, and speckled texture. The result is detailed botanical fantasy rather than minimal expressionism. Several planned abstract marks cannot be identified without forcing unrelated features into those roles."
+  },
+  "fallback_detected_object_count": 1,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-10-02-the-canopy-comes-apart-v1"
+}
