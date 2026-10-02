@@ -100,8 +100,12 @@ test('generated edition route renders artwork and opens a source window', async 
   expect(windowState.hasMedia || windowState.hasReadableText).toBe(true)
 })
 
-for (const audioOnly of [false, true]) {
-  test(`generated edition clicks keep ${audioOnly ? 'audio ' : ''}source surfaces in the plate instead of opening linkout chrome`, async ({ page }) => {
+for (const { audioOnly, clickDelay } of [
+  { audioOnly: false, clickDelay: 0 },
+  { audioOnly: true, clickDelay: 0 },
+  { audioOnly: false, clickDelay: 150 },
+]) {
+  test(`generated edition clicks keep ${audioOnly ? 'audio ' : ''}source surfaces in the plate instead of opening linkout chrome${clickDelay ? ' with delayed pointer delivery' : ''}`, async ({ page }) => {
     const route = process.env.DFE_SMOKE_ROUTE || '/'
 
     if (audioOnly) {
@@ -157,10 +161,19 @@ for (const audioOnly of [false, true]) {
     const openedArtifactIndexes = new Set<number>()
 
     for (let attempt = 0; attempt < 2; attempt += 1) {
+      // The opening bloom initially exposes points that its iframe later covers.
+      // Settle finite entrance animations before sampling real hit territories.
+      await openWindows.evaluateAll(async (nodes) => {
+        await Promise.all(nodes.flatMap((node) => node.getAnimations({ subtree: true }))
+          .filter((animation) => animation.effect?.getTiming().iterations !== Infinity)
+          .map((animation) => animation.finished.catch(() => undefined)))
+      })
       const point = await findClickableArtifactPoint([...openedArtifactIndexes])
       expect(point).not.toBeNull()
       if (!point) break
 
+      // Regress the discovery-to-delivery race without forced clicks or retries.
+      if (attempt > 0 && clickDelay) await page.waitForTimeout(clickDelay)
       await page.mouse.click(point.x, point.y)
       openedArtifactIndexes.add(point.index)
       await expect(openWindows).toHaveCount(openedArtifactIndexes.size)
