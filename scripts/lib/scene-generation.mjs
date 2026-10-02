@@ -980,21 +980,21 @@ function dashPanelRecoveryScene(sourceImageFingerprints = []) {
 }
 
 function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride = '', sourceImageFingerprints = [] }) {
-  const forbiddenDebugMarks = 'No visible annotation glyphs or QA chrome.'
+  const forbiddenDebugMarks = 'No visible annotation glyphs or QA chrome. No numbered or unnumbered registration targets, crosshairs, reticles or hollow target rings at edges/pinhole seams.'
   const dashRecovery = dominantOverride ? dashPanelRecoveryScene(sourceImageFingerprints) : ''
   if (dashRecovery) {
-    return `Add ${anchorCount} source windows as real dash-panel marks: missing-dash seams, shifted raster islands, paper-edge cuts, tiny slit interruptions, margin-shadow apertures, and dense-block scars. They must be embedded in the printed panel and wall edge, never USB ports, plug mouths, cables, cards, pasted thumbnails, visible annotation glyphs, QA chrome, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
+    return `Add ${anchorCount} source windows as real dash-panel marks: missing-dash seams, shifted raster islands, paper-edge cuts, tiny slit interruptions, margin-shadow apertures, and dense-block scars. They must be embedded in the printed panel and wall edge, never USB ports, plug mouths, cables, cards, pasted thumbnails, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
   }
   if (effectDirection?.prompt_sentence) {
     const markTypes = joinLimited(effectDirection.source_window_mark_types, 'source-native marks', 5)
     const surfaces = joinLimited(effectDirection.surface_language, 'source-native surfaces', 4)
     return hasSourceImage
-      ? `Add ${anchorCount} source windows as real marks in the recomposed plate using this effect grammar: ${markTypes} in ${surfaces}. They must grow from borrowed source elements, never cards, pasted thumbnails, visible annotation glyphs, QA chrome, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
-      : `Add ${anchorCount} source windows as real marks from the source field using this effect grammar: ${markTypes} in ${surfaces}. They must not appear as summary cards, pasted thumbnails, visible annotation glyphs, QA chrome, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
+      ? `Add ${anchorCount} source windows as real marks in the recomposed plate using this effect grammar: ${markTypes} in ${surfaces}. They must grow from borrowed source elements, never cards, pasted thumbnails, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
+      : `Add ${anchorCount} source windows as real marks from the source field using this effect grammar: ${markTypes} in ${surfaces}. They must not appear as summary cards, pasted thumbnails, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
   }
   return hasSourceImage
-    ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small, medium, and hero-visible seams, apertures, cuts, glints, scars, defects, and media grains. At least three marks must visibly alter the image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, visible annotation glyphs, QA chrome, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
-    : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, visible annotation glyphs, QA chrome, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
+    ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small to hero-scale seams, apertures, cuts, glints, scars and grains. At least three marks must alter image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
+    : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
 }
 
 export function buildSceneImagePrompt(payload) {

@@ -58,11 +58,14 @@ def fit(image, max_w, max_h):
     return image
 
 source = fit(open_source(source_url), 860, 860)
-plate = fit(Image.open(plate_path).convert('RGB'), 860, 860)
+native_plate = Image.open(plate_path).convert('RGB')
+plate = fit(native_plate.copy(), 860, 860)
 label_h = 46
 gap = 28
-w = source.width + gap + plate.width
-h = label_h + max(source.height, plate.height)
+w = max(source.width + gap + plate.width, native_plate.width)
+overview_h = label_h + max(source.height, plate.height)
+lower_edge = native_plate.crop((0, native_plate.height * 3 // 4, native_plate.width, native_plate.height))
+h = overview_h + gap + label_h + lower_edge.height
 sheet = Image.new('RGB', (w, h), (245, 245, 242))
 draw = ImageDraw.Draw(sheet)
 try:
@@ -73,6 +76,8 @@ draw.text((12, 12), 'LEFT: SOURCE MATERIAL', fill=(20, 20, 20), font=font)
 draw.text((source.width + gap + 12, 12), 'RIGHT: GENERATED PLATE', fill=(20, 20, 20), font=font)
 sheet.paste(source, (0, label_h))
 sheet.paste(plate, (source.width + gap, label_h))
+draw.text((12, overview_h + gap + 12), 'DETAIL: GENERATED PLATE LOWER EDGE - NATIVE PIXELS', fill=(20, 20, 20), font=font)
+sheet.paste(lower_edge, (0, overview_h + gap + label_h))
 sheet.save(output_path)
 print(output_path)
 `
@@ -138,6 +143,8 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   }
 
   const blockers = []
+  // This field is positive visual evidence, not prose to soften via minor/slight filters.
+  if (normalized.forbidden_debug_marks.length) blockers.push('forbidden generated debug marks')
   for (const key of ['resemblance_score', 'framing_score', 'object_relationship_score', 'context_score', 'transformation_score']) {
     if (normalized[key] === null) blockers.push(`invalid ${key}: expected a JSON number from 0 to 1`)
   }
@@ -278,6 +285,8 @@ export async function auditSourceImageFidelity(
     task: 'Compare the LEFT source material image with the RIGHT generated plate. Judge whether the generated plate borrows recognizable source elements while becoming a new Daily Frontpage plate, not a recreation of the same image.',
     rules: [
       'All five scores must be JSON numbers from 0 to 1 inclusive (for example 0.85), never percentages, numeric strings, or spelled-out words. Return valid JSON only.',
+      'Inspect the complete plate and the full-resolution lower edge in the bottom DETAIL strip, not just the reduced overview. Use vision region crops on the DETAIL strip if small marks are unclear; inspect edge/pinhole seams, corners, bright dots and scratch intersections before claiming no forbidden marks. The DETAIL strip is an unmodified native-pixel crop, not extra plate content; its heading and the overview headings are review labels only.',
+      'Return fail for generated numbered or unnumbered registration targets, crosshairs, reticles, calibration ticks, hollow target rings or hotspot outlines. A tiny white hollow ring intersected by a tick or aligned with dots can be a debug mark even without numbers or color. Do not excuse target geometry as photographic dust, repair joins or onset punctures. Distinguish irregular organic grain from designed target geometry; report concrete location and shape in forbidden_debug_marks. Any such mark blocks regardless of fidelity scores.',
       'This is not a generic style-similarity check and not a copy-tolerance check. The generated plate may use the source image as inspiration, but it must not recreate the same photograph/product shot/still life with small marks added.',
       'A pass should borrow source identity: palette, silhouettes, motifs, material behavior, light, edge pressure, or a few object relationships. It should visibly change at least two of arrangement, scale, object count, crop, surface state, or spatial logic.',
       'Do not require exact crop, framing, camera distance, or object layout. Deliberate recomposition is good when the borrowed source identity remains legible.',
@@ -302,7 +311,7 @@ export async function auditSourceImageFidelity(
       retained_critical_elements: ['short phrases'],
       missing_critical_elements: ['short phrases'],
       drift_risks: ['short phrases'],
-      forbidden_debug_marks: ['visible numbered badges/callouts/pins/rings/labels in the generated plate that are not present in the source, or []'],
+      forbidden_debug_marks: ['visible numbered or unnumbered registration targets/crosshairs/reticles/calibration ticks/hollow target rings/badges/callouts/pins/labels in the generated plate; give location and shape, or [] if absent'],
       rationale: 'short editorial reason',
     },
   }
