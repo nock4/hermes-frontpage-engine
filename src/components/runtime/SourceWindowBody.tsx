@@ -379,6 +379,7 @@ export function SourceWindowBody({
           src={descriptor.embedUrl}
           title={binding.title}
         />
+        {surface === 'stage' ? <strong className="source-window__media-title">{binding.source_title || binding.title}</strong> : null}
         <a href={descriptor.sourceUrl} rel="noreferrer" target="_blank">{descriptor.ctaLabel} ↗</a>
       </div>
     )

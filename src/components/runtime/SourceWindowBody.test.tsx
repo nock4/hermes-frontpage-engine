@@ -43,6 +43,19 @@ describe('YouTube stage surfaces', () => {
   })
 })
 
+describe('native audio stage provenance', () => {
+  it.each([
+    ['bandcamp', 'https://music-from-memory.bandcamp.com/track/modern-living-snow-bird', '<iframe src="https://bandcamp.com/EmbeddedPlayer/track=2043450709/size=large/"></iframe>'],
+    ['soundcloud', 'https://soundcloud.com/example/track', '<iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/example/track"></iframe>'],
+  ])('keeps %s primary title outside its native iframe', (_provider, source_url, source_embed_html) => {
+    const binding = { id: 'audio', artifact_id: 'hero', source_type: 'audio', window_type: 'audio', source_url, source_embed_html, title: 'Audio title', source_title: 'Exact source provenance' } as SourceBindingRecord
+    const html = renderToStaticMarkup(createElement(SourceWindow, { binding, mode: 'primary', surface: 'stage', onClose() {} }))
+    expect(html).toContain('<iframe')
+    expect(html).toContain('<strong class="source-window__media-title">Exact source provenance</strong>')
+    expect(html).not.toContain('class="visual-source-card"')
+  })
+})
+
 describe('source visual crop fallback', () => {
   it.each(['medium', 'high'] as const)('uses contained raw media for %s-risk poster crops', (cropRisk) => {
     const binding = makeBinding(cropRisk)
