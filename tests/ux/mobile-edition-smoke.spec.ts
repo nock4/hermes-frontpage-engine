@@ -4,6 +4,7 @@ import path from 'node:path'
 import { expect, test, type Page } from '@playwright/test'
 import { getSourceWindowDescriptor } from '../../src/lib/sourceWindowContent'
 import type { SourceBindingRecord as RuntimeBinding } from '../../src/types/runtime'
+import { waitForNativeAudioReady } from './native-audio-readiness'
 
 type ManifestItem = {
   edition_id: string
@@ -224,7 +225,7 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
     // a clip-path on the source window after animation. Check media/title
     // against every clipping ancestor as well, not only the viewport.
     let contentClipped = false
-    for (const element of [visualCard?.querySelector('.visual-source-card__figure'), title]) {
+    for (const element of [visualCard?.querySelector('.visual-source-card__figure'), ...node.querySelectorAll('iframe'), title]) {
       if (!element) continue
       const content = element.getBoundingClientRect()
       for (let ancestor = element.parentElement; ancestor; ancestor = ancestor.parentElement) {
@@ -354,7 +355,22 @@ for (const viewport of mobileViewports) {
       if (metric.sourceVisualMode && !metric.titleVisible) failures.push(`${viewport.name} / ${label}: image-backed preview has no readable source title`)
       if (!metric.hasVisibleMedia && !metric.hasReadableText) failures.push(`${viewport.name} / ${label}: source window has no visible media or readable fallback`)
       if (metric.hasVisibleMedia && metric.mediaAreaRatio < 0.22) failures.push(`${viewport.name} / ${label}: source media is too small in the mobile source window (${metric.mediaAreaRatio.toFixed(2)} < 0.22)`)
-      if (viewport.name === 'mobile-landscape' && binding.source_media_type !== 'video' && (binding.source_media_url || binding.source_image_url)) {
+      const descriptor = getSourceWindowDescriptor(binding as RuntimeBinding)
+      // YouTube uses an image preview; audio descriptors mount the real player in both modes.
+      const nativePlayer = ['bandcamp-embed', 'soundcloud-embed'].includes(descriptor.kind)
+      if (nativePlayer) {
+        const iframe = page.locator(`.stage-overlay-windows--live .source-window[data-binding-id="${binding.id}"] iframe`)
+        await waitForNativeAudioReady(iframe, descriptor.kind)
+        const box = await iframe.boundingBox()
+        expect(box!.width).toBeGreaterThanOrEqual(240)
+        expect(box!.height).toBeGreaterThanOrEqual(80)
+        expect(box!.x).toBeGreaterThanOrEqual(0)
+        expect(box!.y).toBeGreaterThanOrEqual(0)
+        expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width + 1)
+        expect(box!.y + box!.height).toBeLessThanOrEqual(viewport.height + 1)
+        await page.screenshot({ path: path.join(reportRoot, `${viewport.name}-${sanitizePathPart(binding.id)}-player.png`) })
+      }
+      if (viewport.name === 'mobile-landscape' && !nativePlayer && binding.source_media_type !== 'video' && (binding.source_media_url || binding.source_image_url)) {
         if (metric.sourceVisualMode !== 'raw') failures.push(`${viewport.name} / ${label}: still-image source must use contained raw media in short landscape (mode=${metric.sourceVisualMode})`)
         if (!metric.hasAmbientFill) failures.push(`${viewport.name} / ${label}: contained landscape source is missing blurred ambient fill`)
         const expectedRawImageUrl = binding.source_media_url || binding.source_image_url || null
@@ -406,10 +422,10 @@ for (const viewport of mobileViewports) {
           // A YouTube thumbnail is image metadata, not the opened player's
           // media type. Require the native iframe instead of a raw poster.
           const primaryDescriptor = getSourceWindowDescriptor(primaryBinding as RuntimeBinding)
-          if (primaryDescriptor.kind === 'youtube-embed') {
-            await expect(primaryWindow.locator('.source-window__body--video iframe')).toHaveAttribute('src', primaryDescriptor.embedUrl)
-            await expect(primaryWindow.locator('.source-window__body--video iframe')).toBeVisible()
-            const player = await primaryWindow.locator('.source-window__body--video iframe').boundingBox()
+          if (['youtube-embed', 'bandcamp-embed', 'soundcloud-embed'].includes(primaryDescriptor.kind) && 'embedUrl' in primaryDescriptor) {
+            await expect(primaryWindow.locator('iframe')).toHaveAttribute('src', primaryDescriptor.embedUrl)
+            await expect(primaryWindow.locator('iframe')).toBeVisible()
+            const player = await primaryWindow.locator('iframe').boundingBox()
             expect(player).not.toBeNull()
             expect(player!.x).toBeGreaterThanOrEqual(0)
             expect(player!.y).toBeGreaterThanOrEqual(0)

@@ -3289,6 +3289,23 @@
   aspect-ratio: 16 / 7;
 }
 
+/* Audio controls must fit the aperture, not inherit a wide-video height. */
+@media (max-width: 680px), (max-height: 480px) {
+  .source-window--stage:has(.source-window__body--audio-embed) {
+    height: auto !important;
+    max-height: calc(100dvh - 2rem) !important;
+  }
+  .source-window--stage .source-window__body--audio-embed {
+    height: auto;
+    max-height: none;
+  }
+  .source-window--stage .source-window__body--audio-embed iframe {
+    height: 180px;
+    min-height: 180px;
+    aspect-ratio: auto;
+  }
+}
+
 .source-window__body--video-signal {
   position: relative;
   width: min(100%, 30rem);
@@ -5020,6 +5037,13 @@
      still cuts overflowing content even though the window rect is in bounds. */
   .source-window--stage.source-window--preview:has(.visual-source-card) {
     max-height: min(74dvh, calc(100dvh - clamp(0.5rem, 10dvh, 4.75rem) - 0.5rem)) !important;
+  }
+
+  /* Artifact-card fallbacks cap their body at 24rem, while the mobile shell
+     can span the viewport. Keep its aperture on the raw card so the sibling
+     close control cannot drift into transparent space beside the cover. */
+  .source-window--stage.source-window--preview.source-window--frame-artifact-card:has(.visual-source-card[data-source-visual-mode='raw']) {
+    width: calc(min(82vh, 20rem, calc(100vw - 1.25rem)) + 2px) !important;
   }
 
   .source-window--stage.source-window--preview:has(.visual-source-card[data-source-visual-mode='raw']) .visual-source-card {
