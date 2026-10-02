@@ -127,8 +127,9 @@ function App() {
     ? windowState.openBindingIds
       .filter((bindingId) => !windowState.minimizedBindingIds.includes(bindingId))
       .map((bindingId) => bindingsById.get(bindingId) ?? null)
+      // Explicit minimization controls docking, including persistent audio.
+      // A second audio pin must not silently unmount the first open player.
       .filter((binding): binding is SourceBindingRecord => Boolean(binding))
-      .filter((binding) => binding.window_type !== 'audio' || binding.id === primaryBinding?.id)
     : []
   const embedPreloads = useMemo(() => collectEmbedPreloads({
     bindings: loaded?.sourceBindings.bindings ?? [],

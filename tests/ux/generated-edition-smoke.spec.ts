@@ -100,58 +100,76 @@ test('generated edition route renders artwork and opens a source window', async 
   expect(windowState.hasMedia || windowState.hasReadableText).toBe(true)
 })
 
-test('generated edition clicks keep source surfaces in the plate instead of opening linkout chrome', async ({ page }) => {
-  const route = process.env.DFE_SMOKE_ROUTE || '/'
+for (const audioOnly of [false, true]) {
+  test(`generated edition clicks keep ${audioOnly ? 'audio ' : ''}source surfaces in the plate instead of opening linkout chrome`, async ({ page }) => {
+    const route = process.env.DFE_SMOKE_ROUTE || '/'
 
-  await page.goto(route, { waitUntil: 'domcontentloaded' })
-  await page.waitForSelector('img.plate', { timeout: 20_000 })
-  await page.waitForSelector('button.artifact', { timeout: 20_000 })
-
-  const findClickableArtifactPoint = async (openedArtifactIndexes: number[]) => page.locator('button.artifact').evaluateAll((nodes, openedIndexes) => {
-    const opened = new Set(openedIndexes)
-    const xSteps = [0.5, 0.35, 0.65, 0.2, 0.8]
-    const ySteps = [0.5, 0.35, 0.65, 0.2, 0.8]
-
-    for (const [index, node] of nodes.entries()) {
-      if (opened.has(index)) continue
-
-      const element = node as HTMLElement
-      const rect = element.getBoundingClientRect()
-      if (rect.width <= 0 || rect.height <= 0) continue
-
-      for (const xStep of xSteps) {
-        for (const yStep of ySteps) {
-          const x = rect.left + rect.width * xStep
-          const y = rect.top + rect.height * yStep
-          const hit = document.elementFromPoint(x, y)
-          if (hit === element || element.contains(hit)) return { index, x, y }
+    if (audioOnly) {
+      // Exercise consecutive audio pins even when today's first sources are visual.
+      // Keep real artifact geometry/media; only vary the window-manager category.
+      await page.route('**/source-bindings.json', async (request) => {
+        const response = await request.fetch()
+        const payload = await response.json()
+        for (const binding of payload.bindings) {
+          binding.window_type = 'audio'
+          binding.playback_persistence = true
         }
-      }
+        await request.fulfill({ json: payload })
+      })
     }
 
-    return null
-  }, openedArtifactIndexes)
+    await page.goto(route, { waitUntil: 'domcontentloaded' })
+    await page.waitForSelector('img.plate', { timeout: 20_000 })
+    await page.waitForSelector('button.artifact', { timeout: 20_000 })
 
-  let popupOpened = false
-  page.once('popup', async (popup) => {
-    popupOpened = true
-    await popup.close().catch(() => undefined)
+    const findClickableArtifactPoint = async (openedArtifactIndexes: number[]) => page.locator('button.artifact').evaluateAll((nodes, openedIndexes) => {
+      const opened = new Set(openedIndexes)
+      const xSteps = [0.5, 0.35, 0.65, 0.2, 0.8]
+      const ySteps = [0.5, 0.35, 0.65, 0.2, 0.8]
+
+      for (const [index, node] of nodes.entries()) {
+        if (opened.has(index)) continue
+
+        const element = node as HTMLElement
+        const rect = element.getBoundingClientRect()
+        if (rect.width <= 0 || rect.height <= 0) continue
+
+        for (const xStep of xSteps) {
+          for (const yStep of ySteps) {
+            const x = rect.left + rect.width * xStep
+            const y = rect.top + rect.height * yStep
+            const hit = document.elementFromPoint(x, y)
+            if (hit === element || element.contains(hit)) return { index, x, y }
+          }
+        }
+      }
+
+      return null
+    }, openedArtifactIndexes)
+
+    let popupOpened = false
+    page.once('popup', async (popup) => {
+      popupOpened = true
+      await popup.close().catch(() => undefined)
+    })
+
+    const openWindows = page.locator('.stage-overlay-windows--live .source-window')
+    const openedArtifactIndexes = new Set<number>()
+
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      const point = await findClickableArtifactPoint([...openedArtifactIndexes])
+      expect(point).not.toBeNull()
+      if (!point) break
+
+      await page.mouse.click(point.x, point.y)
+      openedArtifactIndexes.add(point.index)
+      await expect(openWindows).toHaveCount(openedArtifactIndexes.size)
+    }
+
+    expect(openedArtifactIndexes.size).toBe(2)
+    await expect(openWindows).toHaveCount(2)
+    await expect(page.locator('.stage-overlay-windows--live .source-window[data-source-window-mode="primary"]')).toHaveCount(1)
+    await expect(page.locator('.stage-overlay-windows--live .source-window[data-source-window-mode="secondary"]')).toHaveCount(1)
+    expect(popupOpened).toBe(false)
   })
-
-  const openWindows = page.locator('.stage-overlay-windows--live .source-window')
-  const openedArtifactIndexes = new Set<number>()
-
-  for (let attempt = 0; attempt < 2; attempt += 1) {
-    const point = await findClickableArtifactPoint([...openedArtifactIndexes])
-    expect(point).not.toBeNull()
-    if (!point) break
-
-    await page.mouse.click(point.x, point.y)
-    openedArtifactIndexes.add(point.index)
-    await expect(openWindows).toHaveCount(openedArtifactIndexes.size)
-  }
-
-  expect(openedArtifactIndexes.size).toBe(2)
-  await expect(openWindows).toHaveCount(2)
-  expect(popupOpened).toBe(false)
-})
+}
