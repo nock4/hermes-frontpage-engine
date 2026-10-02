@@ -1,4 +1,49 @@
 import { expect, test, type Page } from '@playwright/test'
+import fs from 'node:fs'
+import path from 'node:path'
+
+// Real provider internals: an in-bounds iframe can still cut its track row.
+for (const viewport of [{ width: 360, height: 740 }, { width: 375, height: 667 }, { width: 393, height: 852 }, { width: 852, height: 393 }]) {
+  test(`Bandcamp internal track row fits candidate at ${viewport.width}px`, async ({ page }, testInfo) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/?edition=2026-10-02-a-pulse-inside-the-opening-v1')
+    const artifact = page.getByRole('button', { name: 'Ivory contour aperture', exact: true })
+    await artifact.focus()
+    await artifact.press('Enter')
+    const surface = page.locator('.stage-overlay-windows--live .source-window[data-source-window-mode="primary"]')
+    const iframe = surface.locator('iframe')
+    await expect(iframe).toHaveAttribute('src', /track=1200520298/)
+    const provider = iframe.contentFrame()
+    await expect(provider.locator('#tracklist li').first()).toBeVisible({ timeout: 30000 })
+    await surface.evaluate(async node => {
+      await Promise.all(node.getAnimations({ subtree: true }).filter(a => a.effect?.getComputedTiming().iterations !== Infinity).map(a => a.finished.catch(() => {})))
+    })
+    // Exercise the unchanged real transport, not merely provider readiness.
+    await provider.locator('#play:visible, #big_play_button:visible').first().click()
+    await expect.poll(() => provider.locator('audio').evaluateAll(nodes => nodes.some(node => {
+      const audio = node as HTMLAudioElement
+      return Boolean(audio.currentSrc) && audio.currentTime > 0.2 && !audio.paused && !audio.muted && !audio.error
+    })), { timeout: 20000 }).toBe(true)
+    const internal = await provider.locator('#tracklist').evaluate(node => ({
+      list: node.getBoundingClientRect().toJSON(),
+      row: node.querySelector('li')!.getBoundingClientRect().toJSON(),
+      height: innerHeight,
+    }))
+    const outer = await surface.evaluate(node => ({ surface: node.getBoundingClientRect().toJSON(), frame: node.querySelector('iframe')!.getBoundingClientRect().toJSON() }))
+    const root = process.env.DFE_BANDCAMP_QA_DIR || testInfo.outputPath('bandcamp-proof')
+    fs.mkdirSync(root, { recursive: true })
+    const stem = path.join(root, `${viewport.width}-primary`)
+    fs.writeFileSync(`${stem}.json`, JSON.stringify({ edition: '2026-10-02-a-pulse-inside-the-opening-v1', viewport, internal, outer }, null, 2))
+    await page.screenshot({ path: `${stem}.png` })
+    expect(internal.row.height).toBeGreaterThan(20)
+    expect(internal.row.top).toBeGreaterThanOrEqual(internal.list.top)
+    expect(internal.row.bottom, 'provider track row must not be clipped by its own tracklist').toBeLessThanOrEqual(internal.list.bottom)
+    expect(outer.frame.bottom).toBeLessThanOrEqual(outer.surface.bottom)
+    expect(outer.surface.bottom).toBeLessThanOrEqual(viewport.height)
+    expect(outer.surface.top).toBeGreaterThanOrEqual(0)
+  })
+}
+
 
 const bandcampFixtureSrc = 'https://bandcamp.com/EmbeddedPlayer/track=2003169497/size=large/bgcol=333333/linkcol=e32c14/artwork=small/transparent=true/'
 

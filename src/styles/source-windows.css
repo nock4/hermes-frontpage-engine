@@ -3304,6 +3304,12 @@
     min-height: 180px;
     aspect-ratio: auto;
   }
+  /* Narrow Bandcamp players move download/share below the transport. Their
+     fixed 32px track row needs that extra footer room inside the iframe. */
+  .source-window--stage .source-window__body--audio-embed iframe[src*="bandcamp.com/EmbeddedPlayer/"] {
+    height: 208px;
+    min-height: 208px;
+  }
 }
 
 .source-window__body--video-signal {
