@@ -122,17 +122,30 @@ for (const { audioOnly, clickDelay } of [
       })
     }
 
+    const bindingsResponse = page.waitForResponse((response) => response.url().endsWith('/source-bindings.json'))
+    const artifactsResponse = page.waitForResponse((response) => response.url().endsWith('/artifact-map.json'))
     await page.goto(route, { waitUntil: 'domcontentloaded' })
+    const { bindings } = await (await bindingsResponse).json() as {
+      bindings: { id: string; artifact_id: string; window_type: string }[]
+    }
+    const { artifacts } = await (await artifactsResponse).json() as { artifacts: { id: string }[] }
+    const artifactBindings = artifacts.map((artifact) => bindings.find((binding) => binding.artifact_id === artifact.id))
     await page.waitForSelector('img.plate', { timeout: 20_000 })
     await page.waitForSelector('button.artifact', { timeout: 20_000 })
 
-    const findClickableArtifactPoint = async (openedArtifactIndexes: number[]) => page.locator('button.artifact').evaluateAll((nodes, openedIndexes) => {
+    const findClickableArtifactPoint = async (openedArtifactIndexes: number[]) => page.locator('button.artifact').evaluateAll((nodes, { openedIndexes, categories }) => {
       const opened = new Set(openedIndexes)
+      // Two on-stage pins means two visual windows or two audio windows.
+      // Mixing categories intentionally docks audio; it is not a dropped click.
+      const firstCategory = categories[openedIndexes[0]]
       const xSteps = [0.5, 0.35, 0.65, 0.2, 0.8]
       const ySteps = [0.5, 0.35, 0.65, 0.2, 0.8]
 
       for (const [index, node] of nodes.entries()) {
         if (opened.has(index)) continue
+        const category = categories[index]
+        if (!category || (firstCategory && category !== firstCategory)) continue
+        if (!firstCategory && categories.filter((value) => value === category).length < 2) continue
 
         const element = node as HTMLElement
         const rect = element.getBoundingClientRect()
@@ -149,7 +162,10 @@ for (const { audioOnly, clickDelay } of [
       }
 
       return null
-    }, openedArtifactIndexes)
+    }, {
+      openedIndexes: openedArtifactIndexes,
+      categories: artifactBindings.map((binding) => binding ? (binding.window_type === 'audio' ? 'audio' : 'visual') : null),
+    })
 
     let popupOpened = false
     page.once('popup', async (popup) => {
@@ -174,9 +190,22 @@ for (const { audioOnly, clickDelay } of [
 
       // Regress the discovery-to-delivery race without forced clicks or retries.
       if (attempt > 0 && clickDelay) await page.waitForTimeout(clickDelay)
+      const binding = artifactBindings[point.index]
+      expect(binding).toBeDefined()
+      if (process.env.DFE_SMOKE_HIT_DIAGNOSTICS) {
+        console.log('pin-delivery', { binding, ...await page.evaluate(({ x, y, index }) => ({
+          index, x, y,
+          selected: document.querySelectorAll('button.artifact')[index]?.getAttribute('aria-label'),
+          hit: document.elementFromPoint(x, y)?.outerHTML.slice(0, 700),
+          windows: Array.from(document.querySelectorAll('.stage-overlay-windows--live .source-window')).map((node) => ({
+            binding: node.getAttribute('data-binding-id'), mode: node.getAttribute('data-source-window-mode'),
+          })),
+        }), point) })
+      }
       await page.mouse.click(point.x, point.y)
       openedArtifactIndexes.add(point.index)
       await expect(openWindows).toHaveCount(openedArtifactIndexes.size)
+      await expect(page.locator(`.stage-overlay-windows--live .source-window[data-binding-id="${binding!.id}"]`)).toHaveAttribute('data-source-window-mode', 'primary')
     }
 
     expect(openedArtifactIndexes.size).toBe(2)
