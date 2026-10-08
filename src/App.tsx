@@ -17,6 +17,8 @@ import { ArchiveIndexPage, ArchiveMiniList } from './components/runtime/ArchiveN
 import { EmbedPreloadLayer } from './components/runtime/EmbedPreloadLayer'
 import { RuntimeSidebar } from './components/runtime/RuntimeSidebar'
 import { SourceWindow, SourceWindowDock } from './components/runtime/SourceWindow'
+import { InteractionLab } from './components/runtime/InteractionLab'
+import { isInteractionLabMode } from './lib/interactionLab'
 import type { ArchiveRecord, ArtifactRecord, EditionManifest, LoadedEdition, SourceBindingRecord, SourceWindowState } from './types/runtime'
 
 function App() {
@@ -120,6 +122,7 @@ function App() {
 
   const archiveRecords = useMemo<ArchiveRecord[]>(() => (manifest ? getEditionArchiveRecords(manifest) : []), [manifest])
   const reviewMode = getReviewMode(window.location.search)
+  const interactionLabMode = isInteractionLabMode(window.location.search)
   const presentation = getRuntimePresentation(reviewMode)
   const hasPrimaryStageWindow = reviewMode === 'live' && !!primaryBinding
   const lockedArtifactId = hasPrimaryStageWindow ? primaryBinding?.artifact_id ?? null : null
@@ -206,7 +209,7 @@ function App() {
   const sourcePlaceLabel = sourcePlaceCount === 1 ? '1 place' : `${sourcePlaceCount} places`
 
   return (
-    <main className={`runtime-shell review-mode--${reviewMode} ${runtimeAmbienceClasses}${presentation.showSidebar ? '' : ' runtime-shell--immersive'}${presentation.stageFillViewport ? ' runtime-shell--stage-fill' : ''}`} data-edition-id={loaded.edition.edition_id} style={editionTypographyStyle}>
+    <main className={`runtime-shell review-mode--${reviewMode} ${interactionLabMode ? 'interaction-lab-mode ' : ''}${runtimeAmbienceClasses}${presentation.showSidebar ? '' : ' runtime-shell--immersive'}${presentation.stageFillViewport ? ' runtime-shell--stage-fill' : ''}`} data-edition-id={loaded.edition.edition_id} style={editionTypographyStyle}>
       <section className="runtime-main">
         {embedPreloads.length ? <EmbedPreloadLayer embeds={embedPreloads} /> : null}
         {presentation.showTopbar ? (
@@ -362,12 +365,23 @@ function App() {
                   activateArtifactBinding(artifact.id, binding)
                 }}
                 onClick={() => activateArtifactBinding(artifact.id, binding)}
+                tabIndex={interactionLabMode ? -1 : undefined}
                 type="button"
               >
                 <span>{artifact.label}</span>
               </button>
             )
           })}
+
+          {interactionLabMode ? (
+            <InteractionLab
+              artifacts={loaded.artifactMap.artifacts}
+              bindings={loaded.sourceBindings.bindings}
+              editionId={loaded.edition.edition_id}
+              onOpenSource={(binding, artifact) => activateArtifactBinding(artifact.id, binding)}
+              platePath={loaded.edition.plate_asset_path}
+            />
+          ) : null}
 
           {presentation.showStageOverlayWindows ? (
             <div className={`stage-overlay-windows${reviewMode === 'live' ? ' stage-overlay-windows--live' : ''}`}>
