@@ -17,6 +17,7 @@ export function InteractionLab({ artifacts, bindings, editionId, platePath, onOp
   const [hydratedEditionId, setHydratedEditionId] = useState<string | null>(null)
   const bindingsByArtifact = useMemo(() => new Map(bindings.map((binding) => [binding.artifact_id, binding])), [bindings])
   const selected = useMemo(() => pickLabArtifacts(artifacts, new Set(bindings.map(({ artifact_id }) => artifact_id))), [artifacts, bindings])
+  const safePlatePath = getPackagedMaterialPath(undefined, editionId, platePath)
 
   useEffect(() => {
     dispatch({ type: 'hydrate', trail: loadEncounterTrail(window.localStorage, editionId) })
@@ -47,7 +48,7 @@ export function InteractionLab({ artifacts, bindings, editionId, platePath, onOp
   }
 
   return (
-    <div className="interaction-lab" data-interaction-lab="true" style={{ '--lab-plate': `url("${platePath}")` } as React.CSSProperties}>
+    <div className="interaction-lab" data-interaction-lab="true" style={(safePlatePath ? { '--lab-plate': `url("${safePlatePath}")` } : {}) as React.CSSProperties}>
       <div className="interaction-lab__territories">
         {selected.map((artifact, index) => {
           const binding = bindingsByArtifact.get(artifact.id)!
@@ -80,7 +81,7 @@ export function InteractionLab({ artifacts, bindings, editionId, platePath, onOp
                   left: `${visual.x * 100}%`, top: `${visual.y * 100}%`,
                   width: `${visual.w * 100}%`, height: `${visual.h * 100}%`,
                   clipPath: geometry.visual.clipPath, WebkitClipPath: geometry.visual.clipPath,
-                  '--lab-material': `url("${material}")`,
+                  ...(material ? { '--lab-material': `url("${material}")` } : {}),
                 } as React.CSSProperties}
               >
                 <span className="interaction-lab__material" aria-hidden="true" />

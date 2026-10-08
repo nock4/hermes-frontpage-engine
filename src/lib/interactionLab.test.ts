@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { createInteractionState, getInteractionGeometry, getPackagedMaterialPath, interactionReducer, isInteractionLabMode, loadEncounterTrail, pickLabArtifacts, saveEncounterTrail, storageKey, type Encounter } from './interactionLab'
+import { clearEncounterTrail, createInteractionState, getInteractionGeometry, getPackagedMaterialPath, interactionReducer, isInteractionLabMode, loadEncounterTrail, pickLabArtifacts, saveEncounterTrail, storageKey, type Encounter } from './interactionLab'
 
 const artifacts = Array.from({ length: 8 }, (_, index) => ({ id: `a-${index}` }))
 
@@ -49,6 +49,16 @@ describe('encounter trail storage', () => {
     const storage = { getItem: () => raw, setItem: () => undefined, removeItem: () => true }
     expect(loadEncounterTrail(storage, 'edition-x')).toEqual([])
   })
+
+  it('keeps storage write and clear failures nonblocking', () => {
+    const storage = {
+      getItem: () => null,
+      setItem: () => { throw new DOMException('blocked') },
+      removeItem: () => { throw new DOMException('blocked') },
+    }
+    expect(() => saveEncounterTrail(storage, 'edition-x', [])).not.toThrow()
+    expect(() => clearEncounterTrail(storage, 'edition-x')).not.toThrow()
+  })
 })
 
 describe('interaction geometry', () => {
@@ -74,6 +84,30 @@ describe('interaction geometry', () => {
     const bounds = { x: .2, y: .3, w: .2, h: .1 }
     expect(getInteractionGeometry({ bounds, polygon: [] }).target.bounds).toEqual(bounds)
   })
+
+  it.each([
+    { x: .1, y: .1, w: 0, h: .2 },
+    { x: .1, y: .1, w: -.2, h: .2 },
+    { x: .1, y: .1, w: Number.NaN, h: .2 },
+    { x: .1, y: .1, w: .2, h: Number.POSITIVE_INFINITY },
+  ])('rejects invalid hover bounds and falls back to valid artifact bounds: %j', (hoverBounds) => {
+    const bounds = { x: .2, y: .3, w: .2, h: .1 }
+    const geometry = getInteractionGeometry({ bounds, polygon: [], interaction_mesh: { hover_bounds: hoverBounds, hover_polygon: [] } })
+    expect(geometry.target.bounds).toEqual(bounds)
+    expect(geometry.visual.bounds).toEqual({ x: 0, y: 0, w: 1, h: 1 })
+  })
+
+  it.each([
+    { x: 0, y: 0, w: 0, h: 1 },
+    { x: 0, y: 0, w: 1, h: -1 },
+    { x: Number.NaN, y: 0, w: 1, h: 1 },
+    { x: 0, y: Number.NEGATIVE_INFINITY, w: 1, h: 1 },
+  ])('replaces invalid visible bounds with finite clamped geometry: %j', (bounds) => {
+    const geometry = getInteractionGeometry({ bounds, polygon: [], interaction_mesh: { hover_bounds: { x: -.5, y: -.5, w: 2, h: 2 }, hover_polygon: [] } })
+    expect(geometry.target.bounds).toEqual({ x: 0, y: 0, w: 1, h: 1 })
+    expect(geometry.visual.bounds).toEqual({ x: 0, y: 0, w: 1, h: 1 })
+    expect(Object.values(geometry.visual.bounds).every((value) => Number.isFinite(value) && value >= 0 && value <= 1)).toBe(true)
+  })
 })
 
 describe('material assets', () => {
@@ -87,5 +121,30 @@ describe('material assets', () => {
       '/editions/edition-a/assets/source-posters/../../remote.jpg',
       '/editions/edition-a/assets/source-posters/poster.jpg?remote=https://remote.test',
     ]) expect(getPackagedMaterialPath(unsafe, 'edition-a', plate)).toBe(plate)
+  })
+
+  it.each([
+    '/editions/edition-a/assets/source-posters/%2e%2e/remote.jpg',
+    '/editions/edition-a/assets/source-posters/%252e%252e%252fremote.jpg',
+    '/editions/edition-a/assets/source-posters/folder%2fremote.jpg',
+    '/editions/edition-a/assets/source-posters/folder%5cremote.jpg',
+  ])('rejects encoded traversal and separators in poster paths: %s', (poster) => {
+    expect(getPackagedMaterialPath(poster, 'edition-a', '/editions/edition-a/assets/plate.webp')).toBe('/editions/edition-a/assets/plate.webp')
+  })
+
+  it('preserves safe encoded filename characters', () => {
+    const poster = '/editions/edition-a/assets/source-posters/a%20caf%C3%A9.jpg'
+    expect(getPackagedMaterialPath(poster, 'edition-a', '/editions/edition-a/assets/plate.webp')).toBe(poster)
+  })
+
+  it.each([
+    'https://remote.test/plate.webp',
+    '//remote.test/plate.webp',
+    '/editions/edition-b/assets/plate.webp',
+    '/editions/edition-a/assets/%2e%2e/plate.webp',
+    '/editions/edition-a/assets/folder%2fplate.webp',
+    '/editions/edition-a/assets/plate.webp?cache=1',
+  ])('returns null instead of an unsafe plate fallback: %s', (plate) => {
+    expect(getPackagedMaterialPath('https://remote.test/poster.jpg', 'edition-a', plate)).toBeNull()
   })
 })

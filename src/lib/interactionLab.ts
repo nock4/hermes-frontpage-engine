@@ -26,31 +26,80 @@ const polygonClip = (polygon: Point[] | undefined, bounds: Bounds) => {
   return `polygon(${polygon.map(([x, y]) => `${percent((x - bounds.x) / bounds.w)}% ${percent((y - bounds.y) / bounds.h)}%`).join(', ')})`
 }
 
+const isValidBounds = (bounds: Bounds | undefined): bounds is Bounds => {
+  if (!bounds) return false
+  return Number.isFinite(bounds.x)
+    && Number.isFinite(bounds.y)
+    && Number.isFinite(bounds.w)
+    && Number.isFinite(bounds.h)
+    && bounds.w > 0
+    && bounds.h > 0
+}
+
+const clampUnit = (value: number) => Math.min(1, Math.max(0, Number.isFinite(value) ? value : 0))
+
 export const getInteractionGeometry = (artifact: GeometryArtifact) => {
-  const targetBounds = artifact.interaction_mesh?.hover_bounds || artifact.bounds
-  const targetPolygon = artifact.interaction_mesh?.hover_polygon || artifact.polygon
+  const hasValidVisibleBounds = isValidBounds(artifact.bounds)
+  const visibleBounds = hasValidVisibleBounds ? artifact.bounds : { x: 0, y: 0, w: 1, h: 1 }
+  const hasValidHoverBounds = hasValidVisibleBounds && isValidBounds(artifact.interaction_mesh?.hover_bounds)
+  const targetBounds = hasValidHoverBounds ? artifact.interaction_mesh!.hover_bounds! : visibleBounds
+  const targetPolygon = hasValidHoverBounds ? artifact.interaction_mesh?.hover_polygon : artifact.polygon
+  const visualLeft = clampUnit((visibleBounds.x - targetBounds.x) / targetBounds.w)
+  const visualTop = clampUnit((visibleBounds.y - targetBounds.y) / targetBounds.h)
+  const visualRight = clampUnit((visibleBounds.x + visibleBounds.w - targetBounds.x) / targetBounds.w)
+  const visualBottom = clampUnit((visibleBounds.y + visibleBounds.h - targetBounds.y) / targetBounds.h)
   return {
     target: { bounds: targetBounds, clipPath: polygonClip(targetPolygon, targetBounds) },
     visual: {
       bounds: {
-        x: (artifact.bounds.x - targetBounds.x) / targetBounds.w,
-        y: (artifact.bounds.y - targetBounds.y) / targetBounds.h,
-        w: artifact.bounds.w / targetBounds.w,
-        h: artifact.bounds.h / targetBounds.h,
+        x: visualLeft,
+        y: visualTop,
+        w: visualRight - visualLeft,
+        h: visualBottom - visualTop,
       },
-      clipPath: polygonClip(artifact.polygon, artifact.bounds),
+      clipPath: hasValidVisibleBounds ? polygonClip(artifact.polygon, visibleBounds) : undefined,
     },
   }
 }
 
+const hasUnsafePathEncoding = (path: string) => {
+  let decoded = path
+  for (let depth = 0; depth < 16; depth += 1) {
+    if (/%(?:2e|2f|5c)/i.test(decoded)) return true
+    let next: string
+    try {
+      next = decodeURIComponent(decoded)
+    } catch {
+      return true
+    }
+    if (/[?#\\]/.test(next)) return true
+    if (next === decoded) return false
+    decoded = next
+  }
+  return true
+}
+
+const isPackagedPath = (path: string | undefined, prefix: string) => {
+  if (typeof path !== 'string' || !path.startsWith(prefix) || path.length <= prefix.length) return false
+  if (/[?#\\]/.test(path) || hasUnsafePathEncoding(path)) return false
+  try {
+    const parsed = new URL(path, 'https://packaged.invalid')
+    return parsed.origin === 'https://packaged.invalid'
+      && parsed.pathname === path
+      && parsed.search === ''
+      && parsed.hash === ''
+      && parsed.pathname.startsWith(prefix)
+  } catch {
+    return false
+  }
+}
+
 export const getPackagedMaterialPath = (posterPath: string | undefined, editionId: string, platePath: string) => {
-  const prefix = `/editions/${editionId}/assets/source-posters/`
-  const isPackagedPoster = typeof posterPath === 'string'
-    && posterPath.startsWith(prefix)
-    && posterPath.length > prefix.length
-    && !posterPath.includes('..')
-    && !/[?#\\]/.test(posterPath)
-  return isPackagedPoster ? posterPath : platePath
+  if (!editionId || encodeURIComponent(editionId) !== editionId) return null
+  const assetPrefix = `/editions/${editionId}/assets/`
+  const posterPrefix = `${assetPrefix}source-posters/`
+  if (isPackagedPath(posterPath, posterPrefix)) return posterPath!
+  return isPackagedPath(platePath, assetPrefix) ? platePath : null
 }
 
 type StorageLike = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>
@@ -112,7 +161,17 @@ export const loadEncounterTrail = (storage: StorageLike, editionId: string): Enc
 }
 
 export const saveEncounterTrail = (storage: StorageLike, editionId: string, trail: Encounter[]) => {
-  storage.setItem(storageKey(editionId), JSON.stringify({ version: 1, trail }))
+  try {
+    storage.setItem(storageKey(editionId), JSON.stringify({ version: 1, trail }))
+  } catch {
+    // Persistence is optional; interaction must remain available when storage is blocked.
+  }
 }
 
-export const clearEncounterTrail = (storage: StorageLike, editionId: string) => storage.removeItem(storageKey(editionId))
+export const clearEncounterTrail = (storage: StorageLike, editionId: string) => {
+  try {
+    storage.removeItem(storageKey(editionId))
+  } catch {
+    // Clearing UI state must remain available when storage is blocked.
+  }
+}
