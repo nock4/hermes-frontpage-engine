@@ -30,7 +30,7 @@ function parentEvidence(source, signalHarvest, seen = new Set(), depth = 0, budg
 // Only scheduling sees this copy. Keep unrelated saved-note wikilinks out of
 // lexical ranking, but retain them verbatim in the actual inspector payload.
 function rankingEvidence(value) {
-  if (typeof value === 'string') return value.replace(/###\s+Related\s*(?:-\s*\[\[[^\]]+\]\]\s*)+/gi, '')
+  if (typeof value === 'string') return value.replace(/#{2,3}\s+Related\s*(?:-\s*\[\[[^\]]+\]\]\s*)+/gi, '')
   if (Array.isArray(value)) return value.map(rankingEvidence)
   if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([key, entry]) => [key, rankingEvidence(entry)]))
   return value
@@ -85,7 +85,12 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
         && /\bcreate\b[^.!?\n]{0,100}\b(?:isometric|3d)\b[^.!?\n]{0,60}\b(?:room|scene|diorama)\b/i.test(text)
         && /\b(?:ambient animations|lighting|textures|furniture)\b/i.test(text)
       const promo = product || (/\bprompts?\b/i.test(text) && !sceneCreation)
-      const priority = promo ? -1 : sceneCreation ? 1
+      // Concrete provider works get the same early inspection lane as visual
+      // artwork. Anchor richness/utility heuristics are a poor budget scheduler:
+      // e.g. a track named "Following" is penalized as a profile by that ranker.
+      // These are nominations only; product context and all admission gates stay.
+      const providerTrack = /^https?:\/\/[^/]+\.bandcamp\.com\/(?:track|album)\/[^/?#]+(?:[/?#]|$)/i.test(source.source_url || source.url || '')
+      const priority = promo ? -1 : sceneCreation || providerTrack ? 1
         : rank?.anchor_selection_lane === 'ai-tooling-penalized' ? -1
         : rank?.anchor_selection_lane === 'artwork-first' ? 1 : 0
       return { source, rank, priority }

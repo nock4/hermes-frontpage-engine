@@ -41,6 +41,60 @@ it('replays the saved 60-family field without starving inspected artwork or prom
   }
 })
 
+it('schedules the exhausted cycle2 provider tracks and published artwork before generic candidates', async () => {
+  const fixture = JSON.parse(await fs.readFile(new URL('../fixtures/batch4-cycle2-inspection-ranking.json', import.meta.url), 'utf8'))
+  const original = JSON.stringify(fixture)
+  const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'cycle2-ranking-'))
+  try {
+    expect(fixture.sources).toHaveLength(75)
+    expect(fixture.actualAttemptUrls).toHaveLength(24)
+    fetchVettedRemoteUrl.mockImplementation(async () => new Response(Buffer.from('mock raster'), { headers: { 'content-type': 'image/png' } }))
+    openAiJson.mockReset().mockResolvedValue({ status: 'ambiguous', confidence: 'low' })
+    let research = { source_decisions: [] }
+    for (const count of [10, 20, 24, 24]) {
+      // Production's first pixel batch precedes fallback text research. Preserve
+      // its later exclusions without importing any prior pixel verdicts.
+      if (count === 20) research.source_decisions.push(...fixture.research.source_decisions)
+      research = await inspectCreativeArtifacts(fixture.sources, research, {
+        runDir, signalHarvest: fixture.signalHarvest, recentSourceKeys: new Set(fixture.recentSourceKeys), maxInspections: 100,
+      })
+      expect(openAiJson).toHaveBeenCalledTimes(count)
+    }
+    const urls = research.source_decisions.filter(row => row.inspection).map(row => row.url)
+    const generic = 'https://x.com/unicodeveloper/status/2015802752396394721'
+    for (const url of ['https://lynn1.bandcamp.com/track/underlies', 'https://memotone.bandcamp.com/track/following']) {
+      expect(fixture.actualAttemptUrls).not.toContain(url)
+      expect(urls, `fresh creative candidate ${url} must fit the existing cap`).toContain(url)
+      if (urls.includes(generic)) expect(urls.indexOf(url)).toBeLessThan(urls.indexOf(generic))
+      expect(hasCreativeArtifactEvidence(fixture.sources.find(s => s.url === url), research, fixture.signalHarvest)).toBe(false)
+    }
+    expect(new Set(urls).size).toBe(24)
+    expect(JSON.stringify(fixture)).toBe(original)
+  } finally {
+    await fs.rm(runDir, { recursive: true, force: true })
+    vi.clearAllMocks()
+  }
+})
+
+it.each([
+  { url: 'https://artist.bandcamp.com/track/tool-demo', description: 'Our new software platform' },
+  { url: 'https://x.com/demo/status/1', description: 'Our workflow tool released on @objktcom' },
+  { url: 'https://artist.bandcamp.com.evil.example/track/not-a-provider', description: 'A quiet evening' },
+])('does not give creative-provider priority to products or lookalike hosts: $url', async candidate => {
+  const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'provider-negative-'))
+  try {
+    const promo = { ...candidate, image_url: 'https://example.com/demo.png', note_score: 1 }
+    const neutral = { url: 'https://x.com/work/status/2', image_url: 'https://example.com/work.png', title: 'A quiet evening', note_score: 99999 }
+    fetchVettedRemoteUrl.mockImplementation(async () => new Response(Buffer.from('mock raster'), { headers: { 'content-type': 'image/png' } }))
+    openAiJson.mockReset().mockResolvedValue({ status: 'ambiguous' })
+    const result = await inspectCreativeArtifacts([promo, neutral], {}, { runDir, maxInspections: 1 })
+    expect(result.source_decisions.map(row => row.url)).toEqual([neutral.url])
+  } finally {
+    await fs.rm(runDir, { recursive: true, force: true })
+    vi.clearAllMocks()
+  }
+})
+
 it.each([
   'Prompt: improve your response format and structure',
   'Our workflow tool: Create an isometric 3D cozy room with ambient animations',
