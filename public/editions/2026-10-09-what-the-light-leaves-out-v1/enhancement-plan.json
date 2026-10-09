@@ -1,0 +1,229 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-09-what-the-light-leaves-out-v1",
+  "edition_id": "2026-10-09-what-the-light-leaves-out-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-09-what-the-light-leaves-out-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-bleached-crown",
+      "target_kind": "artifact",
+      "artifact_id": "hero-bleached-crown",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cropped-exposure-silhouette) selected from interpretation."
+    },
+    {
+      "target_id": "hero-frayed-crossing",
+      "target_kind": "artifact",
+      "artifact_id": "hero-frayed-crossing",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (diagonal-exposure-junction) selected from interpretation."
+    },
+    {
+      "target_id": "module-hollow-at-the-temple",
+      "target_kind": "artifact",
+      "artifact_id": "module-hollow-at-the-temple",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (silhouette-edge-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-broken-streak-end",
+      "target_kind": "artifact",
+      "artifact_id": "module-broken-streak-end",
+      "priority": 4,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (interrupted-light-streak) selected from interpretation."
+    },
+    {
+      "target_id": "module-offset-contour-gap",
+      "target_kind": "artifact",
+      "artifact_id": "module-offset-contour-gap",
+      "priority": 5,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (doubled-contour-gap) selected from interpretation."
+    },
+    {
+      "target_id": "module-white-edge-nick",
+      "target_kind": "artifact",
+      "artifact_id": "module-white-edge-nick",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (exposure-edge-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-uneven-repair",
+      "target_kind": "artifact",
+      "artifact_id": "module-uneven-repair",
+      "priority": 7,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stitchlike-exposure-break) selected from interpretation."
+    },
+    {
+      "target_id": "module-shoulder-pinhole",
+      "target_kind": "artifact",
+      "artifact_id": "module-shoulder-pinhole",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (isolated-exposure-pinhole) selected from interpretation."
+    },
+    {
+      "target_id": "module-smoke-edge-interruption",
+      "target_kind": "artifact",
+      "artifact_id": "module-smoke-edge-interruption",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-boundary-break) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}
