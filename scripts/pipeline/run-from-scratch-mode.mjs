@@ -338,6 +338,15 @@ async function readSourceFidelityAudit(runDir, fsImpl) {
 }
 
 export function buildSourceFidelityRecoveryPayload(payload, audit, attempt = 1) {
+  // Keep complete audits (including debug-mark locations and raw provider output)
+  // in the saved recovery payload, never as image-generation choreography.
+  payload = {
+    ...payload,
+    source_fidelity_recovery_diagnostics: [
+      ...(payload?.source_fidelity_recovery_diagnostics || []),
+      ...(audit ? [structuredClone(audit)] : []),
+    ],
+  }
   const existingPreserve = Array.isArray(payload?.source_reference_preserve) ? payload.source_reference_preserve : []
   const missing = Array.isArray(audit?.missing_critical_elements) ? audit.missing_critical_elements : []
   const risks = Array.isArray(audit?.drift_risks) ? audit.drift_risks : []

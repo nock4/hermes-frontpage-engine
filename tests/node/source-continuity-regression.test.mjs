@@ -32,7 +32,7 @@ describe('connected source-space fidelity regression', () => {
     const prompt = buildSceneImagePrompt({ ...payload, source_contract: contract })
     expect(prompt).toContain(fingerprint.composition_moves[1])
     expect(prompt).not.toMatch(/torn poster wall|curled print lips|lifted image lips|pasted print|repaired tears/i)
-    expect(prompt).toMatch(/6–9 source windows/)
+    expect(prompt).toContain('Use existing artwork-native edges')
     expect(prompt).toContain('900x1200')
   })
   it('retains complete recovery diagnostics and source moves instead of clipping away negation', () => {
@@ -41,7 +41,8 @@ describe('connected source-space fidelity regression', () => {
     const recovery = buildSourceFidelityRecoveryPayload(payload, { missing_critical_elements: [missing], drift_risks: [risk] })
     const prompt = buildSceneImagePrompt(recovery)
     expect(prompt).toContain(missing)
-    expect(prompt).toContain(risk)
+    expect(prompt).not.toContain(risk)
+    expect(recovery.source_fidelity_recovery_diagnostics[0].drift_risks).toContain(risk)
     expect(prompt).toContain(fingerprint.composition_moves[1])
   })
 })

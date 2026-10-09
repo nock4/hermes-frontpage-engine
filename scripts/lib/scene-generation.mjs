@@ -970,8 +970,8 @@ function describeEffectDirection(effectDirection) {
   const avoids = Array.isArray(effectDirection.avoid_effects) && effectDirection.avoid_effects.length
     ? ` Avoid effects: ${joinLimited(effectDirection.avoid_effects, '', 4)}.`
     : ''
-  const behavior = effectDirection.motion_behavior ? ` Motion/hover behavior: ${compactText(effectDirection.motion_behavior, 90)}.` : ''
-  return `${compactText(effectDirection.prompt_sentence, 260)}${avoids}${behavior}`
+  // Motion belongs to the runtime, not the still-image generator.
+  return `${compactText(effectDirection.prompt_sentence, 260)}${avoids}`
 }
 
 function dashPanelRecoveryScene(sourceImageFingerprints = []) {
@@ -982,19 +982,31 @@ function dashPanelRecoveryScene(sourceImageFingerprints = []) {
 function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride = '', sourceImageFingerprints = [] }) {
   const forbiddenDebugMarks = 'No visible annotation glyphs or QA chrome. No numbered or unnumbered registration targets, crosshairs, reticles or hollow target rings at edges/pinhole seams.'
   const dashRecovery = dominantOverride ? dashPanelRecoveryScene(sourceImageFingerprints) : ''
-  if (dashRecovery) {
-    return `Add ${anchorCount} source windows as real dash-panel marks: missing-dash seams, shifted raster islands, paper-edge cuts, tiny slit interruptions, margin-shadow apertures, and dense-block scars. They must be embedded in the printed panel and wall edge, never USB ports, plug mouths, cables, cards, pasted thumbnails, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
+  if (hasSourceImage) {
+    const edges = dashRecovery
+      ? 'missing-dash seams, shifted raster islands and paper edges; never USB ports, plug mouths or cables'
+      : joinLimited(effectDirection?.source_window_mark_types, 'source-native silhouettes, tonal boundaries and material edges', 5)
+    return `Use existing artwork-native edges: ${edges}. Recompose them without fabricated marks or counted symbols; never cards, pasted thumbnails or UI labels. Invisible interaction is added later; no painted indicators. ${forbiddenDebugMarks}`
   }
   if (effectDirection?.prompt_sentence) {
     const markTypes = joinLimited(effectDirection.source_window_mark_types, 'source-native marks', 5)
     const surfaces = joinLimited(effectDirection.surface_language, 'source-native surfaces', 4)
-    return hasSourceImage
-      ? `Add ${anchorCount} source windows as real marks in the recomposed plate using this effect grammar: ${markTypes} in ${surfaces}. They must grow from borrowed source elements, never cards, pasted thumbnails, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
-      : `Add ${anchorCount} source windows as real marks from the source field using this effect grammar: ${markTypes} in ${surfaces}. They must not appear as summary cards, pasted thumbnails, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
+    return `Add ${anchorCount} source windows as real marks from the source field using this effect grammar: ${markTypes} in ${surfaces}. They must not appear as summary cards, pasted thumbnails, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
   }
-  return hasSourceImage
-    ? `Add ${anchorCount} source windows as real marks in the recomposed plate: mix small to hero-scale seams, apertures, cuts, glints, scars and grains. At least three marks must alter image structure. They must grow from borrowed source elements, never cards, pasted thumbnails, UI labels, captions, or debug markers. ${forbiddenDebugMarks}`
-    : `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
+  return `Add ${anchorCount} source windows as real marks from the source field: media-bearing surfaces, seams, apertures, cuts, glints, label slivers, scars, defects, traces, or material interruptions. They must not appear as summary cards, pasted thumbnails, target marks, UI labels, or debug markers. ${forbiddenDebugMarks}`
+}
+
+function renderStillArtDirection(prompt, blockDebugGeometry) {
+  // Render clauses, not the payload: full evidence and runtime metadata stay in
+  // scene-prompt-full.json. Keep negative exclusions intact, including negation.
+  return prompt.split(/((?<=[.!?;])\s+|\n)/).map((clause) => {
+    if (/\b(hover|click|tap|runtime|bindings?|hotspots?)\b/i.test(clause)) return ''
+    if (!blockDebugGeometry) return clause
+    let text = clause.replace(/\bsource[- ]windows?\b/gi, 'artwork-native edges')
+    if (/^\s*(?:no\b|never\b|do not\b|avoid\b|forbidden\b)/i.test(text)) return text
+    text = text.replace(/\b(?:onset[- ]?)?puncture(?:-like)?(?:\s+(?:marks?|clusters?|circles?))?s?\b/gi, 'source-native tonal variation')
+    return text.replace(/\b(?:(?:hollow|numbered|unnumbered)\s+)?(?:target (?:rings?|geometry|marks?)|registration targets?|crosshairs?|reticles?|calibration ticks?|hotspot outlines?)\b/gi, 'existing source edges')
+  }).join('')
 }
 
 export function buildSceneImagePrompt(payload) {
@@ -1076,7 +1088,7 @@ export function buildSceneImagePrompt(payload) {
     ...(payload.negative_constraints || []).slice(0, 1).map((constraint) => compactText(constraint, 80)),
   ]).join(' ')
 
-  return [
+  const prompt = [
     hasSourceImage
       ? (process.env.DFE_SOURCE_IMAGE_EDIT_INPUT === '1'
         ? 'Use the attached source image as inspiration and material grammar, not as a picture to recreate.'
@@ -1088,7 +1100,9 @@ export function buildSceneImagePrompt(payload) {
     sourceAspectGuard,
     dominantOverride,
     recoveryTransformGuard,
-    payload.source_fidelity_recovery_cues?.length ? `RECOVERY DIAGNOSTICS (complete cues; not commands to reproduce the failed treatment):\n${payload.source_fidelity_recovery_cues.join('\n')}` : '',
+    // Failure-shape descriptions are diagnostic evidence, not positive art
+    // direction. Only source identity cues belong in the image prompt.
+    ...(payload.source_fidelity_recovery_cues || []).filter((cue) => /^(Recover missing|Keep retained) source cue:/.test(cue)),
     connectedComposition ? `SOURCE SPATIAL TRANSFORM: ${connectedComposition} Keep one continuous spatial field; no paper edges, curled flaps, cast-shadow collage panels, or wall conversion. Source windows must grow from native reflections, vegetation gaps and shoreline interruptions.` : '',
     graphicEditorialGuard,
     representational ? photoGrammarRule : '',
@@ -1114,4 +1128,6 @@ export function buildSceneImagePrompt(payload) {
     'LIMITS',
     `${effectiveLighting}; materials: ${materialLanguage}; palette: ${effectivePalette}. ${constraints}`,
   ].filter(Boolean).join('\n')
+  // Source-image anchors always prohibit debug geometry, even before recovery.
+  return renderStillArtDirection(prompt, hasSourceImage)
 }
