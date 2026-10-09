@@ -526,21 +526,78 @@ except Exception as exc:
   return parsed
 }
 
-export async function inspectWithFetch(candidate, fetchable, classification) {
+// Redirect following is deliberately local to source-page inspection. Image
+// downloads and all other vetted-fetch consumers still receive raw 3xx responses.
+async function fetchSourcePage(sourceUrl, { timeoutMs = 8000, maxBytes = 1_000_001 } = {}) {
+  timeoutMs = Math.min(8000, Math.max(1, timeoutMs))
+  maxBytes = Math.min(1_000_001, Math.max(1, maxBytes))
+  const controller = new AbortController()
+  let finalUrl = sourceUrl
+  let timer
+  const deadline = new Promise((_, reject) => {
+    timer = setTimeout(() => {
+      const error = new Error(`Source page fetch timed out after ${timeoutMs}ms`)
+      controller.abort(error)
+      reject(error)
+    }, timeoutMs)
+  })
+  const follow = async () => {
+    const visited = new Set()
+    let remainingBytes = maxBytes
+    for (let redirects = 0; ; redirects += 1) {
+      controller.signal.throwIfAborted()
+      const url = new URL(finalUrl)
+      if (!['http:', 'https:'].includes(url.protocol) || url.username || url.password) {
+        throw new Error('Unsafe source page URL')
+      }
+      url.hash = '' // Fragments do not change the resource fetched.
+      finalUrl = url.href
+      if (visited.has(finalUrl)) throw new Error('Source page redirect loop')
+      visited.add(finalUrl)
+      const response = await fetchVettedRemoteUrl(finalUrl, {
+        lookup: dns.lookup,
+        headers: {
+          accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'user-agent': 'daily-frontpage-engine-source-research/0.1',
+        },
+        timeoutMs,
+        maxBytes: remainingBytes,
+        signal: controller.signal,
+      })
+      if (!response) throw new Error('blocked HTML URL')
+      // Count raw bytes, including redirect bodies, rather than decoded characters.
+      const body = response.arrayBuffer
+        ? Buffer.from(await response.arrayBuffer())
+        : Buffer.from(await response.text())
+      remainingBytes -= body.length
+      if (remainingBytes < 0) throw new Error(`Response exceeded ${maxBytes} total bytes`)
+      if (![301, 302, 303, 307, 308].includes(response.status)) {
+        return { response, html: body.toString('utf8'), finalUrl }
+      }
+      if (redirects >= 3) throw new Error('Source page redirect limit exceeded')
+      const location = response.headers.get('location')
+      if (typeof location !== 'string' || !location.trim()
+        || /[\u0000-\u0020\u007f\\\\]/.test(location) || /%(?![0-9a-f]{2})/i.test(location)) {
+        throw new Error('Missing or malformed redirect Location')
+      }
+      finalUrl = new URL(location, finalUrl).href
+    }
+  }
+  try {
+    return await Promise.race([follow(), deadline])
+  } catch (error) {
+    error.final_url = finalUrl
+    throw error
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
+export async function inspectWithFetch(candidate, fetchable, classification, pageOptions = {}) {
   const videoId = youtubeId(candidate?.url) || youtubeId(fetchable)
   try {
-    const response = await fetchVettedRemoteUrl(fetchable, {
-      lookup: dns.lookup,
-      headers: {
-        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'user-agent': 'daily-frontpage-engine-source-research/0.1',
-      },
-      timeoutMs: 8000,
-      maxBytes: 1_000_001,
-    })
-    if (!response) throw new Error('blocked HTML URL')
-    const html = await response.text()
-    const bandcampEmbedHtml = isBandcampStreamingSourceUrl(fetchable) ? extractBandcampEmbedHtml(html) : null
+    const { response, html, finalUrl } = await fetchSourcePage(fetchable, pageOptions)
+    const bandcampEmbedHtml = isBandcampStreamingSourceUrl(finalUrl) ? extractBandcampEmbedHtml(html) : null
     const title = extractMeta(html, [
       /<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["'][^>]*>/i,
       /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:title["'][^>]*>/i,
@@ -561,10 +618,10 @@ export async function inspectWithFetch(candidate, fetchable, classification) {
       ...candidate,
       ...classification,
       source_url: candidate.url,
-      final_url: fetchable,
+      final_url: finalUrl,
       title,
       description,
-      image_url: absoluteUrl(image, fetchable) || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
+      image_url: absoluteUrl(image, finalUrl) || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
       source_embed_html: bandcampEmbedHtml || undefined,
       fetch_status: response.ok ? 'fetch-ok' : `fetch-http-${response.status}`,
     }
@@ -574,7 +631,7 @@ export async function inspectWithFetch(candidate, fetchable, classification) {
         ...candidate,
         ...classification,
         source_url: candidate.url,
-        final_url: fetchable,
+        final_url: error.final_url || fetchable,
         title: candidate.note_title,
         description: '',
         image_url: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
@@ -585,7 +642,7 @@ export async function inspectWithFetch(candidate, fetchable, classification) {
       ...candidate,
       ...classification,
       source_url: candidate.url,
-      final_url: fetchable,
+      final_url: error.final_url || fetchable,
       title: candidate.note_title,
       description: '',
       image_url: null,

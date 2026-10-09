@@ -36,11 +36,9 @@ export function getRecentEditionSummaries({ root, fsSync, sourceContentKey, limi
 
 function sourceKeysForBindings(bindings, sourceContentKey) {
   return [...new Set((bindings || []).flatMap((binding) => [
-    sourceContentKey({
-      url: binding.source_url,
-      source_url: binding.source_url,
-      final_url: binding.resolved_url,
-    }),
+    // A preferred source identity is not the full set of spent redirect aliases.
+    sourceContentKey({ url: binding.source_url }),
+    sourceContentKey({ url: binding.resolved_url }),
     sourceContentKey({ url: binding.source_image_url, source_url: binding.source_image_url }),
     sourceContentKey({ url: binding.source_media_url, source_url: binding.source_media_url }),
   ].filter(Boolean)))]

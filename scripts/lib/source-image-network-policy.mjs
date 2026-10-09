@@ -168,8 +168,12 @@ export async function fetchVettedRemoteUrl(sourceUrl, {
   method = 'GET',
   timeoutMs = 8000,
   maxBytes = 5_000_000,
+  signal,
 } = {}) {
+  signal?.throwIfAborted()
   const resolved = await resolvePublicRemote(sourceUrl, { lookup })
+  // A source-page deadline may expire while DNS is pending. Never connect late.
+  signal?.throwIfAborted()
   if (!resolved) return null
 
   const { url, hostname, address, family } = resolved
@@ -179,7 +183,7 @@ export async function fetchVettedRemoteUrl(sourceUrl, {
       method,
       headers,
       redirect: 'error',
-      signal: AbortSignal.timeout(timeoutMs),
+      signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(timeoutMs)]) : AbortSignal.timeout(timeoutMs),
     })
   }
 
@@ -211,6 +215,7 @@ export async function fetchVettedRemoteUrl(sourceUrl, {
         if (total > maxBytes) {
           settled = true
           clearTimeout(timer)
+          signal?.removeEventListener('abort', onAbort)
           const error = new Error(`Response exceeded ${maxBytes} bytes`)
           response.destroy(error)
           request.destroy(error)
@@ -223,12 +228,14 @@ export async function fetchVettedRemoteUrl(sourceUrl, {
         if (settled) return
         settled = true
         clearTimeout(timer)
+        signal?.removeEventListener('abort', onAbort)
         reject(error)
       })
       response.on('end', () => {
         if (settled) return
         settled = true
         clearTimeout(timer)
+        signal?.removeEventListener('abort', onAbort)
         const normalizedHeaders = Object.fromEntries(
           Object.entries(response.headers).map(([key, value]) => [key.toLowerCase(), Array.isArray(value) ? value.join(', ') : String(value ?? '')]),
         )
@@ -244,11 +251,14 @@ export async function fetchVettedRemoteUrl(sourceUrl, {
     const timer = setTimeout(() => {
       request.destroy(new Error(`Fetch timed out after ${timeoutMs}ms`))
     }, timeoutMs)
+    const onAbort = () => request.destroy(signal.reason)
+    signal?.addEventListener('abort', onAbort, { once: true })
 
     request.on('error', (error) => {
       if (settled) return
       settled = true
       clearTimeout(timer)
+      signal?.removeEventListener('abort', onAbort)
       reject(error)
     })
     request.end()
