@@ -1,0 +1,117 @@
+.interaction-lab {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.interaction-lab-mode .stage > .artifact { pointer-events: none; }
+.interaction-lab__territories { position: absolute; inset: 0; }
+
+.interaction-lab__territory {
+  position: absolute;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+  overflow: visible;
+  outline: none;
+}
+
+.interaction-lab__visual { position: absolute; display: block; overflow: hidden; }
+.interaction-lab__territory:focus-visible .interaction-lab__visual::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  z-index: 4;
+  border: 1px solid rgba(255,255,240,.82);
+  box-shadow: inset 0 0 0 1px rgba(8,12,10,.55), 0 0 5px rgba(255,255,240,.28);
+  pointer-events: none;
+}
+.interaction-lab__material { position: absolute; inset: 0; opacity: 0; transition: opacity 420ms ease, transform 650ms cubic-bezier(.2,.7,.2,1); }
+.interaction-lab__territory--material .interaction-lab__material {
+  background-image: var(--lab-material);
+  background-position: center;
+  background-size: cover;
+  filter: saturate(.62) contrast(1.08);
+  -webkit-mask: radial-gradient(ellipse 68% 62% at 48% 52%, #000 0 42%, transparent 74%);
+  mask: radial-gradient(ellipse 68% 62% at 48% 52%, #000 0 42%, transparent 74%);
+  mix-blend-mode: screen;
+  transform: scale(1.08);
+}
+.interaction-lab__territory--material.is-revealed .interaction-lab__material { opacity: .58; transform: scale(1); }
+
+.interaction-lab__contour {
+  position: absolute;
+  inset: 8% 5% auto;
+  display: block;
+  opacity: 0;
+  color: rgba(255,255,245,.88);
+  font: 500 clamp(8px, .72vw, 12px)/1.12 ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: .08em;
+  text-align: left;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0,0,0,.75);
+  transform: translateX(-9px);
+  transition: opacity 320ms ease, transform 440ms ease;
+}
+.interaction-lab__territory--contour.is-revealed .interaction-lab__contour { opacity: .9; transform: translateX(0); }
+.interaction-lab__territory--contour.is-revealed .interaction-lab__visual::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-inline-start: 1px solid rgba(255,255,240,.5);
+  border-block-end: 1px solid rgba(255,255,240,.22);
+  pointer-events: none;
+}
+
+.interaction-lab__wash {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(232,220,184,.07), rgba(20,28,22,.2) 52%, rgba(219,118,74,.07));
+  mix-blend-mode: color;
+  animation: lab-wash 900ms ease both;
+}
+
+.interaction-lab__trail {
+  position: absolute;
+  right: max(12px, 1.5vw);
+  bottom: max(12px, 1.5vw);
+  width: min(280px, 48vw);
+  max-height: 48%;
+  overflow: auto;
+  padding: 0 0 0 12px;
+  color: rgba(255,255,245,.9);
+  background: transparent;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.9));
+  pointer-events: auto;
+}
+.interaction-lab__trail-fragment {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--lab-plate) center/cover;
+  border-inline-start: 1px solid rgba(255,255,240,.48);
+  opacity: .72;
+  mix-blend-mode: screen;
+}
+.interaction-lab__trail ol { list-style: none; margin: 0; padding: 0; }
+.interaction-lab__trail-item { display: grid; grid-template-columns: 2rem 1fr; gap: .35rem; padding: .28rem 0; font: 500 10px/1.25 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.interaction-lab__trail-item b { opacity: .56; font-weight: 500; }
+.interaction-lab__trail-item span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.interaction-lab__reset { margin-top: 8px; min-width: 44px; min-height: 28px; padding: 0; border: 0; background: none; color: rgba(255,255,245,.68); font: 500 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; text-transform: uppercase; cursor: pointer; }
+
+@keyframes lab-wash { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 560px) {
+  .interaction-lab__trail { width: min(210px, 54vw); max-height: 36%; padding-inline-start: 10px; }
+  .interaction-lab__trail-item { font-size: 8px; grid-template-columns: 1.5rem 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .interaction-lab *, .interaction-lab *::before, .interaction-lab *::after { animation: none !important; transition: none !important; }
+}
