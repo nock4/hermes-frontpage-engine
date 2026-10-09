@@ -75,7 +75,12 @@ for (const device of [
   })
 }
 
-test('hydrates a persisted encounter before saving trail state', async ({ page }) => {
+test('hydrates a persisted encounter before saving trail state', async ({ page, request }) => {
+  const response = await request.get('/editions/index.json')
+  expect(response.ok()).toBe(true)
+  const manifest = await response.json()
+  expect(manifest.current_edition_id).toEqual(expect.any(String))
+  const storageKey = `daily-frontpage:interaction-lab:v1:${manifest.current_edition_id}`
   const persisted = [{
     artifactId: 'artifact-hero-01',
     sourceUrl: 'https://example.com/persisted',
@@ -83,8 +88,8 @@ test('hydrates a persisted encounter before saving trail state', async ({ page }
     order: 1,
     discoveredAt: 42,
   }]
-  await page.addInitScript((trail) => {
-    window.localStorage.setItem('daily-frontpage:interaction-lab:v1:2026-10-02-a-pulse-inside-the-opening-v1', JSON.stringify({ version: 1, trail }))
+  await page.addInitScript(({ trail, key }) => {
+    window.localStorage.setItem(key, JSON.stringify({ version: 1, trail }))
     const writes: string[] = []
     const originalSetItem = Storage.prototype.setItem
     Storage.prototype.setItem = function setItem(key, value) {
@@ -92,9 +97,9 @@ test('hydrates a persisted encounter before saving trail state', async ({ page }
       return originalSetItem.call(this, key, value)
     }
     Object.assign(window, { __interactionLabStorageWrites: writes })
-  }, persisted)
+  }, { trail: persisted, key: storageKey })
   await page.goto('/?interaction-lab=1', { waitUntil: 'domcontentloaded' })
   await expect(page.locator('.interaction-lab__trail-item')).toContainText('Persisted encounter')
-  expect(await page.evaluate(() => JSON.parse(window.localStorage.getItem('daily-frontpage:interaction-lab:v1:2026-10-02-a-pulse-inside-the-opening-v1') || '{}').trail)).toEqual(persisted)
+  expect(await page.evaluate((key) => JSON.parse(window.localStorage.getItem(key) || '{}').trail, storageKey)).toEqual(persisted)
   expect(await page.evaluate(() => (window as typeof window & { __interactionLabStorageWrites: string[] }).__interactionLabStorageWrites)).not.toContain(JSON.stringify({ version: 1, trail: [] }))
 })
