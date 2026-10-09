@@ -158,6 +158,25 @@ describe('getSourceWindowDescriptor', () => {
     expect(descriptor.accentTone).toBe('audio')
   })
 
+  it('uses an honest image-backed linkout when a SoundCloud stream is marked unavailable', () => {
+    const descriptor = getSourceWindowDescriptor(
+      makeBinding({
+        source_type: 'audio',
+        source_url: 'https://soundcloud.com/cocteau-twins/feet-like-fins-1',
+        window_type: 'audio',
+        playback_persistence: true,
+        embed_status: 'unavailable',
+      }),
+    )
+
+    expect(descriptor.kind).toBe('rich-preview')
+    if (descriptor.kind !== 'rich-preview') throw new Error('expected rich preview descriptor')
+    expect(descriptor.platformLabel).toBe('SoundCloud')
+    expect(descriptor.sourceUrl).toBe('https://soundcloud.com/cocteau-twins/feet-like-fins-1')
+    expect(descriptor.ctaLabel).toBe('Open track source')
+    expect(descriptor.accentTone).toBe('audio')
+  })
+
   it('uses a native Bandcamp embed when source inspection stored a safe Bandcamp iframe', () => {
     const descriptor = getSourceWindowDescriptor(
       makeBinding({

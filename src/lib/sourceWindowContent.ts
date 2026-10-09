@@ -186,6 +186,17 @@ export const getSourceWindowDescriptor = (binding: SourceBindingRecord): SourceW
     const soundcloudEmbedUrl = toSoundCloudEmbedUrl(sourceUrl)
     if (soundcloudEmbedUrl && binding.source_type !== 'nts') {
       const resolvedSourceUrl = sourceUrl ?? 'https://soundcloud.com'
+      if (binding.embed_status === 'unavailable') {
+        return {
+          kind: 'rich-preview',
+          sourceUrl: resolvedSourceUrl,
+          allowsPlaybackPersistence,
+          domainLabel,
+          ctaLabel: 'Open track source',
+          platformLabel: 'SoundCloud',
+          accentTone,
+        }
+      }
       return {
         kind: 'soundcloud-embed',
         embedUrl: soundcloudEmbedUrl,
