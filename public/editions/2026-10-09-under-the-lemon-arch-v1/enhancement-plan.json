@@ -1,0 +1,210 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-09-under-the-lemon-arch-v1",
+  "edition_id": "2026-10-09-under-the-lemon-arch-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-09-under-the-lemon-arch-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal",
+    "restoration-scan"
+  ],
+  "future_only_subset": [],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-lemon-hook-opening",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lemon-hook-opening",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (leaf-hook-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lilac-branching-silhouette",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lilac-branching-silhouette",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (flower-lobe-boundary) selected from interpretation."
+    },
+    {
+      "target_id": "module-shadowed-arch-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-shadowed-arch-seam",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (refractive-overlap-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-brown-branching-glint",
+      "target_kind": "artifact",
+      "artifact_id": "module-brown-branching-glint",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stem-junction-glint) selected from interpretation."
+    },
+    {
+      "target_id": "module-folded-leaf-cleft",
+      "target_kind": "artifact",
+      "artifact_id": "module-folded-leaf-cleft",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (leaf-edge-cleft) selected from interpretation."
+    },
+    {
+      "target_id": "module-violet-lobe-interval",
+      "target_kind": "artifact",
+      "artifact_id": "module-violet-lobe-interval",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (petal-overlap-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-layered-fragment",
+      "target_kind": "artifact",
+      "artifact_id": "module-layered-fragment",
+      "priority": 7,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-fragment) selected from interpretation."
+    },
+    {
+      "target_id": "module-reference-plaque",
+      "target_kind": "artifact",
+      "artifact_id": "module-reference-plaque",
+      "priority": 8,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (reference-plaque) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 8 artifacts and scene family heuristics."
+}

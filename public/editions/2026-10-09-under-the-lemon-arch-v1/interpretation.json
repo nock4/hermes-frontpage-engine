@@ -1,0 +1,345 @@
+{
+  "interpretation_id": "interp-2026-10-09-under-the-lemon-arch-v1",
+  "edition_id": "2026-10-09-under-the-lemon-arch-v1",
+  "plate_read_timestamp": "2026-10-09T17:34:01.523Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A luminous, intricately veined botanical scene: curled yellow-green leaves hang above and down the right edge, while lilac bell flowers and brown branching stems occupy the lower left. Dark olive depth separates the foliage and flowers. Six distinct interaction anchors are visible, although the planned silhouettes resolve as naturalistic plant forms rather than minimal expressionist marks. No reference plaque or clearly separate layered fragment is visible.",
+    "dominant_spatial_mode": "contained",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "Luminous growth suspended over a quiet, shadowed passage.",
+      "A luminous, intricately veined botanical scene: curled yellow-green leaves hang above and down the right edge, while lilac bell flowers and brown branching stems occupy the lower left. Dark olive depth separates the foliage and flowers. Six distinct interaction anchors are visible, although the planned silhouettes resolve as naturalistic plant forms rather than minimal expressionist marks. No reference plaque or clearly separate layered fragment is visible.",
+      "pleated-leaf",
+      "lemon-transmission",
+      "lilac-lobes"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Lemon hook opening",
+      "Lilac branching silhouette",
+      "Shadowed arch seam",
+      "Brown branching glint",
+      "Folded leaf cleft",
+      "Violet lobe interval",
+      "Layered Fragment",
+      "Reference Plaque"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "sunlit-leaf-arch-refraction",
+      "Oversized hooked leaf arch entering from the upper right",
+      "Recessed branching lilac mass below and left",
+      "Broad irregular olive passage between unequal botanical groupings",
+      "Localized split contours and overlap apertures",
+      "Sparse stem junctions and curled edge interruptions",
+      "Hooked yellow-green leaf with an olive interior",
+      "Translucent lilac bell-flower lobes"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: sunlit-leaf-arch-refraction.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-lemon-hook-opening",
+      "kind": "hero",
+      "type": "leaf-hook-aperture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.5527,
+        "y": 0.1387,
+        "w": 0.1621,
+        "h": 0.2842
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lilac-branching-silhouette",
+      "kind": "hero",
+      "type": "flower-lobe-boundary",
+      "strength": 0.9826879999999999,
+      "bounds": {
+        "x": 0.1992,
+        "y": 0.6523,
+        "w": 0.2979,
+        "h": 0.2969
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shadowed-arch-seam",
+      "kind": "module",
+      "type": "refractive-overlap-seam",
+      "strength": 0.791208,
+      "bounds": {
+        "x": 0.747,
+        "y": 0.364,
+        "w": 0.186,
+        "h": 0.171
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-brown-branching-glint",
+      "kind": "module",
+      "type": "stem-junction-glint",
+      "strength": 0.767124,
+      "bounds": {
+        "x": 0.224,
+        "y": 0.643,
+        "w": 0.049,
+        "h": 0.05
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-folded-leaf-cleft",
+      "kind": "module",
+      "type": "leaf-edge-cleft",
+      "strength": 0.72162,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-violet-lobe-interval",
+      "kind": "module",
+      "type": "petal-overlap-aperture",
+      "strength": 0.689388,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment",
+      "kind": "module",
+      "type": "layered-fragment",
+      "strength": 0.6716280000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-reference-plaque",
+      "kind": "module",
+      "type": "reference-plaque",
+      "strength": 0.633304,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-lemon-hook-opening-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.5527,
+        "y": 0.1387,
+        "w": 0.1621,
+        "h": 0.2842
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lilac-branching-silhouette-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1992,
+        "y": 0.6523,
+        "w": 0.2979,
+        "h": 0.2969
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shadowed-arch-seam-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.747,
+        "y": 0.364,
+        "w": 0.186,
+        "h": 0.171
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-brown-branching-glint-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.224,
+        "y": 0.643,
+        "w": 0.049,
+        "h": 0.05
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-folded-leaf-cleft-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-violet-lobe-interval-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-layered-fragment-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-reference-plaque-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 8 artifacts and scene family heuristics."
+  ]
+}
