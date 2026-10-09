@@ -1,0 +1,230 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-09-the-veil-slips-sideways-v1",
+  "edition_id": "2026-10-09-the-veil-slips-sideways-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-09-the-veil-slips-sideways-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal",
+    "screen-rendered-html"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-displaced-veil-aperture",
+      "target_kind": "artifact",
+      "artifact_id": "hero-displaced-veil-aperture",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (hero-veil-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lower-exposure-cleft",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-exposure-cleft",
+      "priority": 2,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glass-vitrine) selected from interpretation."
+    },
+    {
+      "target_id": "module-suspended-loop-opening",
+      "target_kind": "artifact",
+      "artifact_id": "module-suspended-loop-opening",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (loop-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-lateral-rail-break",
+      "target_kind": "artifact",
+      "artifact_id": "module-lateral-rail-break",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (offset-rail-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "module-detached-pale-diagonal",
+      "target_kind": "artifact",
+      "artifact_id": "module-detached-pale-diagonal",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (mottled-diagonal-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-violet-overlap-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-violet-overlap-notch",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (translucent-plane-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-doubled-curl-pocket",
+      "target_kind": "artifact",
+      "artifact_id": "module-doubled-curl-pocket",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ornamental-contour-opening) selected from interpretation."
+    },
+    {
+      "target_id": "module-exposed-rail-foot",
+      "target_kind": "artifact",
+      "artifact_id": "module-exposed-rail-foot",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (memory-ledger) selected from interpretation."
+    },
+    {
+      "target_id": "module-color-node",
+      "target_kind": "artifact",
+      "artifact_id": "module-color-node",
+      "priority": 9,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (color-node) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

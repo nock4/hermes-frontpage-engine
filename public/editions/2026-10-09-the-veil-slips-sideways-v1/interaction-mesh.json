@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-09-the-veil-slips-sideways-v1",
+  "generation": "cron-1791553232641-70653",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1791553232641-70653/2026-10-09-the-veil-slips-sideways-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-displaced-veil-aperture",
+      "visible_area_px": 108241,
+      "territory_area_px": 131475,
+      "hover_bounds": {
+        "x": 0.0459,
+        "y": 0.0664,
+        "w": 0.3877,
+        "h": 0.3877
+      },
+      "hover_polygon": [
+        [
+          0.0459,
+          0.0996
+        ],
+        [
+          0.0791,
+          0.0664
+        ],
+        [
+          0.3994,
+          0.0664
+        ],
+        [
+          0.4326,
+          0.0996
+        ],
+        [
+          0.4326,
+          0.3115
+        ],
+        [
+          0.251,
+          0.4531
+        ],
+        [
+          0.0791,
+          0.4531
+        ],
+        [
+          0.0459,
+          0.4199
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-color-node",
+          "shared_edge_px": 1627,
+          "direction": "down",
+          "distance_px": 237.37
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-lower-exposure-cleft",
+      "visible_area_px": 108241,
+      "territory_area_px": 155229,
+      "hover_bounds": {
+        "x": 0.5459,
+        "y": 0.0859,
+        "w": 0.3877,
+        "h": 0.3877
+      },
+      "hover_polygon": [
+        [
+          0.5459,
+          0.1191
+        ],
+        [
+          0.5791,
+          0.0859
+        ],
+        [
+          0.8994,
+          0.0859
+        ],
+        [
+          0.9326,
+          0.1191
+        ],
+        [
+          0.9326,
+          0.4395
+        ],
+        [
+          0.8994,
+          0.4727
+        ],
+        [
+          0.5791,
+          0.4727
+        ],
+        [
+          0.5459,
+          0.4395
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-suspended-loop-opening",
+      "visible_area_px": 51302,
+      "territory_area_px": 71952,
+      "hover_bounds": {
+        "x": 0.0518,
+        "y": 0.4922,
+        "w": 0.2764,
+        "h": 0.2754
+      },
+      "hover_polygon": [
+        [
+          0.0518,
+          0.5195
+        ],
+        [
+          0.0791,
+          0.4922
+        ],
+        [
+          0.2539,
+          0.4922
+        ],
+        [
+          0.3271,
+          0.5195
+        ],
+        [
+          0.3115,
+          0.7549
+        ],
+        [
+          0.2998,
+          0.7666
+        ],
+        [
+          0.0791,
+          0.7666
+        ],
+        [
+          0.0518,
+          0.7393
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lateral-rail-break",
+          "shared_edge_px": 1457,
+          "direction": "right",
+          "distance_px": 272.07
+        },
+        {
+          "artifact_id": "module-violet-overlap-notch",
+          "shared_edge_px": 1332,
+          "direction": "down",
+          "distance_px": 240.52
+        },
+        {
+          "artifact_id": "module-color-node",
+          "shared_edge_px": 474,
+          "direction": "up",
+          "distance_px": 279.35
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-lateral-rail-break",
+      "visible_area_px": 51302,
+      "territory_area_px": 70253,
+      "hover_bounds": {
+        "x": 0.3125,
+        "y": 0.5117,
+        "w": 0.2754,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.3125,
+          0.7324
+        ],
+        [
+          0.3281,
+          0.5234
+        ],
+        [
+          0.334,
+          0.5176
+        ],
+        [
+          0.5596,
+          0.5117
+        ],
+        [
+          0.5869,
+          0.5391
+        ],
+        [
+          0.5869,
+          0.751
+        ],
+        [
+          0.3916,
+          0.7871
+        ],
+        [
+          0.3398,
+          0.7871
+        ],
+        [
+          0.3125,
+          0.7598
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-suspended-loop-opening",
+          "shared_edge_px": 1457,
+          "direction": "left",
+          "distance_px": 272.07
+        },
+        {
+          "artifact_id": "module-doubled-curl-pocket",
+          "shared_edge_px": 1268,
+          "direction": "down",
+          "distance_px": 233.15
+        },
+        {
+          "artifact_id": "module-color-node",
+          "shared_edge_px": 720,
+          "direction": "up",
+          "distance_px": 245.31
+        },
+        {
+          "artifact_id": "module-detached-pale-diagonal",
+          "shared_edge_px": 436,
+          "direction": "right",
+          "distance_px": 280.93
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-detached-pale-diagonal",
+      "visible_area_px": 51529,
+      "territory_area_px": 70617,
+      "hover_bounds": {
+        "x": 0.5918,
+        "y": 0.5117,
+        "w": 0.2764,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.5918,
+          0.5391
+        ],
+        [
+          0.6191,
+          0.5117
+        ],
+        [
+          0.8398,
+          0.5117
+        ],
+        [
+          0.8672,
+          0.5391
+        ],
+        [
+          0.8672,
+          0.7314
+        ],
+        [
+          0.6914,
+          0.7871
+        ],
+        [
+          0.6279,
+          0.7871
+        ],
+        [
+          0.5918,
+          0.751
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-exposed-rail-foot",
+          "shared_edge_px": 1165,
+          "direction": "down",
+          "distance_px": 230.89
+        },
+        {
+          "artifact_id": "module-lateral-rail-break",
+          "shared_edge_px": 436,
+          "direction": "left",
+          "distance_px": 280.93
+        },
+        {
+          "artifact_id": "module-doubled-curl-pocket",
+          "shared_edge_px": 297,
+          "direction": "down",
+          "distance_px": 316.67
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-violet-overlap-notch",
+      "visible_area_px": 30525,
+      "territory_area_px": 51637,
+      "hover_bounds": {
+        "x": 0.0723,
+        "y": 0.752,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.0723,
+          0.7793
+        ],
+        [
+          0.0996,
+          0.752
+        ],
+        [
+          0.2793,
+          0.752
+        ],
+        [
+          0.3066,
+          0.7793
+        ],
+        [
+          0.3066,
+          0.9395
+        ],
+        [
+          0.2793,
+          0.9668
+        ],
+        [
+          0.0996,
+          0.9668
+        ],
+        [
+          0.0723,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-suspended-loop-opening",
+          "shared_edge_px": 1332,
+          "direction": "up",
+          "distance_px": 240.52
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-doubled-curl-pocket",
+      "visible_area_px": 30525,
+      "territory_area_px": 50602,
+      "hover_bounds": {
+        "x": 0.3926,
+        "y": 0.752,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.3926,
+          0.7803
+        ],
+        [
+          0.4883,
+          0.752
+        ],
+        [
+          0.5996,
+          0.752
+        ],
+        [
+          0.627,
+          0.7793
+        ],
+        [
+          0.627,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.9668
+        ],
+        [
+          0.4199,
+          0.9668
+        ],
+        [
+          0.3926,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-lateral-rail-break",
+          "shared_edge_px": 1268,
+          "direction": "up",
+          "distance_px": 233.15
+        },
+        {
+          "artifact_id": "module-detached-pale-diagonal",
+          "shared_edge_px": 297,
+          "direction": "up",
+          "distance_px": 316.67
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-exposed-rail-foot",
+      "visible_area_px": 30525,
+      "territory_area_px": 49480,
+      "hover_bounds": {
+        "x": 0.6924,
+        "y": 0.7324,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.6924,
+          0.7773
+        ],
+        [
+          0.7988,
+          0.7324
+        ],
+        [
+          0.8994,
+          0.7324
+        ],
+        [
+          0.9268,
+          0.7598
+        ],
+        [
+          0.9268,
+          0.9199
+        ],
+        [
+          0.8994,
+          0.9473
+        ],
+        [
+          0.7197,
+          0.9473
+        ],
+        [
+          0.6924,
+          0.9199
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-detached-pale-diagonal",
+          "shared_edge_px": 1165,
+          "direction": "up",
+          "distance_px": 230.89
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-color-node",
+      "visible_area_px": 25410,
+      "territory_area_px": 42571,
+      "hover_bounds": {
+        "x": 0.252,
+        "y": 0.3125,
+        "w": 0.2158,
+        "h": 0.2051
+      },
+      "hover_polygon": [
+        [
+          0.252,
+          0.374
+        ],
+        [
+          0.332,
+          0.3125
+        ],
+        [
+          0.4395,
+          0.3125
+        ],
+        [
+          0.4668,
+          0.3398
+        ],
+        [
+          0.4668,
+          0.4893
+        ],
+        [
+          0.4395,
+          0.5166
+        ],
+        [
+          0.2793,
+          0.5166
+        ],
+        [
+          0.252,
+          0.4893
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-displaced-veil-aperture",
+          "shared_edge_px": 1627,
+          "direction": "up",
+          "distance_px": 237.37
+        },
+        {
+          "artifact_id": "module-lateral-rail-break",
+          "shared_edge_px": 720,
+          "direction": "down",
+          "distance_px": 245.31
+        },
+        {
+          "artifact_id": "module-suspended-loop-opening",
+          "shared_edge_px": 474,
+          "direction": "down",
+          "distance_px": 279.35
+        }
+      ]
+    }
+  ]
+}
