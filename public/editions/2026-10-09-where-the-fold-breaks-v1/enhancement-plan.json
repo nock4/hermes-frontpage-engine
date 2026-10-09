@@ -1,0 +1,228 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-09-where-the-fold-breaks-v1",
+  "edition_id": "2026-10-09-where-the-fold-breaks-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-09-where-the-fold-breaks-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal",
+    "restoration-scan"
+  ],
+  "future_only_subset": [],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-broad-fold-opening-quakenbr-ck",
+      "target_kind": "artifact",
+      "artifact_id": "hero-broad-fold-opening-quakenbr-ck",
+      "priority": 1,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (exposed-fold-face) selected from interpretation."
+    },
+    {
+      "target_id": "hero-curl-terminal-falling-into-sheer-blu",
+      "target_kind": "artifact",
+      "artifact_id": "hero-curl-terminal-falling-into-sheer-blu",
+      "priority": 2,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (enlarged-terminal-facet) selected from interpretation."
+    },
+    {
+      "target_id": "module-wedge-bite-four-teeth",
+      "target_kind": "artifact",
+      "artifact_id": "module-wedge-bite-four-teeth",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (triangular-face-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-underfold-reveal-call-myself",
+      "target_kind": "artifact",
+      "artifact_id": "module-underfold-reveal-call-myself",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (occlusion-edge-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-interrupted-return-pi11-3",
+      "target_kind": "artifact",
+      "artifact_id": "module-interrupted-return-pi11-3",
+      "priority": 5,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (missing-segment-socket) selected from interpretation."
+    },
+    {
+      "target_id": "module-turning-bevel-denden",
+      "target_kind": "artifact",
+      "artifact_id": "module-turning-bevel-denden",
+      "priority": 6,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (exposed-bevel-plane) selected from interpretation."
+    },
+    {
+      "target_id": "module-offset-tooth-accidentals",
+      "target_kind": "artifact",
+      "artifact_id": "module-offset-tooth-accidentals",
+      "priority": 7,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (displaced-tooth-face) selected from interpretation."
+    },
+    {
+      "target_id": "module-underfold-reveal-call-myself-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-underfold-reveal-call-myself-2",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (occlusion-edge-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-last-suspended-bead-like-a-daydream",
+      "target_kind": "artifact",
+      "artifact_id": "module-last-suspended-bead-like-a-daydream",
+      "priority": 9,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (terminal-bead-face) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 9 artifacts and scene family heuristics."
+}

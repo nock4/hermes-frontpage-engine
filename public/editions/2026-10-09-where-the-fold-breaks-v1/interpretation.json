@@ -1,0 +1,378 @@
+{
+  "interpretation_id": "interp-2026-10-09-where-the-fold-breaks-v1",
+  "edition_id": "2026-10-09-where-the-fold-breaks-v1",
+  "plate_read_timestamp": "2026-10-09T15:48:39.553Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Two unequal chains of sharply folded, textured magenta planes float on black. The dominant chain rises from a cropped lower-left foreground through broad emerald bevels, orange-yellow insets, triangular cutouts, and progressively smaller facets. A detached upper-right curl repeats this vocabulary at a smaller scale. Visible colored faces support interaction mapping; there are no visible labels or players.",
+    "dominant_spatial_mode": "contained",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "Saturated, taut, suspended: an articulated surface opens into a deliberate black interval.",
+      "Two unequal chains of sharply folded, textured magenta planes float on black. The dominant chain rises from a cropped lower-left foreground through broad emerald bevels, orange-yellow insets, triangular cutouts, and progressively smaller facets. A detached upper-right curl repeats this vocabulary at a smaller scale. Visible colored faces support interaction mapping; there are no visible labels or players.",
+      "segmented-relief",
+      "magenta-wedges",
+      "emerald-bevels"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Broad fold opening — Quakenbrück",
+      "Curl terminal — Falling Into Sheer Blue",
+      "Wedge bite — FOUR TEETH",
+      "Underfold reveal — Call Myself",
+      "Interrupted return — PI11.3",
+      "Turning bevel — Denden",
+      "Offset tooth — Accidentals",
+      "Last suspended bead — Like A Daydream"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "chromatic-wedge-chain-interruption",
+      "A broad folded chain entering from the lower left, its oversized cropped wedges tapering into teeth",
+      "A smaller detached upper-right curl with an open interior and an enlarged terminal face",
+      "A short, uneven beadlike trail that stops before crossing the black interval",
+      "Missing-segment sockets, triangular notches and exposed inset faces integrated into the chains",
+      "One self-occluding return beneath the broad folded chain",
+      "Large diagonal magenta fold face",
+      "Broad magenta terminal on the smaller curl"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: chromatic-wedge-chain-interruption.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-broad-fold-opening-quakenbr-ck",
+      "kind": "hero",
+      "type": "exposed-fold-face",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.1572,
+        "y": 0.4277,
+        "w": 0.418,
+        "h": 0.2939
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-curl-terminal-falling-into-sheer-blu",
+      "kind": "hero",
+      "type": "enlarged-terminal-facet",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.789,
+        "y": 0.317,
+        "w": 0.087,
+        "h": 0.099
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-wedge-bite-four-teeth",
+      "kind": "module",
+      "type": "triangular-face-notch",
+      "strength": 0.793848,
+      "bounds": {
+        "x": 0.528,
+        "y": 0.487,
+        "w": 0.045,
+        "h": 0.096
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-underfold-reveal-call-myself",
+      "kind": "module",
+      "type": "occlusion-edge-aperture",
+      "strength": 0.757668,
+      "bounds": {
+        "x": 0.185,
+        "y": 0.522,
+        "w": 0.255,
+        "h": 0.228
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-interrupted-return-pi11-3",
+      "kind": "module",
+      "type": "missing-segment-socket",
+      "strength": 0.73068,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-turning-bevel-denden",
+      "kind": "module",
+      "type": "exposed-bevel-plane",
+      "strength": 0.701268,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-offset-tooth-accidentals",
+      "kind": "module",
+      "type": "displaced-tooth-face",
+      "strength": 0.6650280000000001,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-underfold-reveal-call-myself-2",
+      "kind": "module",
+      "type": "occlusion-edge-aperture",
+      "strength": 0.6526959999999999,
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-last-suspended-bead-like-a-daydream",
+      "kind": "module",
+      "type": "terminal-bead-face",
+      "strength": 0.6487959999999999,
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-broad-fold-opening-quakenbr-ck-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1572,
+        "y": 0.4277,
+        "w": 0.418,
+        "h": 0.2939
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "hero-curl-terminal-falling-into-sheer-blu-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.789,
+        "y": 0.317,
+        "w": 0.087,
+        "h": 0.099
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-wedge-bite-four-teeth-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.528,
+        "y": 0.487,
+        "w": 0.045,
+        "h": 0.096
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-underfold-reveal-call-myself-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.185,
+        "y": 0.522,
+        "w": 0.255,
+        "h": 0.228
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-interrupted-return-pi11-3-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-turning-bevel-denden-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-offset-tooth-accidentals-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-underfold-reveal-call-myself-2-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-last-suspended-bead-like-a-daydream-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 9 artifacts and scene family heuristics."
+  ]
+}

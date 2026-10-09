@@ -1,0 +1,347 @@
+{
+  "analysis_id": "analysis-2026-10-09-where-the-fold-breaks-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Two unequal chains of sharply folded, textured magenta planes float on black. The dominant chain rises from a cropped lower-left foreground through broad emerald bevels, orange-yellow insets, triangular cutouts, and progressively smaller facets. A detached upper-right curl repeats this vocabulary at a smaller scale. Visible colored faces support interaction mapping; there are no visible labels or players.",
+  "usable_surfaces": [
+    "Large diagonal magenta fold face",
+    "Broad magenta terminal on the smaller curl",
+    "Orange-yellow inset beneath a middle fold",
+    "Black triangular wedge notch",
+    "Emerald side plane of the upper-right curl",
+    "Small separated magenta tooth",
+    "Plum underfold face",
+    "Colored terminal bead on the smaller curl"
+  ],
+  "detected_objects": [
+    {
+      "label": "Broad fold opening — Quakenbrück",
+      "artifact_type": "exposed-fold-face",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.159,
+        "y": 0.431,
+        "w": 0.416,
+        "h": 0.292
+      },
+      "polygon": [
+        [
+          0.159,
+          0.501
+        ],
+        [
+          0.239,
+          0.431
+        ],
+        [
+          0.344,
+          0.501
+        ],
+        [
+          0.518,
+          0.612
+        ],
+        [
+          0.575,
+          0.723
+        ],
+        [
+          0.443,
+          0.656
+        ],
+        [
+          0.29,
+          0.575
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "A large uninterrupted pink-magenta face crosses the main chain diagonally. Its upper edge meets a narrow orange strip, while its lower-right edge meets a broad emerald bevel. This is a real substantial media-bearing surface, not the surrounding fold envelope."
+    },
+    {
+      "label": "Curl terminal — Falling Into Sheer Blue",
+      "artifact_type": "enlarged-terminal-facet",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.789,
+        "y": 0.317,
+        "w": 0.087,
+        "h": 0.099
+      },
+      "polygon": [
+        [
+          0.789,
+          0.325
+        ],
+        [
+          0.815,
+          0.321
+        ],
+        [
+          0.843,
+          0.317
+        ],
+        [
+          0.859,
+          0.346
+        ],
+        [
+          0.876,
+          0.384
+        ],
+        [
+          0.837,
+          0.416
+        ],
+        [
+          0.812,
+          0.367
+        ]
+      ],
+      "confidence": 0.85,
+      "visual_evidence": "The smaller right-hand curl ends inward in a broad magenta folded face, adjacent to a dark plum side face and green-orange folds. It is visibly distinct from the large pierced triangle at the curl's top. The available terminal is smaller than the planned description suggests."
+    },
+    {
+      "label": "Wedge bite — FOUR TEETH",
+      "artifact_type": "triangular-face-notch",
+      "role": "void-mark",
+      "bounds": {
+        "x": 0.528,
+        "y": 0.487,
+        "w": 0.045,
+        "h": 0.096
+      },
+      "polygon": [
+        [
+          0.528,
+          0.487
+        ],
+        [
+          0.552,
+          0.514
+        ],
+        [
+          0.573,
+          0.536
+        ],
+        [
+          0.554,
+          0.559
+        ],
+        [
+          0.536,
+          0.583
+        ],
+        [
+          0.532,
+          0.536
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "A sharply defined black triangular bite punctures the magenta wedge immediately above the large diagonal hero face. Colored cut edges establish it as a physical opening rather than arbitrary background."
+    },
+    {
+      "label": "Underfold reveal — Call Myself",
+      "artifact_type": "occlusion-edge-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.185,
+        "y": 0.522,
+        "w": 0.255,
+        "h": 0.228
+      },
+      "polygon": [
+        [
+          0.185,
+          0.522
+        ],
+        [
+          0.299,
+          0.58
+        ],
+        [
+          0.44,
+          0.656
+        ],
+        [
+          0.439,
+          0.75
+        ],
+        [
+          0.356,
+          0.666
+        ],
+        [
+          0.273,
+          0.599
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A dark plum underside is exposed directly beneath the large diagonal pink face. It tapers toward the left and widens toward a near-vertical edge beside the emerald plane. Orange-yellow folded material borders part of its lower-left edge."
+    },
+    {
+      "label": "Interrupted return — PI11.3",
+      "artifact_type": "missing-segment-socket",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Turning bevel — Denden",
+      "artifact_type": "exposed-bevel-plane",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Offset tooth — Accidentals",
+      "artifact_type": "displaced-tooth-face",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Underfold reveal — Call Myself",
+      "artifact_type": "occlusion-edge-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.72,
+        "y": 0.76,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.72,
+          0.76
+        ],
+        [
+          0.9,
+          0.76
+        ],
+        [
+          0.9,
+          0.92
+        ],
+        [
+          0.72,
+          0.92
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Last suspended bead — Like A Daydream",
+      "artifact_type": "terminal-bead-face",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.28,
+        "y": 0.34,
+        "w": 0.16,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.28,
+          0.34
+        ],
+        [
+          0.44,
+          0.34
+        ],
+        [
+          0.44,
+          0.49
+        ],
+        [
+          0.28,
+          0.49
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 2,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.193,
+    "rationale": "Visually estimated coverage. Two coherent folded gestures and extensive uninterrupted black space keep the composition minimal despite numerous local facets. The surface treatment is painterly, while the overall grammar is geometric rather than loosely gestural expressionism. No separate, confidently bounded missing-segment socket was identified for Interrupted return — PI11.3; unmarked black space was not substituted."
+  },
+  "fallback_detected_object_count": 5,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-10-09-where-the-fold-breaks-v1"
+}
