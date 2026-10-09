@@ -99,3 +99,7 @@ Why: Screenshot baselines are the local guardrail, but CI needs traceable visual
 ## 2026-04-18
 Decision: Generate five new real archive editions after the Argos UX lane was wired.
 Why: The runtime needs real daily-edition volume, not only test fixtures, to prove the engine can carry multiple scene families through the same package contract.
+
+## 2026-10-09
+Decision: Supersede Argos-backed visual CI with Playwright-native screenshot baselines.
+Why: Argos carried an unpatched high-severity dependency chain. Native `toHaveScreenshot` assertions preserve fail-closed local and CI visual checks without the vulnerable upload path; traces, HTML reports, mobile audits, and independent visual review remain required.
