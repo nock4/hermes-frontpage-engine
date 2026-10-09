@@ -1,7 +1,28 @@
-import { expect, test } from '@playwright/test'
+import { expect, test, type Locator } from '@playwright/test'
 
 const proofRoot = 'tmp/interaction-lab-proof'
-const verbs = ['material', 'contour', 'wash'] as const
+
+// Mesh polygons can overlap or exclude their bounding-box center. Prove an
+// actual hit on this mark before each gesture; never bypass actionability.
+async function activateMark(target: Locator, mobile: boolean, gesture: string) {
+  const geometry = await target.evaluate((node) => {
+    const rect = node.getBoundingClientRect()
+    const steps = [0.5, 0.35, 0.65, 0.2, 0.8, 0.1, 0.9]
+    const owner = (x: number, y: number) => document.elementFromPoint(x, y)?.closest('[data-interaction-lab-artifact]')?.getAttribute('data-interaction-lab-artifact')
+    const id = node.getAttribute('data-interaction-lab-artifact')
+    const points = steps.flatMap((x) => steps.map((y) => ({ x: rect.width * x, y: rect.height * y })))
+    return {
+      id,
+      rect: rect.toJSON(),
+      centerOwner: owner(rect.left + rect.width / 2, rect.top + rect.height / 2),
+      point: points.find(({ x, y }) => owner(rect.left + x, rect.top + y) === id),
+    }
+  })
+  await test.info().attach(`${gesture}-${geometry.id}-hit`, { body: JSON.stringify(geometry, null, 2), contentType: 'application/json' })
+  expect(geometry.point, `${geometry.id} must have a real reachable hit point`).toBeDefined()
+  if (mobile) await target.tap({ position: geometry.point! })
+  else await target.click({ position: geometry.point! })
+}
 
 for (const device of [
   { name: 'desktop', width: 1440, height: 980, mobile: false },
@@ -37,10 +58,12 @@ for (const device of [
     await first.evaluate((node) => (node as HTMLElement).blur())
     expect(await first.evaluate((node) => getComputedStyle(node.querySelector('.interaction-lab__visual')!, '::after').borderTopWidth)).toBe('0px')
 
-    for (const verb of verbs) {
-      const target = page.locator(`[data-interaction-lab-artifact][data-verb="${verb}"]`).first()
-      if (device.mobile) await target.tap()
-      else await target.click()
+    const marks = page.locator('[data-interaction-lab-artifact]')
+    for (let index = 0; index < 6; index += 1) {
+      const target = marks.nth(index)
+      const verb = await target.getAttribute('data-verb')
+      await expect(target).toHaveAttribute('data-lab-revealed', 'false')
+      await activateMark(target, device.mobile, 'reveal')
       await expect(target).toHaveAttribute('data-lab-revealed', 'true')
       await expect(page.locator('.source-window')).toHaveCount(0)
       const motion = await target.evaluate((node) => {
@@ -53,20 +76,36 @@ for (const device of [
       })
       expect(motion.materialTransition).toBe('0s')
       expect(motion.washAnimation).toBe('none')
-      await page.screenshot({ path: `${proofRoot}/${verb}-${device.name}.png`, fullPage: true })
+      await expect(page.locator('.interaction-lab__trail-item')).toHaveCount(index + 1)
+      await page.screenshot({ path: `${proofRoot}/${index}-${verb}-${device.name}.png`, fullPage: true })
     }
 
-    expect(await page.locator('.interaction-lab__wash').count()).toBe(1)
-    const washBox = await page.locator('.interaction-lab__wash').boundingBox()
-    const washVisualBox = await page.locator('[data-verb="wash"].is-revealed .interaction-lab__visual').boundingBox()
-    expect(washBox).toEqual(washVisualBox)
-    await expect(page.locator('.interaction-lab__trail-item')).toHaveCount(3)
+    await expect(page.locator('.interaction-lab__wash')).toHaveCount(2)
+    for (const wash of await page.locator('[data-interaction-lab-artifact][data-verb="wash"]').all()) {
+      expect(await wash.locator('.interaction-lab__wash').boundingBox()).toEqual(await wash.locator('.interaction-lab__visual').boundingBox())
+    }
+    await expect(page.locator('.interaction-lab__trail-item')).toHaveCount(6)
 
-    const material = page.locator('[data-interaction-lab-artifact][data-verb="material"]').first()
-    if (device.mobile) await material.tap()
-    else await material.click()
-    await expect(page.locator('.source-window[data-source-window-mode="primary"]')).toHaveCount(1)
-    await page.screenshot({ path: `${proofRoot}/source-window-${device.name}.png`, fullPage: true })
+    const editionId = await page.locator('main[data-edition-id]').getAttribute('data-edition-id')
+    const response = await context.request.get(`/editions/${editionId}/source-bindings.json`)
+    expect(response.ok()).toBe(true)
+    const { bindings } = await response.json() as { bindings: { id: string; artifact_id: string }[] }
+    for (let index = 0; index < 6; index += 1) {
+      const target = marks.nth(index)
+      const artifactId = await target.getAttribute('data-interaction-lab-artifact')
+      const binding = bindings.find((item) => item.artifact_id === artifactId)
+      expect(binding).toBeDefined()
+      await activateMark(target, device.mobile, 'source')
+      const surface = page.locator('.source-window[data-source-window-mode="primary"]')
+      await expect(surface).toHaveCount(1)
+      await expect(surface).toHaveAttribute('data-binding-id', binding!.id)
+      await expect(page.locator('.interaction-lab__trail-item')).toHaveCount(6)
+      await page.screenshot({ path: `${proofRoot}/source-window-${index}-${device.name}.png`, fullPage: true })
+      const close = surface.locator('.source-window__close')
+      if (device.mobile) await close.tap()
+      else await close.click()
+      await expect(page.locator('.source-window')).toHaveCount(0)
+    }
 
     const geometry = await page.evaluate(() => ({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth, debug: document.querySelectorAll('.interaction-lab__debug, .interaction-lab__hotspot-outline').length }))
     expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.width + 1)
