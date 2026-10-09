@@ -1,3 +1,7 @@
+import dns from 'node:dns/promises'
+import { EventEmitter } from 'node:events'
+import https from 'node:https'
+import { Readable } from 'node:stream'
 import { afterAll, afterEach, describe, expect, it, vi } from 'vitest'
 
 import {
@@ -32,6 +36,65 @@ describe('source inspection', () => {
     expect(source.title).toBe('Beautiful colors')
     expect(isAiToolingContentSource(source)).toBe(true)
     expect(isAutoresearchExcluded(source)).toBe(true)
+  })
+
+  describe('bounded image health when the server ignores Range', () => {
+    afterEach(() => {
+      vi.restoreAllMocks()
+      vi.unstubAllEnvs()
+    })
+
+    it.each([
+      ['ordinary JPEG', 60_000, 'image/jpeg', true],
+      ['JPEG at the byte ceiling', 8_000_000, 'image/jpeg', true],
+      ['oversized JPEG', 8_000_001, 'image/jpeg', false],
+      ['HTML masquerading as an image', 60_000, 'text/html', false],
+      ['SVG', 60_000, 'image/svg+xml', false],
+    ])('%s', async (label, byteLength, contentType, loadable) => {
+      // Exercise the real vetted response reader: global-fetch test mode skips
+      // byte enforcement and would make the Range regression pass incorrectly.
+      vi.stubEnv('DFE_TEST_USE_GLOBAL_FETCH', '0')
+      vi.spyOn(dns, 'lookup').mockResolvedValue([{ address: '93.184.216.34', family: 4 }])
+      const imageUrl = `https://images.example.com/${encodeURIComponent(label)}.jpg`
+      const imageResponse = Readable.from([Buffer.alloc(byteLength)])
+      imageResponse.statusCode = 200
+      imageResponse.headers = { 'content-type': contentType }
+      const destroyImage = vi.spyOn(imageResponse, 'destroy')
+      const requests = []
+      vi.spyOn(https, 'request').mockImplementation((options, onResponse) => {
+        const request = new EventEmitter()
+        request.destroy = vi.fn((error) => queueMicrotask(() => request.emit('error', error)))
+        request.end = () => queueMicrotask(() => {
+          if (options.hostname === 'images.example.com') {
+            onResponse(imageResponse)
+          } else {
+            const page = Readable.from([Buffer.from(`<meta property="og:title" content="Art study"><meta property="og:image" content="${imageUrl}">`)])
+            page.statusCode = 200
+            page.headers = { 'content-type': 'text/html' }
+            onResponse(page)
+          }
+        })
+        requests.push({ options, request })
+        return request
+      })
+
+      const source = await inspectCandidateSource(
+        { url: 'https://example.com/art-study', note_title: 'Art study' },
+        { sourceTool: 'fetch' },
+      )
+
+      expect(source.fetch_status).toBe('fetch-ok')
+      expect(source.image_url).toBe(loadable ? imageUrl : null)
+      const imageRequest = requests.find(({ options }) => options.hostname === 'images.example.com')
+      expect(imageRequest.options.headers.range).toBe('bytes=0-4095')
+      const pinnedLookup = vi.fn()
+      imageRequest.options.lookup('images.example.com', { all: true }, pinnedLookup)
+      expect(pinnedLookup).toHaveBeenCalledWith(null, [{ address: '93.184.216.34', family: 4 }])
+      if (byteLength > 8_000_000) {
+        expect(destroyImage).toHaveBeenCalledWith(expect.objectContaining({ message: 'Response exceeded 8000000 bytes' }))
+        expect(imageRequest.request.destroy).toHaveBeenCalledWith(expect.objectContaining({ message: 'Response exceeded 8000000 bytes' }))
+      }
+    })
   })
 
   it('checks YouTube embeddability through oEmbed', async () => {

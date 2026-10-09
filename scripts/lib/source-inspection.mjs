@@ -239,7 +239,9 @@ async function isLoadableVisualImage(imageUrl) {
         'user-agent': 'daily-frontpage-engine-source-research/0.1',
       },
       timeoutMs: 8000,
-      maxBytes: 8192,
+      // Range is advisory: some image CDNs return the entire image with HTTP 200.
+      // Keep the same bounded ceiling used by vetted source-image downloads.
+      maxBytes: 8_000_000,
     })
     if (!response) throw new Error('blocked image URL')
     const contentType = response.headers.get('content-type')?.toLowerCase() || ''
