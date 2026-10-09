@@ -6,6 +6,8 @@ import {
   decideVisualAnchorAction,
 } from '../../scripts/lib/source-decision-gates.mjs'
 import { sourceContentKey } from '../../scripts/lib/source-selection-policy.mjs'
+import { inspectedDecision } from '../fixtures/creative-inspection.mjs'
+import { buildPromotedVisualAnchorMaterial } from '../../scripts/lib/source-research.mjs'
 
 const spentImageUrl = 'https://pbs.twimg.com/card_img/2097854880991825931/snYFSs2-?format=webp&name=medium'
 const freshImageUrl = 'https://i.guim.co.uk/img/media/fresh/master/833.jpg?width=1200'
@@ -15,6 +17,23 @@ function recentKeysFor(...urls) {
 }
 
 describe('source decision gates', () => {
+  it('keeps rejected creative inspection binding across parent aliases and image promotion', () => {
+    const parent = { url: 'https://x.com/0xGoodfuture/status/2013663158624223682', title: 'Photo artwork avatar', image_url: freshImageUrl }
+    const rejected = inspectedDecision(parent)
+    rejected.inspection.status = 'rejected'
+    rejected.inspection.artifact_kind = 'product'
+    const autoresearch = { source_decisions: [{ url: parent.url, role: 'content' }, rejected] }
+    const alias = 'https://twitter.com/i/status/2013663158624223682'
+    const raster = { url: freshImageUrl, image_url: freshImageUrl, page_url: alias, title: 'Painting' }
+    expect(decideAnchorEligibility({ anchorSource: { ...parent, url: alias }, autoresearch }))
+      .toMatchObject({ decision: 'reject', reason_code: 'creative_inspection_rejected_anchor' })
+    expect(buildPromotedVisualAnchorMaterial(raster, { autoresearch })).toBeNull()
+    // Independently owned artwork may be promoted, but cannot rehabilitate the tweet.
+    const artwork = { ...raster, url: 'https://artist.example/painting', page_url: 'https://artist.example/painting' }
+    autoresearch.source_decisions.push(inspectedDecision(artwork))
+    expect(buildPromotedVisualAnchorMaterial(artwork, { autoresearch })?.candidate.page_url).toBe(artwork.page_url)
+    expect(decideAnchorEligibility({ anchorSource: parent, autoresearch }).decision).toBe('reject')
+  })
   it('rejects documentation UI even with an image and gallery wording', () => {
     expect(decideAnchorEligibility({ anchorSource: {
       url: 'https://component.gallery/', title: 'Component Gallery', image_url: freshImageUrl,

@@ -9,7 +9,14 @@ vi.mock('../../scripts/lib/creative-artifact-inspection.mjs', () => ({
     const attempted = new Set((research?.source_decisions || []).filter(row => row.inspection).map(row => row.url))
     const batch = sources.filter(source => !attempted.has(source.url)).slice(0, state.batchSize)
     state.inspections.push(batch.map(source => source.url))
-    return { ...research, source_decisions: [...(research?.source_decisions || []), ...batch.map(source => inspectedDecision(source))] }
+    return { ...research, source_decisions: [...(research?.source_decisions || []), ...batch.map(source => {
+      const decision = inspectedDecision(source)
+      if (state.rejectedUrls.includes(source.url)) decision.inspection = {
+        ...decision.inspection, status: 'rejected', artifact_kind: 'product',
+        observation: 'A photo-to-avatar tool interface, not a standalone creative work.',
+      }
+      return decision
+    })] }
   },
 }))
 
@@ -20,7 +27,8 @@ vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
 }))
 vi.mock('../../scripts/lib/anchor-source-research.mjs', async (importOriginal) => ({
   ...await importOriginal(),
-  selectAnchorSource: ((original) => (...args) => state.noAnchor ? null : original.selectAnchorSource(...args))(await importOriginal()),
+  selectAnchorSource: ((original) => (...args) => state.noAnchor ? null
+    : args[0].find(source => source.url === state.nominatedUrl) || original.selectAnchorSource(...args))(await importOriginal()),
   buildAnchorResearch: async (anchor) => ({ anchor_source: anchor, anchor_research: { summary: 'Painting study', thesis: 'Color and gesture' } }),
   discoverDerivedSourceCandidates: async () => [],
   discoverImageSourceMaterial: async ({ anchor_source: anchor }) => {
@@ -48,6 +56,8 @@ beforeEach(async () => {
   runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'frontpage-vision-gate-'))
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1')
   vi.stubEnv('DFE_DECISION_MODEL', 'openai')
+  state.rejectedUrls = []
+  state.nominatedUrl = null
   state.materials = [material]
   state.reference = { ...sources[0], page_url: material.page_url }
   state.batchSize = Infinity
@@ -64,7 +74,61 @@ const inspect = (options = {}, candidates = sources) => inspectSourceCandidates(
   maxSources: candidates.length, runDir, sourceTool: 'fetch', date: '2026-09-30', ...options,
 })
 
+const rejectedParent = {
+  ...sources[0], url: 'https://x.com/0xGoodfuture/status/2013663158624223682',
+  title: 'made a thing that turns any photo into a 3d avatar',
+  image_url: 'https://pbs.twimg.com/amplify_video_thumb/2013662130524790784/img/jSr2UdEd0PDqqh3s.jpg',
+  note_id: 'rejected-parent',
+}
+function nominateRejectedParent() {
+  state.nominatedUrl = rejectedParent.url
+  state.rejectedUrls = [rejectedParent.url]
+  state.materials = ['G_IV6MpXAAA7mVY', 'G_MwCMEWIAAvNvw'].map(id => ({
+    page_url: rejectedParent.url, image_url: `https://pbs.twimg.com/media/${id}?format=webp&name=large`,
+    title: '', caption: '', lineage: 'direct_link', visual_reason: 'Image surfaced directly on the selected anchor page.',
+  }))
+  state.reference = { ...state.materials[0], url: state.materials[0].image_url }
+  state.analyzer.mockResolvedValue(fertile)
+}
+
 describe('source research vision boundary', () => {
+  it('does not launder a creatively rejected tool parent with separately found fertile artwork pixels', async () => {
+    nominateRejectedParent()
+    const unrelatedImages = state.materials.map(row => row.image_url)
+    const result = await inspect({}, [rejectedParent, ...sources])
+    expect(result.anchor_research.anchor_source.url).not.toBe(rejectedParent.url)
+    expect(result.selected_image_material.length).toBeGreaterThan(0)
+    expect(result.selected_image_material.every(row => !unrelatedImages.includes(row.image_url))).toBe(true)
+    expect(result.selected_image_material.every(row => sources.some(source => source.url === row.page_url && source.image_url === row.image_url))).toBe(true)
+    expect(result.source_decision_audit.status).toBe('ok')
+    expect(result.content_source_count).toBe(6)
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    expect(images.rejected_creative_source_image_material.map(row => row.image_url)).toEqual(unrelatedImages)
+    expect(images.alternate_visual_anchor_attempts).toHaveLength(1)
+    expect(result.source_material_relationship.visual_anchor.url).toBe(result.selected_image_material[0].page_url)
+  })
+
+  it('blocks an exact rejected parent even when unrelated rasters would pass fingerprinting', async () => {
+    nominateRejectedParent()
+    await expect(inspect({ inspirationOverride: { source_url: rejectedParent.url, prompt_bias_terms: ['exact-anchor'] } }, [rejectedParent, ...sources]))
+      .rejects.toThrow(/creative_inspection_rejected_anchor|exact_anchor_material_blocked/)
+    const result = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+    expect(result.anchor_research.anchor_source.url).toBe(rejectedParent.url)
+    expect(result.selected_image_material).toEqual([])
+    expect(result.source_image_fingerprints).toEqual([])
+    expect(result.source_material_relationship).toBeNull()
+    expect(result.source_decision_audit.status).toBe('blocked')
+  })
+
+  it('retains artwork with its own inspected owner instead of inheriting an unrelated parent rejection', async () => {
+    nominateRejectedParent()
+    state.materials = [{ ...material, lineage: 'direct_link' }]
+    state.reference = sources[0]
+    const result = await inspect({}, [rejectedParent, ...sources])
+    expect(result.selected_image_material[0]).toMatchObject({ page_url: material.page_url, image_url: material.image_url })
+    expect(result.source_image_fingerprints[0].preserve_cues).toEqual(fertile.preserve_cues)
+    expect(result.source_decision_audit.status).toBe('ok')
+  })
   it('tries a verified field alternate after the first promotion fails fertility and rebuilds a missing anchor', async () => {
     state.noAnchor = true
     state.materials = []

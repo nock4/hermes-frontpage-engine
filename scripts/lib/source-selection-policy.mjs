@@ -517,6 +517,18 @@ export function isAutoresearchExcluded(source, autoresearch = null, seen = new S
       .some((parent) => isAutoresearchExcluded(parent, autoresearch, seen))
 }
 
+// Anchor/material admission is stricter than inspection scheduling: changing a
+// raster does not rehabilitate a rejected owning source. Keep this separate from
+// isAutoresearchExcluded so changed-media tuples may still receive inspection.
+export function isCreativeInspectionRejectedSource(source, autoresearch = null) {
+  return isAutoresearchExcluded(source, { source_decisions: (autoresearch?.source_decisions || [])
+    .filter(({ url, inspection }) => inspection?.version === 1
+      && inspection.inspector === 'creative-artifact-vision'
+      && inspection.status === 'rejected'
+      && researchIdentity(inspection.source_url) === researchIdentity(url))
+    .map(({ url }) => ({ url, role: 'reject' })) })
+}
+
 // A score and a working poster do not establish creative eligibility. In a
 // researched run, only an affirmative inspection of the actual artifact earns
 // a window; unknown/refill candidates must return to research, not bypass it.

@@ -19,6 +19,7 @@ import { canonicalizeSourceUrl, hostnameForUrl } from './source-url-policy.mjs'
 import {
   aestheticSignalScore,
   isAutoresearchExcluded,
+  isCreativeInspectionRejectedSource,
   isAiToolingContentSource,
   isDocumentationUiSource,
   isAllowedInspectedSource,
@@ -344,7 +345,10 @@ export function buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
   inspirationOverride = null,
   recentSourceKeys = new Set(),
   evidenceSources = [],
+  autoresearch = null,
 } = {}) {
+  if (isAutoresearchExcluded(discoveredVisualReference, autoresearch)
+    || isCreativeInspectionRejectedSource(discoveredVisualReference, autoresearch)) return null
   if (isExactAnchorOverride(inspirationOverride)) return null
   if (!discoveredVisualReference?.image_url) return null
   if (isAiToolingImageMaterial(discoveredVisualReference, { evidenceSources })) return null
@@ -891,8 +895,13 @@ export async function inspectSourceCandidates(signalHarvest, {
 
   // Later research can invalidate an automatic nomination. Clear its old
   // artifacts before reselecting, but keep exact overrides blocking.
+  const rejectedCreativeImageMaterial = imageSourceMaterial.selected_image_material
+    .filter(candidate => isCreativeInspectionRejectedSource(candidate, autoresearch))
+    .map(candidate => ({ ...candidate, reason: 'Owning source was rejected by actual-media creative inspection; image fertility cannot establish independent provenance.' }))
+  const creativelyRejectedAnchor = isCreativeInspectionRejectedSource(anchorSource, autoresearch)
   if (!forcedAnchorSource && !isExactAnchorOverride(inspirationOverride)
-    && anchorSource && isAutoresearchExcluded(anchorSource, autoresearch)) {
+    && anchorSource && (isAutoresearchExcluded(anchorSource, autoresearch)
+      || isCreativeInspectionRejectedSource(anchorSource, autoresearch))) {
     anchorSource = null
     anchorResearch = null
     derivedCandidates = []
@@ -922,11 +931,13 @@ export async function inspectSourceCandidates(signalHarvest, {
 
   // Visual enrichment must not undo an editorial rejection through another lane.
   const eligibleForEnrichment = (source) => !isAutoresearchExcluded(source, autoresearch)
+    && !isCreativeInspectionRejectedSource(source, autoresearch)
     && !isAiToolingContentSource(source, signalHarvest)
   const visualHarvest = { ...signalHarvest, source_candidates: signalHarvest.source_candidates.filter(eligibleForEnrichment) }
   const proposedVisualReference = await findVisualReference(visualHarvest, inspected.filter(eligibleForEnrichment), { sourceTool, browserHarness, recentSourceKeys })
   const discoveredVisualReference = eligibleForEnrichment(proposedVisualReference) ? proposedVisualReference : null
-  const imageMaterialEvidence = { evidenceSources: [anchorSource, ...fetchEvidence, ...inspected].filter(Boolean) }
+  const imageMaterialEvidence = { autoresearch, evidenceSources: [anchorSource, ...fetchEvidence, ...inspected].filter(Boolean) }
+  imageSourceMaterial.rejected_creative_source_image_material = rejectedCreativeImageMaterial
   let promotedVisualAnchorRelationship = null
   let selectedImageMaterial = imageSourceMaterial.selected_image_material
     .filter(eligibleForEnrichment)
@@ -972,9 +983,11 @@ export async function inspectSourceCandidates(signalHarvest, {
         promoted_title: null,
         reason: allSelectedMaterialWasReused
           ? 'All selected image material already appeared in a published edition; do not use repeated anchor source material as the dominant plate seed.'
-          : allSelectedMaterialWasAiTooling
-            ? 'All selected image material was AI/tooling or auxiliary-model material; do not use repeated agent chrome as the dominant plate seed.'
-            : 'All selected image material was low-fertility UI chrome, buttons, ads, spacers, or blank page furniture; do not use it as dominant plate source material.',
+          : rejectedCreativeImageMaterial.length
+            ? 'Selected image material belongs to a creatively rejected source; require independently attributed artwork rather than fertile unrelated pixels.'
+            : allSelectedMaterialWasAiTooling
+              ? 'All selected image material was AI/tooling or auxiliary-model material; do not use repeated agent chrome as the dominant plate seed.'
+              : 'All selected image material was low-fertility UI chrome, buttons, ads, spacers, or blank page furniture; do not use it as dominant plate source material.',
       },
     }
   } else if (selectedImageMaterial.length !== imageSourceMaterial.selected_image_material.length) {
@@ -990,7 +1003,9 @@ export async function inspectSourceCandidates(signalHarvest, {
       },
     }
   }
-  if (!selectedImageMaterial.length) {
+  // With a rejected automatic root, use the verified-field refill below: a
+  // discovered visual alone cannot supply independent owning-source admission.
+  if (!selectedImageMaterial.length && !(creativelyRejectedAnchor && !anchorSource)) {
     const promoted = buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
       ...imageMaterialEvidence,
       anchorResearch,
@@ -1041,9 +1056,10 @@ export async function inspectSourceCandidates(signalHarvest, {
     })
   }
   // The first visual reference is only a nomination. A successful low-fertility
-  // verdict may try a bounded set of already-verified field images, never new
+  // verdict or rejected owning source may try already-verified field images, never new
   // discovery, unknown refill, an exact override, or a failed vision response.
-  if (!selectedImageMaterial.length && screenedMaterial.rejected_image_fingerprints.length
+  if (!selectedImageMaterial.length && (screenedMaterial.rejected_image_fingerprints.length
+    || rejectedCreativeImageMaterial.length || creativelyRejectedAnchor)
     && !isExactAnchorOverride(inspirationOverride)) {
     const attemptedImages = new Set(screenedMaterial.rejected_image_fingerprints
       .map((fingerprint) => canonicalizeSourceUrl(fingerprint.image_url)))
@@ -1055,6 +1071,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       .filter(({ score }) => Number.isFinite(score))
       .sort((left, right) => right.score - left.score)
     imageSourceMaterial.alternate_visual_anchor_attempts = []
+    imageSourceMaterial.rejected_image_fingerprints ||= []
     for (const { source, score } of alternates) {
       if (imageSourceMaterial.alternate_visual_anchor_attempts.length >= 3) break
       const imageKey = canonicalizeSourceUrl(source.image_url)
@@ -1080,12 +1097,12 @@ export async function inspectSourceCandidates(signalHarvest, {
       if (!selectedImageMaterial.length) continue
       if (!anchorSource && !forcedAnchorSource) {
         anchorSource = { ...source, anchor_selection_lane: 'verified-fertile-source-field',
-          anchor_selection_reason: 'Selected from verified eligible content sources after the first visual seed failed fertility.' }
+          anchor_selection_reason: 'Selected from verified eligible content sources after earlier source material failed admission.' }
         anchorResearch = await buildAnchorResearch(anchorSource, { runDate: date })
         await writeJson(path.join(runDir, 'anchor-research.json'), anchorResearch)
       }
       promotedVisualAnchorRelationship = promoted.relationship
-      promotedVisualAnchorRelationship.reason = 'Promoted a fresh verified content-source image after earlier image material failed fertility; alternate survived vision screening.'
+      promotedVisualAnchorRelationship.reason = 'Promoted an independently attributed verified content-source image after earlier source material failed admission; alternate survived vision screening.'
       imageSourceMaterial = {
         ...imageSourceMaterial,
         selected_image_material: selectedImageMaterial,

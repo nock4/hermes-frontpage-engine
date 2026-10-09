@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { isAiToolingContentSource, isAutoresearchExcluded, isDocumentationUiSource, selectContentSources, sourceContentKey } from './source-selection-policy.mjs'
+import { isAiToolingContentSource, isCreativeInspectionRejectedSource, isAutoresearchExcluded, isDocumentationUiSource, selectContentSources, sourceContentKey } from './source-selection-policy.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 
 const SOURCE_DECISION_SCHEMA_VERSION = 1
@@ -56,6 +56,10 @@ export function decideAnchorEligibility({ anchorSource = null, recentSourceKeys 
   if (isAutoresearchExcluded(anchorSource, autoresearch)) return decision({
     decision: 'reject', reason_code: 'autoresearch_excluded_anchor', confidence: 1,
     evidence: ['autoresearch assigned this source family reject or supporting-only'],
+  })
+  if (isCreativeInspectionRejectedSource(anchorSource, autoresearch)) return decision({
+    decision: 'reject', reason_code: 'creative_inspection_rejected_anchor', confidence: 1,
+    evidence: ['actual-media inspection rejected this owning source; fertile unrelated pixels cannot establish its eligibility'],
   })
   if (!anchorSource) {
     return decision({
