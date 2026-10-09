@@ -69,6 +69,10 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
   // Apply archive, signal-aware quarantine, and research exclusions BEFORE
   // ranking. Reuse the artwork-first anchor heuristic only to order inspections;
   // it cannot confer eligibility, and thematic paths are not ranking evidence.
+  const nominated = new Set(result.source_decisions
+    .filter(row => !row.inspection && ['content', 'anchor'].includes(row.role)
+      && ['high', 'medium'].includes(row.confidence))
+    .map(row => attemptKey(row.url, null, null)))
   const candidates = sources.filter(source => source.image_url
     && sourceHasRenderableCardSurface(source, signalHarvest)
     && Number.isFinite(sourceContentScore(source, recentSourceKeys))
@@ -90,7 +94,13 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
       // e.g. a track named "Following" is penalized as a profile by that ranker.
       // These are nominations only; product context and all admission gates stay.
       const providerTrack = /^https?:\/\/[^/]+\.bandcamp\.com\/(?:track|album)\/[^/?#]+(?:[/?#]|$)/i.test(source.source_url || source.url || '')
-      const priority = promo ? -1 : sceneCreation || providerTrack ? 1
+      // Affirmative text research gets an early scheduling lane, not pixel
+      // eligibility. Preserve product penalties, exclusions and attempt limits.
+      const nomination = [source.url, source.source_url, source.final_url, source.resolved_url]
+        .filter(Boolean).some(url => nominated.has(attemptKey(url, null, null)))
+      const priority = promo ? -1
+        : nomination && rank?.anchor_selection_lane !== 'ai-tooling-penalized' ? 2
+        : sceneCreation || providerTrack ? 1
         : rank?.anchor_selection_lane === 'ai-tooling-penalized' ? -1
         : rank?.anchor_selection_lane === 'artwork-first' ? 1 : 0
       return { source, rank, priority }

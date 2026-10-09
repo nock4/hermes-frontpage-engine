@@ -76,6 +76,36 @@ it('schedules the exhausted cycle2 provider tracks and published artwork before 
   }
 })
 
+it('prioritizes affirmative text nominations in the first refill without granting admission', async () => {
+  const fixture = JSON.parse(await fs.readFile(new URL('../fixtures/run5-nomination-ranking.json', import.meta.url), 'utf8'))
+  const original = JSON.stringify(fixture)
+  const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'nomination-ranking-'))
+  try {
+    fetchVettedRemoteUrl.mockImplementation(async () => new Response(Buffer.from('mock raster'), { headers: { 'content-type': 'image/png' } }))
+    openAiJson.mockReset().mockResolvedValue({ status: 'ambiguous', confidence: 'low' })
+    let research = { source_decisions: [...fixture.initialAttempts, ...fixture.research.source_decisions] }
+    research = await inspectCreativeArtifacts(fixture.sources, research, {
+      runDir, signalHarvest: fixture.signalHarvest, recentSourceKeys: new Set(fixture.recentSourceKeys),
+    })
+    const refill = research.source_decisions.filter(row => row.inspection).slice(10).map(row => row.url)
+    expect(refill).toHaveLength(10)
+    for (const url of ['https://x.com/0xassembly/status/2027589835947442483', 'http://tinyurl.com/5n8e678y']) {
+      expect(fixture.actualAttemptUrls).not.toContain(url)
+      expect(refill).toContain(url)
+      expect(hasCreativeArtifactEvidence(fixture.sources.find(s => s.url === url), research, fixture.signalHarvest)).toBe(false)
+    }
+    for (let i = 0; i < 2; i++) research = await inspectCreativeArtifacts(fixture.sources, research, {
+      runDir, signalHarvest: fixture.signalHarvest, recentSourceKeys: new Set(fixture.recentSourceKeys),
+    })
+    expect(research.source_decisions.filter(row => row.inspection)).toHaveLength(24)
+    expect(openAiJson).toHaveBeenCalledTimes(14)
+    expect(JSON.stringify(fixture)).toBe(original)
+  } finally {
+    await fs.rm(runDir, { recursive: true, force: true })
+    vi.clearAllMocks()
+  }
+})
+
 it.each([
   { url: 'https://artist.bandcamp.com/track/tool-demo', description: 'Our new software platform' },
   { url: 'https://x.com/demo/status/1', description: 'Our workflow tool released on @objktcom' },
@@ -106,8 +136,10 @@ it.each([
     const neutral = { url: 'https://x.com/work/status/2', image_url: 'https://example.com/work.png', title: 'A quiet evening', note_score: 1 }
     fetchVettedRemoteUrl.mockImplementation(async () => new Response(Buffer.from('test raster'), { headers: { 'content-type': 'image/png' } }))
     openAiJson.mockReset().mockResolvedValue({ status: 'ambiguous' })
-    const result = await inspectCreativeArtifacts([promo, neutral], {}, { runDir, maxInspections: 1 })
-    expect(result.source_decisions.map(row => row.url)).toEqual([neutral.url])
+    const result = await inspectCreativeArtifacts([promo, neutral], {
+      source_decisions: [{ url: promo.url, role: 'content', confidence: 'high' }],
+    }, { runDir, maxInspections: 1 })
+    expect(result.source_decisions.filter(row => row.inspection).map(row => row.url)).toEqual([neutral.url])
   } finally {
     await fs.rm(runDir, { recursive: true, force: true })
     vi.clearAllMocks()
