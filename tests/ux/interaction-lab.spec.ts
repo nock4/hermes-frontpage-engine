@@ -114,6 +114,45 @@ for (const device of [
   })
 }
 
+test('mobile encounter trail does not intercept an overlapping source mark', async ({ browser }) => {
+  const baseURL = test.info().project.use.baseURL as string
+  const context = await browser.newContext({
+    baseURL,
+    viewport: { width: 390, height: 844 },
+    hasTouch: true,
+    isMobile: true,
+    reducedMotion: 'reduce',
+  })
+  const page = await context.newPage()
+  await page.goto('/?interaction-lab=1', { waitUntil: 'domcontentloaded' })
+  const marks = page.locator('[data-interaction-lab-artifact]')
+  await expect(marks).toHaveCount(6)
+  for (let index = 0; index < 6; index += 1) {
+    await activateMark(marks.nth(index), true, `overlap-reveal-${index}`)
+  }
+
+  const overlap = await page.locator('[data-interaction-lab-artifact="module-compressed-incision-seam"]').evaluate((node) => {
+    const rect = node.getBoundingClientRect()
+    const trail = document.querySelector('.interaction-lab__trail')!.getBoundingClientRect()
+    const id = node.getAttribute('data-interaction-lab-artifact')
+    const steps = [0.5, 0.35, 0.65, 0.2, 0.8, 0.1, 0.9]
+    const candidates = steps.flatMap((x) => steps.map((y) => ({
+      x: rect.left + rect.width * x,
+      y: rect.top + rect.height * y,
+    }))).filter(({ x, y }) => x >= trail.left && x <= trail.right && y >= trail.top && y <= trail.bottom)
+    const point = candidates.find(({ x, y }) => document.elementsFromPoint(x, y).includes(node))
+    return point ? {
+      point,
+      owner: document.elementFromPoint(point.x, point.y)?.closest('[data-interaction-lab-artifact]')?.getAttribute('data-interaction-lab-artifact') ?? null,
+      topClass: document.elementFromPoint(point.x, point.y)?.className ?? null,
+    } : null
+  })
+
+  expect(overlap, 'fixture must overlap the expanded encounter trail').not.toBeNull()
+  expect(overlap?.owner, `trail intercepted the source mark via ${overlap?.topClass}`).toBe('module-compressed-incision-seam')
+  await context.close()
+})
+
 test('hydrates a persisted encounter before saving trail state', async ({ page, request }) => {
   const response = await request.get('/editions/index.json')
   expect(response.ok()).toBe(true)

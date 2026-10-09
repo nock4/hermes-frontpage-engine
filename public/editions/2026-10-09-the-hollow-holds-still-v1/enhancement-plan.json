@@ -1,0 +1,194 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-09-the-hollow-holds-still-v1",
+  "edition_id": "2026-10-09-the-hollow-holds-still-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-09-the-hollow-holds-still-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-worn-nested-rim",
+      "target_kind": "artifact",
+      "artifact_id": "hero-worn-nested-rim",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (nested-relief-rim) selected from interpretation."
+    },
+    {
+      "target_id": "hero-sheltered-inner-cut",
+      "target_kind": "artifact",
+      "artifact_id": "hero-sheltered-inner-cut",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (sheltered-section-face) selected from interpretation."
+    },
+    {
+      "target_id": "module-sparse-lower-punctures",
+      "target_kind": "artifact",
+      "artifact_id": "module-sparse-lower-punctures",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (punctured-relief-ridge) selected from interpretation."
+    },
+    {
+      "target_id": "module-compressed-incision-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-compressed-incision-seam",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (incised-stratum) selected from interpretation."
+    },
+    {
+      "target_id": "module-stepped-end-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-stepped-end-notch",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (section-end-notch) selected from interpretation."
+    },
+    {
+      "target_id": "module-interrupted-lower-groove",
+      "target_kind": "artifact",
+      "artifact_id": "module-interrupted-lower-groove",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stratum-dropout-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-interrupted-lower-groove-2",
+      "target_kind": "artifact",
+      "artifact_id": "module-interrupted-lower-groove-2",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "video",
+        "youtube"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stratum-dropout-cut) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 7 artifacts and scene family heuristics."
+}

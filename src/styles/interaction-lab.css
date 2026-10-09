@@ -90,7 +90,7 @@
   color: rgba(255,255,245,.9);
   background: transparent;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.9));
-  pointer-events: auto;
+  pointer-events: none;
 }
 .interaction-lab__trail-fragment {
   position: absolute;
@@ -105,7 +105,7 @@
 .interaction-lab__trail-item { display: grid; grid-template-columns: 2rem 1fr; gap: .35rem; padding: .28rem 0; font: 500 10px/1.25 ui-monospace, SFMono-Regular, Menlo, monospace; }
 .interaction-lab__trail-item b { opacity: .56; font-weight: 500; }
 .interaction-lab__trail-item span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.interaction-lab__reset { margin-top: 8px; min-width: 44px; min-height: 28px; padding: 0; border: 0; background: none; color: rgba(255,255,245,.68); font: 500 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; text-transform: uppercase; cursor: pointer; }
+.interaction-lab__reset { margin-top: 8px; min-width: 44px; min-height: 28px; padding: 0; border: 0; background: none; color: rgba(255,255,245,.68); font: 500 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; text-transform: uppercase; cursor: pointer; pointer-events: auto; }
 
 @keyframes lab-wash { from { opacity: 0; } to { opacity: 1; } }
 @media (max-width: 560px) {

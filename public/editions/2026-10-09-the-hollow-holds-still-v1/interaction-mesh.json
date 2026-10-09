@@ -1,0 +1,420 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-09-the-hollow-holds-still-v1",
+  "generation": "cron-1791576467417-95732",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1791576467417-95732/2026-10-09-the-hollow-holds-still-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-worn-nested-rim",
+      "visible_area_px": 44441,
+      "territory_area_px": 103852,
+      "hover_bounds": {
+        "x": 0.1377,
+        "y": 0.0,
+        "w": 0.5566,
+        "h": 0.6074
+      },
+      "hover_polygon": [
+        [
+          0.1377,
+          0.5459
+        ],
+        [
+          0.4307,
+          0.002
+        ],
+        [
+          0.5293,
+          0.001
+        ],
+        [
+          0.6279,
+          0.1064
+        ],
+        [
+          0.6758,
+          0.1992
+        ],
+        [
+          0.6934,
+          0.2793
+        ],
+        [
+          0.6855,
+          0.3369
+        ],
+        [
+          0.6797,
+          0.373
+        ],
+        [
+          0.6377,
+          0.4541
+        ],
+        [
+          0.5293,
+          0.5488
+        ],
+        [
+          0.4141,
+          0.5908
+        ],
+        [
+          0.2715,
+          0.6064
+        ],
+        [
+          0.1709,
+          0.5791
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-sparse-lower-punctures",
+          "shared_edge_px": 687,
+          "direction": "down",
+          "distance_px": 300.13
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-sheltered-inner-cut",
+      "visible_area_px": 18338,
+      "territory_area_px": 36868,
+      "hover_bounds": {
+        "x": 0.1719,
+        "y": 0.0312,
+        "w": 0.2764,
+        "h": 0.2129
+      },
+      "hover_polygon": [
+        [
+          0.1719,
+          0.167
+        ],
+        [
+          0.3184,
+          0.0312
+        ],
+        [
+          0.375,
+          0.0518
+        ],
+        [
+          0.4473,
+          0.1211
+        ],
+        [
+          0.4473,
+          0.1445
+        ],
+        [
+          0.3984,
+          0.1982
+        ],
+        [
+          0.2305,
+          0.2432
+        ],
+        [
+          0.1963,
+          0.209
+        ],
+        [
+          0.1719,
+          0.168
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-sparse-lower-punctures",
+      "visible_area_px": 4127,
+      "territory_area_px": 12975,
+      "hover_bounds": {
+        "x": 0.2842,
+        "y": 0.584,
+        "w": 0.1689,
+        "h": 0.0996
+      },
+      "hover_polygon": [
+        [
+          0.2842,
+          0.6318
+        ],
+        [
+          0.3193,
+          0.5918
+        ],
+        [
+          0.3652,
+          0.584
+        ],
+        [
+          0.415,
+          0.5918
+        ],
+        [
+          0.4521,
+          0.6338
+        ],
+        [
+          0.4463,
+          0.6484
+        ],
+        [
+          0.4062,
+          0.6826
+        ],
+        [
+          0.3281,
+          0.6768
+        ],
+        [
+          0.2842,
+          0.6328
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-worn-nested-rim",
+          "shared_edge_px": 687,
+          "direction": "up",
+          "distance_px": 300.13
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-compressed-incision-seam",
+      "visible_area_px": 4264,
+      "territory_area_px": 13615,
+      "hover_bounds": {
+        "x": 0.5908,
+        "y": 0.8271,
+        "w": 0.1406,
+        "h": 0.1514
+      },
+      "hover_polygon": [
+        [
+          0.5908,
+          0.8721
+        ],
+        [
+          0.6045,
+          0.8271
+        ],
+        [
+          0.6572,
+          0.8418
+        ],
+        [
+          0.71,
+          0.8877
+        ],
+        [
+          0.7305,
+          0.9336
+        ],
+        [
+          0.7305,
+          0.9502
+        ],
+        [
+          0.7031,
+          0.9775
+        ],
+        [
+          0.6592,
+          0.9775
+        ],
+        [
+          0.6318,
+          0.9502
+        ],
+        [
+          0.5908,
+          0.875
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-interrupted-lower-groove-2",
+          "shared_edge_px": 877,
+          "direction": "left",
+          "distance_px": 160.74
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-stepped-end-notch",
+      "visible_area_px": 1280,
+      "territory_area_px": 8202,
+      "hover_bounds": {
+        "x": 0.5,
+        "y": 0.5752,
+        "w": 0.127,
+        "h": 0.1035
+      },
+      "hover_polygon": [
+        [
+          0.5,
+          0.6055
+        ],
+        [
+          0.5273,
+          0.5781
+        ],
+        [
+          0.5498,
+          0.5752
+        ],
+        [
+          0.626,
+          0.6445
+        ],
+        [
+          0.5977,
+          0.6777
+        ],
+        [
+          0.5723,
+          0.6768
+        ],
+        [
+          0.5371,
+          0.6641
+        ],
+        [
+          0.5098,
+          0.6367
+        ],
+        [
+          0.5,
+          0.6064
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-interrupted-lower-groove",
+      "visible_area_px": 2757,
+      "territory_area_px": 11324,
+      "hover_bounds": {
+        "x": 0.3018,
+        "y": 0.7959,
+        "w": 0.1582,
+        "h": 0.1152
+      },
+      "hover_polygon": [
+        [
+          0.3018,
+          0.8232
+        ],
+        [
+          0.3291,
+          0.7959
+        ],
+        [
+          0.4551,
+          0.8359
+        ],
+        [
+          0.459,
+          0.8975
+        ],
+        [
+          0.4561,
+          0.9043
+        ],
+        [
+          0.4199,
+          0.9102
+        ],
+        [
+          0.3594,
+          0.9023
+        ],
+        [
+          0.3154,
+          0.8604
+        ],
+        [
+          0.3018,
+          0.8242
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-interrupted-lower-groove-2",
+          "shared_edge_px": 1238,
+          "direction": "right",
+          "distance_px": 135.03
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-interrupted-lower-groove-2",
+      "visible_area_px": 30525,
+      "territory_area_px": 44778,
+      "hover_bounds": {
+        "x": 0.3926,
+        "y": 0.752,
+        "w": 0.2354,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.3926,
+          0.7793
+        ],
+        [
+          0.4199,
+          0.752
+        ],
+        [
+          0.5996,
+          0.752
+        ],
+        [
+          0.627,
+          0.7793
+        ],
+        [
+          0.627,
+          0.9395
+        ],
+        [
+          0.5996,
+          0.9668
+        ],
+        [
+          0.4199,
+          0.9668
+        ],
+        [
+          0.3926,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-interrupted-lower-groove",
+          "shared_edge_px": 1238,
+          "direction": "left",
+          "distance_px": 135.03
+        },
+        {
+          "artifact_id": "module-compressed-incision-seam",
+          "shared_edge_px": 877,
+          "direction": "right",
+          "distance_px": 160.74
+        }
+      ]
+    }
+  ]
+}
