@@ -1,0 +1,279 @@
+{
+  "interpretation_id": "interp-2026-10-10-a-passage-reopens-v1",
+  "edition_id": "2026-10-10-a-passage-reopens-v1",
+  "plate_read_timestamp": "2026-10-10T15:58:37.928Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A detailed, photographic architectural scene: a tall weathered window grid rises on the left, while an ornate lower stone facade with a monumental dark arch occupies the right. Smaller arched doorways, a chipped green inset, recessed glazing, and plant-obstructed steps supply visible interaction anchors. The planned spatial arrangement is only partly realized: the principal arch belongs to the right-hand facade, not beneath the tall grid, and no distinctly shifted glazed bay is evident.",
+    "dominant_spatial_mode": "contained",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Heavy stone, pale air, planted access: a civic habitat reopening without erasing its weather.",
+      "A detailed, photographic architectural scene: a tall weathered window grid rises on the left, while an ornate lower stone facade with a monumental dark arch occupies the right. Smaller arched doorways, a chipped green inset, recessed glazing, and plant-obstructed steps supply visible interaction anchors. The planned spatial arrangement is only partly realized: the principal arch belongs to the right-hand facade, not beneath the tall grid, and no distinctly shifted glazed bay is evident.",
+      "offset-masonry",
+      "pale-sky-interval",
+      "recessed-glazing"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Cavernous entrance in the right-hand stone facade",
+      "Plant-obstructed doorway in the lowest stone wing",
+      "Green mineral-chip inset at the column base",
+      "Plant-broken passage edge",
+      "Opening beyond the opening",
+      "Shifted glazed bay"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "weathered-window-grid-passage",
+      "Upper-cropped window-grid mass offset from a lower pediment-and-arch mass",
+      "Cavernous entrance and a separate broad reused doorway at staggered depths",
+      "Displaced subordinate opening visible beyond the main arch",
+      "Irregular planted passage interrupting architectural feet",
+      "Localized terrazzo reveal and an offset glazed-bay interruption",
+      "Fine diagonal wire crossing the pale-sky interval",
+      "Dark interior contour of the monumental right-hand arch"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: weathered-window-grid-passage.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-cavernous-entrance-in-the-right-hand",
+      "kind": "hero",
+      "type": "deep-arched-aperture",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.787,
+        "y": 0.446,
+        "w": 0.179,
+        "h": 0.462
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-plant-obstructed-doorway-in-the-lowe",
+      "kind": "hero",
+      "type": "reused-stone-threshold",
+      "strength": 0.9199999999999999,
+      "bounds": {
+        "x": 0.483,
+        "y": 0.746,
+        "w": 0.051,
+        "h": 0.092
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-green-mineral-chip-inset-at-the-colu",
+      "kind": "module",
+      "type": "terrazzo-inset-boundary",
+      "strength": 0.72,
+      "bounds": {
+        "x": 0.715,
+        "y": 0.875,
+        "w": 0.047,
+        "h": 0.056
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-plant-broken-passage-edge",
+      "kind": "module",
+      "type": "planted-threshold-cut",
+      "strength": 0.6900000000000001,
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-opening-beyond-the-opening",
+      "kind": "module",
+      "type": "displaced-depth-aperture",
+      "strength": 0.66,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shifted-glazed-bay",
+      "kind": "module",
+      "type": "offset-glazing-interruption",
+      "strength": 0.63,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-cavernous-entrance-in-the-right-hand-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.787,
+        "y": 0.446,
+        "w": 0.179,
+        "h": 0.462
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-plant-obstructed-doorway-in-the-lowe-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.483,
+        "y": 0.746,
+        "w": 0.051,
+        "h": 0.092
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-green-mineral-chip-inset-at-the-colu-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.715,
+        "y": 0.875,
+        "w": 0.047,
+        "h": 0.056
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-plant-broken-passage-edge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-opening-beyond-the-opening-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-shifted-glazed-bay-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

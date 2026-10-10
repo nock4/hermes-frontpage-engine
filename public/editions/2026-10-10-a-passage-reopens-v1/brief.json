@@ -1,0 +1,66 @@
+{
+  "brief_id": "brief-2026-10-10-a-passage-reopens-v1",
+  "date": "2026-10-10",
+  "signal_cluster_ids": [
+    "033a88ea1308",
+    "ecdf721d0f38",
+    "a56e75b92e63",
+    "e2221ea32f09",
+    "df9fedff259a",
+    "e130d49b2328",
+    "c915328fa212",
+    "831af4382535"
+  ],
+  "research_node_ids": [
+    "research-1-3ec60214",
+    "research-2-78e7d3e2",
+    "research-3-5ddd16aa",
+    "research-4-31493fdf",
+    "research-5-15c1943e",
+    "research-6-1eb70162",
+    "research-7-9b568e09",
+    "research-8-b80b501c",
+    "research-9-249264ff",
+    "research-10-097df986",
+    "research-11-0d972356",
+    "research-12-7b34f80c"
+  ],
+  "mood": "Heavy stone, pale air, planted access: a civic habitat reopening without erasing its weather.",
+  "material_language": [
+    "Sandy tan masonry ribs with streaked faces and pale worn arrises",
+    "Mottled gray carved stone surrounding soot-dark recesses",
+    "Desaturated blue-gray glazing recessed behind narrow mullions",
+    "Weathered brown-gray ribbed roofing",
+    "Irregular green stems with subdued mauve flowers"
+  ],
+  "lighting": "Diffuse overcast daylight beneath a nearly white sky. Keep masonry midtones readable, glazing cool and restrained, and arches nearly black with visible worn lips. Establish depth through overlapping roof planes and occluded reveals, not spotlights or glowing rims.",
+  "object_inventory": [
+    "Upper-cropped window-grid mass offset from a lower pediment-and-arch mass",
+    "Cavernous entrance and a separate broad reused doorway at staggered depths",
+    "Displaced subordinate opening visible beyond the main arch",
+    "Irregular planted passage interrupting architectural feet",
+    "Localized terrazzo reveal and an offset glazed-bay interruption",
+    "Fine diagonal wire crossing the pale-sky interval"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 4,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "Do not reconstruct the reference's symmetrical facade, paired end wings, original entrance sequence or continuous roadside foreground.",
+    "No legible words, logos, signage, flags, filenames, interface labels or alphanumeric callouts.",
+    "No cards, floating panels, debug geometry, browser chrome, desks, cabinets or shelves.",
+    "Keep exactly two hero-scale source-bearing anchors; the remaining marks must stay subordinate and individually distinguishable.",
+    "Do not turn the smaller displaced opening into a concentric tunnel, luminous portal or target.",
+    "Do not obscure the distinct source-bearing boundaries with vegetation.",
+    "No picturesque collapse, disaster narrative, rubble spectacle or abandoned-city romanticism.",
+    "No torn paper, tape, poster peeling, decorative crack networks or field-wide terrazzo.",
+    "No cobalt causeway, centered ornamental relief, sunlit botanical arch, charcoal silhouette field, chromatic wedge chain or rose registration veil.",
+    "No invented audio analysis, waveforms, equalizers or beat-synchronized imagery.",
+    "Artifact labels remain metadata only and must not appear inside the finished image.",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects"
+  ]
+}

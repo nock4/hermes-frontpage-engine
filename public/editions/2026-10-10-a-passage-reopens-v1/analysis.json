@@ -1,0 +1,320 @@
+{
+  "analysis_id": "analysis-2026-10-10-a-passage-reopens-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A detailed, photographic architectural scene: a tall weathered window grid rises on the left, while an ornate lower stone facade with a monumental dark arch occupies the right. Smaller arched doorways, a chipped green inset, recessed glazing, and plant-obstructed steps supply visible interaction anchors. The planned spatial arrangement is only partly realized: the principal arch belongs to the right-hand facade, not beneath the tall grid, and no distinctly shifted glazed bay is evident.",
+  "usable_surfaces": [
+    "Dark interior contour of the monumental right-hand arch",
+    "Small arched opening in the lowest stone wing",
+    "Chipped green decorative inset at the foot of a column",
+    "Exposed pale stair edges between encroaching plants",
+    "Distant arched glazing visible inside the principal arch",
+    "Broken dark pane opening in the tall left facade"
+  ],
+  "detected_objects": [
+    {
+      "label": "Cavernous entrance in the right-hand stone facade",
+      "artifact_type": "deep-arched-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.787,
+        "y": 0.446,
+        "w": 0.179,
+        "h": 0.462
+      },
+      "polygon": [
+        [
+          0.799,
+          0.908
+        ],
+        [
+          0.795,
+          0.778
+        ],
+        [
+          0.793,
+          0.657
+        ],
+        [
+          0.787,
+          0.593
+        ],
+        [
+          0.79,
+          0.552
+        ],
+        [
+          0.801,
+          0.514
+        ],
+        [
+          0.817,
+          0.48
+        ],
+        [
+          0.841,
+          0.456
+        ],
+        [
+          0.865,
+          0.446
+        ],
+        [
+          0.892,
+          0.451
+        ],
+        [
+          0.917,
+          0.468
+        ],
+        [
+          0.936,
+          0.5
+        ],
+        [
+          0.95,
+          0.544
+        ],
+        [
+          0.954,
+          0.612
+        ],
+        [
+          0.966,
+          0.757
+        ],
+        [
+          0.949,
+          0.816
+        ],
+        [
+          0.922,
+          0.86
+        ],
+        [
+          0.847,
+          0.9
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "The largest opening has a rounded upper contour and a nearly black recessed interior, bounded by worn carved stone. Its lower edge is interrupted by steps and vegetation. This is a strong visible entrance anchor, but it is not positioned beneath the tall pane grid as planned."
+    },
+    {
+      "label": "Plant-obstructed doorway in the lowest stone wing",
+      "artifact_type": "reused-stone-threshold",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.483,
+        "y": 0.746,
+        "w": 0.051,
+        "h": 0.092
+      },
+      "polygon": [
+        [
+          0.484,
+          0.779
+        ],
+        [
+          0.491,
+          0.761
+        ],
+        [
+          0.502,
+          0.748
+        ],
+        [
+          0.512,
+          0.746
+        ],
+        [
+          0.522,
+          0.757
+        ],
+        [
+          0.53,
+          0.776
+        ],
+        [
+          0.534,
+          0.803
+        ],
+        [
+          0.531,
+          0.827
+        ],
+        [
+          0.518,
+          0.838
+        ],
+        [
+          0.509,
+          0.82
+        ],
+        [
+          0.508,
+          0.803
+        ],
+        [
+          0.496,
+          0.795
+        ],
+        [
+          0.483,
+          0.799
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "A small, separate black arch appears in the lowest wing left of the central doorway. Pale voussoirs frame the top; foliage conceals much of the threshold. The opening is visible, but neither a detached building mass nor evidence of actual reuse can be established from the image."
+    },
+    {
+      "label": "Green mineral-chip inset at the column base",
+      "artifact_type": "terrazzo-inset-boundary",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.715,
+        "y": 0.875,
+        "w": 0.047,
+        "h": 0.056
+      },
+      "polygon": [
+        [
+          0.715,
+          0.88
+        ],
+        [
+          0.737,
+          0.877
+        ],
+        [
+          0.76,
+          0.875
+        ],
+        [
+          0.762,
+          0.899
+        ],
+        [
+          0.761,
+          0.925
+        ],
+        [
+          0.74,
+          0.928
+        ],
+        [
+          0.718,
+          0.931
+        ],
+        [
+          0.716,
+          0.906
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "A small rectangular inset beneath a column contains teal-green fragments, pale irregular chips, and tan veins within a narrow stone frame. Its material could be mosaic or decorative stone; polish and terrazzo composition are not visually certain."
+    },
+    {
+      "label": "Plant-broken passage edge",
+      "artifact_type": "planted-threshold-cut",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Opening beyond the opening",
+      "artifact_type": "displaced-depth-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Shifted glazed bay",
+      "artifact_type": "offset-glazing-interruption",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 2,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.09,
+    "rationale": "The large sky provides negative space, but the built regions are densely photographic: repeated mullions, elaborate carved ornament, weathering, tangled plants, overhead wires, a flag, and a streetlamp compete for attention. This is not a minimal expressionist plate. The mapped coverage is an approximate visual estimate, with the distant glazing nested inside the main arch rather than treated as additional independent area."
+  },
+  "fallback_detected_object_count": 3,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-10-10-a-passage-reopens-v1"
+}

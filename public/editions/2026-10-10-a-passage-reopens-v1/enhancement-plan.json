@@ -1,0 +1,174 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-10-a-passage-reopens-v1",
+  "edition_id": "2026-10-10-a-passage-reopens-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-10-a-passage-reopens-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal",
+    "restoration-scan"
+  ],
+  "future_only_subset": [],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-cavernous-entrance-in-the-right-hand",
+      "target_kind": "artifact",
+      "artifact_id": "hero-cavernous-entrance-in-the-right-hand",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (deep-arched-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-plant-obstructed-doorway-in-the-lowe",
+      "target_kind": "artifact",
+      "artifact_id": "hero-plant-obstructed-doorway-in-the-lowe",
+      "priority": 2,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (reused-stone-threshold) selected from interpretation."
+    },
+    {
+      "target_id": "module-green-mineral-chip-inset-at-the-colu",
+      "target_kind": "artifact",
+      "artifact_id": "module-green-mineral-chip-inset-at-the-colu",
+      "priority": 3,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (terrazzo-inset-boundary) selected from interpretation."
+    },
+    {
+      "target_id": "module-plant-broken-passage-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-plant-broken-passage-edge",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (planted-threshold-cut) selected from interpretation."
+    },
+    {
+      "target_id": "module-opening-beyond-the-opening",
+      "target_kind": "artifact",
+      "artifact_id": "module-opening-beyond-the-opening",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (displaced-depth-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-shifted-glazed-bay",
+      "target_kind": "artifact",
+      "artifact_id": "module-shifted-glazed-bay",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (offset-glazing-interruption) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

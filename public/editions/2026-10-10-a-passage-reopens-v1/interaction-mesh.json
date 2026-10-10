@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-10-a-passage-reopens-v1",
+  "generation": "cron-1791645805277-45327",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1791645805277-45327/2026-10-10-a-passage-reopens-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-cavernous-entrance-in-the-right-hand",
+      "visible_area_px": 103741,
+      "territory_area_px": 132302,
+      "hover_bounds": {
+        "x": 0.7728,
+        "y": 0.4121,
+        "w": 0.2155,
+        "h": 0.5293
+      },
+      "hover_polygon": [
+        [
+          0.7728,
+          0.7881
+        ],
+        [
+          0.7799,
+          0.5107
+        ],
+        [
+          0.8171,
+          0.4453
+        ],
+        [
+          0.8405,
+          0.4219
+        ],
+        [
+          0.8646,
+          0.4121
+        ],
+        [
+          0.8919,
+          0.417
+        ],
+        [
+          0.9167,
+          0.4346
+        ],
+        [
+          0.9577,
+          0.5
+        ],
+        [
+          0.972,
+          0.543
+        ],
+        [
+          0.9876,
+          0.7529
+        ],
+        [
+          0.9707,
+          0.8154
+        ],
+        [
+          0.9219,
+          0.8926
+        ],
+        [
+          0.8464,
+          0.9326
+        ],
+        [
+          0.7988,
+          0.9404
+        ],
+        [
+          0.7799,
+          0.9121
+        ],
+        [
+          0.7747,
+          0.8525
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-opening-beyond-the-opening",
+          "shared_edge_px": 2180,
+          "direction": "left",
+          "distance_px": 273.64
+        },
+        {
+          "artifact_id": "module-green-mineral-chip-inset-at-the-colu",
+          "shared_edge_px": 294,
+          "direction": "down",
+          "distance_px": 312.32
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-plant-obstructed-doorway-in-the-lowe",
+      "visible_area_px": 4428,
+      "territory_area_px": 15035,
+      "hover_bounds": {
+        "x": 0.4603,
+        "y": 0.7119,
+        "w": 0.0964,
+        "h": 0.1602
+      },
+      "hover_polygon": [
+        [
+          0.4603,
+          0.7939
+        ],
+        [
+          0.4681,
+          0.7617
+        ],
+        [
+          0.4993,
+          0.7168
+        ],
+        [
+          0.5117,
+          0.7119
+        ],
+        [
+          0.5443,
+          0.7578
+        ],
+        [
+          0.556,
+          0.8008
+        ],
+        [
+          0.5527,
+          0.8262
+        ],
+        [
+          0.5176,
+          0.8711
+        ],
+        [
+          0.4603,
+          0.7988
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-plant-broken-passage-edge",
+          "shared_edge_px": 1074,
+          "direction": "up",
+          "distance_px": 181.17
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-green-mineral-chip-inset-at-the-colu",
+      "visible_area_px": 3657,
+      "territory_area_px": 11945,
+      "hover_bounds": {
+        "x": 0.6966,
+        "y": 0.8477,
+        "w": 0.084,
+        "h": 0.1113
+      },
+      "hover_polygon": [
+        [
+          0.6966,
+          0.8799
+        ],
+        [
+          0.7148,
+          0.8525
+        ],
+        [
+          0.7598,
+          0.8477
+        ],
+        [
+          0.778,
+          0.875
+        ],
+        [
+          0.7799,
+          0.8955
+        ],
+        [
+          0.7786,
+          0.9248
+        ],
+        [
+          0.7604,
+          0.9521
+        ],
+        [
+          0.7174,
+          0.958
+        ],
+        [
+          0.6992,
+          0.9307
+        ],
+        [
+          0.6966,
+          0.8916
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-cavernous-entrance-in-the-right-hand",
+          "shared_edge_px": 294,
+          "direction": "up",
+          "distance_px": 312.32
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-plant-broken-passage-edge",
+      "visible_area_px": 76953,
+      "territory_area_px": 103030,
+      "hover_bounds": {
+        "x": 0.3216,
+        "y": 0.5117,
+        "w": 0.2572,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.3216,
+          0.5391
+        ],
+        [
+          0.3398,
+          0.5117
+        ],
+        [
+          0.5599,
+          0.5117
+        ],
+        [
+          0.5781,
+          0.5391
+        ],
+        [
+          0.5781,
+          0.7598
+        ],
+        [
+          0.5599,
+          0.7871
+        ],
+        [
+          0.3398,
+          0.7871
+        ],
+        [
+          0.3216,
+          0.7598
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-plant-obstructed-doorway-in-the-lowe",
+          "shared_edge_px": 1074,
+          "direction": "down",
+          "distance_px": 181.17
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-opening-beyond-the-opening",
+      "visible_area_px": 76953,
+      "territory_area_px": 86318,
+      "hover_bounds": {
+        "x": 0.6016,
+        "y": 0.5117,
+        "w": 0.2116,
+        "h": 0.2764
+      },
+      "hover_polygon": [
+        [
+          0.6016,
+          0.5391
+        ],
+        [
+          0.6198,
+          0.5117
+        ],
+        [
+          0.8125,
+          0.5117
+        ],
+        [
+          0.7904,
+          0.7871
+        ],
+        [
+          0.6198,
+          0.7871
+        ],
+        [
+          0.6016,
+          0.7598
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-cavernous-entrance-in-the-right-hand",
+          "shared_edge_px": 2180,
+          "direction": "right",
+          "distance_px": 273.64
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-shifted-glazed-bay",
+      "visible_area_px": 45870,
+      "territory_area_px": 72190,
+      "hover_bounds": {
+        "x": 0.0814,
+        "y": 0.752,
+        "w": 0.2174,
+        "h": 0.2158
+      },
+      "hover_polygon": [
+        [
+          0.0814,
+          0.7793
+        ],
+        [
+          0.0996,
+          0.752
+        ],
+        [
+          0.2799,
+          0.752
+        ],
+        [
+          0.2982,
+          0.7793
+        ],
+        [
+          0.2982,
+          0.9395
+        ],
+        [
+          0.2799,
+          0.9668
+        ],
+        [
+          0.0996,
+          0.9668
+        ],
+        [
+          0.0814,
+          0.9395
+        ]
+      ],
+      "neighbors": []
+    }
+  ]
+}

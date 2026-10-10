@@ -1,0 +1,977 @@
+{
+  "artifact_map_id": "map-2026-10-10-a-passage-reopens-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "weathered-window-grid-passage",
+  "default_artifact_id": "hero-cavernous-entrance-in-the-right-hand",
+  "artifacts": [
+    {
+      "id": "hero-cavernous-entrance-in-the-right-hand",
+      "kind": "hero",
+      "label": "Cavernous entrance in the right-hand stone facade",
+      "artifact_type": "deep-arched-aperture",
+      "bounds": {
+        "x": 0.787,
+        "y": 0.446,
+        "w": 0.179,
+        "h": 0.462
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.799,
+          0.908
+        ],
+        [
+          0.795,
+          0.778
+        ],
+        [
+          0.793,
+          0.657
+        ],
+        [
+          0.787,
+          0.593
+        ],
+        [
+          0.79,
+          0.552
+        ],
+        [
+          0.801,
+          0.514
+        ],
+        [
+          0.817,
+          0.48
+        ],
+        [
+          0.841,
+          0.456
+        ],
+        [
+          0.865,
+          0.446
+        ],
+        [
+          0.892,
+          0.451
+        ],
+        [
+          0.917,
+          0.468
+        ],
+        [
+          0.936,
+          0.5
+        ],
+        [
+          0.95,
+          0.544
+        ],
+        [
+          0.954,
+          0.612
+        ],
+        [
+          0.966,
+          0.757
+        ],
+        [
+          0.949,
+          0.816
+        ],
+        [
+          0.922,
+          0.86
+        ],
+        [
+          0.847,
+          0.9
+        ]
+      ],
+      "cluster_id": "weathered-window-grid-passage",
+      "mask_path": "/editions/2026-10-10-a-passage-reopens-v1/assets/masks/hero-cavernous-entrance-in-the-right-hand.svg",
+      "source_binding_ids": [
+        "binding-hero-cavernous-entrance-in-the-right-hand"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          655
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          693
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.799,
+            0.908
+          ],
+          [
+            0.795,
+            0.778
+          ],
+          [
+            0.793,
+            0.657
+          ],
+          [
+            0.787,
+            0.593
+          ],
+          [
+            0.79,
+            0.552
+          ],
+          [
+            0.801,
+            0.514
+          ],
+          [
+            0.817,
+            0.48
+          ],
+          [
+            0.841,
+            0.456
+          ],
+          [
+            0.865,
+            0.446
+          ],
+          [
+            0.892,
+            0.451
+          ],
+          [
+            0.917,
+            0.468
+          ],
+          [
+            0.936,
+            0.5
+          ],
+          [
+            0.95,
+            0.544
+          ],
+          [
+            0.954,
+            0.612
+          ],
+          [
+            0.966,
+            0.757
+          ],
+          [
+            0.949,
+            0.816
+          ],
+          [
+            0.922,
+            0.86
+          ],
+          [
+            0.847,
+            0.9
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7728,
+            0.7881
+          ],
+          [
+            0.7799,
+            0.5107
+          ],
+          [
+            0.8171,
+            0.4453
+          ],
+          [
+            0.8405,
+            0.4219
+          ],
+          [
+            0.8646,
+            0.4121
+          ],
+          [
+            0.8919,
+            0.417
+          ],
+          [
+            0.9167,
+            0.4346
+          ],
+          [
+            0.9577,
+            0.5
+          ],
+          [
+            0.972,
+            0.543
+          ],
+          [
+            0.9876,
+            0.7529
+          ],
+          [
+            0.9707,
+            0.8154
+          ],
+          [
+            0.9219,
+            0.8926
+          ],
+          [
+            0.8464,
+            0.9326
+          ],
+          [
+            0.7988,
+            0.9404
+          ],
+          [
+            0.7799,
+            0.9121
+          ],
+          [
+            0.7747,
+            0.8525
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7728,
+          "y": 0.4121,
+          "w": 0.2155,
+          "h": 0.5293
+        },
+        "territory_area_px": 132302,
+        "visible_area_px": 103741,
+        "expansion_ratio": 1.275,
+        "neighbors": [
+          {
+            "artifact_id": "module-opening-beyond-the-opening",
+            "shared_edge_px": 2180,
+            "direction": "left",
+            "distance_px": 273.64
+          },
+          {
+            "artifact_id": "module-green-mineral-chip-inset-at-the-colu",
+            "shared_edge_px": 294,
+            "direction": "down",
+            "distance_px": 312.32
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-plant-obstructed-doorway-in-the-lowe",
+      "kind": "hero",
+      "label": "Plant-obstructed doorway in the lowest stone wing",
+      "artifact_type": "reused-stone-threshold",
+      "bounds": {
+        "x": 0.483,
+        "y": 0.746,
+        "w": 0.051,
+        "h": 0.092
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.484,
+          0.779
+        ],
+        [
+          0.491,
+          0.761
+        ],
+        [
+          0.502,
+          0.748
+        ],
+        [
+          0.512,
+          0.746
+        ],
+        [
+          0.522,
+          0.757
+        ],
+        [
+          0.53,
+          0.776
+        ],
+        [
+          0.534,
+          0.803
+        ],
+        [
+          0.531,
+          0.827
+        ],
+        [
+          0.518,
+          0.838
+        ],
+        [
+          0.509,
+          0.82
+        ],
+        [
+          0.508,
+          0.803
+        ],
+        [
+          0.496,
+          0.795
+        ],
+        [
+          0.483,
+          0.799
+        ]
+      ],
+      "cluster_id": "weathered-window-grid-passage",
+      "mask_path": "/editions/2026-10-10-a-passage-reopens-v1/assets/masks/hero-plant-obstructed-doorway-in-the-lowe.svg",
+      "source_binding_ids": [
+        "binding-hero-plant-obstructed-doorway-in-the-lowe"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          781,
+          803
+        ],
+        "safe_stage_window_origin_px": [
+          787,
+          811
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.484,
+            0.779
+          ],
+          [
+            0.491,
+            0.761
+          ],
+          [
+            0.502,
+            0.748
+          ],
+          [
+            0.512,
+            0.746
+          ],
+          [
+            0.522,
+            0.757
+          ],
+          [
+            0.53,
+            0.776
+          ],
+          [
+            0.534,
+            0.803
+          ],
+          [
+            0.531,
+            0.827
+          ],
+          [
+            0.518,
+            0.838
+          ],
+          [
+            0.509,
+            0.82
+          ],
+          [
+            0.508,
+            0.803
+          ],
+          [
+            0.496,
+            0.795
+          ],
+          [
+            0.483,
+            0.799
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4603,
+            0.7939
+          ],
+          [
+            0.4681,
+            0.7617
+          ],
+          [
+            0.4993,
+            0.7168
+          ],
+          [
+            0.5117,
+            0.7119
+          ],
+          [
+            0.5443,
+            0.7578
+          ],
+          [
+            0.556,
+            0.8008
+          ],
+          [
+            0.5527,
+            0.8262
+          ],
+          [
+            0.5176,
+            0.8711
+          ],
+          [
+            0.4603,
+            0.7988
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4603,
+          "y": 0.7119,
+          "w": 0.0964,
+          "h": 0.1602
+        },
+        "territory_area_px": 15035,
+        "visible_area_px": 4428,
+        "expansion_ratio": 3.395,
+        "neighbors": [
+          {
+            "artifact_id": "module-plant-broken-passage-edge",
+            "shared_edge_px": 1074,
+            "direction": "up",
+            "distance_px": 181.17
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-green-mineral-chip-inset-at-the-colu",
+      "kind": "module",
+      "label": "Green mineral-chip inset at the column base",
+      "artifact_type": "terrazzo-inset-boundary",
+      "bounds": {
+        "x": 0.715,
+        "y": 0.875,
+        "w": 0.047,
+        "h": 0.056
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.715,
+          0.88
+        ],
+        [
+          0.737,
+          0.877
+        ],
+        [
+          0.76,
+          0.875
+        ],
+        [
+          0.762,
+          0.899
+        ],
+        [
+          0.761,
+          0.925
+        ],
+        [
+          0.74,
+          0.928
+        ],
+        [
+          0.718,
+          0.931
+        ],
+        [
+          0.716,
+          0.906
+        ]
+      ],
+      "cluster_id": "weathered-window-grid-passage",
+      "mask_path": "/editions/2026-10-10-a-passage-reopens-v1/assets/masks/module-green-mineral-chip-inset-at-the-colu.svg",
+      "source_binding_ids": [
+        "binding-module-green-mineral-chip-inset-at-the-colu"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1134,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          1140,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.715,
+            0.88
+          ],
+          [
+            0.737,
+            0.877
+          ],
+          [
+            0.76,
+            0.875
+          ],
+          [
+            0.762,
+            0.899
+          ],
+          [
+            0.761,
+            0.925
+          ],
+          [
+            0.74,
+            0.928
+          ],
+          [
+            0.718,
+            0.931
+          ],
+          [
+            0.716,
+            0.906
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6966,
+            0.8799
+          ],
+          [
+            0.7148,
+            0.8525
+          ],
+          [
+            0.7598,
+            0.8477
+          ],
+          [
+            0.778,
+            0.875
+          ],
+          [
+            0.7799,
+            0.8955
+          ],
+          [
+            0.7786,
+            0.9248
+          ],
+          [
+            0.7604,
+            0.9521
+          ],
+          [
+            0.7174,
+            0.958
+          ],
+          [
+            0.6992,
+            0.9307
+          ],
+          [
+            0.6966,
+            0.8916
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6966,
+          "y": 0.8477,
+          "w": 0.084,
+          "h": 0.1113
+        },
+        "territory_area_px": 11945,
+        "visible_area_px": 3657,
+        "expansion_ratio": 3.266,
+        "neighbors": [
+          {
+            "artifact_id": "hero-cavernous-entrance-in-the-right-hand",
+            "shared_edge_px": 294,
+            "direction": "up",
+            "distance_px": 312.32
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-plant-broken-passage-edge",
+      "kind": "module",
+      "label": "Plant-broken passage edge",
+      "artifact_type": "planted-threshold-cut",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "cluster_id": "weathered-window-grid-passage",
+      "mask_path": "/editions/2026-10-10-a-passage-reopens-v1/assets/masks/module-plant-broken-passage-edge.svg",
+      "source_binding_ids": [
+        "binding-module-plant-broken-passage-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          691,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          718,
+          666
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.34,
+            0.54
+          ],
+          [
+            0.56,
+            0.54
+          ],
+          [
+            0.56,
+            0.76
+          ],
+          [
+            0.34,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3216,
+            0.5391
+          ],
+          [
+            0.3398,
+            0.5117
+          ],
+          [
+            0.5599,
+            0.5117
+          ],
+          [
+            0.5781,
+            0.5391
+          ],
+          [
+            0.5781,
+            0.7598
+          ],
+          [
+            0.5599,
+            0.7871
+          ],
+          [
+            0.3398,
+            0.7871
+          ],
+          [
+            0.3216,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3216,
+          "y": 0.5117,
+          "w": 0.2572,
+          "h": 0.2764
+        },
+        "territory_area_px": 103030,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.339,
+        "neighbors": [
+          {
+            "artifact_id": "hero-plant-obstructed-doorway-in-the-lowe",
+            "shared_edge_px": 1074,
+            "direction": "down",
+            "distance_px": 181.17
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-opening-beyond-the-opening",
+      "kind": "module",
+      "label": "Opening beyond the opening",
+      "artifact_type": "displaced-depth-aperture",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "weathered-window-grid-passage",
+      "mask_path": "/editions/2026-10-10-a-passage-reopens-v1/assets/masks/module-opening-beyond-the-opening.svg",
+      "source_binding_ids": [
+        "binding-module-opening-beyond-the-opening"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6016,
+            0.5391
+          ],
+          [
+            0.6198,
+            0.5117
+          ],
+          [
+            0.8125,
+            0.5117
+          ],
+          [
+            0.7904,
+            0.7871
+          ],
+          [
+            0.6198,
+            0.7871
+          ],
+          [
+            0.6016,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6016,
+          "y": 0.5117,
+          "w": 0.2116,
+          "h": 0.2764
+        },
+        "territory_area_px": 86318,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.122,
+        "neighbors": [
+          {
+            "artifact_id": "hero-cavernous-entrance-in-the-right-hand",
+            "shared_edge_px": 2180,
+            "direction": "right",
+            "distance_px": 273.64
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-shifted-glazed-bay",
+      "kind": "module",
+      "label": "Shifted glazed bay",
+      "artifact_type": "offset-glazing-interruption",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "weathered-window-grid-passage",
+      "mask_path": "/editions/2026-10-10-a-passage-reopens-v1/assets/masks/module-shifted-glazed-bay.svg",
+      "source_binding_ids": [
+        "binding-module-shifted-glazed-bay"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0814,
+            0.7793
+          ],
+          [
+            0.0996,
+            0.752
+          ],
+          [
+            0.2799,
+            0.752
+          ],
+          [
+            0.2982,
+            0.7793
+          ],
+          [
+            0.2982,
+            0.9395
+          ],
+          [
+            0.2799,
+            0.9668
+          ],
+          [
+            0.0996,
+            0.9668
+          ],
+          [
+            0.0814,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0814,
+          "y": 0.752,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 72190,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.574,
+        "neighbors": []
+      }
+    }
+  ]
+}
