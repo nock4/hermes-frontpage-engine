@@ -452,11 +452,27 @@ async function inspectWithBrowserHarness(sourceUrl, browserHarnessPath) {
       visible_text: '',
     }
   }
+  // Snapshot explicit caller ownership before the harness can load its own .env.
+  // Only our isolated run names and literal loopback Chrome endpoints qualify.
+  const relayName = process.env.BU_NAME || ''
+  const relayWs = process.env.BU_CDP_WS || ''
+  let canReconnect = false
+  try {
+    const endpoint = new URL(relayWs)
+    canReconnect = /^dfe-[a-zA-Z0-9_-]{1,48}$/.test(relayName)
+      && /^ws:\/\/(?:127\.0\.0\.1|\[::1\]):[0-9]+\//.test(relayWs)
+      && endpoint.protocol === 'ws:'
+      && ['127.0.0.1', '[::1]'].includes(endpoint.hostname)
+      && Boolean(endpoint.port)
+      && /^\/devtools\/browser\/[a-zA-Z0-9_-]+$/.test(endpoint.pathname)
+      && !endpoint.username && !endpoint.password && !endpoint.search && !endpoint.hash
+      && !process.env.BU_BROWSER_ID
+  } catch { /* Missing or non-local endpoint: never restart a shared relay. */ }
   const script = `
 import json
 
 url = ${JSON.stringify(sourceUrl)}
-try:
+def inspect_source(url):
     ensure_real_tab()
     goto(url)
     wait_for_load(8)
@@ -484,6 +500,24 @@ JSON.stringify({
 ''')
     data = json.loads(payload or '{}')
     data['fetch_status'] = 'browser-harness'
+    return data
+
+try:
+    try:
+        data = inspect_source(url)
+    except Exception as exc:
+        message = str(exc).lower()
+        stale = 'keepalive ping timeout' in message or 'no close frame received or sent' in message
+        if not (${canReconnect ? 'True' : 'False'} and stale):
+            raise
+        # Restart only this managed relay, not Chrome. The single retry repeats
+        # navigation to the exact vetted source; all work shares the 18s deadline.
+        from admin import restart_daemon, ensure_daemon
+        restart_daemon(name=${JSON.stringify(relayName)})
+        ensure_daemon(wait=5, name=${JSON.stringify(relayName)}, env={
+            'BU_CDP_WS': ${JSON.stringify(relayWs)}, 'BU_BROWSER_ID': ''
+        })
+        data = inspect_source(url)
     print(json.dumps(data))
 except Exception as exc:
     print(json.dumps({
