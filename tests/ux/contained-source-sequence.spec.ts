@@ -7,7 +7,7 @@ const artifacts = JSON.parse(fs.readFileSync(`public/editions/${edition}/artifac
 
 // Same exposed-center, real-pointer sequence as the run7 proof. Locator taps
 // include normal scroll-into-view/focus behavior; DOM dispatch would miss this.
-async function hit(target: Locator, mobile: boolean) {
+async function hit(target: Locator, mobile: boolean, hoverOnly = false) {
   const point = await target.evaluate(el => {
     const r = el.getBoundingClientRect(), points = []
     for (let y = Math.max(3, Math.ceil(r.top)); y < Math.min(innerHeight - 3, r.bottom); y += 3) {
@@ -21,7 +21,8 @@ async function hit(target: Locator, mobile: boolean) {
     return points.sort((a, b) => a.d - b.d)[0]
   })
   expect(point, 'exposed real-pointer target').toBeTruthy()
-  await target[mobile ? 'tap' : 'click']({ position: point })
+  if (hoverOnly) await target.hover({ position: point })
+  else await target[mobile ? 'tap' : 'click']({ position: point })
 }
 
 async function settle(page: Page) {
@@ -69,7 +70,10 @@ for (const view of [
       if (!lab) {
         for (const binding of bindings) {
           await page.mouse.move(1, 1)
-          await hit(page.locator('button.artifact').nth(artifacts.findIndex((a: { id: string }) => a.id === binding.artifact_id)), view.mobile)
+          await hit(page.locator('button.artifact').nth(artifacts.findIndex((a: { id: string }) => a.id === binding.artifact_id)), view.mobile, !view.mobile)
+          // Desktop pointer entry can cover its own mark with the real preview.
+          // Exercise delayed delivery, then promote that exact exposed surface.
+          if (!view.mobile) await page.waitForTimeout(150)
           await settle(page)
           if (await primary.count() === 0) {
             // A hover/focus preview can consume the opening gesture. Promote
