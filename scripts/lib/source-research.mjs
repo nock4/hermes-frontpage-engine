@@ -833,42 +833,39 @@ export async function inspectSourceCandidates(signalHarvest, {
   const inspectionAttempts = () => (autoresearch?.source_decisions || []).filter(row => row.inspection).length
   const beforeRefillLimit = sourceTool === 'browser-harness' ? 18 : 24
   const inspectionOptions = { runDir, apiKey, model, signalHarvest, recentSourceKeys }
+  // Resolve textual editorial roles before the first paid pixel inspection.
+  // Even a large renderable bed cannot predict which sources research will mark
+  // supporting/reject. Running this once up front avoids spending ten attempts
+  // on sources that a late fallback then excludes. Retain anchor provenance and
+  // its captured derived field; text nominations still confer no pixel eligibility.
+  researchMode = anchorSource ? 'single-anchor-derived-pool-autoresearch' : 'fallback-autoresearch'
+  const previousDecisions = autoresearch?.source_decisions || []
+  autoresearch = await runSourceAutoresearch({
+    signalHarvest,
+    evidenceSources: inspected,
+    apiKey,
+    model,
+    date,
+    maxSources,
+    recentSourceKeys,
+    inspirationOverride,
+  }, runDir)
+  autoresearch.source_decisions = [...previousDecisions, ...(autoresearch.source_decisions || []).map(({ inspection, ...decision }) => decision)]
+  const selectedForCapture = normalizeAutoresearchSelection(autoresearch, inspected, {
+    maxSources,
+    recentSourceKeys,
+    signalHarvest,
+  })
+  const researchedCaptures = await captureAutoresearchedSources(selectedForCapture, {
+    sourceTool,
+    browserHarness,
+    maxSources,
+  })
+  // Keep both DNS-vetted fetch evidence and the anchor-derived media. A capture
+  // may legitimately skip raw images or return an empty provider surface.
+  inspected = mergeInspectedSources(researchedCaptures, inspected)
   autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { ...inspectionOptions, maxInspections: beforeRefillLimit - inspectionAttempts() })
   let contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
-
-  if (contentSources.length < minContentItems) {
-    researchMode = anchorSource ? 'single-anchor-derived-pool-fallback-autoresearch' : 'fallback-autoresearch'
-    const previousDecisions = autoresearch?.source_decisions || []
-    autoresearch = await runSourceAutoresearch({
-      signalHarvest,
-      evidenceSources: fetchEvidence,
-      apiKey,
-      model,
-      date,
-      maxSources,
-      recentSourceKeys,
-      inspirationOverride,
-    }, runDir)
-    autoresearch.source_decisions = [...previousDecisions, ...(autoresearch.source_decisions || []).map(({ inspection, ...decision }) => decision)]
-    const selectedForCapture = normalizeAutoresearchSelection(autoresearch, fetchEvidence, {
-      maxSources,
-      recentSourceKeys,
-      signalHarvest,
-    })
-    inspected = await captureAutoresearchedSources(selectedForCapture, {
-      sourceTool,
-      browserHarness,
-      maxSources,
-    })
-    // Keep the DNS-vetted fetch evidence on the press bed. Autoresearch capture can
-    // legitimately skip raw images or already-fetched provider surfaces when browser
-    // navigation is disabled, but those evidence records are still real renderable
-    // source windows. Dropping them here can turn a fertile evidence field into a
-    // false 0-window failure.
-    inspected = mergeInspectedSources(inspected, fetchEvidence)
-    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { ...inspectionOptions, maxInspections: beforeRefillLimit - inspectionAttempts() })
-    contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
-  }
 
   // Inspect the fetch bed without consuming the browser-media reserve.
   while (contentSources.length < minContentItems && inspectionAttempts() < beforeRefillLimit) {

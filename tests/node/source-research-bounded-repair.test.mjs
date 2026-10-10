@@ -6,7 +6,7 @@ import { beforeEach, afterEach, expect, it, vi } from 'vitest'
 const state = vi.hoisted(() => ({ attempts: [], captures: [], rejectAnchor: false, verifiedFrom: 18 }))
 vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
   inspectCandidateSource: async (source, options) => {
-    state.captures.push({ url: source.url, tool: options.sourceTool, attempts: state.attempts.length })
+    state.captures.push({ url: source.url, tool: options.sourceTool, attempts: state.attempts.length, researchCalls: state.researchAttempts.length })
     if (options.sourceTool === 'fetch' && state.fetchChanges?.[source.url]) return { ...source, ...state.fetchChanges[source.url] }
     if (options.sourceTool === 'browser-harness' && state.browserChanges?.[source.url]) return { ...source, ...state.browserChanges[source.url] }
     return options.sourceTool === 'browser-harness' && source.browser_image
@@ -17,7 +17,7 @@ vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
 vi.mock('../../scripts/lib/anchor-source-research.mjs', async (original) => ({
   ...await original(),
   buildAnchorResearch: async (anchor) => ({ anchor_source: anchor, anchor_research: { summary: anchor.title, thesis: anchor.title } }),
-  discoverDerivedSourceCandidates: async () => [],
+  discoverDerivedSourceCandidates: async () => state.derivedCandidates || [],
   discoverImageSourceMaterial: async (research) => {
     const anchor = research.anchor_source
     const materials = [{ title: anchor.title, page_url: anchor.url, image_url: anchor.image_url, source_image_aliases: anchor.source_image_aliases, lineage: 'primary_anchor_image' }]
@@ -39,7 +39,10 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
       state.attempts.push(source.url)
       return { status: Number(source.title.split(' ').at(-1)) >= state.verifiedFrom ? 'verified' : 'ambiguous', artifact_kind: 'artwork', confidence: 'high', observation: 'Synthetic fixture: red painted figures' }
     }
-    if (instructions.includes('source-research editor')) return { source_decisions: state.rejectAnchor ? [{ url: sources[0].url, role: 'reject' }] : [], selected_content_urls: [] }
+    if (instructions.includes('source-research editor')) {
+      state.researchAttempts.push(state.attempts.length)
+      return { source_decisions: state.editorialDecisions || (state.rejectAnchor ? [{ url: sources[0].url, role: 'reject' }] : []), selected_content_urls: [] }
+    }
     return { visual_summary: 'Red figure and blue room in an oil painting', preserve_cues: ['red figure', 'blue room'], visual_fertility: 'high' }
   },
 }))
@@ -54,12 +57,62 @@ let runDir
 beforeEach(async () => {
   runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'bounded-repair-'))
   state.attempts = []; state.captures = []; state.rejectAnchor = false; state.verifiedFrom = 18; state.browserChanges = {}; state.fetchChanges = {}
+  state.researchAttempts = []; state.editorialDecisions = null; state.derivedCandidates = []
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1'); vi.stubEnv('DFE_DECISION_MODEL', 'openai')
 })
 afterEach(async () => { vi.unstubAllEnvs(); await fs.rm(runDir, { recursive: true, force: true }) })
 const inspect = (extra = {}) => inspectSourceCandidates({ source_candidates: sources, notes_selected: [], motif_terms: [] }, {
   maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-09-30', ...extra,
 })
+it.each(['automatic', 'exact'])('researches an undersized %s anchor bed before spending on supporting-only sources', async mode => {
+  // The anchor has no derived works, so it cannot supply the six-source floor.
+  // Text editorial roles must arrive before the first real inspector invocation.
+  state.verifiedFrom = 18
+  state.editorialDecisions = sources.slice(0, 3).map(source => ({ url: source.url, role: 'supporting', confidence: 'high' }))
+  const inspirationOverride = mode === 'exact'
+    ? { source_url: sources[0].url, image_url: sources[0].image_url, title: sources[0].title, prompt_bias_terms: ['exact-anchor'] }
+    : null
+  if (mode === 'exact') await expect(inspect({ inspirationOverride })).rejects.toThrow(/blocked/)
+  else await inspect()
+  expect(state.researchAttempts).toEqual([0])
+  expect(state.attempts.length).toBeGreaterThan(0)
+  expect(state.attempts.length).toBeLessThanOrEqual(24)
+  expect(state.attempts.some(url => sources.slice(0, 3).some(source => source.url === url))).toBe(false)
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  expect(saved.content_sources.some(source => sources.slice(0, 3).some(excluded => excluded.url === source.url))).toBe(false)
+  if (mode === 'exact') {
+    expect(saved.anchor_research.anchor_source.url).toBe(sources[0].url)
+    expect(saved.source_decision_audit.status).toBe('blocked')
+  }
+})
+it('does not manufacture a sixth source when early editorial exclusions leave only five', async () => {
+  state.verifiedFrom = 0
+  state.editorialDecisions = sources.slice(0, 3).map(source => ({ url: source.url, role: 'supporting', confidence: 'high' }))
+  await expect(inspectSourceCandidates({ source_candidates: sources.slice(0, 8), notes_selected: [], motif_terms: [] }, {
+    maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-10-10',
+  })).rejects.toThrow(/blocked|expected at least 6/)
+  expect(state.researchAttempts).toEqual([0])
+  expect(state.attempts).toEqual(sources.slice(3, 8).map(source => source.url))
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  expect(saved.content_source_count).toBe(5)
+  expect(saved.source_floor_diagnostics.min_required_content_sources).toBe(6)
+})
+it.each(['automatic', 'exact'])('retains %s single-anchor provenance with a sufficient derived field after text-first research', async mode => {
+  state.verifiedFrom = 0
+  state.derivedCandidates = sources.slice(1, 7)
+  const inspirationOverride = mode === 'exact'
+    ? { source_url: sources[0].url, image_url: sources[0].image_url, title: sources[0].title, prompt_bias_terms: ['exact-anchor'] }
+    : null
+  const result = await inspect({ inspirationOverride })
+  expect(state.researchAttempts).toEqual([0])
+  expect(result.anchor_research.anchor_source.url).toBe(sources[0].url)
+  expect(result.selected_image_material[0].page_url).toBe(sources[0].url)
+  expect(result.content_source_count).toBeGreaterThanOrEqual(6)
+  expect(result.autoresearch.source_decisions).toEqual(expect.arrayContaining([
+    expect.objectContaining({ url: sources[1].url, why: 'Derived from the selected anchor source.' }),
+  ]))
+})
+
 it.each(['0', '1'])('passes archive keys through source research with single-anchor mode %s', async mode => {
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', mode)
   const recentSourceKeys = new Set(sources.slice(0, 18).map(sourceContentKey))
@@ -119,7 +172,9 @@ it.each(['0', '1'])('refills a saturated normal intake before pixel scheduling i
   expect(snapshot.signal_harvest).toEqual(harvest)
   expect(snapshot.fetch_sources.slice(-6)).toEqual(owners.map(source => ({ ...source, ...state.fetchChanges[source.url] })))
   expect(snapshot.autoresearch).toBeNull()
-  expect(state.captures.filter(row => row.tool === 'fetch' && row.attempts === 0).length).toBeLessThanOrEqual(984)
+  // Intake is bounded before research; research-selected recaptures now also
+  // precede pixels and must not be miscounted as intake-refill fetches.
+  expect(state.captures.filter(row => row.tool === 'fetch' && row.researchCalls === 0).length).toBeLessThanOrEqual(984)
   const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
   expect(saved.content_source_count).toBe(0)
   expect(saved.autoresearch.source_decisions.filter(row => row.inspection)).toHaveLength(6)
@@ -264,7 +319,8 @@ it('keeps the strict floor and clears excluded anchor artifacts when no verified
   state.verifiedFrom = 30
   state.rejectAnchor = true
   await expect(inspect()).rejects.toThrow(/blocked|expected at least 6/)
-  expect(state.attempts).toHaveLength(24)
+  expect(state.attempts).toHaveLength(23) // The excluded anchor never spends an attempt.
+  expect(state.attempts).not.toContain(sources[0].url)
   const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
   expect(saved.anchor_research).toBeNull()
   expect(saved.selected_image_material).toEqual([])

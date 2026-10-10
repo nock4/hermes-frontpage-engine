@@ -36,7 +36,11 @@ vi.mock('../../scripts/lib/anchor-source-research.mjs', async (importOriginal) =
     return { image_source_candidates: materials, selected_image_material: materials }
   },
 }))
-vi.mock('../../scripts/lib/openai-json.mjs', () => ({ openAiJson: (...args) => state.analyzer(...args) }))
+vi.mock('../../scripts/lib/openai-json.mjs', () => ({
+  openAiJson: (...args) => args[0].instructions.includes('source-research editor')
+    ? { source_decisions: state.editorialDecisions, selected_content_urls: [] }
+    : state.analyzer(...args),
+}))
 vi.mock('../../scripts/lib/source-image-geometry.mjs', async (importOriginal) => ({
   ...await importOriginal(), measureSourceImage: async () => ({ width: 800, height: 600 }),
 }))
@@ -57,6 +61,7 @@ beforeEach(async () => {
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1')
   vi.stubEnv('DFE_DECISION_MODEL', 'openai')
   state.rejectedUrls = []
+  state.editorialDecisions = []
   state.nominatedUrl = null
   state.materials = [material]
   state.reference = { ...sources[0], page_url: material.page_url }
@@ -228,8 +233,8 @@ describe('source research vision boundary', () => {
       ...extras,
     ]
     let visions = 0
-    state.analyzer.mockImplementation(async ({ instructions }) => {
-      if (instructions.includes('source-research editor')) return { source_decisions: [{ url: sources[4].url, role: 'reject' }], selected_content_urls: [] }
+    state.editorialDecisions = [{ url: sources[4].url, role: 'reject' }]
+    state.analyzer.mockImplementation(async () => {
       visions++
       return { ...fertile, visual_fertility: 'low' }
     })
@@ -245,16 +250,15 @@ describe('source research vision boundary', () => {
     state.batchSize = 2
     state.followAnchor = true
     state.reference = null
-    state.analyzer.mockImplementation(async ({ instructions }) => instructions.includes('source-research editor')
-      ? { source_decisions: [{ url: sources[0].url, role: 'reject' }], selected_content_urls: [] }
-      : fertile)
+    state.editorialDecisions = [{ url: sources[0].url, role: 'reject' }]
+    state.analyzer.mockResolvedValue(fertile)
     const extra = { ...sources[5], url: 'https://artist6.example/work', image_url: 'https://artist6.example/work.jpg', note_id: 'note-6' }
     const candidates = [...sources, extra].map(source => ({ ...source, source_channel: 'twitter-bookmark' }))
     const result = await inspectSourceCandidates({ source_candidates: candidates, notes_selected: [], motif_terms: [] }, {
       maxSources: 7, runDir, sourceTool: 'fetch', date: '2026-09-30',
     })
     expect(result.content_source_count).toBe(6)
-    expect(state.inspections.filter(batch => batch.length)).toHaveLength(4)
+    expect(state.inspections.filter(batch => batch.length)).toHaveLength(3)
     const replacement = result.anchor_research.anchor_source
     expect(replacement.url).not.toBe(sources[0].url)
     expect(result.content_sources.map(source => source.url)).toContain(replacement.url)
