@@ -341,6 +341,57 @@ function sourceSelectionScore(candidate, recentSourceKeys = new Set()) {
   return score
 }
 
+// Intake identity is provenance, not creative eligibility. Retain aliases and
+// attached media so a different host cannot manufacture another refill family.
+function intakeFamilyUrls(source, seen = new Set()) {
+  if (!source || seen.has(source)) return []
+  seen.add(source)
+  return [source.url, source.source_url, source.final_url, source.resolved_url, source.page_url,
+    source.image_url, source.source_image_url, source.media_url, source.source_media_url,
+    ...(source.source_image_aliases || []),
+    ...intakeFamilyUrls(source.parent_source, seen),
+    ...(source.editorial_evidence || []).flatMap(parent => intakeFamilyUrls(parent, seen)),
+  ].filter(Boolean)
+}
+
+// Resolve the whole known provenance component, including aliases skipped by
+// an earlier pass. Otherwise A <- B <- C can count C after B was deduplicated.
+function owningPageFamilyLookup(sources) {
+  const links = new Map()
+  for (const source of sources) {
+    const keys = intakeFamilyUrls(source).map(researchIdentity)
+    for (const key of keys) {
+      if (!links.has(key)) links.set(key, new Set())
+      links.get(key).add(keys[0])
+      links.get(keys[0]).add(key)
+    }
+  }
+  return source => {
+    const family = new Set(intakeFamilyUrls(source).map(researchIdentity))
+    for (const key of family) {
+      for (const alias of links.get(key) || []) family.add(alias)
+    }
+    return [...family]
+  }
+}
+
+function isOwningPageIntakeCandidate(source) {
+  if (source.source_channel === 'anchor-derived' || !isAllowedInspectedSource(source)) return false
+  const key = sourceContentKey(source)
+  // An attributed asset/alias is not its owning page. A saved collection note,
+  // unlike a page_url or parent_source, is not itself a source-family identity.
+  if (researchIdentity(source.url) !== researchIdentity(key)
+    || (source.page_url && researchIdentity(source.page_url) !== researchIdentity(key))
+    || (source.parent_source && sourceContentKey(source.parent_source) !== key)) return false
+  return [source.url, source.source_url, source.final_url, source.resolved_url].filter(Boolean).every(url => (
+    isAllowedSourceUrl(url)
+    && classifyMediaUrl(url).media_class === 'web-page'
+    // The shared classifier distinguishes rasters/provider media; other file
+    // formats must not masquerade as HTML merely because they are unclassified.
+    && !/\.(?:gif|svg|ico|mp4|m4v|mov|webm|mp3|m4a|wav|ogg|flac|pdf)(?:$|[?#])/i.test(url)
+  ))
+}
+
 export function selectSourceCandidatesForInspection(signalHarvest, maxSources, { recentSourceKeys = new Set() } = {}) {
   const selected = []
   const seen = new Set()
@@ -402,6 +453,36 @@ export function selectSourceCandidatesForInspection(signalHarvest, maxSources, {
   for (const { candidate } of ranked) {
     if (selected.length >= maxSources) break
     add(candidate, { allowRecent: true, domainLimit: maxSources, noteLimit: 3 })
+  }
+
+  // Only genuinely vacant capacity may escape the saved-note cap. Preserve all
+  // earlier diversity passes and their order; use owning-page provenance rather
+  // than pixel verdicts or special publisher names. Existing X/NTS lanes remain.
+  const familyKeys = new Set(selected.flatMap(source => intakeFamilyUrls(source).map(researchIdentity)))
+  const familyLookup = owningPageFamilyLookup(ranked.map(entry => entry.candidate || entry.source))
+  const ownerNoteCounts = new Map()
+  const ownerDomainCounts = new Map()
+  const ownerNoteKey = source => JSON.stringify([noteSelectionKey(source, sourceContentKey(source)), sourceDomainKey(source)])
+  for (const source of selected) {
+    const noteKey = ownerNoteKey(source)
+    const domainKey = sourceDomainKey(source)
+    ownerNoteCounts.set(noteKey, (ownerNoteCounts.get(noteKey) || 0) + 1)
+    ownerDomainCounts.set(domainKey, (ownerDomainCounts.get(domainKey) || 0) + 1)
+  }
+  for (const { candidate } of ranked) {
+    if (selected.length >= maxSources) break
+    if (!isOwningPageIntakeCandidate(candidate)) continue
+    const familyUrls = intakeFamilyUrls(candidate)
+    const keys = familyLookup(candidate)
+    if (keys.some(key => familyKeys.has(key))
+      || familyUrls.some(url => recentSourceKeys.has(canonicalizeSourceUrl(url)))) continue
+    const noteKey = ownerNoteKey(candidate)
+    const domainKey = sourceDomainKey(candidate)
+    if ((ownerNoteCounts.get(noteKey) || 0) >= 3 || (ownerDomainCounts.get(domainKey) || 0) >= 3) continue
+    selected.push(candidate)
+    keys.forEach(key => familyKeys.add(key))
+    ownerNoteCounts.set(noteKey, (ownerNoteCounts.get(noteKey) || 0) + 1)
+    ownerDomainCounts.set(domainKey, (ownerDomainCounts.get(domainKey) || 0) + 1)
   }
 
   return selected
@@ -661,6 +742,35 @@ export function selectContentSources(
   for (const entry of ranked) {
     if (selected.length >= maxItems) break
     add(entry, { allowRecent: false, domainLimit: maxItems, noteLimit: 3 })
+  }
+
+  // Only already-eligible owning pages may fill capacity left by the note cap.
+  // Keep the original diversity prefix and every admission gate above intact.
+  const familyKeys = new Set(selected.flatMap(source => intakeFamilyUrls(source).map(researchIdentity)))
+  const familyLookup = owningPageFamilyLookup(ranked.map(entry => entry.candidate || entry.source))
+  const ownerDomainCounts = new Map()
+  const ownerNoteCounts = new Map()
+  const ownerNoteKey = source => JSON.stringify([noteSelectionKey(source, sourceContentKey(source)), sourceDomainKey(source)])
+  for (const source of selected) {
+    const domain = sourceDomainKey(source)
+    const note = ownerNoteKey(source)
+    ownerDomainCounts.set(domain, (ownerDomainCounts.get(domain) || 0) + 1)
+    ownerNoteCounts.set(note, (ownerNoteCounts.get(note) || 0) + 1)
+  }
+  for (const { source } of ranked) {
+    if (selected.length >= maxItems) break
+    if (!isOwningPageIntakeCandidate(source)) continue
+    const urls = intakeFamilyUrls(source)
+    const keys = familyLookup(source)
+    if (keys.some(key => familyKeys.has(key))
+      || urls.some(url => recentSourceKeys.has(canonicalizeSourceUrl(url)))) continue
+    const domain = sourceDomainKey(source)
+    const note = ownerNoteKey(source)
+    if ((ownerDomainCounts.get(domain) || 0) >= 3 || (ownerNoteCounts.get(note) || 0) >= 3) continue
+    selected.push(source)
+    keys.forEach(key => familyKeys.add(key))
+    ownerDomainCounts.set(domain, (ownerDomainCounts.get(domain) || 0) + 1)
+    ownerNoteCounts.set(note, (ownerNoteCounts.get(note) || 0) + 1)
   }
 
   return selected.slice(0, maxItems)
