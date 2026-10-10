@@ -525,12 +525,13 @@ JSON.stringify({
     || document.querySelector('meta[property="og:description"]')?.content
     || document.querySelector('meta[name="twitter:description"]')?.content
     || '',
-  image_url: document.querySelector('meta[property="og:image:secure_url"]')?.content
-    || document.querySelector('meta[property="og:image"]')?.content
-    || document.querySelector('meta[name="twitter:image:src"]')?.content
-    || document.querySelector('meta[name="twitter:image"]')?.content
-    || document.querySelector('img')?.src
-    || '',
+  image_urls: [
+    document.querySelector('meta[property="og:image:secure_url"]')?.content,
+    document.querySelector('meta[property="og:image"]')?.content,
+    document.querySelector('meta[name="twitter:image:src"]')?.content,
+    document.querySelector('meta[name="twitter:image"]')?.content,
+    ...Array.from(document.images).slice(0, 64).flatMap(img => [img.currentSrc, img.src]),
+  ].filter(Boolean),
   h1: document.querySelector('h1')?.innerText?.trim() || '',
   visible_text: (document.body?.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 900)
 })
@@ -771,6 +772,14 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
       }
       if (!browserFinalFetchable) return null
     }
+    // Consider only URLs observed on this page, in metadata/DOM order. Reject
+    // identifiable low-value/unsafe media before the single existing health
+    // fetch and later vision slot; do not crawl, reconstruct, or retry images.
+    const browserImageUrl = [...new Set([
+      ...(Array.isArray(browserData.image_urls) ? browserData.image_urls : [browserData.image_url]),
+    ].filter((url) => typeof url === 'string' && url.trim())
+      .map((url) => absoluteUrl(url, browserFinalUrl)))]
+      .find((url) => isAllowedSourceUrl(url) && !isLowValueVisualImage(url))
     return normalizeInspectedSourceMedia({
       ...candidate,
       ...classification,
@@ -778,7 +787,7 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
       final_url: browserData.final_url || fetchable,
       title: browserData.title || browserData.h1 || candidate.note_title,
       description: browserData.description || browserData.visible_text || '',
-      image_url: absoluteUrl(browserData.image_url, browserData.final_url || fetchable) || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
+      image_url: browserImageUrl || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
       source_embed_html: bandcampEmbedHtml || undefined,
       fetch_status: browserData.fetch_status,
       youtube_embed_status: embedStatus,

@@ -244,7 +244,16 @@ export function isLowValueVisualImage(imageUrl) {
     lower = imageUrl.toLowerCase()
   }
 
-  return /\.svg(?:$|[?#])/.test(lower)
+  // Decode only the classification copy; never rewrite the source/media URL.
+  try { lower = decodeURIComponent(lower) } catch { /* Keep malformed escapes literal. */ }
+  const wixTransform = /^(?:[^/]+\.)?wixstatic\.com\/.*\/v1\/(?:fill|fit)\/([^/]+)/.exec(lower)?.[1] || ''
+  const wixWidth = Number(wixTransform.match(/(?:^|,)w_(\d+)(?:,|$)/)?.[1])
+  const wixHeight = Number(wixTransform.match(/(?:^|,)h_(\d+)(?:,|$)/)?.[1])
+  const wixBlur = Number(wixTransform.match(/(?:^|,)blur_(\d+)(?:,|$)/)?.[1])
+
+  return (wixWidth > 0 && wixWidth <= 128 && wixHeight > 0 && wixHeight <= 128 && wixBlur > 0)
+    || /(?:^|[/_.-])logo(?:[/.?#_-]|$)/.test(lower)
+    || /\.svg(?:$|[?#])/.test(lower)
     || /\.ico(?:$|[?#])/.test(lower)
     || lower.includes('/ico/')
     || /(?:^|[/_.-])(?:hamburger|singleplayer|multiplayer|achievements?|steamcloud)(?:[/.?#_-]|$)/.test(lower)
