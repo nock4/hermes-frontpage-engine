@@ -19,7 +19,7 @@ vi.mock('../../scripts/lib/anchor-source-research.mjs', async (original) => ({
   discoverDerivedSourceCandidates: async () => [],
   discoverImageSourceMaterial: async (research) => {
     const anchor = research.anchor_source
-    const materials = [{ title: anchor.title, page_url: anchor.url, image_url: anchor.image_url, lineage: 'primary_anchor_image' }]
+    const materials = [{ title: anchor.title, page_url: anchor.url, image_url: anchor.image_url, source_image_aliases: anchor.source_image_aliases, lineage: 'primary_anchor_image' }]
     return { image_source_candidates: materials, selected_image_material: materials }
   },
 }))
@@ -42,7 +42,7 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
     return { visual_summary: 'Red figure and blue room in an oil painting', preserve_cues: ['red figure', 'blue room'], visual_fertility: 'high' }
   },
 }))
-import { inspectSourceCandidates } from '../../scripts/lib/source-research.mjs'
+import { inspectSourceCandidates, buildSourceFloorDiagnostics } from '../../scripts/lib/source-research.mjs'
 import { sourceContentKey, sourceContentScore, isAiToolingContentSource } from '../../scripts/lib/source-selection-policy.mjs'
 const sources = Array.from({ length: 24 }, (_, i) => ({
   url: `https://artist${i}.gallery.example/work`, image_url: `https://artist${i}.gallery.example/work.png`,
@@ -146,6 +146,28 @@ it.each(['fresh-browser-image', 'browser-tooling-context', 'archived-image'])('p
     expect(sourceContentScore(retained, recentSourceKeys)).toBe(-Infinity)
     expect(state.attempts).toEqual([])
   }
+})
+
+it('retains primary material aliases when creating derived content sources', async () => {
+  const alias = 'https://original.example/painting.jpg'
+  const source = { ...sources[18], source_image_aliases: [alias] }
+  const result = await inspectSourceCandidates({ source_candidates: [source, ...sources.slice(19)], notes_selected: [], motif_terms: [] }, {
+    maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-10-10',
+  })
+  const derived = result.sources.find(row => row.url === source.image_url)
+  expect(derived).toBeDefined()
+  expect(derived.source_image_aliases).toContain(alias)
+  expect(sourceContentScore(derived, new Set([sourceContentKey({ url: alias })]))).toBe(-Infinity)
+})
+
+it('keeps fetch redirect aliases through preferred browser merging and archive screening', () => {
+  const alias = 'https://original-images.example/spent.jpg'
+  const source = { ...sources[0], source_image_aliases: [alias] }
+  const inspected = [{ ...source, fetch_status: 'browser-harness', image_url: null, source_image_aliases: [] }]
+  const options = { inspected, fetchEvidence: [source] }
+  expect(buildSourceFloorDiagnostics(options).buckets.non_duplicate_renderable_surfaces).toBe(1)
+  const recentSourceKeys = new Set([sourceContentKey({ url: alias })])
+  expect(buildSourceFloorDiagnostics({ ...options, recentSourceKeys }).buckets.non_duplicate_renderable_surfaces).toBe(0)
 })
 
 it('stops browser refill when negative actual-media attempts exhaust the unchanged cap', async () => {

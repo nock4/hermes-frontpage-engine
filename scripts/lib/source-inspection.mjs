@@ -4,7 +4,8 @@ import http from 'node:http'
 import path from 'node:path'
 
 import { fetchWithTimeout } from './fetch-with-timeout.mjs'
-import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
+import { fetchVettedImage } from './fetch-vetted-image.mjs'
+import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl } from './source-image-network-policy.mjs'
 import {
   classifySource,
   isAllowedInspectedSource,
@@ -224,19 +225,12 @@ async function isLoadableVisualImage(imageUrl) {
   if (!imageUrl || isLowValueVisualImage(imageUrl)) return false
   if (visualImageHealthCache.has(imageUrl)) return visualImageHealthCache.get(imageUrl)
 
-  const fetchableImageUrl = await resolveFetchableImageUrl(imageUrl, { lookup: dns.lookup })
-  if (!fetchableImageUrl) {
-    visualImageHealthCache.set(imageUrl, false)
-    return false
-  }
-
   try {
-    const response = await fetchVettedRemoteUrl(fetchableImageUrl, {
+    const { response, finalUrl, imageUrls } = await fetchVettedImage(imageUrl, {
       lookup: dns.lookup,
       headers: {
         accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5',
         range: 'bytes=0-4095',
-        'user-agent': 'daily-frontpage-engine-source-research/0.1',
       },
       timeoutMs: 8000,
       // Range is advisory: some image CDNs return the entire image with HTTP 200.
@@ -246,8 +240,9 @@ async function isLoadableVisualImage(imageUrl) {
     if (!response) throw new Error('blocked image URL')
     const contentType = response.headers.get('content-type')?.toLowerCase() || ''
     const loadable = response.ok && (!contentType || (contentType.startsWith('image/') && !contentType.includes('svg')))
-    visualImageHealthCache.set(imageUrl, loadable)
-    return loadable
+    const resolved = loadable && !isLowValueVisualImage(finalUrl) ? { finalUrl, imageUrls } : false
+    visualImageHealthCache.set(imageUrl, resolved)
+    return resolved
   } catch {
     visualImageHealthCache.set(imageUrl, false)
     return false
@@ -259,8 +254,16 @@ async function normalizeInspectedSourceMedia(source) {
   if (!isAllowedInspectedSource(source)) return null
 
   const imageUrl = absoluteUrl(source.image_url, source.final_url || source.source_url || source.url)
-  if (imageUrl && await isLoadableVisualImage(imageUrl)) {
-    return { ...source, image_url: imageUrl }
+  const resolvedImageUrl = imageUrl && await isLoadableVisualImage(imageUrl)
+  if (resolvedImageUrl) {
+    return {
+      ...source,
+      source_image_url: source.source_image_url || imageUrl,
+      source_image_aliases: [...new Set([
+        ...(source.source_image_aliases || []), source.source_image_url, imageUrl, ...resolvedImageUrl.imageUrls,
+      ].filter(Boolean))],
+      image_url: resolvedImageUrl.finalUrl,
+    }
   }
 
   return { ...source, image_url: null }
@@ -574,8 +577,7 @@ except Exception as exc:
   return parsed
 }
 
-// Redirect following is deliberately local to source-page inspection. Image
-// downloads and all other vetted-fetch consumers still receive raw 3xx responses.
+// HTML keeps its smaller byte ceiling; images use fetchVettedImage separately.
 async function fetchSourcePage(sourceUrl, { timeoutMs = 8000, maxBytes = 1_000_001 } = {}) {
   timeoutMs = Math.min(8000, Math.max(1, timeoutMs))
   maxBytes = Math.min(1_000_001, Math.max(1, maxBytes))
@@ -606,7 +608,6 @@ async function fetchSourcePage(sourceUrl, { timeoutMs = 8000, maxBytes = 1_000_0
         lookup: dns.lookup,
         headers: {
           accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-          'user-agent': 'daily-frontpage-engine-source-research/0.1',
         },
         timeoutMs,
         maxBytes: remainingBytes,

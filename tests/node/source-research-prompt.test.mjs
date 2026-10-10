@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
 import { buildExactAnchorSourceMaterialBlocker, buildPromotedVisualAnchorMaterial, isAiToolingImageMaterial, isExactAnchorOverride } from '../../scripts/lib/source-research.mjs'
+import { sourceContentKey } from '../../scripts/lib/source-selection-policy.mjs'
 
 const source = readFileSync(new URL('../../scripts/lib/source-research.mjs', import.meta.url), 'utf8')
 
@@ -129,6 +130,13 @@ describe('source autoresearch prompt', () => {
       thesis_anchor: { url: 'https://x.com/text/status/1' },
       visual_anchor: { image_url: 'https://example.com/blue-garden.jpg' },
     })
+  })
+
+  it('retains visual promotion aliases and rejects archived aliases before promotion', () => {
+    const alias = 'https://original.example/garden.jpg'
+    const source = { url: 'https://garden.example/art', title: 'Garden painting', image_url: 'https://cdn.example/garden.jpg', source_image_aliases: [alias] }
+    expect(buildPromotedVisualAnchorMaterial(source).candidate.source_image_aliases).toEqual([alias])
+    expect(buildPromotedVisualAnchorMaterial(source, { recentSourceKeys: new Set([sourceContentKey({ url: alias })]) })).toBeNull()
   })
 
   it('does not promote a nearby visual anchor for an exact-anchor contract', () => {

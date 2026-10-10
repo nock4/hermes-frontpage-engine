@@ -41,6 +41,7 @@ function sourceKeysForBindings(bindings, sourceContentKey) {
     sourceContentKey({ url: binding.resolved_url }),
     sourceContentKey({ url: binding.source_image_url, source_url: binding.source_image_url }),
     sourceContentKey({ url: binding.source_media_url, source_url: binding.source_media_url }),
+    ...(binding.source_image_aliases || []).map((url) => sourceContentKey({ url })),
   ].filter(Boolean)))]
 }
 

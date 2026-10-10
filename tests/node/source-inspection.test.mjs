@@ -217,10 +217,7 @@ describe('source inspection', () => {
         }
       }
 
-      return {
-        ok: true,
-        headers: new Headers({ 'content-type': 'image/jpeg' }),
-      }
+      return new Response(Buffer.from('image bytes'), { headers: { 'content-type': 'image/jpeg' } })
     }))
 
     const source = await inspectCandidateSource(

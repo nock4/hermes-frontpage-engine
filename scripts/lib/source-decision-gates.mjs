@@ -11,7 +11,7 @@ function evidenceList(items = []) {
 }
 
 function sourceUrls(source = {}) {
-  return [source.url, source.source_url, source.final_url, source.image_url, source.source_image_url, source.source_media_url]
+  return [source.url, source.source_url, source.final_url, source.image_url, source.source_image_url, source.source_media_url, ...(source.source_image_aliases || [])]
     .filter(Boolean)
 }
 
@@ -24,7 +24,7 @@ function sourceHasRecentUrlOrImage(source = {}, recentSourceKeys = new Set()) {
 }
 
 function sourceImageSpent(source = {}, recentSourceKeys = new Set()) {
-  const imageUrls = [source.image_url, source.source_image_url, source.source_media_url]
+  const imageUrls = [source.image_url, source.source_image_url, source.source_media_url, ...(source.source_image_aliases || [])]
     .filter(Boolean)
   return imageUrls.some((url) => {
     const canonical = canonicalizeSourceUrl(url)

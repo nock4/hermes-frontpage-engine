@@ -56,6 +56,20 @@ afterEach(() => {
 })
 
 describe('archive source aliases', () => {
+  it('reads every persisted image alias from old editions and rejects candidate-only aliases', () => {
+    const aliases = ['https://prior.example/art.jpg', 'https://declared.example/art.jpg', 'https://redirect.example/art.jpg']
+    const keys = archive({ source_url: original, source_image_url: oldImage, source_image_aliases: aliases })
+    for (const url of aliases) {
+      expect(keys.has(key(url)), url).toBe(true)
+      expectSpent({ ...fresh, source_image_aliases: [url] }, keys, 'spent_material_family')
+    }
+    expect(getRecentEditionSummaries({ root, fsSync: fs, sourceContentKey, limit: 2 })[1].source_keys).toEqual(expect.arrayContaining(aliases.map(key)))
+  })
+
+  it('checks aliases carried only by the candidate against an existing scalar ledger', () => {
+    const keys = archive({ source_url: original, source_image_url: oldImage })
+    expectSpent({ ...fresh, source_image_aliases: [oldImage] }, keys, 'spent_material_family')
+  })
   it('retains original and resolved page keys alongside image/media across the whole archive', () => {
     const keys = archive({ source_url: original, resolved_url: resolved, source_image_url: oldImage, source_media_url: oldMedia })
     expect([...keys].sort()).toEqual([original, resolved, oldImage, oldMedia].map(key).sort())

@@ -306,6 +306,7 @@ export async function buildAnchorResearch(anchor, { runDate = null } = {}) {
     .map((imageUrl) => ({
       page_url: anchor.url,
       image_url: imageUrl,
+      source_image_aliases: anchor.source_image_aliases,
       title: getSourceDisplayTitle(anchor, anchor.title || anchor.note_title || 'Anchor image source material'),
       caption: anchor.description || anchor.note_excerpt || '',
       lineage: 'primary_anchor_image',

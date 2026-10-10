@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto'
 import { openAiJson } from './openai-json.mjs'
 import { selectAnchorSource } from './anchor-source-research.mjs'
 import { canonicalizeSourceUrl, hostnameForUrl } from './source-url-policy.mjs'
-import { fetchVettedRemoteUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
+import { fetchVettedImage } from './fetch-vetted-image.mjs'
 import { hasCreativeArtifactEvidence, isAutoresearchExcluded, sourceContentScore, sourceHasRenderableCardSurface } from './source-selection-policy.mjs'
 
 // Whitelist source evidence, never folder labels. Bound depth, records and text.
@@ -120,13 +120,12 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
     attempted.add(key(source)); remaining -= 1
     const inspection = { version: 1, source_url: source.url, media_url: source.image_url, representative_media_url: ['video', 'audio'].includes(source.media_type) ? source.media_url : undefined, attempt_key: key(source), attempt_key_version: 2, inspector: 'creative-artifact-vision', status: 'unknown' }
     try {
-      const url = await resolveFetchableImageUrl(source.image_url, { lookup: dns.lookup })
-      if (!url) throw new Error('Blocked inspection media')
-      const response = await fetchVettedRemoteUrl(url, { lookup: dns.lookup, timeoutMs: 8000, maxBytes: 8_000_000 })
+      const { response, finalUrl, body: bytes } = await fetchVettedImage(source.image_url, { lookup: dns.lookup, timeoutMs: 8000, maxBytes: 8_000_000 })
+      inspection.resolved_media_url = finalUrl
       if (!response?.ok) throw new Error('Inspection media unavailable')
       const mime = response.headers.get('content-type')?.split(';')[0]
       if (!['image/jpeg', 'image/png', 'image/webp', 'image/gif'].includes(mime)) throw new Error('Unsupported inspection media')
-      const bytes = Buffer.from(await response.arrayBuffer())
+
       inspection.capture_sha256 = createHash('sha256').update(bytes).digest('hex')
       inspection.capture_path = path.join(captureDir, `${inspection.capture_sha256}.${mime.split('/')[1]}`)
       await fs.writeFile(inspection.capture_path, bytes)

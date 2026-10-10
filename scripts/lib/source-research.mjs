@@ -312,6 +312,7 @@ function imageMaterialAlreadyUsed(candidate, recentSourceKeys = new Set()) {
     canonicalizeSourceUrl(candidate?.page_url),
     canonicalizeSourceUrl(candidate?.image_url),
     canonicalizeSourceUrl(candidate?.source_image_preview_url),
+    ...(candidate?.source_image_aliases || []).flatMap((url) => [sourceContentKey({ url }), canonicalizeSourceUrl(url)]),
   ])
   return keys.some((key) => recentSourceKeys.has(key))
 }
@@ -364,6 +365,7 @@ export function buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
   const candidate = {
     page_url: discoveredVisualReference.page_url || discoveredVisualReference.source_url || discoveredVisualReference.url || discoveredVisualReference.final_url || null,
     image_url: discoveredVisualReference.image_url,
+    source_image_aliases: discoveredVisualReference.source_image_aliases,
     title: getSourceDisplayTitle(discoveredVisualReference, 'Promoted visual anchor'),
     caption: discoveredVisualReference.description || discoveredVisualReference.title || '',
     lineage: 'promoted_visual_anchor',
@@ -417,6 +419,7 @@ function buildImageMaterialContentSources(imageMaterial, anchorSource) {
       description: sanitizeSourceText(candidate.visual_reason || candidate.caption || '', '', 500),
       visible_text: sanitizeSourceText(candidate.caption || candidate.visual_reason || '', '', 500),
       image_url: candidate.image_url,
+      source_image_aliases: candidate.source_image_aliases,
       source_channel: 'anchor-derived',
       source_type: 'image',
       window_type: 'image',
@@ -480,6 +483,7 @@ function mergeInspectedSources(...groups) {
       // browser image is not evidence that an already-vetted fetch image vanished.
       // Retain that same-family image for actual pixel inspection, not admission.
       merged.set(key, { ...first, image_url: first.image_url || source.image_url || null,
+        source_image_aliases: uniqueNonEmpty([...(first.source_image_aliases || []), ...(source.source_image_aliases || [])]),
         editorial_evidence: [...(first.editorial_evidence || []), source] })
     } else {
       merged.set(key, source)

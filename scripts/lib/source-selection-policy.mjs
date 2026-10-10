@@ -412,7 +412,7 @@ function sourceUrlsForScoring(source) {
 }
 
 function sourceHasRecentUrlOrImage(source, recentSourceKeys = new Set()) {
-  return [source?.url, source?.source_url, source?.final_url, source?.image_url, source?.source_image_url, source?.source_media_url]
+  return [source?.url, source?.source_url, source?.final_url, source?.image_url, source?.source_image_url, source?.source_media_url, ...(source?.source_image_aliases || [])]
     .filter(Boolean)
     .some((url) => recentSourceKeys.has(canonicalizeSourceUrl(url)) || recentSourceKeys.has(sourceContentKey({ url, source_url: url })))
 }

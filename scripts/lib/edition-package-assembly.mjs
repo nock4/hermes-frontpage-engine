@@ -459,6 +459,7 @@ export async function assembleEditionPackage({
       source_meta: source?.note_title || undefined,
       source_embed_html: source?.source_embed_html || undefined,
       source_image_url: sourceImageUrl || undefined,
+      source_image_aliases: source?.source_image_aliases,
       source_image_alt: sourceImageUrl ? (sourceImageMaterial?.title || sourceImageMaterial?.caption || `${getSourceDisplayTitle(source, artifact.label)} preview image`) : undefined,
       source_media_url: sourceMedia.mediaUrl || undefined,
       source_media_type: sourceMedia.mediaType || undefined,
