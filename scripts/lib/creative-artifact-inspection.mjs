@@ -70,6 +70,15 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
   const key = source => attemptKey(source.source_url || source.url, source.image_url, source.media_url)
   const previousAttempts = result.source_decisions.filter(row => row.inspection)
   const attempted = new Set(previousAttempts.map(row => previousAttemptKey(row.inspection)))
+  // Fairness is scheduling only, never a new ownership/admission assertion.
+  // Use the resolved page host so shorteners cannot purchase extra turns.
+  const owner = source => hostnameForUrl(source.final_url || source.resolved_url || source.source_url || source.url).replace(/^www\./, '').replace(/^twitter\.com$/, 'x.com')
+  const ownerAttempts = new Map()
+  for (const row of previousAttempts) {
+    const source = sources.find(source => source.url === row.url)
+    const host = row.inspection.scheduling_owner || owner(source || { url: row.url })
+    ownerAttempts.set(host, (ownerAttempts.get(host) || 0) + 1)
+  }
   let remaining = Math.max(0, Math.min(10, Number(maxInspections) || 0, 24 - previousAttempts.length))
   const captureDir = path.join(runDir, 'creative-inspections')
   await fs.mkdir(captureDir, { recursive: true })
@@ -110,15 +119,20 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
         : sceneCreation || providerTrack ? 1
         : rank?.anchor_selection_lane === 'ai-tooling-penalized' ? -1
         : rank?.anchor_selection_lane === 'artwork-first' ? 1 : 0
-      return { source, rank, priority }
+      return { source, rank, priority, owner: owner(source) }
     })
-    .sort((left, right) => right.priority - left.priority
+  while (remaining && candidates.length) {
+    // Keep nomination/artwork/product lanes, but give independent hosts a turn
+    // before another high-scoring page from an already sampled host. Counts
+    // include failed calls and survive batch/refill boundaries.
+    candidates.sort((left, right) => right.priority - left.priority
+      || (ownerAttempts.get(left.owner) || 0) - (ownerAttempts.get(right.owner) || 0)
       || (right.rank?.anchor_selection_score ?? -Infinity) - (left.rank?.anchor_selection_score ?? -Infinity))
-  for (const { source } of candidates) {
-    if (!remaining) break
+    const { source, owner: host } = candidates.shift()
     if (attempted.has(key(source))) continue
     attempted.add(key(source)); remaining -= 1
-    const inspection = { version: 1, source_url: source.url, media_url: source.image_url, representative_media_url: ['video', 'audio'].includes(source.media_type) ? source.media_url : undefined, attempt_key: key(source), attempt_key_version: 2, inspector: 'creative-artifact-vision', status: 'unknown' }
+    ownerAttempts.set(host, (ownerAttempts.get(host) || 0) + 1)
+    const inspection = { version: 1, scheduling_owner: host, source_url: source.url, media_url: source.image_url, representative_media_url: ['video', 'audio'].includes(source.media_type) ? source.media_url : undefined, attempt_key: key(source), attempt_key_version: 2, inspector: 'creative-artifact-vision', status: 'unknown' }
     try {
       const { response, finalUrl, body: bytes } = await fetchVettedImage(source.image_url, { lookup: dns.lookup, timeoutMs: 8000, maxBytes: 8_000_000 })
       inspection.resolved_media_url = finalUrl

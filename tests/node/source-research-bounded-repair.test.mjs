@@ -7,6 +7,7 @@ const state = vi.hoisted(() => ({ attempts: [], captures: [], rejectAnchor: fals
 vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
   inspectCandidateSource: async (source, options) => {
     state.captures.push({ url: source.url, tool: options.sourceTool, attempts: state.attempts.length })
+    if (options.sourceTool === 'fetch' && state.fetchChanges?.[source.url]) return { ...source, ...state.fetchChanges[source.url] }
     if (options.sourceTool === 'browser-harness' && state.browserChanges?.[source.url]) return { ...source, ...state.browserChanges[source.url] }
     return options.sourceTool === 'browser-harness' && source.browser_image
       ? { ...source, image_url: source.browser_image, fetch_status: 'browser-harness' } : source
@@ -42,7 +43,7 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
     return { visual_summary: 'Red figure and blue room in an oil painting', preserve_cues: ['red figure', 'blue room'], visual_fertility: 'high' }
   },
 }))
-import { inspectSourceCandidates, buildSourceFloorDiagnostics } from '../../scripts/lib/source-research.mjs'
+import { inspectSourceCandidates, buildSourceFloorDiagnostics, collectFetchEvidenceForAutoresearch } from '../../scripts/lib/source-research.mjs'
 import { sourceContentKey, sourceContentScore, isAiToolingContentSource } from '../../scripts/lib/source-selection-policy.mjs'
 const sources = Array.from({ length: 24 }, (_, i) => ({
   url: `https://artist${i}.gallery.example/work`, image_url: `https://artist${i}.gallery.example/work.png`,
@@ -52,7 +53,7 @@ const sources = Array.from({ length: 24 }, (_, i) => ({
 let runDir
 beforeEach(async () => {
   runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'bounded-repair-'))
-  state.attempts = []; state.captures = []; state.rejectAnchor = false; state.verifiedFrom = 18; state.browserChanges = {}
+  state.attempts = []; state.captures = []; state.rejectAnchor = false; state.verifiedFrom = 18; state.browserChanges = {}; state.fetchChanges = {}
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1'); vi.stubEnv('DFE_DECISION_MODEL', 'openai')
 })
 afterEach(async () => { vi.unstubAllEnvs(); await fs.rm(runDir, { recursive: true, force: true }) })
@@ -82,6 +83,48 @@ it.each(['0', '1'])('fetches the existing supplemental bed before spending pixel
   expect(state.attempts.slice(0, 6)).toEqual(artwork.map(source => source.url))
   expect(state.attempts.length).toBeLessThanOrEqual(24)
 })
+it('snapshots the lossless fetch boundary without doing creative inspection or refilling a healthy bed', async () => {
+  const harvest = { source_candidates: sources, notes_selected: [{ id: 'note-0', excerpt: 'Untouched saved context' }] }
+  const fetched = await collectFetchEvidenceForAutoresearch(sources.slice(0, 6), { signalHarvest: harvest, runDir })
+  expect(fetched).toEqual(sources.slice(0, 6))
+  expect(state.attempts).toEqual([])
+  expect(state.captures).toHaveLength(6)
+  const snapshot = JSON.parse(await fs.readFile(path.join(runDir, 'source-intake-snapshot.json'), 'utf8'))
+  expect(snapshot.initial_fetch_sources).toEqual(fetched)
+  expect(snapshot.refill_candidates).toEqual([])
+  expect(snapshot.autoresearch).toBeNull()
+})
+it.each(['0', '1'])('refills a saturated normal intake before pixel scheduling in anchor mode %s', async mode => {
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', mode)
+  state.verifiedFrom = Infinity // Scheduling cannot manufacture creative admission.
+  const noise = Array.from({ length: 960 }, (_, i) => ({
+    url: `https://noise-${i}.example/work`, note_id: `noise-${i}`, note_title: 'Saved pages', note_score: 99999,
+  }))
+  const owners = Array.from({ length: 6 }, (_, i) => ({
+    url: `https://owner-${i}.example/work`, note_id: 'collection', note_title: 'Saved pages', note_score: 1,
+  }))
+  for (const [i, source] of owners.entries()) state.fetchChanges[source.url] = {
+    title: `Painting ${100 + i}`, image_url: `https://owner-${i}.example/exact.jpg`, fetch_status: 'fetch-ok',
+    source_image_aliases: [`https://owner-${i}.example/original.jpg`], description: 'Oil painting on canvas',
+  }
+  const harvest = { source_candidates: [...noise, ...owners], notes_selected: [{ id: 'collection', excerpt: 'Full saved provenance' }], motif_terms: [] }
+  await expect(inspectSourceCandidates(harvest, {
+    maxSources: 240, runDir, sourceTool: 'fetch', date: '2026-10-10',
+  })).rejects.toThrow(/blocked|expected at least 6/)
+  expect(state.attempts).toEqual(owners.map(source => source.url))
+  expect(state.attempts.length).toBeLessThanOrEqual(24)
+  const snapshot = JSON.parse(await fs.readFile(path.join(runDir, 'source-intake-snapshot.json'), 'utf8'))
+  expect(snapshot.initial_candidates).toEqual(noise)
+  expect(snapshot.refill_candidates).toEqual(owners)
+  expect(snapshot.signal_harvest).toEqual(harvest)
+  expect(snapshot.fetch_sources.slice(-6)).toEqual(owners.map(source => ({ ...source, ...state.fetchChanges[source.url] })))
+  expect(snapshot.autoresearch).toBeNull()
+  expect(state.captures.filter(row => row.tool === 'fetch' && row.attempts === 0).length).toBeLessThanOrEqual(984)
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  expect(saved.content_source_count).toBe(0)
+  expect(saved.autoresearch.source_decisions.filter(row => row.inspection)).toHaveLength(6)
+})
+
 const browserOnlySources = Array.from({ length: 40 }, (_, i) => ({
   ...sources[0], url: `https://late${i}.gallery.example/work`, image_url: null,
   browser_image: `https://late${i}.gallery.example/work.png`,

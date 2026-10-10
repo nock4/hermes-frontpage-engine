@@ -488,6 +488,53 @@ export function selectSourceCandidatesForInspection(signalHarvest, maxSources, {
   return selected
 }
 
+// One bounded fetch refill for failed/prerequisite-ineligible intake slots.
+// This is scheduling only: no pixel verdicts, text nominations or URL boosts.
+export function selectSourceIntakeRefill(signalHarvest, scheduled, fetched, { recentSourceKeys = new Set() } = {}) {
+  const byKey = new Map(fetched.map(source => [sourceContentKey(source), source]))
+  const vacancies = scheduled.filter(candidate => {
+    const source = byKey.get(sourceContentKey(candidate))
+    return !source || !Number.isFinite(sourceContentScore(source, recentSourceKeys))
+      || isAiToolingContentSource(source, signalHarvest)
+      || !sourceHasRenderableCardSurface(source, signalHarvest)
+  }).length
+  const limit = Math.min(24, vacancies)
+  if (!limit) return []
+  const field = [...signalHarvest.source_candidates, ...scheduled, ...fetched]
+  const familyLookup = owningPageFamilyLookup(field)
+  const seen = new Set([...scheduled, ...fetched].flatMap(familyLookup))
+  const archived = new Set([...recentSourceKeys].map(researchIdentity))
+  const ownerCounts = new Map()
+  const ownerNoteCounts = new Map()
+  const ownerNoteKey = source => JSON.stringify([noteSelectionKey(source, sourceContentKey(source)), sourceDomainKey(source)])
+  for (const source of scheduled) {
+    const owner = sourceDomainKey(source)
+    const note = ownerNoteKey(source)
+    ownerCounts.set(owner, (ownerCounts.get(owner) || 0) + 1)
+    ownerNoteCounts.set(note, (ownerNoteCounts.get(note) || 0) + 1)
+  }
+  const ranked = signalHarvest.source_candidates
+    .map(candidate => ({ candidate, score: sourceSelectionScore(candidate, recentSourceKeys) }))
+    .filter(({ candidate, score }) => Number.isFinite(score)
+      && isOwningPageIntakeCandidate(candidate)
+      && !isAiToolingContentSource(candidate, signalHarvest))
+    .sort((a, b) => b.score - a.score)
+  const refill = []
+  for (const { candidate } of ranked) {
+    if (refill.length >= limit) break
+    const family = familyLookup(candidate)
+    if (family.some(key => seen.has(key) || archived.has(key))) continue
+    const owner = sourceDomainKey(candidate)
+    const note = ownerNoteKey(candidate)
+    if ((ownerCounts.get(owner) || 0) >= 3 || (ownerNoteCounts.get(note) || 0) >= 3) continue
+    refill.push(candidate)
+    family.forEach(key => seen.add(key))
+    ownerCounts.set(owner, (ownerCounts.get(owner) || 0) + 1)
+    ownerNoteCounts.set(note, (ownerNoteCounts.get(note) || 0) + 1)
+  }
+  return refill
+}
+
 function sourceUrlsForScoring(source) {
   return [source?.url, source?.source_url, source?.final_url].filter(Boolean)
 }

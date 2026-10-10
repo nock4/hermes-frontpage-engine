@@ -27,6 +27,7 @@ import {
   selectContentSources,
   hasCreativeArtifactEvidence,
   selectSourceCandidatesForInspection,
+  selectSourceIntakeRefill,
   sourceContentKey,
   sourceContentScore,
   sourceHasRenderableCardSurface,
@@ -537,13 +538,31 @@ function normalizeAutoresearchSelection(autoresearch, evidenceSources, {
   return selected.slice(0, maxSources)
 }
 
-async function collectFetchEvidenceForAutoresearch(candidates, { recentSourceKeys, signalHarvest, runDir }) {
+export async function collectFetchEvidenceForAutoresearch(candidates, { recentSourceKeys = new Set(), signalHarvest, runDir }) {
   const inspected = []
   for (const candidate of candidates) {
     const source = await inspectCandidateSource(candidate, { sourceTool: 'fetch', browserHarness: null })
     if (!source || !isAllowedInspectedSource(source)) continue
     inspected.push(source)
   }
+
+  // Refill only after ordinary fetch exposes unusable slots. Keep the original
+  // evidence (including failures and aliases), and bound extra network work to
+  // one 24-page owner-aware pass before any of the unchanged 24 pixel attempts.
+  const initialFetched = [...inspected]
+  const refillCandidates = selectSourceIntakeRefill(signalHarvest, candidates, initialFetched, { recentSourceKeys })
+  for (const candidate of refillCandidates) {
+    const source = await inspectCandidateSource(candidate, { sourceTool: 'fetch', browserHarness: null })
+    if (source && isAllowedInspectedSource(source)) inspected.push(source)
+  }
+  // Lossless pre-anchor/pre-autoresearch input: final source research and the
+  // compact text request cannot reconstruct this boundary after browser merging.
+  await writeJson(path.join(runDir, 'source-intake-snapshot.json'), {
+    schema_version: 1, signal_harvest: signalHarvest, recent_source_keys: [...recentSourceKeys],
+    initial_candidates: candidates, initial_fetch_sources: initialFetched,
+    refill_candidates: refillCandidates, fetch_sources: inspected, autoresearch: null,
+    limits: { initial_candidates: candidates.length, max_refill_fetches: 24, max_pixel_attempts: 24 },
+  })
 
   const noteLookup = noteLookupForSignalHarvest(signalHarvest)
   const evidence = inspected.map((source, index) => researchEvidenceForSource(source, index, {
@@ -553,7 +572,9 @@ async function collectFetchEvidenceForAutoresearch(candidates, { recentSourceKey
   await writeJson(path.join(runDir, 'source-candidate-evidence.json'), {
     generated_at: new Date().toISOString(),
     tool: 'Node fetch + DNS-aware source policy',
-    candidate_count: candidates.length,
+    candidate_count: candidates.length + refillCandidates.length,
+    initial_candidate_count: candidates.length,
+    refill_candidate_count: refillCandidates.length,
     evidence_count: evidence.length,
     evidence,
   })
