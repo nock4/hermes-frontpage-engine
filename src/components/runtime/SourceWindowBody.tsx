@@ -133,9 +133,12 @@ function handleSourceImageLoad(event: SyntheticEvent<HTMLImageElement>) {
 function shouldBypassPosterCrop(binding: SourceBindingRecord, fallbackUrl: string | null) {
   return Boolean(
     fallbackUrl
-    && binding.source_visual?.render_mode === 'poster-crop'
-    && binding.source_visual?.crop_risk
-    && binding.source_visual.crop_risk !== 'low',
+    && (
+      (binding.embed_status === 'unavailable' && binding.source_media_type !== 'video')
+      || (binding.source_visual?.render_mode === 'poster-crop'
+        && binding.source_visual?.crop_risk
+        && binding.source_visual.crop_risk !== 'low')
+    ),
   )
 }
 

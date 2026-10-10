@@ -6,11 +6,14 @@ const fixture = JSON.parse(fs.readFileSync(new URL('../fixtures/related-note-qua
 
 describe('saved-note Related lists are navigation, not source prose', () => {
   for (const { source, note } of fixture.creative) {
-    it(`does not quarantine real creative source ${source.url}`, () => {
+    const marketplaceRelease = source.url === 'https://x.com/0xassembly/status/2027589835947442483'
+    it(`ignores navigation but preserves owning-source quarantine ${source.url}`, () => {
       const signals = { notes_selected: [note] }
       const before = JSON.stringify({ source, signals })
-      expect(isAiToolingContentSource(source, signals)).toBe(false)
-      expect(sourceHasRenderableCardSurface(source, signals)).toBe(true)
+      // The real Paisajitos fixture is a marketplace release, not a Related-list
+      // false positive. Keep its verbatim evidence rather than laundering it.
+      expect(isAiToolingContentSource(source, signals)).toBe(marketplaceRelease)
+      expect(sourceHasRenderableCardSurface(source, signals)).toBe(!marketplaceRelease)
       expect(hasCreativeArtifactEvidence(source, {}, signals)).toBe(false)
       expect(selectContentSources([source], { signalHarvest: signals, autoresearch: {} })).toEqual([])
       expect(JSON.stringify({ source, signals })).toBe(before)

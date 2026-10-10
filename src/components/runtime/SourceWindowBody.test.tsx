@@ -57,6 +57,21 @@ describe('native audio stage provenance', () => {
 })
 
 describe('source visual crop fallback', () => {
+  it.each(['preview', 'primary'] as const)('contains unprocessed unavailable audio artwork in %s', (mode) => {
+    const binding = {
+      id: 'unavailable-audio', artifact_id: 'hero', source_type: 'audio', window_type: 'audio',
+      source_url: 'https://soundcloud.com/lovesliescrushing/lips-to-kiss-2',
+      title: 'Stream unavailable — lips to kiss', embed_status: 'unavailable',
+      source_image_url: 'https://media.example/square-artwork.jpg',
+      source_media_url: 'https://media.example/square-artwork.jpg', source_media_type: 'image',
+    } as SourceBindingRecord
+    const html = renderToStaticMarkup(createElement(SourceWindow, { binding, mode, surface: 'stage', onClose() {} }))
+    expect(html).toContain('data-source-visual-mode="raw"')
+    expect(html).toContain('--source-ambient-image:')
+    expect(html).toContain('src="https://media.example/square-artwork.jpg"')
+    expect(html).not.toContain('<iframe')
+  })
+
   it.each(['medium', 'high'] as const)('uses contained raw media for %s-risk poster crops', (cropRisk) => {
     const binding = makeBinding(cropRisk)
 

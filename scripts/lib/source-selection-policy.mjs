@@ -143,6 +143,9 @@ export function isAiToolingContentSource(source = {}, signalHarvest = null) {
   const text = editorialProvenanceText(source, signalHarvest)
 
   if (!text) return false
+  // An owning-source marketplace release stays quarantined even when its
+  // attached pixels are artwork. Mere artist/platform attribution is not a sale.
+  if (/\breleased\s+on\s+@objktcom\b/.test(text)) return true
   // Explicit instructional/product classes, independent of author/package names.
   // Training as an artistic technique alone is not model research.
   if (/\b(?:pip3?|npm|pnpm|yarn|bun|uv)\s+(?:pip\s+)?(?:install|add)\s+[\w@.-]+/.test(text)) return true

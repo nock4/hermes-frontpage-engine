@@ -89,7 +89,9 @@ it('prioritizes affirmative text nominations in the first refill without grantin
     })
     const refill = research.source_decisions.filter(row => row.inspection).slice(10).map(row => row.url)
     expect(refill).toHaveLength(10)
-    for (const url of ['https://x.com/0xassembly/status/2027589835947442483', 'http://tinyurl.com/5n8e678y']) {
+    // Text nomination cannot schedule a quarantined marketplace release.
+    expect(refill).not.toContain('https://x.com/0xassembly/status/2027589835947442483')
+    for (const url of ['http://tinyurl.com/5n8e678y']) {
       expect(fixture.actualAttemptUrls).not.toContain(url)
       expect(refill).toContain(url)
       expect(hasCreativeArtifactEvidence(fixture.sources.find(s => s.url === url), research, fixture.signalHarvest)).toBe(false)

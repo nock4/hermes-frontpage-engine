@@ -5181,3 +5181,11 @@
     max-height: calc(100dvh - 4rem) !important;
   }
 }
+
+/* Keep the dismissal mark distinct from native provider logos/artwork. */
+.source-window--stage[data-source-window-kind="soundcloud-embed"] .source-window__close {
+  background: rgba(16, 12, 9, 0.96);
+  color: #fff4e2;
+  border-color: rgba(255, 244, 226, 0.5);
+}
+

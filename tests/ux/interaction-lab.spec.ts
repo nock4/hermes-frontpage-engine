@@ -124,7 +124,10 @@ test('mobile encounter trail does not intercept an overlapping source mark', asy
     reducedMotion: 'reduce',
   })
   const page = await context.newPage()
-  await page.goto('/?interaction-lab=1', { waitUntil: 'domcontentloaded' })
+  // This historical mesh overlaps the expanded trail; the rotating live edition may not.
+  const fixtureEdition = '2026-10-09-the-hollow-holds-still-v1'
+  await page.goto(`/?edition=${fixtureEdition}&interaction-lab=1`, { waitUntil: 'domcontentloaded' })
+  await expect(page.locator('main[data-edition-id]')).toHaveAttribute('data-edition-id', fixtureEdition)
   const marks = page.locator('[data-interaction-lab-artifact]')
   await expect(marks).toHaveCount(6)
   for (let index = 0; index < 6; index += 1) {
@@ -150,6 +153,9 @@ test('mobile encounter trail does not intercept an overlapping source mark', asy
 
   expect(overlap, 'fixture must overlap the expanded encounter trail').not.toBeNull()
   expect(overlap?.owner, `trail intercepted the source mark via ${overlap?.topClass}`).toBe('module-compressed-incision-seam')
+  await expect(page.locator('.interaction-lab__trail-item')).toHaveCount(6)
+  await page.getByRole('button', { name: 'clear trace', exact: true }).tap()
+  await expect(page.locator('.interaction-lab__trail-item')).toHaveCount(0)
   await context.close()
 })
 
