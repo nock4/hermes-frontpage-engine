@@ -97,6 +97,19 @@ describe('source inspection', () => {
     })
   })
 
+  it('retains fetched oEmbed attribution without trusting title, notes, or off-provider author URLs', async () => {
+    const { youtubeCreatorAttribution } = await import('../../scripts/lib/source-inspection.mjs')
+    vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => ({ author_url: 'https://www.youtube.com/@RealUploader', author_name: 'not an identity key' }) })))
+    const url = 'https://www.youtube.com/watch?v=creatorproof'
+    await youtubeEmbedStatus(url, { verifyPlayback: false })
+    expect(typeof youtubeCreatorAttribution).toBe('function')
+    expect(youtubeCreatorAttribution(url)).toEqual({ provider: 'youtube', source_url: url, author_url: 'https://www.youtube.com/@RealUploader', evidence: 'oembed' })
+    vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => ({ author_url: 'https://evil.example/@RealUploader' }) })))
+    const bad = 'https://www.youtube.com/watch?v=badcreatorproof'
+    await youtubeEmbedStatus(bad, { verifyPlayback: false })
+    expect(youtubeCreatorAttribution(bad)).toBeNull()
+  })
+
   it('checks YouTube embeddability through oEmbed', async () => {
     vi.stubGlobal('fetch', vi.fn(async () => ({
       ok: true,

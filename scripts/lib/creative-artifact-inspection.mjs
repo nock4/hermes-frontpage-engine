@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { schedulingOwner } from './provider-creator.mjs'
 import path from 'node:path'
 import dns from 'node:dns/promises'
 import { createHash } from 'node:crypto'
@@ -71,8 +72,9 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
   const previousAttempts = result.source_decisions.filter(row => row.inspection)
   const attempted = new Set(previousAttempts.map(row => previousAttemptKey(row.inspection)))
   // Fairness is scheduling only, never a new ownership/admission assertion.
-  // Use the resolved page host so shorteners cannot purchase extra turns.
-  const owner = source => hostnameForUrl(source.final_url || source.resolved_url || source.source_url || source.url).replace(/^www\./, '').replace(/^twitter\.com$/, 'x.com')
+  // Use fetched provider uploader identity where validated, otherwise the
+  // resolved page host so shorteners cannot purchase extra turns.
+  const owner = schedulingOwner
   const ownerAttempts = new Map()
   for (const row of previousAttempts) {
     const source = sources.find(source => source.url === row.url)

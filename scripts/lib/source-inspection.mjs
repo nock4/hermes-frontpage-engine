@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process'
 import dns from 'node:dns/promises'
 import http from 'node:http'
 import path from 'node:path'
+import { validatedYouTubeCreator } from './provider-creator.mjs'
 
 import { fetchWithTimeout } from './fetch-with-timeout.mjs'
 import { fetchVettedImage } from './fetch-vetted-image.mjs'
@@ -81,6 +82,12 @@ async function fetchBandcampEmbedHtml(fetchable) {
 }
 
 const youtubeEmbedStatusCache = new Map()
+const youtubeCreatorCache = new Map()
+
+export function youtubeCreatorAttribution(sourceUrl) {
+  const author = youtubeCreatorCache.get(youtubeId(sourceUrl))
+  return author ? validatedYouTubeCreator(sourceUrl, author) : null
+}
 
 function timeoutAfter(timeoutMs, message) {
   let timer = null
@@ -209,6 +216,27 @@ export async function youtubeEmbedStatus(sourceUrl, { verifyPlayback = true } = 
       youtubeEmbedStatusCache.set(cacheKey, 'unavailable')
       return 'unavailable'
     }
+    // Attribution failure must not change the existing playback result.
+    let metadataReader
+    try {
+      // Fetch's timeout ends at headers. Keep body consumption bounded too,
+      // retaining the reader so a stalled stream can actually be cancelled.
+      const metadata = response.body?.getReader ? (async () => {
+        metadataReader = response.body.getReader()
+        const decoder = new TextDecoder()
+        let text = ''
+        while (true) {
+          const { done, value } = await metadataReader.read()
+          if (done) break
+          text += decoder.decode(value, { stream: true })
+        }
+        return JSON.parse(text + decoder.decode())
+      })() : response.json()
+      const payload = await withTimeout(metadata, 5000, 'YouTube metadata body timed out')
+      const creator = validatedYouTubeCreator(sourceUrl, payload?.author_url)
+      if (creator) youtubeCreatorCache.set(videoId, creator.author_url)
+    } catch { /* Missing/malformed/timed-out metadata has no creator identity. */ }
+    finally { void metadataReader?.cancel().catch(() => {}) }
   } catch {
     youtubeEmbedStatusCache.set(cacheKey, 'unavailable')
     return 'unavailable'
@@ -773,11 +801,13 @@ export async function inspectCandidateSource(candidate, { sourceTool, browserHar
     )
     // Metadata enrichment is additive evidence, not permission to erase the
     // candidate's original editorial role, workflow pitch, or parent identity.
-    return source ? { ...source, editorial_evidence: [...(source.editorial_evidence || []), candidate] } : null
+    return source ? { ...source, creator_attribution: youtubeCreatorAttribution(candidate.url), editorial_evidence: [...(source.editorial_evidence || []), candidate] } : null
   } catch (error) {
     return {
       ...candidate,
       ...classifySource(candidate?.url || ''),
+      // The failure path must not promote a caller's attribution claim either.
+      creator_attribution: youtubeCreatorAttribution(candidate?.url),
       source_url: candidate?.url || null,
       final_url: candidate?.url || null,
       title: candidate?.note_title || candidate?.url || 'Timed out source',

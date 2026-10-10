@@ -7,6 +7,25 @@ vi.mock('../../scripts/lib/source-image-network-policy.mjs', () => ({ resolveFet
 import { inspectCreativeArtifacts } from '../../scripts/lib/creative-artifact-inspection.mjs'
 import { selectContentSources } from '../../scripts/lib/source-selection-policy.mjs'
 
+it('charges validated provider authors separately, not titles or untrusted author URLs', async () => {
+  const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'provider-fairness-'))
+  const page = (id, score, author = null) => ({ url: `https://www.youtube.com/watch?v=${id}`, title: 'A quiet evening', image_url: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`, note_score: score,
+    ...(author ? { creator_attribution: { provider: 'youtube', source_url: `https://www.youtube.com/watch?v=${id}`, author_url: `https://www.youtube.com/@${author}`, evidence: 'oembed' } } : {}) })
+  const sources = [page('first', 1000, 'ownerA'), page('repeat', 900, 'ownerA'), page('other', 1, 'ownerB')]
+  try {
+    let research = await inspectCreativeArtifacts(sources, {}, { runDir, maxInspections: 1 })
+    research = await inspectCreativeArtifacts(sources, research, { runDir, maxInspections: 1 })
+    expect(research.source_decisions.map(d => d.url)).toEqual([sources[0].url, sources[2].url])
+    expect(research.source_decisions[0].inspection.scheduling_owner).not.toBe(research.source_decisions[1].inspection.scheduling_owner)
+    expect(selectContentSources(sources, { autoresearch: research })).toEqual([])
+    const invalid = [page('untrusted1', 2), page('untrusted2', 1)]
+    invalid[0].author_url = 'https://www.youtube.com/@invented'
+    invalid[1].creator_attribution = { ...sources[0].creator_attribution, source_url: invalid[1].url, author_url: 'https://evil.example/@owner' }
+    const fallback = await inspectCreativeArtifacts(invalid, {}, { runDir, maxInspections: 2 })
+    expect(fallback.source_decisions.map(d => d.inspection.scheduling_owner)).toEqual(['youtube.com', 'youtube.com'])
+  } finally { await fs.rm(runDir, { recursive: true, force: true }) }
+})
+
 it('shares a priority lane across resolved owners, retaining fairness across batches and the 24 cap', async () => {
   const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'owner-fairness-'))
   const page = (url, score) => ({ url, title: 'A quiet evening', image_url: `${url}/image.jpg`, note_score: score })
