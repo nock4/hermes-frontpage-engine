@@ -1,0 +1,392 @@
+{
+  "analysis_id": "analysis-2026-10-10-the-weight-between-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A figurative, theatrical scene rather than a minimal expressionist plate: an ivory cruciform male figure floats between two suspended gold cuboid assemblies, while a robed observer stands on a broken checkerboard platform below. Fragmented ornate gold framing borders the dark field. Several tight recesses, folds, and broken edges support interaction mapping, but the intended abstract ivory gesture and subordinate draped mass have become recognizable human figures. The peripheral gold fragments read as decorative frame remnants, not clearly rejoined relief.",
+  "usable_surfaces": [
+    "Stepped black rupture within the upper-left gold assembly",
+    "Interrupted checkerboard platform edge",
+    "Narrow recessed joint within the right gold assembly",
+    "Ivory raised hand and wrist contour",
+    "Dark valley enclosed by the standing observer's robe",
+    "Broad black underside of the near gold block",
+    "Broken inner edge of the upper-left frame remnant"
+  ],
+  "detected_objects": [
+    {
+      "label": "Suspended ochre rupture",
+      "artifact_type": "suspended-plane-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.257,
+        "y": 0.121,
+        "w": 0.065,
+        "h": 0.103
+      },
+      "polygon": [
+        [
+          0.258,
+          0.132
+        ],
+        [
+          0.289,
+          0.126
+        ],
+        [
+          0.298,
+          0.121
+        ],
+        [
+          0.318,
+          0.134
+        ],
+        [
+          0.32,
+          0.175
+        ],
+        [
+          0.318,
+          0.222
+        ],
+        [
+          0.299,
+          0.224
+        ],
+        [
+          0.3,
+          0.189
+        ],
+        [
+          0.278,
+          0.178
+        ],
+        [
+          0.258,
+          0.169
+        ],
+        [
+          0.257,
+          0.145
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "A deep angular black opening interrupts the upper-left assembly just below the small projecting gold cubes. Its sloped top lip, broad dark cavity, and narrower downward continuation distinguish it from the exterior background."
+    },
+    {
+      "label": "Lower counterpulse — platform interruption",
+      "artifact_type": "pressure-cut-ground",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.322,
+        "y": 0.895,
+        "w": 0.116,
+        "h": 0.044
+      },
+      "polygon": [
+        [
+          0.344,
+          0.898
+        ],
+        [
+          0.394,
+          0.9
+        ],
+        [
+          0.399,
+          0.895
+        ],
+        [
+          0.401,
+          0.922
+        ],
+        [
+          0.435,
+          0.922
+        ],
+        [
+          0.438,
+          0.939
+        ],
+        [
+          0.386,
+          0.938
+        ],
+        [
+          0.386,
+          0.924
+        ],
+        [
+          0.322,
+          0.921
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A stepped missing section near the platform's right foreground edge exposes dark vertical tile faces. This is a real ground interruption, although the surrounding repeated pattern is a literal checkerboard rather than compressed expressionist cuts."
+    },
+    {
+      "label": "Upward fold — observer's robe valley",
+      "artifact_type": "satin-fold-valley",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.12,
+        "y": 0.639,
+        "w": 0.101,
+        "h": 0.096
+      },
+      "polygon": [
+        [
+          0.204,
+          0.65
+        ],
+        [
+          0.221,
+          0.639
+        ],
+        [
+          0.211,
+          0.663
+        ],
+        [
+          0.197,
+          0.682
+        ],
+        [
+          0.179,
+          0.701
+        ],
+        [
+          0.161,
+          0.715
+        ],
+        [
+          0.144,
+          0.735
+        ],
+        [
+          0.132,
+          0.728
+        ],
+        [
+          0.12,
+          0.714
+        ],
+        [
+          0.129,
+          0.719
+        ],
+        [
+          0.145,
+          0.718
+        ],
+        [
+          0.161,
+          0.703
+        ],
+        [
+          0.177,
+          0.684
+        ],
+        [
+          0.194,
+          0.663
+        ]
+      ],
+      "confidence": 0.83,
+      "visual_evidence": "On the lower-left observer, a diagonal dark cloth valley climbs from the gathered waist toward the right shoulder between a gold-edged drape and lighter ivory fabric. It is a visible fold territory, though the drapery belongs to a fully rendered person rather than a subordinate isolated mass."
+    },
+    {
+      "label": "Uneven underside",
+      "artifact_type": "stepped-shadow-recess",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.17,
+        "y": 0.343,
+        "w": 0.226,
+        "h": 0.055
+      },
+      "polygon": [
+        [
+          0.17,
+          0.365
+        ],
+        [
+          0.234,
+          0.355
+        ],
+        [
+          0.316,
+          0.343
+        ],
+        [
+          0.352,
+          0.355
+        ],
+        [
+          0.396,
+          0.375
+        ],
+        [
+          0.331,
+          0.386
+        ],
+        [
+          0.26,
+          0.398
+        ],
+        [
+          0.216,
+          0.385
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "The large projecting lower block of the near assembly has an almost black, oblique underside bounded by gold front faces. Its pointed left and right ends and low central corner form a separate shadow surface, well away from the mapped upper rupture."
+    },
+    {
+      "label": "Peripheral relief break — rejoining not confirmed",
+      "artifact_type": "broken-relief-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.004,
+        "y": 0.155,
+        "w": 0.043,
+        "h": 0.042
+      },
+      "polygon": [
+        [
+          0.03,
+          0.155
+        ],
+        [
+          0.041,
+          0.158
+        ],
+        [
+          0.041,
+          0.165
+        ],
+        [
+          0.047,
+          0.167
+        ],
+        [
+          0.044,
+          0.176
+        ],
+        [
+          0.032,
+          0.178
+        ],
+        [
+          0.027,
+          0.186
+        ],
+        [
+          0.021,
+          0.188
+        ],
+        [
+          0.019,
+          0.194
+        ],
+        [
+          0.012,
+          0.19
+        ],
+        [
+          0.004,
+          0.197
+        ],
+        [
+          0.006,
+          0.182
+        ],
+        [
+          0.015,
+          0.175
+        ],
+        [
+          0.024,
+          0.176
+        ],
+        [
+          0.029,
+          0.169
+        ]
+      ],
+      "confidence": 0.77,
+      "visual_evidence": "The bottom of the upper-left gilded frame segment ends in an irregular broken lip with small protrusions and dark indentations. The edge is a real compact gold relief anchor, but no convincing repair joint or rejoined fragment is visible; it should not be described as verified rejoined relief."
+    },
+    {
+      "label": "Uneven underside",
+      "artifact_type": "stepped-shadow-recess",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Rejoined relief",
+      "artifact_type": "broken-relief-notch",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 5,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.036,
+    "rationale": "Estimated coverage refers only to the tightly mapped marks. Extensive dark negative space separates five dominant forms: two gold assemblies, the suspended figure, the robed observer, and the platform. Fragmented ornate framing adds another large distributed region. Anatomical modeling, numerous cuboid projections, elaborate cloth folds, and decorative relief make the image detailed and theatrical rather than minimal and expressionist. The marks are usable, but several planned abstract anchors have become literal figurative substitutes."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-10-10-the-weight-between-v1"
+}
