@@ -1,0 +1,282 @@
+{
+  "interpretation_id": "interp-2026-10-09-the-far-side-rises-v1",
+  "edition_id": "2026-10-09-the-far-side-rises-v1",
+  "plate_read_timestamp": "2026-10-09T23:38:23.941Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "The plate shows a detailed, literal fantasy courtyard with ivory masonry, violet doors and insets, blue paving, abundant planting, lanterns, a bench, and a gold wall ornament. It does not realize the planned minimal arrangement of abstract masses and separated ribbon breaks. The left violet doorway and amber lantern provide recognizable counterparts to two planned anchors, but the foreground ellipse is violet rather than green. Separate near and far cobalt ribbon terminations and the stepped green boundary notch are not clearly visible. The targets below map actual bounded surfaces, not invented substitutes for missing planned artifacts; additional violet insets require editorial source assignment.",
+    "dominant_spatial_mode": "contained",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Warm rendered mass suspended across an impossible blue interval; open, quiet, spatially unsettled.",
+      "The plate shows a detailed, literal fantasy courtyard with ivory masonry, violet doors and insets, blue paving, abundant planting, lanterns, a bench, and a gold wall ornament. It does not realize the planned minimal arrangement of abstract masses and separated ribbon breaks. The left violet doorway and amber lantern provide recognizable counterparts to two planned anchors, but the foreground ellipse is violet rather than green. Separate near and far cobalt ribbon terminations and the stepped green boundary notch are not clearly visible. The targets below map actual bounded surfaces, not invented substitutes for missing planned artifacts; additional violet insets require editorial source assignment.",
+      "rounded-ivory",
+      "cobalt-interval",
+      "violet-undercuts"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Broad violet aperture — visible as a literal doorway",
+      "Near cobalt break",
+      "Far cobalt break",
+      "Small violet recess",
+      "Amber curl terminal",
+      "Stepped green notch",
+      "Foreground violet ellipse — not the planned green pocket"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band",
+      "glass"
+    ],
+    "dominant_structures": [
+      "cobalt-causeway-discontinuity",
+      "Two unequal disconnected ivory masses surrounding an open blue-violet interval",
+      "A segmented cobalt ribbon ending abruptly and resuming at a conflicting elevation",
+      "An oversized cropped elliptical pocket paired with smaller recessed forms",
+      "Separated violet apertures and cobalt breaks with distinct inner surfaces",
+      "A compact stepped green notch and a dark curl with an amber terminal",
+      "Large violet pointed doorway inside the left stone arch",
+      "Amber glass body of the left hanging lantern"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cobalt-causeway-discontinuity.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-broad-violet-aperture-visible-as-a-l",
+      "kind": "hero",
+      "type": "violet-door-surface",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.082,
+        "y": 0.1709,
+        "w": 0.0898,
+        "h": 0.373
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-near-cobalt-break",
+      "kind": "module",
+      "type": "exposed-tile-break",
+      "strength": 0.75,
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-far-cobalt-break",
+      "kind": "module",
+      "type": "raised-tessellation-break",
+      "strength": 0.72,
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-small-violet-recess",
+      "kind": "module",
+      "type": "rounded-shadow-pocket",
+      "strength": 0.6900000000000001,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-amber-curl-terminal",
+      "kind": "module",
+      "type": "inset-terminal-node",
+      "strength": 0.66,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-stepped-green-notch",
+      "kind": "module",
+      "type": "granular-boundary-notch",
+      "strength": 0.63,
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-broad-violet-aperture-visible-as-a-l-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.082,
+        "y": 0.1709,
+        "w": 0.0898,
+        "h": 0.373
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-near-cobalt-break-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-far-cobalt-break-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-small-violet-recess-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-amber-curl-terminal-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-stepped-green-notch-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

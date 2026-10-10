@@ -1,0 +1,818 @@
+{
+  "artifact_map_id": "map-2026-10-09-the-far-side-rises-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "cobalt-causeway-discontinuity",
+  "default_artifact_id": "hero-broad-violet-aperture-visible-as-a-l",
+  "artifacts": [
+    {
+      "id": "hero-broad-violet-aperture-visible-as-a-l",
+      "kind": "hero",
+      "label": "Broad violet aperture — visible as a literal doorway",
+      "artifact_type": "violet-door-surface",
+      "bounds": {
+        "x": 0.082,
+        "y": 0.1709,
+        "w": 0.0898,
+        "h": 0.373
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.084,
+          0.2666
+        ],
+        [
+          0.0938,
+          0.2178
+        ],
+        [
+          0.1139,
+          0.1777
+        ],
+        [
+          0.1237,
+          0.1738
+        ],
+        [
+          0.1328,
+          0.1816
+        ],
+        [
+          0.1549,
+          0.2188
+        ],
+        [
+          0.1667,
+          0.2842
+        ],
+        [
+          0.1693,
+          0.5293
+        ],
+        [
+          0.0983,
+          0.5391
+        ],
+        [
+          0.084,
+          0.377
+        ]
+      ],
+      "cluster_id": "cobalt-causeway-discontinuity",
+      "mask_path": "/editions/2026-10-09-the-far-side-rises-v1/assets/masks/hero-broad-violet-aperture-visible-as-a-l.svg",
+      "source_binding_ids": [
+        "binding-hero-broad-violet-aperture-visible-as-a-l"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          195,
+          336
+        ],
+        "safe_stage_window_origin_px": [
+          205,
+          366
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.084,
+            0.2666
+          ],
+          [
+            0.0938,
+            0.2178
+          ],
+          [
+            0.1139,
+            0.1777
+          ],
+          [
+            0.1237,
+            0.1738
+          ],
+          [
+            0.1328,
+            0.1816
+          ],
+          [
+            0.1549,
+            0.2188
+          ],
+          [
+            0.1667,
+            0.2842
+          ],
+          [
+            0.1693,
+            0.5293
+          ],
+          [
+            0.0983,
+            0.5391
+          ],
+          [
+            0.084,
+            0.377
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0618,
+            0.2646
+          ],
+          [
+            0.071,
+            0.2197
+          ],
+          [
+            0.0905,
+            0.1777
+          ],
+          [
+            0.1133,
+            0.1436
+          ],
+          [
+            0.1237,
+            0.1396
+          ],
+          [
+            0.1322,
+            0.1475
+          ],
+          [
+            0.1771,
+            0.2207
+          ],
+          [
+            0.1888,
+            0.2832
+          ],
+          [
+            0.1908,
+            0.4375
+          ],
+          [
+            0.1908,
+            0.4912
+          ],
+          [
+            0.0762,
+            0.54
+          ],
+          [
+            0.0618,
+            0.3799
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0618,
+          "y": 0.1396,
+          "w": 0.1296,
+          "h": 0.4014
+        },
+        "territory_area_px": 64721,
+        "visible_area_px": 41893,
+        "expansion_ratio": 1.545,
+        "neighbors": [
+          {
+            "artifact_id": "module-near-cobalt-break",
+            "shared_edge_px": 1307,
+            "direction": "down",
+            "distance_px": 307.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-near-cobalt-break",
+      "kind": "module",
+      "label": "Near cobalt break",
+      "artifact_type": "exposed-tile-break",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.08,
+          0.52
+        ],
+        [
+          0.3,
+          0.52
+        ],
+        [
+          0.3,
+          0.74
+        ],
+        [
+          0.08,
+          0.74
+        ]
+      ],
+      "cluster_id": "cobalt-causeway-discontinuity",
+      "mask_path": "/editions/2026-10-09-the-far-side-rises-v1/assets/masks/module-near-cobalt-break.svg",
+      "source_binding_ids": [
+        "binding-module-near-cobalt-break"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          627
+        ],
+        "safe_stage_window_origin_px": [
+          319,
+          645
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.08,
+            0.52
+          ],
+          [
+            0.3,
+            0.52
+          ],
+          [
+            0.3,
+            0.74
+          ],
+          [
+            0.08,
+            0.74
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0612,
+            0.5195
+          ],
+          [
+            0.0716,
+            0.5039
+          ],
+          [
+            0.168,
+            0.4922
+          ],
+          [
+            0.2995,
+            0.4922
+          ],
+          [
+            0.3177,
+            0.5195
+          ],
+          [
+            0.3177,
+            0.7393
+          ],
+          [
+            0.2995,
+            0.7666
+          ],
+          [
+            0.0794,
+            0.7666
+          ],
+          [
+            0.0612,
+            0.7393
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0612,
+          "y": 0.4922,
+          "w": 0.2572,
+          "h": 0.2754
+        },
+        "territory_area_px": 101314,
+        "visible_area_px": 76614,
+        "expansion_ratio": 1.322,
+        "neighbors": [
+          {
+            "artifact_id": "module-amber-curl-terminal",
+            "shared_edge_px": 1890,
+            "direction": "down",
+            "distance_px": 237.1
+          },
+          {
+            "artifact_id": "hero-broad-violet-aperture-visible-as-a-l",
+            "shared_edge_px": 1307,
+            "direction": "up",
+            "distance_px": 307.22
+          },
+          {
+            "artifact_id": "module-far-cobalt-break",
+            "shared_edge_px": 206,
+            "direction": "right",
+            "distance_px": 389.43
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-far-cobalt-break",
+      "kind": "module",
+      "label": "Far cobalt break",
+      "artifact_type": "raised-tessellation-break",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "cluster_id": "cobalt-causeway-discontinuity",
+      "mask_path": "/editions/2026-10-09-the-far-side-rises-v1/assets/masks/module-far-cobalt-break.svg",
+      "source_binding_ids": [
+        "binding-module-far-cobalt-break"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          691,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          718,
+          666
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.34,
+            0.54
+          ],
+          [
+            0.56,
+            0.54
+          ],
+          [
+            0.56,
+            0.76
+          ],
+          [
+            0.34,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3216,
+            0.5391
+          ],
+          [
+            0.3398,
+            0.5117
+          ],
+          [
+            0.5599,
+            0.5117
+          ],
+          [
+            0.5781,
+            0.5391
+          ],
+          [
+            0.5781,
+            0.751
+          ],
+          [
+            0.4173,
+            0.7871
+          ],
+          [
+            0.3398,
+            0.7871
+          ],
+          [
+            0.3216,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3216,
+          "y": 0.5117,
+          "w": 0.2572,
+          "h": 0.2764
+        },
+        "territory_area_px": 103524,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.345,
+        "neighbors": [
+          {
+            "artifact_id": "module-stepped-green-notch",
+            "shared_edge_px": 1420,
+            "direction": "down",
+            "distance_px": 269.59
+          },
+          {
+            "artifact_id": "module-near-cobalt-break",
+            "shared_edge_px": 206,
+            "direction": "left",
+            "distance_px": 389.43
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-small-violet-recess",
+      "kind": "module",
+      "label": "Small violet recess",
+      "artifact_type": "rounded-shadow-pocket",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "cobalt-causeway-discontinuity",
+      "mask_path": "/editions/2026-10-09-the-far-side-rises-v1/assets/masks/module-small-violet-recess.svg",
+      "source_binding_ids": [
+        "binding-module-small-violet-recess"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6016,
+            0.5391
+          ],
+          [
+            0.6198,
+            0.5117
+          ],
+          [
+            0.8398,
+            0.5117
+          ],
+          [
+            0.8581,
+            0.5391
+          ],
+          [
+            0.8581,
+            0.7598
+          ],
+          [
+            0.8398,
+            0.7871
+          ],
+          [
+            0.6198,
+            0.7871
+          ],
+          [
+            0.6016,
+            0.7539
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6016,
+          "y": 0.5117,
+          "w": 0.2572,
+          "h": 0.2764
+        },
+        "territory_area_px": 110005,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.43,
+        "neighbors": [
+          {
+            "artifact_id": "module-stepped-green-notch",
+            "shared_edge_px": 228,
+            "direction": "left",
+            "distance_px": 374.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-amber-curl-terminal",
+      "kind": "module",
+      "label": "Amber curl terminal",
+      "artifact_type": "inset-terminal-node",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "cobalt-causeway-discontinuity",
+      "mask_path": "/editions/2026-10-09-the-far-side-rises-v1/assets/masks/module-amber-curl-terminal.svg",
+      "source_binding_ids": [
+        "binding-module-amber-curl-terminal"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0814,
+            0.7793
+          ],
+          [
+            0.0996,
+            0.752
+          ],
+          [
+            0.2799,
+            0.752
+          ],
+          [
+            0.2982,
+            0.7793
+          ],
+          [
+            0.2982,
+            0.9395
+          ],
+          [
+            0.2799,
+            0.9668
+          ],
+          [
+            0.0996,
+            0.9668
+          ],
+          [
+            0.0814,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0814,
+          "y": 0.752,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 72190,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.574,
+        "neighbors": [
+          {
+            "artifact_id": "module-near-cobalt-break",
+            "shared_edge_px": 1890,
+            "direction": "up",
+            "distance_px": 237.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-stepped-green-notch",
+      "kind": "module",
+      "label": "Stepped green notch",
+      "artifact_type": "granular-boundary-notch",
+      "bounds": {
+        "x": 0.42,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.42,
+          0.78
+        ],
+        [
+          0.6,
+          0.78
+        ],
+        [
+          0.6,
+          0.94
+        ],
+        [
+          0.42,
+          0.94
+        ]
+      ],
+      "cluster_id": "cobalt-causeway-discontinuity",
+      "mask_path": "/editions/2026-10-09-the-far-side-rises-v1/assets/masks/module-stepped-green-notch.svg",
+      "source_binding_ids": [
+        "binding-module-stepped-green-notch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          783,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          805,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.42,
+            0.78
+          ],
+          [
+            0.6,
+            0.78
+          ],
+          [
+            0.6,
+            0.94
+          ],
+          [
+            0.42,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4017,
+            0.7881
+          ],
+          [
+            0.4837,
+            0.752
+          ],
+          [
+            0.5996,
+            0.752
+          ],
+          [
+            0.6178,
+            0.7793
+          ],
+          [
+            0.6178,
+            0.9395
+          ],
+          [
+            0.5996,
+            0.9668
+          ],
+          [
+            0.4199,
+            0.9668
+          ],
+          [
+            0.4017,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4017,
+          "y": 0.752,
+          "w": 0.2168,
+          "h": 0.2158
+        },
+        "territory_area_px": 52862,
+        "visible_area_px": 45705,
+        "expansion_ratio": 1.157,
+        "neighbors": [
+          {
+            "artifact_id": "module-far-cobalt-break",
+            "shared_edge_px": 1420,
+            "direction": "up",
+            "distance_px": 269.59
+          },
+          {
+            "artifact_id": "module-small-violet-recess",
+            "shared_edge_px": 228,
+            "direction": "right",
+            "distance_px": 374.86
+          }
+        ]
+      }
+    }
+  ]
+}

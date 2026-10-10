@@ -1,0 +1,171 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-09-the-far-side-rises-v1",
+  "edition_id": "2026-10-09-the-far-side-rises-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-09-the-far-side-rises-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal",
+    "restoration-scan",
+    "screen-rendered-html"
+  ],
+  "future_only_subset": [],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-broad-violet-aperture-visible-as-a-l",
+      "target_kind": "artifact",
+      "artifact_id": "hero-broad-violet-aperture-visible-as-a-l",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (violet-door-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-near-cobalt-break",
+      "target_kind": "artifact",
+      "artifact_id": "module-near-cobalt-break",
+      "priority": 2,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (exposed-tile-break) selected from interpretation."
+    },
+    {
+      "target_id": "module-far-cobalt-break",
+      "target_kind": "artifact",
+      "artifact_id": "module-far-cobalt-break",
+      "priority": 3,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (raised-tessellation-break) selected from interpretation."
+    },
+    {
+      "target_id": "module-small-violet-recess",
+      "target_kind": "artifact",
+      "artifact_id": "module-small-violet-recess",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rounded-shadow-pocket) selected from interpretation."
+    },
+    {
+      "target_id": "module-amber-curl-terminal",
+      "target_kind": "artifact",
+      "artifact_id": "module-amber-curl-terminal",
+      "priority": 5,
+      "techniques": [
+        "screen-rendered-html",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (inset-terminal-node) selected from interpretation."
+    },
+    {
+      "target_id": "module-stepped-green-notch",
+      "target_kind": "artifact",
+      "artifact_id": "module-stepped-green-notch",
+      "priority": 6,
+      "techniques": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (granular-boundary-notch) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

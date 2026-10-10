@@ -1,0 +1,62 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-10-09-the-far-side-rises-v1",
+  "edition_id": "2026-10-09-the-far-side-rises-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-broad-violet-aperture-visible-as-a-l",
+      "source_image_url": "https://pbs.twimg.com/media/HDSk-FuWIAADFDB?format=webp&name=large",
+      "poster_asset_path": "/editions/2026-10-09-the-far-side-rises-v1/assets/source-posters/binding-hero-broad-violet-aperture-visible-as-a-l.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-10-09-the-far-side-rises-v1/binding-hero-broad-violet-aperture-visible-as-a-l-source-visual-qa.jpg",
+      "image_width": 480,
+      "image_height": 288,
+      "aspect_ratio": 1.6667,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5226
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.0312,
+        "width": 1.0,
+        "height": 0.9375
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.0986,
+        "candidate_box_count": 24
+      }
+    },
+    {
+      "binding_id": "binding-module-stepped-green-notch",
+      "source_image_url": "https://profconradi.github.io/images/4dd877d24790396eb0873d1453f5f5efa38f9bdd4dbfce85ec23f43074264ca0.jpeg",
+      "poster_asset_path": "/editions/2026-10-09-the-far-side-rises-v1/assets/source-posters/binding-module-stepped-green-notch.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-10-09-the-far-side-rises-v1/binding-module-stepped-green-notch-source-visual-qa.jpg",
+      "image_width": 1280,
+      "image_height": 1280,
+      "aspect_ratio": 1.0,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.4996,
+        "y": 0.5004
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2188,
+        "width": 1.0,
+        "height": 0.5625
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02193,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}
