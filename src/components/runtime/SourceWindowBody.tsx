@@ -134,7 +134,8 @@ function shouldBypassPosterCrop(binding: SourceBindingRecord, fallbackUrl: strin
   return Boolean(
     fallbackUrl
     && (
-      (binding.embed_status === 'unavailable' && binding.source_media_type !== 'video')
+      (binding.source_media_url && !binding.source_visual && binding.source_media_type !== 'video')
+      || (binding.embed_status === 'unavailable' && binding.source_media_type !== 'video')
       || (binding.source_visual?.render_mode === 'poster-crop'
         && binding.source_visual?.crop_risk
         && binding.source_visual.crop_risk !== 'low')

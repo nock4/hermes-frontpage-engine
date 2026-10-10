@@ -34,6 +34,49 @@ describe('marketplace owning-source quarantine', () => {
   expect(isAiToolingContentSource({ description: 'released on @objktcommunity' })).toBe(false)
  })
 })
+describe('image-typed final media without a duplicate image descriptor', () => {
+ const image = 'https://collectionapi.metmuseum.org/api/collection/v1/iiif/488880/1005811/restricted'
+ const stillSource = { url: 'https://www.metmuseum.org/art/collection/search/488880', image_url: image }
+ const stillDecision = { ...inspectedDecision(stillSource), inspection: {
+  ...inspectedDecision(stillSource).inspection,
+  capture_path: capture, capture_sha256: decision.inspection.capture_sha256,
+ } }
+ const stillField = { sources: [stillSource], autoresearch: { source_decisions: [stillDecision] } }
+ const stillBinding = { source_url: stillSource.url, source_media_url: image, source_media_type: 'image', source_image_aliases: [image] }
+ const checkStill = (b = stillBinding, f = stillField) => check(b, f)
+ it('accepts the exact inspected extensionless image and preserves binding aliases', () => {
+  const before = structuredClone(stillBinding)
+  expect(() => checkStill()).not.toThrow()
+  expect(stillBinding).toEqual(before)
+ })
+ it('does not require aliases to attest the exact inspected image', () => {
+  expect(() => checkStill({ ...stillBinding, source_image_aliases: undefined })).not.toThrow()
+ })
+ it('rejects substituted media even with the inspected URL retained as an alias', () => {
+  expect(() => checkStill({ ...stillBinding, source_media_url: `${image}-substituted` })).toThrow(/final media or capture integrity mismatch/)
+ })
+ it('does not let an inspected media URL hide an explicit substituted image', () => {
+  expect(() => checkStill({ ...stillBinding, source_image_url: `${image}-substituted` })).toThrow(/final media or capture integrity mismatch/)
+ })
+ it.each(['video', 'audio', undefined])('does not infer still evidence for media type %s', (type) => {
+  expect(() => checkStill({ ...stillBinding, source_media_type: type })).toThrow(/final media or capture integrity mismatch/)
+ })
+ it('does not use a video URL in place of its absent inspected poster', () => {
+  expect(() => check({ ...binding, source_image_url: undefined })).toThrow(/final media or capture integrity mismatch/)
+ })
+ it('rejects a corrupt capture digest on the media-only image path', () => {
+  expect(() => checkStill(stillBinding, { ...stillField, autoresearch: { source_decisions: [{ ...stillDecision, inspection: { ...stillDecision.inspection, capture_sha256: 'b'.repeat(64) } }] } })).toThrow(/final media or capture integrity mismatch/)
+ })
+ it('rejects a missing capture on the media-only image path', () => {
+  expect(() => checkStill(stillBinding, { ...stillField, autoresearch: { source_decisions: [{ ...stillDecision, inspection: { ...stillDecision.inspection, capture_path: `${capture}.missing` } }] } })).toThrow(/final media or capture integrity mismatch/)
+ })
+ it('retains owning-source quarantine', () => {
+  expect(() => checkStill(stillBinding, { ...stillField, sources: [{ ...stillSource, description: 'paisajitos released on @objktcom' }] })).toThrow(/Editorial eligibility/)
+ })
+ it('retains research exclusions', () => {
+  expect(() => checkStill(stillBinding, { ...stillField, autoresearch: { source_decisions: [{ ...stillDecision, role: 'reject' }] } })).toThrow(/Editorial eligibility/)
+ })
+})
 describe('final media integrity',()=>{
  it('rejects an uninspected alternate image',()=>expect(()=>check({...binding,source_image_url:'https://artist.example/other.png'})).toThrow())
  it('rejects a switched video',()=>expect(()=>check({...binding,source_media_url:'https://artist.example/other.mp4'})).toThrow())

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type CSSProperties } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from 'react'
 import { loadEditionPackage, loadManifest, polygonToClipPathForGeometry } from './lib/editionLoader'
 import { buildArchiveHref, getEditionArchiveRecords, parseAppRoute, type AppRoute } from './lib/router'
 import { getRuntimeAmbienceClasses } from './lib/runtimeAmbience'
@@ -32,6 +32,8 @@ function App() {
   const [locationKey, setLocationKey] = useState(() => `${window.location.pathname}${window.location.search}`)
   const [aboutOpen, setAboutOpen] = useState(false)
   const [archiveOpen, setArchiveOpen] = useState(false)
+  const touchPreviewArtifact = useRef<string | null>(null)
+  const [plateGeometry, setPlateGeometry] = useState<{ path: string; aspect: number } | null>(null)
 
   const syncLocation = useCallback(() => {
     setLocationKey(`${window.location.pathname}${window.location.search}`)
@@ -207,6 +209,8 @@ function App() {
   const editionTypographyStyle = getAboutTypographyStyle(loaded.about)
   const sourcePlaceCount = loaded.sourceBindings.bindings.length
   const sourcePlaceLabel = sourcePlaceCount === 1 ? '1 place' : `${sourcePlaceCount} places`
+  const plateAspect = plateGeometry?.path === loaded.edition.plate_asset_path ? plateGeometry.aspect : null
+  const containPlate = plateAspect !== null && plateAspect < 1
 
   return (
     <main className={`runtime-shell review-mode--${reviewMode} ${interactionLabMode ? 'interaction-lab-mode ' : ''}${runtimeAmbienceClasses}${presentation.showSidebar ? '' : ' runtime-shell--immersive'}${presentation.stageFillViewport ? ' runtime-shell--stage-fill' : ''}`} data-edition-id={loaded.edition.edition_id} style={editionTypographyStyle}>
@@ -232,8 +236,8 @@ function App() {
         ) : null}
 
         <section
-          className={`stage${hasPrimaryStageWindow && presentation.suppressArtifactLabelsWhenPrimaryWindowOpen ? ' stage--primary-window-open' : ''}${sceneReactionArtifact ? ' stage--scene-reacting' : ''}${sceneReactionTone ? ` stage--scene-tone-${sceneReactionTone}` : ''}`}
-          style={stageReactionStyle}
+          className={`stage${containPlate ? ' stage--contained-plate' : ''}${hasPrimaryStageWindow && presentation.suppressArtifactLabelsWhenPrimaryWindowOpen ? ' stage--primary-window-open' : ''}${sceneReactionArtifact ? ' stage--scene-reacting' : ''}${sceneReactionTone ? ` stage--scene-tone-${sceneReactionTone}` : ''}`}
+          style={{ ...stageReactionStyle, '--plate-aspect': plateAspect ?? 1, '--plate-ambient': `url(${JSON.stringify(loaded.edition.plate_asset_path)})` } as CSSProperties}
           onMouseLeave={(event) => {
             if (reviewMode === 'live') return
             const nextTarget = event.relatedTarget
@@ -241,7 +245,7 @@ function App() {
             setWindowState((state) => clearPreview(state))
           }}
         >
-          <img className="plate" src={loaded.edition.plate_asset_path} alt={loaded.edition.title} />
+          {containPlate ? <div className="plate-ambient" aria-hidden="true" /> : null}
           <a className="site-enter-button" href="https://nockgarden.com/">enter</a>
 
           {(loaded.about || archiveRecords.length) ? (
@@ -298,6 +302,9 @@ function App() {
             </div>
           ) : null}
 
+          <div className="plate-field">
+          <img className="plate" src={loaded.edition.plate_asset_path} alt={loaded.edition.title}
+            onLoad={(event) => { const image = event.currentTarget; setPlateGeometry({ path: loaded.edition.plate_asset_path, aspect: image.naturalWidth / image.naturalHeight }) }} />
           {loaded.artifactMap.artifacts.map((artifact, artifactIndex) => {
             const active = artifact.id === activeArtifactId
             const interactionMesh = artifact.interaction_mesh
@@ -364,7 +371,20 @@ function App() {
                   if (event.button !== 0 || (bindingDescriptor?.kind !== 'youtube-embed' && bindingDescriptor?.kind !== 'youtube-linkout')) return
                   activateArtifactBinding(artifact.id, binding)
                 }}
-                onClick={() => activateArtifactBinding(artifact.id, binding)}
+                onPointerDown={(event) => {
+                  // Capture before touch compatibility mouseenter/focus creates a
+                  // preview. Its opening tap must not also pin the provider.
+                  touchPreviewArtifact.current = event.pointerType === 'touch'
+                    && bindingDescriptor?.kind === 'tweet-embed' && !previewActive
+                    ? artifact.id : null
+                }}
+                onPointerCancel={() => { touchPreviewArtifact.current = null }}
+                onClick={() => {
+                  const opensTouchPreview = touchPreviewArtifact.current === artifact.id
+                  touchPreviewArtifact.current = null
+                  if (opensTouchPreview) previewArtifactBinding(artifact.id, binding)
+                  else activateArtifactBinding(artifact.id, binding)
+                }}
                 tabIndex={interactionLabMode ? -1 : undefined}
                 type="button"
               >
@@ -382,6 +402,8 @@ function App() {
               platePath={loaded.edition.plate_asset_path}
             />
           ) : null}
+
+          </div>
 
           {presentation.showStageOverlayWindows ? (
             <div className={`stage-overlay-windows${reviewMode === 'live' ? ' stage-overlay-windows--live' : ''}`}>

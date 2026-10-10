@@ -326,6 +326,60 @@ a {
   object-fit: cover;
 }
 
+.plate-field {
+  position: absolute;
+  inset: 0;
+}
+
+/* Portrait plates retain their original coordinate space. The image, real
+   artifact masks and lab territories share this field. */
+.stage--contained-plate {
+  container-type: size;
+  /* Ambient overscan is paint, not scrollable content. Unlike hidden, clip
+     prevents focus/scrollIntoView from shifting the plate and window layer. */
+  overflow: clip;
+}
+
+.runtime-shell--immersive .stage--contained-plate {
+  height: 100vh;
+}
+
+.stage--contained-plate .plate-field {
+  inset: auto;
+  left: 50%;
+  top: 50%;
+  width: min(100cqw, calc(100cqh * var(--plate-aspect)));
+  height: min(100cqh, calc(100cqw / var(--plate-aspect)));
+  transform: translate(-50%, -50%);
+}
+
+/* Desktop emissions follow the plate; mobile windows use the stage viewport
+   so readable cards and their close controls are not capped by a narrow plate. */
+@media (min-width: 901px) and (min-height: 501px) {
+  .stage--contained-plate .stage-overlay-windows--live {
+    inset: auto;
+    left: 50%;
+    top: 50%;
+    width: min(100cqw, calc(100cqh * var(--plate-aspect)));
+    height: min(100cqh, calc(100cqw / var(--plate-aspect)));
+    transform: translate(-50%, -50%);
+  }
+}
+
+.runtime-shell .stage--contained-plate .plate {
+  object-fit: contain;
+  animation: none;
+  transform: none;
+}
+
+.plate-ambient {
+  position: absolute;
+  inset: -4%;
+  background: var(--plate-ambient) center / cover;
+  filter: blur(32px) brightness(.32) saturate(.65);
+  pointer-events: none;
+}
+
 .site-enter-button {
   position: absolute;
   top: clamp(0.9rem, 2vw, 1.4rem);

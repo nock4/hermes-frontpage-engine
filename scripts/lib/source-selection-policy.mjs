@@ -701,7 +701,11 @@ export function assertEditorialBindings(bindings, researchField = {}, signalHarv
     if (finalMedia) {
       const verified = matching.some(source => (researchField.autoresearch?.source_decisions || []).some(decision => {
         const proof = decision.inspection
-        if (!hasCreativeArtifactEvidence({ ...source, image_url: binding.source_image_url }, { source_decisions: [decision] }, signalHarvest)) return false
+        // Enrichment may retain a still only as typed media (including extensionless
+        // URLs). Attest that exact URL, never an alias or an inferred video poster.
+        const finalImageUrl = binding.source_image_url
+          || (binding.source_media_type === 'image' ? binding.source_media_url : undefined)
+        if (!hasCreativeArtifactEvidence({ ...source, image_url: finalImageUrl }, { source_decisions: [decision] }, signalHarvest)) return false
         // A poster attests its associated video/audio identity, not unseen frames.
         if (binding.source_media_url) {
           const expected = ['video', 'audio'].includes(binding.source_media_type)

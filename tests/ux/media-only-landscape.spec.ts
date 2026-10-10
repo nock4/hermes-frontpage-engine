@@ -6,8 +6,8 @@ const title = 'Media-only original still'
 // A portrait original leaves measurable ambient gutters in a landscape aperture.
 const still = '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800"><rect width="400" height="800" fill="#ff40e0"/><rect x="8" y="8" width="384" height="784" fill="none" stroke="#40ffff" stroke-width="16"/></svg>'
 
-async function fixture(page: Page, nativeVideo = false) {
-  await page.setViewportSize({ width: 852, height: 393 })
+async function fixture(page: Page, nativeVideo = false, viewport = { width: 852, height: 393 }) {
+  await page.setViewportSize(viewport)
   await page.route('**/source-bindings.json', async route => {
     const response = await route.fetch()
     const data = await response.json()
@@ -59,9 +59,10 @@ async function openSurface(page: Page, mode: 'preview' | 'primary') {
   return surface
 }
 
+for (const viewport of [{ name: 'landscape', width: 852, height: 393 }, { name: 'desktop', width: 1440, height: 980 }]) {
 for (const mode of ['preview', 'primary'] as const) {
-  test(`media-only still is whole with painted ambient in landscape ${mode}`, async ({ page }, testInfo) => {
-    await fixture(page)
+  test(`media-only still is whole with painted ambient in ${viewport.name} ${mode}`, async ({ page }, testInfo) => {
+    await fixture(page, false, viewport)
     const surface = await openSurface(page, mode)
     const card = surface.locator('.visual-source-card')
     const figure = surface.locator('.visual-source-card__figure')
@@ -80,7 +81,7 @@ for (const mode of ['preview', 'primary'] as const) {
       const r = close.getBoundingClientRect(), hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2)
       return {
         figure: figure.getBoundingClientRect().toJSON(), image: img.getBoundingClientRect().toJSON(),
-        title: title.getBoundingClientRect().toJSON(), close: r.toJSON(),
+        title: (title || figure).getBoundingClientRect().toJSON(), close: r.toJSON(),
         closeHit: hit === close || close.contains(hit),
         natural: [img.naturalWidth, img.naturalHeight],
         ambient: getComputedStyle(figure, '::before').backgroundImage,
@@ -89,15 +90,15 @@ for (const mode of ['preview', 'primary'] as const) {
     expect(geometry.natural).toEqual([400, 800])
     expect(geometry.ambient).toContain(original)
     expect(geometry.closeHit).toBe(true)
-    expect(geometry.close.width).toBeGreaterThanOrEqual(44)
+    expect(geometry.close.width).toBeGreaterThanOrEqual(viewport.name === 'desktop' ? 24 : 44)
     expect(geometry.title.width).toBeGreaterThan(64)
     expect(geometry.title.height).toBeGreaterThan(12)
-    expect(geometry.title.top).toBeGreaterThanOrEqual(geometry.figure.bottom - 1)
+    if (viewport.name !== 'desktop') expect(geometry.title.top).toBeGreaterThanOrEqual(geometry.figure.bottom - 1)
     for (const r of [geometry.figure, geometry.image, geometry.title, geometry.close]) {
       expect(r.left).toBeGreaterThanOrEqual(0)
       expect(r.top).toBeGreaterThanOrEqual(0)
-      expect(r.right).toBeLessThanOrEqual(852)
-      expect(r.bottom).toBeLessThanOrEqual(393)
+      expect(r.right).toBeLessThanOrEqual(viewport.width)
+      expect(r.bottom).toBeLessThanOrEqual(viewport.height)
     }
     expect(geometry.image.left).toBeGreaterThanOrEqual(geometry.figure.left - 1)
     expect(geometry.image.right).toBeLessThanOrEqual(geometry.figure.right + 1)
@@ -126,6 +127,8 @@ for (const mode of ['preview', 'primary'] as const) {
     await surface.locator('.source-window__close').click()
     await expect(surface).toHaveCount(0)
   })
+}
+
 }
 
 test('media-only image metadata does not replace a native primary video', async ({ page }) => {
