@@ -474,6 +474,12 @@ import json
 url = ${JSON.stringify(sourceUrl)}
 def inspect_source(url):
     ensure_real_tab()
+    if ${canReconnect ? 'True' : 'False'}:
+        # The relay's load-event title marker awaits a CDP reply from inside
+        # its receive loop. Queued load callbacks can exhaust the 18s budget.
+        # Our owned metadata capture polls readyState and needs no Page events.
+        # Leave shared/remote browser subscriptions untouched.
+        cdp('Page.disable')
     goto(url)
     wait_for_load(8)
     wait(0.8)

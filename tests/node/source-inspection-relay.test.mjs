@@ -24,6 +24,7 @@ import sys, json
 from admin import event
 attempts = 0
 def ensure_real_tab(): event(['tab'])
+def cdp(method): event(['cdp', method])
 def goto(url):
     global attempts
     attempts += 1
@@ -57,10 +58,10 @@ it.each(['goto', 'js'])('reconnects the managed relay once after stale %s and re
   expect(result.fetch_status).toBe('browser-harness')
   expect(result.title).toBe('Recovered art')
   expect(await f.events()).toEqual([
-    ['tab'], ['goto', 'https://example.com/art'],
+    ['tab'], ['cdp', 'Page.disable'], ['goto', 'https://example.com/art'],
     ['restart', 'dfe-relay-test'],
     ['ensure', 'dfe-relay-test', 5, { BU_CDP_WS: 'ws://127.0.0.1:45678/devtools/browser/test', BU_BROWSER_ID: '' }],
-    ['tab'], ['goto', 'https://example.com/art'],
+    ['tab'], ['cdp', 'Page.disable'], ['goto', 'https://example.com/art'],
   ])
 })
 
@@ -110,8 +111,15 @@ it('recovers the actual abrupt-WebSocket-close signature', async () => {
   expect((await f.events()).filter(e => e[0] === 'restart')).toHaveLength(1)
 })
 
-it('does not restart a healthy relay', async () => {
+it('disables unsolicited load callbacks before managed navigation while retaining DOM polling', async () => {
   const f = await fixture({ stage: 'none' })
+  expect((await f.inspect()).fetch_status).toBe('browser-harness')
+  expect(await f.events()).toEqual([['tab'], ['cdp', 'Page.disable'], ['goto', 'https://example.com/art']])
+})
+
+it('does not change Page event subscriptions on an unowned browser', async () => {
+  const f = await fixture({ stage: 'none' })
+  vi.stubEnv('BU_NAME', 'default')
   expect((await f.inspect()).fetch_status).toBe('browser-harness')
   expect(await f.events()).toEqual([['tab'], ['goto', 'https://example.com/art']])
 })
