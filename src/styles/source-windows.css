@@ -5182,6 +5182,12 @@
   }
 }
 
+/* Native audio footers must not inherit dark artifact-card link ink. */
+.source-window--stage[data-source-window-kind="soundcloud-embed"] .source-window__body--audio-embed > a {
+  color: #fff4e2;
+  background: #100c09;
+}
+
 /* Keep the dismissal mark distinct from native provider logos/artwork. */
 .source-window--stage[data-source-window-kind="soundcloud-embed"] .source-window__close {
   background: rgba(16, 12, 9, 0.96);
