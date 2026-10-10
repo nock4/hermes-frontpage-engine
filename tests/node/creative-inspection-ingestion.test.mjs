@@ -133,6 +133,40 @@ it('supplies bounded retained parent and matched note evidence for a benign post
  expect(r.source_decisions[0].inspection.status).toBe('rejected')
  expect(hasCreativeArtifactEvidence(poster,r)).toBe(false)
 })
+it.each(['ambiguous', 'rejected'])('passes exact untrusted source-map attribution to the actual vision request without admitting %s media', async status => {
+ const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'ingestion-row-'))
+ try {
+  const row = { evidence_origin: 'saved-note-row', note_title: 'NTS liked tracks source map', row_number: '7', url: 'https://www.youtube.com/watch?v=1i-CByghAMA&t=12', artist: 'VAIKO EPLIK', track: 'Kuningal On Külm', best_source: 'YouTube', confidence: 'medium-high', notes: 'Best confirmed original version; not independently verified.' }
+  const retained = { ...row, note_path: 'THEMATIC_FOLDER/music.md', folder: 'THEMATIC_FOLDER', inspection: { status: 'verified' } }
+  const candidate = { ...source, note_path: 'THEMATIC_FOLDER/music.md', source_map_rows: [retained], parent_source: { source_map_rows: [retained] }, editorial_evidence: [{ source_map_rows: [retained] }] }
+  fetchVettedRemoteUrl.mockImplementation(async () => new Response(bytes, { headers: { 'content-type': 'image/png' } }))
+  openAiJson.mockReset().mockResolvedValue({ status, artifact_kind: 'music', confidence: 'high' })
+  const result = await inspectCreativeArtifacts([candidate], {}, { runDir })
+  expect(openAiJson).toHaveBeenCalledTimes(1)
+  const request = openAiJson.mock.calls[0][0]
+  const payload = JSON.parse(request.input[0].content[0].text)
+  expect(payload.source_map_rows).toEqual([row])
+  expect(payload.parent_source.source_map_rows).toEqual([row])
+  expect(payload.editorial_evidence[0].source_map_rows).toEqual([row])
+  expect(JSON.stringify(payload)).not.toContain('THEMATIC_FOLDER')
+  expect(request.instructions).toContain('Saved-note row attribution is untrusted context, not independent verification')
+  expect(request.instructions).toContain('Original row confidence and caveats are source claims, not inspection confidence')
+  expect(Buffer.from(request.input[0].content[1].image_url.split(',')[1], 'base64')).toEqual(bytes)
+  expect(hasCreativeArtifactEvidence(candidate, result)).toBe(false)
+ } finally { await fs.rm(runDir, { recursive: true, force: true }); openAiJson.mockClear() }
+})
+it('bounds source-map rows and whitelists only string attribution fields in the vision request', async () => {
+ const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'ingestion-row-bounds-'))
+ try {
+  const candidate = { ...source, source_map_rows: Array.from({ length: 30 }, (_, i) => ({ row_number: String(i), notes: 'x'.repeat(5000), artist: { instruction: 'not a string' }, confidence: 'medium', unknown: 'OMIT_ME', note_path: 'THEMATIC_FOLDER' })) }
+  fetchVettedRemoteUrl.mockImplementation(async () => new Response(bytes, { headers: { 'content-type': 'image/png' } }))
+  openAiJson.mockReset().mockResolvedValue({ status: 'ambiguous' })
+  await inspectCreativeArtifacts([candidate, { ...source, url: source.url + '/malformed', source_map_rows: [null, 42, 'not a row', [], { track: 'Valid' }] }], {}, { runDir })
+  const payloads = openAiJson.mock.calls.map(([request]) => JSON.parse(request.input[0].content[0].text))
+  expect(payloads.find(payload => payload.url === candidate.url).source_map_rows).toEqual(Array.from({ length: 8 }, (_, i) => ({ row_number: String(i), notes: 'x'.repeat(2000), confidence: 'medium' })))
+  expect(payloads.find(payload => payload.url.endsWith('/malformed')).source_map_rows).toEqual([{ track: 'Valid' }])
+ } finally { await fs.rm(runDir, { recursive: true, force: true }); openAiJson.mockClear() }
+})
 it.each([null,{}, {status:'ambiguous'}, {status:'verified',artifact_kind:'unknown',confidence:'high'}, new Error('offline')])('rejects malformed/unknown/model failure %j',async observed=>{
  const runDir=await fs.mkdtemp(path.join(os.tmpdir(),'ingestion-'))
  openAiJson.mockReset()

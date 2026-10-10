@@ -393,19 +393,24 @@ async function inspectTweetWithFxtwitter(candidate, classification) {
 
 function runCaptured(command, args, { input = '', cwd = process.cwd(), timeoutMs = 30_000, env = process.env } = {}) {
   return new Promise((resolve, reject) => {
-    let settled = false
+    let failure = null
+    let killTimer = null
     const child = spawn(command, args, {
       cwd,
       env,
       stdio: ['pipe', 'pipe', 'pipe'],
     })
-    const timer = setTimeout(() => {
+    const stop = (error) => {
+      failure ||= error
+      if (!child.pid || child.exitCode !== null || child.signalCode !== null || killTimer) return
       child.kill('SIGTERM')
-      setTimeout(() => {
-        if (!settled) child.kill('SIGKILL')
-      }, 2000).unref()
-      settled = true
-      reject(new Error(`${command} timed out after ${timeoutMs}ms`))
+      // Do not settle on timeout: keep escalation alive until the child exits.
+      killTimer = setTimeout(() => {
+        if (child.exitCode === null && child.signalCode === null) child.kill('SIGKILL')
+      }, 2000)
+    }
+    const timer = setTimeout(() => {
+      stop(new Error(`${command} timed out after ${timeoutMs}ms`))
     }, timeoutMs)
     let stdout = ''
     let stderr = ''
@@ -415,20 +420,23 @@ function runCaptured(command, args, { input = '', cwd = process.cwd(), timeoutMs
     child.stderr.on('data', (chunk) => {
       stderr += chunk.toString()
     })
-    child.on('error', (error) => {
+    child.on('error', stop)
+    // An early exit can break a pending input write. Observe that error and use
+    // the same termination/reaping path instead of throwing an uncaught EPIPE.
+    child.stdin.on('error', stop)
+    child.on('exit', () => {
       clearTimeout(timer)
-      if (settled) return
-      settled = true
-      reject(error)
+      clearTimeout(killTimer)
     })
     child.on('close', (code) => {
       clearTimeout(timer)
-      if (settled) return
-      settled = true
-      resolve({ code, stdout, stderr })
+      clearTimeout(killTimer)
+      // close follows exit (or spawn failure) and stdio closure: the child has
+      // been reaped before either timeout rejection or successful completion.
+      if (failure) reject(failure)
+      else resolve({ code, stdout, stderr })
     })
-    if (input) child.stdin.write(input)
-    child.stdin.end()
+    child.stdin.end(input)
   })
 }
 
