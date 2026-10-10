@@ -136,7 +136,6 @@ const isLoadablePreviewImage = async (imageUrl) => {
     const response = await fetchVettedRemoteUrl(fetchableImageUrl, {
       lookup: dns.lookup,
       headers: {
-        'user-agent': 'Mozilla/5.0 (compatible; Hermes/1.0; +https://hermes.local)',
         accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5',
         range: 'bytes=0-4095',
       },
@@ -203,7 +202,6 @@ const fetchHtml = async (sourceUrl) => {
     const response = await fetchVettedRemoteUrl(fetchableUrl, {
       lookup: dns.lookup,
       headers: {
-        'user-agent': 'Mozilla/5.0 (compatible; Hermes/1.0; +https://hermes.local)',
         accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
       },
       timeoutMs: 8000,
