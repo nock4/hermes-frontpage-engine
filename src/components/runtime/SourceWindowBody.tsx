@@ -221,7 +221,7 @@ function SourceImageTitleCard({
   const providerFallback = videoFailed ? getTweetEmbedUrl(binding.source_url || '') : null
   const visualImageUrl = videoFailed && !providerFallback ? binding.source_image_url || null : getSourceMediaUrl(binding, imageUrl)
   const visualStyle = getSourceVisualStyle(binding)
-  const visualMode = getSourceVisualMode(binding, imageUrl)
+  const visualMode = getSourceVisualMode(binding, binding.source_media_type === 'video' ? imageUrl : visualImageUrl)
   const resolvedMediaType = visualImageUrl && mediaType === 'video' ? 'video' : 'image'
   const fallbackLabel = [title, binding.source_domain || getSourceHostLabel(binding.source_url) || binding.kicker]
     .filter(Boolean)

@@ -56,6 +56,41 @@ describe('native audio stage provenance', () => {
   })
 })
 
+describe('media-only landscape surfaces', () => {
+  it.each(['preview', 'primary'] as const)('contains a media-only still with ambient in %s', (mode) => {
+    vi.stubGlobal('window', { matchMedia: vi.fn().mockReturnValue({ matches: true }) })
+    try {
+      const binding = {
+        id: 'media-only', artifact_id: 'hero', source_type: 'web', window_type: 'web',
+        source_url: 'https://example.test/still', title: 'Original still',
+        source_media_type: 'image', source_media_url: 'https://media.example/original.jpg',
+      } as SourceBindingRecord
+      const html = renderToStaticMarkup(createElement(SourceWindow, { binding, mode, surface: 'stage', onClose() {} }))
+      expect(html).toContain('data-source-visual-mode="raw"')
+      expect(html).toContain('--source-ambient-image:')
+      expect(html).toContain('src="https://media.example/original.jpg"')
+      expect(html).not.toContain('poster-crop')
+    } finally { vi.unstubAllGlobals() }
+  })
+
+  it.each(['preview', 'primary'] as const)('keeps direct video without still ambient in %s', (mode) => {
+    vi.stubGlobal('window', { matchMedia: vi.fn().mockReturnValue({ matches: true }) })
+    try {
+      const binding = {
+        id: 'media-video', artifact_id: 'hero', source_type: 'tweet', window_type: 'social',
+        source_url: 'https://x.com/example/status/1234567890', title: 'Original video',
+        source_media_type: 'video', source_media_url: 'https://media.example/original.mp4',
+      } as SourceBindingRecord
+      const html = renderToStaticMarkup(createElement(SourceWindow, { binding, mode, surface: 'stage', onClose() {} }))
+      expect(html).toContain('<video')
+      expect(html).toContain('src="https://media.example/original.mp4"')
+      expect(html).toContain('data-source-visual-mode="poster-crop"')
+      expect(html).not.toContain('--source-ambient-image:')
+      expect(html).not.toContain('<img')
+    } finally { vi.unstubAllGlobals() }
+  })
+})
+
 describe('source visual crop fallback', () => {
   it.each(['preview', 'primary'] as const)('contains unprocessed unavailable audio artwork in %s', (mode) => {
     const binding = {
