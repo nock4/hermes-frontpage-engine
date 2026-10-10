@@ -7,6 +7,7 @@ const state = vi.hoisted(() => ({ attempts: [], captures: [], rejectAnchor: fals
 vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
   inspectCandidateSource: async (source, options) => {
     state.captures.push({ url: source.url, tool: options.sourceTool, attempts: state.attempts.length })
+    if (options.sourceTool === 'browser-harness' && state.browserChanges?.[source.url]) return { ...source, ...state.browserChanges[source.url] }
     return options.sourceTool === 'browser-harness' && source.browser_image
       ? { ...source, image_url: source.browser_image, fetch_status: 'browser-harness' } : source
   },
@@ -42,7 +43,7 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
   },
 }))
 import { inspectSourceCandidates } from '../../scripts/lib/source-research.mjs'
-import { sourceContentKey } from '../../scripts/lib/source-selection-policy.mjs'
+import { sourceContentKey, sourceContentScore, isAiToolingContentSource } from '../../scripts/lib/source-selection-policy.mjs'
 const sources = Array.from({ length: 24 }, (_, i) => ({
   url: `https://artist${i}.gallery.example/work`, image_url: `https://artist${i}.gallery.example/work.png`,
   title: `Painting ${i}`, note_title: `Painting ${i}`, note_id: `note-${i}`, note_score: 100 - i,
@@ -51,7 +52,7 @@ const sources = Array.from({ length: 24 }, (_, i) => ({
 let runDir
 beforeEach(async () => {
   runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'bounded-repair-'))
-  state.attempts = []; state.captures = []; state.rejectAnchor = false; state.verifiedFrom = 18
+  state.attempts = []; state.captures = []; state.rejectAnchor = false; state.verifiedFrom = 18; state.browserChanges = {}
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1'); vi.stubEnv('DFE_DECISION_MODEL', 'openai')
 })
 afterEach(async () => { vi.unstubAllEnvs(); await fs.rm(runDir, { recursive: true, force: true }) })
@@ -101,6 +102,52 @@ it.each(['0', '1'])('reserves actual-media attempts for browser-only sources in 
   const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-autoresearch.json'), 'utf8'))
   expect(saved.source_decisions.filter(row => row.inspection)).toHaveLength(24)
 })
+it('retains run6 fetched media when a successful browser capture has no image', async () => {
+  const fixture = JSON.parse(await fs.readFile(new URL('../fixtures/run6-empty-browser-capture.json', import.meta.url), 'utf8'))
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
+  state.verifiedFrom = Infinity // Recovery is not permission to invent a positive verdict.
+  state.browserChanges[fixture.source.url] = fixture.browser_changes
+  await expect(inspectSourceCandidates({ source_candidates: [fixture.source], notes_selected: [], motif_terms: [] }, {
+    maxSources: 6, runDir, sourceTool: 'browser-harness', date: '2026-10-10',
+  })).rejects.toThrow(/blocked|expected at least 6/)
+  expect(state.captures.some(row => row.tool === 'browser-harness' && row.url === fixture.source.url)).toBe(true)
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  const retained = saved.sources.find(source => source.url === fixture.source.url)
+  expect(retained.image_url).toBe(fixture.source.image_url)
+  expect(retained.final_url).toBe(fixture.source.final_url)
+  expect(retained).toMatchObject({ ...fixture.browser_changes, image_url: fixture.source.image_url })
+  expect(retained.editorial_evidence).toEqual(expect.arrayContaining([expect.objectContaining(fixture.source)]))
+  expect(saved.content_source_count).toBe(0)
+  expect(state.attempts).toEqual([fixture.source.url])
+})
+
+it.each(['fresh-browser-image', 'browser-tooling-context', 'archived-image'])('preserves %s constraints when merging fetch and browser evidence', async scenario => {
+  const source = sources[0]
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
+  state.verifiedFrom = Infinity
+  const recentSourceKeys = scenario === 'archived-image' ? new Set([sourceContentKey({ url: source.image_url })]) : new Set()
+  const browserImage = 'https://artist0.gallery.example/new-work.png'
+  state.browserChanges[source.url] = {
+    fetch_status: 'browser-harness', image_url: scenario === 'fresh-browser-image' ? browserImage : null,
+    ...(scenario === 'browser-tooling-context' ? { description: 'AI agent workflow tutorial and SDK setup guide' } : {}),
+  }
+  await expect(inspectSourceCandidates({ source_candidates: [source], notes_selected: [], motif_terms: [] }, {
+    maxSources: 6, runDir, sourceTool: 'browser-harness', date: '2026-10-10', recentSourceKeys,
+  })).rejects.toThrow(/blocked|expected at least 6/)
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  const retained = saved.sources.find(row => row.url === source.url)
+  expect(saved.content_source_count).toBe(0)
+  if (scenario === 'fresh-browser-image') expect(retained.image_url).toBe(browserImage)
+  if (scenario === 'browser-tooling-context') {
+    expect(retained.image_url).toBe(source.image_url)
+    expect(isAiToolingContentSource(retained)).toBe(true)
+  }
+  if (scenario === 'archived-image') {
+    expect(sourceContentScore(retained, recentSourceKeys)).toBe(-Infinity)
+    expect(state.attempts).toEqual([])
+  }
+})
+
 it('stops browser refill when negative actual-media attempts exhaust the unchanged cap', async () => {
   state.verifiedFrom = Infinity
   await expect(inspectBrowserBed()).rejects.toThrow(/blocked|expected at least 6/)

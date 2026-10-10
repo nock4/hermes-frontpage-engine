@@ -476,9 +476,11 @@ function mergeInspectedSources(...groups) {
     if (!key) continue
     const first = merged.get(key)
     if (first) {
-      // Preserve the preferred capture/media record, but never discard fuller
-      // editorial evidence merely because another inspection arrived first.
-      merged.set(key, { ...first, editorial_evidence: [...(first.editorial_evidence || []), source] })
+      // Keep the preferred capture and its current status/context, but an empty
+      // browser image is not evidence that an already-vetted fetch image vanished.
+      // Retain that same-family image for actual pixel inspection, not admission.
+      merged.set(key, { ...first, image_url: first.image_url || source.image_url || null,
+        editorial_evidence: [...(first.editorial_evidence || []), source] })
     } else {
       merged.set(key, source)
     }
