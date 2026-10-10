@@ -5,7 +5,11 @@ import { beforeEach, afterEach, expect, it, vi } from 'vitest'
 
 const state = vi.hoisted(() => ({ attempts: [], captures: [], rejectAnchor: false, verifiedFrom: 18 }))
 vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
-  inspectCandidateSource: async (source, options) => { state.captures.push({ url: source.url, tool: options.sourceTool }); return source },
+  inspectCandidateSource: async (source, options) => {
+    state.captures.push({ url: source.url, tool: options.sourceTool, attempts: state.attempts.length })
+    return options.sourceTool === 'browser-harness' && source.browser_image
+      ? { ...source, image_url: source.browser_image, fetch_status: 'browser-harness' } : source
+  },
   findVisualReference: async () => null,
 }))
 vi.mock('../../scripts/lib/anchor-source-research.mjs', async (original) => ({
@@ -76,6 +80,43 @@ it.each(['0', '1'])('fetches the existing supplemental bed before spending pixel
   }).catch(() => {}) // The assertion is scheduling, not a fabricated publish proof.
   expect(state.attempts.slice(0, 6)).toEqual(artwork.map(source => source.url))
   expect(state.attempts.length).toBeLessThanOrEqual(24)
+})
+const browserOnlySources = Array.from({ length: 40 }, (_, i) => ({
+  ...sources[0], url: `https://late${i}.gallery.example/work`, image_url: null,
+  browser_image: `https://late${i}.gallery.example/work.png`,
+  title: `Painting ${100 + i}`, note_title: `Painting ${100 + i}`, note_id: `late-${i}`, note_score: 1,
+}))
+const inspectBrowserBed = (late = browserOnlySources) => inspectSourceCandidates({
+  source_candidates: [...sources, ...late], notes_selected: [], motif_terms: [],
+}, { maxSources: 12, runDir, sourceTool: 'browser-harness', date: '2026-10-10' })
+it.each(['0', '1'])('reserves actual-media attempts for browser-only sources in anchor mode %s', async mode => {
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', mode)
+  state.verifiedFrom = 100
+  await expect(inspectBrowserBed()).resolves.toMatchObject({ content_source_count: 6 })
+  const lateCaptures = state.captures.filter(row => row.tool === 'browser-harness' && row.url.includes('late'))
+  expect(lateCaptures).toHaveLength(6)
+  expect(lateCaptures[0].attempts).toBeLessThanOrEqual(18)
+  expect(state.attempts).toHaveLength(24)
+  expect(state.attempts.slice(-6)).toEqual(browserOnlySources.slice(0, 6).map(source => source.url))
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-autoresearch.json'), 'utf8'))
+  expect(saved.source_decisions.filter(row => row.inspection)).toHaveLength(24)
+})
+it('stops browser refill when negative actual-media attempts exhaust the unchanged cap', async () => {
+  state.verifiedFrom = Infinity
+  await expect(inspectBrowserBed()).rejects.toThrow(/blocked|expected at least 6/)
+  const lateCaptures = state.captures.filter(row => row.tool === 'browser-harness' && row.url.includes('late'))
+  expect(lateCaptures).toHaveLength(6)
+  expect(lateCaptures.every(row => row.attempts < 24)).toBe(true)
+  expect(state.attempts).toHaveLength(24)
+})
+it('bounds empty browser refill and returns unused reserve to the existing media bed', async () => {
+  const late = browserOnlySources.map(source => ({ ...source, browser_image: null }))
+  const result = await inspectBrowserBed(late)
+  expect(result.content_source_count).toBe(6)
+  const lateCaptures = state.captures.filter(row => row.tool === 'browser-harness' && row.url.includes('late'))
+  expect(lateCaptures).toHaveLength(24)
+  expect(lateCaptures.every(row => row.attempts === 18)).toBe(true)
+  expect(state.attempts).toHaveLength(24)
 })
 it('inspects the existing renderable bed through the final bounded batch without browser refill', async () => {
   const result = await inspect()

@@ -801,7 +801,12 @@ export async function inspectSourceCandidates(signalHarvest, {
     await writeJson(path.join(runDir, 'source-autoresearch.json'), autoresearch)
   }
 
-  autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest, recentSourceKeys })
+  // Leave six of the unchanged 24 attempts for media that fetch cannot expose.
+  // Negative/unknown outcomes remain charged to the run, never refunded.
+  const inspectionAttempts = () => (autoresearch?.source_decisions || []).filter(row => row.inspection).length
+  const beforeRefillLimit = sourceTool === 'browser-harness' ? 18 : 24
+  const inspectionOptions = { runDir, apiKey, model, signalHarvest, recentSourceKeys }
+  autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { ...inspectionOptions, maxInspections: beforeRefillLimit - inspectionAttempts() })
   let contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
 
   if (contentSources.length < minContentItems) {
@@ -834,21 +839,19 @@ export async function inspectSourceCandidates(signalHarvest, {
     // source windows. Dropping them here can turn a fertile evidence field into a
     // false 0-window failure.
     inspected = mergeInspectedSources(inspected, fetchEvidence)
-    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest, recentSourceKeys })
+    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { ...inspectionOptions, maxInspections: beforeRefillLimit - inspectionAttempts() })
     contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
   }
 
-  // Renderable fetch results still need affirmative pixel evidence. Exhaust the
-  // bounded inspection bed before browser repair; negative attempts are progress
-  // but never retried. The inspector owns the ten-per-batch / 24-total limits.
-  while (contentSources.length < minContentItems) {
+  // Inspect the fetch bed without consuming the browser-media reserve.
+  while (contentSources.length < minContentItems && inspectionAttempts() < beforeRefillLimit) {
     const previousAttempts = autoresearch.source_decisions.filter(row => row.inspection).length
-    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest, recentSourceKeys })
+    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { ...inspectionOptions, maxInspections: beforeRefillLimit - inspectionAttempts() })
     contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
     if (autoresearch.source_decisions.filter(row => row.inspection).length === previousAttempts) break
   }
 
-  if (contentSources.length < minContentItems) {
+  if (contentSources.length < minContentItems && sourceTool === 'browser-harness' && inspectionAttempts() < 24) {
     const renderableInspectedKeys = new Set(inspected
       .filter((source) => sourceHasRenderableCardSurface(source, signalHarvest))
       .map(sourceContentKey))
@@ -882,17 +885,30 @@ export async function inspectSourceCandidates(signalHarvest, {
 
     const fillCandidates = [...evidenceFillCandidates, ...supplementalFillCandidates]
 
-    for (const candidate of fillCandidates) {
-      if (contentSources.length >= minContentItems) break
+    // Empty/unusable captures do not spend pixel attempts, so bound them too.
+    for (const candidate of fillCandidates.slice(0, 24)) {
+      if (contentSources.length >= minContentItems || inspectionAttempts() >= 24) break
       const added = await captureAutoresearchedSources([candidate], {
         sourceTool,
         browserHarness,
         maxSources: 1,
       })
-      inspected.push(...added)
-      autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { runDir, apiKey, model, signalHarvest, recentSourceKeys })
+      inspected = mergeInspectedSources(added, inspected)
+      // Inspect recovered media now; queued fetch previews must not steal the
+      // reserve. Keep retained editorial context on the preferred capture.
+      const addedKeys = new Set(added.map(sourceContentKey))
+      autoresearch = await inspectCreativeArtifacts(inspected.filter(source => addedKeys.has(sourceContentKey(source))), autoresearch, inspectionOptions)
       contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
     }
+  }
+
+  // Return unused browser reserve to the original media bed, still under the
+  // inspector's unchanged ten-per-batch / 24-total cap.
+  while (contentSources.length < minContentItems && inspectionAttempts() < 24) {
+    const previousAttempts = inspectionAttempts()
+    autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, inspectionOptions)
+    contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
+    if (inspectionAttempts() === previousAttempts) break
   }
 
   // Later research can invalidate an automatic nomination. Clear its old
