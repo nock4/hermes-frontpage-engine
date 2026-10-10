@@ -251,6 +251,7 @@ function researchEvidenceForSource(source, index, { recentSourceKeys = new Set()
     source_channel: source.source_channel,
     source_type: source.source_type,
     note_title: source.note_title,
+    ...(source.source_map_rows?.length ? { source_map_rows: source.source_map_rows } : {}),
     note_date: source.note_date,
     note_excerpt: sanitizeSourceText(note?.excerpt, '', 600),
     renderable_surface: sourceHasRenderableCardSurface(source, { notes_selected: note ? [note] : [] }),
@@ -585,6 +586,7 @@ async function runSourceAutoresearch({
       'Prefer variety across channel, source type, domain, and note cluster.',
       'Prefer source material that can render as title plus real image, direct image, tweet media, or native YouTube embed.',
       'For NTS-derived rows, prefer YouTube streaming sources, then Bandcamp, then SoundCloud.',
+      'source_map_rows contains artist/track identity and claims attributed to the saved NTS note, including its original confidence and caveats. Saved-note row attribution is not independent verification of track identity, official upload status, playback, or creative eligibility; an album URL may contain rather than uniquely identify the track. Keep it distinct from fetched page metadata and actual-media inspection.',
       'Choose artistic or material-rich raster visual references over technical diagrams, logos, docs chrome, favicons, icons, and placeholder images.',
       inspirationOverride
         ? 'A temporary inspiration image override is attached. Treat it as the strongest aesthetic steering signal for today, but still choose public content URLs only from candidate_sources.'
@@ -605,7 +607,7 @@ async function runSourceAutoresearch({
       rejected_patterns: ['duplicate or low-value patterns avoided'],
     },
     signal_summary: {
-      notes_selected: signalHarvest.notes_selected.slice(0, 30).map(({ text, urls, ...note }) => ({
+      notes_selected: signalHarvest.notes_selected.slice(0, 30).map(({ text, urls, source_map_rows, ...note }) => ({
         ...note,
         url_count: urls?.length || 0,
         excerpt: sanitizeSourceText(note.excerpt, '', 500),

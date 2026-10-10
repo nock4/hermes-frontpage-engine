@@ -105,7 +105,7 @@ function parseMarkdownTableCells(line) {
   return trimmed.slice(1, -1).split('|').map((cell) => cell.trim())
 }
 
-export function extractNtsStreamingSourceUrls(text) {
+function extractNtsStreamingSourceRows(text) {
   const rows = []
   for (const line of text.split('\n')) {
     const cells = parseMarkdownTableCells(line)
@@ -117,12 +117,22 @@ export function extractNtsStreamingSourceUrls(text) {
     if (!url) continue
     if (bestSource.includes('unverified') || bestSource.includes('search') || confidence === 'low') continue
     if (!isPreferredNtsStreamingSourceUrl(url)) continue
-    rows.push({ url, bestSource, confidence })
+    rows.push({
+      row_number: cells[0],
+      url,
+      artist: cells[1],
+      track: cells[2],
+      best_source: cells[3],
+      confidence: cells[4],
+      notes: cells[6] || '',
+    })
   }
 
-  return uniqueNonEmpty(rows
-    .sort((left, right) => ntsStreamingSourceRank(left.url) - ntsStreamingSourceRank(right.url))
-    .map((row) => row.url))
+  return rows.sort((left, right) => ntsStreamingSourceRank(left.url) - ntsStreamingSourceRank(right.url))
+}
+
+export function extractNtsStreamingSourceUrls(text) {
+  return uniqueNonEmpty(extractNtsStreamingSourceRows(text).map((row) => row.url))
 }
 
 export function normalizeNoteUrls(urls, sourceChannel) {
@@ -177,8 +187,9 @@ export async function loadObsidianAllowlistSignals({ inputRoot, date, windowDays
     const source_channel = normalizeRelativePath(relativePath).toLowerCase().startsWith('01 - active/themes/')
       ? signalChannelForPath(relativePath, rawUrls)
       : preliminarySourceChannel
+    const sourceMapRows = source_channel === 'nts-like' ? extractNtsStreamingSourceRows(text) : []
     const urls = source_channel === 'nts-like'
-      ? extractNtsStreamingSourceUrls(text)
+      ? uniqueNonEmpty(sourceMapRows.map((row) => row.url))
       : normalizeNoteUrls(rawUrls, source_channel)
     if (!urls.length) continue
 
@@ -194,6 +205,14 @@ export async function loadObsidianAllowlistSignals({ inputRoot, date, windowDays
       excerpt: compactText(text),
       text,
       urls,
+      ...(sourceMapRows.length ? {
+        source_map_rows: sourceMapRows.map((row) => ({
+          ...row,
+          evidence_origin: 'saved-note-row',
+          note_path: normalizeRelativePath(relativePath),
+          note_title: title,
+        })),
+      } : {}),
       source_path: normalizeRelativePath(relativePath),
       metadata: {
         adapter: 'obsidian-allowlist',

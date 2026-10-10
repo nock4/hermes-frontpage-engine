@@ -217,10 +217,15 @@ export async function mineSignals({
     for (const url of note.urls) {
       if (seenUrls.has(url)) continue
       seenUrls.add(url)
+      const sourceMapRows = (note.source_map_rows || []).filter((row) => row.url === url)
+      const rowTitle = uniqueNonEmpty(sourceMapRows.map((row) => [row.artist, row.track].filter(Boolean).join(' — '))).join('; ')
       urlRecords.push({
         url,
         note_id: note.id,
-        note_title: note.title,
+        // The container title is retained in each attributed row, while source
+        // fallbacks need the musical identity rather than the whole map's title.
+        note_title: rowTitle || note.title,
+        ...(sourceMapRows.length ? { source_map_rows: sourceMapRows } : {}),
         note_path: note.source_path,
         source_channel: note.source_channel,
         note_date: note.note_date,
