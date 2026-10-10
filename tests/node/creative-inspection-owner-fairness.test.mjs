@@ -26,6 +26,54 @@ it('charges validated provider authors separately, not titles or untrusted autho
   } finally { await fs.rm(runDir, { recursive: true, force: true }) }
 })
 
+it.each(['content', 'anchor'])('does not let a generic %s nomination starve a fresh independent owner', async role => {
+  const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'generic-nomination-'))
+  const sources = [
+    { url: 'https://crowded.example/first', title: 'A quiet evening', image_url: 'https://images.example/first.jpg', note_score: 1000 },
+    { url: 'https://short.example/next', final_url: 'https://crowded.example/next', title: 'A quiet evening', image_url: 'https://images.example/next.jpg', note_score: 900 },
+    { url: 'https://independent.example/page', title: 'A quiet evening', image_url: 'https://images.example/fresh.jpg', note_score: 1 },
+  ]
+  const original = JSON.stringify(sources)
+  try {
+    let research = await inspectCreativeArtifacts(sources, {}, { runDir, maxInspections: 1 })
+    research.source_decisions.push({ url: sources[1].final_url, role, confidence: 'high', why: 'An extraordinary specific creative artwork nomination' })
+    research = await inspectCreativeArtifacts(sources, research, { runDir, maxInspections: 1 })
+    expect(research.source_decisions.filter(d => d.inspection).map(d => d.url)).toEqual([sources[0].url, sources[2].url])
+    research = await inspectCreativeArtifacts(sources, research, { runDir, maxInspections: 1 })
+    expect(research.source_decisions.filter(d => d.inspection).at(-1).url).toBe(sources[1].url)
+    expect(selectContentSources(sources, { autoresearch: research })).toEqual([])
+    expect(JSON.stringify(sources)).toBe(original)
+  } finally { await fs.rm(runDir, { recursive: true, force: true }) }
+})
+
+it('keeps generic nominations ahead of richer peers at equal owner exposure', async () => {
+  const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'generic-tie-'))
+  const sources = [
+    { url: 'https://rich.example/page', title: 'A quiet evening', image_url: 'https://images.example/rich.jpg', note_score: 1000 },
+    { url: 'https://nominated.example/page', title: 'A quiet evening', image_url: 'https://images.example/nominated.jpg', note_score: 1 },
+  ]
+  try {
+    const research = await inspectCreativeArtifacts(sources, { source_decisions: [{ url: sources[1].url, role: 'content', confidence: 'medium' }] }, { runDir, maxInspections: 1 })
+    expect(research.source_decisions.filter(d => d.inspection).map(d => d.url)).toEqual([sources[1].url])
+  } finally { await fs.rm(runDir, { recursive: true, force: true }) }
+})
+
+it.each(['An original finger painting', 'A short animation', 'A live music performance'])('keeps specific creative nominations protected across owner exposure: %s', async description => {
+  const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'specific-nomination-'))
+  const sources = [
+    { url: 'https://crowded.example/first', title: 'A quiet evening', image_url: 'https://images.example/first.jpg', note_score: 1000 },
+    { url: 'https://crowded.example/work', title: 'A quiet evening', description, image_url: 'https://images.example/work.jpg', note_score: 900 },
+    { url: 'https://independent.example/page', title: 'A quiet evening', image_url: 'https://images.example/fresh.jpg', note_score: 1 },
+  ]
+  try {
+    let research = await inspectCreativeArtifacts([sources[0]], {}, { runDir, maxInspections: 1 })
+    research.source_decisions.push({ url: sources[1].url, role: 'content', confidence: 'medium' })
+    research = await inspectCreativeArtifacts(sources, research, { runDir, maxInspections: 1 })
+    expect(research.source_decisions.filter(d => d.inspection).map(d => d.url)).toEqual([sources[0].url, sources[1].url])
+    expect(selectContentSources(sources, { autoresearch: research })).toEqual([])
+  } finally { await fs.rm(runDir, { recursive: true, force: true }) }
+})
+
 it('shares a priority lane across resolved owners, retaining fairness across batches and the 24 cap', async () => {
   const runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'owner-fairness-'))
   const page = (url, score) => ({ url, title: 'A quiet evening', image_url: `${url}/image.jpg`, note_score: score })

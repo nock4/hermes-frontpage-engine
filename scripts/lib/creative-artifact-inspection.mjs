@@ -116,12 +116,25 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
       // eligibility. Preserve product penalties, exclusions and attempt limits.
       const nomination = [source.url, source.source_url, source.final_url, source.resolved_url]
         .filter(Boolean).some(url => nominated.has(attemptKey(url, null, null)))
-      const priority = promo ? -1
-        : nomination && rank?.anchor_selection_lane !== 'ai-tooling-penalized' ? 2
+      // Generic editorial praise is not a protected creative-work nomination.
+      // Ground protection in owning-source evidence, not nomination prose or
+      // saved-note labels. General nominations retain a tie-break within their
+      // lane, after independent-owner opportunity.
+      const creativeWork = sceneCreation || providerTrack || rank?.anchor_selection_lane === 'artwork-first'
+        || /\b(?:artwork|drawings?|paint(?:ing)?s?|sculpture|collage|illustration|photography|textile|animation|film|music|performance|game)\b/i
+          .test([source.title, source.description, source.visible_text].filter(Boolean).join(' '))
+      // Current owning-page error evidence outranks stale saved-note richness.
+      // Require both an error title and recovery text; a work titled "Page Not
+      // Found" or an old failed fetch alone must not lose its opportunity.
+      const missingPage = /^\s*(?:404\s*[-:|]?\s*)?page not found\b/i.test(source.title || '')
+        && /\b(?:oops|back to home|return (?:to )?(?:the )?home|page (?:you are|you're) looking for)\b/i
+          .test([source.description, source.visible_text].filter(Boolean).join(' '))
+      const priority = missingPage || promo ? -1
+        : nomination && creativeWork && rank?.anchor_selection_lane !== 'ai-tooling-penalized' ? 2
         : sceneCreation || providerTrack ? 1
         : rank?.anchor_selection_lane === 'ai-tooling-penalized' ? -1
         : rank?.anchor_selection_lane === 'artwork-first' ? 1 : 0
-      return { source, rank, priority, owner: owner(source) }
+      return { source, rank, priority, nomination, owner: owner(source) }
     })
   while (remaining && candidates.length) {
     // Keep nomination/artwork/product lanes, but give independent hosts a turn
@@ -129,6 +142,7 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
     // include failed calls and survive batch/refill boundaries.
     candidates.sort((left, right) => right.priority - left.priority
       || (ownerAttempts.get(left.owner) || 0) - (ownerAttempts.get(right.owner) || 0)
+      || Number(right.nomination) - Number(left.nomination)
       || (right.rank?.anchor_selection_score ?? -Infinity) - (left.rank?.anchor_selection_score ?? -Infinity))
     const { source, owner: host } = candidates.shift()
     if (attempted.has(key(source))) continue
