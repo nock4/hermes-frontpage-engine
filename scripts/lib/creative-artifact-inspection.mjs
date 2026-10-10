@@ -53,24 +53,26 @@ function attemptKey(url, imageUrl, mediaUrl) {
   return JSON.stringify([family, imageUrl, mediaUrl && mediaUrl !== imageUrl ? mediaUrl : null])
 }
 
-function previousAttemptKey(inspection) {
-  if (inspection.attempt_key_version === 2) return inspection.attempt_key
-  // Older audits used a literal source/media tuple. Re-key it without changing
-  // the original audit or refunding any calls already spent by that run.
+function previousAttemptKey(inspection, source) {
+  if (inspection.attempt_key_version === 3) return inspection.attempt_key
+  // Re-key old audits only for scheduling. Retain their exact media tuple,
+  // original evidence and all spent calls; never copy a verdict to an alias.
+  const resolved = source?.final_url || source?.resolved_url
+  if (inspection.attempt_key_version === 2 && !resolved) return inspection.attempt_key
   try {
     const tuple = JSON.parse(inspection.attempt_key)
-    if (Array.isArray(tuple) && tuple.length === 3) return attemptKey(...tuple)
+    if (Array.isArray(tuple) && tuple.length === 3) return attemptKey(resolved || tuple[0], tuple[1], tuple[2])
   } catch { /* Legacy records may have only the stamped evidence fields. */ }
-  return attemptKey(inspection.source_url, inspection.media_url, inspection.representative_media_url)
+  return attemptKey(resolved || inspection.source_url, inspection.media_url, inspection.representative_media_url)
 }
 
 // Text research may nominate sources, never attest to pixels it did not see.
 // Identity, capture path and digest are stamped here, not accepted from the model.
 export async function inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, recentSourceKeys = new Set(), maxInspections = 10, inspectionTimeoutMs = 60000 } = {}) {
   const result = { ...research, source_decisions: [...(research?.source_decisions || [])] }
-  const key = source => attemptKey(source.source_url || source.url, source.image_url, source.media_url)
+  const key = source => attemptKey(source.final_url || source.resolved_url || source.source_url || source.url, source.image_url, source.media_url)
   const previousAttempts = result.source_decisions.filter(row => row.inspection)
-  const attempted = new Set(previousAttempts.map(row => previousAttemptKey(row.inspection)))
+  const attempted = new Set(previousAttempts.map(row => previousAttemptKey(row.inspection, sources.find(source => source.url === row.url))))
   // Fairness is scheduling only, never a new ownership/admission assertion.
   // Use fetched provider uploader identity where validated, otherwise the
   // resolved page host so shorteners cannot purchase extra turns.
@@ -148,7 +150,7 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
     if (attempted.has(key(source))) continue
     attempted.add(key(source)); remaining -= 1
     ownerAttempts.set(host, (ownerAttempts.get(host) || 0) + 1)
-    const inspection = { version: 1, scheduling_owner: host, source_url: source.url, media_url: source.image_url, representative_media_url: ['video', 'audio'].includes(source.media_type) ? source.media_url : undefined, attempt_key: key(source), attempt_key_version: 2, inspector: 'creative-artifact-vision', status: 'unknown' }
+    const inspection = { version: 1, scheduling_owner: host, source_url: source.url, media_url: source.image_url, representative_media_url: ['video', 'audio'].includes(source.media_type) ? source.media_url : undefined, attempt_key: key(source), attempt_key_version: 3, inspector: 'creative-artifact-vision', status: 'unknown' }
     try {
       const { response, finalUrl, body: bytes } = await fetchVettedImage(source.image_url, { lookup: dns.lookup, timeoutMs: 8000, maxBytes: 8_000_000 })
       inspection.resolved_media_url = finalUrl
