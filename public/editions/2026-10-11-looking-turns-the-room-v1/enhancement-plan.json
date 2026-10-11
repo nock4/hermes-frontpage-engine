@@ -1,0 +1,172 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-11-looking-turns-the-room-v1",
+  "edition_id": "2026-10-11-looking-turns-the-room-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-11-looking-turns-the-room-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-turned-lavender-field",
+      "target_kind": "artifact",
+      "artifact_id": "hero-turned-lavender-field",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (angled-painted-plane) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lower-dark-pigment-interruption",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lower-dark-pigment-interruption",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (irregular-pigment-island) selected from interpretation."
+    },
+    {
+      "target_id": "module-reversed-edge",
+      "target_kind": "artifact",
+      "artifact_id": "module-reversed-edge",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (folded-picture-edge-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-dark-overlap",
+      "target_kind": "artifact",
+      "artifact_id": "module-dark-overlap",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (woven-diagonal-overlap) selected from interpretation."
+    },
+    {
+      "target_id": "module-rubbed-floor-patch",
+      "target_kind": "artifact",
+      "artifact_id": "module-rubbed-floor-patch",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (floor-grain-interruption) selected from interpretation."
+    },
+    {
+      "target_id": "module-exposed-pale-seam",
+      "target_kind": "artifact",
+      "artifact_id": "module-exposed-pale-seam",
+      "priority": 6,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "audio"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (picture-shadow-light-seam) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

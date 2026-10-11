@@ -1,0 +1,918 @@
+{
+  "artifact_map_id": "map-2026-10-11-looking-turns-the-room-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "displaced-picture-viewing-interval",
+  "default_artifact_id": "hero-turned-lavender-field",
+  "artifacts": [
+    {
+      "id": "hero-turned-lavender-field",
+      "kind": "hero",
+      "label": "Turned lavender field",
+      "artifact_type": "angled-painted-plane",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.5625,
+        "h": 0.7005
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0029,
+          0.002
+        ],
+        [
+          0.2471,
+          0.002
+        ],
+        [
+          0.5586,
+          0.0645
+        ],
+        [
+          0.5547,
+          0.6562
+        ],
+        [
+          0.5127,
+          0.666
+        ],
+        [
+          0.0029,
+          0.6973
+        ]
+      ],
+      "cluster_id": "displaced-picture-viewing-interval",
+      "mask_path": "/editions/2026-10-11-looking-turns-the-room-v1/assets/masks/hero-turned-lavender-field.svg",
+      "source_binding_ids": [
+        "binding-hero-turned-lavender-field"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          421,
+          294
+        ],
+        "safe_stage_window_origin_px": [
+          488,
+          350
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0029,
+            0.002
+          ],
+          [
+            0.2471,
+            0.002
+          ],
+          [
+            0.5586,
+            0.0645
+          ],
+          [
+            0.5547,
+            0.6562
+          ],
+          [
+            0.5127,
+            0.666
+          ],
+          [
+            0.0029,
+            0.6973
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.3477,
+            0.0
+          ],
+          [
+            0.5586,
+            0.0423
+          ],
+          [
+            0.5918,
+            0.0645
+          ],
+          [
+            0.5879,
+            0.6556
+          ],
+          [
+            0.0,
+            0.7181
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.5928,
+          "h": 0.7201
+        },
+        "territory_area_px": 449242,
+        "visible_area_px": 577327,
+        "expansion_ratio": 0.778,
+        "neighbors": [
+          {
+            "artifact_id": "module-reversed-edge",
+            "shared_edge_px": 3621,
+            "direction": "down",
+            "distance_px": 569.71
+          },
+          {
+            "artifact_id": "hero-lower-dark-pigment-interruption",
+            "shared_edge_px": 3366,
+            "direction": "down",
+            "distance_px": 352.51
+          },
+          {
+            "artifact_id": "module-dark-overlap",
+            "shared_edge_px": 1947,
+            "direction": "down",
+            "distance_px": 636.49
+          },
+          {
+            "artifact_id": "module-rubbed-floor-patch",
+            "shared_edge_px": 611,
+            "direction": "down",
+            "distance_px": 760.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-lower-dark-pigment-interruption",
+      "kind": "hero",
+      "label": "Lower dark pigment interruption",
+      "artifact_type": "irregular-pigment-island",
+      "bounds": {
+        "x": 0.398,
+        "y": 0.385,
+        "w": 0.096,
+        "h": 0.152
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.415,
+          0.388
+        ],
+        [
+          0.438,
+          0.395
+        ],
+        [
+          0.46,
+          0.388
+        ],
+        [
+          0.488,
+          0.385
+        ],
+        [
+          0.486,
+          0.414
+        ],
+        [
+          0.489,
+          0.444
+        ],
+        [
+          0.484,
+          0.469
+        ],
+        [
+          0.494,
+          0.482
+        ],
+        [
+          0.487,
+          0.511
+        ],
+        [
+          0.477,
+          0.536
+        ],
+        [
+          0.449,
+          0.537
+        ],
+        [
+          0.431,
+          0.526
+        ],
+        [
+          0.422,
+          0.51
+        ],
+        [
+          0.405,
+          0.503
+        ],
+        [
+          0.398,
+          0.478
+        ],
+        [
+          0.408,
+          0.451
+        ],
+        [
+          0.403,
+          0.424
+        ]
+      ],
+      "cluster_id": "displaced-picture-viewing-interval",
+      "mask_path": "/editions/2026-10-11-looking-turns-the-room-v1/assets/masks/hero-lower-dark-pigment-interruption.svg",
+      "source_binding_ids": [
+        "binding-hero-lower-dark-pigment-interruption"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          685,
+          460
+        ],
+        "safe_stage_window_origin_px": [
+          697,
+          472
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.415,
+            0.388
+          ],
+          [
+            0.438,
+            0.395
+          ],
+          [
+            0.46,
+            0.388
+          ],
+          [
+            0.488,
+            0.385
+          ],
+          [
+            0.486,
+            0.414
+          ],
+          [
+            0.489,
+            0.444
+          ],
+          [
+            0.484,
+            0.469
+          ],
+          [
+            0.494,
+            0.482
+          ],
+          [
+            0.487,
+            0.511
+          ],
+          [
+            0.477,
+            0.536
+          ],
+          [
+            0.449,
+            0.537
+          ],
+          [
+            0.431,
+            0.526
+          ],
+          [
+            0.422,
+            0.51
+          ],
+          [
+            0.405,
+            0.503
+          ],
+          [
+            0.398,
+            0.478
+          ],
+          [
+            0.408,
+            0.451
+          ],
+          [
+            0.403,
+            0.424
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3643,
+            0.4766
+          ],
+          [
+            0.3799,
+            0.39
+          ],
+          [
+            0.4141,
+            0.3659
+          ],
+          [
+            0.4873,
+            0.3626
+          ],
+          [
+            0.5205,
+            0.3848
+          ],
+          [
+            0.5264,
+            0.4818
+          ],
+          [
+            0.5098,
+            0.5358
+          ],
+          [
+            0.4824,
+            0.554
+          ],
+          [
+            0.4414,
+            0.554
+          ],
+          [
+            0.3711,
+            0.5026
+          ],
+          [
+            0.3643,
+            0.4792
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3643,
+          "y": 0.3626,
+          "w": 0.1631,
+          "h": 0.1921
+        },
+        "territory_area_px": 39382,
+        "visible_area_px": 17963,
+        "expansion_ratio": 2.192,
+        "neighbors": [
+          {
+            "artifact_id": "hero-turned-lavender-field",
+            "shared_edge_px": 3366,
+            "direction": "up",
+            "distance_px": 352.51
+          },
+          {
+            "artifact_id": "module-dark-overlap",
+            "shared_edge_px": 897,
+            "direction": "down",
+            "distance_px": 306.82
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-reversed-edge",
+      "kind": "module",
+      "label": "Reversed edge",
+      "artifact_type": "folded-picture-edge-aperture",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.08,
+          0.52
+        ],
+        [
+          0.3,
+          0.52
+        ],
+        [
+          0.3,
+          0.74
+        ],
+        [
+          0.08,
+          0.74
+        ]
+      ],
+      "cluster_id": "displaced-picture-viewing-interval",
+      "mask_path": "/editions/2026-10-11-looking-turns-the-room-v1/assets/masks/module-reversed-edge.svg",
+      "source_binding_ids": [
+        "binding-module-reversed-edge"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          627
+        ],
+        "safe_stage_window_origin_px": [
+          319,
+          645
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.08,
+            0.52
+          ],
+          [
+            0.3,
+            0.52
+          ],
+          [
+            0.3,
+            0.74
+          ],
+          [
+            0.08,
+            0.74
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0518,
+            0.5195
+          ],
+          [
+            0.0791,
+            0.5013
+          ],
+          [
+            0.2998,
+            0.5013
+          ],
+          [
+            0.3271,
+            0.5195
+          ],
+          [
+            0.3271,
+            0.5957
+          ],
+          [
+            0.3115,
+            0.75
+          ],
+          [
+            0.2998,
+            0.7578
+          ],
+          [
+            0.0791,
+            0.7578
+          ],
+          [
+            0.0518,
+            0.7396
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0518,
+          "y": 0.5013,
+          "w": 0.2764,
+          "h": 0.2572
+        },
+        "territory_area_px": 106206,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.38,
+        "neighbors": [
+          {
+            "artifact_id": "hero-turned-lavender-field",
+            "shared_edge_px": 3621,
+            "direction": "up",
+            "distance_px": 569.71
+          },
+          {
+            "artifact_id": "module-dark-overlap",
+            "shared_edge_px": 2070,
+            "direction": "right",
+            "distance_px": 276.53
+          },
+          {
+            "artifact_id": "module-exposed-pale-seam",
+            "shared_edge_px": 1224,
+            "direction": "down",
+            "distance_px": 358.19
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-dark-overlap",
+      "kind": "module",
+      "label": "Dark overlap",
+      "artifact_type": "woven-diagonal-overlap",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.34,
+          0.54
+        ],
+        [
+          0.56,
+          0.54
+        ],
+        [
+          0.56,
+          0.76
+        ],
+        [
+          0.34,
+          0.76
+        ]
+      ],
+      "cluster_id": "displaced-picture-viewing-interval",
+      "mask_path": "/editions/2026-10-11-looking-turns-the-room-v1/assets/masks/module-dark-overlap.svg",
+      "source_binding_ids": [
+        "binding-module-dark-overlap"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          691,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          718,
+          666
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.34,
+            0.54
+          ],
+          [
+            0.56,
+            0.54
+          ],
+          [
+            0.56,
+            0.76
+          ],
+          [
+            0.34,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3125,
+            0.6803
+          ],
+          [
+            0.3281,
+            0.5293
+          ],
+          [
+            0.3398,
+            0.5215
+          ],
+          [
+            0.5596,
+            0.5215
+          ],
+          [
+            0.5869,
+            0.5397
+          ],
+          [
+            0.5869,
+            0.7598
+          ],
+          [
+            0.5596,
+            0.778
+          ],
+          [
+            0.3398,
+            0.778
+          ],
+          [
+            0.3125,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3125,
+          "y": 0.5215,
+          "w": 0.2754,
+          "h": 0.2572
+        },
+        "territory_area_px": 102625,
+        "visible_area_px": 76614,
+        "expansion_ratio": 1.34,
+        "neighbors": [
+          {
+            "artifact_id": "module-reversed-edge",
+            "shared_edge_px": 2070,
+            "direction": "left",
+            "distance_px": 276.53
+          },
+          {
+            "artifact_id": "hero-turned-lavender-field",
+            "shared_edge_px": 1947,
+            "direction": "up",
+            "distance_px": 636.49
+          },
+          {
+            "artifact_id": "hero-lower-dark-pigment-interruption",
+            "shared_edge_px": 897,
+            "direction": "up",
+            "distance_px": 306.82
+          },
+          {
+            "artifact_id": "module-rubbed-floor-patch",
+            "shared_edge_px": 678,
+            "direction": "right",
+            "distance_px": 283.79
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-rubbed-floor-patch",
+      "kind": "module",
+      "label": "Rubbed floor patch",
+      "artifact_type": "floor-grain-interruption",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "displaced-picture-viewing-interval",
+      "mask_path": "/editions/2026-10-11-looking-turns-the-room-v1/assets/masks/module-rubbed-floor-patch.svg",
+      "source_binding_ids": [
+        "binding-module-rubbed-floor-patch"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5918,
+            0.5397
+          ],
+          [
+            0.6191,
+            0.5215
+          ],
+          [
+            0.8398,
+            0.5215
+          ],
+          [
+            0.8672,
+            0.5397
+          ],
+          [
+            0.8672,
+            0.7598
+          ],
+          [
+            0.8398,
+            0.778
+          ],
+          [
+            0.6191,
+            0.778
+          ],
+          [
+            0.5918,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5918,
+          "y": 0.5215,
+          "w": 0.2764,
+          "h": 0.2572
+        },
+        "territory_area_px": 110161,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.432,
+        "neighbors": [
+          {
+            "artifact_id": "module-dark-overlap",
+            "shared_edge_px": 678,
+            "direction": "left",
+            "distance_px": 283.79
+          },
+          {
+            "artifact_id": "hero-turned-lavender-field",
+            "shared_edge_px": 611,
+            "direction": "up",
+            "distance_px": 760.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-exposed-pale-seam",
+      "kind": "module",
+      "label": "Exposed pale seam",
+      "artifact_type": "picture-shadow-light-seam",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "displaced-picture-viewing-interval",
+      "mask_path": "/editions/2026-10-11-looking-turns-the-room-v1/assets/masks/module-exposed-pale-seam.svg",
+      "source_binding_ids": [
+        "binding-module-exposed-pale-seam"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0605,
+            0.7799
+          ],
+          [
+            0.0996,
+            0.7539
+          ],
+          [
+            0.2793,
+            0.7539
+          ],
+          [
+            0.3184,
+            0.7799
+          ],
+          [
+            0.3184,
+            0.9395
+          ],
+          [
+            0.2793,
+            0.9655
+          ],
+          [
+            0.0996,
+            0.9655
+          ],
+          [
+            0.0605,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0605,
+          "y": 0.7539,
+          "w": 0.2588,
+          "h": 0.2122
+        },
+        "territory_area_px": 83110,
+        "visible_area_px": 45510,
+        "expansion_ratio": 1.826,
+        "neighbors": [
+          {
+            "artifact_id": "module-reversed-edge",
+            "shared_edge_px": 1224,
+            "direction": "up",
+            "distance_px": 358.19
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "brief_id": "brief-2026-10-11-looking-turns-the-room-v1",
+  "date": "2026-10-11",
+  "signal_cluster_ids": [
+    "033a88ea1308",
+    "ecdf721d0f38",
+    "a56e75b92e63",
+    "e2221ea32f09",
+    "df9fedff259a",
+    "e130d49b2328",
+    "c915328fa212",
+    "831af4382535"
+  ],
+  "research_node_ids": [
+    "research-1-e46c0545",
+    "research-2-42022e6f",
+    "research-3-9372ddc6",
+    "research-4-4efe64e7",
+    "research-5-adb44f46",
+    "research-6-29597b7e",
+    "research-7-8012dd5b",
+    "research-8-4b869811",
+    "research-9-34de42b9",
+    "research-10-b41ac631",
+    "research-11-259301f7",
+    "research-12-7e5736cc"
+  ],
+  "mood": "A bright public interior made unsettled by the act of looking; tactile, attentive, quietly off-balance.",
+  "material_language": [
+    "Cool matte gallery plaster",
+    "Patch-painted lavender-gray surface with a thin warm-brown frame edge",
+    "Wrinkled ivory cotton",
+    "Charcoal woven fabric and doubled webbing",
+    "Honey-pale floorboards with long grain and subdued reflections"
+  ],
+  "lighting": "Diffuse gallery daylight fills the pale blue-gray walls. Warm reflected light catches the ivory folds; the angled picture plane casts a soft, displaced shadow. Keep floor contact shadows modest and pigment edges clear, without spotlights or luminous effects.",
+  "object_inventory": [
+    "A monumental angled painted plane carrying a displaced orange star canton and green-charcoal striped passage",
+    "A separated, anonymous back-facing cloth silhouette across a continuous pale interval",
+    "A broad blurred pigment interruption spreading through the lower painted field",
+    "A doubled dark diagonal gathering into a soft woven overlap",
+    "A limited floorboard wedge interrupted by an offset picture-edge return"
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 4,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "Do not reproduce the reference photograph's centered visitor-before-painting stack or complete museum backdrop.",
+    "Keep exactly two hero-scale source-bearing regions: the angled painted field and its broad pigment interruption; the other marks remain subordinate.",
+    "Do not turn six source anchors into six freestanding objects, framed cards or evenly spaced panels.",
+    "No legible words, wall labels, logos, filenames, alphanumeric callouts or caption-like pseudo-writing inside the plate.",
+    "No identifiable likeness, literal bag branding or exact reconstruction of the original artwork.",
+    "No contact sheets, thumbnail grids, desks, cabinets, shelves, dashboards or software chrome.",
+    "No doorway-led composition, fog, pinlights, glowing targets, ornamental relief or cobalt causeway.",
+    "Treat the botanical distortion as an editorial interpretation of supplied metadata, not a reconstruction of an inspected Tsang photograph.",
+    "Do not invent audio-derived rhythms, waveforms, spectral structures or cover-art colours.",
+    "Use each owning source once; sibling Repponen photographs inform the world but do not create additional source windows.",
+    "The Vimeo source still requires playback and attribution verification; metadata availability is not proof of a functioning native player.",
+    "no generic office-room fallback",
+    "no many-prop still life",
+    "no equal-weight grid of source objects"
+  ]
+}

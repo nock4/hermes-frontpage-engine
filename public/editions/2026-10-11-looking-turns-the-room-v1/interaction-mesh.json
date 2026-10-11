@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-11-looking-turns-the-room-v1",
+  "generation": "cron-1791755585900-67805",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1536
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1791755585900-67805/2026-10-11-looking-turns-the-room-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-turned-lavender-field",
+      "visible_area_px": 577327,
+      "territory_area_px": 449242,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.5928,
+        "h": 0.7201
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.3477,
+          0.0
+        ],
+        [
+          0.5586,
+          0.0423
+        ],
+        [
+          0.5918,
+          0.0645
+        ],
+        [
+          0.5879,
+          0.6556
+        ],
+        [
+          0.0,
+          0.7181
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-reversed-edge",
+          "shared_edge_px": 3621,
+          "direction": "down",
+          "distance_px": 569.71
+        },
+        {
+          "artifact_id": "hero-lower-dark-pigment-interruption",
+          "shared_edge_px": 3366,
+          "direction": "down",
+          "distance_px": 352.51
+        },
+        {
+          "artifact_id": "module-dark-overlap",
+          "shared_edge_px": 1947,
+          "direction": "down",
+          "distance_px": 636.49
+        },
+        {
+          "artifact_id": "module-rubbed-floor-patch",
+          "shared_edge_px": 611,
+          "direction": "down",
+          "distance_px": 760.6
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-lower-dark-pigment-interruption",
+      "visible_area_px": 17963,
+      "territory_area_px": 39382,
+      "hover_bounds": {
+        "x": 0.3643,
+        "y": 0.3626,
+        "w": 0.1631,
+        "h": 0.1921
+      },
+      "hover_polygon": [
+        [
+          0.3643,
+          0.4766
+        ],
+        [
+          0.3799,
+          0.39
+        ],
+        [
+          0.4141,
+          0.3659
+        ],
+        [
+          0.4873,
+          0.3626
+        ],
+        [
+          0.5205,
+          0.3848
+        ],
+        [
+          0.5264,
+          0.4818
+        ],
+        [
+          0.5098,
+          0.5358
+        ],
+        [
+          0.4824,
+          0.554
+        ],
+        [
+          0.4414,
+          0.554
+        ],
+        [
+          0.3711,
+          0.5026
+        ],
+        [
+          0.3643,
+          0.4792
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-turned-lavender-field",
+          "shared_edge_px": 3366,
+          "direction": "up",
+          "distance_px": 352.51
+        },
+        {
+          "artifact_id": "module-dark-overlap",
+          "shared_edge_px": 897,
+          "direction": "down",
+          "distance_px": 306.82
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-reversed-edge",
+      "visible_area_px": 76953,
+      "territory_area_px": 106206,
+      "hover_bounds": {
+        "x": 0.0518,
+        "y": 0.5013,
+        "w": 0.2764,
+        "h": 0.2572
+      },
+      "hover_polygon": [
+        [
+          0.0518,
+          0.5195
+        ],
+        [
+          0.0791,
+          0.5013
+        ],
+        [
+          0.2998,
+          0.5013
+        ],
+        [
+          0.3271,
+          0.5195
+        ],
+        [
+          0.3271,
+          0.5957
+        ],
+        [
+          0.3115,
+          0.75
+        ],
+        [
+          0.2998,
+          0.7578
+        ],
+        [
+          0.0791,
+          0.7578
+        ],
+        [
+          0.0518,
+          0.7396
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-turned-lavender-field",
+          "shared_edge_px": 3621,
+          "direction": "up",
+          "distance_px": 569.71
+        },
+        {
+          "artifact_id": "module-dark-overlap",
+          "shared_edge_px": 2070,
+          "direction": "right",
+          "distance_px": 276.53
+        },
+        {
+          "artifact_id": "module-exposed-pale-seam",
+          "shared_edge_px": 1224,
+          "direction": "down",
+          "distance_px": 358.19
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-dark-overlap",
+      "visible_area_px": 76614,
+      "territory_area_px": 102625,
+      "hover_bounds": {
+        "x": 0.3125,
+        "y": 0.5215,
+        "w": 0.2754,
+        "h": 0.2572
+      },
+      "hover_polygon": [
+        [
+          0.3125,
+          0.6803
+        ],
+        [
+          0.3281,
+          0.5293
+        ],
+        [
+          0.3398,
+          0.5215
+        ],
+        [
+          0.5596,
+          0.5215
+        ],
+        [
+          0.5869,
+          0.5397
+        ],
+        [
+          0.5869,
+          0.7598
+        ],
+        [
+          0.5596,
+          0.778
+        ],
+        [
+          0.3398,
+          0.778
+        ],
+        [
+          0.3125,
+          0.7598
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-reversed-edge",
+          "shared_edge_px": 2070,
+          "direction": "left",
+          "distance_px": 276.53
+        },
+        {
+          "artifact_id": "hero-turned-lavender-field",
+          "shared_edge_px": 1947,
+          "direction": "up",
+          "distance_px": 636.49
+        },
+        {
+          "artifact_id": "hero-lower-dark-pigment-interruption",
+          "shared_edge_px": 897,
+          "direction": "up",
+          "distance_px": 306.82
+        },
+        {
+          "artifact_id": "module-rubbed-floor-patch",
+          "shared_edge_px": 678,
+          "direction": "right",
+          "distance_px": 283.79
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-rubbed-floor-patch",
+      "visible_area_px": 76953,
+      "territory_area_px": 110161,
+      "hover_bounds": {
+        "x": 0.5918,
+        "y": 0.5215,
+        "w": 0.2764,
+        "h": 0.2572
+      },
+      "hover_polygon": [
+        [
+          0.5918,
+          0.5397
+        ],
+        [
+          0.6191,
+          0.5215
+        ],
+        [
+          0.8398,
+          0.5215
+        ],
+        [
+          0.8672,
+          0.5397
+        ],
+        [
+          0.8672,
+          0.7598
+        ],
+        [
+          0.8398,
+          0.778
+        ],
+        [
+          0.6191,
+          0.778
+        ],
+        [
+          0.5918,
+          0.7598
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-dark-overlap",
+          "shared_edge_px": 678,
+          "direction": "left",
+          "distance_px": 283.79
+        },
+        {
+          "artifact_id": "hero-turned-lavender-field",
+          "shared_edge_px": 611,
+          "direction": "up",
+          "distance_px": 760.6
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-exposed-pale-seam",
+      "visible_area_px": 45510,
+      "territory_area_px": 83110,
+      "hover_bounds": {
+        "x": 0.0605,
+        "y": 0.7539,
+        "w": 0.2588,
+        "h": 0.2122
+      },
+      "hover_polygon": [
+        [
+          0.0605,
+          0.7799
+        ],
+        [
+          0.0996,
+          0.7539
+        ],
+        [
+          0.2793,
+          0.7539
+        ],
+        [
+          0.3184,
+          0.7799
+        ],
+        [
+          0.3184,
+          0.9395
+        ],
+        [
+          0.2793,
+          0.9655
+        ],
+        [
+          0.0996,
+          0.9655
+        ],
+        [
+          0.0605,
+          0.9395
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-reversed-edge",
+          "shared_edge_px": 1224,
+          "direction": "up",
+          "distance_px": 358.19
+        }
+      ]
+    }
+  ]
+}

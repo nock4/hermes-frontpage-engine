@@ -1,0 +1,282 @@
+{
+  "interpretation_id": "interp-2026-10-11-looking-turns-the-room-v1",
+  "edition_id": "2026-10-11-looking-turns-the-room-v1",
+  "plate_read_timestamp": "2026-10-11T22:28:20.738Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A gallery photograph rather than a minimal expressionist scene: a large lavender-grey painting fills the left side, while a standing visitor holding a bag occupies the right above a wooden floor. The turned lavender field is clearly present. A lower dark pigment interruption and a small bag-webbing junction offer qualified secondary targets. The planned folded aperture, rubbed floor abrasion, and illuminated upper plaster seam are not visibly established; neither the ordinary frame nor cast shadows should substitute for those missing marks.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "A bright public interior made unsettled by the act of looking; tactile, attentive, quietly off-balance.",
+      "A gallery photograph rather than a minimal expressionist scene: a large lavender-grey painting fills the left side, while a standing visitor holding a bag occupies the right above a wooden floor. The turned lavender field is clearly present. A lower dark pigment interruption and a small bag-webbing junction offer qualified secondary targets. The planned folded aperture, rubbed floor abrasion, and illuminated upper plaster seam are not visibly established; neither the ordinary frame nor cast shadows should substitute for those missing marks.",
+      "picture-plane-displacement",
+      "viewer-picture-tension",
+      "lavender-patchwork"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Turned lavender field",
+      "Lower dark pigment interruption",
+      "Reversed edge",
+      "Dark overlap",
+      "Rubbed floor patch",
+      "Exposed pale seam"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "displaced-picture-viewing-interval",
+      "A monumental angled painted plane carrying a displaced orange star canton and green-charcoal striped passage",
+      "A separated, anonymous back-facing cloth silhouette across a continuous pale interval",
+      "A broad blurred pigment interruption spreading through the lower painted field",
+      "A doubled dark diagonal gathering into a soft woven overlap",
+      "A limited floorboard wedge interrupted by an offset picture-edge return",
+      "Perspective-skewed lavender painted surface with orange-and-green motif",
+      "Lower charcoal pigment island within the painting"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: displaced-picture-viewing-interval.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-turned-lavender-field",
+      "kind": "hero",
+      "type": "angled-painted-plane",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.5625,
+        "h": 0.7005
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-dark-pigment-interruption",
+      "kind": "hero",
+      "type": "irregular-pigment-island",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.398,
+        "y": 0.385,
+        "w": 0.096,
+        "h": 0.152
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reversed-edge",
+      "kind": "module",
+      "type": "folded-picture-edge-aperture",
+      "strength": 0.78762,
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dark-overlap",
+      "kind": "module",
+      "type": "woven-diagonal-overlap",
+      "strength": 0.7533240000000001,
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-rubbed-floor-patch",
+      "kind": "module",
+      "type": "floor-grain-interruption",
+      "strength": 0.728844,
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-exposed-pale-seam",
+      "kind": "module",
+      "type": "picture-shadow-light-seam",
+      "strength": 0.700968,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-turned-lavender-field-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.5625,
+        "h": 0.7005
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lower-dark-pigment-interruption-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.398,
+        "y": 0.385,
+        "w": 0.096,
+        "h": 0.152
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reversed-edge-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.08,
+        "y": 0.52,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-dark-overlap-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.34,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-rubbed-floor-patch-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-exposed-pale-seam-surface",
+      "surface_type": "light-band",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
