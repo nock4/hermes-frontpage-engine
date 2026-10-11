@@ -155,8 +155,11 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
       const { response, finalUrl, body: bytes } = await fetchVettedImage(source.image_url, { lookup: dns.lookup, timeoutMs: 8000, maxBytes: 8_000_000 })
       inspection.resolved_media_url = finalUrl
       if (!response?.ok) throw new Error('Inspection media unavailable')
-      const mime = response.headers.get('content-type')?.split(';')[0]
-      if (!['image/jpeg', 'image/png', 'image/webp', 'image/gif'].includes(mime)) throw new Error('Unsupported inspection media')
+      const responseMime = response.headers.get('content-type')?.split(';')[0]
+      // Some JPEG CDNs send image/jpg. Canonicalize only this explicit alias;
+      // retain the raster allowlist and pass the original bytes to vision.
+      const mime = responseMime === 'image/jpg' ? 'image/jpeg' : responseMime
+      if (!['image/jpeg', 'image/png', 'image/webp', 'image/gif'].includes(mime)) throw new Error(`Unsupported inspection media MIME: ${responseMime || '(missing)'}`)
 
       inspection.capture_sha256 = createHash('sha256').update(bytes).digest('hex')
       inspection.capture_path = path.join(captureDir, `${inspection.capture_sha256}.${mime.split('/')[1]}`)
