@@ -116,7 +116,14 @@ function extractNtsStreamingSourceRows(text) {
     const url = extractUrls(cells[5])[0]
     if (!url) continue
     if (bestSource.includes('unverified') || bestSource.includes('search') || confidence === 'low') continue
-    if (!isPreferredNtsStreamingSourceUrl(url)) continue
+    // Bandcamp supports custom domains. A saved, confidence-qualified row can
+    // nominate its exact work URL without guessing a bandcamp.com replacement.
+    // This is discovery attribution only; normal fetch/media/admission gates apply.
+    const savedCustomBandcampWork = /^bandcamp(?:\s|$)/.test(bestSource)
+      && ['high', 'medium'].includes(confidence)
+      && isAllowedSourceUrl(url)
+      && /^\/(?:track|album)\/[^/]+\/?$/.test(new URL(url).pathname)
+    if (!isPreferredNtsStreamingSourceUrl(url) && !savedCustomBandcampWork) continue
     rows.push({
       row_number: cells[0],
       url,
