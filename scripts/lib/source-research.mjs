@@ -973,6 +973,13 @@ export async function inspectSourceCandidates(signalHarvest, {
       if (renderableInspectedKeys.has(key)) return false
       return !browserInspectedKeys.has(key)
     }
+    const discoverFillLinks = (sources) => sources
+      .flatMap(source => discoverObservedOwnerProjectLinks(source, { maxLinks: 1 }))
+      .filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys)))
+      .filter(canAttemptFill)
+    // Roots captured before pixel inspection cannot be recaptured by refill.
+    // Queue their observed children in the same bounded acquisition budget.
+    const capturedOwnerLinks = discoverFillLinks(inspected)
     const evidenceFillCandidates = fetchEvidence
       .filter(canAttemptFill)
       .map((source) => ({
@@ -989,7 +996,7 @@ export async function inspectSourceCandidates(signalHarvest, {
 
     const supplementalFillCandidates = supplementalCandidates.filter(canAttemptFill)
 
-    const fillCandidates = [...evidenceFillCandidates, ...supplementalFillCandidates]
+    const fillCandidates = [...capturedOwnerLinks, ...evidenceFillCandidates, ...supplementalFillCandidates]
 
     // Empty/unusable captures do not spend pixel attempts, so bound them too.
     let fillAcquisitions = 0
@@ -1009,10 +1016,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       // charging it to the existing 24 browser acquisitions and 24 pixel
       // attempts. This is discovery only: the child still needs ordinary text,
       // archive, provenance and actual-media admission.
-      const discoveredOwnerLinks = added
-        .flatMap(source => discoverObservedOwnerProjectLinks(source, { maxLinks: 1 }))
-        .filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys)))
-        .filter(canAttemptFill)
+      const discoveredOwnerLinks = discoverFillLinks(added)
       if (discoveredOwnerLinks.length) fillCandidates.splice(fillIndex + 1, 0, ...discoveredOwnerLinks)
       // Inspect recovered media now; queued fetch previews must not steal the
       // reserve. Keep retained editorial context on the preferred capture.

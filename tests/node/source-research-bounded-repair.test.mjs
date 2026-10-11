@@ -340,13 +340,17 @@ it('stops browser refill when negative actual-media attempts exhaust the unchang
   expect(lateCaptures.every(row => row.attempts < 24)).toBe(true)
   expect(state.attempts).toHaveLength(24)
 })
-it('discovers one observed same-owner project page through the bounded normal browser refill', async () => {
+it.each(['late-refill', 'pre-pixel-researched'])('discovers one observed same-owner project page from a %s owner capture', async lifecycle => {
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
   state.verifiedFrom = Infinity // Discovery is not a positive inspection stamp.
   const root = {
     url: 'https://designcore.org/', note_id: 'detroit-design', note_title: 'Detroit design organizations',
     note_path: '01 - Active/themes/Design & Visual Systems/detroit.md', note_score: 1,
     source_channel: 'chrome-bookmark', image_url: null,
+    ...(lifecycle === 'pre-pixel-researched' ? {
+      image_url: 'https://cdn.prod.website-files.com/site/fetch-preview.jpg',
+      fetch_status: 'fetch-ok', note_score: 99999,
+    } : {}),
   }
   const childUrl = 'https://designcore.org/news/drinks-by-design-light-sound'
   const linkedImage = 'https://cdn.prod.website-files.com/site/event-card.jpg'
@@ -359,6 +363,11 @@ it('discovers one observed same-owner project page through the bounded normal br
       page_url: root.url, linked_url: childUrl, alt: 'Drinks by Design: Light & Sound',
     }],
   }
+  // Duplicate observations and a second project must not widen the crawl.
+  const firstLink = state.browserChanges[root.url].image_candidates[0]
+  state.browserChanges[root.url].image_candidates.push({ ...firstLink }, {
+    ...firstLink, linked_url: 'https://designcore.org/news/another-project',
+  })
   state.browserChanges[childUrl] = {
     fetch_status: 'browser-harness', final_url: childUrl, title: 'Drinks by Design: Light & Sound',
     image_url: articleImage, source_image_url: articleImage, source_image_aliases: [articleImage],
@@ -368,7 +377,14 @@ it('discovers one observed same-owner project page through the bounded normal br
     source_candidates: [...sources.slice(0, 18), root], notes_selected: [], motif_terms: [],
   }, { maxSources: 6, runDir, sourceTool: 'browser-harness', date: '2026-10-11' })).rejects.toThrow(/blocked|expected at least 6/)
 
-  const childCapture = state.captures.find(row => row.url === childUrl && row.tool === 'browser-harness')
+  const rootCaptures = state.captures.filter(row => row.url === root.url && row.tool === 'browser-harness')
+  expect(rootCaptures).toHaveLength(1)
+  expect(rootCaptures[0].researchCalls).toBe(1)
+  expect(rootCaptures[0].attempts).toBe(lifecycle === 'pre-pixel-researched' ? 0 : 18)
+  expect(state.captures.some(row => row.url === 'https://designcore.org/news/another-project')).toBe(false)
+  const childCaptures = state.captures.filter(row => row.url === childUrl && row.tool === 'browser-harness')
+  expect(childCaptures).toHaveLength(1)
+  const childCapture = childCaptures[0]
   expect(childCapture?.source).toMatchObject({
     url: childUrl,
     parent_source_url: root.url,
