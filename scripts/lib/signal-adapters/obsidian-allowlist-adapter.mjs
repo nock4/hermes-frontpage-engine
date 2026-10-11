@@ -10,6 +10,8 @@ const allowedSignalDirectories = [
   'Inbox/youtube',
   '00 - Capture/tweets',
   '00 - Capture/youtube',
+  // Explicitly authorized saved nominations, not inferred likes/bookmarks.
+  '00 - Capture/frontpage-intake',
   // Curated/favorited X captures are promoted out of Inbox into thematic shelves.
   // Keep them in the daily press field so archive-wide source dedupe does not
   // exhaust the narrow legacy inbox/capture pool and miss recent artwork.
@@ -50,6 +52,7 @@ export function signalChannelForPath(relativePath, urls = []) {
   if (lower.startsWith('inbox/youtube/')) return 'youtube-like'
   if (lower.startsWith('00 - capture/tweets/')) return 'twitter-bookmark'
   if (lower.startsWith('00 - capture/youtube/')) return 'youtube-like'
+  if (lower.startsWith('00 - capture/frontpage-intake/')) return 'manual-curation'
   if (lower.startsWith('01 - active/themes/')) return inferActiveThemeSignalChannel(urls)
   if (lower.startsWith('inbox/nts-liked-tracks-source-map')) return 'nts-like'
   if (lower.startsWith('00 - capture/nts-liked-tracks-source-map')) return 'nts-like'
@@ -238,7 +241,8 @@ export async function loadObsidianAllowlistSignals({ inputRoot, date, windowDays
     notes,
     selection_filters: [
       'Markdown files only.',
-      'Only enumerate explicit saved-content signal paths: Inbox/tweets, Inbox/youtube, 00 - Capture/tweets, 00 - Capture/youtube, 01 - Active/themes, Inbox NTS liked-track source maps, Resources Chrome Bookmarks, and Resources/Collections YouTube Likes.',
+      'Only enumerate explicit saved-content signal paths: Inbox/tweets, Inbox/youtube, 00 - Capture/tweets, 00 - Capture/youtube, 00 - Capture/frontpage-intake, 01 - Active/themes, Inbox NTS liked-track source maps, Resources Chrome Bookmarks, and Resources/Collections YouTube Likes.',
+      'Frontpage intake notes are saved manual-curation nominations only; source inspection and editorial eligibility remain required.',
       `Keep notes whose date is from ${date} back through ${windowDays} days.`,
       'Reject local/private endpoints and text/data/document URLs before source research.',
       'For NTS liked-track maps, use only direct streamable source URLs and skip low-confidence or search rows.',
@@ -248,6 +252,7 @@ export async function loadObsidianAllowlistSignals({ inputRoot, date, windowDays
       'recent YouTube liked videos',
       'recent NTS liked tracks and resolved track sources',
       'recent Chrome bookmarks',
+      'recent authorized frontpage intake nominations',
     ],
   }
 }

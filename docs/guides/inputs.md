@@ -104,6 +104,13 @@ It scans the existing saved-signal allowlist only:
 - `Resources/Collections/Chrome Bookmarks.md`
 - `Resources/Collections/YouTube Likes.md`
 
+The exact `00 - Capture/frontpage-intake` directory is also scanned recursively,
+including dated subfolders. These user-authorized saved notes enter as
+`manual-curation` nominations with their original note context, date, and URLs;
+they are not inferred bookmarks/likes or affirmative eligibility evidence.
+Normal date/URL filters, harvest caps, archive pressure, source inspection, and
+editorial admission still apply. Other capture folders are not admitted by this lane.
+
 Run it:
 
 ```bash
