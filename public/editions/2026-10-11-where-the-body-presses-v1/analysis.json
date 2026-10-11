@@ -1,0 +1,392 @@
+{
+  "analysis_id": "analysis-2026-10-11-where-the-body-presses-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark, representational carriage interior with wet floorboards, green-grey window light, wooden benches and pale, elongated seated figures. A huge cropped figure on the right dominates; its hanging hand and planted foot provide strong physical anchors. Several planned materials have visible counterparts, but the plate is not minimal or expressionist, and the foreground slat does not clearly exhibit the requested dense rhythmic cuts or compact puncture cluster.",
+  "usable_surfaces": [
+    "Green-grey glazing enclosed by the large right window frame",
+    "Chipped and notched foreground bench fascia",
+    "Narrow curved highlight along the foreground knee",
+    "Broken illuminated end of the middle-distance bench slat",
+    "Dark floorboard joint beside reflected light",
+    "Contact-shadow lip beneath the foreground foot"
+  ],
+  "detected_objects": [
+    {
+      "label": "Occluded green pane",
+      "artifact_type": "interrupted-pane-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.555,
+        "y": 0.09,
+        "w": 0.104,
+        "h": 0.18
+      },
+      "polygon": [
+        [
+          0.557,
+          0.139
+        ],
+        [
+          0.564,
+          0.131
+        ],
+        [
+          0.604,
+          0.114
+        ],
+        [
+          0.643,
+          0.096
+        ],
+        [
+          0.655,
+          0.09
+        ],
+        [
+          0.659,
+          0.105
+        ],
+        [
+          0.658,
+          0.218
+        ],
+        [
+          0.652,
+          0.241
+        ],
+        [
+          0.635,
+          0.251
+        ],
+        [
+          0.579,
+          0.268
+        ],
+        [
+          0.565,
+          0.27
+        ],
+        [
+          0.558,
+          0.261
+        ],
+        [
+          0.555,
+          0.24
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "The large right-side window has a bounded lower pane of mottled green-grey transmission beneath a heavy diagonal crossbar. The polygon follows the glazing rather than the surrounding wall or beam of light. The pale foreground figure lies below and to its right, but does not substantially occlude this pane."
+    },
+    {
+      "label": "Compressed lower rhythm — visible notched fascia",
+      "artifact_type": "rhythmic-notch-band",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.38,
+        "w": 0.20999999999999996,
+        "h": 0.21
+      },
+      "polygon": [
+        [
+          0.795,
+          0.452
+        ],
+        [
+          0.856,
+          0.408
+        ],
+        [
+          0.921,
+          0.38
+        ],
+        [
+          0.925,
+          0.417
+        ],
+        [
+          0.958,
+          0.408
+        ],
+        [
+          1,
+          0.382
+        ],
+        [
+          1,
+          0.577
+        ],
+        [
+          0.96,
+          0.584
+        ],
+        [
+          0.959,
+          0.524
+        ],
+        [
+          0.947,
+          0.52
+        ],
+        [
+          0.924,
+          0.528
+        ],
+        [
+          0.92,
+          0.583
+        ],
+        [
+          0.898,
+          0.59
+        ],
+        [
+          0.89,
+          0.579
+        ],
+        [
+          0.885,
+          0.589
+        ],
+        [
+          0.826,
+          0.586
+        ],
+        [
+          0.792,
+          0.583
+        ],
+        [
+          0.79,
+          0.502
+        ]
+      ],
+      "confidence": 0.74,
+      "visual_evidence": "The near bench presents a long, scraped wooden fascia with an irregular upper edge, a deep lower rectangular cutout and smaller lower-edge chips. These are real interaction-bearing marks. The requested densely spaced cuts and compact puncture cluster are not clearly visible; this is only a partial visual match to the planned rhythm."
+    },
+    {
+      "label": "Curved gloss break",
+      "artifact_type": "curved-gloss-defect",
+      "role": "light-mark",
+      "bounds": {
+        "x": 0.634,
+        "y": 0.264,
+        "w": 0.065,
+        "h": 0.082
+      },
+      "polygon": [
+        [
+          0.634,
+          0.337
+        ],
+        [
+          0.639,
+          0.309
+        ],
+        [
+          0.647,
+          0.285
+        ],
+        [
+          0.661,
+          0.27
+        ],
+        [
+          0.677,
+          0.264
+        ],
+        [
+          0.691,
+          0.265
+        ],
+        [
+          0.699,
+          0.272
+        ],
+        [
+          0.678,
+          0.275
+        ],
+        [
+          0.665,
+          0.281
+        ],
+        [
+          0.653,
+          0.297
+        ],
+        [
+          0.645,
+          0.318
+        ],
+        [
+          0.64,
+          0.346
+        ]
+      ],
+      "confidence": 0.79,
+      "visual_evidence": "A narrow pale crescent follows the rounded upper-left rim of the large foreground knee. It interrupts the otherwise dull grey surface with a curved specular break. The crescent is visible, although its material reads as damp skin rather than a distinct lacquer defect."
+    },
+    {
+      "label": "Pressure crescent",
+      "artifact_type": "contact-shadow-crescent",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.419,
+        "y": 0.853,
+        "w": 0.249,
+        "h": 0.049
+      },
+      "polygon": [
+        [
+          0.419,
+          0.871
+        ],
+        [
+          0.434,
+          0.864
+        ],
+        [
+          0.445,
+          0.874
+        ],
+        [
+          0.462,
+          0.877
+        ],
+        [
+          0.48,
+          0.883
+        ],
+        [
+          0.515,
+          0.876
+        ],
+        [
+          0.557,
+          0.87
+        ],
+        [
+          0.597,
+          0.864
+        ],
+        [
+          0.633,
+          0.853
+        ],
+        [
+          0.658,
+          0.855
+        ],
+        [
+          0.668,
+          0.869
+        ],
+        [
+          0.651,
+          0.889
+        ],
+        [
+          0.611,
+          0.899
+        ],
+        [
+          0.567,
+          0.902
+        ],
+        [
+          0.523,
+          0.898
+        ],
+        [
+          0.481,
+          0.892
+        ],
+        [
+          0.448,
+          0.886
+        ],
+        [
+          0.426,
+          0.88
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "An elongated black contact-shadow lip hugs the underside of the planted foreground foot, from the toes toward the heel. Its upper boundary is defined by the pale foot and its lower boundary by wet floor reflections. The heel-side boundary softens into surrounding darkness."
+    },
+    {
+      "label": "Source Pathway Plaque",
+      "artifact_type": "floor-gap-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    },
+    {
+      "label": "Pressure crescent",
+      "artifact_type": "contact-shadow-crescent",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "confidence": 0.45,
+      "visual_evidence": "Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 5,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.08,
+    "rationale": "Visually estimated coverage is limited to the mapped marks. The scene contains a dominant foreground figure, a left seated figure, a distant standing figure, repeated benches and a strongly articulated window architecture. Wet reflections, wood grain, atmospheric rays and bodily detail create substantial secondary activity. The restrained palette unifies the image, but it reads as elaborate cinematic horror illustration rather than a minimal expressionist plate. Several planned anchors have usable counterparts, though the rhythmic-band specification remains only partially realized."
+  },
+  "fallback_detected_object_count": 2,
+  "mapping_note": "Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.",
+  "edition_id": "2026-10-11-where-the-body-presses-v1"
+}

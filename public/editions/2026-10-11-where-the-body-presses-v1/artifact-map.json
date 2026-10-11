@@ -1,0 +1,1096 @@
+{
+  "artifact_map_id": "map-2026-10-11-where-the-body-presses-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "cold-contact-broken-seating",
+  "default_artifact_id": "hero-occluded-green-pane",
+  "artifacts": [
+    {
+      "id": "hero-occluded-green-pane",
+      "kind": "hero",
+      "label": "Occluded green pane",
+      "artifact_type": "interrupted-pane-aperture",
+      "bounds": {
+        "x": 0.555,
+        "y": 0.09,
+        "w": 0.104,
+        "h": 0.18
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.557,
+          0.139
+        ],
+        [
+          0.564,
+          0.131
+        ],
+        [
+          0.604,
+          0.114
+        ],
+        [
+          0.643,
+          0.096
+        ],
+        [
+          0.655,
+          0.09
+        ],
+        [
+          0.659,
+          0.105
+        ],
+        [
+          0.658,
+          0.218
+        ],
+        [
+          0.652,
+          0.241
+        ],
+        [
+          0.635,
+          0.251
+        ],
+        [
+          0.579,
+          0.268
+        ],
+        [
+          0.565,
+          0.27
+        ],
+        [
+          0.558,
+          0.261
+        ],
+        [
+          0.555,
+          0.24
+        ]
+      ],
+      "cluster_id": "cold-contact-broken-seating",
+      "mask_path": "/editions/2026-10-11-where-the-body-presses-v1/assets/masks/hero-occluded-green-pane.svg",
+      "source_binding_ids": [
+        "binding-hero-occluded-green-pane"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          932,
+          170
+        ],
+        "safe_stage_window_origin_px": [
+          945,
+          184
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.557,
+            0.139
+          ],
+          [
+            0.564,
+            0.131
+          ],
+          [
+            0.604,
+            0.114
+          ],
+          [
+            0.643,
+            0.096
+          ],
+          [
+            0.655,
+            0.09
+          ],
+          [
+            0.659,
+            0.105
+          ],
+          [
+            0.658,
+            0.218
+          ],
+          [
+            0.652,
+            0.241
+          ],
+          [
+            0.635,
+            0.251
+          ],
+          [
+            0.579,
+            0.268
+          ],
+          [
+            0.565,
+            0.27
+          ],
+          [
+            0.558,
+            0.261
+          ],
+          [
+            0.555,
+            0.24
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5326,
+            0.2227
+          ],
+          [
+            0.5345,
+            0.1387
+          ],
+          [
+            0.5638,
+            0.0977
+          ],
+          [
+            0.6549,
+            0.0566
+          ],
+          [
+            0.681,
+            0.1035
+          ],
+          [
+            0.6751,
+            0.2363
+          ],
+          [
+            0.627,
+            0.2861
+          ],
+          [
+            0.5645,
+            0.3027
+          ],
+          [
+            0.5358,
+            0.2607
+          ],
+          [
+            0.5326,
+            0.2412
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5326,
+          "y": 0.0566,
+          "w": 0.1491,
+          "h": 0.2471
+        },
+        "territory_area_px": 44338,
+        "visible_area_px": 23494,
+        "expansion_ratio": 1.887,
+        "neighbors": [
+          {
+            "artifact_id": "module-curved-gloss-break",
+            "shared_edge_px": 482,
+            "direction": "down",
+            "distance_px": 141.59
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-compressed-lower-rhythm-visible-notc",
+      "kind": "hero",
+      "label": "Compressed lower rhythm \u2014 visible notched fascia",
+      "artifact_type": "rhythmic-notch-band",
+      "bounds": {
+        "x": 0.79,
+        "y": 0.38,
+        "w": 0.20999999999999996,
+        "h": 0.21
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.795,
+          0.452
+        ],
+        [
+          0.856,
+          0.408
+        ],
+        [
+          0.921,
+          0.38
+        ],
+        [
+          0.925,
+          0.417
+        ],
+        [
+          0.958,
+          0.408
+        ],
+        [
+          1,
+          0.382
+        ],
+        [
+          1,
+          0.577
+        ],
+        [
+          0.96,
+          0.584
+        ],
+        [
+          0.959,
+          0.524
+        ],
+        [
+          0.947,
+          0.52
+        ],
+        [
+          0.924,
+          0.528
+        ],
+        [
+          0.92,
+          0.583
+        ],
+        [
+          0.898,
+          0.59
+        ],
+        [
+          0.89,
+          0.579
+        ],
+        [
+          0.885,
+          0.589
+        ],
+        [
+          0.826,
+          0.586
+        ],
+        [
+          0.792,
+          0.583
+        ],
+        [
+          0.79,
+          0.502
+        ]
+      ],
+      "cluster_id": "cold-contact-broken-seating",
+      "mask_path": "/editions/2026-10-11-where-the-body-presses-v1/assets/masks/hero-compressed-lower-rhythm-visible-notc.svg",
+      "source_binding_ids": [
+        "binding-hero-compressed-lower-rhythm-visible-notc"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1320,
+          479
+        ],
+        "safe_stage_window_origin_px": [
+          1320,
+          497
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.795,
+            0.452
+          ],
+          [
+            0.856,
+            0.408
+          ],
+          [
+            0.921,
+            0.38
+          ],
+          [
+            0.925,
+            0.417
+          ],
+          [
+            0.958,
+            0.408
+          ],
+          [
+            1,
+            0.382
+          ],
+          [
+            1,
+            0.577
+          ],
+          [
+            0.96,
+            0.584
+          ],
+          [
+            0.959,
+            0.524
+          ],
+          [
+            0.947,
+            0.52
+          ],
+          [
+            0.924,
+            0.528
+          ],
+          [
+            0.92,
+            0.583
+          ],
+          [
+            0.898,
+            0.59
+          ],
+          [
+            0.89,
+            0.579
+          ],
+          [
+            0.885,
+            0.589
+          ],
+          [
+            0.826,
+            0.586
+          ],
+          [
+            0.792,
+            0.583
+          ],
+          [
+            0.79,
+            0.502
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.7676,
+            0.499
+          ],
+          [
+            0.7728,
+            0.4512
+          ],
+          [
+            0.7949,
+            0.418
+          ],
+          [
+            0.8555,
+            0.374
+          ],
+          [
+            0.9206,
+            0.3467
+          ],
+          [
+            0.9993,
+            0.3496
+          ],
+          [
+            0.9993,
+            0.6094
+          ],
+          [
+            0.8978,
+            0.623
+          ],
+          [
+            0.834,
+            0.6191
+          ],
+          [
+            0.7676,
+            0.5107
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.7676,
+          "y": 0.3467,
+          "w": 0.2324,
+          "h": 0.2773
+        },
+        "territory_area_px": 78400,
+        "visible_area_px": 54372,
+        "expansion_ratio": 1.442,
+        "neighbors": [
+          {
+            "artifact_id": "module-source-pathway-plaque",
+            "shared_edge_px": 1107,
+            "direction": "left",
+            "distance_px": 320.08
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-curved-gloss-break",
+      "kind": "module",
+      "label": "Curved gloss break",
+      "artifact_type": "curved-gloss-defect",
+      "bounds": {
+        "x": 0.634,
+        "y": 0.264,
+        "w": 0.065,
+        "h": 0.082
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.634,
+          0.337
+        ],
+        [
+          0.639,
+          0.309
+        ],
+        [
+          0.647,
+          0.285
+        ],
+        [
+          0.661,
+          0.27
+        ],
+        [
+          0.677,
+          0.264
+        ],
+        [
+          0.691,
+          0.265
+        ],
+        [
+          0.699,
+          0.272
+        ],
+        [
+          0.678,
+          0.275
+        ],
+        [
+          0.665,
+          0.281
+        ],
+        [
+          0.653,
+          0.297
+        ],
+        [
+          0.645,
+          0.318
+        ],
+        [
+          0.64,
+          0.346
+        ]
+      ],
+      "cluster_id": "cold-contact-broken-seating",
+      "mask_path": "/editions/2026-10-11-where-the-body-presses-v1/assets/masks/module-curved-gloss-break.svg",
+      "source_binding_ids": [
+        "binding-module-curved-gloss-break"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1024,
+          306
+        ],
+        "safe_stage_window_origin_px": [
+          1032,
+          312
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.634,
+            0.337
+          ],
+          [
+            0.639,
+            0.309
+          ],
+          [
+            0.647,
+            0.285
+          ],
+          [
+            0.661,
+            0.27
+          ],
+          [
+            0.677,
+            0.264
+          ],
+          [
+            0.691,
+            0.265
+          ],
+          [
+            0.699,
+            0.272
+          ],
+          [
+            0.678,
+            0.275
+          ],
+          [
+            0.665,
+            0.281
+          ],
+          [
+            0.653,
+            0.297
+          ],
+          [
+            0.645,
+            0.318
+          ],
+          [
+            0.64,
+            0.346
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6152,
+            0.3359
+          ],
+          [
+            0.6283,
+            0.2842
+          ],
+          [
+            0.6608,
+            0.2422
+          ],
+          [
+            0.6908,
+            0.2373
+          ],
+          [
+            0.7168,
+            0.2715
+          ],
+          [
+            0.64,
+            0.373
+          ],
+          [
+            0.6152,
+            0.3369
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6152,
+          "y": 0.2363,
+          "w": 0.1022,
+          "h": 0.1377
+        },
+        "territory_area_px": 10655,
+        "visible_area_px": 1668,
+        "expansion_ratio": 6.388,
+        "neighbors": [
+          {
+            "artifact_id": "hero-occluded-green-pane",
+            "shared_edge_px": 482,
+            "direction": "up",
+            "distance_px": 141.59
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pressure-crescent",
+      "kind": "module",
+      "label": "Pressure crescent",
+      "artifact_type": "contact-shadow-crescent",
+      "bounds": {
+        "x": 0.419,
+        "y": 0.853,
+        "w": 0.249,
+        "h": 0.049
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.419,
+          0.871
+        ],
+        [
+          0.434,
+          0.864
+        ],
+        [
+          0.445,
+          0.874
+        ],
+        [
+          0.462,
+          0.877
+        ],
+        [
+          0.48,
+          0.883
+        ],
+        [
+          0.515,
+          0.876
+        ],
+        [
+          0.557,
+          0.87
+        ],
+        [
+          0.597,
+          0.864
+        ],
+        [
+          0.633,
+          0.853
+        ],
+        [
+          0.658,
+          0.855
+        ],
+        [
+          0.668,
+          0.869
+        ],
+        [
+          0.651,
+          0.889
+        ],
+        [
+          0.611,
+          0.899
+        ],
+        [
+          0.567,
+          0.902
+        ],
+        [
+          0.523,
+          0.898
+        ],
+        [
+          0.481,
+          0.892
+        ],
+        [
+          0.448,
+          0.886
+        ],
+        [
+          0.426,
+          0.88
+        ]
+      ],
+      "cluster_id": "cold-contact-broken-seating",
+      "mask_path": "/editions/2026-10-11-where-the-body-presses-v1/assets/masks/module-pressure-crescent.svg",
+      "source_binding_ids": [
+        "binding-module-pressure-crescent"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          835,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          865,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.419,
+            0.871
+          ],
+          [
+            0.434,
+            0.864
+          ],
+          [
+            0.445,
+            0.874
+          ],
+          [
+            0.462,
+            0.877
+          ],
+          [
+            0.48,
+            0.883
+          ],
+          [
+            0.515,
+            0.876
+          ],
+          [
+            0.557,
+            0.87
+          ],
+          [
+            0.597,
+            0.864
+          ],
+          [
+            0.633,
+            0.853
+          ],
+          [
+            0.658,
+            0.855
+          ],
+          [
+            0.668,
+            0.869
+          ],
+          [
+            0.651,
+            0.889
+          ],
+          [
+            0.611,
+            0.899
+          ],
+          [
+            0.567,
+            0.902
+          ],
+          [
+            0.523,
+            0.898
+          ],
+          [
+            0.481,
+            0.892
+          ],
+          [
+            0.448,
+            0.886
+          ],
+          [
+            0.426,
+            0.88
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.4004,
+            0.8701
+          ],
+          [
+            0.4186,
+            0.8428
+          ],
+          [
+            0.4336,
+            0.8359
+          ],
+          [
+            0.6328,
+            0.8252
+          ],
+          [
+            0.6576,
+            0.8271
+          ],
+          [
+            0.666,
+            0.8379
+          ],
+          [
+            0.6862,
+            0.8682
+          ],
+          [
+            0.6504,
+            0.916
+          ],
+          [
+            0.5664,
+            0.9287
+          ],
+          [
+            0.4479,
+            0.9131
+          ],
+          [
+            0.4212,
+            0.9014
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.4004,
+          "y": 0.8252,
+          "w": 0.2865,
+          "h": 0.1045
+        },
+        "territory_area_px": 32754,
+        "visible_area_px": 9682,
+        "expansion_ratio": 3.383,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-source-pathway-plaque",
+      "kind": "module",
+      "label": "Source Pathway Plaque",
+      "artifact_type": "floor-gap-aperture",
+      "bounds": {
+        "x": 0.62,
+        "y": 0.54,
+        "w": 0.22,
+        "h": 0.22
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.62,
+          0.54
+        ],
+        [
+          0.84,
+          0.54
+        ],
+        [
+          0.84,
+          0.76
+        ],
+        [
+          0.62,
+          0.76
+        ]
+      ],
+      "cluster_id": "cold-contact-broken-seating",
+      "mask_path": "/editions/2026-10-11-where-the-body-presses-v1/assets/masks/module-source-pathway-plaque.svg",
+      "source_binding_ids": [
+        "binding-module-source-pathway-plaque"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1121,
+          648
+        ],
+        "safe_stage_window_origin_px": [
+          1148,
+          666
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.62,
+            0.54
+          ],
+          [
+            0.84,
+            0.54
+          ],
+          [
+            0.84,
+            0.76
+          ],
+          [
+            0.62,
+            0.76
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6016,
+            0.5391
+          ],
+          [
+            0.6198,
+            0.5117
+          ],
+          [
+            0.7884,
+            0.5117
+          ],
+          [
+            0.8581,
+            0.6211
+          ],
+          [
+            0.8581,
+            0.7598
+          ],
+          [
+            0.8398,
+            0.7871
+          ],
+          [
+            0.6198,
+            0.7871
+          ],
+          [
+            0.6016,
+            0.7598
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6016,
+          "y": 0.5117,
+          "w": 0.2572,
+          "h": 0.2764
+        },
+        "territory_area_px": 102486,
+        "visible_area_px": 76953,
+        "expansion_ratio": 1.332,
+        "neighbors": [
+          {
+            "artifact_id": "hero-compressed-lower-rhythm-visible-notc",
+            "shared_edge_px": 1107,
+            "direction": "right",
+            "distance_px": 320.08
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-pressure-crescent-2",
+      "kind": "module",
+      "label": "Pressure crescent",
+      "artifact_type": "contact-shadow-crescent",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.78,
+        "w": 0.18,
+        "h": 0.16
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.1,
+          0.78
+        ],
+        [
+          0.28,
+          0.78
+        ],
+        [
+          0.28,
+          0.94
+        ],
+        [
+          0.1,
+          0.94
+        ]
+      ],
+      "cluster_id": "cold-contact-broken-seating",
+      "mask_path": "/editions/2026-10-11-where-the-body-presses-v1/assets/masks/module-pressure-crescent-2.svg",
+      "source_binding_ids": [
+        "binding-module-pressure-crescent-2"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          292,
+          850
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          850
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.78
+          ],
+          [
+            0.28,
+            0.78
+          ],
+          [
+            0.28,
+            0.94
+          ],
+          [
+            0.1,
+            0.94
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0814,
+            0.7793
+          ],
+          [
+            0.0996,
+            0.752
+          ],
+          [
+            0.2799,
+            0.752
+          ],
+          [
+            0.2982,
+            0.7793
+          ],
+          [
+            0.2982,
+            0.9395
+          ],
+          [
+            0.2799,
+            0.9668
+          ],
+          [
+            0.0996,
+            0.9668
+          ],
+          [
+            0.0814,
+            0.9395
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0814,
+          "y": 0.752,
+          "w": 0.2174,
+          "h": 0.2158
+        },
+        "territory_area_px": 72190,
+        "visible_area_px": 45870,
+        "expansion_ratio": 1.574,
+        "neighbors": []
+      }
+    }
+  ]
+}
