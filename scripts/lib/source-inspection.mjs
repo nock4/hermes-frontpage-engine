@@ -538,9 +538,15 @@ JSON.stringify({
         // Intrinsic size wins over layout: full-size art can be displayed tiny.
         // Unknown/unloaded dimensions are not evidence of a tracking pixel.
         const hasIntrinsicSize = img.naturalWidth > 0 && img.naturalHeight > 0;
-        const width = hasIntrinsicSize ? img.naturalWidth : Number(img.getAttribute('width'));
-        const height = hasIntrinsicSize ? img.naturalHeight : Number(img.getAttribute('height'));
-        return !(width > 0 && width <= 2 && height > 0 && height <= 2);
+        // An explicit zero is known size too (including completed, undecoded
+        // beacons). Missing/empty/invalid attributes must remain unknown.
+        const declaredSize = name => {
+          const value = img.getAttribute(name)?.trim();
+          return value && /^[0-9]+$/.test(value) ? Number(value) : NaN;
+        };
+        const width = hasIntrinsicSize ? img.naturalWidth : declaredSize('width');
+        const height = hasIntrinsicSize ? img.naturalHeight : declaredSize('height');
+        return !(width >= 0 && width <= 2 && height >= 0 && height <= 2);
       })
       .flatMap(img => [img.currentSrc, img.src]),
   ].filter(Boolean),

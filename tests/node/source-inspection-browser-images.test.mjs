@@ -106,6 +106,22 @@ it('skips explicitly tiny unloaded images without rejecting unknown dimensions',
   expect(result.image_url).toBe(art)
 })
 
+it('skips a completed zero-size undecoded DOM beacon (live WeTransfer shape)', async () => {
+  const { result, fetch } = await inspect(`<img width="0" height="0" alt="" src="${beacon}" style="display:none">`)
+  expect(result.image_url).toBeNull()
+  expect(fetch).not.toHaveBeenCalled()
+})
+
+it.each(['', 'width="" height=""', 'width="invalid" height="invalid"', 'width="0"'])('does not equate unknown dimensions with explicit zero: %s', async attributes => {
+  const { result } = await inspect(`<img ${attributes} src="${art}">`)
+  expect(result.image_url).toBe(art)
+})
+
+it('preserves decoded full-size content despite explicit zero dimensions', async () => {
+  const { result } = await inspect(`<img width="0" height="0" src="${art}">`, {}, false, 200, { [art]: sizedImage(1200, 800) })
+  expect(result.image_url).toBe(art)
+})
+
 it('returns no media and spends no image health request on a pixel-only page', async () => {
   const { result, fetch } = await inspect(`<img src="${beacon}">`, {}, false, 200, { [beacon]: sizedImage(1, 1) })
   expect(result.image_url).toBeNull()
