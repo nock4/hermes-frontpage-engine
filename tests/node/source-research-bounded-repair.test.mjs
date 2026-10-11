@@ -161,6 +161,36 @@ it('does not manufacture a sixth source when early editorial exclusions leave on
   expect(saved.content_source_count).toBe(5)
   expect(saved.source_floor_diagnostics.min_required_content_sources).toBe(6)
 })
+it.each(['automatic', 'exact', 'unverified', 'spent'])('keeps anchor recovery independent of an undersized content floor: %s', async mode => {
+  state.verifiedFrom = mode === 'unverified' ? 30 : 0
+  state.editorialDecisions = sources.slice(0, 3).map(source => ({ url: source.url, role: 'supporting', confidence: 'high' }))
+  const inspirationOverride = mode === 'exact'
+    ? { source_url: sources[0].url, image_url: sources[0].image_url, title: sources[0].title, prompt_bias_terms: ['exact-anchor'] }
+    : null
+  const recentSourceKeys = mode === 'spent' ? new Set(sources.slice(3, 8).map(sourceContentKey)) : new Set()
+  await expect(inspectSourceCandidates({ source_candidates: sources.slice(0, 8), notes_selected: [], motif_terms: [] }, {
+    maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-10-10', inspirationOverride, recentSourceKeys,
+  })).rejects.toThrow(/blocked/)
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  const blockers = saved.source_decision_audit.hard_blockers.map(row => row.reason_code)
+  expect(blockers).toContain('insufficient_eligible_source_media')
+  expect(saved.content_source_count).toBe(['unverified', 'spent'].includes(mode) ? 0 : 5)
+  expect(state.attempts.length).toBeLessThanOrEqual(24)
+  if (mode === 'automatic') {
+    expect(saved.anchor_research?.anchor_source.url).toBe(sources[3].url)
+    expect(blockers).toEqual(['insufficient_eligible_source_media'])
+    expect(saved.selected_image_material[0].page_url).toBe(sources[3].url)
+    const retained = JSON.parse(await fs.readFile(path.join(runDir, 'anchor-research.json'), 'utf8'))
+    expect(retained.anchor_source.url).toBe(sources[3].url)
+  } else if (mode === 'exact') {
+    expect(saved.anchor_research.anchor_source.url).toBe(sources[0].url)
+    expect(blockers).toContain('autoresearch_excluded_anchor')
+  } else {
+    expect(saved.anchor_research).toBeNull()
+    expect(blockers).toContain('missing_anchor_source')
+    await expect(fs.access(path.join(runDir, 'anchor-research.json'))).rejects.toThrow()
+  }
+})
 it.each(['automatic', 'exact'])('retains %s single-anchor provenance with a sufficient derived field after text-first research', async mode => {
   state.verifiedFrom = 0
   state.derivedCandidates = sources.slice(1, 7)

@@ -1050,7 +1050,10 @@ export async function inspectSourceCandidates(signalHarvest, {
     imageSourceMaterial = { image_source_candidates: [], selected_image_material: [] }
     await fs.rm(path.join(runDir, 'anchor-research.json'), { force: true })
   }
-  if (!anchorSource && contentSources.length >= minContentItems) {
+  // Anchor recovery and the six-window floor are independent decisions. An
+  // undersized but verified field can supply a valid replacement root while the
+  // unchanged source-count gate still blocks generation below the floor.
+  if (!anchorSource && contentSources.length) {
     const verifiedAnchors = contentSources.filter(source => hasCreativeArtifactEvidence(source, autoresearch, signalHarvest)
       && decideAnchorEligibility({ anchorSource: source, recentSourceKeys, autoresearch }).decision === 'accept')
     const fieldAnchor = selectAnchorSource(verifiedAnchors, { recentSourceKeys, signalHarvest })
