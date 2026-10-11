@@ -74,7 +74,13 @@ it('does not confuse full-size Wix artwork or typography with placeholders', () 
   expect(isLowValueVisualImage('https://cdn.example.com/study_logotype.jpg')).toBe(false)
 })
 
-it.each([logo, tiny])('skips low-value OG media for the same-page content image: %s', async bad => {
+it.each([
+  logo, tiny,
+  'https://rithikaisafool.com/assets/shop/Shop%20Logo.png',
+  'https://cdn.example.com/Shop%20Logo.png',
+  'https://cdn.example.com/Shop Logo.png',
+  'https://cdn.example.com/Shop%20Logo%20Dark.png',
+])('skips low-value OG media for the same-page content image: %s', async bad => {
   const { result, fetch } = await inspect(`<meta property="og:image" content="${bad}"><img src="${bad}"><img src="${art}">`)
   expect(result.image_url).toBe(art)
   expect(result.source_image_url).toBe(art)

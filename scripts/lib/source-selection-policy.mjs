@@ -266,7 +266,7 @@ export function isLowValueVisualImage(imageUrl) {
   const wixBlur = Number(wixTransform.match(/(?:^|,)blur_(\d+)(?:,|$)/)?.[1])
 
   return (wixWidth > 0 && wixWidth <= 128 && wixHeight > 0 && wixHeight <= 128 && wixBlur > 0)
-    || /(?:^|[/_.-])logo(?:[/.?#_-]|$)/.test(lower)
+    || /(?:^|[\s/_.-])logo(?:[\s/.?#_-]|$)/.test(lower)
     || /\.svg(?:$|[?#])/.test(lower)
     || /\.ico(?:$|[?#])/.test(lower)
     || lower.includes('/ico/')
