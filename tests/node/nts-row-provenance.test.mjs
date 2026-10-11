@@ -2,7 +2,15 @@ import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 import dns from 'node:dns/promises'
+import { spawn } from 'node:child_process'
 import { afterEach, beforeEach, expect, it, vi } from 'vitest'
+
+// Fetch fixtures do not intercept Jev's credential subprocess. Fail closed if
+// this unit fixture ever escapes to op (or any other spawned dependency).
+vi.mock('node:child_process', async (importOriginal) => ({
+  ...await importOriginal(),
+  spawn: vi.fn(() => { throw new Error('Unexpected subprocess in NTS provenance fixture') }),
+}))
 
 // Only the model and network are fixtures; run the real harvest, source
 // inspection, autoresearch request serialization, and eligibility gates.
@@ -38,6 +46,7 @@ ${'Saved listening context. '.repeat(90)}
 let root
 let harvest
 beforeEach(async () => {
+  vi.mocked(spawn).mockClear()
   root = await fs.mkdtemp(path.join(os.tmpdir(), 'nts-provenance-'))
   await fs.mkdir(path.join(root, '00 - Capture'))
   await fs.writeFile(path.join(root, notePath), markdown)
@@ -45,12 +54,21 @@ beforeEach(async () => {
   harvest = await mineSignals({ inputMode: 'obsidian-allowlist', inputRoot: root, date: '2026-04-16', windowDays: 7, maxNotes: 8 }, root)
   vi.stubEnv('DFE_TEST_USE_GLOBAL_FETCH', '1')
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
+  // Cron exports Jev + an op reference; provenance tests use deterministic
+  // gates, not a live decision provider or credential lookup.
+  vi.stubEnv('DFE_DECISION_MODEL', 'rules')
   vi.spyOn(dns, 'lookup').mockResolvedValue([{ address: '93.184.216.34', family: 4 }])
   vi.stubGlobal('fetch', vi.fn(async () => { throw new Error('offline fixture') }))
 })
 afterEach(async () => {
-  vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.unstubAllEnvs()
-  await fs.rm(root, { recursive: true, force: true })
+  try {
+    // The Jev adapter catches subprocess errors as fallback evidence, so a
+    // throwing guard alone would silently pass. Assert the boundary too.
+    expect(vi.mocked(spawn).mock.calls.map(([command]) => command)).toEqual([])
+  } finally {
+    vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.unstubAllEnvs()
+    await fs.rm(root, { recursive: true, force: true })
+  }
 })
 
 it('retains exact NTS row identities, attribution and confidence without adding rejected URLs', () => {
