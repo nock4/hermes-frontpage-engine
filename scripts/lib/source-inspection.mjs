@@ -2,7 +2,7 @@ import { spawn } from 'node:child_process'
 import dns from 'node:dns/promises'
 import http from 'node:http'
 import path from 'node:path'
-import { validatedYouTubeCreator } from './provider-creator.mjs'
+import { validatedYouTubeCreator, validatedXCreator } from './provider-creator.mjs'
 
 import { fetchWithTimeout } from './fetch-with-timeout.mjs'
 import { fetchVettedImage } from './fetch-vetted-image.mjs'
@@ -416,6 +416,7 @@ async function inspectTweetWithFxtwitter(candidate, classification) {
       media_url: media.media_url,
       media_type: media.media_type,
       fetch_status: 'fxtwitter-fetch-ok',
+      creator_attribution: validatedXCreator(candidate.url, tweet),
       tweet_media_count: tweet.media?.all?.length || tweet.media?.photos?.length || 0,
     })
   } catch {
@@ -826,13 +827,14 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
 export async function inspectCandidateSource(candidate, { sourceTool, browserHarness, timeoutMs = 35_000 } = {}) {
   try {
     const source = await withTimeout(
-      inspectCandidateSourceInner(candidate, { sourceTool, browserHarness }),
+      // Only provider fetches may supply scheduling identity, never callers.
+      inspectCandidateSourceInner({ ...candidate, creator_attribution: null }, { sourceTool, browserHarness }),
       timeoutMs,
       `Source inspection timed out after ${timeoutMs}ms: ${candidate?.url || 'unknown source'}`,
     )
     // Metadata enrichment is additive evidence, not permission to erase the
     // candidate's original editorial role, workflow pitch, or parent identity.
-    return source ? { ...source, creator_attribution: youtubeCreatorAttribution(candidate.url), editorial_evidence: [...(source.editorial_evidence || []), candidate] } : null
+    return source ? { ...source, creator_attribution: source.creator_attribution || youtubeCreatorAttribution(candidate.url), editorial_evidence: [...(source.editorial_evidence || []), candidate] } : null
   } catch (error) {
     return {
       ...candidate,
