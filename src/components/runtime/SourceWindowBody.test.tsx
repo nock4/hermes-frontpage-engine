@@ -114,11 +114,11 @@ describe('source visual crop fallback', () => {
     expect(getSourceVisualMode(binding, binding.source_media_url ?? null)).toBe('raw')
   })
 
-  it('keeps poster crops for low-risk imagery', () => {
+  it('preserves the full original even for low-risk poster imagery', () => {
     const binding = makeBinding('low')
 
-    expect(getSourceVisualImageUrl(binding, binding.source_media_url ?? null)).toBe('/editions/test/assets/source-poster.jpg')
-    expect(getSourceVisualMode(binding, binding.source_media_url ?? null)).toBe('poster-crop')
+    expect(getSourceVisualImageUrl(binding, binding.source_media_url ?? null)).toBe(binding.source_media_url)
+    expect(getSourceVisualMode(binding, binding.source_media_url ?? null)).toBe('raw')
   })
 
   it('uses contained raw media with ambient fill on short landscape screens', () => {

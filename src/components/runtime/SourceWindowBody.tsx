@@ -134,8 +134,9 @@ function shouldBypassPosterCrop(binding: SourceBindingRecord, fallbackUrl: strin
   return Boolean(
     fallbackUrl
     && (
-      (binding.source_media_url && !binding.source_visual && binding.source_media_type !== 'video')
-      || (binding.embed_status === 'unavailable' && binding.source_media_type !== 'video')
+      // Open still surfaces expose the source composition, not a cropper's
+      // saliency estimate. Even low-risk posters can remove source edges.
+      binding.source_media_type !== 'video'
       || (binding.source_visual?.render_mode === 'poster-crop'
         && binding.source_visual?.crop_risk
         && binding.source_visual.crop_risk !== 'low')
