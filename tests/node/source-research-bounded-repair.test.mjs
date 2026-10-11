@@ -6,7 +6,7 @@ import { beforeEach, afterEach, expect, it, vi } from 'vitest'
 const state = vi.hoisted(() => ({ attempts: [], captures: [], rejectAnchor: false, verifiedFrom: 18 }))
 vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
   inspectCandidateSource: async (source, options) => {
-    state.captures.push({ url: source.url, tool: options.sourceTool, attempts: state.attempts.length, researchCalls: state.researchAttempts.length })
+    state.captures.push({ url: source.url, tool: options.sourceTool, attempts: state.attempts.length, researchCalls: state.researchAttempts.length, observedSources: options.observedSources })
     if (options.sourceTool === 'fetch' && state.fetchChanges?.[source.url]) return { ...source, ...state.fetchChanges[source.url] }
     if (options.sourceTool === 'browser-harness' && state.browserChanges?.[source.url]) return { ...source, ...state.browserChanges[source.url] }
     return options.sourceTool === 'browser-harness' && source.browser_image
@@ -47,7 +47,7 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
   },
 }))
 import { inspectSourceCandidates, buildSourceFloorDiagnostics, collectFetchEvidenceForAutoresearch } from '../../scripts/lib/source-research.mjs'
-import { sourceContentKey, sourceContentScore, isAiToolingContentSource } from '../../scripts/lib/source-selection-policy.mjs'
+import { sourceContentKey, sourceContentScore, isAiToolingContentSource, hasCreativeArtifactEvidence, isAutoresearchExcluded } from '../../scripts/lib/source-selection-policy.mjs'
 const sources = Array.from({ length: 24 }, (_, i) => ({
   url: `https://artist${i}.gallery.example/work`, image_url: `https://artist${i}.gallery.example/work.png`,
   title: `Painting ${i}`, note_title: `Painting ${i}`, note_id: `note-${i}`, note_score: 100 - i,
@@ -64,6 +64,70 @@ afterEach(async () => { vi.unstubAllEnvs(); await fs.rm(runDir, { recursive: tru
 const inspect = (extra = {}) => inspectSourceCandidates({ source_candidates: sources, notes_selected: [], motif_terms: [] }, {
   maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-09-30', ...extra,
 })
+it('passes observed fetch evidence into browser reduction and preserves candidates across the real research merge', async () => {
+  state.verifiedFrom = 0
+  const source = sources[0]
+  const metadata = { image_url: source.image_url, kind: 'metadata', page_url: source.url }
+  const dom = { image_url: 'https://artist0.gallery.example/article.png', kind: 'dom', context: 'main', page_url: source.url }
+  state.fetchChanges[source.url] = { image_candidates: [metadata] }
+  state.browserChanges[source.url] = {
+    image_url: dom.image_url, source_image_url: dom.image_url, source_image_aliases: [dom.image_url],
+    image_candidates: [dom], image_selection: { reason: 'observed-shared-homepage-preview' }, fetch_status: 'browser-harness',
+  }
+  state.derivedCandidates = sources.slice(1, 7)
+  const result = await inspect({ sourceTool: 'browser-harness' })
+  const capture = state.captures.find(row => row.url === source.url && row.tool === 'browser-harness')
+  expect(capture.observedSources).toContainEqual(expect.objectContaining({ url: source.url, image_candidates: [metadata] }))
+  const merged = result.sources.find(row => row.url === source.url)
+  expect(merged.image_url).toBe(dom.image_url)
+  expect(merged.image_candidates).toEqual(expect.arrayContaining([metadata, dom]))
+  expect(merged.image_selection.reason).toBe('observed-shared-homepage-preview')
+  expect(merged.editorial_evidence).toContainEqual(expect.objectContaining({ image_candidates: [metadata] }))
+  expect(state.attempts.length).toBeLessThanOrEqual(24)
+})
+
+it.each(['replacement', 'same-image-redirect', 'owner-rejected'])('keeps only selected-image aliases through the real research merge: %s', async scenario => {
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
+  state.verifiedFrom = 0
+  const source = sources[0]
+  const og = source.image_url
+  const original = 'https://artist0.gallery.example/shared-og-original.png'
+  const work = scenario === 'same-image-redirect' ? og : 'https://artist0.gallery.example/selected-work.png'
+  state.fetchChanges[source.url] = {
+    source_image_url: original, source_image_aliases: [original, og],
+  }
+  state.browserChanges[source.url] = {
+    image_url: work, source_image_url: work, source_image_aliases: [work], fetch_status: 'browser-harness',
+    ...(scenario === 'owner-rejected' ? { editorial_evidence: [{ url: source.url, autoresearch_role: 'reject' }] } : {}),
+  }
+  const result = await inspect({ sourceTool: 'browser-harness' })
+  const merged = result.sources.find(row => row.url === source.url)
+  const ledger = new Set([sourceContentKey({ url: original })])
+  if (scenario === 'same-image-redirect') {
+    expect(merged.source_image_aliases).toContain(original)
+    expect(sourceContentScore(merged, ledger)).toBe(-Infinity)
+  } else {
+    // The old shared OG in the ledger must not poison a different selected work.
+    expect(sourceContentScore(merged, ledger)).not.toBe(-Infinity)
+    expect(merged.source_image_aliases).toEqual([work])
+    expect(merged.source_image_url).toBe(work)
+  }
+  expect(merged.editorial_evidence).toContainEqual(expect.objectContaining({
+    source_image_url: original, source_image_aliases: [original, og],
+  }))
+  expect(sourceContentScore(merged, new Set([sourceContentKey(source)]))).toBe(-Infinity)
+  if (scenario === 'owner-rejected') expect(isAutoresearchExcluded(merged)).toBe(true)
+  const oldProof = { source_decisions: [{ url: source.url, role: 'content', confidence: 'high', inspection: {
+    version: 1, inspector: 'creative-artifact-vision', status: 'verified', confidence: 'high',
+    artifact_kind: 'artwork', source_url: source.url, media_url: og,
+    observation: 'Old OG pixels', capture_sha256: 'a'.repeat(64), capture_path: '/fixture/old-og.png',
+  } }] }
+  if (scenario === 'replacement') {
+    expect(hasCreativeArtifactEvidence({ ...source, image_url: og }, oldProof)).toBe(true)
+    expect(hasCreativeArtifactEvidence(merged, oldProof)).toBe(false)
+  }
+})
+
 it.each(['automatic', 'exact'])('researches an undersized %s anchor bed before spending on supporting-only sources', async mode => {
   // The anchor has no derived works, so it cannot supply the six-source floor.
   // Text editorial roles must arrive before the first real inspector invocation.

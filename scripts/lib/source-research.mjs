@@ -483,8 +483,24 @@ function mergeInspectedSources(...groups) {
       // Keep the preferred capture and its current status/context, but an empty
       // browser image is not evidence that an already-vetted fetch image vanished.
       // Retain that same-family image for actual pixel inspection, not admission.
-      merged.set(key, { ...first, image_url: first.image_url || source.image_url || null,
-        source_image_aliases: uniqueNonEmpty([...(first.source_image_aliases || []), ...(source.source_image_aliases || [])]),
+      const selectedImage = first.image_url || source.image_url || null
+      const firstChain = uniqueNonEmpty([first.image_url, first.source_image_url, ...(first.source_image_aliases || [])])
+      const sourceChain = uniqueNonEmpty([source.image_url, source.source_image_url, ...(source.source_image_aliases || [])])
+      // Only a shared observed image/redirect identity joins active alias chains.
+      // Different superseded media remain below in editorial evidence, preserving
+      // owner rejection/history without poisoning this image's archive identity.
+      const sameImage = !first.image_url || sourceChain.includes(first.image_url)
+        || (source.image_url && firstChain.includes(source.image_url))
+      merged.set(key, { ...first, image_url: selectedImage,
+        source_image_url: first.image_url ? (first.source_image_url || first.image_url)
+          : (source.source_image_url || selectedImage),
+        // Keep bounded observed media/context even when the preferred capture
+        // selects only one image. These are evidence, never eligibility stamps.
+        image_candidates: [...new Map([...(first.image_candidates || []), ...(source.image_candidates || [])]
+          .map(row => [JSON.stringify(row), row])).values()].slice(0, 264),
+        source_image_aliases: sameImage
+          ? uniqueNonEmpty([...(first.image_url ? firstChain : []), ...sourceChain])
+          : firstChain,
         editorial_evidence: [...(first.editorial_evidence || []), source] })
     } else {
       merged.set(key, source)
@@ -716,7 +732,7 @@ async function runSourceAutoresearch({
   }
 }
 
-async function captureAutoresearchedSources(selectedSources, { sourceTool, browserHarness, maxSources }) {
+async function captureAutoresearchedSources(selectedSources, { sourceTool, browserHarness, maxSources, observedSources = [] }) {
   const captured = []
   const seen = new Set()
 
@@ -725,7 +741,7 @@ async function captureAutoresearchedSources(selectedSources, { sourceTool, brows
     const key = sourceContentKey(candidate)
     if (!key || seen.has(key)) continue
     seen.add(key)
-    const source = await inspectCandidateSource(candidate, { sourceTool, browserHarness })
+    const source = await inspectCandidateSource(candidate, { sourceTool, browserHarness, observedSources: [...observedSources, ...captured] })
     if (!source || !isAllowedInspectedSource(source)) continue
     captured.push(source)
   }
@@ -789,6 +805,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     inspected = await captureAutoresearchedSources(singleAnchorCaptureSet, {
       sourceTool,
       browserHarness,
+      observedSources: fetchEvidence,
       maxSources: Math.max(maxSources * 2, minContentItems + 6),
     })
     inspected = mergeInspectedSources(inspected, fetchEvidence, imageMaterialContentSources)
@@ -859,6 +876,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   const researchedCaptures = await captureAutoresearchedSources(selectedForCapture, {
     sourceTool,
     browserHarness,
+    observedSources: inspected,
     maxSources,
   })
   // Keep both DNS-vetted fetch evidence and the anchor-derived media. A capture
@@ -915,6 +933,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       const added = await captureAutoresearchedSources([candidate], {
         sourceTool,
         browserHarness,
+        observedSources: inspected,
         maxSources: 1,
       })
       inspected = mergeInspectedSources(added, inspected)

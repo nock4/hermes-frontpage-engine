@@ -528,11 +528,13 @@ JSON.stringify({
     || document.querySelector('meta[property="og:description"]')?.content
     || document.querySelector('meta[name="twitter:description"]')?.content
     || '',
-  image_urls: [
-    document.querySelector('meta[property="og:image:secure_url"]')?.content,
-    document.querySelector('meta[property="og:image"]')?.content,
-    document.querySelector('meta[name="twitter:image:src"]')?.content,
-    document.querySelector('meta[name="twitter:image"]')?.content,
+  image_candidates: [
+    ...[
+      document.querySelector('meta[property="og:image:secure_url"]')?.content,
+      document.querySelector('meta[property="og:image"]')?.content,
+      document.querySelector('meta[name="twitter:image:src"]')?.content,
+      document.querySelector('meta[name="twitter:image"]')?.content,
+    ].filter(Boolean).map(image_url => ({ image_url, kind: 'metadata', context: 'head', page_url: location.href })),
     ...Array.from(document.images).slice(0, 64)
       .filter(img => !img.closest('nav, footer, [role="navigation"], [role="contentinfo"]'))
       .filter(img => {
@@ -549,7 +551,13 @@ JSON.stringify({
         const height = hasIntrinsicSize ? img.naturalHeight : declaredSize('height');
         return !(width >= 0 && width <= 2 && height >= 0 && height <= 2);
       })
-      .flatMap(img => [img.currentSrc, img.src]),
+      .flatMap(img => [...new Set([img.currentSrc, img.src].filter(Boolean))].map(image_url => ({
+        image_url, kind: 'dom', page_url: location.href,
+        context: img.closest('article') ? 'article' : img.closest('main, [role="main"]') ? 'main' : 'body',
+        ancillary: Boolean(img.closest('header, aside, [role="banner"], [role="complementary"]')),
+        linked_url: img.closest('a[href]')?.href || null,
+        alt: (img.alt || '').slice(0, 300),
+      }))),
   ].filter(Boolean),
   h1: document.querySelector('h1')?.innerText?.trim() || '',
   visible_text: (document.body?.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 900)
@@ -719,6 +727,8 @@ export async function inspectWithFetch(candidate, fetchable, classification, pag
       title,
       description,
       image_url: absoluteUrl(image, finalUrl) || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
+      image_candidates: image ? [{ image_url: absoluteUrl(image, finalUrl), page_url: finalUrl, kind: 'metadata', context: 'head' }] : [],
+      image_selection: null,
       source_embed_html: bandcampEmbedHtml || undefined,
       fetch_status: response.ok ? 'fetch-ok' : `fetch-http-${response.status}`,
     }
@@ -748,7 +758,42 @@ export async function inspectWithFetch(candidate, fetchable, classification, pag
   }
 }
 
-async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarness }) {
+// A shared homepage preview is evidence, not a filename heuristic. Fail closed
+// without an already-inspected successful same-origin root. No discovery/fetch.
+function selectObservedPageImage(imageCandidates, pageUrl, observedSources) {
+  const viable = imageCandidates.filter(row => isAllowedSourceUrl(row.image_url) && !isLowValueVisualImage(row.image_url))
+  const preferred = viable[0]
+  const unchanged = { image_url: preferred?.image_url || null, image_selection: null }
+  if (preferred?.kind !== 'metadata') return unchanged
+  try {
+    const page = new URL(pageUrl)
+    if (page.pathname === '/') return unchanged
+    const owner = observedSources.find(source => {
+      if (!['fetch-ok', 'browser-harness', 'browser-harness-disabled-fetch-ok', 'browser-harness-error-fetch-ok'].includes(source?.fetch_status)
+        || !isAllowedInspectedSource(source) || hasSourcePageError(source)) return false
+      const root = new URL(source.final_url || source.source_url || source.url)
+      return root.origin === page.origin && root.pathname === '/' && !root.search
+        && source.image_candidates?.some(row => row.kind === 'metadata'
+          && row.page_url === root.href && row.image_url === preferred.image_url)
+    })
+    if (!owner) return unchanged
+    const specific = viable.find(row => row.kind === 'dom' && row.page_url === pageUrl
+      && ['main', 'article'].includes(row.context) && !row.ancillary
+      && row.image_url !== preferred.image_url
+      // Linked cards belong to another page; a self/fragment or full-image link
+      // retains the current page's context. Never borrow a neighbouring story.
+      && (!row.linked_url || row.linked_url === row.image_url
+        || row.linked_url.split('#')[0] === pageUrl.split('#')[0]))
+    if (!specific) return unchanged
+    return { image_url: specific.image_url, image_selection: {
+      reason: 'observed-shared-homepage-preview', shared_preview_url: preferred.image_url,
+      evidence_page_url: owner.final_url || owner.source_url || owner.url,
+      page_url: pageUrl, selected_image_url: specific.image_url,
+    } }
+  } catch { return unchanged }
+}
+
+async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarness, observedSources = [] }) {
   if (!isAllowedSourceUrl(candidate.url)) return null
   const classification = classifySource(candidate.url)
   const videoId = youtubeId(candidate.url)
@@ -795,11 +840,15 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
     // identifiable low-value/unsafe media before the single existing health
     // fetch and later vision slot; do not crawl, reconstruct, or retry images.
     const pageError = hasSourcePageError(browserData)
-    const browserImageUrl = pageError ? null : [...new Set([
-      ...(Array.isArray(browserData.image_urls) ? browserData.image_urls : [browserData.image_url]),
-    ].filter((url) => typeof url === 'string' && url.trim())
-      .map((url) => absoluteUrl(url, browserFinalUrl)))]
-      .find((url) => isAllowedSourceUrl(url) && !isLowValueVisualImage(url))
+    const imageCandidates = (Array.isArray(browserData.image_candidates)
+      ? browserData.image_candidates
+      : (Array.isArray(browserData.image_urls) ? browserData.image_urls : [browserData.image_url])
+        .map(image_url => ({ image_url, kind: 'unknown', page_url: browserFinalUrl })))
+      .slice(0, 132).filter(row => typeof row?.image_url === 'string' && row.image_url.trim())
+      .map(row => ({ ...row, image_url: absoluteUrl(row.image_url, browserFinalUrl) }))
+    const selection = pageError ? { image_url: null, image_selection: null }
+      : selectObservedPageImage(imageCandidates, browserFinalUrl, observedSources)
+    const browserImageUrl = selection.image_url
     return normalizeInspectedSourceMedia({
       ...candidate,
       ...classification,
@@ -811,6 +860,11 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
       visible_text: browserData.visible_text || '',
       description: browserData.description || browserData.visible_text || '',
       image_url: pageError ? null : browserImageUrl || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
+      image_candidates: pageError ? [] : imageCandidates,
+      image_selection: selection.image_selection,
+      // An old metadata image is not an alias of the newly selected photograph.
+      source_image_url: browserImageUrl === candidate.image_url ? candidate.source_image_url : null,
+      source_image_aliases: browserImageUrl === candidate.image_url ? candidate.source_image_aliases : [],
       source_embed_html: bandcampEmbedHtml || undefined,
       fetch_status: browserData.fetch_status,
       youtube_embed_status: embedStatus,
@@ -824,11 +878,11 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
   })
 }
 
-export async function inspectCandidateSource(candidate, { sourceTool, browserHarness, timeoutMs = 35_000 } = {}) {
+export async function inspectCandidateSource(candidate, { sourceTool, browserHarness, observedSources = [], timeoutMs = 35_000 } = {}) {
   try {
     const source = await withTimeout(
       // Only provider fetches may supply scheduling identity, never callers.
-      inspectCandidateSourceInner({ ...candidate, creator_attribution: null }, { sourceTool, browserHarness }),
+      inspectCandidateSourceInner({ ...candidate, creator_attribution: null }, { sourceTool, browserHarness, observedSources }),
       timeoutMs,
       `Source inspection timed out after ${timeoutMs}ms: ${candidate?.url || 'unknown source'}`,
     )
