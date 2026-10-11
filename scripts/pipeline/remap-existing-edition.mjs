@@ -43,15 +43,10 @@ export async function remapExistingEditionPlate({
 
   const analysis = await inspectGeneratedPlate({ payload, platePath, apiKey, model }, remapRunDir)
 
-  if (analysis.inspection_mode === 'planned-artifact-fallback' && analysis.inspection_error) {
-    await writeJson(path.join(editionDir, 'analysis.json'), {
-      ...analysis,
-      analysis_id: `analysis-${editionId}`,
-      edition_id: editionId,
-      skipped_artifact_map_update: true,
-      skip_reason: 'Vision remap failed; preserving the existing artifact map instead of overwriting it with planned fallback rectangles.',
-    })
-
+  // Failed inspection must not replace accepted analysis, geometry, masks or copy.
+  if (analysis.inspection_mode === 'inspection-failed'
+    || analysis.inspection_mode === 'planned-artifact-fallback'
+    || analysis.inspection_error) {
     return {
       edition_id: editionId,
       inspection_mode: analysis.inspection_mode,

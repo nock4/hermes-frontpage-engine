@@ -95,10 +95,13 @@ export async function writeArtifactSvgMasks(editionDir, editionId, artifacts, di
     }))
 }
 
-export function safeOrigin(bounds, mode) {
-  const x = Math.round((bounds.x + bounds.w * (mode === 'stage' ? 0.58 : 0.5)) * 1536)
-  const y = Math.round((bounds.y + bounds.h * (mode === 'stage' ? 0.5 : 0.42)) * 1024)
-  return [Math.min(1320, Math.max(90, x)), Math.min(850, Math.max(80, y))]
+export function safeOrigin(bounds, mode, { width = 1536, height = 1024 } = {}) {
+  const x = Math.round((bounds.x + bounds.w * (mode === 'stage' ? 0.58 : 0.5)) * width)
+  const y = Math.round((bounds.y + bounds.h * (mode === 'stage' ? 0.5 : 0.42)) * height)
+  return [
+    Math.round(Math.min(width * 1320 / 1536, Math.max(width * 90 / 1536, x))),
+    Math.round(Math.min(height * 850 / 1024, Math.max(height * 80 / 1024, y))),
+  ]
 }
 
 export function expansionLabel(bounds) {

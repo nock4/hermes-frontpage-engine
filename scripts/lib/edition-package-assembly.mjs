@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import {
   expansionLabel,
-  parseImageSize,
+  readImageDimensions,
   rectPolygon,
   safeOrigin,
   writeArtifactSvgMasks,
@@ -24,18 +24,6 @@ import { canonicalizeSourceUrl, isYouTubeVideoUrl } from './source-url-policy.mj
 import { sentenceList, slugify, uniqueNonEmpty } from './string-utils.mjs'
 
 const DEFAULT_MAX_CONTENT_ITEMS = 10
-const FALLBACK_SURFACE_BOUNDS = [
-  { x: 0.08, y: 0.1, w: 0.32, h: 0.32 },
-  { x: 0.58, y: 0.12, w: 0.32, h: 0.32 },
-  { x: 0.08, y: 0.52, w: 0.22, h: 0.22 },
-  { x: 0.34, y: 0.54, w: 0.22, h: 0.22 },
-  { x: 0.62, y: 0.54, w: 0.22, h: 0.22 },
-  { x: 0.1, y: 0.78, w: 0.18, h: 0.16 },
-  { x: 0.42, y: 0.78, w: 0.18, h: 0.16 },
-  { x: 0.72, y: 0.76, w: 0.18, h: 0.16 },
-  { x: 0.28, y: 0.34, w: 0.16, h: 0.15 },
-  { x: 0.56, y: 0.34, w: 0.16, h: 0.15 },
-]
 
 async function readJson(filePath) {
   return JSON.parse(await fs.readFile(filePath, 'utf8'))
@@ -82,28 +70,20 @@ function uniqueArtifactId(label, index, kind, usedIds) {
   return candidate
 }
 
-function fallbackSurfaceObject(artifact, index) {
-  const bounds = FALLBACK_SURFACE_BOUNDS[index % FALLBACK_SURFACE_BOUNDS.length]
-  return {
-    label: artifact?.label || `Source pocket ${index + 1}`,
-    artifact_type: artifact?.artifact_type || 'source-surface',
-    role: index < 2 ? 'hero-anchor' : 'source-pocket',
-    bounds,
-    polygon: rectPolygon(bounds),
-    confidence: 0.45,
-    visual_evidence: 'Planned source surface fallback used because plate inspection returned fewer mapped objects than source bindings.',
-  }
-}
-
 function packageDetectedObjects(analysis, eligibleArtifacts, maxContentItems) {
-  const detectedObjects = Array.isArray(analysis.detected_objects) ? analysis.detected_objects : []
-  const targetCount = Math.min(eligibleArtifacts.length, maxContentItems)
-  const objects = []
-
-  for (let index = 0; index < targetCount; index += 1) {
-    objects.push(detectedObjects[index] || fallbackSurfaceObject(eligibleArtifacts[index], index))
+  const detectedObjects = Array.isArray(analysis?.detected_objects) ? analysis.detected_objects : []
+  const objects = detectedObjects.slice(0, Math.min(eligibleArtifacts.length, maxContentItems))
+  const invalidGeometry = objects.some((object) => {
+    const bounds = object?.bounds
+    return !bounds || !['x', 'y', 'w', 'h'].every((key) => Number.isFinite(bounds[key]))
+      || bounds.x < 0 || bounds.y < 0 || bounds.w <= 0 || bounds.h <= 0
+      || bounds.x + bounds.w > 1.000001 || bounds.y + bounds.h > 1.000001
+  })
+  // The floor applies to review packages too. Planned geometry is not evidence.
+  if (objects.length < 6 || invalidGeometry || analysis.inspection_mode === 'planned-artifact-fallback'
+    || analysis.inspection_error || Number(analysis.fallback_detected_object_count) > 0) {
+    throw new Error(`Package requires at least 6 real detected mapped objects; found ${objects.length} candidates (inspection: ${analysis?.inspection_mode || 'unknown'}). Planned fallback geometry cannot satisfy the floor.`)
   }
-
   return objects
 }
 
@@ -373,18 +353,6 @@ export async function assembleEditionPackage({
     }
   }
   assertEditorialBindings(payload.artifacts, researchField, signalHarvest, { minimum: options.publish === false ? 1 : 6 })
-  const manifestPath = path.join(root, 'public', 'editions', 'index.json')
-  const manifest = await readJson(manifestPath)
-  const slugBase = slugify(payload.slug_base || payload.scene_family)
-  const version = nextVersion(manifest, options.date, slugBase)
-  const slug = `${slugBase}-v${version}`
-  const editionId = `${options.date}-${slug}`
-  const editionDir = path.join(root, 'public', 'editions', editionId)
-  const assetsDir = path.join(editionDir, 'assets')
-  await fs.mkdir(assetsDir, { recursive: true })
-
-  await fs.copyFile(plate.outputPath, path.join(assetsDir, 'plate.png'))
-  await fs.copyFile(plate.outputPath, path.join(assetsDir, 'preview.png'))
 
   const sourceByUrl = buildSourceLookup(researchField.sources)
   const eligibleArtifacts = []
@@ -396,15 +364,28 @@ export async function assembleEditionPackage({
   }
   const sourceUrls = eligibleArtifacts.map((artifact) => artifact.source_url)
   const objects = packageDetectedObjects(analysis, eligibleArtifacts, maxContentItems)
-  const fallbackDetectedObjectCount = Math.max(0, objects.length - (analysis.detected_objects?.length || 0))
-  const packageAnalysis = {
-    ...analysis,
-    detected_objects: objects,
-    fallback_detected_object_count: fallbackDetectedObjectCount,
-    ...(fallbackDetectedObjectCount > 0
-      ? { mapping_note: 'Package assembly filled unmapped source pockets from planned artifact surfaces because plate inspection returned too few detected objects.' }
-      : {}),
+  const analysisViewport = analysis.viewport
+  const analysisSize = Number.isFinite(analysisViewport?.base_width) && analysisViewport.base_width > 0
+    && Number.isFinite(analysisViewport?.base_height) && analysisViewport.base_height > 0
+    ? `${analysisViewport.base_width}x${analysisViewport.base_height}` : options.imageSize
+  const dimensions = await readImageDimensions(plate.outputPath, analysisSize)
+  const viewport = {
+    base_width: dimensions.width,
+    base_height: dimensions.height,
+    aspect_ratio: `${dimensions.width}:${dimensions.height}`,
   }
+  const packageAnalysis = { ...analysis, detected_objects: objects, viewport }
+  const manifestPath = path.join(root, 'public', 'editions', 'index.json')
+  const manifest = await readJson(manifestPath)
+  const slugBase = slugify(payload.slug_base || payload.scene_family)
+  const version = nextVersion(manifest, options.date, slugBase)
+  const slug = `${slugBase}-v${version}`
+  const editionId = `${options.date}-${slug}`
+  const editionDir = path.join(root, 'public', 'editions', editionId)
+  const assetsDir = path.join(editionDir, 'assets')
+  await fs.mkdir(assetsDir, { recursive: true })
+  await fs.copyFile(plate.outputPath, path.join(assetsDir, 'plate.png'))
+  await fs.copyFile(plate.outputPath, path.join(assetsDir, 'preview.png'))
   const usedArtifactIds = new Set()
   const artifactMapArtifacts = objects.map((object, index) => {
     const kind = index < 2 ? 'hero' : 'module'
@@ -422,13 +403,13 @@ export async function assembleEditionPackage({
       mask_path: `/editions/${editionId}/assets/masks/${id}.svg`,
       source_binding_ids: [`binding-${id}`],
       geometry: {
-        safe_hover_origin_px: safeOrigin(bounds, 'hover'),
-        safe_stage_window_origin_px: safeOrigin(bounds, 'stage'),
+        safe_hover_origin_px: safeOrigin(bounds, 'hover', dimensions),
+        safe_stage_window_origin_px: safeOrigin(bounds, 'stage', dimensions),
         preferred_expansion_label: expansionLabel(bounds),
       },
     }
   })
-  await writeArtifactSvgMasks(editionDir, editionId, artifactMapArtifacts, parseImageSize(options.imageSize), { root })
+  await writeArtifactSvgMasks(editionDir, editionId, artifactMapArtifacts, dimensions, { root })
 
   const usedBindingTitles = new Set()
   const bindings = await Promise.all(artifactMapArtifacts.map(async (artifact, index) => {
@@ -507,11 +488,7 @@ export async function assembleEditionPackage({
 
   const artifactMap = {
     artifact_map_id: edition.artifact_map_id,
-    viewport: {
-      base_width: 1536,
-      base_height: 1024,
-      aspect_ratio: '1536:1024',
-    },
+    viewport,
     default_cluster_id: payload.scene_family,
     default_artifact_id: artifactMapArtifacts[0]?.id,
     artifacts: artifactMapArtifacts,

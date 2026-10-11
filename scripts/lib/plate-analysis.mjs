@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { clamp01, rectPolygon } from './edition-geometry.mjs'
+import { clamp01, readImageDimensions } from './edition-geometry.mjs'
 import { openAiJson } from './openai-json.mjs'
 import { slugify } from './string-utils.mjs'
 
@@ -70,79 +70,36 @@ export async function inspectGeneratedPlate(
       maxOutputTokens: 7000,
     })
   } catch (error) {
-    console.warn(`Hermes plate inspection failed; using planned artifact geometry fallback. ${error.message}`)
-    analysis = fallbackPlateAnalysis(payload, error.message)
+    console.warn(`Hermes plate inspection failed; no detected objects are available. ${error.message}`)
+    analysis = { inspection_mode: 'inspection-failed', inspection_error: error.message, detected_objects: [] }
   }
 
   const normalized = normalizePlateAnalysis(analysis, payload, { maxContentItems })
+  const dimensions = await readImageDimensions(platePath)
+  normalized.viewport = {
+    base_width: dimensions.width,
+    base_height: dimensions.height,
+    aspect_ratio: `${dimensions.width}:${dimensions.height}`,
+  }
   await writeJson(path.join(runDir, 'plate-analysis.json'), normalized)
   return normalized
 }
 
-function fallbackPlateAnalysis(payload, errorMessage = '') {
-  const layout = fallbackBounds()
-  return {
-    inspection_mode: 'planned-artifact-fallback',
-    inspection_error: errorMessage,
-    scene_summary: payload.scene_prompt,
-    usable_surfaces: payload.material_language,
-    detected_objects: payload.artifacts.map((artifact, index) => ({
-      label: artifact.label,
-      artifact_type: artifact.artifact_type,
-      role: index < 2 ? 'hero-anchor' : 'gesture-mark',
-      bounds: layout[index],
-      polygon: rectPolygon(layout[index]),
-      confidence: 0.55,
-      visual_evidence: 'Planned source-bearing mark from the scene brief.',
-    })),
-    complexity_assessment: {
-      status: 'watch',
-      dominant_form_count: 3,
-      large_region_count: 3,
-      mapped_region_coverage: 0.4,
-      rationale: 'Fallback geometry cannot verify the plate complexity directly.',
-    },
-  }
-}
-
-function fallbackBounds() {
-  return [
-    { x: 0.08, y: 0.1, w: 0.32, h: 0.32 },
-    { x: 0.58, y: 0.12, w: 0.32, h: 0.32 },
-    { x: 0.08, y: 0.52, w: 0.22, h: 0.22 },
-    { x: 0.34, y: 0.54, w: 0.22, h: 0.22 },
-    { x: 0.62, y: 0.54, w: 0.22, h: 0.22 },
-    { x: 0.1, y: 0.78, w: 0.18, h: 0.16 },
-    { x: 0.42, y: 0.78, w: 0.18, h: 0.16 },
-    { x: 0.72, y: 0.76, w: 0.18, h: 0.16 },
-    { x: 0.28, y: 0.34, w: 0.16, h: 0.15 },
-    { x: 0.56, y: 0.34, w: 0.16, h: 0.15 },
-  ]
-}
-
 function normalizePlateAnalysis(analysis, payload, { maxContentItems }) {
-  const fallback = fallbackPlateAnalysis(payload)
   const objects = Array.isArray(analysis.detected_objects) ? analysis.detected_objects : []
   const normalized = objects
     .map((object, index) => normalizeDetectedObject(object, index))
     .filter(Boolean)
     .slice(0, maxContentItems)
 
-  if (fallback.inspection_mode === analysis.inspection_mode || normalized.length === 0) {
-    for (const object of fallback.detected_objects) {
-      if (normalized.length >= maxContentItems) break
-      normalized.push(object)
-    }
-  }
-
   const complexity = normalizeComplexityAssessment(analysis.complexity_assessment, normalized, { maxContentItems })
 
   return {
     analysis_id: `analysis-${Date.now()}`,
-    inspection_mode: analysis.inspection_mode === 'planned-artifact-fallback' ? 'planned-artifact-fallback' : 'openai-vision',
+    inspection_mode: analysis.inspection_error ? 'inspection-failed' : 'openai-vision',
     inspection_error: analysis.inspection_error || null,
-    scene_summary: String(analysis.scene_summary || fallback.scene_summary),
-    usable_surfaces: normalizeStringArray(analysis.usable_surfaces, fallback.usable_surfaces).slice(0, 12),
+    scene_summary: String(analysis.scene_summary || payload.scene_prompt),
+    usable_surfaces: normalizeStringArray(analysis.usable_surfaces, []).slice(0, 12),
     detected_objects: normalized,
     complexity_assessment: complexity,
   }
