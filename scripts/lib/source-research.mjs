@@ -618,7 +618,7 @@ async function runSourceAutoresearch({
     hard_rules: [
       'Use only URLs present in candidate_sources. Do not invent outside URLs.',
       'These are text nominations, not verified visual eligibility. Never return an inspection record; actual media is independently captured and inspected after nomination.',
-      'Public content must come only from recent saved-signal channels: Twitter bookmarks, YouTube likes, NTS resolved streaming sources, and Chrome bookmarks.',
+      'Public content must come only from recent saved-signal channels: Twitter bookmarks, YouTube likes, NTS resolved streaming sources, Chrome bookmarks, and explicitly authorized saved manual-curation nominations. Manual-curation is a nomination channel, not proof of creative eligibility; preserve its provenance and apply the same actual-media inspection, editorial exclusions, and archive-repeat gates.',
       'Never select local files, text documents, NTS pages, unresolved search locators, or URLs that are not in the candidate list.',
       `Select ${minContentItems} to ${maxContentItems} content URLs when enough suitable sources exist; ${targetContentItems} is ideal.`,
       'Over-index on music, visuals, art, memes, animation, film/video, games, fashion/material texture, comics/zines, photography, archives, and other visually stimulating sources.',

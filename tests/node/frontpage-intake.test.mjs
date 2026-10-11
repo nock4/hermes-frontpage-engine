@@ -1,7 +1,60 @@
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
-import { describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+
+const state = vi.hoisted(() => ({ sources: new Map(), requests: [], attempts: [], batches: [] }))
+// Run real mining, orchestration, serialization and media/editorial/archive gates.
+// Only network and model responses are synthetic; never inject eligibility stamps.
+vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
+  inspectCandidateSource: async source => ({ ...source, ...state.sources.get(source.url) }),
+  findVisualReference: async () => null,
+}))
+vi.mock('../../scripts/lib/source-image-network-policy.mjs', async original => ({
+  ...await original(),
+  resolveFetchableImageUrl: async url => url,
+  fetchVettedRemoteUrl: async () => new Response(Buffer.from('synthetic test pixels'), { headers: { 'content-type': 'image/png' } }),
+}))
+vi.mock('../../scripts/lib/source-image-geometry.mjs', async original => ({
+  ...await original(), measureSourceImage: async () => ({ width: 800, height: 600 }),
+}))
+vi.mock('../../scripts/lib/creative-artifact-inspection.mjs', async original => {
+  const actual = await original()
+  return { ...actual, inspectCreativeArtifacts: async (...args) => {
+    const before = state.attempts.length
+    const result = await actual.inspectCreativeArtifacts(...args)
+    state.batches.push(state.attempts.length - before)
+    return result
+  } }
+})
+vi.mock('../../scripts/lib/openai-json.mjs', () => ({
+  openAiJson: async ({ instructions, input }) => {
+    if (instructions.includes('source-research editor')) {
+      const request = JSON.parse(input)
+      state.requests.push({ request, attempts: state.attempts.length })
+      // Honor the serialized channel contract, rather than always returning
+      // content and concealing a contradictory prompt. Substantive exclusions
+      // still win even when the channel is authorized.
+      const channelRule = request.hard_rules.find(rule => rule.startsWith('Public content must come only')) || ''
+      const manualAllowed = channelRule.includes('explicitly authorized saved manual-curation nominations')
+      const source_decisions = request.candidate_sources.map(source => ({
+        url: source.url, confidence: 'high',
+        role: source.source_channel === 'manual-curation' && !manualAllowed ? 'reject'
+          : /identity mismatch/i.test(source.description) ? 'reject' : 'content',
+        why: source.source_channel === 'manual-curation' && !manualAllowed ? 'Outside allowed saved-signal channels'
+          : /identity mismatch/i.test(source.description) ? 'Owning work identity mismatch' : 'Nominate creative work for actual-media inspection',
+      }))
+      return { source_decisions, selected_content_urls: source_decisions.filter(row => row.role === 'content').map(row => row.url), visual_reference_urls: [] }
+    }
+    if (instructions.startsWith('Inspect the attached actual source pixels')) {
+      const source = JSON.parse(input[0].content[0].text)
+      state.attempts.push(source.url)
+      return { status: state.sources.get(source.url)?.pixelStatus || 'verified', artifact_kind: 'artwork', confidence: 'high', observation: 'Synthetic model fixture: painted textile figures' }
+    }
+    return { visual_summary: 'Painted textile figures', preserve_cues: ['red figures', 'woven texture'], visual_fertility: 'high' }
+  },
+}))
+import { inspectSourceCandidates } from '../../scripts/lib/source-research.mjs'
 import { loadObsidianAllowlistSignals, signalChannelForPath } from '../../scripts/lib/signal-adapters/obsidian-allowlist-adapter.mjs'
 import { mineSignals } from '../../scripts/lib/signal-mining.mjs'
 import { canonicalizeSourceUrl } from '../../scripts/lib/source-url-policy.mjs'
@@ -17,8 +70,87 @@ async function writeNote(root, relativePath, text) {
   await fs.utimes(file, new Date(`${date}T12:00:00Z`), new Date(`${date}T12:00:00Z`))
 }
 
+beforeEach(() => {
+  state.sources = new Map(); state.requests = []; state.attempts = []; state.batches = []
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
+  vi.stubEnv('DFE_DECISION_MODEL', 'rules')
+})
+afterEach(() => vi.unstubAllEnvs())
+
+async function researchSavedNominations(fixtures, check) {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-intake-research-'))
+  try {
+    const vault = path.join(root, 'vault')
+    for (const [index, fixture] of fixtures.entries()) {
+      await writeNote(vault, `${lane}/${date}/work-${index}.md`, `# Textile artwork ${index}\nSaved nomination; inspect actual media before admission.\n${fixture.url}`)
+      state.sources.set(fixture.url, {
+        title: `Textile artwork ${index}`, description: 'Painted woven figures in a gallery work.',
+        image_url: `https://media${index}.example/work.png`, fetch_status: 'fetch-ok', ...fixture,
+      })
+    }
+    const recentSourceKeys = new Set(fixtures.filter(source => source.repeated).map(source => canonicalizeSourceUrl(source.url)))
+    const options = { inputMode: 'obsidian-allowlist', inputRoot: vault, date, windowDays: 30, maxNotes: fixtures.length, recentSourceKeys }
+    const harvest = await mineSignals(options, root)
+    expect(harvest.notes_selected).toHaveLength(fixtures.length)
+    expect(harvest.source_candidates).toHaveLength(fixtures.length)
+    expect(harvest.source_candidates.every(source => source.source_channel === 'manual-curation' && !source.inspection)).toBe(true)
+    await expect(inspectSourceCandidates(harvest, { ...options, maxSources: 6, runDir: root, sourceTool: 'fetch' })).rejects.toThrow(/blocked|expected at least 6/)
+    const request = JSON.parse(await fs.readFile(path.join(root, 'source-autoresearch-request.json'), 'utf8'))
+    const research = JSON.parse(await fs.readFile(path.join(root, 'source-research.json'), 'utf8'))
+    expect(state.requests).toHaveLength(1)
+    expect(state.requests[0]).toEqual({ request, attempts: 0 })
+    expect(request.candidate_sources.every(source => source.source_channel === 'manual-curation')).toBe(true)
+    expect(request.candidate_sources.every(source => source.note_excerpt.includes('Saved nomination; inspect actual media before admission.'))).toBe(true)
+    expect(request.hard_rules.join(' ')).toContain('These are text nominations, not verified visual eligibility')
+    expect(research.source_floor_diagnostics.min_required_content_sources).toBe(6)
+    expect(state.attempts.length).toBeLessThanOrEqual(24)
+    expect(state.batches.every(count => count <= 10)).toBe(true)
+    await check({ request, research, harvest })
+  } finally { await fs.rm(root, { recursive: true, force: true }) }
+}
+
 // These are synthetic saved-note fixtures, not new bookmarks or eligibility proof.
 describe('authorized frontpage intake lane', () => {
+  it('nominates saved manual-curation through the serialized channel contract without overriding substantive gates', async () => {
+    const fresh = [
+      'https://artist-a.example/projects/textile', 'https://artist-b.example/photography/room',
+      'https://vimeo.com/123456789', 'https://vimeo.com/987654321',
+    ]
+    const rejected = 'https://reject.example/work'
+    const tooling = 'https://tooling.example/work'
+    const ambiguous = 'https://ambiguous.example/work'
+    const repeated = 'https://spent.example/work'
+    await researchSavedNominations([
+      ...fresh.map(url => ({ url })),
+      { url: rejected, description: 'Owning work identity mismatch: saved attribution does not match this work.' },
+      { url: tooling, description: 'AI assistant prompt guide and agent workflow tutorial.' },
+      { url: ambiguous, pixelStatus: 'ambiguous' },
+      { url: repeated, repeated: true },
+    ], ({ research }) => {
+      expect(research.content_sources.map(source => source.url).sort()).toEqual([...fresh].sort())
+      expect(research.content_sources.every(source => source.source_channel === 'manual-curation')).toBe(true)
+      expect(state.attempts).toEqual(expect.arrayContaining([...fresh, ambiguous]))
+      expect(state.attempts).not.toEqual(expect.arrayContaining([rejected]))
+      expect(state.attempts).not.toEqual(expect.arrayContaining([tooling]))
+      expect(state.attempts).not.toEqual(expect.arrayContaining([repeated]))
+      expect(research.autoresearch.source_decisions).toContainEqual(expect.objectContaining({ url: rejected, role: 'reject', why: 'Owning work identity mismatch' }))
+      // A nomination is not an inspection; even fertile fingerprints cannot turn
+      // ambiguous actual-media results into a fifth source or clear the floor.
+      expect(research.content_source_count).toBe(4)
+    })
+  })
+
+  it('keeps authorized but ambiguous nominations at zero admission and the unchanged 24-total/10-batch caps', async () => {
+    await researchSavedNominations(Array.from({ length: 30 }, (_, index) => ({
+      url: `https://owner${index}.example/work`, pixelStatus: 'ambiguous',
+    })), ({ research }) => {
+      expect(state.attempts).toHaveLength(24)
+      expect(new Set(state.attempts).size).toBe(24)
+      expect(state.batches).toContain(10)
+      expect(research.content_sources).toEqual([])
+      expect(research.content_source_count).toBe(0)
+    })
+  })
   it('recursively harvests all 12 saved nominations with their exact context, dates and URLs', async () => {
     const vault = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-intake-'))
     try {
