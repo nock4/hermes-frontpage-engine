@@ -20,7 +20,7 @@ afterEach(async () => {
   for (const dir of dirs.splice(0)) await fs.rm(dir, { recursive: true, force: true })
 })
 
-async function inspect(html, extra = {}) {
+async function inspect(html, extra = {}, expectRejected = false, status = 200) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'source-images-'))
   dirs.push(dir)
   const executable = path.join(dir, 'harness.mjs')
@@ -35,7 +35,7 @@ const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage();
   await page.route('**/*', route => route.request().isNavigationRequest()
-    ? route.fulfill({ contentType: 'text/html', body: ${JSON.stringify(html)} })
+    ? route.fulfill({ status: ${status}, contentType: 'text/html', body: ${JSON.stringify(html)} })
     : route.abort());
   await page.goto(${JSON.stringify(sourceUrl)});
   const result = JSON.parse(await page.evaluate(expression));
@@ -49,6 +49,11 @@ try {
   vi.stubGlobal('fetch', fetch)
   const candidate = { url: sourceUrl, note_title: 'Saved art', ...extra }
   const result = await inspectCandidateSource(candidate, { sourceTool: 'browser-harness', browserHarness: executable })
+  if (expectRejected) {
+    expect(result).toBeNull()
+    expect(fetch).not.toHaveBeenCalled()
+    return { result, fetch }
+  }
   expect(result?.fetch_status).toBe('browser-harness')
   expect(result?.url).toBe(sourceUrl)
   expect(result?.source_url).toBe(sourceUrl)
@@ -98,6 +103,26 @@ it('does not crawl linked art or expand the bounded DOM scan', async () => {
   const { result, fetch } = await inspect(`${`<img src="${logo}">`.repeat(64)}<img src="${art}"><a href="https://elsewhere.example/art.jpg">art</a>`)
   expect(result.image_url).toBeNull()
   expect(fetch).not.toHaveBeenCalled()
+})
+
+it('skips navigation and footer photos before choosing owning-page artwork', async () => {
+  const { result, fetch } = await inspect(`<nav><img src="https://cdn.example.com/mountain.jpg"></nav><div role="navigation"><img src="https://cdn.example.com/flowers.jpg"></div><footer><img src="https://cdn.example.com/bird.jpg"></footer><main><img src="${art}"></main>`)
+  expect(result.image_url).toBe(art)
+  expect(fetch.mock.calls.every(([url]) => url === art)).toBe(true)
+})
+
+it('does not extract media from a missing-page browser shell', async () => {
+  const { result, fetch } = await inspect(`<title>Requested Page Not Found (404)</title><h1>Page not found</h1><p>We're sorry, we can't find the page you're looking for. Error code: 404</p><meta property="og:image" content="${art}"><img src="${art}">`, {}, true)
+  expect(result).toBeNull()
+  expect(fetch).not.toHaveBeenCalled()
+})
+
+it('retains navigation HTTP failure even when the page title looks like content', async () => {
+  await inspect(`<title>Garden guide</title><meta property="og:image" content="${art}">`, {}, true, 404)
+})
+
+it('does not let stale OG metadata hide a corroborated missing-page heading', async () => {
+  await inspect(`<meta property="og:title" content="Garden guide"><meta property="og:image" content="${art}"><h1>Page not found</h1><p>Oops! Back to home.</p>`, {}, true)
 })
 
 it('preserves a viable OG image and editorial quarantine without granting creative evidence', async () => {

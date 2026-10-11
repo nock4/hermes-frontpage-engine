@@ -9,6 +9,7 @@ import { fetchVettedImage } from './fetch-vetted-image.mjs'
 import { fetchVettedRemoteUrl, resolveFetchableHtmlUrl } from './source-image-network-policy.mjs'
 import {
   classifySource,
+  hasSourcePageError,
   isAllowedInspectedSource,
   isLowValueVisualImage,
   scoreVisualCandidate,
@@ -517,6 +518,7 @@ def inspect_source(url):
     payload = js(r'''
 JSON.stringify({
   final_url: location.href,
+  http_status: performance.getEntriesByType('navigation')[0]?.responseStatus || null,
   title: document.querySelector('meta[property="og:title"]')?.content
     || document.querySelector('meta[name="twitter:title"]')?.content
     || document.title
@@ -530,7 +532,9 @@ JSON.stringify({
     document.querySelector('meta[property="og:image"]')?.content,
     document.querySelector('meta[name="twitter:image:src"]')?.content,
     document.querySelector('meta[name="twitter:image"]')?.content,
-    ...Array.from(document.images).slice(0, 64).flatMap(img => [img.currentSrc, img.src]),
+    ...Array.from(document.images).slice(0, 64)
+      .filter(img => !img.closest('nav, footer, [role="navigation"], [role="contentinfo"]'))
+      .flatMap(img => [img.currentSrc, img.src]),
   ].filter(Boolean),
   h1: document.querySelector('h1')?.innerText?.trim() || '',
   visible_text: (document.body?.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 900)
@@ -775,7 +779,8 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
     // Consider only URLs observed on this page, in metadata/DOM order. Reject
     // identifiable low-value/unsafe media before the single existing health
     // fetch and later vision slot; do not crawl, reconstruct, or retry images.
-    const browserImageUrl = [...new Set([
+    const pageError = hasSourcePageError(browserData)
+    const browserImageUrl = pageError ? null : [...new Set([
       ...(Array.isArray(browserData.image_urls) ? browserData.image_urls : [browserData.image_url]),
     ].filter((url) => typeof url === 'string' && url.trim())
       .map((url) => absoluteUrl(url, browserFinalUrl)))]
@@ -786,8 +791,11 @@ async function inspectCandidateSourceInner(candidate, { sourceTool, browserHarne
       source_url: candidate.url,
       final_url: browserData.final_url || fetchable,
       title: browserData.title || browserData.h1 || candidate.note_title,
+      h1: browserData.h1 || '',
+      http_status: browserData.http_status || null,
+      visible_text: browserData.visible_text || '',
       description: browserData.description || browserData.visible_text || '',
-      image_url: browserImageUrl || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
+      image_url: pageError ? null : browserImageUrl || (videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null),
       source_embed_html: bandcampEmbedHtml || undefined,
       fetch_status: browserData.fetch_status,
       youtube_embed_status: embedStatus,

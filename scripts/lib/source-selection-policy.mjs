@@ -32,8 +32,22 @@ export function classifySource(url) {
   }
 }
 
+// A successful browser transport is not evidence that the requested page exists.
+// Use current owning-page evidence only: stale failed fetches in editorial_evidence
+// must not veto a recovered page, and an artwork's error-themed title alone is not
+// a missing-page verdict.
+export function hasSourcePageError(source) {
+  if (/^fetch-http-(?:404|410)$/.test(source?.fetch_status || '')) return true
+  if (Number(source?.http_status) >= 400) return true
+  const errorHeading = /^(?:(?:error\s*)?(?:404|410)\s*[-:|]?\s*)?(?:requested\s+)?page (?:not found|unavailable|does not exist)\b|^(?:404|410)(?:\s*[-:|]\s*(?:not found|gone))?\s*$/i
+  const heading = [source?.title, source?.h1].some(value => errorHeading.test(String(value || '').trim()))
+  const recovery = /\b(?:oops|back to home|return (?:to )?(?:the )?home|page (?:you are|you're) looking for|(?:can't|cannot|could not) find (?:the|this) page|error code:\s*(?:404|410))\b/i
+    .test([source?.description, source?.visible_text].filter(Boolean).join(' '))
+  return heading && recovery
+}
+
 export function isAllowedInspectedSource(source) {
-  if (source?.embed_status === 'unavailable') return false
+  if (source?.embed_status === 'unavailable' || hasSourcePageError(source)) return false
   return [source?.url, source?.source_url, source?.final_url]
     .filter(Boolean)
     .every(isAllowedSourceUrl)
@@ -261,6 +275,7 @@ export function isLowValueVisualImage(imageUrl) {
     || lower.includes('favicon')
     || lower.includes('apple-touch-icon')
     || lower.includes('site-icon')
+    || /(?:^|[/_.-])global[-_]?nav(?:igation)?(?:[/.?#_-]|promo|$)/.test(lower)
     || lower.includes('wordmark')
     || lower.includes('profile_images')
     || lower.includes('profile_pic')
@@ -306,6 +321,7 @@ export function isDirectRasterImageUrl(sourceUrl) {
 }
 
 export function visualReferenceScore(source, recentSourceKeys = new Set()) {
+  if (!isAllowedInspectedSource(source)) return Number.NEGATIVE_INFINITY
   if (isDocumentationUiSource(source)) return Number.NEGATIVE_INFINITY
   if (isAiToolingContentSource(source)) return Number.NEGATIVE_INFINITY
   if (isLowValueVisualImage(source?.image_url)) return Number.NEGATIVE_INFINITY
