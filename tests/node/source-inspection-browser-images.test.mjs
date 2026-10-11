@@ -20,7 +20,7 @@ afterEach(async () => {
   for (const dir of dirs.splice(0)) await fs.rm(dir, { recursive: true, force: true })
 })
 
-async function inspect(html, extra = {}, expectRejected = false, status = 200) {
+async function inspect(html, extra = {}, expectRejected = false, status = 200, imageFixtures = {}) {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'source-images-'))
   dirs.push(dir)
   const executable = path.join(dir, 'harness.mjs')
@@ -34,9 +34,12 @@ const expression = input.match(/payload = js\\(r'''([\\s\\S]*?)'''\\)/)[1];
 const browser = await chromium.launch({ headless: true });
 try {
   const page = await browser.newPage();
+  const imageFixtures = ${JSON.stringify(imageFixtures)};
   await page.route('**/*', route => route.request().isNavigationRequest()
     ? route.fulfill({ status: ${status}, contentType: 'text/html', body: ${JSON.stringify(html)} })
-    : route.abort());
+    : imageFixtures[route.request().url()]
+      ? route.fulfill({ contentType: 'image/svg+xml', body: imageFixtures[route.request().url()] })
+      : route.abort());
   await page.goto(${JSON.stringify(sourceUrl)});
   const result = JSON.parse(await page.evaluate(expression));
   console.log(JSON.stringify({ ...result, fetch_status: 'browser-harness' }));
@@ -86,6 +89,37 @@ it.each([
   expect(result.source_image_url).toBe(art)
   expect(result.source_image_aliases).toEqual([art])
   expect(fetch.mock.calls.every(([url]) => url === art)).toBe(true)
+})
+
+// Opaque URLs deliberately carry no pixel/tracker filename or host cue.
+const beacon = 'https://cdn.example.com/action/0?evt=pageLoad'
+const sizedImage = (width, height) => `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><rect width="100%" height="100%" fill="red"/></svg>`
+
+it.each([1, 2])('skips an intrinsically %ipx image even when CSS enlarges it', async size => {
+  const { result, fetch } = await inspect(`<img src="${beacon}" style="width:800px;height:600px"><img src="${art}">`, {}, false, 200, { [beacon]: sizedImage(size, size) })
+  expect(result.image_url).toBe(art)
+  expect(fetch.mock.calls.every(([url]) => url === art)).toBe(true)
+})
+
+it('skips explicitly tiny unloaded images without rejecting unknown dimensions', async () => {
+  const { result } = await inspect(`<img src="${beacon}" width="1" height="1"><img src="${art}">`)
+  expect(result.image_url).toBe(art)
+})
+
+it('returns no media and spends no image health request on a pixel-only page', async () => {
+  const { result, fetch } = await inspect(`<img src="${beacon}">`, {}, false, 200, { [beacon]: sizedImage(1, 1) })
+  expect(result.image_url).toBeNull()
+  expect(fetch).not.toHaveBeenCalled()
+})
+
+it('preserves full-size content even when declared and displayed at one pixel', async () => {
+  const { result } = await inspect(`<img src="${art}" width="1" height="1" style="width:1px;height:1px">`, {}, false, 200, { [art]: sizedImage(1200, 800) })
+  expect(result.image_url).toBe(art)
+})
+
+it('preserves narrow content rather than treating a single tiny dimension as a pixel', async () => {
+  const { result } = await inspect(`<img src="${art}">`, {}, false, 200, { [art]: sizedImage(1, 800) })
+  expect(result.image_url).toBe(art)
 })
 
 it('checks later metadata before falling back to DOM images', async () => {

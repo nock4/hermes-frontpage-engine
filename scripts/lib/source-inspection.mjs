@@ -534,6 +534,14 @@ JSON.stringify({
     document.querySelector('meta[name="twitter:image"]')?.content,
     ...Array.from(document.images).slice(0, 64)
       .filter(img => !img.closest('nav, footer, [role="navigation"], [role="contentinfo"]'))
+      .filter(img => {
+        // Intrinsic size wins over layout: full-size art can be displayed tiny.
+        // Unknown/unloaded dimensions are not evidence of a tracking pixel.
+        const hasIntrinsicSize = img.naturalWidth > 0 && img.naturalHeight > 0;
+        const width = hasIntrinsicSize ? img.naturalWidth : Number(img.getAttribute('width'));
+        const height = hasIntrinsicSize ? img.naturalHeight : Number(img.getAttribute('height'));
+        return !(width > 0 && width <= 2 && height > 0 && height <= 2);
+      })
       .flatMap(img => [img.currentSrc, img.src]),
   ].filter(Boolean),
   h1: document.querySelector('h1')?.innerText?.trim() || '',
