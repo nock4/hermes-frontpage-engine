@@ -6,7 +6,7 @@ import { beforeEach, afterEach, expect, it, vi } from 'vitest'
 const state = vi.hoisted(() => ({ attempts: [], captures: [], rejectAnchor: false, verifiedFrom: 18 }))
 vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
   inspectCandidateSource: async (source, options) => {
-    state.captures.push({ url: source.url, tool: options.sourceTool, attempts: state.attempts.length, researchCalls: state.researchAttempts.length, observedSources: options.observedSources })
+    state.captures.push({ url: source.url, source, tool: options.sourceTool, attempts: state.attempts.length, researchCalls: state.researchAttempts.length, observedSources: options.observedSources })
     if (options.sourceTool === 'fetch' && state.fetchChanges?.[source.url]) return { ...source, ...state.fetchChanges[source.url] }
     if (options.sourceTool === 'browser-harness' && state.browserChanges?.[source.url]) return { ...source, ...state.browserChanges[source.url] }
     return options.sourceTool === 'browser-harness' && source.browser_image
@@ -46,7 +46,7 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
     return { visual_summary: 'Red figure and blue room in an oil painting', preserve_cues: ['red figure', 'blue room'], visual_fertility: 'high' }
   },
 }))
-import { inspectSourceCandidates, buildSourceFloorDiagnostics, collectFetchEvidenceForAutoresearch } from '../../scripts/lib/source-research.mjs'
+import { inspectSourceCandidates, buildSourceFloorDiagnostics, collectFetchEvidenceForAutoresearch, discoverObservedOwnerProjectLinks } from '../../scripts/lib/source-research.mjs'
 import { sourceContentKey, sourceContentScore, isAiToolingContentSource, hasCreativeArtifactEvidence, isAutoresearchExcluded } from '../../scripts/lib/source-selection-policy.mjs'
 const sources = Array.from({ length: 24 }, (_, i) => ({
   url: `https://artist${i}.gallery.example/work`, image_url: `https://artist${i}.gallery.example/work.png`,
@@ -339,6 +339,113 @@ it('stops browser refill when negative actual-media attempts exhaust the unchang
   expect(lateCaptures).toHaveLength(6)
   expect(lateCaptures.every(row => row.attempts < 24)).toBe(true)
   expect(state.attempts).toHaveLength(24)
+})
+it('discovers one observed same-owner project page through the bounded normal browser refill', async () => {
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
+  state.verifiedFrom = Infinity // Discovery is not a positive inspection stamp.
+  const root = {
+    url: 'https://designcore.org/', note_id: 'detroit-design', note_title: 'Detroit design organizations',
+    note_path: '01 - Active/themes/Design & Visual Systems/detroit.md', note_score: 1,
+    source_channel: 'chrome-bookmark', image_url: null,
+  }
+  const childUrl = 'https://designcore.org/news/drinks-by-design-light-sound'
+  const linkedImage = 'https://cdn.prod.website-files.com/site/event-card.jpg'
+  const articleImage = 'https://cdn.prod.website-files.com/site/installation.jpg'
+  state.browserChanges[root.url] = {
+    fetch_status: 'browser-harness', final_url: root.url,
+    image_url: 'https://cdn.prod.website-files.com/site/shared-preview.jpg',
+    image_candidates: [{
+      image_url: linkedImage, kind: 'dom', context: 'main', ancillary: false,
+      page_url: root.url, linked_url: childUrl, alt: 'Drinks by Design: Light & Sound',
+    }],
+  }
+  state.browserChanges[childUrl] = {
+    fetch_status: 'browser-harness', final_url: childUrl, title: 'Drinks by Design: Light & Sound',
+    image_url: articleImage, source_image_url: articleImage, source_image_aliases: [articleImage],
+  }
+
+  await expect(inspectSourceCandidates({
+    source_candidates: [...sources.slice(0, 18), root], notes_selected: [], motif_terms: [],
+  }, { maxSources: 6, runDir, sourceTool: 'browser-harness', date: '2026-10-11' })).rejects.toThrow(/blocked|expected at least 6/)
+
+  const childCapture = state.captures.find(row => row.url === childUrl && row.tool === 'browser-harness')
+  expect(childCapture?.source).toMatchObject({
+    url: childUrl,
+    parent_source_url: root.url,
+    parent_observed_image_url: linkedImage,
+    source_lineage: 'observed_same_owner_project_link',
+    note_id: root.note_id,
+    note_path: root.note_path,
+  })
+  expect(childCapture.source.editorial_evidence).toContainEqual(expect.objectContaining({ url: root.url }))
+  expect(state.attempts).toContain(childUrl)
+  expect(state.attempts).toHaveLength(20)
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  expect(saved.sources.find(source => source.url === childUrl)).toMatchObject({
+    parent_source_url: root.url,
+    source_lineage: 'observed_same_owner_project_link',
+  })
+  expect(saved.autoresearch.source_decisions.find(row => row.url === childUrl)?.inspection.status).toBe('ambiguous')
+})
+it('bounds owner-link discovery and rejects non-root, cross-owner, ancillary and unsafe links', () => {
+  const root = {
+    url: 'https://gallery.example/', final_url: 'https://gallery.example/', fetch_status: 'browser-harness',
+    source_channel: 'chrome-bookmark', note_id: 'gallery-note',
+    image_candidates: [
+      { image_url: 'https://gallery.example/one.jpg', kind: 'dom', context: 'main', page_url: 'https://gallery.example/', linked_url: 'https://gallery.example/work/one' },
+      { image_url: 'https://gallery.example/two.jpg', kind: 'dom', context: 'article', page_url: 'https://gallery.example/', linked_url: 'https://gallery.example/work/two' },
+      { image_url: 'https://gallery.example/other.jpg', kind: 'dom', context: 'main', page_url: 'https://gallery.example/', linked_url: 'https://other.example/work' },
+      { image_url: 'https://gallery.example/ad.jpg', kind: 'dom', context: 'main', ancillary: true, page_url: 'https://gallery.example/', linked_url: 'https://gallery.example/ad' },
+      { image_url: 'https://gallery.example/data.jpg', kind: 'dom', context: 'main', page_url: 'https://gallery.example/', linked_url: 'data:text/html,unsafe' },
+      { image_url: 'https://gallery.example/fragment.jpg', kind: 'dom', context: 'main', page_url: 'https://gallery.example/', linked_url: 'https://gallery.example/work/fragment#details' },
+      { image_url: 'https://gallery.example/about.jpg', kind: 'dom', context: 'main', page_url: 'https://gallery.example/', linked_url: 'https://gallery.example/about' },
+      { image_url: 'https://gallery.example/contact.jpg', kind: 'dom', context: 'article', page_url: 'https://gallery.example/', linked_url: 'https://gallery.example/contact/' },
+      { image_url: 'https://gallery.example/news.jpg', kind: 'dom', context: 'main', page_url: 'https://gallery.example/', linked_url: 'https://gallery.example/news' },
+    ],
+  }
+  expect(discoverObservedOwnerProjectLinks(root)).toEqual([
+    expect.objectContaining({ url: 'https://gallery.example/work/one', parent_source_url: root.url }),
+  ])
+  expect(discoverObservedOwnerProjectLinks(root, { maxLinks: 10 }).map(row => row.url)).toEqual([
+    'https://gallery.example/work/one', 'https://gallery.example/work/two',
+  ])
+  expect(discoverObservedOwnerProjectLinks({ ...root, url: 'https://gallery.example/news', final_url: 'https://gallery.example/news' })).toEqual([])
+  expect(discoverObservedOwnerProjectLinks({ ...root, fetch_status: 'fetch-ok' })).toEqual([])
+})
+it('keeps specific descendants of generic listing routes discoverable', () => {
+  const root = {
+    url: 'https://gallery.example/', final_url: 'https://gallery.example/', fetch_status: 'browser-harness',
+    source_channel: 'chrome-bookmark', note_id: 'gallery-note',
+    image_candidates: [{
+      image_url: 'https://gallery.example/event.jpg', kind: 'dom', context: 'main', page_url: 'https://gallery.example/',
+      linked_url: 'https://gallery.example/news/drinks-by-design-light-sound',
+    }],
+  }
+  expect(discoverObservedOwnerProjectLinks(root)).toEqual([
+    expect.objectContaining({ url: 'https://gallery.example/news/drinks-by-design-light-sound' }),
+  ])
+})
+it('does not reacquire an archive-spent observed owner project link', async () => {
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
+  state.verifiedFrom = Infinity
+  const root = {
+    url: 'https://gallery.example/', note_id: 'gallery-note', note_title: 'Gallery', note_score: 1,
+    source_channel: 'chrome-bookmark', image_url: null,
+  }
+  const childUrl = 'https://gallery.example/work/already-used'
+  state.browserChanges[root.url] = {
+    fetch_status: 'browser-harness', final_url: root.url,
+    image_url: 'https://gallery.example/shared.jpg',
+    image_candidates: [{ image_url: 'https://gallery.example/card.jpg', kind: 'dom', context: 'main', page_url: root.url, linked_url: childUrl }],
+  }
+  await expect(inspectSourceCandidates({
+    source_candidates: [...sources.slice(0, 18), root], notes_selected: [], motif_terms: [],
+  }, {
+    maxSources: 6, runDir, sourceTool: 'browser-harness', date: '2026-10-11',
+    recentSourceKeys: new Set([sourceContentKey({ url: childUrl })]),
+  })).rejects.toThrow(/blocked|expected at least 6/)
+  expect(state.captures.some(row => row.url === childUrl)).toBe(false)
+  expect(state.attempts).toHaveLength(19)
 })
 it('bounds empty browser refill and returns unused reserve to the existing media bed', async () => {
   const late = browserOnlySources.map(source => ({ ...source, browser_image: null }))

@@ -15,7 +15,7 @@ import { buildSourceDecisionAudit, decideAnchorEligibility, decideVisualAnchorAc
 import { getSourceDisplayTitle } from './source-display.mjs'
 import { isLowFertilitySourceFingerprint, isLowFertilitySourceImageCandidate, screenSourceImageMaterial, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
-import { canonicalizeSourceUrl, hostnameForUrl } from './source-url-policy.mjs'
+import { canonicalizeSourceUrl, hostnameForUrl, isAllowedSourceUrl } from './source-url-policy.mjs'
 import {
   aestheticSignalScore,
   isAutoresearchExcluded,
@@ -749,6 +749,70 @@ async function captureAutoresearchedSources(selectedSources, { sourceTool, brows
   return captured
 }
 
+export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1 } = {}) {
+  if (source?.fetch_status !== 'browser-harness' || !isAllowedInspectedSource(source)) return []
+  const sourceUrl = source.final_url || source.source_url || source.url
+  let ownerPage
+  try {
+    ownerPage = new URL(sourceUrl)
+    if (ownerPage.pathname !== '/' || ownerPage.search || ownerPage.hash) return []
+  } catch { return [] }
+
+  const discovered = []
+  const seen = new Set()
+  for (const row of source.image_candidates || []) {
+    if (discovered.length >= Math.max(0, maxLinks)) break
+    if (row?.kind !== 'dom' || !['main', 'article'].includes(row.context) || row.ancillary) continue
+    if (!isAllowedSourceUrl(row.image_url) || isLowValueVisualImage(row.image_url)) continue
+    if (row.page_url !== sourceUrl || !isAllowedSourceUrl(row.linked_url)) continue
+    let linked
+    try {
+      linked = new URL(row.linked_url)
+      if (linked.origin !== ownerPage.origin || linked.pathname === '/' || linked.href === ownerPage.href
+        || linked.username || linked.password || linked.hash) continue
+    } catch { continue }
+    const route = linked.pathname.toLowerCase().replace(/\/+$/, '') || '/'
+    const genericOwnerRoutes = new Set([
+      '/about', '/archive', '/blog', '/contact', '/events', '/exhibitions',
+      '/home', '/info', '/journal', '/news', '/portfolio', '/projects',
+      '/services', '/shop', '/store', '/team', '/work', '/works',
+    ])
+    if (genericOwnerRoutes.has(route)) continue
+    const key = canonicalizeSourceUrl(row.linked_url)
+    if (!key || seen.has(key)) continue
+    seen.add(key)
+    discovered.push({
+      url: row.linked_url,
+      note_id: source.note_id,
+      note_title: row.alt || source.note_title || source.title,
+      note_path: source.note_path,
+      note_date: source.note_date,
+      note_score: source.note_score,
+      note_raw_score: source.note_raw_score,
+      note_diversity_penalty: source.note_diversity_penalty,
+      note_historical_source_penalty: source.note_historical_source_penalty,
+      source_repeated_in_archive: source.source_repeated_in_archive,
+      source_channel: source.source_channel,
+      image_url: row.image_url,
+      source_image_url: row.image_url,
+      source_image_aliases: [row.image_url],
+      source_lineage: 'observed_same_owner_project_link',
+      source_reason: 'Same-owner work/project page observed as a main-content image link on the successfully captured owner root.',
+      parent_source_url: sourceUrl,
+      parent_observed_image_url: row.image_url,
+      parent_link_context: {
+        page_url: row.page_url,
+        linked_url: row.linked_url,
+        image_url: row.image_url,
+        context: row.context,
+        alt: row.alt || '',
+      },
+      editorial_evidence: [...(source.editorial_evidence || []), source],
+    })
+  }
+  return discovered
+}
+
 export async function inspectSourceCandidates(signalHarvest, {
   maxSources,
   runDir,
@@ -928,8 +992,11 @@ export async function inspectSourceCandidates(signalHarvest, {
     const fillCandidates = [...evidenceFillCandidates, ...supplementalFillCandidates]
 
     // Empty/unusable captures do not spend pixel attempts, so bound them too.
-    for (const candidate of fillCandidates.slice(0, 24)) {
+    let fillAcquisitions = 0
+    for (let fillIndex = 0; fillIndex < fillCandidates.length && fillAcquisitions < 24; fillIndex += 1) {
+      const candidate = fillCandidates[fillIndex]
       if (contentSources.length >= minContentItems || inspectionAttempts() >= 24) break
+      fillAcquisitions += 1
       const added = await captureAutoresearchedSources([candidate], {
         sourceTool,
         browserHarness,
@@ -937,6 +1004,16 @@ export async function inspectSourceCandidates(signalHarvest, {
         maxSources: 1,
       })
       inspected = mergeInspectedSources(added, inspected)
+      // A successful owner-root capture may expose a real work/project page on
+      // an image card. Follow at most one exact same-origin link immediately,
+      // charging it to the existing 24 browser acquisitions and 24 pixel
+      // attempts. This is discovery only: the child still needs ordinary text,
+      // archive, provenance and actual-media admission.
+      const discoveredOwnerLinks = added
+        .flatMap(source => discoverObservedOwnerProjectLinks(source, { maxLinks: 1 }))
+        .filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys)))
+        .filter(canAttemptFill)
+      if (discoveredOwnerLinks.length) fillCandidates.splice(fillIndex + 1, 0, ...discoveredOwnerLinks)
       // Inspect recovered media now; queued fetch previews must not steal the
       // reserve. Keep retained editorial context on the preferred capture.
       const addedKeys = new Set(added.map(sourceContentKey))
