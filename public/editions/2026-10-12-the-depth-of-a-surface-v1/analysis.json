@@ -1,0 +1,474 @@
+{
+  "analysis_id": "analysis-2026-10-12-the-depth-of-a-surface-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A naturalistic museum gallery with a red-and-pale staircase at left, four distinct textile, paper and relief objects on the central wall, and two tall gold-framed rainy-street pictures facing two rear-view visitors at right. All six planned source families have visible anchors, but several proposed transformations are not realized: the botanical paper hangs independently rather than occupying a frame reveal, the pictures read as separate tall frames rather than nested fragments, and the stair has a central red stepped path rather than broad alternating vertical bands.",
+  "usable_surfaces": [
+    "Rust-red stepped path across pale stair treads and risers",
+    "Tall beaded gold frame around a rainy street and lamppost",
+    "Right gold-framed umbrella and dark-dressed figure",
+    "Rounded black bob and belted red plaid coat",
+    "Long reddish hair, blue-gray jacket and joined hands",
+    "Dark hanging with yellow foliage, pale stripes and white flowers",
+    "Cream botanical paper with black stems and colored drops",
+    "Coarse brown hanging with curled, overlapping strip ends",
+    "Peaked dark relief with blue rays and pale raised-arm figures"
+  ],
+  "detected_objects": [
+    {
+      "label": "Rust-red stepped path across the pale staircase",
+      "artifact_type": "stair-pigment-mark",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.075,
+        "y": 0.339,
+        "w": 0.218,
+        "h": 0.345
+      },
+      "polygon": [
+        [
+          0.075,
+          0.684
+        ],
+        [
+          0.155,
+          0.684
+        ],
+        [
+          0.155,
+          0.662
+        ],
+        [
+          0.185,
+          0.662
+        ],
+        [
+          0.185,
+          0.634
+        ],
+        [
+          0.225,
+          0.59
+        ],
+        [
+          0.246,
+          0.541
+        ],
+        [
+          0.268,
+          0.49
+        ],
+        [
+          0.29,
+          0.452
+        ],
+        [
+          0.293,
+          0.39
+        ],
+        [
+          0.272,
+          0.365
+        ],
+        [
+          0.256,
+          0.347
+        ],
+        [
+          0.238,
+          0.339
+        ],
+        [
+          0.249,
+          0.36
+        ],
+        [
+          0.271,
+          0.391
+        ],
+        [
+          0.267,
+          0.427
+        ],
+        [
+          0.219,
+          0.483
+        ],
+        [
+          0.114,
+          0.634
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A rust-red route shifts laterally across actual stair surfaces, descending from the short upper flight into the broad foreground flight. Pale stone flanks it. This is a visible stair-depth intervention, but not the planned repeated vertical orange-red and white banding across branching flights."
+    },
+    {
+      "label": "Left beaded gold street-picture panel",
+      "artifact_type": "framed-picture-surface",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.626,
+        "y": 0,
+        "w": 0.153,
+        "h": 0.561
+      },
+      "polygon": [
+        [
+          0.626,
+          0
+        ],
+        [
+          0.779,
+          0
+        ],
+        [
+          0.779,
+          0.339
+        ],
+        [
+          0.763,
+          0.341
+        ],
+        [
+          0.75,
+          0.363
+        ],
+        [
+          0.751,
+          0.394
+        ],
+        [
+          0.728,
+          0.412
+        ],
+        [
+          0.721,
+          0.451
+        ],
+        [
+          0.723,
+          0.499
+        ],
+        [
+          0.728,
+          0.53
+        ],
+        [
+          0.72,
+          0.559
+        ],
+        [
+          0.635,
+          0.561
+        ],
+        [
+          0.626,
+          0.55
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "A thick ornamented gold frame encloses wet paving, umbrellas, a wedge-shaped building, a tall dark streetlamp and a top-hatted rear-view figure. Its top is cropped by the image, and the plaid-coated visitor occludes the lower-right portion; the polygon follows that interruption."
+    },
+    {
+      "label": "Right gold street-picture panel with umbrellas and dark dress",
+      "artifact_type": "framed-picture-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.855,
+        "y": 0,
+        "w": 0.145,
+        "h": 0.547
+      },
+      "polygon": [
+        [
+          0.855,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0.543
+        ],
+        [
+          0.901,
+          0.547
+        ],
+        [
+          0.902,
+          0.49
+        ],
+        [
+          0.893,
+          0.448
+        ],
+        [
+          0.877,
+          0.432
+        ],
+        [
+          0.872,
+          0.392
+        ],
+        [
+          0.866,
+          0.365
+        ],
+        [
+          0.855,
+          0.359
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "A second gold-bordered rainy-street image contains large overlapping umbrella arcs, a dark-dressed foreground woman and smaller coated figures. The picture is cropped at the top and right; the reddish-haired visitor interrupts its lower-left edge. It is a distinct panel, not a clearly visible nested fragment."
+    },
+    {
+      "label": "Black-bobbed visitor in a belted red plaid coat",
+      "artifact_type": "figure-silhouette",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.719,
+        "y": 0.338,
+        "w": 0.105,
+        "h": 0.47
+      },
+      "polygon": [
+        [
+          0.77,
+          0.338
+        ],
+        [
+          0.785,
+          0.344
+        ],
+        [
+          0.797,
+          0.391
+        ],
+        [
+          0.789,
+          0.402
+        ],
+        [
+          0.808,
+          0.419
+        ],
+        [
+          0.818,
+          0.483
+        ],
+        [
+          0.809,
+          0.525
+        ],
+        [
+          0.823,
+          0.734
+        ],
+        [
+          0.787,
+          0.741
+        ],
+        [
+          0.79,
+          0.806
+        ],
+        [
+          0.752,
+          0.808
+        ],
+        [
+          0.752,
+          0.741
+        ],
+        [
+          0.72,
+          0.733
+        ],
+        [
+          0.729,
+          0.59
+        ],
+        [
+          0.72,
+          0.584
+        ],
+        [
+          0.725,
+          0.532
+        ],
+        [
+          0.72,
+          0.475
+        ],
+        [
+          0.748,
+          0.401
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "The broad rear-view silhouette has a rounded black bob, red-and-dark plaid calf-length coat, narrow belt, small dark side bag, bare lower legs and black shoes. The contour identifies the actual figure rather than a broad rectangle around the picture-and-viewer ensemble."
+    },
+    {
+      "label": "Reddish-haired visitor with hands joined behind her back",
+      "artifact_type": "figure-silhouette",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.815,
+        "y": 0.36,
+        "w": 0.087,
+        "h": 0.452
+      },
+      "polygon": [
+        [
+          0.854,
+          0.36
+        ],
+        [
+          0.868,
+          0.367
+        ],
+        [
+          0.876,
+          0.406
+        ],
+        [
+          0.876,
+          0.43
+        ],
+        [
+          0.893,
+          0.448
+        ],
+        [
+          0.901,
+          0.489
+        ],
+        [
+          0.9,
+          0.535
+        ],
+        [
+          0.892,
+          0.574
+        ],
+        [
+          0.897,
+          0.613
+        ],
+        [
+          0.888,
+          0.619
+        ],
+        [
+          0.875,
+          0.767
+        ],
+        [
+          0.876,
+          0.809
+        ],
+        [
+          0.839,
+          0.812
+        ],
+        [
+          0.84,
+          0.772
+        ],
+        [
+          0.829,
+          0.612
+        ],
+        [
+          0.815,
+          0.605
+        ],
+        [
+          0.816,
+          0.447
+        ],
+        [
+          0.833,
+          0.429
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "Long reddish-brown hair falls over a blue-gray jacket. The hands visibly meet behind the back above dark fitted trousers and black boots. This is a separate narrow silhouette beside the plaid-coated figure."
+    },
+    {
+      "label": "Dark textile with yellow foliage, stripes and white flowers",
+      "artifact_type": "patterned-textile-surface",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.313,
+        "y": 0,
+        "w": 0.078,
+        "h": 0.505
+      },
+      "polygon": [
+        [
+          0.315,
+          0
+        ],
+        [
+          0.388,
+          0
+        ],
+        [
+          0.389,
+          0.148
+        ],
+        [
+          0.389,
+          0.454
+        ],
+        [
+          0.391,
+          0.493
+        ],
+        [
+          0.386,
+          0.505
+        ],
+        [
+          0.362,
+          0.5
+        ],
+        [
+          0.339,
+          0.495
+        ],
+        [
+          0.316,
+          0.491
+        ],
+        [
+          0.313,
+          0.466
+        ],
+        [
+          0.315,
+          0.268
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "A narrow dark hanging has dense golden-yellow botanical shapes at the top, pale irregular vertical stripes in the middle, and white floral motifs below, ending in fringe. The sequence runs vertically in this plate, not left to right, and no clear folded wall return is visible."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.436,
+    "rationale": "Approximate visual coverage only. The three dominant groups are the stair, central wall objects and right picture-and-viewer ensemble. Broad pale wall and floor areas keep the targets separable, but ornate frames, railings, background paintings, patterned textiles and detailed street scenes make this a layered naturalistic gallery rather than a minimal expressionist plate. The right ensemble is dense and partly occluded; the small central targets remain distinct."
+  },
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "edition_id": "2026-10-12-the-depth-of-a-surface-v1"
+}

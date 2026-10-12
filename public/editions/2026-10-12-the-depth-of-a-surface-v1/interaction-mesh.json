@@ -1,0 +1,379 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-12-the-depth-of-a-surface-v1",
+  "generation": "cron-1791803309562-59552",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1791803309562-59552/2026-10-12-the-depth-of-a-surface-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-rust-red-stepped-path-across-the-pal",
+      "visible_area_px": 29238,
+      "territory_area_px": 61668,
+      "hover_bounds": {
+        "x": 0.0527,
+        "y": 0.3057,
+        "w": 0.2604,
+        "h": 0.4121
+      },
+      "hover_polygon": [
+        [
+          0.0527,
+          0.6836
+        ],
+        [
+          0.2155,
+          0.3389
+        ],
+        [
+          0.2376,
+          0.3057
+        ],
+        [
+          0.2559,
+          0.3135
+        ],
+        [
+          0.2923,
+          0.3555
+        ],
+        [
+          0.3118,
+          0.4512
+        ],
+        [
+          0.207,
+          0.6611
+        ],
+        [
+          0.1849,
+          0.6943
+        ],
+        [
+          0.1549,
+          0.7168
+        ],
+        [
+          0.0749,
+          0.7168
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-dark-textile-with-yellow-foliage-str",
+          "shared_edge_px": 774,
+          "direction": "up",
+          "distance_px": 381.03
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-left-beaded-gold-street-picture-pane",
+      "visible_area_px": 121327,
+      "territory_area_px": 152699,
+      "hover_bounds": {
+        "x": 0.6029,
+        "y": 0.0,
+        "w": 0.1953,
+        "h": 0.5869
+      },
+      "hover_polygon": [
+        [
+          0.6029,
+          0.0254
+        ],
+        [
+          0.6048,
+          0.0
+        ],
+        [
+          0.7949,
+          0.0
+        ],
+        [
+          0.7975,
+          0.1396
+        ],
+        [
+          0.7936,
+          0.3369
+        ],
+        [
+          0.7832,
+          0.3896
+        ],
+        [
+          0.7018,
+          0.584
+        ],
+        [
+          0.625,
+          0.5859
+        ],
+        [
+          0.6029,
+          0.5527
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-black-bobbed-visitor-in-a-belted-red",
+          "shared_edge_px": 1986,
+          "direction": "down",
+          "distance_px": 377.0
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-right-gold-street-picture-panel-with",
+      "visible_area_px": 111902,
+      "territory_area_px": 123583,
+      "hover_bounds": {
+        "x": 0.8385,
+        "y": 0.0,
+        "w": 0.1615,
+        "h": 0.5635
+      },
+      "hover_polygon": [
+        [
+          0.8385,
+          0.002
+        ],
+        [
+          0.9993,
+          0.0
+        ],
+        [
+          0.9974,
+          0.5625
+        ],
+        [
+          0.9128,
+          0.5625
+        ],
+        [
+          0.8483,
+          0.3926
+        ],
+        [
+          0.8411,
+          0.3604
+        ],
+        [
+          0.8385,
+          0.0869
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-reddish-haired-visitor-with-hands-jo",
+          "shared_edge_px": 1593,
+          "direction": "down",
+          "distance_px": 371.06
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-black-bobbed-visitor-in-a-belted-red",
+      "visible_area_px": 60778,
+      "territory_area_px": 71671,
+      "hover_bounds": {
+        "x": 0.7018,
+        "y": 0.332,
+        "w": 0.1217,
+        "h": 0.502
+      },
+      "hover_polygon": [
+        [
+          0.7018,
+          0.666
+        ],
+        [
+          0.7031,
+          0.4912
+        ],
+        [
+          0.7122,
+          0.4355
+        ],
+        [
+          0.7943,
+          0.332
+        ],
+        [
+          0.8047,
+          0.3477
+        ],
+        [
+          0.8203,
+          0.4033
+        ],
+        [
+          0.8229,
+          0.7578
+        ],
+        [
+          0.8229,
+          0.7695
+        ],
+        [
+          0.8079,
+          0.8037
+        ],
+        [
+          0.7891,
+          0.832
+        ],
+        [
+          0.752,
+          0.832
+        ],
+        [
+          0.7331,
+          0.8037
+        ],
+        [
+          0.7018,
+          0.7305
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-reddish-haired-visitor-with-hands-jo",
+          "shared_edge_px": 2316,
+          "direction": "right",
+          "distance_px": 149.59
+        },
+        {
+          "artifact_id": "hero-left-beaded-gold-street-picture-pane",
+          "shared_edge_px": 1986,
+          "direction": "up",
+          "distance_px": 377.0
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-reddish-haired-visitor-with-hands-jo",
+      "visible_area_px": 40433,
+      "territory_area_px": 61423,
+      "hover_bounds": {
+        "x": 0.8053,
+        "y": 0.3516,
+        "w": 0.1139,
+        "h": 0.4883
+      },
+      "hover_polygon": [
+        [
+          0.8053,
+          0.4346
+        ],
+        [
+          0.8405,
+          0.3516
+        ],
+        [
+          0.8939,
+          0.417
+        ],
+        [
+          0.9108,
+          0.4473
+        ],
+        [
+          0.9186,
+          0.4873
+        ],
+        [
+          0.9147,
+          0.6123
+        ],
+        [
+          0.8939,
+          0.8086
+        ],
+        [
+          0.8757,
+          0.8359
+        ],
+        [
+          0.8385,
+          0.8389
+        ],
+        [
+          0.8203,
+          0.8115
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-black-bobbed-visitor-in-a-belted-red",
+          "shared_edge_px": 2316,
+          "direction": "left",
+          "distance_px": 149.59
+        },
+        {
+          "artifact_id": "module-right-gold-street-picture-panel-with",
+          "shared_edge_px": 1593,
+          "direction": "up",
+          "distance_px": 371.06
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-dark-textile-with-yellow-foliage-str",
+      "visible_area_px": 58094,
+      "territory_area_px": 89691,
+      "hover_bounds": {
+        "x": 0.2962,
+        "y": 0.0,
+        "w": 0.1126,
+        "h": 0.5293
+      },
+      "hover_polygon": [
+        [
+          0.2962,
+          0.3242
+        ],
+        [
+          0.2975,
+          0.002
+        ],
+        [
+          0.4082,
+          0.002
+        ],
+        [
+          0.4069,
+          0.4932
+        ],
+        [
+          0.3861,
+          0.5283
+        ],
+        [
+          0.3184,
+          0.5166
+        ],
+        [
+          0.3001,
+          0.4893
+        ],
+        [
+          0.2962,
+          0.4229
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-rust-red-stepped-path-across-the-pal",
+          "shared_edge_px": 774,
+          "direction": "down",
+          "distance_px": 381.03
+        }
+      ]
+    }
+  ]
+}

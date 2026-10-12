@@ -1,0 +1,282 @@
+{
+  "interpretation_id": "interp-2026-10-12-the-depth-of-a-surface-v1",
+  "edition_id": "2026-10-12-the-depth-of-a-surface-v1",
+  "plate_read_timestamp": "2026-10-12T11:47:17.942Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A naturalistic museum gallery with a red-and-pale staircase at left, four distinct textile, paper and relief objects on the central wall, and two tall gold-framed rainy-street pictures facing two rear-view visitors at right. All six planned source families have visible anchors, but several proposed transformations are not realized: the botanical paper hangs independently rather than occupying a frame reveal, the pictures read as separate tall frames rather than nested fragments, and the stair has a central red stepped path rather than broad alternating vertical bands.",
+    "dominant_spatial_mode": "contained",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "A softly lit landscape museum gallery: two unequal gold frame fragments join around open ivory wall, carrying a rainy street into a nested picture. Two rear-view visitors gather at their shared edge above empty tiled floor. A branching orange-red-and-white stair is the second large feature; a patterned textile return, printed paper reveal, curled woven hanging and small peaked relief remain subordinate.",
+      "A naturalistic museum gallery with a red-and-pale staircase at left, four distinct textile, paper and relief objects on the central wall, and two tall gold-framed rainy-street pictures facing two rear-view visitors at right. All six planned source families have visible anchors, but several proposed transformations are not realized: the botanical paper hangs independently rather than occupying a frame reveal, the pictures read as separate tall frames rather than nested fragments, and the stair has a central red stepped path rather than broad alternating vertical bands.",
+      "exposed-returns",
+      "unequal-rims",
+      "plaid-pressure"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Rust-red stepped path across the pale staircase",
+      "Left beaded gold street-picture panel",
+      "Right gold street-picture panel with umbrellas and dark dress",
+      "Black-bobbed visitor in a belted red plaid coat",
+      "Reddish-haired visitor with hands joined behind her back",
+      "Dark textile with yellow foliage, stripes and white flowers"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "viewing-depth-stepped-cutaway",
+      "A branching stair carries orange-red and white bands across its risers.",
+      "Unequal beaded gold street-picture fragments face two rear-view visitors.",
+      "A dark cloth return shifts from yellow foliage to stripes to white motifs.",
+      "A cream paper reveal bears black foliage and blue, teal and yellow drops.",
+      "Coarse tan-brown strips curl apart into uneven ends and deep wall shadows.",
+      "A dark peaked relief has blue rays and tiny monochrome raised-arm figures.",
+      "Rust-red stepped path across pale stair treads and risers"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: viewing-depth-stepped-cutaway.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-rust-red-stepped-path-across-the-pal",
+      "kind": "hero",
+      "type": "stair-pigment-mark",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.075,
+        "y": 0.339,
+        "w": 0.218,
+        "h": 0.345
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-left-beaded-gold-street-picture-pane",
+      "kind": "hero",
+      "type": "framed-picture-surface",
+      "strength": 0.9199999999999999,
+      "bounds": {
+        "x": 0.623,
+        "y": 0,
+        "w": 0.1549,
+        "h": 0.5596
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-right-gold-street-picture-panel-with",
+      "kind": "module",
+      "type": "framed-picture-surface",
+      "strength": 0.72,
+      "bounds": {
+        "x": 0.8548,
+        "y": 0,
+        "w": 0.1452,
+        "h": 0.541
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-black-bobbed-visitor-in-a-belted-red",
+      "kind": "module",
+      "type": "figure-silhouette",
+      "strength": 0.6900000000000001,
+      "bounds": {
+        "x": 0.7188,
+        "y": 0.3359,
+        "w": 0.1048,
+        "h": 0.4746
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reddish-haired-visitor-with-hands-jo",
+      "kind": "module",
+      "type": "figure-silhouette",
+      "strength": 0.66,
+      "bounds": {
+        "x": 0.815,
+        "y": 0.36,
+        "w": 0.087,
+        "h": 0.452
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-dark-textile-with-yellow-foliage-str",
+      "kind": "module",
+      "type": "patterned-textile-surface",
+      "strength": 0.63,
+      "bounds": {
+        "x": 0.3125,
+        "y": 0,
+        "w": 0.0801,
+        "h": 0.5049
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-rust-red-stepped-path-across-the-pal-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.075,
+        "y": 0.339,
+        "w": 0.218,
+        "h": 0.345
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-left-beaded-gold-street-picture-pane-surface",
+      "surface_type": "light-band",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.623,
+        "y": 0,
+        "w": 0.1549,
+        "h": 0.5596
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-right-gold-street-picture-panel-with-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.8548,
+        "y": 0,
+        "w": 0.1452,
+        "h": 0.541
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-black-bobbed-visitor-in-a-belted-red-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.7188,
+        "y": 0.3359,
+        "w": 0.1048,
+        "h": 0.4746
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-reddish-haired-visitor-with-hands-jo-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.815,
+        "y": 0.36,
+        "w": 0.087,
+        "h": 0.452
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    },
+    {
+      "id": "module-dark-textile-with-yellow-foliage-str-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3125,
+        "y": 0,
+        "w": 0.0801,
+        "h": 0.5049
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
