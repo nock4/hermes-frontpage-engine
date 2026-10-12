@@ -82,7 +82,10 @@ function looksLikeProfileOrUtility(source) {
 function isAiToolingAnchor(source) {
   const text = sourceText(source).toLowerCase()
   const url = String(source?.url || source?.source_url || source?.final_url || '').toLowerCase()
-  return /\b(ai assistant|assistant|agent|agents|agentic|prompt guide|prompts?|benchmark|model|claude|fable|codex|comfy mcp|mcp|workflow|automation|api|sdk|github|docs|framework|vibe cod|vibe-coded|tooling|productivity|software factory)\b/.test(text)
+  // A human museum job title is not tooling. Exempt only that assistant
+  // occurrence; explicit AI-qualified assistants (including whitespace and
+  // powered/intelligence variants) and other tooling cues still win.
+  return /\b((?:ai(?:-powered)?|artificial[\s-]+intelligence)\s+assistant|assistant(?!\s+curator\b)|agent|agents|agentic|prompt guide|prompts?|benchmark|model|claude|fable|codex|comfy mcp|mcp|workflow|automation|api|sdk|github|docs|framework|vibe cod|vibe-coded|tooling|productivity|software factory)\b/.test(text)
     || /\b(substack\.com\/p\/claude|anthropic\.com\/claude|github\.com|docs\.|mcp|codex|comfyui)\b/.test(url)
 }
 
