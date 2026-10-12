@@ -66,6 +66,38 @@ describe('bounded scene and ownership replan', () => {
     expect(field).toEqual(before)
   })
 
+  it.each([1, 8])('preserves full attribution caveats outside image prompt budgets (prose scale %s)', async (scale) => {
+    const response = replacement()
+    const caveat = 'The inspected still supports the visible surface relationship only. Saved attribution is contextual, not pixel-established; material identity, authorship, motion and playback remain unverified. '
+    const role = `${caveat.repeat(scale + 1)}Do not transfer these observations to another owner.`
+    expect(role.length).toBeGreaterThan(240)
+    response.artifacts[0].role = role
+    const request = vi.fn().mockResolvedValue(response)
+    const record = vi.fn()
+    const result = await planRealMarks({ payload, researchField }, { request, record })
+    expect(result.artifacts[0].role).toBe(role)
+    expect(record.mock.calls[1][1].artifacts[0].role).toBe(role)
+    expect(request).toHaveBeenCalledTimes(1)
+    expect(request.mock.calls[0][0]).toMatchObject({ maxOutputTokens: 4000, timeoutMs: 120000 })
+    const shape = JSON.parse(request.mock.calls[0][0].input).output_shape
+    expect(shape.artifacts[0].role).not.toMatch(/at most|240|character/i)
+    expect(shape.artifacts[0].role).toMatch(/caveats/i)
+    expect(shape.scene_prompt).toContain('420')
+    expect(shape.artifacts[0].visual_description).toContain('80')
+    const shortRolePlan = structuredClone(result)
+    shortRolePlan.artifacts[0].role = 'context only'
+    expect(buildSceneImagePrompt(result)).toBe(buildSceneImagePrompt(shortRolePlan))
+    expect(buildSceneImagePrompt(result)).not.toContain(caveat.trim())
+  })
+
+  it.each([undefined, null, '', '   ', 42, {}, []])('rejects malformed attribution prose: %j', async (role) => {
+    const response = replacement()
+    response.artifacts[0].role = role
+    const request = vi.fn().mockResolvedValue(response)
+    await expect(planRealMarks({ payload, researchField }, { request })).rejects.toThrow(/invalid role/)
+    expect(request).toHaveBeenCalledTimes(1)
+  })
+
   it.each(['missing', 'wrong owner', 'wrong media', 'ambiguous', 'low confidence', 'missing capture', 'rejected'])('fails before transport without attributable affirmative inspection: %s', async (scenario) => {
     const field = structuredClone(researchField)
     const decision = field.autoresearch.source_decisions[0]
@@ -109,6 +141,12 @@ describe('bounded scene and ownership replan', () => {
     ['debug marks', (r) => { r.artifacts[0].visual_description = 'numbered target ring' }],
     ['oversized mark', (r) => { r.artifacts[0].visual_description = 'x'.repeat(81) }],
     ['oversized scene', (r) => { r.scene_prompt = 'x'.repeat(421) }],
+    ['oversized material', (r) => { r.material_language[0] = 'x'.repeat(101) }],
+    ['oversized lighting', (r) => { r.lighting = 'x'.repeat(161) }],
+    ['oversized composition', (r) => { r.composition_archetype = 'x'.repeat(101) }],
+    ['oversized camera grammar', (r) => { r.camera_plate_grammar = 'x'.repeat(161) }],
+    ['oversized transformation', (r) => { r.visual_compositional_moves[0] = 'x'.repeat(161) }],
+    ['oversized exclusion', (r) => { r.negative_constraints[0] = 'x'.repeat(161) }],
   ])('fails closed on %s without a second planning attempt', async (_, mutate) => {
     const response = replacement(); mutate(response)
     const request = vi.fn().mockResolvedValue(response)

@@ -73,7 +73,7 @@ export async function planRealMarks({ payload, researchField, apiKey, model }, {
         camera_plate_grammar: 'at most 160 characters',
         visual_compositional_moves: ['1–3 structural transformations, each at most 160 characters'],
         negative_constraints: ['1–6 scene-compatible exclusions, each at most 160 characters'],
-        artifacts: [{ source_url: 'exact supplied source_url', visual_description: 'at most 80 characters', role: 'source-evidenced relationship, at most 240 characters' }],
+        artifacts: [{ source_url: 'exact supplied source_url', visual_description: 'at most 80 characters', role: 'source-evidenced attribution relationship with full source caveats; explanatory prose, not image direction' }],
       },
     }),
   }
@@ -91,7 +91,9 @@ export async function planRealMarks({ payload, researchField, apiKey, model }, {
     if (/https?:|\b(?:click|hover|tap|runtime|binding|hotspot|source.window|label|numbered|target|crosshair|reticle|pin|card)\b/i.test(description)) fail('visual_description contains UI or mapping language')
     byUrl.set(artifact.source_url, {
       source_url: artifact.source_url, label: description, artifact_type: 'source-native-mark',
-      visual_description: description, role: text(artifact.role, 240, 'role'),
+      // Attribution prose is not image direction. Preserve complete caveats;
+      // only provider-facing visual descriptions retain the compact budget.
+      visual_description: description, role: text(artifact.role, Infinity, 'role'),
     })
   }
   const artifacts = urls.map((url) => byUrl.get(url))
