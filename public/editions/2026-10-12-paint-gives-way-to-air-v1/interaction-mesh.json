@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-12-paint-gives-way-to-air-v1",
+  "generation": "cron-1791784691610-32903",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1791784691610-32903/2026-10-12-paint-gives-way-to-air-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-green-and-rust-ribbed-shoulder-shell",
+      "visible_area_px": 65006,
+      "territory_area_px": 117187,
+      "hover_bounds": {
+        "x": 0.0684,
+        "y": 0.0,
+        "w": 0.4258,
+        "h": 0.3467
+      },
+      "hover_polygon": [
+        [
+          0.0684,
+          0.1689
+        ],
+        [
+          0.0905,
+          0.1357
+        ],
+        [
+          0.153,
+          0.0732
+        ],
+        [
+          0.2324,
+          0.0234
+        ],
+        [
+          0.2858,
+          0.0
+        ],
+        [
+          0.4447,
+          0.0
+        ],
+        [
+          0.4629,
+          0.0273
+        ],
+        [
+          0.4818,
+          0.084
+        ],
+        [
+          0.4935,
+          0.1992
+        ],
+        [
+          0.4714,
+          0.2324
+        ],
+        [
+          0.2799,
+          0.3457
+        ],
+        [
+          0.0905,
+          0.2021
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "hero-dense-twisted-flank-of-the-dark-hang",
+      "visible_area_px": 44758,
+      "territory_area_px": 83679,
+      "hover_bounds": {
+        "x": 0.3073,
+        "y": 0.3799,
+        "w": 0.2233,
+        "h": 0.4795
+      },
+      "hover_polygon": [
+        [
+          0.3073,
+          0.4648
+        ],
+        [
+          0.3118,
+          0.4131
+        ],
+        [
+          0.334,
+          0.3799
+        ],
+        [
+          0.3848,
+          0.3926
+        ],
+        [
+          0.4258,
+          0.4258
+        ],
+        [
+          0.5039,
+          0.5615
+        ],
+        [
+          0.5299,
+          0.6826
+        ],
+        [
+          0.515,
+          0.7539
+        ],
+        [
+          0.4674,
+          0.832
+        ],
+        [
+          0.4199,
+          0.8584
+        ],
+        [
+          0.3854,
+          0.8525
+        ],
+        [
+          0.3633,
+          0.8193
+        ],
+        [
+          0.3073,
+          0.4688
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-black-and-cream-cuff-with-curved-rib",
+          "shared_edge_px": 730,
+          "direction": "right",
+          "distance_px": 254.66
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-black-and-cream-cuff-with-curved-rib",
+      "visible_area_px": 26998,
+      "territory_area_px": 48443,
+      "hover_bounds": {
+        "x": 0.5065,
+        "y": 0.4443,
+        "w": 0.1738,
+        "h": 0.2715
+      },
+      "hover_polygon": [
+        [
+          0.5065,
+          0.5635
+        ],
+        [
+          0.528,
+          0.498
+        ],
+        [
+          0.5469,
+          0.4697
+        ],
+        [
+          0.5879,
+          0.4443
+        ],
+        [
+          0.6576,
+          0.4648
+        ],
+        [
+          0.6758,
+          0.4922
+        ],
+        [
+          0.6797,
+          0.5967
+        ],
+        [
+          0.6615,
+          0.6279
+        ],
+        [
+          0.5684,
+          0.7148
+        ],
+        [
+          0.5436,
+          0.6992
+        ],
+        [
+          0.5234,
+          0.668
+        ],
+        [
+          0.5065,
+          0.5693
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-dense-twisted-flank-of-the-dark-hang",
+          "shared_edge_px": 730,
+          "direction": "left",
+          "distance_px": 254.66
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-rough-wooden-splice-beneath-the-pain",
+      "visible_area_px": 12534,
+      "territory_area_px": 25669,
+      "hover_bounds": {
+        "x": 0.4186,
+        "y": 0.2461,
+        "w": 0.123,
+        "h": 0.2139
+      },
+      "hover_polygon": [
+        [
+          0.4186,
+          0.375
+        ],
+        [
+          0.4193,
+          0.3555
+        ],
+        [
+          0.5039,
+          0.2461
+        ],
+        [
+          0.5319,
+          0.2852
+        ],
+        [
+          0.541,
+          0.3525
+        ],
+        [
+          0.5339,
+          0.3906
+        ],
+        [
+          0.4798,
+          0.459
+        ],
+        [
+          0.4414,
+          0.4395
+        ],
+        [
+          0.4232,
+          0.4121
+        ],
+        [
+          0.4186,
+          0.3945
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-small-reflective-lip-above-the-centr",
+      "visible_area_px": 5179,
+      "territory_area_px": 14223,
+      "hover_bounds": {
+        "x": 0.5553,
+        "y": 0.0645,
+        "w": 0.1035,
+        "h": 0.1465
+      },
+      "hover_polygon": [
+        [
+          0.5553,
+          0.1768
+        ],
+        [
+          0.5781,
+          0.1318
+        ],
+        [
+          0.6296,
+          0.0645
+        ],
+        [
+          0.6484,
+          0.0938
+        ],
+        [
+          0.6582,
+          0.1562
+        ],
+        [
+          0.6276,
+          0.1963
+        ],
+        [
+          0.5918,
+          0.21
+        ],
+        [
+          0.5736,
+          0.2041
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-white-edged-cyan-and-lime-bulge-on-t",
+      "visible_area_px": 15992,
+      "territory_area_px": 30132,
+      "hover_bounds": {
+        "x": 0.8535,
+        "y": 0.3262,
+        "w": 0.1178,
+        "h": 0.2246
+      },
+      "hover_polygon": [
+        [
+          0.8535,
+          0.4766
+        ],
+        [
+          0.8626,
+          0.3535
+        ],
+        [
+          0.8809,
+          0.3262
+        ],
+        [
+          0.9108,
+          0.333
+        ],
+        [
+          0.946,
+          0.3652
+        ],
+        [
+          0.9648,
+          0.3936
+        ],
+        [
+          0.9707,
+          0.4395
+        ],
+        [
+          0.9707,
+          0.4531
+        ],
+        [
+          0.959,
+          0.4834
+        ],
+        [
+          0.9277,
+          0.5332
+        ],
+        [
+          0.9095,
+          0.5498
+        ],
+        [
+          0.8841,
+          0.5391
+        ],
+        [
+          0.8555,
+          0.498
+        ],
+        [
+          0.8535,
+          0.4805
+        ]
+      ],
+      "neighbors": []
+    }
+  ]
+}

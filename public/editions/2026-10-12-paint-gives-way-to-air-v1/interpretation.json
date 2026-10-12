@@ -1,0 +1,282 @@
+{
+  "interpretation_id": "interp-2026-10-12-paint-gives-way-to-air-v1",
+  "edition_id": "2026-10-12-paint-gives-way-to-air-v1",
+  "plate_read_timestamp": "2026-10-12T06:31:04.302Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A suspended, heavily corrugated assemblage fills most of the pale field. A green-and-rust shoulder shell arches over a dark hollow, with long gray-beige folds descending on either side. A dark cable loop hangs below; painted wood, a striped woven cuff and a small reflective lip interrupt the central mass. A separate blue fragment at right carries a white-edged cyan-and-lime bulge. All six planned anchors have visible counterparts, although the mirror appears near the upper assembly rather than in a lower chalk-filled pocket.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Landscape suspended assemblage: a painted shoulder shell and crushed bundles surround a dark hollow; a large unraveling cable loop hangs below. Bare pleats descend past a woven cuff, wooden splice and chalk-lined mirror lip. A separate narrow fold bears a blue, cyan and lime painted bulge. Thin suspension lines cross a luminous field with one architectural edge; ragged lower ends hang free.",
+      "A suspended, heavily corrugated assemblage fills most of the pale field. A green-and-rust shoulder shell arches over a dark hollow, with long gray-beige folds descending on either side. A dark cable loop hangs below; painted wood, a striped woven cuff and a small reflective lip interrupt the central mass. A separate blue fragment at right carries a white-edged cyan-and-lime bulge. All six planned anchors have visible counterparts, although the mirror appears near the upper assembly rather than in a lower chalk-filled pocket.",
+      "broken-paint",
+      "suspended-folds",
+      "hollow-span"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Green-and-rust ribbed shoulder shell",
+      "Dense twisted flank of the dark hanging cable loop",
+      "Black-and-cream cuff with curved ribbed bands",
+      "Rough wooden splice beneath the painted central fold",
+      "Small reflective lip above the central assembly",
+      "White-edged cyan-and-lime bulge on the blue hanging fragment"
+    ],
+    "dominant_surfaces": [
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "painted-pleat-open-span",
+      "A broad green-and-rust ribbed shoulder shell encloses a dark hollow.",
+      "A large dark twisted cable loop unravels into branching strands.",
+      "A black-and-cream woven cuff carries overlapping curved ribbed bands.",
+      "A rough wooden splice projects beneath gray, pink and blue paint.",
+      "A small mirror lip rises from a folded pocket of chalk-like fragments.",
+      "A narrow blue fold bears a white-edged cyan-and-lime rounded bulge.",
+      "Green-and-rust corrugated rim around the upper hollow"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: painted-pleat-open-span.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-green-and-rust-ribbed-shoulder-shell",
+      "kind": "hero",
+      "type": "corrugated-painted-shell",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.091,
+        "y": 0.018,
+        "w": 0.381,
+        "h": 0.295
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-dense-twisted-flank-of-the-dark-hang",
+      "kind": "hero",
+      "type": "twisted-cable-bundle",
+      "strength": 0.9199999999999999,
+      "bounds": {
+        "x": 0.33,
+        "y": 0.414,
+        "w": 0.178,
+        "h": 0.412
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-and-cream-cuff-with-curved-rib",
+      "kind": "module",
+      "type": "ribbed-woven-cuff",
+      "strength": 0.72,
+      "bounds": {
+        "x": 0.523,
+        "y": 0.472,
+        "w": 0.139,
+        "h": 0.216
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-rough-wooden-splice-beneath-the-pain",
+      "kind": "module",
+      "type": "projecting-wood-splice",
+      "strength": 0.6900000000000001,
+      "bounds": {
+        "x": 0.437,
+        "y": 0.274,
+        "w": 0.086,
+        "h": 0.158
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-small-reflective-lip-above-the-centr",
+      "kind": "module",
+      "type": "reflective-mirror-lip",
+      "strength": 0.66,
+      "bounds": {
+        "x": 0.574,
+        "y": 0.092,
+        "w": 0.066,
+        "h": 0.091
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-white-edged-cyan-and-lime-bulge-on-t",
+      "kind": "module",
+      "type": "painted-folded-bulge",
+      "strength": 0.63,
+      "bounds": {
+        "x": 0.872,
+        "y": 0.354,
+        "w": 0.081,
+        "h": 0.169
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-green-and-rust-ribbed-shoulder-shell-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.091,
+        "y": 0.018,
+        "w": 0.381,
+        "h": 0.295
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-dense-twisted-flank-of-the-dark-hang-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.33,
+        "y": 0.414,
+        "w": 0.178,
+        "h": 0.412
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-black-and-cream-cuff-with-curved-rib-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.523,
+        "y": 0.472,
+        "w": 0.139,
+        "h": 0.216
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-rough-wooden-splice-beneath-the-pain-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.437,
+        "y": 0.274,
+        "w": 0.086,
+        "h": 0.158
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-small-reflective-lip-above-the-centr-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.574,
+        "y": 0.092,
+        "w": 0.066,
+        "h": 0.091
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-white-edged-cyan-and-lime-bulge-on-t-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.872,
+        "y": 0.354,
+        "w": 0.081,
+        "h": 0.169
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
