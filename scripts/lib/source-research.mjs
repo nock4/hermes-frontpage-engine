@@ -1148,6 +1148,13 @@ export async function inspectSourceCandidates(signalHarvest, {
       },
     }
   }
+  const eligibleMaterialOwner = (material) => material && contentSources.find(source =>
+    material.page_url && [source.url, source.source_url, source.final_url].includes(material.page_url)
+    && source.image_url === material.image_url
+    && eligibleForEnrichment(source)
+    && hasCreativeArtifactEvidence(source, autoresearch, signalHarvest)
+    && decideAnchorEligibility({ anchorSource: source, recentSourceKeys, autoresearch }).decision === 'accept')
+  let unownedAutomaticPromotion = false
   // With a rejected automatic root, use the verified-field refill below: a
   // discovered visual alone cannot supply independent owning-source admission.
   if (!selectedImageMaterial.length && !(creativelyRejectedAnchor && !anchorSource)) {
@@ -1158,7 +1165,12 @@ export async function inspectSourceCandidates(signalHarvest, {
       inspirationOverride,
       recentSourceKeys,
     })
-    if (promoted?.candidate) {
+    // A rootless automatic nomination must be able to rebuild an eligible
+    // owner after vision. Skip unowned pixels before fingerprinting, then use
+    // the existing bounded verified-field loop even without a fertility reject.
+    unownedAutomaticPromotion = Boolean(promoted?.candidate && !anchorSource && !forcedAnchorSource
+      && !isExactAnchorOverride(inspirationOverride) && !eligibleMaterialOwner(promoted.candidate))
+    if (promoted?.candidate && !unownedAutomaticPromotion) {
       selectedImageMaterial = [promoted.candidate]
       promotedVisualAnchorRelationship = promoted.relationship
       imageSourceMaterial = {
@@ -1201,10 +1213,11 @@ export async function inspectSourceCandidates(signalHarvest, {
     })
   }
   // The first visual reference is only a nomination. A successful low-fertility
-  // verdict or rejected owning source may try already-verified field images, never new
-  // discovery, unknown refill, an exact override, or a failed vision response.
+  // verdict, rejected owner, or unowned automatic promotion may try verified
+  // field images, never new discovery, unknown refill, an exact override, or a
+  // failed vision response.
   if (!selectedImageMaterial.length && (screenedMaterial.rejected_image_fingerprints.length
-    || rejectedCreativeImageMaterial.length || creativelyRejectedAnchor)
+    || rejectedCreativeImageMaterial.length || creativelyRejectedAnchor || unownedAutomaticPromotion)
     && !isExactAnchorOverride(inspirationOverride)) {
     const attemptedImages = new Set(screenedMaterial.rejected_image_fingerprints
       .map((fingerprint) => canonicalizeSourceUrl(fingerprint.image_url)))
@@ -1270,12 +1283,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     const material = selectedImageMaterial[0]
     const fertile = material && sourceImageArtifacts.source_image_fingerprints.some(fingerprint =>
       fingerprint.image_url === material.image_url && !isLowFertilitySourceFingerprint(fingerprint))
-    const owner = fertile && contentSources.find(source =>
-      material.page_url && [source.url, source.source_url, source.final_url].includes(material.page_url)
-      && source.image_url === material.image_url
-      && eligibleForEnrichment(source)
-      && hasCreativeArtifactEvidence(source, autoresearch, signalHarvest)
-      && decideAnchorEligibility({ anchorSource: source, recentSourceKeys, autoresearch }).decision === 'accept')
+    const owner = fertile && eligibleMaterialOwner(material)
     if (owner) {
       anchorSource = { ...owner, anchor_selection_lane: 'verified-fertile-source-field',
         anchor_selection_reason: 'Selected the exact verified eligible owning source of dominant image material after it survived vision screening.' }

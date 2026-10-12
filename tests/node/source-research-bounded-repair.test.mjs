@@ -43,11 +43,12 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
       state.researchAttempts.push(state.attempts.length)
       return { source_decisions: state.editorialDecisions || (state.rejectAnchor ? [{ url: sources[0].url, role: 'reject' }] : []), selected_content_urls: [] }
     }
+    state.fingerprintCalls.push(input)
     return { visual_summary: 'Red figure and blue room in an oil painting', preserve_cues: ['red figure', 'blue room'], visual_fertility: 'high' }
   },
 }))
 import { inspectSourceCandidates, buildSourceFloorDiagnostics, collectFetchEvidenceForAutoresearch, discoverObservedOwnerProjectLinks } from '../../scripts/lib/source-research.mjs'
-import { sourceContentKey, sourceContentScore, isAiToolingContentSource, hasCreativeArtifactEvidence, isAutoresearchExcluded } from '../../scripts/lib/source-selection-policy.mjs'
+import { sourceContentKey, sourceContentScore, visualReferenceScore, isAiToolingContentSource, hasCreativeArtifactEvidence, isAutoresearchExcluded } from '../../scripts/lib/source-selection-policy.mjs'
 const sources = Array.from({ length: 24 }, (_, i) => ({
   url: `https://artist${i}.gallery.example/work`, image_url: `https://artist${i}.gallery.example/work.png`,
   title: `Painting ${i}`, note_title: `Painting ${i}`, note_id: `note-${i}`, note_score: 100 - i,
@@ -58,7 +59,7 @@ beforeEach(async () => {
   runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'bounded-repair-'))
   state.attempts = []; state.captures = []; state.rejectAnchor = false; state.verifiedFrom = 18; state.browserChanges = {}; state.fetchChanges = {}
   state.researchAttempts = []; state.editorialDecisions = null; state.derivedCandidates = []
-  state.visualReference = null; state.inspectionVerdicts = {}
+  state.visualReference = null; state.inspectionVerdicts = {}; state.fingerprintCalls = []
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1'); vi.stubEnv('DFE_DECISION_MODEL', 'openai')
 })
 afterEach(async () => { vi.unstubAllEnvs(); await fs.rm(runDir, { recursive: true, force: true }) })
@@ -231,6 +232,26 @@ it.each(['automatic', 'exact', 'supporting', 'rejected', 'ambiguous', 'medium', 
     expect(saved.source_decision_audit.hard_blockers).toEqual([])
     const retained = JSON.parse(await fs.readFile(path.join(runDir, 'anchor-research.json'), 'utf8'))
     expect(retained).toEqual(saved.anchor_research)
+  } else if (['unknown-owner', 'wrong-image', 'shared-image-other-owner', 'ambiguous', 'medium'].includes(mode)) {
+    // An ineligible nomination must not become the root; a different verified
+    // field tuple may now recover it, without repairing a deficient floor.
+    const replacement = saved.selected_image_material[0]
+    expect(replacement).toBeDefined()
+    expect(replacement.page_url === (state.visualReference.page_url || state.visualReference.url)
+      && replacement.image_url === state.visualReference.image_url).toBe(false)
+    expect(saved.anchor_research.anchor_source.url).toBe(replacement.page_url)
+    expect(saved.content_sources.some(source => source.url === replacement.page_url && source.image_url === replacement.image_url)).toBe(true)
+    if (['ambiguous', 'medium'].includes(mode)) {
+      expect(error?.message).toMatch(/blocked/)
+      expect(saved.content_source_count).toBe(5)
+      expect(saved.source_decision_audit.hard_blockers.map(row => row.reason_code)).toEqual(['insufficient_eligible_source_media'])
+    } else {
+      expect(error).toBeUndefined()
+      expect(saved.content_source_count).toBe(6)
+      expect(saved.source_decision_audit.hard_blockers).toEqual([])
+    }
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    expect(images.alternate_visual_anchor_attempts).toHaveLength(1)
   } else {
     expect(error?.message).toMatch(/blocked/)
     if (mode === 'exact') expect(saved.anchor_research.anchor_source.url).toBe(sources[0].url)
@@ -241,6 +262,55 @@ it.each(['automatic', 'exact', 'supporting', 'rejected', 'ambiguous', 'medium', 
     }
   }
 })
+it.each(['unowned', 'owned', 'exact'])('routes the frozen run9 six-owner rootless field without borrowing seed fertility: %s', async mode => {
+  const fixture = JSON.parse(await fs.readFile(new URL('../fixtures/run9-rootless-unowned-seed.json', import.meta.url), 'utf8'))
+  const field = fixture.owners
+  const owner = field[0]
+  // The broad visual-reference adapter can nominate captured but uninspected
+  // material outside the admitted field. No Blood Pool fingerprint is imported.
+  expect(visualReferenceScore(fixture.unowned_seed)).toBeGreaterThan(Math.max(...field.map(source => visualReferenceScore(source))))
+  state.visualReference = mode === 'owned' ? owner : fixture.unowned_seed
+  state.editorialDecisions = [{ url: sources[0].url, role: 'supporting', confidence: 'high' }]
+  for (const source of field) state.inspectionVerdicts[source.url] = {
+    status: 'verified', artifact_kind: 'artwork', confidence: 'high', observation: 'Synthetic adapter fixture, not production pixel proof',
+  }
+  const inspirationOverride = mode === 'exact'
+    ? { source_url: sources[0].url, image_url: sources[0].image_url, title: sources[0].title, prompt_bias_terms: ['exact-anchor'] } : null
+  let error
+  try {
+    await inspectSourceCandidates({ source_candidates: [sources[0], ...field], notes_selected: [], motif_terms: [] }, {
+      maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-10-12', inspirationOverride,
+    })
+  } catch (caught) { error = caught }
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  expect(saved.content_source_count).toBe(6)
+  expect(saved.autoresearch.source_decisions.some(row => row.url === fixture.unowned_seed.url)).toBe(false)
+  expect(state.attempts).not.toContain(fixture.unowned_seed.url)
+  expect(saved.source_image_fingerprints.some(row => row.image_url === fixture.unowned_seed.image_url)).toBe(false)
+  const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+  if (mode === 'exact') {
+    expect(error?.message).toMatch(/blocked/)
+    expect(saved.anchor_research.anchor_source.url).toBe(sources[0].url)
+    expect(images.alternate_visual_anchor_attempts).toBeUndefined()
+    return
+  }
+  expect(error).toBeUndefined()
+  expect(state.fingerprintCalls).toHaveLength(1)
+  const material = saved.selected_image_material[0]
+  expect(field.some(source => source.url === material.page_url && source.image_url === material.image_url)).toBe(true)
+  expect(saved.anchor_research.anchor_source.url).toBe(material.page_url)
+  expect(saved.source_decision_audit.hard_blockers).toEqual([])
+  if (mode === 'owned') {
+    expect(material.page_url).toBe(owner.url)
+    expect(images.alternate_visual_anchor_attempts).toBeUndefined()
+  } else {
+    expect(images.alternate_visual_anchor_attempts).toEqual([
+      { page_url: material.page_url, image_url: material.image_url, status: 'accepted' },
+    ])
+    expect(images.rejected_image_fingerprints).toEqual([])
+  }
+})
+
 it.each(['automatic', 'exact'])('retains %s single-anchor provenance with a sufficient derived field after text-first research', async mode => {
   state.verifiedFrom = 0
   state.derivedCandidates = sources.slice(1, 7)

@@ -174,6 +174,29 @@ describe('source research vision boundary', () => {
     expect(images.promoted_visual_anchor).toBeNull()
   })
 
+  it.each(['low', 'error'])('keeps rootless unowned recovery bounded and fail-closed: %s', async outcome => {
+    state.noAnchor = true
+    state.materials = []
+    state.reference = { ...sources[0], url: 'https://uninspected.example/work', image_url: 'https://uninspected.example/work.jpg' }
+    if (outcome === 'error') state.analyzer.mockRejectedValue(new Error('alternate vision unavailable'))
+    else state.analyzer.mockResolvedValue({ ...fertile, visual_fertility: 'low' })
+    await expect(inspect()).rejects.toThrow(outcome === 'error' ? /vision.*before image generation/ : /missing_anchor_source/)
+    expect(state.analyzer).toHaveBeenCalledTimes(outcome === 'error' ? 1 : 3)
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    const attempts = images.alternate_visual_anchor_attempts
+    expect(attempts).toHaveLength(outcome === 'error' ? 1 : 3)
+    expect(new Set(attempts.map(row => row.image_url)).size).toBe(attempts.length)
+    expect(attempts.every(row => sources.some(source => source.url === row.page_url && source.image_url === row.image_url))).toBe(true)
+    if (outcome === 'error') {
+      expect(attempts[0].status).toBe('inspecting')
+      const evidence = JSON.parse(await fs.readFile(path.join(runDir, 'source-image-fingerprints.json'), 'utf8'))
+      expect(evidence.fingerprints[0].vision_error).toContain('alternate vision unavailable')
+    } else {
+      expect(attempts.every(row => row.status === 'rejected-low-fertility')).toBe(true)
+      expect(images.selected_image_material).toEqual([])
+    }
+  })
+
   it('can nominate verified music material with a needs-review text score without weakening the final gate', async () => {
     state.noAnchor = true
     state.materials = []
