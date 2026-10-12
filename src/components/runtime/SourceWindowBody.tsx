@@ -308,7 +308,7 @@ export function SourceWindowBody({
       <SourceImageTitleCard
         binding={binding}
         imageUrl={getUsableSourceImageUrl(binding)}
-        title={richPreview.richPreviewTitle || binding.source_title || binding.title}
+        title={binding.source_title || richPreview.richPreviewTitle || binding.title}
       />
     )
   }

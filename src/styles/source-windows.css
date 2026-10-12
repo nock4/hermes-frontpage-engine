@@ -3974,6 +3974,25 @@
   display: none;
 }
 
+/* Raw previews retain their media aperture; identity rides its bottom edge.
+   Mobile overrides below put the same compact label beneath the image. */
+.source-window--stage.source-window--preview:has(.visual-source-card[data-source-visual-mode='raw']) .visual-source-card__edge-title {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  display: block;
+  min-width: 0;
+  padding: 0.28rem 0.42rem 0.32rem;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(8, 8, 9, 0.9), rgba(8, 8, 9, 0.66));
+  color: rgba(255, 250, 238, 0.96);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 .source-window--stage.source-window--poster-window .visual-source-card__caption,
 .source-window--stage.source-window--bleed-embed .visual-source-card__caption {
   position: absolute;
