@@ -7,6 +7,27 @@ import { describe, expect, it } from 'vitest'
 import { buildSceneImagePrompt, generateScenePlate } from '../../scripts/lib/scene-generation.mjs'
 
 describe('scene generation image prompt', () => {
+  it('keeps concrete scene direction ahead of duplicate transform boilerplate within the existing budget', () => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'A foreground corrugated mouth faces branching diagonal bundles. A broad interlaced tension fork counterbalances the shell; smaller curls hold a woven junction, broken painted edge, granular reflective seam and overlapping-flap opening.',
+      plate_posture: { plate_posture: 'source-led balanced' },
+      source_image_fingerprints: [{
+        title: 'Suspended forms', image_url: 'https://example.com/sculpture.jpg',
+        preserve_cues: ['hollow folded forms with pigment patches'],
+      }],
+      artifacts: [{ label: 'Internal binding label', artifact_type: 'internal-binding-type', source_url: 'https://example.com/source' }],
+    })
+    const transform = prompt.split('\nTRANSFORM\n')[1].split('\nCOMPOSITION\n')[0]
+    expect(transform).toContain('woven junction')
+    expect(transform).toContain('granular reflective seam')
+    expect(transform.length).toBeLessThanOrEqual(420)
+    expect(prompt).toContain('No visible annotation glyphs or QA chrome')
+    expect(prompt).toContain('change at least two of arrangement, scale, object count, crop, surface state, or spatial logic')
+    expect(prompt).toContain('Subordinate posture to source borrowing, not source copying')
+    expect(prompt).not.toContain('Internal binding label')
+    expect(prompt).not.toContain('internal-binding-type')
+  })
+
   it('does not leak internal artifact labels or types into the plate prompt', () => {
     const prompt = buildSceneImagePrompt({
       scene_prompt: 'A moody abstract landscape with sparse source-bearing marks.',

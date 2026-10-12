@@ -1078,7 +1078,7 @@ export function buildSceneImagePrompt(payload) {
     ? 'warm white paper panel, pale gray wall, near-black dash ink, soft gray shadow; no silver hardware, black phone slab, cable plastic, USB ports, or product-table styling'
     : visualDirection.palette_profile || payload.ambiance?.color_drift || payload.mood || 'source-led color'
   const sourceFidelityGuard = sourceImageFingerprints.length
-    ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them. Translate crop/placement into fragment scale, seam position, silhouette pressure, or negative-space ratio; keep named framing cues legible. ${sourceAspectGuard} ${dominantOverride} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks.`
+    ? `SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. Subordinate posture to source borrowing, not source copying. Translate crop/placement into fragment scale, seam position, silhouette pressure, or negative-space ratio; keep named framing cues legible. ${sourceAspectGuard} ${dominantOverride} ${recoveryTransformGuard} ${sourceContract} No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks.`
     : ''
   const constraints = uniqueNonEmpty([
     sourceFidelityGuard,
@@ -1109,8 +1109,10 @@ export function buildSceneImagePrompt(payload) {
     representational ? recompositionRule : '',
     '',
     'TRANSFORM',
+    // Reserve the existing scene budget for concrete art direction. Fidelity
+    // boilerplate lives in LIMITS; prefixing it here can erase the whole brief.
     compactText(hasSourceImage
-      ? `Build a new plate from the BORROW cues: keep source identity through borrowed silhouettes, motifs, palette, lighting, and material edges, but change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. ${sourceAudioMaterial ? `Audio material provides the hidden skeleton: ${sourceAudioMaterial}. ` : ''}${platePosture && !dashRecovery ? `Posture: ${platePosture.plate_posture}; subordinate posture to source borrowing, not source copying. ` : ''}${dashRecovery || payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'}`
+      ? `${platePosture && !dashRecovery ? `Posture: ${platePosture.plate_posture}. ` : ''}${dashRecovery || payload.scene_prompt || payload.mood || 'Turn the source into a full-bleed source-led artwork.'} ${sourceAudioMaterial ? `Audio material provides the hidden skeleton: ${sourceAudioMaterial}. ` : ''}`
       : `${payload.scene_prompt || payload.mood || 'Turn the source field into a full-bleed source-led artwork.'} ${sourceAudioMaterial ? `Audio material provides hidden structure: ${sourceAudioMaterial}. ` : ''}${platePosture ? `Posture: ${platePosture.plate_posture}.` : ''}`, 420),
     sourceAudioMaterial ? 'AUDIO MATERIAL' : '',
     sourceAudioMaterial ? compactText(`Translate the audio into surfaces and marks only: bass ridges, spectral veils, onset punctures, silence apertures, loop folds, pulse seams, pitch-color drift. Do not draw waveforms, equalizer bars, media-player UI, circular visualizers, or charts. ${sourceAudioMaterial}`, 620) : '',
