@@ -133,6 +133,87 @@ describe('bounded scene and ownership replan', () => {
   })
 
   it.each([
+    ['scene_prompt', 420], ['composition_archetype', 100], ['lighting', 160],
+    ['camera_plate_grammar', 160], ['material_language', 100],
+    ['visual_compositional_moves', 160], ['negative_constraints', 160], ['visual_description', 80],
+  ])('repairs only overlength %s once with complete evidence and attribution', async (field, limit) => {
+    const response = replacement()
+    response.artifacts[0].role = 'Not leather; authorship is contextual, not pixel evidence. '.repeat(20)
+    const compact = structuredClone(response)
+    const originalText = field === 'visual_description' ? response.artifacts[0][field]
+      : Array.isArray(response[field]) ? response[field][0] : response[field]
+    const long = `${originalText} `.repeat(20)
+    if (field === 'visual_description') response.artifacts[0][field] = long
+    else if (Array.isArray(response[field])) response[field][0] = long
+    else response[field] = long
+    expect(long.length).toBeGreaterThan(limit)
+    const before = structuredClone(response)
+    const request = vi.fn().mockResolvedValueOnce(response).mockResolvedValueOnce(compact)
+    const record = vi.fn()
+    const result = await planRealMarks({ payload, researchField, apiKey: 'test-secret' }, { request, record })
+    expect(request).toHaveBeenCalledTimes(2)
+    const initial = JSON.parse(request.mock.calls[0][0].input)
+    const repair = JSON.parse(request.mock.calls[1][0].input)
+    expect(repair.sources).toEqual(initial.sources)
+    expect(repair.rejected_response).toEqual(before)
+    expect(repair.output_shape).toEqual(initial.output_shape)
+    expect(request.mock.calls[1][0]).toMatchObject({ maxOutputTokens: 4000, timeoutMs: 120000 })
+    expect(result.artifacts[0].role).toBe(compact.artifacts[0].role)
+    expect(record.mock.calls.map(([kind]) => kind)).toEqual(['request', 'response', 'repair.request', 'repair.response'])
+    expect(JSON.stringify(record.mock.calls)).not.toContain('test-secret')
+    expect(response).toEqual(before)
+  })
+
+  it.each([
+    ['malformed', (r) => { r.lighting = null }],
+    ['ownership', (r) => { r.artifacts[0].source_url = 'https://wrong.example/' }],
+    ['geometry', (r) => { r.artifacts[1].polygon = [] }],
+    ['debug', (r) => { r.artifacts[1].visual_description = 'target ring' }],
+    ['long debug', (r) => { r.artifacts[1].visual_description = 'target ring '.repeat(20) }],
+    ['attribution', (r) => { r.artifacts[1].role = null }],
+    ['source contract', (r) => { r.scene_prompt = 'Do not depict the source.' }],
+    ['array count', (r) => { r.material_language = Array(5).fill('cloth') }],
+    ['eligibility stamp', (r) => { r.artifacts[0].eligibility = 'verified' }],
+    ['root geometry', (r) => { r.bounds = {} }],
+  ])('does not repair length mixed with %s errors', async (_, mutate) => {
+    const response = replacement(); response.composition_archetype = 'x'.repeat(101); mutate(response)
+    const request = vi.fn().mockResolvedValue(response)
+    await expect(planRealMarks({ payload, researchField }, { request })).rejects.toThrow()
+    expect(request).toHaveBeenCalledTimes(1)
+  })
+
+  it('repairs both saved-production budget misses in one call rather than one call per field', async () => {
+    const first = replacement()
+    first.composition_archetype = 'Asymmetric gallery fragments around an uninterrupted pale interval; two large features, small satellites'
+    first.visual_compositional_moves[0] = 'Split the central street image into unequal gilt apertures: umbrella domes and elongated figures in one, slender lamp and converging wedge-building in the other.'
+    const compact = structuredClone(first)
+    compact.composition_archetype = 'Asymmetric gallery fragments around open pale space; two large features and small satellites'
+    compact.visual_compositional_moves[0] = 'Split the street into unequal gilt apertures: umbrella domes and elongated figures in one, slender lamp and converging wedge-building in the other.'
+    const request = vi.fn().mockResolvedValueOnce(first).mockResolvedValueOnce(compact)
+    const result = await planRealMarks({ payload, researchField }, { request })
+    expect(request).toHaveBeenCalledTimes(2)
+    expect(JSON.parse(request.mock.calls[1][0].input).overlength).toEqual([
+      { field: 'composition_archetype', length: 104, limit: 100 },
+      { field: 'visual_compositional_moves.0', length: 161, limit: 160 },
+    ])
+    expect(result.visual_direction.composition_archetype).toBe(compact.composition_archetype)
+    expect(result.visual_direction.visual_compositional_moves).toEqual(compact.visual_compositional_moves)
+  })
+
+  it.each(['length', 'role', 'owner', 'geometry', 'exclusion'])('fails closed on a repaired %s violation', async (scenario) => {
+    const first = replacement(); first.composition_archetype = 'x'.repeat(101)
+    const second = replacement()
+    if (scenario === 'length') second.lighting = 'x'.repeat(161)
+    if (scenario === 'role') second.artifacts[0].role = 'lost caveat'
+    if (scenario === 'owner') second.artifacts[0].source_url = 'https://wrong.example/'
+    if (scenario === 'geometry') second.artifacts[0].bounds = {}
+    if (scenario === 'exclusion') second.negative_constraints = ['Allow same-photo restaging.']
+    const request = vi.fn().mockResolvedValueOnce(first).mockResolvedValueOnce(second)
+    await expect(planRealMarks({ payload, researchField }, { request })).rejects.toThrow()
+    expect(request).toHaveBeenCalledTimes(2)
+  })
+
+  it.each([
     ['dropped source', (r) => r.artifacts.pop()],
     ['new owner', (r) => { r.artifacts[0].source_url = 'https://different.org/work' }],
     ['duplicate owner', (r) => { r.artifacts[0].source_url = r.artifacts[1].source_url }],
@@ -147,11 +228,11 @@ describe('bounded scene and ownership replan', () => {
     ['oversized camera grammar', (r) => { r.camera_plate_grammar = 'x'.repeat(161) }],
     ['oversized transformation', (r) => { r.visual_compositional_moves[0] = 'x'.repeat(161) }],
     ['oversized exclusion', (r) => { r.negative_constraints[0] = 'x'.repeat(161) }],
-  ])('fails closed on %s without a second planning attempt', async (_, mutate) => {
+  ])('fails closed on %s with no unbounded planning attempts', async (scenario, mutate) => {
     const response = replacement(); mutate(response)
     const request = vi.fn().mockResolvedValue(response)
     await expect(planRealMarks({ payload, researchField }, { request })).rejects.toThrow(/Real-mark plan/)
-    expect(request).toHaveBeenCalledTimes(1)
+    expect(request).toHaveBeenCalledTimes(scenario.startsWith('oversized') ? 2 : 1)
   })
 
   it('retains the reconciled connected-space scene instead of silently replacing it after planning', async () => {

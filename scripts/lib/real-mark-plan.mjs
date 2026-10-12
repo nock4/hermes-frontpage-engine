@@ -5,16 +5,8 @@ import { hasCreativeArtifactEvidence, sourceContentKey } from './source-selectio
 
 const sourceKey = (url) => sourceContentKey({ url })
 const fail = (message) => { throw new Error(`Real-mark plan: ${message}`) }
-function text(value, max, field) {
-  if (typeof value !== 'string' || !value.trim() || value.length > max) fail(`invalid ${field} (limit ${max})`)
-  return value.trim()
-}
-function texts(value, maxItems, maxLength, field) {
-  if (!Array.isArray(value) || !value.length || value.length > maxItems) fail(`invalid ${field}`)
-  return value.map((entry) => text(entry, maxLength, field))
-}
-
-// One bounded planning call per plate attempt, never a geometry/mapping repair.
+// One planning call plus at most one prose-only length repair per plate attempt.
+// No image, inspection, eligibility or geometry retries are introduced here.
 // The owning sources are fixed; their visual translations may change together
 // with the scene when fidelity recovery invalidates an earlier material world.
 export async function planRealMarks({ payload, researchField, apiKey, model }, { request = openAiJson, record = async () => {} } = {}) {
@@ -81,13 +73,65 @@ export async function planRealMarks({ payload, researchField, apiKey, model }, {
   await record('request', requestPayload)
   const response = await request({ ...requestPayload, apiKey })
   await record('response', response ?? null)
-  if (!response || response.error) fail(response?.error || 'empty response')
+  const overlength = []
+  // Validate ALL non-length gates before deciding whether repair is admissible.
+  const next = validateResponse(response, payload, urls, overlength)
+  if (!overlength.length) return next
+  // The Hermes JSON adapter is prompt-only: it exposes no enforced JSON schema.
+  // Keep the same transport and budgets; never truncate provider prose locally.
+  const repairPayload = {
+    ...requestPayload,
+    instructions: `${requestPayload.instructions} Formatting repair only: rewrite overlength fields as compact COMPLETE phrases. Preserve every negation, exclusion and caveat; never truncate. Return the complete JSON object. Copy all other fields, source URLs and full attribution roles verbatim. If meaning cannot fit honestly, return an error.`,
+    input: JSON.stringify({
+      ...JSON.parse(requestPayload.input),
+      task: 'Repair only the listed overlength prose fields. No new research, source admission, geometry or scene redesign.',
+      overlength,
+      rejected_response: response,
+    }),
+  }
+  await record('repair.request', repairPayload)
+  const repaired = await request({ ...repairPayload, apiKey })
+  await record('repair.response', repaired ?? null)
+  const final = validateResponse(repaired, payload, urls)
+  assertOnlyLengthEdits(response, repaired, new Set(overlength.map(({ field }) => field)))
+  return final
+}
+
+function assertOnlyLengthEdits(before, after, allowed, field = '') {
+  if (allowed.has(field)) return
+  if (before && typeof before === 'object') {
+    if (!after || typeof after !== 'object' || Array.isArray(before) !== Array.isArray(after)
+      || Object.keys(before).length !== Object.keys(after).length) fail(`formatting repair changed ${field || 'shape'}`)
+    for (const key of Object.keys(before)) {
+      if (!Object.hasOwn(after, key)) fail(`formatting repair removed ${field}.${key}`)
+      assertOnlyLengthEdits(before[key], after[key], allowed, field ? `${field}.${key}` : key)
+    }
+  } else if (before !== after) fail(`formatting repair changed protected ${field}`)
+}
+
+function validateResponse(response, payload, urls, overlength = null) {
+  function text(value, max, field) {
+    if (typeof value !== 'string' || !value.trim()) fail(`invalid ${field} (limit ${max})`)
+    if (value.length > max) {
+      if (!overlength) fail(`invalid ${field} (limit ${max})`)
+      overlength.push({ field, length: value.length, limit: max })
+    }
+    return max === Infinity ? value : value.trim()
+  }
+  function texts(value, maxItems, maxLength, field) {
+    if (!Array.isArray(value) || !value.length || value.length > maxItems) fail(`invalid ${field}`)
+    return value.map((entry, index) => text(entry, maxLength, `${field}.${index}`))
+  }
+  if (!response || typeof response !== 'object' || Array.isArray(response) || response.error) fail(response?.error || 'empty or malformed response')
+  const fields = ['scene_prompt', 'material_language', 'lighting', 'composition_archetype', 'camera_plate_grammar', 'visual_compositional_moves', 'negative_constraints', 'artifacts']
+  if (Object.keys(response).some((key) => !fields.includes(key))) fail('unexpected plan fields; no geometry or eligibility evidence allowed')
   if (!Array.isArray(response.artifacts) || response.artifacts.length !== urls.length) fail('owning source count changed')
   const byUrl = new Map()
-  for (const artifact of response.artifacts) {
+  for (const [index, artifact] of response.artifacts.entries()) {
+    if (!artifact || typeof artifact !== 'object' || Array.isArray(artifact)) fail('malformed artifact')
     if (!urls.includes(artifact.source_url) || byUrl.has(artifact.source_url)) fail('owning source changed or duplicated')
-    if (['bounds', 'polygon', 'confidence', 'visual_evidence'].some((key) => key in artifact)) fail('planning cannot supply mapping evidence')
-    const description = text(artifact.visual_description, 80, 'visual_description')
+    if (Object.keys(artifact).some((key) => !['source_url', 'visual_description', 'role'].includes(key))) fail('planning cannot supply mapping or eligibility evidence')
+    const description = text(artifact.visual_description, 80, `artifacts.${index}.visual_description`)
     if (/https?:|\b(?:click|hover|tap|runtime|binding|hotspot|source.window|label|numbered|target|crosshair|reticle|pin|card)\b/i.test(description)) fail('visual_description contains UI or mapping language')
     byUrl.set(artifact.source_url, {
       source_url: artifact.source_url, label: description, artifact_type: 'source-native-mark',
