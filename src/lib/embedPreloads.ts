@@ -1,6 +1,7 @@
 import type { SourceBindingRecord } from '../types/runtime'
 import { getSourceWindowDescriptor } from './sourceWindowContent'
 import { sanitizeSourceImageUrl } from './sourceUrl'
+import { getOriginalImageDeliveryUrl } from './originalImageDelivery'
 import { getTweetEmbedUrl } from './tweetEmbed'
 
 export type EmbedPreload = {
@@ -61,7 +62,7 @@ export function collectEmbedPreloads({ bindings, reviewMode, openBindingIds }: C
       preloads.push({ id: binding.id, kind: descriptor.kind === 'bandcamp-embed' ? 'bandcamp' : 'soundcloud', src: descriptor.embedUrl, title: binding.title })
     }
 
-    const sourceImageUrl = sanitizeSourceImageUrl(binding.source_image_url)
+    const sourceImageUrl = getOriginalImageDeliveryUrl(binding) || sanitizeSourceImageUrl(binding.source_image_url)
     if (sourceImageUrl) {
       const key = `image:${sourceImageUrl}`
       if (seen.has(key)) continue

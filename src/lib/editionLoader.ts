@@ -32,6 +32,7 @@ import type {
 } from '../types/interpretation'
 import { sanitizeSourceImageUrl, sanitizeSourceUrl } from './sourceUrl'
 import { sanitizeSourceText } from './sourceText'
+import { verifyOriginalImageDelivery } from './originalImageDelivery'
 
 type JsonValue = null | boolean | number | string | JsonValue[] | { [key: string]: JsonValue }
 type JsonObject = { [key: string]: JsonValue }
@@ -372,7 +373,8 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
     id: requireString(binding.id, `${path}.id`),
     artifact_id: requireString(binding.artifact_id, `${path}.artifact_id`),
     source_type: requireLiteral(binding.source_type, SOURCE_BINDING_SOURCE_TYPES, `${path}.source_type`),
-    source_url: sanitizedSourceUrl,
+    // Validate normally, but do not normalize attested literal identities.
+    source_url: binding.source_image_delivery !== undefined ? sourceUrl ?? null : sanitizedSourceUrl,
     window_type: requireLiteral(binding.window_type, SOURCE_BINDING_WINDOW_TYPES, `${path}.window_type`),
     hover_behavior: requireLiteral(binding.hover_behavior, SOURCE_BINDING_HOVER_BEHAVIORS, `${path}.hover_behavior`),
     click_behavior: requireLiteral(binding.click_behavior, SOURCE_BINDING_CLICK_BEHAVIORS, `${path}.click_behavior`),
@@ -387,9 +389,11 @@ const parseSourceBindingRecord = (value: JsonValue, path: string): SourceBinding
     source_domain: optionalString(binding.source_domain, `${path}.source_domain`),
     source_meta: optionalString(binding.source_meta, `${path}.source_meta`),
     source_embed_html: optionalString(binding.source_embed_html, `${path}.source_embed_html`),
-    source_image_url: sanitizedSourceImageUrl ?? undefined,
+    source_image_url: binding.source_image_delivery !== undefined ? sourceImageUrl : sanitizedSourceImageUrl ?? undefined,
+    // Verified against the actual edition and bytes before leaving the loader.
+    source_image_delivery: binding.source_image_delivery as unknown as SourceBindingRecord['source_image_delivery'],
     source_image_alt: optionalString(binding.source_image_alt, `${path}.source_image_alt`),
-    source_media_url: sanitizedSourceMediaUrl ?? undefined,
+    source_media_url: binding.source_image_delivery !== undefined ? sourceMediaUrl : sanitizedSourceMediaUrl ?? undefined,
     source_media_type: optionalLiteral(binding.source_media_type, SOURCE_BINDING_MEDIA_TYPES, `${path}.source_media_type`),
     source_visual: parseSourceVisualRecord(binding.source_visual, `${path}.source_visual`),
   }
@@ -726,6 +730,13 @@ export const loadEditionPackage = async (basePath: string): Promise<LoadedEditio
     fetchOptionalJson(`${basePath}/about.json`, parseAboutRecord),
     fetchOptionalJson(`${basePath}/interpretation.json`, parseInterpretationRecord),
   ])
+
+  if (sourceBindings.bindings.some(binding => binding.source_image_delivery !== undefined)) {
+    if (basePath !== `/editions/${edition.edition_id}`
+      || sourceBindings.source_binding_set_id !== `bindings-${edition.edition_id}`
+      || sourceBindings.bindings.length > 10) throw new Error('Original image delivery: edition context mismatch')
+    for (const binding of sourceBindings.bindings) await verifyOriginalImageDelivery(binding, edition.edition_id)
+  }
 
   const mergedArtifactMap = geometryKit
     ? {

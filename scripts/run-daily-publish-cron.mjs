@@ -558,7 +558,8 @@ async function main() {
     const finalHarvest = await readJson(path.join(summary.latest_run_dir, 'signal-harvest.json'))
     const finalBindings = await readJson(path.join(options.worktreeDir, 'public', 'editions', summary.local_edition_id, 'source-bindings.json'))
     assertRunEditionProvenance(summary.local_edition_id, packageSummary, finalBindings)
-    assertEditorialBindings(finalBindings.bindings, finalResearch, finalHarvest, { finalMedia: true })
+    assertEditorialBindings(finalBindings.bindings, finalResearch, finalHarvest, { finalMedia: true,
+      editionId: summary.local_edition_id, editionDir: path.join(options.worktreeDir, 'public', 'editions', summary.local_edition_id) })
 
     const commitResult = await commitPublishedArtifacts(options.worktreeDir, summary.local_edition_id || new Date().toISOString().slice(0, 10), options.branch)
     summary.commit = commitResult.commit

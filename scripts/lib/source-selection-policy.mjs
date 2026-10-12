@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs'
+import { assertPackagedOriginalImages } from './original-image-delivery.mjs'
 import { createHash } from 'node:crypto'
 import {
   canonicalizeSourceUrl,
@@ -710,7 +711,8 @@ export function hasCreativeArtifactEvidence(source, autoresearch, signalHarvest 
   })
 }
 
-export function assertEditorialBindings(bindings, researchField = {}, signalHarvest = null, { minimum = 6, finalMedia = false } = {}) {
+export function assertEditorialBindings(bindings, researchField = {}, signalHarvest = null, { minimum = 6, finalMedia = false, editionDir, editionId } = {}) {
+  if (finalMedia) assertPackagedOriginalImages(bindings || [], { editionDir, editionId })
   const evidence = [...(researchField.sources || []), ...(researchField.content_sources || [])]
   const identities = new Set()
   for (const binding of bindings || []) {
@@ -726,6 +728,9 @@ export function assertEditorialBindings(bindings, researchField = {}, signalHarv
     if (finalMedia) {
       const verified = matching.some(source => (researchField.autoresearch?.source_decisions || []).some(decision => {
         const proof = decision.inspection
+        if (binding.source_image_delivery && (binding.source_image_delivery.capture_sha256 !== proof?.capture_sha256
+          || binding.source_image_delivery.source_url !== proof?.source_url
+          || binding.source_image_delivery.media_url !== proof?.media_url)) return false
         // Enrichment may retain a still only as typed media (including extensionless
         // URLs). Attest that exact URL, never an alias or an inferred video poster.
         const finalImageUrl = binding.source_image_url

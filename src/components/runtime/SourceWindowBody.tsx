@@ -1,6 +1,7 @@
 import { useEffect, useState, type CSSProperties, type SyntheticEvent } from 'react'
 
 import { getRichPreviewModel } from '../../lib/richPreviewModel'
+import { getOriginalImageDeliveryUrl } from '../../lib/originalImageDelivery'
 import { getYouTubeThumbnailUrl } from '../../lib/sourceWindowContent'
 import { getTweetEmbedSrcDoc, getTweetEmbedUrl, PROVIDER_EMBED_SANDBOX, TWEET_EMBED_SANDBOX } from '../../lib/tweetEmbed'
 import type { ArtifactRecord, SourceBindingRecord } from '../../types/runtime'
@@ -145,6 +146,8 @@ function shouldBypassPosterCrop(binding: SourceBindingRecord, fallbackUrl: strin
 }
 
 export function getSourceVisualImageUrl(binding: SourceBindingRecord, fallbackUrl: string | null) {
+  const original = getOriginalImageDeliveryUrl(binding)
+  if (original) return original
   if (shouldBypassPosterCrop(binding, fallbackUrl) || isMobileSourceViewport()) return fallbackUrl
   return binding.source_visual?.poster_asset_path || fallbackUrl
 }
@@ -221,7 +224,7 @@ function SourceImageTitleCard({
   const [videoFailed, setVideoFailed] = useState(false)
   useEffect(() => setVideoFailed(false), [binding.id, binding.source_url, binding.source_media_url])
   const providerFallback = videoFailed ? getTweetEmbedUrl(binding.source_url || '') : null
-  const visualImageUrl = videoFailed && !providerFallback ? binding.source_image_url || null : getSourceMediaUrl(binding, imageUrl)
+  const visualImageUrl = videoFailed && !providerFallback ? getUsableSourceImageUrl(binding) : getSourceMediaUrl(binding, imageUrl)
   const visualStyle = getSourceVisualStyle(binding)
   const visualMode = getSourceVisualMode(binding, binding.source_media_type === 'video' ? imageUrl : visualImageUrl)
   const resolvedMediaType = visualImageUrl && mediaType === 'video' ? 'video' : 'image'
@@ -246,7 +249,7 @@ function SourceImageTitleCard({
               loop
               muted
               playsInline
-              poster={binding.source_image_url}
+              poster={getUsableSourceImageUrl(binding) || undefined}
               preload="metadata"
               src={visualImageUrl}
             />

@@ -169,6 +169,7 @@ export interface SourceBindingRecord {
   source_meta?: string
   source_embed_html?: string
   source_image_url?: string
+  source_image_delivery?: import('../lib/originalImageContract.mjs').OriginalImageDelivery
   source_image_alt?: string
   source_media_url?: string
   source_media_type?: 'image' | 'video'

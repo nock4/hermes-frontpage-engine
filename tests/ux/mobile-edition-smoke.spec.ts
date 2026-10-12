@@ -1,5 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { createHash } from 'node:crypto'
+import { assertOriginalImageContract, originalImageMime } from '../../src/lib/originalImageContract.mjs'
 
 import { expect, test, type Page } from '@playwright/test'
 import { getSourceWindowDescriptor } from '../../src/lib/sourceWindowContent'
@@ -27,6 +29,7 @@ type SourceBindingRecord = {
   source_media_type?: string
   source_media_url?: string
   source_image_url?: string
+  source_image_delivery?: RuntimeBinding['source_image_delivery']
 }
 
 type MobileWindowMetric = {
@@ -75,6 +78,19 @@ function readEditionJson<T>(edition: ManifestItem, fileName: string): T {
 
 function sanitizePathPart(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 80) || 'item'
+}
+
+// Independently verify identity and bytes: a full original is not a poster crop.
+function expectedOriginalUrl(binding: SourceBindingRecord) {
+  if (binding.source_image_delivery) {
+    const delivery = assertOriginalImageContract(binding as RuntimeBinding, currentEdition.edition_id)
+    const bytes = fs.readFileSync(path.join(root, 'public', delivery.asset_path))
+    expect(bytes.length).toBe(delivery.byte_length)
+    expect(createHash('sha256').update(bytes).digest('hex')).toBe(delivery.capture_sha256)
+    expect(originalImageMime(bytes)).toBe(delivery.mime_type)
+    return delivery.asset_path
+  }
+  return binding.source_media_url || binding.source_image_url || null
 }
 
 async function gotoLiveEdition(page: Page) {
@@ -373,7 +389,7 @@ for (const viewport of mobileViewports) {
       if (viewport.name === 'mobile-landscape' && !nativePlayer && binding.source_media_type !== 'video' && (binding.source_media_url || binding.source_image_url)) {
         if (metric.sourceVisualMode !== 'raw') failures.push(`${viewport.name} / ${label}: still-image source must use contained raw media in short landscape (mode=${metric.sourceVisualMode})`)
         if (!metric.hasAmbientFill) failures.push(`${viewport.name} / ${label}: contained landscape source is missing blurred ambient fill`)
-        const expectedRawImageUrl = binding.source_media_url || binding.source_image_url || null
+        const expectedRawImageUrl = expectedOriginalUrl(binding)
         if (expectedRawImageUrl && metric.sourceVisualImageUrl !== expectedRawImageUrl) failures.push(`${viewport.name} / ${label}: landscape still must render the original source image, not its poster crop`)
         if (metric.sourceVisualMode === 'raw' && metric.height < viewport.height * 0.55) failures.push(`${viewport.name} / ${label}: landscape source aperture is too short to show the image (${Math.round(metric.height)}px < ${Math.round(viewport.height * 0.55)}px)`)
       }
@@ -434,7 +450,7 @@ for (const viewport of mobileViewports) {
             if (viewport.name === 'mobile-landscape') expect(primaryMetric.height).toBeGreaterThanOrEqual(viewport.height * 0.55)
           } else if (viewport.name === 'mobile-landscape' && primaryBinding.source_media_type !== 'video') {
             if (primaryMetric.sourceVisualMode !== 'raw' || !primaryMetric.hasAmbientFill) failures.push(`${viewport.name} / primary source: short-landscape raw media mode/ambient fill is missing`)
-            const expectedRawImageUrl = primaryBinding.source_media_url || primaryBinding.source_image_url || null
+            const expectedRawImageUrl = expectedOriginalUrl(primaryBinding)
             if (expectedRawImageUrl && primaryMetric.sourceVisualImageUrl !== expectedRawImageUrl) failures.push(`${viewport.name} / primary source: landscape still must render the original source image, not its poster crop`)
             if (primaryMetric.height < viewport.height * 0.55) failures.push(`${viewport.name} / primary source: clicked source aperture is too short (${Math.round(primaryMetric.height)}px < ${Math.round(viewport.height * 0.55)}px)`)
           }

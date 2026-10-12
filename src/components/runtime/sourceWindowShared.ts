@@ -1,5 +1,6 @@
 import { getRichPreviewModel } from '../../lib/richPreviewModel'
 import { sanitizeSourceImageUrl } from '../../lib/sourceUrl'
+import { getOriginalImageDeliveryUrl } from '../../lib/originalImageDelivery'
 import { getSourceWindowSurfaceProfile } from '../../lib/sourceWindowSurface'
 import type { ArtifactRecord, SourceBindingRecord } from '../../types/runtime'
 import type { SourceWindowDescriptor } from '../../types/sourceWindows'
@@ -60,6 +61,8 @@ function isDirectImageUrl(value: string | null | undefined) {
 }
 
 export function getUsableSourceImageUrl(binding: SourceBindingRecord) {
+  const original = getOriginalImageDeliveryUrl(binding)
+  if (original) return original
   const imageUrl = sanitizeSourceImageUrl(binding.source_image_url)
   if (imageUrl && !isLowValueSourceImage(imageUrl)) return imageUrl
 

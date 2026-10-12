@@ -11,6 +11,10 @@ for (const viewport of [{ width: 375, height: 667 }, { width: 852, height: 393 }
           ...data.bindings[0], source_type: 'audio', window_type: 'audio',
           source_url: 'https://soundcloud.com/ashra-official/ocean-of-tenderness',
           title: 'Ocean of Tenderness', source_title: 'Ocean of Tenderness',
+          // This is a different canonical source, not an attested original-image fixture.
+          source_image_delivery: undefined,
+          source_image_url: undefined, source_media_url: undefined, source_media_type: undefined,
+          source_visual: undefined,
           embed_status: undefined, source_embed_html: undefined,
         }
         await route.fulfill({ response, json: data })
@@ -80,7 +84,11 @@ for (const viewport of [{ width: 375, height: 667 }, { width: 852, height: 393 }
       data.bindings[0] = {
         ...data.bindings[0], source_type: 'audio', window_type: 'audio',
         source_url: 'https://soundcloud.com/ashra-official/ocean-of-tenderness',
-        embed_status: undefined, source_embed_html: undefined,
+        // This is a different canonical source, not an attested original-image fixture.
+          source_image_delivery: undefined,
+          source_image_url: undefined, source_media_url: undefined, source_media_type: undefined,
+          source_visual: undefined,
+          embed_status: undefined, source_embed_html: undefined,
       }
       await route.fulfill({ response, json: data })
     })

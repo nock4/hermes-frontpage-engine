@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { assertPackagedOriginalImages } from './lib/original-image-delivery.mjs'
 
 const root = process.cwd()
 const editionsRoot = path.join(root, 'public', 'editions')
@@ -28,6 +29,8 @@ for (const item of manifest.editions) {
   const edition = JSON.parse(fs.readFileSync(path.join(base, 'edition.json'), 'utf8'))
   const artifactMap = JSON.parse(fs.readFileSync(path.join(base, 'artifact-map.json'), 'utf8'))
   const bindings = JSON.parse(fs.readFileSync(path.join(base, 'source-bindings.json'), 'utf8'))
+  try { assertPackagedOriginalImages(bindings.bindings, { editionDir: base, editionId: item.edition_id }) }
+  catch (error) { errors.push(`${item.edition_id}: ${error.message}`) }
   const enforceVariety = edition.date >= '2026-04-18'
 
   if (!fs.existsSync(path.join(root, 'public', edition.plate_asset_path.replace(/^\//, '')))) {

@@ -385,6 +385,36 @@ describe('loadEditionPackage', () => {
   })
 })
 
+it('preserves validated literal attested URLs through loader normalization', async () => {
+  const bytes = Uint8Array.from([137,80,78,71,13,10,26,10,1,2,3])
+  const hash = '7f47b756761a46e6d4a4d96f0d8a4448f8449235009d1f3ad1493f5c773c19e8'
+  const source = 'https://Artist.example:443'
+  const media = 'https://Artist.example:443/image.png'
+  const asset = `/editions/test/assets/source-originals/${hash}.png`
+  const responses = new Map<string, unknown>([
+    ['/editions/test/edition.json', { ...editionRecord, edition_id: 'test' }],
+    ['/editions/test/brief.json', briefRecord],
+    ['/editions/test/artifact-map.json', artifactMapRecord],
+    ['/editions/test/ambiance.json', ambianceRecord],
+    ['/editions/test/review.json', reviewRecord],
+    ['/editions/test/source-bindings.json', {
+      source_binding_set_id: 'bindings-test', bindings: [{ ...sourceBindingsRecord.bindings[0],
+        source_url: source, source_image_url: media, source_media_url: media, source_media_type: 'image',
+        source_image_delivery: { version: 1, kind: 'attested-full-original', edition_id: 'test',
+          source_url: source, media_url: media, capture_sha256: hash, mime_type: 'image/png',
+          byte_length: bytes.length, asset_path: asset },
+      }],
+    }],
+  ])
+  vi.stubGlobal('fetch', vi.fn(async (url: string) => url === asset
+    ? new Response(bytes, { headers: { 'content-type': 'image/png' } })
+    : responses.has(url) ? new Response(JSON.stringify(responses.get(url)), { headers: { 'content-type': 'application/json' } })
+      : new Response('', { status: 404 })))
+  const loaded = await loadEditionPackage('/editions/test')
+  expect(loaded.sourceBindings.bindings[0].source_url).toBe(source)
+  expect(loaded.sourceBindings.bindings[0].source_image_url).toBe(media)
+})
+
 describe('loadManifest', () => {
   it('rejects invalid manifest payloads instead of trusting casts', async () => {
     vi.stubGlobal('fetch', vi.fn(async (): Promise<MockFetchResponse> => ({

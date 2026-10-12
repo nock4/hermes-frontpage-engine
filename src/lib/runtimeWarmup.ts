@@ -1,6 +1,7 @@
 import { getSourceWindowDescriptor } from './sourceWindowContent'
 import type { EditionManifest, EditionManifestItem, SourceBindingRecord } from '../types/runtime'
 import { sanitizeSourceImageUrl, sanitizeSourceUrl } from './sourceUrl'
+import { getOriginalImageDeliveryUrl } from './originalImageDelivery'
 
 interface RuntimeWarmupPlan {
   packageUrls: string[]
@@ -63,7 +64,7 @@ export const collectWarmImageUrls = (bindings: SourceBindingRecord[], limit = DE
 
   for (const binding of bindings) {
     if (urls.length >= limit) break
-    const sourceImageUrl = toHttpUrl(binding.source_image_url, 'image')?.toString()
+    const sourceImageUrl = getOriginalImageDeliveryUrl(binding) || toHttpUrl(binding.source_image_url, 'image')?.toString()
     if (!sourceImageUrl || seen.has(sourceImageUrl)) continue
     seen.add(sourceImageUrl)
     urls.push(sourceImageUrl)

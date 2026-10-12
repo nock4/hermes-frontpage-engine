@@ -48,6 +48,9 @@ test(`denied direct video ${viewport.width}px switches to the canonical provider
     const data = await response.json()
     for (const binding of data.bindings) Object.assign(binding, {
       source_type: 'tweet', window_type: 'social', source_url: 'https://x.com/akiraxtwo/status/2048486473490678173',
+      // This synthetic video replaces the source identity, not its attested original.
+      source_image_delivery: undefined,
+      source_image_url: undefined, source_image_alt: undefined, source_visual: undefined,
       source_media_type: 'video', source_media_url: 'https://video.twimg.com/denied-test.mp4',
     })
     await route.fulfill({ response, json: data })
