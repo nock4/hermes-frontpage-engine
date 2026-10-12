@@ -112,6 +112,8 @@ function sanitizePathPart(value: string) {
 function isKnownBadImageUrl(value: string | undefined) {
   if (!value) return false
   const lower = value.toLowerCase()
+  // A decoded runtime error SVG is not source media, even with valid dimensions.
+  if (lower.startsWith('data:image/svg+xml')) return true
   if (lower.includes('/assets/source-posters/')) return false
   return lower.includes('abs.twimg.com')
     || lower.includes('profile_images')

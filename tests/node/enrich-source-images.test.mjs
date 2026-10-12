@@ -48,6 +48,7 @@ async function enrich(binding) {
     await fs.writeFile(path.join(root, 'public/editions/index.json'), JSON.stringify({ editions: [{ edition_id: 'fixture', path: '/editions/fixture' }] }))
     await fs.writeFile(path.join(edition, 'source-bindings.json'), JSON.stringify({ bindings: [binding] }))
     await fs.writeFile(path.join(root, 'transport.mjs'), preload)
+    await fs.writeFile(path.join(root, 'requests.jsonl'), '')
     const stdout = execFileSync(process.execPath, ['--import', path.join(root, 'transport.mjs'), script, '--edition', 'fixture'], {
       cwd: root,
       env: { ...process.env, NODE_ENV: 'test', DFE_TEST_USE_GLOBAL_FETCH: '0', NODE_OPTIONS: '' },
@@ -55,7 +56,7 @@ async function enrich(binding) {
       encoding: 'utf8',
     })
     const output = JSON.parse(await fs.readFile(path.join(edition, 'source-bindings.json'), 'utf8'))
-    const requests = (await fs.readFile(path.join(root, 'requests.jsonl'), 'utf8')).trim().split('\n').map(JSON.parse)
+    const requests = (await fs.readFile(path.join(root, 'requests.jsonl'), 'utf8')).trim().split('\n').filter(Boolean).map(JSON.parse)
     return { binding: output.bindings[0], requests, summary: JSON.parse(stdout) }
   } finally {
     await fs.rm(root, { recursive: true, force: true })
@@ -70,6 +71,20 @@ it('preserves an existing healthy descriptor with ordinary image-health identity
   expect(result.requests).toEqual([{ path: '/art.jpg', status: 206, headers: {
     accept: 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5', range: 'bytes=0-4095',
   } }])
+})
+
+it.each([
+  { source_image_url: 'https://gallery.example/denied.jpg', source_media_url: 'https://gallery.example/denied.jpg', source_media_type: 'image' },
+  { source_media_url: 'https://gallery.example/denied.jpg', source_media_type: 'image' },
+  { source_image_url: 'https://gallery.example/denied.jpg', source_media_url: 'https://gallery.example/movie.mp4', source_media_type: 'video' },
+  // Do not silently reconcile conflicting identities: finalMedia must reject these.
+  { source_image_url: 'https://gallery.example/wrong.jpg', source_media_url: 'https://gallery.example/denied.jpg', source_media_type: 'image' },
+])('preserves selected media identity despite unavailable remote media: %j', async selected => {
+  const binding = { source_url: 'https://gallery.example/work', source_image_alt: 'Original artwork', ...selected }
+  const result = await enrich(binding)
+  expect(result.binding).toEqual(binding)
+  expect(result.summary).toEqual({ updatedBindings: 0, updatedEditions: [] })
+  expect(result.requests).toEqual([])
 })
 
 it('enriches owning-page metadata using the same ordinary identity as image health', async () => {

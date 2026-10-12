@@ -316,6 +316,10 @@ const shouldClearSourceImage = async (binding) => {
 }
 
 const enrichBinding = async (binding) => {
+  // Typed media is a selection, not a generic page-preview suggestion. Transient
+  // health failures must not replace its still/poster with unrelated metadata.
+  // Preserve conflicts too: finalMedia, not enrichment, adjudicates provenance.
+  if (binding?.source_media_url && ['image', 'video', 'audio'].includes(binding.source_media_type)) return null
   if (!binding?.source_url || !await shouldRefreshSourceImage(binding)) return null
   const sourceUrl = binding.source_url
   const enrichmentCandidates = [
