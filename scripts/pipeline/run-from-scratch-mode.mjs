@@ -10,6 +10,7 @@ import { createMineSignalsStep } from './mine-signals.mjs'
 import { buildSmokeRoute, maskPipelineArgs, pipelinePython, postPackageSteps } from './package-steps.mjs'
 import { createResearchSourcesStep } from './research-sources.mjs'
 import { buildSourceContract } from '../lib/source-contract.mjs'
+import { planRealMarks } from '../lib/real-mark-plan.mjs'
 import { prepareSourceAudioMaterial } from '../lib/source-audio-material.mjs'
 import { recompositionRule, photoGrammarRule, recomposeSourceCues } from '../lib/source-recomposition.mjs'
 
@@ -49,6 +50,9 @@ export async function runFromScratchMode({
   const runDir = path.join(root, 'tmp', 'daily-process-runs', runId)
   await fs.mkdir(runDir, { recursive: true })
   const generationName = runId
+  const recordRealMarkPlan = (suffix = '') => async (kind, value) => {
+    await fs.writeFile(path.join(runDir, `real-mark-plan${suffix}.${kind}.json`), `${JSON.stringify(value, null, 2)}\n`, 'utf8')
+  }
   const sampleMode = options.useSampleSignals || (options.sampleDataEnabled && options.inputMode === 'manifest')
   const rawRecentEditions = sampleMode ? [] : getRecentEditionSummaries(recentDiversityEditionCount)
   const recentEditions = rawRecentEditions
@@ -133,9 +137,12 @@ export async function runFromScratchMode({
               source_image_mode: 'skipped-no-valid-dominant-source-image',
               source_image_mode_reason: contract.skip_reason,
             }
-        await fs.writeFile(path.join(runDir, 'source-contract.json'), `${JSON.stringify(contract, null, 2)}\n`, 'utf8')
+        if (contract.mode === 'source-image') {
+          context.payload = await planRealMarks({ payload: context.payload, researchField: context.researchField, apiKey, model: options.model }, { record: recordRealMarkPlan() })
+        }
+        await fs.writeFile(path.join(runDir, 'source-contract.json'), `${JSON.stringify(context.payload.source_contract, null, 2)}\n`, 'utf8')
         await fs.writeFile(path.join(runDir, 'daily-generation-payload.json'), `${JSON.stringify(context.payload, null, 2)}\n`, 'utf8')
-        return contract
+        return context.payload.source_contract
       },
     },
     createGeneratePlateStep({ apiKey, context, generateScenePlate, imageAspectRatioFromSize, options, root, runDir }),
@@ -163,6 +170,8 @@ export async function runFromScratchMode({
           for (let attempt = 1; attempt <= recoveryAttempts; attempt += 1) {
             const failedAudit = await readSourceFidelityAudit(runDir, fs)
             context.payload = buildSourceFidelityRecoveryPayload(context.payload, failedAudit, attempt)
+            context.payload = await planRealMarks({ payload: context.payload, researchField: context.researchField, apiKey, model: options.model }, { record: recordRealMarkPlan(`.source-fidelity-recovery-${attempt}`) })
+            await fs.writeFile(path.join(runDir, 'source-contract.json'), `${JSON.stringify(context.payload.source_contract, null, 2)}\n`, 'utf8')
             await fs.writeFile(
               path.join(runDir, `daily-generation-payload.source-fidelity-recovery-${attempt}.json`),
               `${JSON.stringify(context.payload, null, 2)}\n`,
@@ -342,6 +351,9 @@ export function buildSourceFidelityRecoveryPayload(payload, audit, attempt = 1) 
   // in the saved recovery payload, never as image-generation choreography.
   payload = {
     ...payload,
+    ...((payload?.artifacts?.length >= 6 || payload?.real_mark_plan)
+      ? { real_mark_plan: { status: 'needs-replan', reason: 'fidelity recovery changes scene requirements' } }
+      : {}),
     source_fidelity_recovery_diagnostics: [
       ...(payload?.source_fidelity_recovery_diagnostics || []),
       ...(audit ? [structuredClone(audit)] : []),

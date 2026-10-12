@@ -979,10 +979,17 @@ function dashPanelRecoveryScene(sourceImageFingerprints = []) {
   return 'A new landscape plate built from the wall-mounted dash-grid panel: keep a centered portrait paper field on a pale wall, but split the internal raster into three offset translucent paper layers. Shift the dense upper-right block upward into broken islands, pull the lower-right ledge into a separate stepped seam, and carve a new diagonal missing-dash aperture through the pale figure so the source grammar survives without recreating the original contour.'
 }
 
-function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride = '', sourceImageFingerprints = [] }) {
+function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride = '', sourceImageFingerprints = [], artifacts = [] }) {
   const forbiddenDebugMarks = 'No visible annotation glyphs or QA chrome. No numbered or unnumbered registration targets, crosshairs, reticles or hollow target rings at edges/pinhole seams.'
   const dashRecovery = dominantOverride ? dashPanelRecoveryScene(sourceImageFingerprints) : ''
   if (hasSourceImage) {
+    const planned = artifacts.map((artifact) => artifact.visual_description).filter(Boolean)
+    if (planned.length) {
+      if (planned.length !== artifacts.length || planned.length < 6 || planned.length > 10 || planned.some((mark) => typeof mark !== 'string' || mark.length > 80)) {
+        throw new Error('Real-mark plan: incomplete or over-budget visual descriptions; replan before generation')
+      }
+      return `Compose at least six distinct source-native physical features within the artwork: ${planned.join('; ')}. Keep each visibly separable, with unequal scale; never counted symbols, cards, pasted thumbnails or UI labels. Invisible interaction is added later; no painted indicators. ${forbiddenDebugMarks}`
+    }
     const edges = dashRecovery
       ? 'missing-dash seams, shifted raster islands and paper edges; never USB ports, plug mouths or cables'
       : joinLimited(effectDirection?.source_window_mark_types, 'source-native silhouettes, tonal boundaries and material edges', 5)
@@ -1010,9 +1017,20 @@ function renderStillArtDirection(prompt, blockDebugGeometry) {
 }
 
 export function buildSceneImagePrompt(payload) {
+  if (payload.real_mark_plan?.status === 'needs-replan') throw new Error('Real-mark plan needs replan before image generation')
   const dominant = payload.source_image_fingerprints?.[0]
   const connectedComposition = connectedSourceComposition(dominant)
-  if (connectedComposition) {
+  const reconciled = payload.real_mark_plan?.status === 'planned'
+  if (connectedComposition && reconciled) {
+    const directions = [payload.scene_prompt, payload.lighting, ...(payload.material_language || []),
+      payload.visual_direction?.composition_archetype, payload.visual_direction?.camera_plate_grammar,
+      ...(payload.visual_direction?.visual_compositional_moves || []), ...(payload.artifacts || []).map((a) => a.visual_description)]
+    const positive = directions.filter(Boolean).flatMap((entry) => entry.split(/[.;]/)).filter((clause) => !/^\s*(no|never|avoid|do not)\b/i.test(clause)).join(' ')
+    if (/\b(?:paper[- ]panels?|paper edges|curled (?:paper|flaps|corners)|poster wall|pasted print|collage panels)\b/i.test(positive)) {
+      throw new Error('Real-mark plan conflicts with connected source space; replan before generation')
+    }
+  }
+  if (connectedComposition && !reconciled) {
     // Remove conflicting positive directions, rather than appending a ban after
     // still commanding paper panels in composition, lighting and anchor surfaces.
     payload = {
@@ -1051,6 +1069,7 @@ export function buildSceneImagePrompt(payload) {
     : '6–9'
   const effectDirection = payload.effect_direction || visualDirection.effect_direction || null
   const dominantOverride = hasSourceImage ? dominantSourceConflictGuard(sourceImageFingerprints, effectDirection, payload) : ''
+  if (reconciled && dominantOverride) throw new Error('Real-mark plan conflicts with dominant source; replan before generation')
   const dashRecovery = dominantOverride ? dashPanelRecoveryScene(sourceImageFingerprints) : ''
   const materialLanguage = dashRecovery
     ? joinLimited((sourceImageFingerprints[0]?.surface_cues || []), 'matte paper panel, printed black dash ink, pale gallery wall, soft panel shadow', 4)
@@ -1125,7 +1144,7 @@ export function buildSceneImagePrompt(payload) {
       : `${visualDirection.composition_archetype || 'source-led plate'}; ${visualDirection.camera_plate_grammar || 'evidence-derived camera grammar'}. ${sourceAspectGuard} ${moves}. Formal risk: ${formalRisk}${lookAvoidance ? ` Anti-repeat: ${lookAvoidance}` : ''}`,
     '',
     'ANCHORS',
-    sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride, sourceImageFingerprints }),
+    sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride, sourceImageFingerprints, artifacts }),
     '',
     'LIMITS',
     `${effectiveLighting}; materials: ${materialLanguage}; palette: ${effectivePalette}. ${constraints}`,
