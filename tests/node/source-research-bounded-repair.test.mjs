@@ -12,7 +12,7 @@ vi.mock('../../scripts/lib/source-inspection.mjs', () => ({
     return options.sourceTool === 'browser-harness' && source.browser_image
       ? { ...source, image_url: source.browser_image, fetch_status: 'browser-harness' } : source
   },
-  findVisualReference: async () => null,
+  findVisualReference: async () => state.visualReference || null,
 }))
 vi.mock('../../scripts/lib/anchor-source-research.mjs', async (original) => ({
   ...await original(),
@@ -37,7 +37,7 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
     if (instructions.startsWith('Inspect the attached actual source pixels')) {
       const source = JSON.parse(input[0].content[0].text)
       state.attempts.push(source.url)
-      return { status: Number(source.title.split(' ').at(-1)) >= state.verifiedFrom ? 'verified' : 'ambiguous', artifact_kind: 'artwork', confidence: 'high', observation: 'Synthetic fixture: red painted figures' }
+      return state.inspectionVerdicts?.[source.url] || { status: Number(source.title.split(' ').at(-1)) >= state.verifiedFrom ? 'verified' : 'ambiguous', artifact_kind: 'artwork', confidence: 'high', observation: 'Synthetic fixture: red painted figures' }
     }
     if (instructions.includes('source-research editor')) {
       state.researchAttempts.push(state.attempts.length)
@@ -58,6 +58,7 @@ beforeEach(async () => {
   runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'bounded-repair-'))
   state.attempts = []; state.captures = []; state.rejectAnchor = false; state.verifiedFrom = 18; state.browserChanges = {}; state.fetchChanges = {}
   state.researchAttempts = []; state.editorialDecisions = null; state.derivedCandidates = []
+  state.visualReference = null; state.inspectionVerdicts = {}
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1'); vi.stubEnv('DFE_DECISION_MODEL', 'openai')
 })
 afterEach(async () => { vi.unstubAllEnvs(); await fs.rm(runDir, { recursive: true, force: true }) })
@@ -189,6 +190,55 @@ it.each(['automatic', 'exact', 'unverified', 'spent'])('keeps anchor recovery in
     expect(saved.anchor_research).toBeNull()
     expect(blockers).toContain('missing_anchor_source')
     await expect(fs.access(path.join(runDir, 'anchor-research.json'))).rejects.toThrow()
+  }
+})
+it.each(['automatic', 'exact', 'supporting', 'rejected', 'ambiguous', 'medium', 'spent', 'unknown-owner', 'wrong-image', 'shared-image-other-owner'])('recovers an absent general-lane anchor only from the exact eligible fertile owner: %s', async mode => {
+  state.verifiedFrom = 0
+  const field = sources.slice(1, 7).map((source, i) => ({ ...source,
+    url: `https://collection${i}.example/objects/work`, image_url: `https://collection${i}.example/work.png`,
+    source_channel: 'manual-curation',
+  }))
+  const owner = field[0]
+  state.editorialDecisions = [{ url: sources[0].url, role: 'supporting', confidence: 'high' }]
+  if (mode === 'supporting') state.editorialDecisions.push({ url: owner.url, role: 'supporting', confidence: 'high' })
+  if (['rejected', 'ambiguous', 'medium'].includes(mode)) state.inspectionVerdicts[owner.url] = {
+    status: mode === 'medium' ? 'verified' : mode, artifact_kind: 'artwork',
+    confidence: mode === 'medium' ? 'medium' : 'high', observation: 'Synthetic fixture: painted figures',
+  }
+  state.visualReference = { ...owner }
+  if (mode === 'unknown-owner' || mode === 'shared-image-other-owner') state.visualReference.url = 'https://uninspected.example/work'
+  if (mode === 'unknown-owner') state.visualReference.image_url = 'https://uninspected.example/work.png'
+  if (mode === 'wrong-image') state.visualReference.image_url = 'https://collection0.example/uninspected.png'
+  const inspirationOverride = mode === 'exact'
+    ? { source_url: sources[0].url, image_url: sources[0].image_url, title: sources[0].title, prompt_bias_terms: ['exact-anchor'] } : null
+  const recentSourceKeys = mode === 'spent' ? new Set([sourceContentKey(owner)]) : new Set()
+  let error
+  try {
+    await inspectSourceCandidates({ source_candidates: [sources[0], ...field], notes_selected: [], motif_terms: [] }, {
+      maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-10-11', inspirationOverride, recentSourceKeys,
+    })
+  } catch (caught) { error = caught }
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  expect(state.researchAttempts).toEqual([0])
+  expect(state.attempts.length).toBeLessThanOrEqual(24)
+  expect(saved.source_floor_diagnostics.min_required_content_sources).toBe(6)
+  if (mode === 'automatic') {
+    expect(error).toBeUndefined()
+    expect(saved.content_source_count).toBe(6)
+    expect(saved.anchor_research?.anchor_source.url).toBe(owner.url)
+    expect(saved.anchor_research.anchor_source.anchor_selection_lane).toBe('verified-fertile-source-field')
+    expect(saved.selected_image_material[0]).toMatchObject({ page_url: owner.url, image_url: owner.image_url })
+    expect(saved.source_decision_audit.hard_blockers).toEqual([])
+    const retained = JSON.parse(await fs.readFile(path.join(runDir, 'anchor-research.json'), 'utf8'))
+    expect(retained).toEqual(saved.anchor_research)
+  } else {
+    expect(error?.message).toMatch(/blocked/)
+    if (mode === 'exact') expect(saved.anchor_research.anchor_source.url).toBe(sources[0].url)
+    else {
+      expect(saved.anchor_research).toBeNull()
+      expect(saved.source_decision_audit.hard_blockers.map(row => row.reason_code)).toContain('missing_anchor_source')
+      await expect(fs.access(path.join(runDir, 'anchor-research.json'))).rejects.toThrow()
+    }
   }
 })
 it.each(['automatic', 'exact'])('retains %s single-anchor provenance with a sufficient derived field after text-first research', async mode => {

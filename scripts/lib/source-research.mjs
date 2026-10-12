@@ -1262,6 +1262,27 @@ export async function inspectSourceCandidates(signalHarvest, {
       break
     }
   }
+  // Both the first promotion and bounded alternates can leave a fertile seed
+  // without an automatic root. Fertility alone is not owning-source admission:
+  // join the exact surviving page/image tuple to an affirmatively eligible field
+  // record, never to a raster alias or an uninspected visual-reference nomination.
+  if (!anchorSource && !forcedAnchorSource && !isExactAnchorOverride(inspirationOverride)) {
+    const material = selectedImageMaterial[0]
+    const fertile = material && sourceImageArtifacts.source_image_fingerprints.some(fingerprint =>
+      fingerprint.image_url === material.image_url && !isLowFertilitySourceFingerprint(fingerprint))
+    const owner = fertile && contentSources.find(source =>
+      material.page_url && [source.url, source.source_url, source.final_url].includes(material.page_url)
+      && source.image_url === material.image_url
+      && eligibleForEnrichment(source)
+      && hasCreativeArtifactEvidence(source, autoresearch, signalHarvest)
+      && decideAnchorEligibility({ anchorSource: source, recentSourceKeys, autoresearch }).decision === 'accept')
+    if (owner) {
+      anchorSource = { ...owner, anchor_selection_lane: 'verified-fertile-source-field',
+        anchor_selection_reason: 'Selected the exact verified eligible owning source of dominant image material after it survived vision screening.' }
+      anchorResearch = await buildAnchorResearch(anchorSource, { runDate: date })
+      await writeJson(path.join(runDir, 'anchor-research.json'), anchorResearch)
+    }
+  }
   const sourceImageMode = sourceImageArtifacts.source_image_fingerprints.some((fingerprint) => fingerprint?.image_url && !isLowFertilitySourceFingerprint(fingerprint))
     ? 'dominant-source-image'
     : 'skipped-no-valid-dominant-source-image'
