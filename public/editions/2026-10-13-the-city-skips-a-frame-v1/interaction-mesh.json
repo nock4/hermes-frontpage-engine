@@ -1,0 +1,466 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-13-the-city-skips-a-frame-v1",
+  "generation": "cron-1791886909888-65546",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1024,
+    "height": 1536
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1791886909888-65546/2026-10-13-the-city-skips-a-frame-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-tall-coral-slab-with-dark-window-row",
+      "visible_area_px": 98667,
+      "territory_area_px": 139862,
+      "hover_bounds": {
+        "x": 0.1113,
+        "y": 0.0,
+        "w": 0.3467,
+        "h": 0.3587
+      },
+      "hover_polygon": [
+        [
+          0.1113,
+          0.0
+        ],
+        [
+          0.3682,
+          0.0
+        ],
+        [
+          0.4531,
+          0.0579
+        ],
+        [
+          0.457,
+          0.2969
+        ],
+        [
+          0.457,
+          0.3307
+        ],
+        [
+          0.4238,
+          0.3529
+        ],
+        [
+          0.3496,
+          0.3581
+        ],
+        [
+          0.3164,
+          0.3359
+        ],
+        [
+          0.1133,
+          0.1328
+        ],
+        [
+          0.1113,
+          0.0326
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-turquoise-porch-with-railing-posts-a",
+          "shared_edge_px": 1310,
+          "direction": "down",
+          "distance_px": 302.19
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-broad-sedan-windshield-holding-a-noc",
+      "visible_area_px": 51958,
+      "territory_area_px": 86682,
+      "hover_bounds": {
+        "x": 0.3271,
+        "y": 0.6003,
+        "w": 0.5059,
+        "h": 0.1439
+      },
+      "hover_polygon": [
+        [
+          0.3271,
+          0.6432
+        ],
+        [
+          0.3281,
+          0.627
+        ],
+        [
+          0.3721,
+          0.6003
+        ],
+        [
+          0.668,
+          0.6139
+        ],
+        [
+          0.6963,
+          0.6191
+        ],
+        [
+          0.832,
+          0.7214
+        ],
+        [
+          0.7988,
+          0.7435
+        ],
+        [
+          0.3682,
+          0.7324
+        ],
+        [
+          0.3301,
+          0.709
+        ],
+        [
+          0.3271,
+          0.6921
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-grassy-stone-abutment-with-blue-door",
+          "shared_edge_px": 1957,
+          "direction": "up",
+          "distance_px": 213.08
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-turquoise-porch-with-railing-posts-a",
+      "visible_area_px": 93896,
+      "territory_area_px": 117311,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.0938,
+        "w": 0.2861,
+        "h": 0.4336
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.0938
+        ],
+        [
+          0.2236,
+          0.1849
+        ],
+        [
+          0.2383,
+          0.2318
+        ],
+        [
+          0.2852,
+          0.5182
+        ],
+        [
+          0.2646,
+          0.5267
+        ],
+        [
+          0.1084,
+          0.4766
+        ],
+        [
+          0.0,
+          0.3828
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-tall-coral-slab-with-dark-window-row",
+          "shared_edge_px": 1310,
+          "direction": "up",
+          "distance_px": 302.19
+        },
+        {
+          "artifact_id": "module-multicolor-branching-wall-fissure-be",
+          "shared_edge_px": 1038,
+          "direction": "down",
+          "distance_px": 453.15
+        },
+        {
+          "artifact_id": "module-ribbed-silver-gray-wall-inset-surrou",
+          "shared_edge_px": 670,
+          "direction": "down",
+          "distance_px": 330.6
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-ribbed-silver-gray-wall-inset-surrou",
+      "visible_area_px": 17141,
+      "territory_area_px": 32793,
+      "hover_bounds": {
+        "x": 0.2607,
+        "y": 0.3724,
+        "w": 0.1543,
+        "h": 0.1868
+      },
+      "hover_polygon": [
+        [
+          0.2607,
+          0.4284
+        ],
+        [
+          0.2803,
+          0.3913
+        ],
+        [
+          0.3086,
+          0.3724
+        ],
+        [
+          0.3301,
+          0.3737
+        ],
+        [
+          0.3838,
+          0.4128
+        ],
+        [
+          0.4023,
+          0.4447
+        ],
+        [
+          0.4141,
+          0.4941
+        ],
+        [
+          0.3994,
+          0.5293
+        ],
+        [
+          0.3594,
+          0.5579
+        ],
+        [
+          0.3408,
+          0.5586
+        ],
+        [
+          0.2891,
+          0.5241
+        ],
+        [
+          0.2715,
+          0.4928
+        ],
+        [
+          0.2607,
+          0.446
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-grassy-stone-abutment-with-blue-door",
+          "shared_edge_px": 703,
+          "direction": "right",
+          "distance_px": 230.78
+        },
+        {
+          "artifact_id": "module-turquoise-porch-with-railing-posts-a",
+          "shared_edge_px": 670,
+          "direction": "up",
+          "distance_px": 330.6
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-sea-blue-water-reflection-with-white",
+      "visible_area_px": 19469,
+      "territory_area_px": 39050,
+      "hover_bounds": {
+        "x": 0.0723,
+        "y": 0.7064,
+        "w": 0.2998,
+        "h": 0.1569
+      },
+      "hover_polygon": [
+        [
+          0.0723,
+          0.7467
+        ],
+        [
+          0.1221,
+          0.7161
+        ],
+        [
+          0.2393,
+          0.7064
+        ],
+        [
+          0.3584,
+          0.7715
+        ],
+        [
+          0.3711,
+          0.8216
+        ],
+        [
+          0.3623,
+          0.8444
+        ],
+        [
+          0.335,
+          0.8626
+        ],
+        [
+          0.2236,
+          0.8307
+        ],
+        [
+          0.1348,
+          0.7891
+        ],
+        [
+          0.0898,
+          0.7591
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-multicolor-branching-wall-fissure-be",
+          "shared_edge_px": 134,
+          "direction": "up",
+          "distance_px": 303.49
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-multicolor-branching-wall-fissure-be",
+      "visible_area_px": 54305,
+      "territory_area_px": 76256,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.4772,
+        "w": 0.2783,
+        "h": 0.2546
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.5736
+        ],
+        [
+          0.0732,
+          0.4961
+        ],
+        [
+          0.1016,
+          0.4772
+        ],
+        [
+          0.1572,
+          0.4772
+        ],
+        [
+          0.2354,
+          0.5026
+        ],
+        [
+          0.2627,
+          0.5208
+        ],
+        [
+          0.2773,
+          0.597
+        ],
+        [
+          0.0947,
+          0.7311
+        ],
+        [
+          0.0,
+          0.7292
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-turquoise-porch-with-railing-posts-a",
+          "shared_edge_px": 1038,
+          "direction": "up",
+          "distance_px": 453.15
+        },
+        {
+          "artifact_id": "module-sea-blue-water-reflection-with-white",
+          "shared_edge_px": 134,
+          "direction": "down",
+          "distance_px": 303.49
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-grassy-stone-abutment-with-blue-door",
+      "visible_area_px": 49429,
+      "territory_area_px": 64461,
+      "hover_bounds": {
+        "x": 0.3906,
+        "y": 0.4323,
+        "w": 0.3271,
+        "h": 0.1973
+      },
+      "hover_polygon": [
+        [
+          0.3906,
+          0.5371
+        ],
+        [
+          0.4102,
+          0.4648
+        ],
+        [
+          0.5479,
+          0.4323
+        ],
+        [
+          0.5918,
+          0.4577
+        ],
+        [
+          0.6592,
+          0.5267
+        ],
+        [
+          0.7168,
+          0.625
+        ],
+        [
+          0.7119,
+          0.6289
+        ],
+        [
+          0.4248,
+          0.6185
+        ],
+        [
+          0.3926,
+          0.5866
+        ],
+        [
+          0.3906,
+          0.5566
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-broad-sedan-windshield-holding-a-noc",
+          "shared_edge_px": 1957,
+          "direction": "down",
+          "distance_px": 213.08
+        },
+        {
+          "artifact_id": "module-ribbed-silver-gray-wall-inset-surrou",
+          "shared_edge_px": 703,
+          "direction": "left",
+          "distance_px": 230.78
+        }
+      ]
+    }
+  ]
+}

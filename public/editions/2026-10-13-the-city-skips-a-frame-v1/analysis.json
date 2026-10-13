@@ -1,0 +1,555 @@
+{
+  "analysis_id": "analysis-2026-10-13-the-city-skips-a-frame-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dense, sharply rendered architectural collage places an oversized blue sedan beneath a suspended yellow traffic signal, with a coral tower, weathered masonry, turquoise porch and needle-topped skyscraper against clear blue sky. Seven distinct source-bearing anchors are visible. Two depart from their planned placement: the ribbed blue oval is mounted on masonry rather than bodywork, and the multicolor branching feature occupies a broken retaining wall rather than a ground seam.",
+  "usable_surfaces": [
+    "Coral high-rise facade with dark window rows",
+    "Broad sedan windshield containing a nocturnal city",
+    "Turquoise porch posts, railing and stepped entrance",
+    "Ribbed silver oval surrounding a luminous blue center on masonry",
+    "White-tipped blue water imagery along the sedan flank",
+    "Multicolored branching fissure and painted blocks in a retaining wall",
+    "Planted stone abutment with blue arched door, chimney and ladder"
+  ],
+  "detected_objects": [
+    {
+      "label": "Tall coral slab with dark window rows behind stepped masonry",
+      "artifact_type": "architectural-facade",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.145,
+        "y": 0,
+        "w": 0.279,
+        "h": 0.336
+      },
+      "polygon": [
+        [
+          0.145,
+          0
+        ],
+        [
+          0.316,
+          0
+        ],
+        [
+          0.367,
+          0.021
+        ],
+        [
+          0.42,
+          0.058
+        ],
+        [
+          0.424,
+          0.331
+        ],
+        [
+          0.386,
+          0.323
+        ],
+        [
+          0.35,
+          0.336
+        ],
+        [
+          0.343,
+          0.28
+        ],
+        [
+          0.3,
+          0.264
+        ],
+        [
+          0.293,
+          0.246
+        ],
+        [
+          0.261,
+          0.251
+        ],
+        [
+          0.258,
+          0.177
+        ],
+        [
+          0.169,
+          0.14
+        ],
+        [
+          0.147,
+          0.133
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "A coral-orange tower touches the upper image edge. Its black rectangular window rows and angled right facade remain visible above and between the overlapping brown masonry roofs. The contour excludes the foreground masonry."
+    },
+    {
+      "label": "Broad sedan windshield holding a nocturnal city and yellow lights",
+      "artifact_type": "glazing-cavity",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.362,
+        "y": 0.622,
+        "w": 0.435,
+        "h": 0.099
+      },
+      "polygon": [
+        [
+          0.367,
+          0.622
+        ],
+        [
+          0.472,
+          0.623
+        ],
+        [
+          0.575,
+          0.627
+        ],
+        [
+          0.674,
+          0.638
+        ],
+        [
+          0.74,
+          0.671
+        ],
+        [
+          0.797,
+          0.721
+        ],
+        [
+          0.64,
+          0.712
+        ],
+        [
+          0.505,
+          0.711
+        ],
+        [
+          0.364,
+          0.71
+        ],
+        [
+          0.362,
+          0.662
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "The wide front windshield contains dark building silhouettes, small yellow illuminated windows, low horizontal railing-like lines and a purple-pink night sky. Its sloped right edge and blue lower frame form a distinct cavity. The city imagery is visible, although heavy dithering is not clearly established at this scale."
+    },
+    {
+      "label": "Turquoise porch with railing, posts and descending painted steps",
+      "artifact_type": "painted-architectural-surface",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0,
+        "y": 0.112,
+        "w": 0.274,
+        "h": 0.4
+      },
+      "polygon": [
+        [
+          0,
+          0.112
+        ],
+        [
+          0.23,
+          0.203
+        ],
+        [
+          0.221,
+          0.225
+        ],
+        [
+          0.211,
+          0.222
+        ],
+        [
+          0.207,
+          0.407
+        ],
+        [
+          0.225,
+          0.421
+        ],
+        [
+          0.216,
+          0.444
+        ],
+        [
+          0.239,
+          0.453
+        ],
+        [
+          0.234,
+          0.471
+        ],
+        [
+          0.26,
+          0.481
+        ],
+        [
+          0.274,
+          0.508
+        ],
+        [
+          0.246,
+          0.512
+        ],
+        [
+          0.133,
+          0.475
+        ],
+        [
+          0.127,
+          0.397
+        ],
+        [
+          0.043,
+          0.377
+        ],
+        [
+          0,
+          0.365
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "A cropped turquoise porch projects from the left masonry cluster. Painted roof edges, slender support posts, close-spaced railing uprights and a short descending stair remain clearly visible. The porch opening is dark; a specifically boarded entrance is not unambiguous."
+    },
+    {
+      "label": "Ribbed silver-gray wall inset surrounding a luminous blue oval",
+      "artifact_type": "ribbed-oval-inset",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.289,
+        "y": 0.391,
+        "w": 0.098,
+        "h": 0.15
+      },
+      "polygon": [
+        [
+          0.309,
+          0.391
+        ],
+        [
+          0.331,
+          0.392
+        ],
+        [
+          0.354,
+          0.409
+        ],
+        [
+          0.373,
+          0.438
+        ],
+        [
+          0.385,
+          0.474
+        ],
+        [
+          0.387,
+          0.501
+        ],
+        [
+          0.377,
+          0.525
+        ],
+        [
+          0.36,
+          0.54
+        ],
+        [
+          0.341,
+          0.541
+        ],
+        [
+          0.32,
+          0.528
+        ],
+        [
+          0.302,
+          0.5
+        ],
+        [
+          0.29,
+          0.463
+        ],
+        [
+          0.289,
+          0.43
+        ],
+        [
+          0.296,
+          0.405
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "Several closely nested silver-gray ribs encircle an elongated blue center with cyan highlights. This is a compact, sharply bounded oval mounted on a gray wall above the sedan, not an inset in the car body."
+    },
+    {
+      "label": "Sea-blue water reflection with white splash tips on the sedan flank",
+      "artifact_type": "water-splash-mark",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.725,
+        "w": 0.244,
+        "h": 0.12
+      },
+      "polygon": [
+        [
+          0.1,
+          0.747
+        ],
+        [
+          0.123,
+          0.735
+        ],
+        [
+          0.158,
+          0.747
+        ],
+        [
+          0.186,
+          0.732
+        ],
+        [
+          0.204,
+          0.749
+        ],
+        [
+          0.224,
+          0.729
+        ],
+        [
+          0.24,
+          0.725
+        ],
+        [
+          0.235,
+          0.751
+        ],
+        [
+          0.27,
+          0.753
+        ],
+        [
+          0.29,
+          0.78
+        ],
+        [
+          0.332,
+          0.772
+        ],
+        [
+          0.321,
+          0.802
+        ],
+        [
+          0.344,
+          0.821
+        ],
+        [
+          0.335,
+          0.845
+        ],
+        [
+          0.281,
+          0.829
+        ],
+        [
+          0.224,
+          0.813
+        ],
+        [
+          0.179,
+          0.785
+        ],
+        [
+          0.135,
+          0.771
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "Irregular white foam tips and curling cyan-to-deep-blue water forms cross the side doors between the wheels. The selected contour follows the visible splash-bearing patch rather than enclosing the entire blue body panel."
+    },
+    {
+      "label": "Multicolor branching wall fissure beside pink and green blocks",
+      "artifact_type": "branching-painted-fissure",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0,
+        "y": 0.496,
+        "w": 0.25,
+        "h": 0.217
+      },
+      "polygon": [
+        [
+          0.102,
+          0.496
+        ],
+        [
+          0.158,
+          0.496
+        ],
+        [
+          0.201,
+          0.511
+        ],
+        [
+          0.236,
+          0.521
+        ],
+        [
+          0.25,
+          0.6
+        ],
+        [
+          0.228,
+          0.612
+        ],
+        [
+          0.166,
+          0.605
+        ],
+        [
+          0.171,
+          0.639
+        ],
+        [
+          0.128,
+          0.669
+        ],
+        [
+          0.095,
+          0.713
+        ],
+        [
+          0,
+          0.711
+        ],
+        [
+          0,
+          0.592
+        ],
+        [
+          0.034,
+          0.58
+        ],
+        [
+          0.066,
+          0.56
+        ],
+        [
+          0.078,
+          0.526
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Black branching channels with turquoise, yellow and pink bands descend through a broken retaining-wall face beneath the porch. Pink rectangular blocks sit at the lower left and a muted green block at the right. The feature is not on the pavement, and the green is not visibly fluorescent; its arrangement is closer to a painted wall fissure than a crisp circuit trace."
+    },
+    {
+      "label": "Grassy stone abutment with blue door, chimney and leaning ladder",
+      "artifact_type": "planted-architectural-fragment",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.412,
+        "y": 0.451,
+        "w": 0.278,
+        "h": 0.175
+      },
+      "polygon": [
+        [
+          0.412,
+          0.483
+        ],
+        [
+          0.461,
+          0.471
+        ],
+        [
+          0.523,
+          0.478
+        ],
+        [
+          0.527,
+          0.455
+        ],
+        [
+          0.548,
+          0.451
+        ],
+        [
+          0.565,
+          0.458
+        ],
+        [
+          0.563,
+          0.489
+        ],
+        [
+          0.601,
+          0.502
+        ],
+        [
+          0.632,
+          0.527
+        ],
+        [
+          0.654,
+          0.559
+        ],
+        [
+          0.666,
+          0.589
+        ],
+        [
+          0.69,
+          0.626
+        ],
+        [
+          0.628,
+          0.625
+        ],
+        [
+          0.577,
+          0.614
+        ],
+        [
+          0.502,
+          0.612
+        ],
+        [
+          0.438,
+          0.609
+        ],
+        [
+          0.42,
+          0.587
+        ],
+        [
+          0.417,
+          0.528
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "An irregular planted mound surrounds a stone arch and blue door just above the car roof. A short brick chimney rises from the vegetation, and a narrow ladder leans up the right side. The blue door is round-topped rather than a complete circle."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 4,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.393,
+    "rationale": "Estimated mapped coverage is visual rather than mask-measured. The car, left architectural cluster, suspended signal and right skyscraper establish four strong competing forms. Clear sky provides breathing room, but fine masonry, window grids, foliage, automotive detail and several embedded miniature scenes make the plate dense and illustrative rather than minimal and expressionist. All seven planned relationships have distinct visible anchors, although several differ in placement or literal form."
+  },
+  "viewport": {
+    "base_width": 1024,
+    "base_height": 1536,
+    "aspect_ratio": "1024:1536"
+  },
+  "edition_id": "2026-10-13-the-city-skips-a-frame-v1"
+}

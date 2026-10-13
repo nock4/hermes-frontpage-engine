@@ -1,0 +1,316 @@
+{
+  "interpretation_id": "interp-2026-10-13-the-city-skips-a-frame-v1",
+  "edition_id": "2026-10-13-the-city-skips-a-frame-v1",
+  "plate_read_timestamp": "2026-10-13T10:57:54.919Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dense, sharply rendered architectural collage places an oversized blue sedan beneath a suspended yellow traffic signal, with a coral tower, weathered masonry, turquoise porch and needle-topped skyscraper against clear blue sky. Seven distinct source-bearing anchors are visible. Two depart from their planned placement: the ribbed blue oval is mounted on masonry rather than bodywork, and the multicolor branching feature occupies a broken retaining wall rather than a ground seam.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Portrait city photomontage: coral window slab and stepped masonry crowd the left; a needle tower stands across open electric-blue sky. One enlarged blue sedan with scarlet trim floats forward, its dark glazing holding dithered night depth. A hooded signal hangs above. Turquoise boarded porch, silver oval inset, sea-blue splash reflection, branching ground seam and grassy blue-door abutment stay subordinate.",
+      "A dense, sharply rendered architectural collage places an oversized blue sedan beneath a suspended yellow traffic signal, with a coral tower, weathered masonry, turquoise porch and needle-topped skyscraper against clear blue sky. Seven distinct source-bearing anchors are visible. Two depart from their planned placement: the ribbed blue oval is mounted on masonry rather than bodywork, and the multicolor branching feature occupies a broken retaining wall rather than a ground seam.",
+      "electric-blue",
+      "coral-lattice",
+      "discontinuous-ground"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Tall coral slab with dark window rows behind stepped masonry",
+      "Broad sedan windshield holding a nocturnal city and yellow lights",
+      "Turquoise porch with railing, posts and descending painted steps",
+      "Ribbed silver-gray wall inset surrounding a luminous blue oval",
+      "Sea-blue water reflection with white splash tips on the sedan flank",
+      "Multicolor branching wall fissure beside pink and green blocks",
+      "Grassy stone abutment with blue door, chimney and leaning ladder"
+    ],
+    "dominant_surfaces": [
+      "water",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "daylight-city-discontinuous-crossing",
+      "A tall coral slab with black window rows rises behind stepped brown masonry.",
+      "Broad dark sedan glazing holds dithered blocks, yellow lights and railings.",
+      "A turquoise boarded porch and painted steps project from muted masonry.",
+      "A ribbed silver-gray bodywork inset cups an iridescent blue oval.",
+      "A saturated sea-blue reflection with white splash tips curls on the car flank.",
+      "Multicolor branching grooves meet pink and green blocks in a black ground seam.",
+      "A small grassy abutment holds a round blue door, chimney and leaning ladder."
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: daylight-city-discontinuous-crossing.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-tall-coral-slab-with-dark-window-row",
+      "kind": "hero",
+      "type": "architectural-facade",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.145,
+        "y": 0,
+        "w": 0.279,
+        "h": 0.336
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-broad-sedan-windshield-holding-a-noc",
+      "kind": "hero",
+      "type": "glazing-cavity",
+      "strength": 0.9199999999999999,
+      "bounds": {
+        "x": 0.3574,
+        "y": 0.6204,
+        "w": 0.4463,
+        "h": 0.1048
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-turquoise-porch-with-railing-posts-a",
+      "kind": "module",
+      "type": "painted-architectural-surface",
+      "strength": 0.72,
+      "bounds": {
+        "x": 0,
+        "y": 0.112,
+        "w": 0.274,
+        "h": 0.4
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ribbed-silver-gray-wall-inset-surrou",
+      "kind": "module",
+      "type": "ribbed-oval-inset",
+      "strength": 0.6900000000000001,
+      "bounds": {
+        "x": 0.289,
+        "y": 0.391,
+        "w": 0.098,
+        "h": 0.15
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sea-blue-water-reflection-with-white",
+      "kind": "module",
+      "type": "water-splash-mark",
+      "strength": 0.66,
+      "bounds": {
+        "x": 0.1,
+        "y": 0.725,
+        "w": 0.244,
+        "h": 0.12
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-multicolor-branching-wall-fissure-be",
+      "kind": "module",
+      "type": "branching-painted-fissure",
+      "strength": 0.63,
+      "bounds": {
+        "x": 0,
+        "y": 0.496,
+        "w": 0.25,
+        "h": 0.217
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grassy-stone-abutment-with-blue-door",
+      "kind": "module",
+      "type": "planted-architectural-fragment",
+      "strength": 0.6000000000000001,
+      "bounds": {
+        "x": 0.412,
+        "y": 0.451,
+        "w": 0.278,
+        "h": 0.175
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-tall-coral-slab-with-dark-window-row-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.145,
+        "y": 0,
+        "w": 0.279,
+        "h": 0.336
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-broad-sedan-windshield-holding-a-noc-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.3574,
+        "y": 0.6204,
+        "w": 0.4463,
+        "h": 0.1048
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-turquoise-porch-with-railing-posts-a-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.112,
+        "w": 0.274,
+        "h": 0.4
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-ribbed-silver-gray-wall-inset-surrou-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.289,
+        "y": 0.391,
+        "w": 0.098,
+        "h": 0.15
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-sea-blue-water-reflection-with-white-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.725,
+        "w": 0.244,
+        "h": 0.12
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-multicolor-branching-wall-fissure-be-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.496,
+        "w": 0.25,
+        "h": 0.217
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grassy-stone-abutment-with-blue-door-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.412,
+        "y": 0.451,
+        "w": 0.278,
+        "h": 0.175
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 7 artifacts and scene family heuristics."
+  ]
+}

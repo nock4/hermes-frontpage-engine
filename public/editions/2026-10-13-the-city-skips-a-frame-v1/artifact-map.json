@@ -1,0 +1,1543 @@
+{
+  "artifact_map_id": "map-2026-10-13-the-city-skips-a-frame-v1",
+  "viewport": {
+    "base_width": 1024,
+    "base_height": 1536,
+    "aspect_ratio": "1024:1536"
+  },
+  "default_cluster_id": "daylight-city-discontinuous-crossing",
+  "default_artifact_id": "hero-tall-coral-slab-with-dark-window-row",
+  "artifacts": [
+    {
+      "id": "hero-tall-coral-slab-with-dark-window-row",
+      "kind": "hero",
+      "label": "Tall coral slab with dark window rows behind stepped masonry",
+      "artifact_type": "architectural-facade",
+      "bounds": {
+        "x": 0.145,
+        "y": 0,
+        "w": 0.279,
+        "h": 0.336
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.145,
+          0
+        ],
+        [
+          0.316,
+          0
+        ],
+        [
+          0.367,
+          0.021
+        ],
+        [
+          0.42,
+          0.058
+        ],
+        [
+          0.424,
+          0.331
+        ],
+        [
+          0.386,
+          0.323
+        ],
+        [
+          0.35,
+          0.336
+        ],
+        [
+          0.343,
+          0.28
+        ],
+        [
+          0.3,
+          0.264
+        ],
+        [
+          0.293,
+          0.246
+        ],
+        [
+          0.261,
+          0.251
+        ],
+        [
+          0.258,
+          0.177
+        ],
+        [
+          0.169,
+          0.14
+        ],
+        [
+          0.147,
+          0.133
+        ]
+      ],
+      "cluster_id": "daylight-city-discontinuous-crossing",
+      "mask_path": "/editions/2026-10-13-the-city-skips-a-frame-v1/assets/masks/hero-tall-coral-slab-with-dark-window-row.svg",
+      "source_binding_ids": [
+        "binding-hero-tall-coral-slab-with-dark-window-row"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          291,
+          217
+        ],
+        "safe_stage_window_origin_px": [
+          314,
+          258
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.145,
+            0
+          ],
+          [
+            0.316,
+            0
+          ],
+          [
+            0.367,
+            0.021
+          ],
+          [
+            0.42,
+            0.058
+          ],
+          [
+            0.424,
+            0.331
+          ],
+          [
+            0.386,
+            0.323
+          ],
+          [
+            0.35,
+            0.336
+          ],
+          [
+            0.343,
+            0.28
+          ],
+          [
+            0.3,
+            0.264
+          ],
+          [
+            0.293,
+            0.246
+          ],
+          [
+            0.261,
+            0.251
+          ],
+          [
+            0.258,
+            0.177
+          ],
+          [
+            0.169,
+            0.14
+          ],
+          [
+            0.147,
+            0.133
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1113,
+            0.0
+          ],
+          [
+            0.3682,
+            0.0
+          ],
+          [
+            0.4531,
+            0.0579
+          ],
+          [
+            0.457,
+            0.2969
+          ],
+          [
+            0.457,
+            0.3307
+          ],
+          [
+            0.4238,
+            0.3529
+          ],
+          [
+            0.3496,
+            0.3581
+          ],
+          [
+            0.3164,
+            0.3359
+          ],
+          [
+            0.1133,
+            0.1328
+          ],
+          [
+            0.1113,
+            0.0326
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1113,
+          "y": 0.0,
+          "w": 0.3467,
+          "h": 0.3587
+        },
+        "territory_area_px": 139862,
+        "visible_area_px": 98667,
+        "expansion_ratio": 1.418,
+        "neighbors": [
+          {
+            "artifact_id": "module-turquoise-porch-with-railing-posts-a",
+            "shared_edge_px": 1310,
+            "direction": "down",
+            "distance_px": 302.19
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-broad-sedan-windshield-holding-a-noc",
+      "kind": "hero",
+      "label": "Broad sedan windshield holding a nocturnal city and yellow lights",
+      "artifact_type": "glazing-cavity",
+      "bounds": {
+        "x": 0.3574,
+        "y": 0.6204,
+        "w": 0.4463,
+        "h": 0.1048
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.3604,
+          0.6595
+        ],
+        [
+          0.3623,
+          0.627
+        ],
+        [
+          0.3721,
+          0.623
+        ],
+        [
+          0.5205,
+          0.625
+        ],
+        [
+          0.6689,
+          0.6367
+        ],
+        [
+          0.6963,
+          0.6419
+        ],
+        [
+          0.7998,
+          0.722
+        ],
+        [
+          0.3691,
+          0.7109
+        ],
+        [
+          0.3633,
+          0.7096
+        ],
+        [
+          0.3604,
+          0.6895
+        ]
+      ],
+      "cluster_id": "daylight-city-discontinuous-crossing",
+      "mask_path": "/editions/2026-10-13-the-city-skips-a-frame-v1/assets/masks/hero-broad-sedan-windshield-holding-a-noc.svg",
+      "source_binding_ids": [
+        "binding-hero-broad-sedan-windshield-holding-a-noc"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          593,
+          1019
+        ],
+        "safe_stage_window_origin_px": [
+          629,
+          1031
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.3604,
+            0.6595
+          ],
+          [
+            0.3623,
+            0.627
+          ],
+          [
+            0.3721,
+            0.623
+          ],
+          [
+            0.5205,
+            0.625
+          ],
+          [
+            0.6689,
+            0.6367
+          ],
+          [
+            0.6963,
+            0.6419
+          ],
+          [
+            0.7998,
+            0.722
+          ],
+          [
+            0.3691,
+            0.7109
+          ],
+          [
+            0.3633,
+            0.7096
+          ],
+          [
+            0.3604,
+            0.6895
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3271,
+            0.6432
+          ],
+          [
+            0.3281,
+            0.627
+          ],
+          [
+            0.3721,
+            0.6003
+          ],
+          [
+            0.668,
+            0.6139
+          ],
+          [
+            0.6963,
+            0.6191
+          ],
+          [
+            0.832,
+            0.7214
+          ],
+          [
+            0.7988,
+            0.7435
+          ],
+          [
+            0.3682,
+            0.7324
+          ],
+          [
+            0.3301,
+            0.709
+          ],
+          [
+            0.3271,
+            0.6921
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3271,
+          "y": 0.6003,
+          "w": 0.5059,
+          "h": 0.1439
+        },
+        "territory_area_px": 86682,
+        "visible_area_px": 51958,
+        "expansion_ratio": 1.668,
+        "neighbors": [
+          {
+            "artifact_id": "module-grassy-stone-abutment-with-blue-door",
+            "shared_edge_px": 1957,
+            "direction": "up",
+            "distance_px": 213.08
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-turquoise-porch-with-railing-posts-a",
+      "kind": "module",
+      "label": "Turquoise porch with railing, posts and descending painted steps",
+      "artifact_type": "painted-architectural-surface",
+      "bounds": {
+        "x": 0,
+        "y": 0.112,
+        "w": 0.274,
+        "h": 0.4
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0,
+          0.112
+        ],
+        [
+          0.23,
+          0.203
+        ],
+        [
+          0.221,
+          0.225
+        ],
+        [
+          0.211,
+          0.222
+        ],
+        [
+          0.207,
+          0.407
+        ],
+        [
+          0.225,
+          0.421
+        ],
+        [
+          0.216,
+          0.444
+        ],
+        [
+          0.239,
+          0.453
+        ],
+        [
+          0.234,
+          0.471
+        ],
+        [
+          0.26,
+          0.481
+        ],
+        [
+          0.274,
+          0.508
+        ],
+        [
+          0.246,
+          0.512
+        ],
+        [
+          0.133,
+          0.475
+        ],
+        [
+          0.127,
+          0.397
+        ],
+        [
+          0.043,
+          0.377
+        ],
+        [
+          0,
+          0.365
+        ]
+      ],
+      "cluster_id": "daylight-city-discontinuous-crossing",
+      "mask_path": "/editions/2026-10-13-the-city-skips-a-frame-v1/assets/masks/module-turquoise-porch-with-railing-posts-a.svg",
+      "source_binding_ids": [
+        "binding-module-turquoise-porch-with-railing-posts-a"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          140,
+          430
+        ],
+        "safe_stage_window_origin_px": [
+          163,
+          479
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.112
+          ],
+          [
+            0.23,
+            0.203
+          ],
+          [
+            0.221,
+            0.225
+          ],
+          [
+            0.211,
+            0.222
+          ],
+          [
+            0.207,
+            0.407
+          ],
+          [
+            0.225,
+            0.421
+          ],
+          [
+            0.216,
+            0.444
+          ],
+          [
+            0.239,
+            0.453
+          ],
+          [
+            0.234,
+            0.471
+          ],
+          [
+            0.26,
+            0.481
+          ],
+          [
+            0.274,
+            0.508
+          ],
+          [
+            0.246,
+            0.512
+          ],
+          [
+            0.133,
+            0.475
+          ],
+          [
+            0.127,
+            0.397
+          ],
+          [
+            0.043,
+            0.377
+          ],
+          [
+            0,
+            0.365
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0938
+          ],
+          [
+            0.2236,
+            0.1849
+          ],
+          [
+            0.2383,
+            0.2318
+          ],
+          [
+            0.2852,
+            0.5182
+          ],
+          [
+            0.2646,
+            0.5267
+          ],
+          [
+            0.1084,
+            0.4766
+          ],
+          [
+            0.0,
+            0.3828
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0938,
+          "w": 0.2861,
+          "h": 0.4336
+        },
+        "territory_area_px": 117311,
+        "visible_area_px": 93896,
+        "expansion_ratio": 1.249,
+        "neighbors": [
+          {
+            "artifact_id": "hero-tall-coral-slab-with-dark-window-row",
+            "shared_edge_px": 1310,
+            "direction": "up",
+            "distance_px": 302.19
+          },
+          {
+            "artifact_id": "module-multicolor-branching-wall-fissure-be",
+            "shared_edge_px": 1038,
+            "direction": "down",
+            "distance_px": 453.15
+          },
+          {
+            "artifact_id": "module-ribbed-silver-gray-wall-inset-surrou",
+            "shared_edge_px": 670,
+            "direction": "down",
+            "distance_px": 330.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-ribbed-silver-gray-wall-inset-surrou",
+      "kind": "module",
+      "label": "Ribbed silver-gray wall inset surrounding a luminous blue oval",
+      "artifact_type": "ribbed-oval-inset",
+      "bounds": {
+        "x": 0.289,
+        "y": 0.391,
+        "w": 0.098,
+        "h": 0.15
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.309,
+          0.391
+        ],
+        [
+          0.331,
+          0.392
+        ],
+        [
+          0.354,
+          0.409
+        ],
+        [
+          0.373,
+          0.438
+        ],
+        [
+          0.385,
+          0.474
+        ],
+        [
+          0.387,
+          0.501
+        ],
+        [
+          0.377,
+          0.525
+        ],
+        [
+          0.36,
+          0.54
+        ],
+        [
+          0.341,
+          0.541
+        ],
+        [
+          0.32,
+          0.528
+        ],
+        [
+          0.302,
+          0.5
+        ],
+        [
+          0.29,
+          0.463
+        ],
+        [
+          0.289,
+          0.43
+        ],
+        [
+          0.296,
+          0.405
+        ]
+      ],
+      "cluster_id": "daylight-city-discontinuous-crossing",
+      "mask_path": "/editions/2026-10-13-the-city-skips-a-frame-v1/assets/masks/module-ribbed-silver-gray-wall-inset-surrou.svg",
+      "source_binding_ids": [
+        "binding-module-ribbed-silver-gray-wall-inset-surrou"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          346,
+          697
+        ],
+        "safe_stage_window_origin_px": [
+          354,
+          716
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.309,
+            0.391
+          ],
+          [
+            0.331,
+            0.392
+          ],
+          [
+            0.354,
+            0.409
+          ],
+          [
+            0.373,
+            0.438
+          ],
+          [
+            0.385,
+            0.474
+          ],
+          [
+            0.387,
+            0.501
+          ],
+          [
+            0.377,
+            0.525
+          ],
+          [
+            0.36,
+            0.54
+          ],
+          [
+            0.341,
+            0.541
+          ],
+          [
+            0.32,
+            0.528
+          ],
+          [
+            0.302,
+            0.5
+          ],
+          [
+            0.29,
+            0.463
+          ],
+          [
+            0.289,
+            0.43
+          ],
+          [
+            0.296,
+            0.405
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2607,
+            0.4284
+          ],
+          [
+            0.2803,
+            0.3913
+          ],
+          [
+            0.3086,
+            0.3724
+          ],
+          [
+            0.3301,
+            0.3737
+          ],
+          [
+            0.3838,
+            0.4128
+          ],
+          [
+            0.4023,
+            0.4447
+          ],
+          [
+            0.4141,
+            0.4941
+          ],
+          [
+            0.3994,
+            0.5293
+          ],
+          [
+            0.3594,
+            0.5579
+          ],
+          [
+            0.3408,
+            0.5586
+          ],
+          [
+            0.2891,
+            0.5241
+          ],
+          [
+            0.2715,
+            0.4928
+          ],
+          [
+            0.2607,
+            0.446
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2607,
+          "y": 0.3724,
+          "w": 0.1543,
+          "h": 0.1868
+        },
+        "territory_area_px": 32793,
+        "visible_area_px": 17141,
+        "expansion_ratio": 1.913,
+        "neighbors": [
+          {
+            "artifact_id": "module-grassy-stone-abutment-with-blue-door",
+            "shared_edge_px": 703,
+            "direction": "right",
+            "distance_px": 230.78
+          },
+          {
+            "artifact_id": "module-turquoise-porch-with-railing-posts-a",
+            "shared_edge_px": 670,
+            "direction": "up",
+            "distance_px": 330.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-sea-blue-water-reflection-with-white",
+      "kind": "module",
+      "label": "Sea-blue water reflection with white splash tips on the sedan flank",
+      "artifact_type": "water-splash-mark",
+      "bounds": {
+        "x": 0.1,
+        "y": 0.725,
+        "w": 0.244,
+        "h": 0.12
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.1,
+          0.747
+        ],
+        [
+          0.123,
+          0.735
+        ],
+        [
+          0.158,
+          0.747
+        ],
+        [
+          0.186,
+          0.732
+        ],
+        [
+          0.204,
+          0.749
+        ],
+        [
+          0.224,
+          0.729
+        ],
+        [
+          0.24,
+          0.725
+        ],
+        [
+          0.235,
+          0.751
+        ],
+        [
+          0.27,
+          0.753
+        ],
+        [
+          0.29,
+          0.78
+        ],
+        [
+          0.332,
+          0.772
+        ],
+        [
+          0.321,
+          0.802
+        ],
+        [
+          0.344,
+          0.821
+        ],
+        [
+          0.335,
+          0.845
+        ],
+        [
+          0.281,
+          0.829
+        ],
+        [
+          0.224,
+          0.813
+        ],
+        [
+          0.179,
+          0.785
+        ],
+        [
+          0.135,
+          0.771
+        ]
+      ],
+      "cluster_id": "daylight-city-discontinuous-crossing",
+      "mask_path": "/editions/2026-10-13-the-city-skips-a-frame-v1/assets/masks/module-sea-blue-water-reflection-with-white.svg",
+      "source_binding_ids": [
+        "binding-module-sea-blue-water-reflection-with-white"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          227,
+          1191
+        ],
+        "safe_stage_window_origin_px": [
+          247,
+          1206
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.1,
+            0.747
+          ],
+          [
+            0.123,
+            0.735
+          ],
+          [
+            0.158,
+            0.747
+          ],
+          [
+            0.186,
+            0.732
+          ],
+          [
+            0.204,
+            0.749
+          ],
+          [
+            0.224,
+            0.729
+          ],
+          [
+            0.24,
+            0.725
+          ],
+          [
+            0.235,
+            0.751
+          ],
+          [
+            0.27,
+            0.753
+          ],
+          [
+            0.29,
+            0.78
+          ],
+          [
+            0.332,
+            0.772
+          ],
+          [
+            0.321,
+            0.802
+          ],
+          [
+            0.344,
+            0.821
+          ],
+          [
+            0.335,
+            0.845
+          ],
+          [
+            0.281,
+            0.829
+          ],
+          [
+            0.224,
+            0.813
+          ],
+          [
+            0.179,
+            0.785
+          ],
+          [
+            0.135,
+            0.771
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0723,
+            0.7467
+          ],
+          [
+            0.1221,
+            0.7161
+          ],
+          [
+            0.2393,
+            0.7064
+          ],
+          [
+            0.3584,
+            0.7715
+          ],
+          [
+            0.3711,
+            0.8216
+          ],
+          [
+            0.3623,
+            0.8444
+          ],
+          [
+            0.335,
+            0.8626
+          ],
+          [
+            0.2236,
+            0.8307
+          ],
+          [
+            0.1348,
+            0.7891
+          ],
+          [
+            0.0898,
+            0.7591
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0723,
+          "y": 0.7064,
+          "w": 0.2998,
+          "h": 0.1569
+        },
+        "territory_area_px": 39050,
+        "visible_area_px": 19469,
+        "expansion_ratio": 2.006,
+        "neighbors": [
+          {
+            "artifact_id": "module-multicolor-branching-wall-fissure-be",
+            "shared_edge_px": 134,
+            "direction": "up",
+            "distance_px": 303.49
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-multicolor-branching-wall-fissure-be",
+      "kind": "module",
+      "label": "Multicolor branching wall fissure beside pink and green blocks",
+      "artifact_type": "branching-painted-fissure",
+      "bounds": {
+        "x": 0,
+        "y": 0.496,
+        "w": 0.25,
+        "h": 0.217
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.102,
+          0.496
+        ],
+        [
+          0.158,
+          0.496
+        ],
+        [
+          0.201,
+          0.511
+        ],
+        [
+          0.236,
+          0.521
+        ],
+        [
+          0.25,
+          0.6
+        ],
+        [
+          0.228,
+          0.612
+        ],
+        [
+          0.166,
+          0.605
+        ],
+        [
+          0.171,
+          0.639
+        ],
+        [
+          0.128,
+          0.669
+        ],
+        [
+          0.095,
+          0.713
+        ],
+        [
+          0,
+          0.711
+        ],
+        [
+          0,
+          0.592
+        ],
+        [
+          0.034,
+          0.58
+        ],
+        [
+          0.066,
+          0.56
+        ],
+        [
+          0.078,
+          0.526
+        ]
+      ],
+      "cluster_id": "daylight-city-discontinuous-crossing",
+      "mask_path": "/editions/2026-10-13-the-city-skips-a-frame-v1/assets/masks/module-multicolor-branching-wall-fissure-be.svg",
+      "source_binding_ids": [
+        "binding-module-multicolor-branching-wall-fissure-be"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          128,
+          902
+        ],
+        "safe_stage_window_origin_px": [
+          148,
+          929
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.102,
+            0.496
+          ],
+          [
+            0.158,
+            0.496
+          ],
+          [
+            0.201,
+            0.511
+          ],
+          [
+            0.236,
+            0.521
+          ],
+          [
+            0.25,
+            0.6
+          ],
+          [
+            0.228,
+            0.612
+          ],
+          [
+            0.166,
+            0.605
+          ],
+          [
+            0.171,
+            0.639
+          ],
+          [
+            0.128,
+            0.669
+          ],
+          [
+            0.095,
+            0.713
+          ],
+          [
+            0,
+            0.711
+          ],
+          [
+            0,
+            0.592
+          ],
+          [
+            0.034,
+            0.58
+          ],
+          [
+            0.066,
+            0.56
+          ],
+          [
+            0.078,
+            0.526
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.5736
+          ],
+          [
+            0.0732,
+            0.4961
+          ],
+          [
+            0.1016,
+            0.4772
+          ],
+          [
+            0.1572,
+            0.4772
+          ],
+          [
+            0.2354,
+            0.5026
+          ],
+          [
+            0.2627,
+            0.5208
+          ],
+          [
+            0.2773,
+            0.597
+          ],
+          [
+            0.0947,
+            0.7311
+          ],
+          [
+            0.0,
+            0.7292
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.4772,
+          "w": 0.2783,
+          "h": 0.2546
+        },
+        "territory_area_px": 76256,
+        "visible_area_px": 54305,
+        "expansion_ratio": 1.404,
+        "neighbors": [
+          {
+            "artifact_id": "module-turquoise-porch-with-railing-posts-a",
+            "shared_edge_px": 1038,
+            "direction": "up",
+            "distance_px": 453.15
+          },
+          {
+            "artifact_id": "module-sea-blue-water-reflection-with-white",
+            "shared_edge_px": 134,
+            "direction": "down",
+            "distance_px": 303.49
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-grassy-stone-abutment-with-blue-door",
+      "kind": "module",
+      "label": "Grassy stone abutment with blue door, chimney and leaning ladder",
+      "artifact_type": "planted-architectural-fragment",
+      "bounds": {
+        "x": 0.412,
+        "y": 0.451,
+        "w": 0.278,
+        "h": 0.175
+      },
+      "z_index": 26,
+      "polygon": [
+        [
+          0.412,
+          0.483
+        ],
+        [
+          0.461,
+          0.471
+        ],
+        [
+          0.523,
+          0.478
+        ],
+        [
+          0.527,
+          0.455
+        ],
+        [
+          0.548,
+          0.451
+        ],
+        [
+          0.565,
+          0.458
+        ],
+        [
+          0.563,
+          0.489
+        ],
+        [
+          0.601,
+          0.502
+        ],
+        [
+          0.632,
+          0.527
+        ],
+        [
+          0.654,
+          0.559
+        ],
+        [
+          0.666,
+          0.589
+        ],
+        [
+          0.69,
+          0.626
+        ],
+        [
+          0.628,
+          0.625
+        ],
+        [
+          0.577,
+          0.614
+        ],
+        [
+          0.502,
+          0.612
+        ],
+        [
+          0.438,
+          0.609
+        ],
+        [
+          0.42,
+          0.587
+        ],
+        [
+          0.417,
+          0.528
+        ]
+      ],
+      "cluster_id": "daylight-city-discontinuous-crossing",
+      "mask_path": "/editions/2026-10-13-the-city-skips-a-frame-v1/assets/masks/module-grassy-stone-abutment-with-blue-door.svg",
+      "source_binding_ids": [
+        "binding-module-grassy-stone-abutment-with-blue-door"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          564,
+          806
+        ],
+        "safe_stage_window_origin_px": [
+          587,
+          827
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.412,
+            0.483
+          ],
+          [
+            0.461,
+            0.471
+          ],
+          [
+            0.523,
+            0.478
+          ],
+          [
+            0.527,
+            0.455
+          ],
+          [
+            0.548,
+            0.451
+          ],
+          [
+            0.565,
+            0.458
+          ],
+          [
+            0.563,
+            0.489
+          ],
+          [
+            0.601,
+            0.502
+          ],
+          [
+            0.632,
+            0.527
+          ],
+          [
+            0.654,
+            0.559
+          ],
+          [
+            0.666,
+            0.589
+          ],
+          [
+            0.69,
+            0.626
+          ],
+          [
+            0.628,
+            0.625
+          ],
+          [
+            0.577,
+            0.614
+          ],
+          [
+            0.502,
+            0.612
+          ],
+          [
+            0.438,
+            0.609
+          ],
+          [
+            0.42,
+            0.587
+          ],
+          [
+            0.417,
+            0.528
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.3906,
+            0.5371
+          ],
+          [
+            0.4102,
+            0.4648
+          ],
+          [
+            0.5479,
+            0.4323
+          ],
+          [
+            0.5918,
+            0.4577
+          ],
+          [
+            0.6592,
+            0.5267
+          ],
+          [
+            0.7168,
+            0.625
+          ],
+          [
+            0.7119,
+            0.6289
+          ],
+          [
+            0.4248,
+            0.6185
+          ],
+          [
+            0.3926,
+            0.5866
+          ],
+          [
+            0.3906,
+            0.5566
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.3906,
+          "y": 0.4323,
+          "w": 0.3271,
+          "h": 0.1973
+        },
+        "territory_area_px": 64461,
+        "visible_area_px": 49429,
+        "expansion_ratio": 1.304,
+        "neighbors": [
+          {
+            "artifact_id": "hero-broad-sedan-windshield-holding-a-noc",
+            "shared_edge_px": 1957,
+            "direction": "down",
+            "distance_px": 213.08
+          },
+          {
+            "artifact_id": "module-ribbed-silver-gray-wall-inset-surrou",
+            "shared_edge_px": 703,
+            "direction": "left",
+            "distance_px": 230.78
+          }
+        ]
+      }
+    }
+  ]
+}

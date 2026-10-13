@@ -1,0 +1,196 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-13-the-city-skips-a-frame-v1",
+  "edition_id": "2026-10-13-the-city-skips-a-frame-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-13-the-city-skips-a-frame-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-tall-coral-slab-with-dark-window-row",
+      "target_kind": "artifact",
+      "artifact_id": "hero-tall-coral-slab-with-dark-window-row",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (architectural-facade) selected from interpretation."
+    },
+    {
+      "target_id": "hero-broad-sedan-windshield-holding-a-noc",
+      "target_kind": "artifact",
+      "artifact_id": "hero-broad-sedan-windshield-holding-a-noc",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (glazing-cavity) selected from interpretation."
+    },
+    {
+      "target_id": "module-turquoise-porch-with-railing-posts-a",
+      "target_kind": "artifact",
+      "artifact_id": "module-turquoise-porch-with-railing-posts-a",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-architectural-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-ribbed-silver-gray-wall-inset-surrou",
+      "target_kind": "artifact",
+      "artifact_id": "module-ribbed-silver-gray-wall-inset-surrou",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ribbed-oval-inset) selected from interpretation."
+    },
+    {
+      "target_id": "module-sea-blue-water-reflection-with-white",
+      "target_kind": "artifact",
+      "artifact_id": "module-sea-blue-water-reflection-with-white",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (water-splash-mark) selected from interpretation."
+    },
+    {
+      "target_id": "module-multicolor-branching-wall-fissure-be",
+      "target_kind": "artifact",
+      "artifact_id": "module-multicolor-branching-wall-fissure-be",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (branching-painted-fissure) selected from interpretation."
+    },
+    {
+      "target_id": "module-grassy-stone-abutment-with-blue-door",
+      "target_kind": "artifact",
+      "artifact_id": "module-grassy-stone-abutment-with-blue-door",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (planted-architectural-fragment) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 7 artifacts and scene family heuristics."
+}
