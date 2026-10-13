@@ -553,6 +553,58 @@ it.each(['late-refill', 'pre-pixel-researched'])('discovers one observed same-ow
   })
   expect(saved.autoresearch.source_decisions.find(row => row.url === childUrl)?.inspection.status).toBe('ambiguous')
 })
+it.each(['late-refill', 'pre-pixel-researched'].flatMap(lifecycle =>
+  ['archived', 'excluded', 'already-acquired', 'first-eligible'].map(scenario => [lifecycle, scenario]),
+))('charges the one observed-child allowance only after acquisition admission: %s / %s', async (lifecycle, scenario) => {
+  vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '0')
+  state.verifiedFrom = Infinity // Acquisition never supplies affirmative pixel evidence.
+  const root = {
+    url: 'https://designcore.org/', note_id: 'detroit-design', note_title: 'Detroit design organizations',
+    note_score: lifecycle === 'pre-pixel-researched' ? 99999 : 1,
+    source_channel: 'chrome-bookmark', fetch_status: 'fetch-ok',
+    image_url: lifecycle === 'pre-pixel-researched' ? 'https://designcore.org/root-preview.jpg' : null,
+  }
+  const firstUrl = 'https://designcore.org/news/drinks-by-design-light-sound'
+  const secondUrl = 'https://designcore.org/news/fresh-installation'
+  const thirdUrl = 'https://designcore.org/news/another-installation'
+  const links = [firstUrl, secondUrl, thirdUrl].map((url, i) => ({
+    image_url: `https://designcore.org/work-${i}.jpg`, kind: 'dom', context: 'main',
+    page_url: root.url, linked_url: url, alt: `Installation ${i}`,
+  }))
+  state.browserChanges[root.url] = {
+    fetch_status: 'browser-harness', final_url: root.url,
+    image_url: 'https://designcore.org/root-preview.jpg', image_candidates: links,
+  }
+  for (const row of links) state.browserChanges[row.linked_url] = {
+    fetch_status: 'browser-harness', final_url: row.linked_url,
+    title: row.alt, image_url: row.image_url,
+  }
+  const recentSourceKeys = scenario === 'archived' ? new Set([sourceContentKey({ url: firstUrl })]) : new Set()
+  if (scenario === 'excluded') state.editorialDecisions = [{ url: firstUrl, role: 'reject', confidence: 'high' }]
+  const alreadyAcquired = scenario === 'already-acquired' ? [{
+    ...sources[0], url: firstUrl, image_url: links[0].image_url, fetch_status: 'browser-harness',
+  }] : []
+  await expect(inspectSourceCandidates({
+    source_candidates: [...sources.slice(0, 18), root, ...alreadyAcquired], notes_selected: [], motif_terms: [],
+  }, {
+    maxSources: 6, runDir, sourceTool: 'browser-harness', date: '2026-10-13', recentSourceKeys,
+  })).rejects.toThrow(/blocked|expected at least 6/)
+
+  const expectedUrl = scenario === 'first-eligible' ? firstUrl : secondUrl
+  const children = state.captures.filter(row => row.tool === 'browser-harness'
+    && row.source.source_lineage === 'observed_same_owner_project_link')
+  expect(children.map(row => row.url)).toEqual([expectedUrl])
+  expect(children[0].source.parent_source_url).toBe(root.url)
+  expect(state.captures.some(row => row.url === thirdUrl)).toBe(false)
+  if (['archived', 'excluded'].includes(scenario)) expect(state.captures.some(row => row.url === firstUrl)).toBe(false)
+  expect(state.attempts.filter(url => url === expectedUrl)).toHaveLength(1)
+  expect(state.attempts.length).toBeLessThanOrEqual(24)
+  expect(state.captures.filter(row => row.tool === 'browser-harness' && row.attempts > 0).length).toBeLessThanOrEqual(24)
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  expect(saved.autoresearch.source_decisions.find(row => row.url === expectedUrl)?.inspection.status).toBe('ambiguous')
+  expect(saved.content_sources).toEqual([])
+  expect(saved.source_decision_audit.status).toBe('blocked')
+})
 it('bounds owner-link discovery and rejects non-root, cross-owner, ancillary and unsafe links', () => {
   const root = {
     url: 'https://gallery.example/', final_url: 'https://gallery.example/', fetch_status: 'browser-harness',

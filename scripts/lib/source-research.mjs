@@ -749,7 +749,7 @@ async function captureAutoresearchedSources(selectedSources, { sourceTool, brows
   return captured
 }
 
-export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1 } = {}) {
+export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1, canAcquire = () => true } = {}) {
   if (source?.fetch_status !== 'browser-harness' || !isAllowedInspectedSource(source)) return []
   const sourceUrl = source.final_url || source.source_url || source.url
   let ownerPage
@@ -781,7 +781,7 @@ export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1 } = {})
     const key = canonicalizeSourceUrl(row.linked_url)
     if (!key || seen.has(key)) continue
     seen.add(key)
-    discovered.push({
+    const candidate = {
       url: row.linked_url,
       note_id: source.note_id,
       note_title: row.alt || source.note_title || source.title,
@@ -808,7 +808,10 @@ export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1 } = {})
         alt: row.alt || '',
       },
       editorial_evidence: [...(source.editorial_evidence || []), source],
-    })
+    }
+    // Screen within the already-observed image rows before spending the one
+    // child allowance. Rejected links cause no acquisition or pixel attempt.
+    if (canAcquire(candidate)) discovered.push(candidate)
   }
   return discovered
 }
@@ -974,9 +977,10 @@ export async function inspectSourceCandidates(signalHarvest, {
       return !browserInspectedKeys.has(key)
     }
     const discoverFillLinks = (sources) => sources
-      .flatMap(source => discoverObservedOwnerProjectLinks(source, { maxLinks: 1 }))
-      .filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys)))
-      .filter(canAttemptFill)
+      .flatMap(source => discoverObservedOwnerProjectLinks(source, {
+        maxLinks: 1,
+        canAcquire: candidate => Number.isFinite(sourceContentScore(candidate, recentSourceKeys)) && canAttemptFill(candidate),
+      }))
     // Roots captured before pixel inspection cannot be recaptured by refill.
     // Queue their observed children in the same bounded acquisition budget.
     const capturedOwnerLinks = discoverFillLinks(inspected)
