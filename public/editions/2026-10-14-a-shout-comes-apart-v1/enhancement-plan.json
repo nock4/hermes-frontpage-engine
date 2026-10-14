@@ -1,0 +1,217 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-14-a-shout-comes-apart-v1",
+  "edition_id": "2026-10-14-a-shout-comes-apart-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-14-a-shout-comes-apart-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-coral-lipped-blue-muzzle-with-white-",
+      "target_kind": "artifact",
+      "artifact_id": "hero-coral-lipped-blue-muzzle-with-white-",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (mouth-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-hooked-horns-drooping-black-ears-blu",
+      "target_kind": "artifact",
+      "artifact_id": "hero-hooked-horns-drooping-black-ears-blu",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (horn-ear-brow-mass) selected from interpretation."
+    },
+    {
+      "target_id": "module-red-folded-seam-above-pale-pink-scal",
+      "target_kind": "artifact",
+      "artifact_id": "module-red-folded-seam-above-pale-pink-scal",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scalloped-fold) selected from interpretation."
+    },
+    {
+      "target_id": "module-grainy-green-blue-channel-with-a-pal",
+      "target_kind": "artifact",
+      "artifact_id": "module-grainy-green-blue-channel-with-a-pal",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (granular-channel) selected from interpretation."
+    },
+    {
+      "target_id": "module-water-dark-marine-recess-with-a-crum",
+      "target_kind": "artifact",
+      "artifact_id": "module-water-dark-marine-recess-with-a-crum",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rimmed-marine-recess) selected from interpretation."
+    },
+    {
+      "target_id": "module-pink-orange-swelling-inside-a-pale-n",
+      "target_kind": "artifact",
+      "artifact_id": "module-pink-orange-swelling-inside-a-pale-n",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (notched-relief) selected from interpretation."
+    },
+    {
+      "target_id": "module-long-mauve-crease-with-a-yellow-end-",
+      "target_kind": "artifact",
+      "artifact_id": "module-long-mauve-crease-with-a-yellow-end-",
+      "priority": 7,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (elongated-crease) selected from interpretation."
+    },
+    {
+      "target_id": "module-stepped-blue-bridge-and-flared-strok",
+      "target_kind": "artifact",
+      "artifact_id": "module-stepped-blue-bridge-and-flared-strok",
+      "priority": 8,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stepped-ribbed-bridge) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 8 artifacts and scene family heuristics."
+}

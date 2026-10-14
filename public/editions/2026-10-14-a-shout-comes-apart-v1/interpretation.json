@@ -1,0 +1,347 @@
+{
+  "interpretation_id": "interp-2026-10-14-a-shout-comes-apart-v1",
+  "edition_id": "2026-10-14-a-shout-comes-apart-v1",
+  "plate_read_timestamp": "2026-10-14T09:21:46.854Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A coral ground separates a huge blue, coral-lipped animal muzzle at left from a black-horned, blue-browed head fragment above right. Blue maze bands connect smaller tactile interruptions: a red-and-pink folded edge, a turquoise channel, a marine hollow, a cropped pink swelling, a mauve crease, a stepped blue bridge, and a white-split multicolored ledge. The plate is strongly hierarchical but densely textured and sculptural rather than minimal or expressionist.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "dense",
+    "legibility": "selective",
+    "mood": [
+      "Vertical coral poster: a huge blue muzzle opens coral lips around teeth, red tongue and black depth; coarse white cheek joins a narrow white neck and blue-white knit. Apart, hooked black horns, drooping ears, blue brow, ragged coral tuft and a red eye form the second large mass. Dense blue rectilinear maze bands cross bare coral; smaller colored seams, wet recesses and drawn interruptions inhabit those bands.",
+      "A coral ground separates a huge blue, coral-lipped animal muzzle at left from a black-horned, blue-browed head fragment above right. Blue maze bands connect smaller tactile interruptions: a red-and-pink folded edge, a turquoise channel, a marine hollow, a cropped pink swelling, a mauve crease, a stepped blue bridge, and a white-split multicolored ledge. The plate is strongly hierarchical but densely textured and sculptural rather than minimal or expressionist.",
+      "detached-horn",
+      "mouth-depth",
+      "coral-interval"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Coral-lipped blue muzzle with white teeth and a red tongue",
+      "Hooked horns, drooping black ears, blue brow and red-highlighted eye",
+      "Red folded seam above pale pink scallops within a blue maze band",
+      "Grainy green-blue channel with a pale cloud-shaped edge",
+      "Water-dark marine recess with a crumpled blue rim",
+      "Pink-orange swelling inside a pale notched band at the right edge",
+      "Long mauve crease with a yellow end and a pale outlined edge",
+      "Stepped blue bridge and flared stroke across yellow gaps"
+    ],
+    "dominant_surfaces": [
+      "water",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "coral-cyan-mouth-fragment-collision",
+      "A coral-lipped blue muzzle with white teeth and a red tongue in black depth.",
+      "A red peaked seam over pale pink scallops within an electric-blue band.",
+      "A grainy green-blue channel with a pale cloud-shaped edge through a blue band.",
+      "A small water-dark recess with colored marine forms and a crumpled blue rim.",
+      "A pink-orange swelling edged by unequal shallow notches in a pale band.",
+      "A long mauve crease ends in yellow beside a pale, delicately outlined edge.",
+      "A stepped blue bridge carries a flared blue stroke across a yellow gap."
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: coral-cyan-mouth-fragment-collision.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-coral-lipped-blue-muzzle-with-white-",
+      "kind": "hero",
+      "type": "mouth-aperture",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0,
+        "y": 0.3398,
+        "w": 0.4551,
+        "h": 0.5033
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hooked-horns-drooping-black-ears-blu",
+      "kind": "hero",
+      "type": "horn-ear-brow-mass",
+      "strength": 0.9199999999999999,
+      "bounds": {
+        "x": 0.497,
+        "y": 0.007,
+        "w": 0.487,
+        "h": 0.43
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-red-folded-seam-above-pale-pink-scal",
+      "kind": "module",
+      "type": "scalloped-fold",
+      "strength": 0.72,
+      "bounds": {
+        "x": 0.0488,
+        "y": 0,
+        "w": 0.3955,
+        "h": 0.1361
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grainy-green-blue-channel-with-a-pal",
+      "kind": "module",
+      "type": "granular-channel",
+      "strength": 0.6900000000000001,
+      "bounds": {
+        "x": 0.2,
+        "y": 0.105,
+        "w": 0.295,
+        "h": 0.154
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-water-dark-marine-recess-with-a-crum",
+      "kind": "module",
+      "type": "rimmed-marine-recess",
+      "strength": 0.66,
+      "bounds": {
+        "x": 0.6162,
+        "y": 0.4486,
+        "w": 0.2783,
+        "h": 0.1615
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pink-orange-swelling-inside-a-pale-n",
+      "kind": "module",
+      "type": "notched-relief",
+      "strength": 0.63,
+      "bounds": {
+        "x": 0.879,
+        "y": 0.299,
+        "w": 0.121,
+        "h": 0.234
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-long-mauve-crease-with-a-yellow-end-",
+      "kind": "module",
+      "type": "elongated-crease",
+      "strength": 0.6000000000000001,
+      "bounds": {
+        "x": 0.585,
+        "y": 0.594,
+        "w": 0.397,
+        "h": 0.177
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stepped-blue-bridge-and-flared-strok",
+      "kind": "module",
+      "type": "stepped-ribbed-bridge",
+      "strength": 0.58,
+      "bounds": {
+        "x": 0.619,
+        "y": 0.74,
+        "w": 0.227,
+        "h": 0.177
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-coral-lipped-blue-muzzle-with-white--surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.3398,
+        "w": 0.4551,
+        "h": 0.5033
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-hooked-horns-drooping-black-ears-blu-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.497,
+        "y": 0.007,
+        "w": 0.487,
+        "h": 0.43
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-red-folded-seam-above-pale-pink-scal-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0488,
+        "y": 0,
+        "w": 0.3955,
+        "h": 0.1361
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grainy-green-blue-channel-with-a-pal-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2,
+        "y": 0.105,
+        "w": 0.295,
+        "h": 0.154
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-water-dark-marine-recess-with-a-crum-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.6162,
+        "y": 0.4486,
+        "w": 0.2783,
+        "h": 0.1615
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pink-orange-swelling-inside-a-pale-n-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.879,
+        "y": 0.299,
+        "w": 0.121,
+        "h": 0.234
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-long-mauve-crease-with-a-yellow-end--surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.585,
+        "y": 0.594,
+        "w": 0.397,
+        "h": 0.177
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-stepped-blue-bridge-and-flared-strok-surface",
+      "surface_type": "water",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.619,
+        "y": 0.74,
+        "w": 0.227,
+        "h": 0.177
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 8 artifacts and scene family heuristics."
+  ]
+}
