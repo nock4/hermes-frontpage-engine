@@ -200,6 +200,43 @@ describe('bounded scene and ownership replan', () => {
     expect(result.visual_direction.visual_compositional_moves).toEqual(compact.visual_compositional_moves)
   })
 
+  it('supplies safe headroom targets for every offending field in the single repair', async () => {
+    const compact = replacement()
+    const first = structuredClone(compact)
+    const budgets = [
+      ['scene_prompt', 420, 315], ['material_language.0', 100, 75],
+      ['lighting', 160, 120], ['composition_archetype', 100, 75],
+      ['camera_plate_grammar', 160, 120], ['visual_compositional_moves.0', 160, 120],
+      ['negative_constraints.0', 160, 120], ['artifacts.0.visual_description', 80, 60],
+      ['artifacts.5.visual_description', 80, 60],
+    ]
+    for (const [field, limit] of budgets) {
+      const keys = field.split('.')
+      const key = keys.pop()
+      const parent = keys.reduce((value, part) => value[part], first)
+      parent[key] = `${parent[key]} `.repeat(limit)
+    }
+    // Exact production miss: the old repair merely changed "and" to "with"
+    // and grew from 101 to 102 characters instead of getting below 100.
+    first.composition_archetype = 'Asymmetric anatomical diptych without panels; two dominant masses and subordinate attached fragments.'
+    const request = vi.fn().mockResolvedValueOnce(first).mockResolvedValueOnce(compact)
+    await planRealMarks({ payload, researchField }, { request })
+    expect(request).toHaveBeenCalledTimes(2)
+    const initial = JSON.parse(request.mock.calls[0][0].input)
+    const repair = JSON.parse(request.mock.calls[1][0].input)
+    expect(repair.repair_length_targets).toEqual(Object.fromEntries(budgets.map(([field, , target]) => [field, target])))
+    expect(repair.overlength.map(({ field }) => field).sort()).toEqual(budgets.map(([field]) => field).sort())
+    for (const { field, limit } of repair.overlength) {
+      expect(limit).toBe(budgets.find(([name]) => name === field)[1])
+      expect(repair.repair_length_targets[field]).toBeLessThan(limit)
+    }
+    expect(repair.output_shape).toEqual(initial.output_shape)
+    expect(repair.rejected_response).toEqual(first)
+    expect(request.mock.calls[1][0].instructions).toMatch(/repair_length_targets/)
+    expect(request.mock.calls[1][0].instructions).toMatch(/spaces and punctuation/)
+    expect(request.mock.calls[1][0].instructions).toMatch(/Copy all other fields, source URLs and full attribution roles verbatim/)
+  })
+
   it.each(['length', 'role', 'owner', 'geometry', 'exclusion'])('fails closed on a repaired %s violation', async (scenario) => {
     const first = replacement(); first.composition_archetype = 'x'.repeat(101)
     const second = replacement()

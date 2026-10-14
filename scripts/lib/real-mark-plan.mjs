@@ -81,11 +81,13 @@ export async function planRealMarks({ payload, researchField, apiKey, model }, {
   // Keep the same transport and budgets; never truncate provider prose locally.
   const repairPayload = {
     ...requestPayload,
-    instructions: `${requestPayload.instructions} Formatting repair only: rewrite overlength fields as compact COMPLETE phrases. Preserve every negation, exclusion and caveat; never truncate. Return the complete JSON object. Copy all other fields, source URLs and full attribution roles verbatim. If meaning cannot fit honestly, return an error.`,
+    instructions: `${requestPayload.instructions} Formatting repair only: rewrite overlength fields as compact COMPLETE phrases. Aim at or below each field's repair_length_targets character budget, including spaces and punctuation, leaving headroom rather than editing near the hard limit. These are drafting targets, not new hard caps; the original limits remain unchanged. Rephrase concisely, then check every listed field's length before returning. Preserve every negation, exclusion and caveat; never truncate. Return the complete JSON object. Copy all other fields, source URLs and full attribution roles verbatim. If meaning cannot fit honestly within the hard limit, return an error.`,
     input: JSON.stringify({
       ...JSON.parse(requestPayload.input),
       task: 'Repair only the listed overlength prose fields. No new research, source admission, geometry or scene redesign.',
       overlength,
+      // Leave 25% counting headroom in the same repair; validation keeps its caps.
+      repair_length_targets: Object.fromEntries(overlength.map(({ field, limit }) => [field, Math.floor(limit * 0.75)])),
       rejected_response: response,
     }),
   }
