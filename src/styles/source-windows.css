@@ -5197,6 +5197,86 @@
 
 
 
+/* Still-image apertures size from the original, not the artifact's narrow
+   plate-relative width or a fixed portrait figure. Keep this desktop-only and
+   image-element-specific: native video/provider geometry is a separate contract. */
+@media (min-width: 681px) and (min-height: 481px) {
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) {
+    --still-window-width: min(40rem, calc(100% - 1.5rem));
+    width: var(--still-window-width) !important;
+    left: clamp(0.75rem, var(--emission-x), calc(100% - var(--still-window-width) - 0.75rem)) !important;
+    top: clamp(0.75rem, var(--emission-y), calc(100% - min(52vh, 32rem) - 3rem)) !important;
+    max-height: calc(100% - 1.5rem) !important;
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .source-window.source-window--stage.source-window--preview:has(.visual-source-card .visual-source-card__figure > img) {
+    --still-window-width: min(35rem, calc(100% - 1.5rem));
+  }
+
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) .source-window__body--visual-card,
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) .visual-source-card {
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: auto;
+    padding: 0;
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) .visual-source-card__figure {
+    min-height: 0;
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    margin: 0;
+    border: 0;
+  }
+
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) .visual-source-card__image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: min(52vh, 32rem);
+    object-fit: contain;
+    filter: none;
+  }
+
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) .visual-source-card__figure::after,
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) .visual-source-card__caption {
+    display: none;
+  }
+
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) .visual-source-card__edge-title {
+    position: relative;
+    inset: auto;
+    display: block;
+    min-width: 0;
+    padding: 0.35rem 0.5rem;
+    background: rgba(8, 8, 9, 0.9);
+    color: #fff4e2;
+    font-size: 0.75rem;
+    font-weight: 550;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .source-window.source-window--stage:is(.source-window--preview, .source-window--primary, .source-window--secondary):has(.visual-source-card .visual-source-card__figure > img) .source-window__floating-actions {
+    top: 0.4rem !important;
+    right: 0.4rem !important;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
 /* Provider posts remain whole, scrollable documents below live navigation. */
 @media (max-width: 900px) {
   .source-window--stage.source-window--primary:has(.provider-video-scroll) {

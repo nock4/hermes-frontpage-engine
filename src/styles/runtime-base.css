@@ -331,6 +331,38 @@ a {
   inset: 0;
 }
 
+/* Landscape/square editions use one full-width, intrinsic-aspect coordinate
+   field. A mismatched viewport cannot be filled in both axes without crop or
+   stretch: leave honest vertical space, or scroll the page on short screens.
+   Never move/zoom the image independently of its real marks and hit mesh. */
+.runtime-shell .stage--full-width-plate {
+  display: grid;
+  align-items: center;
+  aspect-ratio: auto;
+  height: auto;
+  min-height: 100svh;
+  overflow: clip;
+}
+
+.stage--full-width-plate .plate-field {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  aspect-ratio: var(--plate-aspect);
+}
+
+.runtime-shell .stage--full-width-plate .plate {
+  object-fit: contain;
+  animation: none;
+  transform: none;
+}
+
+/* Windows belong to the viewport, not the potentially scrollable plate. */
+.stage--full-width-plate .stage-overlay-windows--live {
+  position: fixed;
+  inset: 0;
+}
+
 /* Portrait plates retain their original coordinate space. The image, real
    artifact masks and lab territories share this field. */
 .stage--contained-plate {

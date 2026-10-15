@@ -236,7 +236,7 @@ function App() {
         ) : null}
 
         <section
-          className={`stage${containPlate ? ' stage--contained-plate' : ''}${hasPrimaryStageWindow && presentation.suppressArtifactLabelsWhenPrimaryWindowOpen ? ' stage--primary-window-open' : ''}${sceneReactionArtifact ? ' stage--scene-reacting' : ''}${sceneReactionTone ? ` stage--scene-tone-${sceneReactionTone}` : ''}`}
+          className={`stage${containPlate ? ' stage--contained-plate' : ' stage--full-width-plate'}${hasPrimaryStageWindow && presentation.suppressArtifactLabelsWhenPrimaryWindowOpen ? ' stage--primary-window-open' : ''}${sceneReactionArtifact ? ' stage--scene-reacting' : ''}${sceneReactionTone ? ` stage--scene-tone-${sceneReactionTone}` : ''}`}
           style={{ ...stageReactionStyle, '--plate-aspect': plateAspect ?? 1, '--plate-ambient': `url(${JSON.stringify(loaded.edition.plate_asset_path)})` } as CSSProperties}
           onMouseLeave={(event) => {
             if (reviewMode === 'live') return

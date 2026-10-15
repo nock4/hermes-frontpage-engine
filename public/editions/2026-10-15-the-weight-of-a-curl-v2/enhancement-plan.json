@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-15-the-weight-of-a-curl-v2",
+  "edition_id": "2026-10-15-the-weight-of-a-curl-v2",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-15-the-weight-of-a-curl-v2"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-broad-blue-lavender-curl-partly-conc",
+      "target_kind": "artifact",
+      "artifact_id": "hero-broad-blue-lavender-curl-partly-conc",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (grooved-pigment-curl) selected from interpretation."
+    },
+    {
+      "target_id": "hero-lime-hooked-sweep-with-fluted-relief",
+      "target_kind": "artifact",
+      "artifact_id": "hero-lime-hooked-sweep-with-fluted-relief",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (fluted-pigment-hook) selected from interpretation."
+    },
+    {
+      "target_id": "module-torn-layered-lip-at-the-upper-end-of",
+      "target_kind": "artifact",
+      "artifact_id": "module-torn-layered-lip-at-the-upper-end-of",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (torn-pigment-lip) selected from interpretation."
+    },
+    {
+      "target_id": "module-folded-lime-tongue-with-fine-grooves",
+      "target_kind": "artifact",
+      "artifact_id": "module-folded-lime-tongue-with-fine-grooves",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (folded-pigment-tongue) selected from interpretation."
+    },
+    {
+      "target_id": "module-detached-purple-curled-droplet-with-",
+      "target_kind": "artifact",
+      "artifact_id": "module-detached-purple-curled-droplet-with-",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (torn-pigment-droplet) selected from interpretation."
+    },
+    {
+      "target_id": "module-cream-petal-fold-exposing-broken-gre",
+      "target_kind": "artifact",
+      "artifact_id": "module-cream-petal-fold-exposing-broken-gre",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curled-pigment-petal) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

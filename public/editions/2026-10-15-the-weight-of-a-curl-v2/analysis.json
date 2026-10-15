@@ -1,0 +1,551 @@
+{
+  "analysis_id": "analysis-2026-10-15-the-weight-of-a-curl-v2",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Two large, glossy, comb-grooved ribbon gestures stand on a pale blush field: a blue-lavender curl wraps partly around a squat black vessel on the left, while a lime-green hooked sweep rises on the right. Dark serrated leafy stems cross both forms. A detached purple curl and a cream petal-like fold sit near the lower corners. Torn pigment skins and exposed colored underlayers provide smaller, physically distinct interaction targets.",
+  "usable_surfaces": [
+    "Broad blue-lavender crescent with dense combed grooves",
+    "Lime-green hooked body with fluted relief and pink-blue edge layers",
+    "Ragged pale blue and pink skin at the upper end of the blue curl",
+    "Narrow folded lime tip with a pink underlayer",
+    "Detached purple curl with a torn multicolored belly",
+    "Cream petal fold with broken green pigment and a yellow lower edge"
+  ],
+  "detected_objects": [
+    {
+      "label": "Broad blue-lavender curl partly concealing a black vessel",
+      "artifact_type": "grooved-pigment-curl",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.013,
+        "y": 0.103,
+        "w": 0.337,
+        "h": 0.69
+      },
+      "polygon": [
+        [
+          0.176,
+          0.114
+        ],
+        [
+          0.126,
+          0.163
+        ],
+        [
+          0.071,
+          0.244
+        ],
+        [
+          0.032,
+          0.332
+        ],
+        [
+          0.013,
+          0.43
+        ],
+        [
+          0.025,
+          0.537
+        ],
+        [
+          0.055,
+          0.639
+        ],
+        [
+          0.118,
+          0.721
+        ],
+        [
+          0.205,
+          0.771
+        ],
+        [
+          0.266,
+          0.793
+        ],
+        [
+          0.269,
+          0.715
+        ],
+        [
+          0.294,
+          0.651
+        ],
+        [
+          0.244,
+          0.605
+        ],
+        [
+          0.241,
+          0.529
+        ],
+        [
+          0.185,
+          0.478
+        ],
+        [
+          0.189,
+          0.366
+        ],
+        [
+          0.35,
+          0.261
+        ],
+        [
+          0.221,
+          0.103
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "The left foreground crescent has a blue outer face, lavender inner face, closely spaced grooves and glossy ridges. Its lower advancing edge overlaps the rounded black vessel. This target follows the broad foreground crescent rather than enclosing the vessel, foliage or the open center of the rear loop."
+    },
+    {
+      "label": "Lime hooked sweep with fluted relief and muted colored seams",
+      "artifact_type": "fluted-pigment-hook",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.554,
+        "y": 0.318,
+        "w": 0.36,
+        "h": 0.547
+      },
+      "polygon": [
+        [
+          0.901,
+          0.318
+        ],
+        [
+          0.839,
+          0.35
+        ],
+        [
+          0.796,
+          0.413
+        ],
+        [
+          0.783,
+          0.506
+        ],
+        [
+          0.794,
+          0.604
+        ],
+        [
+          0.801,
+          0.653
+        ],
+        [
+          0.768,
+          0.649
+        ],
+        [
+          0.722,
+          0.556
+        ],
+        [
+          0.679,
+          0.521
+        ],
+        [
+          0.628,
+          0.518
+        ],
+        [
+          0.587,
+          0.571
+        ],
+        [
+          0.554,
+          0.683
+        ],
+        [
+          0.566,
+          0.758
+        ],
+        [
+          0.632,
+          0.797
+        ],
+        [
+          0.638,
+          0.704
+        ],
+        [
+          0.663,
+          0.622
+        ],
+        [
+          0.702,
+          0.608
+        ],
+        [
+          0.758,
+          0.865
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A large lime ribbon curls forward at the lower left of the right-hand group and rises into a broad upright hook. Parallel grooves, pale ridges, blue-green passages and pink edge strata are visible. The contour traces a continuous portion of the folded body without assigning the central opening or leafy stems as interaction surface."
+    },
+    {
+      "label": "Torn layered lip at the upper end of the blue curl",
+      "artifact_type": "torn-pigment-lip",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.221,
+        "y": 0.093,
+        "w": 0.166,
+        "h": 0.2
+      },
+      "polygon": [
+        [
+          0.223,
+          0.101
+        ],
+        [
+          0.251,
+          0.099
+        ],
+        [
+          0.274,
+          0.093
+        ],
+        [
+          0.294,
+          0.107
+        ],
+        [
+          0.329,
+          0.105
+        ],
+        [
+          0.35,
+          0.12
+        ],
+        [
+          0.354,
+          0.145
+        ],
+        [
+          0.369,
+          0.163
+        ],
+        [
+          0.367,
+          0.181
+        ],
+        [
+          0.383,
+          0.203
+        ],
+        [
+          0.387,
+          0.223
+        ],
+        [
+          0.368,
+          0.218
+        ],
+        [
+          0.354,
+          0.245
+        ],
+        [
+          0.339,
+          0.259
+        ],
+        [
+          0.334,
+          0.293
+        ],
+        [
+          0.309,
+          0.274
+        ],
+        [
+          0.287,
+          0.217
+        ],
+        [
+          0.221,
+          0.19
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "The upper blue stroke ends in an irregular thin-looking lip, with pale blue-gray flakes above muted pink and lavender strata. Small notches and uneven projecting edges establish a real torn boundary. Bright raster-like multicolor striping is not evident; the visible layering is subdued."
+    },
+    {
+      "label": "Folded lime tongue with fine grooves and pink-blue underlayers",
+      "artifact_type": "folded-pigment-tongue",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.841,
+        "y": 0.132,
+        "w": 0.135,
+        "h": 0.301
+      },
+      "polygon": [
+        [
+          0.841,
+          0.136
+        ],
+        [
+          0.853,
+          0.132
+        ],
+        [
+          0.875,
+          0.145
+        ],
+        [
+          0.871,
+          0.173
+        ],
+        [
+          0.879,
+          0.193
+        ],
+        [
+          0.918,
+          0.204
+        ],
+        [
+          0.946,
+          0.23
+        ],
+        [
+          0.964,
+          0.273
+        ],
+        [
+          0.976,
+          0.326
+        ],
+        [
+          0.97,
+          0.379
+        ],
+        [
+          0.953,
+          0.421
+        ],
+        [
+          0.926,
+          0.433
+        ],
+        [
+          0.909,
+          0.416
+        ],
+        [
+          0.93,
+          0.38
+        ],
+        [
+          0.937,
+          0.325
+        ],
+        [
+          0.925,
+          0.267
+        ],
+        [
+          0.904,
+          0.236
+        ],
+        [
+          0.853,
+          0.21
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "The far upper-right extension starts at a small folded yellow-green tip and bends into a narrow descending ribbon. Fine longitudinal grooves and pale pink and blue-green passages are visible along the folded strip. It is spatially distinct from the broad lower fluted body."
+    },
+    {
+      "label": "Detached purple curled droplet with a scraped multicolored belly",
+      "artifact_type": "torn-pigment-droplet",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.034,
+        "y": 0.7,
+        "w": 0.148,
+        "h": 0.221
+      },
+      "polygon": [
+        [
+          0.08,
+          0.7
+        ],
+        [
+          0.088,
+          0.709
+        ],
+        [
+          0.088,
+          0.723
+        ],
+        [
+          0.073,
+          0.722
+        ],
+        [
+          0.067,
+          0.748
+        ],
+        [
+          0.079,
+          0.777
+        ],
+        [
+          0.111,
+          0.791
+        ],
+        [
+          0.143,
+          0.787
+        ],
+        [
+          0.168,
+          0.764
+        ],
+        [
+          0.166,
+          0.742
+        ],
+        [
+          0.173,
+          0.76
+        ],
+        [
+          0.182,
+          0.812
+        ],
+        [
+          0.177,
+          0.874
+        ],
+        [
+          0.161,
+          0.906
+        ],
+        [
+          0.12,
+          0.921
+        ],
+        [
+          0.075,
+          0.905
+        ],
+        [
+          0.041,
+          0.858
+        ],
+        [
+          0.034,
+          0.78
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "A separate purple crescent rests at lower left, with a hooked tip, finely grooved exterior and ragged open belly. Pink torn rims surround green, cream and dark blue patches. The polygon follows the crescent's indentation rather than filling the pale space above its belly."
+    },
+    {
+      "label": "Cream petal fold exposing broken green pigment above a yellow edge",
+      "artifact_type": "curled-pigment-petal",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.811,
+        "y": 0.715,
+        "w": 0.161,
+        "h": 0.242
+      },
+      "polygon": [
+        [
+          0.811,
+          0.886
+        ],
+        [
+          0.818,
+          0.841
+        ],
+        [
+          0.839,
+          0.802
+        ],
+        [
+          0.87,
+          0.769
+        ],
+        [
+          0.893,
+          0.728
+        ],
+        [
+          0.914,
+          0.715
+        ],
+        [
+          0.937,
+          0.722
+        ],
+        [
+          0.952,
+          0.744
+        ],
+        [
+          0.958,
+          0.779
+        ],
+        [
+          0.955,
+          0.817
+        ],
+        [
+          0.961,
+          0.866
+        ],
+        [
+          0.972,
+          0.905
+        ],
+        [
+          0.955,
+          0.937
+        ],
+        [
+          0.935,
+          0.957
+        ],
+        [
+          0.91,
+          0.943
+        ],
+        [
+          0.875,
+          0.914
+        ],
+        [
+          0.848,
+          0.91
+        ],
+        [
+          0.819,
+          0.939
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "The detached lower-right fold has a raised cream lip and a concave, softly ridged interior. Broken sage-green pigment patches sit above a narrow yellow lower sweep, with jagged pale borders. Its petal-like outer contour is clearly separated from the lime ribbon behind it."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 2,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.575,
+    "rationale": "Visually estimated mapped coverage. The pale background and two dominant ribbon groups preserve clear separation, and all six planned features have visible counterparts. Dense grooves, branching serrated foliage, the vessel and several layered tears make this more materially elaborate and sculptural than strictly minimal expressionism. It is not excessively cluttered, but the small edge targets need precise interaction territories."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-15-the-weight-of-a-curl-v2"
+}
