@@ -33,6 +33,7 @@ function App() {
   const [aboutOpen, setAboutOpen] = useState(false)
   const [archiveOpen, setArchiveOpen] = useState(false)
   const touchPreviewArtifact = useRef<string | null>(null)
+  const dismissedPointer = useRef<{ x: number; y: number } | null>(null)
   const [plateGeometry, setPlateGeometry] = useState<{ path: string; aspect: number } | null>(null)
 
   const syncLocation = useCallback(() => {
@@ -238,6 +239,17 @@ function App() {
         <section
           className={`stage${containPlate ? ' stage--contained-plate' : ' stage--full-width-plate'}${hasPrimaryStageWindow && presentation.suppressArtifactLabelsWhenPrimaryWindowOpen ? ' stage--primary-window-open' : ''}${sceneReactionArtifact ? ' stage--scene-reacting' : ''}${sceneReactionTone ? ` stage--scene-tone-${sceneReactionTone}` : ''}`}
           style={{ ...stageReactionStyle, '--plate-aspect': plateAspect ?? 1, '--plate-ambient': `url(${JSON.stringify(loaded.edition.plate_asset_path)})` } as CSSProperties}
+          onMouseMoveCapture={(event) => {
+            const dismissed = dismissedPointer.current
+            if (dismissed && (dismissed.x !== event.clientX || dismissed.y !== event.clientY)) dismissedPointer.current = null
+          }}
+          onClickCapture={(event) => {
+            if (event.target instanceof Element && event.target.closest('.source-window__close')) {
+              // Removing a window can synthesize mouseenter on the mark it
+              // covered. That stationary pointer is dismissal, not a new hover.
+              dismissedPointer.current = { x: event.clientX, y: event.clientY }
+            }
+          }}
           onMouseLeave={(event) => {
             if (reviewMode === 'live') return
             const nextTarget = event.relatedTarget
@@ -365,7 +377,12 @@ function App() {
                   }).length,
                   ...sceneReactionStyle,
                 }}
-                onMouseEnter={() => previewArtifactBinding(artifact.id, binding)}
+                onMouseEnter={(event) => {
+                  const dismissed = dismissedPointer.current
+                  if (dismissed && dismissed.x === event.clientX && dismissed.y === event.clientY) return
+                  dismissedPointer.current = null
+                  previewArtifactBinding(artifact.id, binding)
+                }}
                 onFocus={() => previewArtifactBinding(artifact.id, binding)}
                 onMouseDown={(event) => {
                   if (event.button !== 0 || (bindingDescriptor?.kind !== 'youtube-embed' && bindingDescriptor?.kind !== 'youtube-linkout')) return

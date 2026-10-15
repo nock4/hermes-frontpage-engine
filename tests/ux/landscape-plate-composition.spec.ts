@@ -3,6 +3,7 @@ import fs from 'node:fs'
 
 const edition = '2026-10-15-the-weight-of-a-curl-v2'
 const { artifacts } = JSON.parse(fs.readFileSync(`public/editions/${edition}/artifact-map.json`, 'utf8'))
+const { bindings } = JSON.parse(fs.readFileSync(`public/editions/${edition}/source-bindings.json`, 'utf8'))
 
 for (const v of [
   { name: 'desktop', width: 1440, height: 980, touch: false },
@@ -50,10 +51,12 @@ for (const v of [
         expect(hit, `painted mark ${artifact.id} must hit its own mesh`).toBe(artifact.label)
         if (v.touch) await page.touchscreen.tap(point.x, point.y)
         else await page.mouse.click(point.x, point.y)
-        const win = page.locator(`.source-window[data-artifact-id="${artifact.id}"]`)
-        // Source windows expose binding identity rather than artifact identity.
-        const opened = page.locator('.stage-overlay-windows--live .source-window').last()
+        const binding = bindings.find((candidate: { artifact_id: string }) => candidate.artifact_id === artifact.id)
+        expect(binding, `binding for visible mark ${artifact.id}`).toBeDefined()
+        const opened = page.locator(`.stage-overlay-windows--live .source-window[data-binding-id="${binding.id}"]`)
         await expect(opened).toBeVisible()
+        await expect(opened).toHaveAttribute('data-artifact-id', artifact.id)
+        await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveCount(1)
         await page.waitForTimeout(400)
         const rect = await opened.boundingBox()
         expect(rect!.x).toBeGreaterThanOrEqual(-1)
@@ -66,7 +69,6 @@ for (const v of [
         await page.mouse.move(1, 1)
         await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveCount(0)
         await page.evaluate(() => window.scrollTo(0, 0))
-        void win
       }
       const geometry = await page.locator('img.plate').evaluate((img: HTMLImageElement) => ({ rect: img.getBoundingClientRect().toJSON(), w: img.naturalWidth, h: img.naturalHeight, fit: getComputedStyle(img).objectFit }))
       expect(geometry.rect.width).toBeCloseTo(v.width, 0)
@@ -79,3 +81,27 @@ for (const v of [
     } finally { await context.close() }
   })
 }
+
+test('first close must not hover-open the newly uncovered mark under a stationary pointer', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 })
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await page.goto('/?edition=2026-10-15-the-weight-of-a-curl-v2')
+  await page.locator('img.plate').evaluate((img: HTMLImageElement) => img.decode())
+  const windows = page.locator('.stage-overlay-windows--live .source-window')
+  const lime = page.locator('[data-binding-id="binding-hero-lime-hooked-sweep-with-fluted-relief"]')
+  await page.getByRole('button', { name: 'Lime hooked sweep with fluted relief and muted colored seams', exact: true }).focus()
+  await expect(lime).toHaveAttribute('data-source-window-mode', 'preview')
+  const close = lime.locator('.source-window__close')
+  await close.hover()
+  const closeRect = (await close.boundingBox())!
+  await close.click()
+  // Let Chromium perform its post-removal hit-test while the pointer remains
+  // over the now-uncovered tongue. Moving away immediately hides this race.
+  await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))))
+  await expect(windows).toHaveCount(0)
+  await page.mouse.move(1, 1)
+  await expect(windows).toHaveCount(0)
+  // A deliberate fresh hover must still work after dismissal.
+  await page.mouse.move(closeRect.x + closeRect.width / 2, closeRect.y + closeRect.height / 2)
+  await expect(page.locator('[data-binding-id="binding-module-folded-lime-tongue-with-fine-grooves"]')).toHaveAttribute('data-source-window-mode', 'preview')
+})
