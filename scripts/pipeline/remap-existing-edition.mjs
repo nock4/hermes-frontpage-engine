@@ -2,7 +2,8 @@ import fs from 'node:fs'
 import fsPromises from 'node:fs/promises'
 import path from 'node:path'
 
-import { expansionLabel, readImageDimensions, rectPolygon, safeOrigin, writeArtifactSvgMasks } from '../lib/edition-geometry.mjs'
+import { assertLandscapePlate } from '../lib/landscape-policy.mjs'
+import { expansionLabel, rectPolygon, safeOrigin, writeArtifactSvgMasks } from '../lib/edition-geometry.mjs'
 import { sentenceList } from '../lib/string-utils.mjs'
 
 export async function remapExistingEditionPlate({
@@ -23,6 +24,7 @@ export async function remapExistingEditionPlate({
   const bindingByArtifact = new Map((sourceBindings.bindings || []).map((binding) => [binding.artifact_id, binding]))
   let platePath = path.join(root, 'public', edition.plate_asset_path.replace(/^\//, ''))
   if (!fs.existsSync(platePath)) platePath = path.join(editionDir, 'assets', 'plate.png')
+  const dimensions = await assertLandscapePlate(platePath)
 
   const remapRunDir = path.join(root, 'tmp', 'daily-process-runs', generationName, `remap-${editionId}`)
   await fsPromises.mkdir(remapRunDir, { recursive: true })
@@ -84,7 +86,7 @@ export async function remapExistingEditionPlate({
     analysis_id: `analysis-${editionId}`,
     edition_id: editionId,
   })
-  await writeArtifactSvgMasks(editionDir, editionId, artifactMap.artifacts, await readImageDimensions(platePath))
+  await writeArtifactSvgMasks(editionDir, editionId, artifactMap.artifacts, dimensions)
   await writeJson(path.join(editionDir, 'artifact-map.json'), artifactMap)
 
   const aboutPath = path.join(editionDir, 'about.json')

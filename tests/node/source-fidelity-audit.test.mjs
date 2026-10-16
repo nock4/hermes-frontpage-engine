@@ -493,7 +493,7 @@ describe('source image fidelity audit', () => {
           retained_critical_elements: ['uninterrupted pale negative space', 'single centered horizontal wordmark'],
           missing_critical_elements: [],
           drift_risks: ['contact sheet panel is landscape, but generated composition itself preserves the square-minimal source logic'],
-          rationale: 'The generated plate reads as the same typographic island in the same empty field. It preserves the source framing logic, camera distance, centered placement, and dominant negative space rather than replaced by a metaphor scene.',
+          rationale: 'The generated plate transforms the typographic island into a new spatial field. It preserves the source identity rather than replaced by a metaphor scene.',
         }),
       },
     )
@@ -562,5 +562,142 @@ describe('source image fidelity audit', () => {
     expect(audit.verdict).toBe('skipped')
     expect(audit.inspection_mode).toBe('skipped-no-valid-dominant-source-image')
     expect(audit.rationale).toContain('not passed')
+  })
+})
+
+
+describe('source-fidelity overcopy prose boundaries', () => {
+  // Exact saved production output; independent of ignored tmp artifacts.
+  const savedAudit = {
+  "audit_id": "source-fidelity-1792148338763",
+  "inspection_mode": "vision-source-plate-contact-sheet",
+  "source_image_url": "https://pbs.twimg.com/media/HKVrpjNa8AAJxc_.jpg?name=orig",
+  "contact_sheet_path": "tmp/recovery-20261016-landscape/source-plate-contact-sheet.png",
+  "verdict": "pass",
+  "resemblance_score": 0.88,
+  "framing_score": 0.9,
+  "object_relationship_score": 0.85,
+  "context_score": 0.84,
+  "transformation_score": 0.94,
+  "retained_critical_elements": [
+    "Side-swept brown hair and legible eyes above a vertically erased pink lower face.",
+    "Sharp pale-blue collar points contrasted with dissolving facial material.",
+    "Red-orange patterned clothing fragments interrupted by blue-violet veiling.",
+    "Dark purple ground and translucent bands connecting separated portrait and clothing elements.",
+    "Detached white graphic fragment punctuating the lower field."
+  ],
+  "missing_critical_elements": [
+    "The source's tiny comma-like punctuation is replaced by a larger angular white scrap rather than retaining its curved silhouette."
+  ],
+  "drift_risks": [
+    "Folded clothing fragments and the patterned cuff introduce harder, more sculptural material than the source's soft photographic dissolution.",
+    "The enlarged head remains aligned above one collar fragment, partially preserving a local bust relationship, but the wider composition decisively breaks the continuous portrait."
+  ],
+  "forbidden_debug_marks": [],
+  "rationale": "The plate borrows specific portrait and clothing features rather than palette alone: swept hair, exposed eyes, pink vertical facial erasure, blue collar points and reddish patterned shoulders remain recognizable. It changes arrangement, scale, fragment count and spatial logic, distributing the former bust across a landscape with substantial dark intervals. The violet veil bridges separated elements without reconstructing the original image. Inspection of the full plate and native lower-edge strip shows irregular torn seams, clothing ornament and solid patterned dots, not identifiable registration targets, crosshairs or hollow target rings with ticks. The white fragment has uneven projecting edges rather than target geometry. This reads as a transformed source-inspired edition, not a recreation.",
+  "pass": false,
+  "blockers": [
+    "anchor copied without edition transformation"
+  ]
+}
+
+  async function auditResponse(raw) {
+    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-fidelity-prose-'))
+    const result = auditSourceImageFidelity({
+      payload: { source_image_fingerprints: [{ image_url: savedAudit.source_image_url }] },
+      platePath: path.join(runDir, 'unused-plate.png'),
+    }, runDir, {
+      writeJson,
+      createContactSheetImpl: async ({ outputPath }) => outputPath,
+      openAiJsonImpl: async () => raw,
+    })
+    return { result, runDir }
+  }
+
+  it('accepts the exact saved landscape vision pass without changing inspection evidence', async () => {
+    const original = structuredClone(savedAudit)
+    const { result } = await auditResponse(savedAudit)
+    const audit = await result
+    expect(audit.pass).toBe(true)
+    expect(audit.blockers).toEqual([])
+    expect(audit.transformation_score).toBe(0.94)
+    for (const key of ['rationale', 'retained_critical_elements', 'missing_critical_elements', 'drift_risks', 'forbidden_debug_marks']) {
+      expect(audit[key]).toEqual(savedAudit[key])
+    }
+    expect(savedAudit).toEqual(original)
+  })
+
+  it.each([
+    'The veil bridges elements without reconstructing the original image. Irregular torn seams are visible.',
+    'The veil bridges elements without reconstructing the original image; irregular torn seams are visible.',
+    'The veil bridges elements without reconstructing the original image! Irregular torn seams are visible.',
+    'The veil bridges elements without reconstructing the original image, with irregular torn seams visible.',
+    'The plate is not a copy with only tiny seams.',
+    'The plate is not without edition-native transformation.',
+  ])('does not invert negated overcopy or join independent findings: %s', async (rationale) => {
+    const { result } = await auditResponse({ ...savedAudit, drift_risks: [], rationale })
+    expect((await result).blockers).toEqual([])
+  })
+
+  it('does not join unpunctuated array entries into an absent-seam finding', async () => {
+    const { result } = await auditResponse({ ...savedAudit,
+      drift_risks: ['The veil bridges elements without reconstructing the original image', 'Irregular torn seams are visible'],
+      rationale: 'The source identity is transformed.',
+    })
+    expect((await result).blockers).toEqual([])
+  })
+
+  it('does not let contact-sheet prose swallow a separate affirmative same-field finding', async () => {
+    const { result } = await auditResponse({ ...savedAudit, missing_critical_elements: [],
+      drift_risks: ['contact sheet panel is landscape, but generated composition itself preserves the square-minimal source logic'],
+      rationale: 'The generated plate reads as the same typographic island in the same empty field. It preserves the source framing logic, camera distance, centered placement, and dominant negative space rather than replaced by a metaphor scene.',
+    })
+    await expect(result).rejects.toThrow(/anchor copied without edition transformation/)
+  })
+
+  it.each(['pass', 'warn'])('retains coordinated affirmative absence with %s verdict', async (verdict) => {
+    for (const rationale of [
+      'The plate is not a copy and has no added seams.',
+      'The plate is not a copy, and has no added seams.',
+      'The plate is not a copy but has no added seams.',
+      'The plate is never a reproduction and has only tiny seams.',
+    ]) {
+      const { result } = await auditResponse({ ...savedAudit, verdict, missing_critical_elements: [], drift_risks: [], rationale })
+      await expect(result).rejects.toThrow(/anchor copied without edition transformation/)
+    }
+  })
+
+  it.each(['pass', 'warn'])('preserves unpunctuated evidence boundaries with %s verdict', async (verdict) => {
+    const { result } = await auditResponse({ ...savedAudit, verdict, missing_critical_elements: [],
+      drift_risks: ['The plate is not a copy', 'No added seams'], rationale: 'Recognizable source identity.',
+    })
+    await expect(result).rejects.toThrow(/anchor copied without edition transformation/)
+  })
+
+  it.each(['pass', 'warn'])('does not manufacture copy insufficiency across evidence entries with %s verdict', async (verdict) => {
+    const { result } = await auditResponse({ ...savedAudit, verdict, missing_critical_elements: [],
+      drift_risks: ['A reproduction appears in the source reference', 'Only the violet palette is retained'], rationale: 'A transformed edition.',
+    })
+    expect((await result).blockers).toEqual([])
+  })
+
+  it.each([
+    'The plate is without edition-native transformation.',
+    'The plate has no added source-window apertures, cuts, seams, or edition-native transformation.',
+    'The plate is without visible transformed source-window marks.',
+    'The plate has only tiny seams.',
+    'The plate has insufficient transformation.',
+    'The plate has no meaningful transformation.',
+    'Edition-native transformation is absent.',
+    'Visible source-window seams are absent.',
+    'The plate is a near-copy with only tiny decorative changes.',
+    'The plate is not without recognizable identity, but has no added seams.',
+  ])('blocks affirmative absent/insufficient transformation despite high scores: %s', async (rationale) => {
+    const { result, runDir } = await auditResponse({ ...savedAudit, drift_risks: [], rationale })
+    await expect(result).rejects.toThrow(/anchor copied without edition transformation/)
+    const audit = JSON.parse(await readFile(path.join(runDir, 'source-fidelity-audit.json'), 'utf8'))
+    expect(audit.pass).toBe(false)
+    expect(audit.blockers).toContain('anchor copied without edition transformation')
+    expect(audit.transformation_score).toBe(0.94)
   })
 })

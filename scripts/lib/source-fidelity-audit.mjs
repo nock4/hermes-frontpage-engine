@@ -120,6 +120,23 @@ async function createSourcePlateContactSheet({ sourceImageUrl, platePath, output
   })
 }
 
+function hasAffirmativeOvercopy(fields) {
+  // Keep findings and sentences separate: "without reconstructing the image. ...
+  // torn seams" does not mean "without seams". Negation must govern the actual
+  // transformation noun, not an arbitrary later word in the vision rationale.
+  const transformation = '(?:source[- ]?windows?|apertures?|cuts?|seams?|interruptions?|edition[- ]?native(?: transformation)?|transformation|arrangement changes?)'
+  const modifiers = '(?:(?:any|added|visible|meaningful|substantial|sufficient|real|new|transformed|tiny|minor|subtle|small|decorative|edition[- ]?native|source[- ]?window)\\s+)*'
+  const absentTransformation = new RegExp(`\\b(?:no|without|only|tiny|minor|subtle|insufficient)\\s+${modifiers}${transformation}\\b|\\b${transformation}\\s+(?:is|are|remains?|remain)\\s+(?:absent|missing|insufficient)\\b`)
+  const copyWithInsufficientChange = /\b(copy|copied|near[- ]?copy|duplicate|reproduction|reproduces|direct transformed edition|same quiet blank field|same centered|same wordmark|same typographic|same still[- ]?life|same arrangement|same object positions|same composition|basically the source|almost identical|too close to the source)\b.{0,180}\b(no added|without|only|same|close enough|publication|subtle|tiny|minor|not enough|insufficient)\b/
+  return fields.some((field) => field.toLowerCase().split(/[.!?;\n]+|\b(?:but|however|yet)\b/).some((clause) => {
+    const affirmative = clause
+      .replace(/\bnot without\b/g, 'with')
+      .replace(/\brather than (?:the )?(?:same|identical|near[- ]?identical|almost identical)\b(?:(?!\b(?:and|but|however|yet)\b)[^,])*/g, ' transformed ')
+      .replace(/\b(?:not|never|rather than|without)\s+(?:(?:a|an|the|merely|just|simply)\s+)*(?:copy|copied|copying|near[- ]?copy|duplicate|reproduction|reproducing)\b(?:(?!\b(?:and|but|however|yet)\b)[^,])*/g, ' transformed ')
+    return absentTransformation.test(affirmative) || copyWithInsufficientChange.test(affirmative)
+  }))
+}
+
 function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   const verdict = ['pass', 'warn', 'fail'].includes(String(raw?.verdict || '').toLowerCase())
     ? String(raw.verdict).toLowerCase()
@@ -190,10 +207,6 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       pattern: /(invented|unrelated|replacement|metaphor).{0,100}(scene|city|skyline|horizon|figure|character|deep space|macro texture)|(?:city|skyline|horizon|figure|character|deep space|macro texture).{0,100}(not present|invented|unrelated|replacement)/,
     },
     {
-      label: 'anchor copied without edition transformation',
-      pattern: /(copy|copied|near[- ]?copy|duplicate|reproduction|reproduces|direct transformed edition|same quiet blank field|same centered|same wordmark|same typographic|same still[- ]?life|same arrangement|same object positions|same composition|basically the source|almost identical|too close to the source).{0,180}(no added|without|only|same|close enough|publication|subtle|tiny|minor|not enough|insufficient)|(?:no added|without|only|tiny|minor|subtle|insufficient).{0,120}(source[- ]?window|aperture|cut|seam|interruption|edition[- ]?native|transformation|arrangement change)/,
-    },
-    {
       label: 'source image recreated instead of borrowed',
       pattern: /(same|identical|near[- ]?identical|almost identical|unchanged).{0,120}(arrangement|object positions|still[- ]?life|three[- ]?vase|camera distance|plinth|composition|layout)|(?:borrow|inspiration|inspired).{0,140}(not enough|insufficient|too literal|same image)/,
     },
@@ -223,6 +236,15 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       .replace(/no (?:visible )?(?:numbered |debug[- ]?looking )?[^.;]*(?:badges?|callouts?|pins?|rings?|labels?|markers?|annotations?|numerals?|numbers?)[^.;]*(?:appear|visible|present)[^.;]*[.;]?/g, ' no debug marks ')
       .replace(/(?:no|without) [^.;]*(?:numbered |debug[- ]?looking )?(?:badges?|callouts?|pins?|rings?|labels?|markers?|annotations?|numerals?|numbers?)[^.;]*[.;]?/g, ' no debug marks ')
     : auditText
+  // Evaluate original evidence entries before prose filtering/flattening can erase
+  // a coordinated finding or join independent observations into a new claim.
+  const overcopyFields = [
+    ...(normalized.verdict === 'pass' ? [] : normalized.missing_critical_elements),
+    ...normalized.drift_risks,
+    ...normalized.forbidden_debug_marks,
+    normalized.rationale,
+  ]
+  if (hasAffirmativeOvercopy(overcopyFields)) blockers.push('anchor copied without edition transformation')
   for (const { label, pattern } of blockerWarningPatterns) {
     if (pattern.test(blockerScopeText) && !blockers.includes(label)) blockers.push(label)
   }

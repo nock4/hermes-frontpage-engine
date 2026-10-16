@@ -1,5 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import fs from 'node:fs/promises'
+import { platePng } from '../fixtures/plate-png.mjs'
 import os from 'node:os'
 import path from 'node:path'
 import { buildSceneImagePrompt } from '../../scripts/lib/scene-generation.mjs'
@@ -351,6 +352,9 @@ describe('real-mark planning contract', () => {
     provider.mockReset().mockResolvedValueOnce(initialResponse).mockResolvedValueOnce(recoveryResponse)
     const writes = new Map()
     const images = []
+    const plateDir = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-planning-plate-'))
+    const platePath = path.join(plateDir, 'plate.png')
+    await fs.writeFile(platePath, platePng())
     const audit = { blockers: ['overcopy'] }
     const stop = new Error('stop before mapping provider or assembly')
     const consoleLog = vi.spyOn(console, 'log').mockImplementation(() => {})
@@ -368,7 +372,7 @@ describe('real-mark planning contract', () => {
         inspectSourceCandidates: async () => researchField,
         composeDailyPayload: async () => structuredClone(payload),
         imageAspectRatioFromSize: () => 'landscape',
-        generateScenePlate: async ({ payload: plan }) => { images.push(structuredClone(plan)); buildSceneImagePrompt(plan); return { outputPath: '/test-only/plate.png' } },
+        generateScenePlate: async ({ payload: plan }) => { images.push(structuredClone(plan)); buildSceneImagePrompt(plan); return { outputPath: platePath } },
         auditSourceImageFidelity: vi.fn().mockRejectedValueOnce(new Error('overcopy')).mockResolvedValueOnce({ pass: true }),
         inspectGeneratedPlate: async ({ payload: plan }) => { expect(plan).toEqual(images[1]); throw stop },
         runInternal: async (step, command, run) => { if (step.name !== 'Prepare source audio material') return run() },
@@ -403,6 +407,7 @@ describe('real-mark planning contract', () => {
       expect(JSON.parse(JSON.parse(writes.get(`${prefix}.source-fidelity-recovery-1.request.json`)).input).recovery_diagnostics).toEqual([audit])
     } finally {
       consoleLog.mockRestore(); consoleWarn.mockRestore()
+      await fs.rm(plateDir, { recursive: true, force: true })
       if (previous === undefined) delete process.env.DFE_SOURCE_FIDELITY_AUTO_RECOVERY
       else process.env.DFE_SOURCE_FIDELITY_AUTO_RECOVERY = previous
       if (previousAttempts === undefined) delete process.env.DFE_SOURCE_FIDELITY_RECOVERY_ATTEMPTS

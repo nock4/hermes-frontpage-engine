@@ -1,3 +1,4 @@
+import { platePng } from '../fixtures/plate-png.mjs'
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
@@ -552,7 +553,7 @@ describe('scene generation Hermes image backend', () => {
             if (calls === 1) {
               throw new Error('Codex response contained no image_generation_call result')
             }
-            await writeFile(path.join(runDir, 'plate.png'), 'fake-image-bytes')
+            await writeFile(path.join(runDir, 'plate.png'), platePng())
             return {
               provider: 'openai-codex',
               model: 'gpt-image-2-medium',
@@ -572,70 +573,11 @@ describe('scene generation Hermes image backend', () => {
         { attempt: 2, ok: true },
       ])
       expect(sceneGeneration.provider).toBe('openai-codex')
-      expect(await readFile(path.join(runDir, 'plate.png'), 'utf8')).toBe('fake-image-bytes')
+      expect(await readFile(path.join(runDir, 'plate.png'))).toEqual(platePng())
       const promptFull = JSON.parse(await readFile(path.join(runDir, 'scene-prompt-full.json'), 'utf8'))
       expect(promptFull.compact_prompt).toContain('SOURCE FIELD')
       expect(promptFull.compact_prompt).toContain('TRANSFORM')
       expect(promptFull.payload.scene_prompt).toContain('full-bleed abstract field')
-    } finally {
-      await rm(runDir, { recursive: true, force: true })
-    }
-  })
-
-  it('normalizes provider-returned portrait or square plates to the requested canvas', async () => {
-    const runDir = await mkdtemp(path.join(os.tmpdir(), 'dfe-scene-normalize-'))
-    let normalizedArgs = null
-    try {
-      await generateScenePlate(
-        {
-          payload: {
-            scene_prompt: 'A full-bleed abstract field with visible source apertures.',
-            lighting: 'diffuse studio light',
-            material_language: ['paper', 'ink'],
-            artifacts: [{ source_url: 'https://example.com/source' }],
-          },
-          imageModel: 'gpt-image-2-medium',
-          imageBackend: 'hermes',
-          imageSize: '1536x1024',
-          imageQuality: 'medium',
-        },
-        runDir,
-        {
-          writeJson: async (targetPath, payload) => {
-            await writeFile(targetPath, JSON.stringify(payload, null, 2), 'utf8')
-          },
-          runHermesImageCommand: async () => {
-            await writeFile(path.join(runDir, 'plate.png'), 'provider-returned-image')
-            return {
-              provider: 'openai-codex',
-              model: 'gpt-image-2-medium',
-              source_image: '/tmp/generated.png',
-              aspect_ratio: 'portrait',
-            }
-          },
-          normalizePlateGeometry: async (outputPath, imageSize) => {
-            normalizedArgs = { outputPath, imageSize }
-            return {
-              requested: { width: 1536, height: 1024 },
-              actual_before: { width: 10, height: 20 },
-              actual_after: { width: 1536, height: 1024 },
-              normalized: true,
-              method: 'center-crop-cover',
-            }
-          },
-          sleep: async () => {},
-        },
-      )
-      const sceneGeneration = JSON.parse(await readFile(path.join(runDir, 'scene-generation.json'), 'utf8'))
-      expect(normalizedArgs).toMatchObject({ imageSize: '1536x1024' })
-      expect(normalizedArgs.outputPath).toBe(path.join(runDir, 'plate.png'))
-      expect(sceneGeneration.output_geometry).toMatchObject({
-        requested: { width: 1536, height: 1024 },
-        actual_before: { width: 10, height: 20 },
-        actual_after: { width: 1536, height: 1024 },
-        normalized: true,
-        method: 'center-crop-cover',
-      })
     } finally {
       await rm(runDir, { recursive: true, force: true })
     }
@@ -672,7 +614,7 @@ describe('scene generation Hermes image backend', () => {
           },
           runHermesImageCommand: async (_command, args) => {
             seenArgs = args
-            await writeFile(path.join(runDir, 'plate.png'), 'fake-image-bytes')
+            await writeFile(path.join(runDir, 'plate.png'), platePng())
             return {
               provider: 'openai-codex',
               model: 'gpt-image-2-medium',

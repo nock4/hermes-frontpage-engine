@@ -11,7 +11,7 @@ export function sourceGeometryGuard(source = {}) {
   const height = Number(source.height)
   if (!(width > 0 && height > 0)) return ''
   const shape = Math.abs(width - height) / Math.max(width, height) < 0.08 ? 'square' : width > height ? 'landscape' : 'portrait/vertical'
-  return `SOURCE-ASPECT NOTE: measured source is ${shape} (${width}x${height}). Preserve this source aspect and frame orientation, not exact camera distance or subject placement; do not squeeze it into a different orientation or a framed panel. Recompose source-native fragments and relationships within this orientation.`
+  return `SOURCE-ASPECT NOTE: measured source is ${shape} (${width}x${height}); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.`
 }
 
 export async function measureSourceImage(imageUrl) {

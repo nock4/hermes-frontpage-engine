@@ -2,6 +2,7 @@ import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 import { expect, it, vi } from 'vitest'
+import { platePng } from '../fixtures/plate-png.mjs'
 import { remapExistingEditionPlate } from '../../scripts/pipeline/remap-existing-edition.mjs'
 
 async function withEdition(run) {
@@ -21,11 +22,7 @@ async function withEdition(run) {
     for (const [name, data] of Object.entries(files)) await fs.writeFile(path.join(editionDir, name), JSON.stringify(data))
     await fs.writeFile(path.join(editionDir, 'assets/masks/hero.svg'), '<svg>existing refined mask</svg>')
     await fs.writeFile(path.join(editionDir, 'assets/masks/retained.svg'), '<svg>existing extra mask</svg>')
-    const header = Buffer.alloc(24)
-    Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]).copy(header)
-    header.writeUInt32BE(1024, 16)
-    header.writeUInt32BE(1536, 20)
-    await fs.writeFile(path.join(editionDir, 'assets/plate.png'), header)
+    await fs.writeFile(path.join(editionDir, 'assets/plate.png'), platePng(1536, 1024))
     await run({ root, editionId, editionDir, readJson, writeJson, generationName: 'test-remap' })
   } finally {
     await fs.rm(root, { recursive: true, force: true })
@@ -62,6 +59,18 @@ it.each([
   })
 })
 
+it.each([platePng(8, 12), platePng(8, 8), platePng().subarray(0, 24)])('rejects invalid recovered plate before remapping or writes', async (bytes) => {
+  await withEdition(async (options) => {
+    await fs.writeFile(path.join(options.editionDir, 'assets/plate.png'), bytes)
+    const before = await snapshot(options.editionDir)
+    const inspectGeneratedPlate = vi.fn(async () => ({ inspection_mode: 'inspection-failed', detected_objects: [] }))
+    await expect(remapExistingEditionPlate({ ...options, inspectGeneratedPlate })).rejects.toThrow(/landscape/i)
+    expect(inspectGeneratedPlate).not.toHaveBeenCalled()
+    expect(options.writeJson).not.toHaveBeenCalled()
+    expect(await snapshot(options.editionDir)).toEqual(before)
+  })
+})
+
 it('writes corrected analysis, geometry, masks and about text after valid inspection', async () => {
   await withEdition(async (options) => {
     const object = { label: 'Observed mark', artifact_type: 'ink', bounds: { x: 0.25, y: 0.25, w: 0.5, h: 0.5 }, polygon: [[0.25, 0.25], [0.75, 0.25], [0.5, 0.75]] }
@@ -72,7 +81,7 @@ it('writes corrected analysis, geometry, masks and about text after valid inspec
     const artifactMap = await options.readJson(path.join(options.editionDir, 'artifact-map.json'))
     expect(artifactMap.artifacts[0]).toMatchObject({ ...object, id: 'hero' })
     expect(await options.readJson(path.join(options.editionDir, 'analysis.json'))).toMatchObject({ inspection_mode: 'vision', detected_objects: [object] })
-    expect(await fs.readFile(path.join(options.editionDir, 'assets/masks/hero.svg'), 'utf8')).toContain('points="256,384 768,384 512,1152"')
+    expect(await fs.readFile(path.join(options.editionDir, 'assets/masks/hero.svg'), 'utf8')).toContain('points="384,256 1152,256 768,768"')
     expect((await options.readJson(path.join(options.editionDir, 'about.json'))).body.join(' ')).toContain('Observed mark')
   })
 })

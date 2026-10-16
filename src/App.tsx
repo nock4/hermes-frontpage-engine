@@ -240,6 +240,12 @@ function App() {
         <section
           className={`stage${containPlate ? ' stage--contained-plate' : ' stage--full-width-plate'}${hasPrimaryStageWindow && presentation.suppressArtifactLabelsWhenPrimaryWindowOpen ? ' stage--primary-window-open' : ''}${sceneReactionArtifact ? ' stage--scene-reacting' : ''}${sceneReactionTone ? ` stage--scene-tone-${sceneReactionTone}` : ''}`}
           style={{ ...stageReactionStyle, '--plate-aspect': plateAspect ?? 1, '--plate-ambient': `url(${JSON.stringify(loaded.edition.plate_asset_path)})` } as CSSProperties}
+          onPointerOverCapture={(event) => {
+            // A move directly into a provider iframe reaches this document as
+            // pointerover, but its pointermove belongs to the child document.
+            // Keep the idle mouse coordinate current for a later touch close.
+            if (event.pointerType === 'mouse') mousePointer.current = { x: Math.floor(event.clientX), y: Math.floor(event.clientY) }
+          }}
           onPointerMoveCapture={(event) => {
             // Touch compatibility mousemove must not overwrite the idle mouse.
             // MouseEvent coordinates truncate PointerEvent's fractional values.

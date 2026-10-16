@@ -1,10 +1,10 @@
 import crypto from 'node:crypto'
+import { assertLandscapePlate, assertLandscapePublication } from './landscape-policy.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
 import {
   expansionLabel,
-  readImageDimensions,
   rectPolygon,
   safeOrigin,
   writeArtifactSvgMasks,
@@ -366,11 +366,7 @@ export async function assembleEditionPackage({
   }
   const sourceUrls = eligibleArtifacts.map((artifact) => artifact.source_url)
   const objects = packageDetectedObjects(analysis, eligibleArtifacts, maxContentItems)
-  const analysisViewport = analysis.viewport
-  const analysisSize = Number.isFinite(analysisViewport?.base_width) && analysisViewport.base_width > 0
-    && Number.isFinite(analysisViewport?.base_height) && analysisViewport.base_height > 0
-    ? `${analysisViewport.base_width}x${analysisViewport.base_height}` : options.imageSize
-  const dimensions = await readImageDimensions(plate.outputPath, analysisSize)
+  const dimensions = await assertLandscapePlate(plate.outputPath)
   const viewport = {
     base_width: dimensions.width,
     base_height: dimensions.height,
@@ -558,6 +554,7 @@ export async function assembleEditionPackage({
 
   const filtered = manifest.editions.filter((item) => item.edition_id !== editionId)
   if (options.publish) {
+    await assertLandscapePublication(editionDir)
     for (const item of filtered) item.is_live = false
     manifest.current_edition_id = editionId
   }

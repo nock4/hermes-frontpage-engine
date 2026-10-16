@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { platePng } from '../fixtures/plate-png.mjs'
 import os from 'node:os'
 import path from 'node:path'
 import { expect, it } from 'vitest'
@@ -13,7 +14,7 @@ it('keeps researched tweet image identity ahead of stale saved-note media during
     await fs.mkdir(path.join(root, 'public/editions'), { recursive: true })
     await fs.writeFile(path.join(root, 'public/editions/index.json'), JSON.stringify({ editions: [] }))
     const platePath = path.join(runDir, 'plate.png')
-    await fs.writeFile(platePath, 'fixture plate')
+    await fs.writeFile(platePath, platePng())
     const sources = Array.from({ length: 6 }, (_, i) => ({
       url: `https://x.com/artist${i}/status/123456789012345678${i}`,
       note_id: `note-${i}`, title: `Artwork ${i}`,

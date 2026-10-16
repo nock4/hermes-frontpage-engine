@@ -1,6 +1,8 @@
-import { spawn } from 'node:child_process'
+import { spawn, execFile } from 'node:child_process'
+import { promisify } from 'node:util'
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import { assertLandscapePlate } from './lib/landscape-policy.mjs'
 import { fileURLToPath } from 'node:url'
 import https from 'node:https'
 
@@ -361,7 +363,29 @@ export function generatedAuditPathForOtherEdition(line, editionId) {
   return match[1] === editionId ? null : candidate
 }
 
-async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
+async function assertPublicationTarget(worktreeDir, editionId, staged = false) {
+  const read = async (relative) => staged
+    ? (await promisify(execFile)('git', ['show', `:public/editions/${relative}`], { cwd: worktreeDir, encoding: 'buffer', maxBuffer: 64 * 1024 * 1024 })).stdout
+    : fs.readFile(path.join(worktreeDir, 'public', 'editions', relative))
+  const fail = () => { throw new Error(`Publication target mismatch: ${editionId} must be the current and sole live edition with canonical served assets`) }
+  if (!isSafeEditionId(editionId)) fail()
+  const manifest = JSON.parse(await read('index.json'))
+  const records = Array.isArray(manifest.editions) ? manifest.editions : []
+  const selected = records.filter((entry) => entry.edition_id === editionId)
+  const live = records.filter((entry) => entry.is_live)
+  const route = `/editions/${editionId}`
+  if (manifest.current_edition_id !== editionId || selected.length !== 1 || live.length !== 1
+    || live[0] !== selected[0] || live[0].is_live !== true
+    || selected[0].path !== route || selected[0].preview_asset_path !== `${route}/assets/preview.png`) fail()
+  const edition = JSON.parse(await read(`${editionId}/edition.json`))
+  if (edition.edition_id !== editionId || edition.plate_asset_path !== `${route}/assets/plate.png`) fail()
+  for (const asset of ['plate.png', 'preview.png']) {
+    await assertLandscapePlate(await read(`${editionId}/assets/${asset}`))
+  }
+}
+
+export async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
+  await assertPublicationTarget(worktreeDir, editionId)
   const readStatusLines = async () => parseStatusLines((await run('git', ['status', '--short'], { cwd: worktreeDir, capture: true })).stdout)
   let lines = await readStatusLines()
   if (!lines.length) {
@@ -386,6 +410,9 @@ async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
     return { committed: false, commit: null, changed_paths: [] }
   }
 
+  // Re-read Git's actual staged bytes: clean filters or recovered staging must
+  // not promote a different manifest/asset than the preflight just inspected.
+  await assertPublicationTarget(worktreeDir, editionId, true)
   const commitMessage = `feat: publish daily edition ${editionId}`
   await run('git', ['commit', '-m', commitMessage], { cwd: worktreeDir })
   const head = await run('git', ['rev-parse', 'HEAD'], { cwd: worktreeDir, capture: true })

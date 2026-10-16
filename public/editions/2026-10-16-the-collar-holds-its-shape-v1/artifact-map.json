@@ -1,9 +1,9 @@
 {
   "artifact_map_id": "map-2026-10-16-the-collar-holds-its-shape-v1",
   "viewport": {
-    "base_width": 1024,
-    "base_height": 1536,
-    "aspect_ratio": "1024:1536"
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
   },
   "default_cluster_id": "violet-ghost-collar-recess",
   "default_artifact_id": "hero-rounded-hair-and-eye-fragment-traili",
@@ -12,86 +12,70 @@
       "id": "hero-rounded-hair-and-eye-fragment-traili",
       "kind": "hero",
       "label": "Rounded hair-and-eye fragment trailing vertically erased pink flesh",
-      "artifact_type": "portrait-erasure",
+      "artifact_type": "portrait-erasure-mark",
       "bounds": {
-        "x": 0.063,
-        "y": 0,
-        "w": 0.407,
-        "h": 0.478
+        "x": 0.05,
+        "y": 0.025,
+        "w": 0.2859,
+        "h": 0.5944
       },
       "z_index": 10,
       "polygon": [
         [
-          0.096,
-          0
+          0.0523,
+          0.2722
         ],
         [
-          0.389,
-          0
+          0.0883,
+          0.1278
         ],
         [
-          0.448,
-          0.034
+          0.1148,
+          0.0514
         ],
         [
-          0.47,
-          0.088
+          0.1383,
+          0.0292
         ],
         [
-          0.45,
-          0.14
+          0.1969,
+          0.0681
         ],
         [
-          0.416,
-          0.169
+          0.2516,
+          0.1306
         ],
         [
-          0.403,
-          0.229
+          0.3219,
+          0.2333
         ],
         [
-          0.37,
+          0.3328,
           0.275
         ],
         [
-          0.337,
-          0.322
+          0.3055,
+          0.5833
         ],
         [
-          0.31,
-          0.478
+          0.2781,
+          0.6139
         ],
         [
-          0.274,
-          0.451
+          0.1523,
+          0.5389
         ],
         [
-          0.242,
-          0.354
+          0.1008,
+          0.4417
         ],
         [
-          0.191,
-          0.297
+          0.0664,
+          0.3556
         ],
         [
-          0.151,
-          0.232
-        ],
-        [
-          0.137,
-          0.184
-        ],
-        [
-          0.083,
-          0.162
-        ],
-        [
-          0.063,
-          0.1
-        ],
-        [
-          0.075,
-          0.039
+          0.0523,
+          0.2736
         ]
       ],
       "cluster_id": "violet-ghost-collar-recess",
@@ -101,12 +85,12 @@
       ],
       "geometry": {
         "safe_hover_origin_px": [
-          273,
-          308
+          246,
+          302
         ],
         "safe_stage_window_origin_px": [
-          306,
-          367
+          277,
+          357
         ],
         "preferred_expansion_label": "right"
       },
@@ -114,204 +98,195 @@
         "schema_version": 1,
         "visible_polygon": [
           [
-            0.096,
-            0
+            0.0523,
+            0.2722
           ],
           [
-            0.389,
-            0
+            0.0883,
+            0.1278
           ],
           [
-            0.448,
-            0.034
+            0.1148,
+            0.0514
           ],
           [
-            0.47,
-            0.088
+            0.1383,
+            0.0292
           ],
           [
-            0.45,
-            0.14
+            0.1969,
+            0.0681
           ],
           [
-            0.416,
-            0.169
+            0.2516,
+            0.1306
           ],
           [
-            0.403,
-            0.229
+            0.3219,
+            0.2333
           ],
           [
-            0.37,
+            0.3328,
             0.275
           ],
           [
-            0.337,
-            0.322
+            0.3055,
+            0.5833
           ],
           [
-            0.31,
-            0.478
+            0.2781,
+            0.6139
           ],
           [
-            0.274,
-            0.451
+            0.1523,
+            0.5389
           ],
           [
-            0.242,
-            0.354
+            0.1008,
+            0.4417
           ],
           [
-            0.191,
-            0.297
+            0.0664,
+            0.3556
           ],
           [
-            0.151,
-            0.232
-          ],
-          [
-            0.137,
-            0.184
-          ],
-          [
-            0.083,
-            0.162
-          ],
-          [
-            0.063,
-            0.1
-          ],
-          [
-            0.075,
-            0.039
+            0.0523,
+            0.2736
           ]
         ],
         "hover_polygon": [
           [
-            0.0293,
-            0.0977
+            0.025,
+            0.2694
           ],
           [
-            0.041,
-            0.0378
+            0.0867,
+            0.0528
           ],
           [
-            0.0625,
+            0.1187,
             0.0
           ],
           [
-            0.4268,
+            0.1656,
             0.0
           ],
           [
-            0.4805,
-            0.0339
+            0.1984,
+            0.0222
           ],
           [
-            0.5029,
-            0.0872
+            0.2547,
+            0.0875
           ],
           [
-            0.3428,
-            0.4779
+            0.3336,
+            0.2056
           ],
           [
-            0.3096,
-            0.5
+            0.3586,
+            0.2736
           ],
           [
-            0.2402,
-            0.4505
+            0.332,
+            0.5819
           ],
           [
-            0.0488,
-            0.1615
+            0.2773,
+            0.6611
           ],
           [
-            0.0293,
-            0.1009
+            0.1516,
+            0.5861
+          ],
+          [
+            0.0734,
+            0.4403
+          ],
+          [
+            0.0398,
+            0.3583
+          ],
+          [
+            0.025,
+            0.2736
           ]
         ],
         "hover_bounds": {
-          "x": 0.0293,
+          "x": 0.025,
           "y": 0.0,
-          "w": 0.4746,
-          "h": 0.5007
+          "w": 0.3344,
+          "h": 0.6625
         },
-        "territory_area_px": 221186,
-        "visible_area_px": 169324,
-        "expansion_ratio": 1.306,
-        "neighbors": []
+        "territory_area_px": 139498,
+        "visible_area_px": 101625,
+        "expansion_ratio": 1.373,
+        "neighbors": [
+          {
+            "artifact_id": "module-stepped-pale-blue-shirt-pleat-with-n",
+            "shared_edge_px": 318,
+            "direction": "right",
+            "distance_px": 298.6
+          }
+        ]
       }
     },
     {
       "id": "hero-broad-red-orange-patterned-shoulder-",
       "kind": "hero",
-      "label": "Broad red-orange patterned shoulder with continuous color across folds",
+      "label": "Broad red-orange patterned shoulder with continuous wash across folds",
       "artifact_type": "washed-patterned-fabric",
       "bounds": {
-        "x": 0.627,
-        "y": 0.1921,
-        "w": 0.3721,
-        "h": 0.5293
+        "x": 0.6453,
+        "y": 0.3056,
+        "w": 0.3461,
+        "h": 0.4736
       },
       "z_index": 11,
       "polygon": [
         [
-          0.6299,
-          0.3568
+          0.6477,
+          0.5028
         ],
         [
-          0.7158,
-          0.2311
+          0.693,
+          0.4333
         ],
         [
-          0.7793,
-          0.1947
+          0.7656,
+          0.375
         ],
         [
-          0.8848,
-          0.2018
+          0.8055,
+          0.3458
         ],
         [
-          0.9639,
-          0.2233
+          0.8938,
+          0.3097
         ],
         [
-          0.9951,
-          0.2402
+          0.982,
+          0.5056
         ],
         [
-          0.9951,
-          0.6432
+          0.9883,
+          0.5375
         ],
         [
-          0.9346,
-          0.7155
+          0.9375,
+          0.7736
         ],
         [
-          0.9219,
-          0.7188
+          0.7578,
+          0.7556
         ],
         [
-          0.8594,
-          0.6979
+          0.6773,
+          0.6917
         ],
         [
-          0.7197,
-          0.61
-        ],
-        [
-          0.668,
-          0.5365
-        ],
-        [
-          0.6377,
-          0.4206
-        ],
-        [
-          0.6299,
-          0.36
+          0.6664,
+          0.6528
         ]
       ],
       "cluster_id": "violet-ghost-collar-recess",
@@ -321,12 +296,12 @@
       ],
       "geometry": {
         "safe_hover_origin_px": [
-          839,
-          658
+          1023,
+          375
         ],
         "safe_stage_window_origin_px": [
-          868,
-          726
+          1062,
+          404
         ],
         "preferred_expansion_label": "left"
       },
@@ -334,226 +309,224 @@
         "schema_version": 1,
         "visible_polygon": [
           [
-            0.6299,
-            0.3568
+            0.6477,
+            0.5028
           ],
           [
-            0.7158,
-            0.2311
+            0.693,
+            0.4333
           ],
           [
-            0.7793,
-            0.1947
+            0.7656,
+            0.375
           ],
           [
-            0.8848,
-            0.2018
+            0.8055,
+            0.3458
           ],
           [
-            0.9639,
-            0.2233
+            0.8938,
+            0.3097
           ],
           [
-            0.9951,
-            0.2402
+            0.982,
+            0.5056
           ],
           [
-            0.9951,
-            0.6432
+            0.9883,
+            0.5375
           ],
           [
-            0.9346,
-            0.7155
+            0.9375,
+            0.7736
           ],
           [
-            0.9219,
-            0.7188
+            0.7578,
+            0.7556
           ],
           [
-            0.8594,
-            0.6979
+            0.6773,
+            0.6917
           ],
           [
-            0.7197,
-            0.61
-          ],
-          [
-            0.668,
-            0.5365
-          ],
-          [
-            0.6377,
-            0.4206
-          ],
-          [
-            0.6299,
-            0.36
+            0.6664,
+            0.6528
           ]
         ],
         "hover_polygon": [
           [
-            0.5967,
-            0.3561
+            0.6211,
+            0.5028
           ],
           [
-            0.6816,
-            0.2305
+            0.693,
+            0.3847
           ],
           [
-            0.7793,
-            0.1725
+            0.7664,
+            0.3264
           ],
           [
-            0.8848,
-            0.179
+            0.9039,
+            0.2819
           ],
           [
-            0.9639,
-            0.2005
+            0.9992,
+            0.4861
           ],
           [
-            0.999,
-            0.2207
+            0.9992,
+            0.6111
           ],
           [
-            0.999,
-            0.6777
+            0.9617,
+            0.7764
           ],
           [
-            0.9688,
-            0.7148
+            0.7289,
+            0.7806
           ],
           [
-            0.9346,
-            0.7376
+            0.6797,
+            0.7417
           ],
           [
-            0.9219,
-            0.7409
+            0.65,
+            0.6917
           ],
           [
-            0.8594,
-            0.7194
+            0.6391,
+            0.6528
           ],
           [
-            0.6855,
-            0.6094
-          ],
-          [
-            0.6338,
-            0.5345
-          ],
-          [
-            0.5967,
-            0.3626
+            0.6211,
+            0.5056
           ]
         ],
         "hover_bounds": {
-          "x": 0.5967,
-          "y": 0.1725,
-          "w": 0.4033,
-          "h": 0.569
+          "x": 0.6211,
+          "y": 0.2819,
+          "w": 0.3789,
+          "h": 0.5
         },
-        "territory_area_px": 277333,
-        "visible_area_px": 235197,
-        "expansion_ratio": 1.179,
+        "territory_area_px": 119119,
+        "visible_area_px": 105568,
+        "expansion_ratio": 1.128,
         "neighbors": [
           {
-            "artifact_id": "module-curled-dark-illustrated-lining-with-",
-            "shared_edge_px": 1134,
+            "artifact_id": "module-curled-dark-lining-flap-with-illustr",
+            "shared_edge_px": 1868,
             "direction": "down",
-            "distance_px": 538.86
+            "distance_px": 216.87
+          },
+          {
+            "artifact_id": "module-translucent-frayed-veil-carrying-blu",
+            "shared_edge_px": 1099,
+            "direction": "up",
+            "distance_px": 267.75
           }
         ]
       }
     },
     {
-      "id": "module-small-pale-pleat-with-vertical-ribs-",
+      "id": "module-stepped-pale-blue-shirt-pleat-with-n",
       "kind": "module",
-      "label": "Small pale pleat with vertical ribs turning into stepped folds",
-      "artifact_type": "ribbed-stepped-pleat",
+      "label": "Stepped pale-blue shirt pleat with narrow ribs and mottled edges",
+      "artifact_type": "stepped-ribbed-fold",
       "bounds": {
-        "x": 0.386,
-        "y": 0.508,
-        "w": 0.145,
-        "h": 0.187
+        "x": 0.354,
+        "y": 0.083,
+        "w": 0.143,
+        "h": 0.275
       },
       "z_index": 22,
       "polygon": [
         [
-          0.409,
-          0.508
+          0.365,
+          0.083
         ],
         [
-          0.444,
-          0.516
+          0.388,
+          0.097
         ],
         [
-          0.474,
-          0.542
+          0.388,
+          0.114
         ],
         [
-          0.501,
-          0.567
+          0.416,
+          0.123
         ],
         [
-          0.518,
-          0.594
+          0.419,
+          0.133
         ],
         [
-          0.531,
-          0.621
+          0.451,
+          0.121
         ],
         [
-          0.519,
-          0.661
+          0.465,
+          0.138
         ],
         [
-          0.508,
-          0.695
+          0.47,
+          0.196
         ],
         [
-          0.473,
-          0.691
+          0.485,
+          0.236
         ],
         [
-          0.443,
-          0.677
+          0.497,
+          0.351
         ],
         [
-          0.435,
-          0.649
+          0.466,
+          0.348
         ],
         [
-          0.415,
-          0.624
+          0.462,
+          0.339
         ],
         [
-          0.395,
-          0.608
+          0.424,
+          0.358
         ],
         [
-          0.39,
-          0.564
+          0.414,
+          0.303
         ],
         [
-          0.386,
-          0.534
+          0.387,
+          0.292
+        ],
+        [
+          0.381,
+          0.235
+        ],
+        [
+          0.358,
+          0.231
+        ],
+        [
+          0.354,
+          0.166
         ]
       ],
       "cluster_id": "violet-ghost-collar-recess",
-      "mask_path": "/editions/2026-10-16-the-collar-holds-its-shape-v1/assets/masks/module-small-pale-pleat-with-vertical-ribs-.svg",
+      "mask_path": "/editions/2026-10-16-the-collar-holds-its-shape-v1/assets/masks/module-stepped-pale-blue-shirt-pleat-with-n.svg",
       "source_binding_ids": [
-        "binding-module-small-pale-pleat-with-vertical-ribs-"
+        "binding-module-stepped-pale-blue-shirt-pleat-with-n"
       ],
       "geometry": {
         "safe_hover_origin_px": [
-          470,
-          901
+          545,
+          143
         ],
         "safe_stage_window_origin_px": [
-          481,
-          924
+          559,
+          159
         ],
         "preferred_expansion_label": "right"
       },
@@ -561,447 +534,449 @@
         "schema_version": 1,
         "visible_polygon": [
           [
-            0.409,
-            0.508
+            0.365,
+            0.083
           ],
           [
-            0.444,
-            0.516
+            0.388,
+            0.097
           ],
           [
-            0.474,
-            0.542
+            0.388,
+            0.114
           ],
           [
-            0.501,
-            0.567
+            0.416,
+            0.123
           ],
           [
-            0.518,
-            0.594
+            0.419,
+            0.133
           ],
           [
-            0.531,
-            0.621
+            0.451,
+            0.121
           ],
           [
-            0.519,
-            0.661
+            0.465,
+            0.138
           ],
           [
-            0.508,
-            0.695
+            0.47,
+            0.196
           ],
           [
-            0.473,
-            0.691
+            0.485,
+            0.236
           ],
           [
-            0.443,
-            0.677
+            0.497,
+            0.351
           ],
           [
-            0.435,
-            0.649
+            0.466,
+            0.348
           ],
           [
-            0.415,
-            0.624
+            0.462,
+            0.339
           ],
           [
-            0.395,
-            0.608
+            0.424,
+            0.358
           ],
           [
-            0.39,
-            0.564
+            0.414,
+            0.303
           ],
           [
-            0.386,
-            0.534
+            0.387,
+            0.292
+          ],
+          [
+            0.381,
+            0.235
+          ],
+          [
+            0.358,
+            0.231
+          ],
+          [
+            0.354,
+            0.166
           ]
         ],
         "hover_polygon": [
           [
-            0.3584,
-            0.5339
+            0.332,
+            0.1625
           ],
           [
-            0.3799,
-            0.5085
+            0.343,
+            0.0819
           ],
           [
-            0.4082,
-            0.4896
+            0.3648,
+            0.0431
           ],
           [
-            0.4434,
-            0.4974
+            0.4508,
+            0.0819
           ],
           [
-            0.5273,
-            0.5651
+            0.4867,
+            0.1375
           ],
           [
-            0.5576,
-            0.6198
+            0.507,
+            0.2389
           ],
           [
-            0.5352,
-            0.6947
+            0.5188,
+            0.3472
           ],
           [
-            0.5078,
-            0.7129
+            0.4969,
+            0.3889
           ],
           [
-            0.4727,
-            0.709
+            0.4234,
+            0.3958
           ],
           [
-            0.415,
-            0.6764
+            0.3359,
+            0.2306
           ],
           [
-            0.3672,
-            0.6074
-          ],
-          [
-            0.3584,
-            0.5371
+            0.332,
+            0.1708
           ]
         ],
         "hover_bounds": {
-          "x": 0.3584,
-          "y": 0.4896,
-          "w": 0.2002,
-          "h": 0.224
+          "x": 0.332,
+          "y": 0.0431,
+          "w": 0.1875,
+          "h": 0.3542
         },
-        "territory_area_px": 46329,
-        "visible_area_px": 26869,
-        "expansion_ratio": 1.724,
-        "neighbors": []
+        "territory_area_px": 40976,
+        "visible_area_px": 22241,
+        "expansion_ratio": 1.842,
+        "neighbors": [
+          {
+            "artifact_id": "hero-rounded-hair-and-eye-fragment-traili",
+            "shared_edge_px": 318,
+            "direction": "left",
+            "distance_px": 298.6
+          }
+        ]
       }
     },
     {
-      "id": "module-translucent-folded-sleeve-with-blue-",
+      "id": "module-translucent-frayed-veil-carrying-blu",
       "kind": "module",
-      "label": "Translucent folded sleeve with blue-purple, rust, and navy bands",
+      "label": "Translucent frayed veil carrying blue, purple, rust and navy bands",
       "artifact_type": "banded-translucent-fabric",
       "bounds": {
-        "x": 0.03,
-        "y": 0.515,
-        "w": 0.277,
-        "h": 0.405
+        "x": 0.634,
+        "y": 0.025,
+        "w": 0.341,
+        "h": 0.279
       },
       "z_index": 23,
       "polygon": [
         [
-          0.181,
-          0.515
+          0.634,
+          0.042
         ],
         [
-          0.216,
-          0.522
+          0.657,
+          0.025
         ],
         [
-          0.244,
-          0.559
+          0.721,
+          0.037
         ],
         [
-          0.27,
-          0.594
+          0.766,
+          0.062
         ],
         [
-          0.307,
-          0.634
+          0.823,
+          0.066
         ],
         [
-          0.292,
-          0.689
+          0.882,
+          0.055
         ],
         [
-          0.303,
-          0.754
+          0.908,
+          0.064
         ],
         [
-          0.276,
-          0.825
+          0.916,
+          0.118
         ],
         [
-          0.252,
-          0.887
+          0.929,
+          0.153
         ],
         [
-          0.209,
-          0.92
+          0.94,
+          0.203
         ],
         [
-          0.166,
-          0.894
+          0.975,
+          0.265
         ],
         [
-          0.123,
-          0.848
+          0.914,
+          0.235
         ],
         [
-          0.078,
-          0.823
+          0.881,
+          0.263
         ],
         [
-          0.034,
-          0.795
+          0.861,
+          0.296
         ],
         [
-          0.03,
-          0.749
+          0.811,
+          0.304
         ],
         [
-          0.047,
-          0.68
+          0.765,
+          0.285
         ],
         [
-          0.119,
-          0.603
+          0.684,
+          0.285
         ],
         [
-          0.139,
-          0.544
+          0.658,
+          0.151
         ]
       ],
       "cluster_id": "violet-ghost-collar-recess",
-      "mask_path": "/editions/2026-10-16-the-collar-holds-its-shape-v1/assets/masks/module-translucent-folded-sleeve-with-blue-.svg",
+      "mask_path": "/editions/2026-10-16-the-collar-holds-its-shape-v1/assets/masks/module-translucent-frayed-veil-carrying-blu.svg",
       "source_binding_ids": [
-        "binding-module-translucent-folded-sleeve-with-blue-"
+        "binding-module-translucent-frayed-veil-carrying-blu"
       ],
       "geometry": {
         "safe_hover_origin_px": [
-          173,
-          1052
+          1030,
+          102
         ],
         "safe_stage_window_origin_px": [
-          195,
-          1102
+          1065,
+          118
         ],
-        "preferred_expansion_label": "up"
+        "preferred_expansion_label": "left"
       },
       "interaction_mesh": {
         "schema_version": 1,
         "visible_polygon": [
           [
-            0.181,
-            0.515
+            0.634,
+            0.042
           ],
           [
-            0.216,
-            0.522
+            0.657,
+            0.025
           ],
           [
-            0.244,
-            0.559
+            0.721,
+            0.037
           ],
           [
-            0.27,
-            0.594
+            0.766,
+            0.062
           ],
           [
-            0.307,
-            0.634
+            0.823,
+            0.066
           ],
           [
-            0.292,
-            0.689
+            0.882,
+            0.055
           ],
           [
-            0.303,
-            0.754
+            0.908,
+            0.064
           ],
           [
-            0.276,
-            0.825
+            0.916,
+            0.118
           ],
           [
-            0.252,
-            0.887
+            0.929,
+            0.153
           ],
           [
-            0.209,
-            0.92
+            0.94,
+            0.203
           ],
           [
-            0.166,
-            0.894
+            0.975,
+            0.265
           ],
           [
-            0.123,
-            0.848
+            0.914,
+            0.235
           ],
           [
-            0.078,
-            0.823
+            0.881,
+            0.263
           ],
           [
-            0.034,
-            0.795
+            0.861,
+            0.296
           ],
           [
-            0.03,
-            0.749
+            0.811,
+            0.304
           ],
           [
-            0.047,
-            0.68
+            0.765,
+            0.285
           ],
           [
-            0.119,
-            0.603
+            0.684,
+            0.285
           ],
           [
-            0.139,
-            0.544
+            0.658,
+            0.151
           ]
         ],
         "hover_polygon": [
           [
-            0.002,
-            0.7474
+            0.6117,
+            0.0417
           ],
           [
-            0.0195,
-            0.6797
+            0.6375,
+            0.0
           ],
           [
-            0.1113,
-            0.5436
+            0.725,
+            0.0
           ],
           [
-            0.1807,
-            0.4967
+            0.9078,
+            0.025
           ],
           [
-            0.2158,
-            0.5033
+            0.9297,
+            0.0639
           ],
           [
-            0.2432,
-            0.5215
+            0.9969,
+            0.2639
           ],
           [
-            0.334,
-            0.6335
+            0.975,
+            0.3028
           ],
           [
-            0.3301,
-            0.7546
+            0.8609,
+            0.3347
           ],
           [
-            0.2803,
-            0.8854
+            0.8109,
+            0.3417
           ],
           [
-            0.209,
-            0.9382
+            0.6836,
+            0.3236
           ],
           [
-            0.1367,
-            0.8932
+            0.6609,
+            0.2819
           ],
           [
-            0.0059,
-            0.7949
-          ],
-          [
-            0.002,
-            0.7539
+            0.6117,
+            0.0431
           ]
         ],
         "hover_bounds": {
-          "x": 0.002,
-          "y": 0.4967,
-          "w": 0.333,
-          "h": 0.4421
+          "x": 0.6117,
+          "y": 0.0,
+          "w": 0.3859,
+          "h": 0.3431
         },
-        "territory_area_px": 152264,
-        "visible_area_px": 114713,
-        "expansion_ratio": 1.327,
-        "neighbors": []
+        "territory_area_px": 88001,
+        "visible_area_px": 57721,
+        "expansion_ratio": 1.525,
+        "neighbors": [
+          {
+            "artifact_id": "hero-broad-red-orange-patterned-shoulder-",
+            "shared_edge_px": 1099,
+            "direction": "down",
+            "distance_px": 267.75
+          }
+        ]
       }
     },
     {
-      "id": "module-pale-angular-cuff-opening-around-a-b",
+      "id": "module-pale-angular-cuff-enclosing-a-brown-",
       "kind": "module",
-      "label": "Pale angular cuff opening around a brown fold and wine-red shadow",
+      "label": "Pale angular cuff enclosing a brown fold and wine-red shadow",
       "artifact_type": "angular-cuff-aperture",
       "bounds": {
-        "x": 0.4189,
-        "y": 0.7389,
-        "w": 0.1846,
-        "h": 0.1921
+        "x": 0.4188,
+        "y": 0.5639,
+        "w": 0.1414,
+        "h": 0.2972
       },
       "z_index": 24,
       "polygon": [
         [
-          0.4219,
-          0.8737
+          0.4211,
+          0.6569
         ],
         [
-          0.4541,
-          0.8014
+          0.5008,
+          0.5681
         ],
         [
-          0.4639,
-          0.7904
+          0.5555,
+          0.7292
         ],
         [
-          0.5576,
-          0.7409
+          0.557,
+          0.7681
         ],
         [
-          0.5625,
-          0.7415
+          0.5297,
+          0.8472
         ],
         [
-          0.5996,
-          0.8294
+          0.5086,
+          0.8556
         ],
         [
-          0.5996,
-          0.8405
+          0.4313,
+          0.7403
         ],
         [
-          0.5713,
-          0.916
-        ],
-        [
-          0.5537,
-          0.9284
-        ],
-        [
-          0.4414,
-          0.9115
-        ],
-        [
-          0.4258,
-          0.9017
-        ],
-        [
-          0.4219,
-          0.888
+          0.4211,
+          0.6583
         ]
       ],
       "cluster_id": "violet-ghost-collar-recess",
-      "mask_path": "/editions/2026-10-16-the-collar-holds-its-shape-v1/assets/masks/module-pale-angular-cuff-opening-around-a-b.svg",
+      "mask_path": "/editions/2026-10-16-the-collar-holds-its-shape-v1/assets/masks/module-pale-angular-cuff-enclosing-a-brown-.svg",
       "source_binding_ids": [
-        "binding-module-pale-angular-cuff-opening-around-a-b"
+        "binding-module-pale-angular-cuff-enclosing-a-brown-"
       ],
       "geometry": {
         "safe_hover_origin_px": [
-          523,
-          1258
+          627,
+          496
         ],
         "safe_stage_window_origin_px": [
-          538,
-          1275
+          641,
+          513
         ],
         "preferred_expansion_label": "up"
       },
@@ -1009,211 +984,191 @@
         "schema_version": 1,
         "visible_polygon": [
           [
-            0.4219,
-            0.8737
+            0.4211,
+            0.6569
           ],
           [
-            0.4541,
-            0.8014
+            0.5008,
+            0.5681
           ],
           [
-            0.4639,
-            0.7904
+            0.5555,
+            0.7292
           ],
           [
-            0.5576,
-            0.7409
+            0.557,
+            0.7681
           ],
           [
-            0.5625,
-            0.7415
+            0.5297,
+            0.8472
           ],
           [
-            0.5996,
-            0.8294
+            0.5086,
+            0.8556
           ],
           [
-            0.5996,
-            0.8405
+            0.4313,
+            0.7403
           ],
           [
-            0.5713,
-            0.916
-          ],
-          [
-            0.5537,
-            0.9284
-          ],
-          [
-            0.4414,
-            0.9115
-          ],
-          [
-            0.4258,
-            0.9017
-          ],
-          [
-            0.4219,
-            0.888
+            0.4211,
+            0.6583
           ]
         ],
         "hover_polygon": [
           [
-            0.3945,
-            0.873
+            0.3992,
+            0.6556
           ],
           [
-            0.4248,
-            0.8021
+            0.4211,
+            0.6167
           ],
           [
-            0.4355,
-            0.791
+            0.5008,
+            0.5292
           ],
           [
-            0.5566,
-            0.7227
+            0.5234,
+            0.5694
           ],
           [
-            0.5908,
-            0.7422
+            0.5758,
+            0.7236
           ],
           [
-            0.626,
-            0.8281
+            0.5781,
+            0.75
           ],
           [
-            0.5986,
-            0.9154
+            0.5781,
+            0.7681
           ],
           [
-            0.5527,
-            0.9466
+            0.5523,
+            0.8444
           ],
           [
-            0.4404,
-            0.9297
+            0.5297,
+            0.8847
           ],
           [
-            0.3984,
-            0.9017
+            0.5086,
+            0.8944
           ],
           [
-            0.3945,
-            0.8887
+            0.4094,
+            0.7403
+          ],
+          [
+            0.3992,
+            0.6597
           ]
         ],
         "hover_bounds": {
-          "x": 0.3945,
-          "y": 0.7227,
-          "w": 0.2324,
-          "h": 0.2246
+          "x": 0.3992,
+          "y": 0.5292,
+          "w": 0.1797,
+          "h": 0.3667
         },
-        "territory_area_px": 57020,
-        "visible_area_px": 36076,
-        "expansion_ratio": 1.581,
+        "territory_area_px": 37067,
+        "visible_area_px": 21751,
+        "expansion_ratio": 1.704,
         "neighbors": []
       }
     },
     {
-      "id": "module-curled-dark-illustrated-lining-with-",
+      "id": "module-curled-dark-lining-flap-with-illustr",
       "kind": "module",
-      "label": "Curled dark illustrated lining with white dots and colored flecks",
-      "artifact_type": "curled-illustrated-lining",
+      "label": "Curled dark lining flap with illustrated figures, white dots and colored flecks",
+      "artifact_type": "illustrated-curled-lining",
       "bounds": {
-        "x": 0.627,
-        "y": 0.633,
-        "w": 0.237,
-        "h": 0.351
+        "x": 0.749,
+        "y": 0.704,
+        "w": 0.212,
+        "h": 0.259
       },
       "z_index": 25,
       "polygon": [
         [
-          0.627,
-          0.637
+          0.754,
+          0.767
         ],
         [
-          0.681,
-          0.633
+          0.776,
+          0.735
         ],
         [
-          0.739,
-          0.646
+          0.813,
+          0.711
         ],
         [
-          0.79,
-          0.678
+          0.855,
+          0.704
         ],
         [
-          0.831,
-          0.722
+          0.894,
+          0.719
         ],
         [
-          0.856,
-          0.768
+          0.928,
+          0.752
         ],
         [
-          0.864,
-          0.806
+          0.952,
+          0.804
         ],
         [
-          0.85,
-          0.855
+          0.961,
+          0.857
         ],
         [
-          0.828,
+          0.949,
+          0.902
+        ],
+        [
+          0.921,
+          0.963
+        ],
+        [
+          0.887,
+          0.942
+        ],
+        [
+          0.851,
           0.911
         ],
         [
-          0.818,
-          0.95
+          0.813,
+          0.881
         ],
         [
-          0.838,
-          0.984
+          0.788,
+          0.872
         ],
         [
-          0.814,
-          0.976
+          0.758,
+          0.887
         ],
         [
-          0.789,
-          0.933
-        ],
-        [
-          0.771,
-          0.892
-        ],
-        [
-          0.746,
-          0.859
-        ],
-        [
-          0.722,
-          0.824
-        ],
-        [
-          0.668,
-          0.75
-        ],
-        [
-          0.696,
-          0.664
+          0.749,
+          0.828
         ]
       ],
       "cluster_id": "violet-ghost-collar-recess",
-      "mask_path": "/editions/2026-10-16-the-collar-holds-its-shape-v1/assets/masks/module-curled-dark-illustrated-lining-with-.svg",
+      "mask_path": "/editions/2026-10-16-the-collar-holds-its-shape-v1/assets/masks/module-curled-dark-lining-flap-with-illustr.svg",
       "source_binding_ids": [
-        "binding-module-curled-dark-illustrated-lining-with-"
+        "binding-module-curled-dark-lining-flap-with-illustr"
       ],
       "geometry": {
         "safe_hover_origin_px": [
-          763,
-          1199
+          1094,
+          585
         ],
         "safe_stage_window_origin_px": [
-          783,
-          1242
+          1100,
+          598
         ],
         "preferred_expansion_label": "up"
       },
@@ -1221,147 +1176,143 @@
         "schema_version": 1,
         "visible_polygon": [
           [
-            0.627,
-            0.637
+            0.754,
+            0.767
           ],
           [
-            0.681,
-            0.633
+            0.776,
+            0.735
           ],
           [
-            0.739,
-            0.646
+            0.813,
+            0.711
           ],
           [
-            0.79,
-            0.678
+            0.855,
+            0.704
           ],
           [
-            0.831,
-            0.722
+            0.894,
+            0.719
           ],
           [
-            0.856,
-            0.768
+            0.928,
+            0.752
           ],
           [
-            0.864,
-            0.806
+            0.952,
+            0.804
           ],
           [
-            0.85,
-            0.855
+            0.961,
+            0.857
           ],
           [
-            0.828,
+            0.949,
+            0.902
+          ],
+          [
+            0.921,
+            0.963
+          ],
+          [
+            0.887,
+            0.942
+          ],
+          [
+            0.851,
             0.911
           ],
           [
-            0.818,
-            0.95
+            0.813,
+            0.881
           ],
           [
-            0.838,
-            0.984
+            0.788,
+            0.872
           ],
           [
-            0.814,
-            0.976
+            0.758,
+            0.887
           ],
           [
-            0.789,
-            0.933
-          ],
-          [
-            0.771,
-            0.892
-          ],
-          [
-            0.746,
-            0.859
-          ],
-          [
-            0.722,
-            0.824
-          ],
-          [
-            0.668,
-            0.75
-          ],
-          [
-            0.696,
-            0.664
+            0.749,
+            0.828
           ]
         ],
         "hover_polygon": [
           [
-            0.5996,
-            0.6367
+            0.7266,
+            0.8236
           ],
           [
-            0.627,
-            0.6185
+            0.732,
+            0.7667
           ],
           [
-            0.6807,
-            0.6146
+            0.7547,
+            0.7264
           ],
           [
-            0.7383,
-            0.6276
+            0.8797,
+            0.6736
           ],
           [
-            0.8174,
-            0.6784
+            0.9273,
+            0.7125
           ],
           [
-            0.8584,
-            0.7227
+            0.9734,
+            0.8028
           ],
           [
-            0.8828,
-            0.7669
+            0.9828,
+            0.8556
           ],
           [
-            0.8906,
-            0.8073
+            0.9703,
+            0.9014
           ],
           [
-            0.8652,
-            0.9837
+            0.9437,
+            0.9597
           ],
           [
-            0.8418,
-            0.9993
+            0.9219,
+            0.9986
           ],
           [
-            0.8301,
-            0.9993
+            0.9156,
+            0.9986
           ],
           [
-            0.7861,
-            0.9759
+            0.7578,
+            0.925
           ],
           [
-            0.6406,
-            0.7507
+            0.7359,
+            0.8861
+          ],
+          [
+            0.7266,
+            0.8292
           ]
         ],
         "hover_bounds": {
-          "x": 0.5996,
-          "y": 0.6146,
-          "w": 0.292,
-          "h": 0.3854
+          "x": 0.7266,
+          "y": 0.6736,
+          "w": 0.257,
+          "h": 0.3264
         },
-        "territory_area_px": 91971,
-        "visible_area_px": 56635,
-        "expansion_ratio": 1.624,
+        "territory_area_px": 51970,
+        "visible_area_px": 33917,
+        "expansion_ratio": 1.532,
         "neighbors": [
           {
             "artifact_id": "hero-broad-red-orange-patterned-shoulder-",
-            "shared_edge_px": 1134,
+            "shared_edge_px": 1868,
             "direction": "up",
-            "distance_px": 538.86
+            "distance_px": 216.87
           }
         ]
       }

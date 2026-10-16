@@ -5,36 +5,37 @@
     "interpretation_id": "interp-2026-10-16-the-collar-holds-its-shape-v1"
   },
   "interaction_world": {
-    "class": "object-native",
-    "primary_behavior": "mechanical-reveal-system",
-    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
     "choreography_rule": "anchor-and-satellites"
   },
   "bundle": {
     "primary": [
-      "mechanical-reveal-system"
+      "paint-bleed-reveal"
     ],
     "secondary": [
-      "warped-paper-fragment",
-      "threshold-scan-reveal"
+      "restoration-scan",
+      "pigment-crack-annotation"
     ],
     "wildcard": []
   },
   "runtime_safe_subset": [
-    "mechanical-reveal-system",
-    "warped-paper-fragment",
-    "threshold-scan-reveal",
-    "restoration-scan"
+    "restoration-scan",
+    "threshold-scan-reveal"
   ],
-  "future_only_subset": [],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
   "rejected": [
     {
-      "technique": "light-path-reveal",
-      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
     },
     {
-      "technique": "light-path-reveal",
-      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
     }
   ],
   "targets": [
@@ -57,7 +58,7 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (portrait-erasure) selected from interpretation."
+      "reason": "Artifact candidate (portrait-erasure-mark) selected from interpretation."
     },
     {
       "target_id": "hero-broad-red-orange-patterned-shoulder-",
@@ -81,9 +82,9 @@
       "reason": "Artifact candidate (washed-patterned-fabric) selected from interpretation."
     },
     {
-      "target_id": "module-small-pale-pleat-with-vertical-ribs-",
+      "target_id": "module-stepped-pale-blue-shirt-pleat-with-n",
       "target_kind": "artifact",
-      "artifact_id": "module-small-pale-pleat-with-vertical-ribs-",
+      "artifact_id": "module-stepped-pale-blue-shirt-pleat-with-n",
       "priority": 3,
       "techniques": [
         "threshold-scan-reveal",
@@ -99,12 +100,12 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (ribbed-stepped-pleat) selected from interpretation."
+      "reason": "Artifact candidate (stepped-ribbed-fold) selected from interpretation."
     },
     {
-      "target_id": "module-translucent-folded-sleeve-with-blue-",
+      "target_id": "module-translucent-frayed-veil-carrying-blu",
       "target_kind": "artifact",
-      "artifact_id": "module-translucent-folded-sleeve-with-blue-",
+      "artifact_id": "module-translucent-frayed-veil-carrying-blu",
       "priority": 4,
       "techniques": [
         "threshold-scan-reveal",
@@ -123,9 +124,9 @@
       "reason": "Artifact candidate (banded-translucent-fabric) selected from interpretation."
     },
     {
-      "target_id": "module-pale-angular-cuff-opening-around-a-b",
+      "target_id": "module-pale-angular-cuff-enclosing-a-brown-",
       "target_kind": "artifact",
-      "artifact_id": "module-pale-angular-cuff-opening-around-a-b",
+      "artifact_id": "module-pale-angular-cuff-enclosing-a-brown-",
       "priority": 5,
       "techniques": [
         "threshold-scan-reveal",
@@ -144,9 +145,9 @@
       "reason": "Artifact candidate (angular-cuff-aperture) selected from interpretation."
     },
     {
-      "target_id": "module-curled-dark-illustrated-lining-with-",
+      "target_id": "module-curled-dark-lining-flap-with-illustr",
       "target_kind": "artifact",
-      "artifact_id": "module-curled-dark-illustrated-lining-with-",
+      "artifact_id": "module-curled-dark-lining-flap-with-illustr",
       "priority": 6,
       "techniques": [
         "threshold-scan-reveal",
@@ -162,13 +163,13 @@
         "drag": false,
         "hold": false
       },
-      "reason": "Artifact candidate (curled-illustrated-lining) selected from interpretation."
+      "reason": "Artifact candidate (illustrated-curled-lining) selected from interpretation."
     }
   ],
   "global_recommendation": [
-    "mechanical-reveal-system",
-    "warped-paper-fragment",
-    "threshold-scan-reveal"
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
   ],
   "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
 }

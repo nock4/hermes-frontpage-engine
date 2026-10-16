@@ -1,4 +1,5 @@
 import path from 'node:path'
+import { assertLandscapePlate } from '../lib/landscape-policy.mjs'
 
 export function createMapArtifactsStep({ apiKey, context, inspectGeneratedPlate, options, root, runDir }) {
   return {
@@ -6,6 +7,7 @@ export function createMapArtifactsStep({ apiKey, context, inspectGeneratedPlate,
     tool: 'Hermes structured vision JSON',
     command: `internal:hermes-vision-map --requested-model ${options.model}`,
     run: async () => {
+      await assertLandscapePlate(context.plate.outputPath)
       context.analysis = await inspectGeneratedPlate({
         payload: context.payload,
         platePath: context.plate.outputPath,

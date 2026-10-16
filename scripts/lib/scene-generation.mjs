@@ -1,4 +1,5 @@
 import crypto from 'node:crypto'
+import { assertLandscapePlate, landscapeImageSize } from './landscape-policy.mjs'
 import { sourceGeometryGuard, withoutSourceUiCues } from './source-image-geometry.mjs'
 import fsSync from 'node:fs'
 import fs from 'node:fs/promises'
@@ -262,75 +263,16 @@ function parseRequestedImageSize(size) {
 
 async function normalizeGeneratedPlateGeometry(outputPath, requestedSize) {
   const requested = parseRequestedImageSize(requestedSize)
-  const probe = await runImageGeometryNormalizer(outputPath, requested, false)
-  if (!probe?.ok) return { requested, normalized: false, error: probe?.error || 'unreadable image' }
-  if (probe.width === requested.width && probe.height === requested.height) {
-    return { requested, actual_before: { width: probe.width, height: probe.height }, actual_after: { width: probe.width, height: probe.height }, normalized: false }
-  }
-  const normalized = await runImageGeometryNormalizer(outputPath, requested, true)
-  if (!normalized?.ok) {
-    return { requested, actual_before: { width: probe.width, height: probe.height }, normalized: false, error: normalized?.error || 'normalization failed' }
-  }
-  return {
-    requested,
-    actual_before: { width: probe.width, height: probe.height },
-    actual_after: { width: normalized.width, height: normalized.height },
-    normalized: true,
-    method: 'center-crop-cover',
-  }
-}
-
-function runImageGeometryNormalizer(outputPath, requested, normalize) {
-  const script = String.raw`
-import json, sys
-from pathlib import Path
-from PIL import Image
-image_path = Path(sys.argv[1])
-width = int(sys.argv[2])
-height = int(sys.argv[3])
-normalize = sys.argv[4] == '1'
-try:
-    image = Image.open(image_path).convert('RGB')
-    before = {'ok': True, 'width': image.width, 'height': image.height}
-    if normalize and (image.width != width or image.height != height):
-        scale = max(width / image.width, height / image.height)
-        resized = image.resize((max(1, round(image.width * scale)), max(1, round(image.height * scale))), Image.Resampling.LANCZOS)
-        left = max(0, (resized.width - width) // 2)
-        top = max(0, (resized.height - height) // 2)
-        canvas = resized.crop((left, top, left + width, top + height))
-        canvas.save(image_path)
-        before.update({'width': canvas.width, 'height': canvas.height})
-    print(json.dumps(before))
-except Exception as exc:
-    print(json.dumps({'ok': False, 'error': str(exc)}))
-`
-  return runPythonJson(script, [outputPath, String(requested.width), String(requested.height), normalize ? '1' : '0'])
-}
-
-async function runPythonJson(script, args) {
-  return await new Promise((resolve) => {
-    const child = spawn(hermesImagePython, ['-c', script, ...args], { stdio: ['ignore', 'pipe', 'pipe'] })
-    let stdout = ''
-    let stderr = ''
-    child.stdout.on('data', (chunk) => { stdout += chunk })
-    child.stderr.on('data', (chunk) => { stderr += chunk })
-    child.on('close', (code) => {
-      if (code !== 0) return resolve({ ok: false, error: stderr || `python exited ${code}` })
-      try {
-        resolve(JSON.parse(stdout))
-      } catch {
-        resolve({ ok: false, error: stdout || stderr || 'python returned invalid json' })
-      }
-    })
-    child.on('error', (error) => resolve({ ok: false, error: error.message }))
-  })
+  const actual = await assertLandscapePlate(outputPath)
+  return { requested, actual_before: actual, actual_after: actual, normalized: false }
 }
 
 export async function generateScenePlate(
   { payload, apiKey, imageModel, imageBackend, imageSize, imageQuality },
   runDir,
-  { writeJson, runHermesImageCommand = runJsonCommand, sleep = delay, normalizePlateGeometry = normalizeGeneratedPlateGeometry } = {},
+  { writeJson, runHermesImageCommand = runJsonCommand, sleep = delay } = {},
 ) {
+  imageSize = landscapeImageSize(imageSize)
   if (payload?.source_contract?.mode === 'source-image') {
     assertSourceContractPromptSafe(payload.source_contract)
   }
@@ -344,26 +286,8 @@ export async function generateScenePlate(
   }, null, 2)}\n`, 'utf8')
 
   if (process.env.DFE_SOURCE_PRESERVE_PLATE === '1' && process.env.DFE_DETERMINISTIC_SOURCE_PRESERVE_PLATE === '1' && payload.source_image_fingerprints?.[0]?.image_url) {
-    await synthesizeSourcePreservingPlate(payload.source_image_fingerprints[0].image_url, outputPath, imageSize)
-    await writeJson(path.join(runDir, 'scene-generation.json'), {
-      backend: 'source-preserve-fallback',
-      model: 'deterministic-source-preserve-plate',
-      size: imageSize,
-      quality: imageQuality || null,
-      generated_at: new Date().toISOString(),
-      prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
-      asset_path: outputPath,
-      source_image: payload.source_image_fingerprints[0].image_url,
-      note: 'Used only for explicit anchor-source recovery when generative attempts repeatedly lost source framing.',
-    })
-    return {
-      backend: 'source-preserve-fallback',
-      model: 'deterministic-source-preserve-plate',
-      size: imageSize,
-      quality: imageQuality || null,
-      outputPath,
-      prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
-    }
+    throw new Error('Landscape generation requires source-native recomposition; deterministic source padding/cropping is not permitted.')
+
   }
 
 
@@ -404,7 +328,7 @@ export async function generateScenePlate(
         : 'source-field',
       modality: hermesResult.modality || null,
       aspect_ratio: hermesResult.aspect_ratio || imageAspectRatioFromSize(imageSize),
-      output_geometry: await normalizePlateGeometry(outputPath, imageSize),
+      output_geometry: await normalizeGeneratedPlateGeometry(outputPath, imageSize),
       attempts: hermesAttempts,
     })
 
@@ -455,7 +379,7 @@ export async function generateScenePlate(
       }
 
       await fs.writeFile(outputPath, buffer)
-      const outputGeometry = await normalizePlateGeometry(outputPath, body.size)
+      const outputGeometry = await normalizeGeneratedPlateGeometry(outputPath, body.size)
       await writeJson(path.join(runDir, 'scene-generation.json'), {
         backend: 'openai',
         model: imageModel,
@@ -476,6 +400,7 @@ export async function generateScenePlate(
         prompt_sha256: crypto.createHash('sha256').update(prompt).digest('hex'),
       }
     } catch (error) {
+      if (error.code === 'DFE_LANDSCAPE_REQUIRED') throw error
       lastError = error
     }
   }
@@ -483,60 +408,6 @@ export async function generateScenePlate(
   throw lastError || new Error('OpenAI image generation failed.')
 }
 
-
-async function synthesizeSourcePreservingPlate(sourceImageUrl, outputPath, imageSize = '1536x1024') {
-  await fs.mkdir(path.dirname(outputPath), { recursive: true })
-  const script = String.raw`
-import sys, urllib.request
-from PIL import Image, ImageFilter
-source_url, output_path, image_size = sys.argv[1:4]
-def open_source(url):
-    if url.startswith('/'):
-        return Image.open(url).convert('RGB')
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (compatible; DailyFrontpage/1.0)', 'Accept': 'image/avif,image/webp,image/png,image/jpeg,image/*,*/*;q=0.5'})
-    with urllib.request.urlopen(req, timeout=25) as response:
-        return Image.open(response).convert('RGB')
-source = open_source(source_url)
-
-try:
-    canvas_w, canvas_h = [int(part) for part in image_size.lower().split('x', 1)]
-except Exception:
-    canvas_w, canvas_h = 1536, 1024
-bg = source.copy()
-scale = max(canvas_w / bg.width, canvas_h / bg.height)
-bg = bg.resize((int(bg.width * scale), int(bg.height * scale)), Image.Resampling.LANCZOS)
-left = max(0, (bg.width - canvas_w) // 2)
-top = max(0, (bg.height - canvas_h) // 2)
-bg = bg.crop((left, top, left + canvas_w, top + canvas_h)).filter(ImageFilter.GaussianBlur(28))
-field = source.copy()
-field.thumbnail((canvas_h, canvas_h), Image.Resampling.LANCZOS)
-plate = bg.copy()
-x = (canvas_w - field.width) // 2
-y = (canvas_h - field.height) // 2
-plate.paste(field, (x, y))
-edge = 18
-mask = Image.new('L', (field.width, field.height), 255)
-px = mask.load()
-for yy in range(field.height):
-    for xx in range(field.width):
-        d = min(xx, yy, field.width - 1 - xx, field.height - 1 - yy)
-        if d < edge:
-            px[xx, yy] = int(225 + 30 * d / edge)
-plate.paste(field, (x, y), mask)
-plate.save(output_path)
-print(output_path)
-`
-  await new Promise((resolve, reject) => {
-    const child = spawn(hermesImagePython, ['-c', script, sourceImageUrl, outputPath, imageSize], { stdio: ['ignore', 'pipe', 'pipe'] })
-    let stderr = ''
-    child.stderr.on('data', (chunk) => { stderr += chunk.toString() })
-    child.on('error', reject)
-    child.on('close', (code) => {
-      if (code === 0) resolve()
-      else reject(new Error(stderr || `${hermesImagePython} exited ${code}`))
-    })
-  })
-}
 
 function hermesImageAttemptCount() {
   const parsed = Number.parseInt(process.env.DFE_HERMES_IMAGE_ATTEMPTS || '', 10)
@@ -1108,6 +979,7 @@ export function buildSceneImagePrompt(payload) {
   ]).join(' ')
 
   const prompt = [
+    'OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.',
     hasSourceImage
       ? (process.env.DFE_SOURCE_IMAGE_EDIT_INPUT === '1'
         ? 'Use the attached source image as inspiration and material grammar, not as a picture to recreate.'

@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { platePng } from '../fixtures/plate-png.mjs'
 import { inspectedDecision } from '../fixtures/creative-inspection.mjs'
 import os from 'node:os'
 import path from 'node:path'
@@ -23,7 +24,7 @@ describe('edition package assembly', () => {
       current_edition_id: null,
       editions: [],
     }))
-    await fs.writeFile(platePath, 'fake image bytes')
+    await fs.writeFile(platePath, platePng(1536, 1024))
 
     const sourceUrl = 'https://example.com/gallery/story'
     const input = {
@@ -172,8 +173,11 @@ describe('edition package assembly', () => {
     { count: 6, publish: false, invalidBounds: true },
     { count: 6, publish: false }, { count: 7, publish: true },
     { count: 7, publish: false, portrait: true },
+    { count: 7, publish: true, portrait: true },
+    { count: 7, publish: true, square: true },
+    { count: 7, publish: true, corrupt: true },
     { count: 6, publish: false, analysisPortrait: true },
-  ])('requires real mapped objects before writes: %j', async ({ count, publish, mode = 'vision', fallbackCount = 0, portrait = false, analysisPortrait = false, invalidBounds = false }) => {
+  ])('requires real mapped objects before writes: %j', async ({ count, publish, mode = 'vision', fallbackCount = 0, portrait = false, square = false, corrupt = false, analysisPortrait = false, invalidBounds = false }) => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-package-fallback-'))
     const publicEditionsDir = path.join(root, 'public', 'editions')
     const runDir = path.join(root, 'tmp', 'run')
@@ -184,7 +188,7 @@ describe('edition package assembly', () => {
       current_edition_id: null,
       editions: [],
     }))
-    await fs.writeFile(platePath, 'fake image bytes')
+    await fs.writeFile(platePath, platePng(1536, 1024))
 
     const artifacts = Array.from({ length: 7 }, (_, index) => ({
       label: `Pocket ${index + 1}`,
@@ -260,22 +264,27 @@ describe('edition package assembly', () => {
       confidence: 0.9, visual_evidence: `Distinct pigment mark ${index + 1}`,
     }))
     if (invalidBounds) delete input.analysis.detected_objects[0].bounds
-    if (portrait) {
-      // PNG header geometry must override both the requested size and stale analysis.
-      const header = Buffer.alloc(24)
-      Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]).copy(header)
-      header.writeUInt32BE(1024, 16)
-      header.writeUInt32BE(1536, 20)
-      await fs.writeFile(platePath, header)
+    if (portrait || square || corrupt) {
+      // Actual bytes override both requested size and stale analysis.
+      await fs.writeFile(platePath, corrupt ? platePng().subarray(0, 24) : platePng(1024, square ? 1024 : 1536))
       input.analysis.viewport = { base_width: 1536, base_height: 1024, aspect_ratio: '1536:1024' }
     }
-    if (analysisPortrait) input.analysis.viewport = { base_width: 1024, base_height: 1536, aspect_ratio: '1024:1536' }
+    if (analysisPortrait) {
+      input.analysis.viewport = { base_width: 1024, base_height: 1536, aspect_ratio: '1024:1536' }
+      await fs.writeFile(platePath, platePng(1200, 800))
+    }
     const beforeManifest = await fs.readFile(path.join(publicEditionsDir, 'index.json'), 'utf8')
     if (count < 6 || mode === 'planned-artifact-fallback' || fallbackCount || invalidBounds) {
       await expect(assembleEditionPackage(input)).rejects.toThrow(/at least 6 real detected mapped objects/i)
       expect(await fs.readdir(publicEditionsDir)).toEqual(['index.json'])
       expect(await fs.readFile(path.join(publicEditionsDir, 'index.json'), 'utf8')).toBe(beforeManifest)
       expect(await fs.readdir(runDir)).toEqual(['plate.png'])
+      return
+    }
+    if (portrait || square || corrupt) {
+      await expect(assembleEditionPackage(input)).rejects.toThrow(/landscape/i)
+      expect(await fs.readdir(publicEditionsDir)).toEqual(['index.json'])
+      expect(await fs.readFile(path.join(publicEditionsDir, 'index.json'), 'utf8')).toBe(beforeManifest)
       return
     }
     const result = await assembleEditionPackage(input)
@@ -289,15 +298,17 @@ describe('edition package assembly', () => {
     expect(analysis.detected_objects).toEqual(input.analysis.detected_objects)
     expect(analysis.fallback_detected_object_count || 0).toBe(0)
     expect(analysis.mapping_note).toBeUndefined()
-    if (portrait || analysisPortrait) {
-      const viewport = { base_width: 1024, base_height: 1536, aspect_ratio: '1024:1536' }
-      expect(artifactMap.viewport).toEqual(viewport)
-      expect(analysis.viewport).toEqual(viewport)
-      expect(artifactMap.artifacts[0].geometry.safe_hover_origin_px).toEqual([128, 372])
-      expect(artifactMap.artifacts[0].geometry.safe_stage_window_origin_px).toEqual([132, 384])
-      const mask = await fs.readFile(path.join(editionDir, 'assets/masks', `${artifactMap.artifacts[0].id}.svg`), 'utf8')
-      expect(mask).toContain('viewBox="0 0 1024 1536"')
-      expect(mask).toContain('102.4,307.2')
+    expect(artifactMap.viewport).toEqual(analysisPortrait
+      ? { base_width: 1200, base_height: 800, aspect_ratio: '1200:800' }
+      : { base_width: 1536, base_height: 1024, aspect_ratio: '1536:1024' })
+    expect(analysis.viewport).toEqual(artifactMap.viewport)
+    if (analysisPortrait) {
+      const first = artifactMap.artifacts[0]
+      expect(first.geometry.safe_hover_origin_px).toEqual([150, 194])
+      expect(first.geometry.safe_stage_window_origin_px).toEqual([155, 200])
+      const mask = await fs.readFile(path.join(editionDir, 'assets', 'masks', `${first.id}.svg`), 'utf8')
+      expect(mask).toContain('viewBox="0 0 1200 800"')
+      expect(mask).toContain('points="120,160 180,160 180,240 120,240"')
     }
   })
 })
