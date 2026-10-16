@@ -1,0 +1,279 @@
+{
+  "interpretation_id": "interp-2026-10-16-the-collar-holds-its-shape-v1",
+  "edition_id": "2026-10-16-the-collar-holds-its-shape-v1",
+  "plate_read_timestamp": "2026-10-16T08:38:29.620Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A fragmented photographic portrait floats on a near-black purple field. Curled dark hair and legible eyes dissolve into long pink vertical erasures. A large red-orange patterned shoulder occupies the right edge; detached pale collar points, a ribbed pleat, a translucent banded sleeve, a brown-and-wine cuff aperture, and a curled illustrated lining remain separated by dark gaps. All six planned anchors have visible counterparts, although some translated details are less literal than their descriptions.",
+    "dominant_spatial_mode": "contained",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Vertical 500:591 low-resolution portrait fragments on black plum. A large side-swept hair-and-eye fragment faces a broad red-orange patterned shoulder across a dark interval. Detached pale-blue collar points cut pink facial haze bridging the fragments. Smaller stepped pleats, a banded violet veil, a pale angular cuff opening and a dark speckled lining remain distinct. A tiny edged white fragment floats below.",
+      "A fragmented photographic portrait floats on a near-black purple field. Curled dark hair and legible eyes dissolve into long pink vertical erasures. A large red-orange patterned shoulder occupies the right edge; detached pale collar points, a ribbed pleat, a translucent banded sleeve, a brown-and-wine cuff aperture, and a curled illustrated lining remain separated by dark gaps. All six planned anchors have visible counterparts, although some translated details are less literal than their descriptions.",
+      "collar-underfold",
+      "violet-drag",
+      "displaced-likeness"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Rounded hair-and-eye fragment trailing vertically erased pink flesh",
+      "Broad red-orange patterned shoulder with continuous color across folds",
+      "Small pale pleat with vertical ribs turning into stepped folds",
+      "Translucent folded sleeve with blue-purple, rust, and navy bands",
+      "Pale angular cuff opening around a brown fold and wine-red shadow",
+      "Curled dark illustrated lining with white dots and colored flecks"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "violet-ghost-collar-recess",
+      "A rounded hair-and-eye fragment trails vertically erased pink flesh.",
+      "A broad red-orange shoulder bears a continuous wash over its patterned folds.",
+      "A small stepped shirt pleat carries narrow vertical ribs and mottled edges.",
+      "A translucent shoulder veil holds soft blue, purple, rust and navy bands.",
+      "A pale angular cuff opening encloses a brown inner fold and wine-red shadow.",
+      "A curled dark lining flap holds tangled figures, white dots and colored flecks.",
+      "Hair-and-eye fragment with trailing pink erasure"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: violet-ghost-collar-recess.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-rounded-hair-and-eye-fragment-traili",
+      "kind": "hero",
+      "type": "portrait-erasure",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.063,
+        "y": 0,
+        "w": 0.407,
+        "h": 0.478
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-broad-red-orange-patterned-shoulder-",
+      "kind": "hero",
+      "type": "washed-patterned-fabric",
+      "strength": 0.9199999999999999,
+      "bounds": {
+        "x": 0.627,
+        "y": 0.1921,
+        "w": 0.3721,
+        "h": 0.5293
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-small-pale-pleat-with-vertical-ribs-",
+      "kind": "module",
+      "type": "ribbed-stepped-pleat",
+      "strength": 0.72,
+      "bounds": {
+        "x": 0.386,
+        "y": 0.508,
+        "w": 0.145,
+        "h": 0.187
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-translucent-folded-sleeve-with-blue-",
+      "kind": "module",
+      "type": "banded-translucent-fabric",
+      "strength": 0.6900000000000001,
+      "bounds": {
+        "x": 0.03,
+        "y": 0.515,
+        "w": 0.277,
+        "h": 0.405
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-angular-cuff-opening-around-a-b",
+      "kind": "module",
+      "type": "angular-cuff-aperture",
+      "strength": 0.66,
+      "bounds": {
+        "x": 0.4189,
+        "y": 0.7389,
+        "w": 0.1846,
+        "h": 0.1921
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-curled-dark-illustrated-lining-with-",
+      "kind": "module",
+      "type": "curled-illustrated-lining",
+      "strength": 0.63,
+      "bounds": {
+        "x": 0.627,
+        "y": 0.633,
+        "w": 0.237,
+        "h": 0.351
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-rounded-hair-and-eye-fragment-traili-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.063,
+        "y": 0,
+        "w": 0.407,
+        "h": 0.478
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-broad-red-orange-patterned-shoulder--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.627,
+        "y": 0.1921,
+        "w": 0.3721,
+        "h": 0.5293
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-small-pale-pleat-with-vertical-ribs--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.508,
+        "w": 0.145,
+        "h": 0.187
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-translucent-folded-sleeve-with-blue--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.03,
+        "y": 0.515,
+        "w": 0.277,
+        "h": 0.405
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-angular-cuff-opening-around-a-b-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4189,
+        "y": 0.7389,
+        "w": 0.1846,
+        "h": 0.1921
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-curled-dark-illustrated-lining-with--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.627,
+        "y": 0.633,
+        "w": 0.237,
+        "h": 0.351
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

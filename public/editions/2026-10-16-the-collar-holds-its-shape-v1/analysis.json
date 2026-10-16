@@ -1,0 +1,531 @@
+{
+  "analysis_id": "analysis-2026-10-16-the-collar-holds-its-shape-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A fragmented photographic portrait floats on a near-black purple field. Curled dark hair and legible eyes dissolve into long pink vertical erasures. A large red-orange patterned shoulder occupies the right edge; detached pale collar points, a ribbed pleat, a translucent banded sleeve, a brown-and-wine cuff aperture, and a curled illustrated lining remain separated by dark gaps. All six planned anchors have visible counterparts, although some translated details are less literal than their descriptions.",
+  "usable_surfaces": [
+    "Hair-and-eye fragment with trailing pink erasure",
+    "Red-orange wash across patterned shoulder folds",
+    "Pale stepped pleat with narrow vertical ribs",
+    "Translucent blue-purple and rust banded sleeve",
+    "Pale cuff rim around brown and wine-red interior",
+    "Curled dark lining with small figures and bright flecks"
+  ],
+  "detected_objects": [
+    {
+      "label": "Rounded hair-and-eye fragment trailing vertically erased pink flesh",
+      "artifact_type": "portrait-erasure",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.063,
+        "y": 0,
+        "w": 0.407,
+        "h": 0.478
+      },
+      "polygon": [
+        [
+          0.096,
+          0
+        ],
+        [
+          0.389,
+          0
+        ],
+        [
+          0.448,
+          0.034
+        ],
+        [
+          0.47,
+          0.088
+        ],
+        [
+          0.45,
+          0.14
+        ],
+        [
+          0.416,
+          0.169
+        ],
+        [
+          0.403,
+          0.229
+        ],
+        [
+          0.37,
+          0.275
+        ],
+        [
+          0.337,
+          0.322
+        ],
+        [
+          0.31,
+          0.478
+        ],
+        [
+          0.274,
+          0.451
+        ],
+        [
+          0.242,
+          0.354
+        ],
+        [
+          0.191,
+          0.297
+        ],
+        [
+          0.151,
+          0.232
+        ],
+        [
+          0.137,
+          0.184
+        ],
+        [
+          0.083,
+          0.162
+        ],
+        [
+          0.063,
+          0.1
+        ],
+        [
+          0.075,
+          0.039
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "A rounded mass of curly brown hair surrounds two clearly visible eyes. The cheeks and lower face become a pink painted veil with uneven vertical streaks tapering downward. The hair meets the top image boundary; the polygon follows the outer hair silhouette and the substantial pink trail rather than including the empty neck area."
+    },
+    {
+      "label": "Broad red-orange patterned shoulder with continuous color across folds",
+      "artifact_type": "washed-patterned-fabric",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.638,
+        "y": 0.195,
+        "w": 0.362,
+        "h": 0.555
+      },
+      "polygon": [
+        [
+          0.638,
+          0.412
+        ],
+        [
+          0.657,
+          0.333
+        ],
+        [
+          0.696,
+          0.267
+        ],
+        [
+          0.738,
+          0.221
+        ],
+        [
+          0.777,
+          0.195
+        ],
+        [
+          0.852,
+          0.201
+        ],
+        [
+          0.937,
+          0.221
+        ],
+        [
+          1,
+          0.244
+        ],
+        [
+          1,
+          0.707
+        ],
+        [
+          0.966,
+          0.75
+        ],
+        [
+          0.92,
+          0.727
+        ],
+        [
+          0.875,
+          0.694
+        ],
+        [
+          0.831,
+          0.652
+        ],
+        [
+          0.793,
+          0.594
+        ],
+        [
+          0.738,
+          0.575
+        ],
+        [
+          0.69,
+          0.541
+        ],
+        [
+          0.682,
+          0.468
+        ],
+        [
+          0.646,
+          0.433
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "A raised shoulder at upper right carries orange-red color over a crest, recessed fold, and broad patterned outer face. Dark floral and paisley-like motifs remain visible beneath the wash. Its inner and lower edges dissolve into streaked pigment; the outer shoulder is cropped by the right image boundary."
+    },
+    {
+      "label": "Small pale pleat with vertical ribs turning into stepped folds",
+      "artifact_type": "ribbed-stepped-pleat",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.386,
+        "y": 0.508,
+        "w": 0.145,
+        "h": 0.187
+      },
+      "polygon": [
+        [
+          0.409,
+          0.508
+        ],
+        [
+          0.444,
+          0.516
+        ],
+        [
+          0.474,
+          0.542
+        ],
+        [
+          0.501,
+          0.567
+        ],
+        [
+          0.518,
+          0.594
+        ],
+        [
+          0.531,
+          0.621
+        ],
+        [
+          0.519,
+          0.661
+        ],
+        [
+          0.508,
+          0.695
+        ],
+        [
+          0.473,
+          0.691
+        ],
+        [
+          0.443,
+          0.677
+        ],
+        [
+          0.435,
+          0.649
+        ],
+        [
+          0.415,
+          0.624
+        ],
+        [
+          0.395,
+          0.608
+        ],
+        [
+          0.39,
+          0.564
+        ],
+        [
+          0.386,
+          0.534
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "Below the detached collar, a narrow pale fabric island contains closely spaced upright ribs. These bend outward and descend in stepped, stacked folds. Blue-gray mottling and a ragged pale perimeter distinguish it from the larger collar surfaces."
+    },
+    {
+      "label": "Translucent folded sleeve with blue-purple, rust, and navy bands",
+      "artifact_type": "banded-translucent-fabric",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.03,
+        "y": 0.515,
+        "w": 0.277,
+        "h": 0.405
+      },
+      "polygon": [
+        [
+          0.181,
+          0.515
+        ],
+        [
+          0.216,
+          0.522
+        ],
+        [
+          0.244,
+          0.559
+        ],
+        [
+          0.27,
+          0.594
+        ],
+        [
+          0.307,
+          0.634
+        ],
+        [
+          0.292,
+          0.689
+        ],
+        [
+          0.303,
+          0.754
+        ],
+        [
+          0.276,
+          0.825
+        ],
+        [
+          0.252,
+          0.887
+        ],
+        [
+          0.209,
+          0.92
+        ],
+        [
+          0.166,
+          0.894
+        ],
+        [
+          0.123,
+          0.848
+        ],
+        [
+          0.078,
+          0.823
+        ],
+        [
+          0.034,
+          0.795
+        ],
+        [
+          0.03,
+          0.749
+        ],
+        [
+          0.047,
+          0.68
+        ],
+        [
+          0.119,
+          0.603
+        ],
+        [
+          0.139,
+          0.544
+        ]
+      ],
+      "confidence": 0.89,
+      "visual_evidence": "An isolated sleeve-like veil on the lower left contains translucent navy and violet folds crossed by muted rust and pink bands. Its bent silhouette and layered bands are visible, but the bands curve and intersect rather than forming a simple stack of horizontal stripes."
+    },
+    {
+      "label": "Pale angular cuff opening around a brown fold and wine-red shadow",
+      "artifact_type": "angular-cuff-aperture",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.418,
+        "y": 0.737,
+        "w": 0.185,
+        "h": 0.196
+      },
+      "polygon": [
+        [
+          0.561,
+          0.737
+        ],
+        [
+          0.576,
+          0.75
+        ],
+        [
+          0.591,
+          0.784
+        ],
+        [
+          0.603,
+          0.825
+        ],
+        [
+          0.59,
+          0.868
+        ],
+        [
+          0.568,
+          0.933
+        ],
+        [
+          0.533,
+          0.925
+        ],
+        [
+          0.481,
+          0.922
+        ],
+        [
+          0.44,
+          0.91
+        ],
+        [
+          0.42,
+          0.896
+        ],
+        [
+          0.418,
+          0.878
+        ],
+        [
+          0.434,
+          0.833
+        ],
+        [
+          0.451,
+          0.797
+        ],
+        [
+          0.462,
+          0.787
+        ],
+        [
+          0.506,
+          0.762
+        ],
+        [
+          0.543,
+          0.744
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "The lower central opening has a pale blue-white angular outer cuff, a warm brown inward fold, and a saturated wine-red shadow along the cavity's lower curve. It is physically separate from the upper collar points and sits immediately left of the illustrated lining."
+    },
+    {
+      "label": "Curled dark illustrated lining with white dots and colored flecks",
+      "artifact_type": "curled-illustrated-lining",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.627,
+        "y": 0.633,
+        "w": 0.237,
+        "h": 0.351
+      },
+      "polygon": [
+        [
+          0.627,
+          0.637
+        ],
+        [
+          0.681,
+          0.633
+        ],
+        [
+          0.739,
+          0.646
+        ],
+        [
+          0.79,
+          0.678
+        ],
+        [
+          0.831,
+          0.722
+        ],
+        [
+          0.856,
+          0.768
+        ],
+        [
+          0.864,
+          0.806
+        ],
+        [
+          0.85,
+          0.855
+        ],
+        [
+          0.828,
+          0.911
+        ],
+        [
+          0.818,
+          0.95
+        ],
+        [
+          0.838,
+          0.984
+        ],
+        [
+          0.814,
+          0.976
+        ],
+        [
+          0.789,
+          0.933
+        ],
+        [
+          0.771,
+          0.892
+        ],
+        [
+          0.746,
+          0.859
+        ],
+        [
+          0.722,
+          0.824
+        ],
+        [
+          0.668,
+          0.75
+        ],
+        [
+          0.696,
+          0.664
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "A dark hooked flap at lower right carries tiny figure-like illustrations, looping lines, pale dots, and orange, blue, and cream accents. It curls down into a thin tail. The polygon follows the decorated lining and excludes the adjacent pale facing and the dark unpatterned opening."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 2,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.654,
+    "rationale": "Estimated coverage is visual rather than mask-measured. The erased portrait and red-orange shoulder dominate, with a substantial banded sleeve below left. Dark gaps preserve separation and useful interaction territories, but detailed photographic eyes, ornate fabric motifs, ribbing, and illustrated lining make this more elaborate than a strictly minimal expressionist plate. It remains legible rather than overcrowded."
+  },
+  "viewport": {
+    "base_width": 1024,
+    "base_height": 1536,
+    "aspect_ratio": "1024:1536"
+  },
+  "edition_id": "2026-10-16-the-collar-holds-its-shape-v1"
+}

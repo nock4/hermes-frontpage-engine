@@ -1,0 +1,174 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-16-the-collar-holds-its-shape-v1",
+  "edition_id": "2026-10-16-the-collar-holds-its-shape-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-16-the-collar-holds-its-shape-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal",
+    "restoration-scan"
+  ],
+  "future_only_subset": [],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-rounded-hair-and-eye-fragment-traili",
+      "target_kind": "artifact",
+      "artifact_id": "hero-rounded-hair-and-eye-fragment-traili",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (portrait-erasure) selected from interpretation."
+    },
+    {
+      "target_id": "hero-broad-red-orange-patterned-shoulder-",
+      "target_kind": "artifact",
+      "artifact_id": "hero-broad-red-orange-patterned-shoulder-",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "web",
+        "article"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (washed-patterned-fabric) selected from interpretation."
+    },
+    {
+      "target_id": "module-small-pale-pleat-with-vertical-ribs-",
+      "target_kind": "artifact",
+      "artifact_id": "module-small-pale-pleat-with-vertical-ribs-",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (ribbed-stepped-pleat) selected from interpretation."
+    },
+    {
+      "target_id": "module-translucent-folded-sleeve-with-blue-",
+      "target_kind": "artifact",
+      "artifact_id": "module-translucent-folded-sleeve-with-blue-",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (banded-translucent-fabric) selected from interpretation."
+    },
+    {
+      "target_id": "module-pale-angular-cuff-opening-around-a-b",
+      "target_kind": "artifact",
+      "artifact_id": "module-pale-angular-cuff-opening-around-a-b",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (angular-cuff-aperture) selected from interpretation."
+    },
+    {
+      "target_id": "module-curled-dark-illustrated-lining-with-",
+      "target_kind": "artifact",
+      "artifact_id": "module-curled-dark-illustrated-lining-with-",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curled-illustrated-lining) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}
