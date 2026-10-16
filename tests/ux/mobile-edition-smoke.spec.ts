@@ -241,13 +241,24 @@ async function collectWindowMetric(page: Page, bindingId: string, artifactLabel:
     // a clip-path on the source window after animation. Check media/title
     // against every clipping ancestor as well, not only the viewport.
     let contentClipped = false
-    for (const element of [visualCard?.querySelector('.visual-source-card__figure'), ...node.querySelectorAll('iframe'), title]) {
+    for (const element of [visualCard?.querySelector('.visual-source-card__figure'), ...node.querySelectorAll('iframe, video, .provider-video-scroll'), title]) {
       if (!element) continue
-      const content = element.getBoundingClientRect()
+      const content = element.getBoundingClientRect().toJSON()
       for (let ancestor = element.parentElement; ancestor; ancestor = ancestor.parentElement) {
         const style = getComputedStyle(ancestor)
         if (!/(hidden|clip|auto|scroll)/.test(style.overflowY) && style.clipPath === 'none') continue
         const boundary = ancestor.getBoundingClientRect()
+        // The fallback intentionally exposes an 800px provider document through
+        // a scrollable aperture. Measure that aperture vertically, not the full
+        // document. Still check horizontal overflow, the aperture itself against
+        // every ancestor, and native iframe/video/title geometry without exceptions.
+        if (element.matches('iframe[data-video-fallback="provider"]')
+          && ancestor === element.parentElement && ancestor.matches('.provider-video-scroll')
+          && /^(auto|scroll)$/.test(style.overflowY)
+          && ancestor.clientHeight > 0 && ancestor.scrollHeight > ancestor.clientHeight) {
+          content.top = boundary.top
+          content.bottom = boundary.bottom
+        }
         if (content.left < boundary.left - 1 || content.right > boundary.right + 1
           || content.top < boundary.top - 1 || content.bottom > boundary.bottom + 1) contentClipped = true
       }
@@ -465,5 +476,40 @@ for (const viewport of mobileViewports) {
     )
 
     expect(failures).toEqual([])
+  })
+}
+
+// Audit classifier contracts: a scrollable provider document is not a clipped
+// player. Exercise the same collector as current-edition QA, without networking.
+for (const scenario of [
+  { name: 'scrollable provider document', media: 'provider', clipped: false },
+  { name: 'provider aperture outside shell', media: 'provider', clipped: true, apertureHeight: 280 },
+  { name: 'provider document horizontal overflow', media: 'provider', clipped: true, mediaWidth: 340 },
+  { name: 'provider title outside shell', media: 'provider', clipped: true, titleOffset: 100 },
+  { name: 'non-scrollable provider document', media: 'provider', clipped: true, overflow: 'hidden' },
+  { name: 'scrolled provider document', media: 'provider', clipped: false, scrollTop: 300 },
+  { name: 'native iframe', media: 'native', clipped: false },
+  { name: 'native iframe overflow', media: 'native', clipped: true, mediaHeight: 280 },
+  { name: 'direct video', media: 'video', clipped: false },
+  { name: 'direct video overflow', media: 'video', clipped: true, mediaHeight: 280 },
+]) {
+  test(`mobile audit measures ${scenario.name}`, async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 })
+    const mediaStyle = `display:block;border:0;width:${scenario.mediaWidth || 300}px;height:${scenario.mediaHeight || 180}px`
+    const media = scenario.media === 'provider'
+      ? `<div class="provider-video-scroll" style="width:300px;height:${scenario.apertureHeight || 180}px;overflow-y:${scenario.overflow || 'auto'}"><iframe data-video-fallback="provider" style="${mediaStyle};height:800px" srcdoc="<p>Scrollable full provider post</p>"></iframe></div>`
+      : scenario.media === 'video' ? `<video style="${mediaStyle}"></video>` : `<iframe style="${mediaStyle}" srcdoc="<p>Native player</p>"></iframe>`
+    await page.setContent(`<style>body{margin:0}.source-window{position:absolute;left:10px;top:60px;width:300px;height:220px;overflow:hidden}.visual-source-card__figure{margin:0;width:300px;height:180px}.visual-source-card__edge-title{position:relative;top:${scenario.titleOffset || 0}px;font-size:12px;height:20px;width:300px}</style>
+      <div class="stage-overlay-windows--live"><div class="source-window" data-binding-id="audit-fixture" data-source-window-mode="preview"><article class="visual-source-card" data-source-visual-mode="raw"><figure class="visual-source-card__figure">${media}</figure><div class="visual-source-card__edge-title">Readable source identity</div></article></div></div>`)
+    if (scenario.scrollTop) {
+      const scrollTop = await page.locator('.provider-video-scroll').evaluate((element, offset) => {
+        element.scrollTop = offset
+        return element.scrollTop
+      }, scenario.scrollTop)
+      expect(scrollTop).toBe(scenario.scrollTop)
+    }
+    const metric = await collectWindowMetric(page, 'audit-fixture', scenario.name)
+    expect(metric.clipped).toBe(scenario.clipped)
+    expect(metric.titleVisible).toBe(!scenario.clipped)
   })
 }
