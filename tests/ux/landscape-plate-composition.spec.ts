@@ -1,6 +1,48 @@
 import { expect, test } from '@playwright/test'
 import fs from 'node:fs'
 
+test('hybrid touch close must not reopen beneath the idle mouse; fresh input still works', async ({ browser }, info) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true, reducedMotion: 'reduce' })
+  const page = await context.newPage()
+  try {
+    await page.goto(`${info.project.use.baseURL}/?edition=2026-10-15-the-weight-of-a-curl-v2`)
+    await page.locator('img.plate').evaluate((img: HTMLImageElement) => img.decode())
+    const artifact = page.getByRole('button', { name: 'Lime hooked sweep with fluted relief and muted colored seams', exact: true })
+    const point = await artifact.evaluate(el => {
+      const r = el.getBoundingClientRect(), points = []
+      for (let y = Math.max(2, r.top); y < Math.min(innerHeight - 2, r.bottom); y += 2)
+        for (let x = Math.max(2, r.left); x < Math.min(innerWidth - 2, r.right); x += 2)
+          if (document.elementFromPoint(x, y) === el) points.push({ x, y, d: (x-r.x-r.width/2)**2+(y-r.y-r.height/2)**2 })
+      return points.sort((a,b) => a.d-b.d)[0]
+    })
+    expect(point).toBeDefined()
+    const windows = page.locator('.source-window')
+    const opened = page.locator('.source-window[data-binding-id="binding-hero-lime-hooked-sweep-with-fluted-relief"]')
+    await page.mouse.move(point.x, point.y)
+    await expect(opened).toHaveAttribute('data-source-window-mode', 'preview')
+    await opened.locator('img.visual-source-card__image').tap()
+    await expect(opened).toHaveAttribute('data-source-window-mode', 'primary')
+    await opened.locator('.source-window__close').tap()
+    await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))))
+    await expect(windows).toHaveCount(0)
+    // The mouse stays parked throughout the touch sequence above. Only a
+    // deliberate move away/back should renew hover at the original coordinate.
+    await page.mouse.move(1, 1)
+    await page.mouse.move(point.x, point.y)
+    await expect(opened).toHaveAttribute('data-source-window-mode', 'preview')
+    await opened.locator('.source-window__close').tap()
+    await expect(windows).toHaveCount(0)
+    await page.touchscreen.tap(point.x, point.y)
+    await expect(opened).toHaveAttribute('data-source-window-mode', 'primary')
+    await opened.locator('.source-window__close').tap()
+    await expect(windows).toHaveCount(0)
+    await artifact.focus()
+    await expect(opened).toHaveAttribute('data-source-window-mode', 'preview')
+    await page.keyboard.press('Enter')
+    await expect(opened).toHaveAttribute('data-source-window-mode', 'primary')
+  } finally { await context.close() }
+})
+
 const edition = '2026-10-15-the-weight-of-a-curl-v2'
 const { artifacts } = JSON.parse(fs.readFileSync(`public/editions/${edition}/artifact-map.json`, 'utf8'))
 const { bindings } = JSON.parse(fs.readFileSync(`public/editions/${edition}/source-bindings.json`, 'utf8'))

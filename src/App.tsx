@@ -33,7 +33,8 @@ function App() {
   const [aboutOpen, setAboutOpen] = useState(false)
   const [archiveOpen, setArchiveOpen] = useState(false)
   const touchPreviewArtifact = useRef<string | null>(null)
-  const dismissedPointer = useRef<{ x: number; y: number } | null>(null)
+  const mousePointer = useRef<{ x: number; y: number } | null>(null)
+  const dismissedPointer = useRef<{ x: number; y: number }[]>([])
   const [plateGeometry, setPlateGeometry] = useState<{ path: string; aspect: number } | null>(null)
 
   const syncLocation = useCallback(() => {
@@ -239,15 +240,21 @@ function App() {
         <section
           className={`stage${containPlate ? ' stage--contained-plate' : ' stage--full-width-plate'}${hasPrimaryStageWindow && presentation.suppressArtifactLabelsWhenPrimaryWindowOpen ? ' stage--primary-window-open' : ''}${sceneReactionArtifact ? ' stage--scene-reacting' : ''}${sceneReactionTone ? ` stage--scene-tone-${sceneReactionTone}` : ''}`}
           style={{ ...stageReactionStyle, '--plate-aspect': plateAspect ?? 1, '--plate-ambient': `url(${JSON.stringify(loaded.edition.plate_asset_path)})` } as CSSProperties}
+          onPointerMoveCapture={(event) => {
+            // Touch compatibility mousemove must not overwrite the idle mouse.
+            // MouseEvent coordinates truncate PointerEvent's fractional values.
+            if (event.pointerType === 'mouse') mousePointer.current = { x: Math.floor(event.clientX), y: Math.floor(event.clientY) }
+          }}
           onMouseMoveCapture={(event) => {
-            const dismissed = dismissedPointer.current
-            if (dismissed && (dismissed.x !== event.clientX || dismissed.y !== event.clientY)) dismissedPointer.current = null
+            if (!dismissedPointer.current.some(point => point.x === event.clientX && point.y === event.clientY)) dismissedPointer.current = []
           }}
           onClickCapture={(event) => {
             if (event.target instanceof Element && event.target.closest('.source-window__close')) {
               // Removing a window can synthesize mouseenter on the mark it
               // covered. That stationary pointer is dismissal, not a new hover.
-              dismissedPointer.current = { x: event.clientX, y: event.clientY }
+              // A hybrid touch close also uncovers the independent idle mouse,
+              // whose position is not the tap/compatibility-click coordinate.
+              dismissedPointer.current = [{ x: event.clientX, y: event.clientY }, ...(mousePointer.current ? [mousePointer.current] : [])]
             }
           }}
           onMouseLeave={(event) => {
@@ -378,9 +385,8 @@ function App() {
                   ...sceneReactionStyle,
                 }}
                 onMouseEnter={(event) => {
-                  const dismissed = dismissedPointer.current
-                  if (dismissed && dismissed.x === event.clientX && dismissed.y === event.clientY) return
-                  dismissedPointer.current = null
+                  if (dismissedPointer.current.some(point => point.x === event.clientX && point.y === event.clientY)) return
+                  dismissedPointer.current = []
                   previewArtifactBinding(artifact.id, binding)
                 }}
                 onFocus={() => previewArtifactBinding(artifact.id, binding)}
