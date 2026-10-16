@@ -144,13 +144,15 @@ function getSourceImageForBinding(source, researchField, signalHarvest = null) {
   const directSourceImage = getDirectSourceImageUrl(source)
   if (directSourceImage) return directSourceImage
 
+  // Researched media is the selected identity; saved-note URLs are only a
+  // fallback. A bookmark can carry a different rendition (e.g. no name=orig).
+  if (source.image_url && !isLowValueVisualImage(source.image_url)) return source.image_url
+
   const classification = classifySource(source.url || source.source_url || '')
   if (classification.source_type === 'tweet') {
     const signalHarvestImage = getSignalHarvestImageForSource(source, signalHarvest)
     if (signalHarvestImage) return signalHarvestImage
   }
-
-  if (source.image_url && !isLowValueVisualImage(source.image_url)) return source.image_url
 
   const redirectSiblingImage = getRedirectSiblingImageUrl(source, researchField)
   if (redirectSiblingImage) return redirectSiblingImage
