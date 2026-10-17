@@ -1,8 +1,15 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { allocateUxPort, postPackageSteps } from '../../scripts/pipeline/package-steps.mjs'
 
 describe('post-package UX port isolation', () => {
+  beforeEach(() => vi.stubEnv('DFE_UX_PORT', ''))
+  afterEach(() => vi.unstubAllEnvs())
+
+  it('retains an explicitly configured port instead of applying the default range', () => {
+    vi.stubEnv('DFE_UX_PORT', '43903')
+    expect(allocateUxPort('fixture')).toBe('43903')
+  })
   it('allocates a stable high port from a run id', () => {
     expect(allocateUxPort('daily-process-2026-05-15T08-10-53-271Z')).toMatch(/^4[4-8]\d{3}$/)
     expect(allocateUxPort('daily-process-2026-05-15T08-10-53-271Z')).toBe(

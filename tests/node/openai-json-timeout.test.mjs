@@ -8,7 +8,10 @@ it('terminates and reaps a real subprocess ignoring SIGTERM before rejecting', a
  const dir=await fs.mkdtemp(path.join(os.tmpdir(),'hermes-deadline-'))
  const executable=path.join(dir,'fake-hermes')
  const pidFile=path.join(dir,'pid')
- await fs.writeFile(executable,`#!${process.execPath}\nrequire('node:fs').writeFileSync(${JSON.stringify(pidFile)},String(process.pid));process.on('SIGTERM',()=>{});setTimeout(()=>process.exit(0),3000)\n`,{mode:0o755})
+ // Use an exec'd sleep rather than starting a second Node runtime: under a
+ // busy full suite Node startup can consume the entire deadline before the PID
+ // marker/handler is installed. Ignored TERM survives exec and the PID is stable.
+ await fs.writeFile(executable,`#!/bin/sh\ntrap '' TERM\nprintf '%s' "$$" > ${JSON.stringify(pidFile)}\nexec /bin/sleep 30\n`,{mode:0o755})
  const previous=process.env.HERMES_BIN
  process.env.HERMES_BIN=executable
  try {
