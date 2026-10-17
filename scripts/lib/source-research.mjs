@@ -1,4 +1,6 @@
 import fs from 'node:fs/promises'
+import { acquireBookmarkArtwork } from './bookmark-artwork.mjs'
+import { bookmarkCacheDir } from './bookmark-intake.mjs'
 import path from 'node:path'
 
 import { findVisualReference, inspectCandidateSource } from './source-inspection.mjs'
@@ -616,6 +618,7 @@ async function runSourceAutoresearch({
     date,
     workflow: 'aesthetic-field autoresearch: read all candidate source evidence, find the most visually fertile creative through-line, imagine the edition as a coherent aesthetic world, choose renderable source windows with provenance, and avoid infrastructure/tooling links unless they carry strong visible artifacts.',
     hard_rules: [
+      ...(signalHarvest.selection_policy?.bookmark_first ? ['Bookmark-first policy: assess each saved owning work independently. Nominate creative works as content for actual-media validation; do not demote a work to supporting merely for lacking thematic coherence or links to an anchor. This is a small refill batch, not the whole reserve. Preserve substantive editorial exclusions; metadata never confers eligibility. Do not discover or request outside sources.'] : []),
       'Use only URLs present in candidate_sources. Do not invent outside URLs.',
       'These are text nominations, not verified visual eligibility. Never return an inspection record; actual media is independently captured and inspected after nomination.',
       'Public content must come only from recent saved-signal channels: Twitter bookmarks, YouTube likes, NTS resolved streaming sources, Chrome bookmarks, and explicitly authorized saved manual-curation nominations. Manual-curation is a nomination channel, not proof of creative eligibility; preserve its provenance and apply the same actual-media inspection, editorial exclusions, and archive-repeat gates.',
@@ -689,6 +692,7 @@ async function runSourceAutoresearch({
         'Return strict JSON matching the requested schema. Do not include Markdown.',
       ].join(' '),
       input: responseInput,
+      timeoutMs: signalHarvest.selection_policy?.bookmark_first ? 60000 : undefined,
       maxOutputTokens: 6000,
     })
     const normalized = {
@@ -828,15 +832,16 @@ export async function inspectSourceCandidates(signalHarvest, {
   inspirationOverride = null,
 }) {
   const candidateLimit = Math.max(maxSources, Math.min(maxSources * autoresearchCandidateMultiplier, maxAutoresearchCandidates))
+  const bookmarkFirst = signalHarvest.selection_policy?.bookmark_first === true && !inspirationOverride?.active && !inspirationOverride?.source_url
   // Fetch the same bounded supplemental field that browser repair can reach,
   // before spending pixel attempts. Previously its lower-ranked artwork arrived
   // only after the 24-attempt cap had already been consumed by the first 320.
-  const supplementalCandidates = selectSourceCandidatesForInspection(signalHarvest, Math.max(maxSources * 4, maxSources + minContentItems), { recentSourceKeys })
-  const candidates = [...new Map([
+  const supplementalCandidates = bookmarkFirst ? [] : selectSourceCandidatesForInspection(signalHarvest, Math.max(maxSources * 4, maxSources + minContentItems), { recentSourceKeys })
+  const candidates = bookmarkFirst ? signalHarvest.source_candidates.filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys))).slice(0, 24) : [...new Map([
     ...selectSourceCandidatesForInspection(signalHarvest, candidateLimit, { recentSourceKeys }),
     ...supplementalCandidates,
   ].map(source => [sourceContentKey(source), source])).values()]
-  const fetchEvidence = await collectFetchEvidenceForAutoresearch(candidates, {
+  let fetchEvidence = bookmarkFirst ? [] : await collectFetchEvidenceForAutoresearch(candidates, {
     recentSourceKeys,
     signalHarvest,
     runDir,
@@ -850,9 +855,32 @@ export async function inspectSourceCandidates(signalHarvest, {
   let inspected = [...fetchEvidence]
 
   const forcedAnchorSource = forcedAnchorSourceFromInspirationOverride(inspirationOverride, fetchEvidence)
-  let anchorSource = isSingleAnchorResearchEnabled()
+  let anchorSource = !bookmarkFirst && isSingleAnchorResearchEnabled()
     ? (forcedAnchorSource || selectAnchorSource(fetchEvidence, { recentSourceKeys, signalHarvest }))
     : null
+  let contentSources = []
+  if (bookmarkFirst) {
+    const bounded = await acquireBookmarkArtwork({ candidates }, {
+      acquire: async batch => {
+        const sources = []
+        for (const candidate of batch) {
+          const source = await inspectCandidateSource(candidate, { sourceTool: 'fetch', browserHarness: null })
+          if (source && isAllowedInspectedSource(source)) sources.push(source)
+        }
+        return sources
+      },
+      research: sources => runSourceAutoresearch({ signalHarvest, evidenceSources: sources, apiKey, model, date, maxSources: 6, recentSourceKeys }, runDir),
+      inspect: (sources, research) => inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, recentSourceKeys, inspectionCacheDir: bookmarkCacheDir() }),
+      select: (sources, research) => selectContentSources(sources, { recentSourceKeys, signalHarvest, autoresearch: research }),
+    })
+    inspected = bounded.inspected
+    fetchEvidence = bounded.inspected
+    autoresearch = bounded.autoresearch
+    contentSources = bounded.contentSources
+    researchMode = 'bounded-bookmark-first'
+    await writeJson(path.join(runDir, 'bookmark-acquisition.json'), bounded.audit)
+    await writeJson(path.join(runDir, 'source-intake-snapshot.json'), { schema_version: 1, signal_harvest: signalHarvest, recent_source_keys: [...recentSourceKeys], initial_candidates: candidates, fetch_sources: inspected, limits: bounded.audit })
+  } else {
   if (anchorSource) {
     anchorResearch = await buildAnchorResearch(anchorSource, { runDate: date })
     await writeJson(path.join(runDir, 'anchor-research.json'), anchorResearch)
@@ -950,7 +978,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   // may legitimately skip raw images or return an empty provider surface.
   inspected = mergeInspectedSources(researchedCaptures, inspected)
   autoresearch = await inspectCreativeArtifacts(inspected, autoresearch, { ...inspectionOptions, maxInspections: beforeRefillLimit - inspectionAttempts() })
-  let contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
+  contentSources = selectContentSources(inspected, { recentSourceKeys, signalHarvest, autoresearch })
 
   // Inspect the fetch bed without consuming the browser-media reserve.
   while (contentSources.length < minContentItems && inspectionAttempts() < beforeRefillLimit) {
@@ -1039,6 +1067,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     if (inspectionAttempts() === previousAttempts) break
   }
 
+  }
   // Later research can invalidate an automatic nomination. Clear its old
   // artifacts before reselecting, but keep exact overrides blocking.
   const rejectedCreativeImageMaterial = imageSourceMaterial.selected_image_material
@@ -1071,7 +1100,10 @@ export async function inspectSourceCandidates(signalHarvest, {
       await writeJson(path.join(runDir, 'anchor-research.json'), anchorResearch)
       // The verified field supplies the windows; rebuild anchor artifacts without
       // reopening derived discovery or admitting uninspected content sources.
-      imageSourceMaterial = await discoverImageSourceMaterial(anchorResearch, [], {
+      imageSourceMaterial = bookmarkFirst ? {
+        image_source_candidates: [],
+        selected_image_material: [{ title: anchorSource.title, page_url: anchorSource.url, image_url: anchorSource.image_url, lineage: 'primary_anchor_image' }],
+      } : await discoverImageSourceMaterial(anchorResearch, [], {
         maxCandidates: 32,
         maxSelected: 8,
       })
@@ -1082,8 +1114,8 @@ export async function inspectSourceCandidates(signalHarvest, {
   const eligibleForEnrichment = (source) => !isAutoresearchExcluded(source, autoresearch)
     && !isCreativeInspectionRejectedSource(source, autoresearch)
     && !isAiToolingContentSource(source, signalHarvest)
-  const visualHarvest = { ...signalHarvest, source_candidates: signalHarvest.source_candidates.filter(eligibleForEnrichment) }
-  const proposedVisualReference = await findVisualReference(visualHarvest, inspected.filter(eligibleForEnrichment), { sourceTool, browserHarness, recentSourceKeys })
+  const visualHarvest = { ...signalHarvest, source_candidates: bookmarkFirst ? [] : signalHarvest.source_candidates.filter(eligibleForEnrichment) }
+  const proposedVisualReference = await findVisualReference(visualHarvest, (bookmarkFirst ? contentSources : inspected).filter(eligibleForEnrichment), { sourceTool, browserHarness, recentSourceKeys })
   const discoveredVisualReference = eligibleForEnrichment(proposedVisualReference) ? proposedVisualReference : null
   const imageMaterialEvidence = { autoresearch, evidenceSources: [anchorSource, ...fetchEvidence, ...inspected].filter(Boolean) }
   imageSourceMaterial.rejected_creative_source_image_material = rejectedCreativeImageMaterial

@@ -21,6 +21,7 @@ export function createMineSignalsStep({ options, context, recentDiversityAvoidTe
     run: async () => {
       context.signalHarvest = await mineSignals({
         ...options,
+        bookmarkFirst: options.inputMode === 'obsidian-allowlist',
         diversityAvoidTerms: recentDiversityAvoidTerms,
         recentSourceKeys,
         inspirationOverride: context.inspirationOverride,

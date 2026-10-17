@@ -33,7 +33,7 @@ vi.mock('../../scripts/lib/source-image-geometry.mjs', async (original) => ({
   ...await original(), measureSourceImage: async () => ({ width: 800, height: 600 }),
 }))
 vi.mock('../../scripts/lib/openai-json.mjs', () => ({
-  openAiJson: async ({ instructions, input }) => {
+  openAiJson: async ({ instructions, input, timeoutMs }) => {
     if (instructions.startsWith('Inspect the attached actual source pixels')) {
       const source = JSON.parse(input[0].content[0].text)
       state.attempts.push(source.url)
@@ -41,6 +41,7 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
     }
     if (instructions.includes('source-research editor')) {
       state.researchAttempts.push(state.attempts.length)
+      state.researchTimeouts.push(timeoutMs)
       return { source_decisions: state.editorialDecisions || (state.rejectAnchor ? [{ url: sources[0].url, role: 'reject' }] : []), selected_content_urls: [] }
     }
     state.fingerprintCalls.push(input)
@@ -58,7 +59,7 @@ let runDir
 beforeEach(async () => {
   runDir = await fs.mkdtemp(path.join(os.tmpdir(), 'bounded-repair-'))
   state.attempts = []; state.captures = []; state.rejectAnchor = false; state.verifiedFrom = 18; state.browserChanges = {}; state.fetchChanges = {}
-  state.researchAttempts = []; state.editorialDecisions = null; state.derivedCandidates = []
+  state.researchAttempts = []; state.researchTimeouts = []; state.editorialDecisions = null; state.derivedCandidates = []
   state.visualReference = null; state.inspectionVerdicts = {}; state.fingerprintCalls = []
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1'); vi.stubEnv('DFE_DECISION_MODEL', 'openai')
 })
@@ -66,6 +67,26 @@ afterEach(async () => { vi.unstubAllEnvs(); await fs.rm(runDir, { recursive: tru
 const inspect = (extra = {}) => inspectSourceCandidates({ source_candidates: sources, notes_selected: [], motif_terms: [] }, {
   maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-09-30', ...extra,
 })
+it.each(['verified', 'ambiguous', 'supporting', 'spent'])('bounded bookmark production orchestration preserves admission gates: %s', async mode => {
+  vi.stubEnv('DFE_BOOKMARK_CACHE_DIR', path.join(runDir, 'cache'))
+  state.verifiedFrom = mode === 'ambiguous' ? 100 : 0
+  const ledger = mode === 'spent' ? new Set(sources.slice(0, 6).map(sourceContentKey)) : new Set()
+  if (mode === 'supporting') state.editorialDecisions = sources.map(s => ({ url: s.url, role: 'supporting', confidence: 'high' }))
+  const run = inspectSourceCandidates({ selection_policy: { bookmark_first: true }, source_candidates: sources, notes_selected: [], motif_terms: [] }, {
+    maxSources: 240, runDir, sourceTool: 'fetch', date: '2026-10-17', recentSourceKeys: ledger,
+  })
+  if (['ambiguous', 'supporting'].includes(mode)) await expect(run).rejects.toThrow(/blocked/)
+  else expect((await run).content_sources).toHaveLength(6)
+  const audit = JSON.parse(await fs.readFile(path.join(runDir, 'bookmark-acquisition.json'), 'utf8'))
+  expect(audit.acquired).toBe(['verified', 'spent'].includes(mode) ? 6 : 24)
+  expect(state.captures).toHaveLength(audit.acquired)
+  expect(state.researchAttempts[0]).toBe(0)
+  expect(state.researchTimeouts.every(ms => ms === 60000)).toBe(true)
+  if (mode === 'spent') expect(state.captures.some(s => sources.slice(0, 6).some(old => old.url === s.url))).toBe(false)
+  if (mode === 'supporting') expect(state.attempts).toHaveLength(0)
+  if (mode === 'ambiguous') expect(audit.admitted).toBe(0)
+})
+
 it('passes observed fetch evidence into browser reduction and preserves candidates across the real research merge', async () => {
   state.verifiedFrom = 0
   const source = sources[0]
@@ -696,6 +717,16 @@ it('replaces an excluded automatic anchor with verified eligible material and al
   }
   expect(result.selected_image_material[0].page_url).toBe(anchor.url)
   expect(result.visual_reference.image_url).toBe(anchor.image_url)
+})
+it('keeps an excluded exact override blocking even on a bookmark-marked harvest', async () => {
+  state.rejectAnchor = true
+  await expect(inspectSourceCandidates({ selection_policy: { bookmark_first: true }, source_candidates: sources, notes_selected: [], motif_terms: [] }, {
+    maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-10-17',
+    inspirationOverride: { source_url: sources[0].url, image_url: sources[0].image_url, title: sources[0].title, prompt_bias_terms: ['exact-anchor'] },
+  })).rejects.toThrow(/blocked/)
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  expect(saved.anchor_research.anchor_source.url).toBe(sources[0].url)
+  await expect(fs.access(path.join(runDir, 'bookmark-acquisition.json'))).rejects.toThrow()
 })
 it('does not reselect an excluded exact override', async () => {
   state.rejectAnchor = true

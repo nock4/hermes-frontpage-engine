@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { loadBookmarkBatch } from './bookmark-intake.mjs'
 import path from 'node:path'
 
 import { loadManifestSignals } from './signal-adapters/manifest-adapter.mjs'
@@ -194,9 +195,12 @@ export async function mineSignals({
   diversityAvoidTerms = [],
   recentSourceKeys = new Set(),
   inspirationOverride = null,
+  bookmarkFirst = false,
+  bookmarkCacheDir,
 }, runDir) {
   const resolvedInputRoot = inputRoot || vault || null
-  const loaded = await loadSignalsForMode({
+  const boundedBookmarks = bookmarkFirst && inputMode === 'obsidian-allowlist' && !inspirationOverride?.active && !inspirationOverride?.source_url
+  const loaded = boundedBookmarks ? await loadBookmarkBatch({ inputRoot: resolvedInputRoot, cacheDir: bookmarkCacheDir, recentSourceKeys, maxNotes: Math.min(maxNotes || 24, 24) }) : await loadSignalsForMode({
     inputMode,
     inputRoot: resolvedInputRoot,
     signalManifest,
@@ -205,10 +209,10 @@ export async function mineSignals({
   })
 
   const normalizedDiversityAvoidTerms = normalizeDiversityTerms(diversityAvoidTerms)
-  const selectedNotes = selectRecentSignalNotes(loaded.notes, maxNotes, {
+  const selectedNotes = (boundedBookmarks ? loaded.notes : selectRecentSignalNotes(loaded.notes, maxNotes, {
     diversityAvoidTerms: normalizedDiversityAvoidTerms,
     recentSourceKeys,
-  })
+  }))
     .map(normalizeSelectedNote)
 
   const urlRecords = []
@@ -247,9 +251,11 @@ export async function mineSignals({
     date,
     window_days: windowDays,
     selection_policy: {
-      selected_count: maxNotes,
+      bookmark_first: boundedBookmarks,
+      bookmark_intake: loaded.audit || null,
+      selected_count: boundedBookmarks ? selectedNotes.length : maxNotes,
       filters: loaded.selection_filters,
-      scoring: [
+      scoring: boundedBookmarks ? ['Stable saved-path cursor over unused owning bookmarks; no whole-field taste ranking or recency window.'] : [
         'Recency: (window_days - age_days) * 2.',
         'Linked-source richness: min(url_count, 8) * 2.',
         'Channel boost is adapter-dependent and favors richer public media signals.',
@@ -265,7 +271,7 @@ export async function mineSignals({
       looked_for: loaded.looked_for,
     },
     markdown_files_seen: loaded.markdown_files_seen,
-    notes_scanned: loaded.notes.length,
+    notes_scanned: loaded.audit?.notes_read ?? loaded.notes.length,
     notes_selected: selectedNotes.map(({ text, ...note }) => note),
     motif_terms: wordFrequencies(selectedNotes),
     source_candidates: urlRecords,
