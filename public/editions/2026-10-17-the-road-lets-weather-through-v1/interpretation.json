@@ -1,0 +1,280 @@
+{
+  "interpretation_id": "interp-2026-10-17-the-road-lets-weather-through-v1",
+  "edition_id": "2026-10-17-the-road-lets-weather-through-v1",
+  "plate_read_timestamp": "2026-10-17T14:10:25.358Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Two unequal elevated roadway arcs cross a nearly black blue void beneath large pale clouds. The dominant cool-gray roadway sweeps from the foreground to the right and rises into translucent pointed fins. A smaller left arc carries straw-colored light and a rose rim. Foreground details include a striped road edge, a pastel pavement swell, and an angular speckled slab. Six visible interaction targets are available, but the planned lobed inner boundary is not clearly realized.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Landscape of offset asphalt arcs enclosing a near-black navy void beneath white cumulus. A large railed arc curls into translucent pointed fins; a second lies low with faint warm light. Smaller features are a pleated rail edge, a pastel-tinted pavement swell, a squared speckled road lip and a lobed inner edge. Silver rails and white lanes follow the arcs; a cloud interrupts the low dark divide.",
+      "Two unequal elevated roadway arcs cross a nearly black blue void beneath large pale clouds. The dominant cool-gray roadway sweeps from the foreground to the right and rises into translucent pointed fins. A smaller left arc carries straw-colored light and a rose rim. Foreground details include a striped road edge, a pastel pavement swell, and an angular speckled slab. Six visible interaction targets are available, but the planned lobed inner boundary is not clearly realized.",
+      "detached-road-arcs",
+      "elastic-pavement",
+      "exposed-cut-faces"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Broad silver-railed asphalt arc rising into smoky pointed fins",
+      "Low reclining roadway arc with straw light and a rose rim",
+      "Short striped foreground road edge beneath the left guardrail",
+      "Smooth foreground pavement swell with faint pastel bands",
+      "Angular right road lip with purple-and-yellow speckling",
+      "Bright hooked inner guardrail bordering the foreground void"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "cloud-gap-road-section",
+      "A broad silver-railed asphalt arc curling into smoky pointed fins",
+      "A low reclining road arc with dithered straw light and a faint rose rim",
+      "A short pleated silver rail edge with muted displaced color shadows",
+      "A smooth saddle-shaped pavement swell with faint textured pastel bands",
+      "A squared thin road lip with sparse purple-and-yellow surface speckling",
+      "A lobed asphalt inner edge enclosing dark blue with softly tinted margins",
+      "Silver-railed sweeping asphalt and translucent pointed fins"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cloud-gap-road-section.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-broad-silver-railed-asphalt-arc-risi",
+      "kind": "hero",
+      "type": "roadway-gesture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.559,
+        "y": 0.063,
+        "w": 0.439,
+        "h": 0.707
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-low-reclining-roadway-arc-with-straw",
+      "kind": "hero",
+      "type": "illuminated-roadway-surface",
+      "strength": 0.9862399999999999,
+      "bounds": {
+        "x": 0,
+        "y": 0.55,
+        "w": 0.3867,
+        "h": 0.1792
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-short-striped-foreground-road-edge-b",
+      "kind": "module",
+      "type": "striped-edge",
+      "strength": 0.784488,
+      "bounds": {
+        "x": 0.001,
+        "y": 0.781,
+        "w": 0.249,
+        "h": 0.158
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-smooth-foreground-pavement-swell-wit",
+      "kind": "module",
+      "type": "pastel-pavement-surface",
+      "strength": 0.750924,
+      "bounds": {
+        "x": 0.313,
+        "y": 0.723,
+        "w": 0.35,
+        "h": 0.277
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-angular-right-road-lip-with-purple-a",
+      "kind": "module",
+      "type": "speckled-terminal-edge",
+      "strength": 0.728184,
+      "bounds": {
+        "x": 0.709,
+        "y": 0.767,
+        "w": 0.173,
+        "h": 0.23299999999999998
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bright-hooked-inner-guardrail-border",
+      "kind": "module",
+      "type": "curved-rail-edge",
+      "strength": 0.69078,
+      "bounds": {
+        "x": 0.604,
+        "y": 0.792,
+        "w": 0.079,
+        "h": 0.20799999999999996
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-broad-silver-railed-asphalt-arc-risi-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.559,
+        "y": 0.063,
+        "w": 0.439,
+        "h": 0.707
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-low-reclining-roadway-arc-with-straw-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.55,
+        "w": 0.3867,
+        "h": 0.1792
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-short-striped-foreground-road-edge-b-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.001,
+        "y": 0.781,
+        "w": 0.249,
+        "h": 0.158
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-smooth-foreground-pavement-swell-wit-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.313,
+        "y": 0.723,
+        "w": 0.35,
+        "h": 0.277
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-angular-right-road-lip-with-purple-a-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.709,
+        "y": 0.767,
+        "w": 0.173,
+        "h": 0.23299999999999998
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-bright-hooked-inner-guardrail-border-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.604,
+        "y": 0.792,
+        "w": 0.079,
+        "h": 0.20799999999999996
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

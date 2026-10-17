@@ -1,0 +1,459 @@
+{
+  "analysis_id": "analysis-2026-10-17-the-road-lets-weather-through-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Two unequal elevated roadway arcs cross a nearly black blue void beneath large pale clouds. The dominant cool-gray roadway sweeps from the foreground to the right and rises into translucent pointed fins. A smaller left arc carries straw-colored light and a rose rim. Foreground details include a striped road edge, a pastel pavement swell, and an angular speckled slab. Six visible interaction targets are available, but the planned lobed inner boundary is not clearly realized.",
+  "usable_surfaces": [
+    "Silver-railed sweeping asphalt and translucent pointed fins",
+    "Warm reclining left roadway arc",
+    "Closely striped foreground road edge",
+    "Pastel-textured foreground pavement swell",
+    "Purple-and-yellow-speckled angular road lip",
+    "Bright curved inner guardrail against the dark void"
+  ],
+  "detected_objects": [
+    {
+      "label": "Broad silver-railed asphalt arc rising into smoky pointed fins",
+      "artifact_type": "roadway-gesture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.559,
+        "y": 0.063,
+        "w": 0.439,
+        "h": 0.707
+      },
+      "polygon": [
+        [
+          0.559,
+          0.17
+        ],
+        [
+          0.583,
+          0.255
+        ],
+        [
+          0.591,
+          0.226
+        ],
+        [
+          0.576,
+          0.063
+        ],
+        [
+          0.62,
+          0.198
+        ],
+        [
+          0.695,
+          0.257
+        ],
+        [
+          0.637,
+          0.131
+        ],
+        [
+          0.711,
+          0.219
+        ],
+        [
+          0.843,
+          0.26
+        ],
+        [
+          0.969,
+          0.335
+        ],
+        [
+          0.691,
+          0.306
+        ],
+        [
+          0.632,
+          0.318
+        ],
+        [
+          0.987,
+          0.401
+        ],
+        [
+          0.998,
+          0.455
+        ],
+        [
+          0.937,
+          0.566
+        ],
+        [
+          0.629,
+          0.77
+        ],
+        [
+          0.826,
+          0.533
+        ],
+        [
+          0.624,
+          0.363
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "A large gray multilane road curves along the right side, with thin white lane marks, paired silver guardrails and dark supports. Its upper-left continuation rises into several sharp, pale, semi-transparent fins. The polygon follows the main elevated gesture and excludes the separately mapped foreground swell."
+    },
+    {
+      "label": "Low reclining roadway arc with straw light and a rose rim",
+      "artifact_type": "illuminated-roadway-surface",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.001,
+        "y": 0.553,
+        "w": 0.435,
+        "h": 0.172
+      },
+      "polygon": [
+        [
+          0.001,
+          0.673
+        ],
+        [
+          0.016,
+          0.63
+        ],
+        [
+          0.05,
+          0.597
+        ],
+        [
+          0.108,
+          0.574
+        ],
+        [
+          0.188,
+          0.559
+        ],
+        [
+          0.28,
+          0.553
+        ],
+        [
+          0.365,
+          0.557
+        ],
+        [
+          0.436,
+          0.567
+        ],
+        [
+          0.325,
+          0.572
+        ],
+        [
+          0.227,
+          0.579
+        ],
+        [
+          0.16,
+          0.598
+        ],
+        [
+          0.125,
+          0.623
+        ],
+        [
+          0.12,
+          0.653
+        ],
+        [
+          0.128,
+          0.685
+        ],
+        [
+          0.151,
+          0.715
+        ],
+        [
+          0.005,
+          0.725
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "The separate left arc lies low across the dark background. Its broad bend is illuminated pale yellow, while a thin pinkish rail traces the upper perimeter and tapers into the distance. The surface is visibly grainy, though a specific dithering technique cannot be established."
+    },
+    {
+      "label": "Short striped foreground road edge beneath the left guardrail",
+      "artifact_type": "striped-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.001,
+        "y": 0.781,
+        "w": 0.249,
+        "h": 0.158
+      },
+      "polygon": [
+        [
+          0.001,
+          0.91
+        ],
+        [
+          0.076,
+          0.87
+        ],
+        [
+          0.155,
+          0.831
+        ],
+        [
+          0.226,
+          0.796
+        ],
+        [
+          0.242,
+          0.781
+        ],
+        [
+          0.249,
+          0.788
+        ],
+        [
+          0.247,
+          0.807
+        ],
+        [
+          0.23,
+          0.821
+        ],
+        [
+          0.159,
+          0.856
+        ],
+        [
+          0.079,
+          0.896
+        ],
+        [
+          0.001,
+          0.939
+        ]
+      ],
+      "confidence": 0.87,
+      "visual_evidence": "The thin exposed edge below the foreground left guardrail has many closely spaced vertical divisions with muted yellow, blue-gray and pinkish accents. This is a real localized striped contour. It partially matches the planned pleated edge, but the silver guardrail above it is not visibly corrugated."
+    },
+    {
+      "label": "Smooth foreground pavement swell with faint pastel bands",
+      "artifact_type": "pastel-pavement-surface",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.313,
+        "y": 0.723,
+        "w": 0.35,
+        "h": 0.277
+      },
+      "polygon": [
+        [
+          0.313,
+          1
+        ],
+        [
+          0.356,
+          0.943
+        ],
+        [
+          0.397,
+          0.874
+        ],
+        [
+          0.431,
+          0.817
+        ],
+        [
+          0.473,
+          0.776
+        ],
+        [
+          0.52,
+          0.743
+        ],
+        [
+          0.567,
+          0.731
+        ],
+        [
+          0.604,
+          0.723
+        ],
+        [
+          0.634,
+          0.743
+        ],
+        [
+          0.609,
+          0.792
+        ],
+        [
+          0.603,
+          0.832
+        ],
+        [
+          0.614,
+          0.884
+        ],
+        [
+          0.635,
+          0.945
+        ],
+        [
+          0.663,
+          1
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "The foreground road widens into a smooth raised shoulder with pale straw, dusty rose and blue-green textured bands. Its left silhouette bulges outward while the inner rail bends sharply inward. The colored surface is continuous with the dominant road rather than a separate object."
+    },
+    {
+      "label": "Angular right road lip with purple-and-yellow speckling",
+      "artifact_type": "speckled-terminal-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.709,
+        "y": 0.767,
+        "w": 0.173,
+        "h": 0.23299999999999998
+      },
+      "polygon": [
+        [
+          0.709,
+          0.779
+        ],
+        [
+          0.715,
+          0.767
+        ],
+        [
+          0.75,
+          0.773
+        ],
+        [
+          0.768,
+          0.822
+        ],
+        [
+          0.793,
+          0.87
+        ],
+        [
+          0.827,
+          0.925
+        ],
+        [
+          0.882,
+          1
+        ],
+        [
+          0.818,
+          1
+        ],
+        [
+          0.787,
+          0.947
+        ],
+        [
+          0.755,
+          0.88
+        ],
+        [
+          0.728,
+          0.834
+        ],
+        [
+          0.71,
+          0.809
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "An angular slab enters from the lower right. Its diagonal exposed lip and adjacent top surface carry visible violet and yellow flecks. The polygon follows that speckled edge instead of enclosing the entire slab. Unlike the planned thin continuous termination, the generated feature has a conspicuously thick exposed face and is separated from the main road by dark space."
+    },
+    {
+      "label": "Bright hooked inner guardrail bordering the foreground void",
+      "artifact_type": "curved-rail-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.604,
+        "y": 0.792,
+        "w": 0.079,
+        "h": 0.20799999999999996
+      },
+      "polygon": [
+        [
+          0.615,
+          0.792
+        ],
+        [
+          0.611,
+          0.815
+        ],
+        [
+          0.61,
+          0.842
+        ],
+        [
+          0.617,
+          0.867
+        ],
+        [
+          0.635,
+          0.905
+        ],
+        [
+          0.66,
+          0.955
+        ],
+        [
+          0.683,
+          1
+        ],
+        [
+          0.67,
+          1
+        ],
+        [
+          0.65,
+          0.959
+        ],
+        [
+          0.625,
+          0.914
+        ],
+        [
+          0.608,
+          0.877
+        ],
+        [
+          0.604,
+          0.852
+        ],
+        [
+          0.605,
+          0.823
+        ],
+        [
+          0.609,
+          0.801
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "A narrow silver guardrail hooks around the inner foreground bend, with small dark posts and a bright rim against almost black blue space. This is a distinct visible edge target, not confirmation of the planned map-derived lobed boundary: no clearly multilobed contour or softly multicolored void margins are visible."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 2,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.578,
+    "rationale": "Two dominant road gestures remain legible against a large dark void and pale cloud field. The plate is not visually cluttered, but detailed clouds, repeated rails, lane marks, supports and the thick foreground slab make it more rendered and infrastructural than strictly minimal or expressionist. Coverage is an approximate visual estimate. The six targets include partial planned matches and one additional real edge; the planned lobed void boundary is not independently verified."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-17-the-road-lets-weather-through-v1"
+}

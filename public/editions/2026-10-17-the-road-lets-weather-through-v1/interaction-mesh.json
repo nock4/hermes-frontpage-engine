@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-17-the-road-lets-weather-through-v1",
+  "generation": "cron-1792245516576-60949",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1792245516576-60949/2026-10-17-the-road-lets-weather-through-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-broad-silver-railed-asphalt-arc-risi",
+      "visible_area_px": 86999,
+      "territory_area_px": 161646,
+      "hover_bounds": {
+        "x": 0.532,
+        "y": 0.0153,
+        "w": 0.468,
+        "h": 0.7986
+      },
+      "hover_polygon": [
+        [
+          0.532,
+          0.1694
+        ],
+        [
+          0.5492,
+          0.0625
+        ],
+        [
+          0.5758,
+          0.0153
+        ],
+        [
+          0.9688,
+          0.2875
+        ],
+        [
+          0.9953,
+          0.3347
+        ],
+        [
+          0.9992,
+          0.5
+        ],
+        [
+          0.9367,
+          0.6125
+        ],
+        [
+          0.6336,
+          0.8125
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-angular-right-road-lip-with-purple-a",
+          "shared_edge_px": 532,
+          "direction": "down",
+          "distance_px": 343.22
+        },
+        {
+          "artifact_id": "module-smooth-foreground-pavement-swell-wit",
+          "shared_edge_px": 342,
+          "direction": "left",
+          "distance_px": 491.33
+        },
+        {
+          "artifact_id": "module-bright-hooked-inner-guardrail-border",
+          "shared_edge_px": 141,
+          "direction": "down",
+          "distance_px": 397.72
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-low-reclining-roadway-arc-with-straw",
+      "visible_area_px": 38631,
+      "territory_area_px": 73337,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.5083,
+        "w": 0.4109,
+        "h": 0.2625
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.6097
+        ],
+        [
+          0.0352,
+          0.5569
+        ],
+        [
+          0.1094,
+          0.5222
+        ],
+        [
+          0.3836,
+          0.5083
+        ],
+        [
+          0.4102,
+          0.5556
+        ],
+        [
+          0.3836,
+          0.6028
+        ],
+        [
+          0.2437,
+          0.7444
+        ],
+        [
+          0.0,
+          0.7667
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-short-striped-foreground-road-edge-b",
+          "shared_edge_px": 105,
+          "direction": "down",
+          "distance_px": 178.58
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-short-striped-foreground-road-edge-b",
+      "visible_area_px": 6423,
+      "territory_area_px": 25413,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.7444,
+        "w": 0.2711,
+        "h": 0.2347
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.8722
+        ],
+        [
+          0.2375,
+          0.7458
+        ],
+        [
+          0.2484,
+          0.7486
+        ],
+        [
+          0.2703,
+          0.7875
+        ],
+        [
+          0.2687,
+          0.8069
+        ],
+        [
+          0.2469,
+          0.8458
+        ],
+        [
+          0.2297,
+          0.8597
+        ],
+        [
+          0.0,
+          0.9764
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-low-reclining-roadway-arc-with-straw",
+          "shared_edge_px": 105,
+          "direction": "up",
+          "distance_px": 178.58
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-smooth-foreground-pavement-swell-wit",
+      "visible_area_px": 53376,
+      "territory_area_px": 61983,
+      "hover_bounds": {
+        "x": 0.2914,
+        "y": 0.6833,
+        "w": 0.3648,
+        "h": 0.3167
+      },
+      "hover_polygon": [
+        [
+          0.2914,
+          0.9986
+        ],
+        [
+          0.4344,
+          0.7736
+        ],
+        [
+          0.5195,
+          0.7028
+        ],
+        [
+          0.6039,
+          0.6833
+        ],
+        [
+          0.6336,
+          0.7028
+        ],
+        [
+          0.6555,
+          0.7417
+        ],
+        [
+          0.6461,
+          0.9986
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-bright-hooked-inner-guardrail-border",
+          "shared_edge_px": 1233,
+          "direction": "right",
+          "distance_px": 172.74
+        },
+        {
+          "artifact_id": "hero-broad-silver-railed-asphalt-arc-risi",
+          "shared_edge_px": 342,
+          "direction": "right",
+          "distance_px": 491.33
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-angular-right-road-lip-with-purple-a",
+      "visible_area_px": 10815,
+      "territory_area_px": 22870,
+      "hover_bounds": {
+        "x": 0.6867,
+        "y": 0.7278,
+        "w": 0.2164,
+        "h": 0.2722
+      },
+      "hover_polygon": [
+        [
+          0.6867,
+          0.7778
+        ],
+        [
+          0.7148,
+          0.7278
+        ],
+        [
+          0.75,
+          0.7333
+        ],
+        [
+          0.9023,
+          0.9986
+        ],
+        [
+          0.7945,
+          0.9986
+        ],
+        [
+          0.6875,
+          0.8083
+        ],
+        [
+          0.6867,
+          0.7917
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-broad-silver-railed-asphalt-arc-risi",
+          "shared_edge_px": 532,
+          "direction": "up",
+          "distance_px": 343.22
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-bright-hooked-inner-guardrail-border",
+      "visible_area_px": 2119,
+      "territory_area_px": 11359,
+      "hover_bounds": {
+        "x": 0.582,
+        "y": 0.7528,
+        "w": 0.1227,
+        "h": 0.2472
+      },
+      "hover_polygon": [
+        [
+          0.582,
+          0.8375
+        ],
+        [
+          0.5867,
+          0.8
+        ],
+        [
+          0.6148,
+          0.7528
+        ],
+        [
+          0.6367,
+          0.7917
+        ],
+        [
+          0.7039,
+          0.9986
+        ],
+        [
+          0.6469,
+          0.9986
+        ],
+        [
+          0.5875,
+          0.8806
+        ],
+        [
+          0.582,
+          0.8528
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-smooth-foreground-pavement-swell-wit",
+          "shared_edge_px": 1233,
+          "direction": "left",
+          "distance_px": 172.74
+        },
+        {
+          "artifact_id": "hero-broad-silver-railed-asphalt-arc-risi",
+          "shared_edge_px": 141,
+          "direction": "up",
+          "distance_px": 397.72
+        }
+      ]
+    }
+  ]
+}

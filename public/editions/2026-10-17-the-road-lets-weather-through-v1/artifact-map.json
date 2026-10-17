@@ -1,0 +1,1158 @@
+{
+  "artifact_map_id": "map-2026-10-17-the-road-lets-weather-through-v1",
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "default_cluster_id": "cloud-gap-road-section",
+  "default_artifact_id": "hero-broad-silver-railed-asphalt-arc-risi",
+  "artifacts": [
+    {
+      "id": "hero-broad-silver-railed-asphalt-arc-risi",
+      "kind": "hero",
+      "label": "Broad silver-railed asphalt arc rising into smoky pointed fins",
+      "artifact_type": "roadway-gesture",
+      "bounds": {
+        "x": 0.559,
+        "y": 0.063,
+        "w": 0.439,
+        "h": 0.707
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.559,
+          0.17
+        ],
+        [
+          0.583,
+          0.255
+        ],
+        [
+          0.591,
+          0.226
+        ],
+        [
+          0.576,
+          0.063
+        ],
+        [
+          0.62,
+          0.198
+        ],
+        [
+          0.695,
+          0.257
+        ],
+        [
+          0.637,
+          0.131
+        ],
+        [
+          0.711,
+          0.219
+        ],
+        [
+          0.843,
+          0.26
+        ],
+        [
+          0.969,
+          0.335
+        ],
+        [
+          0.691,
+          0.306
+        ],
+        [
+          0.632,
+          0.318
+        ],
+        [
+          0.987,
+          0.401
+        ],
+        [
+          0.998,
+          0.455
+        ],
+        [
+          0.937,
+          0.566
+        ],
+        [
+          0.629,
+          0.77
+        ],
+        [
+          0.826,
+          0.533
+        ],
+        [
+          0.624,
+          0.363
+        ]
+      ],
+      "cluster_id": "cloud-gap-road-section",
+      "mask_path": "/editions/2026-10-17-the-road-lets-weather-through-v1/assets/masks/hero-broad-silver-railed-asphalt-arc-risi.svg",
+      "source_binding_ids": [
+        "binding-hero-broad-silver-railed-asphalt-arc-risi"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          996,
+          259
+        ],
+        "safe_stage_window_origin_px": [
+          1041,
+          300
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.559,
+            0.17
+          ],
+          [
+            0.583,
+            0.255
+          ],
+          [
+            0.591,
+            0.226
+          ],
+          [
+            0.576,
+            0.063
+          ],
+          [
+            0.62,
+            0.198
+          ],
+          [
+            0.695,
+            0.257
+          ],
+          [
+            0.637,
+            0.131
+          ],
+          [
+            0.711,
+            0.219
+          ],
+          [
+            0.843,
+            0.26
+          ],
+          [
+            0.969,
+            0.335
+          ],
+          [
+            0.691,
+            0.306
+          ],
+          [
+            0.632,
+            0.318
+          ],
+          [
+            0.987,
+            0.401
+          ],
+          [
+            0.998,
+            0.455
+          ],
+          [
+            0.937,
+            0.566
+          ],
+          [
+            0.629,
+            0.77
+          ],
+          [
+            0.826,
+            0.533
+          ],
+          [
+            0.624,
+            0.363
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.532,
+            0.1694
+          ],
+          [
+            0.5492,
+            0.0625
+          ],
+          [
+            0.5758,
+            0.0153
+          ],
+          [
+            0.9688,
+            0.2875
+          ],
+          [
+            0.9953,
+            0.3347
+          ],
+          [
+            0.9992,
+            0.5
+          ],
+          [
+            0.9367,
+            0.6125
+          ],
+          [
+            0.6336,
+            0.8125
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.532,
+          "y": 0.0153,
+          "w": 0.468,
+          "h": 0.7986
+        },
+        "territory_area_px": 161646,
+        "visible_area_px": 86999,
+        "expansion_ratio": 1.858,
+        "neighbors": [
+          {
+            "artifact_id": "module-angular-right-road-lip-with-purple-a",
+            "shared_edge_px": 532,
+            "direction": "down",
+            "distance_px": 343.22
+          },
+          {
+            "artifact_id": "module-smooth-foreground-pavement-swell-wit",
+            "shared_edge_px": 342,
+            "direction": "left",
+            "distance_px": 491.33
+          },
+          {
+            "artifact_id": "module-bright-hooked-inner-guardrail-border",
+            "shared_edge_px": 141,
+            "direction": "down",
+            "distance_px": 397.72
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-low-reclining-roadway-arc-with-straw",
+      "kind": "hero",
+      "label": "Low reclining roadway arc with straw light and a rose rim",
+      "artifact_type": "illuminated-roadway-surface",
+      "bounds": {
+        "x": 0.0,
+        "y": 0.55,
+        "w": 0.3867,
+        "h": 0.1792
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0.0016,
+          0.6542
+        ],
+        [
+          0.0359,
+          0.6042
+        ],
+        [
+          0.1094,
+          0.5708
+        ],
+        [
+          0.2211,
+          0.5556
+        ],
+        [
+          0.3836,
+          0.5569
+        ],
+        [
+          0.2445,
+          0.6986
+        ],
+        [
+          0.0016,
+          0.7236
+        ]
+      ],
+      "cluster_id": "cloud-gap-road-section",
+      "mask_path": "/editions/2026-10-17-the-road-lets-weather-through-v1/assets/masks/hero-low-reclining-roadway-arc-with-straw.svg",
+      "source_binding_ids": [
+        "binding-hero-low-reclining-roadway-arc-with-straw"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          280,
+          450
+        ],
+        "safe_stage_window_origin_px": [
+          324,
+          460
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0016,
+            0.6542
+          ],
+          [
+            0.0359,
+            0.6042
+          ],
+          [
+            0.1094,
+            0.5708
+          ],
+          [
+            0.2211,
+            0.5556
+          ],
+          [
+            0.3836,
+            0.5569
+          ],
+          [
+            0.2445,
+            0.6986
+          ],
+          [
+            0.0016,
+            0.7236
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.6097
+          ],
+          [
+            0.0352,
+            0.5569
+          ],
+          [
+            0.1094,
+            0.5222
+          ],
+          [
+            0.3836,
+            0.5083
+          ],
+          [
+            0.4102,
+            0.5556
+          ],
+          [
+            0.3836,
+            0.6028
+          ],
+          [
+            0.2437,
+            0.7444
+          ],
+          [
+            0.0,
+            0.7667
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.5083,
+          "w": 0.4109,
+          "h": 0.2625
+        },
+        "territory_area_px": 73337,
+        "visible_area_px": 38631,
+        "expansion_ratio": 1.898,
+        "neighbors": [
+          {
+            "artifact_id": "module-short-striped-foreground-road-edge-b",
+            "shared_edge_px": 105,
+            "direction": "down",
+            "distance_px": 178.58
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-short-striped-foreground-road-edge-b",
+      "kind": "module",
+      "label": "Short striped foreground road edge beneath the left guardrail",
+      "artifact_type": "striped-edge",
+      "bounds": {
+        "x": 0.001,
+        "y": 0.781,
+        "w": 0.249,
+        "h": 0.158
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.001,
+          0.91
+        ],
+        [
+          0.076,
+          0.87
+        ],
+        [
+          0.155,
+          0.831
+        ],
+        [
+          0.226,
+          0.796
+        ],
+        [
+          0.242,
+          0.781
+        ],
+        [
+          0.249,
+          0.788
+        ],
+        [
+          0.247,
+          0.807
+        ],
+        [
+          0.23,
+          0.821
+        ],
+        [
+          0.159,
+          0.856
+        ],
+        [
+          0.079,
+          0.896
+        ],
+        [
+          0.001,
+          0.939
+        ]
+      ],
+      "cluster_id": "cloud-gap-road-section",
+      "mask_path": "/editions/2026-10-17-the-road-lets-weather-through-v1/assets/masks/module-short-striped-foreground-road-edge-b.svg",
+      "source_binding_ids": [
+        "binding-module-short-striped-foreground-road-edge-b"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          161,
+          598
+        ],
+        "safe_stage_window_origin_px": [
+          186,
+          598
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.001,
+            0.91
+          ],
+          [
+            0.076,
+            0.87
+          ],
+          [
+            0.155,
+            0.831
+          ],
+          [
+            0.226,
+            0.796
+          ],
+          [
+            0.242,
+            0.781
+          ],
+          [
+            0.249,
+            0.788
+          ],
+          [
+            0.247,
+            0.807
+          ],
+          [
+            0.23,
+            0.821
+          ],
+          [
+            0.159,
+            0.856
+          ],
+          [
+            0.079,
+            0.896
+          ],
+          [
+            0.001,
+            0.939
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.8722
+          ],
+          [
+            0.2375,
+            0.7458
+          ],
+          [
+            0.2484,
+            0.7486
+          ],
+          [
+            0.2703,
+            0.7875
+          ],
+          [
+            0.2687,
+            0.8069
+          ],
+          [
+            0.2469,
+            0.8458
+          ],
+          [
+            0.2297,
+            0.8597
+          ],
+          [
+            0.0,
+            0.9764
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.7444,
+          "w": 0.2711,
+          "h": 0.2347
+        },
+        "territory_area_px": 25413,
+        "visible_area_px": 6423,
+        "expansion_ratio": 3.957,
+        "neighbors": [
+          {
+            "artifact_id": "hero-low-reclining-roadway-arc-with-straw",
+            "shared_edge_px": 105,
+            "direction": "up",
+            "distance_px": 178.58
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-smooth-foreground-pavement-swell-wit",
+      "kind": "module",
+      "label": "Smooth foreground pavement swell with faint pastel bands",
+      "artifact_type": "pastel-pavement-surface",
+      "bounds": {
+        "x": 0.313,
+        "y": 0.723,
+        "w": 0.35,
+        "h": 0.277
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.313,
+          1
+        ],
+        [
+          0.356,
+          0.943
+        ],
+        [
+          0.397,
+          0.874
+        ],
+        [
+          0.431,
+          0.817
+        ],
+        [
+          0.473,
+          0.776
+        ],
+        [
+          0.52,
+          0.743
+        ],
+        [
+          0.567,
+          0.731
+        ],
+        [
+          0.604,
+          0.723
+        ],
+        [
+          0.634,
+          0.743
+        ],
+        [
+          0.609,
+          0.792
+        ],
+        [
+          0.603,
+          0.832
+        ],
+        [
+          0.614,
+          0.884
+        ],
+        [
+          0.635,
+          0.945
+        ],
+        [
+          0.663,
+          1
+        ]
+      ],
+      "cluster_id": "cloud-gap-road-section",
+      "mask_path": "/editions/2026-10-17-the-road-lets-weather-through-v1/assets/masks/module-smooth-foreground-pavement-swell-wit.svg",
+      "source_binding_ids": [
+        "binding-module-smooth-foreground-pavement-swell-wit"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          625,
+          598
+        ],
+        "safe_stage_window_origin_px": [
+          660,
+          598
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.313,
+            1
+          ],
+          [
+            0.356,
+            0.943
+          ],
+          [
+            0.397,
+            0.874
+          ],
+          [
+            0.431,
+            0.817
+          ],
+          [
+            0.473,
+            0.776
+          ],
+          [
+            0.52,
+            0.743
+          ],
+          [
+            0.567,
+            0.731
+          ],
+          [
+            0.604,
+            0.723
+          ],
+          [
+            0.634,
+            0.743
+          ],
+          [
+            0.609,
+            0.792
+          ],
+          [
+            0.603,
+            0.832
+          ],
+          [
+            0.614,
+            0.884
+          ],
+          [
+            0.635,
+            0.945
+          ],
+          [
+            0.663,
+            1
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2914,
+            0.9986
+          ],
+          [
+            0.4344,
+            0.7736
+          ],
+          [
+            0.5195,
+            0.7028
+          ],
+          [
+            0.6039,
+            0.6833
+          ],
+          [
+            0.6336,
+            0.7028
+          ],
+          [
+            0.6555,
+            0.7417
+          ],
+          [
+            0.6461,
+            0.9986
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2914,
+          "y": 0.6833,
+          "w": 0.3648,
+          "h": 0.3167
+        },
+        "territory_area_px": 61983,
+        "visible_area_px": 53376,
+        "expansion_ratio": 1.161,
+        "neighbors": [
+          {
+            "artifact_id": "module-bright-hooked-inner-guardrail-border",
+            "shared_edge_px": 1233,
+            "direction": "right",
+            "distance_px": 172.74
+          },
+          {
+            "artifact_id": "hero-broad-silver-railed-asphalt-arc-risi",
+            "shared_edge_px": 342,
+            "direction": "right",
+            "distance_px": 491.33
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-angular-right-road-lip-with-purple-a",
+      "kind": "module",
+      "label": "Angular right road lip with purple-and-yellow speckling",
+      "artifact_type": "speckled-terminal-edge",
+      "bounds": {
+        "x": 0.709,
+        "y": 0.767,
+        "w": 0.173,
+        "h": 0.23299999999999998
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.709,
+          0.779
+        ],
+        [
+          0.715,
+          0.767
+        ],
+        [
+          0.75,
+          0.773
+        ],
+        [
+          0.768,
+          0.822
+        ],
+        [
+          0.793,
+          0.87
+        ],
+        [
+          0.827,
+          0.925
+        ],
+        [
+          0.882,
+          1
+        ],
+        [
+          0.818,
+          1
+        ],
+        [
+          0.787,
+          0.947
+        ],
+        [
+          0.755,
+          0.88
+        ],
+        [
+          0.728,
+          0.834
+        ],
+        [
+          0.71,
+          0.809
+        ]
+      ],
+      "cluster_id": "cloud-gap-road-section",
+      "mask_path": "/editions/2026-10-17-the-road-lets-weather-through-v1/assets/masks/module-angular-right-road-lip-with-purple-a.svg",
+      "source_binding_ids": [
+        "binding-module-angular-right-road-lip-with-purple-a"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1018,
+          598
+        ],
+        "safe_stage_window_origin_px": [
+          1036,
+          598
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.709,
+            0.779
+          ],
+          [
+            0.715,
+            0.767
+          ],
+          [
+            0.75,
+            0.773
+          ],
+          [
+            0.768,
+            0.822
+          ],
+          [
+            0.793,
+            0.87
+          ],
+          [
+            0.827,
+            0.925
+          ],
+          [
+            0.882,
+            1
+          ],
+          [
+            0.818,
+            1
+          ],
+          [
+            0.787,
+            0.947
+          ],
+          [
+            0.755,
+            0.88
+          ],
+          [
+            0.728,
+            0.834
+          ],
+          [
+            0.71,
+            0.809
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6867,
+            0.7778
+          ],
+          [
+            0.7148,
+            0.7278
+          ],
+          [
+            0.75,
+            0.7333
+          ],
+          [
+            0.9023,
+            0.9986
+          ],
+          [
+            0.7945,
+            0.9986
+          ],
+          [
+            0.6875,
+            0.8083
+          ],
+          [
+            0.6867,
+            0.7917
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6867,
+          "y": 0.7278,
+          "w": 0.2164,
+          "h": 0.2722
+        },
+        "territory_area_px": 22870,
+        "visible_area_px": 10815,
+        "expansion_ratio": 2.115,
+        "neighbors": [
+          {
+            "artifact_id": "hero-broad-silver-railed-asphalt-arc-risi",
+            "shared_edge_px": 532,
+            "direction": "up",
+            "distance_px": 343.22
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-bright-hooked-inner-guardrail-border",
+      "kind": "module",
+      "label": "Bright hooked inner guardrail bordering the foreground void",
+      "artifact_type": "curved-rail-edge",
+      "bounds": {
+        "x": 0.604,
+        "y": 0.792,
+        "w": 0.079,
+        "h": 0.20799999999999996
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.615,
+          0.792
+        ],
+        [
+          0.611,
+          0.815
+        ],
+        [
+          0.61,
+          0.842
+        ],
+        [
+          0.617,
+          0.867
+        ],
+        [
+          0.635,
+          0.905
+        ],
+        [
+          0.66,
+          0.955
+        ],
+        [
+          0.683,
+          1
+        ],
+        [
+          0.67,
+          1
+        ],
+        [
+          0.65,
+          0.959
+        ],
+        [
+          0.625,
+          0.914
+        ],
+        [
+          0.608,
+          0.877
+        ],
+        [
+          0.604,
+          0.852
+        ],
+        [
+          0.605,
+          0.823
+        ],
+        [
+          0.609,
+          0.801
+        ]
+      ],
+      "cluster_id": "cloud-gap-road-section",
+      "mask_path": "/editions/2026-10-17-the-road-lets-weather-through-v1/assets/masks/module-bright-hooked-inner-guardrail-border.svg",
+      "source_binding_ids": [
+        "binding-module-bright-hooked-inner-guardrail-border"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          824,
+          598
+        ],
+        "safe_stage_window_origin_px": [
+          832,
+          598
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.615,
+            0.792
+          ],
+          [
+            0.611,
+            0.815
+          ],
+          [
+            0.61,
+            0.842
+          ],
+          [
+            0.617,
+            0.867
+          ],
+          [
+            0.635,
+            0.905
+          ],
+          [
+            0.66,
+            0.955
+          ],
+          [
+            0.683,
+            1
+          ],
+          [
+            0.67,
+            1
+          ],
+          [
+            0.65,
+            0.959
+          ],
+          [
+            0.625,
+            0.914
+          ],
+          [
+            0.608,
+            0.877
+          ],
+          [
+            0.604,
+            0.852
+          ],
+          [
+            0.605,
+            0.823
+          ],
+          [
+            0.609,
+            0.801
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.582,
+            0.8375
+          ],
+          [
+            0.5867,
+            0.8
+          ],
+          [
+            0.6148,
+            0.7528
+          ],
+          [
+            0.6367,
+            0.7917
+          ],
+          [
+            0.7039,
+            0.9986
+          ],
+          [
+            0.6469,
+            0.9986
+          ],
+          [
+            0.5875,
+            0.8806
+          ],
+          [
+            0.582,
+            0.8528
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.582,
+          "y": 0.7528,
+          "w": 0.1227,
+          "h": 0.2472
+        },
+        "territory_area_px": 11359,
+        "visible_area_px": 2119,
+        "expansion_ratio": 5.361,
+        "neighbors": [
+          {
+            "artifact_id": "module-smooth-foreground-pavement-swell-wit",
+            "shared_edge_px": 1233,
+            "direction": "left",
+            "distance_px": 172.74
+          },
+          {
+            "artifact_id": "hero-broad-silver-railed-asphalt-arc-risi",
+            "shared_edge_px": 141,
+            "direction": "up",
+            "distance_px": 397.72
+          }
+        ]
+      }
+    }
+  ]
+}
