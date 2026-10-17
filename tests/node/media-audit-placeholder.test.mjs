@@ -3,6 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import vm from 'node:vm'
 import ts from 'typescript'
+import { nativeVideoPlaybackProgress } from '../ux/helpers/native-video-playback'
 
 // Execute the actual audit analyzer without registering network/browser tests.
 const source = fs.readFileSync(new URL('../ux/source-window-media-audit.spec.ts', import.meta.url), 'utf8')
@@ -13,6 +14,7 @@ const context = { exports: {}, process, console, URL, require: name => {
   if (name === 'node:fs') return fs
   if (name === 'node:path') return path
   if (name === '@playwright/test') return { test() {}, expect }
+  if (name === './helpers/native-video-playback') return { nativeVideoPlaybackProgress }
   throw new Error(`Unexpected audit dependency ${name}`)
 } }
 vm.runInNewContext(compiled, context)

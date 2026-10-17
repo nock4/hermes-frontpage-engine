@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 import { expect, test, type Locator, type Page } from '@playwright/test'
+import { nativeVideoPlaybackProgress } from './helpers/native-video-playback'
 
 type ManifestItem = {
   edition_id: string
@@ -470,14 +471,18 @@ test('real source-window media audit across packaged editions', async ({ page })
             await video.scrollIntoViewIfNeeded()
             const box = await video.boundingBox()
             if (!box) throw new Error('No visible video hit target')
-            await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2)
-            const start = await video.evaluate((v: HTMLVideoElement) => v.currentTime)
-            await expect.poll(() => video.evaluate((v: HTMLVideoElement, start: number) => ({
-              advanced: v.currentTime > start + 0.2,
-              decoded: v.getVideoPlaybackQuality().totalVideoFrames > 0,
-              dimensions: v.videoWidth > 0 && v.videoHeight > 0,
+            const snapshot = () => video.evaluate((v: HTMLVideoElement) => ({
+              currentTime: v.currentTime, duration: v.duration,
+              frames: v.getVideoPlaybackQuality().totalVideoFrames,
+              width: v.videoWidth, height: v.videoHeight,
               error: v.error?.message || null,
-            }), start), { timeout: 15_000 }).toEqual({ advanced: true, decoded: true, dimensions: true, error: null })
+            }))
+            // Sample before the trusted gesture: very short clips may already
+            // be ended by the time the click command returns.
+            const start = await snapshot()
+            await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2)
+            await expect.poll(async () => nativeVideoPlaybackProgress(await snapshot(), start), { timeout: 15_000 })
+              .toEqual({ advanced: true, decoded: true, dimensions: true, error: null })
           } catch (error) { playbackError = String(error) }
           if (playbackError) failures.push(`${edition.slug} / ${binding.id}: native video playback failed: ${playbackError}`)
         }
