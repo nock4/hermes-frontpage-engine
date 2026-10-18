@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { assertDiskHeadroom, evidenceBytes } from './cron-reliability.mjs'
 import path from 'node:path'
 import { randomUUID } from 'node:crypto'
 import { execFile } from 'node:child_process'
@@ -19,20 +20,22 @@ export async function snapshotCronWorktree(worktree, archive, baseline) {
   return destination
 }
 
-export async function preserveCronEvidence(worktree, archive, changedPaths) {
+export async function preserveCronEvidence(worktree, archive, changedPaths, { checkDisk = assertDiskHeadroom, copy = fs.cp } = {}) {
   for (const name of changedPaths) {
     if (!name.startsWith('public/editions/') || name.split(/[\\/]/).includes('..') || path.isAbsolute(name)) throw new Error(`Unsafe evidence path: ${name}`)
   }
+  const bytes = await evidenceBytes(path.join(worktree, 'tmp')) + (await Promise.all(changedPaths.map(name => evidenceBytes(path.join(worktree, name))))).reduce((a, b) => a + b, 0)
+  await checkDisk(archive, { requiredBytes: bytes + 5 * 1024 ** 3 })
   const destination = path.join(archive, `${Date.now()}-${randomUUID()}`)
   await fs.mkdir(destination, { recursive: true })
   // tmp holds prompts, original failures, captures, generated plates and mapping.
   // Refuse to refresh if preservation fails; never silently discard evidence.
-  try { await fs.cp(path.join(worktree, 'tmp'), path.join(destination, 'tmp'), { recursive: true, dereference: false }) }
+  try { await copy(path.join(worktree, 'tmp'), path.join(destination, 'tmp'), { recursive: true, dereference: false }) }
   catch (error) { if (error.code !== 'ENOENT') throw error }
   for (const name of changedPaths) {
     const target = path.join(destination, name)
     await fs.mkdir(path.dirname(target), { recursive: true })
-    try { await fs.cp(path.join(worktree, name), target, { recursive: true, dereference: false }) }
+    try { await copy(path.join(worktree, name), target, { recursive: true, dereference: false }) }
     catch (error) { if (error.code !== 'ENOENT') throw error }
   }
   await fs.writeFile(path.join(destination, 'preservation.json'), JSON.stringify({ worktree, changed_paths: changedPaths, created_at: new Date().toISOString() }, null, 2))

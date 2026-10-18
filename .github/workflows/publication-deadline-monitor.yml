@@ -1,0 +1,37 @@
+name: Publication deadline monitor
+on:
+  schedule:
+    # 07:17 Eastern in summer/winter; evaluator suppresses pre-deadline checks.
+    - cron: '17 11,12,13 * * *'
+  workflow_dispatch:
+    inputs:
+      diagnostic:
+        description: Read-only check; never creates an issue
+        type: boolean
+        default: true
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: frontpage-publication-monitor
+  cancel-in-progress: false
+jobs:
+  publication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check publication independently
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DFE_PUBLICATION_DEADLINE: ${{ vars.DFE_PUBLICATION_DEADLINE || '07:00' }}
+          DIAGNOSTIC: ${{ github.event_name == 'workflow_dispatch' && inputs.diagnostic }}
+        run: |
+          if [ "$DIAGNOSTIC" = true ]; then
+            node scripts/publication-monitor.mjs --diagnostic
+          else
+            node scripts/publication-monitor.mjs
+          fi

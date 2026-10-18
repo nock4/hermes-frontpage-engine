@@ -5,6 +5,7 @@ import path from 'node:path'
 import { assertLandscapePlate } from './lib/landscape-policy.mjs'
 import { fileURLToPath } from 'node:url'
 import https from 'node:https'
+import { assertDiskHeadroom, discoverRecovery, localPublicationDate, writePublicationOutcome } from './lib/cron-reliability.mjs'
 import { randomUUID } from 'node:crypto'
 
 import { auditPressStability, formatPressStabilityAudit } from './lib/press-stability.mjs'
@@ -221,6 +222,8 @@ export async function resolveInspirationOverridePath(options) {
 
 async function ensureWorktree({ worktreeDir, remote, branch }) {
   await assertSafeCronWorktreePath(worktreeDir)
+  await assertDiskHeadroom(primaryRoot)
+  await assertDiskHeadroom(path.dirname(worktreeDir))
   await run('git', ['fetch', remote, branch, '--prune'], { cwd: primaryRoot })
 
   if (await exists(worktreeDir)) {
@@ -267,11 +270,11 @@ export function cacheBustedRemoteUrl(remoteUrl, attempt) {
   return url.toString()
 }
 
-async function verifyRemoteManifest(remoteUrl, expectedEditionId, { retries, retryDelayMs }) {
+export async function verifyRemoteManifest(remoteUrl, expectedEditionId, { retries, retryDelayMs, fetch = fetchJson }) {
   let lastError = null
   for (let attempt = 1; attempt <= retries; attempt += 1) {
     try {
-      const payload = await fetchJson(cacheBustedRemoteUrl(remoteUrl, attempt))
+      const payload = await fetch(cacheBustedRemoteUrl(remoteUrl, attempt))
       if (payload?.current_edition_id === expectedEditionId) {
         return {
           ok: true,
@@ -282,6 +285,7 @@ async function verifyRemoteManifest(remoteUrl, expectedEditionId, { retries, ret
       lastError = new Error(`remote current_edition_id=${payload?.current_edition_id || 'null'} expected=${expectedEditionId}`)
     } catch (error) {
       lastError = error
+      if (error.permanent) break
     }
     if (attempt < retries) await sleep(retryDelayMs)
   }
@@ -291,9 +295,12 @@ async function verifyRemoteManifest(remoteUrl, expectedEditionId, { retries, ret
   }
 }
 
-function fetchJson(url) {
+export function fetchJson(url, { timeoutMs = 15000, get = https.get } = {}) {
   return new Promise((resolve, reject) => {
-    const request = https.get(url, {
+    if (!Number.isSafeInteger(timeoutMs) || timeoutMs < 1) return reject(new Error('Invalid request deadline'))
+    let timer
+    const finish = (error, value) => { clearTimeout(timer); error ? reject(error) : resolve(value) }
+    const request = get(url, {
       headers: {
         'Cache-Control': 'no-cache, no-store, max-age=0',
         Pragma: 'no-cache',
@@ -303,23 +310,27 @@ function fetchJson(url) {
       const statusCode = response.statusCode || 0
       if (statusCode < 200 || statusCode >= 300) {
         response.resume()
-        reject(new Error(`HTTP ${statusCode} for ${url}`))
+        finish(Object.assign(new Error(`HTTP ${statusCode} for ${url}`), { permanent: statusCode >= 400 && statusCode < 500 && ![408, 429].includes(statusCode) }))
         return
       }
       let body = ''
       response.setEncoding('utf8')
       response.on('data', (chunk) => {
         body += chunk
+        if (body.length > 4 * 1024 * 1024) request.destroy(new Error('Remote manifest exceeds size limit'))
       })
+      response.on('error', finish)
+      response.on('aborted', () => finish(new Error('Remote manifest response aborted')))
       response.on('end', () => {
         try {
-          resolve(JSON.parse(body))
+          finish(null, JSON.parse(body))
         } catch (error) {
-          reject(error)
+          finish(error)
         }
       })
     })
-    request.on('error', reject)
+    request.on('error', finish)
+    timer = setTimeout(() => request.destroy(new Error(`Remote manifest request deadline exceeded (${timeoutMs}ms)`)), timeoutMs)
   })
 }
 
@@ -530,6 +541,7 @@ async function main() {
     process.exitCode = result.code
     return
   }
+  const expectedDate = localPublicationDate()
   let exitCode = 0
   const cronUxPort = allocateCronUxPort()
   const cronEnv = {
@@ -538,6 +550,8 @@ async function main() {
     DFE_ENABLE_UNTRUSTED_BROWSER_SOURCE_INSPECTION: process.env.DFE_ENABLE_UNTRUSTED_BROWSER_SOURCE_INSPECTION || '1',
   }
   const summary = {
+    reliability_version: 1,
+    expected_date: expectedDate,
     ok: false,
     worktree_dir: path.resolve(options.worktreeDir),
     input_root: path.resolve(options.inputRoot),
@@ -555,6 +569,7 @@ async function main() {
   const checkpoint = async (stage) => { summary.stage = stage; await writeCronCheckpoint(checkpointPath, summary) }
 
   try {
+    if (!options.proofOnly && !options.resumeCandidate) Object.assign(options, await discoverRecovery(path.dirname(checkpointPath), expectedDate, options.worktreeDir))
     if (options.proofOnly) {
       Object.assign(summary, await readProofCheckpoint(options.proofOnly), { ok: false, proof_only: true, proof_input_checkpoint: options.proofOnly, checkpoint_path: checkpointPath })
       delete summary.error
@@ -571,6 +586,8 @@ async function main() {
       console.log(JSON.stringify(summary, null, 2))
       return
     }
+    await assertDiskHeadroom(primaryRoot)
+    await assertDiskHeadroom(path.dirname(options.worktreeDir))
     await checkpoint('preflight')
     await logPressStabilityPreflight()
     await cleanupPreviewSmokeServer()
@@ -613,6 +630,7 @@ async function main() {
       env: cronEnv,
     })
     }
+    summary.local_edition_id = (await readJson(path.join(summary.latest_run_dir, 'edition-package-summary.json'))).edition_id
     await fs.rm(path.join(options.worktreeDir, 'vite.config.d.ts'), { force: true })
     await checkpoint('qa-publish')
     await run('npm', ['run', 'qa:publish'], { cwd: options.worktreeDir, env: cronEnv })
@@ -669,6 +687,7 @@ async function main() {
     exitCode = 1
   } finally {
     await writeCronCheckpoint(checkpointPath, summary)
+    await writePublicationOutcome(path.join(primaryRoot, 'tmp', 'cron-outcomes', path.basename(checkpointPath)), summary, expectedDate)
     if (!options.proofOnly) {
       await cleanupPreviewSmokeServer()
       await cleanupPreviewSmokeServer(cronUxPort)
