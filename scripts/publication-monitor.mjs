@@ -24,8 +24,8 @@ async function main() {
   let manifest = null, error = null
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      const response = await fetch(`https://daily.nockgarden.com/editions/index.json?monitor=${Date.now()}`, { signal: AbortSignal.timeout(15000), headers: { 'Cache-Control': 'no-cache' } })
-      if (!response.ok) throw new Error(`Manifest HTTP ${response.status}`)
+      const response = await fetch(`https://daily.nockgarden.com/editions/index.json?monitor=${Date.now()}`, { signal: AbortSignal.timeout(15000), headers: { 'Cache-Control': 'no-cache', 'User-Agent': 'DailyFrontpageCronRemoteVerify/1.0', Accept: 'application/json' } })
+      if (!response.ok) throw new Error(`Manifest HTTP ${response.status}; server=${response.headers.get('server') || 'unknown'}; body=${(await response.text()).slice(0, 500)}`)
       manifest = await response.json()
       break
     } catch (e) { error = e.message }
@@ -35,7 +35,7 @@ async function main() {
   // playback, image-fidelity, runtime-QA, or local machine heartbeat proof.
   if (result.status === 'published') {
     try {
-      const response = await fetch(`https://daily.nockgarden.com/editions/${result.observed_id}/edition.json?monitor=${Date.now()}`, { signal: AbortSignal.timeout(15000) })
+      const response = await fetch(`https://daily.nockgarden.com/editions/${result.observed_id}/edition.json?monitor=${Date.now()}`, { signal: AbortSignal.timeout(15000), headers: { 'User-Agent': 'DailyFrontpageCronRemoteVerify/1.0', Accept: 'application/json' } })
       if (!response.ok || (await response.json()).edition_id !== result.observed_id) throw new Error('Remote edition identity unavailable/mismatched')
       result.evidence = 'remote-manifest-and-edition'
     } catch (e) { result.status = 'unavailable'; result.error = e.message }
