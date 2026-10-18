@@ -1,10 +1,14 @@
-import { describe, it, expect } from 'vitest'
+import { beforeEach, describe, it, expect } from 'vitest'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { preserveCronEvidence } from '../../scripts/lib/cron-recovery-state.mjs'
 import { EventEmitter } from 'node:events'
 import { fetchJson, verifyRemoteManifest, buildDailyProcessArgs } from '../../scripts/run-daily-publish-cron.mjs'
 import { assertDiskHeadroom, assertPublishDiskHeadroom, selectRecovery, publicationOutcome, discoverRecovery, writePublicationOutcome } from '../../scripts/lib/cron-reliability.mjs'
+
+beforeEach(async () => {
+  await fs.mkdir(path.resolve(process.env.TMPDIR || 'tmp/'), { recursive: true })
+})
 
 describe('bounded remote requests', () => {
   it('bounds transient retries and never accepts a different edition', async () => {

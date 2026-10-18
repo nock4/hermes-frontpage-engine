@@ -49,6 +49,7 @@ const claim = (over = {}) => claimPreparedReserve({ reserveDir, inputRoot: vault
 // developer shell may or may not export. Pin it per test and restore after.
 let savedHermesHome
 beforeEach(async () => {
+  await fs.mkdir(path.resolve(process.env.TMPDIR || 'tmp/'), { recursive: true })
   root = await fs.mkdtemp(path.join(path.resolve(process.env.TMPDIR || 'tmp/'), 'reserve-test-'))
   reserveDir = path.join(root, 'reserve'); vault = path.join(root, 'vault')
   savedHermesHome = process.env.HERMES_HOME

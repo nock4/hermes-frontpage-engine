@@ -53,18 +53,42 @@ export const productionIssueTitle = date => `[Frontpage publication] ${date}`
 export const diagnosticIssueTitle = date => `[Frontpage publication DIAGNOSTIC] ${date}`
 
 // Every issue (open and closed, all pages; pull requests excluded) through the
-// REST list API, not search: no index lag and no recency cap on dedup.
+// REST list API, not search: no index lag and no recency cap on dedup. Each
+// request carries a unique nonce and no-cache so no cached page is reused.
+let listNonce = 0
 function exactTitleIssues(gh, repo, title) {
-  return gh(['api', '--paginate', '-X', 'GET', `repos/${repo}/issues`, '-f', 'state=all', '-f', 'per_page=100',
+  return gh(['api', '--paginate', '-X', 'GET', `repos/${repo}/issues`, '-H', 'Cache-Control: no-cache',
+    '-f', 'state=all', '-f', 'per_page=100', '-f', `monitor_nonce=${Date.now()}-${process.pid}-${++listNonce}`,
     '--jq', '.[] | select(.pull_request == null) | {number, title, state, url: .html_url}'])
     .split('\n').filter(line => line.trim()).map(line => JSON.parse(line))
     .filter(issue => issue.title === title).map(issue => ({ ...issue, state: String(issue.state).toUpperCase() }))
 }
 
+const sleepSync = ms => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms)
+export const defaultVisibility = { attempts: 8, delayMs: 1500 }
+
+// The REST list lagged a fresh create in deployed run 39165196866, so a later
+// reconcile duplicated the issue. Reading back the target by number does not
+// prove the list is fresh: success requires the list itself to show exactly
+// the written issue in its new state, within bounded waits, else fail closed.
+function confirmListed(gh, repo, title, issue, { wait = sleepSync, visibility = defaultVisibility } = {}) {
+  let last = []
+  for (let attempt = 1; attempt <= visibility.attempts; attempt++) {
+    last = exactTitleIssues(gh, repo, title)
+    if (last.length === 1 && last[0].number === issue.number && last[0].state === issue.state) return { attempts: attempt }
+    if (attempt < visibility.attempts) wait(visibility.delayMs)
+  }
+  throw new Error(`Issue #${issue.number} ${issue.state} not visible in exact-title list for ${title} after ${visibility.attempts} attempts; listed: ${JSON.stringify(last.map(({ number, state }) => ({ number, state })))}`)
+}
+
 // One exact-title issue per date. Open or reopen on a real miss, close only on
 // full remote manifest+edition evidence. Duplicates fail closed.
-export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnostic = false }) {
-  const view = number => JSON.parse(gh(['issue', 'view', String(number), '--repo', repo, '--json', 'number,title,state,url']))
+export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnostic = false, wait, visibility }) {
+  // Read back the exact target, then require list visibility before reporting delivery.
+  const view = number => {
+    const issue = JSON.parse(gh(['issue', 'view', String(number), '--repo', repo, '--json', 'number,title,state,url']))
+    return { ...issue, list_visibility: confirmListed(gh, repo, title, issue, { wait, visibility }) }
+  }
   const matches = exactTitleIssues(gh, repo, title)
   if (matches.length > 1) throw new Error(`Ambiguous exact-title issues for ${title}: ${matches.map(issue => issue.number).join(', ')}`)
   const [existing] = matches
@@ -73,7 +97,6 @@ export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnos
   if (['missed', 'unavailable'].includes(result.status)) {
     if (!existing) {
       const url = gh(['issue', 'create', '--repo', repo, '--title', title, '--body', `${label}Publication evidence missing after ${result.deadline} America/New_York.\n\nStart state UNKNOWN: no machine heartbeat exists. This does not prove the Mac failed to start.\n\n${evidence}`]).trim()
-      // Read back the exact newly created target before reporting delivery.
       return { action: 'created', issue: view(url) }
     }
     if (existing.state === 'OPEN') return { action: 'existing-open', issue: existing }
@@ -89,15 +112,15 @@ export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnos
 
 // Exercises the production reconciliation against a DIAGNOSTIC-titled issue.
 // Production titles are never passed here, so no false incident can be raised.
-export function exerciseIssueReconciliation({ repo, gh, now = new Date(), runUrl = null }) {
+export function exerciseIssueReconciliation({ repo, gh, now = new Date(), runUrl = null, wait, visibility }) {
   const date = localPublicationDate(now)
   const title = diagnosticIssueTitle(date)
   if (title === productionIssueTitle(date)) throw new Error('Diagnostic title collides with production')
   const injected = { expected_date: date, deadline: '07:00', timezone: 'America/New_York', status: 'missed', start_state: 'unknown-no-heartbeat', evidence: 'injected-diagnostic', injected: true, diagnostic: true, checked_at: now.toISOString() }
-  const first = reconcileIssue({ repo, title, result: injected, gh, runUrl, diagnostic: true })
-  const second = reconcileIssue({ repo, title, result: injected, gh, runUrl, diagnostic: true })
+  const first = reconcileIssue({ repo, title, result: injected, gh, runUrl, diagnostic: true, wait, visibility })
+  const second = reconcileIssue({ repo, title, result: injected, gh, runUrl, diagnostic: true, wait, visibility })
   const exactTitleMatches = exactTitleIssues(gh, repo, title).length
-  const close = reconcileIssue({ repo, title, result: { ...injected, status: 'published', evidence: 'remote-manifest-and-edition', observed_id: `${date}-diagnostic-exercise-v1` }, gh, runUrl, diagnostic: true })
+  const close = reconcileIssue({ repo, title, result: { ...injected, status: 'published', evidence: 'remote-manifest-and-edition', observed_id: `${date}-diagnostic-exercise-v1` }, gh, runUrl, diagnostic: true, wait, visibility })
   const readback = JSON.parse(gh(['issue', 'view', String(close.issue?.number ?? first.issue.number), '--repo', repo, '--json', 'number,title,state,url']))
   // existing-open first: a previous exercise crashed before closing; still one issue.
   const ok = ['created', 'reopened', 'existing-open'].includes(first.action) && second.action === 'existing-open' && exactTitleMatches === 1

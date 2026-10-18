@@ -22,16 +22,24 @@ import { checkPublication, reconcileIssue, exerciseIssueReconciliation, producti
 const liveManifest = id => ({ current_edition_id: id, editions: [{ edition_id: id, is_live: true, path: `/editions/${id}`, preview_asset_path: `/editions/${id}/assets/preview.png` }] })
 
 // In-memory gh stand-in: exact title list over open+closed, create/reopen/close/view.
-function fakeGh(seed = []) {
+// staleLists: after each write, the next N list calls return the pre-write
+// snapshot (the REST list lag seen in deployed run 39165196866).
+function fakeGh(seed = [], { staleLists = 0 } = {}) {
   const issues = seed.map((issue, index) => ({ number: index + 1, url: `https://github.com/o/r/issues/${index + 1}`, ...issue }))
   const calls = []
+  let snapshot = null, staleRemaining = 0
   const gh = args => {
     calls.push(args)
     const [, verb] = args
     if (args[0] === 'api') {
       // Emulates `gh api --paginate ... --jq '.[] | select(.pull_request == null) | {...}'`: NDJSON over every page.
       if (!args.includes('--paginate')) throw new Error('issue listing must paginate')
-      return issues.filter(issue => !issue.pull_request).map(({ number, title, state, url }) => JSON.stringify({ number, title, state: state.toLowerCase(), url })).join('\n') + '\n'
+      const listed = staleRemaining > 0 ? (staleRemaining--, snapshot) : issues
+      return listed.filter(issue => !issue.pull_request).map(({ number, title, state, url }) => JSON.stringify({ number, title, state: state.toLowerCase(), url })).join('\n') + '\n'
+    }
+    if (['create', 'reopen', 'close'].includes(verb) && staleLists > 0 && staleRemaining === 0) {
+      snapshot = issues.map(issue => ({ ...issue }))
+      staleRemaining = staleLists
     }
     if (verb === 'list') throw new Error('capped gh issue list must not be used for dedup')
     if (verb === 'create') {
@@ -153,5 +161,78 @@ describe('exhaustive exact-date dedup and exercise restart', () => {
     expect(evidence.ok).toBe(true)
     expect(evidence.readback.state).toBe('CLOSED')
     expect(f.issues.filter(issue => issue.title === title)).toHaveLength(1)
+  })
+})
+
+describe('stale REST list after writes (deployed run 39165196866)', () => {
+  const title = diagnosticIssueTitle('2026-10-18')
+  const now = new Date('2026-10-18T16:00Z')
+  const waits = []
+  const wait = ms => waits.push(ms)
+  it('creates exactly once and closes the same issue when the list briefly lags each write', () => {
+    waits.length = 0
+    const f = fakeGh([], { staleLists: 2 })
+    const evidence = exerciseIssueReconciliation({ repo: 'o/r', gh: f.gh, now, wait })
+    expect(f.calls.filter(args => args[1] === 'create')).toHaveLength(1)
+    expect(f.issues.filter(issue => issue.title === title)).toHaveLength(1)
+    expect(evidence.first.action).toBe('created')
+    expect(evidence.second.action).toBe('existing-open')
+    expect(evidence.exact_title_matches).toBe(1)
+    expect(evidence.close).toMatchObject({ action: 'closed', issue: { number: 1, state: 'CLOSED' } })
+    expect(evidence.ok).toBe(true)
+    expect(waits.length).toBeGreaterThan(0)
+  })
+  it('confirms list visibility after reopen and close too', () => {
+    waits.length = 0
+    const f = fakeGh([{ title, state: 'CLOSED' }], { staleLists: 1 })
+    const reopened = reconcileIssue({ repo: 'o/r', title, result: { status: 'missed', deadline: '07:00' }, gh: f.gh, wait })
+    expect(reopened.action).toBe('reopened')
+    expect(waits).toHaveLength(1)
+    const closed = reconcileIssue({ repo: 'o/r', title, result: { status: 'published', evidence: 'remote-manifest-and-edition', observed_id: 'x' }, gh: f.gh, wait })
+    expect(closed.action).toBe('closed')
+    expect(waits).toHaveLength(2)
+  })
+  it('fails closed after bounded waits when the write never becomes list-visible', () => {
+    waits.length = 0
+    const f = fakeGh([], { staleLists: 1000 })
+    expect(() => reconcileIssue({ repo: 'o/r', title, result: { status: 'missed', deadline: '07:00' }, gh: f.gh, wait, visibility: { attempts: 4, delayMs: 10 } })).toThrow(/not visible/i)
+    expect(waits).toEqual([10, 10, 10])
+    expect(f.calls.filter(args => args[1] === 'create')).toHaveLength(1)
+  })
+  it('fails closed if the list shows the wrong exact-title issue instead of the written one', () => {
+    const f = fakeGh([])
+    let lists = 0
+    // First list is empty (create #1); afterwards the list only ever shows some other #9.
+    const gh = args => args[0] === 'api' ? (lists++ ? JSON.stringify({ number: 9, title, state: 'open', url: 'u' }) + '\n' : '') : f.gh(args)
+    expect(() => reconcileIssue({ repo: 'o/r', title, result: { status: 'missed', deadline: '07:00' }, gh, wait: () => {}, visibility: { attempts: 2, delayMs: 1 } })).toThrow(/#1 OPEN not visible.*"number":9/)
+    expect(f.calls.filter(args => args[1] === 'create')).toHaveLength(1)
+  })
+  it('lists with a cache-busting nonce and no-cache header, unique per request', () => {
+    const f = fakeGh([])
+    reconcileIssue({ repo: 'o/r', title, result: { status: 'missed', deadline: '07:00' }, gh: f.gh, wait })
+    const lists = f.calls.filter(args => args[0] === 'api')
+    expect(lists.length).toBeGreaterThanOrEqual(2)
+    for (const args of lists) {
+      expect(args).toContain('--paginate')
+      expect(args[args.indexOf('-H') + 1]).toBe('Cache-Control: no-cache')
+      expect(args.some(arg => /^monitor_nonce=\S+$/.test(arg))).toBe(true)
+    }
+    const nonces = lists.map(args => args.find(arg => arg.startsWith('monitor_nonce=')))
+    expect(new Set(nonces).size).toBe(nonces.length)
+  })
+  it('real re-exercise reuses closed issue #2 and ignores renamed duplicate #3 without touching production', () => {
+    waits.length = 0
+    const f = fakeGh([
+      { title: productionIssueTitle('2026-10-18'), state: 'CLOSED' },
+      { title, state: 'CLOSED' },
+      { title: `${title} duplicate evidence (run 39165196866)`, state: 'CLOSED' },
+    ], { staleLists: 1 })
+    const evidence = exerciseIssueReconciliation({ repo: 'o/r', gh: f.gh, now, wait })
+    expect(evidence.first).toMatchObject({ action: 'reopened', issue: { number: 2 } })
+    expect(evidence.close).toMatchObject({ action: 'closed', issue: { number: 2, state: 'CLOSED' } })
+    expect(evidence.ok).toBe(true)
+    expect(f.calls.filter(args => args[1] === 'create')).toHaveLength(0)
+    expect(f.calls.some(args => args[0] === 'issue' && ['1', '3'].includes(args[2]))).toBe(false)
+    expect(f.issues.map(issue => issue.state)).toEqual(['CLOSED', 'CLOSED', 'CLOSED'])
   })
 })
