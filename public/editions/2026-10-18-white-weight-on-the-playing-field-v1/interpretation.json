@@ -1,0 +1,280 @@
+{
+  "interpretation_id": "interp-2026-10-18-white-weight-on-the-playing-field-v1",
+  "edition_id": "2026-10-18-white-weight-on-the-playing-field-v1",
+  "plate_read_timestamp": "2026-10-18T12:50:55.585Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A textured dark-green football pitch holds a compact group of blunt cream-and-black and red-and-white players. A vast ragged white-gray plume engulfs a delicate goal at upper right, counterbalanced by a curved chalk bank with a blue underside and yellow rim at upper left. A broken multicolored turf scuff, a small gray ball, a folded silver deposit and a stepped black boundary wedge provide distinct secondary interaction anchors. Broad green intervals keep the painting expressionist rather than diagrammatic.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Flattened green pitch: a vast ragged white-gray plume overlaps a fine goal; a blue-shadowed chalk bank with yellow lip counters it. Broad green separates these from a compact group of blunt red/white, ochre/black and cream players, gray ball, raster scuff and folded silver chip. Broken chalk corner, red pennant; asymmetrical stepped black edge wedges. Small features remain distinct, broad painted forms.",
+      "A textured dark-green football pitch holds a compact group of blunt cream-and-black and red-and-white players. A vast ragged white-gray plume engulfs a delicate goal at upper right, counterbalanced by a curved chalk bank with a blue underside and yellow rim at upper left. A broken multicolored turf scuff, a small gray ball, a folded silver deposit and a stepped black boundary wedge provide distinct secondary interaction anchors. Broad green intervals keep the painting expressionist rather than diagrammatic.",
+      "tilted-playing-field",
+      "scumbled-apparition",
+      "fragile-chalk"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Ragged white-gray plume overlapping the skeletal goal",
+      "Chalk bank with blue underside and muted yellow lip",
+      "Broken green-purple-blue-orange turf scuff",
+      "Upper cream-shirt player with black curved lower-shirt marks",
+      "Cropped stepped black wedge with blue edging and warm recess-like marks",
+      "Folded silver paint chip with cleft top and turquoise dimples"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "chalk-field-apparition",
+      "An immense ragged white-gray plume overlaps a delicate white goal.",
+      "A broad chalk bank carries a blue underside and a muted yellow lip.",
+      "A broad turf scuff breaks into green, purple, blue and orange flecks.",
+      "A softly shaded gray ball bears dull silver facets and sparse color flecks.",
+      "A blunt cream-shirt player patch bears paired black curves and short limbs.",
+      "A cropped stepped black wedge has a dull blue edge and warm recesses.",
+      "A folded silver paint chip has a cleft upper lobe and turquoise dimples."
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: chalk-field-apparition.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-ragged-white-gray-plume-overlapping-",
+      "kind": "hero",
+      "type": "pigment-plume",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.5469,
+        "y": 0,
+        "w": 0.4531,
+        "h": 0.4972
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-chalk-bank-with-blue-underside-and-m",
+      "kind": "hero",
+      "type": "layered-paint-bank",
+      "strength": 0.9844639999999999,
+      "bounds": {
+        "x": 0,
+        "y": 0.003,
+        "w": 0.443,
+        "h": 0.47
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-broken-green-purple-blue-orange-turf",
+      "kind": "module",
+      "type": "raster-like-pigment-scuff",
+      "strength": 0.77574,
+      "bounds": {
+        "x": 0.255,
+        "y": 0.543,
+        "w": 0.335,
+        "h": 0.45699999999999996
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-cream-shirt-player-with-black-",
+      "kind": "module",
+      "type": "painted-player-silhouette",
+      "strength": 0.7573320000000001,
+      "bounds": {
+        "x": 0.148,
+        "y": 0.533,
+        "w": 0.046,
+        "h": 0.105
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cropped-stepped-black-wedge-with-blu",
+      "kind": "module",
+      "type": "stepped-boundary-wedge",
+      "strength": 0.7101120000000001,
+      "bounds": {
+        "x": 0.617,
+        "y": 0.439,
+        "w": 0.383,
+        "h": 0.5609999999999999
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-folded-silver-paint-chip-with-cleft-",
+      "kind": "module",
+      "type": "folded-metallic-pigment-island",
+      "strength": 0.696,
+      "bounds": {
+        "x": 0.686,
+        "y": 0.743,
+        "w": 0.074,
+        "h": 0.156
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-ragged-white-gray-plume-overlapping--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.5469,
+        "y": 0,
+        "w": 0.4531,
+        "h": 0.4972
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-chalk-bank-with-blue-underside-and-m-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.003,
+        "w": 0.443,
+        "h": 0.47
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-broken-green-purple-blue-orange-turf-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.255,
+        "y": 0.543,
+        "w": 0.335,
+        "h": 0.45699999999999996
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-upper-cream-shirt-player-with-black--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.148,
+        "y": 0.533,
+        "w": 0.046,
+        "h": 0.105
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cropped-stepped-black-wedge-with-blu-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.617,
+        "y": 0.439,
+        "w": 0.383,
+        "h": 0.5609999999999999
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-folded-silver-paint-chip-with-cleft--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.686,
+        "y": 0.743,
+        "w": 0.074,
+        "h": 0.156
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

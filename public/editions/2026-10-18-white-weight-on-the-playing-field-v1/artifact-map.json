@@ -1,0 +1,1276 @@
+{
+  "artifact_map_id": "map-2026-10-18-white-weight-on-the-playing-field-v1",
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "default_cluster_id": "chalk-field-apparition",
+  "default_artifact_id": "hero-ragged-white-gray-plume-overlapping-",
+  "artifacts": [
+    {
+      "id": "hero-ragged-white-gray-plume-overlapping-",
+      "kind": "hero",
+      "label": "Ragged white-gray plume overlapping the skeletal goal",
+      "artifact_type": "pigment-plume",
+      "bounds": {
+        "x": 0.5469,
+        "y": 0.0,
+        "w": 0.4531,
+        "h": 0.4972
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.5492,
+          0.2292
+        ],
+        [
+          0.6266,
+          0.0278
+        ],
+        [
+          0.6539,
+          0.0028
+        ],
+        [
+          0.9977,
+          0.0028
+        ],
+        [
+          0.9977,
+          0.2333
+        ],
+        [
+          0.9297,
+          0.3375
+        ],
+        [
+          0.7594,
+          0.4778
+        ],
+        [
+          0.6672,
+          0.4917
+        ],
+        [
+          0.607,
+          0.4528
+        ],
+        [
+          0.55,
+          0.3361
+        ],
+        [
+          0.5492,
+          0.2361
+        ]
+      ],
+      "cluster_id": "chalk-field-apparition",
+      "mask_path": "/editions/2026-10-18-white-weight-on-the-playing-field-v1/assets/masks/hero-ragged-white-gray-plume-overlapping-.svg",
+      "source_binding_ids": [
+        "binding-hero-ragged-white-gray-plume-overlapping-"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          995,
+          149
+        ],
+        "safe_stage_window_origin_px": [
+          1040,
+          177
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.5492,
+            0.2292
+          ],
+          [
+            0.6266,
+            0.0278
+          ],
+          [
+            0.6539,
+            0.0028
+          ],
+          [
+            0.9977,
+            0.0028
+          ],
+          [
+            0.9977,
+            0.2333
+          ],
+          [
+            0.9297,
+            0.3375
+          ],
+          [
+            0.7594,
+            0.4778
+          ],
+          [
+            0.6672,
+            0.4917
+          ],
+          [
+            0.607,
+            0.4528
+          ],
+          [
+            0.55,
+            0.3361
+          ],
+          [
+            0.5492,
+            0.2361
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5219,
+            0.2292
+          ],
+          [
+            0.6156,
+            0.0
+          ],
+          [
+            0.9992,
+            0.0
+          ],
+          [
+            0.9992,
+            0.2764
+          ],
+          [
+            0.9297,
+            0.3847
+          ],
+          [
+            0.7594,
+            0.525
+          ],
+          [
+            0.6672,
+            0.5389
+          ],
+          [
+            0.6062,
+            0.5
+          ],
+          [
+            0.5234,
+            0.3347
+          ],
+          [
+            0.5219,
+            0.2583
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5219,
+          "y": 0.0,
+          "w": 0.4781,
+          "h": 0.5403
+        },
+        "territory_area_px": 190620,
+        "visible_area_px": 160407,
+        "expansion_ratio": 1.188,
+        "neighbors": [
+          {
+            "artifact_id": "module-cropped-stepped-black-wedge-with-blu",
+            "shared_edge_px": 119,
+            "direction": "down",
+            "distance_px": 399.17
+          }
+        ]
+      }
+    },
+    {
+      "id": "hero-chalk-bank-with-blue-underside-and-m",
+      "kind": "hero",
+      "label": "Chalk bank with blue underside and muted yellow lip",
+      "artifact_type": "layered-paint-bank",
+      "bounds": {
+        "x": 0,
+        "y": 0.003,
+        "w": 0.443,
+        "h": 0.47
+      },
+      "z_index": 11,
+      "polygon": [
+        [
+          0,
+          0.239
+        ],
+        [
+          0.072,
+          0.168
+        ],
+        [
+          0.164,
+          0.099
+        ],
+        [
+          0.258,
+          0.051
+        ],
+        [
+          0.359,
+          0.022
+        ],
+        [
+          0.42,
+          0.003
+        ],
+        [
+          0.437,
+          0.023
+        ],
+        [
+          0.443,
+          0.047
+        ],
+        [
+          0.431,
+          0.081
+        ],
+        [
+          0.366,
+          0.121
+        ],
+        [
+          0.273,
+          0.16
+        ],
+        [
+          0.194,
+          0.207
+        ],
+        [
+          0.119,
+          0.279
+        ],
+        [
+          0.061,
+          0.368
+        ],
+        [
+          0,
+          0.473
+        ],
+        [
+          0,
+          0.388
+        ]
+      ],
+      "cluster_id": "chalk-field-apparition",
+      "mask_path": "/editions/2026-10-18-white-weight-on-the-playing-field-v1/assets/masks/hero-chalk-bank-with-blue-underside-and-m.svg",
+      "source_binding_ids": [
+        "binding-hero-chalk-bank-with-blue-underside-and-m"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          284,
+          144
+        ],
+        "safe_stage_window_origin_px": [
+          329,
+          171
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0,
+            0.239
+          ],
+          [
+            0.072,
+            0.168
+          ],
+          [
+            0.164,
+            0.099
+          ],
+          [
+            0.258,
+            0.051
+          ],
+          [
+            0.359,
+            0.022
+          ],
+          [
+            0.42,
+            0.003
+          ],
+          [
+            0.437,
+            0.023
+          ],
+          [
+            0.443,
+            0.047
+          ],
+          [
+            0.431,
+            0.081
+          ],
+          [
+            0.366,
+            0.121
+          ],
+          [
+            0.273,
+            0.16
+          ],
+          [
+            0.194,
+            0.207
+          ],
+          [
+            0.119,
+            0.279
+          ],
+          [
+            0.061,
+            0.368
+          ],
+          [
+            0,
+            0.473
+          ],
+          [
+            0,
+            0.388
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.1917
+          ],
+          [
+            0.0734,
+            0.1181
+          ],
+          [
+            0.1555,
+            0.0569
+          ],
+          [
+            0.2578,
+            0.0028
+          ],
+          [
+            0.4508,
+            0.0
+          ],
+          [
+            0.4695,
+            0.0444
+          ],
+          [
+            0.4305,
+            0.1278
+          ],
+          [
+            0.0,
+            0.5194
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 0.4703,
+          "h": 0.5208
+        },
+        "territory_area_px": 91148,
+        "visible_area_px": 54480,
+        "expansion_ratio": 1.673,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-broken-green-purple-blue-orange-turf",
+      "kind": "module",
+      "label": "Broken green-purple-blue-orange turf scuff",
+      "artifact_type": "raster-like-pigment-scuff",
+      "bounds": {
+        "x": 0.255,
+        "y": 0.543,
+        "w": 0.335,
+        "h": 0.45699999999999996
+      },
+      "z_index": 22,
+      "polygon": [
+        [
+          0.443,
+          0.548
+        ],
+        [
+          0.469,
+          0.581
+        ],
+        [
+          0.491,
+          0.543
+        ],
+        [
+          0.527,
+          0.594
+        ],
+        [
+          0.57,
+          0.566
+        ],
+        [
+          0.59,
+          0.612
+        ],
+        [
+          0.548,
+          0.7
+        ],
+        [
+          0.517,
+          0.758
+        ],
+        [
+          0.536,
+          0.869
+        ],
+        [
+          0.579,
+          0.989
+        ],
+        [
+          0.507,
+          0.949
+        ],
+        [
+          0.493,
+          1
+        ],
+        [
+          0.255,
+          1
+        ],
+        [
+          0.299,
+          0.893
+        ],
+        [
+          0.344,
+          0.804
+        ],
+        [
+          0.365,
+          0.736
+        ],
+        [
+          0.412,
+          0.659
+        ],
+        [
+          0.443,
+          0.612
+        ]
+      ],
+      "cluster_id": "chalk-field-apparition",
+      "mask_path": "/editions/2026-10-18-white-weight-on-the-playing-field-v1/assets/masks/module-broken-green-purple-blue-orange-turf.svg",
+      "source_binding_ids": [
+        "binding-module-broken-green-purple-blue-orange-turf"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          541,
+          529
+        ],
+        "safe_stage_window_origin_px": [
+          575,
+          555
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.443,
+            0.548
+          ],
+          [
+            0.469,
+            0.581
+          ],
+          [
+            0.491,
+            0.543
+          ],
+          [
+            0.527,
+            0.594
+          ],
+          [
+            0.57,
+            0.566
+          ],
+          [
+            0.59,
+            0.612
+          ],
+          [
+            0.548,
+            0.7
+          ],
+          [
+            0.517,
+            0.758
+          ],
+          [
+            0.536,
+            0.869
+          ],
+          [
+            0.579,
+            0.989
+          ],
+          [
+            0.507,
+            0.949
+          ],
+          [
+            0.493,
+            1
+          ],
+          [
+            0.255,
+            1
+          ],
+          [
+            0.299,
+            0.893
+          ],
+          [
+            0.344,
+            0.804
+          ],
+          [
+            0.365,
+            0.736
+          ],
+          [
+            0.412,
+            0.659
+          ],
+          [
+            0.443,
+            0.612
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.2336,
+            0.9972
+          ],
+          [
+            0.4211,
+            0.5472
+          ],
+          [
+            0.443,
+            0.5083
+          ],
+          [
+            0.4906,
+            0.5028
+          ],
+          [
+            0.5695,
+            0.5264
+          ],
+          [
+            0.6117,
+            0.6111
+          ],
+          [
+            0.6008,
+            0.9889
+          ],
+          [
+            0.5953,
+            0.9986
+          ],
+          [
+            0.2336,
+            0.9986
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.2336,
+          "y": 0.5028,
+          "w": 0.3789,
+          "h": 0.4972
+        },
+        "territory_area_px": 103112,
+        "visible_area_px": 77387,
+        "expansion_ratio": 1.332,
+        "neighbors": [
+          {
+            "artifact_id": "module-cropped-stepped-black-wedge-with-blu",
+            "shared_edge_px": 83,
+            "direction": "right",
+            "distance_px": 536.03
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-upper-cream-shirt-player-with-black-",
+      "kind": "module",
+      "label": "Upper cream-shirt player with black curved lower-shirt marks",
+      "artifact_type": "painted-player-silhouette",
+      "bounds": {
+        "x": 0.148,
+        "y": 0.533,
+        "w": 0.046,
+        "h": 0.105
+      },
+      "z_index": 23,
+      "polygon": [
+        [
+          0.17,
+          0.534
+        ],
+        [
+          0.178,
+          0.533
+        ],
+        [
+          0.18,
+          0.552
+        ],
+        [
+          0.187,
+          0.562
+        ],
+        [
+          0.189,
+          0.574
+        ],
+        [
+          0.194,
+          0.585
+        ],
+        [
+          0.189,
+          0.59
+        ],
+        [
+          0.183,
+          0.575
+        ],
+        [
+          0.183,
+          0.606
+        ],
+        [
+          0.178,
+          0.637
+        ],
+        [
+          0.17,
+          0.631
+        ],
+        [
+          0.173,
+          0.608
+        ],
+        [
+          0.165,
+          0.608
+        ],
+        [
+          0.162,
+          0.638
+        ],
+        [
+          0.156,
+          0.634
+        ],
+        [
+          0.159,
+          0.589
+        ],
+        [
+          0.148,
+          0.589
+        ],
+        [
+          0.161,
+          0.552
+        ]
+      ],
+      "cluster_id": "chalk-field-apparition",
+      "mask_path": "/editions/2026-10-18-white-weight-on-the-playing-field-v1/assets/masks/module-upper-cream-shirt-player-with-black-.svg",
+      "source_binding_ids": [
+        "binding-module-upper-cream-shirt-player-with-black-"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          219,
+          416
+        ],
+        "safe_stage_window_origin_px": [
+          224,
+          422
+        ],
+        "preferred_expansion_label": "right"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.17,
+            0.534
+          ],
+          [
+            0.178,
+            0.533
+          ],
+          [
+            0.18,
+            0.552
+          ],
+          [
+            0.187,
+            0.562
+          ],
+          [
+            0.189,
+            0.574
+          ],
+          [
+            0.194,
+            0.585
+          ],
+          [
+            0.189,
+            0.59
+          ],
+          [
+            0.183,
+            0.575
+          ],
+          [
+            0.183,
+            0.606
+          ],
+          [
+            0.178,
+            0.637
+          ],
+          [
+            0.17,
+            0.631
+          ],
+          [
+            0.173,
+            0.608
+          ],
+          [
+            0.165,
+            0.608
+          ],
+          [
+            0.162,
+            0.638
+          ],
+          [
+            0.156,
+            0.634
+          ],
+          [
+            0.159,
+            0.589
+          ],
+          [
+            0.148,
+            0.589
+          ],
+          [
+            0.161,
+            0.552
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.1258,
+            0.5889
+          ],
+          [
+            0.1453,
+            0.5375
+          ],
+          [
+            0.1695,
+            0.4944
+          ],
+          [
+            0.1773,
+            0.4931
+          ],
+          [
+            0.1992,
+            0.5319
+          ],
+          [
+            0.2156,
+            0.5847
+          ],
+          [
+            0.1992,
+            0.6361
+          ],
+          [
+            0.1773,
+            0.675
+          ],
+          [
+            0.1555,
+            0.6722
+          ],
+          [
+            0.1336,
+            0.6333
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.1258,
+          "y": 0.4931,
+          "w": 0.0906,
+          "h": 0.1847
+        },
+        "territory_area_px": 9425,
+        "visible_area_px": 2289,
+        "expansion_ratio": 4.118,
+        "neighbors": []
+      }
+    },
+    {
+      "id": "module-cropped-stepped-black-wedge-with-blu",
+      "kind": "module",
+      "label": "Cropped stepped black wedge with blue edging and warm recess-like marks",
+      "artifact_type": "stepped-boundary-wedge",
+      "bounds": {
+        "x": 0.617,
+        "y": 0.439,
+        "w": 0.383,
+        "h": 0.5609999999999999
+      },
+      "z_index": 24,
+      "polygon": [
+        [
+          0.882,
+          0.463
+        ],
+        [
+          1,
+          0.439
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0.623,
+          1
+        ],
+        [
+          0.617,
+          0.904
+        ],
+        [
+          0.777,
+          0.904
+        ],
+        [
+          0.772,
+          0.833
+        ],
+        [
+          0.811,
+          0.824
+        ],
+        [
+          0.794,
+          0.61
+        ],
+        [
+          0.895,
+          0.6
+        ]
+      ],
+      "cluster_id": "chalk-field-apparition",
+      "mask_path": "/editions/2026-10-18-white-weight-on-the-playing-field-v1/assets/masks/module-cropped-stepped-black-wedge-with-blu.svg",
+      "source_binding_ids": [
+        "binding-module-cropped-stepped-black-wedge-with-blu"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1035,
+          486
+        ],
+        "safe_stage_window_origin_px": [
+          1074,
+          518
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.882,
+            0.463
+          ],
+          [
+            1,
+            0.439
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0.623,
+            1
+          ],
+          [
+            0.617,
+            0.904
+          ],
+          [
+            0.777,
+            0.904
+          ],
+          [
+            0.772,
+            0.833
+          ],
+          [
+            0.811,
+            0.824
+          ],
+          [
+            0.794,
+            0.61
+          ],
+          [
+            0.895,
+            0.6
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.5945,
+            0.9028
+          ],
+          [
+            0.8797,
+            0.4264
+          ],
+          [
+            0.9992,
+            0.4014
+          ],
+          [
+            0.9992,
+            0.9986
+          ],
+          [
+            0.6008,
+            0.9986
+          ],
+          [
+            0.5945,
+            0.9083
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.5945,
+          "y": 0.4014,
+          "w": 0.4055,
+          "h": 0.5986
+        },
+        "territory_area_px": 124999,
+        "visible_area_px": 106149,
+        "expansion_ratio": 1.178,
+        "neighbors": [
+          {
+            "artifact_id": "module-folded-silver-paint-chip-with-cleft-",
+            "shared_edge_px": 1203,
+            "direction": "left",
+            "distance_px": 187.75
+          },
+          {
+            "artifact_id": "hero-ragged-white-gray-plume-overlapping-",
+            "shared_edge_px": 119,
+            "direction": "up",
+            "distance_px": 399.17
+          },
+          {
+            "artifact_id": "module-broken-green-purple-blue-orange-turf",
+            "shared_edge_px": 83,
+            "direction": "left",
+            "distance_px": 536.03
+          }
+        ]
+      }
+    },
+    {
+      "id": "module-folded-silver-paint-chip-with-cleft-",
+      "kind": "module",
+      "label": "Folded silver paint chip with cleft top and turquoise dimples",
+      "artifact_type": "folded-metallic-pigment-island",
+      "bounds": {
+        "x": 0.686,
+        "y": 0.743,
+        "w": 0.074,
+        "h": 0.156
+      },
+      "z_index": 25,
+      "polygon": [
+        [
+          0.703,
+          0.749
+        ],
+        [
+          0.718,
+          0.743
+        ],
+        [
+          0.722,
+          0.763
+        ],
+        [
+          0.729,
+          0.745
+        ],
+        [
+          0.744,
+          0.754
+        ],
+        [
+          0.741,
+          0.802
+        ],
+        [
+          0.759,
+          0.825
+        ],
+        [
+          0.751,
+          0.851
+        ],
+        [
+          0.754,
+          0.877
+        ],
+        [
+          0.744,
+          0.877
+        ],
+        [
+          0.739,
+          0.899
+        ],
+        [
+          0.719,
+          0.872
+        ],
+        [
+          0.711,
+          0.884
+        ],
+        [
+          0.694,
+          0.874
+        ],
+        [
+          0.686,
+          0.859
+        ],
+        [
+          0.693,
+          0.832
+        ],
+        [
+          0.7,
+          0.81
+        ]
+      ],
+      "cluster_id": "chalk-field-apparition",
+      "mask_path": "/editions/2026-10-18-white-weight-on-the-playing-field-v1/assets/masks/module-folded-silver-paint-chip-with-cleft-.svg",
+      "source_binding_ids": [
+        "binding-module-folded-silver-paint-chip-with-cleft-"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          925,
+          582
+        ],
+        "safe_stage_window_origin_px": [
+          933,
+          591
+        ],
+        "preferred_expansion_label": "up"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.703,
+            0.749
+          ],
+          [
+            0.718,
+            0.743
+          ],
+          [
+            0.722,
+            0.763
+          ],
+          [
+            0.729,
+            0.745
+          ],
+          [
+            0.744,
+            0.754
+          ],
+          [
+            0.741,
+            0.802
+          ],
+          [
+            0.759,
+            0.825
+          ],
+          [
+            0.751,
+            0.851
+          ],
+          [
+            0.754,
+            0.877
+          ],
+          [
+            0.744,
+            0.877
+          ],
+          [
+            0.739,
+            0.899
+          ],
+          [
+            0.719,
+            0.872
+          ],
+          [
+            0.711,
+            0.884
+          ],
+          [
+            0.694,
+            0.874
+          ],
+          [
+            0.686,
+            0.859
+          ],
+          [
+            0.693,
+            0.832
+          ],
+          [
+            0.7,
+            0.81
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.6641,
+            0.8569
+          ],
+          [
+            0.6805,
+            0.7486
+          ],
+          [
+            0.7023,
+            0.7097
+          ],
+          [
+            0.718,
+            0.7028
+          ],
+          [
+            0.7438,
+            0.7139
+          ],
+          [
+            0.7656,
+            0.7528
+          ],
+          [
+            0.7805,
+            0.825
+          ],
+          [
+            0.7758,
+            0.8764
+          ],
+          [
+            0.7383,
+            0.9375
+          ],
+          [
+            0.6937,
+            0.9125
+          ],
+          [
+            0.6641,
+            0.8583
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.6641,
+          "y": 0.7028,
+          "w": 0.1172,
+          "h": 0.2361
+        },
+        "territory_area_px": 16937,
+        "visible_area_px": 6480,
+        "expansion_ratio": 2.614,
+        "neighbors": [
+          {
+            "artifact_id": "module-cropped-stepped-black-wedge-with-blu",
+            "shared_edge_px": 1203,
+            "direction": "right",
+            "distance_px": 187.75
+          }
+        ]
+      }
+    }
+  ]
+}

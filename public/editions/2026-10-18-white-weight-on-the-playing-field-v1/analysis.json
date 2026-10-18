@@ -1,0 +1,508 @@
+{
+  "analysis_id": "analysis-2026-10-18-white-weight-on-the-playing-field-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A textured dark-green football pitch holds a compact group of blunt cream-and-black and red-and-white players. A vast ragged white-gray plume engulfs a delicate goal at upper right, counterbalanced by a curved chalk bank with a blue underside and yellow rim at upper left. A broken multicolored turf scuff, a small gray ball, a folded silver deposit and a stepped black boundary wedge provide distinct secondary interaction anchors. Broad green intervals keep the painting expressionist rather than diagrammatic.",
+  "usable_surfaces": [
+    "Ragged white-gray plume overlapping the goal",
+    "Curved chalk bank with blue underside and ochre-yellow rim",
+    "Broken multicolored turf abrasion below and right of the players",
+    "Small faceted gray ball between the players",
+    "Upper cream-shirt player's painted silhouette",
+    "Stepped black right-edge wedge with blue edging and warm scratches",
+    "Folded silver deposit with a cleft top and turquoise marks"
+  ],
+  "detected_objects": [
+    {
+      "label": "Ragged white-gray plume overlapping the skeletal goal",
+      "artifact_type": "pigment-plume",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.554,
+        "y": 0,
+        "w": 0.44599999999999995,
+        "h": 0.492
+      },
+      "polygon": [
+        [
+          0.635,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0.218
+        ],
+        [
+          0.962,
+          0.235
+        ],
+        [
+          0.989,
+          0.272
+        ],
+        [
+          0.942,
+          0.322
+        ],
+        [
+          0.87,
+          0.333
+        ],
+        [
+          0.811,
+          0.354
+        ],
+        [
+          0.76,
+          0.393
+        ],
+        [
+          0.703,
+          0.417
+        ],
+        [
+          0.672,
+          0.484
+        ],
+        [
+          0.648,
+          0.492
+        ],
+        [
+          0.64,
+          0.431
+        ],
+        [
+          0.61,
+          0.45
+        ],
+        [
+          0.588,
+          0.371
+        ],
+        [
+          0.554,
+          0.31
+        ],
+        [
+          0.608,
+          0.153
+        ],
+        [
+          0.61,
+          0.079
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "Thick off-white and gray paint forms a large irregular mass cropped by the upper and right image edges. Torn brush tips descend toward the center. Fine white goal bars and netting remain visible beside and beneath it; the polygon follows the painted mass rather than enclosing the surrounding goal and green ground."
+    },
+    {
+      "label": "Chalk bank with blue underside and muted yellow lip",
+      "artifact_type": "layered-paint-bank",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0,
+        "y": 0.003,
+        "w": 0.443,
+        "h": 0.47
+      },
+      "polygon": [
+        [
+          0,
+          0.239
+        ],
+        [
+          0.072,
+          0.168
+        ],
+        [
+          0.164,
+          0.099
+        ],
+        [
+          0.258,
+          0.051
+        ],
+        [
+          0.359,
+          0.022
+        ],
+        [
+          0.42,
+          0.003
+        ],
+        [
+          0.437,
+          0.023
+        ],
+        [
+          0.443,
+          0.047
+        ],
+        [
+          0.431,
+          0.081
+        ],
+        [
+          0.366,
+          0.121
+        ],
+        [
+          0.273,
+          0.16
+        ],
+        [
+          0.194,
+          0.207
+        ],
+        [
+          0.119,
+          0.279
+        ],
+        [
+          0.061,
+          0.368
+        ],
+        [
+          0,
+          0.473
+        ],
+        [
+          0,
+          0.388
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "A broad arcing cream-white stripe enters from the left edge and narrows to an irregular tip near the upper center. Its lower edge is distinctly blue, while a thin broken yellow-ochre lip traces the upper edge. These layers form one continuous painted bank."
+    },
+    {
+      "label": "Broken green-purple-blue-orange turf scuff",
+      "artifact_type": "raster-like-pigment-scuff",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.255,
+        "y": 0.543,
+        "w": 0.335,
+        "h": 0.45699999999999996
+      },
+      "polygon": [
+        [
+          0.443,
+          0.548
+        ],
+        [
+          0.469,
+          0.581
+        ],
+        [
+          0.491,
+          0.543
+        ],
+        [
+          0.527,
+          0.594
+        ],
+        [
+          0.57,
+          0.566
+        ],
+        [
+          0.59,
+          0.612
+        ],
+        [
+          0.548,
+          0.7
+        ],
+        [
+          0.517,
+          0.758
+        ],
+        [
+          0.536,
+          0.869
+        ],
+        [
+          0.579,
+          0.989
+        ],
+        [
+          0.507,
+          0.949
+        ],
+        [
+          0.493,
+          1
+        ],
+        [
+          0.255,
+          1
+        ],
+        [
+          0.299,
+          0.893
+        ],
+        [
+          0.344,
+          0.804
+        ],
+        [
+          0.365,
+          0.736
+        ],
+        [
+          0.412,
+          0.659
+        ],
+        [
+          0.443,
+          0.612
+        ]
+      ],
+      "confidence": 0.85,
+      "visual_evidence": "A diagonal abrasion spreads down from the right side of the player group toward the bottom edge. Purple clusters, blue-green strokes and orange flecks interrupt the green ground. Its outline is porous and diffuse, so this contour follows the recognizable colored scuff envelope, not an opaque solid island."
+    },
+    {
+      "label": "Upper cream-shirt player with black curved lower-shirt marks",
+      "artifact_type": "painted-player-silhouette",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.148,
+        "y": 0.533,
+        "w": 0.046,
+        "h": 0.105
+      },
+      "polygon": [
+        [
+          0.17,
+          0.534
+        ],
+        [
+          0.178,
+          0.533
+        ],
+        [
+          0.18,
+          0.552
+        ],
+        [
+          0.187,
+          0.562
+        ],
+        [
+          0.189,
+          0.574
+        ],
+        [
+          0.194,
+          0.585
+        ],
+        [
+          0.189,
+          0.59
+        ],
+        [
+          0.183,
+          0.575
+        ],
+        [
+          0.183,
+          0.606
+        ],
+        [
+          0.178,
+          0.637
+        ],
+        [
+          0.17,
+          0.631
+        ],
+        [
+          0.173,
+          0.608
+        ],
+        [
+          0.165,
+          0.608
+        ],
+        [
+          0.162,
+          0.638
+        ],
+        [
+          0.156,
+          0.634
+        ],
+        [
+          0.159,
+          0.589
+        ],
+        [
+          0.148,
+          0.589
+        ],
+        [
+          0.161,
+          0.552
+        ]
+      ],
+      "confidence": 0.84,
+      "visual_evidence": "The upper-left member of the group has a cream torso, a small featureless head, irregular short arms and dark shorts with short pale legs. Dark curved marks are visible along the lower cream patch, although their precise graphic identity is not clear. This selects only the upper cream figure, not the separate cream figure below."
+    },
+    {
+      "label": "Cropped stepped black wedge with blue edging and warm recess-like marks",
+      "artifact_type": "stepped-boundary-wedge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.617,
+        "y": 0.439,
+        "w": 0.383,
+        "h": 0.5609999999999999
+      },
+      "polygon": [
+        [
+          0.882,
+          0.463
+        ],
+        [
+          1,
+          0.439
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0.623,
+          1
+        ],
+        [
+          0.617,
+          0.904
+        ],
+        [
+          0.777,
+          0.904
+        ],
+        [
+          0.772,
+          0.833
+        ],
+        [
+          0.811,
+          0.824
+        ],
+        [
+          0.794,
+          0.61
+        ],
+        [
+          0.895,
+          0.6
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "A continuous near-black stepped form enters from the right and bottom edges. A dull blue line follows its irregular stair-step boundary, and rusty orange scratches and recess-like patches break its dark face. The polygon follows the actual stepped perimeter."
+    },
+    {
+      "label": "Folded silver paint chip with cleft top and turquoise dimples",
+      "artifact_type": "folded-metallic-pigment-island",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.686,
+        "y": 0.743,
+        "w": 0.074,
+        "h": 0.156
+      },
+      "polygon": [
+        [
+          0.703,
+          0.749
+        ],
+        [
+          0.718,
+          0.743
+        ],
+        [
+          0.722,
+          0.763
+        ],
+        [
+          0.729,
+          0.745
+        ],
+        [
+          0.744,
+          0.754
+        ],
+        [
+          0.741,
+          0.802
+        ],
+        [
+          0.759,
+          0.825
+        ],
+        [
+          0.751,
+          0.851
+        ],
+        [
+          0.754,
+          0.877
+        ],
+        [
+          0.744,
+          0.877
+        ],
+        [
+          0.739,
+          0.899
+        ],
+        [
+          0.719,
+          0.872
+        ],
+        [
+          0.711,
+          0.884
+        ],
+        [
+          0.694,
+          0.874
+        ],
+        [
+          0.686,
+          0.859
+        ],
+        [
+          0.693,
+          0.832
+        ],
+        [
+          0.7,
+          0.81
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "An isolated silver-gray painted deposit lies on green ground just above the lower black step. Two upright lobes are divided by a narrow dark cleft, with angular folded-looking lower flaps and a cluster of turquoise spots across the middle. Green ground separates it from the wedge and the multicolored scuff."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 3,
+    "large_region_count": 4,
+    "mapped_region_coverage": 0.812,
+    "rationale": "Three bold masses—the plume, curved bank and black stepped wedge—organize the plate; the diffuse scuff adds a fourth substantial region. Smaller figures, ball and silver chip remain subordinate within generous dark-green intervals. Texture is dense but the composition is spatially restrained and expressionist, not visually cluttered. Coverage is a visual estimate; the scuff contour contains exposed ground between its broken strokes."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-18-white-weight-on-the-playing-field-v1"
+}

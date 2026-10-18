@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-18-white-weight-on-the-playing-field-v1",
+  "generation": "oct18-retained-seven-source-recovery",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine/tmp/interaction-mesh-generations/oct18-retained-seven-source-recovery/2026-10-18-white-weight-on-the-playing-field-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-ragged-white-gray-plume-overlapping-",
+      "visible_area_px": 160407,
+      "territory_area_px": 190620,
+      "hover_bounds": {
+        "x": 0.5219,
+        "y": 0.0,
+        "w": 0.4781,
+        "h": 0.5403
+      },
+      "hover_polygon": [
+        [
+          0.5219,
+          0.2292
+        ],
+        [
+          0.6156,
+          0.0
+        ],
+        [
+          0.9992,
+          0.0
+        ],
+        [
+          0.9992,
+          0.2764
+        ],
+        [
+          0.9297,
+          0.3847
+        ],
+        [
+          0.7594,
+          0.525
+        ],
+        [
+          0.6672,
+          0.5389
+        ],
+        [
+          0.6062,
+          0.5
+        ],
+        [
+          0.5234,
+          0.3347
+        ],
+        [
+          0.5219,
+          0.2583
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-cropped-stepped-black-wedge-with-blu",
+          "shared_edge_px": 119,
+          "direction": "down",
+          "distance_px": 399.17
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-chalk-bank-with-blue-underside-and-m",
+      "visible_area_px": 54480,
+      "territory_area_px": 91148,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.4703,
+        "h": 0.5208
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.1917
+        ],
+        [
+          0.0734,
+          0.1181
+        ],
+        [
+          0.1555,
+          0.0569
+        ],
+        [
+          0.2578,
+          0.0028
+        ],
+        [
+          0.4508,
+          0.0
+        ],
+        [
+          0.4695,
+          0.0444
+        ],
+        [
+          0.4305,
+          0.1278
+        ],
+        [
+          0.0,
+          0.5194
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-broken-green-purple-blue-orange-turf",
+      "visible_area_px": 77387,
+      "territory_area_px": 103112,
+      "hover_bounds": {
+        "x": 0.2336,
+        "y": 0.5028,
+        "w": 0.3789,
+        "h": 0.4972
+      },
+      "hover_polygon": [
+        [
+          0.2336,
+          0.9972
+        ],
+        [
+          0.4211,
+          0.5472
+        ],
+        [
+          0.443,
+          0.5083
+        ],
+        [
+          0.4906,
+          0.5028
+        ],
+        [
+          0.5695,
+          0.5264
+        ],
+        [
+          0.6117,
+          0.6111
+        ],
+        [
+          0.6008,
+          0.9889
+        ],
+        [
+          0.5953,
+          0.9986
+        ],
+        [
+          0.2336,
+          0.9986
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-cropped-stepped-black-wedge-with-blu",
+          "shared_edge_px": 83,
+          "direction": "right",
+          "distance_px": 536.03
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-upper-cream-shirt-player-with-black-",
+      "visible_area_px": 2289,
+      "territory_area_px": 9425,
+      "hover_bounds": {
+        "x": 0.1258,
+        "y": 0.4931,
+        "w": 0.0906,
+        "h": 0.1847
+      },
+      "hover_polygon": [
+        [
+          0.1258,
+          0.5889
+        ],
+        [
+          0.1453,
+          0.5375
+        ],
+        [
+          0.1695,
+          0.4944
+        ],
+        [
+          0.1773,
+          0.4931
+        ],
+        [
+          0.1992,
+          0.5319
+        ],
+        [
+          0.2156,
+          0.5847
+        ],
+        [
+          0.1992,
+          0.6361
+        ],
+        [
+          0.1773,
+          0.675
+        ],
+        [
+          0.1555,
+          0.6722
+        ],
+        [
+          0.1336,
+          0.6333
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-cropped-stepped-black-wedge-with-blu",
+      "visible_area_px": 106149,
+      "territory_area_px": 124999,
+      "hover_bounds": {
+        "x": 0.5945,
+        "y": 0.4014,
+        "w": 0.4055,
+        "h": 0.5986
+      },
+      "hover_polygon": [
+        [
+          0.5945,
+          0.9028
+        ],
+        [
+          0.8797,
+          0.4264
+        ],
+        [
+          0.9992,
+          0.4014
+        ],
+        [
+          0.9992,
+          0.9986
+        ],
+        [
+          0.6008,
+          0.9986
+        ],
+        [
+          0.5945,
+          0.9083
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-folded-silver-paint-chip-with-cleft-",
+          "shared_edge_px": 1203,
+          "direction": "left",
+          "distance_px": 187.75
+        },
+        {
+          "artifact_id": "hero-ragged-white-gray-plume-overlapping-",
+          "shared_edge_px": 119,
+          "direction": "up",
+          "distance_px": 399.17
+        },
+        {
+          "artifact_id": "module-broken-green-purple-blue-orange-turf",
+          "shared_edge_px": 83,
+          "direction": "left",
+          "distance_px": 536.03
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-folded-silver-paint-chip-with-cleft-",
+      "visible_area_px": 6480,
+      "territory_area_px": 16937,
+      "hover_bounds": {
+        "x": 0.6641,
+        "y": 0.7028,
+        "w": 0.1172,
+        "h": 0.2361
+      },
+      "hover_polygon": [
+        [
+          0.6641,
+          0.8569
+        ],
+        [
+          0.6805,
+          0.7486
+        ],
+        [
+          0.7023,
+          0.7097
+        ],
+        [
+          0.718,
+          0.7028
+        ],
+        [
+          0.7438,
+          0.7139
+        ],
+        [
+          0.7656,
+          0.7528
+        ],
+        [
+          0.7805,
+          0.825
+        ],
+        [
+          0.7758,
+          0.8764
+        ],
+        [
+          0.7383,
+          0.9375
+        ],
+        [
+          0.6937,
+          0.9125
+        ],
+        [
+          0.6641,
+          0.8583
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "module-cropped-stepped-black-wedge-with-blu",
+          "shared_edge_px": 1203,
+          "direction": "right",
+          "distance_px": 187.75
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-18-white-weight-on-the-playing-field-v1",
+  "edition_id": "2026-10-18-white-weight-on-the-playing-field-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-18-white-weight-on-the-playing-field-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-ragged-white-gray-plume-overlapping-",
+      "target_kind": "artifact",
+      "artifact_id": "hero-ragged-white-gray-plume-overlapping-",
+      "priority": 1,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pigment-plume) selected from interpretation."
+    },
+    {
+      "target_id": "hero-chalk-bank-with-blue-underside-and-m",
+      "target_kind": "artifact",
+      "artifact_id": "hero-chalk-bank-with-blue-underside-and-m",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-paint-bank) selected from interpretation."
+    },
+    {
+      "target_id": "module-broken-green-purple-blue-orange-turf",
+      "target_kind": "artifact",
+      "artifact_id": "module-broken-green-purple-blue-orange-turf",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (raster-like-pigment-scuff) selected from interpretation."
+    },
+    {
+      "target_id": "module-upper-cream-shirt-player-with-black-",
+      "target_kind": "artifact",
+      "artifact_id": "module-upper-cream-shirt-player-with-black-",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-player-silhouette) selected from interpretation."
+    },
+    {
+      "target_id": "module-cropped-stepped-black-wedge-with-blu",
+      "target_kind": "artifact",
+      "artifact_id": "module-cropped-stepped-black-wedge-with-blu",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stepped-boundary-wedge) selected from interpretation."
+    },
+    {
+      "target_id": "module-folded-silver-paint-chip-with-cleft-",
+      "target_kind": "artifact",
+      "artifact_id": "module-folded-silver-paint-chip-with-cleft-",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (folded-metallic-pigment-island) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}
