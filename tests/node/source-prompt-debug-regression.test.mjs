@@ -46,6 +46,15 @@ describe('source-image still prompt boundary', () => {
     expect(payload).toEqual(before)
   })
 
+  it('keeps 3D-editor rig and control overlays out of finished source-inspired mesh artwork', () => {
+    const meshPayload = { ...payload, source_image_fingerprints: [{ image_url: 'https://example.com/mesh.jpg', width: 1200, height: 893, visual_summary: 'A low-poly figure in a 3D workspace inside a jewel case.', preserve_cues: ['Angular mesh head, looping hair, pleated skirt and heavy shoes.'] }], negative_constraints: Array.from({ length: 20 }, (_, i) => `Existing constraint ${i}`) }
+    const prompt = buildSceneImagePrompt(meshPayload)
+    expect(prompt).toContain('3D-editor rigs, joint nodes, gizmos, vertex handles/control connectors.')
+    expect(prompt).toContain('Angular mesh head')
+    const recovery = buildSceneImagePrompt(buildSourceFidelityRecoveryPayload(meshPayload, { ...audit, forbidden_debug_marks: ['Thin connectors terminate in hollow circular nodes beside the mesh hair.'] }))
+    expect(recovery).toContain('3D-editor rigs, joint nodes, gizmos, vertex handles/control connectors.')
+    expect(recovery).not.toContain('Thin connectors terminate in hollow circular nodes beside the mesh hair.')
+  })
   it('writes full diagnostics and runtime metadata before a blocked image adapter call', async () => {
     const dir = await mkdtemp(path.join(os.tmpdir(), 'source-prompt-boundary-'))
     const recovery = buildSourceFidelityRecoveryPayload(payload, audit)

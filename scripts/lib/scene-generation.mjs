@@ -851,7 +851,8 @@ function dashPanelRecoveryScene(sourceImageFingerprints = []) {
 }
 
 function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirection, dominantOverride = '', sourceImageFingerprints = [], artifacts = [] }) {
-  const forbiddenDebugMarks = 'No visible annotation glyphs or QA chrome. No numbered or unnumbered registration targets, crosshairs, reticles or hollow target rings at edges/pinhole seams.'
+  const hasEditorMeshReference = sourceImageFingerprints.some((fingerprint) => /\b(?:3d|low[- ]poly|mesh|wireframe|rig(?:ging)?)\b/i.test(JSON.stringify(fingerprint)))
+  const forbiddenDebugMarks = 'No visible annotation glyphs or QA chrome. No numbered or unnumbered registration targets, crosshairs, reticles or hollow target rings at edges/pinhole seams.' + (hasEditorMeshReference ? ' No 3D-editor rigs, joint nodes, gizmos, vertex handles/control connectors.' : '')
   const dashRecovery = dominantOverride ? dashPanelRecoveryScene(sourceImageFingerprints) : ''
   if (hasSourceImage) {
     const planned = artifacts.map((artifact) => artifact.visual_description).filter(Boolean)
