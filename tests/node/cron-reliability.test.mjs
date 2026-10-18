@@ -56,7 +56,7 @@ describe('recovery decisions', () => {
     expect(out.scheduler_delivery).toBe('unknown')
   })
   it('discovers packaged interrupted runs and writes a separate machine outcome atomically', async () => {
-    const root = await fs.mkdtemp(path.join(process.env.TMPDIR || 'tmp/', 'recovery-test-'))
+    const root = await fs.mkdtemp(path.join(path.resolve(process.env.TMPDIR || 'tmp/'), 'recovery-test-'))
     try {
       const work = path.join(root, 'work'), dir = path.join(root, 'checkpoints'), run = path.join(work, 'tmp/daily-process-runs/exact')
       await fs.mkdir(run, { recursive: true }); await fs.mkdir(dir)
@@ -79,7 +79,7 @@ describe('recovery decisions', () => {
 })
 describe('disk guard', () => {
   it('preserves original bytes on low space and mid-copy ENOSPC', async () => {
-    const root = await fs.mkdtemp(path.join(process.env.TMPDIR || 'tmp/', 'disk-test-'))
+    const root = await fs.mkdtemp(path.join(path.resolve(process.env.TMPDIR || 'tmp/'), 'disk-test-'))
     try {
       await fs.mkdir(path.join(root, 'work/tmp'), { recursive: true })
       const original = path.join(root, 'work/tmp/evidence')
