@@ -36,7 +36,15 @@ function walk(relative) {
   }
 }
 // Explicit saved lanes only; no recursive whole-vault walk or incidental links.
-for (const dir of ['Inbox/tweets', '00 - Capture/tweets', '01 - Active/themes']) walk(dir)
+for (const dir of ['Inbox/tweets', '00 - Capture/tweets', '01 - Active/themes', 'Themes']) walk(dir)
+// The vault files saved bookmarks from Inbox into Themes. Rewind the cursors
+// once when that lane is introduced so a warmed legacy cache cannot strand it.
+// Preserve all exact-note metadata and the separate exact-media verdict cache.
+if (state.intake_paths_version !== 2) {
+  state.after = null
+  state.scan_after = null
+  state.intake_paths_version = 2
+}
 files.sort().reverse()
 const live = new Set(files)
 for (const key of Object.keys(state.entries)) if (!live.has(key)) delete state.entries[key]
@@ -64,7 +72,7 @@ for (const relative of [...files.slice(scanOffset), ...files.slice(0, scanOffset
   const explicit = text.match(/^\s*\[View on (?:X|Twitter)\]\((https?:\/\/[^)]+)\)/im)?.[1]
     || frontmatter.match(/^\s*(?:url|source_url|source):\s*["']?(https?:\/\/[^\s"']+)/m)?.[1]
   const owner = explicit ? owners.find(url => canonicalizeSourceUrl(url) === canonicalizeSourceUrl(explicit))
-    : relative.startsWith('01 - Active/themes/') ? null : primary
+    : /^(?:01 - Active\/themes|Themes)\//.test(relative) ? null : primary
   const note = owner ? {
     id: hash(relative).slice(0, 12), source_channel: 'twitter-bookmark',
     title: text.match(/^#\s+(.+)$/m)?.[1] || path.basename(relative),

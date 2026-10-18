@@ -28,6 +28,50 @@ describe('bounded bookmark intake', () => {
       expect(h.source_candidates.every(c => c.note_path && /x.com/.test(c.url))).toBe(true)
     } finally { await fs.rm(f.root, { recursive: true, force: true }) }
   })
+  it('keeps owning bookmarks after filing into Themes and ignores incidental thematic mentions', async () => {
+    const f = await fixture(12)
+    try {
+      const themes = path.join(f.vault, 'Themes/Design & Visual Systems')
+      await fs.mkdir(themes, { recursive: true })
+      for (let i = 0; i < 12; i++) {
+        const filename = `${String(i).padStart(3, '0')}.md`
+        await fs.appendFile(path.join(f.vault, 'Inbox/tweets', filename), `\n[View on X](https://x.com/artist/status/${10000 + i})\n`)
+        await fs.rename(path.join(f.vault, 'Inbox/tweets', filename), path.join(themes, filename))
+      }
+      await fs.writeFile(path.join(themes, 'essay.md'), '# Unowned essay\nAn incidental mention of https://x.com/artist/status/99999\n')
+      const h = await mineSignals({ inputMode: 'obsidian-allowlist', inputRoot: f.vault, date: '2026-10-18', maxNotes: 1209, bookmarkFirst: true, bookmarkCacheDir: f.cacheDir }, path.join(f.root, 'run'))
+      expect(h.source_candidates).toHaveLength(12)
+      expect(h.notes_scanned).toBe(13)
+      expect(h.notes_selected.every(n => n.source_path.startsWith('Themes/Design & Visual Systems/'))).toBe(true)
+      expect(h.source_candidates.every(c => c.source_channel === 'twitter-bookmark')).toBe(true)
+      const spent = new Set(Array.from({ length: 12 }, (_, i) => `https://x.com/renamed/status/${10000 + i}`))
+      const repeat = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, recentSourceKeys: spent })
+      expect(repeat.notes).toHaveLength(0)
+      expect(repeat.audit.notes_read).toBe(0)
+      // Clean detached-worktree state must not depend on a warmed old-path index.
+      const clean = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: path.join(f.root, 'detached-cache') })
+      expect(clean.notes.map(n => n.id)).toEqual(h.notes_selected.map(n => n.id))
+    } finally { await fs.rm(f.root, { recursive: true, force: true }) }
+  })
+  it('rewinds legacy cursors once for the newly recognized saved lane without clearing metadata', async () => {
+    const f = await fixture(60)
+    try {
+      const original = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir })
+      const state = JSON.parse(await fs.readFile(original.audit.cache_path, 'utf8'))
+      delete state.intake_paths_version
+      state.after = 'Inbox/tweets/030.md'
+      state.scan_after = 'Inbox/tweets/030.md'
+      await fs.writeFile(original.audit.cache_path, JSON.stringify(state))
+      const themes = path.join(f.vault, 'Themes/Design & Visual Systems')
+      await fs.mkdir(themes, { recursive: true })
+      await fs.writeFile(path.join(themes, 'new.md'), '# Saved artwork\n[View on X](https://x.com/artist/status/99999)\n')
+      const next = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, maxReads: 1, maxNotes: 1 })
+      expect(next.notes[0].urls).toEqual(['https://x.com/artist/status/99999'])
+      expect(next.audit.cached_notes).toBe(49)
+      const repeat = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, maxReads: 1, maxNotes: 1 })
+      expect(repeat.notes[0].urls).not.toEqual(next.notes[0].urls)
+    } finally { await fs.rm(f.root, { recursive: true, force: true }) }
+  })
   it('keeps exact source overrides on the legacy intake path without dropping saved provenance', async () => {
     const f = await fixture()
     const override = { source_url: 'https://x.com/artist/status/10000', title: 'Exact saved work' }
