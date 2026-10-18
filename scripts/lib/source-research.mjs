@@ -820,6 +820,57 @@ export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1, canAcq
   return discovered
 }
 
+// Ordinary bookmark-first acquisition and actual-media admission: fetch capture,
+// text research, creative inspection and selection over at most 24 candidates in
+// batches of six. Also used by the source-only reserve preparation CLI.
+// `budget` is the run's shared 24-acquisition / 24-inspection allowance: a
+// prepared-reserve attempt and its fresh fallback draw on one budget, never 48.
+export async function acquireBoundedBookmarkSources(signalHarvest, { candidates, runDir, apiKey, model, date, recentSourceKeys = new Set(), budget = { acquisitions: 0, inspections: 0 }, adapters = {} }) {
+  candidates ||= signalHarvest.source_candidates.filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys))).slice(0, 24)
+  const base = {
+    acquire: async batch => {
+      const sources = []
+      for (const candidate of batch) {
+        const source = await inspectCandidateSource(candidate, { sourceTool: 'fetch', browserHarness: null })
+        if (source && isAllowedInspectedSource(source)) sources.push(source)
+      }
+      return sources
+    },
+    research: sources => runSourceAutoresearch({ signalHarvest, evidenceSources: sources, apiKey, model, date, maxSources: 6, recentSourceKeys }, runDir),
+    inspectRaw: (sources, research, maxInspections) => inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, recentSourceKeys, maxInspections, inspectionCacheDir: bookmarkCacheDir() }),
+    select: (sources, research) => selectContentSources(sources, { recentSourceKeys, signalHarvest, autoresearch: research }),
+    ...adapters,
+  }
+  const attempts = research => (research?.source_decisions || []).filter(row => row.inspection).length
+  const bounded = await acquireBookmarkArtwork({ candidates, maxAcquisitions: Math.max(0, 24 - budget.acquisitions) }, {
+    acquire: async batch => {
+      // Charge before I/O: an interrupted batch must not refund its allowance.
+      budget.acquisitions += batch.length
+      return base.acquire(batch)
+    },
+    research: base.research,
+    inspect: async (sources, research) => {
+      const before = attempts(research)
+      const allowance = Math.max(0, Math.min(10, 24 - budget.inspections))
+      try {
+        const inspected = await base.inspectRaw(sources, research, allowance)
+        budget.inspections += attempts(inspected) - before
+        return inspected
+      } catch (error) {
+        // An evidence write may fail after vision calls completed. Their precise
+        // count is unavailable, so conservatively charge the entire allowance.
+        budget.inspections += allowance
+        throw error
+      }
+    },
+    select: base.select,
+  })
+  await fs.mkdir(runDir, { recursive: true })
+  await writeJson(path.join(runDir, 'bookmark-acquisition.json'), { ...bounded.audit, shared_budget: { ...budget } })
+  await writeJson(path.join(runDir, 'source-intake-snapshot.json'), { schema_version: 1, signal_harvest: signalHarvest, recent_source_keys: [...recentSourceKeys], initial_candidates: candidates, fetch_sources: bounded.inspected, limits: bounded.audit })
+  return { candidates, ...bounded }
+}
+
 export async function inspectSourceCandidates(signalHarvest, {
   maxSources,
   runDir,
@@ -830,6 +881,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   model,
   date,
   inspirationOverride = null,
+  bookmarkBudget = undefined,
 }) {
   const candidateLimit = Math.max(maxSources, Math.min(maxSources * autoresearchCandidateMultiplier, maxAutoresearchCandidates))
   const bookmarkFirst = signalHarvest.selection_policy?.bookmark_first === true && !inspirationOverride?.active && !inspirationOverride?.source_url
@@ -860,26 +912,12 @@ export async function inspectSourceCandidates(signalHarvest, {
     : null
   let contentSources = []
   if (bookmarkFirst) {
-    const bounded = await acquireBookmarkArtwork({ candidates }, {
-      acquire: async batch => {
-        const sources = []
-        for (const candidate of batch) {
-          const source = await inspectCandidateSource(candidate, { sourceTool: 'fetch', browserHarness: null })
-          if (source && isAllowedInspectedSource(source)) sources.push(source)
-        }
-        return sources
-      },
-      research: sources => runSourceAutoresearch({ signalHarvest, evidenceSources: sources, apiKey, model, date, maxSources: 6, recentSourceKeys }, runDir),
-      inspect: (sources, research) => inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, recentSourceKeys, inspectionCacheDir: bookmarkCacheDir() }),
-      select: (sources, research) => selectContentSources(sources, { recentSourceKeys, signalHarvest, autoresearch: research }),
-    })
+    const bounded = await acquireBoundedBookmarkSources(signalHarvest, { candidates, runDir, apiKey, model, date, recentSourceKeys, budget: bookmarkBudget })
     inspected = bounded.inspected
     fetchEvidence = bounded.inspected
     autoresearch = bounded.autoresearch
     contentSources = bounded.contentSources
     researchMode = 'bounded-bookmark-first'
-    await writeJson(path.join(runDir, 'bookmark-acquisition.json'), bounded.audit)
-    await writeJson(path.join(runDir, 'source-intake-snapshot.json'), { schema_version: 1, signal_harvest: signalHarvest, recent_source_keys: [...recentSourceKeys], initial_candidates: candidates, fetch_sources: inspected, limits: bounded.audit })
   } else {
   if (anchorSource) {
     anchorResearch = await buildAnchorResearch(anchorSource, { runDate: date })

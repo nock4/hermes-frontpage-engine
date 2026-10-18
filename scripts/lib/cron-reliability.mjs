@@ -42,9 +42,18 @@ export function selectRecovery(records, expectedDate) {
       if ((p.local_edition_id && s.local_edition_id && p.local_edition_id !== s.local_edition_id)
         || (p.commit && s.commit && p.commit !== s.commit)) throw new Error('Conflicting recovery identity for the same retained run')
     }
-    if (!previous || String(s.updated_at || '') > String(previous.summary.updated_at || '')) groups.set(key, record)
+    // A verified publication stays resolved: a later failed proof of the same
+    // run (expired gh auth, CDN outage, newer edition live) cannot reopen it.
+    const verified = r => r.summary.ok === true && r.summary.push_succeeded === true
+    if (!previous || (verified(record) && !verified(previous))
+      || (verified(record) === verified(previous) && String(s.updated_at || '') > String(previous.summary.updated_at || ''))) groups.set(key, record)
   }
-  const pending = [...groups.values()].filter(({ summary: s }) => s.ok !== true || s.local_edition_id?.startsWith(expectedDate))
+  // Failures before any package or push (fetch/disk/discovery errors, or a
+  // generation that never packaged) carry nothing to resume or prove. They stay
+  // on disk as evidence but are not candidates, so they cannot block or multiply.
+  const pending = [...groups.values()]
+    .filter(({ summary: s }) => s.local_edition_id || s.push_succeeded === true)
+    .filter(({ summary: s }) => s.ok !== true || s.local_edition_id?.startsWith(expectedDate))
   if (!pending.length) return {}
   if (pending.length !== 1) throw new Error('ambiguous recovery checkpoints; preserve evidence and reconcile explicitly')
   const { file, summary: s } = pending[0]
@@ -98,4 +107,12 @@ export async function writePublicationOutcome(file, summary, expectedDate) {
   const temporary = `${file}.${randomUUID()}.tmp`
   await fs.writeFile(temporary, JSON.stringify(outcome, null, 2) + '\n', { flag: 'wx' })
   await fs.rename(temporary, file)
+}
+
+// Standalone `daily:process --publish` shares the cron's generation headroom
+// guard; dry runs and existing-mode remaps are not gated here.
+export async function assertPublishDiskHeadroom(options, root, { check = assertDiskHeadroom } = {}) {
+  if (options.mode === 'existing' || options.publish !== true) return false
+  await check(root, { requiredBytes: 5 * 1024 ** 3 })
+  return true
 }

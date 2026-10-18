@@ -24,6 +24,7 @@ import { composeDailyPayload as composeDailyPayloadImpl, generateScenePlate as g
 import { defaultGenerationName, requireOpenAiKey } from './lib/runtime-env.mjs'
 import { chooseDiversityDirective, getHistoricalSourceKeys, getRecentDiversityAvoidTerms, getRecentEditionSummaries, getRecentSourceKeys, loadManifest } from './lib/recent-edition-context.mjs'
 import { sourceContentKey } from './lib/source-selection-policy.mjs'
+import { assertPublishDiskHeadroom } from './lib/cron-reliability.mjs'
 import { runExistingMode } from './pipeline/run-existing-mode.mjs'
 import { runFromScratchMode } from './pipeline/run-from-scratch-mode.mjs'
 
@@ -116,6 +117,7 @@ async function main() {
     })
     return
   }
+  await assertPublishDiskHeadroom(options, root)
   await runFromScratchMode({
     options,
     root,

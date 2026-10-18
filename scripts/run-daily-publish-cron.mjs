@@ -220,6 +220,24 @@ export async function resolveInspirationOverridePath(options) {
   return configured
 }
 
+// Edition IDs otherwise use the configured timezone (UTC in the active config),
+// which disagrees with the America/New_York publication date from 20:00/19:00
+// local until midnight. Pin the exact date this invocation will verify.
+export function buildDailyProcessArgs(options, { generationName, expectedDate, inspirationOverridePath = null }) {
+  return [
+    'run', 'daily:process', '--',
+    '--generation-name', generationName,
+    '--date', expectedDate,
+    '--input-mode', 'obsidian-allowlist',
+    '--input-root', options.inputRoot,
+    '--window-days', String(options.windowDays),
+    '--max-notes', String(options.maxNotes),
+    '--max-sources', String(options.maxSources),
+    '--publish',
+    ...(inspirationOverridePath ? ['--inspiration-override', inspirationOverridePath] : []),
+  ]
+}
+
 async function ensureWorktree({ worktreeDir, remote, branch }) {
   await assertSafeCronWorktreePath(worktreeDir)
   await assertDiskHeadroom(primaryRoot)
@@ -608,19 +626,9 @@ async function main() {
     const generationName = `cron-${Date.now()}-${process.pid}`
     summary.latest_run_dir = path.join(options.worktreeDir, 'tmp', 'daily-process-runs', generationName)
     await checkpoint('generation')
-    const processArgs = [
-      'run', 'daily:process', '--',
-      '--generation-name', generationName,
-      '--input-mode', 'obsidian-allowlist',
-      '--input-root', options.inputRoot,
-      '--window-days', String(options.windowDays),
-      '--max-notes', String(options.maxNotes),
-      '--max-sources', String(options.maxSources),
-      '--publish',
-    ]
     const inspirationOverridePath = await resolveInspirationOverridePath(options)
+    const processArgs = buildDailyProcessArgs(options, { generationName, expectedDate, inspirationOverridePath })
     if (inspirationOverridePath) {
-      processArgs.push('--inspiration-override', inspirationOverridePath)
       summary.inspiration_override = inspirationOverridePath
       console.log(`[daily:publish:cron] using inspiration override ${inspirationOverridePath}`)
     }

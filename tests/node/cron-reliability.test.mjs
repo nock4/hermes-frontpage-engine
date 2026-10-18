@@ -3,8 +3,8 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { preserveCronEvidence } from '../../scripts/lib/cron-recovery-state.mjs'
 import { EventEmitter } from 'node:events'
-import { fetchJson, verifyRemoteManifest } from '../../scripts/run-daily-publish-cron.mjs'
-import { assertDiskHeadroom, selectRecovery, publicationOutcome, discoverRecovery, writePublicationOutcome } from '../../scripts/lib/cron-reliability.mjs'
+import { fetchJson, verifyRemoteManifest, buildDailyProcessArgs } from '../../scripts/run-daily-publish-cron.mjs'
+import { assertDiskHeadroom, assertPublishDiskHeadroom, selectRecovery, publicationOutcome, discoverRecovery, writePublicationOutcome } from '../../scripts/lib/cron-reliability.mjs'
 
 describe('bounded remote requests', () => {
   it('bounds transient retries and never accepts a different edition', async () => {
@@ -72,6 +72,31 @@ describe('recovery decisions', () => {
       expect(JSON.parse(await fs.readFile(outcome, 'utf8')).commit).toBe(null)
     } finally { await fs.rm(root, { recursive: true, force: true }) }
   })
+  it('keeps a verified publication resolved when a later proof of the same run fails', () => {
+    const verified = { ...base, ok: true, push_succeeded: true, remote_matches: true, commit: 'a'.repeat(40), updated_at: '2026-10-18T11:00:00Z' }
+    const failedProof = { ...verified, ok: false, remote_matches: false, proof_only: true, error: 'gh auth expired', updated_at: '2026-10-18T15:00:00Z' }
+    const records = [{ file: 'ok', summary: verified }, { file: 'later-failed-proof', summary: failedProof }]
+    // Next day: yesterday is verified, so nothing is pending and generation may proceed.
+    expect(selectRecovery(records, '2026-10-19')).toEqual({})
+    // Same day: the verified record (not the failed proof) is the exact proof input.
+    expect(selectRecovery([...records].reverse(), today)).toEqual({ proofOnly: 'ok' })
+  })
+  it('ignores identity-less failures instead of multiplying blocked candidates', () => {
+    const blocked = n => ({ file: `blocked-${n}`, summary: { ...base, ok: false, latest_run_dir: null, local_edition_id: null, error: 'git fetch failed', updated_at: `2026-10-18T0${n}:00:00Z` } })
+    expect(selectRecovery([blocked(1)], today)).toEqual({})
+    expect(selectRecovery([blocked(1), blocked(2), blocked(3)], today)).toEqual({})
+    // A real candidate is still selected exactly, alongside identity-less noise.
+    expect(selectRecovery([blocked(1), { file: 'a', summary: base }, blocked(2)], today)).toEqual({ resumeCandidate: 'a' })
+  })
+  it('does not treat a generation that never packaged as an unrecoverable candidate', async () => {
+    const root = await fs.mkdtemp(path.join(path.resolve(process.env.TMPDIR || 'tmp/'), 'recovery-test-'))
+    try {
+      const work = path.join(root, 'work'), dir = path.join(root, 'checkpoints'), run = path.join(work, 'tmp/daily-process-runs/unpackaged')
+      await fs.mkdir(run, { recursive: true }); await fs.mkdir(dir)
+      await fs.writeFile(path.join(dir, 'one.json'), JSON.stringify({ ...base, ok: false, local_edition_id: null, worktree_dir: work, latest_run_dir: run, error: 'Source research produced 3' }))
+      expect(await discoverRecovery(dir, today, work)).toEqual({})
+    } finally { await fs.rm(root, { recursive: true, force: true }) }
+  })
   it('rejects malformed pushed state and permits no history', () => {
     expect(selectRecovery([], today)).toEqual({})
     expect(() => selectRecovery([{ file: 'a', summary: { ...base, push_succeeded: true } }], today)).toThrow()
@@ -94,5 +119,25 @@ describe('disk guard', () => {
   it('fails closed before writes when low or invalid', async () => {
     await expect(assertDiskHeadroom('.', { requiredBytes: 100, statfs: async () => ({ bavail: 1, bsize: 1 }) })).rejects.toThrow(/headroom/)
     await expect(assertDiskHeadroom('.', { requiredBytes: NaN })).rejects.toThrow(/headroom/)
+  })
+})
+describe('publication date alignment', () => {
+  it('pins daily:process to the cron Eastern publication date instead of the config timezone', () => {
+    const args = buildDailyProcessArgs({ inputRoot: '/vault', windowDays: 1000, maxNotes: 1209, maxSources: 240 }, { generationName: 'cron-1', expectedDate: '2026-10-18', inspirationOverridePath: null })
+    expect(args.slice(args.indexOf('--date'), args.indexOf('--date') + 2)).toEqual(['--date', '2026-10-18'])
+    expect(args).toContain('--publish')
+    const override = buildDailyProcessArgs({ inputRoot: '/vault', windowDays: 1, maxNotes: 1, maxSources: 1 }, { generationName: 'cron-2', expectedDate: '2026-10-18', inspirationOverridePath: '/o.json' })
+    expect(override.slice(-2)).toEqual(['--inspiration-override', '/o.json'])
+  })
+})
+describe('standalone daily:process disk guard', () => {
+  it('applies the same 5 GiB headroom to any from-scratch publishing run, not to dry or existing-mode runs', async () => {
+    const checked = []
+    const check = async (target, opts) => { checked.push([target, opts?.requiredBytes]) }
+    expect(await assertPublishDiskHeadroom({ mode: 'from-scratch', publish: true }, '/repo', { check })).toBe(true)
+    expect(checked).toEqual([['/repo', 5 * 1024 ** 3]])
+    expect(await assertPublishDiskHeadroom({ mode: 'from-scratch', publish: false }, '/repo', { check })).toBe(false)
+    expect(await assertPublishDiskHeadroom({ mode: 'existing', publish: true }, '/repo', { check })).toBe(false)
+    await expect(assertPublishDiskHeadroom({ mode: 'from-scratch', publish: true }, '/repo', { check: async () => { throw new Error('Insufficient disk headroom') } })).rejects.toThrow(/headroom/)
   })
 })

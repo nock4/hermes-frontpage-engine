@@ -197,10 +197,22 @@ export async function mineSignals({
   inspirationOverride = null,
   bookmarkFirst = false,
   bookmarkCacheDir,
+  preparedReserve = null,
 }, runDir) {
   const resolvedInputRoot = inputRoot || vault || null
   const boundedBookmarks = bookmarkFirst && inputMode === 'obsidian-allowlist' && !inspirationOverride?.active && !inspirationOverride?.source_url
-  const loaded = boundedBookmarks ? await loadBookmarkBatch({ inputRoot: resolvedInputRoot, cacheDir: bookmarkCacheDir, recentSourceKeys, maxNotes: Math.min(maxNotes || 24, 24) }) : await loadSignalsForMode({
+  // A claimed prepared reserve replaces only this run's nomination batch with
+  // its revalidated owning notes; the bookmark cursor is left untouched and
+  // every archive, editorial and actual-media gate downstream runs as normal.
+  const reserveNotes = boundedBookmarks && preparedReserve?.claim && Array.isArray(preparedReserve.notes) ? preparedReserve.notes : null
+  const loaded = reserveNotes ? {
+    input_root: resolvedInputRoot,
+    notes: reserveNotes.map(note => ({ ...note, text: note.excerpt })),
+    markdown_files_seen: null,
+    selection_filters: ['Prepared artwork reserve: exact revalidated owning notes from a prior normal bounded intake; nomination only; archive and actual-media gates required.'],
+    looked_for: ['unused owning X/Twitter bookmarks'],
+    audit: { prepared_reserve: true, notes_read: reserveNotes.length, max_reads: 48, max_notes: 24 },
+  } : boundedBookmarks ? await loadBookmarkBatch({ inputRoot: resolvedInputRoot, cacheDir: bookmarkCacheDir, recentSourceKeys, maxNotes: Math.min(maxNotes || 24, 24) }) : await loadSignalsForMode({
     inputMode,
     inputRoot: resolvedInputRoot,
     signalManifest,
@@ -253,6 +265,7 @@ export async function mineSignals({
     selection_policy: {
       bookmark_first: boundedBookmarks,
       bookmark_intake: loaded.audit || null,
+      ...(reserveNotes ? { prepared_reserve: { set_id: preparedReserve.claim.set.set_id, created_at: preparedReserve.claim.set.created_at, expires_at: preparedReserve.claim.set.expires_at, claim_file: preparedReserve.claim.file } } : {}),
       selected_count: boundedBookmarks ? selectedNotes.length : maxNotes,
       filters: loaded.selection_filters,
       scoring: boundedBookmarks ? ['Stable saved-path cursor over unused owning bookmarks; no whole-field taste ranking or recency window.'] : [

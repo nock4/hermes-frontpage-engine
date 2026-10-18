@@ -19,40 +19,114 @@ export function evaluatePublication(manifest, { now = new Date(), deadline = '07
   return { expected_date: expectedDate, expected_id: expectedId, observed_id: id || null, deadline, timezone: 'America/New_York', status: valid ? 'published' : time < deadline ? 'before-deadline' : manifest ? 'missed' : 'unavailable', start_state: 'unknown-no-heartbeat', evidence: manifest ? 'remote-manifest' : 'remote-unavailable', checked_at: now.toISOString() }
 }
 
-async function main() {
-  const diagnostic = process.argv.includes('--diagnostic')
+const site = 'https://daily.nockgarden.com'
+const requestHeaders = { 'Cache-Control': 'no-cache', 'User-Agent': 'DailyFrontpageCronRemoteVerify/1.0', Accept: 'application/json' }
+
+async function fetchRemoteJson(url) {
+  const response = await fetch(url, { signal: AbortSignal.timeout(15000), headers: requestHeaders })
+  if (!response.ok) throw new Error(`HTTP ${response.status}; server=${response.headers.get('server') || 'unknown'}; body=${(await response.text()).slice(0, 500)}`)
+  return response.json()
+}
+
+export async function checkPublication({ now = new Date(), deadline = '07:00', expectedId = null, fetchJson = fetchRemoteJson } = {}) {
   let manifest = null, error = null
   for (let attempt = 0; attempt < 3; attempt++) {
-    try {
-      const response = await fetch(`https://daily.nockgarden.com/editions/index.json?monitor=${Date.now()}`, { signal: AbortSignal.timeout(15000), headers: { 'Cache-Control': 'no-cache', 'User-Agent': 'DailyFrontpageCronRemoteVerify/1.0', Accept: 'application/json' } })
-      if (!response.ok) throw new Error(`Manifest HTTP ${response.status}; server=${response.headers.get('server') || 'unknown'}; body=${(await response.text()).slice(0, 500)}`)
-      manifest = await response.json()
-      break
-    } catch (e) { error = e.message }
+    try { manifest = await fetchJson(`${site}/editions/index.json?monitor=${now.getTime()}-${attempt}`); break } catch (e) { error = `Manifest ${e.message}` }
   }
-  const result = { ...evaluatePublication(manifest, { deadline: process.env.DFE_PUBLICATION_DEADLINE || '07:00', expectedId: process.env.DFE_EXPECTED_EDITION_ID || null }), diagnostic, error: manifest ? null : error }
+  const result = { ...evaluatePublication(manifest, { now, deadline, expectedId }), error: manifest ? null : error }
   // The edition's own identity is independent of index metadata. This is not
   // playback, image-fidelity, runtime-QA, or local machine heartbeat proof.
   if (result.status === 'published') {
     try {
-      const response = await fetch(`https://daily.nockgarden.com/editions/${result.observed_id}/edition.json?monitor=${Date.now()}`, { signal: AbortSignal.timeout(15000), headers: { 'User-Agent': 'DailyFrontpageCronRemoteVerify/1.0', Accept: 'application/json' } })
-      if (!response.ok || (await response.json()).edition_id !== result.observed_id) throw new Error('Remote edition identity unavailable/mismatched')
+      if ((await fetchJson(`${site}/editions/${result.observed_id}/edition.json?monitor=${now.getTime()}`)).edition_id !== result.observed_id) throw new Error('Remote edition identity mismatched')
       result.evidence = 'remote-manifest-and-edition'
-    } catch (e) { result.status = 'unavailable'; result.error = e.message }
+    } catch (e) {
+      // A transient edition fetch failure is only an incident after the deadline.
+      result.status = evaluatePublication(null, { now, deadline }).status === 'before-deadline' ? 'before-deadline' : 'unavailable'
+      result.error = e.message
+    }
   }
-  console.log(JSON.stringify(result, null, 2))
-  if (process.env.GITHUB_STEP_SUMMARY) await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, `## Publication monitor\n\n\`\`\`json\n${JSON.stringify(result, null, 2)}\n\`\`\`\n`)
-  if (!['missed', 'unavailable'].includes(result.status) || diagnostic) return
+  return result
+}
+
+export const productionIssueTitle = date => `[Frontpage publication] ${date}`
+export const diagnosticIssueTitle = date => `[Frontpage publication DIAGNOSTIC] ${date}`
+
+// Every issue (open and closed, all pages; pull requests excluded) through the
+// REST list API, not search: no index lag and no recency cap on dedup.
+function exactTitleIssues(gh, repo, title) {
+  return gh(['api', '--paginate', '-X', 'GET', `repos/${repo}/issues`, '-f', 'state=all', '-f', 'per_page=100',
+    '--jq', '.[] | select(.pull_request == null) | {number, title, state, url: .html_url}'])
+    .split('\n').filter(line => line.trim()).map(line => JSON.parse(line))
+    .filter(issue => issue.title === title).map(issue => ({ ...issue, state: String(issue.state).toUpperCase() }))
+}
+
+// One exact-title issue per date. Open or reopen on a real miss, close only on
+// full remote manifest+edition evidence. Duplicates fail closed.
+export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnostic = false }) {
+  const view = number => JSON.parse(gh(['issue', 'view', String(number), '--repo', repo, '--json', 'number,title,state,url']))
+  const matches = exactTitleIssues(gh, repo, title)
+  if (matches.length > 1) throw new Error(`Ambiguous exact-title issues for ${title}: ${matches.map(issue => issue.number).join(', ')}`)
+  const [existing] = matches
+  const evidence = `\`\`\`json\n${JSON.stringify(result, null, 2)}\n\`\`\`${runUrl ? `\n\nRun: ${runUrl}` : ''}`
+  const label = diagnostic ? 'DIAGNOSTIC exercise (injected; not a production incident). ' : ''
+  if (['missed', 'unavailable'].includes(result.status)) {
+    if (!existing) {
+      const url = gh(['issue', 'create', '--repo', repo, '--title', title, '--body', `${label}Publication evidence missing after ${result.deadline} America/New_York.\n\nStart state UNKNOWN: no machine heartbeat exists. This does not prove the Mac failed to start.\n\n${evidence}`]).trim()
+      // Read back the exact newly created target before reporting delivery.
+      return { action: 'created', issue: view(url) }
+    }
+    if (existing.state === 'OPEN') return { action: 'existing-open', issue: existing }
+    gh(['issue', 'reopen', String(existing.number), '--repo', repo, '--comment', `${label}Publication evidence missing again.\n\n${evidence}`])
+    return { action: 'reopened', issue: view(existing.number) }
+  }
+  if (result.status === 'published' && result.evidence === 'remote-manifest-and-edition' && existing?.state === 'OPEN') {
+    gh(['issue', 'close', String(existing.number), '--repo', repo, '--comment', `${label}Publication verified: ${result.observed_id} (remote manifest and exact edition identity).\n\n${evidence}`])
+    return { action: 'closed', issue: view(existing.number) }
+  }
+  return { action: 'none', issue: existing || null }
+}
+
+// Exercises the production reconciliation against a DIAGNOSTIC-titled issue.
+// Production titles are never passed here, so no false incident can be raised.
+export function exerciseIssueReconciliation({ repo, gh, now = new Date(), runUrl = null }) {
+  const date = localPublicationDate(now)
+  const title = diagnosticIssueTitle(date)
+  if (title === productionIssueTitle(date)) throw new Error('Diagnostic title collides with production')
+  const injected = { expected_date: date, deadline: '07:00', timezone: 'America/New_York', status: 'missed', start_state: 'unknown-no-heartbeat', evidence: 'injected-diagnostic', injected: true, diagnostic: true, checked_at: now.toISOString() }
+  const first = reconcileIssue({ repo, title, result: injected, gh, runUrl, diagnostic: true })
+  const second = reconcileIssue({ repo, title, result: injected, gh, runUrl, diagnostic: true })
+  const exactTitleMatches = exactTitleIssues(gh, repo, title).length
+  const close = reconcileIssue({ repo, title, result: { ...injected, status: 'published', evidence: 'remote-manifest-and-edition', observed_id: `${date}-diagnostic-exercise-v1` }, gh, runUrl, diagnostic: true })
+  const readback = JSON.parse(gh(['issue', 'view', String(close.issue?.number ?? first.issue.number), '--repo', repo, '--json', 'number,title,state,url']))
+  // existing-open first: a previous exercise crashed before closing; still one issue.
+  const ok = ['created', 'reopened', 'existing-open'].includes(first.action) && second.action === 'existing-open' && exactTitleMatches === 1
+    && close.action === 'closed' && readback.title === title && readback.state === 'CLOSED'
+  return { mode: 'exercise-issue', title, date, first, second, exact_title_matches: exactTitleMatches, close, readback, ok, recorded_at: new Date().toISOString() }
+}
+
+async function main() {
+  const mode = process.argv.includes('--exercise-issue') ? 'exercise-issue' : process.argv.includes('--diagnostic') ? 'diagnostic' : 'production'
   const repo = process.env.GITHUB_REPOSITORY
-  if (!repo) throw new Error('GITHUB_REPOSITORY required for alerts')
-  const title = `[Frontpage publication] ${result.expected_date}`
+  const runUrl = repo && process.env.GITHUB_RUN_ID ? `https://github.com/${repo}/actions/runs/${process.env.GITHUB_RUN_ID}` : null
   const gh = args => execFileSync('gh', args, { encoding: 'utf8', timeout: 30000 })
-  const issues = JSON.parse(gh(['issue', 'list', '--repo', repo, '--state', 'all', '--search', `${title} in:title`, '--json', 'number,title', '--limit', '100']))
-  if (!issues.some(issue => issue.title === title)) {
-    const url = gh(['issue', 'create', '--repo', repo, '--title', title, '--body', `Publication evidence missing after ${result.deadline} America/New_York.\n\nStart state UNKNOWN: no machine heartbeat exists. This does not prove the Mac failed to start.\n\n\`\`\`json\n${JSON.stringify(result, null, 2)}\n\`\`\`\n\nRun: https://github.com/${repo}/actions/runs/${process.env.GITHUB_RUN_ID}`]).trim()
-    // Read back the exact newly created target before reporting delivery.
-    console.log(gh(['issue', 'view', url, '--repo', repo, '--json', 'url,title,state']))
+  const report = async value => {
+    console.log(JSON.stringify(value, null, 2))
+    if (process.env.DFE_MONITOR_EVIDENCE_PATH) await fs.writeFile(process.env.DFE_MONITOR_EVIDENCE_PATH, JSON.stringify(value, null, 2) + '\n')
+    if (process.env.GITHUB_STEP_SUMMARY) await fs.appendFile(process.env.GITHUB_STEP_SUMMARY, `## Publication monitor (${mode})\n\n\`\`\`json\n${JSON.stringify(value, null, 2)}\n\`\`\`\n`)
   }
-  process.exitCode = 1 // Existing GitHub Actions notification channel as well.
+  if (mode === 'exercise-issue') {
+    if (!repo) throw new Error('GITHUB_REPOSITORY required for the diagnostic issue exercise')
+    const evidence = exerciseIssueReconciliation({ repo, gh, runUrl })
+    await report(evidence)
+    if (!evidence.ok) process.exitCode = 1
+    return
+  }
+  const result = { ...await checkPublication({ deadline: process.env.DFE_PUBLICATION_DEADLINE || '07:00', expectedId: process.env.DFE_EXPECTED_EDITION_ID || null }), diagnostic: mode === 'diagnostic' }
+  if (mode === 'diagnostic' || result.status === 'before-deadline') return report(result)
+  if (!repo) throw new Error('GITHUB_REPOSITORY required for alerts')
+  result.issue = reconcileIssue({ repo, title: productionIssueTitle(result.expected_date), result, gh, runUrl })
+  await report(result)
+  if (['missed', 'unavailable'].includes(result.status)) process.exitCode = 1 // Existing GitHub Actions notification channel as well.
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main().catch(error => { console.error(error); process.exitCode = 1 })
