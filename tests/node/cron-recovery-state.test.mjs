@@ -4,7 +4,7 @@ import os from 'node:os'
 import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 import { preserveCronEvidence, snapshotCronWorktree, writeCronCheckpoint, readProofCheckpoint, readCandidateCheckpoint } from '../../scripts/lib/cron-recovery-state.mjs'
-async function fixture() { return fs.mkdtemp(path.resolve('tmp/cron-state-')) }
+async function fixture() { await fs.mkdir(path.resolve('tmp'), { recursive: true }); return fs.mkdtemp(path.resolve('tmp/cron-state-')) }
 describe('durable cron recovery', () => {
   it('resumes only the exact unpushed candidate worktree, never a published or foreign run', async () => {
     const root = await fixture(), file = path.join(root, 'candidate.json')

@@ -423,7 +423,7 @@ console.log('Verdicts:');
 console.log(`- Press/runtime: ${summary.ok ? 'green' : 'check log'} — daily:publish:cron completed${sourceWindowCount ? `; source windows ${sourceWindowCount}` : ''}`);
 console.log(`- Publish/remote: ${summary.remote_matches ? 'green' : 'not verified'} — remote_matches: ${summary.remote_matches === true}`);
 console.log('- Media/preload: loaded plate captured; provider playback and independent review still require their own evidence.');
-console.log(`- Source-window: green — qa:publish passed; window count: ${sourceWindowCount}`);
+console.log(`- Source-window: ${summary.proof_only ? 'proof-only: no fresh QA or generation claimed' : 'qa:publish passed'}; window count: ${sourceWindowCount}`);
 console.log(`- Source-image fidelity: ${fidelityVerdict}`);
 console.log(`- Overcopy: ${fidelity.transformation_score !== undefined ? (fidelity.pass ? 'green' : 'blocked') : 'not applicable in source-field mode'}${fidelity.transformation_score !== undefined ? ` — transformation_score: ${fidelity.transformation_score}` : ''}`);
 console.log(`- Editorial/source-material: ${editorial.valid_dominant_source_image ? 'source-image mode' : 'source-field mode'} — ${source.source_image_mode_reason || 'not recorded'}`);
@@ -508,7 +508,7 @@ else
   verdict_report="Verdicts: not detected — no latest edition directory found."
 fi
 
-echo "Plate published."
+echo "Publication evidence collected (see exact checkpoint for generation versus proof-only mode)."
 echo
 echo "Stages passed:"
 echo "- Runtime verification"

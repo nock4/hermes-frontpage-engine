@@ -5,7 +5,7 @@ import os from 'node:os'
 import path from 'node:path'
 const supervisor = path.resolve('scripts/press-owner.py')
 const sleep = ms => new Promise(r => setTimeout(r, ms))
-async function fixture() { return fs.mkdtemp(path.resolve('tmp/press-owner-')) }
+async function fixture() { await fs.mkdir(path.resolve('tmp'), { recursive: true }); return fs.mkdtemp(path.resolve('tmp/press-owner-')) }
 function run(root, code, extra = []) {
   return spawn('python3', [supervisor, '--state-dir', root, ...extra, '--', 'python3', '-c', code], { stdio: ['ignore', 'pipe', 'pipe'] })
 }

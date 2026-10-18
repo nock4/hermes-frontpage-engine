@@ -102,6 +102,7 @@ it.each(['plate.png', 'preview.png'])('cron commit/push rejects invalid %s befor
 })
 
 it('retries the exact committed candidate after push failure without a new diff', async () => {
+  await fs.mkdir(path.resolve('tmp'), { recursive: true })
   const base = await fs.mkdtemp(path.resolve('tmp/press-push-recovery-'))
   const root = path.join(base, 'repo'), remote = path.join(base, 'remote.git')
   await fs.mkdir(root); await fs.mkdir(remote)
