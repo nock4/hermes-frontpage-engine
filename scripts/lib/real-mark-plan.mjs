@@ -56,6 +56,7 @@ export async function planRealMarks({ payload, researchField, apiKey, model }, {
       dominant_source: payload.source_image_fingerprints?.[0],
       source_audio_material: payload.source_audio_material,
       recovery_diagnostics: payload.source_fidelity_recovery_diagnostics || [],
+      mapping_recovery_diagnostics: payload.mapping_recovery_diagnostics || null,
       prior_scene_proposal: payload.scene_prompt,
       output_shape: {
         scene_prompt: 'complete still-image art direction, at most 420 characters',

@@ -101,6 +101,30 @@ it.each(['plate.png', 'preview.png'])('cron commit/push rejects invalid %s befor
   } finally { await fs.rm(root, { recursive: true, force: true }) }
 })
 
+it('retries the exact committed candidate after push failure without a new diff', async () => {
+  const base = await fs.mkdtemp(path.resolve('tmp/press-push-recovery-'))
+  const root = path.join(base, 'repo'), remote = path.join(base, 'remote.git')
+  await fs.mkdir(root); await fs.mkdir(remote)
+  const git = (...args) => execFileSync('git', args, { cwd: root, encoding: 'utf8', stdio: 'pipe' }).trim()
+  try {
+    await fixture(root); await fs.rm(path.join(root, 'public/editions', otherId), { recursive: true })
+    git('init', '-q'); git('config', 'user.email', 'test@example.invalid'); git('config', 'user.name', 'Fixture'); git('add', '.'); git('commit', '-qm', 'baseline')
+    execFileSync('git', ['init', '--bare', '-q', remote])
+    git('remote', 'add', 'origin', remote)
+    const hook = path.join(remote, 'hooks/pre-receive')
+    await fs.writeFile(hook, '#!/bin/sh\nexit 1\n', { mode: 0o755 })
+    const file = path.join(root, 'public/editions', editionId, 'edition.json')
+    const edition = JSON.parse(await fs.readFile(file, 'utf8')); edition.title = 'retained candidate'
+    await fs.writeFile(file, JSON.stringify(edition))
+    await expect(commitPublishedArtifacts(root, editionId, 'main')).rejects.toThrow(/push/)
+    const commit = git('rev-parse', 'HEAD'); expect(git('status', '--short')).toBe('')
+    await fs.unlink(hook)
+    const recovered = await commitPublishedArtifacts(root, editionId, 'main')
+    expect(recovered.commit).toBe(commit); expect(recovered.push_succeeded).toBe(true)
+    expect(git('ls-remote', 'origin', 'refs/heads/main').split(/\s/)[0]).toBe(commit)
+  } finally { await fs.rm(base, { recursive: true, force: true }) }
+})
+
 it('publication checks both actual assets while archive reading remains portrait-capable', async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-landscape-publish-'))
   try {

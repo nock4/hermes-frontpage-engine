@@ -307,6 +307,13 @@ describe('bounded scene and ownership replan', () => {
     expect(JSON.parse(record.mock.calls[0][1].input).sources).toHaveLength(6)
   })
 
+  it('sends exact mapping critique to the planner without treating it as eligibility', async () => {
+    const critique = { detected_objects: [{ label: 'white silhouette', visual_evidence: 'one continuous contour, not two' }], inspection_mode: 'openai-vision' }
+    const request = vi.fn().mockResolvedValue(replacement())
+    await planRealMarks({ payload: { ...payload, mapping_recovery_diagnostics: critique }, researchField }, { request })
+    expect(JSON.parse(request.mock.calls[0][0].input).mapping_recovery_diagnostics).toEqual(critique)
+  })
+
   it('does not retry or silently fall back after provider failure', async () => {
     const request = vi.fn().mockRejectedValue(new Error('provider unavailable'))
     const record = vi.fn()
@@ -366,7 +373,11 @@ describe('real-mark planning contract', () => {
     try {
       const run = runFromScratchMode({
         root: '/test-only', options: { generationName: 'contract', date: '2026-10-11', useSampleSignals: true, inputMode: 'manifest', skipMask: true, imageSize: '1536x1024' },
-        fs: { mkdir: async () => {}, writeFile: async (file, value) => writes.set(file, value), readFile: async () => JSON.stringify(audit) },
+        fs: {
+          mkdir: async () => {}, writeFile: async (file, value) => writes.set(file, value), readFile: async () => JSON.stringify(audit),
+          readdir: async dir => [...writes.keys()].filter(file => path.dirname(file) === dir).map(file => ({ name: path.basename(file), isFile: () => true })),
+          copyFile: async (from, to) => writes.set(to, writes.has(from) ? writes.get(from) : await fs.readFile(from)),
+        },
         requireOpenAiKey: () => ({ loaded: {} }), chooseDiversityDirective: () => '',
         mineSignals: async () => ({ notes_selected: [], source_candidates: [] }),
         inspectSourceCandidates: async () => researchField,

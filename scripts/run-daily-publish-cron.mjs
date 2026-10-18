@@ -5,9 +5,11 @@ import path from 'node:path'
 import { assertLandscapePlate } from './lib/landscape-policy.mjs'
 import { fileURLToPath } from 'node:url'
 import https from 'node:https'
+import { randomUUID } from 'node:crypto'
 
 import { auditPressStability, formatPressStabilityAudit } from './lib/press-stability.mjs'
 import { assertEditorialBindings } from './lib/source-selection-policy.mjs'
+import { snapshotCronWorktree, writeCronCheckpoint, readProofCheckpoint, readCandidateCheckpoint } from './lib/cron-recovery-state.mjs'
 
 const primaryRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
 const defaultVaultRoot = '/Users/nickgeorge-studio/Documents/nicks-mind-map'
@@ -58,6 +60,8 @@ export function parseArgs(argv) {
     }
 
     if (arg === '--input-root') options.inputRoot = readValue()
+    else if (arg === '--proof-only') options.proofOnly = path.resolve(readValue())
+    else if (arg === '--resume-candidate') options.resumeCandidate = path.resolve(readValue())
     else if (arg === '--worktree-dir') options.worktreeDir = readValue()
     else if (arg === '--branch') options.branch = readValue()
     else if (arg === '--remote') options.remote = readValue()
@@ -80,6 +84,7 @@ export function parseArgs(argv) {
     }
   }
 
+  if (options.proofOnly && options.resumeCandidate) throw new Error('Choose proof-only or resume-candidate, not both')
   if (!Number.isFinite(options.retries) || options.retries < 1) throw new Error('--retries must be >= 1')
   if (!Number.isFinite(options.retryDelayMs) || options.retryDelayMs < 0) throw new Error('--retry-delay-ms must be >= 0')
   if (!Number.isFinite(options.windowDays) || options.windowDays < 1) throw new Error('--window-days must be >= 1')
@@ -220,6 +225,8 @@ async function ensureWorktree({ worktreeDir, remote, branch }) {
 
   if (await exists(worktreeDir)) {
     await assertExistingDisposableWorktree(worktreeDir)
+    const retained = await snapshotCronWorktree(worktreeDir, path.join(primaryRoot, 'tmp', 'retained-cron'), `${remote}/${branch}`)
+    console.log(`PRESERVED_CRON_EVIDENCE=${retained}`)
   }
   const removeResult = await run('git', ['worktree', 'remove', '--force', worktreeDir], {
     cwd: primaryRoot,
@@ -388,9 +395,7 @@ export async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
   await assertPublicationTarget(worktreeDir, editionId)
   const readStatusLines = async () => parseStatusLines((await run('git', ['status', '--short'], { cwd: worktreeDir, capture: true })).stdout)
   let lines = await readStatusLines()
-  if (!lines.length) {
-    return { committed: false, commit: null, changed_paths: [] }
-  }
+
 
   const generatedAuditNoise = lines.map((line) => generatedAuditPathForOtherEdition(line, editionId)).filter(Boolean)
   if (generatedAuditNoise.length) {
@@ -406,19 +411,19 @@ export async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
   await run('git', ['add', 'public/editions/index.json', path.join('public', 'editions', editionId)], { cwd: worktreeDir })
   const cached = await run('git', ['diff', '--cached', '--name-only'], { cwd: worktreeDir, capture: true })
   const cachedPaths = parseStatusLines(cached.stdout)
-  if (!cachedPaths.length) {
-    return { committed: false, commit: null, changed_paths: [] }
-  }
+
 
   // Re-read Git's actual staged bytes: clean filters or recovered staging must
   // not promote a different manifest/asset than the preflight just inspected.
   await assertPublicationTarget(worktreeDir, editionId, true)
   const commitMessage = `feat: publish daily edition ${editionId}`
-  await run('git', ['commit', '-m', commitMessage], { cwd: worktreeDir })
+  if (cachedPaths.length) await run('git', ['commit', '-m', commitMessage], { cwd: worktreeDir })
   const head = await run('git', ['rev-parse', 'HEAD'], { cwd: worktreeDir, capture: true })
   const commit = head.stdout.trim()
   await run('git', ['push', 'origin', `HEAD:${branch}`], { cwd: worktreeDir })
-  return { committed: true, commit, changed_paths: cachedPaths }
+  const remote = await run('git', ['ls-remote', 'origin', `refs/heads/${branch}`], { cwd: worktreeDir, capture: true })
+  if (remote.stdout.trim().split(/\s+/)[0] !== commit) throw new Error(`Pushed commit ${commit} did not match remote ${branch}; preserve candidate and retry proof`)
+  return { committed: cachedPaths.length > 0, commit, push_succeeded: true, changed_paths: cachedPaths }
 }
 
 export function ownerRepoFromGitRemote(remoteUrl) {
@@ -518,6 +523,13 @@ async function logPressStabilityPreflight() {
 
 async function main() {
   const options = parseArgs(process.argv.slice(2))
+  // All entrypoints, including direct node calls, share the outer kernel lock.
+  const ownership = await run('python3', [path.join(primaryRoot, 'scripts', 'press-owner.py'), '--validate'], { allowFailure: true })
+  if (ownership.code !== 0) {
+    const result = await run('python3', [path.join(primaryRoot, 'scripts', 'press-owner.py'), '--', process.execPath, fileURLToPath(import.meta.url), ...process.argv.slice(2)], { allowFailure: true })
+    process.exitCode = result.code
+    return
+  }
   let exitCode = 0
   const cronUxPort = allocateCronUxPort()
   const cronEnv = {
@@ -538,15 +550,47 @@ async function main() {
     remote_url: options.remoteUrl,
     latest_run_dir: null,
   }
+  const checkpointPath = path.join(primaryRoot, 'tmp', 'cron-checkpoints', `${process.env.DFE_PRESS_RUN_ID || Date.now()}-${randomUUID()}.json`)
+  summary.checkpoint_path = checkpointPath
+  const checkpoint = async (stage) => { summary.stage = stage; await writeCronCheckpoint(checkpointPath, summary) }
 
   try {
+    if (options.proofOnly) {
+      Object.assign(summary, await readProofCheckpoint(options.proofOnly), { ok: false, proof_only: true, proof_input_checkpoint: options.proofOnly, checkpoint_path: checkpointPath })
+      delete summary.error
+      delete summary.remote_verification
+      delete summary.post_push_runtime_qa
+      summary.remote_matches = false
+      await checkpoint('remote-proof')
+      summary.remote_verification = await verifyRemoteManifest(summary.remote_url || options.remoteUrl, summary.local_edition_id, options)
+      summary.remote_matches = summary.remote_verification.ok
+      if (options.verifyGitHubRuntimeQa) summary.post_push_runtime_qa = await verifyGitHubRuntimeQaForCommit({ worktreeDir: primaryRoot, commit: summary.commit, workflowName: options.githubRuntimeQaWorkflow, timeoutMs: options.githubRuntimeQaTimeoutMs, pollMs: options.githubRuntimeQaPollMs })
+      summary.ok = summary.remote_matches && (!options.verifyGitHubRuntimeQa || summary.post_push_runtime_qa?.ok === true)
+      if (!summary.ok) throw new Error('Proof-only remote/CI verification failed; publication retained, no generation attempted')
+      await checkpoint('remote-proof-complete')
+      console.log(JSON.stringify(summary, null, 2))
+      return
+    }
+    await checkpoint('preflight')
     await logPressStabilityPreflight()
     await cleanupPreviewSmokeServer()
     await cleanupPreviewSmokeServer(cronUxPort)
+    if (options.resumeCandidate) {
+      const retained = await readCandidateCheckpoint(options.resumeCandidate, options.worktreeDir)
+      summary.latest_run_dir = retained.latest_run_dir
+      summary.resumed_candidate = options.resumeCandidate
+      // Check package presence/identity before QA. All normal final-media,
+      // provenance, landscape, staged-byte and push gates still run below.
+      const pkg = await readJson(path.join(summary.latest_run_dir, 'edition-package-summary.json'))
+      const manifest = await readJson(path.join(options.worktreeDir, 'public/editions/index.json'))
+      const bindings = await readJson(path.join(options.worktreeDir, 'public/editions', manifest.current_edition_id, 'source-bindings.json'))
+      assertRunEditionProvenance(manifest.current_edition_id, pkg, bindings)
+    } else {
     await ensureWorktree(options)
 
     const generationName = `cron-${Date.now()}-${process.pid}`
     summary.latest_run_dir = path.join(options.worktreeDir, 'tmp', 'daily-process-runs', generationName)
+    await checkpoint('generation')
     const processArgs = [
       'run', 'daily:process', '--',
       '--generation-name', generationName,
@@ -568,7 +612,9 @@ async function main() {
       cwd: options.worktreeDir,
       env: cronEnv,
     })
+    }
     await fs.rm(path.join(options.worktreeDir, 'vite.config.d.ts'), { force: true })
+    await checkpoint('qa-publish')
     await run('npm', ['run', 'qa:publish'], { cwd: options.worktreeDir, env: cronEnv })
 
     const manifest = await readJson(path.join(options.worktreeDir, 'public', 'editions', 'index.json'))
@@ -590,8 +636,9 @@ async function main() {
 
     const commitResult = await commitPublishedArtifacts(options.worktreeDir, summary.local_edition_id || new Date().toISOString().slice(0, 10), options.branch)
     summary.commit = commitResult.commit
-    summary.push_succeeded = true
+    summary.push_succeeded = commitResult.push_succeeded === true
     summary.changed_paths = commitResult.changed_paths
+    await checkpoint('published-awaiting-proof')
 
     const remoteVerification = await verifyRemoteManifest(options.remoteUrl, summary.local_edition_id, options)
     summary.remote_matches = remoteVerification.ok
@@ -612,6 +659,7 @@ async function main() {
 
     const runtimeQaOk = !options.verifyGitHubRuntimeQa || summary.post_push_runtime_qa?.ok === true
     summary.ok = summary.local_publish_status === 'live' && summary.push_succeeded && summary.remote_matches && runtimeQaOk
+    await checkpoint('remote-proof-complete')
     console.log(JSON.stringify(summary, null, 2))
     if (!summary.ok) exitCode = 1
   } catch (error) {
@@ -620,8 +668,11 @@ async function main() {
     console.log(JSON.stringify(summary, null, 2))
     exitCode = 1
   } finally {
-    await cleanupPreviewSmokeServer()
-    await cleanupPreviewSmokeServer(cronUxPort)
+    await writeCronCheckpoint(checkpointPath, summary)
+    if (!options.proofOnly) {
+      await cleanupPreviewSmokeServer()
+      await cleanupPreviewSmokeServer(cronUxPort)
+    }
   }
   if (exitCode !== 0) process.exit(exitCode)
 }

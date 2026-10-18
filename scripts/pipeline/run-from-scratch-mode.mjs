@@ -13,6 +13,7 @@ import { buildSourceContract } from '../lib/source-contract.mjs'
 import { planRealMarks } from '../lib/real-mark-plan.mjs'
 import { prepareSourceAudioMaterial } from '../lib/source-audio-material.mjs'
 import { recompositionRule, photoGrammarRule, recomposeSourceCues } from '../lib/source-recomposition.mjs'
+import { recoverMappedPlate } from '../lib/mapping-recovery.mjs'
 
 export function historicalSourceKeyOptionsForRun(options = {}, env = process.env) {
   return options.publish && env.DFE_EXCLUDE_SAME_DATE_SOURCE_LEDGER === '1'
@@ -50,6 +51,16 @@ export async function runFromScratchMode({
   const runDir = path.join(root, 'tmp', 'daily-process-runs', runId)
   await fs.mkdir(runDir, { recursive: true })
   const generationName = runId
+  const snapshotAttempt = async (label) => {
+    const destination = path.join(runDir, 'attempt-evidence', `${Date.now()}-${label}`)
+    await fs.mkdir(destination, { recursive: true })
+    for (const item of await fs.readdir(runDir, { withFileTypes: true })) {
+      if (item.isFile()) await fs.copyFile(path.join(runDir, item.name), path.join(destination, item.name))
+    }
+    if (context.plate?.outputPath) await fs.copyFile(context.plate.outputPath, path.join(destination, 'failed-plate.png'))
+    await fs.writeFile(path.join(destination, 'context.json'), JSON.stringify({ payload: context.payload, analysis: context.analysis, plate: context.plate }, null, 2))
+    console.log(`RETAINED_PLATE_ATTEMPT=${destination}`)
+  }
   const recordRealMarkPlan = (suffix = '') => async (kind, value) => {
     await fs.writeFile(path.join(runDir, `real-mark-plan${suffix}.${kind}.json`), `${JSON.stringify(value, null, 2)}\n`, 'utf8')
   }
@@ -169,6 +180,7 @@ export async function runFromScratchMode({
           const recoveryAttempts = sourceFidelityRecoveryAttempts()
           for (let attempt = 1; attempt <= recoveryAttempts; attempt += 1) {
             const failedAudit = await readSourceFidelityAudit(runDir, fs)
+            await snapshotAttempt(`fidelity-blocked-${attempt}`)
             context.payload = buildSourceFidelityRecoveryPayload(context.payload, failedAudit, attempt)
             context.payload = await planRealMarks({ payload: context.payload, researchField: context.researchField, apiKey, model: options.model }, { record: recordRealMarkPlan(`.source-fidelity-recovery-${attempt}`) })
             await fs.writeFile(path.join(runDir, 'source-contract.json'), `${JSON.stringify(context.payload.source_contract, null, 2)}\n`, 'utf8')
@@ -206,6 +218,22 @@ export async function runFromScratchMode({
       },
     },
     createMapArtifactsStep({ apiKey, context, inspectGeneratedPlate, options, root, runDir }),
+    {
+      name: 'Continue same-source mapping correction if required',
+      tool: 'Bounded retained-source correction with unchanged fidelity and mapping gates',
+      command: 'internal:same-source-mapping-recovery --max-corrections 1',
+      run: () => recoverMappedPlate({
+        context,
+        snapshot: snapshotAttempt,
+        replan: async () => {
+          context.payload = await planRealMarks({ payload: context.payload, researchField: context.researchField, apiKey, model: options.model }, { record: recordRealMarkPlan('.mapping-recovery') })
+          await fs.writeFile(path.join(runDir, 'daily-generation-payload.mapping-recovery.json'), JSON.stringify(context.payload, null, 2))
+        },
+        generate: () => createGeneratePlateStep({ apiKey, context, generateScenePlate, imageAspectRatioFromSize, options, root, runDir }).run(),
+        audit: () => auditSourceImageFidelity({ payload: context.payload, platePath: context.plate.outputPath, apiKey, model: options.model }, runDir),
+        map: () => createMapArtifactsStep({ apiKey, context, inspectGeneratedPlate, options, root, runDir }).run(),
+      }),
+    },
     createAssembleEditionStep({
       assembleEditionPackage,
       context,
