@@ -1,5 +1,24 @@
 import { expect, test } from '@playwright/test'
 
+test('direct media requests omit the document referrer without changing provider iframe policy', async ({ page }) => {
+  const referrers: (string | undefined)[] = []
+  await page.route('https://video.twimg.com/referrer-contract.mp4', route => {
+    referrers.push(route.request().headers().referer)
+    return route.fulfill({ status: 403, body: 'Synthetic request-policy probe, not playback proof' })
+  })
+  await page.goto('/')
+  await page.evaluate(() => {
+    const video = document.createElement('video')
+    video.src = 'https://video.twimg.com/referrer-contract.mp4'
+    video.preload = 'auto'
+    document.body.append(video)
+    video.load()
+  })
+  await expect.poll(() => referrers.length).toBeGreaterThan(0)
+  expect(referrers.every(value => !value)).toBe(true)
+  await expect(page.locator('meta[name="referrer"]')).toHaveAttribute('content', 'no-referrer')
+})
+
 for (const [width, height, artifactId] of [
   [375, 667, 'module-foreground-violet-flower-spikes'],
   [852, 393, 'module-pink-flowers-at-the-right-bank-tip'],
