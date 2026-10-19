@@ -1,0 +1,51 @@
+{
+  "brief_id": "brief-2026-10-19-pink-passes-through-v1",
+  "date": "2026-10-19",
+  "signal_cluster_ids": [
+    "a0158a574acf",
+    "90220c830592",
+    "33501c615c17",
+    "6d3715b76003",
+    "dedd960d3608",
+    "46d356dcec53",
+    "a238f3bc3a5b",
+    "cf935c25d01f"
+  ],
+  "research_node_ids": [
+    "research-1-ba322967",
+    "research-2-61c2c31d",
+    "research-3-6b101c4f",
+    "research-4-69fbcd3b",
+    "research-5-59ac2587",
+    "research-6-a783aa1d"
+  ],
+  "mood": "Landscape digital character collage on dusty pink. An asymmetric chestnut crown and softly lit cheek overlook a fitted black bodice and gathered pale apron. A bare arm bends down, hand at waist; a separate white-ruffled shoulder threads its triangular opening. These two masses dominate. Small petalled wrist pleats, layered apron folds, a short sleeve chain and a pencil-grained hem tuck remain attached to the costume.",
+  "material_language": [
+    "Smooth digitally shaded skin and glossy chestnut hair with narrow reflective streaks",
+    "Black satin and cool-white pleated ruffles; fine cracking confined to one black shoulder surface",
+    "Soft gathered apron fabric with restrained colored fold interiors and local pencil-like grain",
+    "Cool metallic links resting against a puff sleeve"
+  ],
+  "lighting": "Soft frontal light models the cheek and bare arm; narrow hair and metal highlights, cool fold shadows, uninterrupted matte dusty pink.",
+  "object_inventory": [
+    "A bare bent arm rests its hand at a fitted waist above a gathered pale apron.",
+    "A broad black puff shoulder has fine cracks and an irregular white ruffle.",
+    "Small white wrist pleats open over muted coral edges and pale yellow lining.",
+    "Overlapping pale apron folds expose narrow muted green and blue undersides.",
+    "A short articulated silver chain lies along a black puff-sleeve seam.",
+    "A pale curled hem tuck carries faint violet pencil grain and a soft outline."
+  ],
+  "interaction_grammar": {
+    "hero_count": 2,
+    "module_count": 4,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "No raised-arm pose, detached apron, hidden waist contact or shoulder that fills and erases the arm opening.",
+    "No separate animal, wheel, globe, flower bouquet or colorful accessory assemblage.",
+    "No detection boxes, tracking rays, confidence labels, cursors, target rings, pins, colored markers or captions.",
+    "No pasted images, framed paintings, cards, tickets, barcodes, typography, logos or interface chrome.",
+    "No repeated standing lineup, exact facial likeness or near-identical source recreation.",
+    "No stretching, forced cropping, padding, unrelated setting or all-over texture that erases costume structure."
+  ]
+}

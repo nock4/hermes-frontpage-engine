@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-19-pink-passes-through-v1",
+  "edition_id": "2026-10-19-pink-passes-through-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-19-pink-passes-through-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-bare-bent-arm-connecting-the-puff-sl",
+      "target_kind": "artifact",
+      "artifact_id": "hero-bare-bent-arm-connecting-the-puff-sl",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bent-arm-gesture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-broad-black-puff-shoulder-with-fine-",
+      "target_kind": "artifact",
+      "artifact_id": "hero-broad-black-puff-shoulder-with-fine-",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (cracked-fabric-surface) selected from interpretation."
+    },
+    {
+      "target_id": "module-white-wrist-pleats-over-coral-folds-",
+      "target_kind": "artifact",
+      "artifact_id": "module-white-wrist-pleats-over-coral-folds-",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-wrist-ruffle) selected from interpretation."
+    },
+    {
+      "target_id": "module-muted-green-and-blue-undersides-bene",
+      "target_kind": "artifact",
+      "artifact_id": "module-muted-green-and-blue-undersides-bene",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-fold-undersides) selected from interpretation."
+    },
+    {
+      "target_id": "module-short-articulated-silver-chain-follo",
+      "target_kind": "artifact",
+      "artifact_id": "module-short-articulated-silver-chain-follo",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (metal-chain-seam) selected from interpretation."
+    },
+    {
+      "target_id": "module-pale-curled-apron-hem-with-violet-gr",
+      "target_kind": "artifact",
+      "artifact_id": "module-pale-curled-apron-hem-with-violet-gr",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (violet-curled-hem) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

@@ -1,0 +1,515 @@
+{
+  "analysis_id": "analysis-2026-10-19-pink-passes-through-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A closely cropped, naturalistically rendered maid-costume figure leans diagonally across a muted pink ground. A bent bare arm connects a large cracked black puff sleeve to a hand resting at the apron waist. Local source-bearing details include a silver sleeve chain, coral-and-yellow wrist pleats, green-blue undersides beneath pale apron folds, and violet-grained curled hems. The planned material cues are visible, but the composition reads as a detailed figurative portrait rather than a minimal expressionist plate.",
+  "usable_surfaces": [
+    "Bent bare arm and hand-at-waist gesture",
+    "Cracked black puff-sleeve surface",
+    "Coral-edged white wrist pleats with yellow lining",
+    "Muted green and blue apron-fold undersides",
+    "Articulated silver chain along sleeve opening",
+    "Violet-grained curled pale hem"
+  ],
+  "detected_objects": [
+    {
+      "label": "Bare bent arm connecting the puff sleeve to the hand at the apron waist",
+      "artifact_type": "bent-arm-gesture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.258,
+        "y": 0.246,
+        "w": 0.348,
+        "h": 0.608
+      },
+      "polygon": [
+        [
+          0.519,
+          0.434
+        ],
+        [
+          0.447,
+          0.448
+        ],
+        [
+          0.388,
+          0.445
+        ],
+        [
+          0.421,
+          0.525
+        ],
+        [
+          0.473,
+          0.66
+        ],
+        [
+          0.477,
+          0.714
+        ],
+        [
+          0.507,
+          0.726
+        ],
+        [
+          0.552,
+          0.762
+        ],
+        [
+          0.606,
+          0.812
+        ],
+        [
+          0.598,
+          0.831
+        ],
+        [
+          0.548,
+          0.805
+        ],
+        [
+          0.513,
+          0.835
+        ],
+        [
+          0.48,
+          0.854
+        ],
+        [
+          0.46,
+          0.822
+        ],
+        [
+          0.436,
+          0.697
+        ],
+        [
+          0.33,
+          0.546
+        ],
+        [
+          0.258,
+          0.385
+        ],
+        [
+          0.491,
+          0.246
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "The exposed arm bends sharply at the left elbow, descends toward the pleated cuff, and continues into a hand laid across the pale waistband. Pink ground remains visible inside the bend. The cuff interrupts the skin surface; this polygon maps the connected gesture rather than a uniform material patch."
+    },
+    {
+      "label": "Broad black puff shoulder with fine pale cracking",
+      "artifact_type": "cracked-fabric-surface",
+      "role": "media-surface",
+      "bounds": {
+        "x": 0.506,
+        "y": 0.123,
+        "w": 0.24,
+        "h": 0.445
+      },
+      "polygon": [
+        [
+          0.506,
+          0.18
+        ],
+        [
+          0.535,
+          0.156
+        ],
+        [
+          0.549,
+          0.123
+        ],
+        [
+          0.614,
+          0.133
+        ],
+        [
+          0.647,
+          0.178
+        ],
+        [
+          0.699,
+          0.226
+        ],
+        [
+          0.735,
+          0.296
+        ],
+        [
+          0.746,
+          0.366
+        ],
+        [
+          0.739,
+          0.442
+        ],
+        [
+          0.713,
+          0.496
+        ],
+        [
+          0.669,
+          0.543
+        ],
+        [
+          0.564,
+          0.568
+        ],
+        [
+          0.542,
+          0.559
+        ],
+        [
+          0.526,
+          0.505
+        ],
+        [
+          0.553,
+          0.425
+        ],
+        [
+          0.563,
+          0.34
+        ],
+        [
+          0.537,
+          0.237
+        ],
+        [
+          0.509,
+          0.211
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "A large irregular black sleeve bulges above the torso. Fine branching gray cracks cross its central and upper-right surface, while bright folds gather toward the arm opening. An uneven white ruffle borders the sleeve; the polygon follows the black surface rather than enclosing surrounding skin or background."
+    },
+    {
+      "label": "White wrist pleats over coral folds and yellow lining",
+      "artifact_type": "layered-wrist-ruffle",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.403,
+        "y": 0.604,
+        "w": 0.119,
+        "h": 0.204
+      },
+      "polygon": [
+        [
+          0.448,
+          0.604
+        ],
+        [
+          0.465,
+          0.614
+        ],
+        [
+          0.48,
+          0.618
+        ],
+        [
+          0.492,
+          0.624
+        ],
+        [
+          0.51,
+          0.644
+        ],
+        [
+          0.518,
+          0.643
+        ],
+        [
+          0.522,
+          0.701
+        ],
+        [
+          0.514,
+          0.735
+        ],
+        [
+          0.506,
+          0.748
+        ],
+        [
+          0.5,
+          0.778
+        ],
+        [
+          0.479,
+          0.788
+        ],
+        [
+          0.466,
+          0.808
+        ],
+        [
+          0.445,
+          0.801
+        ],
+        [
+          0.421,
+          0.782
+        ],
+        [
+          0.409,
+          0.753
+        ],
+        [
+          0.403,
+          0.692
+        ],
+        [
+          0.414,
+          0.712
+        ],
+        [
+          0.457,
+          0.721
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "The wrist has a distinct pleated white cuff backed by scalloped muted coral fabric. Thin ochre-yellow lining peeks around the right and lower edges. This is a localized trim feature separate from the hand and apron."
+    },
+    {
+      "label": "Muted green and blue undersides beneath overlapping pale apron folds",
+      "artifact_type": "layered-fold-undersides",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.126,
+        "y": 0.787,
+        "w": 0.158,
+        "h": 0.21299999999999997
+      },
+      "polygon": [
+        [
+          0.131,
+          0.838
+        ],
+        [
+          0.171,
+          0.787
+        ],
+        [
+          0.197,
+          0.802
+        ],
+        [
+          0.226,
+          0.851
+        ],
+        [
+          0.244,
+          0.921
+        ],
+        [
+          0.284,
+          0.919
+        ],
+        [
+          0.262,
+          0.958
+        ],
+        [
+          0.235,
+          0.979
+        ],
+        [
+          0.229,
+          1
+        ],
+        [
+          0.141,
+          1
+        ],
+        [
+          0.132,
+          0.953
+        ],
+        [
+          0.126,
+          0.899
+        ]
+      ],
+      "confidence": 0.94,
+      "visual_evidence": "Near the lower-left edge, pale overlapping fabric reveals an olive-green curled underside and a smaller muted blue layer below it. Both colored surfaces visibly belong to stacked folds. Their lower extent is cropped by the image boundary."
+    },
+    {
+      "label": "Short articulated silver chain following the sleeve opening",
+      "artifact_type": "metal-chain-seam",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.534,
+        "y": 0.228,
+        "w": 0.044,
+        "h": 0.196
+      },
+      "polygon": [
+        [
+          0.534,
+          0.228
+        ],
+        [
+          0.546,
+          0.231
+        ],
+        [
+          0.559,
+          0.254
+        ],
+        [
+          0.57,
+          0.289
+        ],
+        [
+          0.576,
+          0.325
+        ],
+        [
+          0.578,
+          0.36
+        ],
+        [
+          0.575,
+          0.395
+        ],
+        [
+          0.572,
+          0.419
+        ],
+        [
+          0.565,
+          0.424
+        ],
+        [
+          0.561,
+          0.414
+        ],
+        [
+          0.565,
+          0.39
+        ],
+        [
+          0.568,
+          0.357
+        ],
+        [
+          0.565,
+          0.327
+        ],
+        [
+          0.56,
+          0.301
+        ],
+        [
+          0.549,
+          0.271
+        ],
+        [
+          0.536,
+          0.248
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "Individual reflective oval links form a short curved silver chain between the white arm ruffle and black sleeve. The narrow polygon tracks its arc rather than selecting the entire seam."
+    },
+    {
+      "label": "Pale curled apron hem with violet grain and outlined rolled tip",
+      "artifact_type": "violet-curled-hem",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.155,
+        "y": 0.682,
+        "w": 0.167,
+        "h": 0.243
+      },
+      "polygon": [
+        [
+          0.159,
+          0.721
+        ],
+        [
+          0.176,
+          0.695
+        ],
+        [
+          0.208,
+          0.682
+        ],
+        [
+          0.254,
+          0.692
+        ],
+        [
+          0.289,
+          0.721
+        ],
+        [
+          0.311,
+          0.756
+        ],
+        [
+          0.322,
+          0.804
+        ],
+        [
+          0.32,
+          0.846
+        ],
+        [
+          0.303,
+          0.88
+        ],
+        [
+          0.272,
+          0.912
+        ],
+        [
+          0.245,
+          0.925
+        ],
+        [
+          0.234,
+          0.879
+        ],
+        [
+          0.225,
+          0.825
+        ],
+        [
+          0.208,
+          0.785
+        ],
+        [
+          0.182,
+          0.767
+        ],
+        [
+          0.163,
+          0.778
+        ],
+        [
+          0.155,
+          0.756
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A foreground pale fold curls outward into a conspicuous oval rolled end. Lavender-violet shading, fine grain, and narrow purple contour lines run through its interior and hem. The polygon isolates this curled fold from the neighboring green-blue undersides."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.426,
+    "rationale": "The pink ground and single figure keep the overall silhouette readable, and six distinct source-bearing features are visible. However, detailed hair, facial rendering, lace, sleeve cracking, and numerous rolled fabric folds make this a richly rendered portrait rather than a minimal expressionist composition. The chain and colored cuff are small interaction targets. Coverage is an approximate visual estimate."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-19-pink-passes-through-v1"
+}

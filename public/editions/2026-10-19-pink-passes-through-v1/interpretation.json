@@ -1,0 +1,279 @@
+{
+  "interpretation_id": "interp-2026-10-19-pink-passes-through-v1",
+  "edition_id": "2026-10-19-pink-passes-through-v1",
+  "plate_read_timestamp": "2026-10-19T08:12:48.858Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A closely cropped, naturalistically rendered maid-costume figure leans diagonally across a muted pink ground. A bent bare arm connects a large cracked black puff sleeve to a hand resting at the apron waist. Local source-bearing details include a silver sleeve chain, coral-and-yellow wrist pleats, green-blue undersides beneath pale apron folds, and violet-grained curled hems. The planned material cues are visible, but the composition reads as a detailed figurative portrait rather than a minimal expressionist plate.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Landscape digital character collage on dusty pink. An asymmetric chestnut crown and softly lit cheek overlook a fitted black bodice and gathered pale apron. A bare arm bends down, hand at waist; a separate white-ruffled shoulder threads its triangular opening. These two masses dominate. Small petalled wrist pleats, layered apron folds, a short sleeve chain and a pencil-grained hem tuck remain attached to the costume.",
+      "A closely cropped, naturalistically rendered maid-costume figure leans diagonally across a muted pink ground. A bent bare arm connects a large cracked black puff sleeve to a hand resting at the apron waist. Local source-bearing details include a silver sleeve chain, coral-and-yellow wrist pleats, green-blue undersides beneath pale apron folds, and violet-grained curled hems. The planned material cues are visible, but the composition reads as a detailed figurative portrait rather than a minimal expressionist plate.",
+      "pink-field",
+      "ruffle-interlock",
+      "angular-opening"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Bare bent arm connecting the puff sleeve to the hand at the apron waist",
+      "Broad black puff shoulder with fine pale cracking",
+      "White wrist pleats over coral folds and yellow lining",
+      "Muted green and blue undersides beneath overlapping pale apron folds",
+      "Short articulated silver chain following the sleeve opening",
+      "Pale curled apron hem with violet grain and outlined rolled tip"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "pink-field-ruffle-interlock",
+      "A bare bent arm rests its hand at a fitted waist above a gathered pale apron.",
+      "A broad black puff shoulder has fine cracks and an irregular white ruffle.",
+      "Small white wrist pleats open over muted coral edges and pale yellow lining.",
+      "Overlapping pale apron folds expose narrow muted green and blue undersides.",
+      "A short articulated silver chain lies along a black puff-sleeve seam.",
+      "A pale curled hem tuck carries faint violet pencil grain and a soft outline.",
+      "Bent bare arm and hand-at-waist gesture"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: pink-field-ruffle-interlock.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-bare-bent-arm-connecting-the-puff-sl",
+      "kind": "hero",
+      "type": "bent-arm-gesture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.2562,
+        "y": 0.2389,
+        "w": 0.2836,
+        "h": 0.4375
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-broad-black-puff-shoulder-with-fine-",
+      "kind": "hero",
+      "type": "cracked-fabric-surface",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.506,
+        "y": 0.123,
+        "w": 0.24,
+        "h": 0.445
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-white-wrist-pleats-over-coral-folds-",
+      "kind": "module",
+      "type": "layered-wrist-ruffle",
+      "strength": 0.782052,
+      "bounds": {
+        "x": 0.403,
+        "y": 0.604,
+        "w": 0.119,
+        "h": 0.204
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-muted-green-and-blue-undersides-bene",
+      "kind": "module",
+      "type": "layered-fold-undersides",
+      "strength": 0.7585200000000001,
+      "bounds": {
+        "x": 0.125,
+        "y": 0.775,
+        "w": 0.1625,
+        "h": 0.225
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-short-articulated-silver-chain-follo",
+      "kind": "module",
+      "type": "metal-chain-seam",
+      "strength": 0.7399800000000001,
+      "bounds": {
+        "x": 0.534,
+        "y": 0.228,
+        "w": 0.044,
+        "h": 0.196
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-curled-apron-hem-with-violet-gr",
+      "kind": "module",
+      "type": "violet-curled-hem",
+      "strength": 0.699492,
+      "bounds": {
+        "x": 0.155,
+        "y": 0.682,
+        "w": 0.167,
+        "h": 0.243
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-bare-bent-arm-connecting-the-puff-sl-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.2562,
+        "y": 0.2389,
+        "w": 0.2836,
+        "h": 0.4375
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-broad-black-puff-shoulder-with-fine--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.506,
+        "y": 0.123,
+        "w": 0.24,
+        "h": 0.445
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-white-wrist-pleats-over-coral-folds--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.403,
+        "y": 0.604,
+        "w": 0.119,
+        "h": 0.204
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-muted-green-and-blue-undersides-bene-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.125,
+        "y": 0.775,
+        "w": 0.1625,
+        "h": 0.225
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-short-articulated-silver-chain-follo-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.534,
+        "y": 0.228,
+        "w": 0.044,
+        "h": 0.196
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-curled-apron-hem-with-violet-gr-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.155,
+        "y": 0.682,
+        "w": 0.167,
+        "h": 0.243
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
