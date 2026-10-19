@@ -1,4 +1,26 @@
 import { describe, expect, it } from 'vitest'
+import { readFileSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs'
+import { execFileSync } from 'node:child_process'
+import os from 'node:os'
+import path from 'node:path'
+
+const versionedSummary = {
+  reliability_version: 1,
+  expected_date: '2026-10-19',
+  ok: true,
+  local_edition_id: '2026-10-19-pink-passes-through-v1',
+  local_publish_status: 'live',
+  remote_matches: true,
+  proof_only: true,
+  note: 'Quoted closing brace } and escaped quote " with backslash \\ then {',
+}
+const versionedLog = [
+  'publish log noise',
+  JSON.stringify({ ok: false, local_edition_id: null }, null, 2),
+  JSON.stringify(versionedSummary, null, 2),
+  JSON.stringify({ ok: true, message: 'unrelated trailing JSON' }, null, 2),
+  'Live preload proof: {"loadedPlateImageCount":1}',
+].join('\n')
 
 import {
   buildPublishProof,
@@ -92,6 +114,51 @@ describe('press proof contract', () => {
       local_edition_id: 'edition-v1',
       remote_matches: true,
     })
+  })
+
+  it('extracts a versioned summary with quoted braces before unrelated trailing JSON', () => {
+    expect(extractLastPublishSummary(versionedLog)).toEqual(versionedSummary)
+  })
+
+  it('preserves compact and reordered legacy summaries and failed null edition ids', () => {
+    const summary = { local_edition_id: null, error: 'generation failed }', ok: false }
+    expect(extractLastPublishSummary(JSON.stringify(summary))).toEqual(summary)
+  })
+
+  it('ignores unrelated JSON and malformed trailing summary candidates', () => {
+    expect(extractLastPublishSummary('{\n  "ok": true,\n  "message": "not a publish summary"\n}')).toBeNull()
+    expect(extractLastPublishSummary(`${versionedLog}\n{\n  "ok": false,\n  "local_edition_id":`)).toEqual(versionedSummary)
+  })
+
+  it('uses the wrapper extraction to supply the screenshot edition from versioned logs', () => {
+    const wrapper = readFileSync('scripts/cron/daily-frontpage-cron.sh', 'utf8')
+    const block = wrapper.match(/^expected_edition_id="\$\([\s\S]*?^\)"/m)?.[0]
+    expect(block).toBeTruthy()
+    const root = mkdtempSync(path.join(os.tmpdir(), 'publish-summary-'))
+    try {
+      const logPath = path.join(root, 'cron.log')
+      writeFileSync(logPath, versionedLog)
+      const output = execFileSync('bash', ['-c', `log_file="$1"\n${block}\nprintf '%s' "$expected_edition_id"`, 'summary-test', logPath], { encoding: 'utf8' })
+      expect(output).toBe(versionedSummary.local_edition_id)
+    } finally {
+      rmSync(root, { recursive: true, force: true })
+    }
+  })
+
+  it('uses the shared summary for wrapper proof-only verdicts', () => {
+    const wrapper = readFileSync('scripts/cron/daily-frontpage-cron.sh', 'utf8')
+    const block = wrapper.match(/^print_press_verdicts\(\) \{[\s\S]*?^NODE\n\}/m)?.[0]
+    expect(block).toBeTruthy()
+    const root = mkdtempSync(path.join(os.tmpdir(), 'publish-verdict-'))
+    try {
+      const logPath = path.join(root, 'cron.log')
+      writeFileSync(logPath, versionedLog)
+      const output = execFileSync('bash', ['-c', `log_file="$1"\n${block}\nprint_press_verdicts "$2"`, 'verdict-test', logPath, root], { encoding: 'utf8' })
+      expect(output).toContain('Publish/remote: green')
+      expect(output).toContain('proof-only: no fresh QA or generation claimed')
+    } finally {
+      rmSync(root, { recursive: true, force: true })
+    }
   })
 
   it('builds proof directly from cron log text', async () => {

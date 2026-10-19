@@ -9,7 +9,8 @@ async function sandbox() {
   expect(script).toContain('BASH_SOURCE[0]')
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'cron-wrapper-'))
   await fs.mkdir(path.join(root, 'scripts/cron'), { recursive: true })
-  for (const file of ['scripts/press-owner.py', 'scripts/cron/daily-frontpage-cron.sh', 'scripts/cron/daily-frontpage-self-healing-cron.sh']) await fs.copyFile(file, path.join(root, file))
+  await fs.mkdir(path.join(root, 'scripts/lib'), { recursive: true })
+  for (const file of ['scripts/lib/press-proof.mjs', 'scripts/press-owner.py', 'scripts/cron/daily-frontpage-cron.sh', 'scripts/cron/daily-frontpage-self-healing-cron.sh']) await fs.copyFile(file, path.join(root, file))
   await fs.writeFile(path.join(root, 'package.json'), JSON.stringify({ scripts: { 'check:setup': 'exit 21', 'daily:publish:cron': 'echo MUST_NOT_GENERATE', 'press:doctor': 'echo fixture-doctor', 'press:stability': 'echo fixture-stability' } }))
   return root
 }

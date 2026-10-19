@@ -1,13 +1,17 @@
 export function extractLastPublishSummary(text) {
   const source = String(text || '')
-  const marker = '{\n  "ok"'
-  let searchFrom = source.length
-  while (searchFrom > 0) {
-    const start = source.lastIndexOf(marker, searchFrom - 1)
-    if (start < 0) return null
+  // Match object boundaries, not the first key: reliability metadata precedes
+  // `ok` in current summaries. Keep the string-aware JSON parser for braces
+  // and escaped quotes in error messages and other string values.
+  const candidates = [...source.matchAll(/^[\t ]*\{/gm)]
+  for (const candidate of candidates.reverse()) {
+    const start = candidate.index + candidate[0].length - 1
     const parsed = parseJsonObjectAt(source, start)
-    if (parsed) return parsed
-    searchFrom = start
+    // Other stages also emit JSON with `ok`; publication summaries always
+    // carry an edition id (null when generation has not produced one yet).
+    if (parsed && typeof parsed.ok === 'boolean'
+      && Object.hasOwn(parsed, 'local_edition_id')
+      && (parsed.local_edition_id === null || typeof parsed.local_edition_id === 'string')) return parsed
   }
   return null
 }

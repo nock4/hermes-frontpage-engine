@@ -404,15 +404,16 @@ print_scene_prompt() {
 
 print_press_verdicts() {
   local edition_dir="$1"
-  node - "$edition_dir" "$log_file" <<'NODE'
-const fs = require('fs');
-const path = require('path');
+  node --input-type=module - "$edition_dir" "$log_file" <<'NODE'
+import fs from 'node:fs';
+import path from 'node:path';
+import { extractLastPublishSummary } from './scripts/lib/press-proof.mjs';
 const [editionDir, logPath] = process.argv.slice(2);
 const readJson = (file) => fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
 const source = readJson(path.join(editionDir, 'source-research.json')) || {};
 const fidelity = readJson(path.join(editionDir, 'source-fidelity-audit.json')) || {};
 const pkg = readJson(path.join(editionDir, 'edition-package-summary.json')) || {};
-const summary = lastJsonObject(fs.existsSync(logPath) ? fs.readFileSync(logPath, 'utf8') : '') || {};
+const summary = extractLastPublishSummary(fs.existsSync(logPath) ? fs.readFileSync(logPath, 'utf8') : '') || {};
 const sourceWindowCount = Number(pkg.artifact_count || pkg.source_window_count || 0) || 'not recorded';
 const sourceImageMode = source.source_image_mode || fidelity.source_image_mode || fidelity.inspection_mode || 'not recorded';
 const fidelityVerdict = fidelity.gate_applicable === false || fidelity.verdict === 'skipped'
@@ -428,22 +429,6 @@ console.log(`- Source-image fidelity: ${fidelityVerdict}`);
 console.log(`- Overcopy: ${fidelity.transformation_score !== undefined ? (fidelity.pass ? 'green' : 'blocked') : 'not applicable in source-field mode'}${fidelity.transformation_score !== undefined ? ` — transformation_score: ${fidelity.transformation_score}` : ''}`);
 console.log(`- Editorial/source-material: ${editorial.valid_dominant_source_image ? 'source-image mode' : 'source-field mode'} — ${source.source_image_mode_reason || 'not recorded'}`);
 console.log('- Proof/report: attachments reported below; not an independent visual or actual-provider playback verdict.');
-function lastJsonObject(text) {
-  const marker = '{\n  "ok"';
-  const start = text.lastIndexOf(marker);
-  if (start < 0) return null;
-  let depth = 0;
-  for (let i = start; i < text.length; i += 1) {
-    if (text[i] === '{') depth += 1;
-    if (text[i] === '}') {
-      depth -= 1;
-      if (depth === 0) {
-        try { return JSON.parse(text.slice(start, i + 1)); } catch { return null; }
-      }
-    }
-  }
-  return null;
-}
 NODE
 }
 
@@ -457,27 +442,12 @@ else
   stage="argument validation"
   report_fail 2
 fi
-expected_edition_id="$(node - "$log_file" <<'NODE'
-const fs = require('fs');
+expected_edition_id="$(node --input-type=module - "$log_file" <<'NODE'
+import fs from 'node:fs';
+import { extractLastPublishSummary } from './scripts/lib/press-proof.mjs';
 const text = fs.existsSync(process.argv[2]) ? fs.readFileSync(process.argv[2], 'utf8') : '';
-const marker = '{\n  "ok"';
-const start = text.lastIndexOf(marker);
-if (start >= 0) {
-  let depth = 0;
-  for (let i = start; i < text.length; i += 1) {
-    if (text[i] === '{') depth += 1;
-    if (text[i] === '}') {
-      depth -= 1;
-      if (depth === 0) {
-        try {
-          const summary = JSON.parse(text.slice(start, i + 1));
-          if (summary.local_edition_id) console.log(summary.local_edition_id);
-        } catch {}
-        break;
-      }
-    }
-  }
-}
+const summary = extractLastPublishSummary(text);
+if (summary?.local_edition_id) console.log(summary.local_edition_id);
 NODE
 )"
 stage="success screenshot"
