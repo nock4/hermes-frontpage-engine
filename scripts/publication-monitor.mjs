@@ -96,12 +96,16 @@ export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnos
   const label = diagnostic ? 'DIAGNOSTIC exercise (injected; not a production incident). ' : ''
   if (['missed', 'unavailable'].includes(result.status)) {
     if (!existing) {
-      const url = gh(['issue', 'create', '--repo', repo, '--title', title, '--body', `${label}${subject} evidence missing after ${result.deadline} America/New_York.\n\nStart state UNKNOWN: no machine heartbeat exists. This does not prove the Mac failed to start.\n\n${evidence}`]).trim()
+      const url = gh(['issue', 'create', '--repo', repo, '--title', title, '--body', `${label}${subject} evidence missing after ${result.deadline} America/New_York.\n\nThis is missing evidence, not proof of a machine outage. See the structured observation below.\n\n${evidence}`]).trim()
       return { action: 'created', issue: view(url) }
     }
     if (existing.state === 'OPEN') return { action: 'existing-open', issue: existing }
     gh(['issue', 'reopen', String(existing.number), '--repo', repo, '--comment', `${label}${subject} evidence missing again.\n\n${evidence}`])
     return { action: 'reopened', issue: view(existing.number) }
+  }
+  if (result.status === 'delivered' && result.reason === 'host-attested-transport-receipt' && existing?.state === 'OPEN') {
+    gh(['issue', 'close', String(existing.number), '--repo', repo, '--comment', `${label}Host-attested daily transport receipt; not proof of reading or current site acceptance.\n\n${evidence}`])
+    return { action: 'closed', issue: view(existing.number) }
   }
   if (result.status === 'published' && result.evidence === 'remote-manifest-and-edition' && existing?.state === 'OPEN') {
     gh(['issue', 'close', String(existing.number), '--repo', repo, '--comment', `${label}Publication verified: ${result.observed_id} (remote manifest and exact edition identity).\n\n${evidence}`])

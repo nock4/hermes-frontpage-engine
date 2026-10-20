@@ -7,7 +7,6 @@ import { createHash, randomUUID } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
 import { checkPressProof } from './lib/press-proof.mjs'
 import { localPublicationDate } from './lib/cron-reliability.mjs'
-import { reconcileIssue } from './publication-monitor.mjs'
 const profile = '/Users/nickgeorge-studio/.hermes/profiles/frontpage'
 const stateRoot = path.join(profile, 'delivery')
 const target = 'telegram:2142213564'
@@ -90,9 +89,10 @@ async function liveIdentity() {
 }
 async function alarmUncertain(record) {
   const result = {status:'unavailable',deadline:'07:00',expected_date:record.date,evidence:'telegram-transport-uncertain',target,run_id:record.run_id,notification_type:record.type,receipt_state:record.status,error:record.error||'Process interrupted after durable intent, before receipt',policy:'Do not resend blindly: inspect exact Telegram target/receipt first. This alarm does not stop publication repair.'}
-  const alarm=reconcileIssue({repo:'nock4/hermes-frontpage-engine',title:`[Frontpage delivery] ${record.date}`,result,subject:'Telegram delivery',gh:args=>execFileSync('gh',args,{encoding:'utf8',timeout:20000})})
-  await atomic(path.join(stateRoot,'alarms',`${record.date}.json`),{result,alarm})
-  console.error(`Telegram delivery remains uncertain; GitHub alarm: ${alarm.issue?.url}`)
+  // Local evidence only. Offhost workflow is the SOLE GitHub delivery-issue writer,
+  // avoiding a list/create race during network partitions or delayed API visibility.
+  await atomic(path.join(stateRoot,'alarms',`${record.date}.json`),{result})
+  console.error('Telegram delivery remains uncertain; retained locally for offhost attestation.')
 }
 async function main() {
   const args=process.argv.slice(2)

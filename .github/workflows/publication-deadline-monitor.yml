@@ -1,8 +1,8 @@
 name: Publication deadline monitor
 on:
   schedule:
-    # 07:17 Eastern in summer/winter; evaluator suppresses pre-deadline checks.
-    - cron: '17 11,12,13 * * *'
+    # Hourly independent observation; Eastern deadline/DST evaluated in code.
+    - cron: '17 * * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -39,11 +39,26 @@ jobs:
             exercise-issue) node scripts/publication-monitor.mjs --exercise-issue ;;
             *) node scripts/publication-monitor.mjs --diagnostic ;;
           esac
+      - name: Check delivery independently (no Telegram sender)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DFE_DELIVERY_ATTESTATION: ${{ vars.DFE_DELIVERY_ATTESTATION }}
+          DFE_DELIVERY_EVIDENCE_PATH: ${{ runner.temp }}/delivery-monitor-evidence.json
+          MODE: ${{ github.event_name == 'workflow_dispatch' && inputs.mode || 'production' }}
+        run: |
+          case "$MODE" in
+            production) node scripts/delivery-monitor.mjs ;;
+            exercise-issue) node scripts/delivery-monitor.mjs --exercise-issue ;;
+            *) node scripts/delivery-monitor.mjs --diagnostic ;;
+          esac
       - name: Retain monitor evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: publication-monitor-evidence-${{ github.run_id }}
-          path: ${{ runner.temp }}/publication-monitor-evidence.json
+          path: |
+            ${{ runner.temp }}/publication-monitor-evidence.json
+            ${{ runner.temp }}/delivery-monitor-evidence.json
           if-no-files-found: warn
           retention-days: 90

@@ -71,6 +71,17 @@ describe('issue reconciliation', () => {
   const missed = { status: 'missed', expected_date: '2026-10-18', deadline: '07:00' }
   const published = { status: 'published', evidence: 'remote-manifest-and-edition', expected_date: '2026-10-18', observed_id: '2026-10-18-art-v1' }
   const title = productionIssueTitle('2026-10-18')
+  it('deduplicates delivery alarms, closes only from receipt evidence, and reopens uncertainty', () => {
+    const f = fakeGh([], {staleLists:2}), title='[Frontpage delivery] 2026-10-21'
+    const run=result=>reconcileIssue({repo:'o/r',title,result,gh:f.gh,wait:()=>{}})
+    const missing={status:'unavailable',reason:'receipt-absent',deadline:'07:00'}
+    expect(run(missing).action).toBe('created')
+    expect(run(missing).action).toBe('existing-open')
+    expect(run({status:'delivered',reason:'manifest-only'}).action).toBe('none')
+    expect(run({status:'delivered',reason:'host-attested-transport-receipt'}).issue.state).toBe('CLOSED')
+    expect(run({...missing,reason:'send-uncertain'}).action).toBe('reopened')
+    expect(f.issues).toHaveLength(1)
+  })
   it('creates once per exact date and never duplicates on repeated checks', () => {
     const f = fakeGh([{ title: '[Frontpage publication] 2026-10-18 follow-up', state: 'OPEN' }])
     expect(reconcileIssue({ repo: 'o/r', title, result: missed, gh: f.gh }).action).toBe('created')

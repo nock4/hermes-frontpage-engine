@@ -30,6 +30,14 @@ def main():
             # A pending receipt deliberately remains ambiguous; never resend it blindly.
             print('Delivery watchdog exceeded 150s. Inspect pending receipt before retry.', file=sys.stderr)
             return 1
+        finally:
+            # Same OS lock: only the local sender writes telemetry. No remote send ownership.
+            if not any(arg in sys.argv for arg in ['--dry-run', '--diagnostic', '--accept-proof']):
+                try:
+                    subprocess.run(['/opt/homebrew/bin/node', str(ROOT / 'scripts/delivery-attestation.mjs')], cwd=ROOT, env=env, timeout=40, check=True)
+                except (subprocess.TimeoutExpired, subprocess.CalledProcessError):
+                    print('Delivery attestation unavailable; offhost monitor will expire heartbeat.', file=sys.stderr)
+                    raise SystemExit(1)
 
 
 if __name__ == '__main__':
