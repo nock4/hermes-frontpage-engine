@@ -238,6 +238,17 @@ export function buildDailyProcessArgs(options, { generationName, expectedDate, i
   ]
 }
 
+// Called only after recovery discovery and clean deployed worktree setup, under
+// the existing kernel owner. Preparation audits ready sets without intake and
+// replenishes missing/consumed sets. Failure must not buy a second fresh budget.
+export async function prepareCronReserve(options, { run: execute = run, env = process.env } = {}) {
+  if (options.proofOnly || options.resumeCandidate || options.inspirationOverridePath || env.DFE_ARTWORK_RESERVE === '0') return { skipped: true }
+  const result = await execute(process.execPath, ['scripts/prepare-artwork-reserve.mjs', '--input-root', options.inputRoot,
+    '--remote', options.remote, '--branch', options.branch], { cwd: options.worktreeDir, env, allowFailure: true })
+  if (result.code !== 0) throw new Error(`Source-only reserve preparation failed (${result.code}); bounded evidence retained; no second fresh intake`)
+  return { prepared_or_ready: true }
+}
+
 async function ensureWorktree({ worktreeDir, remote, branch }) {
   await assertSafeCronWorktreePath(worktreeDir)
   await assertDiskHeadroom(primaryRoot)
@@ -625,8 +636,10 @@ async function main() {
 
     const generationName = `cron-${Date.now()}-${process.pid}`
     summary.latest_run_dir = path.join(options.worktreeDir, 'tmp', 'daily-process-runs', generationName)
-    await checkpoint('generation')
     const inspirationOverridePath = await resolveInspirationOverridePath(options)
+    await checkpoint('reserve-preparation')
+    summary.reserve_preparation = await prepareCronReserve({ ...options, inspirationOverridePath }, { env: cronEnv })
+    await checkpoint('generation')
     const processArgs = buildDailyProcessArgs(options, { generationName, expectedDate, inspirationOverridePath })
     if (inspirationOverridePath) {
       summary.inspiration_override = inspirationOverridePath

@@ -197,6 +197,7 @@ export async function mineSignals({
   inspirationOverride = null,
   bookmarkFirst = false,
   bookmarkCacheDir,
+  bookmarkMaxReads = 48,
   preparedReserve = null,
 }, runDir) {
   const resolvedInputRoot = inputRoot || vault || null
@@ -212,7 +213,7 @@ export async function mineSignals({
     selection_filters: ['Prepared artwork reserve: exact revalidated owning notes from a prior normal bounded intake; nomination only; archive and actual-media gates required.'],
     looked_for: ['unused owning X/Twitter bookmarks'],
     audit: { prepared_reserve: true, notes_read: reserveNotes.length, max_reads: 48, max_notes: 24 },
-  } : boundedBookmarks ? await loadBookmarkBatch({ inputRoot: resolvedInputRoot, cacheDir: bookmarkCacheDir, recentSourceKeys, maxNotes: Math.min(maxNotes || 24, 24) }) : await loadSignalsForMode({
+  } : boundedBookmarks ? await loadBookmarkBatch({ inputRoot: resolvedInputRoot, cacheDir: bookmarkCacheDir, recentSourceKeys, maxReads: bookmarkMaxReads, maxNotes: Math.min(maxNotes || 24, 24) }) : await loadSignalsForMode({
     inputMode,
     inputRoot: resolvedInputRoot,
     signalManifest,

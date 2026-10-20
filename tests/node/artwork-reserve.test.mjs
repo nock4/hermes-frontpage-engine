@@ -468,6 +468,26 @@ describe('source-only preparation CLI', () => {
     expect(calls.acquire).toBe(0)
     expect(await reserveState(reserveDir)).toMatchObject({ prepared: [set.set_id], consumed: [], claimed: [] })
   })
+  it.each(['absent', 'consumed'])('cron replenishes a real %s fixture and ready reruns spend no intake', async state => {
+    const { runPreparation } = await import('../../scripts/prepare-artwork-reserve.mjs')
+    const { prepareCronReserve } = await import('../../scripts/run-daily-publish-cron.mjs')
+    if (state === 'consumed') {
+      await prepare()
+      await finalizeReserveClaim((await claim()).claim, admitted(harvestFixture()))
+    }
+    const { calls, deps: d } = fakeDeps()
+    const results = []
+    const run = async () => {
+      const result = await runPreparation({ options: { reserveDir, ttlHours: 72 }, runDir: path.join(root, 'run'), deps: d })
+      results.push(result)
+      return { code: ['prepared', 'ready'].includes(result.status) ? 0 : 2 }
+    }
+    await prepareCronReserve({}, { run, env: {} })
+    await prepareCronReserve({}, { run, env: {} })
+    expect(results.map(r => r.status)).toEqual(['prepared', 'ready'])
+    expect(calls.acquire).toBe(1)
+    expect((await reserveState(reserveDir)).prepared).toHaveLength(1)
+  })
   it('blocks undeployed admission code unless explicitly labelled local diagnostic in a separate reserve dir', async () => {
     const { runPreparation } = await import('../../scripts/prepare-artwork-reserve.mjs')
     const local = { codeCheck: async () => ({ matches: false, mismatched: ['scripts/lib/artwork-reserve.mjs'], ref: 'origin/main' }) }

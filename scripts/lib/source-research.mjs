@@ -825,8 +825,15 @@ export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1, canAcq
 // batches of six. Also used by the source-only reserve preparation CLI.
 // `budget` is the run's shared 24-acquisition / 24-inspection allowance: a
 // prepared-reserve attempt and its fresh fallback draw on one budget, never 48.
-export async function acquireBoundedBookmarkSources(signalHarvest, { candidates, runDir, apiKey, model, date, recentSourceKeys = new Set(), budget = { acquisitions: 0, inspections: 0 }, adapters = {} }) {
+export async function acquireBoundedBookmarkSources(signalHarvest, { candidates, runDir, apiKey, model, date, recentSourceKeys = new Set(), budget = { acquisitions: 0, inspections: 0 }, state = {}, adapters = {} }) {
   candidates ||= signalHarvest.source_candidates.filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys))).slice(0, 24)
+  const attempted = new Set(state.attempted || [])
+  candidates = candidates.filter(source => {
+    const key = sourceContentKey(source)
+    if (!key || attempted.has(key)) return false
+    attempted.add(key)
+    return true
+  })
   const base = {
     acquire: async batch => {
       const sources = []
@@ -842,10 +849,11 @@ export async function acquireBoundedBookmarkSources(signalHarvest, { candidates,
     ...adapters,
   }
   const attempts = research => (research?.source_decisions || []).filter(row => row.inspection).length
-  const bounded = await acquireBookmarkArtwork({ candidates, maxAcquisitions: Math.max(0, 24 - budget.acquisitions) }, {
+  const bounded = await acquireBookmarkArtwork({ candidates, state, maxAcquisitions: Math.max(0, 24 - budget.acquisitions) }, {
     acquire: async batch => {
       // Charge before I/O: an interrupted batch must not refund its allowance.
       budget.acquisitions += batch.length
+      state.attempted = [...new Set([...(state.attempted || []), ...batch.map(sourceContentKey)])]
       return base.acquire(batch)
     },
     research: base.research,

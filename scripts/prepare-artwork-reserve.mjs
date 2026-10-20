@@ -33,6 +33,8 @@ export function parseArgs(argv) {
     const value = () => { const next = argv[++index]; if (!next || next.startsWith('--')) throw new Error(`Missing value for ${arg}`); return next }
     if (arg === '--input-root') options.inputRoot = value()
     else if (arg === '--reserve-dir') options.reserveDir = path.resolve(value())
+    else if (arg === '--remote') options.remote = value()
+    else if (arg === '--branch') options.branch = value()
     else if (arg === '--ttl-hours') options.ttlHours = Number(value())
     else if (arg === '--audit-only') options.auditOnly = true
     else if (arg === '--prove-consumption') options.proveConsumption = true
@@ -128,10 +130,31 @@ export async function runPreparation({ options, runDir, deps }) {
   }
   if (options.auditOnly) return { ...out, status: 'audited' }
   if (out.audit.ready.length) return { ...out, status: 'ready', ready: out.audit.ready }
-  const harvest = await deps.mine(press, ledger)
+  // Four small cursor advances, not four full intake budgets. Keep the owning
+  // notes and exact actual-media observations together throughout admission.
+  const budget = { acquisitions: 0, inspections: 0, reads: 0, nominations: 0 }
+  const state = {}
+  let harvest, acquired
+  out.batches = []
+  for (let batch = 0; batch < 4 && budget.acquisitions < 24 && budget.inspections < 24; batch++) {
+    const next = await deps.mine(press, ledger, { maxReads: 12, maxNotes: 6 })
+    budget.reads += next.selection_policy?.bookmark_intake?.notes_read ?? 12
+    budget.nominations += next.notes_selected.length
+    harvest = harvest ? { ...next,
+      notes_selected: [...new Map([...harvest.notes_selected, ...next.notes_selected].map(n => [n.id, n])).values()],
+      source_candidates: [...new Map([...harvest.source_candidates, ...next.source_candidates].map(s => [sourceContentKey(s), s])).values()],
+    } : next
+    if (next.selection_policy && !next.selection_policy.bookmark_first) throw new Error('Normal bounded bookmark intake was not used')
+    acquired = await deps.acquire(harvest, press, ledger, { budget, state })
+    out.batches.push({ batch: batch + 1, budget: { ...budget }, admitted: acquired.contentSources.length })
+    await fs.mkdir(runDir, { recursive: true })
+    await fs.writeFile(path.join(runDir, 'reserve-continuation.json'), JSON.stringify({ budget, batches: out.batches, signal_harvest: harvest, acquired }, null, 2) + '\n')
+    if (acquired.contentSources.length >= 6 || budget.reads >= 48 || budget.nominations >= 24) break
+  }
+  out.budget = budget
   out.intake = { notes_selected: harvest.notes_selected.length, source_candidates: harvest.source_candidates.length, bookmark_intake: harvest.selection_policy?.bookmark_intake || null }
   if (harvest.selection_policy && !harvest.selection_policy.bookmark_first) throw new Error('Normal bounded bookmark intake was not used')
-  const acquired = await deps.acquire(harvest, press, ledger)
+
   const attempts = (acquired.autoresearch?.source_decisions || []).filter(row => row.inspection)
   out.admission = { ...acquired.audit, inspected_sources: acquired.inspected.length, inspection_attempts: attempts.length,
     inspection_statuses: attempts.reduce((counts, row) => { const key = row.inspection.error ? 'error' : row.inspection.status; return { ...counts, [key]: (counts[key] || 0) + 1 } }, {}),
@@ -167,8 +190,8 @@ async function main() {
       press,
       fingerprint: p => reserveConfigFingerprint({ model: p.model, inputRoot: p.inputRoot, frontpageConfigPath: p.configPath }),
       audit: args => auditPreparedReserves(args),
-      mine: (p, ledger) => realMineSignals({ inputMode: 'obsidian-allowlist', inputRoot: p.inputRoot, date: p.date, maxNotes: 24, bookmarkFirst: true, recentSourceKeys: ledger.keys, inspirationOverride: null }, runDir),
-      acquire: (harvest, p, ledger) => acquireBoundedBookmarkSources(harvest, { runDir, apiKey, model: p.model, date: p.date, recentSourceKeys: ledger.keys }),
+      mine: (p, ledger, limits) => realMineSignals({ inputMode: 'obsidian-allowlist', inputRoot: p.inputRoot, date: p.date, maxNotes: limits.maxNotes, bookmarkMaxReads: limits.maxReads, bookmarkFirst: true, recentSourceKeys: ledger.keys, inspirationOverride: null }, runDir),
+      acquire: (harvest, p, ledger, continuation) => acquireBoundedBookmarkSources(harvest, { runDir, apiKey, model: p.model, date: p.date, recentSourceKeys: ledger.keys, ...continuation }),
       prove: ({ setFile, press: p, ledger }) => proveReserveConsumption({ setFile, runDir: path.join(runDir, 'consumption-proof'), options: p, recentSourceKeys: ledger.keys, apiKey }),
     } }))
     if (diagnostics.status === 'insufficient') process.exitCode = 2
