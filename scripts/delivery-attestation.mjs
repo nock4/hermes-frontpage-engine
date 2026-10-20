@@ -7,7 +7,7 @@ import { execFileSync } from 'node:child_process'
 import { localPublicationDate } from './lib/cron-reliability.mjs'
 import { latestAccepted } from './delivery-watchdog.mjs'
 const types=['edition','fallback','recovery']
-export const variable='DFE_DELIVERY_ATTESTATION'
+const variable='DFE_DELIVERY_ATTESTATION'
 export function buildAttestation({now=new Date(),records=[],accepted=false}={}) {
  const date=localPublicationDate(now)
  return {version:1,date,heartbeat_at:now.toISOString(),accepted_current:accepted===true,receipts:records.filter(r=>r?.date===date&&types.includes(r.type)).map(r=>({type:r.type,status:r.status==='sent'&&r.receipt?.success===true&&r.receipt?.platform==='telegram'&&r.target===`telegram:${r.receipt.chat_id}`&&r.receipt?.message_id?'sent':'uncertain'}))}
