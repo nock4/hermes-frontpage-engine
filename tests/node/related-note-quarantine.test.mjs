@@ -5,6 +5,30 @@ import { isAiToolingContentSource, sourceHasRenderableCardSurface, hasCreativeAr
 const fixture = JSON.parse(fs.readFileSync(new URL('../fixtures/related-note-quarantine.json', import.meta.url)))
 
 describe('saved-note Related lists are navigation, not source prose', () => {
+  it('keeps actual artist posts eligible for inspection despite saved taxonomy tags and bare related links', () => {
+    const captured = JSON.parse(fs.readFileSync(new URL('../fixtures/artist-note-taxonomy.json', import.meta.url)))
+    const before = JSON.stringify(captured)
+    for (const source of captured.sources) {
+      expect(isAiToolingContentSource(source, captured)).toBe(false)
+      expect(sourceHasRenderableCardSurface(source, captured)).toBe(true)
+      expect(hasCreativeArtifactEvidence(source, {}, captured)).toBe(false)
+      const note = captured.notes_selected.find(n => n.id === source.note_id)
+      for (const pitch of ['Try this prompt.', 'Use agent credentials to run the workflow.']) {
+        expect(isAiToolingContentSource(source, { notes_selected: [{ ...note, excerpt: `${note.excerpt}\n${pitch}` }] })).toBe(true)
+      }
+    }
+    expect(JSON.stringify(captured)).toBe(before)
+  })
+  it('still excludes owning NFT mint pitches rather than relying on navigation tags', () => {
+    for (const title of ['Mint some on nfts dot gay', 'A rush to mint before mint out in just minutes']) {
+      expect(isAiToolingContentSource({title})).toBe(true)
+    }
+    expect(isAiToolingContentSource({title:'A painting with mint green highlights'})).toBe(false)
+  })
+  it('does not strip source-body tags or frontmatter descriptions', () => {
+    expect(isAiToolingContentSource({note_excerpt:'A note\ntags: AI & Agents'})).toBe(true)
+    expect(isAiToolingContentSource({note_excerpt:'---\ntags: [art]\ndescription: Try this prompt.\n---\nPainting'})).toBe(true)
+  })
   for (const { source, note } of fixture.creative) {
     const marketplaceRelease = source.url === 'https://x.com/0xassembly/status/2027589835947442483'
     it(`ignores navigation but preserves owning-source quarantine ${source.url}`, () => {

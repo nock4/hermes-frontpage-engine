@@ -121,14 +121,14 @@ export function aestheticSignalScore(candidate = {}) {
   return score
 }
 
-// Saved-note navigation is not source prose. Match only the consecutive
-// wikilink bullets under a Related heading (including flattened excerpts),
-// never the rest of the section: a following pitch must still quarantine.
-// Do not apply this to inspected descriptions, captions, or other source text.
+// Strip saved-note taxonomy, not owning-source prose. Only the leading YAML
+// tags line and wikilinks immediately under Related are navigation. Preserve
+// descriptions, subsequent pitches, and every inspected source field verbatim.
 function savedNoteProse(value) {
-  return typeof value === 'string'
-    ? value.replace(/(^|\s)#{2,3}\s+Related\s*(?:-\s*\[\[[^\]\r\n]+\]\]\s*)+/gi, '$1')
-    : value
+  if (typeof value !== 'string') return value
+  return value
+    .replace(/^---\r?\n([\s\S]*?)\r?\n---(?=\r?\n|$)/, (block) => block.replace(/^tags:[^\r\n]*$/gm, ''))
+    .replace(/(^|\s)#{2,3}\s+Related\s*(?:(?:-\s*)?\[\[[^\]\r\n]+\]\]\s*)+/gi, '$1')
 }
 
 // Read source evidence, not generated artifact labels or thematic folder names.
@@ -230,7 +230,7 @@ export function isAiToolingContentSource(source = {}, signalHarvest = null) {
     'de-slop a codebase',
   ]
   if (highConfidenceToolPhrases.some((phrase) => text.includes(phrase))) return true
-  return /\b(x402|mcp|openrouter|openclaw|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|hermes agents?|auxiliary models?|local models?|model routing|model savings?|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|solana|blockchain|smart contracts?|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nft|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
+  return /\b(x402|mcp|openrouter|openclaw|grokbot|skillopt|skill\.md|datacenter|data center|agentic|agents?|automation pipeline|orchestration|tool calls?|prompt guide|prompt pack|codex|claude code|claude agent|ai assistant|ai-agent|ai agent|hermes agents?|auxiliary models?|local models?|model routing|model savings?|model benchmark|vibe cod|vibe-coded|vibecoding|software factory|llm\.txt|sdk|api docs?|quickstart|crypto|solana|blockchain|smart contracts?|protocol fees?|ecosystem fund|clanker|farcaster|storyprotocol|story protocol|automated cad|automated research|research hackathon|optimization challenges?|buildanything|production ready apps?|monad|replit|design engineer|nfts?|mint out|token-gated|web3|startup hiring|come work|dms? open)\b/.test(text)
 }
 
 export function scoreVisualCandidate(candidate) {

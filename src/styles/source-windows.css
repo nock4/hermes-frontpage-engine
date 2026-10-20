@@ -35,6 +35,13 @@
   overflow: hidden;
 }
 
+/* The stage preview body promotes to a primary window. Native video controls
+   consume touch taps before compatibility mouse events reach that body.
+   Let the preview surface own the tap; primary players keep native input. */
+.source-window--stage.source-window--preview video {
+  pointer-events: none;
+}
+
 .source-window--frame-panel {
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
