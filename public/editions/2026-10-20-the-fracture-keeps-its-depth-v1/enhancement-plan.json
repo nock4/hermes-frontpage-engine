@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-20-the-fracture-keeps-its-depth-v1",
+  "edition_id": "2026-10-20-the-fracture-keeps-its-depth-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-20-the-fracture-keeps-its-depth-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-broad-violet-gray-dome-above-paired-",
+      "target_kind": "artifact",
+      "artifact_id": "hero-broad-violet-gray-dome-above-paired-",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (layered-dome-and-hollows) selected from interpretation."
+    },
+    {
+      "target_id": "hero-sweeping-violet-fold-with-blue-viole",
+      "target_kind": "artifact",
+      "artifact_id": "hero-sweeping-violet-fold-with-blue-viole",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (curling-pigment-fold) selected from interpretation."
+    },
+    {
+      "target_id": "module-branching-green-blue-ridge-with-oran",
+      "target_kind": "artifact",
+      "artifact_id": "module-branching-green-blue-ridge-with-oran",
+      "priority": 3,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (branching-pigment-ridge) selected from interpretation."
+    },
+    {
+      "target_id": "module-chunky-projecting-ivory-ledge-across",
+      "target_kind": "artifact",
+      "artifact_id": "module-chunky-projecting-ivory-ledge-across",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (projecting-ivory-ledge) selected from interpretation."
+    },
+    {
+      "target_id": "module-detached-rust-red-shelf-with-rough-g",
+      "target_kind": "artifact",
+      "artifact_id": "module-detached-rust-red-shelf-with-rough-g",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (rust-and-gold-shelf) selected from interpretation."
+    },
+    {
+      "target_id": "module-scraped-blue-pink-black-pocket-below",
+      "target_kind": "artifact",
+      "artifact_id": "module-scraped-blue-pink-black-pocket-below",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (scraped-pigment-pocket) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

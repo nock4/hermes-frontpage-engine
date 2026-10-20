@@ -1,0 +1,280 @@
+{
+  "interpretation_id": "interp-2026-10-20-the-fracture-keeps-its-depth-v1",
+  "edition_id": "2026-10-20-the-fracture-keeps-its-depth-v1",
+  "plate_read_timestamp": "2026-10-20T11:37:56.303Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A pale, heavily textured ground supports a large skull-like violet-gray assemblage at left, a separate curled violet fragment at upper right, and a rust-red and gold shelf at lower right. Paired black hollows, sharp ivory blades, teal insets, a small branching colored ridge, and a scraped multicolored pocket provide distinct visible interaction anchors. Thin raised ivory threads cross the open ground. The plate is expressionist and spatially restrained, though its main forms contain dense surface detail. Not every planned spatial relationship is present: the conspicuous ivory ledge belongs to the left assemblage, and the rust shelf sits beneath the right fragment rather than beneath the larger left cluster.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "On warm ivory, two unequal fractured pigment clusters flank a channel. The larger bears a violet dome, paired dark hollows and ivory blades; the smaller, a violet-blue fold. Turquoise inserts, purple ovals, ocher scratches and bridging white cords join a minor rust shelf, bright branching ridge, chunky ledge and speckled scrape.",
+      "A pale, heavily textured ground supports a large skull-like violet-gray assemblage at left, a separate curled violet fragment at upper right, and a rust-red and gold shelf at lower right. Paired black hollows, sharp ivory blades, teal insets, a small branching colored ridge, and a scraped multicolored pocket provide distinct visible interaction anchors. Thin raised ivory threads cross the open ground. The plate is expressionist and spatially restrained, though its main forms contain dense surface detail. Not every planned spatial relationship is present: the conspicuous ivory ledge belongs to the left assemblage, and the rust shelf sits beneath the right fragment rather than beneath the larger left cluster.",
+      "pigment-relief",
+      "ivory-channel",
+      "broken-plane"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Broad violet-gray dome above paired dark hollows and fractured ivory blades",
+      "Sweeping violet fold with blue-violet interior and pale fractured chips",
+      "Branching green-blue ridge with orange tips and pink streaks",
+      "Chunky projecting ivory ledge across the left assemblage",
+      "Detached rust-red shelf with rough gold overlap and broken pale bars",
+      "Scraped blue-pink-black pocket below an ivory lip"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "split-impasto-channel",
+      "A broad violet-gray dome crowns paired dark hollows and fractured ivory blades.",
+      "A broad sweeping violet fold exposes blue-violet paint and pale fractured chips.",
+      "A branching green-blue ridge carries pink and orange tips over a dark scrape.",
+      "A chunky ivory ledge projects below a dark, long-striated paint fold.",
+      "A detached rust-red shelf bears a crude gold overlap above broken pale bars.",
+      "A pale scraped pocket reveals blue-pink-black pigment beneath a speckled lip.",
+      "Violet-gray dome and paired black hollows"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: split-impasto-channel.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-broad-violet-gray-dome-above-paired-",
+      "kind": "hero",
+      "type": "layered-dome-and-hollows",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.0758,
+        "y": 0.0347,
+        "w": 0.4391,
+        "h": 0.5972
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-sweeping-violet-fold-with-blue-viole",
+      "kind": "hero",
+      "type": "curling-pigment-fold",
+      "strength": 0.98288,
+      "bounds": {
+        "x": 0.647,
+        "y": 0.097,
+        "w": 0.335,
+        "h": 0.457
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-branching-green-blue-ridge-with-oran",
+      "kind": "module",
+      "type": "branching-pigment-ridge",
+      "strength": 0.788088,
+      "bounds": {
+        "x": 0.009,
+        "y": 0.085,
+        "w": 0.184,
+        "h": 0.22
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-chunky-projecting-ivory-ledge-across",
+      "kind": "module",
+      "type": "projecting-ivory-ledge",
+      "strength": 0.7530960000000001,
+      "bounds": {
+        "x": 0.02,
+        "y": 0.597,
+        "w": 0.301,
+        "h": 0.207
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detached-rust-red-shelf-with-rough-g",
+      "kind": "module",
+      "type": "rust-and-gold-shelf",
+      "strength": 0.717084,
+      "bounds": {
+        "x": 0.588,
+        "y": 0.576,
+        "w": 0.374,
+        "h": 0.403
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-scraped-blue-pink-black-pocket-below",
+      "kind": "module",
+      "type": "scraped-pigment-pocket",
+      "strength": 0.696912,
+      "bounds": {
+        "x": 0.114,
+        "y": 0.747,
+        "w": 0.177,
+        "h": 0.186
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-broad-violet-gray-dome-above-paired--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0758,
+        "y": 0.0347,
+        "w": 0.4391,
+        "h": 0.5972
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-sweeping-violet-fold-with-blue-viole-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.647,
+        "y": 0.097,
+        "w": 0.335,
+        "h": 0.457
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-branching-green-blue-ridge-with-oran-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.009,
+        "y": 0.085,
+        "w": 0.184,
+        "h": 0.22
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-chunky-projecting-ivory-ledge-across-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.02,
+        "y": 0.597,
+        "w": 0.301,
+        "h": 0.207
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detached-rust-red-shelf-with-rough-g-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.588,
+        "y": 0.576,
+        "w": 0.374,
+        "h": 0.403
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-scraped-blue-pink-black-pocket-below-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.114,
+        "y": 0.747,
+        "w": 0.177,
+        "h": 0.186
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
