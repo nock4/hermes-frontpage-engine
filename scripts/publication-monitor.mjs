@@ -83,7 +83,7 @@ function confirmListed(gh, repo, title, issue, { wait = sleepSync, visibility = 
 
 // One exact-title issue per date. Open or reopen on a real miss, close only on
 // full remote manifest+edition evidence. Duplicates fail closed.
-export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnostic = false, wait, visibility }) {
+export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnostic = false, wait, visibility, subject = 'Publication' }) {
   // Read back the exact target, then require list visibility before reporting delivery.
   const view = number => {
     const issue = JSON.parse(gh(['issue', 'view', String(number), '--repo', repo, '--json', 'number,title,state,url']))
@@ -96,11 +96,11 @@ export function reconcileIssue({ repo, title, result, gh, runUrl = null, diagnos
   const label = diagnostic ? 'DIAGNOSTIC exercise (injected; not a production incident). ' : ''
   if (['missed', 'unavailable'].includes(result.status)) {
     if (!existing) {
-      const url = gh(['issue', 'create', '--repo', repo, '--title', title, '--body', `${label}Publication evidence missing after ${result.deadline} America/New_York.\n\nStart state UNKNOWN: no machine heartbeat exists. This does not prove the Mac failed to start.\n\n${evidence}`]).trim()
+      const url = gh(['issue', 'create', '--repo', repo, '--title', title, '--body', `${label}${subject} evidence missing after ${result.deadline} America/New_York.\n\nStart state UNKNOWN: no machine heartbeat exists. This does not prove the Mac failed to start.\n\n${evidence}`]).trim()
       return { action: 'created', issue: view(url) }
     }
     if (existing.state === 'OPEN') return { action: 'existing-open', issue: existing }
-    gh(['issue', 'reopen', String(existing.number), '--repo', repo, '--comment', `${label}Publication evidence missing again.\n\n${evidence}`])
+    gh(['issue', 'reopen', String(existing.number), '--repo', repo, '--comment', `${label}${subject} evidence missing again.\n\n${evidence}`])
     return { action: 'reopened', issue: view(existing.number) }
   }
   if (result.status === 'published' && result.evidence === 'remote-manifest-and-edition' && existing?.state === 'OPEN') {
