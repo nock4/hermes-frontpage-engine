@@ -22,6 +22,10 @@ describe('nonsecret delivery attestation',()=>{
   for(const a of [{...make(),heartbeat_at:'bogus'},{...make(),heartbeat_at:'2027-01-01T00:00:00Z'},{...make(),private:'SECRET'}]) expect(evaluateDelivery(a,{now}).reason).toBe('invalid-heartbeat')
   expect(evaluateDelivery(make([receipt],new Date('2026-10-20T11:20:00Z')),{now}).status).toBe('unavailable')
  })
+ it('retains observed heartbeat even when rollout suppresses alerts',()=>{
+  const time=new Date('2026-10-20T15:00:00Z')
+  expect(evaluateDelivery(make([],time),{now:time})).toMatchObject({status:'before-rollout',heartbeat:'fresh',reason:'receipt-absent'})
+ })
  it('uses Eastern deadline through DST and rollout cutoff',()=>{
   for(const time of ['2026-10-21T10:59:00Z','2026-11-01T11:59:00Z']) expect(evaluateDelivery(null,{now:new Date(time)}).status).toBe('before-deadline')
   expect(evaluateDelivery(null,{now:new Date('2026-11-01T12:00:00Z')}).status).toBe('unavailable')

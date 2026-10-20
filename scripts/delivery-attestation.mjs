@@ -15,9 +15,14 @@ export function buildAttestation({now=new Date(),records=[],accepted=false}={}) 
 export function evaluateDelivery(a,{now=new Date()}={}) {
  const date=localPublicationDate(now)
  const time=new Intl.DateTimeFormat('en-GB',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(now)
- const result={expected_date:date,deadline:'07:00',checked_at:now.toISOString(),status:'unavailable',reason:'no-heartbeat',heartbeat:'absent',accepted_current:false}
+ const result=classifyDelivery(a,now)
  if(date<'2026-10-21')return {...result,status:'before-rollout'}
  if(time<'07:00')return {...result,status:'before-deadline'}
+ return result
+}
+function classifyDelivery(a,now){
+ const date=localPublicationDate(now)
+ const result={expected_date:date,deadline:'07:00',checked_at:now.toISOString(),status:'unavailable',reason:'no-heartbeat',heartbeat:'absent',accepted_current:false}
  if(!a)return result
  const age=now-new Date(a.heartbeat_at)
  if(Object.keys(a).sort().join()!=='accepted_current,date,heartbeat_at,receipts,version'||a.version!==1||typeof a.accepted_current!=='boolean'||!Number.isFinite(age)||age< -60000||a.date!==localPublicationDate(new Date(a.heartbeat_at))||!Array.isArray(a.receipts)||a.receipts.length>3||new Set(a.receipts.map(r=>r?.type)).size!==a.receipts.length||a.receipts.some(r=>!r||Object.keys(r).sort().join()!=='status,type'||!types.includes(r.type)||!['sent','uncertain'].includes(r.status)))return {...result,reason:'invalid-heartbeat',heartbeat:'invalid'}
