@@ -1,0 +1,441 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-10-21-the-grip-leaves-a-gap-v1",
+  "generation": "cron-1792569628989-31430",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1792569628989-31430/2026-10-21-the-grip-leaves-a-gap-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-saddle-crowned-green-creature-grippi",
+      "visible_area_px": 138665,
+      "territory_area_px": 191497,
+      "hover_bounds": {
+        "x": 0.132,
+        "y": 0.0,
+        "w": 0.4953,
+        "h": 0.9736
+      },
+      "hover_polygon": [
+        [
+          0.132,
+          0.5306
+        ],
+        [
+          0.1695,
+          0.1944
+        ],
+        [
+          0.1945,
+          0.0458
+        ],
+        [
+          0.2195,
+          0.0
+        ],
+        [
+          0.3867,
+          0.0167
+        ],
+        [
+          0.4133,
+          0.0639
+        ],
+        [
+          0.6266,
+          0.8444
+        ],
+        [
+          0.6,
+          0.8917
+        ],
+        [
+          0.5289,
+          0.9722
+        ],
+        [
+          0.2961,
+          0.7361
+        ],
+        [
+          0.1398,
+          0.5542
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-pink-faced-stepped-protrusion-behind",
+          "shared_edge_px": 1680,
+          "direction": "left",
+          "distance_px": 293.58
+        },
+        {
+          "artifact_id": "module-blue-green-foliage-tuft-surrounding-",
+          "shared_edge_px": 160,
+          "direction": "left",
+          "distance_px": 373.94
+        }
+      ]
+    },
+    {
+      "artifact_id": "hero-pink-faced-stepped-protrusion-behind",
+      "visible_area_px": 10385,
+      "territory_area_px": 28824,
+      "hover_bounds": {
+        "x": 0.0523,
+        "y": 0.2014,
+        "w": 0.1648,
+        "h": 0.3319
+      },
+      "hover_polygon": [
+        [
+          0.0523,
+          0.4417
+        ],
+        [
+          0.0547,
+          0.3944
+        ],
+        [
+          0.0711,
+          0.3486
+        ],
+        [
+          0.1695,
+          0.2014
+        ],
+        [
+          0.1898,
+          0.2028
+        ],
+        [
+          0.2164,
+          0.25
+        ],
+        [
+          0.1992,
+          0.3583
+        ],
+        [
+          0.1625,
+          0.4847
+        ],
+        [
+          0.1359,
+          0.5319
+        ],
+        [
+          0.0789,
+          0.4972
+        ],
+        [
+          0.0523,
+          0.45
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-saddle-crowned-green-creature-grippi",
+          "shared_edge_px": 1680,
+          "direction": "right",
+          "distance_px": 293.58
+        },
+        {
+          "artifact_id": "module-blue-green-foliage-tuft-surrounding-",
+          "shared_edge_px": 267,
+          "direction": "down",
+          "distance_px": 255.99
+        },
+        {
+          "artifact_id": "module-grainy-black-bowl-holding-turquoise-",
+          "shared_edge_px": 230,
+          "direction": "up",
+          "distance_px": 160.75
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-grainy-black-bowl-holding-turquoise-",
+      "visible_area_px": 12304,
+      "territory_area_px": 24965,
+      "hover_bounds": {
+        "x": 0.0148,
+        "y": 0.0458,
+        "w": 0.1531,
+        "h": 0.2472
+      },
+      "hover_polygon": [
+        [
+          0.0148,
+          0.1292
+        ],
+        [
+          0.0156,
+          0.1139
+        ],
+        [
+          0.0453,
+          0.0611
+        ],
+        [
+          0.0945,
+          0.0458
+        ],
+        [
+          0.125,
+          0.0542
+        ],
+        [
+          0.143,
+          0.0694
+        ],
+        [
+          0.1672,
+          0.1222
+        ],
+        [
+          0.1602,
+          0.1736
+        ],
+        [
+          0.1406,
+          0.2347
+        ],
+        [
+          0.1078,
+          0.2875
+        ],
+        [
+          0.0828,
+          0.2917
+        ],
+        [
+          0.0625,
+          0.2819
+        ],
+        [
+          0.0406,
+          0.2431
+        ],
+        [
+          0.0148,
+          0.1431
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-pink-faced-stepped-protrusion-behind",
+          "shared_edge_px": 230,
+          "direction": "down",
+          "distance_px": 160.75
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-blue-green-foliage-tuft-surrounding-",
+      "visible_area_px": 38282,
+      "territory_area_px": 59209,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.4681,
+        "w": 0.1922,
+        "h": 0.4708
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.5972
+        ],
+        [
+          0.0047,
+          0.5583
+        ],
+        [
+          0.0211,
+          0.5069
+        ],
+        [
+          0.043,
+          0.4681
+        ],
+        [
+          0.1305,
+          0.5292
+        ],
+        [
+          0.1672,
+          0.6417
+        ],
+        [
+          0.1914,
+          0.7764
+        ],
+        [
+          0.1594,
+          0.8722
+        ],
+        [
+          0.1367,
+          0.9125
+        ],
+        [
+          0.0813,
+          0.9375
+        ],
+        [
+          0.0547,
+          0.9125
+        ],
+        [
+          0.0312,
+          0.8708
+        ],
+        [
+          0.0,
+          0.7917
+        ]
+      ],
+      "neighbors": [
+        {
+          "artifact_id": "hero-pink-faced-stepped-protrusion-behind",
+          "shared_edge_px": 267,
+          "direction": "up",
+          "distance_px": 255.99
+        },
+        {
+          "artifact_id": "hero-saddle-crowned-green-creature-grippi",
+          "shared_edge_px": 160,
+          "direction": "right",
+          "distance_px": 373.94
+        }
+      ]
+    },
+    {
+      "artifact_id": "module-pale-pointed-fan-with-blue-streaks-a",
+      "visible_area_px": 62986,
+      "territory_area_px": 81654,
+      "hover_bounds": {
+        "x": 0.7828,
+        "y": 0.0181,
+        "w": 0.2172,
+        "h": 0.6778
+      },
+      "hover_polygon": [
+        [
+          0.7828,
+          0.2458
+        ],
+        [
+          0.7883,
+          0.2167
+        ],
+        [
+          0.8445,
+          0.1153
+        ],
+        [
+          0.882,
+          0.0653
+        ],
+        [
+          0.9391,
+          0.0181
+        ],
+        [
+          0.9992,
+          0.125
+        ],
+        [
+          0.9992,
+          0.6764
+        ],
+        [
+          0.9891,
+          0.6944
+        ],
+        [
+          0.9656,
+          0.6722
+        ],
+        [
+          0.943,
+          0.6319
+        ],
+        [
+          0.7828,
+          0.25
+        ]
+      ],
+      "neighbors": []
+    },
+    {
+      "artifact_id": "module-detached-bent-cream-limb-with-expose",
+      "visible_area_px": 24011,
+      "territory_area_px": 49748,
+      "hover_bounds": {
+        "x": 0.6148,
+        "y": 0.2819,
+        "w": 0.1984,
+        "h": 0.5792
+      },
+      "hover_polygon": [
+        [
+          0.6148,
+          0.6792
+        ],
+        [
+          0.7484,
+          0.3208
+        ],
+        [
+          0.7703,
+          0.2819
+        ],
+        [
+          0.7867,
+          0.2944
+        ],
+        [
+          0.8086,
+          0.3333
+        ],
+        [
+          0.8125,
+          0.3889
+        ],
+        [
+          0.8016,
+          0.7778
+        ],
+        [
+          0.7922,
+          0.8167
+        ],
+        [
+          0.7703,
+          0.8556
+        ],
+        [
+          0.7609,
+          0.8597
+        ],
+        [
+          0.6414,
+          0.7611
+        ],
+        [
+          0.6195,
+          0.7222
+        ],
+        [
+          0.6148,
+          0.6819
+        ]
+      ],
+      "neighbors": []
+    }
+  ]
+}

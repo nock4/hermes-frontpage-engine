@@ -1,0 +1,175 @@
+{
+  "enhancement_plan_id": "enhance-2026-10-21-the-grip-leaves-a-gap-v1",
+  "edition_id": "2026-10-21-the-grip-leaves-a-gap-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-10-21-the-grip-leaves-a-gap-v1"
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "primary_behavior": "paint-bleed-reveal",
+    "scene_wide_behavior": "paint-bleed-reveal",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "restoration-scan",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "paint-bleed-reveal",
+    "pigment-crack-annotation"
+  ],
+  "rejected": [
+    {
+      "technique": "mechanical-reveal-system",
+      "reason": "Rejected by interpretation behavior rule: cabinet-drawer-behavior"
+    },
+    {
+      "technique": "screen-rendered-html",
+      "reason": "Material-native scenes should prefer painterly or restoration treatments over device-screen logic."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-saddle-crowned-green-creature-grippi",
+      "target_kind": "artifact",
+      "artifact_id": "hero-saddle-crowned-green-creature-grippi",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (connected-figurative-gesture) selected from interpretation."
+    },
+    {
+      "target_id": "hero-pink-faced-stepped-protrusion-behind",
+      "target_kind": "artifact",
+      "artifact_id": "hero-pink-faced-stepped-protrusion-behind",
+      "priority": 2,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (stepped-character-edge) selected from interpretation."
+    },
+    {
+      "target_id": "module-grainy-black-bowl-holding-turquoise-",
+      "target_kind": "artifact",
+      "artifact_id": "module-grainy-black-bowl-holding-turquoise-",
+      "priority": 3,
+      "techniques": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (luminous-bowl) selected from interpretation."
+    },
+    {
+      "target_id": "module-blue-green-foliage-tuft-surrounding-",
+      "target_kind": "artifact",
+      "artifact_id": "module-blue-green-foliage-tuft-surrounding-",
+      "priority": 4,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (foliage-cleft) selected from interpretation."
+    },
+    {
+      "target_id": "module-pale-pointed-fan-with-blue-streaks-a",
+      "target_kind": "artifact",
+      "artifact_id": "module-pale-pointed-fan-with-blue-streaks-a",
+      "priority": 5,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (pointed-streaked-fold) selected from interpretation."
+    },
+    {
+      "target_id": "module-detached-bent-cream-limb-with-expose",
+      "target_kind": "artifact",
+      "artifact_id": "module-detached-bent-cream-limb-with-expose",
+      "priority": 6,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (bent-anatomical-gesture) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "paint-bleed-reveal",
+    "restoration-scan",
+    "pigment-crack-annotation"
+  ],
+  "runtime_note": "Generated automatically from 6 artifacts and scene family heuristics."
+}

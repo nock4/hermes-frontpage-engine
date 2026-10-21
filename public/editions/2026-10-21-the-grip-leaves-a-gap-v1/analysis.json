@@ -1,0 +1,551 @@
+{
+  "analysis_id": "analysis-2026-10-21-the-grip-leaves-a-gap-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Two unequal, disconnected cartoon-anatomy groups sit on a cream ground with a broad open gap. At left, a green saddle-crowned creature grips a pale face connected to a long cyan-edged limb; a pink stepped face, a floating turquoise-lit black bowl, and a foliage tuft flank it. At right, a bent bone-tipped limb, pink coils, and purple lobes sit against solid red scallops, with a pale blue-streaked pointed fan behind them. Five planned source anchors are visibly distinguishable. A separate translucent jagged colored-wash ruff is not clearly visible: the red backing is solid, while the pale streaked fan corresponds to the pointed-fold anchor. The detached bent limb supplies a sixth distinct interaction target without assigning either backing to the missing ruff.",
+  "usable_surfaces": [
+    "Green crown and gripping contour connected to pale head and long limb",
+    "Pink stepped face exposed behind the green silhouette",
+    "Grainy black bowl with turquoise interior",
+    "Blue-green foliage blades around a pink-yellow cleft",
+    "Pale pointed fan with blue streaks and orange-purple rim",
+    "Detached bent pale limb with cyan underside and exposed bone tip"
+  ],
+  "detected_objects": [
+    {
+      "label": "Saddle-crowned green creature gripping a pale head and long cyan-edged limb",
+      "artifact_type": "connected-figurative-gesture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.132,
+        "y": 0.044,
+        "w": 0.468,
+        "h": 0.882
+      },
+      "polygon": [
+        [
+          0.132,
+          0.5
+        ],
+        [
+          0.171,
+          0.351
+        ],
+        [
+          0.222,
+          0.044
+        ],
+        [
+          0.246,
+          0.204
+        ],
+        [
+          0.284,
+          0.246
+        ],
+        [
+          0.328,
+          0.241
+        ],
+        [
+          0.387,
+          0.065
+        ],
+        [
+          0.404,
+          0.252
+        ],
+        [
+          0.428,
+          0.351
+        ],
+        [
+          0.411,
+          0.422
+        ],
+        [
+          0.452,
+          0.507
+        ],
+        [
+          0.438,
+          0.597
+        ],
+        [
+          0.406,
+          0.624
+        ],
+        [
+          0.514,
+          0.8
+        ],
+        [
+          0.566,
+          0.785
+        ],
+        [
+          0.6,
+          0.845
+        ],
+        [
+          0.529,
+          0.926
+        ],
+        [
+          0.298,
+          0.691
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "Two pointed green crown ends enclose a deep saddle-shaped dip. Yellow eyes have black lower segments. Green fingers obscure a pale face with a small pink mouth, while a long cream limb extends diagonally down-right to a rounded mitten-like end. Cyan and black contours run along its underside. This is one connected dominant gesture; its complex silhouette includes deep concavities."
+    },
+    {
+      "label": "Pink-faced stepped protrusion behind the green creature",
+      "artifact_type": "stepped-character-edge",
+      "role": "edge-mark",
+      "bounds": {
+        "x": 0.079,
+        "y": 0.249,
+        "w": 0.111,
+        "h": 0.237
+      },
+      "polygon": [
+        [
+          0.079,
+          0.451
+        ],
+        [
+          0.082,
+          0.395
+        ],
+        [
+          0.096,
+          0.396
+        ],
+        [
+          0.098,
+          0.35
+        ],
+        [
+          0.116,
+          0.351
+        ],
+        [
+          0.119,
+          0.319
+        ],
+        [
+          0.136,
+          0.322
+        ],
+        [
+          0.139,
+          0.29
+        ],
+        [
+          0.154,
+          0.293
+        ],
+        [
+          0.156,
+          0.266
+        ],
+        [
+          0.168,
+          0.267
+        ],
+        [
+          0.17,
+          0.249
+        ],
+        [
+          0.19,
+          0.251
+        ],
+        [
+          0.173,
+          0.359
+        ],
+        [
+          0.158,
+          0.357
+        ],
+        [
+          0.156,
+          0.378
+        ],
+        [
+          0.143,
+          0.376
+        ],
+        [
+          0.136,
+          0.486
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "An exposed pink shape has a stair-stepped upper-left boundary, short black facial strokes, and a heavy black lower edge. Its right side disappears behind the green creature. It is visibly distinct from the creature's smooth contour."
+    },
+    {
+      "label": "Grainy black bowl holding turquoise light",
+      "artifact_type": "luminous-bowl",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.037,
+        "y": 0.085,
+        "w": 0.109,
+        "h": 0.168
+      },
+      "polygon": [
+        [
+          0.038,
+          0.115
+        ],
+        [
+          0.046,
+          0.101
+        ],
+        [
+          0.067,
+          0.088
+        ],
+        [
+          0.095,
+          0.085
+        ],
+        [
+          0.125,
+          0.094
+        ],
+        [
+          0.143,
+          0.109
+        ],
+        [
+          0.146,
+          0.124
+        ],
+        [
+          0.139,
+          0.175
+        ],
+        [
+          0.125,
+          0.201
+        ],
+        [
+          0.116,
+          0.211
+        ],
+        [
+          0.119,
+          0.236
+        ],
+        [
+          0.108,
+          0.249
+        ],
+        [
+          0.083,
+          0.253
+        ],
+        [
+          0.063,
+          0.244
+        ],
+        [
+          0.062,
+          0.233
+        ],
+        [
+          0.067,
+          0.211
+        ],
+        [
+          0.048,
+          0.187
+        ],
+        [
+          0.037,
+          0.143
+        ]
+      ],
+      "confidence": 0.99,
+      "visual_evidence": "A turquoise elliptical opening tops a black bowl covered in cream grain-like flecks. A small flared foot completes its silhouette. A violet-blue powdery halo surrounds it, but the interaction contour follows the solid bowl rather than the diffuse bloom. The bowl floats above-left of the larger group rather than sitting at its base."
+    },
+    {
+      "label": "Blue-green foliage tuft surrounding a pink-yellow cleft",
+      "artifact_type": "foliage-cleft",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.006,
+        "y": 0.507,
+        "w": 0.165,
+        "h": 0.392
+      },
+      "polygon": [
+        [
+          0.082,
+          0.899
+        ],
+        [
+          0.055,
+          0.874
+        ],
+        [
+          0.037,
+          0.833
+        ],
+        [
+          0.014,
+          0.769
+        ],
+        [
+          0.006,
+          0.714
+        ],
+        [
+          0.014,
+          0.69
+        ],
+        [
+          0.007,
+          0.626
+        ],
+        [
+          0.017,
+          0.607
+        ],
+        [
+          0.031,
+          0.665
+        ],
+        [
+          0.027,
+          0.559
+        ],
+        [
+          0.039,
+          0.569
+        ],
+        [
+          0.043,
+          0.508
+        ],
+        [
+          0.059,
+          0.521
+        ],
+        [
+          0.084,
+          0.631
+        ],
+        [
+          0.111,
+          0.534
+        ],
+        [
+          0.145,
+          0.639
+        ],
+        [
+          0.17,
+          0.779
+        ],
+        [
+          0.137,
+          0.874
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "Tall teal and blue leaf-like blades part around a narrow yellow channel edged in pink. Black linear veins follow the blades. A cream scalloped skirt surrounds the lower edge; the polygon concentrates on the colored tuft and its warm internal cleft rather than empty cream around it."
+    },
+    {
+      "label": "Pale pointed fan with blue streaks and orange-purple edge",
+      "artifact_type": "pointed-streaked-fold",
+      "role": "source-pocket",
+      "bounds": {
+        "x": 0.804,
+        "y": 0.058,
+        "w": 0.19599999999999995,
+        "h": 0.597
+      },
+      "polygon": [
+        [
+          0.804,
+          0.248
+        ],
+        [
+          0.809,
+          0.213
+        ],
+        [
+          0.838,
+          0.213
+        ],
+        [
+          0.842,
+          0.153
+        ],
+        [
+          0.873,
+          0.151
+        ],
+        [
+          0.882,
+          0.101
+        ],
+        [
+          0.903,
+          0.097
+        ],
+        [
+          0.928,
+          0.061
+        ],
+        [
+          0.944,
+          0.058
+        ],
+        [
+          0.955,
+          0.102
+        ],
+        [
+          0.98,
+          0.146
+        ],
+        [
+          1,
+          0.182
+        ],
+        [
+          1,
+          0.552
+        ],
+        [
+          0.985,
+          0.655
+        ],
+        [
+          0.964,
+          0.64
+        ],
+        [
+          0.959,
+          0.543
+        ],
+        [
+          0.894,
+          0.455
+        ],
+        [
+          0.863,
+          0.311
+        ]
+      ],
+      "confidence": 0.92,
+      "visual_evidence": "A pale fan-like form rises to a sharp tip near the upper-right corner. Blue streaks radiate through its folds. An orange band and purple scalloped outer edge follow its right side and meet the image boundary. Its lower-left edge is occluded by the solid red backing. This is the visible pointed-fold candidate, not evidence of a second separate translucent ruff."
+    },
+    {
+      "label": "Detached bent cream limb with exposed bone and cyan underside",
+      "artifact_type": "bent-anatomical-gesture",
+      "role": "gesture-mark",
+      "bounds": {
+        "x": 0.637,
+        "y": 0.321,
+        "w": 0.154,
+        "h": 0.5
+      },
+      "polygon": [
+        [
+          0.759,
+          0.378
+        ],
+        [
+          0.765,
+          0.341
+        ],
+        [
+          0.771,
+          0.321
+        ],
+        [
+          0.78,
+          0.326
+        ],
+        [
+          0.787,
+          0.334
+        ],
+        [
+          0.781,
+          0.347
+        ],
+        [
+          0.776,
+          0.365
+        ],
+        [
+          0.791,
+          0.39
+        ],
+        [
+          0.778,
+          0.492
+        ],
+        [
+          0.755,
+          0.547
+        ],
+        [
+          0.685,
+          0.679
+        ],
+        [
+          0.744,
+          0.716
+        ],
+        [
+          0.78,
+          0.777
+        ],
+        [
+          0.771,
+          0.817
+        ],
+        [
+          0.761,
+          0.821
+        ],
+        [
+          0.726,
+          0.762
+        ],
+        [
+          0.642,
+          0.723
+        ],
+        [
+          0.637,
+          0.68
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "The smaller group contains a separate cream limb bent sharply at its lower-left elbow. A red cut opening and small pale bone tip cap the upper end. Cyan follows the inner diagonal and rounded lower-right end, with black shadow underneath. This is a distinct repeated anatomical mark from the dominant creature source, not the planned translucent ruff."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 2,
+    "large_region_count": 2,
+    "mapped_region_coverage": 0.716,
+    "rationale": "The cream ground and large central gap keep two principal groups legible, and the smaller source pockets remain identifiable. Internal detail is substantial: heavy contours, facial features, coils, lobes, scallops, foliage veins, and radiating streaks make the plate more cartoon-illustrative than minimal expressionist. The right-hand fan is cropped at the image edge. Coverage is an approximate visual estimate."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-21-the-grip-leaves-a-gap-v1"
+}

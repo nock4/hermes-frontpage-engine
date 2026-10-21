@@ -1,0 +1,280 @@
+{
+  "interpretation_id": "interp-2026-10-21-the-grip-leaves-a-gap-v1",
+  "edition_id": "2026-10-21-the-grip-leaves-a-gap-v1",
+  "plate_read_timestamp": "2026-10-21T08:13:54.192Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Two unequal, disconnected cartoon-anatomy groups sit on a cream ground with a broad open gap. At left, a green saddle-crowned creature grips a pale face connected to a long cyan-edged limb; a pink stepped face, a floating turquoise-lit black bowl, and a foliage tuft flank it. At right, a bent bone-tipped limb, pink coils, and purple lobes sit against solid red scallops, with a pale blue-streaked pointed fan behind them. Five planned source anchors are visibly distinguishable. A separate translucent jagged colored-wash ruff is not clearly visible: the red backing is solid, while the pale streaked fan corresponds to the pointed-fold anchor. The detached bent limb supplies a sixth distinct interaction target without assigning either backing to the missing ruff.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Landscape ivory cartoon: two unequal fragment groups across an empty gap. A saddle-crowned green creature grips a pale head above a pink mouth; a long cyan-edged mitten limb points inward. Opposite, a smaller bent bone-ended limb meets pink tubes and purple lobes on scalloped red. A jagged translucent ruff spreads behind it. Black glowing bowl, foliage tuft, stepped pink face and pointed fold nest at outer edges.",
+      "Two unequal, disconnected cartoon-anatomy groups sit on a cream ground with a broad open gap. At left, a green saddle-crowned creature grips a pale face connected to a long cyan-edged limb; a pink stepped face, a floating turquoise-lit black bowl, and a foliage tuft flank it. At right, a bent bone-tipped limb, pink coils, and purple lobes sit against solid red scallops, with a pale blue-streaked pointed fan behind them. Five planned source anchors are visibly distinguishable. A separate translucent jagged colored-wash ruff is not clearly visible: the red backing is solid, while the pale streaked fan corresponds to the pointed-fold anchor. The detached bent limb supplies a sixth distinct interaction target without assigning either backing to the missing ruff.",
+      "split-print-clusters",
+      "cyan-contours",
+      "curling-grip"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Saddle-crowned green creature gripping a pale head and long cyan-edged limb",
+      "Pink-faced stepped protrusion behind the green creature",
+      "Grainy black bowl holding turquoise light",
+      "Blue-green foliage tuft surrounding a pink-yellow cleft",
+      "Pale pointed fan with blue streaks and orange-purple edge",
+      "Detached bent cream limb with exposed bone and cyan underside"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "cyan-contour-poster-grip",
+      "A saddle-crowned green creature grips a pale head and long cyan-edged limb.",
+      "A translucent jagged ruff layers colored washes behind the bent limb.",
+      "A grainy black bowl holds turquoise light inside a violet-blue halo.",
+      "A blue-green foliage tuft parts around a pink-yellow cleft and pale edge.",
+      "A pink-faced stepped protrusion meets the green creature's outer contour.",
+      "A pale pointed fold bears blue streaks and blurred orange-purple edges.",
+      "Green crown and gripping contour connected to pale head and long limb"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cyan-contour-poster-grip.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-saddle-crowned-green-creature-grippi",
+      "kind": "hero",
+      "type": "connected-figurative-gesture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.132,
+        "y": 0.044,
+        "w": 0.468,
+        "h": 0.882
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-pink-faced-stepped-protrusion-behind",
+      "kind": "hero",
+      "type": "stepped-character-edge",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.079,
+        "y": 0.249,
+        "w": 0.111,
+        "h": 0.237
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grainy-black-bowl-holding-turquoise-",
+      "kind": "module",
+      "type": "luminous-bowl",
+      "strength": 0.7967759999999999,
+      "bounds": {
+        "x": 0.037,
+        "y": 0.085,
+        "w": 0.109,
+        "h": 0.168
+      },
+      "supports": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-blue-green-foliage-tuft-surrounding-",
+      "kind": "module",
+      "type": "foliage-cleft",
+      "strength": 0.7558800000000001,
+      "bounds": {
+        "x": 0.006,
+        "y": 0.507,
+        "w": 0.165,
+        "h": 0.392
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-pointed-fan-with-blue-streaks-a",
+      "kind": "module",
+      "type": "pointed-streaked-fold",
+      "strength": 0.7284,
+      "bounds": {
+        "x": 0.8023,
+        "y": 0.0542,
+        "w": 0.1977,
+        "h": 0.6083
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detached-bent-cream-limb-with-expose",
+      "kind": "module",
+      "type": "bent-anatomical-gesture",
+      "strength": 0.686988,
+      "bounds": {
+        "x": 0.637,
+        "y": 0.321,
+        "w": 0.154,
+        "h": 0.5
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-saddle-crowned-green-creature-grippi-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.132,
+        "y": 0.044,
+        "w": 0.468,
+        "h": 0.882
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-pink-faced-stepped-protrusion-behind-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.079,
+        "y": 0.249,
+        "w": 0.111,
+        "h": 0.237
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-grainy-black-bowl-holding-turquoise--surface",
+      "surface_type": "light-band",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.037,
+        "y": 0.085,
+        "w": 0.109,
+        "h": 0.168
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "paint-bleed-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-blue-green-foliage-tuft-surrounding--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.006,
+        "y": 0.507,
+        "w": 0.165,
+        "h": 0.392
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-pale-pointed-fan-with-blue-streaks-a-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.8023,
+        "y": 0.0542,
+        "w": 0.1977,
+        "h": 0.6083
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-detached-bent-cream-limb-with-expose-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.637,
+        "y": 0.321,
+        "w": 0.154,
+        "h": 0.5
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}
