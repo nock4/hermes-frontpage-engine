@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
+# Agent-launched shells may inherit another Python ABI's site-packages.
+# Let each selected interpreter resolve its own environment (Pillow/numpy).
+unset PYTHONPATH PYTHONHOME
+
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 if ! python3 "$REPO/scripts/press-owner.py" --validate; then
   exec python3 "$REPO/scripts/press-owner.py" -- bash "$0" "$@"

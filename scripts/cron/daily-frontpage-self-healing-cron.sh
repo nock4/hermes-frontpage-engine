@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
+# Keep the owner and press interpreters isolated from the agent Python ABI.
+unset PYTHONPATH PYTHONHOME
+
 # Data-collection wrapper for the Daily Frontpage self-healing cron agent.
 # It runs the normal press script, but never exits non-zero: failures are handed
 # to the LLM cron agent as context so it can inspect artifacts, patch, commit,

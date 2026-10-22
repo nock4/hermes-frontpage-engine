@@ -16,14 +16,23 @@ async function sandbox() {
   await fs.writeFile(path.join(root, 'package.json'), JSON.stringify({ scripts: { 'check:setup': 'exit 21', 'daily:publish:cron': 'echo MUST_NOT_GENERATE', 'press:doctor': 'echo fixture-doctor', 'press:stability': 'echo fixture-stability' } }))
   return root
 }
-function run(root, name) {
+function run(root, name, env = {}) {
   return new Promise(resolve => {
-    const child = spawn('bash', [path.join(root, 'scripts/cron', name)], { env: { ...process.env, DFE_REPORT_CACHE_DIR: path.join(root, 'reports') } })
+    const child = spawn('bash', [path.join(root, 'scripts/cron', name)], { env: { ...process.env, ...env, DFE_REPORT_CACHE_DIR: path.join(root, 'reports') } })
     let output = ''; child.stdout.on('data', x => { output += x }); child.stderr.on('data', x => { output += x })
     child.on('close', code => resolve({ code, output }))
   })
 }
 describe('ordinary shell wrapper isolated injection', () => {
+  it.each(['daily-frontpage-cron.sh', 'daily-frontpage-self-healing-cron.sh'])('isolates %s from agent Python ABI injection', async (name) => {
+    const root = await sandbox()
+    await fs.writeFile(path.join(root, 'check-python-env.mjs'), "console.log(process.env.PYTHONPATH || process.env.PYTHONHOME ? 'ABI_POISON_RETAINED' : 'PYTHON_ABI_CLEAN'); process.exit(21)")
+    await fs.writeFile(path.join(root, 'package.json'), JSON.stringify({ scripts: { 'check:setup': 'node check-python-env.mjs', 'daily:publish:cron': 'echo MUST_NOT_GENERATE' } }))
+    const out = await run(root, name, { PYTHONPATH: '/fixture/python3.14/site-packages' })
+    expect(out.output).toContain('PYTHON_ABI_CLEAN')
+    expect(out.output).not.toContain('ABI_POISON_RETAINED')
+    expect(out.output).not.toContain('MUST_NOT_GENERATE')
+  })
   it('consumes an explicit scheduler proof-only request without generation', async () => {
     const root = await sandbox()
     const script = await fs.readFile(path.join(root, 'scripts/cron/daily-frontpage-self-healing-cron.sh'), 'utf8')
