@@ -1,6 +1,8 @@
 import { expect, test, type Locator } from '@playwright/test'
 
 const proofRoot = 'tmp/interaction-lab-proof'
+// Six local verbs are a lab regression fixture, not a daily publication floor.
+const multiVerbFixture = '2026-10-21-the-grip-leaves-a-gap-v1'
 
 // Mesh polygons can overlap or exclude their bounding-box center. Prove an
 // actual hit on this mark before each gesture; never bypass actionability.
@@ -43,7 +45,8 @@ for (const device of [
     await expect(page.locator('[data-interaction-lab]')).toHaveCount(0)
     await page.screenshot({ path: `${proofRoot}/baseline-${device.name}.png`, fullPage: true })
 
-    await page.goto('/?interaction-lab=1', { waitUntil: 'domcontentloaded' })
+    await page.goto(`/?edition=${multiVerbFixture}&interaction-lab=1`, { waitUntil: 'domcontentloaded' })
+    await expect(page.locator('main[data-edition-id]')).toHaveAttribute('data-edition-id', multiVerbFixture)
     await page.waitForSelector('[data-interaction-lab-artifact]')
     await expect(page.locator('[data-interaction-lab-artifact]')).toHaveCount(6)
     await expect(page.locator('.interaction-lab__trail')).toBeVisible()

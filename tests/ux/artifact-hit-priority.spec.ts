@@ -3,11 +3,12 @@ import path from 'node:path'
 import { expect, test } from '@playwright/test'
 
 // A larger mesh's convex outline must not swallow a nested source mark.
-// Reproduce the Sept 27 crossing pillar/sequence-notch overlap on any edition.
+// Use a stable multi-mark archive fixture: today's valid edition may be a singleton.
+const fixtureEdition = '2026-10-21-the-grip-leaves-a-gap-v1'
 for (const width of [375, 852]) {
   test(`nested source mark survives overlapping hover mesh at ${width}px`, async ({ page }) => {
     const manifest = JSON.parse(fs.readFileSync('public/editions/index.json', 'utf8'))
-    const edition = manifest.editions.find((item: { edition_id: string }) => item.edition_id === manifest.current_edition_id)
+    const edition = manifest.editions.find((item: { edition_id: string }) => item.edition_id === fixtureEdition)
     const map = JSON.parse(fs.readFileSync(path.join('public', edition.path, 'artifact-map.json'), 'utf8'))
     const bindings = JSON.parse(fs.readFileSync(path.join('public', edition.path, 'source-bindings.json'), 'utf8')).bindings
     const binding = bindings[0]
@@ -26,7 +27,7 @@ for (const width of [375, 852]) {
     blocker.z_index = 20
     await page.route('**/artifact-map.json', route => route.fulfill({ json: map }))
     await page.setViewportSize({ width, height: width === 375 ? 667 : 393 })
-    await page.goto('/')
+    await page.goto(`/?edition=${fixtureEdition}`)
     const button = page.getByRole('button', { name: target.label, exact: true })
     await expect(button).toBeVisible()
     const point = await button.evaluate(node => {
