@@ -1,0 +1,115 @@
+{
+  "interpretation_id": "interp-2026-10-22-an-interval-of-blue-v1",
+  "edition_id": "2026-10-22-an-interval-of-blue-v1",
+  "plate_read_timestamp": "2026-10-22T10:27:43.621Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A surreal, finely rendered coastal scene places a floating black armored vessel bound in ivory ribs and articulated bones near the center-right. A tall broken turquoise gateway rises at left; a separate suspended arrangement of fruit, flowers, drapery, classical figures and a peacock occupies the upper right. A pale moon and open blue sky separate the three principal forms. The planned machine-and-bone anchor is clearly visible, although the overall plate is illustrative rather than minimal and expressionist.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape painted sci-fi tableau: a broken turquoise threshold stands offset left, apart from a dominant compact black armored fragment entwined with ivory bones. Broad blue sky separates them. A smaller suspended island holds cream drapery, pale flesh, gold urn, bowed peacock, fruit and flowers. A pale cratered disk and thin cloud threads link the groups; rust-lit recesses, fine reproduction grain.",
+      "A surreal, finely rendered coastal scene places a floating black armored vessel bound in ivory ribs and articulated bones near the center-right. A tall broken turquoise gateway rises at left; a separate suspended arrangement of fruit, flowers, drapery, classical figures and a peacock occupies the upper right. A pale moon and open blue sky separate the three principal forms. The planned machine-and-bone anchor is clearly visible, although the overall plate is illustrative rather than minimal and expressionist.",
+      "broken-threshold",
+      "ivory-articulation",
+      "armored-ribbing"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Bulbous black armored vessel clasped by ivory ribs and bent limbs"
+    ],
+    "dominant_surfaces": [
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "blue-threshold-orbital-ornament",
+      "A bulbous ribbed black armored fragment clasped by ivory ribs and bent limbs.",
+      "Ribbed black armored nose clasped by ivory ribs",
+      "Circular metal housings interlocked with bent skeletal limbs",
+      "Serrated upper casing and bone-bound lower edge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: blue-threshold-orbital-ornament.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-bulbous-black-armored-vessel-clasped",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.4891,
+        "y": 0.4069,
+        "w": 0.2734,
+        "h": 0.4556
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-bulbous-black-armored-vessel-clasped-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4891,
+        "y": 0.4069,
+        "w": 0.2734,
+        "h": 0.4556
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

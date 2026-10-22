@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-10-22-an-interval-of-blue-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-bulbous-black-armored-vessel-clasped",
+      "artifact_id": "hero-bulbous-black-armored-vessel-clasped",
+      "source_type": "tweet",
+      "source_url": "https://x.com/pmamtraveller/status/2108814372650795276",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@pmamtraveller: By Noriyoshi Ohrai",
+      "kicker": "x.com",
+      "excerpt": "By Noriyoshi Ohrai",
+      "source_title": "@pmamtraveller: By Noriyoshi Ohrai",
+      "source_summary": "By Noriyoshi Ohrai",
+      "source_domain": "x.com",
+      "source_meta": "Noriyoshi Ohrai — surreal science-fiction illustration",
+      "source_image_url": "https://pbs.twimg.com/media/HUQDfAjXEAArSa1.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HUQDfAjXEAArSa1.jpg?name=orig"
+      ],
+      "source_image_alt": "@pmamtraveller: By Noriyoshi Ohrai",
+      "source_media_url": "https://pbs.twimg.com/media/HUQDfAjXEAArSa1.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-10-22-an-interval-of-blue-v1/assets/source-posters/binding-hero-bulbous-black-armored-vessel-clasped.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.4991,
+          "y": 0.577
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2937,
+          "width": 1.0,
+          "height": 0.4288
+        },
+        "image_width": 1175,
+        "image_height": 1539,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.04934,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}
