@@ -1,5 +1,8 @@
 # Decision Log
 
+## 2026-10-22 — authorized editorial count reset
+Decision: Minimum 1, desired 6, maximum 10 independently owned real source windows. Zero is invalid. This supersedes all earlier count floors, including the April decision below and minimum-six skill guidance. No duplicate-source padding. Normal acquisition stops at the first strong unused pixel-verified artwork, then deepens research; ready-six reserve preparation is not a prerequisite. Eligibility, exact provenance, full-archive dedup, image-only landscape, non-overcopy, mobile and media gates, ownership and watchdog guards are unchanged.
+
 ## 2026-04-28
 Decision: From-scratch daily generation must use the full automated path, not a manual/external substitute.
 Why: The project is a daily engine. `npm run daily:process` now owns saved-signal mining, source autoresearch, browser capture, `gpt-image-2` plate generation, post-plate vision, package assembly, masks, validation, build, and browser QA.

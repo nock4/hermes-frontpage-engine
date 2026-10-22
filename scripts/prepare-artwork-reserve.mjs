@@ -1,8 +1,9 @@
 // Source-only preparation of the small prepared artwork reserve. Runs one normal
-// bounded bookmark intake (48 reads / 24 nominations, batches of six) and the
+// bounded metadata indexing / 24 nominations, stopping at the first verified work, and the
 // ordinary actual-media admission against the real vault and inspectors, then
 // stops. It never composes a brief, generates or buys a plate, or publishes.
 import fs from 'node:fs/promises'
+import { MIN_SOURCE_WINDOWS, DESIRED_SOURCE_WINDOWS } from '../src/lib/sourceWindowCountContract.mjs'
 import fsSync from 'node:fs'
 import path from 'node:path'
 import { execFile, spawn } from 'node:child_process'
@@ -99,7 +100,7 @@ export async function proveReserveConsumption({ setFile, runDir, root: projectRo
   // Same per-binding finalMedia check the press applies before commit, minus
   // packaging (no edition exists): verified proof plus capture bytes on disk.
   const bindings = field.content_sources.map(source => ({ source_url: source.url, source_image_url: source.image_url }))
-  assertEditorialBindings(bindings, field, context.signalHarvest, { finalMedia: true })
+  assertEditorialBindings(bindings, field, context.signalHarvest, { finalMedia: true, minimum: MIN_SOURCE_WINDOWS })
   const captureDigests = field.content_sources.map(source => {
     const proof = (field.autoresearch?.source_decisions || []).map(row => row.inspection).find(p => p?.source_url === source.url && p.media_url === source.image_url && p.status === 'verified')
     const reserved = set.sources.find(entry => entry.url === source.url || (entry.note_id === source.note_id && entry.media_url === source.image_url))
@@ -137,7 +138,7 @@ export async function runPreparation({ options, runDir, deps }) {
   let harvest, acquired
   out.batches = []
   for (let batch = 0; batch < 4 && budget.acquisitions < 24 && budget.inspections < 24; batch++) {
-    const next = await deps.mine(press, ledger, { maxReads: 12, maxNotes: 6 })
+    const next = await deps.mine(press, ledger, { maxReads: 12, maxNotes: DESIRED_SOURCE_WINDOWS })
     budget.reads += next.selection_policy?.bookmark_intake?.notes_read ?? 12
     budget.nominations += next.notes_selected.length
     harvest = harvest ? { ...next,
@@ -149,7 +150,7 @@ export async function runPreparation({ options, runDir, deps }) {
     out.batches.push({ batch: batch + 1, budget: { ...budget }, admitted: acquired.contentSources.length })
     await fs.mkdir(runDir, { recursive: true })
     await fs.writeFile(path.join(runDir, 'reserve-continuation.json'), JSON.stringify({ budget, batches: out.batches, signal_harvest: harvest, acquired }, null, 2) + '\n')
-    if (acquired.contentSources.length >= 6 || budget.reads >= 48 || budget.nominations >= 24) break
+    if (acquired.contentSources.length >= MIN_SOURCE_WINDOWS || budget.nominations >= 24) break
   }
   out.budget = budget
   out.intake = { notes_selected: harvest.notes_selected.length, source_candidates: harvest.source_candidates.length, bookmark_intake: harvest.selection_policy?.bookmark_intake || null }
@@ -160,7 +161,7 @@ export async function runPreparation({ options, runDir, deps }) {
     inspection_statuses: attempts.reduce((counts, row) => { const key = row.inspection.error ? 'error' : row.inspection.status; return { ...counts, [key]: (counts[key] || 0) + 1 } }, {}),
     inspection_errors: attempts.filter(row => row.inspection.error).map(row => ({ url: row.url, error: String(row.inspection.error).slice(0, 300) })),
     cache_hits: attempts.filter(row => row.inspection.cache_hit).length, admitted: acquired.contentSources.map(source => source.url) }
-  if (acquired.contentSources.length < 6) return { ...out, status: 'insufficient' }
+  if (acquired.contentSources.length < MIN_SOURCE_WINDOWS) return { ...out, status: 'insufficient' }
   const { file, set } = await writePreparedReserve({ reserveDir, signalHarvest: harvest, contentSources: acquired.contentSources, autoresearch: acquired.autoresearch, fingerprints,
     ttlMs: options.ttlHours * 3600e3, runDir, ledgerSize: ledger.keys.size, codeMatchesRef: code.matches, codeRef: `${ledger.ref}@${ledger.ref_commit}` })
   return { ...out, status: 'prepared', reserve_file: file, set_id: set.set_id, expires_at: set.expires_at, works: set.sources.length }

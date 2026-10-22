@@ -12,7 +12,7 @@ describe('source floor diagnostics', () => {
     const diagnostics = buildSourceFloorDiagnostics({ inspected: sources, autoresearch: { source_decisions: sources.map(source => inspectedDecision(source)) } })
     expect(diagnostics.eligible_source_urls).toHaveLength(1)
     expect(diagnostics.buckets.eligible_creative_surfaces).toBe(1)
-    expect(diagnostics.missing_content_sources).toBe(5)
+    expect(diagnostics.missing_content_sources).toBe(0)
   })
   it('separates potential renderable surfaces from affirmative eligible sources', () => {
     const sources = Array.from({ length: 8 }, (_, i) => ({ url: `https://artist${i}.example/work`, image_url: `https://artist${i}.example/work.jpg`, title: `Painting ${i}` }))
@@ -22,8 +22,8 @@ describe('source floor diagnostics', () => {
     expect(diagnostics.potential_source_urls).toHaveLength(7)
     expect(diagnostics.eligible_source_urls).toHaveLength(1)
     expect(diagnostics.buckets.eligible_creative_surfaces).toBe(1)
-    expect(diagnostics.missing_content_sources).toBe(5)
-    expect(diagnostics.primary_constraint).toBe('creative_inspection')
+    expect(diagnostics.missing_content_sources).toBe(0)
+    expect(diagnostics.primary_constraint).toBe('selection_logic')
     expect(buildSourceFloorDiagnostics({ inspected: sources }).eligible_source_urls).toEqual([])
   })
   it('names archive repeat pressure before the six-window floor fails', () => {

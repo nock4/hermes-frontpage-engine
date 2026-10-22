@@ -102,7 +102,7 @@ async function researchSavedNominations(fixtures, check) {
     expect(request.candidate_sources.every(source => source.source_channel === 'manual-curation')).toBe(true)
     expect(request.candidate_sources.every(source => source.note_excerpt.includes('Saved nomination; inspect actual media before admission.'))).toBe(true)
     expect(request.hard_rules.join(' ')).toContain('These are text nominations, not verified visual eligibility')
-    expect(research.source_floor_diagnostics.min_required_content_sources).toBe(6)
+    expect(research.source_floor_diagnostics.min_required_content_sources).toBe(1)
     expect(state.attempts.length).toBeLessThanOrEqual(24)
     expect(state.batches.every(count => count <= 10)).toBe(true)
     await check({ request, research, harvest })

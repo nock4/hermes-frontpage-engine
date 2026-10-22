@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 import { describe, expect, it } from 'vitest'
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from './sourceWindowCountContract.mjs'
 import manifest from '../../public/editions/index.json'
 import charcoalArtifactMap from '../../public/editions/2026-04-27-charcoal-spiral-observatory-v1/artifact-map.json'
 import vermilionArtifactMap from '../../public/editions/2026-04-27-vermilion-arc-astrolabe-v1/artifact-map.json'
@@ -27,22 +28,22 @@ const packagedArtifactMaps = [
 ]
 
 describe('live edition curation rules', () => {
-  it('keeps the current live edition between 6 and 10 masks/modules with no duplicate urls', () => {
+  it('keeps the current live edition within the shared count contract with no duplicate urls', () => {
     expect(manifest.current_edition_id).toBe(liveEditionId)
 
     const urls = currentSourceBindings.bindings
       .map((binding: { source_url?: string | null }) => binding.source_url)
       .filter(Boolean) as string[]
 
-    expect(currentArtifactMap.artifacts.length).toBeGreaterThanOrEqual(6)
-    expect(currentArtifactMap.artifacts.length).toBeLessThanOrEqual(10)
+    expect(currentArtifactMap.artifacts.length).toBeGreaterThanOrEqual(MIN_SOURCE_WINDOWS)
+    expect(currentArtifactMap.artifacts.length).toBeLessThanOrEqual(MAX_SOURCE_WINDOWS)
     expect(new Set(urls).size).toBe(urls.length)
   })
 
-  it('keeps serious packaged iterations in the 6 to 10 artifact range', () => {
+  it('keeps serious packaged iterations within the shared artifact range', () => {
     for (const artifactMap of packagedArtifactMaps) {
-      expect(artifactMap.artifacts.length).toBeGreaterThanOrEqual(6)
-      expect(artifactMap.artifacts.length).toBeLessThanOrEqual(10)
+      expect(artifactMap.artifacts.length).toBeGreaterThanOrEqual(MIN_SOURCE_WINDOWS)
+      expect(artifactMap.artifacts.length).toBeLessThanOrEqual(MAX_SOURCE_WINDOWS)
     }
   })
 
@@ -51,7 +52,7 @@ describe('live edition curation rules', () => {
       currentSourceBindings.bindings.map((binding: { source_title?: string | null; title: string }) => binding.source_title || binding.title),
     )
 
-    expect(distinctTitles.size).toBeGreaterThanOrEqual(6)
+    expect(distinctTitles.size).toBeGreaterThanOrEqual(MIN_SOURCE_WINDOWS)
     expect(distinctTitles.size).toBe(currentSourceBindings.bindings.length)
   })
 })

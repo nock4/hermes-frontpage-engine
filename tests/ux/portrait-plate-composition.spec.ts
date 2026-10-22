@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
+import { MIN_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 
 const edition = '2026-09-28-the-edge-outlasts-the-day-v1'
 // Four colored edges make cropping observable; normalized marks occupy the
@@ -51,7 +52,7 @@ for (const viewport of [{ name: 'desktop', width: 1440, height: 980 }, { name: '
         const hit = document.elementFromPoint(x, y)
         return { rect: r.toJSON(), nx: parseFloat(style.left) / 100, ny: parseFloat(style.top) / 100, nw: parseFloat(style.width) / 100, nh: parseFloat(style.height) / 100, hit: hit === node || node.contains(hit) }
       }))
-      expect(all.length).toBeGreaterThanOrEqual(6)
+      expect(all.length).toBeGreaterThanOrEqual(MIN_SOURCE_WINDOWS)
       for (const mark of all) {
         expect(mark.rect.x).toBeCloseTo(geometry.rect.x + mark.nx * geometry.rect.width, 0)
         expect(mark.rect.y).toBeCloseTo(geometry.rect.y + mark.ny * geometry.rect.height, 0)

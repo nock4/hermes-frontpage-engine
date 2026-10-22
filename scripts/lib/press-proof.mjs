@@ -1,3 +1,5 @@
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
+
 export function extractLastPublishSummary(text) {
   const source = String(text || '')
   // Match object boundaries, not the first key: reliability metadata precedes
@@ -97,6 +99,11 @@ export function checkPressProof(proof = {}) {
   if (!liveProof) {
     blockers.push('live preload proof missing')
   } else {
+    if (/^\d{4}-\d{2}-\d{2}-/.test(String(expectedEditionId)) && String(expectedEditionId).slice(0, 10) >= '2026-10-22'
+      && (!Number.isInteger(liveProof.artifactCount)
+        || liveProof.artifactCount < MIN_SOURCE_WINDOWS || liveProof.artifactCount > MAX_SOURCE_WINDOWS)) {
+      blockers.push('live source-window count proof missing or outside editorial contract')
+    }
     if (!Number.isFinite(Number(liveProof.loadedPlateImageCount)) || Number(liveProof.loadedPlateImageCount) < 1) {
       blockers.push('loaded plate image proof missing')
     }

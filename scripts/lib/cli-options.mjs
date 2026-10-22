@@ -1,3 +1,4 @@
+import { MIN_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import fsSync from 'node:fs'
 import path from 'node:path'
 
@@ -422,11 +423,11 @@ export function parseArgs(argv) {
   if (!Number.isFinite(options.windowDays) || options.windowDays < 1) {
     throw new Error(`Expected --window-days to be a positive number. Received: ${options.windowDays}`)
   }
-  if (!Number.isFinite(options.maxNotes) || options.maxNotes < 6) {
-    throw new Error(`Expected --max-notes to be at least 6. Received: ${options.maxNotes}`)
+  if (!Number.isInteger(options.maxNotes) || options.maxNotes < MIN_SOURCE_WINDOWS) {
+    throw new Error(`Expected --max-notes to be at least ${MIN_SOURCE_WINDOWS}. Received: ${options.maxNotes}`)
   }
-  if (!Number.isFinite(options.maxSources) || options.maxSources < 6) {
-    throw new Error(`Expected --max-sources to be at least 6. Received: ${options.maxSources}`)
+  if (!Number.isInteger(options.maxSources) || options.maxSources < MIN_SOURCE_WINDOWS) {
+    throw new Error(`Expected --max-sources to be at least ${MIN_SOURCE_WINDOWS}. Received: ${options.maxSources}`)
   }
   options.ux = options.ux || (options.mode === 'from-scratch' ? 'smoke' : 'focused')
   if (!['smoke', 'focused', 'full', 'none'].includes(options.ux)) {

@@ -76,9 +76,9 @@ it.each(['verified', 'ambiguous', 'supporting', 'spent'])('bounded bookmark prod
     maxSources: 240, runDir, sourceTool: 'fetch', date: '2026-10-17', recentSourceKeys: ledger,
   })
   if (['ambiguous', 'supporting'].includes(mode)) await expect(run).rejects.toThrow(/blocked/)
-  else expect((await run).content_sources).toHaveLength(6)
+  else expect((await run).content_sources).toHaveLength(1)
   const audit = JSON.parse(await fs.readFile(path.join(runDir, 'bookmark-acquisition.json'), 'utf8'))
-  expect(audit.acquired).toBe(['verified', 'spent'].includes(mode) ? 6 : 24)
+  expect(audit.acquired).toBe(['verified', 'spent'].includes(mode) ? 1 : 24)
   expect(state.captures).toHaveLength(audit.acquired)
   expect(state.researchAttempts[0]).toBe(0)
   expect(state.researchTimeouts.every(ms => ms === 60000)).toBe(true)
@@ -177,12 +177,12 @@ it('does not manufacture a sixth source when early editorial exclusions leave on
   state.editorialDecisions = sources.slice(0, 3).map(source => ({ url: source.url, role: 'supporting', confidence: 'high' }))
   await expect(inspectSourceCandidates({ source_candidates: sources.slice(0, 8), notes_selected: [], motif_terms: [] }, {
     maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-10-10',
-  })).rejects.toThrow(/blocked|expected at least 6/)
+  })).resolves.toMatchObject({ content_source_count: 5 })
   expect(state.researchAttempts).toEqual([0])
   expect(state.attempts).toEqual(sources.slice(3, 8).map(source => source.url))
   const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
   expect(saved.content_source_count).toBe(5)
-  expect(saved.source_floor_diagnostics.min_required_content_sources).toBe(6)
+  expect(saved.source_floor_diagnostics.min_required_content_sources).toBe(1)
 })
 it.each(['automatic', 'exact', 'unverified', 'spent'])('keeps anchor recovery independent of an undersized content floor: %s', async mode => {
   state.verifiedFrom = mode === 'unverified' ? 30 : 0
@@ -191,17 +191,20 @@ it.each(['automatic', 'exact', 'unverified', 'spent'])('keeps anchor recovery in
     ? { source_url: sources[0].url, image_url: sources[0].image_url, title: sources[0].title, prompt_bias_terms: ['exact-anchor'] }
     : null
   const recentSourceKeys = mode === 'spent' ? new Set(sources.slice(3, 8).map(sourceContentKey)) : new Set()
-  await expect(inspectSourceCandidates({ source_candidates: sources.slice(0, 8), notes_selected: [], motif_terms: [] }, {
+  const run = inspectSourceCandidates({ source_candidates: sources.slice(0, 8), notes_selected: [], motif_terms: [] }, {
     maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-10-10', inspirationOverride, recentSourceKeys,
-  })).rejects.toThrow(/blocked/)
+  })
+  if (mode === 'automatic') await expect(run).resolves.toMatchObject({ content_source_count: 5 })
+  else await expect(run).rejects.toThrow(/blocked/)
   const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
   const blockers = saved.source_decision_audit.hard_blockers.map(row => row.reason_code)
-  expect(blockers).toContain('insufficient_eligible_source_media')
+  if (['unverified', 'spent'].includes(mode)) expect(blockers).toContain('insufficient_eligible_source_media')
+  else expect(blockers).not.toContain('insufficient_eligible_source_media')
   expect(saved.content_source_count).toBe(['unverified', 'spent'].includes(mode) ? 0 : 5)
   expect(state.attempts.length).toBeLessThanOrEqual(24)
   if (mode === 'automatic') {
     expect(saved.anchor_research?.anchor_source.url).toBe(sources[3].url)
-    expect(blockers).toEqual(['insufficient_eligible_source_media'])
+    expect(blockers).toEqual([])
     expect(saved.selected_image_material[0].page_url).toBe(sources[3].url)
     const retained = JSON.parse(await fs.readFile(path.join(runDir, 'anchor-research.json'), 'utf8'))
     expect(retained.anchor_source.url).toBe(sources[3].url)
@@ -243,7 +246,7 @@ it.each(['automatic', 'exact', 'supporting', 'rejected', 'ambiguous', 'medium', 
   const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
   expect(state.researchAttempts).toEqual([0])
   expect(state.attempts.length).toBeLessThanOrEqual(24)
-  expect(saved.source_floor_diagnostics.min_required_content_sources).toBe(6)
+  expect(saved.source_floor_diagnostics.min_required_content_sources).toBe(1)
   if (mode === 'automatic') {
     expect(error).toBeUndefined()
     expect(saved.content_source_count).toBe(6)
@@ -263,9 +266,9 @@ it.each(['automatic', 'exact', 'supporting', 'rejected', 'ambiguous', 'medium', 
     expect(saved.anchor_research.anchor_source.url).toBe(replacement.page_url)
     expect(saved.content_sources.some(source => source.url === replacement.page_url && source.image_url === replacement.image_url)).toBe(true)
     if (['ambiguous', 'medium'].includes(mode)) {
-      expect(error?.message).toMatch(/blocked/)
+      expect(error).toBeUndefined()
       expect(saved.content_source_count).toBe(5)
-      expect(saved.source_decision_audit.hard_blockers.map(row => row.reason_code)).toEqual(['insufficient_eligible_source_media'])
+      expect(saved.source_decision_audit.hard_blockers).toEqual([])
     } else {
       expect(error).toBeUndefined()
       expect(saved.content_source_count).toBe(6)
@@ -426,14 +429,14 @@ const inspectBrowserBed = (late = browserOnlySources) => inspectSourceCandidates
 it.each(['0', '1'])('reserves actual-media attempts for browser-only sources in anchor mode %s', async mode => {
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', mode)
   state.verifiedFrom = 100
-  await expect(inspectBrowserBed()).resolves.toMatchObject({ content_source_count: 6 })
+  await expect(inspectBrowserBed()).resolves.toMatchObject({ content_source_count: 1 })
   const lateCaptures = state.captures.filter(row => row.tool === 'browser-harness' && row.url.includes('late'))
-  expect(lateCaptures).toHaveLength(6)
+  expect(lateCaptures).toHaveLength(1)
   expect(lateCaptures[0].attempts).toBeLessThanOrEqual(18)
-  expect(state.attempts).toHaveLength(24)
-  expect(state.attempts.slice(-6)).toEqual(browserOnlySources.slice(0, 6).map(source => source.url))
+  expect(state.attempts).toHaveLength(19)
+  expect(state.attempts.slice(-1)).toEqual(browserOnlySources.slice(0, 1).map(source => source.url))
   const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-autoresearch.json'), 'utf8'))
-  expect(saved.source_decisions.filter(row => row.inspection)).toHaveLength(24)
+  expect(saved.source_decisions.filter(row => row.inspection)).toHaveLength(19)
 })
 it('retains run6 fetched media when a successful browser capture has no image', async () => {
   const fixture = JSON.parse(await fs.readFile(new URL('../fixtures/run6-empty-browser-capture.json', import.meta.url), 'utf8'))
@@ -695,11 +698,11 @@ it('bounds empty browser refill and returns unused reserve to the existing media
   expect(lateCaptures.every(row => row.attempts === 18)).toBe(true)
   expect(state.attempts).toHaveLength(24)
 })
-it('inspects the existing renderable bed through the final bounded batch without browser refill', async () => {
+it('stops inspecting the existing renderable bed once a bounded batch admits viable works', async () => {
   const result = await inspect()
-  expect(result.content_source_count).toBe(6)
-  expect(state.attempts).toHaveLength(24)
-  expect(new Set(state.attempts).size).toBe(24)
+  expect(result.content_source_count).toBe(2)
+  expect(state.attempts).toHaveLength(20)
+  expect(new Set(state.attempts).size).toBe(20)
   expect(result.content_sources.every(source => Number(source.title.split(' ').at(-1)) >= 18)).toBe(true)
   expect(state.captures.every(capture => capture.tool === 'fetch')).toBe(true)
 })

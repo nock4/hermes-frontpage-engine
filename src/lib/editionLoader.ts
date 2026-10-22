@@ -1,3 +1,4 @@
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from './sourceWindowCountContract.mjs'
 import type {
   AmbianceRecord,
   ArtifactGeometryRecord,
@@ -731,10 +732,28 @@ export const loadEditionPackage = async (basePath: string): Promise<LoadedEditio
     fetchOptionalJson(`${basePath}/interpretation.json`, parseInterpretationRecord),
   ])
 
+  const count = sourceBindings.bindings.length
+  if (count < MIN_SOURCE_WINDOWS || artifactMap.artifacts.length < MIN_SOURCE_WINDOWS) {
+    throw new Error('Source window count: at least one real source and mapped artifact required')
+  }
+  // Preserve historical archive packages; newly authored editions use the
+  // authorized one-to-one contract, not a six-window admission quota.
+  if (edition.date >= '2026-10-22') {
+    const owners = new Set(sourceBindings.bindings.map(binding => binding.source_url))
+    const mapped = new Set(sourceBindings.bindings.map(binding => binding.artifact_id))
+    if (count > MAX_SOURCE_WINDOWS || artifactMap.artifacts.length !== count
+      || owners.size !== count || mapped.size !== count
+      || artifactMap.artifacts.some(artifact => !mapped.has(artifact.id)
+        || artifact.source_binding_ids.length !== 1
+        || !sourceBindings.bindings.some(binding => binding.id === artifact.source_binding_ids[0] && binding.artifact_id === artifact.id))) {
+      throw new Error('Source window count: require 1–10 independently owned, one-to-one mapped windows')
+    }
+  }
+
   if (sourceBindings.bindings.some(binding => binding.source_image_delivery !== undefined)) {
     if (basePath !== `/editions/${edition.edition_id}`
       || sourceBindings.source_binding_set_id !== `bindings-${edition.edition_id}`
-      || sourceBindings.bindings.length > 10) throw new Error('Original image delivery: edition context mismatch')
+      || sourceBindings.bindings.length > MAX_SOURCE_WINDOWS) throw new Error('Original image delivery: edition context mismatch')
     for (const binding of sourceBindings.bindings) await verifyOriginalImageDelivery(binding, edition.edition_id)
   }
 

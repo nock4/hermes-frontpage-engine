@@ -1,3 +1,4 @@
+import { MIN_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import { buildPublishProofFromCronLog, classifyPressState, extractLastPublishSummary } from './press-proof.mjs'
 import { classifyPressLogText } from './press-stability.mjs'
 
@@ -15,7 +16,7 @@ export function classifyCronFailure(logText) {
       summary,
       latest_run_dir: summary.latest_run_dir || stability.latest_run_dir || null,
       next_action: 'widen_or_rebalance_source_bed_then_rerun_press',
-      blocker: stability.evidence.source_floor || firstMatchingLine(text, /expected at least 6|non-duplicate renderable content sources/i),
+      blocker: stability.evidence.source_floor || firstMatchingLine(text, /expected at least \d+|non-duplicate renderable content sources/i),
       stability,
     }
   }
@@ -97,7 +98,7 @@ export function planPressDoctorActions(incident) {
     return [
       { id: 'read_source_research', action: 'read latest_run_dir/source-research.json and source-candidate-evidence.json' },
       { id: 'measure_dropouts', action: 'count browser/renderability/no-repeat/tooling dropouts before changing thresholds' },
-      { id: 'rebalance_source_bed', action: 'patch source mining/selection so at least 6 real non-duplicate source windows survive; never pad with summary cards' },
+      { id: 'rebalance_source_bed', action: `recover ${MIN_SOURCE_WINDOWS} strong unused pixel-verified independent source, then deepen its research; six is desired, never pad with summary cards` },
       { id: 'run_focused_tests', action: 'run source-research and source-selection regression tests' },
       { id: 'rerun_existing_cron', action: 'rerun the configured Daily Frontpage cron job without overlap' },
       { id: 'verify_press_proof', action: 'require publish-proof green, screenshot, preload, QA, and adversarial visual proof' },

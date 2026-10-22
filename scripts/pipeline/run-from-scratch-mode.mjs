@@ -1,4 +1,5 @@
 import path from 'node:path'
+import { MIN_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 
 import { loadInspirationOverride, consumeInspirationOverride } from '../lib/inspiration-override.mjs'
 import { selectPlatePosture } from '../lib/scene-posture.mjs'
@@ -379,7 +380,7 @@ export function buildSourceFidelityRecoveryPayload(payload, audit, attempt = 1) 
   // in the saved recovery payload, never as image-generation choreography.
   payload = {
     ...payload,
-    ...((payload?.artifacts?.length >= 6 || payload?.real_mark_plan)
+    ...((payload?.artifacts?.length >= MIN_SOURCE_WINDOWS || payload?.real_mark_plan)
       ? { real_mark_plan: { status: 'needs-replan', reason: 'fidelity recovery changes scene requirements' } }
       : {}),
     source_fidelity_recovery_diagnostics: [

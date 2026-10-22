@@ -32,7 +32,7 @@ Primary product rules:
 
 4. Scene generation
    - generate one brand new AI scene plate for the date with `gpt-image-2`
-   - bias toward abstract expressionist plates with one dominant field/form, one disruptive gesture, large negative space, and 7-10 quiet source anchors
+   - bias toward abstract expressionist plates with one dominant field/form, one disruptive gesture, large negative space, and 1–10 quiet independently owned source anchors (6 desired, never required)
 
 5. Native-artifact mapping
    - inspect the actual generated plate with `gpt-5.5` vision

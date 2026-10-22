@@ -134,15 +134,15 @@ The order matters:
 3. pass that evidence to `gpt-5.5` for a bounded source-research synthesis inspired by the `llm-wiki` flow: read all evidence first, cluster the field, identify a through-line, reject duplicates or weak sources, and choose the edition source set with provenance
 4. only after that synthesis, use browser-harness against a real Chrome tab to capture and verify selected source pages/images
 5. select one source image as the visual reference for brief composition, preferring artistic or material-rich raster images over technical logos, favicons, wordmarks, GitHub preview cards, and generic docs chrome
-6. choose 7 to 10 source pieces for the edition, de-duplicated by resolved URL/post/image and biased toward variety across notes, domains, media types, and recent editions
+6. accept 1 to 10 independently owned eligible sources (6 desired, never required), de-duplicated by resolved URL/post/image against the full archive; stop normal bookmark acquisition at the first strong unused pixel-verified artwork and deepen that anchor
 7. reject YouTube candidates that fail the oEmbed embeddability check; if the video cannot render as a native iframe, it should not become an edition source
 8. let the findings influence scene generation and later ambiance decisions
 
 This step should produce a richer source field than the saved-source records alone. It may choose public source bindings only from the saved-source candidates it was given; it must not introduce unrelated external content as a primary edition source.
 
 Current content-selection rules:
-- choose 7 to 10 source pieces when enough valid sources exist; 9 is ideal
-- reject recent duplicate source keys outright
+- minimum 1, desired 6, maximum 10 real independent source pieces; zero fails. This authorized reset supersedes old minimum-six skill guidance.
+- reject duplicate source keys across the full archive outright
 - reject raw Twitter/X CDN media URLs as primary source bindings
 - prefer native tweet URLs over extracted tweet-media URLs, while still using tweet media as the visual image when available
 - treat distinct resolved NTS tracks from the same source-map note as distinct source records
@@ -208,11 +208,11 @@ The brief-composition request is written to `tmp/daily-process-runs/<run-id>/bri
 Minimal expressionist complexity budget:
 - one dominant visual form
 - two secondary visual forms
-- 7 to 10 quiet source anchors embedded as marks, apertures, labels, slits, cuts, scratches, stains, edge details, or small lights
+- 1 to 10 quiet source anchors (6 desired) embedded as real marks, apertures, slits, cuts, scratches, stains, edge details, or small lights; never duplicate a source to meet a count
 - at least 60 percent negative space when the source set allows it
 - no more than three dominant material surfaces
 
-The plate can support 7 to 10 source bindings without showing 7 to 10 loud objects. The source windows carry media richness; the plate should read as restrained artwork first.
+One compelling independent source is a valid edition. Additional eligible sources may enrich it up to ten, without equal-weight props or fake summary cards. Source windows carry media richness; the plate should read as restrained artwork first. Pixel eligibility, exact provenance, full-archive deduplication, image-only landscape composition, non-overcopy, readable-mobile and media gates remain mandatory.
 
 ## About panel generation
 Every packaged edition gets an `about.json` written from the actual run data. It should always use two plain-language paragraphs:

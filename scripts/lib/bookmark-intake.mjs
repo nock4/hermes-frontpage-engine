@@ -28,5 +28,8 @@ export function runVaultWorker(options, { timeoutMs = 20000, workerCode } = {}) 
 }
 
 export function loadBookmarkBatch(options) {
-  return runVaultWorker({ maxReads: 48, maxNotes: 24, ...options, cacheDir: options.cacheDir || bookmarkCacheDir() })
+  // Index local metadata completely under worker byte/time/file bounds; only
+  // maxNotes limits model-facing nomination. Legacy maxReads is not an index
+  // coverage limit: a folder prefix cannot establish the available artwork.
+  return runVaultWorker({ maxNotes: 24, ...options, cacheDir: options.cacheDir || bookmarkCacheDir() })
 }

@@ -16,6 +16,47 @@ async function fixture(count = 40) {
 }
 
 describe('bounded bookmark intake', () => {
+  it('covers saved metadata before nomination instead of exhausting inspection on one lexical folder', async () => {
+    const f = await fixture(0)
+    try {
+      const bad = path.join(f.vault, 'Themes/Z Crypto')
+      const good = path.join(f.vault, 'Themes/A Unclassified')
+      await fs.mkdir(bad, { recursive: true }); await fs.mkdir(good, { recursive: true })
+      for (let i = 0; i < 60; i++) await fs.writeFile(path.join(bad, `${i}.md`), `# Token commentary\n[View on X](https://x.com/coin/status/${20000+i})\n`)
+      await fs.writeFile(path.join(good, 'work.md'), '# Charcoal drawing\nAn original drawing in black pigment.\n[View on X](https://x.com/artist/status/90000)\n![work](https://pbs.twimg.com/media/work.jpg)')
+      const batch = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, maxReads: 12, maxNotes: 6 })
+      expect(batch.audit.metadata_coverage_complete).toBe(true)
+      expect(batch.audit.metadata_files).toBe(61)
+      expect(batch.notes[0].urls).toEqual(['https://x.com/artist/status/90000'])
+      expect(batch.notes.length).toBeLessThanOrEqual(6)
+      expect(batch.notes[0]).not.toHaveProperty('inspection')
+    } finally { await fs.rm(f.root, { recursive: true, force: true }) }
+  })
+  it('advances from preferred media to sparse owners instead of repeating rejected-looking nominations forever', async () => {
+    const f = await fixture(0)
+    try {
+      await fs.writeFile(path.join(f.vault, 'Inbox/tweets/a.md'), '# Artwork\nhttps://x.com/a/status/100\nhttps://pbs.twimg.com/media/a.jpg')
+      await fs.writeFile(path.join(f.vault, 'Inbox/tweets/b.md'), '# New work\nhttps://x.com/b/status/200\nhttps://pbs.twimg.com/media/b.jpg')
+      await fs.writeFile(path.join(f.vault, 'Inbox/tweets/c.md'), '# 無題\nhttps://x.com/c/status/300')
+      const seen = []
+      for (let i=0; i<3; i++) seen.push((await loadBookmarkBatch({ inputRoot:f.vault, cacheDir:f.cacheDir, maxNotes:1 })).notes[0]?.urls[0])
+      expect(seen).toEqual(['https://x.com/a/status/100', 'https://x.com/b/status/200', 'https://x.com/c/status/300'])
+    } finally { await fs.rm(f.root, { recursive:true, force:true }) }
+  })
+  it.each(['#artwork', '(#artwork)', '**#artwork**', '#news,#artwork'])('does not let tag %s or folder names promote a sparse owner as creative prose', async (tag) => {
+    const f = await fixture(0)
+    try {
+      const text = `# Market news\nhttps://x.com/a/status/100\n${tag}`
+      await fs.writeFile(path.join(f.vault, 'Inbox/tweets/a.md'), text)
+      await fs.writeFile(path.join(f.vault, 'Inbox/tweets/b.md'), text.replace('/100', '/200') + '\nhttps://pbs.twimg.com/media/promo.jpg')
+      const batch = await loadBookmarkBatch({ inputRoot:f.vault, cacheDir:f.cacheDir })
+      expect(batch.audit.nomination_lanes.find(row => row.lane === 1).unused).toBe(0)
+      expect(batch.audit.nomination_lanes.find(row => row.lane === 3).unused).toBe(1)
+      expect(batch.audit.nomination_lanes.find(row => row.lane === 0).unused).toBe(0)
+      expect(batch.audit.nomination_lanes.find(row => row.lane === 2).unused).toBe(1)
+      expect(batch.notes.find(n => n.urls[0].endsWith('/100')).excerpt).toBe(text)
+    } finally { await fs.rm(f.root, { recursive:true, force:true }) }
+  })
   it('wires ordinary mining to bounded acquisition and reports actual counts and policy', async () => {
     const f = await fixture()
     try {
@@ -66,8 +107,11 @@ describe('bounded bookmark intake', () => {
       await fs.mkdir(themes, { recursive: true })
       await fs.writeFile(path.join(themes, 'new.md'), '# Saved artwork\n[View on X](https://x.com/artist/status/99999)\n')
       const next = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, maxReads: 1, maxNotes: 1 })
-      expect(next.notes[0].urls).toEqual(['https://x.com/artist/status/99999'])
-      expect(next.audit.cached_notes).toBe(49)
+      expect(next.notes[0].urls).toEqual(original.notes[0].urls)
+      expect(next.audit.cached_notes).toBe(61)
+      expect(next.audit.metadata_reads).toBe(1)
+      const indexed = JSON.parse(await fs.readFile(next.audit.cache_path, 'utf8'))
+      expect(indexed.entries['Themes/Design & Visual Systems/new.md'].note.urls).toEqual(['https://x.com/artist/status/99999'])
       const repeat = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, maxReads: 1, maxNotes: 1 })
       expect(repeat.notes[0].urls).not.toEqual(next.notes[0].urls)
     } finally { await fs.rm(f.root, { recursive: true, force: true }) }
@@ -84,16 +128,16 @@ describe('bounded bookmark intake', () => {
       await expect(fs.access(f.cacheDir)).rejects.toThrow()
     } finally { await fs.rm(f.root, { recursive: true, force: true }) }
   })
-  it('reads only a small deterministic batch, persists metadata and rotates without rereading the whole vault', async () => {
+  it('indexes cheap metadata once then rotates a small deterministic nomination batch without rereading unchanged notes', async () => {
     const f = await fixture()
     try {
       const a = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, maxReads: 8, maxNotes: 6 })
-      expect(a.audit.notes_read).toBe(8)
+      expect(a.audit.notes_read).toBe(40)
       expect(a.notes).toHaveLength(6)
       expect(a.markdown_files_seen).toBe(40)
       const b = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, maxReads: 8, maxNotes: 6 })
-      expect(b.audit.notes_read).toBe(8)
-      expect(b.audit.cached_notes).toBe(16)
+      expect(b.audit.notes_read).toBe(0)
+      expect(b.audit.cached_notes).toBe(40)
       expect(b.notes.map(n => n.id)).not.toEqual(a.notes.map(n => n.id))
     } finally { await fs.rm(f.root, { recursive: true, force: true }) }
   })
@@ -147,7 +191,7 @@ describe('bounded bookmark intake', () => {
       for (let i = 0; i < 3; i++) {
         for (let n = 0; n < 6; n++) await fs.appendFile(path.join(f.vault, 'Inbox/tweets', `${String(n).padStart(3, '0')}.md`), `\nTouch ${i}`)
         const batch = await loadBookmarkBatch({ inputRoot: f.vault, cacheDir: f.cacheDir, maxReads: 2, maxNotes: 2 })
-        expect(batch.audit.notes_read).toBe(2)
+        expect(batch.audit.notes_read).toBe(6)
         for (const note of batch.notes) seen.add(note.id)
       }
       expect(seen.size).toBe(6)

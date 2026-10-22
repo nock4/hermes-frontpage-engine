@@ -1,4 +1,5 @@
 import crypto from 'node:crypto'
+import { MIN_SOURCE_WINDOWS, DESIRED_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import { assertLandscapePlate, landscapeImageSize } from './landscape-policy.mjs'
 import { sourceGeometryGuard, withoutSourceUiCues } from './source-image-geometry.mjs'
 import fsSync from 'node:fs'
@@ -36,7 +37,7 @@ const bannedProductTerms = [
 export async function composeDailyPayload(
   { signalHarvest, researchField, apiKey, model, date, recentEditions = [], diversityDirective = '', platePosture = null },
   runDir,
-  { writeJson, minContentItems, targetContentItems, maxContentItems },
+  { writeJson, minContentItems = MIN_SOURCE_WINDOWS, targetContentItems = DESIRED_SOURCE_WINDOWS, maxContentItems = MAX_SOURCE_WINDOWS },
 ) {
   const contentSources = getResearchContentSources(researchField).slice(0, maxContentItems)
   const visualDirection = await inferVisualDirection({ signalHarvest, researchField, apiKey, model, date, recentEditions, platePosture }, runDir)
@@ -181,7 +182,7 @@ export async function composeDailyPayload(
     'Choose one coherent visual world from the saved signals and inspected source metadata.',
     'Use only source URLs from the supplied source_research array in artifacts.',
     'Do not put version suffixes such as -v1 or -v2 in scene_family or slug_base; the package assembler adds edition versions itself.',
-    `Produce ${minContentItems} to ${maxContentItems} source anchor artifacts; ${targetContentItems} is ideal when enough sources are supplied. Exactly 2 should be hero-scale anchors, but the image should let the inferred visual direction decide how many major shapes or clusters it needs.`,
+    `Produce ${minContentItems} to ${maxContentItems} source anchor artifacts; ${targetContentItems} is ideal when enough distinct eligible sources are supplied. Never duplicate sources to reach the desired count. Use up to 2 hero-scale anchors, or 1 when only one source is supplied; let the inferred visual direction decide how many major shapes or clusters it needs.`,
     'Never use the same source URL, resolved source, article, post, or image twice in artifacts.',
     'Favor variety across domains, notes, media types, visual scales, and artifact roles.',
     'Avoid repeating the recent edition titles, scene families, dominant materials, and visual worlds supplied in recent_edition_avoidance.',
@@ -857,10 +858,10 @@ function sourceWindowAnchorSentence({ hasSourceImage, anchorCount, effectDirecti
   if (hasSourceImage) {
     const planned = artifacts.map((artifact) => artifact.visual_description).filter(Boolean)
     if (planned.length) {
-      if (planned.length !== artifacts.length || planned.length < 6 || planned.length > 10 || planned.some((mark) => typeof mark !== 'string' || mark.length > 80)) {
+      if (planned.length !== artifacts.length || planned.length < MIN_SOURCE_WINDOWS || planned.length > MAX_SOURCE_WINDOWS || planned.some((mark) => typeof mark !== 'string' || mark.length > 80)) {
         throw new Error('Real-mark plan: incomplete or over-budget visual descriptions; replan before generation')
       }
-      return `Compose at least six distinct source-native physical features within the artwork: ${planned.join('; ')}. Keep each visibly separable, with unequal scale; never counted symbols, cards, pasted thumbnails or UI labels. Invisible interaction is added later; no painted indicators. ${forbiddenDebugMarks}`
+      return `Compose exactly ${planned.length} distinct source-native physical features within the artwork: ${planned.join('; ')}. Keep each visibly separable, with unequal scale where multiple sources exist; never counted symbols, cards, pasted thumbnails or UI labels. Invisible interaction is added later; no painted indicators. ${forbiddenDebugMarks}`
     }
     const edges = dashRecovery
       ? 'missing-dash seams, shifted raster islands and paper edges; never USB ports, plug mouths or cables'
@@ -937,8 +938,8 @@ export function buildSceneImagePrompt(payload) {
     ? 'This is a graphic/editorial/poster/package reference: borrow layout grammar, figure/portrait masses as abstract shapes, text-strip silhouettes as illegible marks, object/hand edge cues, negative space, palette, and light. Do not preserve the exact cover/card/photo arrangement. Recompose those masses into a new plate while staying flat unless the source itself has deep space. Do not replace it with unrelated macro texture, cave, room, landscape, city, skyline, horizon, character, central figure, poster wall, or metaphor.'
     : ''
   const anchorCount = artifacts.length
-    ? `${Math.min(9, Math.max(6, artifacts.length))}`
-    : '6–9'
+    ? `${Math.min(MAX_SOURCE_WINDOWS, artifacts.length)}`
+    : `${MIN_SOURCE_WINDOWS}–${MAX_SOURCE_WINDOWS}, only for distinct supplied sources (${DESIRED_SOURCE_WINDOWS} desired when available)`
   const effectDirection = payload.effect_direction || visualDirection.effect_direction || null
   const dominantOverride = hasSourceImage ? dominantSourceConflictGuard(sourceImageFingerprints, effectDirection, payload) : ''
   if (reconciled && dominantOverride) throw new Error('Real-mark plan conflicts with dominant source; replan before generation')

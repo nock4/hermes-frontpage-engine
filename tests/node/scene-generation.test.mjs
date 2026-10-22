@@ -8,6 +8,14 @@ import { describe, expect, it } from 'vitest'
 import { buildSceneImagePrompt, generateScenePlate } from '../../scripts/lib/scene-generation.mjs'
 
 describe('scene generation image prompt', () => {
+  it.each([1, 2, 5, 6, 10])('requests exactly %s existing source-field anchors without padding', (count) => {
+    const prompt = buildSceneImagePrompt({
+      scene_prompt: 'Source-derived physical seams.',
+      artifacts: Array.from({ length: count }, (_, index) => ({ source_url: `https://example.com/work/${index}` })),
+    })
+    expect(prompt).toContain(`Add ${count} source windows as real marks`)
+    expect(prompt).not.toMatch(/at least six|6–9/)
+  })
   it('keeps concrete scene direction ahead of duplicate transform boilerplate within the existing budget', () => {
     const prompt = buildSceneImagePrompt({
       scene_prompt: 'A foreground corrugated mouth faces branching diagonal bundles. A broad interlaced tension fork counterbalances the shell; smaller curls hold a woven junction, broken painted edge, granular reflective seam and overlapping-flap opening.',

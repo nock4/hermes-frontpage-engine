@@ -3,7 +3,7 @@
 Every scheduled **America/New_York** day owes an attempt to deliver one of:
 
 1. **Verified daily edition** — only full accepted press proof, explicit independent visual pass, retained screenshot, and a matching live manifest plus edition identity qualify.
-2. **Daily fallback — not a new edition** — dated today, exact last-verified edition ID/link, its retained screenshot, and an honest reason (missing accepted proof or live verification failure). Never fabricate content, mark old work new, reuse/consume archived source records, or weaken provenance, six-real-window, fidelity, media, mobile, visual or publication QA gates.
+2. **Daily fallback — not a new edition** — dated today, exact last-verified edition ID/link, its retained screenshot, and an honest reason (missing accepted proof or live verification failure). Never fabricate content, mark old work new, reuse/consume archived source records, or weaken provenance, real-independent-source, fidelity, media, mobile, visual or publication QA gates. The authorized count contract is minimum 1, desired 6, maximum 10; zero remains invalid.
 
 Fallback does **not** close repair, start another press, mutate the website, or roll back a healthy plate. The existing single 04:00 Eastern self-healing job remains responsible for repair. A later accepted same-day edition gets **one Recovery** update. A fresh manifest alone is not full acceptance.
 

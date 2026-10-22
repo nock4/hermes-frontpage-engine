@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { MIN_SOURCE_WINDOWS, DESIRED_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import path from 'node:path'
 
 import { inferEffectDirectionFromResearch } from './effect-direction.mjs'
@@ -273,7 +274,7 @@ export async function inferVisualDirection({ signalHarvest, researchField, apiKe
       'Extract 3 to 5 concrete visible compositional moves from visual_reference, source_image_fingerprints, selected_image_material, and source_audio_material; do not reduce images or audio to vague palette or ambience.',
       'Choose source-window visual effects from autoresearch evidence: visual_motifs, aesthetic_thesis, capture_notes, source_decisions.why, image fingerprints, and audio material. Do not default to torn paper unless the source field explicitly asks for paper/poster/paste.',
       'Choose one explicit composition archetype and one camera/plate grammar that the image prompt can obey.',
-      'Honor plate_posture as the edition-level variety gear. Minimal/abstract postures should still preserve 6 to 10 real source-bearing marks as apertures, seams, notches, glints, cuts, nodes, or surface interruptions.',
+      `Honor plate_posture as the edition-level variety gear. Preserve ${MIN_SOURCE_WINDOWS} to ${MAX_SOURCE_WINDOWS} real source-bearing marks as apertures, seams, notches, glints, cuts, nodes, or surface interruptions; ${DESIRED_SOURCE_WINDOWS} is desired only when enough distinct eligible sources exist. Never duplicate sources or invent marks to pad the count.`,
       'When plate_posture includes formal_risk or look_avoidance_directive, treat those as hard anti-flatness constraints: choose depth, scale shift, rupture, weather, procession, cutaway, object collision, horizon, or loud source-media fragments instead of another polite material scan.',
       'Avoid generic office-room, dashboard, and card-grid staging, but do not overcorrect into the same flat sleeve/paper/seam macro grammar.',
       'Consider recent editions only as anti-repetition pressure, not as a style template to repeat.',

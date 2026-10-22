@@ -7,7 +7,7 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "knip": {
-    "ignore": ["src/lib/originalImageContract.d.mts"],
+    "ignore": ["src/lib/originalImageContract.d.mts", "src/lib/sourceWindowCountContract.d.mts"],
     "ignoreBinaries": [
       "python3",
       "hermes",

@@ -287,7 +287,9 @@ editions/
 - all artifact ids unique
 - all source bindings must resolve to real source URLs
 - all artifacts must reference real bindings when interactive
-- generated packages should have 7-10 non-duplicate source bindings when enough valid saved-source material exists
+- authorized editorial reset (2026-10-22): minimum 1, desired 6, maximum 10 independent source bindings; zero is invalid. `src/lib/sourceWindowCountContract.mjs` is the shared executable contract, superseding prior six-window skill guidance.
+- each new package has one real mapped mark per independently owned source; never duplicate a source to reach the desired count. Historical archive packages remain unchanged.
+- counts do not relax high-confidence actual-pixel eligibility, exact provenance, full-archive deduplication, image-only landscape composition, non-overcopy, readable-mobile or media-delivery gates
 - generated packages must not use raw Twitter/X CDN media as a primary source URL
 - generated YouTube bindings must be embeddable or be excluded before packaging
 - about notes must reference edition-specific process details, not generic pipeline copy

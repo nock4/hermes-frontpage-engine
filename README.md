@@ -169,7 +169,8 @@ If you are reviewing this for a creative-tooling or agentic-systems hackathon, t
 - prefer abstract, image-led, research-shaped worlds over default office/desk metaphors
 - artifact mapping must anchor to real visible marks, objects, edges, surfaces, or gestures in the generated plate
 - source windows should expose real media or source-framed fallbacks, not summary cards
-- generated editions should use 6-10 non-duplicate source windows when enough valid source material exists
+- editorial count contract: minimum 1, desired 6, maximum 10 independently owned real source windows; zero is invalid, and six is never an admission quota
+- stop acquisition at the first strong unused pixel-verified artwork, then deepen its research; never pad with duplicate-source marks or summary cards
 
 ## Deploying
 This repo includes `vercel.json` for static Vite deploys with SPA fallback. Existing files are served directly, and non-file routes fall back to `index.html` so archive routing works under a custom domain.

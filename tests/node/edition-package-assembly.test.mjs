@@ -13,7 +13,10 @@ async function readJson(filePath) {
 }
 
 describe('edition package assembly', () => {
-  it('writes a self-contained edition package and updates the manifest', async () => {
+  it.each([0, 11])('rejects %s source artifacts before package writes', async (count) => {
+    await expect(assembleEditionPackage({ payload: { artifacts: Array(count).fill({ source_url: 'https://example.com/work' }) } })).rejects.toThrow(/1–10 distinct source artifacts/)
+  })
+  it.each([1, 2, 5, 6, 10])('writes a self-contained %s-source edition package and updates the manifest', async (count) => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), 'dfe-package-'))
     const publicEditionsDir = path.join(root, 'public', 'editions')
     const runDir = path.join(root, 'tmp', 'run')
@@ -120,7 +123,7 @@ describe('edition package assembly', () => {
       runDir,
       maxContentItems: 10,
     }
-    for (let index = 1; index < 6; index += 1) {
+    for (let index = 1; index < count; index += 1) {
       const url = `https://example.com/gallery/artwork-${index}`
       const source = { url, title: `Artwork ${index}`, image_url: `${url}.jpg` }
       input.payload.artifacts.push({ label: source.title, source_url: url })
@@ -149,7 +152,10 @@ describe('edition package assembly', () => {
     const summary = await readJson(path.join(runDir, 'edition-package-summary.json'))
 
     expect(edition.title).toBe('Quiet Test Room')
-    expect(artifactMap.artifacts).toHaveLength(6)
+    expect(artifactMap.artifacts).toHaveLength(count)
+    const brief = await readJson(path.join(editionDir, 'brief.json'))
+    expect(brief.interaction_grammar.hero_count).toBe(Math.min(2, count))
+    expect(brief.interaction_grammar.module_count).toBe(Math.max(0, count - 2))
     expect(artifactMap.artifacts[0].mask_path).toContain('/assets/masks/hero-paper-field.svg')
     expect(bindings.bindings[0]).toMatchObject({
       source_url: sourceUrl,
@@ -274,8 +280,8 @@ describe('edition package assembly', () => {
       await fs.writeFile(platePath, platePng(1200, 800))
     }
     const beforeManifest = await fs.readFile(path.join(publicEditionsDir, 'index.json'), 'utf8')
-    if (count < 6 || mode === 'planned-artifact-fallback' || fallbackCount || invalidBounds) {
-      await expect(assembleEditionPackage(input)).rejects.toThrow(/at least 6 real detected mapped objects/i)
+    if (count < 1 || mode === 'planned-artifact-fallback' || fallbackCount || invalidBounds) {
+      await expect(assembleEditionPackage(input)).rejects.toThrow(/at least 1 real detected mapped objects/i)
       expect(await fs.readdir(publicEditionsDir)).toEqual(['index.json'])
       expect(await fs.readFile(path.join(publicEditionsDir, 'index.json'), 'utf8')).toBe(beforeManifest)
       expect(await fs.readdir(runDir)).toEqual(['plate.png'])

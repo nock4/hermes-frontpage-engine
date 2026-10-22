@@ -30,6 +30,17 @@ import {
 } from '../../scripts/lib/press-proof.mjs'
 
 describe('press proof contract', () => {
+  it.each([undefined, 0, 1, 6, 10, 11])('requires a valid live source-window count for new editions: %s', artifactCount => {
+    const edition = '2026-10-22-contract-v1'
+    const proof = buildPublishProof({
+      summary: { ok: true, local_edition_id: edition, remote_matches: true },
+      liveProof: { pageEditionId: edition, loadedPlateImageCount: 1, artifactCount,
+        plate: { src: `/editions/${edition}/assets/plate.png`, naturalWidth: 1536, naturalHeight: 1024 } },
+      screenshotPath: '/fixture/screenshot.png', promptPath: '/fixture/prompt.txt',
+      qa: { qaPublishPassed: true, adversarialVisualQa: 'pass' },
+    })
+    expect(checkPressProof(proof).green).toBe([1, 6, 10].includes(artifactCount))
+  })
   it('marks a publish green only when remote, screenshot, preload, QA, and edition match proof all hold', () => {
     const proof = buildPublishProof({
       summary: {

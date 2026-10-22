@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { MIN_SOURCE_WINDOWS, DESIRED_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import { acquireBookmarkArtwork } from './bookmark-artwork.mjs'
 import { bookmarkCacheDir } from './bookmark-intake.mjs'
 import path from 'node:path'
@@ -38,11 +39,11 @@ import {
 import { uniqueNonEmpty } from './string-utils.mjs'
 
 const root = process.cwd()
-const minContentItems = 6
+const minContentItems = MIN_SOURCE_WINDOWS
 import { inspectCreativeArtifacts } from './creative-artifact-inspection.mjs'
 
-const targetContentItems = 9
-const maxContentItems = 10
+const targetContentItems = DESIRED_SOURCE_WINDOWS
+const maxContentItems = MAX_SOURCE_WINDOWS
 const autoresearchCandidateMultiplier = 6
 // Keep enough of the saved-signal field on the press bed to survive archive-wide
 // source-material dedupe. High-score recent YouTube and emergency seeds can all be
@@ -203,7 +204,7 @@ export function buildSourceFloorDiagnostics({ inspected = [], fetchEvidence = []
         : primary_constraint === 'renderability_or_browser_capture'
           ? 'inspect browser/fetch evidence and recover real media/provider surfaces'
           : primary_constraint === 'selection_logic'
-            ? 'repair selectContentSources grouping/scoring without lowering the six-window floor'
+            ? 'repair selectContentSources grouping/scoring while preserving the one-window minimum'
             : 'inspect source-research.json and source-candidate-evidence.json before changing thresholds',
   }
 }
@@ -647,7 +648,7 @@ async function runSourceAutoresearch({
       anchor_reason: 'why the selected anchor is visually fertile',
       clusters: [{ label: 'string', takeaway: 'string', urls: ['candidate URL strings'] }],
       source_decisions: [{ url: 'candidate URL string', role: 'content | visual_reference | supporting | reject', why: 'string', confidence: 'high | medium | low' }],
-      selected_content_urls: ['7 to 10 candidate URL strings'],
+      selected_content_urls: [`${minContentItems} to ${maxContentItems} candidate URL strings; ${targetContentItems} desired, never required`],
       visual_reference_urls: ['1 to 3 candidate URL strings with likely strong real imagery'],
       capture_notes: ['what browser-harness should verify or capture after research'],
       rejected_patterns: ['duplicate or low-value patterns avoided'],
@@ -822,7 +823,7 @@ export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1, canAcq
 
 // Ordinary bookmark-first acquisition and actual-media admission: fetch capture,
 // text research, creative inspection and selection over at most 24 candidates in
-// batches of six. Also used by the source-only reserve preparation CLI.
+// single-candidate steps, stopping at the first admitted work. Also used by the source-only reserve preparation CLI.
 // `budget` is the run's shared 24-acquisition / 24-inspection allowance: a
 // prepared-reserve attempt and its fresh fallback draw on one budget, never 48.
 export async function acquireBoundedBookmarkSources(signalHarvest, { candidates, runDir, apiKey, model, date, recentSourceKeys = new Set(), budget = { acquisitions: 0, inspections: 0 }, state = {}, adapters = {} }) {
@@ -1129,7 +1130,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     imageSourceMaterial = { image_source_candidates: [], selected_image_material: [] }
     await fs.rm(path.join(runDir, 'anchor-research.json'), { force: true })
   }
-  // Anchor recovery and the six-window floor are independent decisions. An
+  // Anchor recovery and the source-window minimum are independent decisions. An
   // undersized but verified field can supply a valid replacement root while the
   // unchanged source-count gate still blocks generation below the floor.
   if (!anchorSource && contentSources.length) {

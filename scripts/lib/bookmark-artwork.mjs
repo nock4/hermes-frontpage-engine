@@ -1,8 +1,10 @@
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
+
 // This scheduler grants no admission itself. The production select callback
 // applies archive, editorial, family and exact actual-media gates on every batch.
-export async function acquireBookmarkArtwork({ candidates, batchSize = 6, target = 6, maxAcquisitions = 24, state = {} }, adapters) {
+export async function acquireBookmarkArtwork({ candidates, batchSize = 1, target = MIN_SOURCE_WINDOWS, maxAcquisitions = 24, state = {} }, adapters) {
   const limit = Math.min(24, Math.max(0, maxAcquisitions))
-  const width = Math.min(10, Math.max(1, batchSize))
+  const width = Math.min(MAX_SOURCE_WINDOWS, Math.max(1, batchSize))
   let inspected = [...(state.inspected || [])], autoresearch = state.autoresearch || { source_decisions: [] }
   let contentSources = inspected.length ? adapters.select(inspected, autoresearch) : []
   let acquired = 0

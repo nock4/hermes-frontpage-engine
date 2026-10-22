@@ -32,6 +32,10 @@ const audit = {
   rationale: 'Target geometry independently blocks release.',
 }
 
+// These tests isolate diagnostic sanitization before ownership planning. Any
+// nonempty owning field now requires a real replan (covered in real-mark-plan).
+const diagnosticOnlyRecovery = (input, failed, attempt) => buildSourceFidelityRecoveryPayload({ ...input, artifacts: [] }, failed, attempt)
+
 describe('source-image still prompt boundary', () => {
   it('uses existing artwork edges instead of manufacturing interaction targets', () => {
     const before = structuredClone(payload)
@@ -51,13 +55,13 @@ describe('source-image still prompt boundary', () => {
     const prompt = buildSceneImagePrompt(meshPayload)
     expect(prompt).toContain('3D-editor rigs, joint nodes, gizmos, vertex handles/control connectors.')
     expect(prompt).toContain('Angular mesh head')
-    const recovery = buildSceneImagePrompt(buildSourceFidelityRecoveryPayload(meshPayload, { ...audit, forbidden_debug_marks: ['Thin connectors terminate in hollow circular nodes beside the mesh hair.'] }))
+    const recovery = buildSceneImagePrompt(diagnosticOnlyRecovery(meshPayload, { ...audit, forbidden_debug_marks: ['Thin connectors terminate in hollow circular nodes beside the mesh hair.'] }))
     expect(recovery).toContain('3D-editor rigs, joint nodes, gizmos, vertex handles/control connectors.')
     expect(recovery).not.toContain('Thin connectors terminate in hollow circular nodes beside the mesh hair.')
   })
   it('writes full diagnostics and runtime metadata before a blocked image adapter call', async () => {
     const dir = await mkdtemp(path.join(os.tmpdir(), 'source-prompt-boundary-'))
-    const recovery = buildSourceFidelityRecoveryPayload(payload, audit)
+    const recovery = diagnosticOnlyRecovery(payload, audit)
     try {
       await expect(generateScenePlate({ payload: recovery, imageBackend: 'hermes' }, dir, {
         runHermesImageCommand: async () => { throw new Error('test: image generation disabled') },
@@ -76,7 +80,7 @@ describe('source-image still prompt boundary', () => {
 
   it.each([false, true])('keeps full failed audits in recovery artifacts, not image instructions (overcopy=%s)', (overcopy) => {
     const failed = { ...audit, blockers: [...audit.blockers, ...(overcopy ? ['anchor copied without edition transformation'] : [])] }
-    const recovery = buildSourceFidelityRecoveryPayload(payload, failed)
+    const recovery = diagnosticOnlyRecovery(payload, failed)
     expect(recovery.source_fidelity_recovery_diagnostics).toEqual([failed])
     const prompt = buildSceneImagePrompt(recovery)
     expect(prompt).not.toContain(audit.forbidden_debug_marks[0])

@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import fsSync from 'node:fs'
 import path from 'node:path'
 import dns from 'node:dns/promises'
@@ -13,7 +14,7 @@ import { fetchVettedImage } from './fetch-vetted-image.mjs'
 // confers admission: consumption revalidates notes, bytes, config and ledger,
 // then the ordinary bounded acquisition/inspection/selection runs again.
 const reservePolicyVersion = 'prepared-artwork-reserve-v1'
-const minimumWorks = 6
+const minimumWorks = MIN_SOURCE_WINDOWS
 const states = ['prepared', 'claimed', 'consumed', 'invalid']
 const digest = value => createHash('sha256').update(value).digest('hex')
 const hex64 = value => /^[a-f0-9]{64}$/.test(value || '')
@@ -38,7 +39,7 @@ const admissionEntries = ['lib/artwork-reserve.mjs', 'lib/signal-mining.mjs', 'l
 export function admissionModuleFiles() {
   const seen = new Set()
   const visit = file => {
-    if (seen.has(file) || !file.startsWith(scriptsDir) || !fsSync.existsSync(file)) return
+    if (seen.has(file) || !(file.startsWith(scriptsDir) || file === path.resolve(scriptsDir, '../src/lib/sourceWindowCountContract.mjs')) || !fsSync.existsSync(file)) return
     seen.add(file)
     const text = fsSync.readFileSync(file, 'utf8')
     for (const match of text.matchAll(/(?:\bfrom\s*|\bimport\s*\(\s*|\bimport\s+)['"](\.{1,2}\/[^'"]+\.m?js)['"]/g)) visit(path.resolve(path.dirname(file), match[1]))
@@ -115,7 +116,8 @@ async function moveSet(reserveDir, file, state, note) {
 
 export async function writePreparedReserve({ reserveDir = defaultReserveDir(), signalHarvest, contentSources = [], autoresearch, fingerprints, now = Date.now(), ttlMs = 72 * 3600e3, runDir = null, ledgerSize = null, codeMatchesRef = false, codeRef = null }) {
   const unique = [...new Map(contentSources.map(source => [source.url, source])).values()]
-  if (unique.length < minimumWorks) throw new Error(`Prepared reserve requires at least six admitted independent works; got ${unique.length}`)
+  if (unique.length < minimumWorks) throw new Error(`Prepared reserve requires at least ${minimumWorks} admitted independent works; got ${unique.length}`)
+  if (unique.length > MAX_SOURCE_WINDOWS) throw new Error(`Prepared reserve allows at most ${MAX_SOURCE_WINDOWS} works`)
   if (!hex64(fingerprints?.config_sha256) || !hex64(fingerprints?.ledger_sha256)) throw new Error('Prepared reserve requires config and ledger fingerprints')
   const notes = new Map()
   const sources = unique.map(source => {
@@ -225,7 +227,7 @@ export async function claimPreparedReserve({ reserveDir = defaultReserveDir(), i
   return { claim: null, reason: 'no valid prepared reserve', invalidated }
 }
 
-// After ordinary admission: consume only when at least six distinct reserved
+// After ordinary admission: consume only when at least one distinct reserved
 // works are admitted, every admitted source comes from the reserve, and fresh
 // inspection bytes match preparation. Never throws once the set has moved.
 export async function finalizeReserveClaim(claim, { contentSources = [], autoresearch = null, error = null } = {}) {
@@ -242,9 +244,10 @@ export async function finalizeReserveClaim(claim, { contentSources = [], autores
     if (!reserved) return invalid(`admitted source outside reserve: ${source.url}`)
     const proof = verifiedProof(source, autoresearch)
     if (!proof || proof.capture_sha256 !== reserved.capture_sha256 || source.image_url !== reserved.media_url) return invalid(`media bytes changed at inspection: ${source.image_url}`)
+    if (matched.has(reserved.url)) return invalid('duplicate admitted alias; distinct reserved works required')
     matched.add(reserved.url)
   }
-  if (matched.size < minimumWorks) return invalid(`ordinary admission matched ${matched.size} distinct reserved works; six required`)
+  if (matched.size < minimumWorks) return invalid(`ordinary admission matched ${matched.size} distinct reserved works; ${minimumWorks} required`)
   return settle('consumed', { run_id: claim.run_id, consumed_at: new Date().toISOString(), admitted: contentSources.map(source => source.url) })
 }
 

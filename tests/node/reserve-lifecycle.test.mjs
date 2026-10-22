@@ -5,10 +5,10 @@ import * as cron from '../../scripts/run-daily-publish-cron.mjs'
 import { runPreparation } from '../../scripts/prepare-artwork-reserve.mjs'
 import { acquireBoundedBookmarkSources } from '../../scripts/lib/source-research.mjs'
 
-it.each(['absent', 'consumed'])('cron automatically prepares %s reserve before generation', async () => {
+it.each(['absent', 'consumed'])('cron optionally prepares %s reserve before generation', async () => {
   const calls = []
   await cron.prepareCronReserve({ inputRoot: '/fixture', worktreeDir: '/detached', remote: 'origin', branch: 'main' }, {
-    run: async (...args) => { calls.push(args); return { code: 0 } }, env: {},
+    run: async (...args) => { calls.push(args); return { code: 0 } }, env: { DFE_ARTWORK_RESERVE: '1' },
   })
   expect(calls).toHaveLength(1)
   expect(calls[0][1]).toContain('scripts/prepare-artwork-reserve.mjs')
@@ -18,7 +18,7 @@ it.each([{ proofOnly: '/proof' }, { resumeCandidate: '/candidate' }, { inspirati
   await cron.prepareCronReserve(mode, { run: async () => { throw new Error('must not spawn') }, env: {} })
 })
 it('preparation failure stops before a second fresh intake budget', async () => {
-  await expect(cron.prepareCronReserve({}, { run: async () => ({ code: 2 }), env: {} })).rejects.toThrow(/reserve/i)
+  await expect(cron.prepareCronReserve({}, { run: async () => ({ code: 2 }), env: { DFE_ARTWORK_RESERVE: '1' } })).rejects.toThrow(/reserve/i)
 })
 
 it('partial preparation advances bounded intake and retains proof under one aggregate budget', async () => {
@@ -46,11 +46,11 @@ it('partial preparation advances bounded intake and retains proof under one aggr
     }
     const out = await runPreparation({ options: { reserveDir: path.join(root, 'reserve'), ttlHours: 72 }, runDir: root, deps })
     expect(out.status).toBe('prepared')
-    expect(mines).toBe(2)
+    expect(mines).toBe(1)
     expect(seen[0]).toMatchObject({ maxReads: 12, maxNotes: 6 })
-    expect(out.budget).toMatchObject({ acquisitions: 8, inspections: 8, reads: 24 })
+    expect(out.budget).toMatchObject({ acquisitions: 1, inspections: 1, reads: 12 })
     const set = JSON.parse(await fs.readFile(out.reserve_file, 'utf8'))
-    expect(set.sources.map(s => s.note_id)).toEqual(['n0', 'n1', 'n2', 'n3', 'n4', 'n5'])
+    expect(set.sources.map(s => s.note_id)).toEqual(['n0'])
   } finally { await fs.rm(root, { recursive: true, force: true }) }
 })
 
@@ -84,7 +84,7 @@ it('empty continuation keeps admitted evidence and does not reacquire duplicates
   } finally { await fs.rm(root, { recursive: true, force: true }) }
 })
 
-it('exhausted preparation keeps partial evidence and stops at four small cursor batches', async () => {
+it('metadata reads above 48 do not stop acquisition; exhaustion stops at four bounded batches', async () => {
   const root = await fs.mkdtemp(path.join(process.env.TMPDIR || 'tmp/', 'exhausted-prep-'))
   try {
     let mines = 0
@@ -92,16 +92,16 @@ it('exhausted preparation keeps partial evidence and stops at four small cursor 
     const deps = {
       completeLedger: async () => ({ keys: new Set(), ref: 'origin/main' }), codeCheck: async () => ({ matches: true }),
       press: () => ({}), fingerprint: async () => ({}), audit: async () => ({ ready: [] }),
-      mine: async (_p, _l, limits) => { expect(limits).toEqual({ maxReads: 12, maxNotes: 6 }); mines++; return { notes_selected: [], source_candidates: [], selection_policy: { bookmark_first: true, bookmark_intake: { notes_read: 12 } } } },
-      acquire: async (_h, _p, _l, { budget }) => { budgets.push(budget); budget.acquisitions += 6; budget.inspections += 2; return { contentSources: [{ url: 'partial' }], inspected: [], autoresearch: { source_decisions: [] }, audit: {} } },
+      mine: async (_p, _l, limits) => { expect(limits).toEqual({ maxReads: 12, maxNotes: 6 }); mines++; return { notes_selected: [], source_candidates: [], selection_policy: { bookmark_first: true, bookmark_intake: { notes_read: 100, metadata_coverage_complete: true } } } },
+      acquire: async (_h, _p, _l, { budget }) => { budgets.push(budget); budget.acquisitions += 6; budget.inspections += 2; return { contentSources: [], inspected: [{ url: 'rejected' }], autoresearch: { source_decisions: [] }, audit: {} } },
     }
     const out = await runPreparation({ options: { reserveDir: path.join(root, 'reserve') }, runDir: root, deps })
     expect(out.status).toBe('insufficient')
     expect(mines).toBe(4)
     expect(new Set(budgets).size).toBe(1)
-    expect(out.budget).toEqual({ acquisitions: 24, inspections: 8, reads: 48, nominations: 0 })
+    expect(out.budget).toEqual({ acquisitions: 24, inspections: 8, reads: 400, nominations: 0 })
     const retained = JSON.parse(await fs.readFile(path.join(root, 'reserve-continuation.json'), 'utf8'))
-    expect(retained.acquired.contentSources).toEqual([{ url: 'partial' }])
+    expect(retained.acquired.inspected).toEqual([{ url: 'rejected' }])
     expect(retained.budget).toEqual(out.budget)
   } finally { await fs.rm(root, { recursive: true, force: true }) }
 })

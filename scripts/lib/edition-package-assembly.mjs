@@ -1,4 +1,5 @@
 import crypto from 'node:crypto'
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import { assertLandscapePlate, assertLandscapePublication } from './landscape-policy.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -23,7 +24,7 @@ import { sanitizeSourceText } from './source-text.mjs'
 import { canonicalizeSourceUrl, isYouTubeVideoUrl } from './source-url-policy.mjs'
 import { sentenceList, slugify, uniqueNonEmpty } from './string-utils.mjs'
 
-const DEFAULT_MAX_CONTENT_ITEMS = 10
+const DEFAULT_MAX_CONTENT_ITEMS = MAX_SOURCE_WINDOWS
 
 async function readJson(filePath) {
   return JSON.parse(await fs.readFile(filePath, 'utf8'))
@@ -80,9 +81,9 @@ function packageDetectedObjects(analysis, eligibleArtifacts, maxContentItems) {
       || bounds.x + bounds.w > 1.000001 || bounds.y + bounds.h > 1.000001
   })
   // The floor applies to review packages too. Planned geometry is not evidence.
-  if (objects.length < 6 || invalidGeometry || analysis.inspection_mode === 'planned-artifact-fallback'
+  if (objects.length < MIN_SOURCE_WINDOWS || invalidGeometry || analysis.inspection_mode === 'planned-artifact-fallback'
     || analysis.inspection_error || Number(analysis.fallback_detected_object_count) > 0) {
-    throw new Error(`Package requires at least 6 real detected mapped objects; found ${objects.length} candidates (inspection: ${analysis?.inspection_mode || 'unknown'}). Planned fallback geometry cannot satisfy the floor.`)
+    throw new Error(`Package requires at least ${MIN_SOURCE_WINDOWS} real detected mapped objects; found ${objects.length} candidates (inspection: ${analysis?.inspection_mode || 'unknown'}). Planned fallback geometry cannot satisfy the floor.`)
   }
   return objects
 }
@@ -342,6 +343,10 @@ export async function assembleEditionPackage({
   runDir,
   maxContentItems = DEFAULT_MAX_CONTENT_ITEMS,
 }, stepMeta = {}) {
+  if (!Array.isArray(payload.artifacts) || payload.artifacts.length < MIN_SOURCE_WINDOWS || payload.artifacts.length > MAX_SOURCE_WINDOWS) {
+    throw new Error(`Package requires ${MIN_SOURCE_WINDOWS}–${MAX_SOURCE_WINDOWS} distinct source artifacts`)
+  }
+  maxContentItems = Math.min(MAX_SOURCE_WINDOWS, maxContentItems)
   // Recheck enriched research before any package writes. A stale payload or
   // aesthetic relabel must not bypass selection; fail rather than silently
   // dropping windows below the floor or remapping plate objects to other sources.
@@ -354,7 +359,7 @@ export async function assembleEditionPackage({
       throw new Error(`Editorial quarantine: prohibited workflow/service/component-library source ${artifact.source_url}`)
     }
   }
-  assertEditorialBindings(payload.artifacts, researchField, signalHarvest, { minimum: options.publish === false ? 1 : 6 })
+  assertEditorialBindings(payload.artifacts, researchField, signalHarvest, { minimum: MIN_SOURCE_WINDOWS })
 
   const sourceByUrl = buildSourceLookup(researchField.sources)
   const eligibleArtifacts = []
@@ -477,8 +482,8 @@ export async function assembleEditionPackage({
     lighting: payload.lighting,
     object_inventory: payload.object_inventory,
     interaction_grammar: {
-      hero_count: 2,
-      module_count: artifactMapArtifacts.length - 2,
+      hero_count: Math.min(2, artifactMapArtifacts.length),
+      module_count: Math.max(0, artifactMapArtifacts.length - 2),
       window_strategy: 'source-window',
     },
     negative_constraints: payload.negative_constraints,

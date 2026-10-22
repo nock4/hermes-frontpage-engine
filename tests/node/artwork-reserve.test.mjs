@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest'
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { createHash } from 'node:crypto'
@@ -49,6 +49,8 @@ const claim = (over = {}) => claimPreparedReserve({ reserveDir, inputRoot: vault
 // developer shell may or may not export. Pin it per test and restore after.
 let savedHermesHome
 beforeEach(async () => {
+  vi.useFakeTimers({ toFake: ['Date'] })
+  vi.setSystemTime(NOW + 3600e3)
   await fs.mkdir(path.resolve(process.env.TMPDIR || 'tmp/'), { recursive: true })
   root = await fs.mkdtemp(path.join(path.resolve(process.env.TMPDIR || 'tmp/'), 'reserve-test-'))
   reserveDir = path.join(root, 'reserve'); vault = path.join(root, 'vault')
@@ -56,6 +58,7 @@ beforeEach(async () => {
   process.env.HERMES_HOME = path.join(root, 'hermes-frontpage')
 })
 afterEach(async () => {
+  vi.useRealTimers()
   if (savedHermesHome === undefined) delete process.env.HERMES_HOME; else process.env.HERMES_HOME = savedHermesHome
   await fs.rm(root, { recursive: true, force: true })
 })
@@ -70,9 +73,15 @@ describe('prepared artwork reserve preparation', () => {
     expect(JSON.stringify(set)).not.toMatch(/"inspector"|"role"|"version":1,/)
     expect(set.expires_at).toBe(new Date(NOW + 72 * 3600e3).toISOString())
   })
-  it('refuses to fabricate a reserve below six real independently verified works', async () => {
-    const harvest = harvestFixture(5)
-    await expect(writePreparedReserve({ reserveDir, signalHarvest: harvest, ...admitted(harvest), fingerprints: fingerprints(), now: NOW })).rejects.toThrow(/six/)
+  it('admits and consumes one verified work without requiring six', async () => {
+    const harvest = harvestFixture(1)
+    const evidence = admitted(harvest)
+    await prepare({ signalHarvest: harvest, ...evidence })
+    expect(await finalizeReserveClaim((await claim()).claim, evidence)).toMatchObject({ state: 'consumed' })
+  })
+  it('refuses zero works and unverified pixels', async () => {
+    const harvest = harvestFixture(0)
+    await expect(writePreparedReserve({ reserveDir, signalHarvest: harvest, ...admitted(harvest), fingerprints: fingerprints(), now: NOW })).rejects.toThrow(/at least 1/)
     const full = harvestFixture()
     const bad = admitted(full)
     bad.autoresearch.source_decisions[2].inspection.status = 'ambiguous'
@@ -217,7 +226,7 @@ describe('review fixes: fingerprint scope and code provenance', () => {
   it('hashes every module reachable from intake/admission and the explicit frontpage transport, never a default profile', async () => {
     const files = admissionModuleFiles().map(file => path.relative(path.resolve('scripts'), file))
     for (const name of ['lib/source-research.mjs', 'lib/signal-mining.mjs', 'lib/bookmark-intake.mjs', 'lib/bookmark-vault-worker.mjs', 'lib/source-url-policy.mjs', 'lib/fetch-vetted-image.mjs', 'lib/source-selection-policy.mjs', 'lib/creative-artifact-inspection.mjs', 'lib/openai-json.mjs', 'lib/artwork-reserve.mjs', 'pipeline/mine-signals.mjs', 'pipeline/research-sources.mjs']) expect(files).toContain(name)
-    expect(files.every(name => !name.startsWith('..'))).toBe(true)
+    expect(files.filter(name => name.startsWith('..'))).toEqual(['../src/lib/sourceWindowCountContract.mjs'])
     await expect(reserveConfigFingerprint({ model: 'm', inputRoot: vault, env: {} })).rejects.toThrow(/HERMES_HOME/)
     await fs.mkdir(path.join(root, 'frontpage'), { recursive: true })
     await fs.writeFile(path.join(root, 'frontpage', 'config.yaml'), 'model: a')
@@ -293,7 +302,7 @@ describe('review fixes: bounded budget across reserve attempt and fallback', () 
     const original = new Error('injected evidence write failure')
     const failing = { ...adapters(), [stage]: async () => { throw original } }
     await expect(acquireBoundedBookmarkSources(harvest, { runDir: path.join(root, 'failed'), budget, adapters: failing })).rejects.toBe(original)
-    expect(budget.acquisitions).toBe(6)
+    expect(budget.acquisitions).toBe(1)
     expect(budget.inspections).toBe(stage === 'inspectRaw' ? 10 : 0)
     await acquireBoundedBookmarkSources(harvest, { runDir: path.join(root, 'fallback'), budget, adapters: adapters() })
     expect(budget.acquisitions).toBe(24)
@@ -482,8 +491,8 @@ describe('source-only preparation CLI', () => {
       results.push(result)
       return { code: ['prepared', 'ready'].includes(result.status) ? 0 : 2 }
     }
-    await prepareCronReserve({}, { run, env: {} })
-    await prepareCronReserve({}, { run, env: {} })
+    await prepareCronReserve({}, { run, env: { DFE_ARTWORK_RESERVE: '1' } })
+    await prepareCronReserve({}, { run, env: { DFE_ARTWORK_RESERVE: '1' } })
     expect(results.map(r => r.status)).toEqual(['prepared', 'ready'])
     expect(calls.acquire).toBe(1)
     expect((await reserveState(reserveDir)).prepared).toHaveLength(1)

@@ -10,8 +10,13 @@ import { inspectedDecision } from '../fixtures/creative-inspection.mjs'
 autoresearch.source_decisions.push(inspectedDecision(sources[0])) // synthetic contract fixture only
 
 describe('failed September source bed: eligibility is not a six-window quota', () => {
-  it('blocks the decision audit even with an accepted anchor when public media falls below six', () => {
+  it('accepts one verified independent artwork without padding to six', () => {
     const audit = buildSourceDecisionAudit({ contentSources: sources, autoresearch })
+    expect(audit.status).toBe('ok')
+    expect(audit.hard_blockers).toEqual([])
+  })
+  it('blocks zero eligible sources even with other supporting nominations', () => {
+    const audit = buildSourceDecisionAudit({ contentSources: sources.slice(1), autoresearch })
     expect(audit.status).toBe('blocked')
     expect(audit.hard_blockers[0].reason_code).toBe('insufficient_eligible_source_media')
   })

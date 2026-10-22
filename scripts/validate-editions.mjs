@@ -1,6 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { assertPackagedOriginalImages } from './lib/original-image-delivery.mjs'
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../src/lib/sourceWindowCountContract.mjs'
+import { canonicalizeSourceUrl } from './lib/source-url-policy.mjs'
 
 const root = process.cwd()
 const editionsRoot = path.join(root, 'public', 'editions')
@@ -68,6 +70,18 @@ for (const item of manifest.editions) {
     .filter((sourceUrl) => typeof sourceUrl === 'string' && sourceUrl.length > 0)
 
   const uniqueBoundUrls = new Set(boundUrls)
+  if (boundUrls.length < MIN_SOURCE_WINDOWS || artifactMap.artifacts.length < MIN_SOURCE_WINDOWS) {
+    errors.push(`Edition ${item.edition_id} has zero real source windows`)
+  }
+  // New contract does not rewrite legacy archive packages.
+  if (edition.date >= '2026-10-22') {
+    if (boundUrls.length > MAX_SOURCE_WINDOWS || artifactMap.artifacts.length !== boundUrls.length
+      || new Set(boundUrls.map(canonicalizeSourceUrl)).size !== boundUrls.length
+      || new Set(bindings.bindings.map(binding => binding.artifact_id)).size !== boundUrls.length
+      || artifactMap.artifacts.some(artifact => artifact.source_binding_ids?.length !== 1)) {
+      errors.push(`Edition ${item.edition_id} violates independent source-window count contract`)
+    }
+  }
   if (boundUrls.length >= 6 && uniqueBoundUrls.size < MIN_UNIQUE_BOUND_URLS) {
     const issue = `Edition ${item.edition_id} has low source variety: ${uniqueBoundUrls.size} unique bound URLs across ${boundUrls.length} bindings`
     ;(enforceVariety ? errors : warnings).push(issue)

@@ -34,7 +34,7 @@ Current order:
 4. pass the evidence to `gpt-5.5` for an autoresearch-style synthesis: read all candidates, cluster the field, identify the through-line, reject weak/duplicate sources, and choose source candidates with provenance
 5. use browser-harness only after synthesis to capture and verify selected pages/images
 6. select one artistic or material-rich source image for the brief
-7. choose 7-10 renderable non-duplicate content sources; hard-fail below 7
+7. accept 1–10 independently owned renderable sources, with 6 desired but never required; zero fails. Stop normal acquisition at the first strong unused pixel-verified artwork, then deepen its research rather than buying six sources.
 
 Research record per cluster:
 - visual cues: shapes, silhouettes, compositions, density
@@ -145,8 +145,8 @@ Produce one save-ready package per edition:
 Before handing off to image generation, verify:
 - the brief names concrete objects, materials, and lighting
 - the brief also states the desired abstraction / formal language, not just a literal room type
-- at least 7 viable source-window targets exist
-- the 7-10 source-window targets are not treated as 7-10 equal-weight props
+- at least 1 and at most 10 viable independently owned source-window targets exist; 6 is desired
+- targets correspond to actual visible marks, not duplicate-source regions or equal-weight props
 - the image prompt preserves a minimal expressionist complexity budget: one dominant form, one disruptive gesture, quiet anchors, and large negative space
 - primary source URLs are unique and do not include raw Twitter/X CDN media
 - ambiance is derived from research, not random styling

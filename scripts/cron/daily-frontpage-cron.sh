@@ -51,7 +51,7 @@ Keep patching, testing, committing, pushing, rerunning the existing cron job, an
 2. Read the real cron log above and classify the incident with:
    npm run press:doctor -- --log $log_file --json
 3. Inspect the failed run artifacts under the latest run dir named in the log, especially source-research, source-fidelity, scene prompt, QA output, and publish summary files.
-4. Patch the real blocker. Do not bypass gates, fake source windows, or lower the 6-window standard.
+4. Patch the real blocker. Preserve provenance, exact actual-media and visual QA. Six source windows is desired, not a minimum: one compelling independent real source is valid; zero, padding and duplicate-source windows are invalid.
 5. Run focused tests for the touched edge, then npm run qa:publish from $REPO.
 6. Commit and push code repairs to main.
 7. Do not recursively trigger cron. Use the exact checkpoint and retained candidate.
@@ -195,6 +195,7 @@ const url = `${baseUrl}?proof=${encodeURIComponent(runId)}${expectedEditionId ? 
       loadedImageCount: loadedImages.length,
       plateImageCount: plateImages.length,
       loadedPlateImageCount: loadedPlateImages.length,
+      artifactCount: document.querySelectorAll('button.artifact').length,
       plate: loadedPlateImages[0] || plateImages[0] || null,
       iframeCount: iframes.length,
       sampleIframes: iframes.slice(0, 6),

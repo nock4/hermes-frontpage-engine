@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 
 test('generated edition route renders artwork and opens a source window', async ({ page }) => {
   const route = process.env.DFE_SMOKE_ROUTE || '/'
@@ -21,7 +22,8 @@ test('generated edition route renders artwork and opens a source window', async 
   expect(plateState.naturalHeight).toBeGreaterThan(0)
 
   const artifactCount = await page.locator('button.artifact').count()
-  expect(artifactCount).toBeGreaterThanOrEqual(6)
+  expect(artifactCount).toBeGreaterThanOrEqual(MIN_SOURCE_WINDOWS)
+  expect(artifactCount).toBeLessThanOrEqual(MAX_SOURCE_WINDOWS)
 
   const stageState = await page.evaluate(() => {
     const visibleDebugChrome = Array.from(document.querySelectorAll('.artifact span, .window-dock:not(.window-dock--stage), .side-rail, .runtime-topbar')).filter((node) => {

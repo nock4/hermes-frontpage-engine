@@ -1,4 +1,5 @@
 import { openAiJson } from './openai-json.mjs'
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import { buildSourceContract, assertSourceContractPromptSafe } from './source-contract.mjs'
 import { getResearchContentSources } from './source-research.mjs'
 import { hasCreativeArtifactEvidence, sourceContentKey } from './source-selection-policy.mjs'
@@ -11,7 +12,7 @@ const fail = (message) => { throw new Error(`Real-mark plan: ${message}`) }
 // with the scene when fidelity recovery invalidates an earlier material world.
 export async function planRealMarks({ payload, researchField, apiKey, model }, { request = openAiJson, record = async () => {} } = {}) {
   const originals = payload.artifacts || []
-  if (originals.length < 6 || originals.length > 10) fail('requires 6–10 source-backed marks before generation')
+  if (originals.length < MIN_SOURCE_WINDOWS || originals.length > MAX_SOURCE_WINDOWS) fail(`requires ${MIN_SOURCE_WINDOWS}–${MAX_SOURCE_WINDOWS} source-backed marks before generation`)
   const urls = originals.map((artifact) => artifact.source_url)
   if (urls.some((url) => !url) || new Set(urls.map(sourceKey)).size !== urls.length) fail('duplicate or missing owning source')
   const content = getResearchContentSources(researchField)
@@ -43,7 +44,7 @@ export async function planRealMarks({ payload, researchField, apiKey, model }, {
       task: 'Reconcile the scene and every owning source with the dominant source fidelity contract before image generation.',
       rules: [
         'Use every supplied source_url exactly once; do not add, drop, substitute or duplicate sources.',
-        'Make at least six distinct visible physical features, not six counted symbols. Keep two larger features and subordinate others within the same composition.',
+        `Make exactly ${originals.length} distinct visible source-backed physical features, not counted symbols. Keep ${Math.min(2, originals.length)} larger features and subordinate any others within the same composition. Never pad the count with duplicate sources.`,
         'Each visual_description is a complete concrete still-image phrase, at most 80 characters. No labels, URLs, taxonomy, interaction instructions, numbering, target rings, debug marks, pins or pasted cards.',
         'Ground each translation in its own supplied source_decisions inspection observations and preserve their caveats; metadata and prior_role are context, not pixel evidence. Explain the relationship in role. Never attribute one source’s appearance to another.',
         'The prior scene and materials are proposals, not preservation requirements. Recovery may replace them: replan all marks in the recovered source-native world rather than forcing incompatible old materials or a decorated copy.',

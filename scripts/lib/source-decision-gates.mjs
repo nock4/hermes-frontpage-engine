@@ -1,3 +1,4 @@
+import { MIN_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
@@ -189,11 +190,11 @@ export function buildSourceDecisionAudit({ anchorDecision, visualAnchorDecision,
   const decisions = [anchorDecision, visualAnchorDecision, jevDecision].filter(Boolean)
   if (Array.isArray(contentSources)) {
     const eligible = selectContentSources(contentSources, { autoresearch, recentSourceKeys, signalHarvest })
-    if (eligible.length < 6) decisions.push(decision({
+    if (eligible.length < MIN_SOURCE_WINDOWS) decisions.push(decision({
       decision: 'block_and_rerun',
       reason_code: 'insufficient_eligible_source_media',
       confidence: 1,
-      evidence: [`${eligible.length} eligible non-duplicate media sources; require 6`, 'Do not fill the deficit with tooling, rejected/supporting sources, or text-only surfaces.'],
+      evidence: [`${eligible.length} eligible non-duplicate media sources; require ${MIN_SOURCE_WINDOWS}`, 'Do not fill the deficit with tooling, rejected/supporting sources, or text-only surfaces.'],
     }))
   }
   const hardBlockers = decisions.filter((item) => item.decision === 'reject' || item.decision === 'block_and_rerun')

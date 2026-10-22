@@ -8,8 +8,8 @@ const PRESS_STABILITY_PATTERNS = {
     next_action: 'widen_or_rebalance_source_bed_then_rerun_press',
     patterns: [
       /Source research produced \d+ non-duplicate renderable content sources/i,
-      /expected at least 6/i,
-      /fewer than 6 real source windows/i,
+      /expected at least \d+/i,
+      /fewer than \d+ real source windows/i,
     ],
   },
   editorial_ai_tooling_risk: {

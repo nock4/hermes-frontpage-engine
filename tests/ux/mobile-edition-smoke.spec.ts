@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import path from 'node:path'
 import { createHash } from 'node:crypto'
 import { assertOriginalImageContract, originalImageMime } from '../../src/lib/originalImageContract.mjs'
@@ -335,7 +336,8 @@ for (const viewport of mobileViewports) {
     expect(stageState.debugChrome).toBe(0)
 
     const artifactCount = await page.locator('button.artifact').count()
-    expect(artifactCount).toBeGreaterThanOrEqual(6)
+    expect(artifactCount).toBeGreaterThanOrEqual(MIN_SOURCE_WINDOWS)
+    expect(artifactCount).toBeLessThanOrEqual(MAX_SOURCE_WINDOWS)
 
     const sourceBindings = readEditionJson<{ bindings: SourceBindingRecord[] }>(currentEdition, 'source-bindings.json')
     const artifactMap = readEditionJson<{ artifacts: ArtifactRecord[] }>(currentEdition, 'artifact-map.json')

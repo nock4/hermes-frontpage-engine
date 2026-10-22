@@ -5,7 +5,10 @@ import { canonicalizeSourceUrl, extractUrls } from './source-url-policy.mjs'
 
 const options = JSON.parse(fs.readFileSync(0, 'utf8'))
 const { inputRoot, cacheDir } = options
-const maxReads = Math.max(1, Math.min(48, options.maxReads || 48))
+// Local metadata indexing is distinct from paid acquisition/pixel inspection.
+// Cover every authorized saved lane before selecting a small model-facing batch.
+const maxMetadataBytes = 32 * 1024 * 1024
+let metadataBytes = 0
 const maxNotes = Math.max(1, Math.min(24, options.maxNotes || 24))
 const progress = (op, file) => fs.writeSync(2, `${op} ${file}\n`)
 const hash = text => createHash('sha256').update(text).digest('hex')
@@ -37,29 +40,29 @@ function walk(relative) {
 }
 // Explicit saved lanes only; no recursive whole-vault walk or incidental links.
 for (const dir of ['Inbox/tweets', '00 - Capture/tweets', '01 - Active/themes', 'Themes']) walk(dir)
-// The vault files saved bookmarks from Inbox into Themes. Rewind the cursors
-// once when that lane is introduced so a warmed legacy cache cannot strand it.
-// Preserve all exact-note metadata and the separate exact-media verdict cache.
-if (state.intake_paths_version !== 2) {
+// Invalidate cursor semantics once; exact note and pixel caches remain intact.
+if (state.intake_paths_version !== 3) {
   state.after = null
   state.scan_after = null
-  state.intake_paths_version = 2
+  state.queue_after = null
+  state.intake_paths_version = 3
 }
 files.sort().reverse()
 const live = new Set(files)
 for (const key of Object.keys(state.entries)) if (!live.has(key)) delete state.entries[key]
 let notesRead = 0
-const scanOffset = Math.max(0, state.scan_after ? files.findIndex(relative => relative < state.scan_after) : 0)
-for (const relative of [...files.slice(scanOffset), ...files.slice(0, scanOffset)]) {
+for (const relative of files) {
   const full = path.join(inputRoot, relative)
   progress('stat', full)
   const stat = fs.statSync(full)
   const signature = `${stat.dev}:${stat.ino}:${stat.size}:${stat.mtimeMs}:${stat.ctimeMs}`
   if (state.entries[relative]?.signature === signature) continue
-  // Invalidate before applying read budget; stale notes cannot be selected.
+  // Never nominate stale metadata. Resource exhaustion is a local index error,
+  // not an editorial shortage inferred from a lexical prefix of the vault.
   delete state.entries[relative]
-  if (notesRead >= maxReads) continue
-  if (stat.size > 131072) continue
+  if (stat.size > 131072) throw new Error(`Saved-note metadata oversized: ${relative}`)
+  metadataBytes += stat.size
+  if (metadataBytes > maxMetadataBytes) throw new Error('Saved-note metadata exceeds 32 MiB indexing budget; no partial nomination issued')
   progress('readFile', full)
   const text = fs.readFileSync(full, 'utf8')
   notesRead++
@@ -84,13 +87,25 @@ for (const relative of [...files.slice(scanOffset), ...files.slice(0, scanOffset
   state.entries[relative] = { signature, note }
 
 }
+// Prefer media-backed nominations but retain a final sparse-owner exploration
+// lane: only acquisition can reveal attachments absent from a saved note.
+// Classification uses owning prose/attachments, never a thematic folder or tags.
+// These are opportunities for pixel inspection, never eligibility assertions.
+const nominationLane = note => {
+  const prose = note.excerpt.replace(/^---\r?\n[\s\S]*?\r?\n---/, '').replace(/^#{2,3} Related\s*\n(?:\s*[-*] \[\[[^\n]+\n?)*/gm, '').replace(/#[\p{L}\p{N}_-]+/gu, '')
+  const creative = /\b(artwork|painting|drawing|illustration|sculpture|photograph|animation|collage|printmaking|woodcut|ceramic|visual reference|attached visual|video art)\b/i.test(prose)
+  const media = note.metadata.attached_media_urls.length > 0
+  return media && creative ? 0 : creative ? 1 : media ? 2 : 3
+}
 const fresh = files.filter(relative => {
   const note = state.entries[relative]?.note
   return note && ![...note.urls, ...note.metadata.attached_media_urls].some(url => ledger.has(materialKey(url)))
 })
-// Advance by actual visited path, not requested slots. Changing a note must not
-// repeatedly steal a slot and strand unchanged entries at every wraparound.
-const next = state.after ? fresh.findIndex(relative => relative < state.after) : 0
+const queueKey = relative => `${nominationLane(state.entries[relative].note)}:${hash(materialKey(state.entries[relative].note.urls[0]))}`
+fresh.sort((a, b) => queueKey(a).localeCompare(queueKey(b)) || a.localeCompare(b))
+// Advance across the entire stable priority queue before wrapping. Rejected but
+// unspent strong-label records must not permanently starve sparse real artwork.
+const next = state.queue_after ? fresh.findIndex(relative => queueKey(relative) > state.queue_after) : 0
 const offset = Math.max(0, next)
 const queue = [...fresh.slice(offset), ...fresh.slice(0, offset)]
 const families = new Set()
@@ -98,6 +113,7 @@ const notes = []
 for (const relative of queue) {
   const note = state.entries[relative].note
   state.after = relative
+  state.queue_after = queueKey(relative)
   const key = materialKey(note.urls[0])
   if (families.has(key)) continue
   families.add(key)
@@ -111,5 +127,5 @@ fs.renameSync(temporary, statePath)
 process.stdout.write(JSON.stringify({ input_root: inputRoot, notes, markdown_files_seen: files.length,
   selection_filters: ['Bookmark-first bounded saved-note intake; metadata is nomination only; archive and actual-media gates required.'],
   looked_for: ['unused owning X/Twitter bookmarks'],
-  audit: { notes_read: notesRead, cached_notes: Object.keys(state.entries).length, unused_cached_notes: fresh.length, metadata_files: files.length, max_reads: maxReads, max_notes: maxNotes, cache_path: statePath },
+  audit: { notes_read: notesRead, metadata_reads: notesRead, metadata_bytes_read: metadataBytes, metadata_coverage_complete: true, nomination_lanes: [0, 1, 2, 3].map(lane => ({ lane, unused: fresh.filter(relative => nominationLane(state.entries[relative].note) === lane).length })), cached_notes: Object.keys(state.entries).length, unused_cached_notes: fresh.length, metadata_files: files.length, max_metadata_files: 10000, max_metadata_bytes: maxMetadataBytes, max_notes: maxNotes, cache_path: statePath },
 }))

@@ -34,7 +34,7 @@ function fixture() {
 
 it('packages only exact inspected bytes without changing remote identity or source attribution', async () => {
   const f = fixture(); const before = structuredClone(f.bindings)
-  const result = await delivery.packageOriginalImages({ ...f, bindingSet: f.bindings, minimum: 1 })
+  const result = await delivery.packageOriginalImages({ ...f, bindingSet: f.bindings })
   expect(f.bindings).toEqual(before)
   const b = result.bindings[0]
   expect(b.source_image_url).toBe(before.bindings[0].source_image_url)

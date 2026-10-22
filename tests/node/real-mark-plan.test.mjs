@@ -42,6 +42,19 @@ const replacement = () => ({
 })
 
 describe('bounded scene and ownership replan', () => {
+  it.each([1, 2, 5, 6])('plans exactly %s admitted sources without padding', async (count) => {
+    const small = { ...payload, artifacts: payload.artifacts.slice(0, count) }
+    const response = replacement()
+    response.artifacts = response.artifacts.slice(0, count)
+    const request = vi.fn().mockResolvedValue(response)
+    const result = await planRealMarks({ payload: small, researchField }, { request })
+    expect(result.artifacts).toHaveLength(count)
+    expect(JSON.parse(request.mock.calls[0][0].input).rules.join(' ')).toContain(`exactly ${count} distinct`)
+    expect(buildSceneImagePrompt(result)).toContain(`Compose exactly ${count} distinct`)
+    const recovery = buildSourceFidelityRecoveryPayload(small, {})
+    expect(recovery.real_mark_plan.status).toBe('needs-replan')
+    expect(() => buildSceneImagePrompt(recovery)).toThrow(/needs replan/)
+  })
   it('carries exact owner/media inspection provenance, caveats and prior roles without unrelated images', async () => {
     const field = structuredClone(researchField)
     const original = structuredClone(field)
@@ -288,9 +301,10 @@ describe('bounded scene and ownership replan', () => {
     expect(() => buildSceneImagePrompt(result)).toThrow(/Real-mark plan.*connected/)
   })
 
-  it('does not plan below six owners or invent absent research', async () => {
+  it('does not plan outside 1–10 owners or invent absent research', async () => {
     const request = vi.fn()
-    await expect(planRealMarks({ payload: { ...payload, artifacts: payload.artifacts.slice(0, 5) }, researchField }, { request })).rejects.toThrow(/6–10/)
+    await expect(planRealMarks({ payload: { ...payload, artifacts: [] }, researchField }, { request })).rejects.toThrow(/1–10/)
+    await expect(planRealMarks({ payload: { ...payload, artifacts: Array(11).fill(payload.artifacts[0]) }, researchField }, { request })).rejects.toThrow(/1–10/)
     await expect(planRealMarks({ payload, researchField: { ...researchField, content_sources: researchField.content_sources.slice(0, 5) } }, { request })).rejects.toThrow(/absent/)
     expect(request).not.toHaveBeenCalled()
   })
@@ -430,7 +444,7 @@ describe('real-mark planning contract', () => {
     const prompt = buildSceneImagePrompt(payload)
     for (const mark of marks) expect(prompt).toContain(mark)
     expect(prompt).not.toMatch(/Internal label|internal-type|https:\/\/example.org\/work/)
-    expect(prompt).toContain('at least six distinct')
+    expect(prompt).toContain('exactly 6 distinct')
     expect(prompt).toContain('No visible annotation glyphs or QA chrome')
     expect(prompt.split('\nTRANSFORM\n')[1].split('\nCOMPOSITION\n')[0].length).toBeLessThanOrEqual(420)
     expect(prompt.split('\nANCHORS\n')[1].split('\nLIMITS\n')[0].length).toBeLessThanOrEqual(1400)

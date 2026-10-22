@@ -280,8 +280,8 @@ describe('source research vision boundary', () => {
     const result = await inspectSourceCandidates({ source_candidates: candidates, notes_selected: [], motif_terms: [] }, {
       maxSources: 7, runDir, sourceTool: 'fetch', date: '2026-09-30',
     })
-    expect(result.content_source_count).toBe(6)
-    expect(state.inspections.filter(batch => batch.length)).toHaveLength(3)
+    expect(result.content_source_count).toBe(2)
+    expect(state.inspections.filter(batch => batch.length)).toHaveLength(1)
     const replacement = result.anchor_research.anchor_source
     expect(replacement.url).not.toBe(sources[0].url)
     expect(result.content_sources.map(source => source.url)).toContain(replacement.url)

@@ -242,7 +242,7 @@ export function buildDailyProcessArgs(options, { generationName, expectedDate, i
 // the existing kernel owner. Preparation audits ready sets without intake and
 // replenishes missing/consumed sets. Failure must not buy a second fresh budget.
 export async function prepareCronReserve(options, { run: execute = run, env = process.env } = {}) {
-  if (options.proofOnly || options.resumeCandidate || options.inspirationOverridePath || env.DFE_ARTWORK_RESERVE === '0') return { skipped: true }
+  if (options.proofOnly || options.resumeCandidate || options.inspirationOverridePath || env.DFE_ARTWORK_RESERVE !== '1') return { skipped: true }
   const result = await execute(process.execPath, ['scripts/prepare-artwork-reserve.mjs', '--input-root', options.inputRoot,
     '--remote', options.remote, '--branch', options.branch], { cwd: options.worktreeDir, env, allowFailure: true })
   if (result.code !== 0) throw new Error(`Source-only reserve preparation failed (${result.code}); bounded evidence retained; no second fresh intake`)

@@ -1,0 +1,3 @@
+export const MIN_SOURCE_WINDOWS: 1
+export const DESIRED_SOURCE_WINDOWS: 6
+export const MAX_SOURCE_WINDOWS: 10

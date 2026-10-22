@@ -415,6 +415,26 @@ it('preserves validated literal attested URLs through loader normalization', asy
   expect(loaded.sourceBindings.bindings[0].source_image_url).toBe(media)
 })
 
+describe('authorized window count at runtime', () => {
+  it.each([0, 1, 6, 10, 11])('validates %i independently owned windows', async count => {
+    const artifacts = Array.from({ length: count }, (_, i) => ({ ...artifactMapRecord.artifacts[0], id: `a-${i}`, source_binding_ids: [`b-${i}`] }))
+    const bindings = Array.from({ length: count }, (_, i) => ({ ...sourceBindingsRecord.bindings[0], id: `b-${i}`, artifact_id: `a-${i}`, source_url: `https://example.com/work/${i}` }))
+    const responses = new Map<string, unknown>([
+      ['/editions/test/edition.json', { ...editionRecord, date: '2026-10-22' }],
+      ['/editions/test/brief.json', briefRecord],
+      ['/editions/test/artifact-map.json', { ...artifactMapRecord, artifacts }],
+      ['/editions/test/source-bindings.json', { ...sourceBindingsRecord, bindings }],
+      ['/editions/test/ambiance.json', ambianceRecord],
+      ['/editions/test/review.json', reviewRecord],
+    ])
+    vi.stubGlobal('fetch', vi.fn(async (url: string) => responses.has(url)
+      ? new Response(JSON.stringify(responses.get(url)), { headers: { 'content-type': 'application/json' } })
+      : new Response('', { status: 404 })))
+    if (count === 0 || count === 11) await expect(loadEditionPackage('/editions/test')).rejects.toThrow(/count/)
+    else expect((await loadEditionPackage('/editions/test')).sourceBindings.bindings).toHaveLength(count)
+  })
+})
+
 describe('loadManifest', () => {
   it('rejects invalid manifest payloads instead of trusting casts', async () => {
     vi.stubGlobal('fetch', vi.fn(async (): Promise<MockFetchResponse> => ({

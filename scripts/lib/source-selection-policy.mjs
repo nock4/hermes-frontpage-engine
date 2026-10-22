@@ -1,3 +1,4 @@
+import { MIN_SOURCE_WINDOWS, DESIRED_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import { readFileSync } from 'node:fs'
 import { assertPackagedOriginalImages } from './original-image-delivery.mjs'
 import { createHash } from 'node:crypto'
@@ -12,8 +13,8 @@ import {
 } from './source-url-policy.mjs'
 import { classifyMediaUrl } from './media-url-classifier.mjs'
 
-const DEFAULT_MAX_CONTENT_ITEMS = 10
-const DEFAULT_TARGET_CONTENT_ITEMS = 9
+const DEFAULT_MAX_CONTENT_ITEMS = MAX_SOURCE_WINDOWS
+const DEFAULT_TARGET_CONTENT_ITEMS = DESIRED_SOURCE_WINDOWS
 const SOURCE_CHANNELS = ['youtube-like', 'nts-like', 'chrome-bookmark', 'twitter-bookmark']
 
 export function classifySource(url) {
@@ -638,7 +639,7 @@ export function sourceHasRenderableCardSurface(source, signalHarvest = null) {
     if (providerEmbedStatus(source) !== 'unavailable') return true
     // Some saved music/video sources refuse native iframe playback but still carry
     // a real provider thumbnail. Treat that poster as a source-framed visual
-    // surface so music-heavy days do not collapse below the six-window floor;
+    // surface without treating the desired window count as an admission floor;
     // package/QA keeps the unavailable embed status visible.
     return Boolean(source.image_url && !isLowValueVisualImage(source.image_url))
   }
@@ -711,7 +712,9 @@ export function hasCreativeArtifactEvidence(source, autoresearch, signalHarvest 
   })
 }
 
-export function assertEditorialBindings(bindings, researchField = {}, signalHarvest = null, { minimum = 6, finalMedia = false, editionDir, editionId } = {}) {
+export function assertEditorialBindings(bindings, researchField = {}, signalHarvest = null, { minimum = MIN_SOURCE_WINDOWS, finalMedia = false, editionDir, editionId } = {}) {
+  minimum = Math.max(MIN_SOURCE_WINDOWS, Number(minimum) || MIN_SOURCE_WINDOWS)
+  if ((bindings || []).length > MAX_SOURCE_WINDOWS) throw new Error(`Editorial count exceeds maximum ${MAX_SOURCE_WINDOWS}`)
   if (finalMedia) assertPackagedOriginalImages(bindings || [], { editionDir, editionId })
   const evidence = [...(researchField.sources || []), ...(researchField.content_sources || [])]
   const identities = new Set()
@@ -762,7 +765,10 @@ export function selectContentSources(
     autoresearch = null,
   } = {},
 ) {
+  maxItems = Math.min(MAX_SOURCE_WINDOWS, Math.max(0, Number(maxItems) || 0))
+  targetItems = Math.min(maxItems, Math.max(0, Number(targetItems) || 0))
   const duplicateGroupKey = (source) => {
+    // An owning source cannot supply multiple windows to satisfy a target.
     if (source.source_channel === 'twitter-bookmark' && source.source_type === 'tweet') {
       return ['twitter-bookmark-tweet', source.note_id || source.note_title || source.title].filter(Boolean).join(':')
     }
@@ -818,7 +824,7 @@ export function selectContentSources(
   }
 
   // If the harvest is narrow but each bookmark has its own real media surface,
-  // keep filling rather than failing below the six-window floor solely because
+  // allow distinct eligible sources to enrich the desired count even when
   // several windows live on x.com.
   for (const entry of ranked) {
     if (selected.length >= maxItems) break

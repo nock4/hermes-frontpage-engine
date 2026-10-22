@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import path from 'node:path'
 import { createHash } from 'node:crypto'
 import { isDeepStrictEqual } from 'node:util'
@@ -51,7 +52,7 @@ export function assertPackagedOriginalImages(bindings, { editionDir, editionId }
 // stamps, inferred aliases or modifications to the private inspection records.
 // A relocated complete run is supported by resolving its content-addressed
 // capture basename inside that run, never by reading the stale absolute path.
-export async function packageOriginalImages({ root, editionId, runDir, bindingSet, minimum = 6 }) {
+export async function packageOriginalImages({ root, editionId, runDir, bindingSet, minimum = MIN_SOURCE_WINDOWS }) {
   // Keep the synchronous publication validator independent of editorial policy.
   const { assertEditorialBindings, hasCreativeArtifactEvidence } = await import('./source-selection-policy.mjs')
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(editionId || '')) throw new Error('Original image delivery: invalid edition')
@@ -62,7 +63,7 @@ export async function packageOriginalImages({ root, editionId, runDir, bindingSe
   }
   const summary = read('edition-package-summary.json')
   if (summary.edition_id !== editionId || bindingSet.source_binding_set_id !== `bindings-${editionId}`) throw new Error('Original image delivery: same-run edition mismatch')
-  if (!Array.isArray(bindingSet.bindings) || bindingSet.bindings.length > 10) throw new Error('Original image delivery: binding limit')
+  if (!Array.isArray(bindingSet.bindings) || bindingSet.bindings.length > MAX_SOURCE_WINDOWS) throw new Error('Original image delivery: binding limit')
   const research = read('source-research.json'), harvest = read('signal-harvest.json'), inspections = read('creative-inspections.json')
   assertEditorialBindings(bindingSet.bindings, research, harvest, { minimum })
   const editionDir = path.resolve(root, 'public/editions', editionId)

@@ -1,3 +1,4 @@
+import { MIN_SOURCE_WINDOWS, DESIRED_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../src/lib/sourceWindowCountContract.mjs'
 import { spawn } from 'node:child_process'
 import fs from 'node:fs/promises'
 import fsSync from 'node:fs'
@@ -29,9 +30,9 @@ import { runExistingMode } from './pipeline/run-existing-mode.mjs'
 import { runFromScratchMode } from './pipeline/run-from-scratch-mode.mjs'
 
 const root = process.cwd()
-const minContentItems = 6
-const targetContentItems = 9
-const maxContentItems = 10
+const minContentItems = MIN_SOURCE_WINDOWS
+const targetContentItems = DESIRED_SOURCE_WINDOWS
+const maxContentItems = MAX_SOURCE_WINDOWS
 const recentDiversityEditionCount = 6
 
 function formatCommand(command, args) {
