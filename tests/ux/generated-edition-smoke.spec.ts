@@ -132,10 +132,15 @@ for (const { audioOnly, clickDelay } of [
     }
     const { artifacts } = await (await artifactsResponse).json() as { artifacts: { id: string }[] }
     const artifactBindings = artifacts.map((artifact) => bindings.find((binding) => binding.artifact_id === artifact.id))
+    const categories = artifactBindings.map((binding) => binding ? (binding.window_type === 'audio' ? 'audio' : 'visual') : null)
+    // Regress two-pin delivery when a same-category pair exists; a legitimate
+    // singleton must still exercise a real click, not require a fabricated pin.
+    const targetWindowCount = Math.min(2, Math.max(categories.filter(value => value === 'audio').length, categories.filter(value => value === 'visual').length))
+    expect(targetWindowCount).toBeGreaterThanOrEqual(MIN_SOURCE_WINDOWS)
     await page.waitForSelector('img.plate', { timeout: 20_000 })
     await page.waitForSelector('button.artifact', { timeout: 20_000 })
 
-    const findClickableArtifactPoint = async (openedArtifactIndexes: number[]) => page.locator('button.artifact').evaluateAll((nodes, { openedIndexes, categories }) => {
+    const findClickableArtifactPoint = async (openedArtifactIndexes: number[]) => page.locator('button.artifact').evaluateAll((nodes, { openedIndexes, categories, targetWindowCount }) => {
       const opened = new Set(openedIndexes)
       // Two on-stage pins means two visual windows or two audio windows.
       // Mixing categories intentionally docks audio; it is not a dropped click.
@@ -147,7 +152,7 @@ for (const { audioOnly, clickDelay } of [
         if (opened.has(index)) continue
         const category = categories[index]
         if (!category || (firstCategory && category !== firstCategory)) continue
-        if (!firstCategory && categories.filter((value) => value === category).length < 2) continue
+        if (!firstCategory && categories.filter((value) => value === category).length < targetWindowCount) continue
 
         const element = node as HTMLElement
         const rect = element.getBoundingClientRect()
@@ -166,7 +171,8 @@ for (const { audioOnly, clickDelay } of [
       return null
     }, {
       openedIndexes: openedArtifactIndexes,
-      categories: artifactBindings.map((binding) => binding ? (binding.window_type === 'audio' ? 'audio' : 'visual') : null),
+      categories,
+      targetWindowCount,
     })
 
     let popupOpened = false
@@ -178,7 +184,7 @@ for (const { audioOnly, clickDelay } of [
     const openWindows = page.locator('.stage-overlay-windows--live .source-window')
     const openedArtifactIndexes = new Set<number>()
 
-    for (let attempt = 0; attempt < 2; attempt += 1) {
+    for (let attempt = 0; attempt < targetWindowCount; attempt += 1) {
       // The opening bloom initially exposes points that its iframe later covers.
       // Settle finite entrance animations before sampling real hit territories.
       await openWindows.evaluateAll(async (nodes) => {
@@ -210,10 +216,10 @@ for (const { audioOnly, clickDelay } of [
       await expect(page.locator(`.stage-overlay-windows--live .source-window[data-binding-id="${binding!.id}"]`)).toHaveAttribute('data-source-window-mode', 'primary')
     }
 
-    expect(openedArtifactIndexes.size).toBe(2)
-    await expect(openWindows).toHaveCount(2)
+    expect(openedArtifactIndexes.size).toBe(targetWindowCount)
+    await expect(openWindows).toHaveCount(targetWindowCount)
     await expect(page.locator('.stage-overlay-windows--live .source-window[data-source-window-mode="primary"]')).toHaveCount(1)
-    await expect(page.locator('.stage-overlay-windows--live .source-window[data-source-window-mode="secondary"]')).toHaveCount(1)
+    await expect(page.locator('.stage-overlay-windows--live .source-window[data-source-window-mode="secondary"]')).toHaveCount(targetWindowCount - 1)
     expect(popupOpened).toBe(false)
   })
 }
