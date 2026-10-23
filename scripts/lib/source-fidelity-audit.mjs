@@ -137,6 +137,21 @@ function hasAffirmativeOvercopy(fields) {
   }))
 }
 
+function hasAffirmativeDebugMarks(fields) {
+  // Match complete words within one observation, never "pin" in "overlapping"
+  // or color in one sentence against an unrelated label in the next. Inspect
+  // original fields so minor/no prose filters cannot erase a later finding.
+  const appearance = '\\b(?:blue|colored|circular|circles?|badges?|dots?|callouts?|annotations?|pins?|markers?|labels?|numbered)\\b'
+  const mark = '\\b(?:numbers?|numerals?|badges?|dots?|callouts?|annotations?|pins?|markers?|labels?|[4578])\\b'
+  const debugMarks = new RegExp(`${appearance}.{0,80}${mark}|\\b[4578]\\b.{0,80}${appearance}`)
+  return fields.some((field) => field.toLowerCase().split(/[.!?;,\n]+|\b(?:and|but|however|yet|while)\b/).some((clause) => {
+    const affirmative = clause
+      .replace(/\bnot without\b/g, 'with')
+      .replace(/\b(?:no|without|not)\s+(?:(?:any|visible|numbered|debug[- ]?looking|blue|colored|circular|target|hollow|callout|annotation)\s+)*(?:badges?|callouts?|pins?|rings?|labels?|markers?|annotations?|numerals?|numbers?|dots?)\b/g, ' ')
+    return debugMarks.test(affirmative)
+  }))
+}
+
 function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
   const verdict = ['pass', 'warn', 'fail'].includes(String(raw?.verdict || '').toLowerCase())
     ? String(raw.verdict).toLowerCase()
@@ -210,10 +225,6 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
       label: 'source image recreated instead of borrowed',
       pattern: /(same|identical|near[- ]?identical|almost identical|unchanged).{0,120}(arrangement|object positions|still[- ]?life|three[- ]?vase|camera distance|plinth|composition|layout)|(?:borrow|inspiration|inspired).{0,140}(not enough|insufficient|too literal|same image)/,
     },
-    {
-      label: 'debug-looking numbered source-window marks',
-      pattern: /(?:blue|colored|circular|circle|badge|dot|callout|annotation|pin|marker|label|numbered).{0,80}(?:number|numeral|badge|dot|callout|annotation|pin|marker|label|4|5|7|8)|(?:4|5|7|8).{0,80}(?:blue|circle|badge|dot|callout|annotation|pin|marker|label)/,
-    },
   ]
   const passAuditText = [
     ...normalized.drift_risks,
@@ -245,6 +256,7 @@ function normalizeFidelityAudit(raw, { sourceImageUrl, contactSheetPath }) {
     normalized.rationale,
   ]
   if (hasAffirmativeOvercopy(overcopyFields)) blockers.push('anchor copied without edition transformation')
+  if (hasAffirmativeDebugMarks(overcopyFields)) blockers.push('debug-looking numbered source-window marks')
   for (const { label, pattern } of blockerWarningPatterns) {
     if (pattern.test(blockerScopeText) && !blockers.includes(label)) blockers.push(label)
   }
