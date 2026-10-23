@@ -1,0 +1,113 @@
+{
+  "interpretation_id": "interp-2026-10-23-bone-light-coral-heat-v1",
+  "edition_id": "2026-10-23-bone-light-coral-heat-v1",
+  "plate_read_timestamp": "2026-10-23T08:31:05.814Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A coral-red expressionist plate holds a large skull-like cream face within a swept navy hair-and-shoulder mass on the left, a smaller detached bob-haired face at upper right, and a bent orange sleeve reaching toward a tall cream pigment wipe. The wipe runs through the full image height just right of center, with ragged turquoise and ochre-yellow traces; its lower section merges into a broad cream stroke extending to the right edge.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape coral-pink; unequal skull and bob-face islands across broad coral. Navy swept hair, ivory skull, orange sockets, dark nose wedge, thin teeth; small white face, pointed black fringe, outlined eyes. Tall broken cream wipe, turquoise-yellow ghost edges, veils navy shoulder; detached orange sleeve bends into it. Translucent vertical smears; ragged edges.",
+      "A coral-red expressionist plate holds a large skull-like cream face within a swept navy hair-and-shoulder mass on the left, a smaller detached bob-haired face at upper right, and a bent orange sleeve reaching toward a tall cream pigment wipe. The wipe runs through the full image height just right of center, with ragged turquoise and ochre-yellow traces; its lower section merges into a broad cream stroke extending to the right edge.",
+      "coral-ground",
+      "bone-light",
+      "navy-silhouettes"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Tall cream pigment wipe with ragged turquoise-yellow edges"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "coral-transfer-silhouette-dislocation",
+      "A tall interrupted cream pigment wipe with ragged turquoise-yellow edges.",
+      "Tall ragged cream wipe with turquoise-yellow edge traces"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: coral-transfer-silhouette-dislocation.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-tall-cream-pigment-wipe-with-ragged-",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.622,
+        "y": 0,
+        "w": 0.136,
+        "h": 1
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-tall-cream-pigment-wipe-with-ragged--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.622,
+        "y": 0,
+        "w": 0.136,
+        "h": 1
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
