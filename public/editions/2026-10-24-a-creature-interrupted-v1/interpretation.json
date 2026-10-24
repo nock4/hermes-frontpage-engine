@@ -1,0 +1,111 @@
+{
+  "interpretation_id": "interp-2026-10-24-a-creature-interrupted-v1",
+  "edition_id": "2026-10-24-a-creature-interrupted-v1",
+  "plate_read_timestamp": "2026-10-24T08:08:51.249Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "An expressionist painted plate on a cream ground, with a large rose-pink pointed-ear facial fragment at left and a smaller fragment at right. A cream-ringed charcoal eye sits beside a ragged descending charcoal-and-rose boundary on the larger face. Turquoise washes, orange-red mouth paint, dry-brushed dark streaks and thin drips interrupt the ground.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape painting: two separated pink catlike fragment groups across a broad pale interval. A hot-pink ear and large cream-haloed charcoal pupil face a smaller ear, eye and vermilion mouth arc edged violet-blue. Local hanging charcoal-olive bands interrupt pale head remnants; turquoise, cobalt and acid-yellow washes partly submerge them. One broad ragged rose-to-charcoal boundary dominates beside the larger pupil.",
+      "An expressionist painted plate on a cream ground, with a large rose-pink pointed-ear facial fragment at left and a smaller fragment at right. A cream-ringed charcoal eye sits beside a ragged descending charcoal-and-rose boundary on the larger face. Turquoise washes, orange-red mouth paint, dry-brushed dark streaks and thin drips interrupt the ground.",
+      "ear-wedge",
+      "pigment-veil",
+      "unequal-echo"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Broad ragged rose-to-charcoal pigment boundary beside the large cream-haloed pupil"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "pigment-creature-fragment-echo",
+      "A broad ragged rose-to-charcoal pigment boundary beside a cream-haloed pupil",
+      "Ragged charcoal-and-rose pigment boundary immediately right of the large cream-haloed eye"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: pigment-creature-fragment-echo.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-broad-ragged-rose-to-charcoal-pigmen",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.316,
+        "y": 0.399,
+        "w": 0.183,
+        "h": 0.533
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-broad-ragged-rose-to-charcoal-pigmen-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.316,
+        "y": 0.399,
+        "w": 0.183,
+        "h": 0.533
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

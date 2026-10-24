@@ -1,0 +1,111 @@
+{
+  "analysis_id": "analysis-2026-10-24-a-creature-interrupted-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "An expressionist painted plate on a cream ground, with a large rose-pink pointed-ear facial fragment at left and a smaller fragment at right. A cream-ringed charcoal eye sits beside a ragged descending charcoal-and-rose boundary on the larger face. Turquoise washes, orange-red mouth paint, dry-brushed dark streaks and thin drips interrupt the ground.",
+  "usable_surfaces": [
+    "Ragged charcoal-and-rose pigment boundary immediately right of the large cream-haloed eye"
+  ],
+  "detected_objects": [
+    {
+      "label": "Broad ragged rose-to-charcoal pigment boundary beside the large cream-haloed pupil",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.316,
+        "y": 0.399,
+        "w": 0.183,
+        "h": 0.533
+      },
+      "polygon": [
+        [
+          0.316,
+          0.399
+        ],
+        [
+          0.35,
+          0.428
+        ],
+        [
+          0.376,
+          0.492
+        ],
+        [
+          0.393,
+          0.532
+        ],
+        [
+          0.417,
+          0.567
+        ],
+        [
+          0.438,
+          0.629
+        ],
+        [
+          0.471,
+          0.684
+        ],
+        [
+          0.491,
+          0.727
+        ],
+        [
+          0.499,
+          0.795
+        ],
+        [
+          0.482,
+          0.861
+        ],
+        [
+          0.469,
+          0.932
+        ],
+        [
+          0.418,
+          0.911
+        ],
+        [
+          0.403,
+          0.849
+        ],
+        [
+          0.402,
+          0.771
+        ],
+        [
+          0.371,
+          0.682
+        ],
+        [
+          0.352,
+          0.59
+        ],
+        [
+          0.341,
+          0.509
+        ],
+        [
+          0.324,
+          0.47
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "Immediately to the right of the large cream-ringed black eye, rose paint meets an irregular charcoal stroke. The visible boundary descends from a narrow broken dark passage into a broad black knot with pink intrusions, coarse brush edges and a frayed lower fringe. The polygon follows this connected painted feature rather than enclosing the face or nearby cream ground."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 2,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.098,
+    "rationale": "Clearly expressionist, with two unequal facial fragments and a broad cream interval preserving hierarchy. Multiple colored washes, dark vertical streaks and drips make it more textured than strictly minimal, but not excessively cluttered. Only the single planned source-bearing boundary is mapped; the other facial marks remain unbound."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-24-a-creature-interrupted-v1"
+}

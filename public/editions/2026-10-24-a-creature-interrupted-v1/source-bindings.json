@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-10-24-a-creature-interrupted-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-broad-ragged-rose-to-charcoal-pigmen",
+      "artifact_id": "hero-broad-ragged-rose-to-charcoal-pigmen",
+      "source_type": "tweet",
+      "source_url": "https://x.com/gucci4mycat/status/2109655430146535658",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@gucci4mycat: I'm afraid LORA training (only based on my irl paintings) was on my bingo for this...",
+      "kicker": "x.com",
+      "excerpt": "I'm afraid LORA training (only based on my irl paintings) was on my bingo for this year.....",
+      "source_title": "@gucci4mycat: I'm afraid LORA training (only based on my irl paintings) was on my bingo for this...",
+      "source_summary": "I'm afraid LORA training (only based on my irl paintings) was on my bingo for this year.....",
+      "source_domain": "x.com",
+      "source_meta": "@gucci4mycat: LoRA trained on paintings",
+      "source_image_url": "https://pbs.twimg.com/media/HUcASoXXIAAbUNO.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HUcASoXXIAAbUNO.jpg?name=orig"
+      ],
+      "source_image_alt": "@gucci4mycat: I'm afraid LORA training (only based on my irl paintings) was on my bingo for this year.....",
+      "source_media_url": "https://pbs.twimg.com/media/HUcASoXXIAAbUNO.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-10-24-a-creature-interrupted-v1/assets/source-posters/binding-hero-broad-ragged-rose-to-charcoal-pigmen.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.4863,
+          "y": 0.5
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2225,
+          "width": 1.0,
+          "height": 0.5544
+        },
+        "image_width": 1648,
+        "image_height": 1672,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.01186,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}
