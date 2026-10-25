@@ -105,6 +105,13 @@ const queueKey = relative => `${nominationLane(state.entries[relative].note)}:${
 fresh.sort((a, b) => queueKey(a).localeCompare(queueKey(b)) || a.localeCompare(b))
 // Advance across the entire stable priority queue before wrapping. Rejected but
 // unspent strong-label records must not permanently starve sparse real artwork.
+// A nomination cursor is not acquisition evidence. Yesterday's early success
+// can leave unused artwork behind that cursor; give it first chance today.
+// Within the same publication day retain bounded fallback traversal.
+if (options.date && state.queue_date !== options.date) {
+  state.queue_after = null
+  state.queue_date = options.date
+}
 const next = state.queue_after ? fresh.findIndex(relative => queueKey(relative) > state.queue_after) : 0
 const offset = Math.max(0, next)
 const queue = [...fresh.slice(offset), ...fresh.slice(0, offset)]

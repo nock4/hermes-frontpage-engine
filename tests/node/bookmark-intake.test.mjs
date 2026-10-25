@@ -32,6 +32,21 @@ describe('bounded bookmark intake', () => {
       expect(batch.notes[0]).not.toHaveProperty('inspection')
     } finally { await fs.rm(f.root, { recursive: true, force: true }) }
   })
+  it('restarts artwork-first nomination each publication day without losing same-day fallback progress', async () => {
+    const f = await fixture(0)
+    try {
+      await fs.writeFile(path.join(f.vault, 'Inbox/tweets/a.md'), '# Artwork\nhttps://x.com/a/status/100\nhttps://pbs.twimg.com/media/a.jpg')
+      for (let i = 0; i < 30; i++) await fs.writeFile(path.join(f.vault, `Inbox/tweets/sparse-${i}.md`), `# Tool news\nhttps://x.com/tools/status/${1000+i}`)
+      const mine = date => mineSignals({ inputMode: 'obsidian-allowlist', inputRoot: f.vault, date, bookmarkFirst: true, bookmarkCacheDir: f.cacheDir }, path.join(f.root, date))
+      const first = await mine('2026-10-24')
+      expect(first.notes_selected[0].urls).toEqual(['https://x.com/a/status/100'])
+      const retry = await mine('2026-10-24')
+      expect(retry.notes_selected[0].urls).not.toEqual(first.notes_selected[0].urls)
+      const next = await mine('2026-10-25')
+      expect(next.notes_selected[0].urls).toEqual(first.notes_selected[0].urls)
+      expect(next.selection_policy.bookmark_intake.metadata_reads).toBe(0)
+    } finally { await fs.rm(f.root, { recursive: true, force: true }) }
+  })
   it('advances from preferred media to sparse owners instead of repeating rejected-looking nominations forever', async () => {
     const f = await fixture(0)
     try {
