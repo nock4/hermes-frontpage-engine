@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-10-25-a-reflection-out-of-place-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-black-rimmed-mirror-glass-holding-ha",
+      "artifact_id": "hero-black-rimmed-mirror-glass-holding-ha",
+      "source_type": "tweet",
+      "source_url": "https://x.com/sinnoh_CEO/status/2109040850017591354",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@sinnoh_CEO: Pokemon collage meme",
+      "kicker": "x.com",
+      "excerpt": "@sinnoh_CEO: Pokemon collage meme",
+      "source_title": "@sinnoh_CEO: Pokemon collage meme",
+      "source_summary": "@sinnoh_CEO: Pokemon collage meme",
+      "source_domain": "x.com",
+      "source_meta": "@sinnoh_CEO: Pokemon collage meme",
+      "source_image_url": "https://pbs.twimg.com/media/HUTReVTXQAAZhJ0.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HUTReVTXQAAZhJ0.jpg?name=orig"
+      ],
+      "source_image_alt": "@sinnoh_CEO: Pokemon collage meme",
+      "source_media_url": "https://pbs.twimg.com/media/HUTReVTXQAAZhJ0.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-10-25-a-reflection-out-of-place-v1/assets/source-posters/binding-hero-black-rimmed-mirror-glass-holding-ha.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "high",
+        "focal_point": {
+          "x": 0.4994,
+          "y": 0.5143
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2981,
+          "width": 1.0,
+          "height": 0.4029
+        },
+        "image_width": 828,
+        "image_height": 1154,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.06468,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

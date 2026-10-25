@@ -1,0 +1,111 @@
+{
+  "analysis_id": "analysis-2026-10-25-a-reflection-out-of-place-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A constructed car-interior collage on a flat blue-gray field. A wide black-rimmed rearview mirror holds cropped dark hair, a cheek, a suited torso and a narrow red cartoon-car face. Two hanging white dice overlap the glass. A steering-wheel arc and cigar-holding hand fill the lower left, with smoke rising toward the mirror. A tall phone-like slab at right contains angular yellow-and-blue shapes on green. The mirror is the single planned source-bearing anchor.",
+  "usable_surfaces": [
+    "Visible mirror glass containing hair, cheek, suit and red cartoon-car fragments"
+  ],
+  "detected_objects": [
+    {
+      "label": "Black-rimmed mirror glass holding hair, cheek, suit and a red cartoon-car sliver",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.016,
+        "y": 0.211,
+        "w": 0.547,
+        "h": 0.324
+      },
+      "polygon": [
+        [
+          0.016,
+          0.413
+        ],
+        [
+          0.028,
+          0.302
+        ],
+        [
+          0.052,
+          0.224
+        ],
+        [
+          0.086,
+          0.211
+        ],
+        [
+          0.185,
+          0.218
+        ],
+        [
+          0.316,
+          0.236
+        ],
+        [
+          0.403,
+          0.254
+        ],
+        [
+          0.373,
+          0.296
+        ],
+        [
+          0.36,
+          0.35
+        ],
+        [
+          0.362,
+          0.422
+        ],
+        [
+          0.391,
+          0.474
+        ],
+        [
+          0.431,
+          0.487
+        ],
+        [
+          0.475,
+          0.443
+        ],
+        [
+          0.489,
+          0.306
+        ],
+        [
+          0.53,
+          0.297
+        ],
+        [
+          0.554,
+          0.336
+        ],
+        [
+          0.563,
+          0.462
+        ],
+        [
+          0.545,
+          0.535
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "A rounded black frame encloses a horizontally stretched collage: dense black hair and a cropped cheek at left, white shirt collar and dark suit near the center, and an eye, red hood and smiling mouth at the right edge. The lower glass boundary slopes down toward the right. The polygon follows the inner frame and indents around the hanging dice, excluding their opaque foreground surfaces. These fragments belong to one mirror anchor rather than separate source entries."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 5,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.177,
+    "rationale": "Broad blue-gray gaps keep the composition legible, but the photographic mirror collage, paired dice, steering wheel, cigar hand and bright phone graphic compete for attention. It is more representational collage than minimal expressionism, though not densely cluttered. Only the planned mirror anchor is mapped; surrounding props remain supporting imagery."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-25-a-reflection-out-of-place-v1"
+}

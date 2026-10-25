@@ -1,0 +1,112 @@
+{
+  "interpretation_id": "interp-2026-10-25-a-reflection-out-of-place-v1",
+  "edition_id": "2026-10-25-a-reflection-out-of-place-v1",
+  "plate_read_timestamp": "2026-10-25T13:12:04.167Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A constructed car-interior collage on a flat blue-gray field. A wide black-rimmed rearview mirror holds cropped dark hair, a cheek, a suited torso and a narrow red cartoon-car face. Two hanging white dice overlap the glass. A steering-wheel arc and cigar-holding hand fill the lower left, with smoke rising toward the mirror. A tall phone-like slab at right contains angular yellow-and-blue shapes on green. The mirror is the single planned source-bearing anchor.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape photomontage: two unequal collage islands across quiet gray-blue space. A large detached black-rimmed mirror holds looping hair, cheek, suited shoulder and a glossy red cartoon-car sliver. Paired white dice hang beside it above a partial wheel and warm cigar-gripping fingers crossed by smoke. Apart, an upright black phone mass holds saturated green and jagged yellow-blue shapes.",
+      "A constructed car-interior collage on a flat blue-gray field. A wide black-rimmed rearview mirror holds cropped dark hair, a cheek, a suited torso and a narrow red cartoon-car face. Two hanging white dice overlap the glass. A steering-wheel arc and cigar-holding hand fill the lower left, with smoke rising toward the mirror. A tall phone-like slab at right contains angular yellow-and-blue shapes on green. The mirror is the single planned source-bearing anchor.",
+      "dislocated-reflection",
+      "scale-collision",
+      "black-curvature"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Black-rimmed mirror glass holding hair, cheek, suit and a red cartoon-car sliver"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "smoke-glass-collage-dislocation",
+      "Black-rimmed mirror glass holding hair, cheek, suit and a red cartoon-car sliver",
+      "Visible mirror glass containing hair, cheek, suit and red cartoon-car fragments"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: smoke-glass-collage-dislocation.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-black-rimmed-mirror-glass-holding-ha",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.016,
+        "y": 0.211,
+        "w": 0.547,
+        "h": 0.324
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-black-rimmed-mirror-glass-holding-ha-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.016,
+        "y": 0.211,
+        "w": 0.547,
+        "h": 0.324
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
