@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-10-26-the-tide-beneath-the-brim-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-long-white-fur-spilling-from-beneath",
+      "artifact_id": "hero-long-white-fur-spilling-from-beneath",
+      "source_type": "tweet",
+      "source_url": "https://x.com/DucDeBerrry/status/2113724200472936796",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Fantasy character and botanical collage",
+      "kicker": "x.com",
+      "excerpt": "Fantasy character and botanical collage",
+      "source_title": "Fantasy character and botanical collage",
+      "source_summary": "Fantasy character and botanical collage",
+      "source_domain": "x.com",
+      "source_meta": "Fantasy character and botanical collage",
+      "source_image_url": "https://pbs.twimg.com/media/HVV09HAXAAAstfb.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HVV09HAXAAAstfb.jpg?name=orig"
+      ],
+      "source_image_alt": "Fantasy character and botanical collage",
+      "source_media_url": "https://pbs.twimg.com/media/HVV09HAXAAAstfb.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-10-26-the-tide-beneath-the-brim-v1/assets/source-posters/binding-hero-long-white-fur-spilling-from-beneath.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5006,
+          "y": 0.5002
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2744,
+          "width": 1.0,
+          "height": 0.4507
+        },
+        "image_width": 1642,
+        "image_height": 2048,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.15474,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

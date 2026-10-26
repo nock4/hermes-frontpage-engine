@@ -1,0 +1,111 @@
+{
+  "interpretation_id": "interp-2026-10-26-the-tide-beneath-the-brim-v1",
+  "edition_id": "2026-10-26-the-tide-beneath-the-brim-v1",
+  "plate_read_timestamp": "2026-10-26T08:10:28.492Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A parchment-ground illustration splits into two ornate groups: a large white-furred ape face beneath a sweeping jeweled white hat, wrapped in cobalt surf on the left; face-bearing orchids, branching growth, a bound broom and a crowned bulb above smaller waves on the right. Three bees cross the gap, and a floral seal with red brush marks sits below. The planned white-fur and wave overlap is clearly visible.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape fantasy collage on cream paper: a large white pointed hat, jeweled crown and furry ape muzzle with round eyes and pink mouth overlap cobalt surf. Across open paper, a smaller orchid-and-bee cluster rests on detached wave shelves. A dotted pink face-ruff nestles against an angled broom; purple roots, veined greens, twisted cord and a crowned bulb weave through the fragments. Red strokes flank a floral disk.",
+      "A parchment-ground illustration splits into two ornate groups: a large white-furred ape face beneath a sweeping jeweled white hat, wrapped in cobalt surf on the left; face-bearing orchids, branching growth, a bound broom and a crowned bulb above smaller waves on the right. Three bees cross the gap, and a floral seal with red brush marks sits below. The planned white-fur and wave overlap is clearly visible.",
+      "engraved-surf",
+      "sweeping-brim",
+      "botanical-overlap"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Long white fur spilling from beneath the sweeping hat brim across a cobalt wave"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "botanical-surf-proscenium",
+      "A sweeping white hat brim and long white fur overlap a cobalt wave curl.",
+      "Scalloped white-fur edge spilling over the large cobalt wave beneath the hat"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: botanical-surf-proscenium.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-long-white-fur-spilling-from-beneath",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.045,
+        "y": 0.561,
+        "w": 0.434,
+        "h": 0.328
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-long-white-fur-spilling-from-beneath-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.045,
+        "y": 0.561,
+        "w": 0.434,
+        "h": 0.328
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

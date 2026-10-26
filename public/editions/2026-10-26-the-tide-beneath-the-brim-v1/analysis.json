@@ -1,0 +1,111 @@
+{
+  "analysis_id": "analysis-2026-10-26-the-tide-beneath-the-brim-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A parchment-ground illustration splits into two ornate groups: a large white-furred ape face beneath a sweeping jeweled white hat, wrapped in cobalt surf on the left; face-bearing orchids, branching growth, a bound broom and a crowned bulb above smaller waves on the right. Three bees cross the gap, and a floral seal with red brush marks sits below. The planned white-fur and wave overlap is clearly visible.",
+  "usable_surfaces": [
+    "Scalloped white-fur edge spilling over the large cobalt wave beneath the hat"
+  ],
+  "detected_objects": [
+    {
+      "label": "Long white fur spilling from beneath the sweeping hat brim across a cobalt wave",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.045,
+        "y": 0.561,
+        "w": 0.434,
+        "h": 0.328
+      },
+      "polygon": [
+        [
+          0.045,
+          0.644
+        ],
+        [
+          0.087,
+          0.609
+        ],
+        [
+          0.139,
+          0.584
+        ],
+        [
+          0.189,
+          0.561
+        ],
+        [
+          0.224,
+          0.587
+        ],
+        [
+          0.257,
+          0.642
+        ],
+        [
+          0.293,
+          0.672
+        ],
+        [
+          0.337,
+          0.729
+        ],
+        [
+          0.402,
+          0.77
+        ],
+        [
+          0.453,
+          0.762
+        ],
+        [
+          0.47,
+          0.798
+        ],
+        [
+          0.465,
+          0.849
+        ],
+        [
+          0.479,
+          0.889
+        ],
+        [
+          0.451,
+          0.865
+        ],
+        [
+          0.427,
+          0.823
+        ],
+        [
+          0.352,
+          0.818
+        ],
+        [
+          0.261,
+          0.787
+        ],
+        [
+          0.205,
+          0.713
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "Below the broad white hat brim, a pale lock sweeps from the left shoulder across the dark blue wave, widening into layered strands beneath the muzzle and tapering into a dangling curl at the lower right. The polygon follows this localized white-fur gesture rather than enclosing the whole head, hat or surf. The orchids, bees and smaller faces are subordinate elements of the same planned artwork, not additional source assignments."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 2,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.142,
+    "rationale": "Two dominant groups are separated by parchment gaps, but both contain dense engraved-looking detail. Jewels, individual fur strands, foam curls, several faces, bees, botanical veins, rope and a floral seal make the plate ornate and illustrative rather than minimal and expressionist. The single mapped overlap remains visually distinct."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-26-the-tide-beneath-the-brim-v1"
+}

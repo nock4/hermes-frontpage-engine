@@ -1,0 +1,35 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-10-26-the-tide-beneath-the-brim-v1",
+  "edition_id": "2026-10-26-the-tide-beneath-the-brim-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-long-white-fur-spilling-from-beneath",
+      "source_image_url": "https://pbs.twimg.com/media/HVV09HAXAAAstfb.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-10-26-the-tide-beneath-the-brim-v1/assets/source-posters/binding-hero-long-white-fur-spilling-from-beneath.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-10-26-the-tide-beneath-the-brim-v1/binding-hero-long-white-fur-spilling-from-beneath-source-visual-qa.jpg",
+      "image_width": 1642,
+      "image_height": 2048,
+      "aspect_ratio": 0.8018,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.5006,
+        "y": 0.5002
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2744,
+        "width": 1.0,
+        "height": 0.4507
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.15474,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}
