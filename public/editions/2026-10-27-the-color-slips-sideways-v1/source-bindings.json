@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-10-27-the-color-slips-sideways-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-white-veiled-blue-smiling-face-benea",
+      "artifact_id": "hero-white-veiled-blue-smiling-face-benea",
+      "source_type": "tweet",
+      "source_url": "https://x.com/gucci4mycat/status/2112288926249652730",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@gucci4mycat: Praise the lord",
+      "kicker": "x.com",
+      "excerpt": "Praise the lord",
+      "source_title": "@gucci4mycat: Praise the lord",
+      "source_summary": "Praise the lord",
+      "source_domain": "x.com",
+      "source_meta": "Praise the lord — colorful character painting",
+      "source_image_url": "https://pbs.twimg.com/media/HVBbim9XIAE_IqY.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HVBbim9XIAE_IqY.jpg?name=orig"
+      ],
+      "source_image_alt": "@gucci4mycat: Praise the lord",
+      "source_media_url": "https://pbs.twimg.com/media/HVBbim9XIAE_IqY.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-10-27-the-color-slips-sideways-v1/assets/source-posters/binding-hero-white-veiled-blue-smiling-face-benea.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.4572,
+          "y": 0.5283
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2279,
+          "width": 1.0,
+          "height": 0.5442
+        },
+        "image_width": 1882,
+        "image_height": 1944,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.02359,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

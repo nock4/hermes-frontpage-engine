@@ -1,0 +1,111 @@
+{
+  "interpretation_id": "interp-2026-10-27-the-color-slips-sideways-v1",
+  "edition_id": "2026-10-27-the-color-slips-sideways-v1",
+  "plate_read_timestamp": "2026-10-27T08:09:34.781Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A textured turquoise field holds a large smiling blue face beneath an oversized red-and-gold crown, with translucent white veil-like streaks framing and crossing it. A small blue face rests beside a pale hand at lower left. A haloed pink figure raises a hand on the right, beside a tall tilted dark cross. The crowned face is the sole mapped source anchor; the other figures and gestures remain subordinate compositional elements.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Full-bleed landscape: a blue face fragment beneath a huge red-and-gold crown faces a smaller haloed pink smile across turquoise space. White oval eyes, dot pupils and red crescent smile remain clear. Pale upright hands rise from saturated sleeves; one small blue face meets the isolated hand. A dark brown knotted cross counters the crown. Vertical white veils interrupt contours across grainy color and open ground.",
+      "A textured turquoise field holds a large smiling blue face beneath an oversized red-and-gold crown, with translucent white veil-like streaks framing and crossing it. A small blue face rests beside a pale hand at lower left. A haloed pink figure raises a hand on the right, beside a tall tilted dark cross. The crowned face is the sole mapped source anchor; the other figures and gestures remain subordinate compositional elements.",
+      "pigment-drag",
+      "register-slip",
+      "broken-arches"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "White-veiled blue smiling face beneath a red-and-gold crown"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "chromatic-register-rupture",
+      "A white-veiled blue smiling face beneath an oversized red-and-gold crown.",
+      "Contiguous red-and-gold crown, blue smiling face, and white veil grouping"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: chromatic-register-rupture.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-white-veiled-blue-smiling-face-benea",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.0297,
+        "y": 0,
+        "w": 0.4453,
+        "h": 1
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-white-veiled-blue-smiling-face-benea-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0297,
+        "y": 0,
+        "w": 0.4453,
+        "h": 1
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

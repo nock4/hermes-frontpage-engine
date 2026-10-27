@@ -1,0 +1,111 @@
+{
+  "analysis_id": "analysis-2026-10-27-the-color-slips-sideways-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A textured turquoise field holds a large smiling blue face beneath an oversized red-and-gold crown, with translucent white veil-like streaks framing and crossing it. A small blue face rests beside a pale hand at lower left. A haloed pink figure raises a hand on the right, beside a tall tilted dark cross. The crowned face is the sole mapped source anchor; the other figures and gestures remain subordinate compositional elements.",
+  "usable_surfaces": [
+    "Contiguous red-and-gold crown, blue smiling face, and white veil grouping"
+  ],
+  "detected_objects": [
+    {
+      "label": "White-veiled blue smiling face beneath a red-and-gold crown",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.036,
+        "y": 0.001,
+        "w": 0.44,
+        "h": 0.999
+      },
+      "polygon": [
+        [
+          0.249,
+          0.001
+        ],
+        [
+          0.272,
+          0.002
+        ],
+        [
+          0.27,
+          0.065
+        ],
+        [
+          0.288,
+          0.095
+        ],
+        [
+          0.327,
+          0.111
+        ],
+        [
+          0.398,
+          0.132
+        ],
+        [
+          0.448,
+          0.182
+        ],
+        [
+          0.473,
+          0.263
+        ],
+        [
+          0.471,
+          0.357
+        ],
+        [
+          0.447,
+          0.436
+        ],
+        [
+          0.432,
+          0.481
+        ],
+        [
+          0.476,
+          0.746
+        ],
+        [
+          0.467,
+          0.999
+        ],
+        [
+          0.219,
+          0.999
+        ],
+        [
+          0.113,
+          0.632
+        ],
+        [
+          0.085,
+          0.489
+        ],
+        [
+          0.036,
+          0.334
+        ],
+        [
+          0.065,
+          0.142
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "The large left-hand grouping visibly connects three red crown lobes edged in ochre gold, a dark-jeweled crown band, and a saturated blue face with two cream eyes and a curved red smile. Pale vertical strokes cross the crown and frame the face as a veil. The polygon follows the crown silhouette and flaring face-and-veil edges, includes the small gold finial at the upper image boundary, and terminates where the face and veil are cropped by the bottom edge. The adjacent miniature face, supporting hand, right-hand pink figure, halo, and dark cross are not separately bound."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.44,
+    "rationale": "The plate is expressionist and painterly but not minimal: the crowned blue grouping, haloed pink figure with raised arm, and dark cross establish three substantial forms. A miniature face, supporting hand, crown jewels, and all-over streaking add detail. Strong color separation keeps the single mapped hero legible, although its silhouette occupies roughly a third of the plate and the composition offers limited quiet space."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-27-the-color-slips-sideways-v1"
+}

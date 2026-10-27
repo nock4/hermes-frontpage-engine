@@ -1,0 +1,35 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-10-27-the-color-slips-sideways-v1",
+  "edition_id": "2026-10-27-the-color-slips-sideways-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-white-veiled-blue-smiling-face-benea",
+      "source_image_url": "https://pbs.twimg.com/media/HVBbim9XIAE_IqY.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-10-27-the-color-slips-sideways-v1/assets/source-posters/binding-hero-white-veiled-blue-smiling-face-benea.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-10-27-the-color-slips-sideways-v1/binding-hero-white-veiled-blue-smiling-face-benea-source-visual-qa.jpg",
+      "image_width": 1882,
+      "image_height": 1944,
+      "aspect_ratio": 0.9681,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.4572,
+        "y": 0.5283
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2279,
+        "width": 1.0,
+        "height": 0.5442
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02359,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}
