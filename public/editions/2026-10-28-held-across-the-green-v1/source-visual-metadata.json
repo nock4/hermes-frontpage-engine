@@ -1,0 +1,35 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-10-28-held-across-the-green-v1",
+  "edition_id": "2026-10-28-held-across-the-green-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-a-broad-cobalt-fold-with-cloudy-whit",
+      "source_image_url": "https://pbs.twimg.com/media/HVGjpf8XwAAU4N1.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-10-28-held-across-the-green-v1/assets/source-posters/binding-hero-a-broad-cobalt-fold-with-cloudy-whit.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-10-28-held-across-the-green-v1/binding-hero-a-broad-cobalt-fold-with-cloudy-whit-source-visual-qa.jpg",
+      "image_width": 1536,
+      "image_height": 1960,
+      "aspect_ratio": 0.7837,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.4818,
+        "y": 0.5
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2796,
+        "width": 1.0,
+        "height": 0.4408
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.02354,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}

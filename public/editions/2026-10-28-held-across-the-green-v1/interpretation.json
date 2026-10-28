@@ -1,0 +1,113 @@
+{
+  "interpretation_id": "interp-2026-10-28-held-across-the-green-v1",
+  "edition_id": "2026-10-28-held-across-the-green-v1",
+  "plate_read_timestamp": "2026-10-28T08:09:44.246Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Two separated, softly textured figurative groupings float on a largely uninterrupted teal-green ground. The larger left grouping contains a pale face, a gray animal-like companion and enclosing pale arms amid ragged blue-white folds. A broad cobalt garment fold sits directly beneath the arms. The smaller right grouping pairs a pale face with a pointed blue animal-like head above trailing pale-blue paint.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape painted tableau on flat turquoise-green: a large bent pale arm and peach hand cradle a gray pointed-eared companion beneath jagged ice-blue hair. Across a wide green interval, a smaller yellow-crested peach face pairs with a cobalt-cyan creature. Turquoise collar, interrupted white-blue drapes, scalloped edges and downward smears; one broad cobalt fold pools beneath the enclosing arm.",
+      "Two separated, softly textured figurative groupings float on a largely uninterrupted teal-green ground. The larger left grouping contains a pale face, a gray animal-like companion and enclosing pale arms amid ragged blue-white folds. A broad cobalt garment fold sits directly beneath the arms. The smaller right grouping pairs a pale face with a pointed blue animal-like head above trailing pale-blue paint.",
+      "enclosing-arm",
+      "unequal-groupings",
+      "turquoise-interval"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "A broad cobalt fold with cloudy white edges beneath a bent pale arm"
+    ],
+    "dominant_surfaces": [
+      "water",
+      "wood",
+      "paint"
+    ],
+    "dominant_structures": [
+      "watercolor-companions-across-green",
+      "A broad cobalt fold with cloudy white edges beneath a bent pale arm",
+      "Cobalt garment fold bounded by cloudy white trim and the underside of a bent pale arm"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: watercolor-companions-across-green.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-a-broad-cobalt-fold-with-cloudy-whit",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.089,
+        "y": 0.475,
+        "w": 0.197,
+        "h": 0.276
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-a-broad-cobalt-fold-with-cloudy-whit-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.089,
+        "y": 0.475,
+        "w": 0.197,
+        "h": 0.276
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
