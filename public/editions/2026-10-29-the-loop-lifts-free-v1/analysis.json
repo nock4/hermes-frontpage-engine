@@ -1,0 +1,111 @@
+{
+  "analysis_id": "analysis-2026-10-29-the-loop-lifts-free-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A distressed cream paper plate holds a compact upper collage of a dark portrait, blue triangular fragment, printed statistical marks, and a large cream shoe cropped along its lower edge. A red strip of disjointed arms and hands runs across the lower portion. The shoe is the single mapped source-bearing feature; the surrounding print fragments remain compositional support.",
+  "usable_surfaces": [
+    "Cream printed shoe fragment with stacked dark lace loops, curved toe outline, and fine side seam"
+  ],
+  "detected_objects": [
+    {
+      "label": "Cream shoe fragment with stacked dark lace loops and heavy curved outline",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.691,
+        "y": 0.221,
+        "w": 0.212,
+        "h": 0.397
+      },
+      "polygon": [
+        [
+          0.691,
+          0.455
+        ],
+        [
+          0.705,
+          0.422
+        ],
+        [
+          0.721,
+          0.354
+        ],
+        [
+          0.735,
+          0.29
+        ],
+        [
+          0.756,
+          0.248
+        ],
+        [
+          0.782,
+          0.225
+        ],
+        [
+          0.812,
+          0.221
+        ],
+        [
+          0.846,
+          0.238
+        ],
+        [
+          0.873,
+          0.278
+        ],
+        [
+          0.891,
+          0.33
+        ],
+        [
+          0.901,
+          0.389
+        ],
+        [
+          0.903,
+          0.454
+        ],
+        [
+          0.898,
+          0.513
+        ],
+        [
+          0.884,
+          0.571
+        ],
+        [
+          0.869,
+          0.618
+        ],
+        [
+          0.786,
+          0.614
+        ],
+        [
+          0.708,
+          0.564
+        ],
+        [
+          0.698,
+          0.509
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "At upper right, a cream shoe fragment has a rounded toe enclosed by a thick distressed dark outline. Stacked dark lace loops cross its left-facing opening, with visible eyelets and a thin curved seam inside the right edge. The blue triangular fragment occludes part of its lower-left side, and a cream diagonal cut crops the bottom. The polygon follows the visible shoe silhouette rather than treating a single lace loop or the surrounding collage as an independent target."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 4,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.084,
+    "rationale": "Two collage bands leave substantial cream negative space, and the shoe remains legible. However, the portrait, shoe, blue triangle, and red hand strip compete for attention; distressed texture and small statistical marks add density. The plate is restrained collage rather than strictly minimal expressionism, but it is not excessively cluttered."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-29-the-loop-lifts-free-v1"
+}

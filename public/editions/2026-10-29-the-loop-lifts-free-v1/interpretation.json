@@ -1,0 +1,110 @@
+{
+  "interpretation_id": "interp-2026-10-29-the-loop-lifts-free-v1",
+  "edition_id": "2026-10-29-the-loop-lifts-free-v1",
+  "plate_read_timestamp": "2026-10-29T12:14:25.860Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A distressed cream paper plate holds a compact upper collage of a dark portrait, blue triangular fragment, printed statistical marks, and a large cream shoe cropped along its lower edge. A red strip of disjointed arms and hands runs across the lower portion. The shoe is the single mapped source-bearing feature; the surrounding print fragments remain compositional support.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Worn landscape print on pale gray, cream top margin and soft shadow. A compact offset cluster joins a rounded dark face enclosure, pointed cutout, blue wedge and enlarged cream lace-up shoe. Broad cream void; below, a broken pink-red strip holds pale bent arm and hand fragments. Discontinuous illegible statistical bands cross both groups; tiny magenta lip and red-blue emblem silhouettes remain subordinate.",
+      "A distressed cream paper plate holds a compact upper collage of a dark portrait, blue triangular fragment, printed statistical marks, and a large cream shoe cropped along its lower edge. A red strip of disjointed arms and hands runs across the lower portion. The shoe is the single mapped source-bearing feature; the surrounding print fragments remain compositional support.",
+      "lifted-lace",
+      "angular-cutout",
+      "broken-overprint"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Cream shoe fragment with stacked dark lace loops and heavy curved outline"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "lace-cutout-overprint-system",
+      "A cream shoe fragment with stacked dark lace loops and a heavy curved outline.",
+      "Cream printed shoe fragment with stacked dark lace loops, curved toe outline, and fine side seam"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: lace-cutout-overprint-system.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-cream-shoe-fragment-with-stacked-dar",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.691,
+        "y": 0.221,
+        "w": 0.212,
+        "h": 0.397
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-cream-shoe-fragment-with-stacked-dar-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.691,
+        "y": 0.221,
+        "w": 0.212,
+        "h": 0.397
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
