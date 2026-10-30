@@ -1,0 +1,111 @@
+{
+  "interpretation_id": "interp-2026-10-30-where-crimson-takes-root-v1",
+  "edition_id": "2026-10-30-where-crimson-takes-root-v1",
+  "plate_read_timestamp": "2026-10-30T08:09:43.600Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dark mixed-media-style plate centers a large pale skull fragment on the left, with cavernous black sockets, a narrow split nasal void, jagged white teeth, tangled pale fibers and branching crimson flowers. Torn paper-like material surrounds the face. A horizontal blue field with black bird silhouettes crosses the upper middle. Two smaller bone-like fragments, more flowers, cartoon gloves and scattered fine text-like marks occupy the margins, especially the right side.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape collage across a broad scratched charcoal field. A large skull fragment holds uneven black sockets, a narrow nasal slit and tight triangular teeth; crimson flower islands cross its fibrous edge. Smaller bone fragments sit apart. A rough blue rectangle bridges clusters over pale filaments. Small black birds, black-outlined white gloves and illegible serif flecks counterweight the modeled bone.",
+      "A dark mixed-media-style plate centers a large pale skull fragment on the left, with cavernous black sockets, a narrow split nasal void, jagged white teeth, tangled pale fibers and branching crimson flowers. Torn paper-like material surrounds the face. A horizontal blue field with black bird silhouettes crosses the upper middle. Two smaller bone-like fragments, more flowers, cartoon gloves and scattered fine text-like marks occupy the margins, especially the right side.",
+      "crimson-growth",
+      "bone-aperture",
+      "buckled-collage"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Fibrous skull fragment with black sockets, jagged teeth and crimson flowers"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "crimson-bone-cantilever",
+      "A fibrous skull fragment with black sockets, jagged teeth and crimson petals",
+      "Large left skull-and-crimson-flower collage silhouette",
+      "Dark socket apertures and pointed tooth edge within the owning skull fragment",
+      "Fibrous pale material and torn edges integrated with the skull"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: crimson-bone-cantilever.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-fibrous-skull-fragment-with-black-so",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.059,
+        "y": 0,
+        "w": 0.439,
+        "h": 1
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-fibrous-skull-fragment-with-black-so-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.059,
+        "y": 0,
+        "w": 0.439,
+        "h": 1
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

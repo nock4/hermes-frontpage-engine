@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-10-30-where-crimson-takes-root-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-fibrous-skull-fragment-with-black-so",
+      "artifact_id": "hero-fibrous-skull-fragment-with-black-so",
+      "source_type": "tweet",
+      "source_url": "https://x.com/didopynell/status/2115104520913195046",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Skull and red-flower collage",
+      "kicker": "x.com",
+      "excerpt": "Skull and red-flower collage",
+      "source_title": "Skull and red-flower collage",
+      "source_summary": "Skull and red-flower collage",
+      "source_domain": "x.com",
+      "source_meta": "Skull and red-flower collage",
+      "source_image_url": "https://pbs.twimg.com/media/HVpcWAsWcAAcsFx.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HVpcWAsWcAAcsFx.jpg?name=orig"
+      ],
+      "source_image_alt": "Skull and red-flower collage",
+      "source_media_url": "https://pbs.twimg.com/media/HVpcWAsWcAAcsFx.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-10-30-where-crimson-takes-root-v1/assets/source-posters/binding-hero-fibrous-skull-fragment-with-black-so.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5027,
+          "y": 0.521
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2188,
+          "width": 1.0,
+          "height": 0.5625
+        },
+        "image_width": 2048,
+        "image_height": 2048,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.13486,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

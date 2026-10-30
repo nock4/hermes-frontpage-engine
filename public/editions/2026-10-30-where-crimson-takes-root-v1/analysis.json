@@ -1,0 +1,113 @@
+{
+  "analysis_id": "analysis-2026-10-30-where-crimson-takes-root-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A dark mixed-media-style plate centers a large pale skull fragment on the left, with cavernous black sockets, a narrow split nasal void, jagged white teeth, tangled pale fibers and branching crimson flowers. Torn paper-like material surrounds the face. A horizontal blue field with black bird silhouettes crosses the upper middle. Two smaller bone-like fragments, more flowers, cartoon gloves and scattered fine text-like marks occupy the margins, especially the right side.",
+  "usable_surfaces": [
+    "Large left skull-and-crimson-flower collage silhouette",
+    "Dark socket apertures and pointed tooth edge within the owning skull fragment",
+    "Fibrous pale material and torn edges integrated with the skull"
+  ],
+  "detected_objects": [
+    {
+      "label": "Fibrous skull fragment with black sockets, jagged teeth and crimson flowers",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.059,
+        "y": 0,
+        "w": 0.439,
+        "h": 1
+      },
+      "polygon": [
+        [
+          0.119,
+          0
+        ],
+        [
+          0.192,
+          0
+        ],
+        [
+          0.218,
+          0.074
+        ],
+        [
+          0.261,
+          0.045
+        ],
+        [
+          0.323,
+          0.125
+        ],
+        [
+          0.322,
+          0.286
+        ],
+        [
+          0.349,
+          0.263
+        ],
+        [
+          0.416,
+          0.303
+        ],
+        [
+          0.452,
+          0.376
+        ],
+        [
+          0.461,
+          0.532
+        ],
+        [
+          0.482,
+          0.551
+        ],
+        [
+          0.498,
+          0.694
+        ],
+        [
+          0.453,
+          0.752
+        ],
+        [
+          0.393,
+          0.899
+        ],
+        [
+          0.242,
+          1
+        ],
+        [
+          0.095,
+          1
+        ],
+        [
+          0.059,
+          0.328
+        ],
+        [
+          0.082,
+          0.101
+        ]
+      ],
+      "confidence": 0.97,
+      "visual_evidence": "The pale left-hand collage visibly contains two large black eye sockets, paired narrow nasal openings and a row of pointed teeth. Red flowers overlap the left cheek, right cheek and lower torn material; their dark stems run through the same collage. Pale fibers lace across the forehead and project from its edges. The polygon follows the substantial connected skull, flower and fibrous-paper silhouette, clipped where that material meets the top and bottom image boundaries; it does not attempt to include every thin projecting strand. The surrounding gloves, blue bird field and separate right-side fragments are not counted as additional owners."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 4,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.439,
+    "rationale": "The owning skull is clear and expressionist, but the plate is not minimal. A prominent blue bird field and two separate right-hand bone collages compete with it, while repeated flowers, two gloves, fine fibers and text-like textures fill much of the remaining field. The single mapped source occupies approximately one third of the image; the other motifs remain unmapped rather than being assigned duplicate source ownership."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-30-where-crimson-takes-root-v1"
+}
