@@ -1,0 +1,111 @@
+{
+  "analysis_id": "analysis-2026-10-31-too-large-to-close-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "An expressionist collage on a weathered ivory ground: uneven plum loops gather into a dense scratched junction on the left, balanced by a smaller open loop cluster on the right. Two miniature photographic figures, broken red horizontal strokes, cyan-green washes and fine black scratches punctuate the pale field.",
+  "usable_surfaces": [
+    "Dense plum pigment junction at the inner edge of the left loop cluster"
+  ],
+  "detected_objects": [
+    {
+      "label": "Broad plum pinched loop junction threaded with scratches and cyan-green traces",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.201,
+        "y": 0.353,
+        "w": 0.145,
+        "h": 0.254
+      },
+      "polygon": [
+        [
+          0.25,
+          0.353
+        ],
+        [
+          0.275,
+          0.371
+        ],
+        [
+          0.301,
+          0.406
+        ],
+        [
+          0.319,
+          0.448
+        ],
+        [
+          0.331,
+          0.477
+        ],
+        [
+          0.345,
+          0.5
+        ],
+        [
+          0.346,
+          0.551
+        ],
+        [
+          0.322,
+          0.565
+        ],
+        [
+          0.294,
+          0.591
+        ],
+        [
+          0.281,
+          0.607
+        ],
+        [
+          0.294,
+          0.579
+        ],
+        [
+          0.293,
+          0.56
+        ],
+        [
+          0.276,
+          0.541
+        ],
+        [
+          0.253,
+          0.53
+        ],
+        [
+          0.229,
+          0.531
+        ],
+        [
+          0.201,
+          0.552
+        ],
+        [
+          0.26,
+          0.477
+        ],
+        [
+          0.267,
+          0.409
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "A broad plum wedge visibly joins several loop edges immediately left of the larger photographic figure. Fine dark incised and crossing lines run through its pigment. Its upper-left boundary follows a pale cyan-green opening; its lower boundary curves around a pale green opening. The contour follows the dense junction rather than enclosing the entire loop cluster or either figure."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 2,
+    "large_region_count": 0,
+    "mapped_region_coverage": 0.037,
+    "rationale": "Two dominant plum loop clusters and a diffuse lower cyan-green wash establish the large-scale structure. Substantial pale space keeps the composition open and expressionist, but numerous scratches, two photographic figures and repeated red interruptions make it more layered than strictly minimal. Only the planned dense left junction is mapped; subordinate marks are not promoted into additional source windows."
+  },
+  "viewport": {
+    "base_width": 1280,
+    "base_height": 720,
+    "aspect_ratio": "1280:720"
+  },
+  "edition_id": "2026-10-31-too-large-to-close-v1"
+}

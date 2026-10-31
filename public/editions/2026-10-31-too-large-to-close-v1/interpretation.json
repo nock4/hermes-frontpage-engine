@@ -1,0 +1,110 @@
+{
+  "interpretation_id": "interp-2026-10-31-too-large-to-close-v1",
+  "edition_id": "2026-10-31-too-large-to-close-v1",
+  "plate_read_timestamp": "2026-10-31T08:08:07.670Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "An expressionist collage on a weathered ivory ground: uneven plum loops gather into a dense scratched junction on the left, balanced by a smaller open loop cluster on the right. Two miniature photographic figures, broken red horizontal strokes, cyan-green washes and fine black scratches punctuate the pale field.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape collage-drawing on pale scuffed ground: two disconnected plum loop clusters, a dense left knot with a broad scratched pinch and a sparse right pair. Across an erased corridor, two unequal tiny back-facing skirted fragments stand apart, one touching a loop, one outside; one wears a pale top. Broken red strokes interrupt the gap; low turquoise slants beneath cyan, mint, pink and gray deposits and wiry arcs.",
+      "An expressionist collage on a weathered ivory ground: uneven plum loops gather into a dense scratched junction on the left, balanced by a smaller open loop cluster on the right. Two miniature photographic figures, broken red horizontal strokes, cyan-green washes and fine black scratches punctuate the pale field.",
+      "impossible-scale",
+      "plum-contours",
+      "chalk-corridor"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Broad plum pinched loop junction threaded with scratches and cyan-green traces"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "overscale-contour-erasure",
+      "A broad plum pinched loop junction threaded with scratches and cyan-green traces",
+      "Dense plum pigment junction at the inner edge of the left loop cluster"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: overscale-contour-erasure.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-broad-plum-pinched-loop-junction-thr",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.201,
+        "y": 0.353,
+        "w": 0.145,
+        "h": 0.254
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-broad-plum-pinched-loop-junction-thr-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.201,
+        "y": 0.353,
+        "w": 0.145,
+        "h": 0.254
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

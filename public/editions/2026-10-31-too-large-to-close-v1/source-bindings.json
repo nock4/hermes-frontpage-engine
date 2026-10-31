@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-10-31-too-large-to-close-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-broad-plum-pinched-loop-junction-thr",
+      "artifact_id": "hero-broad-plum-pinched-loop-junction-thr",
+      "source_type": "tweet",
+      "source_url": "https://x.com/didopynell/status/2115878681197355014",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "Dido Pynell — layered drawing reference",
+      "kicker": "x.com",
+      "excerpt": "Dido Pynell — layered drawing reference",
+      "source_title": "Dido Pynell — layered drawing reference",
+      "source_summary": "Dido Pynell — layered drawing reference",
+      "source_domain": "x.com",
+      "source_meta": "Dido Pynell — layered drawing reference",
+      "source_image_url": "https://pbs.twimg.com/media/HV0cZ_HWUAA8ZlM.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HV0cZ_HWUAA8ZlM.jpg?name=orig"
+      ],
+      "source_image_alt": "Dido Pynell — layered drawing reference",
+      "source_media_url": "https://pbs.twimg.com/media/HV0cZ_HWUAA8ZlM.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-10-31-too-large-to-close-v1/assets/source-posters/binding-hero-broad-plum-pinched-loop-junction-thr.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2188,
+          "width": 1.0,
+          "height": 0.5625
+        },
+        "image_width": 2048,
+        "image_height": 2048,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.11946,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}
