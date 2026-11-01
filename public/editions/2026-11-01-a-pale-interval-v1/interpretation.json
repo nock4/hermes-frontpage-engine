@@ -1,0 +1,110 @@
+{
+  "interpretation_id": "interp-2026-11-01-a-pale-interval-v1",
+  "edition_id": "2026-11-01-a-pale-interval-v1",
+  "plate_read_timestamp": "2026-11-01T09:07:20.069Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Two separated, distressed-looking foil-print fragments rest on a pale gray surface. The larger left fragment carries a cyan eye-bearing curve, a pink curl, overlapping fine print, and dense black mottling. Its dark upper-right rim forms a distinctly rounded corner. A smaller companion at lower right repeats the cyan-magenta print vocabulary. Broad negative space separates the two.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape still life on pale gray: a large rounded foil-print fragment and a smaller companion flank a broad empty channel. The larger pairs a cyan eye-bearing curve with a pink curl beneath violet arcs and a descending cream taper. Black interruptions break the imagery. Outlined heading masses occupy the smaller fragment; fine print bands cross the larger. Thin dark edges cast soft shadows; margins remain open.",
+      "Two separated, distressed-looking foil-print fragments rest on a pale gray surface. The larger left fragment carries a cyan eye-bearing curve, a pink curl, overlapping fine print, and dense black mottling. Its dark upper-right rim forms a distinctly rounded corner. A smaller companion at lower right repeats the cyan-magenta print vocabulary. Broad negative space separates the two.",
+      "foil-interference",
+      "pale-channel",
+      "rounded-edge"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Dark rounded foil edge beside the cyan eye-bearing curve and pink curl"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "foil-fragments-pale-channel",
+      "A dark rounded foil edge beside a cyan eye-bearing curve and pink curl",
+      "Dark rounded upper-right foil rim of the larger illustrated fragment"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: foil-fragments-pale-channel.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-dark-rounded-foil-edge-beside-the-cy",
+      "kind": "hero",
+      "type": "rounded-foil-edge",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.414,
+        "y": 0.11,
+        "w": 0.091,
+        "h": 0.375
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-dark-rounded-foil-edge-beside-the-cy-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.414,
+        "y": 0.11,
+        "w": 0.091,
+        "h": 0.375
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
