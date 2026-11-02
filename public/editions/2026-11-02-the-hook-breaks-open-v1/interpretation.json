@@ -1,0 +1,112 @@
+{
+  "interpretation_id": "interp-2026-11-02-the-hook-breaks-open-v1",
+  "edition_id": "2026-11-02-the-hook-breaks-open-v1",
+  "plate_read_timestamp": "2026-11-02T09:09:30.541Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A textured lavender-blue painted field holds a dense iris clump on the left and a smaller, lighter clump on the right. Violet and yellow blossoms punctuate overlapping green leaves. One conspicuous forest-green blade arches from the left clump across the upper middle, ending in a fine downward hook. This planned anchor is visible, but the many surrounding leaves and all-over brushwork make the composition busier than a minimal expressionist plate.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape painting of two unequal iris foliage islands across a broad blue-lilac interval. A dominant hooked forest-green blade arches partway across the gap; smaller spears and crossing leaves stop short. Sparse crumpled yellow-ochre and violet-pink blossoms droop on thin stems. Broken cream and lavender curls weave around both clusters, pale loops threading the lower-right leaves. Bristle-drag paint, diffuse light.",
+      "A textured lavender-blue painted field holds a dense iris clump on the left and a smaller, lighter clump on the right. Violet and yellow blossoms punctuate overlapping green leaves. One conspicuous forest-green blade arches from the left clump across the upper middle, ending in a fine downward hook. This planned anchor is visible, but the many surrounding leaves and all-over brushwork make the composition busier than a minimal expressionist plate.",
+      "hooked-sweeps",
+      "pigment-cutaway",
+      "emerald-pressure"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Long hooked forest-green iris blade with broken teal brushstroke edge"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "hooked-pigment-cutaway",
+      "A long hooked forest-green iris blade with a broken teal brushstroke edge.",
+      "Long arching forest-green iris blade with a broken teal edge"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: hooked-pigment-cutaway.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-long-hooked-forest-green-iris-blade-",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.298,
+        "y": 0.146,
+        "w": 0.363,
+        "h": 0.303
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-long-hooked-forest-green-iris-blade--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.298,
+        "y": 0.146,
+        "w": 0.363,
+        "h": 0.303
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

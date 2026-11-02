@@ -1,0 +1,40 @@
+{
+  "brief_id": "brief-2026-11-02-the-hook-breaks-open-v1",
+  "date": "2026-11-02",
+  "signal_cluster_ids": [
+    "85c460845e16",
+    "d87073253bd2",
+    "471c0ad5fb4f",
+    "f68b3b91fd48",
+    "bb993540d101",
+    "5eb99ca0509b",
+    "5ff8a264b17b",
+    "8bf5e9f425c7"
+  ],
+  "research_node_ids": [
+    "research-1-52192315"
+  ],
+  "mood": "Landscape painting of two unequal iris foliage islands across a broad blue-lilac interval. A dominant hooked forest-green blade arches partway across the gap; smaller spears and crossing leaves stop short. Sparse crumpled yellow-ochre and violet-pink blossoms droop on thin stems. Broken cream and lavender curls weave around both clusters, pale loops threading the lower-right leaves. Bristle-drag paint, diffuse light.",
+  "material_language": [
+    "Directional teal and forest-green leaf strokes with bristle drag and broken pigment coverage",
+    "Opaque cream, lilac and blue-gray scumbles interrupted by dark green underlayers",
+    "Small irregular yellow-ochre and violet-pink petal daubs on thin painted stems"
+  ],
+  "lighting": "Diffuse painted light throughout; pale broken strokes surround dark leaf silhouettes without crisp cast shadows or sculptural cutaway depth.",
+  "object_inventory": [
+    "A long hooked forest-green iris blade with a broken teal brushstroke edge."
+  ],
+  "interaction_grammar": {
+    "hero_count": 1,
+    "module_count": 0,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "No abstract fold, cutaway, punched hole or unrelated pigment macro; retain recognizable iris leaves, thin stems and irregular blossoms.",
+    "No reconstruction of the original thicket, blossom count or placement; do not erase the blue-lilac separation.",
+    "No text, labels, logos, interface chrome, target rings, pins, debug marks, pasted cards or framed source panels.",
+    "No stretching, forced cropping or padding; reference dimensions do not dictate the output canvas.",
+    "No horizon, room, city, metaphor scene, crisp cast shadows or clean outlined petals.",
+    "Only the dominant hooked blade is the owning source mark; subordinate foliage and blossoms are not additional source windows."
+  ]
+}

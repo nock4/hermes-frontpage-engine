@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-11-02-the-hook-breaks-open-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-long-hooked-forest-green-iris-blade-",
+      "artifact_id": "hero-long-hooked-forest-green-iris-blade-",
+      "source_type": "tweet",
+      "source_url": "https://x.com/archivepilled/status/2115093662799421687",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@archivepilled: Claude Monet, 'Iris' (c. 1924-25)",
+      "kicker": "x.com",
+      "excerpt": "Claude Monet, 'Iris' (c. 1924-25)",
+      "source_title": "@archivepilled: Claude Monet, 'Iris' (c. 1924-25)",
+      "source_summary": "Claude Monet, 'Iris' (c. 1924-25)",
+      "source_domain": "x.com",
+      "source_meta": "Monet Iris painting",
+      "source_image_url": "https://pbs.twimg.com/media/HVlbTWcXIAEZDIG.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HVlbTWcXIAEZDIG.jpg?name=orig"
+      ],
+      "source_image_alt": "@archivepilled: Claude Monet, 'Iris' (c. 1924-25)",
+      "source_media_url": "https://pbs.twimg.com/media/HVlbTWcXIAEZDIG.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-11-02-the-hook-breaks-open-v1/assets/source-posters/binding-hero-long-hooked-forest-green-iris-blade-.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5005,
+          "y": 0.5003
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.1836,
+          "width": 1.0,
+          "height": 0.6333
+        },
+        "image_width": 2048,
+        "image_height": 1819,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.06555,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}
