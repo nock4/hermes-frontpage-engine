@@ -1,0 +1,114 @@
+{
+  "interpretation_id": "interp-2026-11-03-the-heart-behind-the-bevel-v1",
+  "edition_id": "2026-11-03-the-heart-behind-the-bevel-v1",
+  "plate_read_timestamp": "2026-11-03T10:53:11.412Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A thick, angular silver shell rests on pale veined stone. Nested metallic rims surround a heart-shaped aperture containing cyan hair, a partial face, pale blue-lit hands, and a pink anatomical-looking heart wrapped in branching silver ornament. A smaller detached metallic hinge-and-rim fragment lies at the upper left. Broad bare stone separates the two forms.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Oblique landscape: a silver octagonal heart-window shell lies on pale stone, far from a small detached hinge-rim fragment. Navy glass holds a partial face, turquoise hair arc and pale hands around a fissured pink-lavender heart with silver branches. Angular nested rims, bright bevels, dark seams and fasteners remain.",
+      "A thick, angular silver shell rests on pale veined stone. Nested metallic rims surround a heart-shaped aperture containing cyan hair, a partial face, pale blue-lit hands, and a pink anatomical-looking heart wrapped in branching silver ornament. A smaller detached metallic hinge-and-rim fragment lies at the upper left. Broad bare stone separates the two forms.",
+      "octagonal-shell",
+      "recessed-blue",
+      "turquoise-sweep"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Silver angular shell enclosing a blue-lit heart aperture and pale hands"
+    ],
+    "dominant_surfaces": [
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "octagonal-heart-glass-rupture",
+      "Silver octagonal shell enclosing a blue-lit heart aperture and pale hands",
+      "Angular outer silhouette of the dominant silver shell",
+      "Stepped silver rims surrounding the heart aperture",
+      "Blue-lit heart aperture containing hands and a pink heart"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: octagonal-heart-glass-rupture.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-silver-angular-shell-enclosing-a-blu",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.376,
+        "y": 0.07,
+        "w": 0.603,
+        "h": 0.868
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-silver-angular-shell-enclosing-a-blu-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.376,
+        "y": 0.07,
+        "w": 0.603,
+        "h": 0.868
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

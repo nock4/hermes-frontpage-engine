@@ -1,0 +1,109 @@
+{
+  "analysis_id": "analysis-2026-11-03-the-heart-behind-the-bevel-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A thick, angular silver shell rests on pale veined stone. Nested metallic rims surround a heart-shaped aperture containing cyan hair, a partial face, pale blue-lit hands, and a pink anatomical-looking heart wrapped in branching silver ornament. A smaller detached metallic hinge-and-rim fragment lies at the upper left. Broad bare stone separates the two forms.",
+  "usable_surfaces": [
+    "Angular outer silhouette of the dominant silver shell",
+    "Stepped silver rims surrounding the heart aperture",
+    "Blue-lit heart aperture containing hands and a pink heart"
+  ],
+  "detected_objects": [
+    {
+      "label": "Silver angular shell enclosing a blue-lit heart aperture and pale hands",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.376,
+        "y": 0.07,
+        "w": 0.603,
+        "h": 0.868
+      },
+      "polygon": [
+        [
+          0.765,
+          0.07
+        ],
+        [
+          0.881,
+          0.151
+        ],
+        [
+          0.892,
+          0.176
+        ],
+        [
+          0.976,
+          0.459
+        ],
+        [
+          0.979,
+          0.478
+        ],
+        [
+          0.976,
+          0.495
+        ],
+        [
+          0.873,
+          0.829
+        ],
+        [
+          0.859,
+          0.847
+        ],
+        [
+          0.635,
+          0.938
+        ],
+        [
+          0.625,
+          0.93
+        ],
+        [
+          0.44,
+          0.73
+        ],
+        [
+          0.429,
+          0.694
+        ],
+        [
+          0.378,
+          0.426
+        ],
+        [
+          0.376,
+          0.405
+        ],
+        [
+          0.383,
+          0.363
+        ],
+        [
+          0.472,
+          0.189
+        ],
+        [
+          0.49,
+          0.178
+        ]
+      ],
+      "confidence": 0.98,
+      "visual_evidence": "The dominant physical anchor has a clearly visible polygonal silver perimeter, thick sidewalls, nested beveled bands, circular fasteners, and a polished heart-shaped inner rim. Its saturated blue aperture visibly contains cyan hair, part of a face, two pale hands, and a pink heart with branching metallic ornament. The polygon follows the shell's exterior silhouette rather than its cast shadow or surrounding stone. The detached upper-left fragment remains subordinate material and is not mapped as a second attribution."
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 2,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.523,
+    "rationale": "The overall arrangement is sparse, with one dominant shell and one smaller detached fragment against broad negative space. However, the aperture contains densely rendered figurative and ornamental detail. The plate is not broadly cluttered, but its polished illustrative treatment is not strongly minimal or expressionist."
+  },
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "edition_id": "2026-11-03-the-heart-behind-the-bevel-v1"
+}

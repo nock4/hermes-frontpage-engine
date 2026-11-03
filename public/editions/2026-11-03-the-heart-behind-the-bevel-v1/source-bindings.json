@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-11-03-the-heart-behind-the-bevel-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-silver-angular-shell-enclosing-a-blu",
+      "artifact_id": "hero-silver-angular-shell-enclosing-a-blu",
+      "source_type": "tweet",
+      "source_url": "https://x.com/benoit_tokyo_/status/2055146711660826781",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@benoit_tokyo_: yesterday at @emikusano’s opening ✨ 📍@rk_contemporary",
+      "kicker": "x.com",
+      "excerpt": "yesterday at @emikusano’s opening ✨ 📍@rk_contemporary",
+      "source_title": "@benoit_tokyo_: yesterday at @emikusano’s opening ✨ 📍@rk_contemporary",
+      "source_summary": "yesterday at @emikusano’s opening ✨ 📍@rk_contemporary",
+      "source_domain": "x.com",
+      "source_meta": "@benoit_tokyo_: Emi Kusano exhibition",
+      "source_image_url": "https://pbs.twimg.com/media/HIVWmeNbYAARUq0.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HIVWmeNbYAARUq0.jpg?name=orig"
+      ],
+      "source_image_alt": "@benoit_tokyo_: yesterday at @emikusano’s opening ✨ 📍@rk_contemporary",
+      "source_media_url": "https://pbs.twimg.com/media/HIVWmeNbYAARUq0.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-11-03-the-heart-behind-the-bevel-v1/assets/source-posters/binding-hero-silver-angular-shell-enclosing-a-blu.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5218,
+          "y": 0.5054
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2891,
+          "width": 1.0,
+          "height": 0.4219
+        },
+        "image_width": 1536,
+        "image_height": 2048,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.05946,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}
