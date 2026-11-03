@@ -890,7 +890,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   model,
   date,
   inspirationOverride = null,
-  bookmarkBudget = undefined,
+  bookmarkBudget = { acquisitions: 0, inspections: 0 },
 }) {
   const candidateLimit = Math.max(maxSources, Math.min(maxSources * autoresearchCandidateMultiplier, maxAutoresearchCandidates))
   const bookmarkFirst = signalHarvest.selection_policy?.bookmark_first === true && !inspirationOverride?.active && !inspirationOverride?.source_url
@@ -1297,8 +1297,9 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
   // The first visual reference is only a nomination. A successful low-fertility
   // verdict, rejected owner, or unowned automatic promotion may try verified
-  // field images, never new discovery, unknown refill, an exact override, or a
-  // failed vision response.
+  // field images. Bookmark low-fertility recovery may also nominate retained
+  // same-owner attachments for fresh admission within the shared budget. Never
+  // new discovery, an exact override, or a failed vision response.
   if (!selectedImageMaterial.length && (screenedMaterial.rejected_image_fingerprints.length
     || rejectedCreativeImageMaterial.length || creativelyRejectedAnchor || unownedAutomaticPromotion)
     && !isExactAnchorOverride(inspirationOverride)) {
@@ -1311,19 +1312,65 @@ export async function inspectSourceCandidates(signalHarvest, {
       .map((source) => ({ source, score: visualReferenceScore(source, recentSourceKeys) }))
       .filter(({ score }) => Number.isFinite(score))
       .sort((left, right) => right.score - left.score)
+    // Saved attachment URLs nominate only. Match both the saved note and its
+    // owning post, retain literal URLs, and require a new actual-pixel admission.
+    // Never expand arbitrary page images or rehabilitate rejected owning sources.
+    const attachmentAlternates = bookmarkFirst && screenedMaterial.rejected_image_fingerprints.length
+      ? contentSources.filter(source => screenedMaterial.rejected_image_fingerprints.some(row => row.page_url === source.url && row.image_url === source.image_url)
+        && eligibleForEnrichment(source) && hasCreativeArtifactEvidence(source, autoresearch, signalHarvest))
+        .flatMap(source => {
+          const note = signalHarvest.notes_selected?.find(note => note.id === source.note_id
+            && note.urls?.some(url => sourceContentKey({ url }) === sourceContentKey(source)))
+          return [...new Set(note?.metadata?.attached_media_urls || [])].slice(0, 4)
+            .filter(url => /^https:\/\/pbs\.twimg\.com\/media\//.test(url)
+              && canonicalizeSourceUrl(url) !== canonicalizeSourceUrl(source.image_url))
+            .map(image_url => ({ source: { ...source, image_url, media_url: image_url,
+              media_type: 'image', source_image_url: image_url, source_image_aliases: [image_url] },
+            score: visualReferenceScore(source, recentSourceKeys), requiresInspection: true }))
+        }) : []
+    alternates.unshift(...attachmentAlternates)
     imageSourceMaterial.alternate_visual_anchor_attempts = []
     imageSourceMaterial.rejected_image_fingerprints ||= []
-    for (const { source, score } of alternates) {
+    for (const { source, score, requiresInspection } of alternates) {
       if (imageSourceMaterial.alternate_visual_anchor_attempts.length >= 3) break
       const imageKey = canonicalizeSourceUrl(source.image_url)
       if (!imageKey || attemptedImages.has(imageKey)) continue
+      let attachmentAttempt = null
+      if (requiresInspection) {
+        if (bookmarkBudget.inspections >= 24) break
+        if (!eligibleForEnrichment(source) || !Number.isFinite(sourceContentScore(source, recentSourceKeys))
+          || imageMaterialAlreadyUsed({ page_url: source.url, image_url: source.image_url }, recentSourceKeys)) continue
+        attemptedImages.add(imageKey)
+        attachmentAttempt = { page_url: source.url, image_url: source.image_url, status: 'inspecting-admission' }
+        imageSourceMaterial.alternate_visual_anchor_attempts.push(attachmentAttempt)
+        // Charge durably before I/O, including failed/unknown inspections. This
+        // shares the original acquisition budget, never a fresh fallback budget.
+        bookmarkBudget.inspections += 1
+        const acquisitionPath = path.join(runDir, 'bookmark-acquisition.json')
+        const acquisition = JSON.parse(await fs.readFile(acquisitionPath, 'utf8'))
+        await writeJson(acquisitionPath, { ...acquisition, shared_budget: { ...bookmarkBudget } })
+        await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
+        autoresearch = await inspectCreativeArtifacts([source], autoresearch, {
+          runDir, apiKey, model, signalHarvest, recentSourceKeys, maxInspections: 1, inspectionCacheDir: bookmarkCacheDir(),
+        })
+        imageMaterialEvidence.autoresearch = autoresearch
+        if (!eligibleForEnrichment(source) || !hasCreativeArtifactEvidence(source, autoresearch, signalHarvest)
+          || decideAnchorEligibility({ anchorSource: source, recentSourceKeys, autoresearch }).decision === 'reject') {
+          attachmentAttempt.status = 'rejected-admission'
+          continue
+        }
+      }
       const promoted = buildPromotedVisualAnchorMaterial({ ...source, visual_reference_score: score }, {
         ...imageMaterialEvidence, anchorResearch, imageSourceMaterial, inspirationOverride, recentSourceKeys,
       })
-      if (!promoted) continue
+      if (!promoted) {
+        if (attachmentAttempt) attachmentAttempt.status = 'rejected-material'
+        continue
+      }
       attemptedImages.add(imageKey)
-      const attempt = { page_url: promoted.candidate.page_url, image_url: promoted.candidate.image_url, status: 'inspecting' }
-      imageSourceMaterial.alternate_visual_anchor_attempts.push(attempt)
+      const attempt = attachmentAttempt || { page_url: promoted.candidate.page_url, image_url: promoted.candidate.image_url, status: 'inspecting' }
+      attempt.status = 'inspecting'
+      if (!attachmentAttempt) imageSourceMaterial.alternate_visual_anchor_attempts.push(attempt)
       // Persist the attempt before vision; its existing fail-closed error retains
       // the failed fingerprint and must not silently move on to another seed.
       await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
@@ -1336,6 +1383,13 @@ export async function inspectSourceCandidates(signalHarvest, {
         fingerprints: screenedAlternate.source_image_fingerprints,
       })
       if (!selectedImageMaterial.length) continue
+      if (requiresInspection) {
+        // One owning post remains one window. Swap its exact admitted media,
+        // retaining earlier decisions/fingerprints as rejection evidence.
+        contentSources = contentSources.map(row => sourceContentKey(row) === sourceContentKey(source) ? source : row)
+        inspected = inspected.map(row => sourceContentKey(row) === sourceContentKey(source) ? source : row)
+        if (anchorSource && sourceContentKey(anchorSource) === sourceContentKey(source)) anchorSource = null
+      }
       if (!anchorSource && !forcedAnchorSource) {
         anchorSource = { ...source, anchor_selection_lane: 'verified-fertile-source-field',
           anchor_selection_reason: 'Selected from verified eligible content sources after earlier source material failed admission.' }

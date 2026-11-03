@@ -6,8 +6,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 vi.mock('../../scripts/lib/creative-artifact-inspection.mjs', () => ({
   inspectCreativeArtifacts: async (sources, research) => {
     const { inspectedDecision } = await import('../fixtures/creative-inspection.mjs')
-    const attempted = new Set((research?.source_decisions || []).filter(row => row.inspection).map(row => row.url))
-    const batch = sources.filter(source => !attempted.has(source.url)).slice(0, state.batchSize)
+    const attempted = new Set((research?.source_decisions || []).filter(row => row.inspection).map(row => `${row.url}|${row.inspection.media_url}`))
+    const batch = sources.filter(source => !attempted.has(`${source.url}|${source.image_url}`)).slice(0, state.batchSize)
     state.inspections.push(batch.map(source => source.url))
     return { ...research, source_decisions: [...(research?.source_decisions || []), ...batch.map(source => {
       const decision = inspectedDecision(source)
@@ -15,6 +15,7 @@ vi.mock('../../scripts/lib/creative-artifact-inspection.mjs', () => ({
         ...decision.inspection, status: 'rejected', artifact_kind: 'product',
         observation: 'A photo-to-avatar tool interface, not a standalone creative work.',
       }
+      if (state.mediaOutcomes?.[source.image_url]) Object.assign(decision.inspection, state.mediaOutcomes[source.image_url])
       return decision
     })] }
   },
@@ -61,6 +62,7 @@ beforeEach(async () => {
   vi.stubEnv('DFE_SINGLE_ANCHOR_RESEARCH', '1')
   vi.stubEnv('DFE_DECISION_MODEL', 'openai')
   state.rejectedUrls = []
+  state.mediaOutcomes = {}
   state.editorialDecisions = []
   state.nominatedUrl = null
   state.materials = [material]
@@ -97,6 +99,57 @@ function nominateRejectedParent() {
 }
 
 describe('source research vision boundary', () => {
+  it.each([true, false])('inspects a saved same-owner attachment without adding windows or resetting budget (rootless=%s)', async rootless => {
+    state.noAnchor = rootless
+    state.materials = []
+    const owner = { ...sources[0], url: 'https://x.com/artist/status/2117041459421725037', source_channel: 'twitter-bookmark',
+      image_url: 'https://pbs.twimg.com/media/first.png', media_url: 'https://pbs.twimg.com/media/first.png', media_type: 'image' }
+    const attachment = 'https://pbs.twimg.com/media/second.png'
+    state.reference = owner
+    state.analyzer.mockResolvedValueOnce({ ...fertile, visual_fertility: 'low' }).mockResolvedValue(fertile)
+    const budget = { acquisitions: 1, inspections: 1 }
+    const result = await inspectSourceCandidates({ selection_policy: { bookmark_first: true }, source_candidates: [owner],
+      notes_selected: [{ id: owner.note_id, urls: [owner.url], metadata: { attached_media_urls: [owner.image_url, attachment] } }], motif_terms: [] },
+    { maxSources: 1, runDir, sourceTool: 'fetch', date: '2026-11-03', bookmarkBudget: budget })
+    expect(result.selected_image_material[0]).toMatchObject({ page_url: owner.url, image_url: attachment })
+    expect(result.anchor_research.anchor_source.image_url).toBe(attachment)
+    expect(result.content_sources).toHaveLength(1)
+    expect(result.content_sources[0].image_url).toBe(attachment)
+    expect(result.autoresearch.source_decisions.filter(row => row.inspection).map(row => row.inspection.media_url)).toEqual([owner.image_url, attachment])
+    expect(budget).toEqual({ acquisitions: 2, inspections: 3 })
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    expect(images.rejected_image_fingerprints[0].image_url).toBe(owner.image_url)
+    expect(images.alternate_visual_anchor_attempts).toHaveLength(1)
+  })
+
+  it.each(['exhausted', 'wrong-owner', 'archived', 'unknown', 'rejected', 'all-low', 'vision-error'])('keeps attachment fallback bounded and fail-closed: %s', async mode => {
+    state.noAnchor = true
+    state.materials = []
+    const owner = { ...sources[0], url: 'https://x.com/artist/status/2117041459421725037', source_channel: 'twitter-bookmark',
+      image_url: 'https://pbs.twimg.com/media/first.png?name=orig', media_type: 'image' }
+    const attachments = ['first', 'second', 'third', 'fourth', 'fifth'].map(id => `https://pbs.twimg.com/media/${id}.png`)
+    state.reference = owner
+    if (mode === 'unknown' || mode === 'rejected') {
+      for (const image of attachments.slice(1)) state.mediaOutcomes[image] = { status: mode }
+    }
+    state.analyzer.mockResolvedValueOnce({ ...fertile, visual_fertility: 'low' })
+    if (mode === 'vision-error') state.analyzer.mockRejectedValue(new Error('alternate vision unavailable'))
+    else state.analyzer.mockResolvedValue(mode === 'all-low' ? { ...fertile, visual_fertility: 'low' } : fertile)
+    const budget = { acquisitions: 1, inspections: mode === 'exhausted' ? 23 : 1 }
+    const ledger = new Set(mode === 'archived' ? attachments.slice(1).map(canonicalizeSourceUrl) : [])
+    await expect(inspectSourceCandidates({ selection_policy: { bookmark_first: true }, source_candidates: [owner],
+      notes_selected: [{ id: owner.note_id, urls: [mode === 'wrong-owner' ? sources[1].url : owner.url], metadata: { attached_media_urls: attachments } }], motif_terms: [] },
+    { maxSources: 1, runDir, sourceTool: 'fetch', date: '2026-11-03', bookmarkBudget: budget, recentSourceKeys: ledger }))
+      .rejects.toThrow(mode === 'vision-error' ? /vision.*before image generation/ : /missing_anchor_source/)
+    const images = JSON.parse(await fs.readFile(path.join(runDir, 'image-source-material.json'), 'utf8'))
+    const expectedAttempts = ['exhausted', 'wrong-owner', 'archived'].includes(mode) ? 0 : mode === 'vision-error' || mode === 'rejected' ? 1 : 3
+    expect(images.alternate_visual_anchor_attempts).toHaveLength(expectedAttempts)
+    expect(state.analyzer).toHaveBeenCalledTimes(mode === 'all-low' ? 4 : mode === 'vision-error' ? 2 : 1)
+    expect(budget.inspections).toBe(mode === 'exhausted' ? 24 : 2 + expectedAttempts)
+    const saved = JSON.parse(await fs.readFile(path.join(runDir, 'bookmark-acquisition.json'), 'utf8'))
+    expect(saved.shared_budget).toEqual(budget)
+  })
+
   it('does not launder a creatively rejected tool parent with separately found fertile artwork pixels', async () => {
     nominateRejectedParent()
     const unrelatedImages = state.materials.map(row => row.image_url)
