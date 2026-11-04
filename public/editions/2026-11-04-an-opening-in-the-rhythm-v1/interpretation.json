@@ -1,0 +1,112 @@
+{
+  "interpretation_id": "interp-2026-11-04-an-opening-in-the-rhythm-v1",
+  "edition_id": "2026-11-04-an-opening-in-the-rhythm-v1",
+  "plate_read_timestamp": "2026-11-04T09:19:20.919Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A distressed monochrome print on cream paper joins a pale-crowned, cloth-masked face to a long, tapered formation of nested black contours. Separate distorted lettering, a fine-lined map, circular emblems, and scattered print wear fill much of the surrounding plate. The planned joined face-and-contour feature is visibly present.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape black-ink print on off-white paper. A dominant masked-face fragment with pale crown, sharp eyes and marked cloth merges with a tapered nested-contour island; a smaller elastic-letter mass overlaps fine map traces across open paper. Broken medallion rails and a short curling chain retain empty circles and three-lobed emblems. Broad margins, ragged ink, illegible marks; no complete flyer.",
+      "A distressed monochrome print on cream paper joins a pale-crowned, cloth-masked face to a long, tapered formation of nested black contours. Separate distorted lettering, a fine-lined map, circular emblems, and scattered print wear fill much of the surrounding plate. The planned joined face-and-contour feature is visibly present.",
+      "interrupted-medallions",
+      "nested-contours",
+      "ink-negative"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Pale-crowned masked face joined to a tapered nested-contour island"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "broken-medallion-contour-crossing",
+      "A pale-crowned masked face joins a tapered island of nested black contours.",
+      "Pale crown, outlined eyes, and marked cloth mask within a dark printed field",
+      "Nested ink contours flowing from the portrait into a narrow lower-right tip",
+      "Visibly grainy cream paper beneath worn black ink"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: broken-medallion-contour-crossing.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-pale-crowned-masked-face-joined-to-a",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.0091,
+        "y": 0.0703,
+        "w": 0.5762,
+        "h": 0.8789
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-pale-crowned-masked-face-joined-to-a-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0091,
+        "y": 0.0703,
+        "w": 0.5762,
+        "h": 0.8789
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

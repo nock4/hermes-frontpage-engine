@@ -1,0 +1,35 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-11-04-an-opening-in-the-rhythm-v1",
+  "edition_id": "2026-11-04-an-opening-in-the-rhythm-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-pale-crowned-masked-face-joined-to-a",
+      "source_image_url": "https://pbs.twimg.com/media/HWE6kdkbYAASwxb.png",
+      "poster_asset_path": "/editions/2026-11-04-an-opening-in-the-rhythm-v1/assets/source-posters/binding-hero-pale-crowned-masked-face-joined-to-a.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-11-04-an-opening-in-the-rhythm-v1/binding-hero-pale-crowned-masked-face-joined-to-a-source-visual-qa.jpg",
+      "image_width": 563,
+      "image_height": 800,
+      "aspect_ratio": 0.7037,
+      "render_mode": "poster-crop",
+      "crop_risk": "high",
+      "focal_point": {
+        "x": 0.5107,
+        "y": 0.4944
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.3025,
+        "width": 1.0,
+        "height": 0.395
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.11376,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-11-04-an-opening-in-the-rhythm-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-pale-crowned-masked-face-joined-to-a",
+      "artifact_id": "hero-pale-crowned-masked-face-joined-to-a",
+      "source_type": "tweet",
+      "source_url": "https://x.com/mewfeuille/status/2117041459421725037",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@mewfeuille: Was recently made aware of an incredible collection of Japanese experimental gig...",
+      "kicker": "x.com",
+      "excerpt": "Was recently made aware of an incredible collection of Japanese experimental gig flyers from 1975 to 1994. Lots of beautifully hand drawn/handwritten graphics, treated photographs, and collaging. Link to the full archive in the replies.",
+      "source_title": "@mewfeuille: Was recently made aware of an incredible collection of Japanese experimental gig...",
+      "source_summary": "Was recently made aware of an incredible collection of Japanese experimental gig flyers from 1975 to 1994. Lots of beautifully hand drawn/handwritten graphics, treated photographs, and collaging. Link to the full archive in the replies.",
+      "source_domain": "x.com",
+      "source_meta": "@mewfeuille: Was recently made aware of an incredible collection of Japanese experimental gig flyers from 1975 to",
+      "source_image_url": "https://pbs.twimg.com/media/HWE6kdkbYAASwxb.png",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HWE6kdkbYAASwxb.png"
+      ],
+      "source_image_alt": "@mewfeuille: Was recently made aware of an incredible collection of Japanese experimental gig...",
+      "source_media_url": "https://pbs.twimg.com/media/HWE6kdkbYAASwxb.png",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-11-04-an-opening-in-the-rhythm-v1/assets/source-posters/binding-hero-pale-crowned-masked-face-joined-to-a.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "high",
+        "focal_point": {
+          "x": 0.5107,
+          "y": 0.4944
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.3025,
+          "width": 1.0,
+          "height": 0.395
+        },
+        "image_width": 563,
+        "image_height": 800,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.11376,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

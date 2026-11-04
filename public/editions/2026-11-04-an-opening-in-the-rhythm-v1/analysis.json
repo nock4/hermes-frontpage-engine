@@ -1,0 +1,120 @@
+{
+  "analysis_id": "analysis-2026-11-04-an-opening-in-the-rhythm-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A distressed monochrome print on cream paper joins a pale-crowned, cloth-masked face to a long, tapered formation of nested black contours. Separate distorted lettering, a fine-lined map, circular emblems, and scattered print wear fill much of the surrounding plate. The planned joined face-and-contour feature is visibly present.",
+  "usable_surfaces": [
+    "Pale crown, outlined eyes, and marked cloth mask within a dark printed field",
+    "Nested ink contours flowing from the portrait into a narrow lower-right tip",
+    "Visibly grainy cream paper beneath worn black ink"
+  ],
+  "detected_objects": [
+    {
+      "label": "Pale-crowned masked face joined to a tapered nested-contour island",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.0078,
+        "y": 0.0742,
+        "w": 0.5775,
+        "h": 0.876
+      },
+      "polygon": [
+        [
+          0.0358,
+          0.0801
+        ],
+        [
+          0.3086,
+          0.0742
+        ],
+        [
+          0.3112,
+          0.1768
+        ],
+        [
+          0.3724,
+          0.2334
+        ],
+        [
+          0.3607,
+          0.3877
+        ],
+        [
+          0.4049,
+          0.4404
+        ],
+        [
+          0.3822,
+          0.499
+        ],
+        [
+          0.4232,
+          0.5752
+        ],
+        [
+          0.4811,
+          0.6426
+        ],
+        [
+          0.4824,
+          0.7295
+        ],
+        [
+          0.541,
+          0.8262
+        ],
+        [
+          0.5853,
+          0.9424
+        ],
+        [
+          0.5716,
+          0.9502
+        ],
+        [
+          0.4557,
+          0.917
+        ],
+        [
+          0.2884,
+          0.8193
+        ],
+        [
+          0.0729,
+          0.6943
+        ],
+        [
+          0.028,
+          0.6123
+        ],
+        [
+          0.0078,
+          0.4297
+        ]
+      ],
+      "confidence": 0.96,
+      "visual_evidence": "A pale three-point rounded crown sits above sharply outlined eyes. A pale lower-face covering carries dark vertical marks. The portrait's dark backing connects to rippling nested black-and-cream bands that descend diagonally into a narrow tip. The polygon follows the joined outer silhouette, excluding the separate lettering, map, and circular ornaments. These surrounding elements are not counted as additional source owners.",
+      "effect_material": {
+        "material": "paper",
+        "observation": "Cream paper grain remains visible through and around broken, speckled black printing, providing an observable textured surface rather than a reflective or moving medium.",
+        "modalities": [
+          "touch"
+        ]
+      }
+    }
+  ],
+  "complexity_assessment": {
+    "status": "too-complex",
+    "dominant_form_count": 4,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.506,
+    "rationale": "The joined portrait and contour island is distinguishable, but large distorted lettering, an intricate map, and repeated circular ornaments compete with it. Dense fine lines and distressed marks make the plate read as an elaborate graphic flyer rather than a minimal expressionist scene. Coverage is approximate."
+  },
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "edition_id": "2026-11-04-an-opening-in-the-rhythm-v1"
+}
