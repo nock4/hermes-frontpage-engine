@@ -26,6 +26,7 @@ That package should include:
 - ambiance recipe
 - about note with run-specific process explanation and typography profile
 - post-plate analysis, interpretation, and enhancement-plan metadata when generated
+- optional `effects.json` (`schema_version: 1`, matching `edition_id`, at most three admitted artifact/source-bound experiences); absent means off, never an archive rewrite. The canonical normalized contract, generation admission and runtime/backend lifecycle are documented in [Edition experiences](edition-experiences.md).
 - review state
 - publish metadata
 

@@ -112,7 +112,8 @@ const sanitizeHttpUrl = (
     const baseOrigin = allowRelative ? (globalThis.location?.origin ?? 'https://runtime-warmup.local') : undefined
     const url = baseOrigin ? new URL(value, baseOrigin) : new URL(value)
     if (url.protocol !== 'https:' && url.protocol !== 'http:') return null
-    if (!allowPrivateHosts && isBlockedRemoteHostname(url.hostname)) return null
+    const sameOriginRelative = allowRelative && !!baseOrigin && url.origin === baseOrigin && /^\/(?!\/)/.test(value)
+    if (!allowPrivateHosts && !sameOriginRelative && isBlockedRemoteHostname(url.hostname)) return null
     return url.toString()
   } catch {
     return null

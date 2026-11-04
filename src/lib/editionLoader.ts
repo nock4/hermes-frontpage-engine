@@ -1,3 +1,4 @@
+import { normalizeEffects } from './editionEffects.mjs'
 import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from './sourceWindowCountContract.mjs'
 import type {
   AmbianceRecord,
@@ -703,8 +704,8 @@ const fetchJson = async <T,>(path: string, parse: (value: JsonObject, path: stri
   return parse(await parseJsonObject(response, path), path)
 }
 
-const fetchOptionalJson = async <T,>(path: string, parse: (value: JsonObject, path: string) => T): Promise<T | null> => {
-  const response = await fetch(path)
+const fetchOptionalJson = async <T,>(path: string, parse: (value: JsonObject, path: string) => T, options?: RequestInit): Promise<T | null> => {
+  const response = await fetch(path, options)
   if (!response.ok) return null
 
   const contentType = response.headers?.get?.('content-type') ?? ''
@@ -767,7 +768,22 @@ export const loadEditionPackage = async (basePath: string): Promise<LoadedEditio
       }
     : artifactMap
 
-  return { edition, brief, artifactMap: mergedArtifactMap, sourceBindings, ambiance, review, geometryKit, enhancementPlan, about, interpretation }
+  const qaQuery = new URLSearchParams(globalThis.location?.search ?? '')
+  // Explicit same-origin request hint only. The admission override lives in
+  // server-only Vite dev middleware; static production ignores this header.
+  const qaOptions = qaQuery.get('qaEffects') === '1' && qaQuery.has('effectReview')
+    ? { headers: { 'X-DFE-Effects-Review': new URLSearchParams({ qaEffects: '1', effectReview: qaQuery.get('effectReview')! }).toString() } }
+    : undefined
+  let effects: LoadedEdition['effects'] = null
+  try {
+    const effectPayload = await fetchOptionalJson(`${basePath}/effects.json`, value => value, qaOptions)
+    effects = normalizeEffects(effectPayload, { editionId: edition.edition_id, artifacts: artifactMap.artifacts, bindings: sourceBindings.bindings })
+  } catch {
+    // Optional experiences must never take the original edition or its sources
+    // down. Authoring/publish validation remains strict; runtime fails closed.
+    effects = null
+  }
+  return { edition, effects, brief, artifactMap: mergedArtifactMap, sourceBindings, ambiance, review, geometryKit, enhancementPlan, about, interpretation }
 }
 
 export const polygonToClipPathForGeometry = (polygon: ArtifactRecord['polygon'] | undefined, bounds: ArtifactRecord['bounds'] | undefined) => {

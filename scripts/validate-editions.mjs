@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import { normalizeEffects } from '../src/lib/editionEffects.mjs'
 import path from 'node:path'
 import { assertPackagedOriginalImages } from './lib/original-image-delivery.mjs'
 import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../src/lib/sourceWindowCountContract.mjs'
@@ -31,6 +32,11 @@ for (const item of manifest.editions) {
   const edition = JSON.parse(fs.readFileSync(path.join(base, 'edition.json'), 'utf8'))
   const artifactMap = JSON.parse(fs.readFileSync(path.join(base, 'artifact-map.json'), 'utf8'))
   const bindings = JSON.parse(fs.readFileSync(path.join(base, 'source-bindings.json'), 'utf8'))
+  const effectsPath = path.join(base, 'effects.json')
+  if (fs.existsSync(effectsPath)) {
+    try { normalizeEffects(JSON.parse(fs.readFileSync(effectsPath, 'utf8')), { editionId: edition.edition_id, artifacts: artifactMap.artifacts, bindings: bindings.bindings }) }
+    catch (error) { errors.push(`${item.edition_id}: ${error.message}`) }
+  }
   try { assertPackagedOriginalImages(bindings.bindings, { editionDir: base, editionId: item.edition_id }) }
   catch (error) { errors.push(`${item.edition_id}: ${error.message}`) }
   const enforceVariety = edition.date >= '2026-04-18'

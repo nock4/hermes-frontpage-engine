@@ -17,6 +17,7 @@ import { ArchiveIndexPage, ArchiveMiniList } from './components/runtime/ArchiveN
 import { EmbedPreloadLayer } from './components/runtime/EmbedPreloadLayer'
 import { RuntimeSidebar } from './components/runtime/RuntimeSidebar'
 import { SourceWindow, SourceWindowDock } from './components/runtime/SourceWindow'
+import { EditionExperiences } from './components/runtime/EditionExperiences'
 import { InteractionLab } from './components/runtime/InteractionLab'
 import { isInteractionLabMode } from './lib/interactionLab'
 import type { ArchiveRecord, ArtifactRecord, EditionManifest, LoadedEdition, SourceBindingRecord, SourceWindowState } from './types/runtime'
@@ -330,6 +331,7 @@ function App() {
           <div className="plate-field">
           <img className="plate" src={loaded.edition.plate_asset_path} alt={loaded.edition.title}
             onLoad={(event) => { const image = event.currentTarget; setPlateGeometry({ path: loaded.edition.plate_asset_path, aspect: image.naturalWidth / image.naturalHeight }) }} />
+          {reviewMode === 'live' && !interactionLabMode ? <EditionExperiences loaded={loaded} suspended={!!primaryBinding || aboutOpen || archiveOpen} /> : null}
           {loaded.artifactMap.artifacts.map((artifact, artifactIndex) => {
             const active = artifact.id === activeArtifactId
             const interactionMesh = artifact.interaction_mesh

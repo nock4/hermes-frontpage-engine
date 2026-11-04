@@ -1,4 +1,6 @@
 import crypto from 'node:crypto'
+import { planEffects } from '../../src/lib/editionEffects.mjs'
+import { admitNativeVideo } from './effect-video-admission.mjs'
 import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import { assertLandscapePlate, assertLandscapePublication } from './landscape-policy.mjs'
 import fs from 'node:fs/promises'
@@ -526,7 +528,24 @@ export async function assembleEditionPackage({
 
   const about = buildAboutRecord({ root, editionId, payload: { ...payload, artifacts: eligibleArtifacts }, researchField, signalHarvest, analysis: packageAnalysis, runDir, maxContentItems })
 
+  // Only inspected material admissions can nominate experiences. Old analyses
+  // and unsupported media remain effect-free; prose/labels never grant sensors.
+  const effectEvidence = []
+  let videoProbes = 0
+  for (const [index, object] of objects.entries()) {
+    const ev = object.effect_material
+    if (!ev || Number(object.confidence) < 0.8 || !object.polygon) continue
+    // Never accept model-authored video flags; only the actual source probe.
+    const evidence = { material: ev.material, observation: ev.observation, modalities: (ev.modalities || []).filter(m => m !== 'video'), artifact_id: artifactMapArtifacts[index].id, binding_id: bindings[index].id }
+    if (bindings[index].source_media_type === 'video' && (evidence.modalities.includes('reflective') || ev.material === 'screen') && videoProbes++ < 2) {
+      const video = await admitNativeVideo({ source: sourceByUrl.get(sourceUrls[index]), binding: bindings[index] })
+      if (video) { evidence.video = video; evidence.modalities.push('video') }
+    }
+    effectEvidence.push(evidence)
+  }
+  const effects = planEffects({ editionId, artifacts: artifactMapArtifacts, bindings, seed: editionId, evidence: effectEvidence })
   const packageFiles = {
+    'effects.json': effects,
     'edition.json': edition,
     'brief.json': brief,
     'artifact-map.json': artifactMap,

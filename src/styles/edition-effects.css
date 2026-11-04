@@ -1,0 +1,84 @@
+.edition-effect-paint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.edition-effect-paint canvas,
+.edition-effect-video-host {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.edition-effect-paint canvas {
+  opacity: 0;
+}
+.edition-effect-paint canvas.is-painted {
+  opacity: 1;
+}
+.edition-effect-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.edition-effect-video--camera {
+  transform: scaleX(-1);
+  opacity: 0.32;
+  filter: grayscale(1) contrast(1.4);
+  mix-blend-mode: screen;
+}
+.edition-effect-mark {
+  position: absolute;
+
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: none;
+  color: #e8f3f4;
+  text-shadow: 0 1px 4px #000;
+  font-size: 24px;
+  line-height: 1;
+  z-index: 25;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.edition-effect-mark:focus-visible {
+  outline: 1px solid currentColor;
+  outline-offset: -6px;
+}
+.edition-effect-mark:disabled {
+  visibility: hidden;
+}
+.edition-effect-status {
+  position: fixed;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: 12px;
+  right: 12px;
+  max-width: 560px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #101719ed;
+  color: #f1f5f4;
+  font: 12px/1.4 system-ui;
+  z-index: 1000;
+}
+.edition-effect-status button {
+  flex-shrink: 0;
+  min-height: 44px;
+  background: none;
+  border: 1px solid #bec9c9;
+  color: inherit;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: reduce) {
+  .edition-effect-paint {
+    display: none;
+  }
+}

@@ -46,6 +46,13 @@ describe('sanitizeSourceImageUrl', () => {
     vi.unstubAllGlobals()
   })
 
+  it('allows local same-origin relative media without admitting other private hosts', () => {
+    vi.stubGlobal('location', { origin: 'http://127.0.0.1:4180' } as Location)
+    expect(sanitizeSourceImageUrl('/editions/test/assets/native.webm')).toBe('http://127.0.0.1:4180/editions/test/assets/native.webm')
+    expect(sanitizeSourceImageUrl('//192.168.1.2/private')).toBeNull()
+    vi.unstubAllGlobals()
+  })
+
   it('rejects private-host and non-http image urls', () => {
     expect(sanitizeSourceImageUrl('http://localhost:3000/source.jpg')).toBeNull()
     expect(sanitizeSourceImageUrl('http://169.254.169.254/source.jpg')).toBeNull()

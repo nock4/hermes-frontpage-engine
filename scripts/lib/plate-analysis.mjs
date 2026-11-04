@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { normalizeMaterialEvidence } from '../../src/lib/editionEffects.mjs'
 import path from 'node:path'
 
 import { clamp01, readImageDimensions } from './edition-geometry.mjs'
@@ -26,6 +27,7 @@ export async function inspectGeneratedPlate(
       'Do not select empty space or arbitrary quadrants.',
       `Return ${minContentItems} to ${maxContentItems} useful artifacts when visible.`,
       'Also judge whether the plate is minimal and expressionist or too visually cluttered.',
+      'Optional effect_material must describe a directly observed material surface, not inferred source prose. Use null if unsupported. Modalities are reflective (glass/metal/water optics), resonant (a plausible struck or vibrating material), depth (actual layers), fracture (visible seam), touch (visible receptive surface). Never claim native video from a still plate.',
     ],
     planned_artifacts: payload.artifacts,
     output_shape: {
@@ -40,6 +42,7 @@ export async function inspectGeneratedPlate(
           polygon: [[0, 0], [0, 0], [0, 0]],
           confidence: 0.0,
           visual_evidence: 'what visible mark, edge, gesture, or surface supports this target',
+          effect_material: { material: 'metal|glass|water|stone|ceramic|fabric|paper|wood|screen|pigment', observation: 'specific visible material and why it supports these modalities', modalities: ['reflective|resonant|depth|fracture|touch'] },
         },
       ],
       complexity_assessment: {
@@ -157,6 +160,7 @@ function normalizeDetectedObject(object, index) {
     ...(polygon ? { polygon } : {}),
     confidence: Number.isFinite(Number(object.confidence)) ? Number(object.confidence) : 0.5,
     visual_evidence: String(object.visual_evidence || ''),
+    ...(normalizeMaterialEvidence(object.effect_material) ? { effect_material: normalizeMaterialEvidence(object.effect_material) } : {}),
   }
 }
 

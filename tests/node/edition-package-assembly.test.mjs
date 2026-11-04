@@ -134,7 +134,13 @@ describe('edition package assembly', () => {
         bounds: { x: index * 0.1, y: 0.7, w: 0.05, h: 0.1 },
       })
     }
+    // Explicit synthetic vision material evidence; not inferred from the label.
+    input.analysis.detected_objects[0].confidence = 0.95
+    input.analysis.detected_objects[0].effect_material = { material: 'paper', observation: 'Inspected folded resonant paper edge', modalities: ['resonant', 'fracture', 'touch'] }
     const result = await assembleEditionPackage(input, { test_step: true })
+    const experiences = await readJson(path.join(root, 'public', 'editions', result.editionId, 'effects.json'))
+    expect(experiences.effects.length).toBeGreaterThan(0)
+    expect(experiences.effects.length).toBeLessThanOrEqual(3)
 
     expect(result).toMatchObject({
       editionId: '2026-04-27-quiet-test-room-v1',

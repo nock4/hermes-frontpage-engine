@@ -257,6 +257,7 @@ import type { AboutRecord } from './about'
 import type { InterpretationRecord } from './interpretation'
 
 export interface LoadedEdition {
+  effects?: import('../lib/editionEffects.mjs').EditionEffects | null
   edition: EditionRecord
   brief: BriefRecord
   artifactMap: ArtifactMapRecord
