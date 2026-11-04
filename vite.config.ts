@@ -12,6 +12,6 @@ export default defineConfig({
     allowedHosts: true,
   },
   test: {
-    exclude: ['tests/ux/**', 'node_modules/**', 'dist/**'],
+    exclude: ['tests/ux/**', '**/node_modules/**', 'dist/**'],
   },
 })

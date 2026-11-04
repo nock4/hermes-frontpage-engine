@@ -80,6 +80,10 @@ async function fixture(page: any, kind: string) {
 }
 for (const kind of ['refraction', 'camera', 'resonance', 'depth', 'shared', 'rupture', 'sound'])
   test(`${kind}: integrated opt-in, stop and source territory preserved`, async ({ page }, info) => {
+    // This case exercises fail-closed missing configuration, independently of
+    // the proposed production config. Joined exchange has its own relay test.
+    if (kind === 'shared')
+      await page.route('**/effects-config.json', (r) => r.fulfill({ status: 404, contentType: 'text/plain', body: '' }))
     await fixture(page, kind)
     const mark = page.getByRole('button', { name: `Experience ${kind}` })
     await expect(mark).toBeVisible()

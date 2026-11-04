@@ -1,0 +1,7 @@
+{
+  "name": "daily-shared-surface-worker",
+  "private": true,
+  "type": "module",
+  "scripts": { "deploy": "wrangler deploy", "check": "wrangler deploy --dry-run" },
+  "devDependencies": { "wrangler": "4.157.0", "miniflare": "5.20261103.0-beta" }
+}
