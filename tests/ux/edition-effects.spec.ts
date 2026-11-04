@@ -594,6 +594,10 @@ test('QA numerical snapshots do not expose mutable renderer state', async ({ pag
 })
 
 test('archive has no experience marks without a contract or QA diagnostics', async ({ page }) => {
+  // The daily edition may legitimately ship an effects contract. Model the
+  // legacy archive's absent contract explicitly instead of assuming today's
+  // publication has no effects.
+  await page.route(`**${current.path}/effects.json`, route => route.fulfill({ status: 404, body: 'Not found' }))
   await page.goto('/')
   await expect(page.locator('img.plate')).toBeVisible()
   await expect(page.locator('.edition-effect-mark')).toHaveCount(0)
