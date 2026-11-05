@@ -1,0 +1,176 @@
+{
+  "artifact_map_id": "map-2026-11-05-where-the-folds-fall-apart-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "separated-drapery-cascade",
+  "default_artifact_id": "hero-copper-haired-inclined-head-collarbo",
+  "artifacts": [
+    {
+      "id": "hero-copper-haired-inclined-head-collarbo",
+      "kind": "hero",
+      "label": "Copper-haired inclined head, collarbone hand, crossing forearms, and continuous blush drapery",
+      "artifact_type": "figure-drapery-silhouette",
+      "bounds": {
+        "x": 0.0007,
+        "y": 0.001,
+        "w": 0.9987,
+        "h": 0.998
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.0026,
+          0.0811
+        ],
+        [
+          0.028,
+          0.0039
+        ],
+        [
+          0.7897,
+          0.0098
+        ],
+        [
+          0.8379,
+          0.043
+        ],
+        [
+          0.9036,
+          0.1641
+        ],
+        [
+          0.9694,
+          0.3252
+        ],
+        [
+          0.9967,
+          0.4355
+        ],
+        [
+          0.9967,
+          0.9443
+        ],
+        [
+          0.9544,
+          0.9951
+        ],
+        [
+          0.0026,
+          0.9951
+        ]
+      ],
+      "cluster_id": "separated-drapery-cascade",
+      "mask_path": "/editions/2026-11-05-where-the-folds-fall-apart-v1/assets/masks/hero-copper-haired-inclined-head-collarbo.svg",
+      "source_binding_ids": [
+        "binding-hero-copper-haired-inclined-head-collarbo"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          780,
+          438
+        ],
+        "safe_stage_window_origin_px": [
+          896,
+          519
+        ],
+        "preferred_expansion_label": "left"
+      },
+      "interaction_mesh": {
+        "schema_version": 1,
+        "visible_polygon": [
+          [
+            0.0026,
+            0.0811
+          ],
+          [
+            0.028,
+            0.0039
+          ],
+          [
+            0.7897,
+            0.0098
+          ],
+          [
+            0.8379,
+            0.043
+          ],
+          [
+            0.9036,
+            0.1641
+          ],
+          [
+            0.9694,
+            0.3252
+          ],
+          [
+            0.9967,
+            0.4355
+          ],
+          [
+            0.9967,
+            0.9443
+          ],
+          [
+            0.9544,
+            0.9951
+          ],
+          [
+            0.0026,
+            0.9951
+          ]
+        ],
+        "hover_polygon": [
+          [
+            0.0,
+            0.0205
+          ],
+          [
+            0.0078,
+            0.0
+          ],
+          [
+            0.8236,
+            0.0
+          ],
+          [
+            0.8613,
+            0.0449
+          ],
+          [
+            0.9258,
+            0.165
+          ],
+          [
+            0.9993,
+            0.3584
+          ],
+          [
+            0.9993,
+            0.9717
+          ],
+          [
+            0.9772,
+            0.999
+          ],
+          [
+            0.0,
+            0.999
+          ]
+        ],
+        "hover_bounds": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 1.0,
+          "h": 1.0
+        },
+        "territory_area_px": 1530643,
+        "visible_area_px": 1490927,
+        "expansion_ratio": 1.027,
+        "neighbors": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "interpretation_id": "interp-2026-11-05-where-the-folds-fall-apart-v1",
+  "edition_id": "2026-11-05-where-the-folds-fall-apart-v1",
+  "plate_read_timestamp": "2026-11-05T09:16:44.291Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A detailed, right-weighted figurative woodland tableau. Copper hair surrounds an inclined head above a splayed collarbone-touching hand, crossing forearms, and blush drapery. The cloth extends into a broad lower-left train. A smaller waterfall, mossy rocks, glossy foliage, and shallow water occupy the surrounding landscape. Dark green space separates the figure from the cascade. The plate is naturalistic rather than minimal or expressionist.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape fine-art tableau: a compact copper-haired adult woman's inclined head, splayed collarbone-touching hand and crossing forearm rise from diagonal blush folds; a detached flared hem rests below. Broad green-black quiet separates this dominant grouping from a smaller fractured white cascade in moss-rounded dark stone. Glossy leaves overhang amber-olive shallows. Soft canopy light joins pale skin and cloth.",
+      "A detailed, right-weighted figurative woodland tableau. Copper hair surrounds an inclined head above a splayed collarbone-touching hand, crossing forearms, and blush drapery. The cloth extends into a broad lower-left train. A smaller waterfall, mossy rocks, glossy foliage, and shallow water occupy the surrounding landscape. Dark green space separates the figure from the cascade. The plate is naturalistic rather than minimal or expressionist.",
+      "blush-folds",
+      "recessed-cascade",
+      "wet-stone"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Copper-haired inclined head, collarbone hand, crossing forearms, and continuous blush drapery"
+    ],
+    "dominant_surfaces": [
+      "water",
+      "wood",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "separated-drapery-cascade",
+      "Copper-haired inclined head and splayed hand above diagonal blush folds",
+      "Irregular copper-haired figure and continuous blush drapery silhouette",
+      "Overlapping diagonal cloth folds within the owning figure grouping"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: separated-drapery-cascade.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-copper-haired-inclined-head-collarbo",
+      "kind": "hero",
+      "type": "figure-drapery-silhouette",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.0007,
+        "y": 0.001,
+        "w": 0.9987,
+        "h": 0.998
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-copper-haired-inclined-head-collarbo-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.0007,
+        "y": 0.001,
+        "w": 0.9987,
+        "h": 0.998
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

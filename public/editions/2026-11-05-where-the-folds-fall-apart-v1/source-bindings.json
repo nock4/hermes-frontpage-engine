@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-11-05-where-the-folds-fall-apart-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-copper-haired-inclined-head-collarbo",
+      "artifact_id": "hero-copper-haired-inclined-head-collarbo",
+      "source_type": "tweet",
+      "source_url": "https://x.com/tsarfin_art/status/2117572401923813618",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@tsarfin_art: \"The Glaistig's Hour\" I found this small waterfall deep in a mossy gorge, where...",
+      "kicker": "x.com",
+      "excerpt": "\"The Glaistig's Hour\" I found this small waterfall deep in a mossy gorge, where the light stays soft and green even in the middle of the day.",
+      "source_title": "@tsarfin_art: \"The Glaistig's Hour\" I found this small waterfall deep in a mossy gorge, where...",
+      "source_summary": "\"The Glaistig's Hour\" I found this small waterfall deep in a mossy gorge, where the light stays soft and green even in the middle of the day.",
+      "source_domain": "x.com",
+      "source_meta": "Alex Tsarfin — \"The Glaistig's Hour\" (fine-art photography)",
+      "source_image_url": "https://pbs.twimg.com/media/HWMgAHwXwAAPDhP.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HWMgAHwXwAAPDhP.jpg?name=orig"
+      ],
+      "source_image_alt": "@tsarfin_art: \"The Glaistig's Hour\" I found this small waterfall deep in a mossy gorge, where...",
+      "source_media_url": "https://pbs.twimg.com/media/HWMgAHwXwAAPDhP.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-11-05-where-the-folds-fall-apart-v1/assets/source-posters/binding-hero-copper-haired-inclined-head-collarbo.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5,
+          "y": 0.5
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.125,
+          "width": 1.0,
+          "height": 0.75
+        },
+        "image_width": 1600,
+        "image_height": 1200,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.14004,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

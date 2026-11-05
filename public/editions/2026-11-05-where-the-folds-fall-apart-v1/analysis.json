@@ -1,0 +1,152 @@
+{
+  "analysis_id": "analysis-2026-11-05-where-the-folds-fall-apart-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A detailed, right-weighted figurative woodland tableau. Copper hair surrounds an inclined head above a splayed collarbone-touching hand, crossing forearms, and blush drapery. The cloth extends into a broad lower-left train. A smaller waterfall, mossy rocks, glossy foliage, and shallow water occupy the surrounding landscape. Dark green space separates the figure from the cascade. The plate is naturalistic rather than minimal or expressionist.",
+  "usable_surfaces": [
+    "Irregular copper-haired figure and continuous blush drapery silhouette",
+    "Overlapping diagonal cloth folds within the owning figure grouping"
+  ],
+  "detected_objects": [
+    {
+      "label": "Copper-haired inclined head, collarbone hand, crossing forearms, and continuous blush drapery",
+      "artifact_type": "figure-drapery-silhouette",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.036,
+        "y": 0.014,
+        "w": 0.944,
+        "h": 0.986
+      },
+      "polygon": [
+        [
+          0.737,
+          0.014
+        ],
+        [
+          0.84,
+          0.03
+        ],
+        [
+          0.91,
+          0.172
+        ],
+        [
+          0.907,
+          0.301
+        ],
+        [
+          0.954,
+          0.305
+        ],
+        [
+          0.976,
+          0.37
+        ],
+        [
+          0.98,
+          0.533
+        ],
+        [
+          0.956,
+          0.647
+        ],
+        [
+          0.868,
+          0.718
+        ],
+        [
+          0.749,
+          1
+        ],
+        [
+          0.036,
+          1
+        ],
+        [
+          0.094,
+          0.896
+        ],
+        [
+          0.191,
+          0.889
+        ],
+        [
+          0.327,
+          0.745
+        ],
+        [
+          0.544,
+          0.856
+        ],
+        [
+          0.574,
+          0.707
+        ],
+        [
+          0.652,
+          0.475
+        ],
+        [
+          0.658,
+          0.156
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "Copper curls outline the inclined head against the dark background. Separated fingers rest across the upper chest, with a descending forearm and another forearm crossing the waist. Pale blush fabric gathers around the shoulders and torso and visibly continues into the folded train across the bottom left. The lower-right moss bank occludes the grouping; the lower cloth is clipped by the image boundary. This is one irregular source-bearing silhouette, not separate hand, portrait, and hem targets. The 18-point contour approximates the outer edge and does not resolve individual flyaway hairs or translucent fabric scallops. The lower cloth appears continuous rather than visibly detached.",
+      "effect_material": {
+        "material": "fabric",
+        "observation": "Blush-pink gauzy fabric forms overlapping diagonal folds around the torso and a crinkled train across the lower left. Thin edges appear partly translucent, and shaded overlaps visibly distinguish layers.",
+        "modalities": [
+          "depth"
+        ]
+      },
+      "effect_editorial": [
+        {
+          "schema_version": 1,
+          "kind": "depth",
+          "decision": "omit",
+          "planned_artifact_index": 0,
+          "source_url": "https://x.com/tsarfin_art/status/2117572401923813618",
+          "source_observation": "The pixels show a finished, staged fine-art portrait: an adult red-haired figure in a pale pink draped gown stands beside a waterfall and shallow pool, framed by mossy rocks and dense green foliage. The deliberate pose, soft lighting, and contrast between pale fabric and dark landscape visibly establish a creative work. No product demonstration, interface, advertisement, or administrative CTA is present. Authorship, title, and photographic versus synthetic origin cannot be independently established from the pixels.",
+          "capture_sha256": "e939483fbeece1e42514bb9b7f6fa7ea103e898cf4feaf3246807bd180cee115",
+          "plate_observation": "Blush-pink gauzy fabric forms overlapping diagonal folds around the torso and a crinkled train across the lower left. Thin edges appear partly translucent, and shaded overlaps visibly distinguish layers.",
+          "brief_quote": "Soft canopy light joins pale skin and cloth.",
+          "why_behavior": "The visible fabric overlaps technically support layered depth, but the inspected source establishes a deliberately posed portrait, not independently movable cloth layers. Animating this linked head-hand-drapery mark would risk separating the gesture and disturbing the soft skin-to-cloth continuity.",
+          "why_input": "Pointer movement could control a restrained depth effect without sensor access, but neither the inspected source nor this plate establishes a reason to make the portrait track a pointer. Device tilt would add sensor input without a stronger editorial purpose.",
+          "why_not_none": "The undisturbed plate already communicates depth through fold shadows, translucency, and foreground moss occlusion. Parallax would add movement rather than reveal necessary source information; retain the still surface."
+        }
+      ]
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 2,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.931,
+    "rationale": "The figure-and-cloth grouping and smaller waterfall remain distinguishable across a dark central interval. However, detailed curls, fingers, fabric folds, foliage, moss, and water make this a densely rendered naturalistic tableau rather than a minimal expressionist plate. One owning interaction region preserves hierarchy; subdividing its internal gestures or mapping the surrounding scenery would introduce unnecessary competition. Coverage is an approximate full-image area fraction of the irregular mapped silhouette."
+  },
+  "effects_editorial_context": {
+    "schema_version": 1,
+    "brief": "Landscape fine-art tableau: a compact copper-haired adult woman's inclined head, splayed collarbone-touching hand and crossing forearm rise from diagonal blush folds; a detached flared hem rests below. Broad green-black quiet separates this dominant grouping from a smaller fractured white cascade in moss-rounded dark stone. Glossy leaves overhang amber-olive shallows. Soft canopy light joins pale skin and cloth.",
+    "aesthetic_thesis": "",
+    "sources": [
+      {
+        "planned_artifact_index": 0,
+        "source_url": "https://x.com/tsarfin_art/status/2117572401923813618",
+        "title": "@tsarfin_art: \"The Glaistig's Hour\" I found this small waterfall deep in a mossy gorge, where the light stays soft and green even in the middle of the day",
+        "summary": "\"The Glaistig's Hour\"\nI found this small waterfall deep in a mossy gorge, where the light stays soft and green even in the middle of the day. I asked the model to stand at the edge of the pool, close her eyes, and just listen to the water. The pale pink dress, slipping from her shoulders, felt like part of the place: light, quiet, and a little fragile against the dark wet stone. For me, this image is about a private moment of calm, when the body relaxes and the mind goes still.\n#TheGlaistigsHour #FineArtNude #Glaistig #ScottishFolklore #WaterSpirit #PreRaphaelite #Waterfall #HighlandGorge #Redhead #ChiffonGown #ClosedEyes #AlexTsarfn",
+        "observation": "The pixels show a finished, staged fine-art portrait: an adult red-haired figure in a pale pink draped gown stands beside a waterfall and shallow pool, framed by mossy rocks and dense green foliage. The deliberate pose, soft lighting, and contrast between pale fabric and dark landscape visibly establish a creative work. No product demonstration, interface, advertisement, or administrative CTA is present. Authorship, title, and photographic versus synthetic origin cannot be independently established from the pixels.",
+        "capture_sha256": "e939483fbeece1e42514bb9b7f6fa7ea103e898cf4feaf3246807bd180cee115",
+        "capture_path": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/daily-process-runs/cron-1793869255710-9994/creative-inspections/e939483fbeece1e42514bb9b7f6fa7ea103e898cf4feaf3246807bd180cee115.jpeg",
+        "media_url": "https://pbs.twimg.com/media/HWMgAHwXwAAPDhP.jpg?name=orig"
+      }
+    ]
+  },
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "edition_id": "2026-11-05-where-the-folds-fall-apart-v1"
+}
