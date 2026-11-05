@@ -10,6 +10,7 @@ export function createMapArtifactsStep({ apiKey, context, inspectGeneratedPlate,
       await assertLandscapePlate(context.plate.outputPath)
       context.analysis = await inspectGeneratedPlate({
         payload: context.payload,
+        researchField: context.researchField,
         platePath: context.plate.outputPath,
         apiKey,
         model: options.model,

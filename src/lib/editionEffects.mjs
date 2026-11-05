@@ -170,24 +170,58 @@ function hash(s) {
   for (const c of s) h = Math.imul(h ^ c.charCodeAt(0), 16777619)
   return h >>> 0
 }
-export function planEffects({ evidence = [], seed, ...context }) {
+const editorialText = (value) => typeof value === 'string' && value.trim().length > 0 && value.length <= 1600
+function editorialAdmission(d, sources, ev, binding) {
+  if (!d || d.schema_version !== 1 || !effectKinds.includes(d.kind)
+    || !['keep', 'omit'].includes(d.decision)
+    || !['why_behavior', 'why_input', 'why_not_none', 'source_observation', 'plate_observation', 'brief_quote'].every(k => editorialText(d[k]))) return false
+  const source = sources.find(s => s.artifact_id === d.artifact_id && s.binding_id === d.binding_id && s.source_url === d.source_url)
+  return !!source && binding?.source_url === d.source_url
+    && /^[a-f0-9]{64}$/.test(d.capture_sha256 || '') && d.capture_sha256 === source.capture_sha256
+    && d.source_observation === source.observation
+    && typeof source.brief === 'string' && source.brief.includes(d.brief_quote)
+    && ev?.observation === d.plate_observation
+}
+
+// Future authoring only. Published v1 contracts deliberately retain their old
+// physical/media validator above; never retroactively disable accepted archives.
+export function planEffects({ evidence = [], editorial = [], editorialSources = [], audit, seed, ...context }) {
   const candidates = []
-  for (const ev of evidence)
-    for (const kind of effectKinds) {
-      const e = { kind, artifact_id: ev.artifact_id, binding_id: ev.binding_id, evidence: ev }
-      if (admitted(e, context)) candidates.push(e)
+  const decisions = []
+  const records = Array.isArray(editorial) ? editorial : []
+  for (const d of records) {
+    const ev = evidence.find(e => e.artifact_id === d?.artifact_id && e.binding_id === d?.binding_id)
+    const binding = context.bindings.find(b => b.id === d?.binding_id)
+    const entry = { decision: d, status: 'rejected', reason: 'Malformed or mismatched editorial evidence/owner/source/brief reference.' }
+    decisions.push(entry)
+    if (!editorialAdmission(d, editorialSources, ev, binding)) continue
+    // Conflicting/duplicate decisions are not a tie. Fail this exact kind/owner
+    // closed rather than allowing keep to overrule omit or malformed duplicates.
+    if (records.filter(r => r?.kind === d.kind && r?.artifact_id === d.artifact_id && r?.binding_id === d.binding_id).length !== 1) {
+      entry.reason = 'Duplicate or conflicting editorial decisions.'; continue
     }
-  candidates.sort(
-    (a, b) => hash(`${seed}:${a.kind}:${a.artifact_id}`) - hash(`${seed}:${b.kind}:${b.artifact_id}`),
-  )
+    if (d.decision === 'omit') {
+      entry.status = 'omitted'; entry.reason = 'Explicit model editorial omit; no replacement nominated.'; continue
+    }
+    const e = { kind: d.kind, artifact_id: d.artifact_id, binding_id: d.binding_id, evidence: ev }
+    if (!admitted(e, context)) { entry.reason = 'Editorial keep lacks unchanged technical material/geometry/media admission.'; continue }
+    candidates.push({ effect: e, entry })
+    entry.status = 'approved'; entry.reason = 'Explicit source/plate/brief-grounded editorial keep and technical admission.'
+  }
+  candidates.sort((a, b) => hash(`${seed}:${a.effect.kind}:${a.effect.artifact_id}`) - hash(`${seed}:${b.effect.kind}:${b.effect.artifact_id}`)
+    || a.effect.kind.localeCompare(b.effect.kind) || a.effect.artifact_id.localeCompare(b.effect.artifact_id))
   const effects = []
   const seen = new Set()
-  for (const c of candidates) {
-    if (!seen.has(c.kind)) {
-      effects.push(c)
-      seen.add(c.kind)
+  for (const { effect, entry } of candidates) {
+    if (seen.has(effect.kind) || effects.length >= 3) {
+      entry.status = 'omitted'; entry.reason = 'Approved but not selected: maximum three effects, one per kind.'; continue
     }
-    if (effects.length >= 1 + (hash(String(seed)) % 3)) break
+    effects.push(effect); seen.add(effect.kind); entry.status = 'selected'
   }
+  // Missing decisions are visible as omissions, separate from material diagnostics.
+  for (const a of context.artifacts) for (const kind of effectKinds) {
+    if (!records.some(d => d?.kind === kind && d?.artifact_id === a.id)) decisions.push({ artifact_id: a.id, kind, status: 'omitted', reason: 'No explicit editorial decision; technical compatibility is not approval.' })
+  }
+  if (audit && typeof audit === 'object') Object.assign(audit, { schema_version: 1, edition_id: context.editionId, seed, selected: effects.map(e => ({ kind: e.kind, artifact_id: e.artifact_id, binding_id: e.binding_id })), decisions, material_diagnostics: evidence, source_context: editorialSources })
   return normalizeEffects({ schema_version: 1, edition_id: context.editionId, effects }, context)
 }

@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { assembleEditionPackage } from '../../scripts/lib/edition-package-assembly.mjs'
+import { buildEffectsEditorialContext } from '../../scripts/lib/effects-editorial-context.mjs'
 import { inspectedDecision } from './creative-inspection.mjs'
 import { platePng } from './plate-png.mjs'
 /** Entirely synthetic candidate, real packager, no generation/provider calls. */
@@ -18,7 +19,7 @@ export async function buildEffectsCandidate() {
   await fs.writeFile(platePath, platePng(1536, 1024))
   const url = 'https://effects-fixture.example/work',
     image = 'https://effects-fixture.example/original.png'
-  const result = await assembleEditionPackage({
+  const input = {
     root,
     runDir,
     options: { date: '2026-11-03', publish: false, imageSize: '1536x1024' },
@@ -86,11 +87,21 @@ export async function buildEffectsCandidate() {
             observation: 'SYNTHETIC inspected reflective ridge',
             modalities: ['reflective', 'resonant', 'depth', 'fracture', 'touch'],
           },
+          // Explicit synthetic editorial approval, not a production/model result.
+          // This fixture tests plumbing; source/plate semantics are unit fixtures.
+          effect_editorial: [{ schema_version: 1, kind: 'refraction', decision: 'keep', planned_artifact_index: 0, source_url: url,
+            source_observation: 'Synthetic fixture: painted figures and trees', capture_sha256: 'a'.repeat(64),
+            plate_observation: 'SYNTHETIC inspected reflective ridge', brief_quote: 'Synthetic test plate, not source footage',
+            why_behavior: 'SYNTHETIC fixture approval: optical deformation reveals surface relationships.',
+            why_input: 'SYNTHETIC fixture approval: local pointer exploration, no sensor encounter.',
+            why_not_none: 'SYNTHETIC fixture approval: compare local deformation with the undisturbed plate.' }],
         },
       ],
     },
     maxContentItems: 10,
-  })
+  }
+  input.analysis.effects_editorial_context = buildEffectsEditorialContext(input.payload, input.researchField)
+  const result = await assembleEditionPackage(input)
   const manifest = JSON.parse(await fs.readFile(path.join(root, 'public', 'editions', 'index.json'), 'utf8'))
   manifest.current_edition_id = result.editionId
   await fs.writeFile(path.join(root, 'public', 'editions', 'index.json'), JSON.stringify(manifest))

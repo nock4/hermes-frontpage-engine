@@ -1,5 +1,6 @@
 import crypto from 'node:crypto'
-import { planEffects } from '../../src/lib/editionEffects.mjs'
+import { effectKinds, planEffects } from '../../src/lib/editionEffects.mjs'
+import { buildEffectsEditorialContext } from './effects-editorial-context.mjs'
 import { admitNativeVideo } from './effect-video-admission.mjs'
 import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import { assertLandscapePlate, assertLandscapePublication } from './landscape-policy.mjs'
@@ -543,7 +544,38 @@ export async function assembleEditionPackage({
     }
     effectEvidence.push(evidence)
   }
-  const effects = planEffects({ editionId, artifacts: artifactMapArtifacts, bindings, seed: editionId, evidence: effectEvidence })
+  const editorialContext = buildEffectsEditorialContext(payload, researchField)
+  // Bind approvals to the context actually supplied to the analysis call, not
+  // merely matching prose returned by a model that lacked the source evidence.
+  const modelContextMatches = JSON.stringify(analysis.effects_editorial_context) === JSON.stringify(editorialContext)
+  const editorialSources = (modelContextMatches ? editorialContext.sources : []).flatMap(source => {
+    const index = source.planned_artifact_index
+    if (!artifactMapArtifacts[index] || bindings[index]?.source_url !== source.source_url) return []
+    return [{ ...source, artifact_id: artifactMapArtifacts[index].id, binding_id: bindings[index].id, brief: editorialContext.brief }]
+  })
+  const editorial = objects.flatMap((object, index) => {
+    if (object.effect_editorial === undefined) return []
+    const records = Array.isArray(object.effect_editorial) ? object.effect_editorial : [object.effect_editorial]
+    if (records.length > 9) return [{ rejected_record: object.effect_editorial, rejection: 'At most one decision per repertoire kind on a detected object.' }]
+    // Validate the entire detected object's identity/conflict metadata before
+    // wrapping rejected records: otherwise a malformed omit disappears from the
+    // planner's duplicate check and can let a sibling keep select. The owner is
+    // this detected object, never a model-authored final artifact/binding ID.
+    const invalidOwnerOrDecision = records.some(d => !d || typeof d !== 'object' || Array.isArray(d)
+      || d.planned_artifact_index !== index || d.source_url !== bindings[index].source_url
+      || 'artifact_id' in d || 'binding_id' in d || !effectKinds.includes(d.kind)
+      || !['keep', 'omit'].includes(d.decision))
+    if (invalidOwnerOrDecision) return records.map(d => ({ rejected_record: d, rejection: 'Detected object has malformed editorial identity or conflict metadata.' }))
+    return records.map(d => {
+      const { planned_artifact_index, ...decision } = d
+      return { ...decision, artifact_id: artifactMapArtifacts[index].id, binding_id: bindings[index].id }
+    })
+  })
+  const selectionAudit = {}
+  const effects = planEffects({ editionId, artifacts: artifactMapArtifacts, bindings, seed: editionId, evidence: effectEvidence, editorial, editorialSources, audit: selectionAudit })
+  selectionAudit.model_context_matches = modelContextMatches
+  selectionAudit.analysis_source_context = analysis.effects_editorial_context || null
+  await writeJson(path.join(runDir, 'effects-selection-audit.json'), selectionAudit)
   const packageFiles = {
     'effects.json': effects,
     'edition.json': edition,

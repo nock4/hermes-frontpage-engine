@@ -139,8 +139,8 @@ describe('edition package assembly', () => {
     input.analysis.detected_objects[0].effect_material = { material: 'paper', observation: 'Inspected folded resonant paper edge', modalities: ['resonant', 'fracture', 'touch'] }
     const result = await assembleEditionPackage(input, { test_step: true })
     const experiences = await readJson(path.join(root, 'public', 'editions', result.editionId, 'effects.json'))
-    expect(experiences.effects.length).toBeGreaterThan(0)
-    expect(experiences.effects.length).toBeLessThanOrEqual(3)
+    // Technical compatibility without editorial approval is not a keep.
+    expect(experiences.effects).toEqual([])
 
     expect(result).toMatchObject({
       editionId: '2026-04-27-quiet-test-room-v1',

@@ -28,19 +28,21 @@ const evidence = [
     modalities: ['reflective', 'resonant', 'depth', 'fracture', 'touch'],
   },
 ]
+const editorialSources = [{ artifact_id: 'silver', binding_id: 'owner', source_url: binding.source_url, observation: 'Synthetic source inspection: hammered silver ridges', capture_sha256: 'a'.repeat(64), brief: 'Inspect the silver ridges through a local optical gesture.' }]
+const editorial = effectKinds.map(kind => ({ schema_version: 1 as const, kind, decision: 'keep' as const, artifact_id: 'silver', binding_id: 'owner', source_url: binding.source_url, source_observation: editorialSources[0].observation, capture_sha256: editorialSources[0].capture_sha256, brief_quote: editorialSources[0].brief, plate_observation: evidence[0].observation, why_behavior: 'Synthetic fixture approval: reveal ridge relationships.', why_input: 'Synthetic fixture approval: local input explores ridge direction.', why_not_none: 'Synthetic fixture approval: transient deformation reveals ridge relationships absent at rest.' }))
 describe('optional edition experiences', () => {
   it('leaves archive editions off', () => expect(normalizeEffects(undefined, context)).toBeNull())
-  it('plans a deterministic bounded material-grounded subset without mutating sources', () => {
+  it('plans a deterministic bounded explicitly approved subset without mutating sources', () => {
     const before = JSON.stringify(context)
-    const a = planEffects({ ...context, evidence, seed: 'day1' })
+    const a = planEffects({ ...context, evidence, editorial, editorialSources, seed: 'day1' })
     expect(a.effects.length).toBeGreaterThan(0)
     expect(a.effects.length).toBeLessThanOrEqual(3)
-    expect(planEffects({ ...context, evidence, seed: 'day1' })).toEqual(a)
+    expect(planEffects({ ...context, evidence, editorial, editorialSources, seed: 'day1' })).toEqual(a)
     expect(
       new Set(
         Array.from(
           { length: 20 },
-          (_, i) => planEffects({ ...context, evidence, seed: String(i) }).effects[0]?.kind,
+          (_, i) => planEffects({ ...context, evidence, editorial, editorialSources, seed: String(i) }).effects[0]?.kind,
         ),
       ).size,
     ).toBeGreaterThan(1)
@@ -61,7 +63,7 @@ describe('optional edition experiences', () => {
     ).toEqual([])
   })
   it('rejects unsupported geometry, owners, duplicates and overbudget contracts', () => {
-    const p = planEffects({ ...context, evidence, seed: 'x' })
+    const p = planEffects({ ...context, evidence, editorial, editorialSources, seed: 'x' })
     expect(() => normalizeEffects({ ...p, edition_id: 'other' }, context)).toThrow()
     expect(() =>
       normalizeEffects({ ...p, effects: [{ ...p.effects[0], artifact_id: 'absent' }] }, context),

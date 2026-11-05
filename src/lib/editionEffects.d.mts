@@ -43,10 +43,34 @@ interface EffectContext {
     source_media_type?: string
   }>
 }
+export interface EffectEditorialDecision {
+  schema_version: 1
+  kind: EffectKind
+  decision: 'keep' | 'omit'
+  artifact_id: string
+  binding_id: string
+  source_url: string
+  source_observation: string
+  capture_sha256: string
+  plate_observation: string
+  brief_quote: string
+  why_behavior: string
+  why_input: string
+  why_not_none: string
+}
+export type PlateEffectEditorialDecision = Omit<EffectEditorialDecision, 'artifact_id' | 'binding_id'> & { planned_artifact_index: number }
+export interface EffectEditorialSource {
+  artifact_id: string
+  binding_id: string
+  source_url: string
+  observation: string
+  capture_sha256: string
+  brief: string
+}
 export const effectKinds: readonly EffectKind[]
 export function normalizeEffects(value: unknown, context: EffectContext): EditionEffects | null
 export function planEffects(
-  context: EffectContext & { evidence?: EffectEvidence[]; seed: string },
+  context: EffectContext & { evidence?: EffectEvidence[]; seed: string; editorial?: EffectEditorialDecision[]; editorialSources?: EffectEditorialSource[]; audit?: Record<string, unknown> },
 ): EditionEffects
 export function normalizeMaterialEvidence(
   value: unknown,
