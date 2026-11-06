@@ -1,0 +1,111 @@
+{
+  "interpretation_id": "interp-2026-11-06-the-distance-between-creatures-v1",
+  "edition_id": "2026-11-06-the-distance-between-creatures-v1",
+  "plate_read_timestamp": "2026-11-06T09:13:31.717Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "An ivory-ground illustration places a large blush-and-cream creature at the left opposite a smaller gray, pointed-eared face at the right. An upright rust, turquoise and blue rectangle sits behind a curling cream form and its broad lavender underside. The central ivory opening gives the composition breathing room, but the left-hand cluster contains many interleaved contours and mottled color transitions.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape digital collage on ivory. A larger blush broad-muzzled face with oval eyes, long ears and cream lobes faces a smaller gray pointed-eared face with pink eyes, dark muzzle and fine whiskers across open ivory. A cream hook with lavender underside bridges the larger group to a displaced upright rust-and-turquoise rectangle; its broad lavender overlap keeps thin contours as others dissolve.",
+      "An ivory-ground illustration places a large blush-and-cream creature at the left opposite a smaller gray, pointed-eared face at the right. An upright rust, turquoise and blue rectangle sits behind a curling cream form and its broad lavender underside. The central ivory opening gives the composition breathing room, but the left-hand cluster contains many interleaved contours and mottled color transitions.",
+      "ivory-interval",
+      "creature-fragments",
+      "clipped-color"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Lavender underside sweeping beneath the cream hook across the painted rectangle"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "separated-creature-contour-islands",
+      "A broad lavender overlap beneath a cream hook at a mottled color edge",
+      "Broad lavender sweep beneath the cream hook, crossing the mottled rectangle"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: separated-creature-contour-islands.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-lavender-underside-sweeping-beneath-",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.059,
+        "y": 0.499,
+        "w": 0.38,
+        "h": 0.389
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-lavender-underside-sweeping-beneath--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.059,
+        "y": 0.499,
+        "w": 0.38,
+        "h": 0.389
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
