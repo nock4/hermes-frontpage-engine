@@ -5,6 +5,30 @@ const poster = 'https://media.example.test/cropped-poster.jpg'
 const title = 'Cure Nailhouse — full composition'
 const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="550"><rect width="800" height="550" fill="#672276"/><rect x="8" y="8" width="784" height="534" fill="none" stroke="#40ffff" stroke-width="16"/></svg>'
 
+test('route navigation retries a transient manifest failure', async ({ page }) => {
+  let manifestAttempts = 0
+  let failManifest = true
+  await page.route('**/editions/index.json', async route => {
+    manifestAttempts += 1
+    if (failManifest) await route.fulfill({ status: 503, body: 'Transient failure' })
+    else await route.continue()
+  })
+  await page.goto('/')
+  await expect(page.locator('.boot-state')).toContainText('Failed')
+  const failedAttempts = manifestAttempts
+  failManifest = false
+  // Exercise the same popstate entrypoint as Back/Forward after a failed boot.
+  await page.evaluate(() => {
+    history.pushState({}, '', '/?edition=2026-09-28-the-edge-outlasts-the-day-v1')
+    window.dispatchEvent(new PopStateEvent('popstate'))
+  })
+  await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', '2026-09-28-the-edge-outlasts-the-day-v1')
+  expect(manifestAttempts).toBeGreaterThan(failedAttempts)
+  const artifact = page.locator('button.artifact').first()
+  await artifact.focus()
+  await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveAttribute('data-source-window-mode', 'preview')
+})
+
 for (const mode of ['preview', 'primary'] as const) {
   for (const kind of ['still', 'image-only', 'direct', 'youtube', 'soundcloud', 'bandcamp', 'tweet'] as const) {
     if (!['still', 'image-only', 'direct'].includes(kind) && mode === 'preview') continue
@@ -16,6 +40,18 @@ for (const mode of ['preview', 'primary'] as const) {
         youtube: 'https://www.youtube.com/watch?v=prYhH_jDOVQ',
         soundcloud: 'https://soundcloud.com/example/track', bandcamp: 'https://example.bandcamp.com/track/original',
       }
+      // Force the CI ordering: first package paints and accepts focus while
+      // any duplicate load is still pending, then let that late load finish.
+      let packageLoads = 0
+      let releaseDuplicate!: () => void
+      const duplicateGate = new Promise<void>(resolve => { releaseDuplicate = resolve })
+      const exerciseLoadRace = mode === 'preview' && kind === 'still'
+      // effects.json is the final package fetch and is not a warmup prefetch.
+      await page.route('**/effects.json', async route => {
+        packageLoads += 1
+        if (exerciseLoadRace && packageLoads > 1) await duplicateGate
+        await route.continue()
+      })
       await page.route('**/source-bindings.json', async route => {
         const response = await route.fetch(), data = await response.json()
         data.bindings = data.bindings.map((binding: { id: string; artifact_id: string }) => ({
@@ -44,6 +80,16 @@ for (const mode of ['preview', 'primary'] as const) {
       if (mode === 'primary') await artifact.press('Enter')
       const surface = page.locator('.stage-overlay-windows--live .source-window')
       await expect(surface).toHaveAttribute('data-source-window-mode', mode)
+      if (exerciseLoadRace) {
+        if (packageLoads > 1) {
+          const lateEffects = page.waitForResponse(response => response.url().endsWith('/effects.json'))
+          releaseDuplicate()
+          await (await lateEffects).finished()
+          await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))))
+        }
+        await expect(surface).toHaveAttribute('data-source-window-mode', 'preview')
+        expect(packageLoads, 'one package load per route; manifest resolution must not reload it').toBe(1)
+      }
       await surface.evaluate(async node => { await Promise.all(node.getAnimations({ subtree: true }).filter(a => a.effect?.getTiming().iterations !== Infinity).map(a => a.finished)) })
       // Stage tweets with attached still media intentionally render that image,
       // not a native post; retain this distinction from playable providers.

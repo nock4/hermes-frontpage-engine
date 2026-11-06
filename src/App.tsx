@@ -24,6 +24,7 @@ import type { ArchiveRecord, ArtifactRecord, EditionManifest, LoadedEdition, Sou
 
 function App() {
   const [manifest, setManifest] = useState<EditionManifest | null>(null)
+  const manifestRequest = useRef<Promise<EditionManifest> | null>(null)
   const [route, setRoute] = useState<AppRoute | null>(null)
   const [loaded, setLoaded] = useState<LoadedEdition | null>(null)
   const [loading, setLoading] = useState(true)
@@ -53,12 +54,18 @@ function App() {
   }, [syncLocation])
 
   useEffect(() => {
+    let cancelled = false
     const run = async () => {
       try {
         setLoading(true)
         setError(null)
-        const nextManifest = manifest ?? (await loadManifest())
-        const nextRoute = parseAppRoute(`${window.location.pathname}${window.location.search}`, nextManifest)
+        // Manifest resolution is load output, not a reason to reload the route.
+        const nextManifest = await (manifestRequest.current ??= loadManifest().catch(err => {
+          manifestRequest.current = null
+          throw err
+        }))
+        if (cancelled) return
+        const nextRoute = parseAppRoute(locationKey, nextManifest)
         setManifest(nextManifest)
         setRoute(nextRoute)
 
@@ -70,18 +77,20 @@ function App() {
         }
 
         const pkg = await loadEditionPackage(nextRoute.edition.path)
+        if (cancelled) return
         setLoaded(pkg)
         setActiveArtifactId(pkg.artifactMap.default_artifact_id)
         setWindowState(createWindowState())
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load edition')
+        if (!cancelled) setError(err instanceof Error ? err.message : 'Failed to load edition')
       } finally {
-        setLoading(false)
+        if (!cancelled) setLoading(false)
       }
     }
 
     void run()
-  }, [locationKey, manifest])
+    return () => { cancelled = true }
+  }, [locationKey])
 
   useEffect(() => {
     setAboutOpen(false)
