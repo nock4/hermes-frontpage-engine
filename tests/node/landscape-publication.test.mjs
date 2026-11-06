@@ -117,10 +117,21 @@ it('retries the exact committed candidate after push failure without a new diff'
     const file = path.join(root, 'public/editions', editionId, 'edition.json')
     const edition = JSON.parse(await fs.readFile(file, 'utf8')); edition.title = 'retained candidate'
     await fs.writeFile(file, JSON.stringify(edition))
-    await expect(commitPublishedArtifacts(root, editionId, 'main')).rejects.toThrow(/push/)
+    // Explicit synthetic source-field candidate: this test isolates push recovery,
+    // not source-image transformation vision. Retained proof is now required.
+    const runDir = path.join(root, '.git/synthetic-run')
+    await fs.mkdir(runDir)
+    await fs.writeFile(path.join(runDir, 'daily-generation-payload.json'), JSON.stringify({ artifacts: [{ source_url: 'https://example.org/source-field' }], source_contract: { mode: 'skipped-no-valid-dominant-source-image' }, source_image_fingerprints: [] }))
+    const directory = path.dirname(file)
+    await fs.writeFile(path.join(runDir, 'edition-package-summary.json'), JSON.stringify({ edition_id: editionId, edition_dir: directory }))
+    Object.assign(edition, { artifact_map_id: 'map-a', source_binding_set_id: 'bindings-a' })
+    await fs.writeFile(file, JSON.stringify(edition))
+    await fs.writeFile(path.join(directory, 'artifact-map.json'), JSON.stringify({ artifact_map_id: 'map-a', artifacts: [{ id: 'a', source_binding_ids: ['b'] }] }))
+    await fs.writeFile(path.join(directory, 'source-bindings.json'), JSON.stringify({ source_binding_set_id: 'bindings-a', bindings: [{ id: 'b', artifact_id: 'a', source_url: 'https://example.org/source-field' }] }))
+    await expect(commitPublishedArtifacts(root, editionId, 'main', { runDir })).rejects.toThrow(/push/)
     const commit = git('rev-parse', 'HEAD'); expect(git('status', '--short')).toBe('')
     await fs.unlink(hook)
-    const recovered = await commitPublishedArtifacts(root, editionId, 'main')
+    const recovered = await commitPublishedArtifacts(root, editionId, 'main', { runDir })
     expect(recovered.commit).toBe(commit); expect(recovered.push_succeeded).toBe(true)
     expect(git('ls-remote', 'origin', 'refs/heads/main').split(/\s/)[0]).toBe(commit)
   } finally { await fs.rm(base, { recursive: true, force: true }) }

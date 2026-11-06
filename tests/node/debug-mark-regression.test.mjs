@@ -3,7 +3,7 @@ import os from 'node:os'
 import path from 'node:path'
 import { describe, it, expect } from 'vitest'
 import { buildSceneImagePrompt } from '../../scripts/lib/scene-generation.mjs'
-import { auditSourceImageFidelity } from '../../scripts/lib/source-fidelity-audit.mjs'
+import { auditWithSyntheticFulfilledTransformations as auditSourceImageFidelity } from '../helpers/synthetic-fidelity.mjs'
 
 const payload = { source_image_fingerprints: [{ title: 'Photographic emulsion', image_url: 'https://example.com/source.png' }] }
 const good = { verdict: 'pass', resemblance_score: 0.9, framing_score: 0.9, object_relationship_score: 0.9, context_score: 0.9, transformation_score: 0.9, forbidden_debug_marks: [], rationale: 'Source identity retained with structural transformation.' }

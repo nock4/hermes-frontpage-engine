@@ -6,10 +6,11 @@ import { assertLandscapePlate } from './lib/landscape-policy.mjs'
 import { fileURLToPath } from 'node:url'
 import https from 'node:https'
 import { assertDiskHeadroom, discoverRecovery, localPublicationDate, writePublicationOutcome } from './lib/cron-reliability.mjs'
-import { randomUUID } from 'node:crypto'
+import { randomUUID, createHash } from 'node:crypto'
 
 import { auditPressStability, formatPressStabilityAudit } from './lib/press-stability.mjs'
 import { assertEditorialBindings } from './lib/source-selection-policy.mjs'
+import { ensureCurrentSourceFidelity } from './lib/source-fidelity-audit.mjs'
 import { snapshotCronWorktree, writeCronCheckpoint, readProofCheckpoint, readCandidateCheckpoint } from './lib/cron-recovery-state.mjs'
 
 const primaryRoot = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
@@ -431,7 +432,7 @@ async function assertPublicationTarget(worktreeDir, editionId, staged = false) {
   }
 }
 
-export async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
+export async function commitPublishedArtifacts(worktreeDir, editionId, branch, { runDir } = {}) {
   await assertPublicationTarget(worktreeDir, editionId)
   const readStatusLines = async () => parseStatusLines((await run('git', ['status', '--short'], { cwd: worktreeDir, capture: true })).stdout)
   let lines = await readStatusLines()
@@ -456,6 +457,12 @@ export async function commitPublishedArtifacts(worktreeDir, editionId, branch) {
   // Re-read Git's actual staged bytes: clean filters or recovered staging must
   // not promote a different manifest/asset than the preflight just inspected.
   await assertPublicationTarget(worktreeDir, editionId, true)
+  if (!runDir) throw new Error('mandatory transformation: exact retained candidate run proof is required before commit/push')
+  const fidelity = await ensureCandidateSourceFidelity({ worktreeDir, runDir, editionId, staged: true })
+  if (fidelity.transformation_acceptance) {
+    const stagedPlate = (await promisify(execFile)('git', ['show', `:public/editions/${editionId}/assets/plate.png`], { cwd: worktreeDir, encoding: 'buffer', maxBuffer: 64 * 1024 * 1024 })).stdout
+    if (createHash('sha256').update(stagedPlate).digest('hex') !== fidelity.transformation_acceptance.plate_sha256) throw new Error('mandatory transformation: staged plate differs from exact audited candidate bytes')
+  }
   const commitMessage = `feat: publish daily edition ${editionId}`
   if (cachedPaths.length) await run('git', ['commit', '-m', commitMessage], { cwd: worktreeDir })
   const head = await run('git', ['rev-parse', 'HEAD'], { cwd: worktreeDir, capture: true })
@@ -561,6 +568,49 @@ async function logPressStabilityPreflight() {
   }
 }
 
+export async function ensureCandidateSourceFidelity({ worktreeDir, runDir, editionId, staged = false }, dependencies = {}) {
+  if (!/^[a-zA-Z0-9][a-zA-Z0-9._-]+$/.test(editionId || '')) throw new Error('Invalid candidate edition identity')
+  let payload
+  // Applicability is established by retained package identity AND actual served
+  // source bindings, never by a caller's runDir or a self-declared skip mode.
+  try {
+    const directory = path.join(worktreeDir, 'public/editions', editionId)
+    const summary = await readJson(path.join(runDir, 'edition-package-summary.json'))
+    if (summary.edition_id !== editionId || typeof summary.edition_dir !== 'string'
+      || await fs.realpath(summary.edition_dir) !== await fs.realpath(directory)) throw new Error('retained package/edition mismatch')
+    payload = await readJson(path.join(runDir, 'daily-generation-payload.json'))
+    const read = async name => staged
+      ? JSON.parse((await promisify(execFile)('git', ['show', `:public/editions/${editionId}/${name}`], { cwd: worktreeDir, maxBuffer: 64 * 1024 * 1024 })).stdout)
+      : readJson(path.join(directory, name))
+    const edition = await read('edition.json')
+    const map = await read('artifact-map.json')
+    const sources = await read('source-bindings.json')
+    const bindings = sources.bindings
+    const artifacts = map.artifacts
+    const owners = payload.artifacts?.map(entry => entry.source_url)
+    if (edition.edition_id !== editionId || !edition.artifact_map_id || !edition.source_binding_set_id
+      || map.artifact_map_id !== edition.artifact_map_id || sources.source_binding_set_id !== edition.source_binding_set_id
+      || !Array.isArray(owners) || !owners.length || owners.some(owner => typeof owner !== 'string' || !owner)
+      || !Array.isArray(bindings) || bindings.length !== owners.length
+      || !Array.isArray(artifacts) || artifacts.length !== bindings.length) throw new Error('package source/artifact identity mismatch')
+    for (const [index, binding] of bindings.entries()) {
+      const artifact = artifacts[index]
+      if (binding.source_url !== owners[index] || !binding.id || !artifact.id || binding.artifact_id !== artifact.id
+        || artifact.source_binding_ids?.length !== 1 || artifact.source_binding_ids[0] !== binding.id) throw new Error('candidate owner/artifact binding mismatch')
+    }
+    const fingerprint = payload.source_image_fingerprints?.find(entry => entry?.image_url)
+    if (fingerprint) {
+      const owner = payload.lineage?.source_url || fingerprint.page_url || owners[0]
+      if ((payload.lineage?.source_url && payload.lineage.source_url !== owner)
+        || (fingerprint.page_url && fingerprint.page_url !== owner)
+        || !bindings.some(binding => binding.source_url === owner && binding.source_image_url === fingerprint.image_url)) throw new Error('dominant source owner/image mismatch')
+    } else if (payload.source_contract?.mode !== 'skipped-no-valid-dominant-source-image') throw new Error('missing source applicability')
+  } catch (error) {
+    throw new Error(`mandatory transformation: retained run/package/candidate correspondence failed: ${error.message}`)
+  }
+  return ensureCurrentSourceFidelity({ payload, runDir, platePath: path.join(worktreeDir, 'public/editions', editionId, 'assets/plate.png') }, dependencies)
+}
+
 async function main() {
   const options = parseArgs(process.argv.slice(2))
   // All entrypoints, including direct node calls, share the outer kernel lock.
@@ -631,6 +681,7 @@ async function main() {
       const manifest = await readJson(path.join(options.worktreeDir, 'public/editions/index.json'))
       const bindings = await readJson(path.join(options.worktreeDir, 'public/editions', manifest.current_edition_id, 'source-bindings.json'))
       assertRunEditionProvenance(manifest.current_edition_id, pkg, bindings)
+      await ensureCandidateSourceFidelity({ worktreeDir: options.worktreeDir, runDir: summary.latest_run_dir, editionId: manifest.current_edition_id })
     } else {
     await ensureWorktree(options)
 
@@ -673,7 +724,10 @@ async function main() {
     assertEditorialBindings(finalBindings.bindings, finalResearch, finalHarvest, { finalMedia: true,
       editionId: summary.local_edition_id, editionDir: path.join(options.worktreeDir, 'public', 'editions', summary.local_edition_id) })
 
-    const commitResult = await commitPublishedArtifacts(options.worktreeDir, summary.local_edition_id || new Date().toISOString().slice(0, 10), options.branch)
+    // Recheck exact staged plate/contract proof for both fresh and resumed future
+    // candidates. Published proof-only recovery above intentionally never runs it.
+    await ensureCandidateSourceFidelity({ worktreeDir: options.worktreeDir, runDir: summary.latest_run_dir, editionId: summary.local_edition_id })
+    const commitResult = await commitPublishedArtifacts(options.worktreeDir, summary.local_edition_id || new Date().toISOString().slice(0, 10), options.branch, { runDir: summary.latest_run_dir })
     summary.commit = commitResult.commit
     summary.push_succeeded = commitResult.push_succeeded === true
     summary.changed_paths = commitResult.changed_paths

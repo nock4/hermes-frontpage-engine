@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { parseUniqueKeyJson } from './strict-json.mjs'
 import dns from 'node:dns/promises'
 import os from 'node:os'
 import path from 'node:path'
@@ -6,15 +7,16 @@ import { spawn } from 'node:child_process'
 
 import { fetchVettedRemoteUrl, resolveFetchableImageUrl } from './source-image-network-policy.mjs'
 
-function firstJsonObject(text) {
+function firstJsonObject(text, rejectDuplicateKeys = false) {
+  const parse = rejectDuplicateKeys ? parseUniqueKeyJson : JSON.parse
   const trimmed = String(text || '').trim()
-  if (trimmed.startsWith('{') && trimmed.endsWith('}')) return JSON.parse(trimmed)
+  if (trimmed.startsWith('{') && trimmed.endsWith('}')) return parse(trimmed)
   const start = trimmed.indexOf('{')
   const end = trimmed.lastIndexOf('}')
   if (start === -1 || end === -1 || end <= start) {
     throw new Error(`Hermes response did not contain a JSON object: ${trimmed.slice(0, 200)}`)
   }
-  return JSON.parse(trimmed.slice(start, end + 1))
+  return parse(trimmed.slice(start, end + 1))
 }
 
 function extractJsonText(stdout) {
@@ -129,7 +131,7 @@ function resolveHermesCommand() {
   return String(process.env.HERMES_BIN || 'hermes').trim() || 'hermes'
 }
 
-async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
+async function runHermesJsonQuery({ query, needsVision = false, timeoutMs, recordResponse, rejectDuplicateKeys }) {
   const command = resolveHermesCommand()
   const args = buildHermesCommandArgs({ needsVision })
   return new Promise((resolve, reject) => {
@@ -165,9 +167,10 @@ async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
       clearTimeout(killTimer)
       reject(error)
     })
-    child.on('close', (code) => {
+    child.on('close', async (code) => {
       clearTimeout(deadline)
       clearTimeout(killTimer)
+      try { if (recordResponse) await recordResponse(stdout) } catch (error) { reject(error); return }
       // Reject only after close: the timed-out child has actually been reaped.
       if (timedOut) return reject(new Error(`Hermes inspection timed out after ${timeoutMs}ms`))
       if (code !== 0) {
@@ -176,10 +179,10 @@ async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
       }
       if (stdinError) return reject(stdinError)
       try {
-        resolve(firstJsonObject(extractJsonText(stdout)))
+        resolve(firstJsonObject(extractJsonText(stdout), rejectDuplicateKeys))
       } catch (error) {
         reject(Object.assign(new Error(`Expected JSON from ${command}: ${error.message}\n${stdout}`), {
-          rawResponse: stdout.trim(),
+          rawResponse: stdout,
         }))
       }
     })
@@ -188,7 +191,7 @@ async function runHermesJsonQuery({ query, needsVision = false, timeoutMs }) {
   })
 }
 
-export async function openAiJson({ instructions, input, maxOutputTokens = 5000, timeoutMs }) {
+export async function openAiJson({ instructions, input, maxOutputTokens = 5000, timeoutMs, recordResponse, rejectDuplicateKeys }) {
   const { text, imageUrl } = extractTextAndImage(input)
   const { imagePath, remoteImageUrl } = await materializeImage(imageUrl)
   const query = buildHermesQuery({
@@ -198,5 +201,5 @@ export async function openAiJson({ instructions, input, maxOutputTokens = 5000, 
     imagePath,
     remoteImageUrl,
   })
-  return runHermesJsonQuery({ query, needsVision: Boolean(imagePath || remoteImageUrl), timeoutMs })
+  return runHermesJsonQuery({ query, needsVision: Boolean(imagePath || remoteImageUrl), timeoutMs, recordResponse, rejectDuplicateKeys })
 }

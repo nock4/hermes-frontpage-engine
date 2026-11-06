@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "mode": "source-image",
+  "dominant_source_image_url": "https://pbs.twimg.com/media/HWMgAHwXwAAPDhP.jpg?name=orig",
+  "dominant_source_title": "@tsarfin_art: \"The Glaistig's Hour\" I found this small waterfall deep in a mossy gorge, where...",
+  "source_role": "dominant plate seed",
+  "must_preserve": [
+    "SOURCE-ASPECT NOTE: measured source is landscape (1600x1200); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.",
+    "Source observation to recompose: Copper hair, inclined head and splayed collarbone-touching fingers create a distinctive linked contour; the second bent forearm crosses the torso.",
+    "Source observation to recompose: Asymmetrical blush drapery gathers diagonally at the waist before descending into fine vertical folds and a softly flared hem.",
+    "Source observation to recompose: A fractured white cascade passes through a near-black rock cleft, contrasting with the gown's continuous pale silhouette.",
+    "Source observation to recompose: Thick moss rounds jagged stone edges; small glossy leaves cluster above transparent amber-olive shallows.",
+    "Source observation to recompose: Filtered light picks out smooth shoulders, hands and projecting cloth folds against deep rock recesses.",
+    "Landscape photograph of a copper-haired adult woman in a floor-length blush gown, standing slightly right of center beside a woodland pool.",
+    "Replace the continuous ravine scene with two separated groupings: a head-hand-drapery fragment and an independent cascade-rock fragment, divided by broad quiet negative space."
+  ],
+  "must_transform": [
+    "change at least two of arrangement, scale, object count, crop, surface state, or spatial logic",
+    "Require at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.",
+    "make source-window seams/apertures/marks edition-native rather than pasted annotations",
+    "Replace the continuous ravine scene with two separated groupings: a head-hand-drapery fragment and an independent cascade-rock fragment, divided by broad quiet negative space.",
+    "Break the original full-length figure into a compact upper-body silhouette and a detached folded-hem mass; connect them through repeated pale fold rhythms rather than reconstructing the body.",
+    "Retain copper against green and smooth pale forms against wet dark stone, but omit the complete pool-bank-backdrop enclosure. Cropping or distress alone is not sufficient transformation."
+  ],
+  "forbidden_drift": [
+    "same palette but not the same source",
+    "lost crop/framing or source aspect when that destroys identity",
+    "lost major object, gesture, light, or spatial relationships",
+    "source turned into unrelated macro texture, landscape, room, city, skyline, horizon, or metaphor scene",
+    "framed panel/object conversion that destroys source identity"
+  ],
+  "forbidden_overcopy": [
+    "near-identical source recreation with tiny seams or apertures added",
+    "pasted source photo, screenshot, logo, wordmark, UI button, or page chrome as the plate",
+    "same still-life arrangement, object count, camera distance, and object positions without edition-native transformation"
+  ],
+  "prompt_conflicts": []
+}

@@ -4,7 +4,7 @@ import path from 'node:path'
 
 import { describe, expect, it } from 'vitest'
 
-import { auditSourceImageFidelity } from '../../scripts/lib/source-fidelity-audit.mjs'
+import { auditWithSyntheticFulfilledTransformations as auditSourceImageFidelity } from '../helpers/synthetic-fidelity.mjs'
 
 async function writeJson(filePath, value) {
   await writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, 'utf8')

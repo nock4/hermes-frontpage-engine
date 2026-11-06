@@ -1,0 +1,32 @@
+{
+  "audit_id": "source-fidelity-1793870029839",
+  "inspection_mode": "vision-source-plate-contact-sheet",
+  "source_image_url": "https://pbs.twimg.com/media/HWMgAHwXwAAPDhP.jpg?name=orig",
+  "contact_sheet_path": "tmp/daily-process-runs/cron-1793869255710-9994/source-plate-contact-sheet.png",
+  "verdict": "pass",
+  "resemblance_score": 0.88,
+  "framing_score": 0.84,
+  "object_relationship_score": 0.87,
+  "context_score": 0.93,
+  "transformation_score": 0.76,
+  "retained_critical_elements": [
+    "Copper hair, inclined head and pale hand at the collarbone retain the linked upper-body contour.",
+    "A second bent forearm crosses the torso.",
+    "Blush drapery contrasts with moss, wet dark stone and amber-olive water.",
+    "A fractured white cascade remains distinct from the continuous pale cloth silhouette.",
+    "Light emphasizes shoulders, hands and projecting fabric folds against dark woodland recesses."
+  ],
+  "missing_critical_elements": [
+    "The proposed detached upper-body and folded-hem fragments are not realized; the figure remains continuous.",
+    "Broad quiet separation is limited: the cascade and figure still occupy a shared woodland setting.",
+    "The original narrow descending skirt and softly flared hem become an expansive foreground fabric mass."
+  ],
+  "drift_risks": [
+    "The reclining portrait and fuller hair move toward romantic fashion imagery.",
+    "The continuous figure-and-waterfall scene follows the proposed fragment-based spatial transformation only partially."
+  ],
+  "forbidden_debug_marks": [],
+  "rationale": "The plate retains recognizable source identity through the copper-haired inclined figure, chest-touching gesture, crossed arm, blush folds, mossy dark rock and fractured cascade. It changes upright full-length staging into a closer reclining composition, redistributes the drapery across the chest and foreground, and reconstructs the waterfall and bank. Those are substantive changes in pose, scale, framing and surface arrangement, not small decorative edits to the same photograph. The proposed disconnected fragments are absent, but the result remains a legible source-inspired edition rather than unrelated ambience or a near-copy. Inspection of the complete plate and a separate native-resolution lower-edge crop reveals no identifiable forbidden target geometry.",
+  "pass": true,
+  "blockers": []
+}

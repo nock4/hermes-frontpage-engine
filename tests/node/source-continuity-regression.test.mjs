@@ -47,6 +47,23 @@ describe('connected source-space fidelity regression', () => {
   })
 })
 
+it('records exact adapter response bytes before JSON parsing without inventing evidence', async () => {
+  const dir = await mkdtemp(path.join(os.tmpdir(), 'fidelity-raw-response-'))
+  const bin = path.join(dir, 'fake-hermes')
+  const raw = '  {"verdict": "fail", "synthetic": true}  \n'
+  await writeFile(bin, `#!/usr/bin/env node\nprocess.stdout.write(${JSON.stringify(raw)})\n`, { mode: 0o700 })
+  const previous = process.env.HERMES_BIN
+  process.env.HERMES_BIN = bin
+  let recorded
+  try {
+    expect(await openAiJson({ input: 'SYNTHETIC transport test', timeoutMs: 5000, recordResponse: async value => { recorded = value } })).toEqual({ verdict: 'fail', synthetic: true })
+    expect(recorded).toBe(raw)
+  } finally {
+    if (previous === undefined) delete process.env.HERMES_BIN
+    else process.env.HERMES_BIN = previous
+  }
+})
+
 it('preserves malformed provider output on the real JSON adapter error', async () => {
   const dir = await mkdtemp(path.join(os.tmpdir(), 'fidelity-adapter-'))
   const bin = path.join(dir, 'fake-hermes')
@@ -55,7 +72,7 @@ it('preserves malformed provider output on the real JSON adapter error', async (
   const previous = process.env.HERMES_BIN
   process.env.HERMES_BIN = bin
   try {
-    await expect(openAiJson({ input: 'test', timeoutMs: 5000 })).rejects.toMatchObject({ rawResponse: raw })
+    await expect(openAiJson({ input: 'test', timeoutMs: 5000 })).rejects.toMatchObject({ rawResponse: `${raw}\n` })
   } finally {
     if (previous === undefined) delete process.env.HERMES_BIN
     else process.env.HERMES_BIN = previous
