@@ -31,6 +31,21 @@ export function createEffectRenderer(
     ready = false,
     disposed = false
   const shaders: WebGLShader[] = []
+  let settle!: (ready: boolean) => void
+  const readiness = new Promise<boolean>((resolve) => { settle = resolve })
+  let image: HTMLImageElement | null = null
+  const dispose = () => {
+    if (disposed) return
+    disposed = true
+    clearTimeout(deadline)
+    settle(false)
+    if (image) { image.onload = null; image.onerror = null }
+    gl.deleteTexture(texture)
+    gl.deleteBuffer(buffer)
+    gl.deleteProgram(program)
+    shaders.forEach((s) => gl.deleteShader(s))
+  }
+  const deadline = setTimeout(dispose, 5000)
   try {
     shaders.push(
       shader(
@@ -73,17 +88,21 @@ export function createEffectRenderer(
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE)
-    const image = new Image()
+    image = new Image()
     image.onload = () => {
       if (disposed) return
       try {
         gl.bindTexture(gl.TEXTURE_2D, texture)
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image)
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image!)
+        if (gl.isContextLost() || gl.getError() !== gl.NO_ERROR) throw Error('effect texture unavailable')
         ready = true
+        clearTimeout(deadline)
+        settle(true)
       } catch {
-        ready = false
+        dispose()
       }
     }
+    image.onerror = dispose
     image.src = plateUrl
     const names = [
       'center',
@@ -110,6 +129,7 @@ export function createEffectRenderer(
       'sound',
     ]
     return {
+      ready: readiness,
       draw(ms: number) {
         if (disposed || !ready || gl.isContextLost()) return false
         const rect = canvas.getBoundingClientRect(),
@@ -148,21 +168,10 @@ export function createEffectRenderer(
         gl.drawArrays(gl.TRIANGLES, 0, 6)
         return true
       },
-      dispose() {
-        disposed = true
-        image.onload = null
-        image.onerror = null
-        gl.deleteTexture(texture)
-        gl.deleteBuffer(buffer)
-        gl.deleteProgram(program)
-        shaders.forEach((s) => gl.deleteShader(s))
-      },
+      dispose,
     }
   } catch {
-    gl.deleteTexture(texture)
-    gl.deleteBuffer(buffer)
-    gl.deleteProgram(program)
-    shaders.forEach((s) => gl.deleteShader(s))
+    dispose()
     return null
   }
 }
