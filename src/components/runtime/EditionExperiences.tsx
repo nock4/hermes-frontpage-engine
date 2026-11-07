@@ -49,6 +49,7 @@ function Experience({
   const [status, setStatus] = useState(''),
     [started, setStarted] = useState(false),
     [active, setActive] = useState(false),
+    [activation, setActivation] = useState(0),
     [rendered, setRendered] = useState(false)
   const canvas = useRef<HTMLCanvasElement>(null),
     videoHost = useRef<HTMLDivElement>(null)
@@ -58,6 +59,7 @@ function Experience({
     const s = new EffectSession(effect, loaded.edition.edition_id, (text) => {
       setStatus(text)
       setActive(s.active)
+      setActivation(s.activation)
     })
     session.current = s
     const off = () => s.stop(),
@@ -104,6 +106,8 @@ function Experience({
   useEffect(() => {
     const s = session.current
     if (!s || !active || !canvas.current || reduced.current.matches) return
+    const token = s.activation
+    let disposed = false
     const native = effect.kind === 'projection' || effect.kind === 'camera'
     const renderer = native
       ? null
@@ -123,6 +127,7 @@ function Experience({
       last = performance.now(),
       drawn = false
     const draw = (ms: number) => {
+      if (disposed || !s.active || token !== s.activation) return
       const dt = Math.min(0.05, (ms - last) / 1000)
       last = ms
       s.tick(dt, ms)
@@ -132,7 +137,15 @@ function Experience({
       }
       raf = requestAnimationFrame(draw)
     }
-    raf = requestAnimationFrame(draw)
+    if (native) raf = requestAnimationFrame(draw)
+    else void renderer!.ready.then((ready) => {
+      if (disposed || token !== s.activation || !s.active) return
+      if (!ready) {
+        s.stop('Off · renderer unavailable; original source remains available')
+        return
+      }
+      raf = requestAnimationFrame(draw)
+    })
     const field = canvas.current.parentElement?.parentElement
     const touch = (e: PointerEvent) => {
       if ((e.target as Element).closest('.edition-effect-mark,.edition-effect-status')) return
@@ -142,6 +155,7 @@ function Experience({
     field?.addEventListener('pointerdown', touch as EventListener)
     field?.addEventListener('pointermove', touch as EventListener)
     return () => {
+      disposed = true
       element.removeEventListener('webglcontextlost', lost)
       cancelAnimationFrame(raf)
       renderer?.dispose()
@@ -150,7 +164,7 @@ function Experience({
       field?.removeEventListener('pointerdown', touch as EventListener)
       field?.removeEventListener('pointermove', touch as EventListener)
     }
-  }, [active, effect, artifact, loaded.edition.plate_asset_path])
+  }, [active, activation, effect, artifact, loaded.edition.plate_asset_path])
   const polygon = `polygon(${artifact.polygon.map(([x, y]) => `${x * 100}% ${y * 100}%`).join(',')})`
   const style = {
     left: position?.x,
@@ -202,7 +216,8 @@ function Experience({
       {started && !suspended && selected === effect.kind
         ? createPortal(
             <div className="edition-effect-status" role="status">
-              <span>{status}</span>
+              <span>{active && !rendered && effect.kind !== 'camera' && effect.kind !== 'projection'
+                ? 'Renderer activation pending · Stop cancels' : status}</span>
               <button type="button" aria-label="Stop experience" onClick={() => session.current?.stop()}>
                 Off / Stop
               </button>

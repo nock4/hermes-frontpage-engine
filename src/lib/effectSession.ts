@@ -17,6 +17,8 @@ export class EffectSession {
   ruptureAt = -1
   video: HTMLVideoElement | null = null
   private epoch = 0
+  get activation() { return this.epoch }
+  private cancelJoin: (() => void) | null = null
   private stream: MediaStream | null = null
   private ctx: AudioContext | null = null
   private analyser: AnalyserNode | null = null
@@ -71,6 +73,11 @@ export class EffectSession {
     this.tilt = [0, 0]
     this.abort?.abort()
     this.abort = null
+    this.cancelJoin?.()
+    this.cancelJoin = null
+    if (this.events) {
+      this.events.onopen = this.events.onerror = this.events.onmessage = null
+    }
     this.events?.close()
     this.events = null
     this.endpoint = ''
@@ -119,7 +126,9 @@ export class EffectSession {
           return
         }
         this.stream = acquired
-        for (const track of acquired.getTracks()) track.onended = () => this.stop('Off · sensor ended')
+        for (const track of acquired.getTracks()) track.onended = () => {
+          if (token === this.epoch) this.stop('Off · sensor ended')
+        }
         if (kind === 'camera') {
           this.video = document.createElement('video')
           this.video.muted = true
@@ -127,12 +136,14 @@ export class EffectSession {
           this.video.srcObject = acquired
           await this.video.play()
         } else {
-          this.ctx = new AudioContext()
-          await this.ctx.resume()
+          const ctx = new AudioContext()
+          this.ctx = ctx
+          await ctx.resume()
           if (token !== this.epoch) return
-          this.analyser = this.ctx.createAnalyser()
+          if (document.hidden) { this.stop(); return }
+          this.analyser = ctx.createAnalyser()
           this.analyser.fftSize = 8192
-          this.source = this.ctx.createMediaStreamSource(acquired)
+          this.source = ctx.createMediaStreamSource(acquired)
           this.source.connect(this.analyser)
         }
       } else if (kind === 'depth') {
@@ -145,8 +156,9 @@ export class EffectSession {
         if (token !== this.epoch || document.hidden) return
         window.addEventListener('deviceorientation', this.onOrientation)
       } else if (kind === 'sound') {
-        this.ctx = new AudioContext()
-        await this.ctx.resume()
+        const ctx = new AudioContext()
+        this.ctx = ctx
+        await ctx.resume()
       } else if (kind === 'projection' || kind === 'castlight') {
         const url = this.effect.evidence.video?.url
         if (!url) throw Error('native source not admitted')
@@ -178,22 +190,28 @@ export class EffectSession {
         const events = new EventSource(`${this.endpoint}/surface?room=${encodeURIComponent(this.room)}`)
         this.events = events
         await new Promise<void>((resolve, reject) => {
+          const cancel = () => { clearTimeout(timeout); resolve() }
+          this.cancelJoin = cancel
           const timeout = setTimeout(() => {
             events.close()
             reject(Error('shared connection unavailable'))
           }, 5000)
           events.onopen = () => {
             clearTimeout(timeout)
+            if (token !== this.epoch) return
+            this.cancelJoin = null
             resolve()
           }
           events.onerror = () => {
+            if (token !== this.epoch) return
+            this.cancelJoin = null
             clearTimeout(timeout)
             reject(Error('shared connection lost'))
             if (this.active) this.stop('Off · shared disconnected; join explicitly to reconnect')
           }
         })
         events.onmessage = (e) => {
-          if (!this.active) return
+          if (token !== this.epoch || !this.active) return
           try {
             const d = JSON.parse(e.data)
             if (
@@ -218,7 +236,9 @@ export class EffectSession {
         this.usedRupture = true
         this.ruptureAt = performance.now() / 1000
       }
-      if (token !== this.epoch || document.hidden) {
+      if (token !== this.epoch) return
+      if (document.hidden) {
+        this.stop()
         return
       }
       this.active = true
@@ -240,6 +260,7 @@ export class EffectSession {
     if (this.effect.kind === 'depth') this.tilt = [(x - 0.5) * 2, (y - 0.5) * 2]
     if (this.effect.kind === 'shared' && this.endpoint && now - this.lastSend > 100) {
       this.lastSend = now
+      const token = this.epoch
       fetch(`${this.endpoint}/surface?room=${encodeURIComponent(this.room)}`, {
         method: 'POST',
         credentials: 'omit',
@@ -248,10 +269,10 @@ export class EffectSession {
         body: JSON.stringify({ x: this.pointer[0], y: this.pointer[1] }),
       })
         .then((r) => {
-          if (!r.ok) this.stop('Off · shared unavailable')
+          if (token === this.epoch && !r.ok) this.stop('Off · shared unavailable')
         })
         .catch(() => {
-          if (this.active) this.stop('Off · shared disconnected')
+          if (token === this.epoch && this.active) this.stop('Off · shared disconnected')
         })
     }
     if (this.effect.kind === 'sound' && this.ctx && now - this.lastTone > 80) {

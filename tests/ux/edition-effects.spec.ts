@@ -8,6 +8,45 @@ const map = JSON.parse(fs.readFileSync(`public${current.path}/artifact-map.json`
 const bindings = JSON.parse(fs.readFileSync(`public${current.path}/source-bindings.json`, 'utf8'))
 const artifact = map.artifacts[0],
   binding = bindings.bindings.find((b: any) => b.artifact_id === artifact.id)
+for (const viewport of [{width:1440,height:980},{width:375,height:667}]) test(`SYNTHETIC renderer lifecycle ${viewport.width}: pending failure retry Stop`, async ({page}, info) => {
+  await page.setViewportSize(viewport)
+  await page.addInitScript(() => {
+    const Original = window.Image
+    ;(window as any).__pendingTextures = []
+    ;(window as any).__holdTexture = true
+    window.Image = function(...args: any[]) {
+      const image = new (Original as any)(...args)
+      if ((window as any).__holdTexture) {
+        Object.defineProperty(image, 'src', {set() { (window as any).__pendingTextures.push(image) }})
+      }
+      return image
+    } as any
+  })
+  await fixture(page, 'resonance')
+  const mark = page.getByRole('button', {name:'Experience resonance'})
+  await mark.focus(); await page.keyboard.down('Space')
+  await expect.poll(() => page.evaluate(() => (window as any).__pendingTextures.length)).toBe(1)
+  await expect(page.locator('.edition-effect-status')).toContainText('pending')
+  const root = `${process.env.DFE_EFFECT_LIFECYCLE_EVIDENCE_DIR || info.outputPath('')}/`
+  await page.screenshot({path:`${root}desktop-${viewport.width}-pending.png`})
+  await page.evaluate(() => (window as any).__pendingTextures[0].onerror(new Event('error')))
+  await expect(page.locator('.edition-effect-status')).toContainText('Off')
+  await expect.poll(() => page.evaluate(() => (window as any).__effectsQA.resonance().active)).toBe(false)
+  await page.screenshot({path:`${root}desktop-${viewport.width}-failure.png`})
+  const frames=await page.evaluate(() => (window as any).__effectsQA.resonance().frames)
+  await page.waitForTimeout(150)
+  expect(await page.evaluate(() => (window as any).__effectsQA.resonance().frames)).toBe(frames)
+  await page.keyboard.up('Space')
+  await page.evaluate(() => { (window as any).__holdTexture=false })
+  await mark.focus(); await page.keyboard.down('Space')
+  await expect(page.locator('.edition-effect-paint canvas')).toHaveClass('is-painted')
+  await expect(page.locator('.edition-effect-status')).toContainText('ON')
+  await page.screenshot({path:`${root}desktop-${viewport.width}-retry.png`})
+  await page.keyboard.up('Space')
+  await page.getByRole('button',{name:'Stop experience'}).click()
+  await expect(page.locator('.edition-effect-status')).toContainText('Off')
+  await page.screenshot({path:`${root}desktop-${viewport.width}-stop.png`})
+})
 async function fixture(page: any, kind: string) {
   const media = ['projection', 'castlight'].includes(kind)
   if (media) {
