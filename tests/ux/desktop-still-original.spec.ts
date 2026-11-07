@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { readFile } from 'node:fs/promises'
 
 const original = 'https://media.example.test/whole-original.jpg'
 const poster = 'https://media.example.test/cropped-poster.jpg'
@@ -28,6 +29,170 @@ test('route navigation retries a transient manifest failure', async ({ page }) =
   await artifact.focus()
   await expect(page.locator('.stage-overlay-windows--live .source-window')).toHaveAttribute('data-source-window-mode', 'preview')
 })
+
+// Synthetic rectangular hit geometry isolates route ownership, not polygon layout.
+// All interactions still run through the production App and native browser input.
+for (const viewport of [{ width: 1440, height: 980 }, { width: 852, height: 393 }]) {
+  test.describe(`route fixture ${viewport.width}px`, () => {
+  test.use({ viewport, hasTouch: true, contextOptions: { reducedMotion: 'reduce' } })
+  test(`route dismissal belongs to its edition at ${viewport.width}px`, async ({ page }, info) => {
+    page.on('pageerror', error => console.log('route fixture page error:', error.message))
+    page.on('console', message => { if (message.type() === 'error') console.log('route fixture console:', message.text()) })
+    const a = '2026-09-28-the-edge-outlasts-the-day-v1'
+    const b = '2026-10-16-the-collar-holds-its-shape-v1'
+    const windows = page.locator('.stage-overlay-windows--live .source-window')
+    const frames = () => page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))))
+    const navigate = (href: string) => page.evaluate(href => {
+      history.pushState({}, '', href)
+      window.dispatchEvent(new PopStateEvent('popstate'))
+    }, href)
+    const inputs: { type: string; trusted: boolean; x: number; y: number; target: string; edition: string }[] = []
+    {
+      await page.route('**/artifact-map.json', async route => {
+        const data = JSON.parse(await readFile(new URL(`../../public${new URL(route.request().url()).pathname}`, import.meta.url), 'utf8'))
+        const artifact = data.artifacts[0]
+        artifact.bounds = { x: 0.1, y: 0.15, w: 0.8, h: 0.7 }
+        artifact.polygon = [[0.1, 0.15], [0.9, 0.15], [0.9, 0.85], [0.1, 0.85]]
+        delete artifact.interaction_mesh
+        for (const other of data.artifacts.slice(1)) {
+          other.bounds = { x: 0.94, y: 0.9, w: 0.01, h: 0.01 }
+          other.polygon = [[0.94, 0.9], [0.95, 0.9], [0.95, 0.91], [0.94, 0.91]]
+          delete other.interaction_mesh
+        }
+        data.default_artifact_id = artifact.id
+        await route.fulfill({ json: data })
+      })
+      await page.route('**/source-bindings.json', async route => {
+        const data = JSON.parse(await readFile(new URL(`../../public${new URL(route.request().url()).pathname}`, import.meta.url), 'utf8'))
+        data.bindings = data.bindings.map((binding: { id: string; artifact_id: string }) => ({
+          id: binding.id, artifact_id: binding.artifact_id, source_type: 'web', window_type: 'web',
+          source_url: 'https://example.test/route-fixture', hover_behavior: 'preview', click_behavior: 'pin-open',
+          fallback_type: 'rich-preview', title, source_title: title, kicker: 'fixture', excerpt: 'Route fixture', playback_persistence: false,
+          source_image_url: original, source_media_url: original, source_media_type: 'image',
+        }))
+        await route.fulfill({ json: data })
+      })
+      await page.route(original, route => route.fulfill({ contentType: 'image/svg+xml', body: svg }))
+      await page.addInitScript(() => {
+        for (const type of ['mouseover', 'mousemove', 'click']) document.addEventListener(type, event => {
+          const mouse = event as MouseEvent
+          const element = event.target instanceof Element ? event.target.closest('button.artifact, .source-window__close') : null
+          if (element) console.log('route-input', JSON.stringify({ type, trusted: event.isTrusted, x: mouse.clientX, y: mouse.clientY, target: element.getAttribute('aria-label'), edition: document.querySelector('.runtime-shell')?.getAttribute('data-edition-id') }))
+        }, true)
+      })
+      page.on('console', message => {
+        if (message.text().startsWith('route-input ')) {
+          inputs.push(JSON.parse(message.text().slice('route-input '.length)))
+          console.log(message.text())
+        }
+      })
+      await page.goto(`${info.project.use.baseURL}/?edition=${a}`)
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', a)
+      await page.locator('img.plate').evaluate((img: HTMLImageElement) => img.decode())
+      const mark = page.locator('button.artifact').first()
+      const box = (await mark.boundingBox())!
+      const idle = { x: Math.floor(box.x + box.width * 0.12), y: Math.floor(box.y + box.height * 0.7) }
+      const hit = () => page.evaluate(point => document.elementFromPoint(point.x, point.y)?.closest('button.artifact')?.getAttribute('aria-label') ?? null, idle)
+      expect(await hit()).toBe(await mark.getAttribute('aria-label'))
+      await page.mouse.move(idle.x, idle.y)
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await mark.focus()
+      await page.keyboard.press('Enter')
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'primary')
+      await windows.locator('.source-window__close').tap()
+      await frames()
+      await expect(windows).toHaveCount(0)
+      expect(await hit()).toBe(await mark.getAttribute('aria-label'))
+      await page.screenshot({ path: info.outputPath('same-edition-closed.png') })
+      await info.attach('stationary-close', { body: JSON.stringify({ edition: a, idle, hit: await hit(), windows: await windows.count() }), contentType: 'application/json' })
+      await navigate(`/?edition=${b}`)
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', b)
+      await page.locator('img.plate').evaluate((img: HTMLImageElement) => img.decode())
+      // The first native over can already open a window over this coordinate.
+      // Verify its actual mark target rather than assuming it stays uncovered.
+      const nextMarkLabel = await mark.getAttribute('aria-label')
+      await expect.poll(() => inputs.some(event => event.type === 'mouseover' && event.trusted && event.target === nextMarkLabel && event.edition === b && event.x === idle.x && event.y === idle.y)).toBe(true)
+      // Same physical coordinate: not a fresh-motion escape from the old guard.
+      await page.mouse.move(idle.x, idle.y)
+      await frames()
+      console.log('causal first hover', JSON.stringify({ edition: b, idle, hit: await hit(), windows: await windows.count() }))
+      await info.attach('new-edition-first-hover', { body: JSON.stringify({ edition: b, idle, hit: await hit(), windows: await windows.count() }), contentType: 'application/json' })
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await page.screenshot({ path: info.outputPath('new-edition-preview.png') })
+      await windows.locator('.source-window__close').tap()
+      await frames()
+      await expect(windows).toHaveCount(0)
+      await page.mouse.move(1, 1)
+      await page.mouse.move(idle.x, idle.y)
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await windows.locator('.source-window__close').tap()
+      await frames()
+      await expect(windows).toHaveCount(0)
+      await mark.focus()
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await page.keyboard.press('Enter')
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'primary')
+      await windows.locator('.source-window__close').tap()
+      await frames()
+      await expect(windows).toHaveCount(0)
+      await page.goBack()
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', a)
+      await page.mouse.move(idle.x, idle.y)
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await windows.locator('.source-window__close').tap()
+      await frames()
+      await expect(windows).toHaveCount(0)
+      await page.goForward()
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', b)
+      await page.mouse.move(idle.x, idle.y)
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await windows.locator('.source-window__close').tap()
+      await frames()
+      await expect(windows).toHaveCount(0)
+      await navigate('/archive')
+      await expect(page.locator('.archive-shell')).toBeVisible()
+      await navigate(`/archive/${a}`)
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', a)
+      await page.mouse.move(idle.x, idle.y)
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await windows.locator('.source-window__close').tap()
+      await frames()
+      await expect(windows).toHaveCount(0)
+      let releasePending!: () => void
+      let pendingReached!: () => void
+      const pending = new Promise<void>(resolve => { releasePending = resolve })
+      const reached = new Promise<void>(resolve => { pendingReached = resolve })
+      await page.route(`**/${b}/effects.json`, async route => {
+        pendingReached()
+        await pending
+        await route.continue()
+      })
+      await navigate(`/?edition=${b}`)
+      await reached
+      await navigate(`/?edition=${a}`)
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', a)
+      await page.mouse.move(idle.x, idle.y)
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await windows.locator('.source-window__close').tap()
+      await frames()
+      await expect(windows).toHaveCount(0)
+      const lateResponse = page.waitForResponse(response => response.url().endsWith(`/${b}/effects.json`))
+      releasePending()
+      await (await lateResponse).finished()
+      await frames()
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', a)
+      await expect(windows).toHaveCount(0)
+      // A cancelled load must not erase the current route's close protection.
+      await page.mouse.move(idle.x, idle.y)
+      await frames()
+      await expect(windows).toHaveCount(0)
+      await page.mouse.move(1, 1)
+      await page.mouse.move(idle.x, idle.y)
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+    }
+  })
+  })
+}
 
 for (const mode of ['preview', 'primary'] as const) {
   for (const kind of ['still', 'image-only', 'direct', 'youtube', 'soundcloud', 'bandcamp', 'tweet'] as const) {
