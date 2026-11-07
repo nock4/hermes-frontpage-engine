@@ -54,6 +54,9 @@ function App() {
   }, [syncLocation])
 
   useEffect(() => {
+    // Dismissal belongs to the route being left, not the physical mouse.
+    // Reset before async loading so a cancelled request cannot clear a later close.
+    dismissedPointer.current = []
     let cancelled = false
     const run = async () => {
       try {

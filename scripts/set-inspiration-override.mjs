@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { withInspirationOverrideLock } from './lib/inspiration-override.mjs'
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
 const defaultManifestPath = path.join(root, 'tmp', 'next-run-inspiration-override.json')
@@ -81,7 +82,7 @@ async function main() {
     ...(options.image ? (imageIsUrl ? { image_url: options.image } : { image_path: path.isAbsolute(options.image) ? options.image : path.resolve(process.cwd(), options.image) }) : {}),
   }
   await fs.mkdir(path.dirname(manifestPath), { recursive: true })
-  await fs.writeFile(manifestPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8')
+  await withInspirationOverrideLock(manifestPath, () => fs.writeFile(manifestPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8'))
   console.log(JSON.stringify({ ok: true, manifest: manifestPath, image: options.image, source: options.source }, null, 2))
 }
 

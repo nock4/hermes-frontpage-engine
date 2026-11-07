@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { withInspirationOverrideLock } from './lib/inspiration-override.mjs'
 
 const root = path.resolve(fileURLToPath(new URL('..', import.meta.url)))
 const defaultManifestPath = path.join(root, 'tmp', 'next-run-inspiration-override.json')
@@ -112,7 +113,7 @@ async function readManifest(manifestPath) {
 
 async function showManifest(manifestPath) {
   try {
-    const payload = await readManifest(manifestPath)
+    const payload = await withInspirationOverrideLock(manifestPath, () => readManifest(manifestPath))
     console.log(JSON.stringify({ ok: true, manifest: manifestPath, payload }, null, 2))
   } catch (error) {
     if (error?.code === 'ENOENT') {
@@ -124,17 +125,19 @@ async function showManifest(manifestPath) {
 }
 
 async function clearManifest(manifestPath) {
-  let payload = {}
-  try {
-    payload = await readManifest(manifestPath)
-  } catch (error) {
-    if (error?.code !== 'ENOENT') throw error
-  }
-  payload.active = false
-  payload.last_status = 'cleared'
-  payload.last_cleared_at = new Date().toISOString()
   await fs.mkdir(path.dirname(manifestPath), { recursive: true })
-  await fs.writeFile(manifestPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8')
+  await withInspirationOverrideLock(manifestPath, async () => {
+    let payload = {}
+    try {
+      payload = await readManifest(manifestPath)
+    } catch (error) {
+      if (error?.code !== 'ENOENT') throw error
+    }
+    payload.active = false
+    payload.last_status = 'cleared'
+    payload.last_cleared_at = new Date().toISOString()
+    await fs.writeFile(manifestPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8')
+  })
   console.log(JSON.stringify({ ok: true, manifest: manifestPath, active: false, message: 'next-run inspiration override cleared' }, null, 2))
 }
 
@@ -156,7 +159,7 @@ async function installManifest(options, manifestPath) {
   }
 
   await fs.mkdir(path.dirname(manifestPath), { recursive: true })
-  await fs.writeFile(manifestPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8')
+  await withInspirationOverrideLock(manifestPath, () => fs.writeFile(manifestPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8'))
   console.log(JSON.stringify({
     ok: true,
     message: 'next-run inspiration override installed',
