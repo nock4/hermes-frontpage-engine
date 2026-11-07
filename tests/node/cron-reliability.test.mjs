@@ -85,6 +85,41 @@ describe('recovery decisions', () => {
     // Same day: the verified record (not the failed proof) is the exact proof input.
     expect(selectRecovery([...records].reverse(), today)).toEqual({ proofOnly: 'ok' })
   })
+  it('discovers completed proof checkpoints retained in the owning worktree', async () => {
+    const root = await fs.mkdtemp(path.join(path.resolve(process.env.TMPDIR || 'tmp/'), 'recovery-proof-'))
+    try {
+      const work = path.join(root, 'work'), dir = path.join(root, 'checkpoints')
+      const proofs = path.join(work, 'tmp/cron-checkpoints')
+      await fs.mkdir(dir, { recursive: true }); await fs.mkdir(proofs, { recursive: true })
+      await fs.writeFile(path.join(dir, 'failed.json'), JSON.stringify({ ...base, worktree_dir: work, commit: 'a'.repeat(40), push_succeeded: true }))
+      const complete = path.join(proofs, 'complete.json')
+      await fs.writeFile(complete, JSON.stringify({ ...base, worktree_dir: work, commit: 'a'.repeat(40), push_succeeded: true, ok: true, remote_matches: true }))
+      expect(await discoverRecovery(dir, '2026-10-19', work)).toEqual({})
+      const retained = path.join(dir, 'complete.json')
+      expect(await fs.readFile(retained, 'utf8')).toBe(await fs.readFile(complete, 'utf8'))
+      await fs.rm(proofs, { recursive: true })
+      expect(await discoverRecovery(dir, today, work)).toEqual({ proofOnly: retained })
+    } finally { await fs.rm(root, { recursive: true, force: true }) }
+  })
+  it('reconciles only an explicit same-edition descendant repair, preserving conflicts', async () => {
+    const root = await fs.mkdtemp(path.join(path.resolve(process.env.TMPDIR || 'tmp/'), 'recovery-lineage-'))
+    try {
+      const work = path.join(root, 'work'), dir = path.join(root, 'checkpoints')
+      await fs.mkdir(dir, { recursive: true })
+      const original = path.join(dir, 'original.json'), repair = path.join(dir, 'repair.json')
+      const old = { ...base, worktree_dir: work, commit: 'a'.repeat(40), push_succeeded: true }
+      const fixed = { ...old, commit: 'b'.repeat(40), original_checkpoint: original, original_publication_commit: old.commit }
+      await fs.writeFile(original, JSON.stringify(old)); await fs.writeFile(repair, JSON.stringify(fixed))
+      const verifyDescendant = async (ancestor, descendant) => ancestor === old.commit && descendant === fixed.commit
+      expect(await discoverRecovery(dir, today, work, { verifyDescendant })).toEqual({ proofOnly: repair })
+      await expect(discoverRecovery(dir, today, work, { verifyDescendant: async () => false })).rejects.toThrow(/identity/)
+      for (const mutation of [{ original_checkpoint: '/wrong' }, { original_publication_commit: 'c'.repeat(40) }, { local_edition_id: `${today}-other-v1` }, { latest_run_dir: '/other' }]) {
+        await fs.writeFile(repair, JSON.stringify({ ...fixed, ...mutation }))
+        await expect(discoverRecovery(dir, today, work, { verifyDescendant })).rejects.toThrow()
+      }
+      expect(JSON.parse(await fs.readFile(original, 'utf8'))).toEqual(old)
+    } finally { await fs.rm(root, { recursive: true, force: true }) }
+  })
   it('ignores identity-less failures instead of multiplying blocked candidates', () => {
     const blocked = n => ({ file: `blocked-${n}`, summary: { ...base, ok: false, latest_run_dir: null, local_edition_id: null, error: 'git fetch failed', updated_at: `2026-10-18T0${n}:00:00Z` } })
     expect(selectRecovery([blocked(1)], today)).toEqual({})

@@ -1,6 +1,10 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { randomUUID } from 'node:crypto'
+import { execFile } from 'node:child_process'
+import { promisify } from 'node:util'
+
+const execFileAsync = promisify(execFile)
 
 export function localPublicationDate(now = new Date()) {
   return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now)
@@ -66,25 +70,64 @@ export function selectRecovery(records, expectedDate) {
   return { resumeCandidate: file }
 }
 
-export async function discoverRecovery(directory, expectedDate, worktree) {
-  let names
-  try { names = await fs.readdir(directory) } catch (error) { if (error.code === 'ENOENT') return {}; throw error }
+export async function discoverRecovery(directory, expectedDate, worktree, { verifyDescendant = async (ancestor, descendant) => {
+  try {
+    await execFileAsync('git', ['merge-base', '--is-ancestor', ancestor, descendant], { cwd: worktree, timeout: 10000 })
+    return true
+  } catch { return false }
+} } = {}) {
   const records = []
-  for (const name of names.filter(name => name.endsWith('.json')).sort()) {
-    const file = path.join(directory, name)
-    const summary = JSON.parse(await fs.readFile(file, 'utf8'))
-    if (summary.worktree_dir !== path.resolve(worktree) && summary.push_succeeded !== true) continue
-    if (!summary.local_edition_id && summary.latest_run_dir) {
-      const root = path.join(path.resolve(worktree), 'tmp', 'daily-process-runs') + path.sep
-      if (!summary.latest_run_dir.startsWith(root) || path.resolve(summary.latest_run_dir) !== summary.latest_run_dir) throw new Error('Unsafe candidate run identity')
-      try {
-        const pkg = JSON.parse(await fs.readFile(path.join(summary.latest_run_dir, 'edition-package-summary.json'), 'utf8'))
-        summary.local_edition_id = pkg.edition_id
-      } catch (error) { if (error.code !== 'ENOENT') throw error }
+  // Proof-only runs write beneath their own worktree. Read both exact stores
+  // before refresh so an accepted recovery is not lost on the following day.
+  const stores = new Set([path.resolve(directory), path.resolve(worktree, 'tmp/cron-checkpoints')])
+  for (const store of stores) {
+    let names
+    try { names = await fs.readdir(store) } catch (error) { if (error.code === 'ENOENT') continue; throw error }
+    for (const name of names.filter(name => name.endsWith('.json')).sort()) {
+      let file = path.join(store, name)
+      const bytes = await fs.readFile(file, 'utf8')
+      const summary = JSON.parse(bytes)
+      if (summary.worktree_dir !== path.resolve(worktree) && summary.push_succeeded !== true) continue
+      if (store !== path.resolve(directory)) {
+        // Retain exact checkpoint bytes outside the disposable worktree before
+        // refresh. Never overwrite another invocation with the same filename.
+        await fs.mkdir(directory, { recursive: true })
+        const retained = path.join(path.resolve(directory), name)
+        try { await fs.writeFile(retained, bytes, { flag: 'wx' }) } catch (error) {
+          if (error.code !== 'EEXIST') throw error
+          if (await fs.readFile(retained, 'utf8') !== bytes) throw new Error('Conflicting retained checkpoint bytes')
+        }
+        file = retained
+        if (records.some(r => r.file === file)) continue
+      }
+      if (!summary.local_edition_id && summary.latest_run_dir) {
+        const root = path.join(path.resolve(worktree), 'tmp', 'daily-process-runs') + path.sep
+        if (!summary.latest_run_dir.startsWith(root) || path.resolve(summary.latest_run_dir) !== summary.latest_run_dir) throw new Error('Unsafe candidate run identity')
+        try {
+          const pkg = JSON.parse(await fs.readFile(path.join(summary.latest_run_dir, 'edition-package-summary.json'), 'utf8'))
+          summary.local_edition_id = pkg.edition_id
+        } catch (error) { if (error.code !== 'ENOENT') throw error }
+      }
+      records.push({ file, summary })
     }
-    records.push({ file, summary })
   }
-  return selectRecovery(records, expectedDate)
+  // A runtime-only repair may explicitly supersede its publication commit.
+  // Require the exact retained parent, unchanged candidate identity and real
+  // Git ancestry. Never infer supersession from timestamps or a matching date.
+  const superseded = new Set()
+  for (const repair of records) {
+    const s = repair.summary
+    if (!s.original_checkpoint || !s.original_publication_commit) continue
+    const original = records.find(r => r.file === s.original_checkpoint)
+    const p = original?.summary
+    if (!p || !p.local_edition_id || p.local_edition_id !== s.local_edition_id
+      || !p.latest_run_dir || p.latest_run_dir !== s.latest_run_dir
+      || p.worktree_dir !== s.worktree_dir || p.push_succeeded !== true || s.push_succeeded !== true
+      || p.commit !== s.original_publication_commit || p.commit === s.commit
+      || !/^[a-f0-9]{40}$/.test(p.commit || '') || !/^[a-f0-9]{40}$/.test(s.commit || '')) continue
+    if (await verifyDescendant(p.commit, s.commit)) superseded.add(original.file)
+  }
+  return selectRecovery(records.filter(r => !superseded.has(r.file)), expectedDate)
 }
 
 export function publicationOutcome(summary, expectedDate) {
