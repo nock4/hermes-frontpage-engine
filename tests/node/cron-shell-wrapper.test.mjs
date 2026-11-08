@@ -12,7 +12,7 @@ async function sandbox() {
   await fs.mkdir(path.join(root, 'scripts/lib'), { recursive: true })
   await fs.mkdir(path.join(root, 'src/lib'), { recursive: true })
   await fs.copyFile('src/lib/sourceWindowCountContract.mjs', path.join(root, 'src/lib/sourceWindowCountContract.mjs'))
-  for (const file of ['scripts/lib/press-proof.mjs', 'scripts/press-owner.py', 'scripts/cron/daily-frontpage-cron.sh', 'scripts/cron/daily-frontpage-self-healing-cron.sh']) await fs.copyFile(file, path.join(root, file))
+  for (const file of ['scripts/lib/press-proof.mjs', 'scripts/lib/independent-visual-review.mjs', 'scripts/lib/strict-json.mjs', 'scripts/lib/legacy-accepted-proof-hashes.json', 'scripts/press-owner.py', 'scripts/cron/daily-frontpage-cron.sh', 'scripts/cron/daily-frontpage-self-healing-cron.sh']) await fs.copyFile(file, path.join(root, file))
   await fs.writeFile(path.join(root, 'package.json'), JSON.stringify({ scripts: { 'check:setup': 'exit 21', 'daily:publish:cron': 'echo MUST_NOT_GENERATE', 'press:doctor': 'echo fixture-doctor', 'press:stability': 'echo fixture-stability' } }))
   return root
 }

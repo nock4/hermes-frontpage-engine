@@ -7,6 +7,7 @@ import { platePng } from '../fixtures/plate-png.mjs'
 import { assertLandscapePublication } from '../../scripts/lib/landscape-policy.mjs'
 import { readImageDimensions } from '../../scripts/lib/edition-geometry.mjs'
 import { commitPublishedArtifacts } from '../../scripts/run-daily-publish-cron.mjs'
+import { syntheticReview, syntheticProofContext } from '../fixtures/independent-review.mjs'
 
 const editionId = '2026-10-16-landscape-a-v1'
 const otherId = '2026-10-16-portrait-b-v1'
@@ -64,6 +65,8 @@ it.each(['index.json', `${editionId}/assets/plate.png`, `${editionId}/assets/pre
     const git = (...args) => execFileSync('git', args, { cwd: root, stdio: 'pipe' })
     git('init')
     git('config', 'status.showUntrackedFiles', 'all')
+    const runDir = path.join(root, '.git/synthetic-review-run')
+    await syntheticProofContext(editionId, root, runDir)
     // Prevent any commit even if the guard regresses; no remote exists.
     await fs.writeFile(path.join(root, '.git/hooks/pre-commit'), '#!/bin/sh\nexit 1\n', { mode: 0o755 })
     await fs.writeFile(path.join(root, '.git/filter.cjs'), target === 'index.json'
@@ -72,7 +75,7 @@ it.each(['index.json', `${editionId}/assets/plate.png`, `${editionId}/assets/pre
     git('config', 'filter.review.clean', `${process.execPath} .git/filter.cjs`)
     git('config', 'filter.review.required', 'true')
     await fs.writeFile(path.join(root, '.git/info/attributes'), `public/editions/${target} filter=review\n`)
-    await expect(commitPublishedArtifacts(root, editionId, 'main')).rejects.toThrow(target === 'index.json' ? /publication target/i : /Landscape plate required/i)
+    await expect(commitPublishedArtifacts(root, editionId, 'main', { runDir })).rejects.toThrow(target === 'index.json' ? /publication target/i : /Landscape plate required/i)
     expect(JSON.parse(await fs.readFile(path.join(root, 'public/editions/index.json'), 'utf8')).current_edition_id).toBe(editionId)
     expect(() => git('rev-parse', '--verify', 'HEAD')).toThrow()
   } finally { await fs.rm(root, { recursive: true, force: true }) }
@@ -128,6 +131,7 @@ it('retries the exact committed candidate after push failure without a new diff'
     await fs.writeFile(file, JSON.stringify(edition))
     await fs.writeFile(path.join(directory, 'artifact-map.json'), JSON.stringify({ artifact_map_id: 'map-a', artifacts: [{ id: 'a', source_binding_ids: ['b'] }] }))
     await fs.writeFile(path.join(directory, 'source-bindings.json'), JSON.stringify({ source_binding_set_id: 'bindings-a', bindings: [{ id: 'b', artifact_id: 'a', source_url: 'https://example.org/source-field' }] }))
+    await syntheticReview({ worktreeDir: root, runDir, editionId })
     await expect(commitPublishedArtifacts(root, editionId, 'main', { runDir })).rejects.toThrow(/push/)
     const commit = git('rev-parse', 'HEAD'); expect(git('status', '--short')).toBe('')
     await fs.unlink(hook)

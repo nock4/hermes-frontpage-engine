@@ -1,4 +1,23 @@
+import fs from 'node:fs'
+import { createHash } from 'node:crypto'
+import path from 'node:path'
+import { assertIndependentVisualReview, assertArchivedIndependentVisualReview } from './independent-visual-review.mjs'
 import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
+
+const legacyHashes = new Set(Object.values(JSON.parse(fs.readFileSync(new URL('./legacy-accepted-proof-hashes.json', import.meta.url), 'utf8'))))
+// Only exact already-registered bytes are grandfathered, never an edition/date flag.
+export function checkRegisteredPressProof(bytes) {
+  const value = JSON.parse(String(bytes))
+  if (legacyHashes.has(createHash('sha256').update(bytes).digest('hex'))) return checkProof(value.proof, true)
+  if (value.acceptance_policy === 'independent-final-candidate-v1' && value.independent_review_archive) {
+    try {
+      const review = assertArchivedIndependentVisualReview(value.independent_review_archive, value.edition_id)
+      if (value.proof.expected_edition_id !== value.edition_id || review.binding.run_dir !== path.resolve(value.proof.summary.latest_run_dir)) throw Error('registered independent review identity mismatch')
+      return checkProof(value.proof, true)
+    } catch (error) { return { green: false, blockers: [error.message] } }
+  }
+  return checkProof(value.proof, false)
+}
 
 export function extractLastPublishSummary(text) {
   const source = String(text || '')
@@ -76,6 +95,9 @@ export function buildPublishProof({
 }
 
 export function checkPressProof(proof = {}) {
+  return checkProof(proof, false)
+}
+function checkProof(proof = {}, legacyRegistered = false) {
   const blockers = []
   const summary = proof.summary || {}
   const liveProof = proof.live_proof || proof.liveProof || null
@@ -88,7 +110,12 @@ export function checkPressProof(proof = {}) {
   if (!proof.screenshot_path) blockers.push('success screenshot missing')
   if (!proof.prompt_path) blockers.push('scene prompt proof missing')
   if (proof.qa?.qaPublishPassed !== true) blockers.push('qa:publish proof missing')
-  if (proof.qa?.adversarialVisualQa && proof.qa.adversarialVisualQa !== 'pass') blockers.push('adversarial visual QA did not pass')
+  if (proof.qa?.adversarialVisualQa !== 'pass') blockers.push('adversarial visual QA did not pass')
+  if (!legacyRegistered) {
+    try {
+      assertIndependentVisualReview({ worktreeDir: summary.worktree_dir, runDir: summary.latest_run_dir, editionId: expectedEditionId })
+    } catch (error) { blockers.push(error.message) }
+  }
   const sourceFidelityVerdict = String(proof.source?.sourceFidelityVerdict || '').toLowerCase()
   const sourceImageMode = String(proof.source?.sourceImageMode || '').toLowerCase()
   if (sourceFidelityVerdict === 'fail') blockers.push('source-image fidelity failed')

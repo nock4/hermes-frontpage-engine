@@ -2,6 +2,65 @@ import { test, expect } from '@playwright/test'
 import { buildEffectsCandidate } from '../fixtures/effects-candidate.mjs'
 import { createSurfaceServer } from '../../scripts/services/shared-surface.mjs'
 import fs from 'node:fs'
+
+import { denyOtherwiseNativeCapture } from '../fixtures/deny-native-sensors'
+
+test.beforeEach(async ({ context }) => {
+  await context.addInitScript(denyOtherwiseNativeCapture)
+})
+
+test('SYNTHETIC sensor guardian denies before otherwise-native capture and preserves explicit streams', async ({ page }) => {
+  await page.goto('/')
+  await page.evaluate(() => {
+    ;(window as any).__nativeCaptureCalls = 0
+    // Safety sentinel stands in for genuine native capture even during RED.
+    MediaDevices.prototype.getUserMedia = async () => {
+      ;(window as any).__nativeCaptureCalls++
+      throw new DOMException('Safety sentinel: never open hardware', 'NotAllowedError')
+    }
+  })
+  await page.evaluate(denyOtherwiseNativeCapture)
+  const result = await page.evaluate(async () => {
+    const names = []
+    for (const constraints of [{ audio: true }, { video: true }]) {
+      try { await navigator.mediaDevices.getUserMedia(constraints) }
+      catch (error) { names.push((error as DOMException).name) }
+    }
+    return { calls: (window as any).__nativeCaptureCalls, names }
+  })
+  expect(result).toEqual({ calls: 0, names: ['NotAllowedError', 'NotAllowedError'] })
+  expect(await page.evaluate(async () => {
+    const stream = document.createElement('canvas').captureStream(20)
+    Object.defineProperty(navigator, 'mediaDevices', { value: { getUserMedia: async () => stream } })
+    const received = await navigator.mediaDevices.getUserMedia({ video: true })
+    const same = received === stream && received instanceof MediaStream
+    received.getTracks().forEach(track => track.stop())
+    return same
+  })).toBe(true)
+})
+
+test('SYNTHETIC sensor guardian is automatic across context pages frames and navigation', async ({ context, page }) => {
+  const other = await context.newPage()
+  for (const target of [page, other]) {
+    await target.goto('/')
+    await target.locator('body').evaluate(body => {
+      const frame = document.createElement('iframe')
+      frame.src = 'about:blank'
+      body.appendChild(frame)
+    })
+    await expect.poll(() => target.frames().length).toBeGreaterThan(1)
+    for (const frame of target.frames()) {
+      // Inspect first: a missing guard must not invoke the actual native API.
+      expect(await frame.evaluate(() => MediaDevices.prototype.getUserMedia.toString())).toContain('Automated sensor fixture')
+      expect(await frame.evaluate(async () => {
+        try { await navigator.mediaDevices.getUserMedia({ audio: true, video: true }); return 'granted' }
+        catch (error) { return (error as DOMException).name }
+      })).toBe('NotAllowedError')
+    }
+    await target.reload()
+    expect(await target.evaluate(() => MediaDevices.prototype.getUserMedia.toString())).toContain('Automated sensor fixture')
+  }
+})
 const manifest = JSON.parse(fs.readFileSync('public/editions/index.json', 'utf8'))
 const current = manifest.editions.find((e: any) => e.edition_id === manifest.current_edition_id)
 const map = JSON.parse(fs.readFileSync(`public${current.path}/artifact-map.json`, 'utf8'))
@@ -129,6 +188,11 @@ for (const kind of ['refraction', 'camera', 'resonance', 'depth', 'shared', 'rup
     expect(await page.evaluate(() => !!(window as any).__effectsQA)).toBe(true)
     await mark.click()
     await expect(page.locator('.edition-effect-status')).toBeVisible()
+    if (kind === 'camera' || kind === 'resonance') {
+      // Ordinary integration tests exercise denial, not physical capture success.
+      await expect(page.locator('.edition-effect-status')).toContainText('Off · Automated sensor fixture: capture not granted')
+      expect(await page.evaluate(k => (window as any).__effectsQA[k]().active, kind)).toBe(false)
+    }
     if (kind === 'shared')
       await expect(page.locator('.edition-effect-status')).toContainText('not configured')
     await page.getByRole('button', { name: 'Stop experience' }).click()

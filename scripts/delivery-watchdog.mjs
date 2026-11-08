@@ -5,7 +5,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { createHash, randomUUID } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { checkPressProof } from './lib/press-proof.mjs'
+import { archiveIndependentVisualReview } from './lib/independent-visual-review.mjs'
+import { checkPressProof, checkRegisteredPressProof } from './lib/press-proof.mjs'
 import { localPublicationDate } from './lib/cron-reliability.mjs'
 const profile = '/Users/nickgeorge-studio/.hermes/profiles/frontpage'
 const stateRoot = path.join(profile, 'delivery')
@@ -47,7 +48,10 @@ export async function acceptProof(proof, root=stateRoot) {
   const prompt=path.join(root,'documents',`${edition}-scene-prompt.txt`)
   await fs.mkdir(path.dirname(prompt),{recursive:true})
   await fs.copyFile(proof.prompt_path,prompt)
-  const value={edition_id:edition,run_id:proof.summary.checkpoint_path||proof.summary.commit,screenshot,prompt,screenshot_sha256:digest(bytes),accepted_at:new Date().toISOString(),proof}
+  await fs.mkdir(path.join(root, 'independent-reviews'), { recursive: true })
+  const archive = archiveIndependentVisualReview({ worktreeDir: proof.summary.worktree_dir, runDir: proof.summary.latest_run_dir, editionId: edition }, path.join(root, 'independent-reviews', `${edition}-${randomUUID()}`))
+  const retainedProof = { ...proof, summary: { ...proof.summary, latest_run_dir: await fs.realpath(proof.summary.latest_run_dir) } }
+  const value={acceptance_policy:'independent-final-candidate-v1',independent_review_archive:archive,edition_id:edition,run_id:proof.summary.checkpoint_path||proof.summary.commit,screenshot,prompt,screenshot_sha256:digest(bytes),accepted_at:new Date().toISOString(),proof:retainedProof}
   await atomic(path.join(root,'accepted',`${edition}.json`),value)
   return value
 }
@@ -73,8 +77,9 @@ export async function latestAccepted(root, liveId=null) {
   const valid=[]
   for (const name of names.filter(n=>n.endsWith('.json'))) {
     try {
-      const value=await readJson(path.join(dir,name))
-      if(value && digest(await fs.readFile(value.screenshot))===value.screenshot_sha256 && checkPressProof(value.proof).green && value.proof.qa?.adversarialVisualQa==='pass') valid.push(value)
+      const bytes=await fs.readFile(path.join(dir,name))
+      const value=JSON.parse(String(bytes))
+      if(value && digest(await fs.readFile(value.screenshot))===value.screenshot_sha256 && checkRegisteredPressProof(bytes).green && value.proof.qa?.adversarialVisualQa==='pass') valid.push(value)
     } catch { /* A broken newer record must not discard an intact last-good. */ }
   }
   return valid.find(value=>value.edition_id===liveId) || valid.sort((a,b)=>String(b.accepted_at).localeCompare(String(a.accepted_at)))[0] || null

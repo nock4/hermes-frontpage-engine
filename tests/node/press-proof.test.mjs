@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest'
+import { syntheticProofContext } from '../fixtures/independent-review.mjs'
 import { readFileSync, mkdtempSync, writeFileSync, rmSync } from 'node:fs'
 import { execFileSync } from 'node:child_process'
 import os from 'node:os'
@@ -30,10 +31,10 @@ import {
 } from '../../scripts/lib/press-proof.mjs'
 
 describe('press proof contract', () => {
-  it.each([undefined, 0, 1, 6, 10, 11])('requires a valid live source-window count for new editions: %s', artifactCount => {
+  it.each([undefined, 0, 1, 6, 10, 11])('requires a valid live source-window count for new editions: %s', async artifactCount => {
     const edition = '2026-10-22-contract-v1'
     const proof = buildPublishProof({
-      summary: { ok: true, local_edition_id: edition, remote_matches: true },
+      summary: { ok: true, local_edition_id: edition, remote_matches: true, ...await syntheticProofContext(edition) },
       liveProof: { pageEditionId: edition, loadedPlateImageCount: 1, artifactCount,
         plate: { src: `/editions/${edition}/assets/plate.png`, naturalWidth: 1536, naturalHeight: 1024 } },
       screenshotPath: '/fixture/screenshot.png', promptPath: '/fixture/prompt.txt',
@@ -41,7 +42,7 @@ describe('press proof contract', () => {
     })
     expect(checkPressProof(proof).green).toBe([1, 6, 10].includes(artifactCount))
   })
-  it('marks a publish green only when remote, screenshot, preload, QA, and edition match proof all hold', () => {
+  it('marks a publish green only when remote, screenshot, preload, QA, and edition match proof all hold', async () => {
     const proof = buildPublishProof({
       summary: {
         ok: true,
@@ -49,6 +50,7 @@ describe('press proof contract', () => {
         local_publish_status: 'live',
         remote_matches: true,
         commit: 'abc123',
+        ...await syntheticProofContext('2026-07-27-mint-wing-wood-quiet-v1'),
       },
       liveProof: {
         expectedEditionId: '2026-07-27-mint-wing-wood-quiet-v1',
@@ -174,8 +176,9 @@ describe('press proof contract', () => {
 
   it('builds proof directly from cron log text', async () => {
     const { buildPublishProofFromCronLog } = await import('../../scripts/lib/press-proof.mjs')
+    const context = await syntheticProofContext('edition-v1')
     const text = [
-      '{\n  "ok": true,\n  "local_edition_id": "edition-v1",\n  "local_publish_status": "live",\n  "remote_matches": true\n}',
+      JSON.stringify({ ok: true, local_edition_id: 'edition-v1', local_publish_status: 'live', remote_matches: true, ...context }),
       'Captured success screenshot: /tmp/proof.png',
       'Actual plate prompt: /tmp/scene-prompt.txt',
       'Live preload proof: {"expectedEditionId":"edition-v1","pageEditionId":"edition-v1","loadedPlateImageCount":1,"plate":{"src":"https://daily.nockgarden.com/editions/edition-v1/assets/plate.png","naturalWidth":1024,"naturalHeight":1536}}',
