@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "mode": "source-image",
+  "dominant_source_image_url": "https://pbs.twimg.com/media/HWVkcwYWUAAehgQ.jpg?name=orig",
+  "dominant_source_title": "@billdifferen: been going thru a buncha archived syrian cassette tapes and look at how sick...",
+  "source_role": "dominant plate seed",
+  "must_preserve": [
+    "SOURCE-ASPECT NOTE: measured source is landscape (997x611); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.",
+    "Source observation to recompose: Recognizable portrait fragments: receding dark hair, thin metal eyeglasses, rounded head, broad shirt shoulders, and a long dark tie with tiny pale dots.",
+    "Source observation to recompose: The relationship between a relatively crisp salmon-shirted figure and an enlarged, low-contrast cyan portrait echo; borrow fragments rather than rebuilding the complete lineup.",
+    "Source observation to recompose: Oversized yellow calligraphic masses with dark outlines and blue calligraphic masses with thick white edging crossing clothing; their flowing strokes and dots as illegible marks.",
+    "Source observation to recompose: Narrow sleeve-spine grammar: pale vertical band, compact circular emblem, stacked miniature marks, and strongly compressed vertical lettering.",
+    "Source observation to recompose: Cloudy luminous cobalt behind the warm shirt, contrasted with bleached cyan facial planes and shoulders dissolving into pale blue.",
+    "Source observation to recompose: A lower-right dark slanted banner carrying a white flowing wordmark-shaped mass, with smaller orange-gold inscription bands nearby.",
+    "A horizontal cassette-sleeve graphic divided into narrow spine-like strips and larger portrait panels."
+  ],
+  "must_transform": [
+    "change at least two of arrangement, scale, object count, crop, surface state, or spatial logic",
+    "Require at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.",
+    "make source-window seams/apertures/marks edition-native rather than pasted annotations",
+    "Break the original side-by-side panel lineup: assemble a compact cluster from one partial shirt-and-tie figure, a detached enlarged eyeglass-and-face fragment, and a relocated spine strip, leaving a broad pale-blue interval.",
+    "Change the portrait grouping and count rather than reproducing all original figures; preserve the crisp warm portrait versus faded cool echo relationship.",
+    "Redistribute outlined calligraphic masses into unequal bands that bridge selected portrait fragments and interrupt panel boundaries; make all lettering illegible.",
+    "Keep photographic facial and garment silhouettes materially present; do not replace the cover grammar with unrelated macro texture or rely on grain, cropping, and scale changes alone."
+  ],
+  "forbidden_drift": [
+    "same palette but not the same source",
+    "lost crop/framing or source aspect when that destroys identity",
+    "lost major object, gesture, light, or spatial relationships",
+    "source turned into unrelated macro texture, landscape, room, city, skyline, horizon, or metaphor scene",
+    "framed panel/object conversion that destroys source identity"
+  ],
+  "forbidden_overcopy": [
+    "near-identical source recreation with tiny seams or apertures added",
+    "pasted source photo, screenshot, logo, wordmark, UI button, or page chrome as the plate",
+    "same still-life arrangement, object count, camera distance, and object positions without edition-native transformation"
+  ],
+  "prompt_conflicts": []
+}

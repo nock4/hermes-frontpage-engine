@@ -23,7 +23,7 @@ export function ArchiveIndexPage({ records, navigate, currentEditionId }: Archiv
       <section className="archive-grid">
         {records.map((record) => (
           <button className="archive-card" key={record.edition_id} onClick={() => navigate(record.archive_href)} type="button">
-            <img alt={record.title} src={record.preview_asset_path} />
+            <img alt={record.title} loading="lazy" src={record.preview_asset_path} />
             <div className="archive-card__body">
               <div className="archive-card__meta">
                 <span>{record.date}</span>

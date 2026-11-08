@@ -1,0 +1,87 @@
+{
+  "transformation_context_id": "79607d9b86f0063bf832c8c46001786c4e91b7dc210a42a807e2527160689738",
+  "transformation_findings": [
+    {
+      "clause_id": "transform-1-390cc3cd3285c0c9",
+      "clause": "change at least two of arrangement, scale, object count, crop, surface state, or spatial logic",
+      "status": "fulfilled",
+      "visible_evidence": "The plate replaces the source's separately bounded packaging panels with overlapping portraits. The warm figure occupies the left foreground, an enlarged cyan face sits behind it, and the cream spine-like strip moves inside their junction. The additional far-left source portrait is omitted, while a broad pale-cyan field opens on the right.",
+      "context": "The source presents a narrow portrait panel, a spine, a warm front-cover portrait, and a pale-blue back-cover portrait as adjacent package sections. The plate consolidates those materials into a continuous landscape.",
+      "reason": "Arrangement, portrait count, scale, and crop visibly change. The result exceeds the minimum of two changed dimensions."
+    },
+    {
+      "clause_id": "transform-2-1e55c03344fa5ac7",
+      "clause": "Require at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.",
+      "status": "fulfilled",
+      "visible_evidence": "Separate cover sections become a layered group: the warm figure overlaps the enlarged cool portrait, the narrow cream strip stands between their heads, and outlined script crosses their junction. Receding dark hair, thin glasses, the salmon collar, broad shirt silhouette, and dotted dark tie remain visible.",
+      "context": "The original crisp warm portrait and bleached cyan echo remain the governing relationship, but the original outer portrait panel is removed and the remaining elements share one field.",
+      "reason": "The overlapping grouping and reduced portrait count are structural changes, not merely magnification or distress. Distinctive portrait, garment, palette, and calligraphic cues remain recognizable."
+    },
+    {
+      "clause_id": "transform-3-68fb57f4a2c48991",
+      "clause": "make source-window seams/apertures/marks edition-native rather than pasted annotations",
+      "status": "uncertain",
+      "visible_evidence": "The diagonal navy banner, cream strip, calligraphic contours, and irregular pale scratches belong visually to the printed-cover treatment. No conspicuous outlined hotspot or pasted annotation is apparent. However, no particular edge or aperture is visually identifiable as an actual source-window boundary.",
+      "context": "The source supplies packaging divisions and printed graphic edges; the plate turns these into internal graphic surfaces. The contact sheet does not identify which surfaces, if any, function as source windows.",
+      "reason": "Visual integration of the printed marks is plausible, but the required source-window integration cannot be verified merely from the absence of obvious annotations."
+    },
+    {
+      "clause_id": "transform-4-29ccd3b965dce862",
+      "clause": "Break the original side-by-side panel lineup: assemble a compact cluster from one partial shirt-and-tie figure, a detached enlarged eyeglass-and-face fragment, and a relocated spine strip, leaving a broad pale-blue interval.",
+      "status": "failed",
+      "visible_evidence": "The left and center contain a cropped salmon-shirted figure, an internally relocated cream spine-like strip, and an enlarged cyan face, with open pale blue on the right. However, the cyan face continues downward into faint neck, shirt/tie, and upper-torso imagery behind the central lettering; it is not a detached eyeglass-and-face fragment.",
+      "context": "The plate breaks the source's bounded panel lineup and retains its warm-versus-cool portrait relationship, but the cool element remains an enlarged portrait continuation rather than the specifically requested detached fragment.",
+      "reason": "Most components are present, but the complete clause requires a detached enlarged face fragment. Cropping the top of an otherwise continuing portrait does not fulfill that requirement."
+    },
+    {
+      "clause_id": "transform-5-1e0f45435f092560",
+      "clause": "Change the portrait grouping and count rather than reproducing all original figures; preserve the crisp warm portrait versus faded cool echo relationship.",
+      "status": "fulfilled",
+      "visible_evidence": "The source's extra narrow blue portrait at the far left is absent. The plate instead pairs one sharply rendered salmon-shirted foreground figure with one enlarged, low-contrast cyan portrait behind it. These portraits overlap through the center rather than occupying separate package panels.",
+      "context": "The original includes three portrait appearances across its packaging layout. The plate reduces these to two while retaining the contrast between the relatively crisp warm figure and the faded cool echo.",
+      "reason": "Both grouping and portrait count change, and the required warm-versus-cool relationship remains plainly visible."
+    },
+    {
+      "clause_id": "transform-6-bfaeffeba767b9db",
+      "clause": "Redistribute outlined calligraphic masses into unequal bands that bridge selected portrait fragments and interrupt panel boundaries; make all lettering illegible.",
+      "status": "uncertain",
+      "visible_evidence": "Large blue strokes with broad cream outlines and yellow strokes with thinner dark edging cross the warm torso and the cool portrait's lower region. A separate navy diagonal band carries cream script and smaller yellow marks. The lettering is distorted, overlapping, and partly cropped, but several forms remain recognizably script-like.",
+      "context": "The source's title masses and lower banner grammar are redistributed across the formerly separate portrait areas, visibly interrupting their divisions.",
+      "reason": "Redistribution and bridging are visible. The stronger requirement that all lettering be illegible is not securely verifiable from these pixels; inability to transcribe the stylized script is not proof of universal illegibility."
+    },
+    {
+      "clause_id": "transform-7-985da33a934748a9",
+      "clause": "Keep photographic facial and garment silhouettes materially present; do not replace the cover grammar with unrelated macro texture or rely on grain, cropping, and scale changes alone.",
+      "status": "fulfilled",
+      "visible_evidence": "The left portrait retains a modeled photographic face, glasses, receding hairline, folded salmon collar, chest, and patterned tie. The enlarged cyan portrait retains facial planes and eyeglasses. The cream strip, outlined script, and lower diagonal banner remain recognizable printed-cover elements.",
+      "context": "Paper wear overlays a portrait-and-lettering composition rather than replacing the cassette-cover identity with an unrelated textured scene.",
+      "reason": "Faces and garments remain materially present, and overlapping grouping, omitted portrait count, and internal relocation of the spine provide changes beyond grain, cropping, and scale."
+    }
+  ],
+  "verdict": "fail",
+  "resemblance_score": 0.9,
+  "framing_score": 0.87,
+  "object_relationship_score": 0.83,
+  "context_score": 0.9,
+  "transformation_score": 0.76,
+  "retained_critical_elements": [
+    "Receding dark hair, thin eyeglasses, salmon shirt, broad shoulders, and dotted dark tie",
+    "Crisp warm foreground portrait against an enlarged faded cyan echo",
+    "Blue calligraphic masses with cream outlines and dark-edged yellow strokes",
+    "Narrow cream spine-like strip with circular emblem and stacked marks",
+    "Dark diagonal lower banner carrying cream script and yellow accents",
+    "Luminous cyan field and worn printed-paper surface"
+  ],
+  "missing_critical_elements": [
+    "A genuinely detached enlarged eyeglass-and-face fragment rather than a continuing cool portrait",
+    "Visually verified illegibility of every lettering element",
+    "Visually identifiable source-window boundaries sufficient to verify their integration"
+  ],
+  "drift_risks": [
+    "The cool portrait retains neck and upper-body continuity, weakening the explicitly required fragment-based reconstruction.",
+    "Stylized script may remain readable; distortion and cropping alone do not establish that all lettering is illegible.",
+    "Integrated print scratches do not independently prove that interactive source windows use edition-native edges."
+  ],
+  "forbidden_debug_marks": [],
+  "rationale": "The plate clearly borrows this source rather than merely sharing its palette, and its overlapping two-portrait composition is not a recreation of the original packaging layout. Nevertheless, the mandatory detached-face requirement is missed: the cyan face continues into neck and garment imagery. Source-window integration and universal lettering illegibility also remain unverified. The complete overview and native-pixel lower strip were inspected; visible pale intersections are irregular abrasions, with no positively identifiable target rings, reticles, or calibration marks."
+}

@@ -24,7 +24,10 @@ export async function transformationExpectation(payload, platePath) {
   let plateHash = null
   try { plateHash = digest(await fs.readFile(platePath)) } catch (error) { blockers.push(`plate bytes unavailable: ${error.message}`) }
   const sourceOwner = { artifact_source_urls: (payload?.artifacts || []).map(entry => entry?.source_url ?? null), lineage_source_url: payload?.lineage?.source_url ?? null, fingerprint_page_url: payload?.source_image_fingerprints?.find(entry => entry?.image_url)?.page_url ?? null }
-  const binding = { source_owner: sourceOwner, source_image_url: source, source_contract: contract ?? null, plate_sha256: plateHash, required_clauses: required }
+  // Trusted policy is context-bound, never inferred from source prose or model output.
+  // A policy change requires a revision change so prior candidate proof is re-audited.
+  const audit_scope = { policy_revision: 'pre-map-visible-integration-v1', stage: 'pre-mapping-plate-visual', runtime_source_window_function: 'not-assessed' }
+  const binding = { audit_scope, source_owner: sourceOwner, source_image_url: source, source_contract: contract ?? null, plate_sha256: plateHash, required_clauses: required }
   return { schema_version: 1, ...binding, context_id: digest(JSON.stringify(canonical(binding))), blockers }
 }
 
