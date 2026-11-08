@@ -3,6 +3,36 @@ import path from 'node:path'
 import { randomUUID } from 'node:crypto'
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
+import { independentReviewExpectation } from './independent-visual-review.mjs'
+import { isDeepStrictEqual } from 'node:util'
+
+// Compare existing filesystem identities, never rewrite retained evidence paths.
+export async function sameExistingPath(a, b) {
+  return typeof a === 'string' && typeof b === 'string' && await fs.realpath(a) === await fs.realpath(b)
+}
+
+// Follow only explicit, byte-bound replacement links. This normalizes old
+// checkpoints without deleting them or letting failed candidates win by mtime.
+export async function resolveReviewContinuation(summary, worktree) {
+  if (!summary.review_continuation_state || summary.push_succeeded === true) return summary
+  const state = JSON.parse(await fs.readFile(summary.review_continuation_state, 'utf8'))
+  if (state.schema_version !== 1 || !await sameExistingPath(state.initial?.worktreeDir, worktree) || !await sameExistingPath(state.current?.worktreeDir, worktree) || !Number.isInteger(state.repairs) || state.repairs < 0 || state.repairs > 3) throw Error('Malformed review continuation owner state')
+  let run = summary.latest_run_dir
+  for (let i = 0; !await sameExistingPath(run, state.current.runDir) && i < 3; i++) {
+    const link = JSON.parse(await fs.readFile(path.join(run, 'automatic-review-successor.json'), 'utf8'))
+    const review = link.repair_kind === 'runtime-only' ? JSON.parse(await fs.readFile(path.join(run, 'independent-visual-review.json'), 'utf8')) : null
+    const runtimeOnly = review?.verdict === 'BLOCK' && isDeepStrictEqual(review.binding, link.blocked_binding)
+      && review.findings.some(row => row.clause_id === 'source-window-visual-acceptance' && row.status !== 'fulfilled')
+      && review.findings.filter(row => row.clause_id !== 'source-window-visual-acceptance').every(row => row.status === 'fulfilled')
+    if (link.disposition !== 'REPLACED_AFTER_BLOCK' || link.publication_authorized !== false || !await sameExistingPath(link.state_path, summary.review_continuation_state)
+      || !await sameExistingPath(link.blocked_binding?.run_dir, run) || (!runtimeOnly && !state.blocked_plate_sha256.includes(link.blocked_binding.candidate_files['assets/plate.png']))
+      || !await sameExistingPath(link.successor?.worktreeDir, worktree)) throw Error('Invalid explicit rejected-candidate successor')
+    run = link.successor.runDir
+    if (await sameExistingPath(run, state.current.runDir) && !isDeepStrictEqual(link.replacement_binding, independentReviewExpectation(state.current))) throw Error('Changed replacement candidate; preserve original BLOCK')
+  }
+  if (!await sameExistingPath(run, state.current.runDir)) throw Error('Review continuation successor chain missing or over hard limit')
+  return { ...summary, latest_run_dir: state.current.runDir, local_edition_id: state.current.editionId }
+}
 
 const execFileAsync = promisify(execFile)
 
@@ -86,8 +116,8 @@ export async function discoverRecovery(directory, expectedDate, worktree, { veri
     for (const name of names.filter(name => name.endsWith('.json')).sort()) {
       let file = path.join(store, name)
       const bytes = await fs.readFile(file, 'utf8')
-      const summary = JSON.parse(bytes)
-      if (summary.worktree_dir !== path.resolve(worktree) && summary.push_succeeded !== true) continue
+      const summary = await resolveReviewContinuation(JSON.parse(bytes), worktree)
+      if (summary.push_succeeded !== true && !await sameExistingPath(summary.worktree_dir, worktree)) continue
       if (store !== path.resolve(directory)) {
         // Retain exact checkpoint bytes outside the disposable worktree before
         // refresh. Never overwrite another invocation with the same filename.

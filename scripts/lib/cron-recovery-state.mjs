@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises'
-import { assertDiskHeadroom, evidenceBytes } from './cron-reliability.mjs'
+import { assertDiskHeadroom, evidenceBytes, resolveReviewContinuation, sameExistingPath } from './cron-reliability.mjs'
 import path from 'node:path'
 import { randomUUID } from 'node:crypto'
 import { execFile } from 'node:child_process'
@@ -62,10 +62,19 @@ export async function readProofCheckpoint(file) {
 }
 
 export async function readCandidateCheckpoint(file, worktree) {
-  const summary = JSON.parse(await fs.readFile(file, 'utf8'))
+  const summary = await resolveReviewContinuation(JSON.parse(await fs.readFile(file, 'utf8')), worktree)
   if (summary.push_succeeded) throw new Error('Already published: use proof-only, never regenerate or republish')
-  const root = path.resolve(worktree)
-  if (path.resolve(summary.worktree_dir || '.') !== root || !summary.latest_run_dir?.startsWith(path.join(root, 'tmp', 'daily-process-runs') + path.sep) || path.resolve(summary.latest_run_dir) !== summary.latest_run_dir) {
+  // Legacy checkpoints retain their existing lexical validation contract. The
+  // byte-bound continuation below requires existing physical identities.
+  if (!summary.review_continuation_state) {
+    const root = path.resolve(worktree)
+    if (path.resolve(summary.worktree_dir || '.') !== root || !summary.latest_run_dir?.startsWith(path.join(root, 'tmp', 'daily-process-runs') + path.sep) || path.resolve(summary.latest_run_dir) !== summary.latest_run_dir) throw new Error('Candidate recovery requires the exact retained worktree/run directory')
+    return summary
+  }
+  const root = await fs.realpath(worktree)
+  const run = summary.latest_run_dir && await fs.realpath(summary.latest_run_dir)
+  const runsRoot = await fs.realpath(path.join(root, 'tmp', 'daily-process-runs'))
+  if (!await sameExistingPath(summary.worktree_dir, root) || !run?.startsWith(runsRoot + path.sep) || path.resolve(summary.latest_run_dir) !== summary.latest_run_dir) {
     throw new Error('Candidate recovery requires the exact retained worktree/run directory')
   }
   return summary
