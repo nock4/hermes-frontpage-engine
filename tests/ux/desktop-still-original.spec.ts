@@ -1,5 +1,142 @@
 import { expect, test } from '@playwright/test'
-import { readFile } from 'node:fs/promises'
+import { readFile, writeFile } from 'node:fs/promises'
+import { createServer } from 'node:http'
+import { getEditionArchiveRecords } from '../../src/lib/router'
+
+// SYNTHETIC HTTP transport pressure: serve the real built App and unchanged
+// archive bytes, withholding distant preview responses at the socket (not a
+// Playwright route). No placeholder media, pagination, or package mocks.
+for (const width of [1440, 375]) {
+  test(`archive defers distant preview traffic without removing records at ${width}px`, async ({ page }, info) => {
+    await page.setViewportSize({ width, height: 980 })
+    const manifest = JSON.parse(await readFile(new URL('../../dist/editions/index.json', import.meta.url), 'utf8'))
+    const records = getEditionArchiveRecords(manifest)
+    const distant = new Set(records.slice(Math.floor(records.length / 2)).map(record => record.preview_asset_path))
+    const requested: string[] = []
+    const held: (() => void)[] = []
+    let releaseImages = false
+    let closing = false
+    const server = createServer(async (request, response) => {
+      const path = new URL(request.url!, 'http://localhost').pathname
+      requested.push(path)
+      try {
+        const file = path.startsWith('/archive') || path === '/' ? '/index.html' : path
+        const bytes = await readFile(new URL(`../../dist${file}`, import.meta.url))
+        if (distant.has(path) && !releaseImages) await new Promise<void>(resolve => held.push(resolve))
+        if (closing) { response.destroy(); return }
+        // Explicit synthetic preview failure; edition/package bytes stay real.
+        if (path === records.at(-2)!.preview_asset_path) { response.writeHead(503).end(); return }
+        response.setHeader('Content-Type', file.endsWith('.js') ? 'text/javascript' : file.endsWith('.css') ? 'text/css' : file.endsWith('.json') ? 'application/json' : file.endsWith('.png') ? 'image/png' : file.endsWith('.html') ? 'text/html' : 'application/octet-stream')
+        response.end(bytes)
+      } catch {
+        response.writeHead(404).end()
+      }
+    })
+    // OS-checked free port, strict bind; never attach to another checkout.
+    for (let port = 44000; port < 49000; port++) {
+      try {
+        await new Promise<void>((resolve, reject) => {
+          server.once('error', reject)
+          server.listen(port, '127.0.0.1', () => { server.removeListener('error', reject); resolve() })
+        })
+        break
+      } catch (error) {
+        if ((error as NodeJS.ErrnoException).code !== 'EADDRINUSE' || port === 48999) throw error
+      }
+    }
+    const address = server.address() as { port: number }
+    // Block only external provider traffic; same-origin requests use real HTTP.
+    await page.route('https://**', route => route.abort())
+    try {
+      await page.goto(`http://127.0.0.1:${address.port}/archive`, { waitUntil: 'domcontentloaded' })
+      const cards = page.locator('.archive-card')
+      await expect(cards).toHaveCount(records.length)
+      expect(await cards.locator('strong').allTextContents()).toEqual(records.map(record => record.title))
+      expect(await cards.evaluateAll(buttons => buttons.every(button => !(button as HTMLButtonElement).disabled))).toBe(true)
+      expect(await cards.locator('img').evaluateAll(images => images.map(image => image.getAttribute('src')))).toEqual(records.map(record => record.preview_asset_path))
+      await cards.first().locator('img').evaluate((image: HTMLImageElement) => image.decode())
+      await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))))
+      // Actual layout, not textContent alone: a complete title may still be
+      // painted outside the card's overflow clip when generic button CSS wins.
+      const readability = await cards.evaluateAll(buttons => buttons.map(button => {
+        const body = button.querySelector('.archive-card__body')!
+        const title = button.querySelector('strong')!
+        const range = document.createRange()
+        range.selectNodeContents(title)
+        const cardBounds = button.getBoundingClientRect()
+        const bodyBounds = body.getBoundingClientRect()
+        const titleBounds = title.getBoundingClientRect()
+        const lines = Array.from(range.getClientRects()).map(rect => rect.toJSON())
+        const fits = (rect: DOMRect | DOMRectReadOnly, bounds: DOMRect) => rect.left >= bounds.left - 1 && rect.right <= bounds.right + 1 && rect.top >= bounds.top - 1 && rect.bottom <= bounds.bottom + 1
+        return {
+          title: title.textContent,
+          display: getComputedStyle(button).display,
+          borderRadius: getComputedStyle(button).borderRadius,
+          padding: getComputedStyle(button).padding,
+          card: cardBounds.toJSON(), body: bodyBounds.toJSON(), lines,
+          readable: lines.length > 0 && Array.from(range.getClientRects()).every(rect => fits(rect, cardBounds) && fits(rect, bodyBounds) && fits(rect, titleBounds)) && title.scrollWidth <= title.clientWidth + 1,
+        }
+      }))
+      await writeFile(info.outputPath('archive-title-readability.json'), JSON.stringify(readability, null, 2))
+      expect.soft(readability.filter(card => card.display !== 'grid'), 'every archive card retains its intended grid').toEqual([])
+      expect(readability.filter(card => !card.readable), 'all full title text ranges fit within the title, body and clipping card').toEqual([])
+      const geometry = await cards.last().locator('img').evaluate(image => image.getBoundingClientRect().toJSON())
+      expect(geometry.top).toBeGreaterThan(980 * 3)
+      expect(geometry.height).toBeGreaterThan(0)
+      const initial = requested.filter(path => records.some(record => record.preview_asset_path === path))
+      const traffic = JSON.stringify({ initial, totalRecords: records.length, distantRequests: requested.filter(path => distant.has(path)), heldConnections: held.length, geometry })
+      await writeFile(info.outputPath('initial-native-http-traffic.json'), traffic)
+      await info.attach('initial-native-http-traffic', { body: traffic, contentType: 'application/json' })
+      expect(initial.length, 'bounded initial preview traffic, not the complete archive').toBeLessThan(Math.floor(records.length / 2))
+      expect(requested.filter(path => distant.has(path)), 'far-below-fold previews must not occupy HTTP connections before scrolling').toEqual([])
+      await page.screenshot({ path: info.outputPath(`archive-${width}.png`) })
+      // A cold archive -> edition package must remain available while distant
+      // image responses would be withheld by the HTTP fixture.
+      await cards.first().click()
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', records[0].edition_id)
+      await page.goBack()
+      await expect(cards).toHaveCount(records.length)
+      const last = cards.last()
+      await last.scrollIntoViewIfNeeded()
+      // Native lazy loading may request nearby rows before the final row.
+      // Release on the first actual distant HTTP request, not on a request
+      // that can itself be queued behind the six withheld connections.
+      await expect.poll(() => requested.some(path => distant.has(path))).toBe(true)
+      releaseImages = true
+      held.splice(0).forEach(resolve => resolve())
+      await last.locator('img').evaluate((image: HTMLImageElement) => image.decode())
+      const failedCard = cards.nth(records.length - 2)
+      await expect.poll(() => failedCard.locator('img').evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth === 0)).toBe(true)
+      await failedCard.focus()
+      await page.keyboard.press('Enter')
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', records.at(-2)!.edition_id)
+      await page.goBack()
+      await expect(cards).toHaveCount(records.length)
+      await last.focus()
+      await page.keyboard.press('Enter')
+      await expect(page.locator('.runtime-shell')).toHaveAttribute('data-edition-id', records.at(-1)!.edition_id)
+      await page.locator('img.plate').evaluate((image: HTMLImageElement) => image.decode())
+      const mark = page.locator('button.artifact').first()
+      await mark.focus()
+      const windows = page.locator('.stage-overlay-windows--live .source-window')
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'preview')
+      await page.keyboard.press('Enter')
+      await expect(windows).toHaveAttribute('data-source-window-mode', 'primary')
+      await page.screenshot({ path: info.outputPath(`archive-opened-window-${width}.png`) })
+      await windows.locator('.source-window__close').click()
+      await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))))
+      await expect(windows).toHaveCount(0)
+    } finally {
+      closing = true
+      const closed = new Promise<void>(resolve => server.close(() => resolve()))
+      server.closeAllConnections()
+      releaseImages = true
+      held.splice(0).forEach(resolve => resolve())
+      await page.close()
+      await closed
+    }
+  })
+}
 
 const original = 'https://media.example.test/whole-original.jpg'
 const poster = 'https://media.example.test/cropped-poster.jpg'
