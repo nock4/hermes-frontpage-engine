@@ -1,0 +1,113 @@
+{
+  "interpretation_id": "interp-2026-11-08-where-the-ink-steps-forward-v1",
+  "edition_id": "2026-11-08-where-the-ink-steps-forward-v1",
+  "plate_read_timestamp": "2026-11-08T09:15:36.541Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A dense, left-weighted printed composition places a salmon-shirt portrait beside an enlarged pale-cyan face, joined visually by a narrow cream strip with blue ornament. Large outlined lettering crosses the lower cluster. A broad indigo field remains open on the right. The result has substantial negative space but is more figurative and typographically busy than minimal expressionism.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape printed-paper assemblage: one offset cluster of salmon collar, rounded shoulders and dotted navy tie beneath receding-hair and thin-glasses fragments; an unequal, enlarged pale-cyan face dissolves behind it. A displaced pale spine interrupts their overlap. Disconnected yellow dark-edged and blue white-edged curls bridge the cluster and a broad, uninterrupted navy-violet quiet field.",
+      "A dense, left-weighted printed composition places a salmon-shirt portrait beside an enlarged pale-cyan face, joined visually by a narrow cream strip with blue ornament. Large outlined lettering crosses the lower cluster. A broad indigo field remains open on the right. The result has substantial negative space but is more figurative and typographically busy than minimal expressionism.",
+      "salmon-ink",
+      "cyan-echo",
+      "displaced-spine"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Cream printed overlap between the two portrait fragments"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "glass",
+      "paint"
+    ],
+    "dominant_structures": [
+      "displaced-cassette-print-masses",
+      "A pale paper overlap joins salmon-shirt print and a dissolving cyan face.",
+      "Exposed cream printed strip between the salmon portrait and cyan face"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: displaced-cassette-print-masses.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-cream-printed-overlap-between-the-tw",
+      "kind": "hero",
+      "type": "printed-overlap-strip",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.249,
+        "y": 0,
+        "w": 0.131,
+        "h": 0.537
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-cream-printed-overlap-between-the-tw-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.249,
+        "y": 0,
+        "w": 0.131,
+        "h": 0.537
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
