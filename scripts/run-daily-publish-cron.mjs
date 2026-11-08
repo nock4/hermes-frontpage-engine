@@ -1,5 +1,6 @@
 import { spawn, execFile } from 'node:child_process'
 import { promisify } from 'node:util'
+import { assertIndependentVisualReview } from './lib/independent-visual-review.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { assertLandscapePlate } from './lib/landscape-policy.mjs'
@@ -449,6 +450,9 @@ export async function commitPublishedArtifacts(worktreeDir, editionId, branch, {
     throw new Error(`Unexpected changed paths in cron worktree: ${unexpected.join(', ')}`)
   }
 
+  if (!runDir) throw new Error('mandatory transformation: exact retained candidate run proof is required before commit/push')
+  await ensureCandidateSourceFidelity({ worktreeDir, runDir, editionId })
+  assertIndependentVisualReview({ worktreeDir, runDir, editionId })
   await run('git', ['add', 'public/editions/index.json', path.join('public', 'editions', editionId)], { cwd: worktreeDir })
   const cached = await run('git', ['diff', '--cached', '--name-only'], { cwd: worktreeDir, capture: true })
   const cachedPaths = parseStatusLines(cached.stdout)
@@ -463,6 +467,7 @@ export async function commitPublishedArtifacts(worktreeDir, editionId, branch, {
     const stagedPlate = (await promisify(execFile)('git', ['show', `:public/editions/${editionId}/assets/plate.png`], { cwd: worktreeDir, encoding: 'buffer', maxBuffer: 64 * 1024 * 1024 })).stdout
     if (createHash('sha256').update(stagedPlate).digest('hex') !== fidelity.transformation_acceptance.plate_sha256) throw new Error('mandatory transformation: staged plate differs from exact audited candidate bytes')
   }
+  assertIndependentVisualReview({ worktreeDir, runDir, editionId, staged: true })
   const commitMessage = `feat: publish daily edition ${editionId}`
   if (cachedPaths.length) await run('git', ['commit', '-m', commitMessage], { cwd: worktreeDir })
   const head = await run('git', ['rev-parse', 'HEAD'], { cwd: worktreeDir, capture: true })

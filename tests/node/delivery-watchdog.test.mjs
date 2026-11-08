@@ -5,6 +5,7 @@ import os from 'node:os'
 import path from 'node:path'
 import { execFileSync } from 'node:child_process'
 import { buildPublishProof } from '../../scripts/lib/press-proof.mjs'
+import { syntheticProofContext } from '../fixtures/independent-review.mjs'
 const good = { edition_id: '2026-10-20-art-v1', run_id: 'run-a', screenshot: '/proof.png' }
 const now = new Date('2026-10-21T11:00:00Z')
 describe('daily delivery policy', () => {
@@ -36,12 +37,27 @@ with tempfile.TemporaryDirectory() as root:
       const bytes=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aXioAAAAASUVORK5CYII=','base64')
       await fs.writeFile(screenshot,bytes);await fs.writeFile(prompt,'test prompt')
       const id=good.edition_id
-      const proof=buildPublishProof({summary:{ok:true,push_succeeded:true,remote_matches:true,local_edition_id:id,checkpoint_path:'fixture-run'},liveProof:{expectedEditionId:id,pageEditionId:id,loadedPlateImageCount:1,plate:{src:`https://daily.nockgarden.com/editions/${id}/assets/plate.png`,naturalWidth:1440,naturalHeight:900}},screenshotPath:screenshot,promptPath:prompt,qa:{qaPublishPassed:true,adversarialVisualQa:'pass'}})
+      const proof=buildPublishProof({summary:{ok:true,push_succeeded:true,remote_matches:true,local_edition_id:id,checkpoint_path:'fixture-run',...await syntheticProofContext(id)},liveProof:{expectedEditionId:id,pageEditionId:id,loadedPlateImageCount:1,plate:{src:`https://daily.nockgarden.com/editions/${id}/assets/plate.png`,naturalWidth:1440,naturalHeight:900}},screenshotPath:screenshot,promptPath:prompt,qa:{qaPublishPassed:true,adversarialVisualQa:'pass'}})
       const accepted=await acceptProof(proof,path.join(root,'durable'))
       expect(await fs.readFile(accepted.screenshot)).toEqual(bytes)
       expect(await fs.readFile(accepted.prompt,'utf8')).toBe('test prompt')
       await fs.writeFile(path.join(root,'durable','accepted','9999-corrupt.json'),'{broken')
       expect((await latestAccepted(path.join(root,'durable'))).edition_id).toBe(id)
+      // Ordinary cron worktree refresh must not destroy last-good fallback proof.
+      await fs.rm(proof.summary.latest_run_dir, { recursive: true, force: true })
+      expect((await latestAccepted(path.join(root,'durable')))?.edition_id).toBe(id)
+      const archivedReceipt = path.join(accepted.independent_review_archive, 'run/independent-visual-review.json')
+      const retained = await fs.readFile(archivedReceipt)
+      const blocked = JSON.parse(String(retained)); blocked.verdict = 'BLOCK'
+      await fs.writeFile(archivedReceipt, JSON.stringify(blocked))
+      expect(await latestAccepted(path.join(root,'durable'))).toBeNull()
+      await fs.writeFile(archivedReceipt, retained)
+      const evidence = path.join(accepted.independent_review_archive, 'run/synthetic-review-transcript.txt')
+      const raw = await fs.readFile(evidence)
+      await fs.writeFile(evidence, 'tampered')
+      expect(await latestAccepted(path.join(root,'durable'))).toBeNull()
+      await fs.writeFile(evidence, raw)
+      expect((await latestAccepted(path.join(root,'durable')))?.edition_id).toBe(id)
       await fs.writeFile(accepted.screenshot,'tampered')
       expect(await latestAccepted(path.join(root,'durable'))).toBeNull()
       await expect(acceptProof({...proof,qa:{qaPublishPassed:true}},root)).rejects.toThrow('explicit adversarial')
