@@ -59,6 +59,10 @@ printf '%s\n' \
   'Keep the existing limit of 3 repair/rerun cycles per cron session. Additional tool turns are for completing and verifying those cycles, never extra repair cycles.' \
   'If the remaining agent budget cannot own another complete rerun, preserve the run and report a blocked handoff BEFORE launching it. Do not recursively schedule a replacement or report an unfinished process as durable.' \
   'Scheduler status ok is not publication proof: require the final inner summary and normal remote, media, screenshot and adversarial gates.' \
+  'The normal and resume press paths now obtain missing independent review automatically in a separate read-only foreground Hermes session. A PASS resumes the exact package without generation. Genuine plate BLOCK enters bounded same-source critique repair, full QA and a new review; old BLOCK and package evidence remain immutable.' \
+  'Read review_continuation_state and recovery_action in the EXACT checkpoint. Runtime/opened-source failures belong to THIS existing owner: repair the real runtime/evidence defect and resume the retained candidate; do not ask Nick to record a receipt, approve ordinary recovery, or choose from a manual queue.' \
+  'Do not overwrite automatic-review-request, canonical review, failed plate bytes, rejected-package snapshots, successor links or the day repair budget. A failed/unknown provider outcome is not permission for another vote; recover the original session result or report the genuine external/hard-limit blocker.' \
+  'If same-source correction cannot work, inspect a fresh UNUSED owning artwork only within the original aggregate source/day allowance; retain adverse findings and an explicit byte-bound terminal successor. Never reset source budgets, override consumption, archive dedupe, source/fidelity/mobile/landscape gates or the persistent repair cap.' \
   'PRESS_PROCESS_OWNERSHIP_CONTRACT_END'
 echo
 

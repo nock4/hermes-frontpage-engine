@@ -1,6 +1,8 @@
 import { spawn, execFile } from 'node:child_process'
 import { promisify } from 'node:util'
 import { assertIndependentVisualReview } from './lib/independent-visual-review.mjs'
+import { continueReviewedPublication } from './lib/review-continuation.mjs'
+import { repairRejectedCandidate } from './lib/independent-review-repair.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { assertLandscapePlate } from './lib/landscape-policy.mjs'
@@ -616,6 +618,32 @@ export async function ensureCandidateSourceFidelity({ worktreeDir, runDir, editi
   return ensureCurrentSourceFidelity({ payload, runDir, platePath: path.join(worktreeDir, 'public/editions', editionId, 'assets/plate.png') }, dependencies)
 }
 
+// Shared by the actual normal and --resume-candidate branches. Default adapters
+// perform real full QA, independent foreground review, critique repair and the
+// existing staged/commit/push gates; tests inject explicitly synthetic providers.
+export async function completeCandidatePublication(candidate, options, adapters = {}) {
+  const prepare = async current => {
+    await fs.rm(path.join(current.worktreeDir, 'vite.config.d.ts'), { force: true })
+    await run('npm', ['run', 'qa:publish'], { cwd: current.worktreeDir, env: options.env || process.env })
+    const manifest = await readJson(path.join(current.worktreeDir, 'public/editions/index.json'))
+    if (manifest.current_edition_id !== current.editionId) throw new Error('Reviewed candidate is not exact current publication target')
+    const packageSummary = await readJson(path.join(current.runDir, 'edition-package-summary.json'))
+    const research = await readJson(path.join(current.runDir, 'source-research.json'))
+    const harvest = await readJson(path.join(current.runDir, 'signal-harvest.json'))
+    const bindings = await readJson(path.join(current.worktreeDir, 'public/editions', current.editionId, 'source-bindings.json'))
+    assertRunEditionProvenance(current.editionId, packageSummary, bindings)
+    assertEditorialBindings(bindings.bindings, research, harvest, { finalMedia: true, editionId: current.editionId, editionDir: path.join(current.worktreeDir, 'public/editions', current.editionId) })
+    await ensureCandidateSourceFidelity(current)
+  }
+  return continueReviewedPublication(candidate, {
+    statePath: options.statePath,
+    prepare, repair: repairRejectedCandidate,
+    publish: current => commitPublishedArtifacts(current.worktreeDir, current.editionId, options.branch, { runDir: current.runDir }),
+    checkpoint: options.checkpoint,
+    ...adapters,
+  })
+}
+
 async function main() {
   const options = parseArgs(process.argv.slice(2))
   // All entrypoints, including direct node calls, share the outer kernel lock.
@@ -708,31 +736,22 @@ async function main() {
     })
     }
     summary.local_edition_id = (await readJson(path.join(summary.latest_run_dir, 'edition-package-summary.json'))).edition_id
-    await fs.rm(path.join(options.worktreeDir, 'vite.config.d.ts'), { force: true })
-    await checkpoint('qa-publish')
-    await run('npm', ['run', 'qa:publish'], { cwd: options.worktreeDir, env: cronEnv })
-
-    const manifest = await readJson(path.join(options.worktreeDir, 'public', 'editions', 'index.json'))
-    summary.local_edition_id = manifest.current_edition_id || null
-    const liveEdition = Array.isArray(manifest.editions)
-      ? manifest.editions.find((edition) => (edition.id || edition.edition_id) === manifest.current_edition_id)
-      : null
+    const statePath = path.join(primaryRoot, 'tmp/cron-review-continuation', `${expectedDate}.json`)
+    summary.review_continuation_state = statePath
+    const commitResult = await completeCandidatePublication({ worktreeDir: options.worktreeDir, runDir: summary.latest_run_dir, editionId: summary.local_edition_id }, {
+      branch: options.branch, statePath, env: cronEnv,
+      checkpoint: async (stage, current, action) => {
+        summary.latest_run_dir = current.runDir
+        summary.local_edition_id = current.editionId
+        if (action) summary.recovery_action = action
+        await checkpoint(stage)
+      },
+    })
+    summary.latest_run_dir = commitResult.candidate.runDir
+    summary.local_edition_id = commitResult.candidate.editionId
+    const manifest = await readJson(path.join(options.worktreeDir, 'public/editions/index.json'))
+    const liveEdition = manifest.editions?.find(edition => edition.edition_id === summary.local_edition_id)
     summary.local_publish_status = liveEdition?.is_live === true ? 'live' : 'not-live'
-
-    // Re-read final bindings after enrichment and QA, before git add/commit/push.
-    // Missing research or unknown final sources fail closed, independent of UI QA.
-    const packageSummary = await readJson(path.join(summary.latest_run_dir, 'edition-package-summary.json'))
-    const finalResearch = await readJson(path.join(summary.latest_run_dir, 'source-research.json'))
-    const finalHarvest = await readJson(path.join(summary.latest_run_dir, 'signal-harvest.json'))
-    const finalBindings = await readJson(path.join(options.worktreeDir, 'public', 'editions', summary.local_edition_id, 'source-bindings.json'))
-    assertRunEditionProvenance(summary.local_edition_id, packageSummary, finalBindings)
-    assertEditorialBindings(finalBindings.bindings, finalResearch, finalHarvest, { finalMedia: true,
-      editionId: summary.local_edition_id, editionDir: path.join(options.worktreeDir, 'public', 'editions', summary.local_edition_id) })
-
-    // Recheck exact staged plate/contract proof for both fresh and resumed future
-    // candidates. Published proof-only recovery above intentionally never runs it.
-    await ensureCandidateSourceFidelity({ worktreeDir: options.worktreeDir, runDir: summary.latest_run_dir, editionId: summary.local_edition_id })
-    const commitResult = await commitPublishedArtifacts(options.worktreeDir, summary.local_edition_id || new Date().toISOString().slice(0, 10), options.branch, { runDir: summary.latest_run_dir })
     summary.commit = commitResult.commit
     summary.push_succeeded = commitResult.push_succeeded === true
     summary.changed_paths = commitResult.changed_paths
@@ -762,6 +781,9 @@ async function main() {
     if (!summary.ok) exitCode = 1
   } catch (error) {
     summary.error = error.message
+    if (error.code) summary.failure_class = error.code
+    if (error.action) summary.recovery_action = error.action
+    if (error.requestPath) summary.independent_review_request = error.requestPath
     // Keep the invocation's exact run directory even on failure; never guess by mtime.
     console.log(JSON.stringify(summary, null, 2))
     exitCode = 1
