@@ -1,0 +1,110 @@
+{
+  "interpretation_id": "interp-2026-11-09-light-loses-count-v1",
+  "edition_id": "2026-11-09-light-loses-count-v1",
+  "plate_read_timestamp": "2026-11-09T09:15:53.097Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A broad, near-black island filled with colored dots and short dashes dominates the left edge. Two disconnected cyan-white ribbon clusters loop across the upper right and lower middle, with a smaller patterned island at right. Gold particle trails bridge portions of the composition against violet-blue light; warm arcs sweep across the top and bottom. The plate is abstract and expressionist, but its dense particles and fine ribbon lines make it more intricate than minimal.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape optical abstraction: one dominant black dot-lattice island and a smaller detached island in open violet-blue light. Two disconnected looping clusters of lavender ribbon lobes bloom cyan-white across a quiet interval. A curved gold stipple band joins the large island to one cluster. Straight granular edges meet diffuse glow; a broad peach-yellow lower curve and thin coral-red upper arc remain.",
+      "A broad, near-black island filled with colored dots and short dashes dominates the left edge. Two disconnected cyan-white ribbon clusters loop across the upper right and lower middle, with a smaller patterned island at right. Gold particle trails bridge portions of the composition against violet-blue light; warm arcs sweep across the top and bottom. The plate is abstract and expressionist, but its dense particles and fine ribbon lines make it more intricate than minimal.",
+      "counted-light",
+      "lattice-islands",
+      "optical-depth"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Large black dot-and-dash island at the left edge"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "raster-bloom-scale-break",
+      "A broad black island of colored dots and dashes beside cyan-white ribbon bloom.",
+      "Near-black left island with an irregular stepped perimeter and rows of cyan, mint, yellow, and orange marks"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: raster-bloom-scale-break.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-large-black-dot-and-dash-island-at-t",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0.0615,
+        "w": 0.334,
+        "h": 0.7314
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-large-black-dot-and-dash-island-at-t-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.0615,
+        "w": 0.334,
+        "h": 0.7314
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

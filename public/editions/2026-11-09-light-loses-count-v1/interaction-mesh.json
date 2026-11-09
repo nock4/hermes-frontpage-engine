@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "edition_id": "2026-11-09-light-loses-count-v1",
+  "generation": "cron-1794214817467-86437",
+  "strategy": "mask-derived hover territories: dilate visible masks, rescue tiny marks, resolve overlaps by nearest source centroid, export adjacency",
+  "viewport": {
+    "width": 1536,
+    "height": 1024
+  },
+  "audit_board": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/interaction-mesh-generations/cron-1794214817467-86437/2026-11-09-light-loses-count-v1/interaction-mesh-audit-board.png",
+  "cells": [
+    {
+      "artifact_id": "hero-large-black-dot-and-dash-island-at-t",
+      "visible_area_px": 300044,
+      "territory_area_px": 347301,
+      "hover_bounds": {
+        "x": 0.0,
+        "y": 0.0312,
+        "w": 0.3542,
+        "h": 0.792
+      },
+      "hover_polygon": [
+        [
+          0.0,
+          0.1133
+        ],
+        [
+          0.0508,
+          0.0439
+        ],
+        [
+          0.1055,
+          0.0312
+        ],
+        [
+          0.1374,
+          0.0352
+        ],
+        [
+          0.1589,
+          0.0459
+        ],
+        [
+          0.2943,
+          0.1641
+        ],
+        [
+          0.3411,
+          0.2246
+        ],
+        [
+          0.3535,
+          0.2549
+        ],
+        [
+          0.3522,
+          0.4365
+        ],
+        [
+          0.3418,
+          0.5225
+        ],
+        [
+          0.237,
+          0.6963
+        ],
+        [
+          0.1654,
+          0.7861
+        ],
+        [
+          0.0964,
+          0.8223
+        ],
+        [
+          0.0612,
+          0.8145
+        ],
+        [
+          0.0,
+          0.7402
+        ]
+      ],
+      "neighbors": []
+    }
+  ]
+}

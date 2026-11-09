@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-11-09-light-loses-count-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-large-black-dot-and-dash-island-at-t",
+      "artifact_id": "hero-large-black-dot-and-dash-island-at-t",
+      "source_type": "tweet",
+      "source_url": "https://x.com/neural_divine/status/2118054544089522358",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@neural_divine: Abstract luminous data-art",
+      "kicker": "x.com",
+      "excerpt": "@neural_divine: Abstract luminous data-art",
+      "source_title": "@neural_divine: Abstract luminous data-art",
+      "source_summary": "@neural_divine: Abstract luminous data-art",
+      "source_domain": "x.com",
+      "source_meta": "@neural_divine: Abstract luminous data-art",
+      "source_image_url": "https://pbs.twimg.com/media/HWTXYRuXQAA8xbl.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HWTXYRuXQAA8xbl.jpg?name=orig"
+      ],
+      "source_image_alt": "@neural_divine: Abstract luminous data-art",
+      "source_media_url": "https://pbs.twimg.com/media/HWTXYRuXQAA8xbl.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-11-09-light-loses-count-v1/assets/source-posters/binding-hero-large-black-dot-and-dash-island-at-t.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5084,
+          "y": 0.5
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2227,
+          "width": 1.0,
+          "height": 0.5557
+        },
+        "image_width": 1012,
+        "image_height": 1024,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.04904,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}
