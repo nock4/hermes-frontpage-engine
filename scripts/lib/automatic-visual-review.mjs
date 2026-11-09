@@ -15,10 +15,10 @@ export async function prepareAutomaticEvidence(options, { capture = collectRevie
   try { await fs.rename(directory, path.join(options.runDir, `automatic-review-capture-failed-${randomUUID()}`)) } catch (error) { if (error.code !== 'ENOENT') throw error }
   return capture(options)
 }
-async function automaticReviewer(options) {
-  return reviewWithHermes(options)
+async function automaticReviewer(options, transport, launchOriginal) {
+  return reviewWithHermes(options, transport, launchOriginal)
 }
-export async function ensureAutomaticReview(options, { review = automaticReviewer } = {}) {
+export async function ensureAutomaticReview(options, { review = automaticReviewer, transport } = {}) {
   const canonical = path.join(options.runDir, 'independent-visual-review.json')
   try {
     const disposition = JSON.parse(await fs.readFile(path.join(options.runDir, 'CANDIDATE-DISPOSITION.json'), 'utf8'))
@@ -32,22 +32,33 @@ export async function ensureAutomaticReview(options, { review = automaticReviewe
     }
     const request = path.join(options.runDir, 'automatic-review-request.json')
     const binding = independentReviewExpectation(options)
-    try { await fs.writeFile(request, JSON.stringify({ binding, status: 'requested' }, null, 2), { flag: 'wx', mode: 0o600 }) } catch (error) {
+    let launchOriginal = false
+    try {
+      await fs.writeFile(request, JSON.stringify({ binding, status: 'requested' }, null, 2), { flag: 'wx', mode: 0o600 })
+      launchOriginal = true // proof this owner created the original request, not raw absence
+    } catch (error) {
       if (error.code !== 'EEXIST') throw error
       const previous = JSON.parse(await fs.readFile(request, 'utf8'))
       if (!isDeepStrictEqual(previous.binding, binding)) throw Error('Independent review request changed/stale; never reroll')
       if (review !== automaticReviewer) throw Error('independent review incomplete/interrupted; reconcile retained raw response, never reroll this candidate')
-      // The producer opens its raw file with wx BEFORE spawning Hermes. An
-      // absent file means the original stored request has not launched yet;
-      // an existing file can only be parsed/resumed, never spawn a second vote.
+      // The transport owner reconciles the exact admitted turn. Viewer timeout
+      // or raw-file presence/absence never establishes terminal execution.
     }
     let reportPath
-    try { reportPath = await review(options) } catch (error) {
+    try { reportPath = await review(options, transport, launchOriginal) } catch (error) {
       error.code ||= 'INDEPENDENT_REVIEW_PROVIDER'
       error.requestPath = request
       throw error
     }
-    report = recordIndependentVisualReview(options, reportPath)
+    // A genuine late canonical result outranks transport recovery. Never replace
+    // it with another report (including when another owner wins this wx race).
+    try { report = JSON.parse(await fs.readFile(canonical, 'utf8')) } catch (error) {
+      if (error.code !== 'ENOENT') throw error
+      try { report = recordIndependentVisualReview(options, reportPath) } catch (error) {
+        if (error.code !== 'EEXIST') throw error
+        report = JSON.parse(await fs.readFile(canonical, 'utf8'))
+      }
+    }
   }
   if (!isDeepStrictEqual(report.binding, independentReviewExpectation(options))) throw Error('Independent review binding is stale; preserve original verdict and repair exact candidate context')
   if (report.verdict === 'BLOCK') {
