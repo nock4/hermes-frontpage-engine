@@ -64,7 +64,7 @@ export async function evidenceBytes(target) {
   return bytes
 }
 
-export function selectRecovery(records, expectedDate) {
+function collapseRecoveryRecords(records) {
   // Collapse successive proof/recovery invocations of the exact same run.
   const groups = new Map()
   for (const record of records) {
@@ -82,10 +82,14 @@ export function selectRecovery(records, expectedDate) {
     if (!previous || (verified(record) && !verified(previous))
       || (verified(record) === verified(previous) && String(s.updated_at || '') > String(previous.summary.updated_at || ''))) groups.set(key, record)
   }
+  return [...groups.values()]
+}
+
+export function selectRecovery(records, expectedDate) {
   // Failures before any package or push (fetch/disk/discovery errors, or a
   // generation that never packaged) carry nothing to resume or prove. They stay
   // on disk as evidence but are not candidates, so they cannot block or multiply.
-  const pending = [...groups.values()]
+  const pending = collapseRecoveryRecords(records)
     .filter(({ summary: s }) => s.local_edition_id || s.push_succeeded === true)
     .filter(({ summary: s }) => s.ok !== true || s.local_edition_id?.startsWith(expectedDate))
   if (!pending.length) return {}
@@ -116,7 +120,7 @@ export async function discoverRecovery(directory, expectedDate, worktree, { veri
     for (const name of names.filter(name => name.endsWith('.json')).sort()) {
       let file = path.join(store, name)
       const bytes = await fs.readFile(file, 'utf8')
-      const summary = await resolveReviewContinuation(JSON.parse(bytes), worktree)
+      const summary = JSON.parse(bytes)
       if (summary.push_succeeded !== true && !await sameExistingPath(summary.worktree_dir, worktree)) continue
       if (store !== path.resolve(directory)) {
         // Retain exact checkpoint bytes outside the disposable worktree before
@@ -157,7 +161,26 @@ export async function discoverRecovery(directory, expectedDate, worktree, { veri
       || !/^[a-f0-9]{40}$/.test(p.commit || '') || !/^[a-f0-9]{40}$/.test(s.commit || '')) continue
     if (await verifyDescendant(p.commit, s.commit)) superseded.add(original.file)
   }
-  return selectRecovery(records.filter(r => !superseded.has(r.file)), expectedDate)
+  const eligible = records.filter(r => !superseded.has(r.file))
+  // Read and reconcile both stores before touching disposable run paths. An
+  // accepted exact-run proof can outlive refresh; obsolete failed invocations
+  // must not reopen it. Do not collapse unresolved continuation records early:
+  // each still needs its normal byte-bound successor/BLOCK validation.
+  const completed = new Map(collapseRecoveryRecords(eligible)
+    .filter(({ summary: s }) => s.ok === true && s.push_succeeded === true && s.remote_matches === true
+      && /^[a-f0-9]{40}$/.test(s.commit || '') && /^\d{4}-\d{2}-\d{2}-[a-z0-9-]+-v\d+$/.test(s.local_edition_id || '')
+      && s.latest_run_dir && s.worktree_dir)
+    .map(r => [r.summary.latest_run_dir, r]))
+  const normalized = []
+  for (const record of eligible) {
+    const accepted = completed.get(record.summary.latest_run_dir)
+    if (accepted && accepted !== record) {
+      if (record.summary.worktree_dir !== accepted.summary.worktree_dir) throw new Error('Conflicting recovery worktree identity for the same retained run')
+      continue
+    }
+    normalized.push({ ...record, summary: await resolveReviewContinuation(record.summary, worktree) })
+  }
+  return selectRecovery(normalized, expectedDate)
 }
 
 export function publicationOutcome(summary, expectedDate) {
