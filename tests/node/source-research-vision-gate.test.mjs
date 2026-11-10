@@ -250,7 +250,7 @@ describe('source research vision boundary', () => {
     }
   })
 
-  it('can nominate verified music material with a needs-review text score without weakening the final gate', async () => {
+  it('accepts verified music material despite a weak text score without weakening the final fertility gate', async () => {
     state.noAnchor = true
     state.materials = []
     const music = sources.map((source, index) => ({ ...source,
@@ -260,7 +260,7 @@ describe('source research vision boundary', () => {
     state.reference = music[0]
     state.analyzer.mockResolvedValueOnce({ ...fertile, visual_fertility: 'low' }).mockResolvedValue(fertile)
     const result = await inspect({}, music)
-    expect(result.source_decision_audit.decisions[0].decision).toBe('needs_review')
+    expect(result.source_decision_audit.decisions[0]).toMatchObject({ decision: 'accept', reason_code: 'verified_creative_artifact' })
     expect(result.source_decision_audit.status).toBe('ok')
     expect(result.selected_image_material[0].image_url).toBe(music[1].image_url)
   })

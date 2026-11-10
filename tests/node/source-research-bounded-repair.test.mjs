@@ -50,6 +50,46 @@ vi.mock('../../scripts/lib/openai-json.mjs', () => ({
 }))
 import { inspectSourceCandidates, buildSourceFloorDiagnostics, collectFetchEvidenceForAutoresearch, discoverObservedOwnerProjectLinks } from '../../scripts/lib/source-research.mjs'
 import { sourceContentKey, sourceContentScore, visualReferenceScore, isAiToolingContentSource, hasCreativeArtifactEvidence, isAutoresearchExcluded } from '../../scripts/lib/source-selection-policy.mjs'
+import { nov10Anchor } from '../fixtures/nov10-anchor.mjs'
+
+it.each(['verified', 'reject', 'supporting', 'rejected', 'medium', 'ambiguous', 'unknown', 'spent', 'tooling'])('Nov10 lexical-free singleton real research path preserves anchor admission: %s', async mode => {
+  vi.stubEnv('DFE_BOOKMARK_CACHE_DIR', path.join(runDir, 'nov10-cache'))
+  const source = { ...nov10Anchor }
+  if (mode === 'tooling') source.description = 'Hermes Agent auxiliary models prompt workflow'
+  state.inspectionVerdicts[source.url] = {
+    status: ['rejected', 'ambiguous', 'unknown'].includes(mode) ? mode : 'verified',
+    artifact_kind: 'artwork', confidence: mode === 'medium' ? 'medium' : 'high',
+    observation: 'Synthetic Nov10 adapter pixels: dense overlapping colored marks, not a production review',
+  }
+  if (['reject', 'supporting'].includes(mode)) state.editorialDecisions = [{ url: source.url, role: mode, confidence: 'high' }]
+  const recentSourceKeys = mode === 'spent' ? new Set([sourceContentKey(source)]) : new Set()
+  let error
+  try {
+    await inspectSourceCandidates({ selection_policy: { bookmark_first: true }, source_candidates: [source], notes_selected: [], motif_terms: [] }, {
+      maxSources: 6, runDir, sourceTool: 'fetch', date: '2026-11-10', recentSourceKeys,
+    })
+  } catch (caught) { error = caught }
+  const saved = JSON.parse(await fs.readFile(path.join(runDir, 'source-research.json'), 'utf8'))
+  if (mode === 'verified') {
+    expect(error).toBeUndefined()
+    expect(saved.content_source_count).toBe(1)
+    expect(saved.anchor_research?.anchor_source.url).toBe(source.url)
+    expect(saved.anchor_research.anchor_source.anchor_selection_lane).toBe('source-field-artwork-first')
+    expect(saved.selected_image_material[0]).toMatchObject({ page_url: source.url, image_url: source.image_url })
+    expect(saved.source_decision_audit.hard_blockers).toEqual([])
+    const retained = JSON.parse(await fs.readFile(path.join(runDir, 'anchor-research.json'), 'utf8'))
+    expect(retained).toEqual(saved.anchor_research)
+    expect(saved.autoresearch.source_decisions.some(d => d.inspection?.status === 'verified')).toBe(true)
+  } else {
+    expect(error?.message).toMatch(/blocked/)
+    expect(saved.content_source_count).toBe(0)
+    expect(saved.anchor_research).toBeNull()
+    expect(saved.source_decision_audit.hard_blockers.length).toBeGreaterThan(0)
+    await expect(fs.access(path.join(runDir, 'anchor-research.json'))).rejects.toThrow()
+  }
+  expect(state.attempts.length).toBeLessThanOrEqual(1)
+})
+
 const sources = Array.from({ length: 24 }, (_, i) => ({
   url: `https://artist${i}.gallery.example/work`, image_url: `https://artist${i}.gallery.example/work.png`,
   title: `Painting ${i}`, note_title: `Painting ${i}`, note_id: `note-${i}`, note_score: 100 - i,

@@ -2,7 +2,7 @@ import { MIN_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { isAiToolingContentSource, isCreativeInspectionRejectedSource, isAutoresearchExcluded, isDocumentationUiSource, selectContentSources, sourceContentKey } from './source-selection-policy.mjs'
+import { hasCreativeArtifactEvidence, isAiToolingContentSource, isCreativeInspectionRejectedSource, isAutoresearchExcluded, isDocumentationUiSource, selectContentSources, sourceContentKey } from './source-selection-policy.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
 
 const SOURCE_DECISION_SCHEMA_VERSION = 1
@@ -107,6 +107,18 @@ export function decideAnchorEligibility({ anchorSource = null, recentSourceKeys 
       reason_code: 'ai_tooling_or_auxiliary_models',
       confidence: 0.94,
       evidence: ['anchor matches AI/tooling, Hermes Agent, auxiliary-model, prompt, model, agent, or infrastructure patterns'],
+    })
+  }
+
+  // Actual bound pixel evidence can establish creative material even when an
+  // owning post has only an emoticon caption. Never let it override the earlier
+  // editorial, inspection-rejection, archive, documentation or tooling gates.
+  if (hasCreativeArtifactEvidence(anchorSource, autoresearch)) {
+    return decision({
+      decision: 'accept',
+      reason_code: 'verified_creative_artifact',
+      confidence: 0.95,
+      evidence: ['high-confidence actual-media creative inspection matches this owning source and exact image'],
     })
   }
 

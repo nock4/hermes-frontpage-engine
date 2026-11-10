@@ -9,6 +9,44 @@ import { sourceContentKey } from '../../scripts/lib/source-selection-policy.mjs'
 import { inspectedDecision } from '../fixtures/creative-inspection.mjs'
 import { buildPromotedVisualAnchorMaterial } from '../../scripts/lib/source-research.mjs'
 
+import { nov10Anchor } from '../fixtures/nov10-anchor.mjs'
+
+it('admits the exact inspected Nov10 singleton without lexical visual cues', () => {
+  const autoresearch = { source_decisions: [inspectedDecision(nov10Anchor)] }
+  expect(decideAnchorEligibility({ anchorSource: nov10Anchor, autoresearch }))
+    .toMatchObject({ decision: 'accept', reason_code: 'verified_creative_artifact' })
+})
+
+it.each(['reject', 'supporting', 'inspection-rejected', 'spent-image', 'spent-source', 'tooling', 'documentation'])('verified pixels cannot override earlier anchor gates: %s', mode => {
+  const anchorSource = { ...nov10Anchor }
+  if (mode === 'tooling') anchorSource.description = 'Hermes Agent auxiliary models prompt workflow'
+  if (mode === 'documentation') anchorSource.url = 'https://component.gallery/'
+  const positive = inspectedDecision(anchorSource)
+  const autoresearch = { source_decisions: [positive] }
+  if (['reject', 'supporting'].includes(mode)) autoresearch.source_decisions.push({ url: anchorSource.url, role: mode })
+  if (mode === 'inspection-rejected') {
+    const negative = inspectedDecision(anchorSource)
+    negative.inspection.status = 'rejected'
+    autoresearch.source_decisions.push(negative)
+  }
+  const recentSourceKeys = mode === 'spent-image' ? recentKeysFor(anchorSource.image_url)
+    : mode === 'spent-source' ? recentKeysFor(anchorSource.url) : new Set()
+  expect(decideAnchorEligibility({ anchorSource, autoresearch, recentSourceKeys }).decision).toBe('reject')
+})
+
+it.each(['medium', 'medium-role', 'ambiguous', 'no-positive', 'wrong-media', 'wrong-owner', 'missing-capture'])('does not replace missing affirmative exact-pixel proof with metadata: %s', mode => {
+  const proof = inspectedDecision(nov10Anchor)
+  if (mode === 'medium') proof.inspection.confidence = 'medium'
+  if (mode === 'medium-role') proof.confidence = 'medium'
+  if (mode === 'ambiguous') proof.inspection.status = 'ambiguous'
+  if (mode === 'wrong-media') proof.inspection.media_url = 'https://example.com/other.jpg'
+  if (mode === 'wrong-owner') proof.inspection.source_url = 'https://example.com/other'
+  if (mode === 'missing-capture') proof.inspection.capture_sha256 = ''
+  const autoresearch = { source_decisions: mode === 'no-positive' ? [] : [proof] }
+  expect(decideAnchorEligibility({ anchorSource: nov10Anchor, autoresearch }))
+    .toMatchObject({ decision: 'needs_review', reason_code: 'fresh_but_weak_visual_material' })
+})
+
 const spentImageUrl = 'https://pbs.twimg.com/card_img/2097854880991825931/snYFSs2-?format=webp&name=medium'
 const freshImageUrl = 'https://i.guim.co.uk/img/media/fresh/master/833.jpg?width=1200'
 
