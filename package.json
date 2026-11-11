@@ -9,7 +9,7 @@
   },
   "knip": {
     "workspaces": {
-      ".": { "entry": ["press/*.mjs"] },
+      ".": { "entry": ["press/*.mjs", "functions/**/*.js"] },
       "workers/shared-surface": { "entry": ["worker.mjs", "*.test.mjs", "verify-remote.mjs"] }
     },
     "ignore": ["src/lib/originalImageContract.d.mts", "src/lib/sourceWindowCountContract.d.mts", "src/lib/editionEffects.d.mts", "public/review/**"],

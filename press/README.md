@@ -149,7 +149,6 @@ cp press/fixtures/2026-11-10-alliharvard/{brief,map}.json /tmp/press-demo/replay
 cp <any landscape png> /tmp/press-demo/replay/plate.png
 PRESS_STORE=local:/tmp/press-demo/out PRESS_REPLAY_DIR=/tmp/press-demo/replay \
   PRESS_SEED_INDEX=public/editions/index.json npm run press -- run
-npm run build && npm run press:serve -- --bucket /tmp/press-demo/out
 ```
 
 ## What is deliberately not here
