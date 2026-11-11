@@ -1,10 +1,12 @@
 # The press
 
-One plain Node script that makes the daily edition. No agent, no git in the daily
-path, no Mac in the daily path.
+One plain Node script that makes the daily edition, run on the Mac by launchd.
+No agent drives it and it needs no API keys: every model call goes through
+Hermes on Nick's subscriptions. An edition is published the way it always has
+been, as files in this repository, with one commit and push per run.
 
 ```
-pick -> brief -> plate -> map -> assemble -> upload -> smoke -> park -> tell
+pick -> brief -> plate -> map -> assemble -> write -> smoke -> park -> push -> tell
 ```
 
 | Step | What it does | Model calls |
@@ -14,18 +16,47 @@ pick -> brief -> plate -> map -> assemble -> upload -> smoke -> park -> tell
 | plate | Generates the landscape plate | 1 |
 | map | Finds the source-bearing mark in the plate | 1 |
 | assemble | Writes the edition package the viewer already reads | 0 |
-| upload | Puts the files in the bucket | 0 |
+| write | Writes the files under `public/editions/` | 0 |
 | smoke | Loads the package with the viewer's own loader | 0 |
 | park | Schedules it for 4:00 AM Detroit time | 0 |
+| push | One commit and `git push` | 0 |
 | tell | One Telegram message | 0 |
 
-A normal run makes three model calls. Each call retries once on the first
-provider, then uses the second provider.
+A normal run makes three model calls, all through Hermes on this Mac:
+
+- **plate**: the Hermes image provider (the profile's `image_gen`, today
+  `gpt-image-2-medium` on the ChatGPT subscription), called through
+  `scripts/lib/hermes_image_generate.py`, the helper the old press already uses.
+- **brief** and **map**: one bounded `hermes chat` question each (`--oneshot`,
+  `--ignore-rules`, the vision tool only, at most three turns), answered by the
+  profile's models (today Claude Opus on the Claude subscription). Hermes reads
+  the image with its vision tool, so the model that sees the image answers.
+
+Each call is tried twice. If it still fails the build stops with one Telegram
+message and the next scheduled run tries again: an edition is built a day
+ahead, so it has several retries before it would be late. There is no second
+provider.
+
+Why `hermes chat` and not a direct call for brief and map: Hermes' one-call
+client (`agent.auxiliary_client.call_llm`) cannot be loaded from a helper
+script on this Mac, because it restarts into Hermes' managed Python, which the
+helper's interpreter cannot import. The image provider does not have that
+problem. The bounded CLI question is the supported surface that reaches the
+same subscription.
+
+The trade-offs of running on the Mac:
+
+- A Mac that is off or asleep at run time skips that run. launchd runs a missed
+  job when the Mac wakes and the one-day head start covers a missed day, but a
+  Mac that is off for more than a day means a late or missing edition.
+- The press depends on Hermes being installed and signed in to both
+  subscriptions, and on the image helper, which imports Hermes internals. A
+  Hermes update can break either; the failure shows up as one Telegram message.
 
 ## Rules
 
 - Only the smoke step blocks an edition: if the viewer could not load the
-  package, nothing is parked.
+  package, nothing is parked and its files are removed.
 - Weak art is published with a note in `review.json`, `press.json` and the
   Telegram message.
 - If mapping fails, the middle of the plate becomes one target.
@@ -35,32 +66,48 @@ provider, then uses the second provider.
 
 ## Going live without a scheduler
 
-A built edition is written to the bucket and listed in `press/parked.json` with a
-`go_live_at` time. The Pages Function that serves `/editions/index.json` merges
+A built edition is committed under `public/editions/` and listed in
+`public/press/parked.json` with a `go_live_at` time. The site's manifest
+(`/editions/index.json`) is served through a small Pages Function that adds
 every parked edition whose time has passed, so an edition goes live at 4:00 AM
-whether or not any job runs at 4:00 AM. `flip` only folds those entries into
-`editions/index.json` afterwards.
+whether or not anything runs at 4:00 AM. The next run folds those entries into
+`public/editions/index.json`.
+
+A parked edition's files are public from the moment they are pushed; only the
+manifest hides it until its time.
 
 Each run builds at most one edition: the earliest date from today to
 today + `PRESS_LOOKAHEAD_DAYS` (default 1) that has none. Building tomorrow's
 edition a day early is what gives a failed run a day to be rerun.
 
-## Bucket layout
+## Publishing, and shadow runs
+
+The branch of the checkout the press runs in decides what a push means:
+
+- on `main` the push is the publish (Cloudflare Pages deploys `main`);
+- on any other branch (for example `press-shadow`) it is a shadow run. The
+  edition is parked on that branch only, the manifest is left alone so the
+  branch keeps merging cleanly with `main`, Telegram messages are tagged
+  `[shadow]`, and the branch's Pages preview shows the result.
+
+`main` requires the `runtime-qa` check, which only GitHub Actions can report,
+so a direct push of an edition commit is accepted only because Nick's account
+may bypass that rule. That is how the old press has pushed every edition. The
+only route with no bypass is a pull request per edition, merged after the
+check passes.
+
+## Where things live
 
 ```
-editions/index.json            the manifest
-editions/<edition-id>/...      one edition package
-press/candidates.json          saved bookmarks, pushed by the Mac sync
-press/ledger.json              sources already used or ruled out
-press/parked.json              built editions waiting for their go-live time
-press/state.json               last failure notice, to avoid repeats
+public/editions/index.json       the manifest
+public/editions/<edition-id>/    one edition package
+public/press/parked.json         built editions waiting for their go-live time
+press/data/ledger.json           sources already used or ruled out (committed)
+press/data/candidates.json       saved bookmarks read from the vault (not committed)
+press/data/state.json            last failure notice, to avoid repeats (not committed)
 ```
 
-Only `editions/` is reachable from the site. With `PRESS_PREFIX=shadow/` every
-key above moves under `shadow/`, so a shadow press can run in the same bucket
-without touching the live keys. In GitHub Actions every run is a shadow run
-until the repository variable `PRESS_MODE` is `live`, and the schedule is off
-until `PRESS_SCHEDULE` is `on`.
+The bookmark list stays out of git because this repository is public.
 
 ## Commands
 
@@ -70,44 +117,39 @@ npm run press -- build --date 2026-11-12
 npm run press -- flip
 npm run press -- status
 npx tsx press/admin.mjs seed-ledger --from public/editions --dry-run
-npx tsx press/admin.mjs migrate-archive --from public/editions --dry-run
 PRESS_VAULT=<vault dir> npm run press:sync -- --dry-run
-npm run build && npm run press:serve -- --bucket <dir>   # look at a local bucket in the viewer
 ```
 
 ## Configuration (environment only)
 
 | Variable | Purpose |
 |---|---|
-| `PRESS_STORE` | `r2`, or `local:<dir>` for a directory laid out like the bucket |
-| `PRESS_PREFIX` | Key prefix such as `shadow/`; empty for live |
-| `R2_ACCOUNT_ID`, `R2_BUCKET`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` | Bucket access |
-| `OPENAI_API_KEY` | First provider for text, vision and image |
-| `OPENROUTER_API_KEY` | Second provider |
-| `PRESS_TEXT_MODEL`, `PRESS_IMAGE_MODEL`, `PRESS_IMAGE_QUALITY` | Defaults: `gpt-5.5`, `gpt-image-2`, `medium` |
-| `PRESS_FALLBACK_TEXT_MODEL`, `PRESS_FALLBACK_IMAGE_MODEL` | Second-provider models |
+| `PRESS_REPO` | Checkout to write into and push from (default: the current directory) |
+| `PRESS_STORE` | `local:<dir>` to write every file into one directory instead, with no git (tests, demos) |
+| `PRESS_HERMES_PROFILE` | Hermes profile whose models are used (default `frontpage`) |
+| `PRESS_HERMES_BIN`, `PRESS_HERMES_PYTHON`, `HERMES_AGENT_DIR` | Where Hermes lives, if not `~/.local/bin/hermes` and `~/Projects/hermes/hermes-agent` |
 | `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` | Where the one message goes |
 | `PRESS_SITE_URL` | If set, `flip` checks the public site after an edition goes live |
-| `PRESS_SEED_INDEX` | Manifest file to start from when the bucket has none |
+| `PRESS_SEED_INDEX` | Manifest file to start from when a `local:` directory has none |
 | `PRESS_LOOKAHEAD_DAYS` | How many days ahead to keep built (default 1) |
 | `PRESS_REPLAY_DIR` | Answer every model call from recorded files (`brief.json`, `map.json`, `plate.png`) |
 | `PRESS_RECORD_DIR` | Save live model answers in that layout |
-| `PRESS_VAULT` | Obsidian vault directory, for the Mac sync only |
+| `PRESS_VAULT` | Obsidian vault directory the bookmark list is read from |
 
-Secrets live in GitHub Actions secrets (the press) and in a private env file
-outside the repository (the Mac sync). Nothing here reads a secret from a file in
-the repository.
+The only secret is the Telegram bot token, kept in a private env file outside
+the repository. Pushing uses the git credentials already on the Mac. Which
+models Hermes uses is set in the Hermes profile, not here.
 
-## Try it without any keys
+## Try it without Hermes or git
 
 ```bash
-mkdir -p /tmp/press-demo/bucket/press /tmp/press-demo/replay
-cp press/fixtures/2026-11-10-alliharvard/candidates.json /tmp/press-demo/bucket/press/
+mkdir -p /tmp/press-demo/out/press /tmp/press-demo/replay
+cp press/fixtures/2026-11-10-alliharvard/candidates.json /tmp/press-demo/out/press/
 cp press/fixtures/2026-11-10-alliharvard/{brief,map}.json /tmp/press-demo/replay/
 cp <any landscape png> /tmp/press-demo/replay/plate.png
-PRESS_STORE=local:/tmp/press-demo/bucket PRESS_REPLAY_DIR=/tmp/press-demo/replay \
+PRESS_STORE=local:/tmp/press-demo/out PRESS_REPLAY_DIR=/tmp/press-demo/replay \
   PRESS_SEED_INDEX=public/editions/index.json npm run press -- run
-npm run build && npm run press:serve -- --bucket /tmp/press-demo/bucket
+npm run build && npm run press:serve -- --bucket /tmp/press-demo/out
 ```
 
 ## What is deliberately not here
