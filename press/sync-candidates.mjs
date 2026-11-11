@@ -1,11 +1,12 @@
 #!/usr/bin/env node
-// Mac-side sync: push the saved-bookmark candidate list to the press bucket.
-// No agent, no model calls, no publishing. Run by launchd; safe to run by hand.
+// Read the saved-bookmark candidate list from the Obsidian vault.
+// No agent, no model calls, no publishing. Run by the press job; safe to run by hand.
 //
 //   PRESS_VAULT=<vault dir> node press/sync-candidates.mjs [--dry-run]
 //
-// Uploads press/candidates.json only when the list changed. The used-source
-// ledger lives next to it in the bucket and is owned by the press, not by this.
+// Writes press/data/candidates.json, which is not committed: the repository is
+// public and the bookmark list is not. The used-source ledger next to it is
+// owned by the press, not by this.
 
 import { CANDIDATES_KEY } from './lib/pick.mjs'
 import { storeFromEnv } from './lib/store.mjs'
@@ -31,5 +32,5 @@ if (existing && JSON.stringify(existing.candidates) === JSON.stringify(candidate
   console.log(`press-sync: unchanged ${JSON.stringify(summary)}`)
 } else {
   await store.putJson(CANDIDATES_KEY, { generated_at: new Date().toISOString(), candidates })
-  console.log(`press-sync: uploaded ${JSON.stringify(summary)} to ${store.describe()}`)
+  console.log(`press-sync: wrote ${JSON.stringify(summary)} to ${store.describe()}`)
 }

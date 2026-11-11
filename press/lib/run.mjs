@@ -1,6 +1,6 @@
 // The press: flip due editions live, then build the next missing edition.
 //
-//   pick -> brief -> plate -> map -> assemble -> upload -> smoke -> park -> tell
+//   pick -> brief -> plate -> map -> assemble -> write -> smoke -> park -> push -> tell
 //
 // Rules:
 //   - Publish and note it when the art is weak. Only "the page would not load"
@@ -83,6 +83,7 @@ export async function build({
   let source = null
   let brief = null
   let ledgerChanged = false
+  let written = []
   const skipped = []
   try {
     for (const candidate of queue.slice(0, MAX_PICK_TRIES)) {
@@ -118,8 +119,11 @@ export async function build({
       date: target, goLiveAt: liveAt, source, brief, plate, map, existingIds, builtAt: now.toISOString(), provenance: { calls: models.calls },
     }))
 
-    await step('upload', async () => {
-      for (const [key, body] of edition.files) await store.put(key, body)
+    await step('write', async () => {
+      for (const [key, body] of edition.files) {
+        written.push(key)
+        await store.put(key, body)
+      }
     })
 
     const entry = { edition_id: edition.editionId, date: target, go_live_at: liveAt, built_at: now.toISOString(), manifest_item: edition.manifestItem }
@@ -135,6 +139,7 @@ export async function build({
       await store.putJson(LEDGER_KEY, ledger)
       ledgerChanged = false
       await store.putJson(PARKED_KEY, nextParked)
+      written = []
     })
     return {
       status: 'built', date: target, editionId: edition.editionId, title: brief.edition_title, goLiveAt: liveAt,
@@ -142,6 +147,8 @@ export async function build({
     }
   } catch (error) {
     error.date = target
+    // An edition that was written but not parked must not be left to be committed.
+    for (const key of written) await store.delete(key).catch(() => {})
     throw error
   } finally {
     if (ledgerChanged) await store.putJson(LEDGER_KEY, ledger).catch(() => {})

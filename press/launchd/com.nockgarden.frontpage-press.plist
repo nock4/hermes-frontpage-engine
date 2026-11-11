@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Template. Not installed by anything in this repository.
+  Replace REPO_DIR and ENV_FILE, copy to ~/Library/LaunchAgents/, then:
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.nockgarden.frontpage-press.plist
+
+  REPO_DIR is a checkout kept only for the press. Its branch decides what a
+  run does: on main each run publishes; on any other branch (press-shadow) it
+  is a shadow run that production never sees. ENV_FILE is a private file
+  outside the repository:
+    PRESS_VAULT=<Obsidian vault dir>
+    TELEGRAM_BOT_TOKEN=...
+    TELEGRAM_CHAT_ID=...
+    PRESS_SITE_URL=https://daily.nockgarden.com   (on main only: check the site after go-live)
+
+  The job needs, on this Mac: node, git credentials that can push, Hermes
+  signed in to the subscriptions, and Documents access for node (the vault).
+
+  Six runs a day. Each one is a no-op once tomorrow's edition is parked, so the
+  later runs are retries. launchd runs a missed job once when the Mac wakes.
+  Nothing runs between 22:00 and 06:00, when the other nightly jobs do.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.nockgarden.frontpage-press</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>"REPO_DIR/press/launchd/job.sh" "ENV_FILE"</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>20</integer></dict>
+    <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>20</integer></dict>
+    <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>20</integer></dict>
+    <dict><key>Hour</key><integer>15</integer><key>Minute</key><integer>20</integer></dict>
+    <dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>20</integer></dict>
+    <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>20</integer></dict>
+  </array>
+  <key>StandardOutPath</key>
+  <string>/tmp/frontpage-press.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/frontpage-press.log</string>
+</dict>
+</plist>

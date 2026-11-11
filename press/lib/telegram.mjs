@@ -1,8 +1,8 @@
 // Tell: one plain Telegram message. Never throws; a failed notice must not turn
 // a good edition into a failed run.
 
-export async function tell(message, { env = process.env, fetchImpl = fetch, log = console.log } = {}) {
-  const text = `${env.PRESS_PREFIX ? '[shadow] ' : ''}${message}`.slice(0, 3500)
+export async function tell(message, { env = process.env, fetchImpl = fetch, log = console.log, shadow = false } = {}) {
+  const text = `${shadow ? '[shadow] ' : ''}${message}`.slice(0, 3500)
   log(`tell: ${text}`)
   if (!env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) return { sent: false, reason: 'telegram not configured' }
   try {

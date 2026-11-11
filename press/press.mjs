@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-// Daily Frontpage press. Plain Node, no agent.
+// Daily Frontpage press. Plain Node, run on the Mac by launchd; no agent.
+// Editions are files in this repository: a run ends with one commit and push.
+// On main that push is the publish; on any other branch it is a shadow run.
 //
 //   tsx press/press.mjs run      flip due editions, then build the next missing one
 //   tsx press/press.mjs build    build only   [--date YYYY-MM-DD]
@@ -11,6 +13,7 @@
 import fs from 'node:fs/promises'
 
 import { INDEX_KEY, PARKED_KEY, normalizeParked } from '../shared/edition-index.js'
+import { currentBranch, publish } from './lib/git.mjs'
 import { createModels } from './lib/models.mjs'
 import { CANDIDATES_KEY, LEDGER_KEY, normalizeLedger, orderCandidates } from './lib/pick.mjs'
 import { build, builtMessage, failedMessage, flip, shouldTellFailure } from './lib/run.mjs'
@@ -35,6 +38,22 @@ async function main() {
   const seedIndex = await seedIndexFromEnv(env)
   const siteUrl = env.PRESS_SITE_URL || ''
   const now = new Date()
+  // A shadow run parks editions but never folds them into the live manifest,
+  // so its branch keeps merging cleanly with main.
+  const shadow = store.repo ? (await currentBranch(store.repo)) !== 'main' : false
+  const say = (message) => tell(message, { shadow })
+  let commitMessage = 'chore: update the press ledger'
+  const finish = async () => {
+    if (!store.repo) return
+    try {
+      const pushed = await publish(store.repo, commitMessage)
+      console.log(`press: publish ${JSON.stringify(pushed)}`)
+    } catch (error) {
+      console.error(`press: failed at push: ${error.message}`)
+      if (await shouldTellFailure(store, { date: localDate(now), step: 'push' })) await say(failedMessage(Object.assign(error, { step: 'push' })))
+      process.exitCode = 1
+    }
+  }
 
   if (command === 'status') {
     const index = (await store.getJson(INDEX_KEY)) || seedIndex
@@ -55,15 +74,17 @@ async function main() {
     return
   }
 
-  if (command === 'run' || command === 'flip') {
+  if ((command === 'run' || command === 'flip') && shadow) console.log('press: shadow run, manifest left alone')
+  if ((command === 'run' || command === 'flip') && !shadow) {
     const flipped = await flip({ store, now, seedIndex, siteUrl })
     console.log(`press: flip ${JSON.stringify(flipped)}`)
+    if (flipped.applied.length) commitMessage = `chore: fold ${flipped.applied.join(', ')} into the manifest`
     if (flipped.site && flipped.site !== 'ok') {
-      await tell(`Frontpage live check failed for ${flipped.current}: ${flipped.site}`)
+      await say(`Frontpage live check failed for ${flipped.current}: ${flipped.site}`)
       process.exitCode = 1
     }
-    if (command === 'flip') return
   }
+  if (command === 'flip') return finish()
 
   if (command === 'run' || command === 'build') {
     const models = createModels({ env })
@@ -75,14 +96,17 @@ async function main() {
       })
       if (result.status === 'nothing-to-do') {
         console.log('press: nothing to build')
-        return
+        return finish()
       }
       console.log(`press: built ${JSON.stringify({ ...result, calls: result.calls.length })}`)
-      await tell(builtMessage(result, siteUrl))
+      commitMessage = `feat: publish daily edition ${result.editionId} (live ${result.goLiveAt})`
+      await finish()
+      if (!process.exitCode) await say(builtMessage(result, siteUrl))
     } catch (error) {
       console.error(`press: failed at ${error.step || 'unknown'}: ${error.message}`)
-      if (await shouldTellFailure(store, { date: error.date || localDate(now), step: error.step || 'unknown' })) await tell(failedMessage(error))
+      if (await shouldTellFailure(store, { date: error.date || localDate(now), step: error.step || 'unknown' })) await say(failedMessage(error))
       process.exitCode = 1
+      await finish()
     }
     return
   }
