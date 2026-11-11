@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-11-10-one-stitch-out-of-line-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-smiling-green-long-necked-turtle-wit",
+      "artifact_id": "hero-smiling-green-long-necked-turtle-wit",
+      "source_type": "tweet",
+      "source_url": "https://x.com/alliharvard/status/2112561050310824352",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@alliharvard: try music you might like it",
+      "kicker": "x.com",
+      "excerpt": "try music you might like it",
+      "source_title": "@alliharvard: try music you might like it",
+      "source_summary": "try music you might like it",
+      "source_domain": "x.com",
+      "source_meta": "Try music turtle image",
+      "source_image_url": "https://pbs.twimg.com/media/HVFSjIWaQAAH2Uw.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HVFSjIWaQAAH2Uw.jpg?name=orig"
+      ],
+      "source_image_alt": "@alliharvard: try music you might like it",
+      "source_media_url": "https://pbs.twimg.com/media/HVFSjIWaQAAH2Uw.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-11-10-one-stitch-out-of-line-v1/assets/source-posters/binding-hero-smiling-green-long-necked-turtle-wit.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "low",
+        "focal_point": {
+          "x": 0.5026,
+          "y": 0.5016
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.1548,
+          "width": 1.0,
+          "height": 0.6871
+        },
+        "image_width": 380,
+        "image_height": 310,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.09177,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}
