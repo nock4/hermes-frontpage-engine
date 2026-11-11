@@ -1,0 +1,111 @@
+{
+  "interpretation_id": "interp-2026-11-10-one-stitch-out-of-line-v1",
+  "edition_id": "2026-11-10-one-stitch-out-of-line-v1",
+  "plate_read_timestamp": "2026-11-10T10:17:09.069Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Raised embroidery on coral-orange woven cloth: a large smiling green long-necked turtle with a cream-spotted brown shell faces a separate blue grand piano. Three cream musical symbols bridge the open field. Lavender stitch clusters and broken green perimeter ribs provide subordinate accents. The creature is the single planned source-bearing anchor.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape embroidery: a large smiling green long-necked creature with cream-spotted taupe shell faces a smaller blue grand piano across broad coral-orange weave. Sparse cream notes bridge the gap; raised lid, pale keys and slender legs remain distinct. One offset lavender stitch cluster replaces lettering; broken green perimeter ribs frame the field. Directional thread and pale contours retain handmade character.",
+      "Raised embroidery on coral-orange woven cloth: a large smiling green long-necked turtle with a cream-spotted brown shell faces a separate blue grand piano. Three cream musical symbols bridge the open field. Lavender stitch clusters and broken green perimeter ribs provide subordinate accents. The creature is the single planned source-bearing anchor.",
+      "coral-weave",
+      "interrupted-ribbing",
+      "spotted-oval"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Smiling green long-necked turtle with cream-spotted brown shell"
+    ],
+    "dominant_surfaces": [
+      "paper"
+    ],
+    "dominant_structures": [
+      "embroidered-invitation-lift",
+      "A raised green long-necked creature with a smiling head and cream-spotted shell.",
+      "Raised green head and curved neck embroidery",
+      "Cream-outlined brown shell with cream stitched spots",
+      "Exposed orange woven ground"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: embroidered-invitation-lift.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-smiling-green-long-necked-turtle-wit",
+      "kind": "hero",
+      "type": "raised-embroidered-figure",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.029,
+        "y": 0.138,
+        "w": 0.511,
+        "h": 0.742
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-smiling-green-long-necked-turtle-wit-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.029,
+        "y": 0.138,
+        "w": 0.511,
+        "h": 0.742
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
