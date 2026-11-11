@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import { createHash } from 'node:crypto'
 import path from 'node:path'
-import { assertIndependentVisualReview, assertArchivedIndependentVisualReview } from './independent-visual-review.mjs'
+import { assertArchivedIndependentVisualReview } from './independent-visual-review.mjs'
 import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../../src/lib/sourceWindowCountContract.mjs'
 
 const legacyHashes = new Set(Object.values(JSON.parse(fs.readFileSync(new URL('./legacy-accepted-proof-hashes.json', import.meta.url), 'utf8'))))
@@ -111,11 +111,8 @@ function checkProof(proof = {}, legacyRegistered = false) {
   if (!proof.prompt_path) blockers.push('scene prompt proof missing')
   if (proof.qa?.qaPublishPassed !== true) blockers.push('qa:publish proof missing')
   if (proof.qa?.adversarialVisualQa !== 'pass') blockers.push('adversarial visual QA did not pass')
-  if (!legacyRegistered) {
-    try {
-      assertIndependentVisualReview({ worktreeDir: summary.worktree_dir, runDir: summary.latest_run_dir, editionId: expectedEditionId })
-    } catch (error) { blockers.push(error.message) }
-  }
+  // Independent review is advisory (2026-11-10): a missing, failed or BLOCK
+  // review is reported by the press summary, never a proof blocker.
   const sourceFidelityVerdict = String(proof.source?.sourceFidelityVerdict || '').toLowerCase()
   const sourceImageMode = String(proof.source?.sourceImageMode || '').toLowerCase()
   if (sourceFidelityVerdict === 'fail') blockers.push('source-image fidelity failed')

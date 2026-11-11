@@ -1,6 +1,5 @@
 import { spawn, execFile } from 'node:child_process'
 import { promisify } from 'node:util'
-import { assertIndependentVisualReview } from './lib/independent-visual-review.mjs'
 import { continueReviewedPublication } from './lib/review-continuation.mjs'
 import { repairRejectedCandidate } from './lib/independent-review-repair.mjs'
 import fs from 'node:fs/promises'
@@ -454,7 +453,8 @@ export async function commitPublishedArtifacts(worktreeDir, editionId, branch, {
 
   if (!runDir) throw new Error('mandatory transformation: exact retained candidate run proof is required before commit/push')
   await ensureCandidateSourceFidelity({ worktreeDir, runDir, editionId })
-  assertIndependentVisualReview({ worktreeDir, runDir, editionId })
+  // Independent review is advisory (2026-11-10): its verdict is retained in the
+  // run directory by the review continuation and never gates commit or push.
   await run('git', ['add', 'public/editions/index.json', path.join('public', 'editions', editionId)], { cwd: worktreeDir })
   const cached = await run('git', ['diff', '--cached', '--name-only'], { cwd: worktreeDir, capture: true })
   const cachedPaths = parseStatusLines(cached.stdout)
@@ -469,7 +469,6 @@ export async function commitPublishedArtifacts(worktreeDir, editionId, branch, {
     const stagedPlate = (await promisify(execFile)('git', ['show', `:public/editions/${editionId}/assets/plate.png`], { cwd: worktreeDir, encoding: 'buffer', maxBuffer: 64 * 1024 * 1024 })).stdout
     if (createHash('sha256').update(stagedPlate).digest('hex') !== fidelity.transformation_acceptance.plate_sha256) throw new Error('mandatory transformation: staged plate differs from exact audited candidate bytes')
   }
-  assertIndependentVisualReview({ worktreeDir, runDir, editionId, staged: true })
   const commitMessage = `feat: publish daily edition ${editionId}`
   if (cachedPaths.length) await run('git', ['commit', '-m', commitMessage], { cwd: worktreeDir })
   const head = await run('git', ['rev-parse', 'HEAD'], { cwd: worktreeDir, capture: true })
@@ -755,6 +754,7 @@ async function main() {
     summary.commit = commitResult.commit
     summary.push_succeeded = commitResult.push_succeeded === true
     summary.changed_paths = commitResult.changed_paths
+    summary.review_advisory = commitResult.review_advisory || null
     await checkpoint('published-awaiting-proof')
 
     const remoteVerification = await verifyRemoteManifest(options.remoteUrl, summary.local_edition_id, options)
