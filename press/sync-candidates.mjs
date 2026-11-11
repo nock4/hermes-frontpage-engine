@@ -8,6 +8,8 @@
 // public and the bookmark list is not. The used-source ledger next to it is
 // owned by the press, not by this.
 
+import fs from 'node:fs'
+
 import { CANDIDATES_KEY } from './lib/pick.mjs'
 import { storeFromEnv } from './lib/store.mjs'
 import { scanVault } from './lib/vault.mjs'
@@ -16,6 +18,10 @@ const dryRun = process.argv.includes('--dry-run')
 const vault = process.env.PRESS_VAULT
 if (!vault) {
   console.error('press-sync: set PRESS_VAULT to the Obsidian vault directory')
+  process.exit(1)
+}
+if (!fs.existsSync(vault) || !fs.statSync(vault).isDirectory()) {
+  console.error(`press-sync: vault not found at ${vault}. Move the vault there or fix PRESS_VAULT`)
   process.exit(1)
 }
 

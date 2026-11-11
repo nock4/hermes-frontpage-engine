@@ -9,13 +9,15 @@
   run does: on main each run publishes; on any other branch (press-shadow) it
   is a shadow run that production never sees. ENV_FILE is a private file
   outside the repository:
-    PRESS_VAULT=<Obsidian vault dir>
+    PRESS_VAULT=<Obsidian vault dir, e.g. /Users/you/Vaults/nicks-mind-map>
     TELEGRAM_BOT_TOKEN=...
     TELEGRAM_CHAT_ID=...
     PRESS_SITE_URL=https://daily.nockgarden.com   (on main only: check the site after go-live)
 
-  The job needs, on this Mac: node, git credentials that can push, Hermes
-  signed in to the subscriptions, and Documents access for node (the vault).
+  The job needs, on this Mac: node, git credentials that can push, and Hermes
+  signed in to the subscriptions. Keep the vault outside ~/Documents, Desktop
+  and Downloads (for example ~/Vaults/...), so node needs no macOS privacy
+  grant to read it. A run that cannot find PRESS_VAULT stops and says so.
 
   Six runs a day. Each one is a no-op once tomorrow's edition is parked, so the
   later runs are retries. launchd runs a missed job once when the Mac wakes.

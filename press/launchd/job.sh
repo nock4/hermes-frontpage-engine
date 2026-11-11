@@ -24,5 +24,11 @@ if [[ ! -d node_modules || "$lock_before" != "$(git rev-parse HEAD:package-lock.
   npm ci --no-audit --no-fund --silent || exit 1
 fi
 
+# No vault, no sources: stop here and say so, instead of building from a stale list.
+if [[ ! -d "${PRESS_VAULT:-}" ]]; then
+  node -e 'import("./press/lib/telegram.mjs").then((m) => m.tell(process.argv[1]))' \
+    "Frontpage press did not run: vault not found at ${PRESS_VAULT:-(PRESS_VAULT is not set)}. Move the vault there or fix PRESS_VAULT in $1"
+  exit 1
+fi
 node press/sync-candidates.mjs || echo "press: bookmark list not refreshed, using the last one"
 exec npx tsx press/press.mjs run
