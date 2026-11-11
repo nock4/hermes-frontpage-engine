@@ -1,0 +1,88 @@
+name: Frontpage press
+# One plain Node script, no agent. Each run flips due editions live and builds
+# the next missing edition (today, then tomorrow) if there is one to build.
+# Runs are idempotent, so the schedule only has to fire a few times a day.
+#
+# The schedule does nothing until the repository variable PRESS_SCHEDULE is "on".
+# Every run is a shadow run (keys under "shadow/", never the live keys) until the
+# repository variable PRESS_MODE is "live".
+on:
+  schedule:
+    # GitHub delays and drops scheduled runs; ask often, rely on none in particular.
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+    inputs:
+      command:
+        description: 'run = flip then build; build, flip or status on their own'
+        type: choice
+        options: [run, build, flip, status]
+        default: run
+      date:
+        description: 'Edition date for build (YYYY-MM-DD). Empty = next missing date.'
+        type: string
+        default: ''
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: frontpage-press
+  cancel-in-progress: false
+jobs:
+  press:
+    if: github.event_name == 'workflow_dispatch' || vars.PRESS_SCHEDULE == 'on'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The archive is over a gigabyte and the press never reads it.
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/public/editions/*
+            /public/editions/index.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - name: Press
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          PRESS_STORE: r2
+          PRESS_MODE: ${{ vars.PRESS_MODE }}
+          SITE_URL: ${{ vars.PRESS_SITE_URL }}
+          PRESS_LOOKAHEAD_DAYS: ${{ vars.PRESS_LOOKAHEAD_DAYS || '1' }}
+          PRESS_TEXT_MODEL: ${{ vars.PRESS_TEXT_MODEL }}
+          PRESS_IMAGE_MODEL: ${{ vars.PRESS_IMAGE_MODEL }}
+          PRESS_IMAGE_QUALITY: ${{ vars.PRESS_IMAGE_QUALITY }}
+          PRESS_FALLBACK_TEXT_MODEL: ${{ vars.PRESS_FALLBACK_TEXT_MODEL }}
+          PRESS_FALLBACK_IMAGE_MODEL: ${{ vars.PRESS_FALLBACK_IMAGE_MODEL }}
+          PRESS_SEED_INDEX: public/editions/index.json
+          COMMAND: ${{ inputs.command || 'run' }}
+          EDITION_DATE: ${{ inputs.date }}
+        run: |
+          if [ "$PRESS_MODE" = "live" ]; then
+            export PRESS_PREFIX="" PRESS_SITE_URL="$SITE_URL"
+          else
+            export PRESS_PREFIX="shadow/"
+          fi
+          if [ -n "$EDITION_DATE" ]; then
+            npx tsx press/press.mjs "$COMMAND" --date "$EDITION_DATE"
+          else
+            npx tsx press/press.mjs "$COMMAND"
+          fi
+      - name: Keep the schedule alive
+        # Public repositories lose scheduled workflows after 60 days without
+        # repository activity, and editions no longer arrive as commits.
+        if: always() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/$GITHUB_REPOSITORY/actions/workflows/frontpage-press.yml/enable"
