@@ -1,0 +1,35 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-11-10-one-stitch-out-of-line-v1",
+  "edition_id": "2026-11-10-one-stitch-out-of-line-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-smiling-green-long-necked-turtle-wit",
+      "source_image_url": "https://pbs.twimg.com/media/HVFSjIWaQAAH2Uw.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-11-10-one-stitch-out-of-line-v1/assets/source-posters/binding-hero-smiling-green-long-necked-turtle-wit.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-11-10-one-stitch-out-of-line-v1/binding-hero-smiling-green-long-necked-turtle-wit-source-visual-qa.jpg",
+      "image_width": 380,
+      "image_height": 310,
+      "aspect_ratio": 1.2258,
+      "render_mode": "poster-crop",
+      "crop_risk": "low",
+      "focal_point": {
+        "x": 0.5026,
+        "y": 0.5016
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.1548,
+        "width": 1.0,
+        "height": 0.6871
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.09177,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}
