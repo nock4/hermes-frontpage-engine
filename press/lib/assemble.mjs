@@ -1,5 +1,5 @@
 // Assemble: turn a source, brief, plate and map into the edition package the
-// viewer already reads. Returns files in memory (bucket key -> Buffer); nothing
+// viewer already reads. Returns files in memory (store key -> Buffer); nothing
 // here touches disk, git or the network.
 
 import crypto from 'node:crypto'

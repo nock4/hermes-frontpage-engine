@@ -31,6 +31,7 @@
     "daily:process": "node scripts/run-daily-process.mjs",
     "daily:publish:cron": "node scripts/run-daily-publish-cron.mjs",
     "press": "tsx press/press.mjs",
+    "press:sync": "node press/sync-candidates.mjs",
     "press:proof": "node scripts/check-press-proof.mjs",
     "press:review": "node scripts/independent-visual-review.mjs",
     "reserve:prepare": "node scripts/prepare-artwork-reserve.mjs",
