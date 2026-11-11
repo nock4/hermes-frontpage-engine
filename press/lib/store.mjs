@@ -20,7 +20,7 @@ const TYPES = {
   '.webm': 'video/webm',
 }
 
-function contentTypeForKey(key) {
+export function contentTypeForKey(key) {
   return TYPES[path.extname(key).toLowerCase()] || 'application/octet-stream'
 }
 
