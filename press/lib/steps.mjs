@@ -7,7 +7,6 @@ import { clamp01, rectPolygon } from '../../scripts/lib/edition-geometry.mjs'
 import { slugify } from '../../scripts/lib/string-utils.mjs'
 import { briefRequest, imagePrompt, mapRequest } from './prompts.mjs'
 
-const PLATE_SIZE = '1536x1024'
 const WHOLE_PLATE_BOUNDS = { x: 0.1, y: 0.1, w: 0.8, h: 0.8 }
 
 const text = (value, fallback = '') => {
@@ -98,7 +97,7 @@ export async function acceptPlate(buffer) {
 
 export async function generatePlate({ models, brief, source }) {
   const prompt = imagePrompt({ brief, source })
-  const plate = await models.generateImage({ step: 'plate', prompt, size: PLATE_SIZE, accept: acceptPlate })
+  const plate = await models.generateImage({ step: 'plate', prompt, accept: acceptPlate })
   return { ...plate, prompt }
 }
 

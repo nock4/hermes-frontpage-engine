@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process'
 import fs from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
@@ -7,12 +8,14 @@ import sharp from 'sharp'
 import { describe, expect, it } from 'vitest'
 
 import { INDEX_KEY, PARKED_KEY, mergeParked } from '../../shared/edition-index.js'
+import { currentBranch, publish } from '../../press/lib/git.mjs'
+import { hermesChat, hermesImage, hermesSettings } from '../../press/lib/hermes.mjs'
 import { createModels } from '../../press/lib/models.mjs'
 import { CANDIDATES_KEY, LEDGER_KEY, loadSource, markSkipped, normalizeLedger, orderCandidates, sourceKey } from '../../press/lib/pick.mjs'
 import { imagePrompt } from '../../press/lib/prompts.mjs'
 import { build, builtMessage, chooseDate, failedMessage, flip, shouldTellFailure } from '../../press/lib/run.mjs'
 import { acceptBrief, acceptMap, acceptPlate } from '../../press/lib/steps.mjs'
-import { LocalStore, R2Store } from '../../press/lib/store.mjs'
+import { LocalStore, RepoStore } from '../../press/lib/store.mjs'
 import { tell } from '../../press/lib/telegram.mjs'
 import { addDays, goLiveAt, localDate } from '../../press/lib/time.mjs'
 
@@ -125,21 +128,39 @@ describe('model answers', () => {
     await expect(acceptPlate(Buffer.from('nope'))).rejects.toThrow('could not be decoded')
   })
 
-  it('retries the first provider once, then uses the second', async () => {
-    const seen = []
-    const fetchImpl = async (url) => {
-      seen.push(new URL(url).hostname)
-      if (seen.length < 3) return new Response('overloaded', { status: 503 })
-      return new Response(JSON.stringify({ choices: [{ message: { content: '```json\n{"ok": true}\n```' } }] }), { status: 200 })
+  it('tries each Hermes call twice and then gives up, with no other provider', async () => {
+    let chats = 0
+    const hermes = {
+      chat: async (request, settings) => { chats += 1; if (chats === 1) throw new Error('hermes exited 1'); return `{"profile": "${settings.profile}"}` },
+      image: async () => { throw new Error('quota') },
     }
-    const models = createModels({ env: { OPENAI_API_KEY: 'test-openai', OPENROUTER_API_KEY: 'test-openrouter' }, fetchImpl })
-    await expect(models.chatJson({ step: 'brief', system: 's', user: 'u' })).resolves.toEqual({ ok: true })
-    expect(seen).toEqual(['api.openai.com', 'api.openai.com', 'openrouter.ai'])
-    expect(models.calls.map((call) => call.ok)).toEqual([false, false, true])
-    expect(JSON.stringify(models.calls)).not.toContain('test-openai')
+    const models = createModels({ env: {}, hermes })
+    await expect(models.chatJson({ step: 'brief', system: 's', user: 'u' })).resolves.toEqual({ profile: 'frontpage' })
+    expect(models.calls.map((call) => call.ok)).toEqual([false, true])
+    await expect(models.generateImage({ prompt: 'p' })).rejects.toThrow('plate failed twice through Hermes')
+    expect(models.calls).toHaveLength(4)
+  })
 
-    const none = createModels({ env: {} })
-    await expect(none.generateImage({ prompt: 'p' })).rejects.toThrow('No model provider configured')
+  it('asks Hermes one bounded question and returns its plate', async () => {
+    const runs = []
+    const settings = hermesSettings({ PRESS_HERMES_PROFILE: 'frontpage', PRESS_HERMES_BIN: '/bin/hermes', PRESS_HERMES_PYTHON: '/bin/python' })
+    const run = async (command, args, options) => {
+      runs.push({ command, args, input: options.input, env: options.env })
+      if (command === '/bin/python') {
+        await fs.writeFile(args[args.indexOf('--output') + 1], 'png-bytes')
+        return '{"provider": "openai-codex", "model": "gpt-image-2-medium"}\n'
+      }
+      return '{"ok": true}\nsession_id: abc\n'
+    }
+    const png = `data:image/png;base64,${Buffer.from('x').toString('base64')}`
+    expect(await hermesChat({ system: 'sys', user: 'ask', imageDataUrl: png }, settings, run)).toBe('{"ok": true}')
+    expect(await hermesChat({ system: 'sys', user: 'ask' }, settings, run)).toBe('{"ok": true}')
+    expect(runs[0].args.join(' ')).toBe('-p frontpage chat -Q --oneshot --ignore-rules --source tool -t vision --max-turns 3 --query-file -')
+    expect(runs[0].input).toMatch(/vision_analyze once on the image at .*input\.png/)
+    expect(runs[1].args.join(' ')).toContain('-t todo --max-turns 1')
+    const plate = await hermesImage({ prompt: 'a plate' }, settings, run)
+    expect(plate).toEqual({ bytes: Buffer.from('png-bytes'), model: 'openai-codex/gpt-image-2-medium' })
+    expect(runs[2].env.HERMES_HOME).toMatch(/profiles\/frontpage$/)
   })
 })
 
@@ -221,25 +242,51 @@ describe('press run', () => {
 })
 
 describe('storage and notices', () => {
-  it('signs R2 requests without sending the secret', async () => {
-    const requests = []
-    const store = new R2Store({
-      accountId: 'acct', bucket: 'frontpage', accessKeyId: 'AKIDEXAMPLE', secretAccessKey: 'super-secret', prefix: 'shadow/',
-      fetchImpl: async (url, init) => { requests.push({ url, init }); return new Response('{"ok":true}', { status: 200 }) },
-    })
-    await store.putJson('editions/index.json', { ok: true })
-    expect(await store.getJson('editions/index.json')).toEqual({ ok: true })
-    expect(requests[0].url).toBe('https://acct.r2.cloudflarestorage.com/frontpage/shadow/editions/index.json')
-    expect(requests[0].init.method).toBe('PUT')
-    expect(requests[0].init.headers.authorization).toMatch(/^AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE\/\d{8}\/auto\/s3\/aws4_request, SignedHeaders=content-type;host;x-amz-content-sha256;x-amz-date, Signature=[0-9a-f]{64}$/)
-    expect(JSON.stringify(requests)).not.toContain('super-secret')
+  it('keeps site files under public/ and press state under press/data/', async () => {
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), 'press-repo-'))
+    const store = new RepoStore(root)
+    await store.putJson(INDEX_KEY, { editions: [] })
+    await store.putJson(PARKED_KEY, { version: 1, entries: [] })
+    await store.putJson(LEDGER_KEY, { used: {} })
+    await store.putJson(CANDIDATES_KEY, { candidates: [] })
+    const files = (await fs.readdir(root, { recursive: true })).filter((name) => name.endsWith('.json')).sort()
+    expect(files).toEqual(['press/data/candidates.json', 'press/data/ledger.json', 'public/editions/index.json', 'public/press/parked.json'])
     await expect(store.get('../escape')).rejects.toThrow('Invalid store key')
+    await expect(store.put('elsewhere/file.json', '{}')).rejects.toThrow('No place in the repository')
+  })
+
+  it('publishes by commit and push, and does nothing when nothing changed', async () => {
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), 'press-git-'))
+    const git = (cwd, ...args) => execFileSync('git', ['-C', cwd, '-c', 'user.name=Press Test', '-c', 'user.email=press@example.invalid', ...args], { encoding: 'utf8' }).trim()
+    const remote = path.join(root, 'remote.git')
+    const repo = path.join(root, 'repo')
+    execFileSync('git', ['init', '-q', '--bare', '-b', 'main', remote])
+    execFileSync('git', ['init', '-q', '-b', 'main', repo])
+    git(repo, 'config', 'user.name', 'Press Test')
+    git(repo, 'config', 'user.email', 'press@example.invalid')
+    git(repo, 'remote', 'add', 'origin', remote)
+    await fs.writeFile(path.join(repo, 'README.md'), 'site\n')
+    git(repo, 'add', '.')
+    git(repo, 'commit', '-q', '-m', 'start')
+    git(repo, 'push', '-q', '-u', 'origin', 'main')
+
+    const store = new RepoStore(repo)
+    await store.put('editions/2026-11-12-test-v1/edition.json', '{}')
+    await store.putJson(PARKED_KEY, { version: 1, entries: [] })
+    await store.putJson(CANDIDATES_KEY, { candidates: [] })
+    await fs.writeFile(path.join(repo, 'stray.txt'), 'not the press')
+    expect(await currentBranch(repo)).toBe('main')
+    expect(await publish(repo, 'feat: publish daily edition test')).toEqual({ committed: true, pushed: true, branch: 'main' })
+    expect(git(remote, 'show', '--name-only', '--format=%s', 'main').split('\n').filter(Boolean)).toEqual([
+      'feat: publish daily edition test', 'public/editions/2026-11-12-test-v1/edition.json', 'public/press/parked.json',
+    ])
+    expect(await publish(repo, 'again')).toEqual({ committed: false, pushed: false, branch: 'main' })
   })
 
   it('sends one Telegram message and never throws', async () => {
     const sent = []
-    const env = { TELEGRAM_BOT_TOKEN: 'token', TELEGRAM_CHAT_ID: '42', PRESS_PREFIX: 'shadow/' }
-    const ok = await tell('hello', { env, log: () => {}, fetchImpl: async (url, init) => { sent.push(JSON.parse(init.body)); return new Response('{}') } })
+    const env = { TELEGRAM_BOT_TOKEN: 'token', TELEGRAM_CHAT_ID: '42' }
+    const ok = await tell('hello', { env, shadow: true, log: () => {}, fetchImpl: async (url, init) => { sent.push(JSON.parse(init.body)); return new Response('{}') } })
     expect(ok).toEqual({ sent: true })
     expect(sent).toEqual([{ chat_id: '42', text: '[shadow] hello', disable_web_page_preview: false }])
     expect(await tell('hello', { env: {}, log: () => {} })).toEqual({ sent: false, reason: 'telegram not configured' })
