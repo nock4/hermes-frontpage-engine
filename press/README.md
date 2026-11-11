@@ -134,7 +134,7 @@ PRESS_VAULT=<vault dir> npm run press:sync -- --dry-run
 | `PRESS_LOOKAHEAD_DAYS` | How many days ahead to keep built (default 1) |
 | `PRESS_REPLAY_DIR` | Answer every model call from recorded files (`brief.json`, `map.json`, `plate.png`) |
 | `PRESS_RECORD_DIR` | Save live model answers in that layout |
-| `PRESS_VAULT` | Obsidian vault directory the bookmark list is read from. Keep it outside `~/Documents`, Desktop and Downloads (for example `~/Vaults/nicks-mind-map`) so `node` needs no macOS privacy grant. If the directory is missing the job stops and says so on Telegram |
+| `PRESS_VAULT` | Obsidian vault directory the bookmark list is read from. Keep it outside `~/Documents`, Desktop and Downloads (for example `~/Projects/nicks-mind-map`) so `node` needs no macOS privacy grant. If the directory is missing the job stops and says so on Telegram |
 
 The only secret is the Telegram bot token, kept in a private env file outside
 the repository. Pushing uses the git credentials already on the Mac. Which
