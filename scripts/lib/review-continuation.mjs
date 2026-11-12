@@ -123,43 +123,26 @@ export async function continueReviewedPublication(initial, { statePath, prepare,
     }
     await checkpoint('qa-publish', state.current)
     await prepare(state.current)
-    const binding = independentReviewExpectation(state.current)
-    if (state.blocked_plate_sha256.includes(binding.candidate_files['assets/plate.png'])) throw Error('Unchanged rejected plate cannot be reviewed in another run')
+    // Advisory since 2026-11-10 (Nick: "The review stops blocking"). The review
+    // still runs and its verdict is retained beside the run, but a BLOCK, a
+    // stalled or failed reviewer, or a missing report never holds back a
+    // candidate that passed prepare(). No repair or regeneration is triggered.
     await checkpoint('independent-review', state.current)
+    let advisory
     try {
       await ensureAutomaticReview(state.current, { ...(review ? { review } : {}) })
+      advisory = { verdict: 'PASS' }
     } catch (error) {
-      if (error.code !== 'INDEPENDENT_REVIEW_RECOVERY') throw error
-      if (error.action.findings.some(row => row.status === 'uncertain')) {
-        await checkpoint('independent-review-evidence-blocked', state.current, error.action)
-        throw Object.assign(Error('Independent evidence is uncertain/unavailable; existing owner must repair exact evidence or resolve the real external dependency, never generate to evade uncertainty'), { code: 'REVIEW_EVIDENCE_BLOCKER', action: error.action })
-      }
-      // Charge BEFORE any generation/provider I/O. Restart never resets the cap.
-      if (state.repairs >= 3) { await save(statePath, state); throw Error('Independent review hard repair limit exhausted (3); action/evidence retained, no publication authorized') }
-      const sourceWindowFailure = error.action.findings.some(row => row.clause_id === 'source-window-visual-acceptance' && row.status !== 'fulfilled')
-      const plateFailure = error.action.findings.some(row => row.clause_id !== 'source-window-visual-acceptance' && row.status !== 'fulfilled')
-      state.repairs++
-      if (sourceWindowFailure && !plateFailure) {
-        state.pending_runtime = { action: error.action, runtime_sha256: await runtimeRevision(initial.worktreeDir), next_run_dir: `${state.initial.runDir}-runtime-repair-${state.repairs}` }
-        await save(statePath, state)
-        await checkpoint('independent-review-runtime-repair', state.current, error.action)
-        throw Object.assign(Error('Opened-source/runtime repair required by existing press owner; preserve good plate, repair actual code then rerun same checkpoint; new independent review follows automatically'), { code: 'REVIEW_RUNTIME_REPAIR', action: error.action })
-      }
-      state.blocked_plate_sha256.push(binding.candidate_files['assets/plate.png'])
-      const nextRunDir = `${state.initial.runDir}-review-repair-${state.repairs}`
-      // Freeze expected bytes, then persist the charge/intent BEFORE snapshot
-      // writes or adapter I/O. A restart completes only missing verified files.
-      const source = path.join(state.current.worktreeDir, 'public/editions', state.current.editionId)
-      state.pending_repair = { next_run_dir: nextRunDir, action: error.action, snapshot: {
-        source, target: path.join(state.current.runDir, 'rejected-package'), phase: 'charged', manifest: await snapshotManifest(source),
-      } }
-      await save(statePath, state)
-      continue
+      advisory = { verdict: error.code === 'INDEPENDENT_REVIEW_RECOVERY' ? 'BLOCK' : 'UNAVAILABLE', code: error.code || null, reason: String(error.message).slice(0, 2000), action_path: error.actionPath || null, request_path: error.requestPath || null }
+      await checkpoint('independent-review-advisory', state.current, error.action)
     }
+    state.review_advisory = { ...advisory, run_dir: state.current.runDir, edition_id: state.current.editionId, recorded_at: new Date().toISOString() }
+    await save(path.join(state.current.runDir, 'independent-review-advisory.json'), state.review_advisory)
+    await save(statePath, state)
     await checkpoint('commit-publish', state.current)
     const result = await publish(state.current)
     state.published = result
     await save(statePath, state)
-    return { ...result, candidate: state.current }
+    return { ...result, candidate: state.current, review_advisory: state.review_advisory }
   }
 }

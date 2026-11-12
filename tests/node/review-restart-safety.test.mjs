@@ -10,29 +10,6 @@ import { readCandidateCheckpoint } from '../../scripts/lib/cron-recovery-state.m
 const scratch=path.resolve('tmp/review-restart-fixtures')
 async function fixture(){await fs.mkdir(scratch,{recursive:true});const root=await fs.mkdtemp(path.join(scratch,'restart-SYNTHETIC-'));const editionId='2099-01-01-synthetic-v1';const f=await syntheticProofContext(editionId,root,path.join(root,'tmp/daily-process-runs/old'));return{worktreeDir:root,runDir:f.latest_run_dir,editionId}}
 async function blocked(o){const {file}=await syntheticReview(o,{record:false});const r=JSON.parse(await fs.readFile(file));r.verdict='BLOCK';r.findings[0].status='failed';r.adverse_findings=['SYNTHETIC failed composition'];await fs.writeFile(file,JSON.stringify(r));return file}
-it.each(['mid-copy','after-copy'])('charged snapshot survives %s without overwritten evidence or a duplicate charge',async(point)=>{
- const o=await fixture();await fs.rm(path.join(o.runDir,'independent-visual-review.json'));const statePath=path.join(o.worktreeDir,'day.json');let repairs=0,reviews=0;let armed=true;const originals={cp:fs.cp,copyFile:fs.copyFile,rename:fs.rename};
- const adapters={statePath,prepare:async()=>{},review:async x=>{reviews++;return blocked(x)},repair:async()=>{repairs++;throw Error('SYNTHETIC repair reached')},publish:async()=>{throw Error('must not publish')}}
- // Old implementation's real cp completes, then crashes. New implementation's
- // exclusive per-file copy and phase persistence expose both causal boundaries.
- fs.cp=async(...a)=>{await originals.cp(...a);if(armed){armed=false;throw Error('SYNTHETIC snapshot interruption')}}
- fs.copyFile=async(...a)=>{await originals.copyFile(...a);if(point==='mid-copy'&&armed&&String(a[1]).includes('rejected-package')){armed=false;throw Error('SYNTHETIC snapshot interruption')}}
- fs.rename=async(...a)=>{if(point==='after-copy'&&armed&&a[1]===statePath){const s=JSON.parse(await fs.readFile(a[0]));if(s.pending_repair?.snapshot?.phase==='ready'){armed=false;throw Error('SYNTHETIC snapshot interruption')}}return originals.rename(...a)}
- try{await expect(continueReviewedPublication(o,adapters)).rejects.toThrow(/snapshot interruption/)}finally{Object.assign(fs,originals)}
- const charged=JSON.parse(await fs.readFile(statePath));expect(charged.repairs).toBe(1);expect(charged.pending_repair).toBeTruthy();expect(repairs).toBe(0)
- await expect(continueReviewedPublication(o,adapters)).rejects.toThrow(/repair reached/);expect(repairs).toBe(1);expect(reviews).toBe(1);expect(JSON.parse(await fs.readFile(statePath)).repairs).toBe(1)
- const old=JSON.parse(await fs.readFile(path.join(o.runDir,'independent-visual-review.json')));expect(old.verdict).toBe('BLOCK')
- const snapshot=path.join(o.runDir,'rejected-package/assets/plate.png');expect(await fs.readFile(snapshot)).toEqual(await fs.readFile(path.join(o.worktreeDir,'public/editions',o.editionId,'assets/plate.png')))
- await fs.writeFile(snapshot,'SYNTHETIC conflicting retained evidence');await expect(continueReviewedPublication(o,adapters)).rejects.toThrow(/snapshot.*mismatch/i);expect(repairs).toBe(1);expect(await fs.readFile(snapshot,'utf8')).toBe('SYNTHETIC conflicting retained evidence')
-})
-it('snapshot refuses a source-directory symlink introduced after its charged intent',async()=>{
- const o=await fixture();await fs.rm(path.join(o.runDir,'independent-visual-review.json'));const statePath=path.join(o.worktreeDir,'day.json');let repairs=0
- const adapters={statePath,prepare:async()=>{},review:blocked,repair:async()=>{repairs++;throw Error('repair reached')},publish:async()=>{throw Error('publish forbidden')}}
- const copy=fs.copyFile;let once=true;fs.copyFile=async(...a)=>{await copy(...a);if(once&&String(a[1]).includes('rejected-package')){once=false;throw Error('snapshot interrupted')}}
- try{await expect(continueReviewedPublication(o,adapters)).rejects.toThrow(/snapshot interrupted/)}finally{fs.copyFile=copy}
- const assets=path.join(o.worktreeDir,'public/editions',o.editionId,'assets'),outside=path.join(o.worktreeDir,'outside-assets');await fs.rename(assets,outside);await fs.symlink(outside,assets,'dir')
- await expect(continueReviewedPublication(o,adapters)).rejects.toThrow(/snapshot.*escape/i);expect(repairs).toBe(0)
-})
 async function planningFixture(){const o=await fixture();for(const n of ['source-research.json','signal-harvest.json'])await fs.writeFile(path.join(o.runDir,n),'{}');const p=path.join(o.runDir,'daily-generation-payload.json');const payload=JSON.parse(await fs.readFile(p));payload.source_image_fingerprints=[{image_url:'https://example.org/SYNTHETIC.png'}];await fs.writeFile(p,JSON.stringify(payload));return{o,next:path.join(o.worktreeDir,'tmp/daily-process-runs/new'),action:{adverse_findings:['SYNTHETIC failed plate'],findings:[]}}}
 it('exclusive planning guard prevents accepted-unknown repeats and retains diagnostics',async()=>{
  const {o,next,action}=await planningFixture();let calls=0;const adapters={generationOptions:{},replan:async(_,io)=>{calls++;await io.record('request',{SYNTHETIC:true});await io.record('response',{raw:'accepted unknown'});throw Error('SYNTHETIC accepted unknown')},generate:async()=>{throw Error('must not generate')}}

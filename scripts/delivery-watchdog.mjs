@@ -49,9 +49,14 @@ export async function acceptProof(proof, root=stateRoot) {
   await fs.mkdir(path.dirname(prompt),{recursive:true})
   await fs.copyFile(proof.prompt_path,prompt)
   await fs.mkdir(path.join(root, 'independent-reviews'), { recursive: true })
-  const archive = archiveIndependentVisualReview({ worktreeDir: proof.summary.worktree_dir, runDir: proof.summary.latest_run_dir, editionId: edition }, path.join(root, 'independent-reviews', `${edition}-${randomUUID()}`))
+  // Independent review is advisory (2026-11-10): archive a retained PASS when
+  // there is one; its absence or a BLOCK never stops delivery of a green proof.
+  let archive = null
+  try {
+    archive = archiveIndependentVisualReview({ worktreeDir: proof.summary.worktree_dir, runDir: proof.summary.latest_run_dir, editionId: edition }, path.join(root, 'independent-reviews', `${edition}-${randomUUID()}`))
+  } catch { archive = null }
   const retainedProof = { ...proof, summary: { ...proof.summary, latest_run_dir: await fs.realpath(proof.summary.latest_run_dir) } }
-  const value={acceptance_policy:'independent-final-candidate-v1',independent_review_archive:archive,edition_id:edition,run_id:proof.summary.checkpoint_path||proof.summary.commit,screenshot,prompt,screenshot_sha256:digest(bytes),accepted_at:new Date().toISOString(),proof:retainedProof}
+  const value={acceptance_policy:archive?'independent-final-candidate-v1':'independent-review-advisory-v1',independent_review_archive:archive,edition_id:edition,run_id:proof.summary.checkpoint_path||proof.summary.commit,screenshot,prompt,screenshot_sha256:digest(bytes),accepted_at:new Date().toISOString(),proof:retainedProof}
   await atomic(path.join(root,'accepted',`${edition}.json`),value)
   return value
 }

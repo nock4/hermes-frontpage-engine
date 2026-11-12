@@ -58,19 +58,4 @@ describe('automatic independent candidate review', () => {
     await expect(ensureAutomaticReview(options, { review: adapter })).rejects.toThrow(/incomplete|interrupted/)
     expect(calls).toBe(1)
   })
-  it('uncertain evidence is an owner/external blocker, never a reason to generate another plate', async () => {
-    const options=await fixture();let repairs=0
-    const reviewer=async current=>{const file=await review(current);const report=JSON.parse(await fs.readFile(file));report.verdict='BLOCK';report.findings[0].status='uncertain';report.adverse_findings=['SYNTHETIC source fetch unavailable'];await fs.writeFile(file,JSON.stringify(report));return file}
-    await expect(continueReviewedPublication(options,{statePath:path.join(options.worktreeDir,'day.json'),prepare:async()=>{},review:reviewer,repair:async()=>{repairs++;throw Error('must not generate')},publish:async()=>{throw Error('must not publish')}})).rejects.toMatchObject({code:'REVIEW_EVIDENCE_BLOCKER'})
-    expect(repairs).toBe(0)
-  })
-  it('a persisted exhausted day repair allowance cannot be replenished by owner restart', async () => {
-    const options=await fixture();const statePath=path.join(options.worktreeDir,'day.json')
-    await fs.writeFile(statePath,JSON.stringify({schema_version:1,initial:options,current:options,repairs:3,blocked_plate_sha256:[],pending_repair:null}))
-    const reviewer=async current=>{const file=await review(current);const report=JSON.parse(await fs.readFile(file));report.verdict='BLOCK';report.findings[0].status='failed';report.adverse_findings=['SYNTHETIC plate rejected'];await fs.writeFile(file,JSON.stringify(report));return file}
-    const adapters={statePath,prepare:async()=>{},review:reviewer,repair:async()=>{throw Error('must not generate')},publish:async()=>{throw Error('must not publish')}}
-    await expect(continueReviewedPublication(options,adapters)).rejects.toThrow(/hard repair limit exhausted/)
-    await expect(continueReviewedPublication(options,adapters)).rejects.toThrow(/hard repair limit exhausted/)
-    expect(JSON.parse(await fs.readFile(statePath)).repairs).toBe(3)
-  })
 })
