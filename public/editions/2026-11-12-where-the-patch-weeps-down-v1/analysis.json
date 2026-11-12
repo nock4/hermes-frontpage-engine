@@ -1,0 +1,165 @@
+{
+  "analysis_id": "analysis-2026-11-12-where-the-patch-weeps-down-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "Landscape watercolor or dye plate on a flat sage-green ground. On the left, three dripping blot heads huddle together: an orange one at top left, a cream skull-like one with teal eye sockets at front, and a magenta one in the center. Each has a spiky green calyx and dark eye smudges. Lavender and violet drip streaks fall from the heads into a purple pool along the bottom edge. A teal hooked swoosh arcs across the upper middle-right. Small green star shapes and pairs of dark dots float in the open green space. There is no text.",
+  "usable_surfaces": [
+    "huddled dye-blot head cluster with calyx crowns",
+    "lavender-violet drip curtain under the heads",
+    "purple pooled band at the bottom edge",
+    "teal hooked swoosh arc",
+    "open sage-green negative space"
+  ],
+  "detected_objects": [
+    {
+      "label": "Huddled dye-blot heads with calyx crowns",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.01,
+        "y": 0.02,
+        "w": 0.64,
+        "h": 0.68
+      },
+      "polygon": [
+        [
+          0.02,
+          0.2
+        ],
+        [
+          0.08,
+          0.05
+        ],
+        [
+          0.2,
+          0.02
+        ],
+        [
+          0.33,
+          0.07
+        ],
+        [
+          0.37,
+          0.22
+        ],
+        [
+          0.45,
+          0.23
+        ],
+        [
+          0.56,
+          0.24
+        ],
+        [
+          0.64,
+          0.3
+        ],
+        [
+          0.65,
+          0.45
+        ],
+        [
+          0.6,
+          0.58
+        ],
+        [
+          0.45,
+          0.6
+        ],
+        [
+          0.41,
+          0.68
+        ],
+        [
+          0.3,
+          0.7
+        ],
+        [
+          0.17,
+          0.66
+        ],
+        [
+          0.15,
+          0.5
+        ],
+        [
+          0.06,
+          0.42
+        ],
+        [
+          0.01,
+          0.32
+        ]
+      ],
+      "confidence": 0.85,
+      "visual_evidence": "Three saturated bleeding blots (orange, cream, magenta) with feathered edges. Each has a green star calyx and dark or teal eye marks, and they are grouped on the left of center.",
+      "effect_material": {
+        "material": "pigment",
+        "observation": "Wet-bloomed dye pigment with feathered, fractal edges soaked into a flat matte ground. There are no glossy, reflective, or layered physical surfaces.",
+        "modalities": [
+          "touch"
+        ]
+      },
+      "effect_editorial": [
+        {
+          "schema_version": 1,
+          "kind": "refraction",
+          "decision": "omit",
+          "planned_artifact_index": 0,
+          "source_url": "https://x.com/gucci4mycat/status/2114754885161779398",
+          "source_observation": "The image is a portrait-format painted artwork with no text, logos, UI, buttons or call to action. It shows eight saturated blots that bleed and drip in orange, magenta, teal, violet and yellow on a flat muted sage-green ground, set in a loose staggered grid. The pigment has feathered edges and vertical drip streaks, which suggests a wet watercolor, ink or dye technique. Several blots have leafy green tops and dark eye- or mouth-like marks, so they read as melting fruit, pumpkin or face hybrids that fit a spooky theme. The work is visible in the pixels themselves, so this is a creative artwork, not a product or administrative image. The caption's collection launch, VVV platform and holder terms are untrusted promotional claims that I did not verify. The saved note describes 'anime-style heads', which overstates what is visible: the forms are abstract drip-painted, face-like blots.",
+          "capture_sha256": "0be2ca77a1fdbd1e3723b7bd72e6b7984b9867cad78c8e5cc331ed21bba303b1",
+          "plate_observation": "Wet-bloomed dye pigment with feathered, fractal edges soaked into a flat matte ground. There are no glossy, reflective, or layered physical surfaces.",
+          "brief_quote": "Shadowless scan of one wet-dyed sheet on flat sage green",
+          "why_behavior": "Matte, absorbed dye has no optical medium, so it has nothing to refract.",
+          "why_input": "A pointer lens would add glass physics that the sheet does not have.",
+          "why_not_none": "The bleed of the blots already carries the plate. Leaving it undisturbed keeps the scan honest."
+        },
+        {
+          "schema_version": 1,
+          "kind": "depth",
+          "decision": "omit",
+          "planned_artifact_index": 0,
+          "source_url": "https://x.com/gucci4mycat/status/2114754885161779398",
+          "source_observation": "The image is a portrait-format painted artwork with no text, logos, UI, buttons or call to action. It shows eight saturated blots that bleed and drip in orange, magenta, teal, violet and yellow on a flat muted sage-green ground, set in a loose staggered grid. The pigment has feathered edges and vertical drip streaks, which suggests a wet watercolor, ink or dye technique. Several blots have leafy green tops and dark eye- or mouth-like marks, so they read as melting fruit, pumpkin or face hybrids that fit a spooky theme. The work is visible in the pixels themselves, so this is a creative artwork, not a product or administrative image. The caption's collection launch, VVV platform and holder terms are untrusted promotional claims that I did not verify. The saved note describes 'anime-style heads', which overstates what is visible: the forms are abstract drip-painted, face-like blots.",
+          "capture_sha256": "0be2ca77a1fdbd1e3723b7bd72e6b7984b9867cad78c8e5cc331ed21bba303b1",
+          "plate_observation": "Wet-bloomed dye pigment with feathered, fractal edges soaked into a flat matte ground. There are no glossy, reflective, or layered physical surfaces.",
+          "brief_quote": "Shadowless scan of one wet-dyed sheet on flat sage green",
+          "why_behavior": "The brief describes a single flat, shadowless sheet. The overlapping heads are painted overlaps, not physical layers.",
+          "why_input": "Tilt parallax would invent layers that the scan does not contain.",
+          "why_not_none": "Flatness is part of the work, so no depth effect is better."
+        }
+      ]
+    }
+  ],
+  "complexity_assessment": {
+    "status": "watch",
+    "dominant_form_count": 3,
+    "large_region_count": 3,
+    "mapped_region_coverage": 0.789,
+    "rationale": "There is a single dominant cluster with a drip curtain, balanced by the swoosh and open sage space. Scattered small stars and dot-pair eyes add mild noise but do not compete with the hero cluster."
+  },
+  "effects_editorial_context": {
+    "schema_version": 1,
+    "brief": "Shadowless scan of one wet-dyed sheet on flat sage green, landscape. Left of center, three dye-blot heads huddle: orange pumpkin, cream skull-ghost with teal eye-sockets, magenta tomato, each with green star calyx and dark eye band. Lavender-violet drips pool at bottom edge. Teal hooked swoosh arcs free. No text.",
+    "aesthetic_thesis": "A dim, painterly spooky-season nursery where one costumed mascot creature looks out from a layered, ink-washed print wall.",
+    "sources": [
+      {
+        "planned_artifact_index": 0,
+        "source_url": "https://x.com/gucci4mycat/status/2114754885161779398",
+        "title": "@gucci4mycat: Dugucci spooky collection out in 5 days on @vvvdotso Free for prev collections holders!",
+        "summary": "Dugucci spooky collection out in 5 days on @vvvdotso \n\nFree for prev collections holders!",
+        "observation": "The image is a portrait-format painted artwork with no text, logos, UI, buttons or call to action. It shows eight saturated blots that bleed and drip in orange, magenta, teal, violet and yellow on a flat muted sage-green ground, set in a loose staggered grid. The pigment has feathered edges and vertical drip streaks, which suggests a wet watercolor, ink or dye technique. Several blots have leafy green tops and dark eye- or mouth-like marks, so they read as melting fruit, pumpkin or face hybrids that fit a spooky theme. The work is visible in the pixels themselves, so this is a creative artwork, not a product or administrative image. The caption's collection launch, VVV platform and holder terms are untrusted promotional claims that I did not verify. The saved note describes 'anime-style heads', which overstates what is visible: the forms are abstract drip-painted, face-like blots.",
+        "capture_sha256": "0be2ca77a1fdbd1e3723b7bd72e6b7984b9867cad78c8e5cc331ed21bba303b1",
+        "capture_path": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/daily-process-runs/cron-1794474020143-45238/creative-inspections/0be2ca77a1fdbd1e3723b7bd72e6b7984b9867cad78c8e5cc331ed21bba303b1.jpeg",
+        "media_url": "https://pbs.twimg.com/media/HVkeJ6pXwAA-R_2.jpg?name=orig"
+      }
+    ]
+  },
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "edition_id": "2026-11-12-where-the-patch-weeps-down-v1"
+}
