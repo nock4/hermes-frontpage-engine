@@ -1,0 +1,116 @@
+{
+  "interpretation_id": "interp-2026-11-12-where-the-patch-weeps-down-v1",
+  "edition_id": "2026-11-12-where-the-patch-weeps-down-v1",
+  "plate_read_timestamp": "2026-11-12T09:08:36.506Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Landscape watercolor or dye plate on a flat sage-green ground. On the left, three dripping blot heads huddle together: an orange one at top left, a cream skull-like one with teal eye sockets at front, and a magenta one in the center. Each has a spiky green calyx and dark eye smudges. Lavender and violet drip streaks fall from the heads into a purple pool along the bottom edge. A teal hooked swoosh arcs across the upper middle-right. Small green star shapes and pairs of dark dots float in the open green space. There is no text.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Shadowless scan of one wet-dyed sheet on flat sage green, landscape. Left of center, three dye-blot heads huddle: orange pumpkin, cream skull-ghost with teal eye-sockets, magenta tomato, each with green star calyx and dark eye band. Lavender-violet drips pool at bottom edge. Teal hooked swoosh arcs free. No text.",
+      "Landscape watercolor or dye plate on a flat sage-green ground. On the left, three dripping blot heads huddle together: an orange one at top left, a cream skull-like one with teal eye sockets at front, and a magenta one in the center. Each has a spiky green calyx and dark eye smudges. Lavender and violet drip streaks fall from the heads into a purple pool along the bottom edge. A teal hooked swoosh arcs across the upper middle-right. Small green star shapes and pairs of dark dots float in the open green space. There is no text.",
+      "wet-dye-bloom",
+      "gourd-heads",
+      "drip-curtain"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Huddled dye-blot heads with calyx crowns"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "dye-gourd-garden-drip-curtain",
+      "Huddled dye-blot heads with calyx crowns pouring a lavender drip curtain",
+      "huddled dye-blot head cluster with calyx crowns",
+      "lavender-violet drip curtain under the heads",
+      "purple pooled band at the bottom edge",
+      "teal hooked swoosh arc",
+      "open sage-green negative space"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: dye-gourd-garden-drip-curtain.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-huddled-dye-blot-heads-with-calyx-cr",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.01,
+        "y": 0.02,
+        "w": 0.64,
+        "h": 0.68
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-huddled-dye-blot-heads-with-calyx-cr-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.01,
+        "y": 0.02,
+        "w": 0.64,
+        "h": 0.68
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

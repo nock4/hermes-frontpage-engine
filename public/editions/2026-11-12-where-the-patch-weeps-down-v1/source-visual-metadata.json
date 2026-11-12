@@ -1,0 +1,35 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-11-12-where-the-patch-weeps-down-v1",
+  "edition_id": "2026-11-12-where-the-patch-weeps-down-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-huddled-dye-blot-heads-with-calyx-cr",
+      "source_image_url": "https://pbs.twimg.com/media/HVkeJ6pXwAA-R_2.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-11-12-where-the-patch-weeps-down-v1/assets/source-posters/binding-hero-huddled-dye-blot-heads-with-calyx-cr.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-11-12-where-the-patch-weeps-down-v1/binding-hero-huddled-dye-blot-heads-with-calyx-cr-source-visual-qa.jpg",
+      "image_width": 1544,
+      "image_height": 2098,
+      "aspect_ratio": 0.7359,
+      "render_mode": "poster-crop",
+      "crop_risk": "high",
+      "focal_point": {
+        "x": 0.4997,
+        "y": 0.5055
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2931,
+        "width": 1.0,
+        "height": 0.4137
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.05646,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}
