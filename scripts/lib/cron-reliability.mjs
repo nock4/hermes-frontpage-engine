@@ -92,6 +92,10 @@ export function selectRecovery(records, expectedDate) {
   const pending = collapseRecoveryRecords(records)
     .filter(({ summary: s }) => s.local_edition_id || s.push_succeeded === true)
     .filter(({ summary: s }) => s.ok !== true || s.local_edition_id?.startsWith(expectedDate))
+    // A prior day's edition that was already pushed is published. Its failed
+    // post-push proof cannot be repaired by today's press, so it stays on disk
+    // as evidence but must not stop today's edition from being made.
+    .filter(({ summary: s }) => !(s.push_succeeded === true && s.local_edition_id && !s.local_edition_id.startsWith(`${expectedDate}-`)))
   if (!pending.length) return {}
   if (pending.length !== 1) throw new Error('ambiguous recovery checkpoints; preserve evidence and reconcile explicitly')
   const { file, summary: s } = pending[0]

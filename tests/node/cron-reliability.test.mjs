@@ -53,6 +53,12 @@ describe('recovery decisions', () => {
   it('rejects contradictory identities for the same retained run', () => {
     expect(() => selectRecovery([{ file: 'a', summary: base }, { file: 'b', summary: { ...base, local_edition_id: `${today}-different-v1` } }], today)).toThrow(/identity/)
   })
+  it('does not let a published prior-day edition with failed proof block today', () => {
+    const published = { ...base, local_edition_id: '2026-10-17-art-v1', ok: false, push_succeeded: true, commit: 'a'.repeat(40) }
+    expect(selectRecovery([{ file: 'a', summary: published }], today)).toEqual({})
+    expect(selectRecovery([{ file: 'a', summary: published }, { file: 'b', summary: { ...base, latest_run_dir: '/press/tmp/daily-process-runs/b' } }], today)).toEqual({ resumeCandidate: 'b' })
+    expect(selectRecovery([{ file: 'a', summary: published }], '2026-10-17')).toEqual({ proofOnly: 'a' })
+  })
   it('never abandons unresolved yesterday or counts old proof as today', () => {
     expect(() => selectRecovery([{ file: 'a', summary: { ...base, local_edition_id: '2026-10-17-art-v1' } }], today)).toThrow(/date/)
     const out = publicationOutcome({ ...base, local_edition_id: '2026-10-17-art-v1', ok: true, remote_matches: true, push_succeeded: true, commit: 'a'.repeat(40) }, today)
