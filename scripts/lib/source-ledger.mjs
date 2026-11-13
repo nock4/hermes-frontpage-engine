@@ -38,7 +38,7 @@ export class MaterialKeySet extends Set {
   }
 }
 
-export class SourceLedger extends MaterialKeySet {
+class SourceLedger extends MaterialKeySet {
   constructor(archiveKeys = [], supportingBlockedKeys = archiveKeys, policy = null) {
     super(archiveKeys)
     this.supportingBlocked = new MaterialKeySet(supportingBlockedKeys)
@@ -49,10 +49,6 @@ export class SourceLedger extends MaterialKeySet {
 // Keys a SUPPORTING window must avoid. Strict fallback for plain Sets.
 export function supportingLedger(recentSourceKeys) {
   return recentSourceKeys?.supportingBlocked instanceof Set ? recentSourceKeys.supportingBlocked : (recentSourceKeys || new Set())
-}
-
-export function isSupportingRepeatLedger(recentSourceKeys) {
-  return supportingLedger(recentSourceKeys) !== recentSourceKeys
 }
 
 function shiftDate(date, days) {
@@ -77,5 +73,3 @@ export function buildSourceLedger(editions, { date = null, cooldownDays = SUPPOR
     supporting_blocked_edition_ids: blocked.map(edition => edition.edition_id),
   })
 }
-
-export { tweetStatusId }
