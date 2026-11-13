@@ -80,7 +80,16 @@ function Experience({
       qaWindow.__effectsQA ??= {}
       qaWindow.__effectsQA[effect.kind] = () => s.snapshot()
     }
+    let disposed = false
+    let removeSignalCheck: (() => void) | undefined
+    if (import.meta.env.DEV && qa && effect.kind === 'resonance' && new URLSearchParams(location.search).get('signalCheck') === '1') {
+      void import('../../lib/effectSignalCheck').then(({ mountSignalCheck }) => {
+        if (!disposed) removeSignalCheck = mountSignalCheck(s, () => canvas.current?.classList.contains('is-painted') ?? false)
+      })
+    }
     return () => {
+      disposed = true
+      removeSignalCheck?.()
       s.stop()
       session.current = null
       document.removeEventListener('visibilitychange', visibility)
