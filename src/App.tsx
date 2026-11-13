@@ -404,7 +404,14 @@ function App() {
                   }).length,
                   ...sceneReactionStyle,
                 }}
-                onMouseEnter={(event) => {
+                onMouseOver={(event) => {
+                  // Enter, derived from the native event. React's onMouseEnter
+                  // skips a mouseover whose relatedTarget is another React node
+                  // and waits for that node's mouseout. When the element under a
+                  // resting pointer was removed (route change), newer Chromium
+                  // reports the surviving ancestor there and no mouseout follows,
+                  // so onMouseEnter would never fire on the new mark.
+                  if (event.relatedTarget instanceof Node && event.currentTarget.contains(event.relatedTarget)) return
                   if (dismissedPointer.current.some(point => point.x === event.clientX && point.y === event.clientY)) return
                   dismissedPointer.current = []
                   previewArtifactBinding(artifact.id, binding)
