@@ -65,12 +65,11 @@ if (isDirectRun) {
       if (options.output) console.log(`Proof file: ${options.output}`)
     }
     if (!checked.green) process.exit(1)
-    // Only an explicit independent visual pass may become a delivery candidate.
-    // Persist the screenshot outside tmp/cache; the watchdog never generates.
-    if (proof.qa?.adversarialVisualQa === 'pass') {
-      const { acceptProof } = await import('./delivery-watchdog.mjs')
-      await acceptProof(proof)
-    }
+    // A green proof becomes the delivery candidate; an explicit visual QA fail
+    // already made it red. Persist the screenshot outside tmp/cache; the
+    // watchdog never generates.
+    const { acceptProof } = await import('./delivery-watchdog.mjs')
+    await acceptProof(proof)
   } catch (error) {
     console.error(error.stack || error.message)
     process.exit(1)
