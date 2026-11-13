@@ -1559,6 +1559,7 @@ export async function inspectSourceCandidates(signalHarvest, {
     },
     source_decision_audit: sourceDecisionAudit,
     source_decision_audit_path: sourceDecisionAuditPath,
+    anchor_archive_repeats: anchorArchiveRepeats,
     source_image_fingerprints: sourceImageArtifacts.source_image_fingerprints,
     source_image_fingerprints_path: sourceImageArtifacts.source_image_fingerprints_path,
     source_image_contact_sheet_path: sourceImageArtifacts.source_image_contact_sheet_path,
@@ -1582,7 +1583,7 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
 
   await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
-  await writeJson(path.join(runDir, 'source-research.json'), { ...researchField, anchor_archive_repeats: anchorArchiveRepeats })
+  await writeJson(path.join(runDir, 'source-research.json'), researchField)
   if (anchorArchiveRepeats.length) {
     throw new Error(`Anchor archive repeat blocked: ${anchorArchiveRepeats.map(row => `${row.role} ${row.url}`).join(', ')}. The main artwork must be new; repeats are allowed only for supporting windows.`)
   }
