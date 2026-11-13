@@ -62,7 +62,7 @@ function archive(editions) {
   return getHistoricalSourceKeys({ root, fsSync: fs, sourceContentKey, date: RUN_DATE })
 }
 
-async function run({ tweetStatus = 'verified' } = {}) {
+async function run({ tweetStatus = 'verified', extraEditions = [] } = {}) {
   write('Inbox/tweets/a.md', '# Painting\nAn original painting.\nhttps://x.com/painter/status/9001\nhttps://pbs.twimg.com/media/ART.jpg\n')
   source('https://x.com/painter/status/9001', { source_type: 'tweet', image_url: 'https://pbs.twimg.com/media/ART.jpg', pixelStatus: tweetStatus })
   for (const id of ['FRESHVID001', 'COOLDOWN002', 'RECENTVID03']) { write(`00 - Capture/youtube/${id}.md`, youtube(id)); source(yt(id), { source_type: 'youtube', image_url: `https://i.ytimg.com/vi/${id}/hqdefault.jpg` }) }
@@ -77,6 +77,7 @@ async function run({ tweetStatus = 'verified' } = {}) {
   const ledger = archive([
     { id: 'prev', date: '2026-11-12', urls: [yt('RECENTVID03')] },
     { id: 'old', date: '2026-08-01', urls: [yt('COOLDOWN002')] },
+    ...extraEditions,
   ])
   const options = { inputMode: 'obsidian-allowlist', inputRoot: path.join(root, 'vault'), date: RUN_DATE, bookmarkFirst: true, bookmarkCacheDir: path.join(root, 'cache'), recentSourceKeys: ledger }
   const runDir = path.join(root, 'run')
@@ -121,5 +122,51 @@ describe('ordinary bookmark-first production orchestration with supporting repea
     await expect(research).rejects.toThrow(/blocked|expected at least/)
     // Supporting acquisition never started without an admitted fresh work.
     expect(state.captures).toEqual(['https://x.com/painter/status/9001'])
+  })
+})
+
+// Review blocker: an X post with a fresh status ID whose fetched media is
+// already archived (>30 days, so supporting-eligible) is admitted by the
+// cooldown-ledger selector but can never be the anchor. It must not end the
+// anchor lane, open the supporting lane or count toward six before the real
+// fresh X work is reached.
+describe('anchor lane counts only full-archive anchor-eligible admissions', () => {
+  // Outside the 30-day cooldown and not the previous edition: supporting-eligible, never anchor.
+  const OLD_MEDIA_EDITION = [{ id: 'older', date: '2026-07-01', urls: ['https://pbs.twimg.com/media/OLDIMG.jpg'] }]
+  const addSpentMediaRepostAndTweets = freshIndex => {
+    write('Inbox/tweets/b.md', '# Repost\nRepost of old painting.\nhttps://x.com/other/status/7001\n')
+    source('https://x.com/other/status/7001', { source_type: 'tweet', image_url: 'https://pbs.twimg.com/media/OLDIMG.jpg' })
+    for (let i = 1; i <= 8; i++) {
+      write(`Inbox/tweets/t${i}.md`, `# Work ${i}\nA painting.\nhttps://x.com/p${i}/status/80${i}\n`)
+      source(`https://x.com/p${i}/status/80${i}`, { source_type: 'tweet', image_url: `https://pbs.twimg.com/media/W${i}.jpg`, pixelStatus: i === freshIndex ? 'verified' : 'ambiguous' })
+    }
+    for (const id of ['FRESHVID011', 'FRESHVID012', 'FRESHVID013', 'FRESHVID014', 'FRESHVID015', 'FRESHVID016']) {
+      write(`00 - Capture/youtube/${id}.md`, youtube(id)); source(yt(id), { source_type: 'youtube', image_url: `https://i.ytimg.com/vi/${id}/hqdefault.jpg` })
+    }
+  }
+
+  it.each([2, 4, 6, 8])('publishes the fresh X work at queue variant %i as the anchor despite an earlier spent-media admission', async freshIndex => {
+    addSpentMediaRepostAndTweets(freshIndex)
+    const { research: pending, runDir } = await run({ tweetStatus: 'ambiguous', extraEditions: OLD_MEDIA_EDITION })
+    const research = await pending
+    const fresh = `https://x.com/p${freshIndex}/status/80${freshIndex}`
+    expect(research.anchor_research.anchor_source.url).toBe(fresh)
+    expect(research.content_sources.map(row => row.url)).toContain(fresh)
+    expect(research.anchor_archive_repeats).toEqual([])
+    const audit = JSON.parse(fs.readFileSync(path.join(runDir, 'bookmark-acquisition.json'), 'utf8'))
+    // The supporting lane opened only after the fresh work was acquired.
+    const firstSupporting = state.captures.findIndex(url => !url.startsWith('https://x.com/'))
+    if (firstSupporting >= 0) expect(state.captures.indexOf(fresh)).toBeLessThan(firstSupporting)
+    expect(audit.acquired).toBeLessThanOrEqual(24)
+    expect(state.attempts.length).toBeLessThanOrEqual(24)
+  })
+
+  it('spends zero supporting acquisitions when the only X admission has archived media', async () => {
+    addSpentMediaRepostAndTweets(0)
+    const { research: pending, runDir } = await run({ tweetStatus: 'ambiguous', extraEditions: OLD_MEDIA_EDITION })
+    await expect(pending).rejects.toThrow(/blocked|expected at least/)
+    expect(state.captures.every(url => url.startsWith('https://x.com/'))).toBe(true)
+    const audit = JSON.parse(fs.readFileSync(path.join(runDir, 'bookmark-acquisition.json'), 'utf8'))
+    expect(audit.supporting_lane_acquired).toBe(0)
   })
 })

@@ -51,6 +51,24 @@ describe('bounded acquisition continues toward desired supporting windows after 
     expect(a.log.research).toBeLessThan(24)
   })
 
+  it('keeps the anchor lane open until an anchor-eligible work admits, ignoring supporting-only admissions', async () => {
+    // tweets[0] admits under the cooldown ledger but is not anchor-eligible
+    // against the full archive (e.g. its media was published long ago).
+    const verified = new Set([tweets[0].url, tweets[3].url, ...supporting.map(r => r.url)])
+    const a = { ...adapters(verified), anchorEligible: source => source.url !== tweets[0].url }
+    const result = await acquireBookmarkArtwork({ candidates: tweets, supportingCandidates: supporting }, a)
+    expect(a.log.acquired.slice(0, 4)).toEqual(tweets.slice(0, 4).map(r => r.url))
+    expect(result.contentSources.map(r => r.url)).toEqual(expect.arrayContaining([tweets[0].url, tweets[3].url]))
+    expect(result.audit.anchor_lane_acquired).toBe(4)
+  })
+
+  it('spends no supporting acquisition when only supporting-only works admit in the anchor lane', async () => {
+    const a = { ...adapters(new Set([tweets[0].url, ...supporting.map(r => r.url)])), anchorEligible: () => false }
+    const result = await acquireBookmarkArtwork({ candidates: tweets, supportingCandidates: supporting }, a)
+    expect(a.log.acquired).toEqual(tweets.map(r => r.url))
+    expect(result.audit.supporting_lane_acquired).toBe(0)
+  })
+
   it('stops at the shared remaining allowance', async () => {
     const a = adapters(new Set([tweets[0].url]))
     await acquireBookmarkArtwork({ candidates: tweets, supportingCandidates: supporting, maxAcquisitions: 5 }, a)

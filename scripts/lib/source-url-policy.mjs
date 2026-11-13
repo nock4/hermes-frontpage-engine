@@ -239,7 +239,7 @@ export function canonicalizeSourceUrl(value) {
   if (!parsed) return String(value || '').trim().toLowerCase()
 
   let hostname = parsed.hostname.replace(/^www\./, '').toLowerCase()
-  if (hostname === 'twitter.com') hostname = 'x.com'
+  if (hostname === 'twitter.com' || hostname === 'mobile.twitter.com') hostname = 'x.com'
 
   let pathname = parsed.pathname.replace(/\/+$/, '') || '/'
   const statusMatch = pathname.match(/^\/([^/]+)\/status\/(\d+)/)
@@ -262,7 +262,10 @@ export function canonicalizeSourceUrl(value) {
   }
 
   if (hostname === 'pbs.twimg.com' && pathname.startsWith('/media/')) {
-    pathname = pathname.replace(/:(?:orig|large|small|medium|thumb)$/i, '')
+    // One asset: <id>.jpg, <id>.jpg:large, <id>?format=jpg&name=... are the
+    // same material, so the key is the bare media id.
+    pathname = pathname.replace(/:(?:orig|large|small|medium|thumb|\d+x\d+)$/i, '')
+      .replace(/\.(?:jpe?g|png|webp|gif)$/i, '')
     return `${hostname}${pathname}`.toLowerCase()
   }
 

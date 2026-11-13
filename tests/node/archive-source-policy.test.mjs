@@ -42,8 +42,8 @@ describe('archive validation: anchor never repeats, supporting windows cool down
   it('rejects a same-date anchor repeat', () => {
     expect(check([
       edition('v2', '2026-11-20', [b('https://x.com/a/status/5', 'anchor')]),
-      edition('v1', '2026-11-20', [b('https://x.com/a/status/5', 'supporting')]),
-    ])).toHaveLength(1)
+      edition('v1', '2026-11-20', [b('https://x.com/a/status/4', 'anchor'), b('https://x.com/a/status/5', 'supporting')]),
+    ])).toEqual([expect.stringMatching(/v2 anchor\/main artwork repeats archived material from v1/)])
   })
 
   it.each([
@@ -57,6 +57,27 @@ describe('archive validation: anchor never repeats, supporting windows cool down
     ])
     expect(violations).toHaveLength(1)
     expect(violations[0]).toMatch(/supporting/)
+  })
+
+  it('rejects a role-tagged edition whose bindings are all supporting (no anchor)', () => {
+    const violations = check([
+      edition('new', '2026-11-20', [b('https://x.com/a/status/1', 'supporting'), b('https://l.bandcamp.com/track/new', 'supporting')]),
+    ])
+    expect(violations).toEqual([expect.stringMatching(/new.*exactly one anchor.*found 0/)])
+  })
+
+  it('rejects a role-tagged edition with two anchors', () => {
+    const violations = check([
+      edition('new', '2026-11-20', [b('https://x.com/a/status/1', 'anchor'), b('https://l.bandcamp.com/track/new', 'anchor')]),
+    ])
+    expect(violations).toEqual([expect.stringMatching(/new.*exactly one anchor.*found 2/)])
+  })
+
+  it('leaves untagged and pre-policy editions to the existing per-binding rules', () => {
+    expect(check([
+      edition('untagged', '2026-11-20', [b('https://x.com/a/status/1'), b('https://l.bandcamp.com/track/new')]),
+      edition('legacy', '2026-11-01', [b('https://x.com/a/status/2', 'supporting')]),
+    ])).toEqual([])
   })
 
   it('rejects duplicate source families inside one edition', () => {

@@ -20,9 +20,13 @@ function interleaveByChannel(rows) {
 // applies archive, editorial, family and exact actual-media gates on every batch.
 //
 // Phase 1 (anchor lane): single-candidate steps over fresh owning works until
-// `target` (one) admits; supporting acquisition never starts before that.
+// `target` (one) ANCHOR-ELIGIBLE work admits. `adapters.anchorEligible` judges
+// that against the full archive ledger: a work admitted only as a supporting
+// window (e.g. fresh post id, long-archived media) neither ends this phase nor
+// opens the supporting lane. Supporting acquisition never starts before that.
 // Phase 2 (supporting lane): remaining anchor-lane works plus supporting
-// candidates, interleaved by channel, in small batches toward `desired` (six).
+// candidates, interleaved by channel, in small batches toward `desired` (six);
+// it also continues while no anchor-eligible work remains selected.
 // Both phases share one `maxAcquisitions` allowance (at most 24). Fewer real
 // windows is valid; nothing here pads or splits sources.
 export async function acquireBookmarkArtwork({ candidates, supportingCandidates = [], batchSize = 1, target = MIN_SOURCE_WINDOWS, desired = DESIRED_SOURCE_WINDOWS, maxAcquisitions = 24, state = {} }, adapters) {
@@ -43,18 +47,21 @@ export async function acquireBookmarkArtwork({ candidates, supportingCandidates 
     Object.assign(state, { inspected, autoresearch })
     contentSources = adapters.select(inspected, autoresearch)
   }
+  const anchorEligible = adapters.anchorEligible || (() => true)
+  const anchors = () => contentSources.filter(source => anchorEligible(source, autoresearch)).length
   let consumed = 0
-  while (contentSources.length < target && consumed < candidates.length && acquired < limit) {
+  while (anchors() < target && consumed < candidates.length && acquired < limit) {
     const batch = candidates.slice(consumed, consumed + Math.min(width, limit - acquired))
     consumed += batch.length
     await step(batch)
   }
   let supportingBatchSize = 0
-  if (contentSources.length >= target && contentSources.length < goal && acquired < limit) {
+  const short = () => contentSources.length < goal || anchors() < target
+  if (anchors() >= target && short() && acquired < limit) {
     const queue = interleaveByChannel([...candidates.slice(consumed), ...supportingCandidates])
     let offset = 0
-    while (contentSources.length < goal && offset < queue.length && acquired < limit) {
-      const size = Math.min(goal - contentSources.length, limit - acquired, MAX_SOURCE_WINDOWS)
+    while (short() && offset < queue.length && acquired < limit) {
+      const size = Math.min(Math.max(1, goal - contentSources.length), limit - acquired, MAX_SOURCE_WINDOWS)
       const batch = queue.slice(offset, offset + size)
       offset += batch.length
       supportingAcquired += batch.length
@@ -67,7 +74,7 @@ export async function acquireBookmarkArtwork({ candidates, supportingCandidates 
     audit: {
       acquired, limit, batch_size: width, supporting_batch_size: supportingBatchSize,
       anchor_lane_acquired: acquired - supportingAcquired, supporting_lane_acquired: supportingAcquired,
-      admitted: contentSources.length, target: goal,
+      admitted: contentSources.length, anchor_eligible_admitted: anchors(), target: goal,
     },
   }
 }

@@ -25,7 +25,14 @@ export function archiveSourceRepeatViolations(editions, { sourceContentKey, effe
     const prior = editions.slice(index + 1).map((item, offset) => ({ item, keys: editionKeys[index + 1 + offset] }))
     const cutoff = shiftDate(edition.date, -cooldownDays)
     const own = new MaterialKeySet()
-    for (const binding of edition.bindings || []) {
+    // A role-tagged package must name exactly one main artwork; otherwise an
+    // all-'supporting' package would escape the full-archive anchor rule.
+    const bindings = edition.bindings || []
+    if (bindings.some(binding => binding.archive_role)) {
+      const anchors = bindings.filter(binding => binding.archive_role === 'anchor').length
+      if (anchors !== 1) violations.push(`Edition ${edition.edition_id} must mark exactly one anchor binding (archive_role); found ${anchors}`)
+    }
+    for (const binding of bindings) {
       const keys = keysFor(binding)
       if (keys.some(key => own.has(key))) violations.push(`Edition ${edition.edition_id} repeats one source family in two windows: ${binding.source_url}`)
       keys.forEach(key => own.add(key))

@@ -860,6 +860,10 @@ export async function acquireBoundedBookmarkSources(signalHarvest, { candidates,
     research: sources => runSourceAutoresearch({ signalHarvest, evidenceSources: sources, apiKey, model, date, maxSources: 6, recentSourceKeys }, runDir),
     inspectRaw: (sources, research, maxInspections) => inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, recentSourceKeys, maxInspections, inspectionCacheDir: bookmarkCacheDir() }),
     select: (sources, research) => selectContentSources(sources, { recentSourceKeys, signalHarvest, autoresearch: research }),
+    // Same predicate as the post-acquisition anchor recovery, against the FULL
+    // archive ledger: only such a work may end the anchor lane.
+    anchorEligible: (source, research) => hasCreativeArtifactEvidence(source, research, signalHarvest)
+      && decideAnchorEligibility({ anchorSource: source, recentSourceKeys, autoresearch: research }).decision === 'accept',
     ...adapters,
   }
   const attempts = research => (research?.source_decisions || []).filter(row => row.inspection).length
@@ -886,6 +890,7 @@ export async function acquireBoundedBookmarkSources(signalHarvest, { candidates,
       }
     },
     select: base.select,
+    anchorEligible: base.anchorEligible,
   })
   await fs.mkdir(runDir, { recursive: true })
   const supportingChannels = supportingCandidates.reduce((counts, row) => ({ ...counts, [row.source_channel]: (counts[row.source_channel] || 0) + 1 }), {})
