@@ -12,10 +12,12 @@ import {
   youtubeId,
 } from './source-url-policy.mjs'
 import { classifyMediaUrl } from './media-url-classifier.mjs'
+import { supportingLedger } from './source-ledger.mjs'
 
 const DEFAULT_MAX_CONTENT_ITEMS = MAX_SOURCE_WINDOWS
 const DEFAULT_TARGET_CONTENT_ITEMS = DESIRED_SOURCE_WINDOWS
 const SOURCE_CHANNELS = ['youtube-like', 'nts-like', 'chrome-bookmark', 'twitter-bookmark']
+const SUPPORTING_REPEAT_RANK_PENALTY = 40
 
 export function classifySource(url) {
   const classification = classifyMediaUrl(url)
@@ -774,12 +776,18 @@ export function selectContentSources(
     }
     return null
   }
+  // Supporting windows obey the cooldown subset of the archive ledger; the
+  // anchor is decided separately against the full archive. Fresh material
+  // outranks a cooldown-eligible repeat at equal merit.
+  const archiveKeys = recentSourceKeys
+  recentSourceKeys = supportingLedger(archiveKeys)
   const ranked = [...sources]
     .filter((source) => source?.url)
     .filter((source) => !isAutoresearchExcluded(source, autoresearch))
     .filter((source) => !autoresearch || hasCreativeArtifactEvidence(source, autoresearch, signalHarvest))
     .filter((source) => sourceHasRenderableCardSurface(source, signalHarvest))
-    .map((source) => ({ source, score: sourceContentScore(source, recentSourceKeys) }))
+    .map((source) => ({ source, score: sourceContentScore(source, recentSourceKeys)
+      - (archiveKeys !== recentSourceKeys && sourceHasRecentUrlOrImage(source, archiveKeys) ? SUPPORTING_REPEAT_RANK_PENALTY : 0) }))
     .filter((entry) => Number.isFinite(entry.score))
     .sort((left, right) => right.score - left.score)
 

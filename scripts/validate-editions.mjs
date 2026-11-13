@@ -4,6 +4,8 @@ import path from 'node:path'
 import { assertPackagedOriginalImages } from './lib/original-image-delivery.mjs'
 import { MIN_SOURCE_WINDOWS, MAX_SOURCE_WINDOWS } from '../src/lib/sourceWindowCountContract.mjs'
 import { canonicalizeSourceUrl } from './lib/source-url-policy.mjs'
+import { archiveSourceRepeatViolations } from './lib/archive-source-policy.mjs'
+import { sourceContentKey } from './lib/source-selection-policy.mjs'
 
 const root = process.cwd()
 const editionsRoot = path.join(root, 'public', 'editions')
@@ -105,6 +107,15 @@ for (const item of manifest.editions) {
     }
   }
 }
+
+// Archive material policy (2026-11-13): anchor/main artwork never repeats any
+// earlier edition; supporting windows only after the cooldown and never from
+// the previous edition. Legacy editions before the policy start are not rewritten.
+errors.push(...archiveSourceRepeatViolations(manifest.editions.map(item => ({
+  edition_id: item.edition_id,
+  date: item.date,
+  bindings: JSON.parse(fs.readFileSync(path.join(root, 'public', item.path.replace(/^\//, ''), 'source-bindings.json'), 'utf8')).bindings || [],
+})), { sourceContentKey }))
 
 if (warnings.length) {
   console.warn(warnings.join('\n'))

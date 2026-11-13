@@ -1,7 +1,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { createHash } from 'node:crypto'
-import { canonicalizeSourceUrl, extractUrls } from './source-url-policy.mjs'
+import { canonicalizeSourceUrl, extractUrls, isYouTubeVideoUrl } from './source-url-policy.mjs'
+import { extractNtsStreamingSourceRows, normalizeNoteUrls } from './signal-adapters/obsidian-allowlist-adapter.mjs'
 
 const options = JSON.parse(fs.readFileSync(0, 'utf8'))
 const { inputRoot, cacheDir } = options
@@ -19,12 +20,14 @@ const materialKey = url => {
   return tweet ? `tweet:${tweet[1]}` : canonical
 }
 const ledger = new Set((options.recentSourceKeys || []).map(materialKey))
+// Supporting windows obey only the cooldown subset; absent subset = strict.
+const supportingBlocked = new Set((options.supportingBlockedKeys || options.recentSourceKeys || []).map(materialKey))
 let state = { version: 1, entries: {}, after: null }
 try { state = JSON.parse(fs.readFileSync(statePath, 'utf8')) } catch (e) { if (e.code !== 'ENOENT') throw e }
 if (state.version !== 1) throw new Error('Unsupported bookmark metadata cache version')
 const files = []
 let directories = 0
-function walk(relative) {
+function walk(relative, into = files) {
   if (++directories > 1000) throw new Error('Bookmark directory budget exceeded (1000); narrow saved-content folders')
   const full = path.join(inputRoot, relative)
   progress('readdir', full)
@@ -33,9 +36,9 @@ function walk(relative) {
   for (const entry of entries) {
     if (entry.name.startsWith('.')) continue
     const rel = path.join(relative, entry.name)
-    if (entry.isDirectory()) walk(rel)
-    else if (entry.isFile() && entry.name.endsWith('.md')) files.push(rel)
-    if (files.length > 10000) throw new Error('Bookmark metadata budget exceeded (10000 files); narrow saved-content folders')
+    if (entry.isDirectory()) walk(rel, into)
+    else if (entry.isFile() && entry.name.endsWith('.md')) into.push(rel)
+    if (into.length > 10000) throw new Error('Bookmark metadata budget exceeded (10000 files); narrow saved-content folders')
   }
 }
 // Explicit saved lanes only; no recursive whole-vault walk or incidental links.
@@ -127,11 +130,93 @@ for (const relative of queue) {
   notes.push({ ...note, text: note.excerpt })
   if (notes.length >= maxNotes) break
 }
+// Supporting lane (2026-11-13 policy): after the fresh X anchor queue, nominate
+// a bounded, channel-interleaved set of saved YouTube likes, NTS/Bandcamp/
+// SoundCloud map rows (existing high/medium filter) and authorized
+// manual-curation notes. Cooldown-eligible archive repeats may appear here as
+// supporting-only nominations; nothing here confers eligibility.
+const MAX_SUPPORTING_NOMINATIONS = 18
+const supportingDirs = [['00 - Capture/youtube', 'youtube-like'], ['Inbox/youtube', 'youtube-like'], ['00 - Capture/frontpage-intake', 'manual-curation']]
+const supportingMapFiles = ['00 - Capture/nts-liked-tracks-source-map.md', '00 - Capture/nts-liked-tracks-source-map-batch-1.md', '00 - Capture/nts-liked-tracks-source-map-batch-2.md', '00 - Capture/nts-liked-tracks-source-map-batch-3.md', 'Inbox/nts-liked-tracks-source-map.md', 'Inbox/nts-liked-tracks-source-map-batch-1.md', 'Inbox/nts-liked-tracks-source-map-batch-2.md', 'Inbox/nts-liked-tracks-source-map-batch-3.md']
+const supportingFiles = []
+for (const [dir, channel] of supportingDirs) {
+  const found = []
+  walk(dir, found)
+  supportingFiles.push(...found.sort().map(relative => [relative, channel]))
+}
+for (const relative of supportingMapFiles) {
+  try { if (fs.statSync(path.join(inputRoot, relative)).isFile()) supportingFiles.push([relative, 'nts-like']) } catch (e) { if (e.code !== 'ENOENT') throw e }
+}
+const taken = new Set(notes.map(note => materialKey(note.urls[0])))
+const supportingByChannel = new Map()
+const supportingAudit = {}
+for (const [relative, channel] of supportingFiles) {
+  const full = path.join(inputRoot, relative)
+  progress('stat', full)
+  const stat = fs.statSync(full)
+  if (stat.size > 524288) throw new Error(`Supporting saved-note metadata oversized: ${relative}`)
+  metadataBytes += stat.size
+  if (metadataBytes > maxMetadataBytes) throw new Error('Saved-note metadata exceeds 32 MiB indexing budget; no partial nomination issued')
+  progress('readFile', full)
+  const text = fs.readFileSync(full, 'utf8')
+  const title = text.match(/^---[\s\S]*?\ntitle:\s*["']?(.+?)["']?\s*\n[\s\S]*?---/m)?.[1] || text.match(/^#\s+(.+)$/m)?.[1] || path.basename(relative, '.md')
+  const frontmatterUrl = text.match(/^---\r?\n[\s\S]*?^\s*(?:url|source_url|source):\s*["']?(https?:\/\/[^\s"']+)/m)?.[1]
+  const explicitSource = text.match(/^\s*Source:\s*(https?:\/\/\S+)/im)?.[1]
+  let entries = []
+  if (channel === 'nts-like') {
+    entries = extractNtsStreamingSourceRows(text).map(row => ({ url: row.url, rows: [{ ...row, evidence_origin: 'saved-note-row', note_path: relative, note_title: title }] }))
+  } else if (channel === 'youtube-like') {
+    const url = [frontmatterUrl, ...normalizeNoteUrls(extractUrls(text), channel)].filter(Boolean).find(isYouTubeVideoUrl)
+    if (url) entries = [{ url }]
+  } else {
+    const allowed = normalizeNoteUrls(extractUrls(text), channel)
+    const url = [explicitSource, frontmatterUrl].filter(Boolean).map(value => value.replace(/[)>\].,]+$/, '')).find(value => allowed.includes(value)) || allowed[0]
+    if (url) entries = [{ url }]
+  }
+  const audit = supportingAudit[channel] ||= { files: 0, urls: 0, cooldown_blocked: 0, fresh: 0, repeat_eligible: 0, nominated: 0 }
+  audit.files += 1
+  for (const entry of entries) {
+    audit.urls += 1
+    const key = materialKey(entry.url)
+    if (supportingBlocked.has(key)) { audit.cooldown_blocked += 1; continue }
+    if (taken.has(key)) continue
+    taken.add(key)
+    const repeat = ledger.has(key)
+    audit[repeat ? 'repeat_eligible' : 'fresh'] += 1
+    const lane = supportingByChannel.get(channel) || []
+    lane.push({
+      id: hash(`${relative}\n${entry.url}`).slice(0, 12), source_channel: channel,
+      title, note_date: stat.mtime.toISOString().slice(0, 10), excerpt: text.slice(0, 6000).replace(/\|[^\n]*\|\n?/g, ''),
+      urls: [entry.url], source_path: relative, path: relative, score: 0,
+      ...(entry.rows ? { source_map_rows: entry.rows } : {}),
+      intake_lane: 'supporting', supporting_repeat_eligible: repeat,
+      metadata: { adapter: 'supporting-lane', stat_mtime: stat.mtime.toISOString(), note_sha256: hash(text), attached_media_urls: [] },
+      order: `${repeat ? 1 : 0}:${hash(`${options.date || ''}:${key}`)}`,
+    })
+    supportingByChannel.set(channel, lane)
+  }
+}
+// Fresh first, then a deterministic per-day rotation so failed nominations do
+// not starve the same lane every morning; round-robin channels to the cap.
+const lanes = [...supportingByChannel.entries()].sort(([a], [b]) => a.localeCompare(b))
+  .map(([, lane]) => lane.sort((a, b) => a.order.localeCompare(b.order)))
+const supportingNotes = []
+for (let index = 0; supportingNotes.length < MAX_SUPPORTING_NOMINATIONS && lanes.some(lane => index < lane.length); index += 1) {
+  for (const lane of lanes) {
+    if (index < lane.length && supportingNotes.length < MAX_SUPPORTING_NOMINATIONS) {
+      const { order, ...note } = lane[index]
+      supportingNotes.push({ ...note, text: note.excerpt })
+      supportingAudit[note.source_channel].nominated += 1
+    }
+  }
+}
 fs.mkdirSync(cacheDir, { recursive: true })
 const temporary = `${statePath}.${process.pid}.tmp`
 fs.writeFileSync(temporary, JSON.stringify(state))
 fs.renameSync(temporary, statePath)
-process.stdout.write(JSON.stringify({ input_root: inputRoot, notes, markdown_files_seen: files.length,
+process.stdout.write(JSON.stringify({ input_root: inputRoot, notes, supporting_notes: supportingNotes,
+  supporting_audit: { max_nominations: MAX_SUPPORTING_NOMINATIONS, cooldown_ledger: Boolean(options.supportingBlockedKeys), channels: supportingAudit },
+  markdown_files_seen: files.length,
   selection_filters: ['Bookmark-first bounded saved-note intake; metadata is nomination only; archive and actual-media gates required.'],
   looked_for: ['unused owning X/Twitter bookmarks'],
   audit: { notes_read: notesRead, metadata_reads: notesRead, metadata_bytes_read: metadataBytes, metadata_coverage_complete: true, nomination_lanes: [0, 1, 2, 3].map(lane => ({ lane, unused: fresh.filter(relative => nominationLane(state.entries[relative].note) === lane).length })), cached_notes: Object.keys(state.entries).length, unused_cached_notes: fresh.length, metadata_files: files.length, max_metadata_files: 10000, max_metadata_bytes: maxMetadataBytes, max_notes: maxNotes, cache_path: statePath },

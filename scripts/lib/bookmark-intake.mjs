@@ -15,7 +15,11 @@ export function runVaultWorker(options, { timeoutMs = 20000, workerCode } = {}) 
     child.stdout.on('data', chunk => { stdout += chunk; if (stdout.length > 8_000_000) { oversized = true; child.kill('SIGKILL') } })
     child.stderr.on('data', chunk => { lastOperation = (lastOperation + chunk).slice(-2000) })
     child.stdin.on('error', () => {})
-    child.stdin.end(JSON.stringify({ ...options, recentSourceKeys: [...(options.recentSourceKeys || [])] }))
+    child.stdin.end(JSON.stringify({
+      ...options,
+      recentSourceKeys: [...(options.recentSourceKeys || [])],
+      ...(options.recentSourceKeys?.supportingBlocked ? { supportingBlockedKeys: [...options.recentSourceKeys.supportingBlocked] } : {}),
+    }))
     const timer = setTimeout(() => { timedOut = true; child.kill('SIGKILL') }, timeoutMs)
     child.once('error', error => { clearTimeout(timer); reject(error) })
     child.once('close', code => {

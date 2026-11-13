@@ -222,7 +222,7 @@ export async function mineSignals({
   })
 
   const normalizedDiversityAvoidTerms = normalizeDiversityTerms(diversityAvoidTerms)
-  const selectedNotes = (boundedBookmarks ? loaded.notes : selectRecentSignalNotes(loaded.notes, maxNotes, {
+  const selectedNotes = (boundedBookmarks ? [...loaded.notes, ...(loaded.supporting_notes || [])] : selectRecentSignalNotes(loaded.notes, maxNotes, {
     diversityAvoidTerms: normalizedDiversityAvoidTerms,
     recentSourceKeys,
   }))
@@ -251,6 +251,12 @@ export async function mineSignals({
         note_diversity_penalty: note.diversity_penalty || 0,
         note_historical_source_penalty: note.historical_source_penalty || 0,
         source_repeated_in_archive: recentSourceKeys.has(canonicalizeSourceUrl(url)),
+        ...(boundedBookmarks ? {
+          // anchor lane = fresh owning X works; supporting lane = other saved
+          // channels, where cooldown-eligible repeats are supporting-only.
+          intake_lane: note.intake_lane || 'anchor',
+          supporting_repeat_eligible: note.intake_lane === 'supporting' && recentSourceKeys.has(canonicalizeSourceUrl(url)),
+        } : {}),
       })
     }
   }
@@ -266,6 +272,7 @@ export async function mineSignals({
     selection_policy: {
       bookmark_first: boundedBookmarks,
       bookmark_intake: loaded.audit || null,
+      ...(boundedBookmarks ? { supporting_intake: loaded.supporting_audit || null, ledger_policy: recentSourceKeys.policy || null } : {}),
       ...(reserveNotes ? { prepared_reserve: { set_id: preparedReserve.claim.set.set_id, created_at: preparedReserve.claim.set.created_at, expires_at: preparedReserve.claim.set.expires_at, claim_file: preparedReserve.claim.file } } : {}),
       selected_count: boundedBookmarks ? selectedNotes.length : maxNotes,
       filters: loaded.selection_filters,

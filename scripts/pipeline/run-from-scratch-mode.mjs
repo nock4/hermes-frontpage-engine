@@ -69,8 +69,10 @@ export async function runFromScratchMode({
   const rawRecentEditions = sampleMode ? [] : getRecentEditionSummaries(recentDiversityEditionCount)
   const recentEditions = rawRecentEditions
   const sameDateLedgerExclusion = historicalSourceKeyOptionsForRun(options)
+  // Full archive for the anchor; supporting windows get the dated cooldown
+  // subset (SUPPORTING_REPEAT_COOLDOWN_DAYS + previous edition).
   const recentSourceKeys = sampleMode ? new Set() : (getHistoricalSourceKeys
-    ? getHistoricalSourceKeys(sameDateLedgerExclusion)
+    ? getHistoricalSourceKeys({ ...sameDateLedgerExclusion, date: options.date || null })
     : getRecentSourceKeys(recentEditions))
   const recentDiversityAvoidTerms = sampleMode ? [] : getRecentDiversityAvoidTerms(recentEditions)
   const diversityDirective = sampleMode

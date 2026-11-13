@@ -14,7 +14,7 @@ import {
 import { buildInspirationOverrideVisualReference } from './inspiration-override.mjs'
 import { buildJevDecisionPayload, callJevDecisionWithFallback, shouldUseJevDecisionModel } from './decision-model.mjs'
 import { openAiJson } from './openai-json.mjs'
-import { buildSourceDecisionAudit, decideAnchorEligibility, decideVisualAnchorAction, writeSourceDecisionAudit } from './source-decision-gates.mjs'
+import { buildSourceDecisionAudit, decideAnchorEligibility, decideVisualAnchorAction, findAnchorArchiveRepeats, writeSourceDecisionAudit } from './source-decision-gates.mjs'
 import { getSourceDisplayTitle } from './source-display.mjs'
 import { isLowFertilitySourceFingerprint, isLowFertilitySourceImageCandidate, screenSourceImageMaterial, writeSourceImageArtifacts } from './source-image-fingerprints.mjs'
 import { sanitizeSourceText } from './source-text.mjs'
@@ -37,6 +37,7 @@ import {
   visualReferenceScore,
 } from './source-selection-policy.mjs'
 import { uniqueNonEmpty } from './string-utils.mjs'
+import { supportingLedger } from './source-ledger.mjs'
 
 const root = process.cwd()
 const minContentItems = MIN_SOURCE_WINDOWS
@@ -260,7 +261,11 @@ function researchEvidenceForSource(source, index, { recentSourceKeys = new Set()
     note_excerpt: sanitizeSourceText(note?.excerpt, '', 600),
     renderable_surface: sourceHasRenderableCardSurface(source, { notes_selected: note ? [note] : [] }),
     recent_duplicate: recentSourceKeys.has(sourceContentKey(source)),
-    evidence_score: Math.round(sourceContentScore(source, recentSourceKeys)),
+    // Previously published, but outside the supporting cooldown: eligible only
+    // as a supporting window, never as the anchor/main artwork.
+    supporting_repeat_eligible: recentSourceKeys.has(sourceContentKey(source))
+      && !supportingLedger(recentSourceKeys).has(sourceContentKey(source)),
+    evidence_score: Math.round(sourceContentScore(source, supportingLedger(recentSourceKeys))),
     aesthetic_score: Math.round(aestheticScore),
     selection_bias: aestheticScore >= 20 ? 'creative-art-visual' : aestheticScore < 0 ? 'infrastructure-or-low-visual' : 'neutral',
   }
@@ -521,12 +526,13 @@ function normalizeAutoresearchSelection(autoresearch, evidenceSources, {
   const selected = []
   const seen = new Set()
   const seenTwitterNotes = new Set()
+  const supportingKeys = supportingLedger(recentSourceKeys)
   const addSource = (source) => {
     if (!source || selected.length >= maxSources) return
     if (isAutoresearchExcluded(source, autoresearch) || isAiToolingContentSource(source, signalHarvest)) return
     const key = sourceContentKey(source)
     if (!key || seen.has(key)) return
-    if (recentSourceKeys.has(key)) return
+    if (supportingKeys.has(key)) return
     if (source.source_channel === 'twitter-bookmark') {
       const twitterNoteKey = source.note_id || source.note_title || source.note_path
       if (twitterNoteKey && seenTwitterNotes.has(twitterNoteKey)) return
@@ -549,7 +555,7 @@ function normalizeAutoresearchSelection(autoresearch, evidenceSources, {
   for (const source of deterministicContent) addSource(source)
 
   const rankedFallback = [...evidenceSources]
-    .map((source) => ({ source, score: sourceContentScore(source, recentSourceKeys) }))
+    .map((source) => ({ source, score: sourceContentScore(source, supportingKeys) }))
     .filter((entry) => Number.isFinite(entry.score))
     .sort((left, right) => right.score - left.score)
   for (const { source } of rankedFallback) addSource(source)
@@ -621,6 +627,7 @@ async function runSourceAutoresearch({
     hard_rules: [
       ...(signalHarvest.selection_policy?.bookmark_first ? ['Bookmark-first policy: assess each saved owning work independently. Nominate creative works as content for actual-media validation; do not demote a work to supporting merely for lacking thematic coherence or links to an anchor. This is a small refill batch, not the whole reserve. Preserve substantive editorial exclusions; metadata never confers eligibility. Do not discover or request outside sources.'] : []),
       'Use only URLs present in candidate_sources. Do not invent outside URLs.',
+      'A candidate with supporting_repeat_eligible=true already appeared in an older edition: it may be nominated as content for a supporting window, but never as the anchor or visual_reference. Do not reject it merely for having appeared before.',
       'These are text nominations, not verified visual eligibility. Never return an inspection record; actual media is independently captured and inspected after nomination.',
       'Public content must come only from recent saved-signal channels: Twitter bookmarks, YouTube likes, NTS resolved streaming sources, Chrome bookmarks, and explicitly authorized saved manual-curation nominations. Manual-curation is a nomination channel, not proof of creative eligibility; preserve its provenance and apply the same actual-media inspection, editorial exclusions, and archive-repeat gates.',
       'Never select local files, text documents, NTS pages, unresolved search locators, or URLs that are not in the candidate list.',
@@ -826,15 +833,21 @@ export function discoverObservedOwnerProjectLinks(source, { maxLinks = 1, canAcq
 // single-candidate steps, stopping at the first admitted work. Also used by the source-only reserve preparation CLI.
 // `budget` is the run's shared 24-acquisition / 24-inspection allowance: a
 // prepared-reserve attempt and its fresh fallback draw on one budget, never 48.
-export async function acquireBoundedBookmarkSources(signalHarvest, { candidates, runDir, apiKey, model, date, recentSourceKeys = new Set(), budget = { acquisitions: 0, inspections: 0 }, state = {}, adapters = {} }) {
-  candidates ||= signalHarvest.source_candidates.filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys))).slice(0, 24)
+// Ordinary runs pass `supportingCandidates` and `desired` (six): once the fresh
+// anchor-lane work admits, the same shared 24/24 budget continues across
+// channels. Reserve preparation keeps the default one-work stop.
+export async function acquireBoundedBookmarkSources(signalHarvest, { candidates, supportingCandidates = [], desired = MIN_SOURCE_WINDOWS, runDir, apiKey, model, date, recentSourceKeys = new Set(), budget = { acquisitions: 0, inspections: 0 }, state = {}, adapters = {} }) {
+  candidates ||= signalHarvest.source_candidates.filter(source => source.intake_lane !== 'supporting'
+    && Number.isFinite(sourceContentScore(source, recentSourceKeys))).slice(0, 24)
   const attempted = new Set(state.attempted || [])
-  candidates = candidates.filter(source => {
+  const unattempted = source => {
     const key = sourceContentKey(source)
     if (!key || attempted.has(key)) return false
     attempted.add(key)
     return true
-  })
+  }
+  candidates = candidates.filter(unattempted)
+  supportingCandidates = supportingCandidates.filter(unattempted)
   const base = {
     acquire: async batch => {
       const sources = []
@@ -850,7 +863,7 @@ export async function acquireBoundedBookmarkSources(signalHarvest, { candidates,
     ...adapters,
   }
   const attempts = research => (research?.source_decisions || []).filter(row => row.inspection).length
-  const bounded = await acquireBookmarkArtwork({ candidates, state, maxAcquisitions: Math.max(0, 24 - budget.acquisitions) }, {
+  const bounded = await acquireBookmarkArtwork({ candidates, supportingCandidates, desired, state, maxAcquisitions: Math.max(0, 24 - budget.acquisitions) }, {
     acquire: async batch => {
       // Charge before I/O: an interrupted batch must not refund its allowance.
       budget.acquisitions += batch.length
@@ -875,9 +888,10 @@ export async function acquireBoundedBookmarkSources(signalHarvest, { candidates,
     select: base.select,
   })
   await fs.mkdir(runDir, { recursive: true })
-  await writeJson(path.join(runDir, 'bookmark-acquisition.json'), { ...bounded.audit, shared_budget: { ...budget } })
-  await writeJson(path.join(runDir, 'source-intake-snapshot.json'), { schema_version: 1, signal_harvest: signalHarvest, recent_source_keys: [...recentSourceKeys], initial_candidates: candidates, fetch_sources: bounded.inspected, limits: bounded.audit })
-  return { candidates, ...bounded }
+  const supportingChannels = supportingCandidates.reduce((counts, row) => ({ ...counts, [row.source_channel]: (counts[row.source_channel] || 0) + 1 }), {})
+  await writeJson(path.join(runDir, 'bookmark-acquisition.json'), { ...bounded.audit, supporting_candidates: supportingCandidates.length, supporting_candidate_channels: supportingChannels, ledger_policy: recentSourceKeys.policy || null, shared_budget: { ...budget } })
+  await writeJson(path.join(runDir, 'source-intake-snapshot.json'), { schema_version: 1, signal_harvest: signalHarvest, recent_source_keys: [...recentSourceKeys], supporting_blocked_keys: [...supportingLedger(recentSourceKeys)], initial_candidates: candidates, supporting_candidates: supportingCandidates, fetch_sources: bounded.inspected, limits: bounded.audit })
+  return { candidates, supportingCandidates, ...bounded }
 }
 
 export async function inspectSourceCandidates(signalHarvest, {
@@ -898,7 +912,10 @@ export async function inspectSourceCandidates(signalHarvest, {
   // before spending pixel attempts. Previously its lower-ranked artwork arrived
   // only after the 24-attempt cap had already been consumed by the first 320.
   const supplementalCandidates = bookmarkFirst ? [] : selectSourceCandidatesForInspection(signalHarvest, Math.max(maxSources * 4, maxSources + minContentItems), { recentSourceKeys })
-  const candidates = bookmarkFirst ? signalHarvest.source_candidates.filter(source => Number.isFinite(sourceContentScore(source, recentSourceKeys))).slice(0, 24) : [...new Map([
+  // Anchor lane: fresh owning works only (full archive ledger). Supporting lane:
+  // multi-channel saved work under the supporting cooldown ledger.
+  const candidates = bookmarkFirst ? signalHarvest.source_candidates.filter(source => source.intake_lane !== 'supporting'
+    && Number.isFinite(sourceContentScore(source, recentSourceKeys))).slice(0, 24) : [...new Map([
     ...selectSourceCandidatesForInspection(signalHarvest, candidateLimit, { recentSourceKeys }),
     ...supplementalCandidates,
   ].map(source => [sourceContentKey(source), source])).values()]
@@ -921,7 +938,10 @@ export async function inspectSourceCandidates(signalHarvest, {
     : null
   let contentSources = []
   if (bookmarkFirst) {
-    const bounded = await acquireBoundedBookmarkSources(signalHarvest, { candidates, runDir, apiKey, model, date, recentSourceKeys, budget: bookmarkBudget })
+    const supportingKeys = supportingLedger(recentSourceKeys)
+    const supportingCandidates = signalHarvest.source_candidates.filter(source => source.intake_lane === 'supporting'
+      && Number.isFinite(sourceContentScore(source, supportingKeys)))
+    const bounded = await acquireBoundedBookmarkSources(signalHarvest, { candidates, supportingCandidates, desired: DESIRED_SOURCE_WINDOWS, runDir, apiKey, model, date, recentSourceKeys, budget: bookmarkBudget })
     inspected = bounded.inspected
     fetchEvidence = bounded.inspected
     autoresearch = bounded.autoresearch
@@ -1491,6 +1511,11 @@ export async function inspectSourceCandidates(signalHarvest, {
   const visualReference = inspirationOverride
     ? buildInspirationOverrideVisualReference(inspirationOverride, { fallback: imageMaterialReference || safeDiscoveredVisualReference })
     : imageMaterialReference || safeDiscoveredVisualReference
+  // Main artwork stays one-use: the anchor, dominant plate seed and visual
+  // reference may never repeat anything in the full archive (any age/date).
+  const anchorArchiveRepeats = findAnchorArchiveRepeats({
+    anchorSource, selectedImageMaterial: imageSourceMaterial.selected_image_material, visualReference,
+  }, recentSourceKeys)
   const sourceFloorDiagnostics = buildSourceFloorDiagnostics({
     inspected,
     fetchEvidence,
@@ -1557,7 +1582,10 @@ export async function inspectSourceCandidates(signalHarvest, {
   }
 
   await writeJson(path.join(runDir, 'image-source-material.json'), imageSourceMaterial)
-  await writeJson(path.join(runDir, 'source-research.json'), researchField)
+  await writeJson(path.join(runDir, 'source-research.json'), { ...researchField, anchor_archive_repeats: anchorArchiveRepeats })
+  if (anchorArchiveRepeats.length) {
+    throw new Error(`Anchor archive repeat blocked: ${anchorArchiveRepeats.map(row => `${row.role} ${row.url}`).join(', ')}. The main artwork must be new; repeats are allowed only for supporting windows.`)
+  }
   if (sourceDecisionAudit.status === 'blocked') {
     const reasons = sourceDecisionAudit.hard_blockers.map((blocker) => blocker.reason_code).join(', ')
     throw new Error(`Source decision gate blocked image generation: ${reasons}. See ${path.relative(root, sourceDecisionAuditPath)}.`)
