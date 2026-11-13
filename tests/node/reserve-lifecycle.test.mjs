@@ -31,6 +31,9 @@ it('partial preparation advances bounded intake and retains proof under one aggr
       research: async () => ({ tool: 'deterministic-fallback', source_decisions: [] }),
       inspectRaw: async (sources, research, allowance) => ({ ...research, source_decisions: [...research.source_decisions, ...sources.slice(0, allowance).map(s => ({ url: s.url, inspection: { status: 'verified', confidence: 'high', source_url: s.url, media_url: s.image_url, capture_sha256: 'a'.repeat(64) } }))] }),
       select: (sources, research) => sources.filter(s => research.source_decisions.some(r => r.url === s.url && r.inspection?.status === 'verified')).slice(0, 6),
+      // Synthetic stamps carry no capture file, so the synthetic admission
+      // adapter also stands in for the paired anchor-eligibility predicate.
+      anchorEligible: () => true,
     }
     const deps = {
       completeLedger: async () => ({ keys: new Set(), ref: 'origin/main', ref_commit: 'abc' }),

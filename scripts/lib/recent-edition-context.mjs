@@ -1,5 +1,6 @@
 import crypto from 'node:crypto'
 import path from 'node:path'
+import { buildSourceLedger, SUPPORTING_REPEAT_COOLDOWN_DAYS } from './source-ledger.mjs'
 
 export function loadManifest({ root, fsSync }) {
   const manifestPath = path.join(root, 'public', 'editions', 'index.json')
@@ -34,7 +35,7 @@ export function getRecentEditionSummaries({ root, fsSync, sourceContentKey, limi
   })
 }
 
-function sourceKeysForBindings(bindings, sourceContentKey) {
+export function sourceKeysForBindings(bindings, sourceContentKey) {
   return [...new Set((bindings || []).flatMap((binding) => [
     // A preferred source identity is not the full set of spent redirect aliases.
     sourceContentKey({ url: binding.source_url }),
@@ -49,9 +50,11 @@ export function getRecentSourceKeys(recentEditions) {
   return new Set(recentEditions.flatMap((edition) => edition.source_keys || []))
 }
 
-export function getHistoricalSourceKeys({ root, fsSync, sourceContentKey, excludeDates = [], excludeEditionIds = [] }) {
+// Full archive ledger (anchor strictness) plus the supporting-window cooldown
+// subset. Without a run `date` the supporting subset equals the full archive.
+export function getHistoricalSourceKeys({ root, fsSync, sourceContentKey, excludeDates = [], excludeEditionIds = [], date = null, cooldownDays = SUPPORTING_REPEAT_COOLDOWN_DAYS }) {
   const manifest = loadManifest({ root, fsSync })
-  const keys = []
+  const editions = []
   const excludedDates = new Set(excludeDates.filter(Boolean))
   const excludedEditionIds = new Set(excludeEditionIds.filter(Boolean))
   for (const item of manifest.editions || []) {
@@ -59,9 +62,9 @@ export function getHistoricalSourceKeys({ root, fsSync, sourceContentKey, exclud
     if (excludedDates.has(item.date)) continue
     const editionDir = path.join(root, 'public', item.path.replace(/^\//, ''))
     const sourceBindings = readJsonSyncIfExists(path.join(editionDir, 'source-bindings.json'), { fsSync })
-    keys.push(...sourceKeysForBindings(sourceBindings?.bindings || [], sourceContentKey))
+    editions.push({ edition_id: item.edition_id, date: item.date || null, keys: sourceKeysForBindings(sourceBindings?.bindings || [], sourceContentKey) })
   }
-  return new Set(keys)
+  return buildSourceLedger(editions, { date, cooldownDays })
 }
 
 export function getRecentDiversityAvoidTerms(recentEditions, limit = 16) {

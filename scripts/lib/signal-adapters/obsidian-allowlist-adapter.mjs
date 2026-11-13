@@ -108,7 +108,7 @@ function parseMarkdownTableCells(line) {
   return trimmed.slice(1, -1).split('|').map((cell) => cell.trim())
 }
 
-function extractNtsStreamingSourceRows(text) {
+export function extractNtsStreamingSourceRows(text) {
   const rows = []
   for (const line of text.split('\n')) {
     const cells = parseMarkdownTableCells(line)
