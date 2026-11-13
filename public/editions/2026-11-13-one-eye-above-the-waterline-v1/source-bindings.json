@@ -1,0 +1,53 @@
+{
+  "source_binding_set_id": "bindings-2026-11-13-one-eye-above-the-waterline-v1",
+  "bindings": [
+    {
+      "id": "binding-hero-amber-beast-eye-with-red-flecks-in-a",
+      "artifact_id": "hero-amber-beast-eye-with-red-flecks-in-a",
+      "source_type": "tweet",
+      "source_url": "https://x.com/gucci4mycat/status/2113373323665064173",
+      "window_type": "social",
+      "hover_behavior": "preview",
+      "click_behavior": "pin-open",
+      "playback_persistence": true,
+      "fallback_type": "rich-preview",
+      "title": "@gucci4mycat: Halloween special will be free for holders of my prev collections",
+      "kicker": "x.com",
+      "excerpt": "Halloween special will be free for holders of my prev collections",
+      "source_title": "@gucci4mycat: Halloween special will be free for holders of my prev collections",
+      "source_summary": "Halloween special will be free for holders of my prev collections",
+      "source_domain": "x.com",
+      "source_meta": "@gucci4mycat: Halloween special will be free for holders of my prev collections https://x.com/gucci4mycat/status/2",
+      "source_image_url": "https://pbs.twimg.com/media/HVQ1YPjXUAA8L5F.jpg?name=orig",
+      "source_image_aliases": [
+        "https://pbs.twimg.com/media/HVQ1YPjXUAA8L5F.jpg?name=orig"
+      ],
+      "source_image_alt": "@gucci4mycat: Halloween special will be free for holders of my prev collections",
+      "source_media_url": "https://pbs.twimg.com/media/HVQ1YPjXUAA8L5F.jpg?name=orig",
+      "source_media_type": "image",
+      "source_visual": {
+        "poster_asset_path": "/editions/2026-11-13-one-eye-above-the-waterline-v1/assets/source-posters/binding-hero-amber-beast-eye-with-red-flecks-in-a.jpg",
+        "render_mode": "poster-crop",
+        "crop_risk": "medium",
+        "focal_point": {
+          "x": 0.5102,
+          "y": 0.3743
+        },
+        "poster_crop": {
+          "x": 0.0,
+          "y": 0.2306,
+          "width": 1.0,
+          "height": 0.4218
+        },
+        "image_width": 1620,
+        "image_height": 2160,
+        "analysis": {
+          "method": "supervision-contour-union",
+          "supervision_version": "0.28.0",
+          "edge_density": 0.03844,
+          "candidate_box_count": 24
+        }
+      }
+    }
+  ]
+}

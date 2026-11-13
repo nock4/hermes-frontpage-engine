@@ -1,0 +1,144 @@
+{
+  "analysis_id": "analysis-2026-11-13-one-eye-above-the-waterline-v1",
+  "inspection_mode": "openai-vision",
+  "inspection_error": null,
+  "scene_summary": "A landscape watercolor-and-ink plate on a flat turquoise ground. On the left, three stacked line-drawn anime face echoes (eyes closed, eye open and crying with an open mouth, eyes closed) dissolve into vertical indigo/cobalt hair drips. On the right, three torn indigo-violet stain islands each hold a creature fragment: a ridged lavender horn at the top, a reptilian eye with an amber-orange slit-pupil iris and red/magenta-flecked scaly skin in the middle, and a pale cream fang comb dripping toward the bottom edge. A thin red horizontal line runs from the girl's cheek into the amber eye. The eye is the only hot accent, so it is the focal point. It is painted to look luminous but casts no actual light on the ground.",
+  "usable_surfaces": [
+    "torn indigo stain island around the amber eye",
+    "amber slit-pupil iris with red-flecked scaly surround",
+    "thin red horizontal line from tear-face to beast eye",
+    "flat turquoise wash ground"
+  ],
+  "detected_objects": [
+    {
+      "label": "Amber beast eye with red flecks in a torn indigo stain island",
+      "artifact_type": "source-native-mark",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.573,
+        "y": 0.298,
+        "w": 0.391,
+        "h": 0.317
+      },
+      "polygon": [
+        [
+          0.573,
+          0.432
+        ],
+        [
+          0.651,
+          0.391
+        ],
+        [
+          0.703,
+          0.352
+        ],
+        [
+          0.781,
+          0.332
+        ],
+        [
+          0.872,
+          0.337
+        ],
+        [
+          0.964,
+          0.298
+        ],
+        [
+          0.885,
+          0.43
+        ],
+        [
+          0.846,
+          0.527
+        ],
+        [
+          0.781,
+          0.615
+        ],
+        [
+          0.716,
+          0.566
+        ],
+        [
+          0.625,
+          0.566
+        ],
+        [
+          0.618,
+          0.469
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "An irregular indigo-violet stain island with torn, splintered edges and a spike at the upper right. At its center is an amber-orange iris (about x 0.69–0.82, y 0.405–0.503) with a vertical slit pupil near x 0.739, surrounded by scaly skin flecked with crimson and magenta. The thin red horizontal line from the left face ends at this pupil.",
+      "effect_material": {
+        "material": "pigment",
+        "observation": "Watercolor-like indigo and violet pigment stain with torn, splintered edges against flat turquoise wash. The amber iris is painted pigment grading from yellow to orange-red, with no emitted halo or cast light on the surrounding ground.",
+        "modalities": [
+          "fracture"
+        ]
+      },
+      "effect_editorial": [
+        {
+          "schema_version": 1,
+          "kind": "rupture",
+          "decision": "omit",
+          "planned_artifact_index": 0,
+          "source_url": "https://x.com/gucci4mycat/status/2113373323665064173",
+          "source_observation": "The pixels show a finished painted or digital illustration, not a product, UI, or ad. A crying anime-style girl with dark blue hair, drawn with overlapping double faces, sits beside a large horned, one-eyed, fanged creature. The image has vertical dripping, ink-like washes in indigo, cream, and ochre on a turquoise ground. No text, logo, or CTA is visible. This matches the saved note's visual description. The Halloween holder-offer caption is unverified and does not count as evidence. The artwork is verified from the pixels alone.",
+          "capture_sha256": "f1b609405fc5e93fcd5b62bea70fa7472d9c48652f5300540843b91a09a1abeb",
+          "plate_observation": "Watercolor-like indigo and violet pigment stain with torn, splintered edges against flat turquoise wash. The amber iris is painted pigment grading from yellow to orange-red, with no emitted halo or cast light on the surrounding ground.",
+          "brief_quote": "Right: torn stain islands: ringed cone horn, glowing amber eye with red flecks, pale fang comb running into drips.",
+          "why_behavior": "The torn edge already reads as a rupture in the turquoise surface. Breaking it further would repeat what the plate already shows. The source describes a creature in drip washes, not a sealed seam waiting to be broken.",
+          "why_input": "A one-off local gesture would add nothing that the reader's gaze along the red line doesn't already do.",
+          "why_not_none": "Leaving the plate undisturbed keeps the eye's quiet stare and the tear-to-eye tension intact. Omit."
+        },
+        {
+          "schema_version": 1,
+          "kind": "refraction",
+          "decision": "omit",
+          "planned_artifact_index": 0,
+          "source_url": "https://x.com/gucci4mycat/status/2113373323665064173",
+          "source_observation": "The pixels show a finished painted or digital illustration, not a product, UI, or ad. A crying anime-style girl with dark blue hair, drawn with overlapping double faces, sits beside a large horned, one-eyed, fanged creature. The image has vertical dripping, ink-like washes in indigo, cream, and ochre on a turquoise ground. No text, logo, or CTA is visible. This matches the saved note's visual description. The Archive holder-offer caption is unverified and does not count as evidence. The artwork is verified from the pixels alone.",
+          "capture_sha256": "f1b609405fc5e93fcd5b62bea70fa7472d9c48652f5300540843b91a09a1abeb",
+          "plate_observation": "Watercolor-like indigo and violet pigment stain with torn, splintered edges against flat turquoise wash. The amber iris is painted pigment grading from yellow to orange-red, with no emitted halo or cast light on the surrounding ground.",
+          "brief_quote": "One thin horizontal line joins tear-eye to beast eye.",
+          "why_behavior": "The eye is matte painted pigment, not glass or a wet optic. Optical distortion would be a material the plate doesn't have.",
+          "why_input": "Pointer-driven distortion would compete with the fixed horizontal gaze line that defines this composition.",
+          "why_not_none": "The undisturbed eye is stronger. Distortion would blur the slit pupil where the red line lands. Omit."
+        }
+      ]
+    }
+  ],
+  "complexity_assessment": {
+    "status": "minimal",
+    "dominant_form_count": 4,
+    "large_region_count": 1,
+    "mapped_region_coverage": 0.124,
+    "rationale": "There are four main forms on a wide, flat turquoise field: the face-echo column with drips, and the horn, eye and fang islands. Large empty negative space sits in the center, crossed only by one thin red line. The eye is the single warm focal accent. The plate is expressionist and not cluttered."
+  },
+  "effects_editorial_context": {
+    "schema_version": 1,
+    "brief": "Landscape wet-stain painting on wide flat turquoise. Left: three faint line-only anime face echoes stacked, one tear, melting into indigo hair drips. Right: torn stain islands: ringed cone horn, glowing amber eye with red flecks, pale fang comb running into drips. One thin horizontal line joins tear-eye to beast eye.",
+    "aesthetic_thesis": "A late-autumn painted chamber of costumed creatures, with wet ink edges, pumpkin-orange glow and soft brush grain on dark ground.",
+    "sources": [
+      {
+        "planned_artifact_index": 0,
+        "source_url": "https://x.com/gucci4mycat/status/2113373323665064173",
+        "title": "@gucci4mycat: Halloween special will be free for holders of my prev collections",
+        "summary": "Halloween special will be free for holders of my prev collections",
+        "observation": "The pixels show a finished painted or digital illustration, not a product, UI, or ad. A crying anime-style girl with dark blue hair, drawn with overlapping double faces, sits beside a large horned, one-eyed, fanged creature. The image has vertical dripping, ink-like washes in indigo, cream, and ochre on a turquoise ground. No text, logo, or CTA is visible. This matches the saved note's visual description. The Halloween holder-offer caption is unverified and does not count as evidence. The artwork is verified from the pixels alone.",
+        "capture_sha256": "f1b609405fc5e93fcd5b62bea70fa7472d9c48652f5300540843b91a09a1abeb",
+        "capture_path": "/Users/nickgeorge-studio/Projects/hermes-frontpage-engine-cron/tmp/daily-process-runs/cron-1794560419939-11105/creative-inspections/f1b609405fc5e93fcd5b62bea70fa7472d9c48652f5300540843b91a09a1abeb.jpeg",
+        "media_url": "https://pbs.twimg.com/media/HVQ1YPjXUAA8L5F.jpg?name=orig"
+      }
+    ]
+  },
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "edition_id": "2026-11-13-one-eye-above-the-waterline-v1"
+}
