@@ -1,0 +1,108 @@
+{
+  "analysis_id": "analysis-2026-11-15-sky-lying-in-the-leaves-v1",
+  "edition_id": "2026-11-15-sky-lying-in-the-leaves-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A woodblock-print-style autumn forest floor carpeted in fallen maple leaves, striped with diagonal sunlight beneath a row of dark trunks. A large scalloped puddle winds from upper left across the full width, mirroring blue sky, inverted trunks and red maple branches, while one slender leaning trunk crosses diagonally in front of it.",
+  "usable_surfaces": [
+    "scalloped sky-reflecting puddle",
+    "sunlit leaf-carpeted forest floor",
+    "diagonal leaning tree trunk",
+    "background row of dark trunks with autumn canopy",
+    "foreground scattered maple leaves"
+  ],
+  "detected_objects": [
+    {
+      "label": "Scalloped sky-reflecting puddle with inverted trunks in the leaf floor",
+      "artifact_type": "reflective-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.01,
+        "y": 0.255,
+        "w": 0.987,
+        "h": 0.64
+      },
+      "polygon": [
+        [
+          0.215,
+          0.256
+        ],
+        [
+          0.156,
+          0.288
+        ],
+        [
+          0.026,
+          0.322
+        ],
+        [
+          0.01,
+          0.352
+        ],
+        [
+          0.078,
+          0.41
+        ],
+        [
+          0.023,
+          0.586
+        ],
+        [
+          0.163,
+          0.674
+        ],
+        [
+          0.365,
+          0.762
+        ],
+        [
+          0.508,
+          0.83
+        ],
+        [
+          0.651,
+          0.894
+        ],
+        [
+          0.814,
+          0.84
+        ],
+        [
+          0.977,
+          0.771
+        ],
+        [
+          0.996,
+          0.713
+        ],
+        [
+          0.846,
+          0.635
+        ],
+        [
+          0.684,
+          0.571
+        ],
+        [
+          0.456,
+          0.527
+        ],
+        [
+          0.43,
+          0.43
+        ],
+        [
+          0.18,
+          0.33
+        ]
+      ],
+      "confidence": 0.9,
+      "visual_evidence": "A continuous pale-blue water region with a leaf-scalloped outline cut into the leaf floor, containing mirrored dark tree trunks and pink-red maple branches. It runs from a narrow rivulet at upper left to a broad pool reaching the right edge, matching the planned sky-reflecting aperture."
+    }
+  ],
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-14T14:20:07.402Z",
+  "go_live_at": "2026-11-15T09:00:00.000Z",
+  "source_key": "tweet:2120658329047293993",
+  "source_url": "https://x.com/archaeologyart/status/2120658329047293993",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@archaeologyart: Shirō Kasamatsu - Into the Woods, (1955): A 1955 Japanese woodblock print of a sunlit forest floor carpeted in leaf dabs, with a sky-reflecting puddle and a leaning dark trunk.; Source observation to recompose: scalloped, leaf-edged puddle reflecting inverted trunks and sky; Source observation to recompose: puddle narrowing into a winding S-shaped channel; Source observation to recompose: slender dark trunk leaning diagonally across the water;…\nSOURCE-ASPECT NOTE: measured source is portrait/vertical (500x739); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRepresentational source cues are a vocabulary of concrete fragments and relationships, not requirements for exact count, order, positions, or full-scene restaging. Recompose selected recognizable fragments into new groupings and negative space; do not rebuild the complete portrait lineup or backdrop. Palette and grain alone are insufficient.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nWoodblock forest floor seen from a low standing tilt, wide landscape plate, horizontal meander composition, high horizon of dark trunks cropped at the top edge. A long sky-blue pool aperture meanders across the lower middle like a cut-out river, holding indigo trunk reflections and rose branch filaments; one slender black trunk leans diagonally across the water. Raking amber sun bands slash the olive leaf-dab mosaic. Visible baren grain, flat carved edges, overprinted greens, ochre, cobalt, near-black. Quiet late-afternoon stillness; no lettering, seals or margins.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through horizontal meander aperture under a cropped trunk band / low standing downward tilt, flattened woodblock plate with a high horizon. sky-blue pool ribbon meandering across the lower middle; single dark trunk slicing diagonally across the water.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Scalloped sky-reflecting pool aperture cut into the leaf floor. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nLow amber sun raking diagonally through trees in bright stripes; the water glows with a pale, cool sky light from below.; materials: carved woodblock color planes; baren-pressed paper grain; overprinted translucent pigment; flat indigo reflection fields; palette: olive-ochre ground, amber light stripes, indigo-cobalt water, rose accents. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no lettering, signature, seal, date or paper margin no photorealistic forest or 3D foliage",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 71217,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 17403,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 40815,
+      "ok": true
+    }
+  ],
+  "notes": []
+}
