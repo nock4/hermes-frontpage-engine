@@ -263,3 +263,91 @@ describe('bookmark-acquisition.json records supporting fallbacks', () => {
     expect(budget.acquisitions).toBe(3)
   })
 })
+
+// ------------------------------------------- anchor ledger is track-family aware
+// Review blocker: a track already in the archive via one URL must not become the
+// anchor / visual reference / plate seed via its sibling URL (a YouTube Topic
+// thumbnail is often the same album art). Supporting use stays cooldown-governed.
+describe('anchor, visual-reference and plate-seed gates see the whole NTS track family', async () => {
+  const { decideAnchorEligibility, findAnchorArchiveRepeats } = await import('../../scripts/lib/source-decision-gates.mjs')
+  const { selectBestVisualReference } = await import('../../scripts/lib/source-selection-policy.mjs')
+  const { selectAnchorSource } = await import('../../scripts/lib/anchor-source-research.mjs')
+  const { buildPromotedVisualAnchorMaterial, researchEvidenceForSource } = await import('../../scripts/lib/source-research.mjs')
+  const { canonicalizeSourceUrl } = await import('../../scripts/lib/source-url-policy.mjs')
+  const { buildSourceLedger } = await import('../../scripts/lib/source-ledger.mjs')
+  const ledgerOf = url => new Set([canonicalizeSourceUrl(url)])
+  const nts = { title: 'FEEO - Requiem', description: 'artist album artwork music', source_channel: 'nts-like', intake_lane: 'supporting', fetch_status: 'fetch-ok', note_id: 'n1', note_path: 'map.md' }
+  // Direction 1: ledger has YouTube, Bandcamp fallback source was acquired.
+  const fallbackSource = { ...nts, url: BC, source_url: BC, final_url: BC, source_type: 'audio', image_url: 'https://f4.bcbits.com/img/a123_10.jpg', nts_track_family: YT, supporting_fallback_of: YT, supporting_repeat_eligible: true }
+  // Direction 2: ledger has Bandcamp, YouTube primary was acquired.
+  const primarySource = { ...nts, url: YT, source_url: YT, final_url: YT, source_type: 'video', embed_url: 'https://www.youtube.com/embed/NG6-Lrj4TQw', image_url: 'https://i.ytimg.com/vi/NG6-Lrj4TQw/hqdefault.jpg', nts_track_family: YT, fallback_urls: [BC], supporting_repeat_eligible: true }
+  const directions = [['ledger YouTube, Bandcamp fallback', fallbackSource, ledgerOf(YT)], ['ledger Bandcamp, YouTube primary', primarySource, ledgerOf(BC)]]
+  const tweetRef = { url: 'https://x.com/artist/status/123', source_url: 'https://x.com/artist/status/123', title: 'drawing', description: 'artist drawing', image_url: 'https://pbs.twimg.com/media/abc.jpg', source_channel: 'twitter-bookmark', source_type: 'tweet', fetch_status: 'fetch-ok', intake_lane: 'anchor' }
+
+  for (const [name, source, ledger] of directions) {
+    it(`decideAnchorEligibility rejects the sibling (${name})`, () => {
+      expect(decideAnchorEligibility({ anchorSource: source, recentSourceKeys: ledger, autoresearch: null }).decision).toBe('reject')
+    })
+    it(`findAnchorArchiveRepeats final guard flags anchor and visual_reference (${name})`, () => {
+      const roles = findAnchorArchiveRepeats({ anchorSource: source, visualReference: source }, ledger).map(row => row.role)
+      expect(roles).toEqual(['anchor_source', 'visual_reference'])
+    })
+    it(`final guard flags a plate seed carrying the family (${name})`, () => {
+      const seed = { page_url: source.url, image_url: source.image_url, track_family_urls: [YT, BC] }
+      expect(findAnchorArchiveRepeats({ selectedImageMaterial: [seed] }, ledger).map(row => row.role)).toEqual(['selected_image_material[0]'])
+    })
+    it(`selectBestVisualReference prefers fresh material over the spent family (${name})`, () => {
+      expect(selectBestVisualReference([tweetRef, source], ledger)?.source?.url).toBe(tweetRef.url)
+    })
+    it(`selectAnchorSource never picks the sibling (${name})`, () => {
+      expect(selectAnchorSource([source], { recentSourceKeys: ledger })).toBeNull()
+    })
+    it(`promoted visual anchor refuses the spent family (${name})`, () => {
+      expect(buildPromotedVisualAnchorMaterial(source, { recentSourceKeys: ledger })).toBeNull()
+    })
+  }
+
+  it('a fresh promoted visual anchor carries its family URLs for the final guard', () => {
+    const promoted = buildPromotedVisualAnchorMaterial(primarySource, { recentSourceKeys: new Set() })
+    expect(promoted?.candidate?.track_family_urls).toEqual(expect.arrayContaining([YT, BC]))
+  })
+
+  it('source-research keeps the family-level supporting_repeat_eligible flag', () => {
+    const ledger = buildSourceLedger([{ edition_id: 'prev', date: '2026-11-12', keys: [] }, { edition_id: 'old', date: '2026-06-01', keys: [canonicalizeSourceUrl(YT)] }], { date: '2026-11-13' })
+    const row = researchEvidenceForSource(fallbackSource, 0, { recentSourceKeys: ledger })
+    expect(row.supporting_repeat_eligible).toBe(true)
+    expect(row.recent_duplicate).toBe(true)
+  })
+
+  it('supporting use of a family archived outside the cooldown remains allowed', () => {
+    const ledger = buildSourceLedger([{ edition_id: 'prev', date: '2026-11-12', keys: [] }, { edition_id: 'old', date: '2026-06-01', keys: [canonicalizeSourceUrl(YT)] }], { date: '2026-11-13' })
+    expect(selectContentSources([fallbackSource], { recentSourceKeys: ledger }).map(s => s.url)).toEqual([BC])
+  })
+
+  it('supporting use is blocked when the sibling is inside the cooldown', () => {
+    const ledger = buildSourceLedger([{ edition_id: 'recent', date: '2026-11-01', keys: [canonicalizeSourceUrl(YT)] }], { date: '2026-11-13' })
+    expect(selectContentSources([fallbackSource], { recentSourceKeys: ledger })).toEqual([])
+  })
+})
+
+describe('fallback budget: only after a real primary failure', () => {
+  it('does not try the fallback when the primary admitted but was dropped by selection caps', async () => {
+    const a = adapters({ admitted: new Set([tweet.url, YT, BC]) })
+    const select = a.select
+    a.select = (sources, research) => select(sources, research).filter(s => s.url !== YT)
+    const result = await acquireBookmarkArtwork({ candidates: [tweet], supportingCandidates: [ntsCandidate] }, a)
+    expect(a.log.acquired).toEqual([tweet.url, YT])
+    expect(result.audit.supporting_fallbacks_attempted).toBe(0)
+  })
+
+  it('does not retry a fallback URL already attempted before a reserve resume', async () => {
+    root = fs.mkdtempSync(path.join(os.tmpdir(), 'nts-yt-fallback-'))
+    const a = adapters({ admitted: new Set([tweet.url, BC]) })
+    await acquireBoundedBookmarkSources({ source_candidates: [] }, {
+      candidates: [tweet], supportingCandidates: [ntsCandidate], desired: 6, runDir: path.join(root, 'run'),
+      state: { attempted: [sourceContentKey({ url: BC })] },
+      adapters: { acquire: a.acquire, research: a.research, inspectRaw: (s, r) => a.inspect(s, r), select: a.select, anchorEligible: () => true },
+    })
+    expect(a.log.acquired).toEqual([tweet.url, YT])
+  })
+})

@@ -46,6 +46,15 @@ class SourceLedger extends MaterialKeySet {
   }
 }
 
+// NTS track family: a saved track's primary URL plus its saved same-track
+// fallback(s) are ONE material family. Every archive check (anchor ledger and
+// supporting cooldown) must look at all of them, so a track already published
+// via one URL cannot return through its sibling URL.
+export function sourceTrackFamilyUrls(source = {}) {
+  return [source?.nts_track_family, source?.supporting_fallback_of, ...(source?.fallback_urls || []), ...(source?.track_family_urls || [])]
+    .filter(Boolean)
+}
+
 // Keys a SUPPORTING window must avoid. Strict fallback for plain Sets.
 export function supportingLedger(recentSourceKeys) {
   return recentSourceKeys?.supportingBlocked instanceof Set ? recentSourceKeys.supportingBlocked : (recentSourceKeys || new Set())

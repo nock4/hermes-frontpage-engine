@@ -59,10 +59,16 @@ export async function acquireBookmarkArtwork({ candidates, supportingCandidates 
   let acquired = 0
   let supportingAcquired = 0
   const attemptedFallbackSet = new Set()
+  // Actual-media admission of an acquired source (independent of final
+  // selection caps). Production passes the creative-evidence predicate.
+  const admitted = adapters.admitted || ((source, research) => (research?.source_decisions || []).some(row => row.url === source.url
+    && row.inspection?.status === 'verified' && row.inspection?.confidence === 'high'))
+  let lastSources = []
   const step = async batch => {
     for (const candidate of batch) if (candidate.supporting_fallback_of) attemptedFallbackSet.add(candidate)
     acquired += batch.length
     const sources = await adapters.acquire(batch)
+    lastSources = sources
     inspected.push(...sources)
     const text = await adapters.research(sources)
     autoresearch = { ...text, source_decisions: [...autoresearch.source_decisions, ...(text.source_decisions || []).map(({ inspection, ...decision }) => decision)] }
@@ -100,6 +106,9 @@ export async function acquireBookmarkArtwork({ candidates, supportingCandidates 
       // the rest of the queue; the loop's limit/short checks still apply.
       const retries = batch.filter(candidate => supportingSet.has(candidate) && candidate.fallback_urls?.length)
         .filter(candidate => !contentSources.some(source => trackFamily(source) === (candidate.nts_track_family || candidate.url)))
+        // Only a real failure (no source, or not admitted) earns the fallback;
+        // an admitted primary dropped by selection caps does not.
+        .filter(candidate => !lastSources.some(source => [source.url, source.source_url].includes(candidate.url) && admitted(source, autoresearch)))
         .map(candidate => {
           const { fallback_urls: [fallbackUrl], ...rest } = candidate
           return { ...rest, url: fallbackUrl, nts_track_family: candidate.nts_track_family || candidate.url, supporting_fallback_of: candidate.url }
