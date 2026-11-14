@@ -1,0 +1,116 @@
+{
+  "interpretation_id": "interp-2026-11-14-mirror-held-above-the-pile-v1",
+  "edition_id": "2026-11-14-mirror-held-above-the-pile-v1",
+  "plate_read_timestamp": "2026-11-14T11:20:07.805Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A glossy rubber-hose cartoon pile of monsters, skulls, goo creatures, boxes and fanged puddle-mouths fills the lower half of a flat cobalt-blue field. At center, a pink blob character raises both pink hands to lift a gold-rimmed oval mirror into the open blue sky. The mirror holds a collage face of eyes, lips, a checkerboard, a star and a sleeping profile.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "playful-macabre, buoyant and toy-glossy, a cheerful monster parade swelling off a flat page",
+      "A glossy rubber-hose cartoon pile of monsters, skulls, goo creatures, boxes and fanged puddle-mouths fills the lower half of a flat cobalt-blue field. At center, a pink blob character raises both pink hands to lift a gold-rimmed oval mirror into the open blue sky. The mirror holds a collage face of eyes, lips, a checkerboard, a star and a sleeping profile.",
+      "raised-pink-hands",
+      "collage-mirror-face",
+      "toothy-puddle-mouths"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Pink raised hands lifting gold-rimmed oval collage-face mirror"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "lacquered-cartoon-pileup-mirror-lift",
+      "Pink raised hands lifting the oval collage-face mirror into open cobalt",
+      "open cobalt-blue sky upper right",
+      "gold-rimmed oval collage mirror",
+      "pink raised hands and arms",
+      "pink ground plane with fanged puddle-mouths",
+      "wavy cream-green-red stripe band",
+      "red fanged maw at top-left corner"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: lacquered-cartoon-pileup-mirror-lift.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-pink-raised-hands-lifting-gold-rimme",
+      "kind": "hero",
+      "type": "raised-hand-aperture",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.341,
+        "y": 0.009,
+        "w": 0.386,
+        "h": 0.416
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-pink-raised-hands-lifting-gold-rimme-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.341,
+        "y": 0.009,
+        "w": 0.386,
+        "h": 0.416
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
