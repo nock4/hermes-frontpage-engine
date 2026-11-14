@@ -774,6 +774,8 @@ export function selectContentSources(
     if (source.source_channel === 'twitter-bookmark' && source.source_type === 'tweet') {
       return ['twitter-bookmark-tweet', source.note_id || source.note_title || source.title].filter(Boolean).join(':')
     }
+    // An NTS track's primary (YouTube) and saved fallback are one family.
+    if (source.nts_track_family) return `nts-track:${canonicalizeSourceUrl(source.nts_track_family)}`
     return null
   }
   // Supporting windows obey the cooldown subset of the archive ledger; the

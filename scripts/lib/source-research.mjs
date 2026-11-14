@@ -944,8 +944,10 @@ export async function inspectSourceCandidates(signalHarvest, {
   let contentSources = []
   if (bookmarkFirst) {
     const supportingKeys = supportingLedger(recentSourceKeys)
+    // A track family is blocked if its saved fallback is in cooldown too.
     const supportingCandidates = signalHarvest.source_candidates.filter(source => source.intake_lane === 'supporting'
-      && Number.isFinite(sourceContentScore(source, supportingKeys)))
+      && Number.isFinite(sourceContentScore(source, supportingKeys))
+      && !(source.fallback_urls || []).some(url => supportingKeys.has(sourceContentKey({ url }))))
     const bounded = await acquireBoundedBookmarkSources(signalHarvest, { candidates, supportingCandidates, desired: DESIRED_SOURCE_WINDOWS, runDir, apiKey, model, date, recentSourceKeys, budget: bookmarkBudget })
     inspected = bounded.inspected
     fetchEvidence = bounded.inspected

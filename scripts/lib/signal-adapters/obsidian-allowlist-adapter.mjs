@@ -108,6 +108,36 @@ function parseMarkdownTableCells(line) {
   return trimmed.slice(1, -1).split('|').map((cell) => cell.trim())
 }
 
+// Bandcamp supports custom domains. A saved, confidence-qualified row can
+// nominate its exact work URL without guessing a bandcamp.com replacement.
+// This is discovery attribution only; normal fetch/media/admission gates apply.
+function isSavedCustomBandcampWork(label, url) {
+  if (!/^bandcamp(?:\s|\(|$)/.test(label) || !isAllowedSourceUrl(url)) return false
+  try {
+    return /^\/(?:track|album)\/[^/]+\/?$/.test(new URL(url).pathname)
+  } catch {
+    return false
+  }
+}
+
+// Rewritten maps (2026-11-13) promote a verified embeddable YouTube upload and
+// keep the old row's source in Notes as `Previous source (<label>): <url>.`
+// That URL is a same-track fallback only when it passes the same rules the
+// primary column would: no search/unverified label, allowed URL, and a
+// preferred streaming URL (YouTube watch, Bandcamp or SoundCloud work) or a
+// saved custom-domain Bandcamp track/album. Never a separate track/window.
+function extractPreviousSourceFallback(notes, primaryUrl) {
+  const match = String(notes || '').match(/Previous source \(((?:[^()]|\([^()]*\))+)\):\s*(https?:\/\/\S+)/i)
+  if (!match) return null
+  const label = match[1].trim()
+  const lowered = label.toLowerCase()
+  const url = match[2].replace(/[.,;)\]]+$/, '')
+  if (lowered.includes('unverified') || lowered.includes('search')) return null
+  if (!isPreferredNtsStreamingSourceUrl(url) && !isSavedCustomBandcampWork(lowered, url)) return null
+  if (url === primaryUrl) return null
+  return { fallback_url: url, fallback_label: label }
+}
+
 export function extractNtsStreamingSourceRows(text) {
   const rows = []
   for (const line of text.split('\n')) {
@@ -119,14 +149,11 @@ export function extractNtsStreamingSourceRows(text) {
     const url = extractUrls(cells[5])[0]
     if (!url) continue
     if (bestSource.includes('unverified') || bestSource.includes('search') || confidence === 'low') continue
-    // Bandcamp supports custom domains. A saved, confidence-qualified row can
-    // nominate its exact work URL without guessing a bandcamp.com replacement.
-    // This is discovery attribution only; normal fetch/media/admission gates apply.
     const savedCustomBandcampWork = /^bandcamp(?:\s|$)/.test(bestSource)
       && ['high', 'medium'].includes(confidence)
-      && isAllowedSourceUrl(url)
-      && /^\/(?:track|album)\/[^/]+\/?$/.test(new URL(url).pathname)
+      && isSavedCustomBandcampWork(bestSource, url)
     if (!isPreferredNtsStreamingSourceUrl(url) && !savedCustomBandcampWork) continue
+    const fallback = extractPreviousSourceFallback(cells[6], url)
     rows.push({
       row_number: cells[0],
       url,
@@ -135,6 +162,7 @@ export function extractNtsStreamingSourceRows(text) {
       best_source: cells[3],
       confidence: cells[4],
       notes: cells[6] || '',
+      ...(fallback || {}),
     })
   }
 
