@@ -37,7 +37,7 @@ import {
   visualReferenceScore,
 } from './source-selection-policy.mjs'
 import { uniqueNonEmpty } from './string-utils.mjs'
-import { supportingLedger } from './source-ledger.mjs'
+import { sourceTrackFamilyUrls, supportingLedger } from './source-ledger.mjs'
 
 const root = process.cwd()
 const minContentItems = MIN_SOURCE_WINDOWS
@@ -240,8 +240,13 @@ function noteLookupForSignalHarvest(signalHarvest) {
   return lookup
 }
 
-function researchEvidenceForSource(source, index, { recentSourceKeys = new Set(), noteLookup = new Map() } = {}) {
+export function researchEvidenceForSource(source, index, { recentSourceKeys = new Set(), noteLookup = new Map() } = {}) {
   const note = noteLookup.get(source.note_id) || noteLookup.get(source.note_path) || noteLookup.get(source.note_title) || null
+  // An NTS track family (primary + saved fallback) is one material family.
+  const familyKeys = [sourceContentKey(source), ...sourceTrackFamilyUrls(source)
+    .flatMap(url => [canonicalizeSourceUrl(url), sourceContentKey({ url, source_url: url })])].filter(Boolean)
+  const archived = familyKeys.some(key => recentSourceKeys.has(key))
+  const inCooldown = familyKeys.some(key => supportingLedger(recentSourceKeys).has(key))
   const aestheticScore = aestheticSignalScore(source)
   return {
     id: `source-${index + 1}`,
@@ -260,11 +265,11 @@ function researchEvidenceForSource(source, index, { recentSourceKeys = new Set()
     note_date: source.note_date,
     note_excerpt: sanitizeSourceText(note?.excerpt, '', 600),
     renderable_surface: sourceHasRenderableCardSurface(source, { notes_selected: note ? [note] : [] }),
-    recent_duplicate: recentSourceKeys.has(sourceContentKey(source)),
-    // Previously published, but outside the supporting cooldown: eligible only
-    // as a supporting window, never as the anchor/main artwork.
-    supporting_repeat_eligible: recentSourceKeys.has(sourceContentKey(source))
-      && !supportingLedger(recentSourceKeys).has(sourceContentKey(source)),
+    recent_duplicate: archived,
+    // Previously published (own URL or track-family sibling), but outside the
+    // supporting cooldown: eligible only as a supporting window, never as the
+    // anchor/main artwork. Preserve the intake's family-level flag.
+    supporting_repeat_eligible: (archived || source.supporting_repeat_eligible === true) && !inCooldown,
     evidence_score: Math.round(sourceContentScore(source, supportingLedger(recentSourceKeys))),
     aesthetic_score: Math.round(aestheticScore),
     selection_bias: aestheticScore >= 20 ? 'creative-art-visual' : aestheticScore < 0 ? 'infrastructure-or-low-visual' : 'neutral',
@@ -322,6 +327,7 @@ function imageMaterialAlreadyUsed(candidate, recentSourceKeys = new Set()) {
     canonicalizeSourceUrl(candidate?.image_url),
     canonicalizeSourceUrl(candidate?.source_image_preview_url),
     ...(candidate?.source_image_aliases || []).flatMap((url) => [sourceContentKey({ url }), canonicalizeSourceUrl(url)]),
+    ...sourceTrackFamilyUrls(candidate).flatMap((url) => [sourceContentKey({ url, source_url: url }), canonicalizeSourceUrl(url)]),
   ])
   return keys.some((key) => recentSourceKeys.has(key))
 }
@@ -375,6 +381,7 @@ export function buildPromotedVisualAnchorMaterial(discoveredVisualReference, {
     page_url: discoveredVisualReference.page_url || discoveredVisualReference.source_url || discoveredVisualReference.url || discoveredVisualReference.final_url || null,
     image_url: discoveredVisualReference.image_url,
     source_image_aliases: discoveredVisualReference.source_image_aliases,
+    ...(sourceTrackFamilyUrls(discoveredVisualReference).length ? { track_family_urls: [...new Set(sourceTrackFamilyUrls(discoveredVisualReference))] } : {}),
     title: getSourceDisplayTitle(discoveredVisualReference, 'Promoted visual anchor'),
     caption: discoveredVisualReference.description || discoveredVisualReference.title || '',
     lineage: 'promoted_visual_anchor',
@@ -847,7 +854,13 @@ export async function acquireBoundedBookmarkSources(signalHarvest, { candidates,
     return true
   }
   candidates = candidates.filter(unattempted)
-  supportingCandidates = supportingCandidates.filter(unattempted)
+  supportingCandidates = supportingCandidates.filter(unattempted).map(candidate => {
+    // Reserve resume: never re-spend budget on an already attempted fallback.
+    if (!candidate.fallback_urls?.length) return candidate
+    const fallbackUrls = candidate.fallback_urls.filter(url => !attempted.has(sourceContentKey({ url })))
+    return fallbackUrls.length === candidate.fallback_urls.length ? candidate
+      : { ...candidate, nts_track_family: candidate.nts_track_family || candidate.url, fallback_urls: fallbackUrls }
+  })
   const base = {
     acquire: async batch => {
       const sources = []
@@ -860,6 +873,7 @@ export async function acquireBoundedBookmarkSources(signalHarvest, { candidates,
     research: sources => runSourceAutoresearch({ signalHarvest, evidenceSources: sources, apiKey, model, date, maxSources: 6, recentSourceKeys }, runDir),
     inspectRaw: (sources, research, maxInspections) => inspectCreativeArtifacts(sources, research, { runDir, apiKey, model, signalHarvest, recentSourceKeys, maxInspections, inspectionCacheDir: bookmarkCacheDir() }),
     select: (sources, research) => selectContentSources(sources, { recentSourceKeys, signalHarvest, autoresearch: research }),
+    admitted: (source, research) => hasCreativeArtifactEvidence(source, research, signalHarvest),
     // Same predicate as the post-acquisition anchor recovery, against the FULL
     // archive ledger: only such a work may end the anchor lane.
     anchorEligible: (source, research) => hasCreativeArtifactEvidence(source, research, signalHarvest)
@@ -890,6 +904,7 @@ export async function acquireBoundedBookmarkSources(signalHarvest, { candidates,
       }
     },
     select: base.select,
+    admitted: base.admitted,
     anchorEligible: base.anchorEligible,
   })
   await fs.mkdir(runDir, { recursive: true })
@@ -944,8 +959,10 @@ export async function inspectSourceCandidates(signalHarvest, {
   let contentSources = []
   if (bookmarkFirst) {
     const supportingKeys = supportingLedger(recentSourceKeys)
+    // A track family is blocked if its saved fallback is in cooldown too.
     const supportingCandidates = signalHarvest.source_candidates.filter(source => source.intake_lane === 'supporting'
-      && Number.isFinite(sourceContentScore(source, supportingKeys)))
+      && Number.isFinite(sourceContentScore(source, supportingKeys))
+      && !(source.fallback_urls || []).some(url => supportingKeys.has(sourceContentKey({ url }))))
     const bounded = await acquireBoundedBookmarkSources(signalHarvest, { candidates, supportingCandidates, desired: DESIRED_SOURCE_WINDOWS, runDir, apiKey, model, date, recentSourceKeys, budget: bookmarkBudget })
     inspected = bounded.inspected
     fetchEvidence = bounded.inspected
@@ -1364,7 +1381,7 @@ export async function inspectSourceCandidates(signalHarvest, {
       if (requiresInspection) {
         if (bookmarkBudget.inspections >= 24) break
         if (!eligibleForEnrichment(source) || !Number.isFinite(sourceContentScore(source, recentSourceKeys))
-          || imageMaterialAlreadyUsed({ page_url: source.url, image_url: source.image_url }, recentSourceKeys)) continue
+          || imageMaterialAlreadyUsed({ page_url: source.url, image_url: source.image_url, track_family_urls: sourceTrackFamilyUrls(source) }, recentSourceKeys)) continue
         attemptedImages.add(imageKey)
         attachmentAttempt = { page_url: source.url, image_url: source.image_url, status: 'inspecting-admission' }
         imageSourceMaterial.alternate_visual_anchor_attempts.push(attachmentAttempt)

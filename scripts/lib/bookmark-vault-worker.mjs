@@ -164,7 +164,9 @@ for (const [relative, channel] of supportingFiles) {
   const explicitSource = text.match(/^\s*Source:\s*(https?:\/\/\S+)/im)?.[1]
   let entries = []
   if (channel === 'nts-like') {
-    entries = extractNtsStreamingSourceRows(text).map(row => ({ url: row.url, rows: [{ ...row, evidence_origin: 'saved-note-row', note_path: relative, note_title: title }] }))
+    // One entry per TRACK: the row's primary URL (YouTube after the 2026-11-13
+    // rewrite) plus its verified `Previous source` as a same-track fallback.
+    entries = extractNtsStreamingSourceRows(text).map(row => ({ url: row.url, fallbackUrls: row.fallback_url ? [row.fallback_url] : [], rows: [{ ...row, evidence_origin: 'saved-note-row', note_path: relative, note_title: title }] }))
   } else if (channel === 'youtube-like') {
     const url = [frontmatterUrl, ...normalizeNoteUrls(extractUrls(text), channel)].filter(Boolean).find(isYouTubeVideoUrl)
     if (url) entries = [{ url }]
@@ -177,11 +179,17 @@ for (const [relative, channel] of supportingFiles) {
   audit.files += 1
   for (const entry of entries) {
     audit.urls += 1
-    const key = materialKey(entry.url)
-    if (supportingBlocked.has(key)) { audit.cooldown_blocked += 1; continue }
-    if (taken.has(key)) continue
-    taken.add(key)
-    const repeat = ledger.has(key)
+    // Track family = primary + fallback URLs. Policy: a cooldown hit (last 30
+    // days / previous edition) on EITHER blocks the whole track, so the same
+    // song cannot return within the cooldown merely by switching platforms; a
+    // family member already nominated (any lane) also blocks it, so one track
+    // never yields two candidates or windows in one edition.
+    const fallbackUrls = entry.fallbackUrls || []
+    const keys = [entry.url, ...fallbackUrls].map(materialKey)
+    if (keys.some(key => supportingBlocked.has(key))) { audit.cooldown_blocked += 1; continue }
+    if (keys.some(key => taken.has(key))) continue
+    for (const key of keys) taken.add(key)
+    const repeat = keys.some(key => ledger.has(key))
     audit[repeat ? 'repeat_eligible' : 'fresh'] += 1
     const lane = supportingByChannel.get(channel) || []
     lane.push({
@@ -189,9 +197,10 @@ for (const [relative, channel] of supportingFiles) {
       title, note_date: stat.mtime.toISOString().slice(0, 10), excerpt: text.slice(0, 6000).replace(/\|[^\n]*\|\n?/g, ''),
       urls: [entry.url], source_path: relative, path: relative, score: 0,
       ...(entry.rows ? { source_map_rows: entry.rows } : {}),
+      ...(fallbackUrls.length ? { fallback_urls: fallbackUrls, nts_track_family: entry.url } : {}),
       intake_lane: 'supporting', supporting_repeat_eligible: repeat,
       metadata: { adapter: 'supporting-lane', stat_mtime: stat.mtime.toISOString(), note_sha256: hash(text), attached_media_urls: [] },
-      order: `${repeat ? 1 : 0}:${hash(`${options.date || ''}:${key}`)}`,
+      order: `${repeat ? 1 : 0}:${hash(`${options.date || ''}:${keys[0]}`)}`,
     })
     supportingByChannel.set(channel, lane)
   }

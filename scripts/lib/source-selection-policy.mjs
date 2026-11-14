@@ -12,7 +12,7 @@ import {
   youtubeId,
 } from './source-url-policy.mjs'
 import { classifyMediaUrl } from './media-url-classifier.mjs'
-import { supportingLedger } from './source-ledger.mjs'
+import { sourceTrackFamilyUrls, supportingLedger } from './source-ledger.mjs'
 
 const DEFAULT_MAX_CONTENT_ITEMS = MAX_SOURCE_WINDOWS
 const DEFAULT_TARGET_CONTENT_ITEMS = DESIRED_SOURCE_WINDOWS
@@ -336,7 +336,8 @@ export function visualReferenceScore(source, recentSourceKeys = new Set()) {
   if (source.source_channel === 'nts-like' && sourceUrls.some(isBandcampStreamingSourceUrl)) score += 18
   if (source.source_channel === 'youtube-like' && sourceUrls.some(isYouTubeVideoUrl)) score += 8
   if (source.source_channel === 'twitter-bookmark') score -= 35
-  if (recentSourceKeys.has(sourceContentKey(source)) || recentSourceKeys.has(canonicalizeSourceUrl(source.image_url))) score -= 100
+  if (recentSourceKeys.has(sourceContentKey(source)) || recentSourceKeys.has(canonicalizeSourceUrl(source.image_url))
+    || sourceTrackFamilyUrls(source).some(url => recentSourceKeys.has(canonicalizeSourceUrl(url)) || recentSourceKeys.has(sourceContentKey({ url, source_url: url })))) score -= 100
   return score
 }
 
@@ -569,7 +570,7 @@ function sourceUrlsForScoring(source) {
 }
 
 function sourceHasRecentUrlOrImage(source, recentSourceKeys = new Set()) {
-  return [source?.url, source?.source_url, source?.final_url, source?.image_url, source?.source_image_url, source?.source_media_url, ...(source?.source_image_aliases || [])]
+  return [source?.url, source?.source_url, source?.final_url, source?.image_url, source?.source_image_url, source?.source_media_url, ...(source?.source_image_aliases || []), ...sourceTrackFamilyUrls(source)]
     .filter(Boolean)
     .some((url) => recentSourceKeys.has(canonicalizeSourceUrl(url)) || recentSourceKeys.has(sourceContentKey({ url, source_url: url })))
 }
@@ -774,6 +775,8 @@ export function selectContentSources(
     if (source.source_channel === 'twitter-bookmark' && source.source_type === 'tweet') {
       return ['twitter-bookmark-tweet', source.note_id || source.note_title || source.title].filter(Boolean).join(':')
     }
+    // An NTS track's primary (YouTube) and saved fallback are one family.
+    if (source.nts_track_family) return `nts-track:${canonicalizeSourceUrl(source.nts_track_family)}`
     return null
   }
   // Supporting windows obey the cooldown subset of the archive ledger; the

@@ -243,6 +243,9 @@ export async function mineSignals({
         // fallbacks need the musical identity rather than the whole map's title.
         note_title: rowTitle || note.title,
         ...(sourceMapRows.length ? { source_map_rows: sourceMapRows } : {}),
+        // Same-track fallback (saved `Previous source`); acquisition may try it
+        // only after this URL fails, inside the shared budget. Never a window.
+        ...(note.fallback_urls?.length && note.urls[0] === url ? { fallback_urls: note.fallback_urls, nts_track_family: note.nts_track_family || url } : {}),
         note_path: note.source_path,
         source_channel: note.source_channel,
         note_date: note.note_date,
@@ -255,7 +258,9 @@ export async function mineSignals({
           // anchor lane = fresh owning X works; supporting lane = other saved
           // channels, where cooldown-eligible repeats are supporting-only.
           intake_lane: note.intake_lane || 'anchor',
-          supporting_repeat_eligible: note.intake_lane === 'supporting' && recentSourceKeys.has(canonicalizeSourceUrl(url)),
+          // Track-family repeat: the primary or its saved same-track fallback.
+          supporting_repeat_eligible: note.intake_lane === 'supporting' && [url, ...(note.urls[0] === url ? note.fallback_urls || [] : [])]
+            .some(familyUrl => recentSourceKeys.has(canonicalizeSourceUrl(familyUrl))),
         } : {}),
       })
     }
