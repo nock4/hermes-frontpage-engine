@@ -36,6 +36,7 @@ function App() {
   const [archiveOpen, setArchiveOpen] = useState(false)
   const touchPreviewArtifact = useRef<string | null>(null)
   const mousePointer = useRef<{ x: number; y: number } | null>(null)
+  const touchPoint = useRef<{ x: number; y: number } | null>(null)
   const dismissedPointer = useRef<{ x: number; y: number }[]>([])
   const [plateGeometry, setPlateGeometry] = useState<{ path: string; aspect: number } | null>(null)
 
@@ -57,6 +58,7 @@ function App() {
     // Dismissal belongs to the route being left, not the physical mouse.
     // Reset before async loading so a cancelled request cannot clear a later close.
     dismissedPointer.current = []
+    touchPoint.current = null
     let cancelled = false
     const run = async () => {
       try {
@@ -262,7 +264,14 @@ function App() {
           onPointerMoveCapture={(event) => {
             // Touch compatibility mousemove must not overwrite the idle mouse.
             // MouseEvent coordinates truncate PointerEvent's fractional values.
-            if (event.pointerType === 'mouse') mousePointer.current = { x: Math.floor(event.clientX), y: Math.floor(event.clientY) }
+            if (event.pointerType === 'mouse') {
+              mousePointer.current = { x: Math.floor(event.clientX), y: Math.floor(event.clientY) }
+              // The mouse really moved: hover belongs to it again.
+              touchPoint.current = null
+            }
+          }}
+          onPointerDownCapture={(event) => {
+            if (event.pointerType === 'touch') touchPoint.current = { x: event.clientX, y: event.clientY }
           }}
           onMouseMoveCapture={(event) => {
             if (!dismissedPointer.current.some(point => point.x === event.clientX && point.y === event.clientY)) dismissedPointer.current = []
@@ -404,7 +413,19 @@ function App() {
                   }).length,
                   ...sceneReactionStyle,
                 }}
-                onMouseEnter={(event) => {
+                onMouseOver={(event) => {
+                  // Enter, derived from the native event. React's onMouseEnter
+                  // skips a mouseover whose relatedTarget is another React node
+                  // and waits for that node's mouseout. When the element under a
+                  // resting pointer was removed (route change), newer Chromium
+                  // reports the surviving ancestor there and no mouseout follows,
+                  // so onMouseEnter would never fire on the new mark.
+                  if (event.relatedTarget instanceof Node && event.currentTarget.contains(event.relatedTarget)) return
+                  // After a tap, newer Chromium re-targets hover to wherever an idle
+                  // mouse rests, which can be another mark. Until that mouse moves,
+                  // only the tap's own compatibility mouseover counts.
+                  const touched = touchPoint.current
+                  if (touched && (Math.abs(event.clientX - touched.x) > 1 || Math.abs(event.clientY - touched.y) > 1)) return
                   if (dismissedPointer.current.some(point => point.x === event.clientX && point.y === event.clientY)) return
                   dismissedPointer.current = []
                   previewArtifactBinding(artifact.id, binding)
