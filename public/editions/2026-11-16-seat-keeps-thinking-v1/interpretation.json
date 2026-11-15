@@ -1,0 +1,114 @@
+{
+  "interpretation_id": "interp-2026-11-16-seat-keeps-thinking-v1",
+  "edition_id": "2026-11-16-seat-keeps-thinking-v1",
+  "plate_read_timestamp": "2026-11-15T11:20:06.090Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A flat, saturated yellow backdrop meets a pixelated green grass plane at roughly two-thirds height. At left, a lavender cube-like seat stands on four wobbly, pale pink tube legs; its top edge drops in five stair-stepped notches from a tall back-left corner down to the right. Behind it, a large blurred purple silhouette of a seated figure in a chin-on-hand Thinker pose fades into the yellow, and a small soft white cloud floats low at the right.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "deadpan, contemplative, uncanny-playful stillness",
+      "A flat, saturated yellow backdrop meets a pixelated green grass plane at roughly two-thirds height. At left, a lavender cube-like seat stands on four wobbly, pale pink tube legs; its top edge drops in five stair-stepped notches from a tall back-left corner down to the right. Behind it, a large blurred purple silhouette of a seated figure in a chin-on-hand Thinker pose fades into the yellow, and a small soft white cloud floats low at the right.",
+      "empty-pedestal",
+      "thinker-silhouette",
+      "two-band-horizon"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Jagged stair-stepped top edge of the empty lavender cube seat"
+    ],
+    "dominant_surfaces": [
+      "unknown"
+    ],
+    "dominant_structures": [
+      "lavender-cube-thinker-meadow",
+      "Jagged stair-stepped top edge of the empty lavender cube seat",
+      "stair-stepped lavender top edge of the seat",
+      "flat lavender front face of the seat",
+      "wobbly pink legs",
+      "blurred purple Thinker silhouette",
+      "small white cloud at right",
+      "pixelated green grass plane"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: lavender-cube-thinker-meadow.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-jagged-stair-stepped-top-edge-of-the",
+      "kind": "hero",
+      "type": "broken-mesh-edge",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.179,
+        "y": 0.459,
+        "w": 0.215,
+        "h": 0.141
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-jagged-stair-stepped-top-edge-of-the-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.179,
+        "y": 0.459,
+        "w": 0.215,
+        "h": 0.141
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
