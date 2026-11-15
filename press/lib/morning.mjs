@@ -20,7 +20,7 @@ export async function anchorSource(store, editionId) {
 
 // A real browser view of the live page. Returns null when no browser is
 // available; the caller then sends the plate instead.
-export async function screenshotSite(siteUrl, { editionId, timeoutMs = 60_000 } = {}) {
+async function screenshotSite(siteUrl, { editionId, timeoutMs = 60_000 } = {}) {
   let browser
   try {
     const { chromium } = await import('playwright')
