@@ -19,6 +19,7 @@ import { CANDIDATES_KEY, LEDGER_KEY, normalizeLedger, orderCandidates } from './
 import { build, builtMessage, failedMessage, flip, shouldTellFailure } from './lib/run.mjs'
 import { storeFromEnv } from './lib/store.mjs'
 import { tell } from './lib/telegram.mjs'
+import { sendMorningPost } from './lib/morning.mjs'
 import { localDate } from './lib/time.mjs'
 
 function option(args, name) {
@@ -82,6 +83,10 @@ async function main() {
     if (flipped.site && flipped.site !== 'ok') {
       await say(`Frontpage live check failed for ${flipped.current}: ${flipped.site}`)
       process.exitCode = 1
+    }
+    if (flipped.applied.includes(flipped.current)) {
+      const morning = await sendMorningPost({ store, editionId: flipped.current })
+      console.log(`press: morning ${JSON.stringify(morning)}`)
     }
   }
   if (command === 'flip') return finish()
