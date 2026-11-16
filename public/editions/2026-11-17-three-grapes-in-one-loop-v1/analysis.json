@@ -1,0 +1,106 @@
+{
+  "analysis_id": "analysis-2026-11-17-three-grapes-in-one-loop-v1",
+  "edition_id": "2026-11-17-three-grapes-in-one-loop-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A salmon-pink pastel plate crossed by a horizontal band of chalky lavender, electric blue, magenta, yellow, coral and lime marks, with scattered blue teardrop dots. On the left, three glossy purple grape clusters sit on the lavender haze, encircled by a loose, multi-pass tilted graphite ellipse that gathers them into a single focal gesture.",
+  "usable_surfaces": [
+    "graphite lasso ellipse enclosing the grapes",
+    "three glossy grape clusters",
+    "electric-blue crayon stroke band",
+    "magenta crayon stroke at right",
+    "yellow-orange chalk smear upper right",
+    "lavender chalk cloud field",
+    "open salmon-pink field above and below"
+  ],
+  "detected_objects": [
+    {
+      "label": "Loose graphite pencil lasso encircling three glossy grape clusters",
+      "artifact_type": "pencil-lasso-gesture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.213,
+        "w": 0.444,
+        "h": 0.521
+      },
+      "polygon": [
+        [
+          0.389,
+          0.218
+        ],
+        [
+          0.455,
+          0.255
+        ],
+        [
+          0.496,
+          0.308
+        ],
+        [
+          0.513,
+          0.383
+        ],
+        [
+          0.502,
+          0.468
+        ],
+        [
+          0.466,
+          0.553
+        ],
+        [
+          0.407,
+          0.638
+        ],
+        [
+          0.335,
+          0.691
+        ],
+        [
+          0.239,
+          0.728
+        ],
+        [
+          0.15,
+          0.723
+        ],
+        [
+          0.09,
+          0.68
+        ],
+        [
+          0.072,
+          0.606
+        ],
+        [
+          0.084,
+          0.51
+        ],
+        [
+          0.12,
+          0.425
+        ],
+        [
+          0.173,
+          0.34
+        ],
+        [
+          0.239,
+          0.276
+        ],
+        [
+          0.311,
+          0.234
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "A thin, grainy, multi-pass graphite ellipse tilted upward to the right is clearly visible in the left half. It fully encloses the three glossy purple grape clusters with yellow-green stems, matching the planned lasso-and-grapes feature."
+    }
+  ],
+  "viewport": {
+    "base_width": 1672,
+    "base_height": 941,
+    "aspect_ratio": "1672:941"
+  }
+}

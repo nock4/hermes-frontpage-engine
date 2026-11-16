@@ -1,0 +1,115 @@
+{
+  "interpretation_id": "interp-2026-11-17-three-grapes-in-one-loop-v1",
+  "edition_id": "2026-11-17-three-grapes-in-one-loop-v1",
+  "plate_read_timestamp": "2026-11-16T11:20:08.335Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A salmon-pink pastel plate crossed by a horizontal band of chalky lavender, electric blue, magenta, yellow, coral and lime marks, with scattered blue teardrop dots. On the left, three glossy purple grape clusters sit on the lavender haze, encircled by a loose, multi-pass tilted graphite ellipse that gathers them into a single focal gesture.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "sweet, airy, playful morning doodle",
+      "A salmon-pink pastel plate crossed by a horizontal band of chalky lavender, electric blue, magenta, yellow, coral and lime marks, with scattered blue teardrop dots. On the left, three glossy purple grape clusters sit on the lavender haze, encircled by a loose, multi-pass tilted graphite ellipse that gathers them into a single focal gesture.",
+      "graphite-lasso",
+      "grape-cluster",
+      "crayon-band"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Loose graphite pencil lasso encircling three glossy grape clusters"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "pastel-grape-lasso-drift",
+      "Large loose graphite pencil lasso corralling three glossy grape clusters",
+      "graphite lasso ellipse enclosing the grapes",
+      "three glossy grape clusters",
+      "electric-blue crayon stroke band",
+      "magenta crayon stroke at right",
+      "yellow-orange chalk smear upper right",
+      "lavender chalk cloud field"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: pastel-grape-lasso-drift.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-loose-graphite-pencil-lasso-encircli",
+      "kind": "hero",
+      "type": "pencil-lasso-gesture",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.071,
+        "y": 0.213,
+        "w": 0.444,
+        "h": 0.521
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-loose-graphite-pencil-lasso-encircli-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.071,
+        "y": 0.213,
+        "w": 0.444,
+        "h": 0.521
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-16T11:20:08.335Z",
+  "go_live_at": "2026-11-17T09:00:00.000Z",
+  "source_key": "tweet:2120905664729936243",
+  "source_url": "https://x.com/jala_gram/status/2120905664729936243",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@jala_gram: gm 11-12-26: A square digital abstract painting of soft airbrushed lavender clouds, chalky ultramarine crayon strokes, coral blobs, lime dabs and graphite pencil loops floating on a flat dusty-rose ground, sprinkled with small glossy grape-cluster icons.; long horizontal ultramarine crayon band fading into hot pink; loose elongated graphite lasso ellipses; small glossy grape clusters resting on soft color; solid blue teardrop dots and coral blobs\nSOURCE-ASPECT NOTE: measured source is square (2048x2048); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nPastel grape-lasso drift: a wide horizontal frieze of soft airbrushed lavender clouds, chalky ultramarine crayon bars and dragged mustard blur floating on flat dusty-rose ground, seen flat-on like a scanned painting with generous pink margins. One ultramarine crayon band sweeps the full width, fading into hot pink; three small glossy grape clusters gather inside a single loose graphite pencil lasso left of center, while coral blobs and lime dabs thin out rightward. Even shadowless light, grainy pastel tooth, feathered edges, no text.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through horizontal floating frieze with a single gathered focal loop / flat-on scanned-painting plate, no perspective, wide rose margins. full-width ultramarine crayon spine; three grapes corralled inside one large graphite lasso left of center.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Large loose graphite pencil lasso corralling three glossy grape clusters. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nEven, shadowless diffuse light flattening everything into the painted surface; only the grapes carry tiny glossy highlights.; materials: grainy chalk pastel; translucent airbrush gouache; soft graphite pencil line; blurred mustard smear; palette: dusty rose ground with lavender, electric ultramarine, coral, hot pink, lime and mustard accents. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no legible text or numerals from the caption no realistic vineyard, table or fruit still life",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 67904,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 16632,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 36420,
+      "ok": true
+    }
+  ],
+  "notes": []
+}
