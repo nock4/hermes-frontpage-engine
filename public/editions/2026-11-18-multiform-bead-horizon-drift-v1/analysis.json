@@ -1,0 +1,95 @@
+{
+  "analysis_id": "analysis-2026-11-18-multiform-bead-horizon-drift-v1",
+  "edition_id": "2026-11-18-multiform-bead-horizon-drift-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A soft-edged color-field painting on cream, aged canvas, with a pink L-form, a green oval with an ochre core, and a mottled cobalt cloud in the upper half. A full-width row of alternating cobalt and crimson bead-dabs divides the field, above a rose-pink lower wash holding a cobalt hourglass form flanked by turquoise glows.",
+  "usable_surfaces": [
+    "full-width blue-red bead row horizon",
+    "pink L-shaped form upper left",
+    "green oval with ochre core upper center",
+    "mottled cobalt cloud upper right",
+    "cobalt hourglass form lower center",
+    "turquoise halos beside hourglass",
+    "rose-pink lower wash field",
+    "cream canvas ground"
+  ],
+  "detected_objects": [
+    {
+      "label": "Full-width horizon row of alternating cobalt and crimson bead-dabs",
+      "artifact_type": "painted-dab-band",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0,
+        "y": 0.505,
+        "w": 1,
+        "h": 0.055
+      },
+      "polygon": [
+        [
+          0,
+          0.512
+        ],
+        [
+          0.15,
+          0.508
+        ],
+        [
+          0.3,
+          0.51
+        ],
+        [
+          0.45,
+          0.507
+        ],
+        [
+          0.6,
+          0.508
+        ],
+        [
+          0.75,
+          0.507
+        ],
+        [
+          0.9,
+          0.508
+        ],
+        [
+          1,
+          0.512
+        ],
+        [
+          1,
+          0.552
+        ],
+        [
+          0.85,
+          0.556
+        ],
+        [
+          0.65,
+          0.555
+        ],
+        [
+          0.45,
+          0.557
+        ],
+        [
+          0.25,
+          0.555
+        ],
+        [
+          0,
+          0.551
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A continuous horizontal row of about 22 soft, evenly spaced oval dabs alternates cobalt blue and crimson red. It runs edge to edge at about 51-56% of the image height and divides the cream upper field from the pink lower wash. This matches the planned anchor."
+    }
+  ],
+  "viewport": {
+    "base_width": 1610,
+    "base_height": 977,
+    "aspect_ratio": "1610:977"
+  }
+}

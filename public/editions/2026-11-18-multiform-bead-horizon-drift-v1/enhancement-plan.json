@@ -1,0 +1,71 @@
+{
+  "enhancement_plan_id": "enhance-2026-11-18-multiform-bead-horizon-drift-v1",
+  "edition_id": "2026-11-18-multiform-bead-horizon-drift-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-11-18-multiform-bead-horizon-drift-v1"
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "primary_behavior": "mechanical-reveal-system",
+    "scene_wide_behavior": "cabinet-drawer-behavior",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "future_only_subset": [
+    "ghost-reflection-treatment",
+    "lens-inspection"
+  ],
+  "rejected": [
+    {
+      "technique": "light-path-reveal",
+      "reason": "Rejected by interpretation behavior rule: light-path-reaction"
+    },
+    {
+      "technique": "light-path-reveal",
+      "reason": "Object-native scenes should anchor interaction to discrete artifacts before environmental field effects."
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-full-width-horizon-row-of-alternatin",
+      "target_kind": "artifact",
+      "artifact_id": "hero-full-width-horizon-row-of-alternatin",
+      "priority": 1,
+      "techniques": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (painted-dab-band) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "mechanical-reveal-system",
+    "warped-paper-fragment",
+    "threshold-scan-reveal"
+  ],
+  "runtime_note": "Generated automatically from 1 artifacts and scene family heuristics."
+}
