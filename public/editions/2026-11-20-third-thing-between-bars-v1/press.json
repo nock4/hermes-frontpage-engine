@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-19T11:20:08.160Z",
+  "go_live_at": "2026-11-20T09:00:00.000Z",
+  "source_key": "tweet:2120912049870086256",
+  "source_url": "https://x.com/briandroitcour/status/2120912049870086256",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@briandroitcour: \"Secret Third Thing,\" a group show about the conditions and effects of digita...: A filter-processed abstract exhibition poster: a swollen salmon-pink lobe and bruised lavender-magenta painterly core on warm beige, interrupted by black and red-scratched vertical bars, with fragmented embossed title letters.; the large melted boot-like salmon lobe with glowing dark contour; bruised lavender-violet knot at center; tall red-and-black scratched vertical panel slicing the core;…\nSOURCE-ASPECT NOTE: measured source is square (1024x1024); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nMelted-poster abstraction on warm beige vellum: a wide frontal landscape plate, softly vignetted, built as a split-lobe diptych. Two swollen salmon-pink lobes with smeared red-black halo contours drift apart, a bruised lavender-magenta impasto core suspended in the gap. A tall red-scratched vertical panel slices through the core as anchor; a black bar and striped strip stagger across the right third. Illegible embossed glyph-crumbs bead along lobe rims. Diffuse sepia light, painterly filter smoothing, dense center, generous tan negative space, uneasy tender mood.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through split-lobe diptych with vertical bar interruptions / flat frontal poster plate, wide landscape, softly vignetted. two salmon lobes drifting apart around a suspended bruised core; tall red-scratched panel slicing vertically through the core.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: tall red-and-black scratched vertical panel piercing the bruised core. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\ndiffuse sepia daylight with soft corner vignette; dark glowing halos rim each shape as if backlit through paper; materials: warm beige vellum; smeared salmon gouache; crumpled lavender impasto; scratched scarlet enamel strokes; palette: warm beige ground, salmon-coral masses, lavender-violet bruise, scarlet and ink-black accents. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no readable letters or title text do not literalize the lobe as a shoe, foot, or face",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 67671,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 20207,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 35350,
+      "ok": true
+    }
+  ],
+  "notes": []
+}
