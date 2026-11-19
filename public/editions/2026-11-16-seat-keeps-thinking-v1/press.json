@@ -1,0 +1,39 @@
+{
+  "built_at": "2026-11-15T11:20:06.090Z",
+  "go_live_at": "2026-11-16T09:00:00.000Z",
+  "source_key": "tweet:2120888093184254275",
+  "source_url": "https://x.com/manta_timing/status/2120888093184254275",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@manta_timing: TOMORROW - 9am PST “The Thinker” 1/1 auction with redeemable print 0.75 SOL r...: A printed early-CG-style render of a figure in Rodin's Thinker pose seated on a lavender cube stool against a flat yellow backdrop and tiled green turf, with a lone cropped cloud.; Source observation to recompose: hunched chin-on-fist thinker silhouette leaning forward; Source observation to recompose: small lavender cube on thin uneven pale legs;…\nSOURCE-ASPECT NOTE: measured source is portrait/vertical (812x1258); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRepresentational source cues are a vocabulary of concrete fragments and relationships, not requirements for exact count, order, positions, or full-scene restaging. Recompose selected recognizable fragments into new groupings and negative space; do not rebuild the complete portrait lineup or backdrop. Palette and grain alone are insufficient.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nEarly-2000s render dreamworld: a flat lemon-yellow wall meets pixel-mottled green turf along a low horizon across a wide landscape plate. Frontal locked-off camera, offset empty-pedestal archetype: a lone lavender cube on thin pale legs sits left of center, its jagged stair-stepped top edge carrying the source, empty. A soft violet shadow of a hunched chin-on-fist thinker floats unattached across the yellow. One small puffy cloud drifts near the right horizon. Flat shadowless light, print grain, low-poly shimmer, vast quiet negative space.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through offset empty pedestal with detached shadow / frontal locked-off wide plate, eye-level with the cube, low horizon. empty lavender cube isolated left of center on the turf; detached violet thinker shadow floating across the yellow wall.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Jagged stair-stepped top edge of the empty lavender cube seat. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nFlat, even, shadowless studio light with a faint violet shadow-shape that falls from no visible source.; materials: matte lavender polygon surface; tiled pixel-mottled green turf; flat emulsion-yellow backdrop; soft cotton-puff cloud sprite; palette: lemon yellow, acid green, chalk lavender, cloud white, soft violet shadow. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no human body, skin, face, or nudity rendered; the thinker appears only as a faceless soft shadow contour no readable text, signatures, or auction marks",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 69599,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 14258,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 39888,
+      "ok": false,
+      "error": "Expected ',' or '}' after property value in JSON at position 1356 (line 1 column 1357)"
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 36490,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-17T11:20:07.603Z",
+  "go_live_at": "2026-11-18T09:00:00.000Z",
+  "source_key": "tweet:2122276456336077000",
+  "source_url": "https://x.com/trojan_norse/status/2122276456336077000",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@trojan_norse: Mark Rothko: An early Mark Rothko multiform oil painting: soft pink, green, blue and crimson shapes floating on a cream ground, split by a horizontal row of bead-like dabs.; horizontal row of alternating blue and crimson bead-dabs dividing the field; tall soft-pink L-shaped column; green bar with smoldering ochre center; pinched cobalt spool form on a teal band within rose wash\nSOURCE-ASPECT NOTE: measured source is portrait/vertical (387x560); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nMultiform color-field drift on a cream-washed linen plane, frontal flat plate, wide landscape. A long horizon of cobalt and crimson bead-dabs crosses the full width as the anchor, splitting two soft fields. Above, a pale pink column and an ochre-cored green bar drift apart through open cream, and a dappled cornflower cloud breathes at the right edge. Below, a lone cobalt spool floats in rose wash. Feathered, bleeding edges, thin translucent oil, diffuse sourceless glow, quiet hush.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through split-field multiform drift around a horizon band / frontal flat plate, full-bleed painted surface, no perspective. full-width bead-dab horizon dividing two airy fields; upper pink column and green-ochre bar pushed apart across open cream.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Full-width horizon of alternating cobalt and crimson bead-dabs. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\neven, diffuse, sourceless glow emanating from the color fields themselves; materials: thinned oil wash on raw linen; stained cream gesso ground; scumbled translucent pigment; dappled dry-brush blue; palette: cream-dominant with rose pinks, cobalt blues, crimson accents, and one teal-ochre ember. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no hard-edged geometry or crisp outlines no figurative reading of the shapes as objects or creatures",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 62525,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 18430,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 39213,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

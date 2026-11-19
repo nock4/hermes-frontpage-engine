@@ -4,6 +4,7 @@ import path from 'node:path'
 
 import { hasCreativeArtifactEvidence, isAiToolingContentSource, isCreativeInspectionRejectedSource, isAutoresearchExcluded, isDocumentationUiSource, selectContentSources, sourceContentKey } from './source-selection-policy.mjs'
 import { canonicalizeSourceUrl } from './source-url-policy.mjs'
+import { sourceTrackFamilyUrls } from './source-ledger.mjs'
 
 const SOURCE_DECISION_SCHEMA_VERSION = 1
 
@@ -11,8 +12,10 @@ function evidenceList(items = []) {
   return [...new Set(items.filter(Boolean))]
 }
 
+// Anchor material family: every owning, redirect and inspected media identity.
+// The anchor stays one-use against the FULL archive ledger at any age.
 function sourceUrls(source = {}) {
-  return [source.url, source.source_url, source.final_url, source.image_url, source.source_image_url, source.source_media_url, ...(source.source_image_aliases || [])]
+  return [source.url, source.source_url, source.final_url, source.resolved_url, source.page_url, source.image_url, source.source_image_url, source.source_media_url, source.media_url, ...(source.source_image_aliases || []), ...sourceTrackFamilyUrls(source)]
     .filter(Boolean)
 }
 
@@ -25,7 +28,7 @@ function sourceHasRecentUrlOrImage(source = {}, recentSourceKeys = new Set()) {
 }
 
 function sourceImageSpent(source = {}, recentSourceKeys = new Set()) {
-  const imageUrls = [source.image_url, source.source_image_url, source.source_media_url, ...(source.source_image_aliases || [])]
+  const imageUrls = [source.image_url, source.source_image_url, source.source_media_url, source.media_url, ...(source.source_image_aliases || [])]
     .filter(Boolean)
   return imageUrls.some((url) => {
     const canonical = canonicalizeSourceUrl(url)
@@ -51,6 +54,24 @@ function decision({ decision, reason_code: reasonCode, confidence, evidence = []
     confidence,
     evidence: evidenceList(evidence),
   }
+}
+
+// Final anchor/main-artwork guard against the FULL archive ledger. Supporting
+// windows use the cooldown subset elsewhere; this list must stay empty.
+export function findAnchorArchiveRepeats({ anchorSource = null, selectedImageMaterial = [], visualReference = null } = {}, recentSourceKeys = new Set()) {
+  const rows = [
+    ['anchor_source', anchorSource],
+    ['selected_image_material[0]', selectedImageMaterial?.[0] ? { url: selectedImageMaterial[0].page_url, image_url: selectedImageMaterial[0].image_url, source_image_aliases: selectedImageMaterial[0].source_image_aliases, track_family_urls: selectedImageMaterial[0].track_family_urls } : null],
+    ['visual_reference', visualReference],
+  ]
+  return rows.flatMap(([role, source]) => {
+    if (!source) return []
+    const repeated = sourceUrls(source).find(url => {
+      const canonical = canonicalizeSourceUrl(url)
+      return recentSourceKeys.has(canonical) || recentSourceKeys.has(sourceContentKey({ url, source_url: url, final_url: url }))
+    })
+    return repeated ? [{ role, url: repeated }] : []
+  })
 }
 
 export function decideAnchorEligibility({ anchorSource = null, recentSourceKeys = new Set(), autoresearch = null } = {}) {

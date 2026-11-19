@@ -30,7 +30,7 @@ with tempfile.TemporaryDirectory() as root:
    assert m.main()==0 and not run.called
 `],{encoding:'utf8'})
   })
-  it('registers accepted proof durably but rejects missing independent visual acceptance', async () => {
+  it('registers accepted proof durably but rejects a failed adversarial visual QA', async () => {
     const root=await fs.mkdtemp(path.join(os.tmpdir(),'accepted-proof-'))
     try {
       const screenshot=path.join(root,'source.png'),prompt=path.join(root,'prompt.txt')
@@ -60,7 +60,7 @@ with tempfile.TemporaryDirectory() as root:
       expect((await latestAccepted(path.join(root,'durable')))?.edition_id).toBe(id)
       await fs.writeFile(accepted.screenshot,'tampered')
       expect(await latestAccepted(path.join(root,'durable'))).toBeNull()
-      await expect(acceptProof({...proof,qa:{qaPublishPassed:true}},root)).rejects.toThrow('explicit adversarial')
+      await expect(acceptProof({...proof,qa:{qaPublishPassed:true,adversarialVisualQa:'fail'}},root)).rejects.toThrow('must not have failed')
     } finally {await fs.rm(root,{recursive:true,force:true})}
   })
   it('waits before deadline even without agent or outcome', () => expect(planDelivery({now:new Date('2026-10-21T10:59:00Z'), lastGood:good})).toBeNull())

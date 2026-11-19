@@ -1,0 +1,119 @@
+{
+  "interpretation_id": "interp-2026-11-15-sky-lying-in-the-leaves-v1",
+  "edition_id": "2026-11-15-sky-lying-in-the-leaves-v1",
+  "plate_read_timestamp": "2026-11-14T14:20:07.402Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "optical-native",
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A woodblock-print-style autumn forest floor carpeted in fallen maple leaves, striped with diagonal sunlight beneath a row of dark trunks. A large scalloped puddle winds from upper left across the full width, mirroring blue sky, inverted trunks and red maple branches, while one slender leaning trunk crosses diagonally in front of it.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "hushed late-afternoon stillness, warm ground holding a cool sky",
+      "A woodblock-print-style autumn forest floor carpeted in fallen maple leaves, striped with diagonal sunlight beneath a row of dark trunks. A large scalloped puddle winds from upper left across the full width, mirroring blue sky, inverted trunks and red maple branches, while one slender leaning trunk crosses diagonally in front of it.",
+      "woodblock-forest-floor",
+      "reflecting-pool",
+      "leaf-dab-mosaic"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Scalloped sky-reflecting puddle with inverted trunks in the leaf floor"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "wood",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "woodblock-leaf-floor-pool-aperture",
+      "Scalloped sky-reflecting pool aperture cut into the leaf floor",
+      "scalloped sky-reflecting puddle",
+      "sunlit leaf-carpeted forest floor",
+      "diagonal leaning tree trunk",
+      "background row of dark trunks with autumn canopy",
+      "foreground scattered maple leaves"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: woodblock-leaf-floor-pool-aperture.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-scalloped-sky-reflecting-puddle-with",
+      "kind": "hero",
+      "type": "reflective-aperture",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.01,
+        "y": 0.255,
+        "w": 0.987,
+        "h": 0.64
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-scalloped-sky-reflecting-puddle-with-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.01,
+        "y": 0.255,
+        "w": 0.987,
+        "h": 0.64
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

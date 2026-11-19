@@ -75,8 +75,14 @@ async function immutable(file, bytes) {
     if (error.code !== 'EEXIST' || !(await fs.readFile(file)).equals(Buffer.from(bytes))) throw Error(`Review transport retained context changed: ${file}`)
   }
 }
+// review-turn-state.py imports hermes_cli, which only the Hermes venv has. A bare
+// `python3` resolves to whatever is first on PATH (Homebrew 3.15 since 2026-10-22),
+// which made every reconciliation fail as UNAVAILABLE.
+export function hermesPython(env = process.env) {
+  return env.DFE_HERMES_PYTHON || '/Users/nickgeorge-studio/Projects/hermes/hermes-agent/venv/bin/python3'
+}
 async function reconcileTurn({ directory, prompt, sessionId }) {
-  const { stdout } = await promisify(execFile)('python3', [fileURLToPath(new URL('./review-turn-state.py', import.meta.url)), sessionId, path.join(directory, 'hermes-prompt.txt')], {
+  const { stdout } = await promisify(execFile)(hermesPython(), [fileURLToPath(new URL('./review-turn-state.py', import.meta.url)), sessionId, path.join(directory, 'hermes-prompt.txt')], {
     timeout: 60000, maxBuffer: 4 * 1024 * 1024,
     env: { ...process.env, PYTHONPATH: '', PYTHONHOME: '' },
   })

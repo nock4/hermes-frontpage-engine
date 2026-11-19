@@ -1,0 +1,86 @@
+{
+  "analysis_id": "analysis-2026-11-20-third-thing-between-bars-v1",
+  "edition_id": "2026-11-20-third-thing-between-bars-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A wide abstract mixed-media painting on a warm parchment ground shows two heavily textured salmon-pink impasto masses with scorched crimson-black edges, joined by a turbulent lavender-magenta bruised core with dripping tendrils. A full-height scratched red-and-black vertical panel pierces the core just right of centre, while two thinner vertical bars on the right (one solid black, one with glitch-like horizontal striations) add a digital counterpoint.",
+  "usable_surfaces": [
+    "left salmon impasto mass",
+    "right salmon impasto mass",
+    "lavender-magenta bruised core",
+    "scratched red-black vertical panel",
+    "solid black vertical bar",
+    "striated barcode-like strip",
+    "parchment background margins"
+  ],
+  "detected_objects": [
+    {
+      "label": "tall red-and-black scratched vertical panel piercing the bruised core",
+      "artifact_type": "scratched-vertical-interruption",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.451,
+        "y": 0,
+        "w": 0.105,
+        "h": 1
+      },
+      "polygon": [
+        [
+          0.452,
+          0
+        ],
+        [
+          0.504,
+          0
+        ],
+        [
+          0.556,
+          0
+        ],
+        [
+          0.555,
+          0.25
+        ],
+        [
+          0.554,
+          0.5
+        ],
+        [
+          0.552,
+          0.75
+        ],
+        [
+          0.551,
+          1
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.451,
+          1
+        ],
+        [
+          0.451,
+          0.75
+        ],
+        [
+          0.452,
+          0.5
+        ],
+        [
+          0.452,
+          0.25
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A full-height vertical band of saturated red over black with dense diagonal and cross-hatched scratch incisions and small drips. Its straight, slightly irregular left and right edges cut cleanly through the lavender-magenta impasto core near image centre, matching the planned anchor."
+    }
+  ],
+  "viewport": {
+    "base_width": 1610,
+    "base_height": 977,
+    "aspect_ratio": "1610:977"
+  }
+}

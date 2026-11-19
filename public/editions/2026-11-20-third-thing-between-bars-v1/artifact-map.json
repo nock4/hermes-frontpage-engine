@@ -1,0 +1,91 @@
+{
+  "artifact_map_id": "map-2026-11-20-third-thing-between-bars-v1",
+  "viewport": {
+    "base_width": 1610,
+    "base_height": 977,
+    "aspect_ratio": "1610:977"
+  },
+  "default_cluster_id": "salmon-lobe-bruised-core-bar-interruption",
+  "default_artifact_id": "hero-tall-red-and-black-scratched-vertica",
+  "artifacts": [
+    {
+      "id": "hero-tall-red-and-black-scratched-vertica",
+      "kind": "hero",
+      "label": "tall red-and-black scratched vertical panel piercing the bruised core",
+      "artifact_type": "scratched-vertical-interruption",
+      "bounds": {
+        "x": 0.451,
+        "y": 0,
+        "w": 0.105,
+        "h": 1
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.452,
+          0
+        ],
+        [
+          0.504,
+          0
+        ],
+        [
+          0.556,
+          0
+        ],
+        [
+          0.555,
+          0.25
+        ],
+        [
+          0.554,
+          0.5
+        ],
+        [
+          0.552,
+          0.75
+        ],
+        [
+          0.551,
+          1
+        ],
+        [
+          0.5,
+          1
+        ],
+        [
+          0.451,
+          1
+        ],
+        [
+          0.451,
+          0.75
+        ],
+        [
+          0.452,
+          0.5
+        ],
+        [
+          0.452,
+          0.25
+        ]
+      ],
+      "cluster_id": "salmon-lobe-bruised-core-bar-interruption",
+      "mask_path": "/editions/2026-11-20-third-thing-between-bars-v1/assets/masks/hero-tall-red-and-black-scratched-vertica.svg",
+      "source_binding_ids": [
+        "binding-hero-tall-red-and-black-scratched-vertica"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          811,
+          410
+        ],
+        "safe_stage_window_origin_px": [
+          824,
+          489
+        ],
+        "preferred_expansion_label": "left"
+      }
+    }
+  ]
+}

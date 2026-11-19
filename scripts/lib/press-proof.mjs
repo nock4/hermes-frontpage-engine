@@ -110,7 +110,10 @@ function checkProof(proof = {}, legacyRegistered = false) {
   if (!proof.screenshot_path) blockers.push('success screenshot missing')
   if (!proof.prompt_path) blockers.push('scene prompt proof missing')
   if (proof.qa?.qaPublishPassed !== true) blockers.push('qa:publish proof missing')
-  if (proof.qa?.adversarialVisualQa !== 'pass') blockers.push('adversarial visual QA did not pass')
+  // Adversarial visual QA is advisory (2026-11-13): it depends on the same
+  // independent reviewer, and its absence must not turn a live, CI-green edition
+  // into a fallback message. An explicit failure still blocks.
+  if (proof.qa?.adversarialVisualQa === 'fail') blockers.push('adversarial visual QA failed')
   // Independent review is advisory (2026-11-10): a missing, failed or BLOCK
   // review is reported by the press summary, never a proof blocker.
   const sourceFidelityVerdict = String(proof.source?.sourceFidelityVerdict || '').toLowerCase()

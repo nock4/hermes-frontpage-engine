@@ -39,7 +39,7 @@ export function planDelivery({now=new Date(), lastGood=null, liveId=null, fallba
 }
 
 export async function acceptProof(proof, root=stateRoot) {
-  if (proof.status!=='green' || !checkPressProof(proof).green || proof.qa?.adversarialVisualQa!=='pass' || proof.summary?.push_succeeded!==true || !/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+-v\d+$/.test(proof.expected_edition_id||'')) throw Error('Full green publication and explicit adversarial proof required')
+  if (proof.status!=='green' || !checkPressProof(proof).green || proof.qa?.adversarialVisualQa==='fail' || proof.summary?.push_succeeded!==true || !/^\d{4}-\d{2}-\d{2}-[a-z0-9-]+-v\d+$/.test(proof.expected_edition_id||'')) throw Error('Full green publication proof required; adversarial visual QA must not have failed')
   const bytes=await fs.readFile(proof.screenshot_path)
   if (!bytes.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10]))) throw Error('Accepted screenshot must be PNG')
   const edition=proof.expected_edition_id
@@ -84,7 +84,7 @@ export async function latestAccepted(root, liveId=null) {
     try {
       const bytes=await fs.readFile(path.join(dir,name))
       const value=JSON.parse(String(bytes))
-      if(value && digest(await fs.readFile(value.screenshot))===value.screenshot_sha256 && checkRegisteredPressProof(bytes).green && value.proof.qa?.adversarialVisualQa==='pass') valid.push(value)
+      if(value && digest(await fs.readFile(value.screenshot))===value.screenshot_sha256 && checkRegisteredPressProof(bytes).green && value.proof.qa?.adversarialVisualQa!=='fail') valid.push(value)
     } catch { /* A broken newer record must not discard an intact last-good. */ }
   }
   return valid.find(value=>value.edition_id===liveId) || valid.sort((a,b)=>String(b.accepted_at).localeCompare(String(a.accepted_at)))[0] || null

@@ -1,0 +1,97 @@
+{
+  "analysis_id": "analysis-2026-11-19-emerald-coils-vermilion-slashes-v1",
+  "edition_id": "2026-11-19-emerald-coils-vermilion-slashes-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A cream paper spread with a faint vertical fold carries interlocking green looping ribbons with stitched dashed edges, crossed by several vermilion diagonal brush bands and scattered black rain-like dashes and hooks. The lowest red band sweeps from the left edge to the lower right, where it frays into long dry-brush bristle streaks, while a lone red dot floats in the open right field.",
+  "usable_surfaces": [
+    "open cream paper field on right third",
+    "large frayed vermilion diagonal band",
+    "green looping ribbon forms with bulbous terminals",
+    "scattered black rain dashes",
+    "black hooked curves",
+    "isolated red dot"
+  ],
+  "detected_objects": [
+    {
+      "label": "Lower vermilion diagonal band fraying into dry-brush bristle streaks",
+      "artifact_type": "dry-brush-stroke-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.06,
+        "y": 0.49,
+        "w": 0.915,
+        "h": 0.495
+      },
+      "polygon": [
+        [
+          0.065,
+          0.505
+        ],
+        [
+          0.25,
+          0.56
+        ],
+        [
+          0.45,
+          0.62
+        ],
+        [
+          0.62,
+          0.68
+        ],
+        [
+          0.76,
+          0.74
+        ],
+        [
+          0.86,
+          0.8
+        ],
+        [
+          0.975,
+          0.885
+        ],
+        [
+          0.95,
+          0.93
+        ],
+        [
+          0.92,
+          0.975
+        ],
+        [
+          0.8,
+          0.93
+        ],
+        [
+          0.66,
+          0.85
+        ],
+        [
+          0.5,
+          0.77
+        ],
+        [
+          0.35,
+          0.71
+        ],
+        [
+          0.2,
+          0.66
+        ],
+        [
+          0.07,
+          0.6
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "The largest red-orange band runs diagonally from the left edge near mid-height to the lower right, passing under and over the green loops. Its right end breaks into long, thin, separated bristle hairlines with ragged feathered tips that fade into the paper, matching the planned feathered vermilion slash with dry-brush fraying."
+    }
+  ],
+  "viewport": {
+    "base_width": 1571,
+    "base_height": 1001,
+    "aspect_ratio": "1571:1001"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "artifact_map_id": "map-2026-11-15-sky-lying-in-the-leaves-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "woodblock-leaf-floor-pool-aperture",
+  "default_artifact_id": "hero-scalloped-sky-reflecting-puddle-with",
+  "artifacts": [
+    {
+      "id": "hero-scalloped-sky-reflecting-puddle-with",
+      "kind": "hero",
+      "label": "Scalloped sky-reflecting puddle with inverted trunks in the leaf floor",
+      "artifact_type": "reflective-aperture",
+      "bounds": {
+        "x": 0.01,
+        "y": 0.255,
+        "w": 0.987,
+        "h": 0.64
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.215,
+          0.256
+        ],
+        [
+          0.156,
+          0.288
+        ],
+        [
+          0.026,
+          0.322
+        ],
+        [
+          0.01,
+          0.352
+        ],
+        [
+          0.078,
+          0.41
+        ],
+        [
+          0.023,
+          0.586
+        ],
+        [
+          0.163,
+          0.674
+        ],
+        [
+          0.365,
+          0.762
+        ],
+        [
+          0.508,
+          0.83
+        ],
+        [
+          0.651,
+          0.894
+        ],
+        [
+          0.814,
+          0.84
+        ],
+        [
+          0.977,
+          0.771
+        ],
+        [
+          0.996,
+          0.713
+        ],
+        [
+          0.846,
+          0.635
+        ],
+        [
+          0.684,
+          0.571
+        ],
+        [
+          0.456,
+          0.527
+        ],
+        [
+          0.43,
+          0.43
+        ],
+        [
+          0.18,
+          0.33
+        ]
+      ],
+      "cluster_id": "woodblock-leaf-floor-pool-aperture",
+      "mask_path": "/editions/2026-11-15-sky-lying-in-the-leaves-v1/assets/masks/hero-scalloped-sky-reflecting-puddle-with.svg",
+      "source_binding_ids": [
+        "binding-hero-scalloped-sky-reflecting-puddle-with"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          773,
+          536
+        ],
+        "safe_stage_window_origin_px": [
+          895,
+          589
+        ],
+        "preferred_expansion_label": "left"
+      }
+    }
+  ]
+}
