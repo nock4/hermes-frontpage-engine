@@ -107,6 +107,8 @@ for (const viewport of [{width:1440,height:980},{width:375,height:667}]) test(`S
   await page.screenshot({path:`${root}desktop-${viewport.width}-stop.png`})
 })
 async function fixture(page: any, kind: string) {
+  // Chromium 158+ has DeviceOrientationEvent.requestPermission(); without a grant it answers "denied".
+  if (kind === 'depth') await page.context().grantPermissions(['accelerometer', 'gyroscope', 'magnetometer'])
   const media = ['projection', 'castlight'].includes(kind)
   if (media) {
     await page.route('**/editions/qa-effects/assets/native-video.webm', (r: any) =>

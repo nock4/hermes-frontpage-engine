@@ -1,0 +1,117 @@
+{
+  "interpretation_id": "interp-2026-11-18-multiform-bead-horizon-drift-v1",
+  "edition_id": "2026-11-18-multiform-bead-horizon-drift-v1",
+  "plate_read_timestamp": "2026-11-17T11:20:07.603Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A soft-edged color-field painting on cream, aged canvas, with a pink L-form, a green oval with an ochre core, and a mottled cobalt cloud in the upper half. A full-width row of alternating cobalt and crimson bead-dabs divides the field, above a rose-pink lower wash holding a cobalt hourglass form flanked by turquoise glows.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "buoyant, hushed, contemplative drift",
+      "A soft-edged color-field painting on cream, aged canvas, with a pink L-form, a green oval with an ochre core, and a mottled cobalt cloud in the upper half. A full-width row of alternating cobalt and crimson bead-dabs divides the field, above a rose-pink lower wash holding a cobalt hourglass form flanked by turquoise glows.",
+      "color-field",
+      "bead-horizon",
+      "feathered-edge"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Full-width horizon row of alternating cobalt and crimson bead-dabs"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "glass"
+    ],
+    "dominant_structures": [
+      "multiform-bead-horizon-drift",
+      "Full-width horizon of alternating cobalt and crimson bead-dabs",
+      "full-width blue-red bead row horizon",
+      "pink L-shaped form upper left",
+      "green oval with ochre core upper center",
+      "mottled cobalt cloud upper right",
+      "cobalt hourglass form lower center",
+      "turquoise halos beside hourglass"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: multiform-bead-horizon-drift.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-full-width-horizon-row-of-alternatin",
+      "kind": "hero",
+      "type": "painted-dab-band",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0,
+        "y": 0.505,
+        "w": 1,
+        "h": 0.055
+      },
+      "supports": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-full-width-horizon-row-of-alternatin-surface",
+      "surface_type": "glass",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0.505,
+        "w": 1,
+        "h": 0.055
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "ghost-reflection-treatment",
+        "lens-inspection"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

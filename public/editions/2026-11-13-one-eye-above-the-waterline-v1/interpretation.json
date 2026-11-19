@@ -1,0 +1,114 @@
+{
+  "interpretation_id": "interp-2026-11-13-one-eye-above-the-waterline-v1",
+  "edition_id": "2026-11-13-one-eye-above-the-waterline-v1",
+  "plate_read_timestamp": "2026-11-13T09:13:20.398Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A landscape watercolor-and-ink plate on a flat turquoise ground. On the left, three stacked line-drawn anime face echoes (eyes closed, eye open and crying with an open mouth, eyes closed) dissolve into vertical indigo/cobalt hair drips. On the right, three torn indigo-violet stain islands each hold a creature fragment: a ridged lavender horn at the top, a reptilian eye with an amber-orange slit-pupil iris and red/magenta-flecked scaly skin in the middle, and a pale cream fang comb dripping toward the bottom edge. A thin red horizontal line runs from the girl's cheek into the amber eye. The eye is the only hot accent, so it is the focal point. It is painted to look luminous but casts no actual light on the ground.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "Landscape wet-stain painting on wide flat turquoise. Left: three faint line-only anime face echoes stacked, one tear, melting into indigo hair drips. Right: torn stain islands: ringed cone horn, glowing amber eye with red flecks, pale fang comb running into drips. One thin horizontal line joins tear-eye to beast eye.",
+      "A landscape watercolor-and-ink plate on a flat turquoise ground. On the left, three stacked line-drawn anime face echoes (eyes closed, eye open and crying with an open mouth, eyes closed) dissolve into vertical indigo/cobalt hair drips. On the right, three torn indigo-violet stain islands each hold a creature fragment: a ridged lavender horn at the top, a reptilian eye with an amber-orange slit-pupil iris and red/magenta-flecked scaly skin in the middle, and a pale cream fang comb dripping toward the bottom edge. A thin red horizontal line runs from the girl's cheek into the amber eye. The eye is the only hot accent, so it is the focal point. It is painted to look luminous but casts no actual light on the ground.",
+      "split-horizon",
+      "dye-flood",
+      "submerged-bloom"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Amber beast eye with red flecks in a torn indigo stain island"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "water",
+      "paint"
+    ],
+    "dominant_structures": [
+      "turquoise-flood-submerged-bloom",
+      "Self-luminous amber beast eye with red flecks in a torn indigo stain island",
+      "torn indigo stain island around the amber eye",
+      "amber slit-pupil iris with red-flecked scaly surround",
+      "thin red horizontal line from tear-face to beast eye",
+      "flat turquoise wash ground"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: turquoise-flood-submerged-bloom.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-amber-beast-eye-with-red-flecks-in-a",
+      "kind": "hero",
+      "type": "source-native-mark",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0.573,
+        "y": 0.298,
+        "w": 0.391,
+        "h": 0.317
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-amber-beast-eye-with-red-flecks-in-a-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.573,
+        "y": 0.298,
+        "w": 0.391,
+        "h": 0.317
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

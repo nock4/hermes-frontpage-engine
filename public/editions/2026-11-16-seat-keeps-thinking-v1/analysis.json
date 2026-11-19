@@ -1,0 +1,110 @@
+{
+  "analysis_id": "analysis-2026-11-16-seat-keeps-thinking-v1",
+  "edition_id": "2026-11-16-seat-keeps-thinking-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A flat, saturated yellow backdrop meets a pixelated green grass plane at roughly two-thirds height. At left, a lavender cube-like seat stands on four wobbly, pale pink tube legs; its top edge drops in five stair-stepped notches from a tall back-left corner down to the right. Behind it, a large blurred purple silhouette of a seated figure in a chin-on-hand Thinker pose fades into the yellow, and a small soft white cloud floats low at the right.",
+  "usable_surfaces": [
+    "stair-stepped lavender top edge of the seat",
+    "flat lavender front face of the seat",
+    "wobbly pink legs",
+    "blurred purple Thinker silhouette",
+    "small white cloud at right",
+    "pixelated green grass plane",
+    "open yellow sky field"
+  ],
+  "detected_objects": [
+    {
+      "label": "Jagged stair-stepped top edge of the empty lavender cube seat",
+      "artifact_type": "broken-mesh-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.179,
+        "y": 0.459,
+        "w": 0.215,
+        "h": 0.141
+      },
+      "polygon": [
+        [
+          0.179,
+          0.468
+        ],
+        [
+          0.266,
+          0.459
+        ],
+        [
+          0.266,
+          0.487
+        ],
+        [
+          0.302,
+          0.487
+        ],
+        [
+          0.302,
+          0.518
+        ],
+        [
+          0.34,
+          0.518
+        ],
+        [
+          0.34,
+          0.544
+        ],
+        [
+          0.365,
+          0.544
+        ],
+        [
+          0.365,
+          0.572
+        ],
+        [
+          0.394,
+          0.572
+        ],
+        [
+          0.394,
+          0.6
+        ],
+        [
+          0.331,
+          0.6
+        ],
+        [
+          0.331,
+          0.546
+        ],
+        [
+          0.293,
+          0.546
+        ],
+        [
+          0.293,
+          0.516
+        ],
+        [
+          0.257,
+          0.516
+        ],
+        [
+          0.257,
+          0.49
+        ],
+        [
+          0.179,
+          0.49
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "The lavender block's upper contour is clearly visible as a sharp staircase of right-angle notches. It runs from the tall back-left corner (about x 0.18-0.27, y 0.46) and steps down five times to the right edge near x 0.39, y 0.57. It reads as a voxel- or mesh-like broken edge against the yellow background."
+    }
+  ],
+  "viewport": {
+    "base_width": 1672,
+    "base_height": 941,
+    "aspect_ratio": "1672:941"
+  }
+}

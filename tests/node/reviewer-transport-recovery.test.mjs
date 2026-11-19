@@ -300,3 +300,9 @@ print(json.dumps({'calls':calls,'result':result}))`
   expect(output.calls.map(r => r[0])).toEqual(['session.resume', 'prompt.receipt', 'session.resume'])
   expect(output.result.prompt_sha256).toBe(hash('SYNTHETIC prompt')); expect(output.result.execution_generation).toBe(1)
 })
+
+it('reconciles review turns with the Hermes venv Python, not whatever python3 is on PATH', async () => {
+  const { hermesPython } = await import('../../scripts/lib/hermes-review-adapter.mjs')
+  expect(hermesPython({})).toMatch(/hermes-agent\/venv\/bin\/python3$/)
+  expect(hermesPython({ DFE_HERMES_PYTHON: '/custom/python3' })).toBe('/custom/python3')
+})

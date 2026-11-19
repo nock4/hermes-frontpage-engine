@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-18T11:20:08.222Z",
+  "go_live_at": "2026-11-19T09:00:00.000Z",
+  "source_key": "tweet:2122597209002713431",
+  "source_url": "https://x.com/trojan_norse/status/2122597209002713431",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@trojan_norse: David Hockney: An all-over gestural abstract print on cream paper where thick emerald serpentine coils weave through broad vermilion diagonal bands, punctuated by black oil-stick dashes and hooks, split by a central fold seam.; looping rope-thick green serpentine coils with bulbous ends; parallel vermilion slashes running upper-left to lower-right; short black vertical dashes falling like rain over the weave; black hook curves echoing the green loops\nSOURCE-ASPECT NOTE: measured source is landscape (1600x1231); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nGreen coils and red slashes on raw paper: an asymmetric weave-and-clearing composition, flat frontal print plate with the vertical fold seam held left of center. Three oversized emerald serpentine loops knot through a fanned cluster of four vermilion diagonal bands, the lowest band dragging into feathered dry-brush bristle streaks; sparse black oil-stick dashes fall like rain only through the knot; right third left as open cream paper with one stray red dot. Even daylight, no shadow, crisp lithographic grain, ridged ink texture, buoyant, quick, hand-made.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through asymmetric weave-and-clearing / flat frontal print plate, orthographic, with a fold seam held left of center. three oversized emerald loops knotted through a fanned cluster of four v…; right third opened as bare cream paper with one stray red dot.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Feathered vermilion diagonal band fraying into dry-brush bristle streaks. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nEven shadowless daylight on a flat matte sheet, with ink ridges catching only the faintest relief; materials: ridged emerald printing ink; flat vermilion gouache-like band; waxy black oil stick; matte cream rag paper; palette: vermilion, emerald, and carbon black on warm cream, high chroma and flat. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no actual snakes, worms, or figurative creatures no candy-cane or holiday decoration reading of red and green",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 69257,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 16580,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 44675,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

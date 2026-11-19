@@ -1,0 +1,45 @@
+{
+  "brief_id": "brief-2026-11-13-one-eye-above-the-waterline-v1",
+  "date": "2026-11-13",
+  "signal_cluster_ids": [
+    "5a0f6d8be03e",
+    "d9340a782c39",
+    "efffc1d762f5",
+    "471c0ad5fb4f",
+    "f68b3b91fd48",
+    "509b61352b94",
+    "71469c25e581",
+    "bb993540d101"
+  ],
+  "research_node_ids": [
+    "research-1-2a58c616",
+    "research-2-e6a65e58",
+    "research-3-96aef326",
+    "research-4-a1feca40",
+    "research-5-d795e173"
+  ],
+  "mood": "Landscape wet-stain painting on wide flat turquoise. Left: three faint line-only anime face echoes stacked, one tear, melting into indigo hair drips. Right: torn stain islands: ringed cone horn, glowing amber eye with red flecks, pale fang comb running into drips. One thin horizontal line joins tear-eye to beast eye.",
+  "material_language": [
+    "dye-soaked wet watercolor stain with capillary dark edges and feathered halos",
+    "vertical drag-run pigment streaks, as if the paint ran while wet",
+    "crisp fine ink line laid over blurred, dissolving color washes",
+    "ragged torn-paper ink-stain boundaries with small splinters on flat turquoise"
+  ],
+  "lighting": "Flat, even light on the stained support. The only luminous source is the beast's yellow-orange eye, which glows softly from inside the pigment.",
+  "object_inventory": [
+    "Self-luminous amber beast eye with red flecks in a torn indigo stain island"
+  ],
+  "interaction_grammar": {
+    "hero_count": 1,
+    "module_count": 0,
+    "window_strategy": "source-window"
+  },
+  "negative_constraints": [
+    "no painted, shaded or fully rendered faces; echoes are faint ink linework over thin blurred wash only",
+    "no second connecting line; no line starting at the mouth; no vertical plumb line from any node",
+    "no text, logos, signatures, labels, pins, rings, callouts or pasted cards",
+    "no landscape, room, horizon, or other scene setting; keep the flat turquoise stained-sheet ground",
+    "no near-copy of the vertical cheek-to-cheek portrait or of the single fused beast head",
+    "no crisp illustration finish that removes the blurred-wash ghosting"
+  ]
+}

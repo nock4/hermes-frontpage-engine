@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises'
+import { supportingLedger } from './source-ledger.mjs'
 import { cachedArtifactObservation } from './bookmark-inspection-cache.mjs'
 import { schedulingOwner } from './provider-creator.mjs'
 import path from 'node:path'
@@ -97,7 +98,9 @@ export async function inspectCreativeArtifacts(sources, research, { runDir, apiK
     .map(row => attemptKey(row.url, null, null)))
   const candidates = sources.filter(source => source.image_url
     && sourceHasRenderableCardSurface(source, signalHarvest)
-    && Number.isFinite(sourceContentScore(source, recentSourceKeys))
+    // Supporting windows may reuse cooldown-eligible material; anchor ranking
+    // below still uses the full archive ledger and grants no eligibility.
+    && Number.isFinite(sourceContentScore(source, supportingLedger(recentSourceKeys)))
     && !isAutoresearchExcluded(source, result)
     && !hasCreativeArtifactEvidence(source, result, signalHarvest)
     && !attempted.has(key(source)))

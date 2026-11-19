@@ -101,4 +101,22 @@ describe('independent review is advisory', () => {
     expect(accepted).toMatchObject({ acceptance_policy: 'independent-review-advisory-v1', independent_review_archive: null, edition_id: id })
     expect((await latestAccepted(path.join(root, 'durable')))?.edition_id).toBe(id)
   })
+
+  it('delivers a live, CI-green edition when adversarial visual QA never ran, but not when it failed', async () => {
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), 'visual-qa-advisory-SYNTHETIC-'))
+    const id = '2026-10-21-art-v1'
+    const screenshot = path.join(root, 'source.png'), prompt = path.join(root, 'prompt.txt')
+    await fs.writeFile(screenshot, Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aXioAAAAASUVORK5CYII=', 'base64'))
+    await fs.writeFile(prompt, 'SYNTHETIC prompt')
+    const context = await syntheticProofContext(id)
+    const build = qa => buildPublishProof({ summary: { ok: true, push_succeeded: true, remote_matches: true, local_edition_id: id, checkpoint_path: 'fixture-run', ...context }, liveProof: { expectedEditionId: id, pageEditionId: id, loadedPlateImageCount: 1, plate: { src: `https://daily.nockgarden.com/editions/${id}/assets/plate.png`, naturalWidth: 1440, naturalHeight: 900 } }, screenshotPath: screenshot, promptPath: prompt, qa })
+    const failed = build({ qaPublishPassed: true, adversarialVisualQa: 'fail' })
+    expect(checkPressProof(failed).blockers).toContain('adversarial visual QA failed')
+    await expect(acceptProof(failed, path.join(root, 'durable'))).rejects.toThrow(/must not have failed/)
+    const unreviewed = build({ qaPublishPassed: true })
+    expect(unreviewed.status).toBe('green')
+    expect(checkPressProof(unreviewed)).toEqual({ green: true, blockers: [] })
+    await acceptProof(unreviewed, path.join(root, 'durable'))
+    expect((await latestAccepted(path.join(root, 'durable'), id))?.edition_id).toBe(id)
+  })
 })

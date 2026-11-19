@@ -1,0 +1,35 @@
+{
+  "source_visual_metadata_id": "source-visuals-2026-11-13-one-eye-above-the-waterline-v1",
+  "edition_id": "2026-11-13-one-eye-above-the-waterline-v1",
+  "generated_by": "prepare-source-visuals/supervision",
+  "records": [
+    {
+      "binding_id": "binding-hero-amber-beast-eye-with-red-flecks-in-a",
+      "source_image_url": "https://pbs.twimg.com/media/HVQ1YPjXUAA8L5F.jpg?name=orig",
+      "poster_asset_path": "/editions/2026-11-13-one-eye-above-the-waterline-v1/assets/source-posters/binding-hero-amber-beast-eye-with-red-flecks-in-a.jpg",
+      "review_asset_path": "tmp/source-visual-qa/2026-11-13-one-eye-above-the-waterline-v1/binding-hero-amber-beast-eye-with-red-flecks-in-a-source-visual-qa.jpg",
+      "image_width": 1620,
+      "image_height": 2160,
+      "aspect_ratio": 0.75,
+      "render_mode": "poster-crop",
+      "crop_risk": "medium",
+      "focal_point": {
+        "x": 0.5102,
+        "y": 0.3743
+      },
+      "poster_crop": {
+        "x": 0.0,
+        "y": 0.2306,
+        "width": 1.0,
+        "height": 0.4218
+      },
+      "analysis": {
+        "method": "supervision-contour-union",
+        "supervision_version": "0.28.0",
+        "edge_density": 0.03844,
+        "candidate_box_count": 24
+      }
+    }
+  ],
+  "failures": []
+}

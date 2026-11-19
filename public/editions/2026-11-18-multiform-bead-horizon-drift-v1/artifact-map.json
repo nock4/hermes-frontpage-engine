@@ -1,0 +1,99 @@
+{
+  "artifact_map_id": "map-2026-11-18-multiform-bead-horizon-drift-v1",
+  "viewport": {
+    "base_width": 1610,
+    "base_height": 977,
+    "aspect_ratio": "1610:977"
+  },
+  "default_cluster_id": "multiform-bead-horizon-drift",
+  "default_artifact_id": "hero-full-width-horizon-row-of-alternatin",
+  "artifacts": [
+    {
+      "id": "hero-full-width-horizon-row-of-alternatin",
+      "kind": "hero",
+      "label": "Full-width horizon row of alternating cobalt and crimson bead-dabs",
+      "artifact_type": "painted-dab-band",
+      "bounds": {
+        "x": 0,
+        "y": 0.505,
+        "w": 1,
+        "h": 0.055
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0,
+          0.512
+        ],
+        [
+          0.15,
+          0.508
+        ],
+        [
+          0.3,
+          0.51
+        ],
+        [
+          0.45,
+          0.507
+        ],
+        [
+          0.6,
+          0.508
+        ],
+        [
+          0.75,
+          0.507
+        ],
+        [
+          0.9,
+          0.508
+        ],
+        [
+          1,
+          0.512
+        ],
+        [
+          1,
+          0.552
+        ],
+        [
+          0.85,
+          0.556
+        ],
+        [
+          0.65,
+          0.555
+        ],
+        [
+          0.45,
+          0.557
+        ],
+        [
+          0.25,
+          0.555
+        ],
+        [
+          0,
+          0.551
+        ]
+      ],
+      "cluster_id": "multiform-bead-horizon-drift",
+      "mask_path": "/editions/2026-11-18-multiform-bead-horizon-drift-v1/assets/masks/hero-full-width-horizon-row-of-alternatin.svg",
+      "source_binding_ids": [
+        "binding-hero-full-width-horizon-row-of-alternatin"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          805,
+          516
+        ],
+        "safe_stage_window_origin_px": [
+          934,
+          520
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

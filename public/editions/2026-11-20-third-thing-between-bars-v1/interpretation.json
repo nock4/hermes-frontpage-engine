@@ -1,0 +1,116 @@
+{
+  "interpretation_id": "interp-2026-11-20-third-thing-between-bars-v1",
+  "edition_id": "2026-11-20-third-thing-between-bars-v1",
+  "plate_read_timestamp": "2026-11-19T11:20:08.160Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A wide abstract mixed-media painting on a warm parchment ground shows two heavily textured salmon-pink impasto masses with scorched crimson-black edges, joined by a turbulent lavender-magenta bruised core with dripping tendrils. A full-height scratched red-and-black vertical panel pierces the core just right of centre, while two thinner vertical bars on the right (one solid black, one with glitch-like horizontal striations) add a digital counterpoint.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "uneasy, fleshy and tender, a painted gesture caught mid-transformation",
+      "A wide abstract mixed-media painting on a warm parchment ground shows two heavily textured salmon-pink impasto masses with scorched crimson-black edges, joined by a turbulent lavender-magenta bruised core with dripping tendrils. A full-height scratched red-and-black vertical panel pierces the core just right of centre, while two thinner vertical bars on the right (one solid black, one with glitch-like horizontal striations) add a digital counterpoint.",
+      "salmon-lobe",
+      "bruised-core",
+      "halo-contour"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "tall red-and-black scratched vertical panel piercing the bruised core"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "salmon-lobe-bruised-core-bar-interruption",
+      "tall red-and-black scratched vertical panel piercing the bruised core",
+      "left salmon impasto mass",
+      "right salmon impasto mass",
+      "lavender-magenta bruised core",
+      "scratched red-black vertical panel",
+      "solid black vertical bar",
+      "striated barcode-like strip"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: salmon-lobe-bruised-core-bar-interruption.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-tall-red-and-black-scratched-vertica",
+      "kind": "hero",
+      "type": "scratched-vertical-interruption",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.451,
+        "y": 0,
+        "w": 0.105,
+        "h": 1
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-tall-red-and-black-scratched-vertica-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.451,
+        "y": 0,
+        "w": 0.105,
+        "h": 1
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   runtime-qa:
-    runs-on: ubuntu-24.04 # ubuntu-latest moved to 26.04, which the pinned Playwright cannot install Chromium on
+    runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
       CI: true

@@ -115,10 +115,13 @@ it.each(['verified', 'ambiguous', 'supporting', 'spent'])('bounded bookmark prod
   const run = inspectSourceCandidates({ selection_policy: { bookmark_first: true }, source_candidates: sources, notes_selected: [], motif_terms: [] }, {
     maxSources: 240, runDir, sourceTool: 'fetch', date: '2026-10-17', recentSourceKeys: ledger,
   })
+  // 2026-11-13 policy: after the first fresh admission, ordinary runs keep
+  // acquiring (in channel-interleaved batches) toward the desired six.
   if (['ambiguous', 'supporting'].includes(mode)) await expect(run).rejects.toThrow(/blocked/)
-  else expect((await run).content_sources).toHaveLength(1)
+  else expect((await run).content_sources).toHaveLength(6)
   const audit = JSON.parse(await fs.readFile(path.join(runDir, 'bookmark-acquisition.json'), 'utf8'))
-  expect(audit.acquired).toBe(['verified', 'spent'].includes(mode) ? 1 : 24)
+  expect(audit.acquired).toBe(['verified', 'spent'].includes(mode) ? 6 : 24)
+  if (['verified', 'spent'].includes(mode)) expect(audit).toMatchObject({ anchor_lane_acquired: 1, supporting_lane_acquired: 5, admitted: 6, target: 6 })
   expect(state.captures).toHaveLength(audit.acquired)
   expect(state.researchAttempts[0]).toBe(0)
   expect(state.researchTimeouts.every(ms => ms === 60000)).toBe(true)

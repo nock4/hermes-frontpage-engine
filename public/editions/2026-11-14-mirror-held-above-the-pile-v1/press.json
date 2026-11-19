@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-14T11:20:07.805Z",
+  "go_live_at": "2026-11-14T09:00:00.000Z",
+  "source_key": "tweet:2121413465864818881",
+  "source_url": "https://x.com/bywillak/status/2121413465864818881",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@bywillak: Flat No More: A maximalist cartoon illustration of a glossy, black-outlined heap of surreal creatures, boxes and toothy puddles piled on a pink floor against flat cobalt blue, crowned by pink raised hands lifting an oval collage mirror above a skull frieze.; Source observation to recompose: pink figure with raised splayed hands holding an oval collage-face mirror; Source observation to recompose: green flame-haired skull peeking over the pile;…\nSOURCE-ASPECT NOTE: measured source is portrait/vertical (1410x2000); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRepresentational source cues are a vocabulary of concrete fragments and relationships, not requirements for exact count, order, positions, or full-scene restaging. Recompose selected recognizable fragments into new groupings and negative space; do not rebuild the complete portrait lineup or backdrop. Palette and grain alone are insufficient.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nLacquered cartoon pileup on flat cobalt blue, horizontal frieze procession: the heap unstacked into a low sliding parade along a diagonal sage-cream wavy-striped ramp, toothy puddle-mouths ringed in yellow on a tilted pink floor, a fanged black-red zigzag mouth gripping the far left corner. High in open blue, two pink raised hands lift an oval collage-face mirror. Flat frontal plate, thick black contours, airbrushed glossy highlights swelling shapes off the page. Lower edge dissolves into light-blue droplet teeth. Dense left, wide breathing cobalt right.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through horizontal frieze procession with a single lifted emblem in open sky / flat frontal orthographic plate with poster-like layering and no vanishing point. pyramid heap unstacked into a low left-dense procession along a diagonal…; raised pink hands lifting the oval collage mirror alone into wide cobalt….\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Pink raised hands lifting the oval collage-face mirror into open cobalt. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nshadowless flat front light with airbrushed white specular streaks that make each flat shape bulge like lacquered vinyl; materials: glossy enamel-vinyl fills; soft airbrush sheen; thick black ink contour; flat cobalt printed ground; palette: cobalt ground with bubblegum pink, tomato red, sage, lemon, sky blue and cream, all bound by black contour. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no legible letters even in the curling rainbow letterform shape no full re-staging of the vertical pyramid pile",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 77081,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 19582,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 43277,
+      "ok": true
+    }
+  ],
+  "notes": []
+}
