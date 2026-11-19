@@ -1,5 +1,5 @@
 import type { EffectSession } from './effectSession'
-export const signalBuild = 'resonance-current-20261104-1'
+const signalBuild = 'resonance-current-20261104-1'
 /** Dev-only read-only observer. No capture, audio graph, network or storage APIs. */
 export function mountSignalCheck(session: EffectSession, rendererReady: () => boolean) {
   const host = document.createElement('aside')
