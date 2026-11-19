@@ -26,6 +26,20 @@ export class EffectSession {
   private data = new Float32Array(8192)
   private pitch = { hz: 0, confidence: 0, rms: 0 }
   private lastAnalysis = 0
+  private signalRms = 0
+  private signalPeak = 0
+  /** Scalar-only readout of the existing capture graph; never acquires or resumes. */
+  signalSnapshot() {
+    const tracks = this.stream?.getAudioTracks().map(t => ({ readyState: t.readyState, muted: t.muted, enabled: t.enabled })) ?? []
+    return { active: this.active, context: this.ctx?.state ?? 'absent',
+      currentTime: this.ctx?.currentTime ?? 0, sampleRate: this.ctx?.sampleRate ?? 0,
+      tracks, rms: this.signalRms, peak: this.signalPeak,
+      estimatedHz: this.pitch.hz, confidence: this.pitch.confidence, rmsFloor: 0.006,
+      rejection: !this.active ? 'inactive' : this.ctx?.state !== 'running' ? 'context not running' :
+        !tracks.length || tracks.some(t => t.readyState !== 'live' || t.muted || !t.enabled) ? 'track unavailable' :
+        this.signalRms <= 0.006 ? 'below RMS floor' : this.pitch.confidence <= 0.88 ? 'no confident period' : 'confident',
+      energy: this.envelope.energy, phase: this.envelope.phase, frames: this.frames }
+  }
   private abort: AbortController | null = null
   private events: EventSource | null = null
   private endpoint = ''
@@ -321,6 +335,8 @@ export class EffectSession {
       let power = 0
       for (const v of this.data) power += v * v
       const rms = Math.sqrt(power / this.data.length)
+      this.signalRms = rms
+      this.signalPeak = this.data.reduce((peak, v) => Math.max(peak, Math.abs(v)), 0)
       if (ms - this.lastAnalysis >= 40) {
         this.lastAnalysis = ms
         this.pitch = {
