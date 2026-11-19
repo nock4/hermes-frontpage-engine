@@ -134,7 +134,7 @@ The order matters:
 3. pass that evidence to `gpt-5.5` for a bounded source-research synthesis inspired by the `llm-wiki` flow: read all evidence first, cluster the field, identify a through-line, reject duplicates or weak sources, and choose the edition source set with provenance
 4. only after that synthesis, use browser-harness against a real Chrome tab to capture and verify selected source pages/images
 5. select one source image as the visual reference for brief composition, preferring artistic or material-rich raster images over technical logos, favicons, wordmarks, GitHub preview cards, and generic docs chrome
-6. accept 1 to 10 independently owned eligible sources (6 desired, never required), de-duplicated by resolved URL/post/image against the full archive; stop normal bookmark acquisition at the first strong unused pixel-verified artwork and deepen that anchor
+6. accept 1 to 10 independently owned eligible sources (6 desired, never required), de-duplicated by resolved URL/post/image within the edition. The anchor/main artwork is checked against the full archive; supporting windows against the supporting cooldown (see `docs/artwork-first-intake.md#supporting-window-repeats`). After the first strong unused pixel-verified artwork admits, keep acquiring supporting windows across channels toward six inside the same 24-acquisition / 24-inspection budget
 7. reject YouTube candidates that fail the oEmbed embeddability check; if the video cannot render as a native iframe, it should not become an edition source
 8. let the findings influence scene generation and later ambiance decisions
 
@@ -142,7 +142,7 @@ This step should produce a richer source field than the saved-source records alo
 
 Current content-selection rules:
 - minimum 1, desired 6, maximum 10 real independent source pieces; zero fails. This authorized reset supersedes old minimum-six skill guidance.
-- reject duplicate source keys across the full archive outright
+- reject anchor material (any URL, redirect, image, media or parent-post family) already in the full archive outright; reject supporting material used within the last 30 days or in the previous edition
 - reject raw Twitter/X CDN media URLs as primary source bindings
 - prefer native tweet URLs over extracted tweet-media URLs, while still using tweet media as the visual image when available
 - treat distinct resolved NTS tracks from the same source-map note as distinct source records

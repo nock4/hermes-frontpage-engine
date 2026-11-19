@@ -1,0 +1,282 @@
+{
+  "interpretation_id": "interp-2026-10-15-the-weight-of-a-curl-v1",
+  "edition_id": "2026-10-15-the-weight-of-a-curl-v1",
+  "plate_read_timestamp": "2026-10-15T15:20:16.361Z",
+  "scene_ontology": {
+    "primary": "material-native",
+    "secondary": [
+      "optical-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Two tall, glossy ribbon formations flank a peach-colored central opening: a blue-lavender curl on the left partially conceals a rounded black vessel, and a lime-green hooked ribbon descends on the right. Serrated leafy stems cross both formations. Torn pastel strata, a folded multicolored lime tongue, a cream-and-green petal fold, and a small purple curl at the lower-right edge provide distinct secondary anchors. Several forms continue beyond the image borders.",
+    "dominant_spatial_mode": "flat-field",
+    "density": "medium",
+    "legibility": "selective",
+    "mood": [
+      "Portrait botanical abstraction on a softly tinted field. Two lateral ribbon-and-stem groups leave a broad clear gap. A large grooved blue-lavender curl partly conceals an off-center black vessel; a smaller lime hooked sweep faces it. Jagged foliage passes over and under translucent bands. A layered torn lip, scored tongue, purple scraped droplet and cream petal fold stay near separate outer broken ends.",
+      "Two tall, glossy ribbon formations flank a peach-colored central opening: a blue-lavender curl on the left partially conceals a rounded black vessel, and a lime-green hooked ribbon descends on the right. Serrated leafy stems cross both formations. Torn pastel strata, a folded multicolored lime tongue, a cream-and-green petal fold, and a small purple curl at the lower-right edge provide distinct secondary anchors. Several forms continue beyond the image borders.",
+      "grooved-pigment",
+      "unequal-hooks",
+      "serrated-foliage"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Broad blue-lavender curl partly concealing a black vessel",
+      "Lime hooked sweep with a pale mint interior and raised torn seam",
+      "Torn upper lip exposing cyan, cream, and pink pigment layers",
+      "Folded lime tongue over blue and pink underlayers",
+      "Purple curled droplet with lime tip and pink scraped interior",
+      "Cream petal fold exposing green pigment and a yellow lower sweep"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "pearlescent-ribbon-botanical-occlusion",
+      "A broad blue-lavender curl partly conceals a squat black vessel.",
+      "A lime hooked sweep has twisted flutes and muted diagonal color seams.",
+      "A torn translucent lip exposes fine broken layers of colored pigment.",
+      "A folded lime tongue bears fine contours over blue and pink underlayers.",
+      "A purple curled droplet has a scraped belly and tiny bright pigment folds.",
+      "A cream petal fold exposes broken green pigment beneath a yellow sweep.",
+      "Combed blue-lavender inner curl"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "material-native",
+    "recommended_behaviors": [
+      "paint-bleed-reveal",
+      "restoration-scan",
+      "ghost-reflection"
+    ],
+    "rejected_behaviors": [
+      "cabinet-drawer-behavior"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: pearlescent-ribbon-botanical-occlusion.",
+      "Artifact vocabulary suggests material-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-broad-blue-lavender-curl-partly-conc",
+      "kind": "hero",
+      "type": "combed-ribbon-gesture",
+      "strength": 0.99,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.4824,
+        "h": 0.401
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lime-hooked-sweep-with-a-pale-mint-i",
+      "kind": "hero",
+      "type": "fluted-hook-gesture",
+      "strength": 0.988184,
+      "bounds": {
+        "x": 0.623,
+        "y": 0.001,
+        "w": 0.332,
+        "h": 0.352
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-torn-upper-lip-exposing-cyan-cream-a",
+      "kind": "module",
+      "type": "torn-pigment-lip",
+      "strength": 0.801036,
+      "bounds": {
+        "x": 0.272,
+        "y": 0.001,
+        "w": 0.229,
+        "h": 0.067
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-folded-lime-tongue-over-blue-and-pin",
+      "kind": "module",
+      "type": "layered-pigment-fold",
+      "strength": 0.7595160000000001,
+      "bounds": {
+        "x": 0.578,
+        "y": 0.652,
+        "w": 0.215,
+        "h": 0.193
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-purple-curled-droplet-with-lime-tip-",
+      "kind": "module",
+      "type": "curled-pigment-fragment",
+      "strength": 0.733152,
+      "bounds": {
+        "x": 0.868,
+        "y": 0.894,
+        "w": 0.083,
+        "h": 0.10599999999999998
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cream-petal-fold-exposing-green-pigm",
+      "kind": "module",
+      "type": "peeled-petal-surface",
+      "strength": 0.693072,
+      "bounds": {
+        "x": 0.166,
+        "y": 0.701,
+        "w": 0.355,
+        "h": 0.247
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-broad-blue-lavender-curl-partly-conc-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 0.4824,
+        "h": 0.401
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "hero-lime-hooked-sweep-with-a-pale-mint-i-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.623,
+        "y": 0.001,
+        "w": 0.332,
+        "h": 0.352
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-torn-upper-lip-exposing-cyan-cream-a-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.272,
+        "y": 0.001,
+        "w": 0.229,
+        "h": 0.067
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-folded-lime-tongue-over-blue-and-pin-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.578,
+        "y": 0.652,
+        "w": 0.215,
+        "h": 0.193
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-purple-curled-droplet-with-lime-tip--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.868,
+        "y": 0.894,
+        "w": 0.083,
+        "h": 0.10599999999999998
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    },
+    {
+      "id": "module-cream-petal-fold-exposing-green-pigm-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.166,
+        "y": 0.701,
+        "w": 0.355,
+        "h": 0.247
+      },
+      "suitability": 0.76,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "paint-bleed-reveal"
+    ],
+    "secondary": [
+      "restoration-scan",
+      "pigment-crack-annotation"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "paint-bleed-reveal"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 6 artifacts and scene family heuristics."
+  ]
+}

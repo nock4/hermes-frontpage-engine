@@ -1,4 +1,5 @@
 import crypto from 'node:crypto'
+import { archiveRolesForSourceUrls } from './archive-source-policy.mjs'
 import { effectKinds, planEffects } from '../../src/lib/editionEffects.mjs'
 import { buildEffectsEditorialContext } from './effects-editorial-context.mjs'
 import { admitNativeVideo } from './effect-video-admission.mjs'
@@ -418,6 +419,7 @@ export async function assembleEditionPackage({
   await writeArtifactSvgMasks(editionDir, editionId, artifactMapArtifacts, dimensions, { root })
 
   const usedBindingTitles = new Set()
+  const archiveRoles = archiveRolesForSourceUrls(sourceUrls, researchField)
   const bindings = await Promise.all(artifactMapArtifacts.map(async (artifact, index) => {
     const url = sourceUrls[index]
     const source = sourceByUrl.get(url)
@@ -451,6 +453,8 @@ export async function assembleEditionPackage({
       source_media_url: sourceMedia.mediaUrl || undefined,
       source_media_type: sourceMedia.mediaType || undefined,
       ...(embedStatus === 'unavailable' ? { embed_status: 'unavailable' } : {}),
+      // Archive policy: the anchor never repeats; supporting may after cooldown.
+      archive_role: archiveRoles[index],
     }
   }))
 
