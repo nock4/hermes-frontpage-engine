@@ -1,0 +1,118 @@
+{
+  "interpretation_id": "interp-2026-11-21-candles-falling-through-gilt-arch-v1",
+  "edition_id": "2026-11-21-candles-falling-through-gilt-arch-v1",
+  "plate_read_timestamp": "2026-11-20T11:20:07.343Z",
+  "scene_ontology": {
+    "primary": "ritual-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A worn gilt Gothic triple-arch altarpiece dominates the left of the plate, its three dark crumpled panels crossed by a glowing red-and-green candlestick chart plunging from upper left to lower right. To the right, a shaggy black grinning fuzz creature is splattered onto a pale plaster wall above a black-and-cream chevron tile floor.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "irreverent devotion, a crash rendered as sacred spectacle",
+      "A worn gilt Gothic triple-arch altarpiece dominates the left of the plate, its three dark crumpled panels crossed by a glowing red-and-green candlestick chart plunging from upper left to lower right. To the right, a shaggy black grinning fuzz creature is splattered onto a pale plaster wall above a black-and-cream chevron tile floor.",
+      "gothic-gilt-arch",
+      "candlestick-cascade",
+      "soot-sprite-eclipse"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Gilt Gothic triple-arch altarpiece framing falling candlestick chart"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "gilt-arch-candlestick-soot-eclipse",
+      "Oversized Gothic gilt triple arch framing the falling candlestick strokes",
+      "three dark crumpled arch panels",
+      "descending candlestick stroke diagonal",
+      "gilt predella quatrefoil band",
+      "pale speckled plaster wall",
+      "grinning black fuzz creature",
+      "chevron tiled floor"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "ritual-native",
+    "recommended_behaviors": [
+      "activation-bloom",
+      "object-memory",
+      "projection-reveal"
+    ],
+    "rejected_behaviors": [
+      "drag-to-tune"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: gilt-arch-candlestick-soot-eclipse.",
+      "Artifact vocabulary suggests ritual-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-gilt-gothic-triple-arch-altarpiece-f",
+      "kind": "hero",
+      "type": "gilt-arch-aperture",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.012,
+        "y": 0,
+        "w": 0.69,
+        "h": 0.925
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-gilt-gothic-triple-arch-altarpiece-f-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.012,
+        "y": 0,
+        "w": 0.69,
+        "h": 0.925
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "threshold-scan-reveal"
+    ],
+    "secondary": [
+      "seal-break-reveal",
+      "ghost-reflection-treatment"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "activation-bloom"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "artifact_map_id": "map-2026-11-21-candles-falling-through-gilt-arch-v1",
+  "viewport": {
+    "base_width": 1672,
+    "base_height": 941,
+    "aspect_ratio": "1672:941"
+  },
+  "default_cluster_id": "gilt-arch-candlestick-soot-eclipse",
+  "default_artifact_id": "hero-gilt-gothic-triple-arch-altarpiece-f",
+  "artifacts": [
+    {
+      "id": "hero-gilt-gothic-triple-arch-altarpiece-f",
+      "kind": "hero",
+      "label": "Gilt Gothic triple-arch altarpiece framing falling candlestick chart",
+      "artifact_type": "gilt-arch-aperture",
+      "bounds": {
+        "x": 0.012,
+        "y": 0,
+        "w": 0.69,
+        "h": 0.925
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.021,
+          0.919
+        ],
+        [
+          0.35,
+          0.905
+        ],
+        [
+          0.694,
+          0.882
+        ],
+        [
+          0.697,
+          0.765
+        ],
+        [
+          0.679,
+          0.308
+        ],
+        [
+          0.7,
+          0.223
+        ],
+        [
+          0.688,
+          0.016
+        ],
+        [
+          0.52,
+          0
+        ],
+        [
+          0.2,
+          0
+        ],
+        [
+          0.027,
+          0.011
+        ],
+        [
+          0.015,
+          0.218
+        ],
+        [
+          0.027,
+          0.34
+        ],
+        [
+          0.015,
+          0.765
+        ]
+      ],
+      "cluster_id": "gilt-arch-candlestick-soot-eclipse",
+      "mask_path": "/editions/2026-11-21-candles-falling-through-gilt-arch-v1/assets/masks/hero-gilt-gothic-triple-arch-altarpiece-f.svg",
+      "source_binding_ids": [
+        "binding-hero-gilt-gothic-triple-arch-altarpiece-f"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          597,
+          366
+        ],
+        "safe_stage_window_origin_px": [
+          689,
+          435
+        ],
+        "preferred_expansion_label": "right"
+      }
+    }
+  ]
+}

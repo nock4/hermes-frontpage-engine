@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-20T11:20:07.343Z",
+  "go_live_at": "2026-11-21T09:00:00.000Z",
+  "source_key": "tweet:2110158649524212104",
+  "source_url": "https://x.com/rtclick_save/status/2110158649524212104",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@RtClick_Save: Do a deep dive into the Avant NFT scene by reading @gardenparty85's history o...: A digitally composited gallery wall hanging three works in a row: a dark canvas of falling red and green candlestick bars, a gilded Gothic altarpiece filled with glitchy chibi characters, and a scribbled notebook page centered on a grinning black soot creature, above a black-white zigzag floor.; descending cascade of red and green candlestick strokes with a small green rebound at the bottom;…\nSOURCE-ASPECT NOTE: measured source is landscape (1600x679); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nGilt reliquary crash world: off-center aperture with floating counterweight, frontal flat plate. One oversized Gothic gilt triple arch, pinnacles cropped at the top edge, sits left of center; through its openings, glowing vermilion and acid-green candlestick strokes fall across tarred wrinkled canvas, ending in a small green rebound. Right, a black fuzzy soot-ball with two glossy eyes and pale grin hovers in dot-speckled plaster space. Black-white chevron floor tilts upward into the wall. Flat museum light, gold glints, no lettering.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through off-center aperture with a floating counterweight / frontal flat plate with pinnacles cropped at the top edge and the tilted chevron floor entering from the bottom. candlestick cascade falling through the gilt arch openings; soot-ball eclipse isolated in speckled negative space.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Oversized Gothic gilt triple arch framing the falling candlestick strokes. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nFlat even museum light with sharp gold glints on the tracery and a faint neon bloom bleeding from the red and green strokes; materials: burnished gilt tracery; tarred wrinkled canvas; spray-glow pigment strokes; dot-speckled plaster; palette: tar black and bone beige grounds lit by gold, vermilion, and acid green. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no legible lettering, captions, or speech bubbles no recognizable licensed cartoon characters",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 76965,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 20895,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 38909,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

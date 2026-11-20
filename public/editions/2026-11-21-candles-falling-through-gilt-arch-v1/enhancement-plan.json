@@ -1,0 +1,66 @@
+{
+  "enhancement_plan_id": "enhance-2026-11-21-candles-falling-through-gilt-arch-v1",
+  "edition_id": "2026-11-21-candles-falling-through-gilt-arch-v1",
+  "derived_from": {
+    "interpretation_id": "interp-2026-11-21-candles-falling-through-gilt-arch-v1"
+  },
+  "interaction_world": {
+    "class": "ritual-native",
+    "primary_behavior": "threshold-scan-reveal",
+    "scene_wide_behavior": "activation-bloom",
+    "choreography_rule": "anchor-and-satellites"
+  },
+  "bundle": {
+    "primary": [
+      "threshold-scan-reveal"
+    ],
+    "secondary": [
+      "seal-break-reveal",
+      "ghost-reflection-treatment"
+    ],
+    "wildcard": []
+  },
+  "runtime_safe_subset": [
+    "threshold-scan-reveal",
+    "restoration-scan"
+  ],
+  "future_only_subset": [
+    "seal-break-reveal",
+    "ghost-reflection-treatment"
+  ],
+  "rejected": [
+    {
+      "technique": "drag-to-tune",
+      "reason": "Rejected by interpretation behavior rule: drag-to-tune"
+    }
+  ],
+  "targets": [
+    {
+      "target_id": "hero-gilt-gothic-triple-arch-altarpiece-f",
+      "target_kind": "artifact",
+      "artifact_id": "hero-gilt-gothic-triple-arch-altarpiece-f",
+      "priority": 1,
+      "techniques": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ],
+      "source_classes": [
+        "social",
+        "tweet"
+      ],
+      "activation": {
+        "hover": true,
+        "click": true,
+        "drag": false,
+        "hold": false
+      },
+      "reason": "Artifact candidate (gilt-arch-aperture) selected from interpretation."
+    }
+  ],
+  "global_recommendation": [
+    "threshold-scan-reveal",
+    "seal-break-reveal",
+    "ghost-reflection-treatment"
+  ],
+  "runtime_note": "Generated automatically from 1 artifacts and scene family heuristics."
+}
