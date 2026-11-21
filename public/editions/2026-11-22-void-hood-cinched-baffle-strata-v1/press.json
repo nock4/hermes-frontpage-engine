@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-21T11:20:04.350Z",
+  "go_live_at": "2026-11-22T09:00:00.000Z",
+  "source_key": "tweet:1891478511778402501",
+  "source_url": "https://x.com/ihateguppy/status/1891478511778402501",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@ihateguppy: people historically found purpose in their work. but tomorrow, people must wo...: A studio fashion photo of a faceless figure in an all-black cord-cinched quilted puffer and hood, with two glowing red star-glint eyes in the hood void, standing in a pale grey wall niche.; Source observation to recompose: empty black hood cowl with void interior; Source observation to recompose: two small red four-point star glints as eyes; Source observation to recompose: stacked inflated tire-roll sleeve segments;…\nSOURCE-ASPECT NOTE: measured source is landscape (1200x1101); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRepresentational source cues are a vocabulary of concrete fragments and relationships, not requirements for exact count, order, positions, or full-scene restaging. Recompose selected recognizable fragments into new groupings and negative space; do not rebuild the complete portrait lineup or backdrop. Palette and grain alone are insufficient.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nVoid-hood cinch field: a wide frontal locked-off plate in flat shadowless softbox light on pale grey plaster split by three recessed slate-blue niches. Matte black quilted baffles stretch horizontally across the canvas as stacked pillowed bands, pinched at intervals by thin flecked cords, slack loops dangling between. The center niche holds only an empty cowled hood, its black interior opening onto two small ember-red four-point star glints. Bodiless, symmetrical, quiet menace; ink black, ash grey, cold slate, one ember red. Soft grain.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through symmetrical triptych niche with a central floating void focal point over horizontal banded strata / frontal locked-off wide studio plate, flat orthographic feel, shallow grain. empty hood floating alone in the center niche with red star glints; cinched black baffle bands spanning edge to edge with hanging cord loops.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Two ember-red four-point star glints inside the empty black hood void. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nflat diffuse studio softbox, shadowless frontal wash, faint sheen on padding ridges, two tiny self-lit ember-red glints inside the hood; materials: matte black quilted nylon; down-filled pillowed padding; flecked elastic cord; pale grey plaster; palette: ink black, ash grey, cold slate, one ember red accent. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no full human body, face, skin or mannequin no readable logos, tags or labels on fabric",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 68369,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 16342,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 37163,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

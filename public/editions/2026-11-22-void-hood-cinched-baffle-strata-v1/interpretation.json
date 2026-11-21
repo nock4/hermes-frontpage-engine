@@ -1,0 +1,114 @@
+{
+  "interpretation_id": "interp-2026-11-22-void-hood-cinched-baffle-strata-v1",
+  "edition_id": "2026-11-22-void-hood-cinched-baffle-strata-v1",
+  "plate_read_timestamp": "2026-11-21T11:20:04.350Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A faceless black quilted puffer hood with two glowing red star-glint eyes sits in the central recessed niche of a pale grey plaster wall. Below it, a wall of stacked black puffer cushions is laced with speckled drawcords, toggles, and draped cord swags, and the hood's own drawstrings hang over the top cushion.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "quiet bodiless swagger, anonymous and faintly menacing, stillness after work has ended",
+      "A faceless black quilted puffer hood with two glowing red star-glint eyes sits in the central recessed niche of a pale grey plaster wall. Below it, a wall of stacked black puffer cushions is laced with speckled drawcords, toggles, and draped cord swags, and the hood's own drawstrings hang over the top cushion.",
+      "void-hood",
+      "ember-star-glint",
+      "quilted-baffle-bands"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Two ember-red four-point star glints in the black hood void"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "void-hood-cinched-baffle-strata",
+      "Two ember-red four-point star glints inside the empty black hood void",
+      "black hood void with red eye glints",
+      "quilted hood shell",
+      "drawcord toggle and hanging cords",
+      "three recessed wall niches",
+      "stacked puffer cushion wall",
+      "draped cord swags and cord locks"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: void-hood-cinched-baffle-strata.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-two-ember-red-four-point-star-glints",
+      "kind": "hero",
+      "type": "aperture-glint",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.4677,
+        "y": 0.221,
+        "w": 0.0682,
+        "h": 0.0425
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-two-ember-red-four-point-star-glints-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.4677,
+        "y": 0.221,
+        "w": 0.0682,
+        "h": 0.0425
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

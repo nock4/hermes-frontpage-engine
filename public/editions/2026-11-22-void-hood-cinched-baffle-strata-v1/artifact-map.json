@@ -1,0 +1,99 @@
+{
+  "artifact_map_id": "map-2026-11-22-void-hood-cinched-baffle-strata-v1",
+  "viewport": {
+    "base_width": 1672,
+    "base_height": 941,
+    "aspect_ratio": "1672:941"
+  },
+  "default_cluster_id": "void-hood-cinched-baffle-strata",
+  "default_artifact_id": "hero-two-ember-red-four-point-star-glints",
+  "artifacts": [
+    {
+      "id": "hero-two-ember-red-four-point-star-glints",
+      "kind": "hero",
+      "label": "Two ember-red four-point star glints in the black hood void",
+      "artifact_type": "aperture-glint",
+      "bounds": {
+        "x": 0.4677,
+        "y": 0.221,
+        "w": 0.0682,
+        "h": 0.0425
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.4677,
+          0.2423
+        ],
+        [
+          0.4725,
+          0.2359
+        ],
+        [
+          0.4785,
+          0.221
+        ],
+        [
+          0.4844,
+          0.2359
+        ],
+        [
+          0.5185,
+          0.2359
+        ],
+        [
+          0.5245,
+          0.221
+        ],
+        [
+          0.5305,
+          0.2359
+        ],
+        [
+          0.5359,
+          0.2423
+        ],
+        [
+          0.5305,
+          0.2487
+        ],
+        [
+          0.5245,
+          0.2635
+        ],
+        [
+          0.5185,
+          0.2487
+        ],
+        [
+          0.4844,
+          0.2487
+        ],
+        [
+          0.4785,
+          0.2635
+        ],
+        [
+          0.4725,
+          0.2487
+        ]
+      ],
+      "cluster_id": "void-hood-cinched-baffle-strata",
+      "mask_path": "/editions/2026-11-22-void-hood-cinched-baffle-strata-v1/assets/masks/hero-two-ember-red-four-point-star-glints.svg",
+      "source_binding_ids": [
+        "binding-hero-two-ember-red-four-point-star-glints"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          839,
+          225
+        ],
+        "safe_stage_window_origin_px": [
+          848,
+          228
+        ],
+        "preferred_expansion_label": "left"
+      }
+    }
+  ]
+}

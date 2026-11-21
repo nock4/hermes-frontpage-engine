@@ -1,0 +1,93 @@
+{
+  "analysis_id": "analysis-2026-11-22-void-hood-cinched-baffle-strata-v1",
+  "edition_id": "2026-11-22-void-hood-cinched-baffle-strata-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A faceless black quilted puffer hood with two glowing red star-glint eyes sits in the central recessed niche of a pale grey plaster wall. Below it, a wall of stacked black puffer cushions is laced with speckled drawcords, toggles, and draped cord swags, and the hood's own drawstrings hang over the top cushion.",
+  "usable_surfaces": [
+    "black hood void with red eye glints",
+    "quilted hood shell",
+    "drawcord toggle and hanging cords",
+    "three recessed wall niches",
+    "stacked puffer cushion wall",
+    "draped cord swags and cord locks"
+  ],
+  "detected_objects": [
+    {
+      "label": "Two ember-red four-point star glints in the black hood void",
+      "artifact_type": "aperture-glint",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.4677,
+        "y": 0.221,
+        "w": 0.0682,
+        "h": 0.0425
+      },
+      "polygon": [
+        [
+          0.4677,
+          0.2423
+        ],
+        [
+          0.4725,
+          0.2359
+        ],
+        [
+          0.4785,
+          0.221
+        ],
+        [
+          0.4844,
+          0.2359
+        ],
+        [
+          0.5185,
+          0.2359
+        ],
+        [
+          0.5245,
+          0.221
+        ],
+        [
+          0.5305,
+          0.2359
+        ],
+        [
+          0.5359,
+          0.2423
+        ],
+        [
+          0.5305,
+          0.2487
+        ],
+        [
+          0.5245,
+          0.2635
+        ],
+        [
+          0.5185,
+          0.2487
+        ],
+        [
+          0.4844,
+          0.2487
+        ],
+        [
+          0.4785,
+          0.2635
+        ],
+        [
+          0.4725,
+          0.2487
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "Two small, sharp red four-point star highlights sit side by side at roughly the same height inside the pure black opening of the quilted hood. Each has short horizontal and vertical flare arms around a bright red core, matching the planned eye glints."
+    }
+  ],
+  "viewport": {
+    "base_width": 1672,
+    "base_height": 941,
+    "aspect_ratio": "1672:941"
+  }
+}
