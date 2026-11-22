@@ -1,0 +1,87 @@
+{
+  "artifact_map_id": "map-2026-11-23-horse-comes-apart-gently-v1",
+  "viewport": {
+    "base_width": 1672,
+    "base_height": 941,
+    "aspect_ratio": "1672:941"
+  },
+  "default_cluster_id": "segmented-horse-slab-green-recline",
+  "default_artifact_id": "hero-central-sliced-flank-slab-with-penci",
+  "artifacts": [
+    {
+      "id": "hero-central-sliced-flank-slab-with-penci",
+      "kind": "hero",
+      "label": "Central sliced flank slab with pencil seams and drilled dots",
+      "artifact_type": "segmented-surface-seam",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.55,
+        "w": 0.223,
+        "h": 0.396
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.441,
+          0.571
+        ],
+        [
+          0.514,
+          0.558
+        ],
+        [
+          0.592,
+          0.55
+        ],
+        [
+          0.596,
+          0.569
+        ],
+        [
+          0.589,
+          0.723
+        ],
+        [
+          0.579,
+          0.866
+        ],
+        [
+          0.478,
+          0.909
+        ],
+        [
+          0.378,
+          0.946
+        ],
+        [
+          0.373,
+          0.916
+        ],
+        [
+          0.398,
+          0.765
+        ],
+        [
+          0.422,
+          0.648
+        ]
+      ],
+      "cluster_id": "segmented-horse-slab-green-recline",
+      "mask_path": "/editions/2026-11-23-horse-comes-apart-gently-v1/assets/masks/hero-central-sliced-flank-slab-with-penci.svg",
+      "source_binding_ids": [
+        "binding-hero-central-sliced-flank-slab-with-penci"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          810,
+          674
+        ],
+        "safe_stage_window_origin_px": [
+          840,
+          704
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}

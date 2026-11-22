@@ -1,0 +1,39 @@
+{
+  "built_at": "2026-11-22T11:20:03.267Z",
+  "go_live_at": "2026-11-23T09:00:00.000Z",
+  "source_key": "tweet:2123168087977705883",
+  "source_url": "https://x.com/dlsputed/status/2123168087977705883",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@DlSPUTED: Stanislav Balko, Sculptor and his Model, 1985.: A surreal 1985 painting of a stone-bodied, beast-headed sculptor seated in an arched turquoise-paned chair, cradling a pale segmented horse that drapes across a maroon bench against a deep green void.; Source observation to recompose: the pale horse body sliced into rectangular slabs with seams and gaps; Source observation to recompose: a single raised hand with one elongated chisel-like finger;…\nSOURCE-ASPECT NOTE: measured source is landscape (800x722); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRepresentational source cues are a vocabulary of concrete fragments and relationships, not requirements for exact count, order, positions, or full-scene restaging. Recompose selected recognizable fragments into new groupings and negative space; do not rebuild the complete portrait lineup or backdrop. Palette and grain alone are insufficient.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nFlat tempera dreamscape on deep bottle-green canvas: a pale linen-beige horse lies sliced into loose slabs drifting left to right across a long maroon plank, gaps widening between segments, pencil seam lines and tiny bore-holes visible. Wide frontal plate, horizontal recline archetype, low crop pressing the plank against the bottom edge. Upper right, a lone chalky stone hand lifts one tapering finger beside a small window of turquoise panes. Soft even studio light, rust shadows along haunch edges, thin cyan seams, visible canvas weave, hushed uncanny stillness.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through horizontal recline frieze with segmented drift and a single upper-right gesture / wide frontal flat plate, low crop pressing the plank to the bottom edge, no perspective depth. horse body split into separating slabs across the width with green gaps; lone raised stone finger beside a small turquoise-paned window in upper….\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Pale horse flank sliced into slabs with pencil seams and drilled dots. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nsoft, even, shadowless studio light with faint rust undershadows along curved edges and slight luminosity in the turquoise panes; materials: matte tempera on coarse linen; graphite construction lines; chalky carved stone; rust-tinted shadow wash; palette: bottle-green field, linen beige, maroon, rust shadow, small turquoise accents. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no full seated sculptor figure or complete chair no signature, date or legible pencil notations",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 77409,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 18227,
+      "ok": false,
+      "error": "python exited 1: OpenAI image generation via Codex auth failed: Codex images API returned HTTP 400: Your request was rejected by the safety system. If you believe this is an error, contact us at help."
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 19008,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 47749,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

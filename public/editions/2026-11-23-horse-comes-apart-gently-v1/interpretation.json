@@ -1,0 +1,114 @@
+{
+  "interpretation_id": "interp-2026-11-23-horse-comes-apart-gently-v1",
+  "edition_id": "2026-11-23-horse-comes-apart-gently-v1",
+  "plate_read_timestamp": "2026-11-22T11:20:03.267Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A pale, stone-like recumbent horse lies across a maroon ledge against a deep green wall, its midsection sliced into five separated curved slabs marked with faint pencil grid seams and drilled dots. A detached sculpted hand holding an upright tapered blade floats at upper right beside a small six-pane turquoise window.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "hushed, uncanny, tender and clinical at once, like a creature paused mid-making",
+      "A pale, stone-like recumbent horse lies across a maroon ledge against a deep green wall, its midsection sliced into five separated curved slabs marked with faint pencil grid seams and drilled dots. A detached sculpted hand holding an upright tapered blade floats at upper right beside a small six-pane turquoise window.",
+      "sliced-horse",
+      "raised-finger",
+      "pencil-seams"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Central sliced flank slab with pencil seams and drilled dots"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "segmented-horse-slab-green-recline",
+      "Pale horse flank sliced into slabs with pencil seams and drilled dots",
+      "central sliced flank slab",
+      "horse head and neck profile",
+      "rounded hindquarter with drilled dots",
+      "floating hand with blade",
+      "turquoise six-pane window",
+      "green wall field"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: segmented-horse-slab-green-recline.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-central-sliced-flank-slab-with-penci",
+      "kind": "hero",
+      "type": "segmented-surface-seam",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.373,
+        "y": 0.55,
+        "w": 0.223,
+        "h": 0.396
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-central-sliced-flank-slab-with-penci-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.55,
+        "w": 0.223,
+        "h": 0.396
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

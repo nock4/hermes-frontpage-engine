@@ -1,0 +1,82 @@
+{
+  "analysis_id": "analysis-2026-11-23-horse-comes-apart-gently-v1",
+  "edition_id": "2026-11-23-horse-comes-apart-gently-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A pale, stone-like recumbent horse lies across a maroon ledge against a deep green wall, its midsection sliced into five separated curved slabs marked with faint pencil grid seams and drilled dots. A detached sculpted hand holding an upright tapered blade floats at upper right beside a small six-pane turquoise window.",
+  "usable_surfaces": [
+    "central sliced flank slab",
+    "horse head and neck profile",
+    "rounded hindquarter with drilled dots",
+    "floating hand with blade",
+    "turquoise six-pane window",
+    "green wall field",
+    "maroon ledge"
+  ],
+  "detected_objects": [
+    {
+      "label": "Central sliced flank slab with pencil seams and drilled dots",
+      "artifact_type": "segmented-surface-seam",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.373,
+        "y": 0.55,
+        "w": 0.223,
+        "h": 0.396
+      },
+      "polygon": [
+        [
+          0.441,
+          0.571
+        ],
+        [
+          0.514,
+          0.558
+        ],
+        [
+          0.592,
+          0.55
+        ],
+        [
+          0.596,
+          0.569
+        ],
+        [
+          0.589,
+          0.723
+        ],
+        [
+          0.579,
+          0.866
+        ],
+        [
+          0.478,
+          0.909
+        ],
+        [
+          0.378,
+          0.946
+        ],
+        [
+          0.373,
+          0.916
+        ],
+        [
+          0.398,
+          0.765
+        ],
+        [
+          0.422,
+          0.648
+        ]
+      ],
+      "confidence": 0.88,
+      "visual_evidence": "The largest of five separated curved slabs cut from the pale horse body, centered in the frame. It shows faint pencil grid seams crossing its face, small drilled dots, and an ochre cut edge along its right and bottom thickness, with green wall visible through the gaps on either side."
+    }
+  ],
+  "viewport": {
+    "base_width": 1672,
+    "base_height": 941,
+    "aspect_ratio": "1672:941"
+  }
+}
