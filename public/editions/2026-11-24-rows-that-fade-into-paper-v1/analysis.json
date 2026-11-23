@@ -1,0 +1,108 @@
+{
+  "analysis_id": "analysis-2026-11-24-rows-that-fade-into-paper-v1",
+  "edition_id": "2026-11-24-rows-that-fade-into-paper-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "Eight stacked horizontal strips of 1-bit dithered pixel-art landscapes (pylons, pyramid mountains, huts, stippled suns and flags) sit on thin baseline rules on grey paper. Each strip grows longer than the one above and fades from dense black checkerboard on the left to sparse grey stipple that dissolves into blank paper, forming a diagonal stepped edge.",
+  "usable_surfaces": [
+    "stepped diagonal fade edge of the eight bands",
+    "dense dark left-hand glyph clusters",
+    "thin baseline rules under each band",
+    "empty upper-right paper field",
+    "individual pylon, mountain, hut, sun and flag glyphs"
+  ],
+  "detected_objects": [
+    {
+      "label": "Ragged stepped edge where dithered glyph bands dissolve into paper",
+      "artifact_type": "dither-fade-edge",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.156,
+        "y": 0.101,
+        "w": 0.759,
+        "h": 0.875
+      },
+      "polygon": [
+        [
+          0.156,
+          0.101
+        ],
+        [
+          0.218,
+          0.106
+        ],
+        [
+          0.221,
+          0.143
+        ],
+        [
+          0.329,
+          0.223
+        ],
+        [
+          0.329,
+          0.266
+        ],
+        [
+          0.413,
+          0.34
+        ],
+        [
+          0.413,
+          0.393
+        ],
+        [
+          0.502,
+          0.446
+        ],
+        [
+          0.502,
+          0.515
+        ],
+        [
+          0.598,
+          0.574
+        ],
+        [
+          0.598,
+          0.638
+        ],
+        [
+          0.67,
+          0.691
+        ],
+        [
+          0.67,
+          0.744
+        ],
+        [
+          0.78,
+          0.792
+        ],
+        [
+          0.78,
+          0.859
+        ],
+        [
+          0.915,
+          0.903
+        ],
+        [
+          0.915,
+          0.976
+        ],
+        [
+          0.748,
+          0.976
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "Each of the eight bands thins from dense black checkerboard dither into sparse grey stipple and scattered pixels at its right end. The bands end at progressively greater x positions (about 0.22 to 0.91 of the width), creating a clearly visible staircase of fading edges running diagonally from upper-left to lower-right."
+    }
+  ],
+  "viewport": {
+    "base_width": 1672,
+    "base_height": 941,
+    "aspect_ratio": "1672:941"
+  }
+}

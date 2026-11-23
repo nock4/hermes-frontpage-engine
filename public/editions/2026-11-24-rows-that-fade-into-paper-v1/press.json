@@ -1,0 +1,39 @@
+{
+  "built_at": "2026-11-23T14:20:03.898Z",
+  "go_live_at": "2026-11-24T09:00:00.000Z",
+  "source_key": "tweet:2123883634411376870",
+  "source_url": "https://x.com/yoheinakajima/status/2123883634411376870",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@yoheinakajima: if you're interested in simulation games, you'll like this research i worked...: A pale grey ruled table where each row carries a horizontal band of tiny dithered 1-bit pixel pictograms of differing length, dense black at the start and fading to grey toward a ragged right edge.; stacked horizontal bands of small square pictograms like pylons, pyramids, roofs and circles; dark-to-light fade along each band; ragged right edge where bands end at different lengths; thin hairlines separating every band\nSOURCE-ASPECT NOTE: measured source is landscape (1698x916); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nA flat orthographic print plate of cool grey paper holding horizontal bands of tiny one-bit dithered pictograms: pylon, pyramid, roof, pause circle, flag on hill. The bands are arranged as a descending stepped terrace across a wide landscape canvas. Each band begins in dense ink-black checkerboard stipple and fades to pale graphite. All bands end at one ragged stepped edge that spills into vast empty paper. Silver hairlines separate the bands. Lighting is shadowless and matte. The mood is quiet and archival. There is no legible text.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through descending stepped terrace of horizontal bands with open right field / flat orthographic print plate, frontal, no perspective. bands stepped diagonally like terraces, each anchored by a dense dithere…; stipple fading to grey and breaking off at one stepped ragged edge into….\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: ragged stepped edge where dithered glyph bands dissolve into empty paper. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nflat, shadowless, even diffuse daylight on paper; density alone creates value, darkest where glyphs cluster; materials: matte cool-grey paper; checkerboard dither stipple; hairline silver rule; ink-black pixel mass; palette: cool off-white ground, ink black, mid greys, silver hairlines. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no legible text, years, titles or numerals no recognizable game logos or literal city scenes",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 49412,
+      "ok": false,
+      "error": "The attached image is a screenshot of a website data table: rows of years, game titles, counts and small UI pictogram icons on a plain page. It is software UI and chart content rather than an image th"
+    },
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 68094,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 24518,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 42291,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

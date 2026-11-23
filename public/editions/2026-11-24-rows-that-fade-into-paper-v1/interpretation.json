@@ -1,0 +1,113 @@
+{
+  "interpretation_id": "interp-2026-11-24-rows-that-fade-into-paper-v1",
+  "edition_id": "2026-11-24-rows-that-fade-into-paper-v1",
+  "plate_read_timestamp": "2026-11-23T14:20:03.898Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "Eight stacked horizontal strips of 1-bit dithered pixel-art landscapes (pylons, pyramid mountains, huts, stippled suns and flags) sit on thin baseline rules on grey paper. Each strip grows longer than the one above and fades from dense black checkerboard on the left to sparse grey stipple that dissolves into blank paper, forming a diagonal stepped edge.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "quiet, rigorous, gently dissolving, like a census of small worlds evaporating",
+      "Eight stacked horizontal strips of 1-bit dithered pixel-art landscapes (pylons, pyramid mountains, huts, stippled suns and flags) sit on thin baseline rules on grey paper. Each strip grows longer than the one above and fades from dense black checkerboard on the left to sparse grey stipple that dissolves into blank paper, forming a diagonal stepped edge.",
+      "one-bit-dither",
+      "pictogram-bands",
+      "stepped-terrace"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Ragged stepped edge where dithered glyph bands dissolve into paper"
+    ],
+    "dominant_surfaces": [
+      "paper"
+    ],
+    "dominant_structures": [
+      "dither-glyph-terrace-fade",
+      "ragged stepped edge where dithered glyph bands dissolve into empty paper",
+      "stepped diagonal fade edge of the eight bands",
+      "dense dark left-hand glyph clusters",
+      "thin baseline rules under each band",
+      "empty upper-right paper field",
+      "individual pylon, mountain, hut, sun and flag glyphs"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: dither-glyph-terrace-fade.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-ragged-stepped-edge-where-dithered-g",
+      "kind": "hero",
+      "type": "dither-fade-edge",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.156,
+        "y": 0.101,
+        "w": 0.759,
+        "h": 0.875
+      },
+      "supports": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-ragged-stepped-edge-where-dithered-g-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.156,
+        "y": 0.101,
+        "w": 0.759,
+        "h": 0.875
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "warped-paper-fragment",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}
