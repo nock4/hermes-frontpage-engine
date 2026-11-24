@@ -1,0 +1,114 @@
+{
+  "interpretation_id": "interp-2026-11-25-steel-stick-across-cumbia-bubbles-v1",
+  "edition_id": "2026-11-25-steel-stick-across-cumbia-bubbles-v1",
+  "plate_read_timestamp": "2026-11-24T11:20:07.663Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A cellophane-sealed retail card rests on burlap, printed with glossy airbrushed graffiti bubble forms in rainbow gradients over a lime-green ground. A brushed-steel drive slab with a rounded end and a circular aperture glowing yellow lies across the lower bubble masses, under the crinkled plastic.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "giddy, saturated street-market abundance sealed under cheap plastic",
+      "A cellophane-sealed retail card rests on burlap, printed with glossy airbrushed graffiti bubble forms in rainbow gradients over a lime-green ground. A brushed-steel drive slab with a rounded end and a circular aperture glowing yellow lies across the lower bubble masses, under the crinkled plastic.",
+      "bubble-blob",
+      "airbrush-gradient",
+      "cellophane-skin"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Brushed-steel drive slab with glowing yellow ring aperture over bubble forms"
+    ],
+    "dominant_surfaces": [
+      "paint"
+    ],
+    "dominant_structures": [
+      "cellophane-bubble-blob-steel-slab",
+      "brushed-steel drive slab with glowing ring aperture crossing the bubble masses",
+      "brushed-steel slab face",
+      "yellow-glowing ring aperture",
+      "red-orange-yellow bubble lobes",
+      "cyan diagonal bubble mass",
+      "magenta-violet lower bubbles",
+      "lime-green airbrushed ground"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cellophane-bubble-blob-steel-slab.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-brushed-steel-drive-slab-with-glowin",
+      "kind": "hero",
+      "type": "metal-slab-interruption",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.223,
+        "y": 0.622,
+        "w": 0.643,
+        "h": 0.216
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-brushed-steel-drive-slab-with-glowin-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.223,
+        "y": 0.622,
+        "w": 0.643,
+        "h": 0.216
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "analysis_id": "analysis-2026-11-25-steel-stick-across-cumbia-bubbles-v1",
+  "edition_id": "2026-11-25-steel-stick-across-cumbia-bubbles-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A cellophane-sealed retail card rests on burlap, printed with glossy airbrushed graffiti bubble forms in rainbow gradients over a lime-green ground. A brushed-steel drive slab with a rounded end and a circular aperture glowing yellow lies across the lower bubble masses, under the crinkled plastic.",
+  "usable_surfaces": [
+    "brushed-steel slab face",
+    "yellow-glowing ring aperture",
+    "red-orange-yellow bubble lobes",
+    "cyan diagonal bubble mass",
+    "magenta-violet lower bubbles",
+    "lime-green airbrushed ground",
+    "crinkled cellophane highlights",
+    "white tape seal strip",
+    "burlap border texture"
+  ],
+  "detected_objects": [
+    {
+      "label": "Brushed-steel drive slab with glowing yellow ring aperture over bubble forms",
+      "artifact_type": "metal-slab-interruption",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.223,
+        "y": 0.622,
+        "w": 0.643,
+        "h": 0.216
+      },
+      "polygon": [
+        [
+          0.225,
+          0.64
+        ],
+        [
+          0.521,
+          0.631
+        ],
+        [
+          0.824,
+          0.622
+        ],
+        [
+          0.85,
+          0.637
+        ],
+        [
+          0.863,
+          0.674
+        ],
+        [
+          0.866,
+          0.728
+        ],
+        [
+          0.859,
+          0.776
+        ],
+        [
+          0.84,
+          0.809
+        ],
+        [
+          0.811,
+          0.82
+        ],
+        [
+          0.521,
+          0.83
+        ],
+        [
+          0.228,
+          0.838
+        ],
+        [
+          0.223,
+          0.742
+        ]
+      ],
+      "confidence": 0.95,
+      "visual_evidence": "A horizontal rectangular metal bar with fine brushed grain, a squared left end, and a rounded right end with a circular hole showing bright yellow. It overlaps the cyan and magenta-violet bubble masses, and its shadowed lower and left edges separate it from the card beneath the cellophane."
+    }
+  ],
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  }
+}

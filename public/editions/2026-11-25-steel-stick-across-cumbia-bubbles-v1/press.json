@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-24T11:20:07.663Z",
+  "go_live_at": "2026-11-25T09:00:00.000Z",
+  "source_key": "tweet:2124581499013832947",
+  "source_url": "https://x.com/goodwillsmith/status/2124581499013832947",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@GoodWillsmith: USBs from street markets in CDMX did not disappoint. all of them crammed with...: A phone photo of a cellophane-sealed bootleg cumbia USB package: a lime-green airbrushed bubble-lettered insert card with a brushed-steel flash drive laid across it, resting on coarse burlap upholstery.; Source observation to recompose: huge inflated bubble-letter masses stacked in rainbow gradient bands; Source observation to recompose: the flat steel stick crossing and interrupting the bubble numerals;…\nSOURCE-ASPECT NOTE: measured source is portrait/vertical (1392x1528); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRepresentational source cues are a vocabulary of concrete fragments and relationships, not requirements for exact count, order, positions, or full-scene restaging. Recompose selected recognizable fragments into new groupings and negative space; do not rebuild the complete portrait lineup or backdrop. Palette and grain alone are insufficient.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nBootleg-cumbia bubble world: a flat top-down landscape plate of inflated airbrushed blob-masses in red-to-yellow, cyan and magenta-violet, thick black and blue halo outlines, cascading diagonally across acid lime-green. A single brushed-steel slab bridges the lower third, its round ring aperture glowing warm yellow. Everything sealed under crinkled clear cellophane with a heat-seamed edge and a white tape band over coarse oatmeal burlap. Hard phone-flash light, glossy specular pings, saturated street-market pop, no letters, no figures.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through diagonal blob cascade bridged by a single horizontal slab / flat top-down phone-flash plate seen through a crinkled plastic skin. inflated illegible bubble masses cascading diagonally across lime-green; one brushed-steel slab with a glowing ring hole bridging the lower blobs.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: brushed-steel drive slab with glowing ring aperture crossing the bubble masses. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nFlat overhead phone-flash light with hard specular pings on the plastic and a soft sheen on the steel; the ring aperture glows warm yellow from beneath.; materials: crinkled clear cellophane; glossy airbrushed ink; brushed steel; coarse oatmeal burlap; palette: acid lime, gradient red-yellow, cyan, magenta-violet, steel grey, oatmeal burlap. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no legible letters, numerals, logos or USB symbols no human figures, faces or bodies",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 65533,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 16813,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 36391,
+      "ok": true
+    }
+  ],
+  "notes": []
+}
