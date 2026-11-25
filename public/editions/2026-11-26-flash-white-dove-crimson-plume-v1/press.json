@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-25T11:20:07.642Z",
+  "go_live_at": "2026-11-26T09:00:00.000Z",
+  "source_key": "tweet:2124957405394194888",
+  "source_url": "https://x.com/adonixleen/status/2124957405394194888",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@adonixleen: @adonixleen: fruit dove photo (no caption): A flash-lit nighttime photograph of a white fruit dove with a crimson cap, a pink-and-apricot breast patch and a magenta undertail, perched among dark twigs and blurred leaves.; plump hunched white dove silhouette facing left; crimson cap echoed by the dense magenta undertail plume; a thin dark twig crossing over the shoulder; bright subject floating against a black canopy void\nSOURCE-ASPECT NOTE: measured source is landscape (1000x727); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nNocturnal flash-lit canopy void: a plump white fruit dove hunched in the left third, facing left, crimson cap glowing, sage-grey wing feathers ruffled. One dark twig slices diagonally across its shoulder and the full canvas. The right half dissolves into three oversized blurred leaf planes in soft olive bloom. Offset luminous subject against the void, shot as a shallow-focus telephoto plate under hard frontal flash with near-black falloff. Chalk white, magenta, apricot and sage. Anchor: the dense scaled magenta undertail plume hanging into open darkness.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through offset luminous subject against a void, with a soft-focus counterweight / shallow-focus telephoto flash plate with crisp subject, defocused foreground and black falloff. dove moved into the left third and balanced by three giant blurred leaf…; one canvas-spanning diagonal twig slicing over the shoulder above open b….\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: the dense scaled magenta undertail plume hanging below the white body. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nHard frontal flash that makes the white plumage glow, falling off steeply into near-black olive shadow, with faint green bloom on the blurred foreground leaves; materials: fluffed white down; scaled magenta feather plume; sage-grey wing feathers; rough dark twig bark; palette: chalk white and magenta-crimson against near-black olive, accented with apricot and sage grey. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no daylight or blue sky no multiple birds or flock",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 62446,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 18031,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 34425,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

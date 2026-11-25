@@ -1,0 +1,115 @@
+{
+  "interpretation_id": "interp-2026-11-26-flash-white-dove-crimson-plume-v1",
+  "edition_id": "2026-11-26-flash-white-dove-crimson-plume-v1",
+  "plate_read_timestamp": "2026-11-25T11:20:07.642Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A white fruit dove with a crimson cap, a pink-orange breast patch and grey-green wings perches on a thin diagonal lichen-spotted branch against a black void. A dense magenta undertail plume hangs below its white belly, and large out-of-focus green leaves fill the right half of the frame.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "hushed, startled and intimate, like a nocturnal encounter caught in one burst of light",
+      "A white fruit dove with a crimson cap, a pink-orange breast patch and grey-green wings perches on a thin diagonal lichen-spotted branch against a black void. A dense magenta undertail plume hangs below its white belly, and large out-of-focus green leaves fill the right half of the frame.",
+      "fruit-dove",
+      "flash-lit-white",
+      "crimson-plume"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "dense scaled magenta undertail plume below the white body"
+    ],
+    "dominant_surfaces": [
+      "paint",
+      "light-band"
+    ],
+    "dominant_structures": [
+      "flash-white-dove-crimson-plume-canopy-void",
+      "the dense scaled magenta undertail plume hanging below the white body",
+      "magenta undertail plume",
+      "crimson crown cap",
+      "pink-orange breast blush",
+      "scalloped grey-green wing",
+      "diagonal lichen-spotted branch",
+      "blurred green leaf masses"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: flash-white-dove-crimson-plume-canopy-void.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-dense-scaled-magenta-undertail-plume",
+      "kind": "hero",
+      "type": "saturated-feather-plume-surface",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.179,
+        "y": 0.552,
+        "w": 0.173,
+        "h": 0.374
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-dense-scaled-magenta-undertail-plume-surface",
+      "surface_type": "unknown",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.179,
+        "y": 0.552,
+        "w": 0.173,
+        "h": 0.374
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

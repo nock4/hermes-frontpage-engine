@@ -1,0 +1,99 @@
+{
+  "artifact_map_id": "map-2026-11-26-flash-white-dove-crimson-plume-v1",
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  },
+  "default_cluster_id": "flash-white-dove-crimson-plume-canopy-void",
+  "default_artifact_id": "hero-dense-scaled-magenta-undertail-plume",
+  "artifacts": [
+    {
+      "id": "hero-dense-scaled-magenta-undertail-plume",
+      "kind": "hero",
+      "label": "dense scaled magenta undertail plume below the white body",
+      "artifact_type": "saturated-feather-plume-surface",
+      "bounds": {
+        "x": 0.179,
+        "y": 0.552,
+        "w": 0.173,
+        "h": 0.374
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.186,
+          0.591
+        ],
+        [
+          0.234,
+          0.586
+        ],
+        [
+          0.293,
+          0.576
+        ],
+        [
+          0.342,
+          0.552
+        ],
+        [
+          0.35,
+          0.635
+        ],
+        [
+          0.352,
+          0.742
+        ],
+        [
+          0.339,
+          0.83
+        ],
+        [
+          0.306,
+          0.894
+        ],
+        [
+          0.264,
+          0.926
+        ],
+        [
+          0.231,
+          0.903
+        ],
+        [
+          0.205,
+          0.85
+        ],
+        [
+          0.186,
+          0.771
+        ],
+        [
+          0.179,
+          0.684
+        ],
+        [
+          0.182,
+          0.625
+        ]
+      ],
+      "cluster_id": "flash-white-dove-crimson-plume-canopy-void",
+      "mask_path": "/editions/2026-11-26-flash-white-dove-crimson-plume-v1/assets/masks/hero-dense-scaled-magenta-undertail-plume.svg",
+      "source_binding_ids": [
+        "binding-hero-dense-scaled-magenta-undertail-plume"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          408,
+          726
+        ],
+        "safe_stage_window_origin_px": [
+          429,
+          757
+        ],
+        "preferred_expansion_label": "up"
+      }
+    }
+  ]
+}
