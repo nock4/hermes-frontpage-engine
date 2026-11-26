@@ -1,0 +1,115 @@
+{
+  "interpretation_id": "interp-2026-11-27-crystal-through-cedar-cut-v1",
+  "edition_id": "2026-11-27-crystal-through-cedar-cut-v1",
+  "plate_read_timestamp": "2026-11-26T11:20:07.162Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A collage-style plate in which a towering cluster of glowing amber quartz crystals bursts through a scissor-cut gap in a vertical cedar-board wall. A blazing autumn maple canopy fills the sky behind, a small lit fireplace sits in a stucco panel at lower left, and olive velvet hills roll across the foreground.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "warm, quietly uncanny naturalist reverie, domestic shelter opened to forest and stone",
+      "A collage-style plate in which a towering cluster of glowing amber quartz crystals bursts through a scissor-cut gap in a vertical cedar-board wall. A blazing autumn maple canopy fills the sky behind, a small lit fireplace sits in a stucco panel at lower left, and olive velvet hills roll across the foreground.",
+      "cedar-plank",
+      "amber-crystal",
+      "autumn-leaf-mass"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Amber crystal cluster breaching the gap in the cedar roofline"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "cedar-cut-amber-crystal-leaf-breach",
+      "Amber crystal cluster breaching the cut cedar roofline",
+      "amber crystal cluster",
+      "left cedar wall section",
+      "right cedar wall section",
+      "stucco fireplace panel",
+      "lit fireplace opening",
+      "autumn foliage canopy"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: cedar-cut-amber-crystal-leaf-breach.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-amber-crystal-cluster-breaching-the-",
+      "kind": "hero",
+      "type": "collage-cut-breach",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.47,
+        "y": 0.039,
+        "w": 0.376,
+        "h": 0.825
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-amber-crystal-cluster-breaching-the--surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.47,
+        "y": 0.039,
+        "w": 0.376,
+        "h": 0.825
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

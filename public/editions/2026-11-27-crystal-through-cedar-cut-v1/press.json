@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-26T11:20:07.162Z",
+  "go_live_at": "2026-11-27T09:00:00.000Z",
+  "source_key": "tweet:2124672731417579788",
+  "source_url": "https://x.com/oaknarrow/status/2124672731417579788",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@Oaknarrow: ナチュラリスト (nachurarisuto): someone who lives close to nature, studies wildlife,...: A vintage magazine collage of a roofless mid-century cedar-paneled living room whose ceiling is replaced by a blazing autumn tree canopy and a giant amber crystal cluster breaching the wall line.; roofline cut where plank walls end and leaves begin; oversized amber crystal points rising above the wall edge; upward-gazing autumn canopy with dark trunks; small glowing hearth aperture set in a pale wall\nSOURCE-ASPECT NOTE: measured source is portrait/vertical (1280x2048); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nRoofless cedar collage: a wide band of vertical-grain cedar plank slabs, sliced along a clean paper-cut top edge, opens directly into a blazing lemon-to-vermilion leaf mass. Off-center, an oversized amber quartz cluster erupts through the gap between two offset slabs, facets catching ember light. Low left, one small hearth aperture flickers in pale plaster; a moss-green velvet band pools along the base. Flat frontal magazine-plate camera, horizontal strata with central breach, faded halftone grain, warm tungsten and autumn backlight, quietly uncanny.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through horizontal collage strata with a central breach / flat frontal magazine-plate view, cut-and-paste layering, halftone grain. amber crystal erupting through a gap between two offset cedar slabs; razor-clean paper-cut roofline opening straight into blazing leaves.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Amber crystal cluster breaching the cut cedar roofline. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nwarm tungsten interior glow meeting backlit autumn daylight, with crystal facets catching ember-orange highlights and one small firelight flicker low left; materials: vertical-grain cedar plank; faceted amber quartz; backlit autumn leaf mass; moss-green velvet; palette: ochre, rust, vermilion, honey cedar, moss green, cream. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no sofas, lamps, framed paintings, books, or side tables no full living-room restaging or ceiling",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 68567,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 16585,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 35767,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

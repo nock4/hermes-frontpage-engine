@@ -1,0 +1,94 @@
+{
+  "analysis_id": "analysis-2026-11-27-crystal-through-cedar-cut-v1",
+  "edition_id": "2026-11-27-crystal-through-cedar-cut-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A collage-style plate in which a towering cluster of glowing amber quartz crystals bursts through a scissor-cut gap in a vertical cedar-board wall. A blazing autumn maple canopy fills the sky behind, a small lit fireplace sits in a stucco panel at lower left, and olive velvet hills roll across the foreground.",
+  "usable_surfaces": [
+    "amber crystal cluster",
+    "left cedar wall section",
+    "right cedar wall section",
+    "stucco fireplace panel",
+    "lit fireplace opening",
+    "autumn foliage canopy",
+    "olive velvet foreground hills"
+  ],
+  "detected_objects": [
+    {
+      "label": "Amber crystal cluster breaching the gap in the cedar roofline",
+      "artifact_type": "collage-cut-breach",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.47,
+        "y": 0.039,
+        "w": 0.376,
+        "h": 0.825
+      },
+      "polygon": [
+        [
+          0.495,
+          0.278
+        ],
+        [
+          0.736,
+          0.039
+        ],
+        [
+          0.781,
+          0.122
+        ],
+        [
+          0.785,
+          0.195
+        ],
+        [
+          0.84,
+          0.249
+        ],
+        [
+          0.846,
+          0.293
+        ],
+        [
+          0.811,
+          0.467
+        ],
+        [
+          0.706,
+          0.474
+        ],
+        [
+          0.702,
+          0.864
+        ],
+        [
+          0.514,
+          0.842
+        ],
+        [
+          0.511,
+          0.625
+        ],
+        [
+          0.511,
+          0.418
+        ],
+        [
+          0.47,
+          0.342
+        ],
+        [
+          0.482,
+          0.308
+        ]
+      ],
+      "confidence": 0.93,
+      "visual_evidence": "Faceted, translucent amber-orange crystal points rise from the gap between the taller left cedar wall and the lower right cedar wall. Their silhouettes cut across the wall's top edges and extend high into the foliage, with the main point reaching near the top of the frame. The crystals' left and right edges are bounded by the cut wall edges."
+    }
+  ],
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  }
+}
