@@ -1,0 +1,117 @@
+{
+  "interpretation_id": "interp-2026-11-28-torn-bill-embrace-horse-frieze-v1",
+  "edition_id": "2026-11-28-torn-bill-embrace-horse-frieze-v1",
+  "plate_read_timestamp": "2026-11-27T11:20:08.079Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A weathered décollage of layered torn posters: blue-ground white galloping horses at upper left, fragmented red letterforms on cream along the left, and olive paper at the bottom. A large ragged tear at center-right exposes a vintage pulp-cinema illustration of an embrace, with the woman's head thrown back, crimson lips parted, and hands clutching her shoulder.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "melodramatic, street-weathered, sensual spectacle half-peeled away",
+      "A weathered décollage of layered torn posters: blue-ground white galloping horses at upper left, fragmented red letterforms on cream along the left, and olive paper at the bottom. A large ragged tear at center-right exposes a vintage pulp-cinema illustration of an embrace, with the woman's head thrown back, crimson lips parted, and hands clutching her shoulder.",
+      "decollage",
+      "torn-poster",
+      "crimson-mouth"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Ragged tear-aperture exposing crimson mouth, embrace and clutching hands"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "paint"
+    ],
+    "dominant_structures": [
+      "decollage-hoarding-red-letter-embrace-tear",
+      "Ragged tear-aperture exposing the crimson mouth and clutching hands",
+      "ragged tear-aperture around the embrace",
+      "crimson open mouth",
+      "hand gripping bare shoulder",
+      "blue panel with three white horses",
+      "red torn letterform fragments",
+      "olive paper strip along bottom"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: decollage-hoarding-red-letter-embrace-tear.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-ragged-tear-aperture-exposing-crimso",
+      "kind": "hero",
+      "type": "torn-paper-aperture",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.329,
+        "y": 0.068,
+        "w": 0.648,
+        "h": 0.923
+      },
+      "supports": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-ragged-tear-aperture-exposing-crimso-surface",
+      "surface_type": "paper",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.329,
+        "y": 0.068,
+        "w": 0.648,
+        "h": 0.923
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "threshold-scan-reveal",
+        "restoration-scan"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

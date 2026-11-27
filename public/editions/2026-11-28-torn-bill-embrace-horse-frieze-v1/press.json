@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-27T11:20:08.079Z",
+  "go_live_at": "2026-11-28T09:00:00.000Z",
+  "source_key": "tweet:2123363168885870856",
+  "source_url": "https://x.com/m44444nu/status/2123363168885870856",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@m44444nu: Scrolling through @CreamyDreamy and @bis__cut 111K outputs over the past few...: A torn, layered Rotella-style décollage of 1950s Italian film posters showing an embracing couple framed by ripped paper, white horses on blue sky above, and fractured red block lettering below.; Source observation to recompose: thrown-back head with parted crimson lips, eyes torn away; Source observation to recompose: clutching hands gripping bare shoulders in an embrace;…\nSOURCE-ASPECT NOTE: measured source is portrait/vertical (701x1024); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRepresentational source cues are a vocabulary of concrete fragments and relationships, not requirements for exact count, order, positions, or full-scene restaging. Recompose selected recognizable fragments into new groupings and negative space; do not rebuild the complete portrait lineup or backdrop. Palette and grain alone are insufficient.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nWeathered hoarding of torn cinema bills, flat frontal wide plate, horizontal décollage triptych. A ragged vertical tear-aperture right of center reveals warm ochre skin, a thrown-back crimson mouth and clutching hands; a frieze of pale white horse heads crosses a cobalt sky band at top left; illegible red block-letter masses crumble down the left edge. Bone-white underpaper curls in jagged flaps between zones, olive shard as low ledge. Even overcast daylight, creases, glue stains. Palette: signal red, cobalt, ochre, olive, bone white.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through horizontal décollage triptych with an off-center tear-aperture / flat frontal wide plate, orthographic, tight to the paper surface with no visible wall edge. ragged vertical tear-aperture right of center exposing crimson mouth and…; illegible red block-letter masses crumbling down the left edge against a….\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Ragged tear-aperture exposing the crimson mouth and clutching hands. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\neven overcast daylight raking slightly from the left, enough to lift curled paper edges into soft shadow without gloss; materials: layered offset-printed poster paper; bone-white backing pulp; dried wheat-paste glue stains; creased and folded newsprint; palette: signal red, cobalt blue, ochre flesh, olive khaki, bone white. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no legible letters, credits, names or signatures; red type survives only as illegible block masses no full restaging of the couple's bodies or a complete poster",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 71932,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 22285,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 46896,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

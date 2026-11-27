@@ -1,0 +1,110 @@
+{
+  "analysis_id": "analysis-2026-11-28-torn-bill-embrace-horse-frieze-v1",
+  "edition_id": "2026-11-28-torn-bill-embrace-horse-frieze-v1",
+  "inspection_mode": "vision",
+  "inspection_error": null,
+  "scene_summary": "A weathered décollage of layered torn posters: blue-ground white galloping horses at upper left, fragmented red letterforms on cream along the left, and olive paper at the bottom. A large ragged tear at center-right exposes a vintage pulp-cinema illustration of an embrace, with the woman's head thrown back, crimson lips parted, and hands clutching her shoulder.",
+  "usable_surfaces": [
+    "ragged tear-aperture around the embrace",
+    "crimson open mouth",
+    "hand gripping bare shoulder",
+    "blue panel with three white horses",
+    "red torn letterform fragments",
+    "olive paper strip along bottom",
+    "curled white paper tear edges"
+  ],
+  "detected_objects": [
+    {
+      "label": "Ragged tear-aperture exposing crimson mouth, embrace and clutching hands",
+      "artifact_type": "torn-paper-aperture",
+      "role": "hero-anchor",
+      "bounds": {
+        "x": 0.329,
+        "y": 0.068,
+        "w": 0.648,
+        "h": 0.923
+      },
+      "polygon": [
+        [
+          0.534,
+          0.186
+        ],
+        [
+          0.423,
+          0.322
+        ],
+        [
+          0.365,
+          0.459
+        ],
+        [
+          0.345,
+          0.605
+        ],
+        [
+          0.329,
+          0.84
+        ],
+        [
+          0.404,
+          0.884
+        ],
+        [
+          0.534,
+          0.894
+        ],
+        [
+          0.638,
+          0.947
+        ],
+        [
+          0.729,
+          0.991
+        ],
+        [
+          0.872,
+          0.977
+        ],
+        [
+          0.944,
+          0.898
+        ],
+        [
+          0.977,
+          0.742
+        ],
+        [
+          0.957,
+          0.508
+        ],
+        [
+          0.964,
+          0.322
+        ],
+        [
+          0.97,
+          0.088
+        ],
+        [
+          0.846,
+          0.068
+        ],
+        [
+          0.716,
+          0.107
+        ],
+        [
+          0.625,
+          0.166
+        ]
+      ],
+      "confidence": 0.86,
+      "visual_evidence": "A continuous ragged, curled white paper edge encloses the pulp-cinema illustration. It runs from the torn upper-left lip near the horse panel, down the left side past the man's raised hand, along the olive strip at the bottom, and up the right edge beside the gripping hand. The crimson parted lips sit near the upper rim of the opening. Thin torn paper strips cross the top of the aperture, so the top contour is approximate."
+    }
+  ],
+  "viewport": {
+    "base_width": 1536,
+    "base_height": 1024,
+    "aspect_ratio": "1536:1024"
+  }
+}
