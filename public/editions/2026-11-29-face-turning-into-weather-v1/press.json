@@ -1,0 +1,31 @@
+{
+  "built_at": "2026-11-28T11:20:07.324Z",
+  "go_live_at": "2026-11-29T09:00:00.000Z",
+  "source_key": "tweet:2123365307926642705",
+  "source_url": "https://x.com/hayato_hanabusa/status/2123365307926642705",
+  "image_prompt": "OUTPUT: landscape canvas (width > height); source-native recomposition, no stretching, cropping, or padding.\nUse the dominant source image described below as inspiration and material grammar, not as a picture to recreate.\nBORROW\n@hayato_hanabusa: 変容: A gouache-and-pencil sketchbook painting of a green meadow under a turquoise sky in which a huge, half-dissolved anime face with two large eyes and a tiny open mouth materializes out of the clouds.; Source observation to recompose: crescent-pupil eye outlined in olive-khaki floating in cloud-white haze; Source observation to recompose: softer gray smudge eye dissolving into cloud; Source observation to recompose: long vertical pencil hair strands falling through the sky;…\nSOURCE-ASPECT NOTE: measured source is landscape (3291x2939); this describes the reference, not the output canvas. Recompose its subjects, silhouettes, object relationships, light, surface and framing grammar on a landscape canvas. Keep subject proportions and source identity; no stretching, cropping, or padding to force orientation, no pasted source panel or unrelated replacement scene.\nRepresentational source cues are a vocabulary of concrete fragments and relationships, not requirements for exact count, order, positions, or full-scene restaging. Recompose selected recognizable fragments into new groupings and negative space; do not rebuild the complete portrait lineup or backdrop. Palette and grain alone are insufficient.\nRequire at least one structural change to arrangement, grouping/object count, or spatial logic; scale shifts, cropping and surface distress alone do not count. Keep distinctive source silhouettes, motifs, light and material relationships recognizable in the new structure.\nTRANSFORM\nTransfiguring meadow sky painted on torn sketchbook paper: wide horizon-band composition, flat frontal plate, horizon low. One enormous olive-khaki eye with a thick crescent pupil hovers right of center in cloud-white haze; its twin melts into a soft gray smudge far left across open sky. Faint pencil hair strands rain downward. A tiny open mouth outline sinks into the dark mossy treeline. Below, dragged green field crossed edge to edge by a magenta stroke over teal. Diffuse overcast light, turquoise fading to chalk white, scumbled gouache, ragged deckled borders.\nCOMPOSITION\nDo not start by duplicating the original source framing and object layout. Start from the strongest borrowed source elements, then recompose them through wide horizon band with a giant face dissolving into the upper sky / flat frontal painted plate, straight-on, horizon low at the lower third, torn paper edges visible. one crisp crescent-pupil eye opposite a far-left ghost eye across open s…; magenta-over-teal streak stretched edge to edge across the green field.\nANCHORS\nCompose exactly 1 distinct source-native physical feature within the artwork: Olive-khaki crescent-pupil eye floating in the cloud-white sky. Keep it large and visibly separable; never a counted symbol, card, pasted thumbnail or UI label. No painted indicators. No visible annotation glyphs or QA chrome. No registration targets, crosshairs, reticles or hollow target rings.\nLIMITS\nsoft diffuse overcast daylight with no cast shadows, brightest in the cloud-white band just above the horizon; materials: gouache on cold-press watercolor paper; faint graphite underdrawing; dry-brushed chalky white pigment; opaque dragged green paint; palette: pale turquoise and chalk white above, mossy greens below, olive-khaki line accents, a hot magenta and teal stripe. SOURCE-INSPIRATION LOCK: use the source image as material and grammar, not as a composition to copy. Borrow recognizable elements: palette, silhouettes, relationships, motifs, light, and edge pressure; visibly recompose them and change at least two of arrangement, scale, object count, crop, surface state, or spatial logic. No unrelated replacement scene, pasted source photo, or near-identical still life with tiny marks. No game HUD or debug UI. No legible text, browser chrome, dashboards, floating panels, pasted thumbnails, or same-photo restaging. no fully rendered character, body, or complete face no legible text or signatures",
+  "model_calls": [
+    {
+      "step": "brief",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 70665,
+      "ok": true
+    },
+    {
+      "step": "plate",
+      "provider": "hermes",
+      "model": "openai-codex/gpt-image-2-medium",
+      "ms": 19681,
+      "ok": true
+    },
+    {
+      "step": "map",
+      "provider": "hermes",
+      "model": "profile:frontpage",
+      "ms": 41433,
+      "ok": true
+    }
+  ],
+  "notes": []
+}

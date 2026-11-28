@@ -1,0 +1,118 @@
+{
+  "interpretation_id": "interp-2026-11-29-face-turning-into-weather-v1",
+  "edition_id": "2026-11-29-face-turning-into-weather-v1",
+  "plate_read_timestamp": "2026-11-28T11:20:07.324Z",
+  "scene_ontology": {
+    "primary": "object-native",
+    "secondary": [
+      "material-native"
+    ],
+    "confidence": 0.9
+  },
+  "world_read": {
+    "summary": "A deckle-edged painted plate shows a turquoise sky of thick white clouds over a green meadow crossed by a vivid magenta flower band and a dark tree line. A large olive-khaki anime-style eye with a crescent pupil floats in the clouds on the right, while a faded blue-gray ghost eye hovers on the left and thin hair-like strands fall through the sky.",
+    "dominant_spatial_mode": "contained",
+    "density": "sparse",
+    "legibility": "high",
+    "mood": [
+      "dreamy, quiet metamorphosis; a gaze slowly condensing out of an overcast summer sky",
+      "A deckle-edged painted plate shows a turquoise sky of thick white clouds over a green meadow crossed by a vivid magenta flower band and a dark tree line. A large olive-khaki anime-style eye with a crescent pupil floats in the clouds on the right, while a faded blue-gray ghost eye hovers on the left and thin hair-like strands fall through the sky.",
+      "cloud-face",
+      "crescent-pupil-eye",
+      "pencil-hair-rain"
+    ]
+  },
+  "visual_ecology": {
+    "dominant_objects": [
+      "Olive-khaki crescent-pupil eye floating in cloud-white sky"
+    ],
+    "dominant_surfaces": [
+      "paper",
+      "water",
+      "paint"
+    ],
+    "dominant_structures": [
+      "sky-face-cloud-eye-meadow-dissolve",
+      "Olive-khaki crescent-pupil eye floating in the cloud-white sky",
+      "olive crescent-pupil eye in right sky",
+      "faded blue-gray ghost eye in left sky",
+      "white impasto cloud bank",
+      "falling hair-like strokes",
+      "small crescent arc on horizon",
+      "magenta flower band across meadow"
+    ],
+    "negative_space_regions": []
+  },
+  "interaction_world": {
+    "class": "object-native",
+    "recommended_behaviors": [
+      "cabinet-drawer-behavior",
+      "object-memory",
+      "threshold-scan"
+    ],
+    "rejected_behaviors": [
+      "light-path-reaction"
+    ],
+    "reasoning": [
+      "Primary ontology inferred from scene family and artifact types: sky-face-cloud-eye-meadow-dissolve.",
+      "Artifact vocabulary suggests object-native interaction logic."
+    ]
+  },
+  "artifact_candidates": [
+    {
+      "id": "hero-olive-khaki-crescent-pupil-eye-float",
+      "kind": "hero",
+      "type": "painted-eye-outline",
+      "strength": 0.95,
+      "bounds": {
+        "x": 0.61,
+        "y": 0.2,
+        "w": 0.355,
+        "h": 0.305
+      },
+      "supports": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "field_candidates": [],
+  "html_surfaces": [
+    {
+      "id": "hero-olive-khaki-crescent-pupil-eye-float-surface",
+      "surface_type": "paint",
+      "host": "artifact",
+      "bounds": {
+        "x": 0.61,
+        "y": 0.2,
+        "w": 0.355,
+        "h": 0.305
+      },
+      "suitability": 0.9,
+      "supported_treatments": [
+        "mechanical-reveal-system",
+        "threshold-scan-reveal"
+      ]
+    }
+  ],
+  "enhancement_bundle": {
+    "primary": [
+      "mechanical-reveal-system"
+    ],
+    "secondary": [
+      "warped-paper-fragment",
+      "threshold-scan-reveal"
+    ],
+    "wildcard": []
+  },
+  "per_region_assignments": [],
+  "scene_wide_behavior": {
+    "selected": "cabinet-drawer-behavior"
+  },
+  "choreography_rule": {
+    "selected": "anchor-and-satellites"
+  },
+  "release_notes": [
+    "Generated automatically from 1 artifacts and scene family heuristics."
+  ]
+}

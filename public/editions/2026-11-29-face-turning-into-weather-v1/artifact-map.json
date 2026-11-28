@@ -1,0 +1,99 @@
+{
+  "artifact_map_id": "map-2026-11-29-face-turning-into-weather-v1",
+  "viewport": {
+    "base_width": 1556,
+    "base_height": 1011,
+    "aspect_ratio": "1556:1011"
+  },
+  "default_cluster_id": "sky-face-cloud-eye-meadow-dissolve",
+  "default_artifact_id": "hero-olive-khaki-crescent-pupil-eye-float",
+  "artifacts": [
+    {
+      "id": "hero-olive-khaki-crescent-pupil-eye-float",
+      "kind": "hero",
+      "label": "Olive-khaki crescent-pupil eye floating in cloud-white sky",
+      "artifact_type": "painted-eye-outline",
+      "bounds": {
+        "x": 0.61,
+        "y": 0.2,
+        "w": 0.355,
+        "h": 0.305
+      },
+      "z_index": 10,
+      "polygon": [
+        [
+          0.614,
+          0.361
+        ],
+        [
+          0.649,
+          0.292
+        ],
+        [
+          0.7,
+          0.247
+        ],
+        [
+          0.771,
+          0.229
+        ],
+        [
+          0.855,
+          0.247
+        ],
+        [
+          0.913,
+          0.277
+        ],
+        [
+          0.964,
+          0.297
+        ],
+        [
+          0.925,
+          0.326
+        ],
+        [
+          0.887,
+          0.406
+        ],
+        [
+          0.848,
+          0.455
+        ],
+        [
+          0.797,
+          0.485
+        ],
+        [
+          0.739,
+          0.495
+        ],
+        [
+          0.662,
+          0.495
+        ],
+        [
+          0.643,
+          0.415
+        ]
+      ],
+      "cluster_id": "sky-face-cloud-eye-meadow-dissolve",
+      "mask_path": "/editions/2026-11-29-face-turning-into-weather-v1/assets/masks/hero-olive-khaki-crescent-pupil-eye-float.svg",
+      "source_binding_ids": [
+        "binding-hero-olive-khaki-crescent-pupil-eye-float"
+      ],
+      "geometry": {
+        "safe_hover_origin_px": [
+          1225,
+          332
+        ],
+        "safe_stage_window_origin_px": [
+          1270,
+          356
+        ],
+        "preferred_expansion_label": "left"
+      }
+    }
+  ]
+}
